@@ -1346,25 +1346,25 @@
     "message": "Potwierdź sposób blokowania sejfu"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Logowanie jednokrotne przedsiębiorstwa"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ustaw hasło główne"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Aby zakończyć logowanie jednokrotne SSO, ustaw hasło główne, aby uzyskać dostęp do sejfu."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Nowe hasło główne"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Potwierdź nowe hasło główne"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Co najmniej jedna zasada organizacji wymaga, aby hasło główne spełniało następujące wymagania:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimalny poziom złożoności wynosi $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimalna długość wynosi $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Zawiera co najmniej jedną wielką literę"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Zawiera co najmniej jedną małą literę"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Zawiera co najmniej jedną cyfrę"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Zawiera co najmniej jeden następujący znak specjalny $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Nowe hasło główne nie spełnia wymaganych zasad."
   }
 }
