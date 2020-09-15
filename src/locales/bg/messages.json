@@ -1238,16 +1238,16 @@
     "message": "Трезорът е заключен. Въведете своя ПИН, за да продължите."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Отключване с Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Потвърждаване за Битуорден."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Отключване с Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Потвърждаване за Битуорден."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"
@@ -1346,25 +1346,25 @@
     "message": "Потвърждаване на действието"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Еднократна идентификация (SSO)"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Задаване на главна парола"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "За да завършите настройките за еднократна идентификация, трябва да зададете главна парола за трезора."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Нова главна парола"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Потвърждаване на новата главна парола"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Поне една политика на организация има следните изисквания към главната ви парола:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Минимална сложност от $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Минимална дължина: $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Поне една главна буква"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Поне една малка буква"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Поне една цифра"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Поне един от следните специални знаци: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Паролата ви не отговаря на политиките."
   }
 }
