@@ -107,7 +107,7 @@ const cipherService = new CipherService(cryptoService, userService, settingsServ
 const folderService = new FolderService(cryptoService, userService, apiService, storageService,
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
-searchService = new SearchService(cipherService, platformUtilsService);
+searchService = new SearchService(cipherService);
 const policyService = new PolicyService(userService, storageService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
