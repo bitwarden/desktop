@@ -24,19 +24,22 @@
                 </div>
             </div>
         </div>
-        <div class="buttons">
-            <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
-                <b [hidden]="form.loading"><i class="fa fa-sign-in" aria-hidden="true"></i> {{'logIn' | i18n}}</b>
-                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
-            </button>
-            <a routerLink="/register" class="btn block">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'createAccount' | i18n}}
-            </a>
-        </div>
-        <div class="buttons">
-            <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
-                <i class="fa fa-bank" aria-hidden="true"></i> {{'enterpriseSingleSignOn' | i18n}}
-            </a>
+        
+        <div class="buttons with-rows">
+            <div class="buttons-row">
+                <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
+                    <b [hidden]="form.loading"><i class="fa fa-sign-in" aria-hidden="true"></i> {{'logIn' | i18n}}</b>
+                    <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+                </button>
+                <a routerLink="/register" class="btn block">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'createAccount' | i18n}}
+                </a>
+            </div>
+            <div class="buttons-row">
+                <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
+                    <i class="fa fa-bank" aria-hidden="true"></i> {{'enterpriseSingleSignOn' | i18n}}
+                </a>
+            </div>
         </div>
         <div class="sub-options">
             <a routerLink="/hint">{{'getMasterPasswordHint' | i18n}}</a>
