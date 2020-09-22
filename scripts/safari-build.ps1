@@ -1,7 +1,8 @@
 ﻿param (
   [string] $version,
   [switch] $mas,
-  [switch] $masdev
+  [switch] $masdev,
+  [switch] $skipcheckout
 )
 
 # Dependencies:
@@ -19,18 +20,19 @@ $distSafariAppexMas = $distSafariDir + "\browser\dist\Safari\mas\build\Release\s
 $distSafariAppexMasDev = $distSafariDir + "\browser\dist\Safari\masdev\build\Release\safari.appex";
 $pluginsAppex = $rootDir + "\PlugIns\safari.appex";
 
-if (Test-Path -Path $distSafariDir) {
-  Remove-Item -Recurse -Force $distSafariDir
-}
-
 if (Test-Path -Path $pluginsAppex) {
   Remove-Item -Recurse -Force $pluginsAppex
 }
 
-New-Item $distSafariDir -ItemType Directory -ea 0
-cd $distSafariDir
-git clone git@github.com:bitwarden/browser.git
-cd browser
+if(-not $skipcheckout) {
+  if (Test-Path -Path $distSafariDir) {
+    Remove-Item -Recurse -Force $distSafariDir
+  }
+  New-Item $distSafariDir -ItemType Directory -ea 0
+  cd $distSafariDir
+  git clone git@github.com:bitwarden/browser.git
+  cd browser
+}
 
 if (-not ([string]::IsNullOrEmpty($version))) {
   $tag = "v" + $version

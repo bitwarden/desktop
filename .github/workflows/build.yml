@@ -150,9 +150,19 @@ jobs:
       - name: Run linter
         run: npm run lint
 
+      - name: Clean safari directory
+        shell: pwsh
+        run: ./scripts/clean-safari.ps1
+
+      - name: Checkout browser extension
+        uses: actions/checkout@v2
+        with:
+          repository: 'bitwarden/browser'
+          path: 'dist/safari'
+
       - name: Build Safari extension for .dmg
         shell: pwsh
-        run: ./scripts/safari-build.ps1
+        run: ./scripts/safari-build.ps1 -skipcheckout
 
       - name: Build application for .dmg
         run: npm run dist:mac
@@ -162,7 +172,7 @@ jobs:
 
       - name: Build Safari extension for App Store
         shell: pwsh
-        run: ./scripts/safari-build.ps1 -mas
+        run: ./scripts/safari-build.ps1 -mas -skipcheckout
 
       - name: Build application for App Store
         run: npm run dist:mac:mas
