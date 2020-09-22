@@ -219,7 +219,15 @@
       "publish": [
         "github"
       ]
-    }
+    },
+    "protocols": [
+      {
+        "name": "Bitwarden",
+        "schemes": [
+          "bitwarden"
+        ]
+      }
+    ]
   },
   "devDependencies": {
     "@angular/compiler-cli": "^9.1.12",
