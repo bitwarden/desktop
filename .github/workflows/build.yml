@@ -135,6 +135,7 @@ jobs:
           DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
           DEVID_CERT_PASSWORD: ${{ secrets.DEVID_CERT_PASSWORD }}
           APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Set up provisioning profiles
         run: ./.github/scripts/macos/setup-profiles.ps1
