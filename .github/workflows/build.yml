@@ -5,6 +5,9 @@ on:
     branches-ignore:
       - 'l10n_master'
       - 'gh-pages'
+  release:
+    types:
+      - published
 
 jobs:
   build:
