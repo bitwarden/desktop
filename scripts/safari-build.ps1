@@ -29,10 +29,15 @@ if(-not $skipcheckout) {
     Remove-Item -Recurse -Force $distSafariDir
   }
   New-Item $distSafariDir -ItemType Directory -ea 0
-  cd $distSafariDir
-  git clone git@github.com:bitwarden/browser.git
-  cd browser
 }
+
+cd $distSafariDir
+
+if(-not $skipcheckout) {
+  git clone git@github.com:bitwarden/browser.git
+}
+
+cd browser
 
 if (-not ([string]::IsNullOrEmpty($version))) {
   $tag = "v" + $version
