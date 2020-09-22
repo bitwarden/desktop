@@ -140,6 +140,12 @@ jobs:
         run: ./.github/scripts/macos/setup-profiles.ps1
         shell: pwsh
 
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
 #      - name: Build Safari extension for .dmg
 #        shell: pwsh
 #        run: ./scripts/safari-build.ps1
