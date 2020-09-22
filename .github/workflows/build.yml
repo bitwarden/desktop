@@ -140,17 +140,17 @@ jobs:
         run: ./.github/scripts/macos/setup-profiles.ps1
         shell: pwsh
 
-      - name: Build Safari extension for .dmg
-        shell: pwsh
-        run: ./scripts/safari-build.ps1
+#      - name: Build Safari extension for .dmg
+#        shell: pwsh
+#        run: ./scripts/safari-build.ps1
 
       - name: Build application for .dmg
         shell: pwsh
         run: npm run dist:mac
 
-      - name: Build Safari extension for App Store
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -mas
+#      - name: Build Safari extension for App Store
+#        shell: pwsh
+#        run: ./scripts/safari-build.ps1 -mas
 
       - name: Build application for App Store
         shell: pwsh
