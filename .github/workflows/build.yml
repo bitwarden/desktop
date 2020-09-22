@@ -150,9 +150,9 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-#      - name: Build Safari extension for .dmg
-#        shell: pwsh
-#        run: ./scripts/safari-build.ps1
+      - name: Build Safari extension for .dmg
+        shell: pwsh
+        run: ./scripts/safari-build.ps1
 
       - name: Build application for .dmg
         run: npm run dist:mac
@@ -160,9 +160,9 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-#      - name: Build Safari extension for App Store
-#        shell: pwsh
-#        run: ./scripts/safari-build.ps1 -mas
+      - name: Build Safari extension for App Store
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -mas
 
       - name: Build application for App Store
         run: npm run dist:mac:mas

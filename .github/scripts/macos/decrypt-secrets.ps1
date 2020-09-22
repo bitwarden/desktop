@@ -2,7 +2,7 @@
 
 $decryptSecretPath = $($rootPath + "/.github/scripts/decrypt-secret.ps1");
 
-Invoke-Expression "& `"$decryptSecretPath`" -filename bitwarden-deskop-key.p12.gpg"
+Invoke-Expression "& `"$decryptSecretPath`" -filename bitwarden-desktop-key.p12.gpg"
 Invoke-Expression "& `"$decryptSecretPath`" -filename appstore-app-cert.p12.gpg"
 Invoke-Expression "& `"$decryptSecretPath`" -filename appstore-installer-cert.p12.gpg"
 Invoke-Expression "& `"$decryptSecretPath`" -filename devid-app-cert.p12.gpg"
