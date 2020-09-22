@@ -152,7 +152,7 @@ jobs:
 
       - name: Clean safari directory
         shell: pwsh
-        run: ./scripts/clean-safari.ps1
+        run: ./.github/scripts/macos/clean-safari.ps1
 
       - name: Checkout browser extension
         uses: actions/checkout@v2
