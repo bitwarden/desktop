@@ -31,7 +31,11 @@ if(-not $skipcheckout) {
   New-Item $distSafariDir -ItemType Directory -ea 0
 }
 
+ls
+cd $distDir
+ls
 cd $distSafariDir
+ls
 
 if(-not $skipcheckout) {
   git clone git@github.com:bitwarden/browser.git
