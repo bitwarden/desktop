@@ -45,14 +45,16 @@ if (-not ([string]::IsNullOrEmpty($version))) {
 }
 
 npm i
-npm run dist:safari
 if ($mas) {
+  npm run dist:safari:mas
   Copy-Item -Path $distSafariAppexMas -Destination $pluginsAppex –Recurse
 }
 elseif ($masdev) {
+  npm run dist:safari
   Copy-Item -Path $distSafariAppexMasDev -Destination $pluginsAppex –Recurse
 }
 else {
+  npm run dist:safari:dmg
   Copy-Item -Path $distSafariAppexDmg -Destination $pluginsAppex –Recurse
 }
 cd $rootDir
