@@ -150,7 +150,7 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Clean safari directory
+      - name: Clean Safari directory
         shell: pwsh
         run: ./.github/scripts/macos/clean-safari.ps1
 
