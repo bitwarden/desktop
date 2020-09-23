@@ -160,9 +160,9 @@ jobs:
           repository: 'bitwarden/browser'
           path: 'dist/safari/browser'
 
-      - name: Build Safari extension for .dmg
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -skipcheckout
+#      - name: Build Safari extension for .dmg
+#        shell: pwsh
+#        run: ./scripts/safari-build.ps1 -skipcheckout
 
       - name: Build application for .dmg
         run: npm run dist:mac
