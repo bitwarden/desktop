@@ -164,11 +164,11 @@ jobs:
 #        shell: pwsh
 #        run: ./scripts/safari-build.ps1 -skipcheckout
 
-      - name: Build application for .dmg
-        run: npm run dist:mac
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+#      - name: Build application for .dmg
+#        run: npm run dist:mac
+#        env:
+#          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+#          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Build Safari extension for App Store
         shell: pwsh
