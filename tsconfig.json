@@ -44,6 +44,7 @@
     "node_modules",
     "jslib/node_modules",
     "dist",
+    "dist-safari",
     "jslib/dist",
     "build",
     "jslib/spec",

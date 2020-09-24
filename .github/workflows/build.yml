@@ -26,13 +26,8 @@ jobs:
       - name: Print lines of code
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
-  build:
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [windows-latest, ubuntu-latest]
+  linux:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Set up Node
@@ -40,38 +35,89 @@ jobs:
         with:
           node-version: '10.x'
 
+      - name: Set Node options
+        run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
+
       - name: Set up environment
         shell: pwsh
         run: |
-          if($env:RUNNER_OS -eq "Linux") {
-            sudo apt-get update
-            sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
-          }
-          elseif($env:RUNNER_OS -eq "Windows") {
-            choco --version
-          }
+          sudo apt-get update
+          sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
       - name: Print environment
         run: |
           node --version
           npm --version
-          git --version
 
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Determine deployment variables
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
         shell: pwsh
-        env:
-          GITHUB_REF: ${{ github.ref }}
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build application
+        run: npm run dist:lin
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+
+      - name: Upload .rpm artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.rpm
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.rpm
+
+      - name: Upload .freebsd artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+
+      - name: Upload .snap artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          path: ./dist/Bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+
+      - name: Upload .AppImage artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.AppImage
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.AppImage
+
+  windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Set Node options
+        run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
+
+      - name: Print environment
         run: |
-          $PACKAGE_VERSION = (Get-Content -Raw -Path .\src\package.json | ConvertFrom-Json).version
-          $PROD_DEPLOY = "false"
-          if($env:GITHUB_REF.StartsWith("refs/tags/v")) {
-            echo "::set-env name=RELEASE_NAME::$env:GITHUB_REF.Replace('refs/tags/v', '')"
-          }
-          echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
-          echo "::set-env name=PROD_DEPLOY::$PROD_DEPLOY"
+          node --version
+          npm --version
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
 
       - name: Install Node dependencies
         run: npm install
@@ -81,34 +127,31 @@ jobs:
 
       - name: Build application
         shell: pwsh
-        run: |
-          echo "Building dist for $env:PACKAGE_VERSION"
-          if($env:RUNNER_OS -eq "Linux") {
-            npm run dist:lin
-          }
-          elseif($env:RUNNER_OS -eq "Windows") {
-            npm run dist:win:ci
-          }
+        run: npm run dist:win:ci
 
-      - name: Compile artifacts
-        shell: bash
-        run: |
-          mkdir -p artifacts
-          if [ "$RUNNER_OS" == "Linux" ]; then
-            cp ./dist/*.{snap,AppImage,deb,rpm,freebsd} ./artifacts
-          elif [ "$RUNNER_OS" == "Windows" ]; then
-            cp ./dist/Bitwarden-*-x64.appx ./artifacts/Bitwarden-$PACKAGE_VERSION-x64-store.appx
-            cp ./dist/Bitwarden-*-ia32.appx ./artifacts/Bitwarden-$PACKAGE_VERSION-ia32-store.appx
-            cp ./dist/Bitwarden-Portable-*.exe ./artifacts
-            cp ./dist/nsis-web/Bitwarden-Installer-*.exe ./artifacts
-          fi
-
-      - name: Upload artifacts
-        if: runner.os == 'Linux' || runner.os == 'Windows'
-        uses: actions/upload-artifact@v2-preview
+      - name: Upload portable exe artifact
+        uses: actions/upload-artifact@v2
         with:
-          name: desktop-artifacts
-          path: artifacts/*
+          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+
+      - name: Upload installer exe artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+
+      - name: Upload store appx ia32 artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
+
+      - name: Upload store appx x64 artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
 
   macos:
     runs-on: macos-latest
@@ -126,7 +169,6 @@ jobs:
         run: |
           node --version
           npm --version
-          git --version
           Write-Output "GitHub ref: $env:GITHUB_REF"
           Write-Output "GitHub event: $env:GITHUB_EVENT"
         shell: pwsh
