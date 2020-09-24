@@ -114,8 +114,16 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
       - name: Print environment
         run: |
+          node --version
+          npm --version
+          git --version
           Write-Output "GitHub ref: $env:GITHUB_REF"
           Write-Output "GitHub event: $env:GITHUB_EVENT"
         shell: pwsh
