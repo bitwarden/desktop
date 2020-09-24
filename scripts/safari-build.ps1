@@ -15,8 +15,7 @@
 
 $dir = Split-Path -Parent $MyInvocation.MyCommand.Path;
 $rootDir = $dir + "\..";
-$distDir = $rootDir + "\dist";
-$distSafariDir = $distDir + "\safari";
+$distSafariDir = $rootDir + "\dist-safari";
 $distSafariAppexDmg = $distSafariDir + "\browser\dist\Safari\dmg\build\Release\safari.appex";
 $distSafariAppexMas = $distSafariDir + "\browser\dist\Safari\mas\build\Release\safari.appex";
 $distSafariAppexMasDev = $distSafariDir + "\browser\dist\Safari\masdev\build\Release\safari.appex";

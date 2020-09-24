@@ -164,7 +164,7 @@ jobs:
 
       - name: Create Safari directory
         shell: pwsh
-        run: New-Item ./dist/safari -ItemType Directory -ea 0
+        run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
         uses: actions/checkout@v2
