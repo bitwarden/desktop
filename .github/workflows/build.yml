@@ -120,7 +120,7 @@ jobs:
           node-version: '10.x'
 
       - name: Set Node options
-        run: ::set-env name=NODE_OPTIONS::--max_old_space_size=4096
+        run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
 
       - name: Print environment
         run: |
