@@ -186,17 +186,17 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload .app artifact
+      - name: Upload .zip artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden.app
-          path: ./dist/mac/Bitwarden.app
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
 
       - name: Upload .dmg artifact
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          path: ./dist/mac/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
 
       - name: Load Safari extension for App Store
         shell: pwsh
