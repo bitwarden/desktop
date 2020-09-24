@@ -13,6 +13,7 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
 
 import { SsoComponent as BaseSsoComponent } from 'jslib/angular/components/sso.component';
 
@@ -22,13 +23,16 @@ import { SsoComponent as BaseSsoComponent } from 'jslib/angular/components/sso.c
 })
 export class SsoComponent extends BaseSsoComponent {
     constructor(authService: AuthService, router: Router,
-        i18nService: I18nService, route: ActivatedRoute,
+        i18nService: I18nService, syncService: SyncService, route: ActivatedRoute,
         storageService: StorageService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, apiService: ApiService,
         cryptoFunctionService: CryptoFunctionService,
         passwordGenerationService: PasswordGenerationService) {
         super(authService, router, i18nService, route, storageService, stateService, platformUtilsService,
             apiService, cryptoFunctionService, passwordGenerationService);
+        super.onSuccessfulLogin = () => {
+            return syncService.fullSync(true);
+        };
         this.redirectUri = 'bitwarden://sso-callback';
         this.clientId = 'desktop';
     }
