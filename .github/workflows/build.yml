@@ -10,13 +10,29 @@ on:
       - published
 
 jobs:
+
+  cloc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up cloc
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install cloc
+
+      - name: Print lines of code
+        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+
   build:
 
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-latest]
 
     steps:
       - name: Set up Node
@@ -27,7 +43,6 @@ jobs:
       - name: Set up environment
         shell: pwsh
         run: |
-          npm install -g cloc
           if($env:RUNNER_OS -eq "Linux") {
             sudo apt-get update
             sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
@@ -41,7 +56,6 @@ jobs:
           node --version
           npm --version
           git --version
-          cloc --version
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -59,10 +73,6 @@ jobs:
           echo "::set-env name=PACKAGE_VERSION::$PACKAGE_VERSION"
           echo "::set-env name=PROD_DEPLOY::$PROD_DEPLOY"
 
-      - name: Print LOC
-        shell: bash
-        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
-
       - name: Install Node dependencies
         run: npm install
 
@@ -78,9 +88,6 @@ jobs:
           }
           elseif($env:RUNNER_OS -eq "Windows") {
             npm run dist:win:ci
-          }
-          elseif($env:RUNNER_OS -eq "macOS") {
-            npm run build
           }
 
       - name: Compile artifacts
@@ -125,11 +132,6 @@ jobs:
         env:
           DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
 
-      - name: Increment version
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-        run: ./.github/scripts/macos/increment-version.ps1
-        shell: pwsh
-
       - name: Set up keychain
         run: ./.github/scripts/macos/setup-keychain.ps1
         shell: pwsh
@@ -145,15 +147,24 @@ jobs:
         run: ./.github/scripts/macos/setup-profiles.ps1
         shell: pwsh
 
+      - name: Increment version
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        run: ./.github/scripts/macos/increment-version.ps1
+        shell: pwsh
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
       - name: Install Node dependencies
         run: npm install
 
       - name: Run linter
         run: npm run lint
 
-      - name: Clean Safari directory
+      - name: Create Safari directory
         shell: pwsh
-        run: ./.github/scripts/macos/clean-safari.ps1
+        run: New-Item ./dist/safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
         uses: actions/checkout@v2
@@ -161,27 +172,49 @@ jobs:
           repository: 'bitwarden/browser'
           path: 'dist/safari/browser'
 
-#      - name: Build Safari extension for .dmg
-#        shell: pwsh
-#        run: ./scripts/safari-build.ps1 -skipcheckout
-
-#      - name: Build application for .dmg
-#        run: npm run dist:mac
-#        env:
-#          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-#          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-
-      - name: Build Safari extension for App Store
+      - name: Build Safari extension
         shell: pwsh
-        run: ./scripts/safari-build.ps1 -mas -skipcheckout
+        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
-      - name: Build application for App Store
+      - name: Load Safari extension for .dmg
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -copyonly
+
+      - name: Build for .dmg
+        run: npm run dist:mac
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Upload .app artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden.app
+          path: ./dist/mac/Bitwarden.app
+
+      - name: Upload .dmg artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          path: ./dist/mac/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+
+      - name: Load Safari extension for App Store
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -mas -copyonly
+
+      - name: Build for App Store
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Publish to App Store
+      - name: Upload .pkg artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+
+      - name: Deploy to App Store
         run: npm run upload:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}

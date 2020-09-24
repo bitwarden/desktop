@@ -3,7 +3,8 @@
   [switch] $mas,
   [switch] $masdev,
   [switch] $skipcheckout,
-  [switch] $skipoutcopy
+  [switch] $skipoutcopy,
+  [switch] $copyonly
 )
 
 # Dependencies:
@@ -21,8 +22,25 @@ $distSafariAppexMas = $distSafariDir + "\browser\dist\Safari\mas\build\Release\s
 $distSafariAppexMasDev = $distSafariDir + "\browser\dist\Safari\masdev\build\Release\safari.appex";
 $pluginsAppex = $rootDir + "\PlugIns\safari.appex";
 
+function CopyOutput {
+  if ($mas) {
+    Copy-Item -Path $distSafariAppexMas -Destination $pluginsAppex –Recurse
+  }
+  elseif ($masdev) {
+    Copy-Item -Path $distSafariAppexMasDev -Destination $pluginsAppex –Recurse
+  }
+  else {
+    Copy-Item -Path $distSafariAppexDmg -Destination $pluginsAppex –Recurse
+  }
+}
+
 if (Test-Path -Path $pluginsAppex) {
   Remove-Item -Recurse -Force $pluginsAppex
+}
+
+if ($copyonly) {
+  CopyOutput
+  exit
 }
 
 if(-not $skipcheckout) {
@@ -49,15 +67,7 @@ npm i
 npm run dist:safari
 
 if (-not $skipoutcopy) {
-  if ($mas) {
-    Copy-Item -Path $distSafariAppexMas -Destination $pluginsAppex –Recurse
-  }
-  elseif ($masdev) {
-    Copy-Item -Path $distSafariAppexMasDev -Destination $pluginsAppex –Recurse
-  }
-  else {
-    Copy-Item -Path $distSafariAppexDmg -Destination $pluginsAppex –Recurse
-  }
+  CopyOutput
 }
 
 cd $rootDir
