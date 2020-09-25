@@ -74,6 +74,9 @@ jobs:
       - name: Build application
         run: npm run dist:lin
 
+      - name: List dist
+        run: ls ./dist
+
       - name: Upload .deb artifact
         uses: actions/upload-artifact@v2
         with:
