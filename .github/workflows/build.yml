@@ -86,8 +86,8 @@ jobs:
       - name: Upload .rpm artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.rpm
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.rpm
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
 
       - name: Upload .freebsd artifact
         uses: actions/upload-artifact@v2
@@ -104,8 +104,8 @@ jobs:
       - name: Upload .AppImage artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.AppImage
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x84_64.AppImage
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
 
   windows:
     runs-on: windows-latest
