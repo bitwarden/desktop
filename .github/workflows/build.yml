@@ -262,27 +262,27 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
-      - name: Load Safari extension for .dmg
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -copyonly
-
-      - name: Build for .dmg
-        run: npm run dist:mac
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-
-      - name: Upload .zip artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-
-      - name: Upload .dmg artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+#      - name: Load Safari extension for .dmg
+#        shell: pwsh
+#        run: ./scripts/safari-build.ps1 -copyonly
+#
+#      - name: Build for .dmg
+#        run: npm run dist:mac
+#        env:
+#          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+#          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+#
+#      - name: Upload .zip artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+#          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+#
+#      - name: Upload .dmg artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+#          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
 
       - name: Load Safari extension for App Store
         shell: pwsh
