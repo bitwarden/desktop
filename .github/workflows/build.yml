@@ -56,6 +56,20 @@ jobs:
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-lin-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache electron-gyp
+        id: cache-electron-gyp
+        uses: actions/cache@v2
+        with:
+          path: ~/.electron-gyp
+          key: electron-gyp-lin-${{ hashFiles('package-lock.json') }}
+
       - name: Install Node dependencies
         run: npm install
 
@@ -118,6 +132,20 @@ jobs:
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-win-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache electron-gyp
+        id: cache-electron-gyp
+        uses: actions/cache@v2
+        with:
+          path: ~/.electron-gyp
+          key: electron-gyp-win-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node dependencies
         run: npm install
@@ -208,6 +236,20 @@ jobs:
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
+
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules-mac-${{ hashFiles('package-lock.json') }}
+
+      - name: Cache electron-gyp
+        id: cache-electron-gyp
+        uses: actions/cache@v2
+        with:
+          path: ~/.electron-gyp
+          key: electron-gyp-mac-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node dependencies
         run: npm install
