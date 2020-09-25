@@ -98,8 +98,8 @@ jobs:
       - name: Upload .snap artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/Bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
 
       - name: Upload .AppImage artifact
         uses: actions/upload-artifact@v2
@@ -187,7 +187,7 @@ jobs:
         run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
 
       - name: Set Debug
-        run: echo "::set-env name=DEBUG::electron-osx-sign*"
+        run: echo "::set-env name=DEBUG::electron-builder electron-osx-sign*"
 
       - name: Print environment
         run: |
