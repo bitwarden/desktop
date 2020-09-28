@@ -266,11 +266,11 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -copyonly
 
-      - name: Build
+      - name: Build application (dev)
         if: github.ref != 'refs/heads/master' && github.event_name != 'release'
         run: npm run build
 
-      - name: Build for .dmg
+      - name: Build application (dist)
         if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         run: npm run dist:mac
         env:
@@ -296,7 +296,7 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
-      - name: Build for App Store
+      - name: Build application for App Store
         if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         run: npm run dist:mac:mas
         env:
