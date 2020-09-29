@@ -1346,25 +1346,25 @@
     "message": "Konfirmasi Aksi Batas Waktu"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Sistem Masuk Tunggal Perusahaan"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Atur Kata Sandi Utama"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Untuk menyelesaikan masuk dengan SSO, harap setel kata sandi utama untuk mengakses dan melindungi brankas Anda."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Kata Sandi Utama Baru"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Konfirmasi Kata Sandi Baru"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Satu atau lebih kebijakan organisasi memerlukan kata sandi utama Anda untuk memenuhi persyaratan berikut:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Skor kompleksitas minimum $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Panjang minimum $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Berisi satu atau lebih karakter huruf besar"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Berisi satu atau lebih karakter huruf kecil"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Berisi satu atau lebih angka"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Berisi satu atau lebih karakter khusus berikut $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Kata sandi utama Anda yang baru tidak memenuhi persyaratan kebijakan."
   }
 }

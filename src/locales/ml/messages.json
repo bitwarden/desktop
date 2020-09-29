@@ -21,7 +21,7 @@
     "message": "കാർഡ്"
   },
   "typeIdentity": {
-    "message": "ഐഡന്റിറ്റി"
+    "message": "തിരിച്ചറിയൽ"
   },
   "typeSecureNote": {
     "message": "സുരക്ഷിത കുറിപ്പ്"
@@ -82,16 +82,16 @@
     "message": "ഉപയോക്തൃനാമം"
   },
   "password": {
-    "message": "പാസ്സ്‌വേഡ്‌"
+    "message": "പാസ്‌വേഡ്"
   },
   "passphrase": {
-    "message": "പാസ്‌ഫ്രെയ്‌സ്"
+    "message": "രഹസ്യ വാചകം"
   },
   "editItem": {
     "message": "ഇനം എഡിറ്റുചെയ്യുക"
   },
   "emailAddress": {
-    "message": "ഈ - മെയില് വിലാസം"
+    "message": "ഇ-മെയിൽ വിലാസം"
   },
   "verificationCodeTotp": {
     "message": "സ്ഥിരീകരണ കോഡ് (TOTP)"
@@ -141,7 +141,7 @@
     "message": "സുരക്ഷാ കോഡ് സിവി‌വി"
   },
   "identityName": {
-    "message": "ഐഡന്റിറ്റിയുടെ പേര്"
+    "message": "തിരിച്ചറിയലിൻ്റെ പേര്"
   },
   "company": {
     "message": "കമ്പനി"
@@ -349,7 +349,7 @@
     "message": "നിലവിലെ പാസ്‌വേഡ് പുനരാലേഖനം ചെയ്യണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?"
   },
   "noneFolder": {
-    "message": "ഫോൾഡറിൽ ഉൾപ്പെടാത്ത",
+    "message": "ഫോൾഡർ ഇല്ല",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -406,7 +406,7 @@
     "message": "പ്രിയങ്കരങ്ങൾ തിരയുക"
   },
   "searchType": {
-    "message": "തിരയൽ തരം",
+    "message": "തരം തിരയുക",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -419,7 +419,7 @@
     "message": "ഈ അറ്റാച്ചുമെന്റ് ഇല്ലാതാക്കാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?"
   },
   "attachmentSaved": {
-    "message": "ഈ അട്ടച്ച്മെന്റ്റ് സേവ് ചെയ്തിരിക്കുന്നു."
+    "message": "ഈ അറ്റാച്ചുമെന്റ് സംരക്ഷിച്ചു."
   },
   "file": {
     "message": "ഫയൽ"
@@ -464,13 +464,13 @@
     "message": "പ്രാഥമിക പാസ്‌വേഡ്"
   },
   "masterPassDesc": {
-    "message": "നിങ്ങളുടെ വാൾട്ടിലേക്ക് പ്രവേശിക്കാൻ ഉപയോഗിക്കുന്ന പാസ്‌വേഡാണ് പ്രാഥമിക പാസ്‌വേഡ്. നിങ്ങളുടെ പ്രാഥമിക പാസ്‌വേഡ് മറക്കാതിരിക്കുക എന്നത് വളരെ പ്രധാനമാണ്. നിങ്ങൾ പാസ്‌വേഡ് മറന്ന സാഹചര്യത്തിൽ, പാസ്‌വേഡ് വീണ്ടെടുക്കാൻ ഒരു മാർഗവുമില്ല."
+    "message": "നിങ്ങളുടെ വാൾട്ടിലേക്ക് പ്രവേശിക്കാൻ ഉപയോഗിക്കുന്ന പാസ്‌വേഡാണ് പ്രാഥമിക പാസ്‌വേഡ്. പ്രാഥമിക പാസ്‌വേഡ് നിങ്ങൾ ഒരു കാരണവശാലും മറക്കരുത്. നിങ്ങൾ പാസ്‌വേഡ് മറന്നാൽ, വീണ്ടെടുക്കാൻ വേറെ ഒരു മാർഗ്ഗവുമില്ല."
   },
   "masterPassHintDesc": {
     "message": "നിങ്ങളുടെ പാസ്‌വേഡ് മറന്നാൽ അത് ഓർമ്മിക്കാൻ ഒരു പ്രാഥമിക പാസ്‌വേഡ് സൂചന സഹായിക്കും."
   },
   "reTypeMasterPass": {
-    "message": "പ്രാഥമിക പാസ്‌വേഡ് ഒന്നൂടെ ടൈപ്പ്‌ ചെയ്യുക"
+    "message": "പ്രാഥമിക പാസ്‌വേഡ് വീണ്ടും ടൈപ്പ്‌ ചെയ്യുക"
   },
   "masterPassHint": {
     "message": "പ്രാഥമിക പാസ്‌വേഡ് സൂചന (ഇഷ്ടാനുസൃതമായ)"
@@ -488,7 +488,7 @@
     "message": "പ്രാഥമിക പാസ്‌വേഡ് സൂചന നേടുക"
   },
   "emailRequired": {
-    "message": "ഇമെയിൽ അഡ്രസ്സ് നിരബന്ധമാണ്."
+    "message": "ഇമെയിൽ അഡ്രസ്സ് നിർബന്ധമാണ്‌."
   },
   "invalidEmail": {
     "message": "അസാധുവായ ഇമെയിൽ."
@@ -515,7 +515,7 @@
     "message": "വിവരം"
   },
   "noItemsInList": {
-    "message": "ലിസ്റ്റുചെയ്യാൻ ഇനങ്ങളൊന്നുമില്ല."
+    "message": "പ്രദർശിപ്പിക്കാൻ ഇനങ്ങളൊന്നുമില്ല."
   },
   "verificationCode": {
     "message": "പരിശോധിച്ചുറപ്പിക്കൽ കോഡ്"
@@ -530,7 +530,7 @@
     "message": "നിങ്ങളുടെ ഓതന്റിക്കേറ്റർ അപ്ലിക്കേഷനിൽ നിന്ന് 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക."
   },
   "enterVerificationCodeEmail": {
-    "message": "$EMAIL$ൽ ഇമെയിൽ ചെയ്ത 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക.",
+    "message": "$EMAIL$-ൽ ഇമെയിൽ ചെയ്ത 6 അക്ക സ്ഥിരീകരണ കോഡ് നൽകുക.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,7 +539,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "സ്ഥിരീകരണ ഇമെയിൽ $EMAIL$ ലേക്ക് അയച്ചു.",
+    "message": "സ്ഥിരീകരണ ഇമെയിൽ $EMAIL$-ലേക്ക് അയച്ചു.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -692,7 +692,7 @@
     "message": "അക്കൗണ്ട്"
   },
   "loading": {
-    "message": "ലോഡിംഗ്..."
+    "message": "ലഭ്യമാക്കുന്നു..."
   },
   "lockNow": {
     "message": "ഇപ്പോൾ ലോക്കുചെയ്യുക"
@@ -716,7 +716,7 @@
     "message": "ഞങ്ങളെ പിന്തുടരുക"
   },
   "syncVault": {
-    "message": "വാൾട് സിങ്ക് ചെയ്യുക"
+    "message": "വാൾട് സമന്വയിപ്പിക്കുക"
   },
   "changeMasterPass": {
     "message": "പ്രാഥമിക പാസ്‌വേഡ് മാറ്റുക"
@@ -729,7 +729,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "തങ്ങളുടെ അക്കൗണ്ടിന്റെ ഫിംഗർപ്രിന്റ് ഫ്രേസ്‌",
+    "message": "നിങ്ങളുടെ അക്കൗണ്ടിൻ്റെ ഫിംഗർപ്രിന്റ് ഫ്രേസ്‌",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -742,19 +742,19 @@
     "message": "ബ്രൌസർ എക്സ്റ്റൻഷൻ എടുക്കുക"
   },
   "syncingComplete": {
-    "message": "സമന്വയിപ്പിക്കൽ പൂർത്തിയായി"
+    "message": "സമന്വയം പൂർത്തിയായി"
   },
   "syncingFailed": {
-    "message": "സിങ്ക് ചെയ്യാൻ പരാജയപെട്ടു"
+    "message": "സമന്വയം പരാജയപ്പെട്ടു"
   },
   "yourVaultIsLocked": {
-    "message": "തങ്ങളുടെ വാൾട് പൂട്ടിയിരിക്കുന്നു. തുടരുന്നതിന് നിങ്ങളുടെ പ്രാഥമിക പാസ്‌വേഡ് പരിശോധിക്കുക."
+    "message": "തങ്ങളുടെ വാൾട് പൂട്ടിയിരിക്കുന്നു. തുടരുന്നതിന് നിങ്ങളുടെ പ്രാഥമിക പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക."
   },
   "unlock": {
     "message": "അൺലോക്ക്"
   },
   "loggedInAsOn": {
-    "message": "$HOSTNAME$ൽ$EMAIL$ലോഗിൻ ചെയ്തിരിക്കുന്നു.",
+    "message": "$HOSTNAME$-ൽ $EMAIL$ ലോഗിൻ ചെയ്തിരിക്കുന്നു.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -833,11 +833,11 @@
     "message": "സുരക്ഷ"
   },
   "clearClipboard": {
-    "message": "ക്ലിപ്ബോര്‍ഡ് റീഡ് ചെയ്യുക",
+    "message": "ക്ലിപ്ബോര്‍ഡ് മായ്ക്കുക",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "തങ്ങളുടെ ക്ലിപ്പ്ബോർഡിൽ നിന്ന് പകർത്തിയ മൂല്യങ്ങൾ ഓട്ടോമാറ്റിക്കായി മായ്‌ക്കുക.",
+    "message": "നിങ്ങളുടെ ക്ലിപ്പ്ബോർഡിൽ നിന്ന് പകർത്തിയ മൂല്യങ്ങൾ സ്വയം മായ്‌ക്കുക.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
@@ -969,7 +969,7 @@
     "message": "ഒരു പ്രീമിയം അംഗത്വത്തിനായി സൈൻ അപ്പ് ചെയ്ത് നേടുക:"
   },
   "premiumSignUpStorage": {
-    "message": "ഫയൽ അറ്റാച്ചുമെന്റുകൾക്കായി 1 ജിബി എൻക്രിപ്റ്റുചെയ്‌ത സംഭരണം."
+    "message": "ഫയൽ അറ്റാച്ചുമെന്റുകൾക്കായി 1 GB എൻക്രിപ്റ്റുചെയ്‌ത സ്റ്റോറേജ്."
   },
   "premiumSignUpTwoStep": {
     "message": "രണ്ട്-ഘട്ട പ്രവേശന ഓപ്ഷനുകളായ Yubikey, FIDO U2F, Duo."
@@ -996,7 +996,7 @@
     "message": "തങ്ങൾ ഒരു പ്രീമിയം അംഗമാണ്!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Bitwardenനെ പിന്തുണച്ചതിന് നന്ദി."
+    "message": "Bitwarden-നെ പിന്തുണച്ചതിന് നന്ദി."
   },
   "premiumPrice": {
     "message": "എല്ലാം വെറും $PRICE$/ വർഷത്തേക്ക്!",
@@ -1011,17 +1011,17 @@
     "message": "റിഫ്രഷ് പൂർത്തിയായി"
   },
   "passwordHistory": {
-    "message": "പാസ്സ്‌വേഡ് നാൾവഴി"
+    "message": "പാസ്സ്‌വേഡ് ചരിത്രം"
   },
   "clear": {
     "message": "മായ്ക്കുക",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "ലിസ്റ്റ് ചെയ്യാൻ പാസ്സ്‌വേർഡുകൾ ഒന്നും ഇല്ല."
+    "message": "പ്രദർശിപ്പിക്കാൻ പാസ്സ്‌വേഡുകൾ ഒന്നും ഇല്ല."
   },
   "undo": {
-    "message": "പഴയപടിയാക്കുക"
+    "message": "തിരിച്ചാക്കുക"
   },
   "redo": {
     "message": "പുതിയപടിയാക്കുക"
@@ -1050,7 +1050,7 @@
     "message": "ഫുൾ സ്ക്രീൻ ആക്കുക"
   },
   "reload": {
-    "message": "വീണ്ടും ലോഡുചെയ്യുക"
+    "message": "വീണ്ടും ലഭ്യമാക്കുക"
   },
   "toggleDevTools": {
     "message": "ഡവലപ്പർ ഉപകരണങ്ങൾ ടോഗിൾ ചെയ്യുക"
@@ -1067,7 +1067,7 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "Bitwardenനെ കുറിച്ച്"
+    "message": "Bitwarden-നെ കുറിച്ച്"
   },
   "services": {
     "message": "സേവനങ്ങള്‍"
@@ -1113,7 +1113,7 @@
     }
   },
   "passwordSafe": {
-    "message": "അറിയപ്പെടുന്ന ഡാറ്റാ ലംഘനങ്ങളിൽ ഈ പാസ്‌വേഡ് കണ്ടെത്തിയില്ല. ഇത് ഉപയോഗിക്കുന്നത് സുരക്ഷിതമായിരിക്കും."
+    "message": "അറിയപ്പെടുന്ന ഡാറ്റാ ലംഘനങ്ങളിൽ ഒന്നും ഈ പാസ്‌വേഡ് കണ്ടെത്തിയില്ല. ഇത് ഉപയോഗിക്കുന്നത് സുരക്ഷിതമായിരിക്കും."
   },
   "baseDomain": {
     "message": "അടിസ്ഥാന ഡൊമെയ്ൻ"
@@ -1165,7 +1165,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "അപ്‌ഡേറ്റുചെയ്‌തു",
+    "message": "പുതുക്കിയത്",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1189,7 +1189,7 @@
     "message": "നിങ്ങളുടെവാൾട് ഡാറ്റ എക്‌സ്‌പോർട്ടുചെയ്യാൻ പ്രാഥമിക പാസ്‌വേഡ് നൽകുക."
   },
   "noOrganizationsList": {
-    "message": "താങ്കൾ ഒരു സംഘടനയുടെയും അംഗമല്ല. മറ്റ് ഉപയോക്താക്കളുമായി ഇനങ്ങൾ സുരക്ഷിതമായി പങ്കിടാൻ ഓർഗനൈസേഷനുകൾ നിങ്ങളെ അനുവദിക്കുന്നു."
+    "message": "നിങ്ങൾ ഒരു സംഘടനയുടെയും അംഗമല്ല. മറ്റ് ഉപയോക്താക്കളുമായി ഇനങ്ങൾ സുരക്ഷിതമായി പങ്കിടാൻ ഓർഗനൈസേഷനുകൾ നിങ്ങളെ അനുവദിക്കുന്നു."
   },
   "noCollectionsInList": {
     "message": "പ്രദർശിപ്പിക്കാൻ കളക്ഷൻസ് ഒന്നും ഇല്ല."
@@ -1226,7 +1226,7 @@
     "message": "പിൻ ഉപയോഗിച്ച് അൺലോക്കുചെയ്യുക"
   },
   "setYourPinCode": {
-    "message": "Bitwarden അൺലോക്കുചെയ്യുന്നതിന് തങ്ങളുടെ പിൻ കോഡ് സജ്ജമാക്കുക. തങ്ങൾ എപ്പോഴെങ്കിലും അപ്ലിക്കേഷനിൽ നിന്ന് പൂർണ്ണമായി ലോഗ് ഔട്ട് ചെയ്യുകയാണെങ്കിൽ, പിൻ ക്രമീകരണങ്ങൾ പുനസജ്ജമാക്കും."
+    "message": "Bitwarden അൺലോക്കുചെയ്യുന്നതിന് നിങ്ങളുടെ പിൻ കോഡ് ക്രമീകരിക്കുക. നിങ്ങൾ എപ്പോഴെങ്കിലും അപ്ലിക്കേഷനിൽ നിന്ന് പൂർണ്ണമായി ലോഗ് ഔട്ട് ചെയ്യുകയാണെങ്കിൽ, പിൻ ക്രമീകരണങ്ങൾ പുനസജ്ജമാക്കും."
   },
   "pinRequired": {
     "message": "പിൻ കോഡ് നിർബന്ധമാണ്‌."
@@ -1299,7 +1299,7 @@
     "message": "ഒന്നോ അതിലധികമോ സംഘടന നയങ്ങൾ നിങ്ങളുടെ പാസ്സ്‌വേഡ് സൃഷ്ടാവിൻ്റെ ക്രമീകരണങ്ങളെ ബാധിക്കുന്നു."
   },
   "vaultTimeoutAction": {
-    "message": "വാൾട് ടൈം ഔട്ട് ആക്ഷൻ"
+    "message": "വാൾട് ടൈം ഔട്ട് പ്രവർത്തനം"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "ലോക്കുചെയ്‌ത വാൾട് വീണ്ടും ആക്‌സസ് ചെയ്യുന്നതിന് തങ്ങളുടെ പ്രാഥമിക പാസ്‌വേഡ് വീണ്ടും നൽകേണ്ടതാണ്."
@@ -1308,7 +1308,7 @@
     "message": "ലോഗ് ഔട്ട് ചെയ്ത വാൾട് വീണ്ടും അക്സസ്സ് ചെയ്യാൻ ഓതെന്റിക്കേഷൻ ആവശ്യം വേരും."
   },
   "lock": {
-    "message": "പൂട്ടുക\n\t",
+    "message": "പൂട്ടുക",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
@@ -1346,7 +1346,7 @@
     "message": "ടൈംഔട് ആക്ഷൻ സ്ഥിരീകരണം"
   },
   "enterpriseSingleSignOn": {
-    "message": "എന്റർപ്രൈസ് സിംഗിൾ സൈൻ-ഓൺ"
+    "message": "എന്റർപ്രൈസ് SSO"
   },
   "setMasterPassword": {
     "message": "പ്രാഥമിക പാസ്‌വേഡ് സജ്ജമാക്കുക"
@@ -1361,7 +1361,7 @@
     "message": "പുതിയ പ്രാഥമിക പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "ഒന്നോ അതിലധികമോ ഓർഗനൈസേഷൻ നയങ്ങൾക്ക് ഇനിപ്പറയുന്ന ആവശ്യകതകൾ നിറവേറ്റുന്നതിന് നിങ്ങളുടെ മാസ്റ്റർ പാസ്‌വേഡ് ആവശ്യമാണ്:"
   },
   "policyInEffectMinComplexity": {
     "message": "സങ്കീർണ്ണതയുടെ കുറഞ്ഞ സ്കോർ$SCORE$",
@@ -1400,6 +1400,6 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "നിങ്ങളുടെ പുതിയ മാസ്റ്റർ പാസ്‌വേഡ് നയ ആവശ്യകതകൾ നിറവേറ്റുന്നില്ല."
   }
 }
