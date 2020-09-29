@@ -1247,7 +1247,7 @@
     "message": "Розблокувати з Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Перевірити на Bitwarden."
+    "message": "розблокувати сховище"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
