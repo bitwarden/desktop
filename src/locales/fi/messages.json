@@ -387,7 +387,7 @@
     "message": "Sulje"
   },
   "minNumbers": {
-    "message": "Numeroja vähintään"
+    "message": "Numeroita vähintään"
   },
   "minSpecial": {
     "message": "Erikoismerkkejä vähintään",
@@ -1346,13 +1346,13 @@
     "message": "Aikakatkaisun toiminnon vahvistus"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Yrityksen kertakirjautuminen [SSO]"
   },
   "setMasterPassword": {
     "message": "Aseta pääsalasana"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Sisäänkirjautuaksesi kertakirjauksen avulla [SSO], ole hyvä ja määritä pääsalasana holvillesi."
   },
   "newMasterPass": {
     "message": "Uusi pääsalasana"
