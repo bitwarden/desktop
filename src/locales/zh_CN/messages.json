@@ -343,13 +343,13 @@
     "message": "您确定要删除此项目吗？"
   },
   "deletedItem": {
-    "message": "已删除项目"
+    "message": "项目已发送到回收站"
   },
   "overwritePasswordConfirmation": {
     "message": "您确定要覆盖当前密码吗？"
   },
   "noneFolder": {
-    "message": "没有文件夹",
+    "message": "默认文件夹",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -554,7 +554,7 @@
     "message": "重发验证码电子邮件"
   },
   "useAnotherTwoStepMethod": {
-    "message": "使用其他两步登录方法"
+    "message": "使用其他两步登录方式"
   },
   "insertYubiKey": {
     "message": "将您的 YubiKey 插入计算机的 USB 端口，然后按下按钮。"
@@ -677,7 +677,7 @@
     "message": "登出"
   },
   "addNewLogin": {
-    "message": "添加新的登录"
+    "message": "添加新登录"
   },
   "addNewItem": {
     "message": "添加新项目"
