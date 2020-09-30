@@ -39,15 +39,25 @@ jobs:
         run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
 
       - name: Set up environment
-        shell: pwsh
         run: |
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
+
+      - name: Set up snap
+        if: github.event_name == 'release'
+        run: |
+          #sudo snap install snapcraft --classic
+          #echo "::add-path::/snap/bin"
+          echo "$SNAP_TOKEN" | snapcraft login --with -
+        env:
+          SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
           node --version
           npm --version
+          snap --version
+          snapcraft --version
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -55,15 +65,6 @@ jobs:
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
-
-#      - name: Cache node_modules
-#        uses: actions/cache@v2
-#        with:
-#          path: |
-#            ~/.npm
-#            ~/.electron-gyp
-#            node_modules
-#          key: node-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node dependencies
         run: npm install
@@ -74,38 +75,47 @@ jobs:
       - name: Build application
         run: npm run dist:lin
 
-      - name: List dist
-        run: ls ./dist
-
       - name: Upload .deb artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
 
       - name: Upload .rpm artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
 
       - name: Upload .freebsd artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
 
       - name: Upload .snap artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
           path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
 
       - name: Upload .AppImage artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+
+      - name: Deploy to Snap Store
+        if: github.event_name == 'release'
+        run: |
+          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+          snapcraft logout
+        shell: pwsh
 
   windows:
     runs-on: windows-latest
@@ -119,10 +129,20 @@ jobs:
       - name: Set Node options
         run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
 
+      - name: Set up environment
+        if: github.event_name == 'release'
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+
       - name: Print environment
         run: |
           node --version
           npm --version
+          choco --version
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -130,15 +150,6 @@ jobs:
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
-
-#      - name: Cache node_modules
-#        uses: actions/cache@v2
-#        with:
-#          path: |
-#            ~/.npm
-#            ~/.electron-gyp
-#            node_modules
-#          key: node-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node dependencies
         run: npm install
@@ -150,29 +161,67 @@ jobs:
         shell: pwsh
         run: npm run dist:win:ci
 
+      - name: Rename appx files for store
+        shell: pwsh
+        run: |
+          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx" `
+            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
+            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
+
       - name: Upload portable exe artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload installer exe artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload store appx ia32 artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
 
       - name: Upload store appx x64 artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+
+      - name: Deploy to Chocolatey
+        if: github.event_name == 'release'
+        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+        shell: pwsh
+
+      - name: Upload Chocolatey nupkg artifact
+        if: github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          hub release edit `
+            -a ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
+            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+            $env:RELEASE_TAG_NAME
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
   macos:
     runs-on: macos-latest
@@ -228,15 +277,6 @@ jobs:
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
-
-#      - name: Cache node_modules
-#        uses: actions/cache@v2
-#        with:
-#          path: |
-#            ~/.npm
-#            ~/.electron-gyp
-#            node_modules
-#          key: node-modules-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
       - name: Install Node dependencies
         run: npm install
@@ -316,3 +356,15 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          hub release edit `
+            -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
+            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+            $env:RELEASE_TAG_NAME
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
