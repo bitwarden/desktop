@@ -350,7 +350,7 @@ jobs:
           path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
 
       - name: Deploy to App Store
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.event_name == 'release'
         run: npm run upload:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
