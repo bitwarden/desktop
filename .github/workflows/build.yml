@@ -46,8 +46,7 @@ jobs:
       - name: Set up snap
         if: github.event_name == 'release'
         run: |
-          #sudo snap install snapcraft --classic
-          #echo "::add-path::/snap/bin"
+          sudo snap install snapcraft --classic
           echo "$SNAP_TOKEN" | snapcraft login --with -
         env:
           SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
@@ -57,7 +56,7 @@ jobs:
           node --version
           npm --version
           snap --version
-          snapcraft --version
+          snapcraft --version || echo 'snapcraft unavailable'
 
       - name: Checkout repo
         uses: actions/checkout@v2
