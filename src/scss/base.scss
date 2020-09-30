@@ -16,7 +16,7 @@ html, body {
 body {
     color: $text-color;
     background-color: $background-color-alt2;
-
+    -webkit-app-region: drag;
     @include themify($themes) {
         color: themed('textColor');
         background-color: themed('backgroundColorAlt2');
