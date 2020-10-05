@@ -1,12 +1,14 @@
-import * as fs from 'fs';
+import { promises as fs, existsSync } from 'fs';
 import * as ipc from 'node-ipc';
 import * as path from 'path';
 import * as util from 'util';
 
+import { LogService } from 'jslib/abstractions/log.service';
+
 export class NativeMessagingService {
     private connected = false;
 
-    constructor(private userPath: string, private appPath: string) {}
+    constructor(private logService: LogService, private userPath: string, private appPath: string) {}
 
     listen() {
         ipc.config.id = 'bitwarden';
@@ -47,30 +49,13 @@ export class NativeMessagingService {
         const firefoxJson = {...baseJson, ...{ 'allowed_origins': ['446900e4-71c2-419f-a6a7-df9c091e268b']}}
         const chromeJson = {...baseJson, ...{ 'allowed_origins': ['chrome-extension://ijeheppnniijonkinoakkofcdhdfojda/']}}
 
-        fs.mkdir(path.join(this.userPath, 'browsers'), (err) => console.log);
+        if (!existsSync(path.join(this.userPath, 'browsers'))) {
+            fs.mkdir(path.join(this.userPath, 'browsers'))
+                .catch(this.logService.error)
+        }
 
         this.writeManifest('firefox.json', firefoxJson);
         this.writeManifest('chrome.json', chromeJson);
-    }
-
-    private writeManifest(filename: string, manifest: object) {
-        fs.writeFile(
-            path.join(this.userPath, 'browsers', filename),
-            JSON.stringify(manifest, null, 2),
-            (err) => console.log
-        );
-    }
-
-    private binaryName() {
-        switch (process.platform) {
-            case 'win32':
-                return 'app-win.exe'
-            case 'darwin':
-                return 'app-linux'
-            case 'linux':
-            default:
-                return 'app-macos'
-        }
     }
 
     // Setup registry and/or directories
@@ -89,6 +74,25 @@ export class NativeMessagingService {
         }
     }
 
+    private writeManifest(filename: string, manifest: object) {
+        fs.writeFile(
+            path.join(this.userPath, 'browsers', filename),
+            JSON.stringify(manifest, null, 2)
+        ).catch(this.logService.error);
+    }
+
+    private binaryName() {
+        switch (process.platform) {
+            case 'win32':
+                return 'app-win.exe'
+            case 'darwin':
+                return 'app-linux'
+            case 'linux':
+            default:
+                return 'app-macos'
+        }
+    }
+
     private createWindowsRegistry(check: string, location: string, jsonFile: string) {
         const regedit = require('regedit');
         regedit.setExternalVBSLocation('resources/regedit/vbs');
@@ -96,6 +100,8 @@ export class NativeMessagingService {
         const list = util.promisify(regedit.list);
         const createKey = util.promisify(regedit.createKey);
         const putValue = util.promisify(regedit.putValue);
+
+        this.logService.debug(`Adding registry: ${location}`)
 
         // Check installed
         list(check)
@@ -115,6 +121,6 @@ export class NativeMessagingService {
 
                 return putValue(obj);
             })
-            .catch()
+            .catch(this.logService.error)
     }
 }
