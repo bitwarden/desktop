@@ -32,6 +32,7 @@
     "build:main": "webpack --config webpack.main.js",
     "build:renderer": "gulp prebuild:renderer && webpack --config webpack.renderer.js",
     "build:renderer:watch": "gulp prebuild:renderer && webpack --config webpack.renderer.js --watch",
+    "build:proxy": "tsc --build proxy",
     "electron": "npm run build:main && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 ./build --watch\" \"npm run build:renderer:watch\"",
     "clean:dist": "rimraf ./dist/*",
     "clean:l10n": "git push origin --delete l10n_master",
@@ -42,6 +43,7 @@
     "pack:mac:masdev": "npm run clean:dist && electron-builder --mac mas-dev -p never",
     "pack:win": "npm run clean:dist && electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
     "pack:win:ci": "npm run clean:dist && electron-builder --win --x64 --ia32 -p never",
+    "pack:proxy": "pkg build/proxy/app.js --out-path build/proxys",
     "dist:dir": "npm run build && npm run pack:dir",
     "dist:lin": "npm run build && npm run pack:lin",
     "dist:mac": "npm run build && npm run pack:mac",
@@ -49,6 +51,7 @@
     "dist:mac:masdev": "npm run build && npm run pack:mac:masdev",
     "dist:win": "npm run build && npm run pack:win",
     "dist:win:ci": "npm run build && npm run pack:win:ci",
+    "dist:proxy": "npm run build:proxy && npm run pack:proxy",
     "publish:lin": "npm run build && npm run clean:dist && electron-builder --linux --x64 -p always",
     "publish:mac": "npm run build && npm run clean:dist && electron-builder --mac -p always",
     "publish:mac:mas": "npm run dist:mac:mas && npm run upload:mas",
@@ -119,6 +122,12 @@
         "portable",
         "nsis-web",
         "appx"
+      ],
+      "extraResources": [
+        {
+          "from": "build/proxys/app-win.exe",
+          "to": "proxy.exe"
+        }
       ]
     },
     "linux": {
@@ -251,17 +260,18 @@
     "electron-notarize": "^0.2.1",
     "electron-rebuild": "^1.9.0",
     "electron-reload": "^1.5.0",
-    "mini-css-extract-plugin": "^0.9.0",
     "file-loader": "^2.0.0",
     "font-awesome": "4.7.0",
     "gulp": "^4.0.0",
     "gulp-google-webfonts": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "ngx-infinite-scroll": "7.0.1",
     "node-abi": "^2.9.0",
     "node-loader": "^0.6.0",
     "node-sass": "^4.13.1",
+    "pkg": "^4.4.9",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "ts-loader": "^8.0.2",
@@ -299,6 +309,7 @@
     "keytar": "4.13.0",
     "lunr": "2.3.3",
     "node-forge": "0.7.6",
+    "node-ipc": "^9.1.1",
     "nord": "0.2.1",
     "papaparse": "4.6.0",
     "rxjs": "6.6.2",

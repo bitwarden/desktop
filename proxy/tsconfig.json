@@ -4,12 +4,13 @@
     "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "es6",
+    "module": "CommonJS",
     "target": "ES2016",
     "allowJs": true,
     "sourceMap": true,
-    "types": ["sweetalert2"],
+    "types": ["sweetalert2", "node"],
     "baseUrl": ".",
+    "outDir": "../build/proxy",
     "paths": {
       "tldjs": [
         "jslib/src/misc/tldjs.noop"
@@ -43,7 +44,6 @@
   "exclude": [
     "node_modules",
     "jslib/node_modules",
-    "proxy",
     "dist",
     "dist-safari",
     "jslib/dist",

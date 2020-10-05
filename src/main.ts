@@ -18,6 +18,7 @@ import { ElectronStorageService } from 'jslib/electron/services/electronStorage.
 import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
+import { NativeMessagingService } from './services/nativeMessaging.service';
 
 export class Main {
     logService: ElectronLogService;
@@ -33,6 +34,7 @@ export class Main {
     powerMonitorMain: PowerMonitorMain;
     trayMain: TrayMain;
     biometricMain: BiometricMain;
+    nativeMessagingService: NativeMessagingService;
 
     constructor() {
         // Set paths for portable builds
@@ -116,6 +118,8 @@ export class Main {
             const BiometricDarwinMain = require('jslib/electron/biometric.darwin.main').default;
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
+
+        this.nativeMessagingService = new NativeMessagingService();
     }
 
     bootstrap() {
@@ -153,6 +157,7 @@ export class Main {
             // tslint:disable-next-line
             console.error(e);
         });
+        this.nativeMessagingService.listen();
     }
 
     private processDeepLink(argv: string[]): void {
