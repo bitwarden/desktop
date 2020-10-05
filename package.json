@@ -127,6 +127,13 @@
         {
           "from": "build/proxys/app-win.exe",
           "to": "proxy.exe"
+        },
+        {
+          "from": "node_modules/regedit/vbs",
+          "to": "regedit/vbs",
+          "filter": [
+            "**/*"
+          ]
         }
       ]
     },
@@ -312,6 +319,7 @@
     "node-ipc": "^9.1.1",
     "nord": "0.2.1",
     "papaparse": "4.6.0",
+    "regedit": "^3.0.3",
     "rxjs": "6.6.2",
     "sweetalert2": "9.8.1",
     "tslib": "^2.0.1",

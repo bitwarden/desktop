@@ -119,7 +119,7 @@ export class Main {
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
 
-        this.nativeMessagingService = new NativeMessagingService();
+        this.nativeMessagingService = new NativeMessagingService(app.getPath('userData'), app.getAppPath());
     }
 
     bootstrap() {
@@ -158,6 +158,8 @@ export class Main {
             console.error(e);
         });
         this.nativeMessagingService.listen();
+        this.nativeMessagingService.generateManifests();
+        this.nativeMessagingService.enableManifest();
     }
 
     private processDeepLink(argv: string[]): void {

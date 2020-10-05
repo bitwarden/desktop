@@ -1,7 +1,0 @@
-{
-  "name": "com.8bit.bitwarden",
-  "description": "Bitwarden Desktop Bridge",
-  "path": "C:\\Users\\Oscar\\Documents\\Projects\\Bitwarden\\desktop\\build\\proxys\\app-win.exe",
-  "type": "stdio",
-  "allowed_origins": ["chrome-extension://ijeheppnniijonkinoakkofcdhdfojda/"]
-}
