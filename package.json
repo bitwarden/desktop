@@ -114,6 +114,12 @@
       "target": [
         "dmg",
         "zip"
+      ],
+      "extraResources": [
+        {
+          "from": "build/proxys/app-macos",
+          "to": "proxy"
+        }
       ]
     },
     "win": {
@@ -151,7 +157,13 @@
         "Name": "Bitwarden",
         "Type": "Application",
         "GenericName": "Password Manager"
-      }
+      },
+      "extraResources": [
+        {
+          "from": "build/proxys/app-linux",
+          "to": "proxy"
+        }
+      ]
     },
     "dmg": {
       "icon": "dmg.icns",
