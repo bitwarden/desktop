@@ -54,31 +54,44 @@ export class NativeMessagingService {
                 .catch(this.logService.error)
         }
 
-        this.writeManifest('firefox.json', firefoxJson);
-        this.writeManifest('chrome.json', chromeJson);
-    }
-
-    // Setup registry and/or directories
-    // TODO: Do other browsers use different directories?
-    enableManifest() {
         switch (process.platform) {
             case 'win32':
-                this.createWindowsRegistry('HKLM\\SOFTWARE\\Mozilla\\Firefox', 'HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden', 'firefox.json')
-                this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', 'chrome.json')
+                const destination = path.join(this.userPath, 'browsers')
+                this.writeManifest(path.join(destination, 'firefox.json'), firefoxJson);
+                this.writeManifest(path.join(destination, 'chrome.json'), chromeJson);
+
+                this.createWindowsRegistry('HKLM\\SOFTWARE\\Mozilla\\Firefox', 'HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'firefox.json'))
+                this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'))
                 break;
             case 'darwin':
+                if (existsSync('~/Library/Application Support/Mozilla/')) {
+                    fs.mkdir('~/Library/Application Support/Mozilla/NativeMessagingHosts/');
+                    this.writeManifest('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json', firefoxJson);
+                }
+
+                if (existsSync('~/Library/Application Support/Google/Chrome/')) {
+                    fs.mkdir('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/');
+                    this.writeManifest('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json', chromeJson);
+                }
                 break;
             case 'linux':
+                if (existsSync('~/.mozilla/')) {
+                    fs.mkdir('~/.mozilla/native-messaging-hosts');
+                    this.writeManifest('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json', firefoxJson);
+                }
+
+                if (existsSync('~/.config/google-chrome/')) {
+                    fs.mkdir('~/.config/google-chrome/NativeMessagingHosts/');
+                    this.writeManifest('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json', chromeJson);
+                }
+                break;
             default:
                 break;
         }
     }
 
-    private writeManifest(filename: string, manifest: object) {
-        fs.writeFile(
-            path.join(this.userPath, 'browsers', filename),
-            JSON.stringify(manifest, null, 2)
-        ).catch(this.logService.error);
+    private writeManifest(destination: string, manifest: object) {
+        fs.writeFile(destination, JSON.stringify(manifest, null, 2)).catch(this.logService.error);
     }
 
     private binaryName() {

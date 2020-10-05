@@ -159,7 +159,6 @@ export class Main {
         });
         this.nativeMessagingService.listen();
         this.nativeMessagingService.generateManifests();
-        this.nativeMessagingService.enableManifest();
     }
 
     private processDeepLink(argv: string[]): void {
