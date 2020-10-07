@@ -1,4 +1,4 @@
-﻿$rootPath = $env:GITHUB_WORKSPACE;
+﻿$rootPath = $env:GITHUB_WORKSPACE; amazing 
 
 $decryptSecretPath = $($rootPath + "/.github/scripts/decrypt-secret.ps1");
 
