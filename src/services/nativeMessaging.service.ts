@@ -38,6 +38,10 @@ export class NativeMessagingService {
         ipc.server.start();
     }
 
+    stop() {
+        ipc.server.stop();
+    }
+
     generateManifests() {
         const baseJson = {
             'name': 'com.8bit.bitwarden',
@@ -90,6 +94,35 @@ export class NativeMessagingService {
         }
     }
 
+    removeManifests() {
+        switch (process.platform) {
+            case 'win32':
+                this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden');
+                this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden');
+                break;
+            case 'darwin':
+                if (existsSync('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')) {
+                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')
+                }
+
+                if (existsSync('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
+                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')
+                }
+                break;
+            case 'linux':
+                if (existsSync('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json')) {
+                    fs.unlink('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json')
+                }
+
+                if (existsSync('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
+                    fs.unlink('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json')
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
     private writeManifest(destination: string, manifest: object) {
         fs.writeFile(destination, JSON.stringify(manifest, null, 2)).catch(this.logService.error);
     }
@@ -106,7 +139,7 @@ export class NativeMessagingService {
         }
     }
 
-    private createWindowsRegistry(check: string, location: string, jsonFile: string) {
+    private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
         const regedit = require('regedit');
         regedit.setExternalVBSLocation('resources/regedit/vbs');
 
@@ -117,23 +150,43 @@ export class NativeMessagingService {
         this.logService.debug(`Adding registry: ${location}`)
 
         // Check installed
-        list(check)
-            .then(() => {
-                // Create path
-                return createKey(location);
-            })
-            .then(() => {
-                // Insert path to manifest
-                const obj: any = {};
-                obj[location] = {
-                    'default': {
-                        value: path.join(this.userPath, 'browsers', jsonFile),
-                        type: 'REG_DEFAULT',
-                    },
-                }
+        try {
+            await list(check)
+        } catch {
+            return;
+        }
 
-                return putValue(obj);
-            })
-            .catch(this.logService.error)
+        try {
+            await createKey(location);
+
+            // Insert path to manifest
+            const obj: any = {};
+            obj[location] = {
+                'default': {
+                    value: path.join(this.userPath, 'browsers', jsonFile),
+                    type: 'REG_DEFAULT',
+                },
+            }
+
+            return putValue(obj);
+        } catch (error) {
+            this.logService.error(error);
+        }
+    }
+
+    private async deleteWindowsRegistry(key: string) {
+        const regedit = require("regedit");
+
+        const list = util.promisify(regedit.list);
+        const deleteKey = util.promisify(regedit.deleteKey);
+
+        this.logService.debug(`Removing registry: ${location}`)
+
+        try {
+            await list(key);
+            await deleteKey(key); 
+        } catch {
+            // Do nothing
+        }
     }
 }

@@ -44,6 +44,14 @@ export class MessagingMain {
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
                 break;
+            case 'enableBrowserIntegration':
+                this.main.nativeMessagingService.generateManifests();
+                this.main.nativeMessagingService.listen();
+                break;
+            case 'disableBrowserIntegration':
+                this.main.nativeMessagingService.removeManifests();
+                this.main.nativeMessagingService.stop();
+                break;
             default:
                 break;
         }

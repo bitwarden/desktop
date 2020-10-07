@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import IPC from 'ipc';
 
-// Mostly copied from the example on
+// Mostly based on the example from MDN,
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging
 export default class NativeMessage {
     ipc: IPC;

@@ -144,6 +144,10 @@ export class Main {
                 await this.biometricMain.init();
             }
 
+            if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegration)) {
+                this.nativeMessagingService.listen();
+            }
+
             if (!app.isDefaultProtocolClient('bitwarden')) {
                 app.setAsDefaultProtocolClient('bitwarden');
             }
@@ -157,8 +161,6 @@ export class Main {
             // tslint:disable-next-line
             console.error(e);
         });
-        this.nativeMessagingService.listen();
-        this.nativeMessagingService.generateManifests();
     }
 
     private processDeepLink(argv: string[]): void {
