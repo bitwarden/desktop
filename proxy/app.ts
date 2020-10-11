@@ -15,6 +15,8 @@ class Proxy {
     run() {
         this.ipc.connect();
         this.nativeMessage.listen();
+        
+        this.ipc.onMessage = this.nativeMessage.send;
     }
 }
 

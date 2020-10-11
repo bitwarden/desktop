@@ -7,6 +7,7 @@ ipc.config.logger = console.warn; // Stdout is used for native messaging
 
 export default class IPC {
     private connected = false;
+    public onMessage: (message: object) => void
 
     connect() {
         ipc.connectTo('bitwarden', () => {
@@ -24,8 +25,8 @@ export default class IPC {
                 console.error('disconnected from world');
             });
 
-            ipc.of.bitwarden.on('message', (data: any) => {
-                console.error('got a message from world : ', data);
+            ipc.of.bitwarden.on('message', (message: any) => {
+                this.onMessage(message);
             });
 
             /*

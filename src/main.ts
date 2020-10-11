@@ -119,7 +119,7 @@ export class Main {
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
 
-        this.nativeMessagingService = new NativeMessagingService(this.logService, app.getPath('userData'), app.getAppPath());
+        this.nativeMessagingService = new NativeMessagingService(this.logService, this.biometricMain, app.getPath('userData'), app.getAppPath());
     }
 
     bootstrap() {

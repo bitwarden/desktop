@@ -4,11 +4,12 @@ import * as path from 'path';
 import * as util from 'util';
 
 import { LogService } from 'jslib/abstractions/log.service';
+import { BiometricMain } from 'jslib/abstractions/biometric.main';
 
 export class NativeMessagingService {
     private connected = false;
 
-    constructor(private logService: LogService, private userPath: string, private appPath: string) {}
+    constructor(private logService: LogService, private biometricMain: BiometricMain, private userPath: string, private appPath: string) {}
 
     listen() {
         ipc.config.id = 'bitwarden';
@@ -16,8 +17,7 @@ export class NativeMessagingService {
 
         ipc.serve(() => {
             ipc.server.on('message', (data: any, socket: any) => {
-                ipc.log('got a message : ', data);
-                ipc.server.emit(socket, 'message', data + ' world!');
+                this.messageHandler(data, socket);
             });
 
             ipc.server.on('connect', () => {
@@ -40,6 +40,10 @@ export class NativeMessagingService {
 
     stop() {
         ipc.server.stop();
+    }
+
+    send(message: object, socket: any) {
+        ipc.server.emit(socket, 'message', message);
     }
 
     generateManifests() {
@@ -163,7 +167,7 @@ export class NativeMessagingService {
             const obj: any = {};
             obj[location] = {
                 'default': {
-                    value: path.join(this.userPath, 'browsers', jsonFile),
+                    value: jsonFile,
                     type: 'REG_DEFAULT',
                 },
             }
@@ -175,18 +179,39 @@ export class NativeMessagingService {
     }
 
     private async deleteWindowsRegistry(key: string) {
-        const regedit = require("regedit");
+        const regedit = require('regedit');
 
         const list = util.promisify(regedit.list);
         const deleteKey = util.promisify(regedit.deleteKey);
 
-        this.logService.debug(`Removing registry: ${location}`)
+        this.logService.debug(`Removing registry: ${key}`)
 
         try {
             await list(key);
-            await deleteKey(key); 
+            await deleteKey(key);
         } catch {
             // Do nothing
+        }
+    }
+
+    private async messageHandler(message: any, socket: any) {
+        switch (message.command) {
+            case 'biometricUnlock':
+                if (! this.biometricMain) {
+                    return this.send({command: 'biometricUnlock', response: 'not supported'}, socket)
+                }
+
+                const response = await this.biometricMain.requestCreate();
+
+                if (response) {
+                    this.send({command: 'biometricUnlock', response: 'unlocked'}, socket);
+                } else {
+                    this.send({command: 'biometricUnlock', response: 'canceled'}, socket);
+                }
+                
+                break;
+            default:
+                console.error("UNKNOWN COMMAND")
         }
     }
 }

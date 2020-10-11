@@ -61,7 +61,6 @@ export default class NativeMessage {
                 flushChunksQueue();
 
                 const json = JSON.parse(contentWithoutSize);
-                console.error(json);
 
                 // Forward to desktop application
                 this.ipc.send(json);
