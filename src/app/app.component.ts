@@ -52,6 +52,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
+import { NativeMessagingService } from '../services/nativeMessaging.service';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -97,7 +98,7 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService) { }
+        private policyService: PolicyService, private nativeMessagingService: NativeMessagingService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {

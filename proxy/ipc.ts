@@ -17,7 +17,6 @@ export default class IPC {
                     '## connected to bitwarden desktop ##',
                     ipc.config.delay
                 );
-                ipc.of.bitwarden.emit('message', 'hello');
             });
 
             ipc.of.bitwarden.on('disconnect', () => {
