@@ -4,8 +4,8 @@ import IPC from './ipc';
 const args = process.argv.slice(2);
 
 class Proxy {
-    ipc: IPC;
-    nativeMessage: NativeMessage;
+    private ipc: IPC;
+    private nativeMessage: NativeMessage;
 
     constructor() {
         this.ipc = new IPC();

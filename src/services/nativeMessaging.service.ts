@@ -202,16 +202,15 @@ export class NativeMessagingService {
                 }
 
                 const response = await this.biometricMain.requestCreate();
-
                 if (response) {
                     this.send({command: 'biometricUnlock', response: 'unlocked'}, socket);
                 } else {
                     this.send({command: 'biometricUnlock', response: 'canceled'}, socket);
                 }
-                
+
                 break;
             default:
-                console.error("UNKNOWN COMMAND")
+                console.error('UNKNOWN COMMAND')
         }
     }
 }
