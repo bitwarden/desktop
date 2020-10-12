@@ -28,11 +28,9 @@ export default class IPC {
                 this.onMessage(message);
             });
 
-            /*
             ipc.of.bitwarden.on('error', (err: any) => {
                 console.error('error', err);
             });
-            */
         });
     }
 

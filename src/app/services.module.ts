@@ -129,7 +129,7 @@ const environmentService = new EnvironmentService(apiService, storageService, no
 const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
     null);
-const nativeMessagingService = new NativeMessagingService(cryptoService, platformUtilsService)
+const nativeMessagingService = new NativeMessagingService(cryptoService, platformUtilsService, logService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);

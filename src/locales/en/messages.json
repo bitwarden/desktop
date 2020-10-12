@@ -1406,6 +1406,6 @@
     "message": "Enable browser integration"
   },
   "enableBrowserIntegrationDesc": {
-    "message": ""
+    "message": "Browser integration is used for biometrics in browser."
   }
 }

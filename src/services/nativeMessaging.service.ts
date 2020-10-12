@@ -1,9 +1,14 @@
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { PlatformUtilsService } from 'jslib/abstractions';
 import { ipcRenderer } from 'electron';
 
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { LogService } from 'jslib/abstractions/log.service';
+
+const MessageValidTimeout = 10 * 1000;
+
 export class NativeMessagingService {
-    constructor(private cryptoService: CryptoService, private platformUtilService: PlatformUtilsService) {
+
+    constructor(private cryptoService: CryptoService, private platformUtilService: PlatformUtilsService, private logService: LogService) {
         ipcRenderer.on('nativeMessaging', async (event: any, message: any) => {
             this.messageHandler(message);
         });
@@ -12,8 +17,8 @@ export class NativeMessagingService {
     private async messageHandler(rawMessage: any) {
         const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage));
 
-        if (Math.abs(message.timestamp - Date.now()) > 10*1000) {
-            console.error("MESSAGE IS TO OLD");
+        if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
+            this.logService.error('NativeMessage is to old, ignoring.');
             return;
         }
 
@@ -33,7 +38,7 @@ export class NativeMessagingService {
 
                 break;
             default:
-                console.error('UNKNOWN COMMAND')
+                this.logService.error('NativeMessage, got unknown command.');
         }
     }
 
