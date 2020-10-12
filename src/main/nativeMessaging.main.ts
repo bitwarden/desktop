@@ -62,7 +62,7 @@ export class NativeMessagingMain {
             'type': 'stdio',
         }
 
-        const firefoxJson = {...baseJson, ...{ 'allowed_origins': ['446900e4-71c2-419f-a6a7-df9c091e268b']}}
+        const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}}
         const chromeJson = {...baseJson, ...{ 'allowed_origins': ['chrome-extension://ijeheppnniijonkinoakkofcdhdfojda/']}}
 
         if (!existsSync(path.join(this.userPath, 'browsers'))) {
@@ -140,15 +140,11 @@ export class NativeMessagingMain {
     }
 
     private binaryName() {
-        switch (process.platform) {
-            case 'win32':
-                return 'app-win.exe'
-            case 'darwin':
-                return 'app-linux'
-            case 'linux':
-            default:
-                return 'app-macos'
+        if (process.platform === 'win32') {
+            return 'proxy.exe';
         }
+
+        return 'proxy';
     }
 
     private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
