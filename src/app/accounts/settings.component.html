@@ -47,7 +47,8 @@
                         <div class="form-group" *ngIf="supportsBiometric">
                             <div class="checkbox">
                                 <label for="biometric">
-                                    <input id="biometric" type="checkbox" name="biometric" [checked]="biometric" (change)="updateBiometric()">
+                                    <input id="biometric" type="checkbox" name="biometric" [checked]="biometric"
+                                        (change)="updateBiometric()">
                                     {{biometricText | i18n}}
                                 </label>
                             </div>
@@ -98,7 +99,7 @@
                             </div>
                             <small class="help-block">{{enableTrayDescText}}</small>
                         </div>
-                        <div class="form-group" *ngIf="showMinToTray">
+                        <div class="form-group">
                             <div class="checkbox">
                                 <label for="enableMinToTray">
                                     <input id="enableMinToTray" type="checkbox" name="EnableMinToTray"
@@ -108,7 +109,7 @@
                             </div>
                             <small class="help-block">{{'enableMinToTrayDesc' | i18n}}</small>
                         </div>
-                        <div class="form-group" *ngIf="showMinToTray">
+                        <div class="form-group">
                             <div class="checkbox">
                                 <label for="enableCloseToTray">
                                     <input id="enableCloseToTray" type="checkbox" name="EnableCloseToTray"
@@ -118,7 +119,7 @@
                             </div>
                             <small class="help-block">{{'enableCloseToTrayDesc' | i18n}}</small>
                         </div>
-                        <div class="form-group" *ngIf="showMinToTray">
+                        <div class="form-group">
                             <div class="checkbox">
                                 <label for="startToTray">
                                     <input id="startToTray" type="checkbox" name="StartToTray" [(ngModel)]="startToTray"
