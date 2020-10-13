@@ -114,6 +114,7 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
+        this.showMinToTray = true;
         this.vaultTimeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
         this.vaultTimeoutAction = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
