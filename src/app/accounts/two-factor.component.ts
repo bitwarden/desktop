@@ -5,7 +5,10 @@ import {
     ViewContainerRef,
 } from '@angular/core';
 
-import { Router } from '@angular/router';
+import {
+    ActivatedRoute,
+    Router,
+} from '@angular/router';
 
 import { TwoFactorOptionsComponent } from './two-factor-options.component';
 
@@ -36,9 +39,9 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver,
-        stateService: StateService, storageService: StorageService) {
+        stateService: StateService, storageService: StorageService, route: ActivatedRoute) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
-            stateService, storageService);
+            stateService, storageService, route);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
