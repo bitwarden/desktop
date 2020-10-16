@@ -2,6 +2,7 @@ import { promises as fs, existsSync } from 'fs';
 import * as ipc from 'node-ipc';
 import * as path from 'path';
 import * as util from 'util';
+import { homedir } from 'os';
 
 import { LogService } from 'jslib/abstractions/log.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
@@ -80,25 +81,26 @@ export class NativeMessagingMain {
                 this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'))
                 break;
             case 'darwin':
-                if (existsSync('~/Library/Application Support/Mozilla/')) {
-                    fs.mkdir('~/Library/Application Support/Mozilla/NativeMessagingHosts/');
-                    this.writeManifest('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json', firefoxJson);
+                if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/`)) {
+                    fs.mkdir(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`);
+                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson);
                 }
 
-                if (existsSync('~/Library/Application Support/Google/Chrome/')) {
-                    fs.mkdir('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/');
-                    this.writeManifest('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json', chromeJson);
+                if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome`)) {
+                    console.log("FOUND CHROME");
+                    fs.mkdir(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/`);
+                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
                 break;
             case 'linux':
-                if (existsSync('~/.mozilla/')) {
-                    fs.mkdir('~/.mozilla/native-messaging-hosts');
-                    this.writeManifest('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json', firefoxJson);
+                if (existsSync(`${homedir()}/.mozilla/`)) {
+                    fs.mkdir(`${homedir()}/.mozilla/native-messaging-hosts`);
+                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson);
                 }
 
-                if (existsSync('~/.config/google-chrome/')) {
-                    fs.mkdir('~/.config/google-chrome/NativeMessagingHosts/');
-                    this.writeManifest('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json', chromeJson);
+                if (existsSync(`${homedir()}/.config/google-chrome/`)) {
+                    fs.mkdir(`${homedir()}/.config/google-chrome/NativeMessagingHosts/`);
+                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
                 break;
             default:
