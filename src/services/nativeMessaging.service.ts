@@ -5,14 +5,14 @@ import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { LogService } from 'jslib/abstractions/log.service';
 import { Utils } from 'jslib/misc/utils';
+import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
 
 const MessageValidTimeout = 10 * 1000;
-const EncryptionAlgorithm = 'sha256';
+const EncryptionAlgorithm = 'sha1';
 
 export class NativeMessagingService {
-    private publicKey: ArrayBuffer;
-    private privateKey: ArrayBuffer;
     private remotePublicKey: ArrayBuffer;
+    private sharedSecret: any;
 
     constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
         private platformUtilService: PlatformUtilsService, private logService: LogService) {
@@ -28,9 +28,9 @@ export class NativeMessagingService {
             return;
         }
 
-        debugger;
-        const message = JSON.parse(Utils.fromBufferToUtf8(await this.cryptoFunctionService.rsaDecrypt(rawMessage, this.privateKey, EncryptionAlgorithm)));
-        console.log(message);
+        // TODO: Add error handler, if it fails we should invalidate the key and send a re-authenticate message to browser
+        const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
+
         if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
             this.logService.error('NativeMessage is to old, ignoring.');
             return;
@@ -58,14 +58,17 @@ export class NativeMessagingService {
 
     private async send(message: any) {
         message.timestamp = Date.now();
-        const encrypted = await this.cryptoFunctionService.rsaEncrypt(Utils.fromUtf8ToArray(JSON.stringify(message)), this.remotePublicKey, EncryptionAlgorithm);
+
+        const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecret);
 
         ipcRenderer.send('nativeMessagingReply', encrypted);
     }
 
     private async secureCommunication() {
-        [this.publicKey, this.privateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
+        const secret = await this.cryptoFunctionService.randomBytes(64);
+        this.sharedSecret = new SymmetricCryptoKey(secret);
 
-        this.send({command: 'setupEncryption', publicKey: Utils.fromBufferToB64(this.publicKey)});
+        const encryptedSecret = await this.cryptoFunctionService.rsaEncrypt(secret, this.remotePublicKey, EncryptionAlgorithm);
+        ipcRenderer.send('nativeMessagingReply', {command: 'setupEncryption', sharedSecret: Utils.fromBufferToB64(encryptedSecret)});
     }
 }
