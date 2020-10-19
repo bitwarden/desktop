@@ -63,7 +63,7 @@ export class NativeMessagingService {
 
                 const response = await this.platformUtilService.authenticateBiometric();
                 if (response) {
-                    this.send({command: 'biometricUnlock', response: 'unlocked'});
+                    this.send({command: 'biometricUnlock', response: 'unlocked', keyB64: (await this.cryptoService.getKey()).keyB64});
                 } else {
                     this.send({command: 'biometricUnlock', response: 'canceled'});
                 }
