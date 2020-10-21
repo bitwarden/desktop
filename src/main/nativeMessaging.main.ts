@@ -58,7 +58,7 @@ export class NativeMessagingMain {
         const baseJson = {
             'name': 'com.8bit.bitwarden',
             'description': 'Bitwarden desktop <-> browser bridge',
-            'path': path.join(this.appPath, 'proxys', this.binaryName()),
+            'path': this.binaryPath(),
             'type': 'stdio',
         }
 
@@ -133,12 +133,25 @@ export class NativeMessagingMain {
         fs.writeFile(destination, JSON.stringify(manifest, null, 2)).catch(this.logService.error);
     }
 
-    private binaryName() {
-        if (process.platform === 'win32') {
-            return 'proxy.exe';
+    private binaryPath() {
+        const isPackaged = process.mainModule.filename.indexOf('app.asar') !== -1;
+
+        if (isPackaged) {
+            const dir = path.join(this.appPath, '..');
+            if (process.platform === 'win32') {
+                return path.join(dir, 'proxy.exe');
+            }
+
+            return path.join(dir, 'proxy');
         }
 
-        return 'proxy';
+        if (process.platform === 'win32') {
+            return path.join(this.appPath, 'proxies', 'app-win.exe');
+        } else if (process.platform === 'darwin') {
+            return path.join(this.appPath, 'proxies', 'app-macos.exe');
+        }
+
+        return path.join(this.appPath, 'proxies', 'app-linux.exe');
     }
 
     private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
