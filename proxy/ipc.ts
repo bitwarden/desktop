@@ -17,12 +17,16 @@ export default class IPC {
                     '## connected to bitwarden desktop ##',
                     ipc.config.delay
                 );
+
+                // Notify browser extension, connection is established to desktop application.
                 this.onMessage({command: 'connected'})
             });
 
             ipc.of.bitwarden.on('disconnect', () => {
                 this.connected = false;
                 console.error('disconnected from world');
+
+                // Notify browser extension, no connection to desktop application.
                 this.onMessage({command: 'disconnected'})
             });
 

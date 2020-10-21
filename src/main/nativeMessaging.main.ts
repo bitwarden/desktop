@@ -5,8 +5,7 @@ import * as util from 'util';
 import { homedir } from 'os';
 
 import { LogService } from 'jslib/abstractions/log.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { ipcMain, ipcRenderer } from 'electron';
+import { ipcMain } from 'electron';
 import { WindowMain } from 'jslib/electron/window.main';
 
 export class NativeMessagingMain {
@@ -66,14 +65,9 @@ export class NativeMessagingMain {
         const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}}
         const chromeJson = {...baseJson, ...{ 'allowed_origins': ['chrome-extension://ijeheppnniijonkinoakkofcdhdfojda/']}}
 
-        if (!existsSync(path.join(this.userPath, 'browsers'))) {
-            fs.mkdir(path.join(this.userPath, 'browsers'))
-                .catch(this.logService.error)
-        }
-
         switch (process.platform) {
             case 'win32':
-                const destination = path.join(this.userPath, 'browsers')
+                const destination = path.join(this.userPath, 'browsers');
                 this.writeManifest(path.join(destination, 'firefox.json'), firefoxJson);
                 this.writeManifest(path.join(destination, 'chrome.json'), chromeJson);
 
@@ -82,24 +76,20 @@ export class NativeMessagingMain {
                 break;
             case 'darwin':
                 if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/`)) {
-                    fs.mkdir(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`);
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson);
+                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson)
                 }
 
                 if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome`)) {
-                    fs.mkdir(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/`);
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
+                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson)
                 }
                 break;
             case 'linux':
                 if (existsSync(`${homedir()}/.mozilla/`)) {
-                    fs.mkdir(`${homedir()}/.mozilla/native-messaging-hosts`);
-                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson);
+                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson)
                 }
 
                 if (existsSync(`${homedir()}/.config/google-chrome/`)) {
-                    fs.mkdir(`${homedir()}/.config/google-chrome/NativeMessagingHosts/`);
-                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
+                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson)
                 }
                 break;
             default:
@@ -110,25 +100,27 @@ export class NativeMessagingMain {
     removeManifests() {
         switch (process.platform) {
             case 'win32':
+                fs.unlink(path.join(this.userPath, 'browsers', 'firefox.json'));
+                fs.unlink(path.join(this.userPath, 'browsers', 'chrome.json'));
                 this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden');
                 this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden');
                 break;
             case 'darwin':
                 if (existsSync('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')
+                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json');
                 }
 
                 if (existsSync('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')
+                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json');
                 }
                 break;
             case 'linux':
                 if (existsSync('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json')
+                    fs.unlink('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json');
                 }
 
                 if (existsSync('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json')
+                    fs.unlink('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json');
                 }
                 break;
             default:
@@ -137,6 +129,7 @@ export class NativeMessagingMain {
     }
 
     private writeManifest(destination: string, manifest: object) {
+        fs.mkdir(path.dirname(destination));
         fs.writeFile(destination, JSON.stringify(manifest, null, 2)).catch(this.logService.error);
     }
 
