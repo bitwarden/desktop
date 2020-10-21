@@ -17,11 +17,13 @@ export default class IPC {
                     '## connected to bitwarden desktop ##',
                     ipc.config.delay
                 );
+                this.onMessage({command: 'connected'})
             });
 
             ipc.of.bitwarden.on('disconnect', () => {
                 this.connected = false;
                 console.error('disconnected from world');
+                this.onMessage({command: 'disconnected'})
             });
 
             ipc.of.bitwarden.on('message', (message: any) => {

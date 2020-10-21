@@ -87,7 +87,6 @@ export class NativeMessagingMain {
                 }
 
                 if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome`)) {
-                    console.log("FOUND CHROME");
                     fs.mkdir(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/`);
                     this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
