@@ -51,6 +51,12 @@ export class NativeMessagingService {
 
         const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecret));
 
+        // Shared secret is invalidated, force re-authentication
+        if (message == null) {
+            ipcRenderer.send('nativeMessagingReply', {command: 'invalidateEncryption'});
+            return;
+        }
+
         if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
             this.logService.error('NativeMessage is to old, ignoring.');
             return;
