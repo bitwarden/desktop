@@ -8,6 +8,8 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { ExportComponent as BaseExportComponent } from 'jslib/angular/components/export.component';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 @Component({
     selector: 'app-export',
     templateUrl: 'export.component.html',
@@ -15,7 +17,8 @@ import { ExportComponent as BaseExportComponent } from 'jslib/angular/components
 export class ExportComponent extends BaseExportComponent {
     constructor(cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
-        eventService: EventService) {
-        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, window);
+        eventService: EventService, broadcasterService: BroadcasterService) {
+        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, window,
+            broadcasterService);
     }
 }

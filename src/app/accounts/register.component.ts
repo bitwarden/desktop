@@ -9,6 +9,8 @@ import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 import { RegisterComponent as BaseRegisterComponent } from 'jslib/angular/components/register.component';
 
 @Component({
@@ -19,8 +21,9 @@ export class RegisterComponent extends BaseRegisterComponent {
     constructor(authService: AuthService, router: Router,
         i18nService: I18nService, cryptoService: CryptoService,
         apiService: ApiService, stateService: StateService,
-        platformUtilsService: PlatformUtilsService, passwordGenerationService: PasswordGenerationService) {
+        platformUtilsService: PlatformUtilsService, passwordGenerationService: PasswordGenerationService,
+        broadcasterService: BroadcasterService) {
         super(authService, router, i18nService, cryptoService, apiService, stateService, platformUtilsService,
-            passwordGenerationService);
+            passwordGenerationService, broadcasterService);
     }
 }

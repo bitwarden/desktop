@@ -17,6 +17,8 @@ import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib/angular/components/lock.component';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 @Component({
     selector: 'app-lock',
     templateUrl: 'lock.component.html',
@@ -27,9 +29,10 @@ export class LockComponent extends BaseLockComponent {
         userService: UserService, cryptoService: CryptoService,
         storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
-        apiService: ApiService, private route: ActivatedRoute) {
+        apiService: ApiService, broadcasterService: BroadcasterService,
+        private route: ActivatedRoute) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
-            storageService, vaultTimeoutService, environmentService, stateService, apiService);
+            storageService, vaultTimeoutService, environmentService, stateService, apiService, broadcasterService);
     }
 
     async ngOnInit() {
