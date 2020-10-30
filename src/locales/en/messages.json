@@ -1247,7 +1247,7 @@
     "message": "Unlock with Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "unlock your vault"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
