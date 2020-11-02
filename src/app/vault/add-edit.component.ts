@@ -16,8 +16,6 @@ import { UserService } from 'jslib/abstractions/user.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
-
 @Component({
     selector: 'app-vault-add-edit',
     templateUrl: 'add-edit.component.html',
@@ -27,10 +25,9 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
         userService: UserService, collectionService: CollectionService,
-        messagingService: MessagingService, eventService: EventService,
-        broadcasterService: BroadcasterService) {
+        messagingService: MessagingService, eventService: EventService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            userService, collectionService, messagingService, eventService, broadcasterService);
+            userService, collectionService, messagingService, eventService);
     }
 
     async ngOnInit() {
