@@ -15,8 +15,6 @@ import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
-
 import {
     SetPasswordComponent as BaseSetPasswordComponent,
 } from 'jslib/angular/components/set-password.component';
@@ -30,9 +28,9 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
         cryptoService: CryptoService, messagingService: MessagingService,
         userService: UserService, passwordGenerationService: PasswordGenerationService,
         platformUtilsService: PlatformUtilsService, policyService: PolicyService, router: Router,
-        syncService: SyncService, route: ActivatedRoute, broadcasterService: BroadcasterService) {
+        syncService: SyncService, route: ActivatedRoute) {
         super(i18nService, cryptoService, messagingService, userService, passwordGenerationService,
-            platformUtilsService, policyService, router, apiService, syncService, route, broadcasterService);
+            platformUtilsService, policyService, router, apiService, syncService, route);
     }
 
     get masterPasswordScoreWidth() {
