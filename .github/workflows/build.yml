@@ -36,7 +36,7 @@ jobs:
           node-version: '10.x'
 
       - name: Set Node options
-        run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Set up environment
         run: |
@@ -126,7 +126,8 @@ jobs:
           node-version: '10.x'
 
       - name: Set Node options
-        run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: pwsh
 
       - name: Set up environment
         if: github.event_name == 'release'
@@ -232,7 +233,7 @@ jobs:
           node-version: '10.x'
 
       - name: Set Node options
-        run: echo "::set-env name=NODE_OPTIONS::--max_old_space_size=4096"
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Print environment
         run: |
