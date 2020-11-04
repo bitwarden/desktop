@@ -35,7 +35,6 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });

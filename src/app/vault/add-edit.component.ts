@@ -43,7 +43,6 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });

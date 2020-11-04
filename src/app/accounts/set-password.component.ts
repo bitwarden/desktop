@@ -79,7 +79,6 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });

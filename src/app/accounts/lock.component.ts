@@ -53,7 +53,6 @@ export class LockComponent extends BaseLockComponent {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });

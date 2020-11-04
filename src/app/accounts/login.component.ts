@@ -57,7 +57,6 @@ export class LoginComponent extends BaseLoginComponent {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });

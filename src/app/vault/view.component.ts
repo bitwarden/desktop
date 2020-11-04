@@ -52,7 +52,6 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });

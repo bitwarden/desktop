@@ -40,7 +40,6 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
-                
                     default:
                 }
             });
