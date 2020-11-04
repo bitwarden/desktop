@@ -1,6 +1,7 @@
 import {
     Component,
     ComponentFactoryResolver,
+    NgZone,
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
@@ -19,8 +20,12 @@ import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
+
+const BroadcasterSubscriptionId = 'LoginComponent';
 
 @Component({
     selector: 'app-login',
@@ -35,12 +40,28 @@ export class LoginComponent extends BaseLoginComponent {
         syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
-        cryptoFunctionService: CryptoFunctionService, storageService: StorageService) {
+        cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
+    }
+
+    async ngOnInit() {
+        await super.ngOnInit();
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+            this.ngZone.run(() => {
+                switch (message.command) {
+                    case 'windowHidden':
+                        this.onWindowHidden();
+                        break;
+                
+                    default:
+                }
+            });
+        });
     }
 
     settings() {
@@ -60,5 +81,9 @@ export class LoginComponent extends BaseLoginComponent {
         childComponent.onSaved.subscribe(() => {
             modal.close();
         });
+    }
+
+    onWindowHidden() {
+        this.showPassword = false;
     }
 }

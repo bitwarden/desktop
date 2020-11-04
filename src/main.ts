@@ -149,6 +149,14 @@ export class Main {
                 event.preventDefault();
                 this.processDeepLink([url]);
             });
+
+            // Handle window visibility events
+            this.windowMain.win.on('hide', () => {
+                this.messagingService.send('windowHidden');
+            });
+            this.windowMain.win.on('minimize', () => {
+                this.messagingService.send('windowHidden');
+            });
         }, (e: any) => {
             // tslint:disable-next-line
             console.error(e);

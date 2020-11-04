@@ -1,6 +1,7 @@
 import {
     Component,
     OnChanges,
+    NgZone,
 } from '@angular/core';
 
 import { AuditService } from 'jslib/abstractions/audit.service';
@@ -14,7 +15,11 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StateService } from 'jslib/abstractions/state.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
+
+const BroadcasterSubscriptionId = 'AddEditComponent';
 
 @Component({
     selector: 'app-vault-add-edit',
@@ -25,13 +30,25 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
         userService: UserService, collectionService: CollectionService,
-        messagingService: MessagingService, eventService: EventService) {
+        messagingService: MessagingService, eventService: EventService,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
             userService, collectionService, messagingService, eventService);
     }
 
     async ngOnInit() {
-        // We use ngOnChanges instead.
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+            this.ngZone.run(() => {
+                switch (message.command) {
+                    case 'windowHidden':
+                        this.onWindowHidden();
+                        break;
+                
+                    default:
+                }
+            });
+        });
+        // We use ngOnChanges for everything else instead.
     }
 
     async ngOnChanges() {
@@ -45,5 +62,15 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
             this.cipher = null;
         }
         super.load();
+    }
+
+    onWindowHidden() {
+        this.showPassword = false;
+        this.showCardCode = false;
+        if (this.cipher !== null && this.cipher.hasFields) {
+            this.cipher.fields.forEach(field => {
+                field.showValue = false;
+            });
+        }
     }
 }
