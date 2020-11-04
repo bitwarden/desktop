@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    OnDestroy,
+    NgZone,
+} from '@angular/core';
 
 import {
     ActivatedRoute,
@@ -15,6 +19,10 @@ import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
+const BroadcasterSubscriptionId = 'SetPasswordComponent';
+
 import {
     SetPasswordComponent as BaseSetPasswordComponent,
 } from 'jslib/angular/components/set-password.component';
@@ -23,12 +31,13 @@ import {
     selector: 'app-set-password',
     templateUrl: 'set-password.component.html',
 })
-export class SetPasswordComponent extends BaseSetPasswordComponent {
+export class SetPasswordComponent extends BaseSetPasswordComponent implements OnDestroy {
     constructor(apiService: ApiService, i18nService: I18nService,
         cryptoService: CryptoService, messagingService: MessagingService,
         userService: UserService, passwordGenerationService: PasswordGenerationService,
         platformUtilsService: PlatformUtilsService, policyService: PolicyService, router: Router,
-        syncService: SyncService, route: ActivatedRoute) {
+        syncService: SyncService, route: ActivatedRoute,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
         super(i18nService, cryptoService, messagingService, userService, passwordGenerationService,
             platformUtilsService, policyService, router, apiService, syncService, route);
     }
@@ -61,5 +70,27 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
             default:
                 return this.masterPasswordScore != null ? this.i18nService.t('weak') : null;
         }
+    }
+
+    async ngOnInit() {
+        await super.ngOnInit();
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+            this.ngZone.run(() => {
+                switch (message.command) {
+                    case 'windowHidden':
+                        this.onWindowHidden();
+                        break;
+                    default:
+                }
+            });
+        });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
+
+    onWindowHidden() {
+        this.showPassword = false;
     }
 }
