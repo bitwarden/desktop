@@ -58,6 +58,11 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         });
     }
 
+    ngOnDestroy() {
+        super.ngOnDestroy();
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
+
     async ngOnChanges() {
         await super.load();
     }

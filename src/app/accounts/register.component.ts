@@ -1,5 +1,6 @@
 import {
     Component,
+    OnDestroy,
     OnInit,
     NgZone,
 } from '@angular/core';
@@ -23,7 +24,7 @@ const BroadcasterSubscriptionId = 'RegisterComponent';
     selector: 'app-register',
     templateUrl: 'register.component.html',
 })
-export class RegisterComponent extends BaseRegisterComponent implements OnInit {
+export class RegisterComponent extends BaseRegisterComponent implements OnInit, OnDestroy {
     constructor(authService: AuthService, router: Router,
         i18nService: I18nService, cryptoService: CryptoService,
         apiService: ApiService, stateService: StateService,
@@ -44,6 +45,10 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit {
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     onWindowHidden() {

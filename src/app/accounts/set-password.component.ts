@@ -1,5 +1,6 @@
 import {
     Component,
+    OnDestroy,
     NgZone,
 } from '@angular/core';
 
@@ -30,7 +31,7 @@ import {
     selector: 'app-set-password',
     templateUrl: 'set-password.component.html',
 })
-export class SetPasswordComponent extends BaseSetPasswordComponent {
+export class SetPasswordComponent extends BaseSetPasswordComponent implements OnDestroy {
     constructor(apiService: ApiService, i18nService: I18nService,
         cryptoService: CryptoService, messagingService: MessagingService,
         userService: UserService, passwordGenerationService: PasswordGenerationService,
@@ -83,6 +84,10 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     onWindowHidden() {

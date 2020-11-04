@@ -1,6 +1,7 @@
 import {
     Component,
     ComponentFactoryResolver,
+    OnDestroy,
     NgZone,
     ViewChild,
     ViewContainerRef,
@@ -31,7 +32,7 @@ const BroadcasterSubscriptionId = 'LoginComponent';
     selector: 'app-login',
     templateUrl: 'login.component.html',
 })
-export class LoginComponent extends BaseLoginComponent {
+export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
 
     showingModal = false;
@@ -61,6 +62,10 @@ export class LoginComponent extends BaseLoginComponent {
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     settings() {

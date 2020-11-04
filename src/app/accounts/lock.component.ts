@@ -1,5 +1,6 @@
 import {
     Component,
+    OnDestroy,
     NgZone,
 } from '@angular/core';
 import {
@@ -28,7 +29,7 @@ const BroadcasterSubscriptionId = 'LockComponent';
     selector: 'app-lock',
     templateUrl: 'lock.component.html',
 })
-export class LockComponent extends BaseLockComponent {
+export class LockComponent extends BaseLockComponent implements OnDestroy {
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService,
@@ -57,6 +58,10 @@ export class LockComponent extends BaseLockComponent {
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     onWindowHidden() {

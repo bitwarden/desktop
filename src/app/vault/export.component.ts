@@ -1,5 +1,6 @@
 import {
     Component,
+    OnDestroy,
     OnInit,
     NgZone,
 } from '@angular/core';
@@ -39,6 +40,10 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     onWindowHidden() {

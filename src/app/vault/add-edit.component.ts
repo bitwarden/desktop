@@ -1,6 +1,7 @@
 import {
     Component,
     OnChanges,
+    OnDestroy,
     NgZone,
 } from '@angular/core';
 
@@ -25,7 +26,7 @@ const BroadcasterSubscriptionId = 'AddEditComponent';
     selector: 'app-vault-add-edit',
     templateUrl: 'add-edit.component.html',
 })
-export class AddEditComponent extends BaseAddEditComponent implements OnChanges {
+export class AddEditComponent extends BaseAddEditComponent implements OnChanges, OnDestroy {
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
@@ -53,6 +54,10 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges 
     async ngOnChanges() {
         await super.init();
         await this.load();
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
     async load() {
