@@ -25,6 +25,8 @@ import { ViewComponent as BaseViewComponent } from 'jslib/angular/components/vie
 
 import { CipherView } from 'jslib/models/view/cipherView';
 
+const BroadcasterSubscriptionId = 'ViewComponent';
+
 @Component({
     selector: 'app-vault-view',
     templateUrl: 'view.component.html',
@@ -42,6 +44,24 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
             auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
     }
+    ngOnInit() {
+        super.ngOnInit();
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(() => {
+                switch (message.command) {
+                    case 'windowHidden':
+                        this.onWindowHidden();
+                        break;
+                    default:
+                }
+            });
+        });
+    }
+
+    ngOnDestroy() {
+        super.ngOnDestroy();
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
 
     async ngOnChanges() {
         await super.load();
@@ -55,5 +75,15 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     copy(value: string, typeI18nKey: string, aType: string) {
         super.copy(value, typeI18nKey, aType);
         this.messagingService.send('minimizeOnCopy');
+    }
+
+    onWindowHidden() {
+        this.showPassword = false;
+        this.showCardCode = false;
+        if (this.cipher !== null && this.cipher.hasFields) {
+            this.cipher.fields.forEach(field => {
+                field.showValue = false;
+            });
+        }
     }
 }
