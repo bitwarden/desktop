@@ -1241,13 +1241,13 @@
     "message": "Windows Hello를 사용하여 잠금 해제"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden에서 인증을 요청합니다."
   },
   "unlockWithTouchId": {
     "message": "Touch ID를 사용하여 잠금 해제"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bitwarden에서 인증을 요청합니다."
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
@@ -1346,13 +1346,13 @@
     "message": "시간 제한 초과시 동작 확인"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "엔터프라이즈 통합 인증 (SSO)"
   },
   "setMasterPassword": {
     "message": "마스터 비밀번호 설정"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "SSO 로그인을 하기 위해서 보관함에 접근하고 보호할 수 있도록 마스터 비밀번호를 설정해주세요."
   },
   "newMasterPass": {
     "message": "새 마스터 비밀번호"
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "최소 길이 $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1391,7 +1391,7 @@
     "message": "하나 이상의 숫자 포함"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "하나 이상의 다음 특수문자 포함 $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "새 마스터 비밀번호가 정책 요구 사항을 따르지 않습니다."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   }
 }
