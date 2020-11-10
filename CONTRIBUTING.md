@@ -16,7 +16,7 @@ Here is how you can get involved:
   
 * **Help other users:** Go to the [User-to-User Support category](https://community.bitwarden.com/c/support/) on the Community Forums
   
-* **Translate:** See the localization (i10n) section below
+* **Translate:** See the localization (l10n) section below
 
 ## Contributor Agreement
 
