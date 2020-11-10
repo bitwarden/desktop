@@ -1,0 +1,1411 @@
+{
+  "bitwarden": {
+    "message": "Bitwarden"
+  },
+  "filters": {
+    "message": "Филтери"
+  },
+  "allItems": {
+    "message": "Све ставке"
+  },
+  "favorites": {
+    "message": "Омиљени"
+  },
+  "types": {
+    "message": "Врсте"
+  },
+  "typeLogin": {
+    "message": "Пријава"
+  },
+  "typeCard": {
+    "message": "Картица"
+  },
+  "typeIdentity": {
+    "message": "Идентитет"
+  },
+  "typeSecureNote": {
+    "message": "Сигурносна белешка"
+  },
+  "folders": {
+    "message": "Фасцикле"
+  },
+  "collections": {
+    "message": "Колекције"
+  },
+  "searchVault": {
+    "message": "Претраћи Сеф"
+  },
+  "addItem": {
+    "message": "Додај ставку"
+  },
+  "shared": {
+    "message": "Дељено"
+  },
+  "share": {
+    "message": "Подели"
+  },
+  "shareItem": {
+    "message": "Поделити ставку"
+  },
+  "sharedItem": {
+    "message": "Ставка дељена"
+  },
+  "shareDesc": {
+    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  },
+  "attachments": {
+    "message": "Прилози"
+  },
+  "viewItem": {
+    "message": "Види ставку"
+  },
+  "name": {
+    "message": "Име"
+  },
+  "uri": {
+    "message": "УРЛ"
+  },
+  "uriPosition": {
+    "message": "УРЛ $POSITION$",
+    "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
+    "placeholders": {
+      "position": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "newUri": {
+    "message": "Нови УРЛ"
+  },
+  "username": {
+    "message": "Корисничко име"
+  },
+  "password": {
+    "message": "Лозинка"
+  },
+  "passphrase": {
+    "message": "Реченица"
+  },
+  "editItem": {
+    "message": "Уреди ставку"
+  },
+  "emailAddress": {
+    "message": "Имејл"
+  },
+  "verificationCodeTotp": {
+    "message": "Верификациони код (TOTP)"
+  },
+  "website": {
+    "message": "Веб сајт"
+  },
+  "notes": {
+    "message": "Белешке"
+  },
+  "customFields": {
+    "message": "Прилагођена Поља"
+  },
+  "launch": {
+    "message": "Покрени"
+  },
+  "copyValue": {
+    "message": "Копирај вредност",
+    "description": "Copy value to clipboard"
+  },
+  "minimizeOnCopyToClipboard": {
+    "message": "Минимизирај приликом копирања у клипборду"
+  },
+  "minimizeOnCopyToClipboardDesc": {
+    "message": "Минимизирај приликом копирања ставке у клипборду."
+  },
+  "toggleVisibility": {
+    "message": "Пребаци видљивост"
+  },
+  "toggleCollapse": {
+    "message": "Пребаци проширење",
+    "description": "Toggling an expand/collapse state."
+  },
+  "cardholderName": {
+    "message": "Име Власника Картице"
+  },
+  "number": {
+    "message": "Број"
+  },
+  "brand": {
+    "message": "Произвођач"
+  },
+  "expiration": {
+    "message": "Истек"
+  },
+  "securityCode": {
+    "message": "Сигурносни код"
+  },
+  "identityName": {
+    "message": "Име идентитета"
+  },
+  "company": {
+    "message": "Предузеће"
+  },
+  "ssn": {
+    "message": "Број социјалног осигурања"
+  },
+  "passportNumber": {
+    "message": "Број пасоша"
+  },
+  "licenseNumber": {
+    "message": "Број возачке дозволе"
+  },
+  "email": {
+    "message": "Имејл"
+  },
+  "phone": {
+    "message": "Телефон"
+  },
+  "address": {
+    "message": "Адреса"
+  },
+  "premiumRequired": {
+    "message": "Потребан Премијум"
+  },
+  "premiumRequiredDesc": {
+    "message": "Премијум је потребно за употребу ове способности."
+  },
+  "errorOccurred": {
+    "message": "Појавила се грешка."
+  },
+  "error": {
+    "message": "Грешка"
+  },
+  "january": {
+    "message": "Јануар"
+  },
+  "february": {
+    "message": "Фебруар"
+  },
+  "march": {
+    "message": "Mart"
+  },
+  "april": {
+    "message": "Април"
+  },
+  "may": {
+    "message": "Мај"
+  },
+  "june": {
+    "message": "Јун"
+  },
+  "july": {
+    "message": "Јул"
+  },
+  "august": {
+    "message": "Август"
+  },
+  "september": {
+    "message": "Септембар"
+  },
+  "october": {
+    "message": "Октобар"
+  },
+  "november": {
+    "message": "Новембар"
+  },
+  "december": {
+    "message": "Децембар"
+  },
+  "ex": {
+    "message": "нпр.",
+    "description": "Short abbreviation for 'example'."
+  },
+  "title": {
+    "message": "Наслов"
+  },
+  "mr": {
+    "message": "Г."
+  },
+  "mrs": {
+    "message": "Гђц."
+  },
+  "ms": {
+    "message": "Гђа."
+  },
+  "dr": {
+    "message": "Др"
+  },
+  "expirationMonth": {
+    "message": "Месец истека"
+  },
+  "expirationYear": {
+    "message": "Година истека"
+  },
+  "select": {
+    "message": "Изабери"
+  },
+  "other": {
+    "message": "Остало"
+  },
+  "generatePassword": {
+    "message": "Генерисање лозинке"
+  },
+  "type": {
+    "message": "Тип"
+  },
+  "firstName": {
+    "message": "Име"
+  },
+  "middleName": {
+    "message": "Средње име"
+  },
+  "lastName": {
+    "message": "Презиме"
+  },
+  "address1": {
+    "message": "Адреса 1"
+  },
+  "address2": {
+    "message": "Адреса 2"
+  },
+  "address3": {
+    "message": "Адреса 3"
+  },
+  "cityTown": {
+    "message": "Град"
+  },
+  "stateProvince": {
+    "message": "Држава / покрајина"
+  },
+  "zipPostalCode": {
+    "message": "Поштански број"
+  },
+  "country": {
+    "message": "Земља"
+  },
+  "save": {
+    "message": "Сачувај"
+  },
+  "cancel": {
+    "message": "Откажи"
+  },
+  "delete": {
+    "message": "Обриши"
+  },
+  "favorite": {
+    "message": "Омиљено"
+  },
+  "edit": {
+    "message": "Уреди"
+  },
+  "authenticatorKeyTotp": {
+    "message": "Кључ аутентификације (TOTP)"
+  },
+  "folder": {
+    "message": "Фасцикла"
+  },
+  "newCustomField": {
+    "message": "Ново прилагођено поље"
+  },
+  "value": {
+    "message": "Вредност"
+  },
+  "dragToSort": {
+    "message": "Превуците за сортирање"
+  },
+  "cfTypeText": {
+    "message": "Текст"
+  },
+  "cfTypeHidden": {
+    "message": "Сакривено"
+  },
+  "cfTypeBoolean": {
+    "message": "Булове"
+  },
+  "remove": {
+    "message": "Уклони"
+  },
+  "nameRequired": {
+    "message": "Име је неопходно."
+  },
+  "addedItem": {
+    "message": "Ставка додата"
+  },
+  "editedItem": {
+    "message": "Ставка уређена"
+  },
+  "deleteItem": {
+    "message": "Обриши ставку"
+  },
+  "deleteFolder": {
+    "message": "Избриши фасциклу"
+  },
+  "deleteAttachment": {
+    "message": "Избриши прилог"
+  },
+  "deleteItemConfirmation": {
+    "message": "Сигурно избрисати ову ставку?"
+  },
+  "deletedItem": {
+    "message": "Пошаљи ставку у Ђубре"
+  },
+  "overwritePasswordConfirmation": {
+    "message": "Сигурно преписати тренутну лозинку?"
+  },
+  "noneFolder": {
+    "message": "Нема фасцикле",
+    "description": "This is the folder for uncategorized items"
+  },
+  "addFolder": {
+    "message": "Додај фасциклу"
+  },
+  "editFolder": {
+    "message": "Уреди фасциклу"
+  },
+  "regeneratePassword": {
+    "message": "Поново генериши лозинку"
+  },
+  "copyPassword": {
+    "message": "Копирај лозинку"
+  },
+  "copyUri": {
+    "message": "Копирај УРЛ"
+  },
+  "length": {
+    "message": "Дужина"
+  },
+  "numWords": {
+    "message": "Број речи"
+  },
+  "wordSeparator": {
+    "message": "Одвајач речи"
+  },
+  "capitalize": {
+    "message": "Велика слова",
+    "description": "Make the first letter of a work uppercase."
+  },
+  "includeNumber": {
+    "message": "Убаци број"
+  },
+  "close": {
+    "message": "Затвори"
+  },
+  "minNumbers": {
+    "message": "Минимално Бројева"
+  },
+  "minSpecial": {
+    "message": "Минимално Специјално",
+    "description": "Minimum Special Characters"
+  },
+  "ambiguous": {
+    "message": "Avoid Ambiguous Characters"
+  },
+  "searchCollection": {
+    "message": "Претражи колекцију"
+  },
+  "searchFolder": {
+    "message": "Претражи фасцикли"
+  },
+  "searchFavorites": {
+    "message": "Претражи омиљене"
+  },
+  "searchType": {
+    "message": "Претражи тип",
+    "description": "Search item type"
+  },
+  "newAttachment": {
+    "message": "Додај нови прилог"
+  },
+  "deletedAttachment": {
+    "message": "Избрисани прилози"
+  },
+  "deleteAttachmentConfirmation": {
+    "message": "Сигурно обрисати овај прилог?"
+  },
+  "attachmentSaved": {
+    "message": "Прилог је сачуван."
+  },
+  "file": {
+    "message": "Датотека"
+  },
+  "selectFile": {
+    "message": "Изабери датотеку."
+  },
+  "maxFileSize": {
+    "message": "Максимална величина је 100МБ."
+  },
+  "updateKey": {
+    "message": "Не можете да користите ову способност док не промените Ваш кључ за шифровање."
+  },
+  "options": {
+    "message": "Опције"
+  },
+  "editedFolder": {
+    "message": "Фасцикла измењена"
+  },
+  "addedFolder": {
+    "message": "Фасцикла додата"
+  },
+  "deleteFolderConfirmation": {
+    "message": "Сигурно обрисати ову фасциклу?"
+  },
+  "deletedFolder": {
+    "message": "Deleted folder"
+  },
+  "loginOrCreateNewAccount": {
+    "message": "Log in or create a new account to access your secure vault."
+  },
+  "createAccount": {
+    "message": "Create Account"
+  },
+  "logIn": {
+    "message": "Log In"
+  },
+  "submit": {
+    "message": "Submit"
+  },
+  "masterPass": {
+    "message": "Master Password"
+  },
+  "masterPassDesc": {
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+  },
+  "masterPassHintDesc": {
+    "message": "A master password hint can help you remember your password if you forget it."
+  },
+  "reTypeMasterPass": {
+    "message": "Re-type Master Password"
+  },
+  "masterPassHint": {
+    "message": "Master Password Hint (optional)"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "passwordHint": {
+    "message": "Password Hint"
+  },
+  "enterEmailToGetHint": {
+    "message": "Enter your account email address to receive your master password hint."
+  },
+  "getMasterPasswordHint": {
+    "message": "Get master password hint"
+  },
+  "emailRequired": {
+    "message": "Email address is required."
+  },
+  "invalidEmail": {
+    "message": "Invalid email address."
+  },
+  "masterPassRequired": {
+    "message": "Master password is required."
+  },
+  "masterPassLength": {
+    "message": "Master password must be at least 8 characters long."
+  },
+  "masterPassDoesntMatch": {
+    "message": "Master password confirmation does not match."
+  },
+  "newAccountCreated": {
+    "message": "Your new account has been created! You may now log in."
+  },
+  "masterPassSent": {
+    "message": "We've sent you an email with your master password hint."
+  },
+  "unexpectedError": {
+    "message": "An unexpected error has occurred."
+  },
+  "itemInformation": {
+    "message": "Item Information"
+  },
+  "noItemsInList": {
+    "message": "There are no items to list."
+  },
+  "verificationCode": {
+    "message": "Verification Code"
+  },
+  "verificationCodeRequired": {
+    "message": "Verification code is required."
+  },
+  "continue": {
+    "message": "Continue"
+  },
+  "enterVerificationCodeApp": {
+    "message": "Enter the 6 digit verification code from your authenticator app."
+  },
+  "enterVerificationCodeEmail": {
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "verificationCodeEmailSent": {
+    "message": "Verification email sent to $EMAIL$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "example@gmail.com"
+      }
+    }
+  },
+  "rememberMe": {
+    "message": "Remember me"
+  },
+  "sendVerificationCodeEmailAgain": {
+    "message": "Send verification code email again"
+  },
+  "useAnotherTwoStepMethod": {
+    "message": "Use another two-step login method"
+  },
+  "insertYubiKey": {
+    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+  },
+  "insertU2f": {
+    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+  },
+  "recoveryCodeDesc": {
+    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+  },
+  "recoveryCodeTitle": {
+    "message": "Recovery Code"
+  },
+  "authenticatorAppTitle": {
+    "message": "Authenticator App"
+  },
+  "authenticatorAppDesc": {
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  },
+  "yubiKeyTitle": {
+    "message": "YubiKey OTP Security Key"
+  },
+  "yubiKeyDesc": {
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+  },
+  "duoDesc": {
+    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "duoOrganizationDesc": {
+    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
+  },
+  "u2fDesc": {
+    "message": "Use any FIDO U2F enabled security key to access your account."
+  },
+  "u2fTitle": {
+    "message": "FIDO U2F Security Key"
+  },
+  "emailTitle": {
+    "message": "Email"
+  },
+  "emailDesc": {
+    "message": "Verification codes will be emailed to you."
+  },
+  "loginUnavailable": {
+    "message": "Login Unavailable"
+  },
+  "noTwoStepProviders": {
+    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+  },
+  "noTwoStepProviders2": {
+    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+  },
+  "twoStepOptions": {
+    "message": "Опције дво-коракне пријаве"
+  },
+  "selfHostedEnvironment": {
+    "message": "Self-hosted Environment"
+  },
+  "selfHostedEnvironmentFooter": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+  },
+  "customEnvironment": {
+    "message": "Custom Environment"
+  },
+  "customEnvironmentFooter": {
+    "message": "For advanced users. You can specify the base URL of each service independently."
+  },
+  "baseUrl": {
+    "message": "УРЛ Сервера"
+  },
+  "apiUrl": {
+    "message": "УРЛ АПИ Сервера"
+  },
+  "webVaultUrl": {
+    "message": "УРЛ сервера Сефа"
+  },
+  "identityUrl": {
+    "message": "УРЛ сервера идентитета"
+  },
+  "notificationsUrl": {
+    "message": "УРЛ сервера нотификације"
+  },
+  "iconsUrl": {
+    "message": "УРЛ сервера иконице"
+  },
+  "environmentSaved": {
+    "message": "The environment URLs have been saved."
+  },
+  "ok": {
+    "message": "У реду"
+  },
+  "yes": {
+    "message": "Да"
+  },
+  "no": {
+    "message": "Не"
+  },
+  "overwritePassword": {
+    "message": "Препиши лозинку"
+  },
+  "learnMore": {
+    "message": "Сазнај више"
+  },
+  "featureUnavailable": {
+    "message": "Функција је недоступна"
+  },
+  "loggedOut": {
+    "message": "Одјављено"
+  },
+  "loginExpired": {
+    "message": "Ваша сесија пријаве је истекла."
+  },
+  "logOutConfirmation": {
+    "message": "Заиста желите да се одјавите?"
+  },
+  "logOut": {
+    "message": "Одјави се"
+  },
+  "addNewLogin": {
+    "message": "Додај Нову Пријаву"
+  },
+  "addNewItem": {
+    "message": "Додај нову ставку"
+  },
+  "addNewFolder": {
+    "message": "Додај нову фасциклу"
+  },
+  "view": {
+    "message": "Приказ"
+  },
+  "account": {
+    "message": "Налог"
+  },
+  "loading": {
+    "message": "Учитавање..."
+  },
+  "lockNow": {
+    "message": "Закључај одмах"
+  },
+  "passwordGenerator": {
+    "message": "Генератор Лозинке"
+  },
+  "emailUs": {
+    "message": "Пошаљите нам поруку"
+  },
+  "visitOurWebsite": {
+    "message": "Посети наш веб-сајт"
+  },
+  "fileBugReport": {
+    "message": "File a Bug Report"
+  },
+  "blog": {
+    "message": "Блог"
+  },
+  "followUs": {
+    "message": "Прати нас"
+  },
+  "syncVault": {
+    "message": "Синхронизуј сеф"
+  },
+  "changeMasterPass": {
+    "message": "Промени Главну Лозинку"
+  },
+  "changeMasterPasswordConfirmation": {
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "fingerprintPhrase": {
+    "message": "Фраза отиска прста",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "yourAccountsFingerprint": {
+    "message": "Ваша фраза отиска прста за налог",
+    "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
+  },
+  "goToWebVault": {
+    "message": "Ићи на Сеф"
+  },
+  "getMobileApp": {
+    "message": "Апликација за телефон"
+  },
+  "getBrowserExtension": {
+    "message": "Додатак за прегледач"
+  },
+  "syncingComplete": {
+    "message": "Синхронизација завршена"
+  },
+  "syncingFailed": {
+    "message": "Синхронизација није успела"
+  },
+  "yourVaultIsLocked": {
+    "message": "Сеф је блокиран. Проверити главну лозинку за наставак."
+  },
+  "unlock": {
+    "message": "Откључај"
+  },
+  "loggedInAsOn": {
+    "message": "Пријављено са $EMAIL$ на $HOSTNAME$.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      },
+      "hostname": {
+        "content": "$2",
+        "example": "bitwarden.com"
+      }
+    }
+  },
+  "invalidMasterPassword": {
+    "message": "Погрешна главна лозинка"
+  },
+  "twoStepLoginConfirmation": {
+    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "twoStepLogin": {
+    "message": "Дво-коракна лозинка"
+  },
+  "vaultTimeout": {
+    "message": "Тајмаут сефа"
+  },
+  "vaultTimeoutDesc": {
+    "message": "Choose when your vault will timeout and perform the selected action."
+  },
+  "immediately": {
+    "message": "Одмах"
+  },
+  "tenSeconds": {
+    "message": "10 секунди"
+  },
+  "twentySeconds": {
+    "message": "20 секунди"
+  },
+  "thirtySeconds": {
+    "message": "30 секунди"
+  },
+  "oneMinute": {
+    "message": "1 минут"
+  },
+  "twoMinutes": {
+    "message": "2 минута"
+  },
+  "fiveMinutes": {
+    "message": "5 минута"
+  },
+  "fifteenMinutes": {
+    "message": "15 минута"
+  },
+  "thirtyMinutes": {
+    "message": "30 минута"
+  },
+  "oneHour": {
+    "message": "1 сат"
+  },
+  "fourHours": {
+    "message": "4 сата"
+  },
+  "onIdle": {
+    "message": "На мировање система"
+  },
+  "onSleep": {
+    "message": "На успавање система"
+  },
+  "onLocked": {
+    "message": "На блокирање система"
+  },
+  "onRestart": {
+    "message": "На поновно покретање"
+  },
+  "never": {
+    "message": "Никад"
+  },
+  "security": {
+    "message": "Сигурност"
+  },
+  "clearClipboard": {
+    "message": "Обриши клипборд",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
+  },
+  "clearClipboardDesc": {
+    "message": "Аутоматски обришите копиране вредности из клипборда.",
+    "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
+  },
+  "disableFavicon": {
+    "message": "Угаси иконице сајта"
+  },
+  "disableFaviconDesc": {
+    "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
+  },
+  "enableMinToTray": {
+    "message": "Умањи у систем трају"
+  },
+  "enableMinToTrayDesc": {
+    "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableCloseToTray": {
+    "message": "Close to Tray Icon"
+  },
+  "enableCloseToTrayDesc": {
+    "message": "When closing the window, show an icon in the system tray instead."
+  },
+  "enableTray": {
+    "message": "Enable Tray Icon"
+  },
+  "enableTrayDesc": {
+    "message": "Always show an icon in the system tray."
+  },
+  "startToTray": {
+    "message": "Start To Tray Icon"
+  },
+  "startToTrayDesc": {
+    "message": "When the application is first started, only show an icon in the system tray."
+  },
+  "language": {
+    "message": "Језик"
+  },
+  "languageDesc": {
+    "message": "Change the language used by the application. Restart is required."
+  },
+  "theme": {
+    "message": "Theme"
+  },
+  "themeDesc": {
+    "message": "Change the application's color theme."
+  },
+  "dark": {
+    "message": "Dark",
+    "description": "Dark color"
+  },
+  "light": {
+    "message": "Light",
+    "description": "Light color"
+  },
+  "copy": {
+    "message": "Copy",
+    "description": "Copy to clipboard"
+  },
+  "checkForUpdates": {
+    "message": "Check For Updates"
+  },
+  "version": {
+    "message": "Version $VERSION_NUM$",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "restartToUpdate": {
+    "message": "Restart To Update"
+  },
+  "restartToUpdateDesc": {
+    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
+    "placeholders": {
+      "version_num": {
+        "content": "$1",
+        "example": "1.2.3"
+      }
+    }
+  },
+  "updateAvailable": {
+    "message": "Update Available"
+  },
+  "updateAvailableDesc": {
+    "message": "An update was found. Do you want to download it now?"
+  },
+  "restart": {
+    "message": "Restart"
+  },
+  "later": {
+    "message": "Later"
+  },
+  "noUpdatesAvailable": {
+    "message": "No updates are currently available. You are using the latest version."
+  },
+  "updateError": {
+    "message": "Update Error"
+  },
+  "unknown": {
+    "message": "Unknown"
+  },
+  "copyUsername": {
+    "message": "Copy Username"
+  },
+  "copyNumber": {
+    "message": "Copy Number",
+    "description": "Copy credit card number"
+  },
+  "copySecurityCode": {
+    "message": "Copy Security Code",
+    "description": "Copy credit card security code (CVV)"
+  },
+  "premiumMembership": {
+    "message": "Premium Membership"
+  },
+  "premiumManage": {
+    "message": "Manage Membership"
+  },
+  "premiumManageAlert": {
+    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumRefresh": {
+    "message": "Refresh Membership"
+  },
+  "premiumNotCurrentMember": {
+    "message": "You are not currently a premium member."
+  },
+  "premiumSignUpAndGet": {
+    "message": "Sign up for a premium membership and get:"
+  },
+  "premiumSignUpStorage": {
+    "message": "1 GB encrypted storage for file attachments."
+  },
+  "premiumSignUpTwoStep": {
+    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+  },
+  "premiumSignUpReports": {
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+  },
+  "premiumSignUpTotp": {
+    "message": "TOTP verification code (2FA) generator for logins in your vault."
+  },
+  "premiumSignUpSupport": {
+    "message": "Priority customer support."
+  },
+  "premiumSignUpFuture": {
+    "message": "All future premium features. More coming soon!"
+  },
+  "premiumPurchase": {
+    "message": "Купити премијум"
+  },
+  "premiumPurchaseAlert": {
+    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumCurrentMember": {
+    "message": "You are a premium member!"
+  },
+  "premiumCurrentMemberThanks": {
+    "message": "Thank you for supporting Bitwarden."
+  },
+  "premiumPrice": {
+    "message": "All for just $PRICE$ /year!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "refreshComplete": {
+    "message": "Освежавање је завршено"
+  },
+  "passwordHistory": {
+    "message": "Историја Лозинке"
+  },
+  "clear": {
+    "message": "Очисти",
+    "description": "To clear something out. example: To clear browser history."
+  },
+  "noPasswordsInList": {
+    "message": "Нама лозинке у листи."
+  },
+  "undo": {
+    "message": "Опозови"
+  },
+  "redo": {
+    "message": "Понови"
+  },
+  "cut": {
+    "message": "Исеци",
+    "description": "Cut to clipboard"
+  },
+  "paste": {
+    "message": "Залепи",
+    "description": "Paste from clipboard"
+  },
+  "selectAll": {
+    "message": "Изабери све"
+  },
+  "zoomIn": {
+    "message": "Увећање"
+  },
+  "zoomOut": {
+    "message": "Умањење"
+  },
+  "resetZoom": {
+    "message": "Ресетуј зумирање"
+  },
+  "toggleFullScreen": {
+    "message": "Укључи/искључи приказ преко целог екрана"
+  },
+  "reload": {
+    "message": "Поново учитај"
+  },
+  "toggleDevTools": {
+    "message": "Укључи/искључи развојне алатке"
+  },
+  "minimize": {
+    "message": "Минимизирај",
+    "description": "Minimize window"
+  },
+  "zoom": {
+    "message": "Зумирај"
+  },
+  "bringAllToFront": {
+    "message": "Постави све у предњи план",
+    "description": "Bring all windows to front (foreground)"
+  },
+  "aboutBitwarden": {
+    "message": "О Bitwarden"
+  },
+  "services": {
+    "message": "Услуге"
+  },
+  "hideBitwarden": {
+    "message": "Сакриј Bitwarden"
+  },
+  "hideOthers": {
+    "message": "Сакриј остале"
+  },
+  "showAll": {
+    "message": "Прикажи све"
+  },
+  "quitBitwarden": {
+    "message": "Затвори Bitwarden"
+  },
+  "valueCopied": {
+    "message": "$VALUE$ копирано",
+    "description": "Value has been copied to the clipboard.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "Password"
+      }
+    }
+  },
+  "help": {
+    "message": "Помоћ"
+  },
+  "window": {
+    "message": "Прозор"
+  },
+  "checkPassword": {
+    "message": "Проверите да ли је лозинка изложена."
+  },
+  "passwordExposed": {
+    "message": "Ова лозинка је изложена $VALUE$ пута. Требали би да је промените.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "passwordSafe": {
+    "message": "Ова лозинка није никада изложена. Треба да је сигурна за употребу."
+  },
+  "baseDomain": {
+    "message": "Главни домен"
+  },
+  "host": {
+    "message": "Хост",
+    "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
+  },
+  "exact": {
+    "message": "Тачно"
+  },
+  "startsWith": {
+    "message": "Почиње са"
+  },
+  "regEx": {
+    "message": "Регуларни израз",
+    "description": "A programming term, also known as 'RegEx'."
+  },
+  "matchDetection": {
+    "message": "Налажење везе",
+    "description": "URI match detection for auto-fill."
+  },
+  "defaultMatchDetection": {
+    "message": "Стандардно налажење вење",
+    "description": "Default URI match detection for auto-fill."
+  },
+  "toggleOptions": {
+    "message": "Пребацити опције"
+  },
+  "organization": {
+    "message": "Организација",
+    "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "default": {
+    "message": "Подразумевано"
+  },
+  "exit": {
+    "message": "Изађи"
+  },
+  "showHide": {
+    "message": "Покажи/Сакриј",
+    "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
+  },
+  "hideToTray": {
+    "message": "Hide to Tray"
+  },
+  "alwaysOnTop": {
+    "message": "Увек на врху",
+    "description": "Application window should always stay on top of other windows"
+  },
+  "dateUpdated": {
+    "message": "Ажурирано",
+    "description": "ex. Date this item was updated"
+  },
+  "datePasswordUpdated": {
+    "message": "Password Updated",
+    "description": "ex. Date this password was updated"
+  },
+  "exportVault": {
+    "message": "Export Vault"
+  },
+  "fileFormat": {
+    "message": "File Format"
+  },
+  "warning": {
+    "message": "WARNING",
+    "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "exportWarningDesc": {
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+  },
+  "exportMasterPassword": {
+    "message": "Enter your master password to export your vault data."
+  },
+  "noOrganizationsList": {
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+  },
+  "noCollectionsInList": {
+    "message": "There are no collections to list."
+  },
+  "ownership": {
+    "message": "Ownership"
+  },
+  "whoOwnsThisItem": {
+    "message": "Who owns this item?"
+  },
+  "strong": {
+    "message": "Strong",
+    "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
+  },
+  "good": {
+    "message": "Good",
+    "description": "ex. A good password. Scale: Weak -> Good -> Strong"
+  },
+  "weak": {
+    "message": "Weak",
+    "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
+  },
+  "weakMasterPassword": {
+    "message": "Weak Master Password"
+  },
+  "weakMasterPasswordDesc": {
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+  },
+  "pin": {
+    "message": "PIN",
+    "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
+  },
+  "unlockWithPin": {
+    "message": "Unlock with PIN"
+  },
+  "setYourPinCode": {
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+  },
+  "pinRequired": {
+    "message": "PIN code is required."
+  },
+  "invalidPin": {
+    "message": "Invalid PIN code."
+  },
+  "yourVaultIsLockedPinCode": {
+    "message": "Your vault is locked. Verify your PIN code to continue."
+  },
+  "unlockWithWindowsHello": {
+    "message": "Unlock with Windows Hello"
+  },
+  "windowsHelloConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "unlockWithTouchId": {
+    "message": "Unlock with Touch ID"
+  },
+  "touchIdConsentMessage": {
+    "message": "Verify for Bitwarden."
+  },
+  "lockWithMasterPassOnRestart": {
+    "message": "Lock with master password on restart"
+  },
+  "preferences": {
+    "message": "Preferences"
+  },
+  "enableMenuBar": {
+    "message": "Enable Menu Bar Icon"
+  },
+  "enableMenuBarDesc": {
+    "message": "Always show an icon in the menu bar."
+  },
+  "hideToMenuBar": {
+    "message": "Hide to Menu Bar"
+  },
+  "selectOneCollection": {
+    "message": "You must select at least one collection."
+  },
+  "premiumUpdated": {
+    "message": "You've upgraded to premium."
+  },
+  "restore": {
+    "message": "Restore"
+  },
+  "premiumManageAlertAppStore": {
+    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+  },
+  "legal": {
+    "message": "Legal",
+    "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
+  },
+  "termsOfService": {
+    "message": "Terms of Service"
+  },
+  "privacyPolicy": {
+    "message": "Privacy Policy"
+  },
+  "unsavedChangesConfirmation": {
+    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+  },
+  "unsavedChangesTitle": {
+    "message": "Unsaved Changes"
+  },
+  "clone": {
+    "message": "Clone"
+  },
+  "passwordGeneratorPolicyInEffect": {
+    "message": "One or more organization policies are affecting your generator settings."
+  },
+  "vaultTimeoutAction": {
+    "message": "Vault Timeout Action"
+  },
+  "vaultTimeoutActionLockDesc": {
+    "message": "A locked vault requires that you re-enter your master password to access it again."
+  },
+  "vaultTimeoutActionLogOutDesc": {
+    "message": "A logged out vault requires that you re-authenticate to access it again."
+  },
+  "lock": {
+    "message": "Lock",
+    "description": "Verb form: to make secure or inaccesible by"
+  },
+  "trash": {
+    "message": "Смеће",
+    "description": "Noun: a special folder to hold deleted items"
+  },
+  "searchTrash": {
+    "message": "Тражи смеће"
+  },
+  "permanentlyDeleteItem": {
+    "message": "Трајно избрисати ставку"
+  },
+  "permanentlyDeleteItemConfirmation": {
+    "message": "Да ли сте сигурни да желите да трајно избришете ову ставку?"
+  },
+  "permanentlyDeletedItem": {
+    "message": "Трајно избрисати ставку"
+  },
+  "restoreItem": {
+    "message": "Врати ставку"
+  },
+  "restoreItemConfirmation": {
+    "message": "Да ли сте сигурни да желите да вратите ову ставку?"
+  },
+  "restoredItem": {
+    "message": "Ставка враћена"
+  },
+  "permanentlyDelete": {
+    "message": "Трајно избрисати"
+  },
+  "vaultTimeoutLogOutConfirmation": {
+    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+  },
+  "vaultTimeoutLogOutConfirmationTitle": {
+    "message": "Timeout Action Confirmation"
+  },
+  "enterpriseSingleSignOn": {
+    "message": "Enterprise Single Sign-On"
+  },
+  "setMasterPassword": {
+    "message": "Постави Главну Лозинку"
+  },
+  "ssoCompleteRegistration": {
+    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+  },
+  "newMasterPass": {
+    "message": "Нова Главна Лозинка"
+  },
+  "confirmNewMasterPass": {
+    "message": "Потрдити нову Главну Лозинку"
+  },
+  "masterPasswordPolicyInEffect": {
+    "message": "One or more organization policies require your master password to meet the following requirements:"
+  },
+  "policyInEffectMinComplexity": {
+    "message": "Minimum complexity score of $SCORE$",
+    "placeholders": {
+      "score": {
+        "content": "$1",
+        "example": "4"
+      }
+    }
+  },
+  "policyInEffectMinLength": {
+    "message": "Minimum length of $LENGTH$",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "14"
+      }
+    }
+  },
+  "policyInEffectUppercase": {
+    "message": "Contain one or more uppercase characters"
+  },
+  "policyInEffectLowercase": {
+    "message": "Contain one or more lowercase characters"
+  },
+  "policyInEffectNumbers": {
+    "message": "Садрже један или више бројева"
+  },
+  "policyInEffectSpecial": {
+    "message": "Садрже један или више бројева ових специјалних слова $CHARS$",
+    "placeholders": {
+      "chars": {
+        "content": "$1",
+        "example": "!@#$%^&*"
+      }
+    }
+  },
+  "masterPasswordPolicyRequirementsNotMet": {
+    "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  }
+}
