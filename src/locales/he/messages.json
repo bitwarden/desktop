@@ -1238,7 +1238,7 @@
     "message": "הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך."
   },
   "unlockWithWindowsHello": {
-    "message": "שחרור הנעילה עם Windows Hello"
+    "message": "שחרור נעילה עם Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "אימות עבור Bitwarden."
@@ -1364,7 +1364,7 @@
     "message": "אחד או יותר מאילוצי המדיניות של הארגון דורשים שהסיסמה הראשית שלך תעמוד בדרישות הבאות:"
   },
   "policyInEffectMinComplexity": {
-    "message": "ניקוד מורכבות מזערי של $SCORE$",
+    "message": "ניקוד מורכבות הסיסמה צריך להיות לפחות {0}",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "אורך מזערי של $LENGTH$",
+    "message": "אורך מינימלי של $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "תכיל אות גדולה אחת או יותר"
+    "message": "מכילה אות גדולה אחת או יותר"
   },
   "policyInEffectLowercase": {
-    "message": "תכיל אות קטנה אחת או יותר"
+    "message": "מכילה אות קטנה אחת או יותר"
   },
   "policyInEffectNumbers": {
-    "message": "תכיל ספרה אחת או יותר"
+    "message": "מכילה ספרה אחת או יותר"
   },
   "policyInEffectSpecial": {
-    "message": "תכיל תו מיוחד אחד או יותר מבין התווים האלו $CHARS$",
+    "message": "מכילה תו אחד או יותר מהתווים הבאים: {0}",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "הסיסמה הראשית החדשה השלך לא עומדת בדרישות המדיניות."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   }
 }

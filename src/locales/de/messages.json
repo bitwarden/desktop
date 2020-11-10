@@ -343,7 +343,7 @@
     "message": "Soll dieser Eintrag wirklich gelöscht werden?"
   },
   "deletedItem": {
-    "message": "Eintrag gelöscht"
+    "message": "Eintrag in Papierkorb verschoben"
   },
   "overwritePasswordConfirmation": {
     "message": "Bist du sicher, dass du das Passwort überschreiben möchtest?"
@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ihr neues Masterpasswort entspricht nicht den Anforderungen der Richtlinie."
+  },
+  "acceptPolicies": {
+    "message": "By checking this box you agree to the following:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   }
 }
