@@ -1403,7 +1403,7 @@
     "message": "Vaše nové hlavní heslo nesplňuje požadavky zásad."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Zaškrtnutím tohoto políčka souhlasím s následujícím:"
   },
   "acceptPoliciesError": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."

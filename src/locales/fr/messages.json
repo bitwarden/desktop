@@ -1403,9 +1403,9 @@
     "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "En cochant cette case, vous acceptez les éléments suivants :"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
   }
 }

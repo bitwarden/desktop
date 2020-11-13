@@ -1403,9 +1403,9 @@
     "message": "הסיסמה הראשית החדשה השלך לא עומדת בדרישות המדיניות."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "סימון התיבה הזאת מהווה את הסכמתך לתנאים הבאים:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "לא הסכמת לתנאי השירות ומדיניות הפרטיות."
   }
 }

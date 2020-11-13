@@ -1403,9 +1403,9 @@
     "message": "Kata sandi utama Anda yang baru tidak memenuhi persyaratan kebijakan."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Dengan mencentang kotak ini, anda menyetujui yang berikut:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Persyaratan Layanan dan Kebijakan Privasi belum diakui."
   }
 }

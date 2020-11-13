@@ -1403,9 +1403,9 @@
     "message": "Ihr neues Masterpasswort entspricht nicht den Anforderungen der Richtlinie."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
   }
 }

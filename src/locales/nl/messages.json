@@ -1403,9 +1403,9 @@
     "message": "Je nieuwe hoofdwachtwoord voldoet niet aan de beleidseisen."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Door dit vakje aan te vinken, ga je akkoord met het volgende:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Algemene voorwaarden en privacybeleid zijn nog niet erkend."
   }
 }
