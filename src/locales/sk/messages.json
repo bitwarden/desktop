@@ -51,7 +51,7 @@
     "message": "Položka zdieľaná"
   },
   "shareDesc": {
-    "message": "Vyberte organizáciu, s ktorou chcete zdieľať túto položku. Zdieľanie presunie vlastníctvo položky na organizáciu. Po zdieľaní už nebudete priamy vlastník položky."
+    "message": "Vyberte organizáciu, s ktorou chcete zdieľať túto položku. Zdieľanie presunie vlastníctvo položky na organizáciu. Po zdieľaní už nebudete priamym vlastníkom danej položky."
   },
   "attachments": {
     "message": "Prílohy"
@@ -109,7 +109,7 @@
     "message": "Spustiť"
   },
   "copyValue": {
-    "message": "Kopírovať hodnotu",
+    "message": "Skopírovať hodnotu",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
@@ -135,7 +135,7 @@
     "message": "Značka"
   },
   "expiration": {
-    "message": "Expirácia"
+    "message": "Exspirácia"
   },
   "securityCode": {
     "message": "Bezpečnostný kód"
@@ -232,10 +232,10 @@
     "message": "Dr."
   },
   "expirationMonth": {
-    "message": "Mesiac expirácie"
+    "message": "Mesiac exspirácie"
   },
   "expirationYear": {
-    "message": "Rok expirácie"
+    "message": "Rok exspirácie"
   },
   "select": {
     "message": "Vybrať"
@@ -377,7 +377,7 @@
     "message": "Oddeľovač slov"
   },
   "capitalize": {
-    "message": "Prvé písmeno veľkým",
+    "message": "Veľké prvé písmená slov",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -387,10 +387,10 @@
     "message": "Zavrieť"
   },
   "minNumbers": {
-    "message": "Minimum číslic"
+    "message": "Minimálny počet číslic"
   },
   "minSpecial": {
-    "message": "Minimum špec. znakov",
+    "message": "Minimum špeciálnych",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -431,7 +431,7 @@
     "message": "Maximálna veľkosť súboru je 100 MB."
   },
   "updateKey": {
-    "message": "Túto funkciu nemožno použiť, kým neaktualizujete svoj šifrovací kľúč."
+    "message": "Túto funkciu je možné použiť, až keď si aktualizujete svoj šifrovací kľúč."
   },
   "options": {
     "message": "Možnosti"
@@ -449,7 +449,7 @@
     "message": "Priečinok odstránený"
   },
   "loginOrCreateNewAccount": {
-    "message": "Prihláste sa, alebo vytvorte nový účet pre prístup k vášmu bezpečnému trezoru."
+    "message": "Prihláste sa alebo si vytvorte nový účet, aby ste mohli pristupovať k vášmu bezpečnému trezoru."
   },
   "createAccount": {
     "message": "Vytvoriť účet"
@@ -464,7 +464,7 @@
     "message": "Hlavné heslo"
   },
   "masterPassDesc": {
-    "message": "Hlavné heslo je heslo, ktoré použijete na prístup k svojmu trezoru. Je veľmi dôležité, aby ste svoje hlavné heslo nezabudli. Neexistuje možnosť, ako heslo obnoviť v prípade, že ho zabudnete."
+    "message": "Hlavné heslo je heslo, ktoré používate na prístup k svojmu trezoru. Je veľmi dôležité, aby ste svoje hlavné heslo nezabudli. Neexistuje možnosť ako heslo obnoviť v prípade, že ho zabudnete."
   },
   "masterPassHintDesc": {
     "message": "Nápoveď k hlavnému heslu vám môže pomôcť spomenúť si na heslo, ak ho zabudnete."
@@ -566,7 +566,7 @@
     "message": "Stratili ste prístup ku všetkým vašim dvojstupňovým poskytovateľom? Použite váš záchranný kód pre vypnutie všetkých poskytovateľov vo vašom účte."
   },
   "recoveryCodeTitle": {
-    "message": "Záchranný kód"
+    "message": "Kód na obnovenie"
   },
   "authenticatorAppTitle": {
     "message": "Overovacia aplikácia"
@@ -582,7 +582,7 @@
     "message": "Použiť YubiKey pre prístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a s NEO zariadeniami."
   },
   "duoDesc": {
-    "message": "Overiť s Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
+    "message": "Overiť sa prostredníctvom Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -677,7 +677,7 @@
     "message": "Odhlásiť sa"
   },
   "addNewLogin": {
-    "message": "Pridať prihlasovacie údaje"
+    "message": "Pridať nové prihlasovacie údaje"
   },
   "addNewItem": {
     "message": "Pridať novú položku"
@@ -779,7 +779,7 @@
     "message": "Časový limit pre trezor"
   },
   "vaultTimeoutDesc": {
-    "message": "Vyberte kedy vyprší časový limit trezora a vykoná sa zvolená akcia."
+    "message": "Vyberte, kedy vyprší časový limit trezora a vykoná sa zvolená akcia."
   },
   "immediately": {
     "message": "Okamžite"
@@ -880,7 +880,7 @@
     "message": "Motív"
   },
   "themeDesc": {
-    "message": "Zmeniť motív aplikácie."
+    "message": "Zmeniť farebný motív aplikácie."
   },
   "dark": {
     "message": "Tmavý",
@@ -1035,7 +1035,7 @@
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Vybrať Všetko"
+    "message": "Označiť všetko"
   },
   "zoomIn": {
     "message": "Priblížiť"
@@ -1095,7 +1095,7 @@
     }
   },
   "help": {
-    "message": "Pomoc"
+    "message": "Nápoveď"
   },
   "window": {
     "message": "Okno"
@@ -1104,7 +1104,7 @@
     "message": "Overiť či došlo k úniku hesla."
   },
   "passwordExposed": {
-    "message": "Toto heslo uniklo $VALUE$ krát v dátových únikoch. Mali by ste ho zmeniť.",
+    "message": "Toto heslo uniklo $VALUE$-krát v dátových únikoch. Mali by ste ho zmeniť.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1241,13 +1241,13 @@
     "message": "Odomknúť pomocou Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Overiť pre Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Odomknúť s Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Overiť pre Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
@@ -1403,9 +1403,9 @@
     "message": "Vaše nové hlavné heslo nespĺňa pravidlá."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Označením tohto políčka súhlasíte s nasledovným:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Neboli akceptované Podmienky používania a zásady Ochrany osobných údajov."
   }
 }
