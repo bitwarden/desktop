@@ -1403,9 +1403,9 @@
     "message": "Az új mesterjelszó nem felel meg a szabály követelményeknek."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "A kapcsoló bekapcsolásával egyetértünk a következőkkel:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   }
 }
