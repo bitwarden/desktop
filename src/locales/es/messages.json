@@ -1403,9 +1403,9 @@
     "message": "Su nueva contraseña maestra no cumple con los requisitos de la política."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Al seleccionar esta casilla, acepto lo siguiente:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Todavía no has aceptado los términos del servicio y la política de privacidad."
   }
 }
