@@ -1403,9 +1403,9 @@
     "message": "新しいマスターパスワードは最低要件を満たしていません。"
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "以下に同意しチェックします:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "利用規約とプライバシーポリシーを確認してください。"
   }
 }
