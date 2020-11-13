@@ -1403,9 +1403,9 @@
     "message": "Din nye hovedadgangskode opfylder ikke politikkravene."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Ved at markere dette felt accepterer du følgende:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Servicevilkår og fortrolighedspolitik er ikke blevet bekræftet."
   }
 }
