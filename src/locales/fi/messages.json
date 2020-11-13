@@ -1403,9 +1403,9 @@
     "message": "Uusi pääsalasanasi ei täytä käytäntövaatimuksia."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Palvelu- ja tietosuojakäytäntöä ei ole vahvistettu."
   }
 }
