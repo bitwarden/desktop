@@ -1406,6 +1406,6 @@
     "message": "By checking this box you agree to the following:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Terms of service and privacy policy have not been acknowledged."
   }
 }
