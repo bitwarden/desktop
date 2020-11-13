@@ -328,7 +328,7 @@
     "message": "ചേർക്കപ്പെട്ട ഇനം"
   },
   "editedItem": {
-    "message": "തിരുത്തപ്പെട്ട ഇനം"
+    "message": "ഇനം തിരുത്തി"
   },
   "deleteItem": {
     "message": "ഇനം ഇല്ലാതാക്കുക"
@@ -437,7 +437,7 @@
     "message": "ഓപ്ഷനുകൾ"
   },
   "editedFolder": {
-    "message": "തിരുത്തിയ ഫോൾഡറുകൾ"
+    "message": "ഫോൾഡർ തിരുത്തി"
   },
   "addedFolder": {
     "message": "ചേർക്കപ്പെട്ട ഫോൾഡർ"
@@ -586,7 +586,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Duo Mobile, എസ്എംഎസ്, ഫോൺ കോൾ അല്ലെങ്കിൽ യു 2 എഫ് സുരക്ഷാ കീ ഉപയോഗിച്ച് നിങ്ങളുടെ ഓർഗനൈസേഷനെ ഡ്യുവോ സെക്യൂരിറ്റി ഉപയോഗിച്ച് പരിശോധിക്കുക.",
+    "message": "Duo Mobile, SMS, ഫോൺ കോൾ അല്ലെങ്കിൽ U2F സുരക്ഷാ കീ ഉപയോഗിച്ച് നിങ്ങളുടെ ഓർഗനൈസേഷനെ Duo Security ഉപയോഗിച്ച് പരിശോധിക്കുക.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1403,9 +1403,9 @@
     "message": "നിങ്ങളുടെ പുതിയ മാസ്റ്റർ പാസ്‌വേഡ് നയ ആവശ്യകതകൾ നിറവേറ്റുന്നില്ല."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "ഈ ബോക്സ് ചെക്കുചെയ്യുന്നതിലൂടെ നിങ്ങൾ ഇനിപ്പറയുന്നവ അംഗീകരിക്കുന്നു:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "സേവന നിബന്ധനകളും സ്വകാര്യതാ നയവും അംഗീകരിച്ചിട്ടില്ല."
   }
 }
