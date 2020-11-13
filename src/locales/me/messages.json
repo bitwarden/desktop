@@ -1403,9 +1403,9 @@
     "message": "Your new master password does not meet the policy requirements."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Označavanjem ovog polja pristajete na sledeće:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Uslovi usluge i Politika privatnosti nisu prihvaćeni."
   }
 }
