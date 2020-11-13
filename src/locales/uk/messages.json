@@ -1247,7 +1247,7 @@
     "message": "Розблокувати з Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "розблокувати сховище"
+    "message": "Перевірити на Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
@@ -1403,9 +1403,9 @@
     "message": "Ваш новий головний пароль не задовольняє вимоги політики."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Позначивши цей прапорець, ви погоджуєтеся з:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Умови користування та політика приватності не погоджені."
   }
 }
