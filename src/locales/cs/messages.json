@@ -1346,25 +1346,25 @@
     "message": "Potvrzení akce při vypršení časového limitu"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Jednotné podnikové přihlášení"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Nastavení hlavního hesla"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Chcete-li dokončit přihlášení pomocí SSO, nastavte prosím hlavní heslo pro přístup a ochranu vašeho trezoru."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Nové hlavní heslo"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Potvrďte nové heslo"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Jedna nebo více zásad organizace vyžaduje, aby hlavní heslo splňovalo následující požadavky:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimální skóre složitosti $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1373,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimální délka $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1382,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Obsahuje jedno nebo více velkých písmen"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Obsahuje jedno nebo více malých písmen"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Obsahuje jednu nebo více číslic"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Obsahuje jeden nebo více následujících speciálních znaků: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,6 +1400,12 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Vaše nové hlavní heslo nesplňuje požadavky zásad."
+  },
+  "acceptPolicies": {
+    "message": "Zaškrtnutím tohoto políčka souhlasím s následujícím:"
+  },
+  "acceptPoliciesError": {
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   }
 }

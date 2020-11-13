@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Uusi pääsalasanasi ei täytä käytäntövaatimuksia."
+  },
+  "acceptPolicies": {
+    "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
+  },
+  "acceptPoliciesError": {
+    "message": "Palvelu- ja tietosuojakäytäntöä ei ole vahvistettu."
   }
 }

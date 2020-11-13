@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Az új mesterjelszó nem felel meg a szabály követelményeknek."
+  },
+  "acceptPolicies": {
+    "message": "A kapcsoló bekapcsolásával egyetértünk a következőkkel:"
+  },
+  "acceptPoliciesError": {
+    "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   }
 }

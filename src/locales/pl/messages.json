@@ -629,7 +629,7 @@
     "message": "Adres URL serwera"
   },
   "apiUrl": {
-    "message": "Adres URL serwera API"
+    "message": "Adres URL serwera interfejsu API"
   },
   "webVaultUrl": {
     "message": "Adres URL serwera sejfu internetowego"
@@ -1346,7 +1346,7 @@
     "message": "Potwierdź sposób blokowania sejfu"
   },
   "enterpriseSingleSignOn": {
-    "message": "Logowanie jednokrotne przedsiębiorstwa"
+    "message": "Logowanie jednokrotne"
   },
   "setMasterPassword": {
     "message": "Ustaw hasło główne"
@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Nowe hasło główne nie spełnia wymaganych zasad."
+  },
+  "acceptPolicies": {
+    "message": "Zaznaczając tę opcję, akceptujesz:"
+  },
+  "acceptPoliciesError": {
+    "message": "Nie zaakceptowałeś regulaminu i polityki prywatności."
   }
 }

@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Votre nouveau mot de passe maître ne répond pas aux exigences de la politique."
+  },
+  "acceptPolicies": {
+    "message": "En cochant cette case, vous acceptez les éléments suivants :"
+  },
+  "acceptPoliciesError": {
+    "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
   }
 }

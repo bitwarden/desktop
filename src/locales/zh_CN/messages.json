@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "您的新主密码不符合策略要求。"
+  },
+  "acceptPolicies": {
+    "message": "选中此框表示您同意："
+  },
+  "acceptPoliciesError": {
+    "message": "尚未同意服务条款和隐私政策。"
   }
 }

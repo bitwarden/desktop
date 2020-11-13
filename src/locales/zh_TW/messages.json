@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "點擊此選取框，代表您同意下列項目:"
+  },
+  "acceptPoliciesError": {
+    "message": "尚未接受服務條款與隱私權保護政策。"
   }
 }

@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Your new master password does not meet the policy requirements."
+  },
+  "acceptPolicies": {
+    "message": "Označavanjem ovog polja pristajete na sledeće:"
+  },
+  "acceptPoliciesError": {
+    "message": "Uslovi usluge i Politika privatnosti nisu prihvaćeni."
   }
 }

@@ -41,7 +41,7 @@
                 {{'masterPassDesc' | i18n}}
             </div>
         </div>
-        <div class="box last">
+        <div class="box">
             <div class="box-content">
                 <div class="box-content-row box-content-row-flex" appBoxRow>
                     <div class="row-main">
@@ -64,6 +64,18 @@
             </div>
             <div class="box-footer">
                 {{'masterPassHintDesc' | i18n}}
+            </div>
+        </div>
+        <div class="box last" *ngIf="showTerms">
+            <div class="box-footer checkbox">
+                <input type="checkbox" id="acceptPolicies" [(ngModel)]="acceptPolicies" name="AcceptPolicies">
+                <label for="acceptPolicies">
+                    {{'acceptPolicies' | i18n}}<br>
+                    <a href="https://bitwarden.com/terms/" target="_blank"
+                        rel="noopener">{{'termsOfService' | i18n}}</a>,
+                    <a href="https://bitwarden.com/privacy/" target="_blank"
+                        rel="noopener">{{'privacyPolicy' | i18n}}</a>
+                </label>
             </div>
         </div>
         <div class="buttons">

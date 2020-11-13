@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "新しいマスターパスワードは最低要件を満たしていません。"
+  },
+  "acceptPolicies": {
+    "message": "以下に同意しチェックします:"
+  },
+  "acceptPoliciesError": {
+    "message": "利用規約とプライバシーポリシーを確認してください。"
   }
 }

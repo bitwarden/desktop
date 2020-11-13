@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Je nieuwe hoofdwachtwoord voldoet niet aan de beleidseisen."
+  },
+  "acceptPolicies": {
+    "message": "Door dit vakje aan te vinken, ga je akkoord met het volgende:"
+  },
+  "acceptPoliciesError": {
+    "message": "Algemene voorwaarden en privacybeleid zijn nog niet erkend."
   }
 }

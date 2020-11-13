@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "A sua nova senha mestra não cumpre aos requisitos da política."
+  },
+  "acceptPolicies": {
+    "message": "Ao marcar esta caixa, você concorda com o seguinte:"
+  },
+  "acceptPoliciesError": {
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   }
 }

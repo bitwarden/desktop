@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import {
+    Component,
+    OnDestroy,
+    NgZone,
+} from '@angular/core';
 import {
     ActivatedRoute,
     Router,
@@ -15,19 +19,24 @@ import { StorageService } from 'jslib/abstractions/storage.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
+import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+
 import { LockComponent as BaseLockComponent } from 'jslib/angular/components/lock.component';
+
+const BroadcasterSubscriptionId = 'LockComponent';
 
 @Component({
     selector: 'app-lock',
     templateUrl: 'lock.component.html',
 })
-export class LockComponent extends BaseLockComponent {
+export class LockComponent extends BaseLockComponent implements OnDestroy {
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService,
         storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
-        apiService: ApiService, private route: ActivatedRoute) {
+        apiService: ApiService, private route: ActivatedRoute,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
             storageService, vaultTimeoutService, environmentService, stateService, apiService);
     }
@@ -39,5 +48,23 @@ export class LockComponent extends BaseLockComponent {
                 setTimeout(() => this.unlockBiometric(), 1000);
             }
         });
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+            this.ngZone.run(() => {
+                switch (message.command) {
+                    case 'windowHidden':
+                        this.onWindowHidden();
+                        break;
+                    default:
+                }
+            });
+        });
+    }
+
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
+
+    onWindowHidden() {
+        this.showPassword = false;
     }
 }

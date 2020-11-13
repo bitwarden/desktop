@@ -1401,5 +1401,11 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Kata sandi utama Anda yang baru tidak memenuhi persyaratan kebijakan."
+  },
+  "acceptPolicies": {
+    "message": "Dengan mencentang kotak ini, anda menyetujui yang berikut:"
+  },
+  "acceptPoliciesError": {
+    "message": "Persyaratan Layanan dan Kebijakan Privasi belum diakui."
   }
 }
