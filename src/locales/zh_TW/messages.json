@@ -1403,9 +1403,9 @@
     "message": "Your new master password does not meet the policy requirements."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "點擊此選取框，代表您同意下列項目:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "尚未接受服務條款與隱私權保護政策。"
   }
 }
