@@ -1403,9 +1403,9 @@
     "message": "La nova contrasenya principal no compleix els requisits de la política."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Si activeu aquesta casella, indiqueu que esteu d’acord amb el següent:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
   }
 }
