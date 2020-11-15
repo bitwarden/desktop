@@ -25,4 +25,4 @@ $uri = "https://github.com/bitwarden/desktop/releases/download/v" + $version + "
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-RestMethod -Uri $uri -OutFile $distSnap
 
-snapcraft push $distSnap --release stable
+snapcraft upload $distSnap --release stable
