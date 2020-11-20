@@ -51,8 +51,8 @@ export class SettingsComponent implements OnInit {
     supportsBiometric: boolean;
     biometric: boolean;
     biometricText: string;
-    hideDock: boolean;
-    showHideDock: boolean = false;
+    alwaysShowDock: boolean;
+    showAlwaysShowDock: boolean = false;
 
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
@@ -133,8 +133,8 @@ export class SettingsComponent implements OnInit {
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
         this.biometricText = await this.storageService.get<string>(ConstantsService.biometricText);
-        this.hideDock = await this.storageService.get<boolean>(ElectronConstants.hideDock);
-        this.showHideDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
+        this.alwaysShowDock = await this.storageService.get<boolean>(ElectronConstants.alwaysShowDock);
+        this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
     }
 
     async saveVaultTimeoutOptions() {
@@ -281,8 +281,8 @@ export class SettingsComponent implements OnInit {
         });
     }
 
-    async saveHideDock() {
-        await this.storageService.save(ElectronConstants.hideDock, this.hideDock);
+    async saveAlwaysShowDock() {
+        await this.storageService.save(ElectronConstants.alwaysShowDock, this.alwaysShowDock);
     }
 
     private callAnalytics(name: string, enabled: boolean) {

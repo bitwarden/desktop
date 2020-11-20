@@ -128,15 +128,15 @@
                             </div>
                             <small class="help-block">{{'startToTrayDesc' | i18n}}</small>
                         </div>
-                        <div class="form-group" *ngIf="showHideDock">
+                        <div class="form-group" *ngIf="showAlwaysShowDock">
                             <div class="checkbox">
-                                <label for="hideDock">
-                                    <input id="hideDock" type="checkbox" name="HideDock" [(ngModel)]="hideDock"
-                                        (change)="saveHideDock()">
-                                    {{'hideDock' | i18n}}
+                                <label for="alwaysShowDock">
+                                    <input id="alwaysShowDock" type="checkbox" name="AlwaysShowDock" [(ngModel)]="alwaysShowDock"
+                                        (change)="saveAlwaysShowDock()">
+                                    {{'alwaysShowDock' | i18n}}
                                 </label>
                             </div>
-                            <small class="help-block">{{'hideDockDesc' | i18n}}</small>
+                            <small class="help-block">{{'alwaysShowDockDesc' | i18n}}</small>
                         </div>
                         <div class="form-group">
                             <label for="theme">{{'theme' | i18n}}</label>

@@ -870,11 +870,11 @@
   "startToTrayDesc": {
     "message": "When the application is first started, only show an icon in the system tray."
   },
-  "hideDock": {
-    "message": "Hide dock icon"
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
   },
-  "hideDockDesc": {
-    "message": "Hide Bitwarden from the Dock when minimized to the menu bar."
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
   },
   "language": {
     "message": "Language"
