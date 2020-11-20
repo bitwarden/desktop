@@ -46,23 +46,44 @@ export class SettingsComponent implements OnInit {
     themeOptions: any[];
     clearClipboard: number;
     clearClipboardOptions: any[];
-    enableTrayText: string;
-    enableTrayDescText: string;
     supportsBiometric: boolean;
     biometric: boolean;
     biometricText: string;
     alwaysShowDock: boolean;
     showAlwaysShowDock: boolean = false;
 
+    enableTrayText: string;
+    enableTrayDescText: string;
+    enableMinToTrayText: string;
+    enableMinToTrayDescText: string;
+    enableCloseToTrayText: string;
+    enableCloseToTrayDescText: string;
+    startToTrayText: string;
+    startToTrayDescText: string;
+
     constructor(private analytics: Angulartics2, private toasterService: ToasterService,
         private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
-        const trayKey = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop ?
-            'enableMenuBar' : 'enableTray';
+        const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
+        
+        const trayKey = isMac ? 'enableMenuBar' : 'enableTray';
         this.enableTrayText = this.i18nService.t(trayKey);
         this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
+
+        const minToTrayKey = isMac ? 'enableMinToMenuBar' : 'enableMinToTray';
+        this.enableMinToTrayText = this.i18nService.t(minToTrayKey)
+        this.enableMinToTrayDescText = this.i18nService.t(minToTrayKey + 'Desc');
+
+        const closeToTrayKey = isMac ? 'enableCloseToMenuBar' : 'enableCloseToTray';
+        this.enableCloseToTrayText = this.i18nService.t(closeToTrayKey)
+        this.enableCloseToTrayDescText = this.i18nService.t(closeToTrayKey + 'Desc');
+
+        const startToTrayKey = isMac ? 'startToMenuBar' : 'startToTray';
+        this.startToTrayText = this.i18nService.t(startToTrayKey)
+        this.startToTrayDescText = this.i18nService.t(startToTrayKey + 'Desc');
+        
         this.vaultTimeouts = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
@@ -115,7 +136,7 @@ export class SettingsComponent implements OnInit {
     }
 
     async ngOnInit() {
-        this.showMinToTray = this.platformUtilsService.getDevice() === DeviceType.WindowsDesktop;
+        this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
         this.vaultTimeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
         this.vaultTimeoutAction = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
         const pinSet = await this.vaultTimeoutService.isPinLockSet();

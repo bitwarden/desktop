@@ -103,30 +103,30 @@
                                 <label for="enableMinToTray">
                                     <input id="enableMinToTray" type="checkbox" name="EnableMinToTray"
                                         [(ngModel)]="enableMinToTray" (change)="saveMinToTray()">
-                                    {{'enableMinToTray' | i18n}}
+                                    {{enableMinToTrayText}}
                                 </label>
                             </div>
-                            <small class="help-block">{{'enableMinToTrayDesc' | i18n}}</small>
+                            <small class="help-block">{{enableMinToTrayDescText}}</small>
                         </div>
                         <div class="form-group" *ngIf="showMinToTray">
                             <div class="checkbox">
                                 <label for="enableCloseToTray">
                                     <input id="enableCloseToTray" type="checkbox" name="EnableCloseToTray"
                                         [(ngModel)]="enableCloseToTray" (change)="saveCloseToTray()">
-                                    {{'enableCloseToTray' | i18n}}
+                                    {{enableCloseToTrayText}}
                                 </label>
                             </div>
-                            <small class="help-block">{{'enableCloseToTrayDesc' | i18n}}</small>
+                            <small class="help-block">{{enableCloseToTrayDescText}}</small>
                         </div>
                         <div class="form-group" *ngIf="showMinToTray">
                             <div class="checkbox">
                                 <label for="startToTray">
                                     <input id="startToTray" type="checkbox" name="StartToTray" [(ngModel)]="startToTray"
                                         (change)="saveStartToTray()">
-                                    {{'startToTray' | i18n}}
+                                    {{startToTrayText}}
                                 </label>
                             </div>
-                            <small class="help-block">{{'startToTrayDesc' | i18n}}</small>
+                            <small class="help-block">{{startToTrayDescText}}</small>
                         </div>
                         <div class="form-group" *ngIf="showAlwaysShowDock">
                             <div class="checkbox">
