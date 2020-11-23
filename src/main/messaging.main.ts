@@ -44,6 +44,10 @@ export class MessagingMain {
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
                 break;
+            case 'addStartOnLogin':
+                break;
+            case 'removeStartOnLogin':
+                break;
             default:
                 break;
         }

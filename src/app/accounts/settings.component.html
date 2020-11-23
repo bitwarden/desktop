@@ -128,6 +128,16 @@
                             </div>
                             <small class="help-block">{{startToTrayDescText}}</small>
                         </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="startOnLogin">
+                                    <input id="startOnLogin" type="checkbox" name="StartOnLogin" [(ngModel)]="startOnLogin"
+                                        (change)="saveStartOnLogin()">
+                                    {{'startOnLogin' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'startOnLoginDesc' | i18n}}</small>
+                        </div>
                         <div class="form-group" *ngIf="showAlwaysShowDock">
                             <div class="checkbox">
                                 <label for="alwaysShowDock">

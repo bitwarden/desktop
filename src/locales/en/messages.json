@@ -888,6 +888,12 @@
   "startToMenuBarDesc": {
     "message": "When the application is first started, only show an icon in the menu bar."
   },
+  "startOnLogin": {
+    "message": "Start automatically on login"
+  },
+  "startOnLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
   "alwaysShowDock": {
     "message": "Always show in the Dock"
   },

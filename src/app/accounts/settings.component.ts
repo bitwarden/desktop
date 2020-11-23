@@ -51,6 +51,7 @@ export class SettingsComponent implements OnInit {
     biometricText: string;
     alwaysShowDock: boolean;
     showAlwaysShowDock: boolean = false;
+    startOnLogin: boolean;
 
     enableTrayText: string;
     enableTrayDescText: string;
@@ -304,6 +305,10 @@ export class SettingsComponent implements OnInit {
 
     async saveAlwaysShowDock() {
         await this.storageService.save(ElectronConstants.alwaysShowDock, this.alwaysShowDock);
+    }
+
+    async saveStartOnLogin() {
+        this.messagingService.send(this.startOnLogin ? 'addOpenAtLogin' : 'removeOpenAtLogin');
     }
 
     private callAnalytics(name: string, enabled: boolean) {
