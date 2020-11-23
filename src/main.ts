@@ -19,6 +19,7 @@ import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
+import { NativeMessagingProxy } from './proxy/native-messaging-proxy';
 
 export class Main {
     logService: ElectronLogService;
@@ -183,5 +184,11 @@ export class Main {
     }
 }
 
-const main = new Main();
-main.bootstrap();
+console.error(process.argv);
+if (process.argv.some(arg => arg.indexOf('chrome-extension://') !== -1 || arg.indexOf('{') !== -1)) {
+    const proxy = new NativeMessagingProxy();
+    proxy.run();
+} else {
+    const main = new Main();
+    main.bootstrap();
+}

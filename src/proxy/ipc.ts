@@ -6,8 +6,9 @@ ipc.config.retry = 1500;
 ipc.config.logger = console.warn; // Stdout is used for native messaging
 
 export default class IPC {
+    onMessage: (message: object) => void
+
     private connected = false;
-    public onMessage: (message: object) => void
 
     connect() {
         ipc.connectTo('bitwarden', () => {
