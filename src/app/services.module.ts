@@ -97,7 +97,8 @@ const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messa
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
-const cryptoService = new CryptoService(storageService, secureStorageService, cryptoFunctionService, platformUtilsService);
+const cryptoService = new CryptoService(storageService, secureStorageService, cryptoFunctionService,
+    platformUtilsService, logService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
@@ -110,7 +111,7 @@ const cipherService = new CipherService(cryptoService, userService, settingsServ
 const folderService = new FolderService(cryptoService, userService, apiService, storageService,
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
-searchService = new SearchService(cipherService);
+searchService = new SearchService(cipherService, logService);
 const sendService = new SendService(cryptoService, userService, apiService, storageService,
     i18nService, cryptoFunctionService);
 const policyService = new PolicyService(userService, storageService);
@@ -124,11 +125,11 @@ const passwordGenerationService = new PasswordGenerationService(cryptoService, s
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
-    i18nService, platformUtilsService, messagingService, vaultTimeoutService);
+    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService);
 const exportService = new ExportService(folderService, cipherService, apiService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
-    apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }));
+    apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }), logService);
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
 const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
