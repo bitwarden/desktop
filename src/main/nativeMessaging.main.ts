@@ -62,8 +62,14 @@ export class NativeMessagingMain {
             'type': 'stdio',
         }
 
-        const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}}
-        const chromeJson = {...baseJson, ...{ 'allowed_origins': ['chrome-extension://nngceckbapebfimnlniiiahkandclblb/']}}
+        const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}};
+        const chromeJson = {...baseJson, ...{
+            'allowed_origins': [
+                'chrome-extension://nngceckbapebfimnlniiiahkandclblb/',
+                'chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/',
+                'chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/'
+            ]
+        }};
 
         switch (process.platform) {
             case 'win32':
