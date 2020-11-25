@@ -51,7 +51,7 @@ export class SettingsComponent implements OnInit {
     biometricText: string;
     alwaysShowDock: boolean;
     showAlwaysShowDock: boolean = false;
-    startOnLogin: boolean;
+    openAtLogin: boolean;
 
     enableTrayText: string;
     enableTrayDescText: string;
@@ -157,6 +157,7 @@ export class SettingsComponent implements OnInit {
         this.biometricText = await this.storageService.get<string>(ConstantsService.biometricText);
         this.alwaysShowDock = await this.storageService.get<boolean>(ElectronConstants.alwaysShowDock);
         this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
+        this.openAtLogin = await this.storageService.get<boolean>(ElectronConstants.openAtLogin);
     }
 
     async saveVaultTimeoutOptions() {
@@ -307,8 +308,9 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ElectronConstants.alwaysShowDock, this.alwaysShowDock);
     }
 
-    async saveStartOnLogin() {
-        this.messagingService.send(this.startOnLogin ? 'addOpenAtLogin' : 'removeOpenAtLogin');
+    async saveOpenAtLogin() {
+        this.storageService.save(ElectronConstants.openAtLogin, this.openAtLogin);
+        this.messagingService.send(this.openAtLogin ? 'addOpenAtLogin' : 'removeOpenAtLogin');
     }
 
     private callAnalytics(name: string, enabled: boolean) {

@@ -1,4 +1,4 @@
-import { ipcMain } from 'electron';
+import { app, ipcMain } from 'electron';
 
 import { Main } from '../main';
 
@@ -15,6 +15,10 @@ export class MessagingMain {
 
     init() {
         this.scheduleNextSync();
+        if (process.platform !== 'linux') {
+            const loginSettings = app.getLoginItemSettings();
+            this.storageService.save(ElectronConstants.openAtLogin, loginSettings.openAtLogin);
+        }
         ipcMain.on('messagingService', async (event: any, message: any) => this.onMessage(message));
     }
 
@@ -44,9 +48,15 @@ export class MessagingMain {
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
                 break;
-            case 'addStartOnLogin':
+            case 'addOpenAtLogin':
+                if (process.platform !== 'linux') {
+                    app.setLoginItemSettings({openAtLogin: true});
+                }
                 break;
-            case 'removeStartOnLogin':
+            case 'removeOpenAtLogin':
+                if (process.platform !== 'linux') {
+                    app.setLoginItemSettings({openAtLogin: false});
+                }
                 break;
             default:
                 break;
