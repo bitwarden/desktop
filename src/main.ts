@@ -186,6 +186,14 @@ export class Main {
 
 console.error(process.argv);
 if (process.argv.some(arg => arg.indexOf('chrome-extension://') !== -1 || arg.indexOf('{') !== -1)) {
+    app.on('ready', () => {
+        app.dock.hide();
+    });
+    process.stdout.on('error', (e) => {
+        if (e.code === 'EPIPE') {
+            process.exit(0);
+        }
+    });
     const proxy = new NativeMessagingProxy();
     proxy.run();
 } else {

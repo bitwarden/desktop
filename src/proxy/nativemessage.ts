@@ -45,7 +45,12 @@ export default class NativeMessage {
             // The next time we'll need to read the payload size is when all of the data
             // of the current payload has been read (ie. data.length >= payloadSize + 4)
             if (!sizeHasBeenRead()) {
-                payloadSize = stringData.readUInt32LE(0);
+                try {
+                    payloadSize = stringData.readUInt32LE(0);
+                } catch (e) {
+                    console.error(e);
+                    return;
+                }
             }
 
             // If the data we have read so far is >= to the size advertised in the header,
