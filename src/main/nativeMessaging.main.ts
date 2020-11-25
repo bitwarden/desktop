@@ -63,7 +63,7 @@ export class NativeMessagingMain {
         }
 
         const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}}
-        const chromeJson = {...baseJson, ...{ 'allowed_origins': ['chrome-extension://ijeheppnniijonkinoakkofcdhdfojda/']}}
+        const chromeJson = {...baseJson, ...{ 'allowed_origins': ['chrome-extension://nngceckbapebfimnlniiiahkandclblb/']}}
 
         switch (process.platform) {
             case 'win32':
@@ -134,24 +134,14 @@ export class NativeMessagingMain {
     }
 
     private binaryPath() {
-        const isPackaged = process.mainModule.filename.indexOf('app.asar') !== -1;
-
-        if (isPackaged) {
-            const dir = path.join(this.appPath, '..');
-            if (process.platform === 'win32') {
-                return path.join(dir, 'proxy.exe');
-            }
-
-            return path.join(dir, 'proxy');
-        }
-
+        const dir = path.join(this.appPath, '..');
         if (process.platform === 'win32') {
-            return path.join(this.appPath, 'proxies', 'app-win.exe');
+            return path.join(dir, 'native-messaging.bat');
         } else if (process.platform === 'darwin') {
-            return path.join(this.appPath, 'proxies', 'app-macos.exe');
+            return path.join(dir, '..', 'MacOS', 'Bitwarden');
         }
 
-        return path.join(this.appPath, 'proxies', 'app-linux.exe');
+        return path.join(dir, 'proxy');
     }
 
     private async createWindowsRegistry(check: string, location: string, jsonFile: string) {

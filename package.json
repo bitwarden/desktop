@@ -127,6 +127,10 @@
           "filter": [
             "**/*"
           ]
+        },
+        {
+          "from": "resources/native-messaging.bat",
+          "to": "native-messaging.bat"
         }
       ]
     },
