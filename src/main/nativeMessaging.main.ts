@@ -147,7 +147,7 @@ export class NativeMessagingMain {
             return path.join(dir, '..', 'MacOS', 'Bitwarden');
         }
 
-        return path.join(dir, 'proxy');
+        return path.join(dir, '..', 'bitwarden');
     }
 
     private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
