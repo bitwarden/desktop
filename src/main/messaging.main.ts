@@ -17,7 +17,9 @@ export class MessagingMain {
 
     init() {
         this.scheduleNextSync();
-        if (process.platform !== 'linux') {
+        if (process.platform === 'linux') {
+            this.storageService.save(ElectronConstants.openAtLogin, fs.existsSync(this.linuxStartupFile()));
+        } else {
             const loginSettings = app.getLoginItemSettings();
             this.storageService.save(ElectronConstants.openAtLogin, loginSettings.openAtLogin);
         }
@@ -98,6 +100,10 @@ export class MessagingMain {
             StartupNotify=false
             Terminal=false`;
 
+            const dir = path.dirname(this.linuxStartupFile());
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+            }
             fs.writeFileSync(this.linuxStartupFile(), data);
         } else {
             app.setLoginItemSettings({openAtLogin: true});
@@ -106,9 +112,8 @@ export class MessagingMain {
 
     private removeOpenAtLogin() {
         if (process.platform === 'linux') {
-            const file = this.linuxStartupFile();
-            if (fs.existsSync(file)) {
-                fs.unlinkSync(file);
+            if (fs.existsSync(this.linuxStartupFile())) {
+                fs.unlinkSync(this.linuxStartupFile());
             }
         } else {
             app.setLoginItemSettings({openAtLogin: false});
