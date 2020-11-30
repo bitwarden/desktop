@@ -25,7 +25,7 @@ export class NativeMessagingMain {
                     if (msg != null) {
                         this.send(msg, socket);
                     }
-                })
+                });
             });
 
             ipc.server.on('connect', () => {

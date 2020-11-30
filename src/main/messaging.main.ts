@@ -44,6 +44,9 @@ export class MessagingMain {
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
                 break;
+            case 'setFocus':
+                this.setFocus();
+                break;
             case 'enableBrowserIntegration':
                 this.main.nativeMessagingMain.generateManifests();
                 this.main.nativeMessagingMain.listen();
@@ -81,5 +84,10 @@ export class MessagingMain {
         if (lockNowTrayMenuItem != null) {
             lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
         }
+    }
+
+    private setFocus() {
+        this.main.trayMain.restoreFromTray();
+        this.main.windowMain.win.focusOnWebView();
     }
 }

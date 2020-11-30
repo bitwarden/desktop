@@ -3,12 +3,14 @@ import Swal from 'sweetalert2';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 import { LogService } from 'jslib/abstractions/log.service';
+import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { UserService } from 'jslib/abstractions/user.service';
+
 import { Utils } from 'jslib/misc/utils';
 import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { UserService } from 'jslib/abstractions/user.service';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
@@ -17,7 +19,8 @@ export class NativeMessagingService {
     private sharedSecret: any;
 
     constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
-        private platformUtilService: PlatformUtilsService, private logService: LogService, private i18nService: I18nService, private userService: UserService) {
+        private platformUtilService: PlatformUtilsService, private logService: LogService, private i18nService: I18nService,
+        private userService: UserService, private messagingService: MessagingService) {
         ipcRenderer.on('nativeMessaging', async (event: any, message: any) => {
             this.messageHandler(message);
         });
@@ -30,6 +33,8 @@ export class NativeMessagingService {
             const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
             const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), remotePublicKey)).join(' ');
             
+            this.messagingService.send('setFocus');
+
             // Await confirmation that fingerprint is correct
             const submitted = await Swal.fire({
                 title: this.i18nService.t('verifyBrowserTitle'),
