@@ -29,10 +29,10 @@ export class NativeMessagingService {
     private async messageHandler(rawMessage: any) {
 
         // Request to setup secure encryption
-        if (rawMessage.command == 'setupEncryption') {
+        if (rawMessage.command === 'setupEncryption') {
             const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
             const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), remotePublicKey)).join(' ');
-            
+
             this.messagingService.send('setFocus');
 
             // Await confirmation that fingerprint is correct
@@ -45,11 +45,11 @@ export class NativeMessagingService {
                 confirmButtonText: this.i18nService.t('approve'),
                 allowOutsideClick: false,
             });
-            
+
             if (submitted.value !== true) {
                 return;
             }
-            
+
             this.secureCommunication(remotePublicKey);
             return;
         }
