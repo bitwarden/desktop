@@ -1,4 +1,6 @@
-import { ipcMain } from 'electron';
+import { app, ipcMain } from 'electron';
+import * as fs from 'fs';
+import * as path from 'path';
 
 import { Main } from '../main';
 
@@ -15,6 +17,12 @@ export class MessagingMain {
 
     init() {
         this.scheduleNextSync();
+        if (process.platform === 'linux') {
+            this.storageService.save(ElectronConstants.openAtLogin, fs.existsSync(this.linuxStartupFile()));
+        } else {
+            const loginSettings = app.getLoginItemSettings();
+            this.storageService.save(ElectronConstants.openAtLogin, loginSettings.openAtLogin);
+        }
         ipcMain.on('messagingService', async (event: any, message: any) => this.onMessage(message));
     }
 
@@ -44,6 +52,11 @@ export class MessagingMain {
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
                 break;
+            case 'addOpenAtLogin':
+                this.addOpenAtLogin();
+                break;
+            case 'removeOpenAtLogin':
+                this.removeOpenAtLogin();
             case 'setFocus':
                 this.setFocus();
                 break;
@@ -84,6 +97,41 @@ export class MessagingMain {
         if (lockNowTrayMenuItem != null) {
             lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
         }
+    }
+
+    private addOpenAtLogin() {
+        if (process.platform === 'linux') {
+            const data = `[Desktop Entry]
+            Type=Application
+            Version=${app.getVersion()}
+            Name=Bitwarden
+            Comment=Bitwarden startup script
+            Exec=${app.getPath('exe')}
+            StartupNotify=false
+            Terminal=false`;
+
+            const dir = path.dirname(this.linuxStartupFile());
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+            }
+            fs.writeFileSync(this.linuxStartupFile(), data);
+        } else {
+            app.setLoginItemSettings({openAtLogin: true});
+        }
+    }
+
+    private removeOpenAtLogin() {
+        if (process.platform === 'linux') {
+            if (fs.existsSync(this.linuxStartupFile())) {
+                fs.unlinkSync(this.linuxStartupFile());
+            }
+        } else {
+            app.setLoginItemSettings({openAtLogin: false});
+        }
+    }
+
+    private linuxStartupFile(): string {
+        return path.join(app.getPath('home'), '.config', 'autostart', 'bitwarden.desktop');
     }
 
     private setFocus() {
