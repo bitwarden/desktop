@@ -30,7 +30,7 @@ export class MessagingMain {
             case 'minimizeOnCopy':
                 this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey).then(
                     (shouldMinimize) => {
-                        if (shouldMinimize && this.main.windowMain.win != null) {
+                        if (shouldMinimize && this.main.windowMain.win !== null) {
                             this.main.windowMain.win.minimize();
                         }
                     });
@@ -43,6 +43,17 @@ export class MessagingMain {
                 break;
             case 'hideToTray':
                 this.main.trayMain.hideToTray();
+                break;
+            case 'setFocus':
+                this.setFocus();
+                break;
+            case 'enableBrowserIntegration':
+                this.main.nativeMessagingMain.generateManifests();
+                this.main.nativeMessagingMain.listen();
+                break;
+            case 'disableBrowserIntegration':
+                this.main.nativeMessagingMain.removeManifests();
+                this.main.nativeMessagingMain.stop();
                 break;
             default:
                 break;
@@ -73,5 +84,10 @@ export class MessagingMain {
         if (lockNowTrayMenuItem != null) {
             lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
         }
+    }
+
+    private setFocus() {
+        this.main.trayMain.restoreFromTray();
+        this.main.windowMain.win.focusOnWebView();
     }
 }

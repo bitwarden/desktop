@@ -43,6 +43,7 @@
   "exclude": [
     "node_modules",
     "jslib/node_modules",
+    "proxy",
     "dist",
     "dist-safari",
     "jslib/dist",

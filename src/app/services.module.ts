@@ -18,6 +18,7 @@ import { isDev } from 'jslib/electron/utils';
 import { DeviceType } from 'jslib/enums/deviceType';
 
 import { I18nService } from '../services/i18n.service';
+import { NativeMessagingService } from '../services/nativeMessaging.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
@@ -132,6 +133,8 @@ const environmentService = new EnvironmentService(apiService, storageService, no
 const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
     null);
+const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
+    logService, i18nService, userService, messagingService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);
@@ -216,6 +219,7 @@ export function initFactory(): Function {
         { provide: PolicyServiceAbstraction, useValue: policyService },
         { provide: SendServiceAbstraction, useValue: sendService },
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
+        { provide: NativeMessagingService, useValue: nativeMessagingService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
