@@ -33,6 +33,7 @@ export class SettingsComponent implements OnInit {
     vaultTimeoutAction: string;
     pin: boolean = null;
     disableFavicons: boolean = false;
+    enableBrowserIntegration: boolean = false;
     enableMinToTray: boolean = false;
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
@@ -143,6 +144,7 @@ export class SettingsComponent implements OnInit {
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
+        this.enableBrowserIntegration = await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegration);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
@@ -311,6 +313,11 @@ export class SettingsComponent implements OnInit {
     async saveOpenAtLogin() {
         this.storageService.save(ElectronConstants.openAtLogin, this.openAtLogin);
         this.messagingService.send(this.openAtLogin ? 'addOpenAtLogin' : 'removeOpenAtLogin');
+    }
+
+    async saveBrowserIntegration() {
+        await this.storageService.save(ElectronConstants.enableBrowserIntegration, this.enableBrowserIntegration);
+        this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
     }
 
     private callAnalytics(name: string, enabled: boolean) {

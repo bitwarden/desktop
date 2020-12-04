@@ -119,6 +119,19 @@
         "portable",
         "nsis-web",
         "appx"
+      ],
+      "extraResources": [
+        {
+          "from": "node_modules/regedit/vbs",
+          "to": "regedit/vbs",
+          "filter": [
+            "**/*"
+          ]
+        },
+        {
+          "from": "resources/native-messaging.bat",
+          "to": "native-messaging.bat"
+        }
       ]
     },
     "linux": {
@@ -251,13 +264,13 @@
     "electron-notarize": "^0.2.1",
     "electron-rebuild": "^1.9.0",
     "electron-reload": "^1.5.0",
-    "mini-css-extract-plugin": "^0.9.0",
     "file-loader": "^2.0.0",
     "font-awesome": "4.7.0",
     "gulp": "^4.0.0",
     "gulp-google-webfonts": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "ngx-infinite-scroll": "7.0.1",
     "node-abi": "^2.9.0",
     "node-loader": "^0.6.0",
@@ -299,8 +312,10 @@
     "keytar": "4.13.0",
     "lunr": "2.3.3",
     "node-forge": "0.7.6",
+    "node-ipc": "^9.1.1",
     "nord": "0.2.1",
     "papaparse": "4.6.0",
+    "regedit": "^3.0.3",
     "rxjs": "6.6.2",
     "sweetalert2": "9.8.1",
     "tslib": "^2.0.1",
