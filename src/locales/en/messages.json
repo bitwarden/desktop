@@ -1438,7 +1438,6 @@
   "acceptPoliciesError": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
-<<<<<<< HEAD
   "enableBrowserIntegration": {
     "message": "Enable browser integration"
   },
@@ -1453,9 +1452,8 @@
   },
   "verifyBrowserDescription": {
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
-=======
+  },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership Option to an organization and choose from available Collections."
->>>>>>> Initial commit of personal ownership
   }
 }
