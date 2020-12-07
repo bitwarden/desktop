@@ -69,7 +69,7 @@ export class SettingsComponent implements OnInit {
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
-        
+
         const trayKey = isMac ? 'enableMenuBar' : 'enableTray';
         this.enableTrayText = this.i18nService.t(trayKey);
         this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
@@ -85,7 +85,7 @@ export class SettingsComponent implements OnInit {
         const startToTrayKey = isMac ? 'startToMenuBar' : 'startToTray';
         this.startToTrayText = this.i18nService.t(startToTrayKey)
         this.startToTrayDescText = this.i18nService.t(startToTrayKey + 'Desc');
-        
+
         this.vaultTimeouts = [
             // { name: i18nService.t('immediately'), value: 0 },
             { name: i18nService.t('oneMinute'), value: 1 },
@@ -144,7 +144,8 @@ export class SettingsComponent implements OnInit {
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
-        this.enableBrowserIntegration = await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegration);
+        this.enableBrowserIntegration = await this.storageService.get<boolean>(
+            ElectronConstants.enableBrowserIntegration);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
@@ -317,7 +318,8 @@ export class SettingsComponent implements OnInit {
 
     async saveBrowserIntegration() {
         await this.storageService.save(ElectronConstants.enableBrowserIntegration, this.enableBrowserIntegration);
-        this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
+        this.messagingService.send(
+            this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
     }
 
     private callAnalytics(name: string, enabled: boolean) {
