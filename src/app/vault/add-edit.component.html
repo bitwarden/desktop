@@ -311,7 +311,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box" *ngIf="(!editMode || cloneMode) && ownershipOptions && ownershipOptions.length > 1">
+            <div class="box" *ngIf="allowOwnershipOptions()">
                 <div class="box-header">
                     {{'ownership' | i18n}}
                 </div>
