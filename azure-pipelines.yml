@@ -21,4 +21,7 @@ steps:
 - script: |
     npm run build
     npm npm run clean:dist
-    electron-builder --win --x64 --ia32 -p never
+  displayName: 'npm build'
+
+- script: electron-builder --win --x64 --ia32 -p never
+  displayName: 'electron-builder package'
