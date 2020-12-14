@@ -37,10 +37,10 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: 'dist/Bitwarden-1.23.1-ia32.appx'
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-1.23.1-ia32.appx'
     artifactName: Bitwarden-$(GIT_COMMIT_TO_BUILD)-ia32.appx
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: 'dist/Bitwarden-1.23.1-x64.appx'
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-1.23.1-x64.appx'
     artifactName: Bitwarden-$(GIT_COMMIT_TO_BUILD)-x64.appx
