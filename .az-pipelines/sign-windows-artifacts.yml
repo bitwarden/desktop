@@ -6,6 +6,8 @@ pool:
 steps:
 - task: DownloadGitHubRelease@0
   inputs:
+    connection: joseph-flinn
+    userRepository: joseph-flinn/desktop
 
   displayName: 'Git Release Artifacts'
 
