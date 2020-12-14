@@ -1,0 +1,15 @@
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: DownloadGitHubRelease@0
+  inputs:
+
+  displayName: 'Git Release Artifacts'
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
