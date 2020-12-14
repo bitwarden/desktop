@@ -9,11 +9,16 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+variables:
+- group: qa-envs
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+
+- checkout: $(GIT_COMMIT_TO_BUILD)
   
 - script: npm install
   displayName: 'npm install'
@@ -31,10 +36,10 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)/dist/Bitwarden-1.23.1-ia32.appx'
-    artifactName: Bitwarden-1.23.1-ia32.appx
+    pathToPublish: 'dist/Bitwarden-1.23.1-ia32.appx'
+    artifactName: Bitwarden-$(GIT_COMMIT_TO_BUILD)-ia32.appx
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)/dist/Bitwarden-1.23.1-x64.appx'
-    artifactName: Bitwarden-1.23.1-x64.appx
+    pathToPublish: 'dist/Bitwarden-1.23.1-x64.appx'
+    artifactName: Bitwarden-$(GIT_COMMIT_TO_BUILD)-x64.appx
