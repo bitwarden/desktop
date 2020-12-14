@@ -109,12 +109,12 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
 
-      - name: Deploy to Snap Store
-        if: github.event_name == 'release'
-        run: |
-          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
-          snapcraft logout
-        shell: pwsh
+      #- name: Deploy to Snap Store
+      #  if: github.event_name == 'release'
+      #  run: |
+      #    ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+      #    snapcraft logout
+      #  shell: pwsh
 
   windows:
     runs-on: windows-latest
@@ -197,10 +197,10 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
 
-      - name: Deploy to Chocolatey
-        if: github.event_name == 'release'
-        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
-        shell: pwsh
+      # - name: Deploy to Chocolatey
+      #   if: github.event_name == 'release'
+      #   run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+      #   shell: pwsh
 
       - name: Upload Chocolatey nupkg artifact
         if: github.event_name == 'release'
@@ -350,12 +350,12 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
 
-      - name: Deploy to App Store
-        if: github.event_name == 'release'
-        run: npm run upload:mas
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+      # - name: Deploy to App Store
+      #   if: github.event_name == 'release'
+      #   run: npm run upload:mas
+      #   env:
+      #     APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+      #     APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload release assets
         if: github.event_name == 'release'
