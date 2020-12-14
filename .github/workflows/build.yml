@@ -202,18 +202,18 @@ jobs:
       #   run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
       #   shell: pwsh
 
-      - name: Upload Chocolatey nupkg artifact
-        if: github.event_name == 'release'
-        uses: actions/upload-artifact@v2
-        with:
-          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+      # - name: Upload Chocolatey nupkg artifact
+      #   if: github.event_name == 'release'
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+      #     path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
       - name: Upload release assets
         if: github.event_name == 'release'
         run: |
           hub release edit `
-            -a ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg `
+            #-a ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg `
             -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
             -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
             -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
