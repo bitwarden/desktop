@@ -18,7 +18,8 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- checkout: $(GIT_COMMIT_TO_BUILD)
+- script: git checkout $(GIT_COMMIT_TO_BUILD)
+  displayName: setup commit to build
   
 - script: npm install
   displayName: 'npm install'
