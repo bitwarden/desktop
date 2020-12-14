@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- main
+- none
 
 pool:
   vmImage: 'windows-latest'
@@ -35,12 +35,12 @@ steps:
 - script: ls -alht dist
   displayName: show executables
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifacts@1
   inputs:
     pathToPublish: 'dist/Bitwarden-1.23.1-ia32.appx'
     artifactName: Bitwarden-$(GIT_COMMIT_TO_BUILD)-ia32.appx
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifacts@1
   inputs:
     pathToPublish: 'dist/Bitwarden-1.23.1-x64.appx'
     artifactName: Bitwarden-$(GIT_COMMIT_TO_BUILD)-x64.appx
