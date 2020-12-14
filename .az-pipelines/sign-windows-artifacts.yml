@@ -8,10 +8,15 @@ steps:
   inputs:
     connection: joseph-flinn
     userRepository: joseph-flinn/desktop
+  displayName: 'git release artifacts'
 
-  displayName: 'Git Release Artifacts'
+- script: ls -alh
+  displayName: 'show artifacts'
 
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    echo 'Signing artifacts'
+  displayName: 'sign artifacts'
+
+- script: |
+    echo 'Publishing artifacts'
+  displayName: 'publish artifacts'
