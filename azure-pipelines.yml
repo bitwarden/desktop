@@ -18,9 +18,6 @@ steps:
 - script: npm install
   displayName: 'npm install'
 
-- script: ls -alht node_modules/.bin/
-  displayName: show node scripts
-
 - script: |
     npm run build
     npm npm run clean:dist
@@ -28,3 +25,12 @@ steps:
 
 - script: npx electron-builder --win --x64 --ia32 -p never
   displayName: 'electron-builder package'
+
+- script: ls -alht dist
+  displayName: show executables
+
+  #- task: PublishBuildArtifacts@1
+  #  inputs:
+  #    pathToPublish: '$(Build.ArtifactStagingDirectory)/'
+  #    artifactName: TestDesktop
+
