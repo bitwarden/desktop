@@ -213,7 +213,6 @@ jobs:
         if: github.event_name == 'release'
         run: |
           hub release edit `
-            #-a ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg `
             -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
             -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
             -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
