@@ -10,7 +10,7 @@ steps:
     userRepository: joseph-flinn/desktop
   displayName: 'git release artifacts'
 
-- script: ls -alh
+- script: ls -alh $(System.ArtifactsDirectory)
   displayName: 'show artifacts'
 
 - script: |
