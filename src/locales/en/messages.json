@@ -900,6 +900,12 @@
   "alwaysShowDockDesc": {
     "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
   },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
+  },
   "language": {
     "message": "Language"
   },
