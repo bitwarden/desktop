@@ -275,6 +275,7 @@ export class SettingsComponent implements OnInit {
     async saveCloseToTray() {
         if (this.requireEnableTray) {
             this.enableTray = true;
+            await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
         }
 
         await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
@@ -289,7 +290,9 @@ export class SettingsComponent implements OnInit {
 
             if (confirm) {
                 this.startToTray = false;
+                await this.storageService.save(ElectronConstants.enableStartToTrayKey, this.startToTray);
                 this.enableCloseToTray = false;
+                await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
             } else {
                 this.enableTray = true;
             }
@@ -305,6 +308,7 @@ export class SettingsComponent implements OnInit {
     async saveStartToTray() {
         if (this.requireEnableTray) {
             this.enableTray = true;
+            await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
         }
 
         await this.storageService.save(ElectronConstants.enableStartToTrayKey, this.startToTray);
