@@ -18,11 +18,11 @@ steps:
   displayName: 'git release artifacts'
 
 - bash: |
-    GIT_RELEASE_VERSION=$(curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+    GIT_RELEASE_VERSION=$(curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")') 
     echo "##vso[task.setvariable variable=git_release_version]$GIT_RELEASE_VERSION"
   displayName: 'set git_release_version'
 
-- bash: |
+- script: |
     ls -alh $(System.ArtifactsDirectory)
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
