@@ -27,7 +27,7 @@ steps:
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
-- script: AzureSignTool --help
+- script: azuresigntool sign --help
   displayName: 'Debugging AST'
 
 - task: CmdLine@2
