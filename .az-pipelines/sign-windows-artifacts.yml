@@ -5,7 +5,7 @@ pool:
 
 variables:
 - name: GIT_RELEASE_VERSION
-  value: curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'
+  value: $[ curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")' ]
 
 steps:
 - task: DotNetCoreCLI@2
