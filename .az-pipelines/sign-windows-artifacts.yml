@@ -3,6 +3,9 @@ trigger: none
 pool:
   vmImage: 'windows-latest'
 
+variables:
+- group: code-signing-test
+
 steps:
 - task: DotNetCoreCLI@2
   inputs:
