@@ -11,6 +11,9 @@ steps:
     arguments: 'install --global azuresigntool'
   displayName: 'install AzureSignTool'
 
+- script: azuresigntool sign --help
+  displayName: 'Debugging AST'
+
 - task: DownloadGitHubRelease@0
   inputs:
     connection: joseph-flinn
@@ -27,19 +30,9 @@ steps:
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
-- script: azuresigntool sign --help
-  displayName: 'Debugging AST'
-
-- task: CmdLine@2
+- script: azuresigntool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v -ifl "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
   displayName: 'Sign artifacts'
-  inputs:
-    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v -ifl "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
 
-
-- task: CmdLine@2
-  displayName: 'Sign ...-x64.appx artifacts'
-  inputs:
-    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v 
 - task: PublishPipelineArtifact@1
   inputs:
     pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-ia32.appx'
