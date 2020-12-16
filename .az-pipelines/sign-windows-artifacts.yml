@@ -3,20 +3,39 @@ trigger: none
 pool:
   vmImage: 'windows-latest'
 
+variables:
+- name: GIT_RELEASE_VERSION
+  value: curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")'
+
 steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
+    arguments: 'install --global azuresigntool'
+  displayName: 'install AzureSignTool'
+
 - task: DownloadGitHubRelease@0
   inputs:
     connection: joseph-flinn
     userRepository: joseph-flinn/desktop
   displayName: 'git release artifacts'
 
-- script: ls -alh $(System.ArtifactsDirectory)
+- script: |
+    ls -alh $(System.ArtifactsDirectory)
+    echo GIT_RELEASE_VERSION=$GIT_RELEASE_VERSION
   displayName: 'show artifacts'
 
-- script: |
-    echo 'Signing artifacts'
-  displayName: 'sign artifacts'
-
-- script: |
-    echo 'Publishing artifacts'
-  displayName: 'publish artifacts'
+#- task: CmdLine@2
+#  displayName: 'Sign *.appx artifacts'
+#  inputs:
+#    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v "$(System.ArtifactsDirectory)\\*"
+#
+#- task: PublishPipelinArtifact@1
+#  inputs:
+#    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(GIT_RELEASE_VERSION)-ia32.appx'
+#    artifactName: 'Bitwarden-$(GIT_RELEASE_VERSION)-ia32.appx'
+#
+#- task: PublishPipelinArtifact@1
+#  inputs:
+#    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(GIT_RELEASE_VERSION)-x64.appx'
+#    artifactName: 'Bitwarden-$(GIT_RELEASE_VERSION)-x64.appx'
