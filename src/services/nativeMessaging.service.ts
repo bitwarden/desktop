@@ -8,6 +8,7 @@ import { LogService } from 'jslib/abstractions/log.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { UserService } from 'jslib/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { Utils } from 'jslib/misc/utils';
 import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
@@ -20,7 +21,7 @@ export class NativeMessagingService {
 
     constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
         private platformUtilService: PlatformUtilsService, private logService: LogService, private i18nService: I18nService,
-        private userService: UserService, private messagingService: MessagingService) {
+        private userService: UserService, private messagingService: MessagingService, private vaultTimeoutService: VaultTimeoutService) {
         ipcRenderer.on('nativeMessaging', async (event: any, message: any) => {
             this.messageHandler(message);
         });
@@ -40,7 +41,7 @@ export class NativeMessagingService {
             // Await confirmation that fingerprint is correct
             const submitted = await Swal.fire({
                 title: this.i18nService.t('verifyBrowserTitle'),
-                html: `${this.i18nService.t('verifyBrowserDescription')}<br><br><strong>${fingerprint}</strong>`,
+                html: `${this.i18nService.t('verifyBrowserDesc')}<br><br><strong>${fingerprint}</strong>`,
                 showCancelButton: true,
                 cancelButtonText: this.i18nService.t('cancel'),
                 showConfirmButton: true,
@@ -73,6 +74,18 @@ export class NativeMessagingService {
             case 'biometricUnlock':
                 if (! this.platformUtilService.supportsBiometric()) {
                     return this.send({command: 'biometricUnlock', response: 'not supported'}, appId);
+                }
+
+                if (! await this.vaultTimeoutService.isBiometricLockSet()) {
+                    this.send({command: 'biometricUnlock', response: 'not enabled'}, appId);
+
+                    return await Swal.fire({
+                        title: this.i18nService.t('biometricsNotEnabledTitle'),
+                        text: this.i18nService.t('biometricsNotEnabledDesc'),
+                        showCancelButton: true,
+                        cancelButtonText: this.i18nService.t('cancel'),
+                        showConfirmButton: false,
+                    });
                 }
 
                 const response = await this.platformUtilService.authenticateBiometric();
