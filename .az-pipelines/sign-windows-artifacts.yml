@@ -24,7 +24,7 @@ steps:
 
 - script: |
     ls -alh $(System.ArtifactsDirectory)
-    echo GIT_RELEASE_VERSION=$GIT_RELEASE_VERSION
+    echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
 #- task: CmdLine@2
