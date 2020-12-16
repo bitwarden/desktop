@@ -7,6 +7,7 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'custom'
+    custom: 'tool'
     arguments: 'install --global azuresigntool'
   displayName: 'install AzureSignTool'
 
@@ -19,6 +20,7 @@ steps:
 - bash: |
     GIT_RELEASE_VERSION=$(curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
     echo "##vso[task.setvariable variable=git_release_version]$GIT_RELEASE_VERSION"
+  displayName: 'set git_release_version'
 
 - script: |
     ls -alh $(System.ArtifactsDirectory)
