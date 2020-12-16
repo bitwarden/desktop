@@ -102,13 +102,13 @@ export class MessagingMain {
     private addOpenAtLogin() {
         if (process.platform === 'linux') {
             const data = `[Desktop Entry]
-            Type=Application
-            Version=${app.getVersion()}
-            Name=Bitwarden
-            Comment=Bitwarden startup script
-            Exec=${app.getPath('exe')}
-            StartupNotify=false
-            Terminal=false`;
+Type=Application
+Version=${app.getVersion()}
+Name=Bitwarden
+Comment=Bitwarden startup script
+Exec=${app.getPath('exe')}
+StartupNotify=false
+Terminal=false`;
 
             const dir = path.dirname(this.linuxStartupFile());
             if (!fs.existsSync(dir)) {
