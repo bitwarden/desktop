@@ -1447,6 +1447,12 @@
   "enableBrowserIntegrationDesc": {
     "message": "Browser integration is used for biometrics in browser."
   },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
   "approve": {
     "message": "Approve"
   },

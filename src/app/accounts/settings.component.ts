@@ -317,9 +317,18 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveBrowserIntegration() {
+        if (process.platform ==='darwin' && !this.platformUtilsService.isMacAppStore()) {
+            await this.platformUtilsService.showDialog(
+                this.i18nService.t('browserIntegrationMasOnlyDesc'),
+                this.i18nService.t('browserIntegrationMasOnlyTitle'),
+                this.i18nService.t('ok'), null, 'warning');
+            
+            this.enableBrowserIntegration = false;
+            return;
+        }
+
         await this.storageService.save(ElectronConstants.enableBrowserIntegration, this.enableBrowserIntegration);
-        this.messagingService.send(
-            this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
+        this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
     }
 
     private callAnalytics(name: string, enabled: boolean) {
