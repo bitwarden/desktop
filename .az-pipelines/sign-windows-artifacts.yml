@@ -28,7 +28,12 @@ steps:
   displayName: 'show artifacts'
 
 - task: CmdLine@2
-  displayName: 'Sign ...-ia32.appx artifacts'
+  displayName: 'Debugging AST'
+  inputs:
+    script: AzureSignTool --help
+
+- task: CmdLine@2
+  displayName: 'Sign artifacts'
   inputs:
     script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v -ifl "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
 
