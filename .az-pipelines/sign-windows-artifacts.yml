@@ -3,9 +3,6 @@ trigger: none
 pool:
   vmImage: 'windows-latest'
 
-variables:
-  gitReleaseVersion: $[ curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")' ]
-
 steps:
 - task: DotNetCoreCLI@2
   inputs:
@@ -18,6 +15,10 @@ steps:
     connection: joseph-flinn
     userRepository: joseph-flinn/desktop
   displayName: 'git release artifacts'
+
+- bash: |
+    GIT_RELEASE_VERSION=$(curl --silent "https://api.github.com/repos/joseph-flinn/desktop/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+    echo "##vso[task.setvariable variable=git_release_version]$GIT_RELEASE_VERSION"
 
 - script: |
     ls -alh $(System.ArtifactsDirectory)
