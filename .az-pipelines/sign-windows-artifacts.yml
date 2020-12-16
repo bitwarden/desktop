@@ -30,15 +30,13 @@ steps:
 - task: CmdLine@2
   displayName: 'Sign ...-ia32.appx artifacts'
   inputs:
-    script: AzureSignTool sign -du "$(SigningURL)" \
-      -kvu "$(SigningVaultURL)" \
-      -kvi "$(SigningClientId)" \
-      -kvs "$(SigningClientSecret)" \
-      -kvc "$(SigningCertName)" \
-      -v \
-      -ifl "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" \
-      "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
+    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v -ifl "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
 
+
+- task: CmdLine@2
+  displayName: 'Sign ...-x64.appx artifacts'
+  inputs:
+    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v 
 - task: PublishPipelineArtifact@1
   inputs:
     pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-ia32.appx'
