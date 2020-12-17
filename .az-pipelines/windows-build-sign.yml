@@ -26,7 +26,7 @@ steps:
   displayName: 'npm build'
 
 # This task is not working...
-- script: npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden\ Inc\"
+- script: npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
   displayName: 'electron-builder package'
   env:
     CSC_LINK: $(ebSigningCertIdentifierURL)
