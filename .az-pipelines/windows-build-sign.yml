@@ -8,6 +8,9 @@ trigger: none
 pool:
   vmImage: 'windows-latest'
 
+variables:
+- group: code-signing-test
+
 steps:
 - task: NodeTool@0
   inputs:
@@ -22,8 +25,11 @@ steps:
     npm npm run clean:dist
   displayName: 'npm build'
 
-- script: npx electron-builder --win --x64 --ia32 -p never
+- script: npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName="Bitwarden Inc"
   displayName: 'electron-builder package'
+  env:
+    CSC_LINK: $(ebSigningCertIdentifierURL)
+    CSC_KEY_PASSWORD: $(ebSigningCertKey)
 
 - script: ls -alht dist
   displayName: show executables
