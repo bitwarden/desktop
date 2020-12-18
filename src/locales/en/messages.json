@@ -1453,6 +1453,12 @@
   "browserIntegrationMasOnlyDesc": {
     "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
   },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
   "approve": {
     "message": "Approve"
   },

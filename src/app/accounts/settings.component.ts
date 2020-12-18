@@ -34,6 +34,7 @@ export class SettingsComponent implements OnInit {
     pin: boolean = null;
     disableFavicons: boolean = false;
     enableBrowserIntegration: boolean = false;
+    enableBrowserIntegrationFingerprint: boolean = false;
     enableMinToTray: boolean = false;
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
@@ -146,6 +147,7 @@ export class SettingsComponent implements OnInit {
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableBrowserIntegration = await this.storageService.get<boolean>(
             ElectronConstants.enableBrowserIntegration);
+        this.enableBrowserIntegrationFingerprint = await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegrationFingerprint);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
@@ -329,6 +331,15 @@ export class SettingsComponent implements OnInit {
 
         await this.storageService.save(ElectronConstants.enableBrowserIntegration, this.enableBrowserIntegration);
         this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
+
+        if (!this.enableBrowserIntegration) {
+            this.enableBrowserIntegrationFingerprint = false;
+            this.saveBrowserIntegrationFingerprint();
+        }
+    }
+
+    async saveBrowserIntegrationFingerprint() {
+        await this.storageService.save(ElectronConstants.enableBrowserIntegrationFingerprint, this.enableBrowserIntegrationFingerprint);
     }
 
     private callAnalytics(name: string, enabled: boolean) {

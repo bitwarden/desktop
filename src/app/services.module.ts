@@ -135,7 +135,7 @@ const eventService = new EventService(storageService, apiService, userService, c
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
-    logService, i18nService, userService, messagingService, vaultTimeoutService);
+    logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);

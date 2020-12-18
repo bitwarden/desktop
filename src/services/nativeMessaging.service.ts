@@ -12,6 +12,8 @@ import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { Utils } from 'jslib/misc/utils';
 import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
+import { StorageService } from 'jslib/abstractions';
+import { ElectronConstants } from 'jslib/electron/electronConstants';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
@@ -21,7 +23,7 @@ export class NativeMessagingService {
 
     constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
         private platformUtilService: PlatformUtilsService, private logService: LogService, private i18nService: I18nService,
-        private userService: UserService, private messagingService: MessagingService, private vaultTimeoutService: VaultTimeoutService) {
+        private userService: UserService, private messagingService: MessagingService, private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService) {
         ipcRenderer.on('nativeMessaging', async (event: any, message: any) => {
             this.messageHandler(message);
         });
@@ -34,25 +36,30 @@ export class NativeMessagingService {
         // Request to setup secure encryption
         if (rawMessage.command === 'setupEncryption') {
             const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
-            const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), remotePublicKey)).join(' ');
 
-            this.messagingService.send('setFocus');
+            if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegrationFingerprint)) {
+                ipcRenderer.send('nativeMessagingReply', {command: 'verifyFingerprint', appId: appId});
 
-            // Await confirmation that fingerprint is correct
-            const submitted = await Swal.fire({
-                title: this.i18nService.t('verifyBrowserTitle'),
-                html: `${this.i18nService.t('verifyBrowserDesc')}<br><br><strong>${fingerprint}</strong>`,
-                showCancelButton: true,
-                cancelButtonText: this.i18nService.t('cancel'),
-                showConfirmButton: true,
-                confirmButtonText: this.i18nService.t('approve'),
-                allowOutsideClick: false,
-            });
+                const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), remotePublicKey)).join(' ');
 
-            if (submitted.value !== true) {
-                return;
+                this.messagingService.send('setFocus');
+
+                // Await confirmation that fingerprint is correct
+                const submitted = await Swal.fire({
+                    title: this.i18nService.t('verifyBrowserTitle'),
+                    html: `${this.i18nService.t('verifyBrowserDesc')}<br><br><strong>${fingerprint}</strong>`,
+                    showCancelButton: true,
+                    cancelButtonText: this.i18nService.t('cancel'),
+                    showConfirmButton: true,
+                    confirmButtonText: this.i18nService.t('approve'),
+                    allowOutsideClick: false,
+                });
+
+                if (submitted.value !== true) {
+                    return;
+                }
             }
-
+            
             this.secureCommunication(remotePublicKey, appId);
             return;
         }
