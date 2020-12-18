@@ -97,6 +97,7 @@ export class MessagingMain {
         if (lockNowTrayMenuItem != null) {
             lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
         }
+        this.main.trayMain.updateContextMenu();
     }
 
     private addOpenAtLogin() {
