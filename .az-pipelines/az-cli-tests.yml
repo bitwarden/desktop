@@ -1,0 +1,18 @@
+trigger: none
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+- group: sub-secrets
+
+steps:
+- task: AzureCLI@2
+  displayName: Azure CLI KV Test
+  inputs:
+    azureSubscription: '$(subscription-id)'
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      az --verison
+      az account show
