@@ -221,6 +221,7 @@
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     },
     "snap": {
+      "autoStart": true,
       "confinement": "strict",
       "plugs": [
         "default",

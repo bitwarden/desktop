@@ -54,6 +54,7 @@ export class SettingsComponent implements OnInit {
     alwaysShowDock: boolean;
     showAlwaysShowDock: boolean = false;
     openAtLogin: boolean;
+    requireEnableTray: boolean = false;
 
     enableTrayText: string;
     enableTrayDescText: string;
@@ -70,6 +71,9 @@ export class SettingsComponent implements OnInit {
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
+
+        // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
+        this.requireEnableTray = this.platformUtilsService.getDevice() === DeviceType.LinuxDesktop;
 
         const trayKey = isMac ? 'enableMenuBar' : 'enableTray';
         this.enableTrayText = this.i18nService.t(trayKey);
@@ -271,17 +275,44 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveCloseToTray() {
+        if (this.requireEnableTray) {
+            this.enableTray = true;
+            await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
+        }
+
         await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
         this.callAnalytics('CloseToTray', this.enableCloseToTray);
     }
 
     async saveTray() {
+        if (this.requireEnableTray && !this.enableTray && (this.startToTray || this.enableCloseToTray)) {
+            const confirm = await this.platformUtilsService.showDialog(
+                this.i18nService.t('confirmTrayDesc'), this.i18nService.t('confirmTrayTitle'),
+                this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
+
+            if (confirm) {
+                this.startToTray = false;
+                await this.storageService.save(ElectronConstants.enableStartToTrayKey, this.startToTray);
+                this.enableCloseToTray = false;
+                await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
+            } else {
+                this.enableTray = true;
+            }
+
+            return;
+        }
+
         await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
         this.callAnalytics('Tray', this.enableTray);
         this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
     }
 
     async saveStartToTray() {
+        if (this.requireEnableTray) {
+            this.enableTray = true;
+            await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
+        }
+
         await this.storageService.save(ElectronConstants.enableStartToTrayKey, this.startToTray);
         this.callAnalytics('StartToTray', this.startToTray);
     }

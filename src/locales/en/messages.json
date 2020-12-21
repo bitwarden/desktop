@@ -900,6 +900,12 @@
   "alwaysShowDockDesc": {
     "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
   },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
+  },
   "language": {
     "message": "Language"
   },
@@ -1476,5 +1482,8 @@
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
   }
 }
