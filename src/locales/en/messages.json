@@ -1478,7 +1478,7 @@
     "message": "Biometrics not enabled"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometric requires desktop biometric to be enabled in the settings first."
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
