@@ -59,7 +59,7 @@ export class NativeMessagingService {
                     return;
                 }
             }
-            
+
             this.secureCommunication(remotePublicKey, appId);
             return;
         }

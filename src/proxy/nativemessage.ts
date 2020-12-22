@@ -85,7 +85,7 @@ export default class NativeMessage {
 
             try {
                 processData();
-            } catch(e) {
+            } catch (e) {
                 console.error(e);
             }
         });

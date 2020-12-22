@@ -350,12 +350,12 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveBrowserIntegration() {
-        if (process.platform ==='darwin' && !this.platformUtilsService.isMacAppStore()) {
+        if (process.platform === 'darwin' && !this.platformUtilsService.isMacAppStore()) {
             await this.platformUtilsService.showDialog(
                 this.i18nService.t('browserIntegrationMasOnlyDesc'),
                 this.i18nService.t('browserIntegrationMasOnlyTitle'),
                 this.i18nService.t('ok'), null, 'warning');
-            
+
             this.enableBrowserIntegration = false;
             return;
         }
