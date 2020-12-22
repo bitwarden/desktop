@@ -34,6 +34,7 @@ export class SettingsComponent implements OnInit {
     pin: boolean = null;
     disableFavicons: boolean = false;
     enableBrowserIntegration: boolean = false;
+    enableBrowserIntegrationFingerprint: boolean = false;
     enableMinToTray: boolean = false;
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
@@ -150,6 +151,7 @@ export class SettingsComponent implements OnInit {
         this.disableFavicons = await this.storageService.get<boolean>(ConstantsService.disableFaviconKey);
         this.enableBrowserIntegration = await this.storageService.get<boolean>(
             ElectronConstants.enableBrowserIntegration);
+        this.enableBrowserIntegrationFingerprint = await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegrationFingerprint);
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
@@ -348,9 +350,27 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveBrowserIntegration() {
+        if (process.platform ==='darwin' && !this.platformUtilsService.isMacAppStore()) {
+            await this.platformUtilsService.showDialog(
+                this.i18nService.t('browserIntegrationMasOnlyDesc'),
+                this.i18nService.t('browserIntegrationMasOnlyTitle'),
+                this.i18nService.t('ok'), null, 'warning');
+            
+            this.enableBrowserIntegration = false;
+            return;
+        }
+
         await this.storageService.save(ElectronConstants.enableBrowserIntegration, this.enableBrowserIntegration);
-        this.messagingService.send(
-            this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
+        this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
+
+        if (!this.enableBrowserIntegration) {
+            this.enableBrowserIntegrationFingerprint = false;
+            this.saveBrowserIntegrationFingerprint();
+        }
+    }
+
+    async saveBrowserIntegrationFingerprint() {
+        await this.storageService.save(ElectronConstants.enableBrowserIntegrationFingerprint, this.enableBrowserIntegrationFingerprint);
     }
 
     private callAnalytics(name: string, enabled: boolean) {

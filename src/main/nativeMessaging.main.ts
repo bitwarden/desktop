@@ -10,6 +10,7 @@ import { WindowMain } from 'jslib/electron/window.main';
 
 export class NativeMessagingMain {
     private connected = false;
+    private socket: any;
 
     constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private appPath: string) {}
 
@@ -19,14 +20,15 @@ export class NativeMessagingMain {
 
         ipc.serve(() => {
             ipc.server.on('message', (data: any, socket: any) => {
-                // This is a ugly hack until electron is updated 7.0.0 which supports ipcMain.invoke
+                this.socket = socket;
                 this.windowMain.win.webContents.send('nativeMessaging', data);
-                ipcMain.once('nativeMessagingReply', (event, msg) => {
-                    if (msg != null) {
-                        this.send(msg, socket);
-                    }
-                });
             });
+
+            ipcMain.on('nativeMessagingReply', (event, msg) => {
+                if (this.socket != null && msg != null) {
+                    this.send(msg, this.socket);
+                }
+            })
 
             ipc.server.on('connect', () => {
                 this.connected = true;
@@ -36,6 +38,7 @@ export class NativeMessagingMain {
                 'socket.disconnected',
                 (socket: any, destroyedSocketID: any) => {
                     this.connected = false;
+                    this.socket = null;
                     ipc.log(
                         'client ' + destroyedSocketID + ' has disconnected!'
                     );

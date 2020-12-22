@@ -114,7 +114,7 @@ export class Main {
 
         if (process.platform === 'win32') {
             const BiometricWindowsMain = require('jslib/electron/biometric.windows.main').default;
-            this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService);
+            this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService, this.windowMain);
         } else if (process.platform === 'darwin') {
             const BiometricDarwinMain = require('jslib/electron/biometric.darwin.main').default;
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
