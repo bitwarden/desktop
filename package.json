@@ -57,6 +57,7 @@
   },
   "build": {
     "appId": "com.bitwarden.desktop",
+    "buildDependenciesFromSource": true,
     "copyright": "Copyright © 2015-2020 Bitwarden Inc.",
     "directories": {
       "buildResources": "resources",
