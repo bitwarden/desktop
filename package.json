@@ -30,7 +30,7 @@
     "lint:fix": "tslint src/**/*.ts --fix",
     "build": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main\" \"npm run build:renderer\"",
     "build:main": "webpack --config webpack.main.js",
-    "build:renderer":       "gulp prebuild:renderer && webpack --config webpack.renderer.js",
+    "build:renderer": "gulp prebuild:renderer && webpack --config webpack.renderer.js",
     "build:renderer:watch": "gulp prebuild:renderer && webpack --config webpack.renderer.js --watch",
     "build:browser:watch": "gulp prebuild:renderer && webpack --config webpack.browser.js --watch",
     "build:browser_in_electron:watch": "gulp prebuild:renderer && webpack --config webpack.rendererLikeBrowser.js --watch",
@@ -288,6 +288,7 @@
     "typescript": "3.8.3",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   },

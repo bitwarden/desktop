@@ -9,7 +9,7 @@ import {
 import { ToasterModule } from 'angular2-toaster';
 
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
-import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
+// import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib/electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
@@ -89,6 +89,9 @@ import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib/abs
 
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from 'jslib/abstractions/platformUtils.service';
 // import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from './browser/platformUtils.service.abstraction';
+
+import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
+// import { ElectronPlatformUtilsService } from './browser/browserPlatformUtils.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
