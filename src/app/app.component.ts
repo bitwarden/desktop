@@ -21,7 +21,7 @@ import {
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
-import { PremiumComponent } from './accounts/premium.component';
+// import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 
@@ -39,7 +39,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { NotificationsService } from 'jslib/abstractions/notifications.service';
 import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+// import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
@@ -50,6 +50,9 @@ import { SystemService } from 'jslib/abstractions/system.service';
 import { TokenService } from 'jslib/abstractions/token.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+
+import { _showDialog } from 'browser/functionForTarget._showDialog';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
@@ -69,7 +72,7 @@ const IdleTimeout = 60000 * 10; // 10 minutes
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
-    @ViewChild('premium', { read: ViewContainerRef, static: true }) premiumRef: ViewContainerRef;
+    // @ViewChild('premium', { read: ViewContainerRef, static: true }) premiumRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
@@ -162,8 +165,11 @@ export class AppComponent implements OnInit {
                     case 'openSettings':
                         this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
                         break;
-                    case 'openPremium':
-                        this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
+                    // case 'openPremium':
+                    //     this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
+                    //     break;
+                    case 'showDialog':
+                        await this.showDialog(message);
                         break;
                     case 'showFingerprintPhrase':
                         const fingerprint = await this.cryptoService.getFingerprint(
@@ -319,5 +325,9 @@ export class AppComponent implements OnInit {
             }
         }
         this.toasterService.popAsync(toast);
+    }
+
+    private async showDialog(msg: any) {
+        _showDialog(msg, this.platformUtilsService);
     }
 }

@@ -8,11 +8,11 @@ const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const common = {
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-            },
+            // {
+            //     test: /\.ts$/,
+            //     enforce: 'pre',
+            //     loader: 'tslint-loader',
+            // },
             {
                 test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
                 loader: '@ngtools/webpack',
@@ -31,20 +31,30 @@ const common = {
         ],
     },
     plugins: [
-    //     new CleanWebpackPlugin([
-    //         path.resolve(__dirname, 'build-web/*'),
-    //     ]),
-    //     new CopyWebpackPlugin([
-    //         './src/package.json',
-    //         { from: './src/images', to: 'images' },
-    //         { from: './src/locales', to: 'locales' },
-    //         { from: './server.js', to: 'server.js' },
-    //     ]),
-    //     new webpack.EnvironmentPlugin(['ELECTRON_IS_DEV', 'ENV']),
+        // new CleanWebpackPlugin([
+        //     path.resolve(__dirname, 'build-web/*'),
+        // ]),
+        // new CopyWebpackPlugin([
+        //     './src/package.json',
+        //     { from: './src/images', to: 'images' },
+        //     { from: './src/locales', to: 'locales' },
+        //     { from: './server.js', to: 'server.js' },
+        // ]),
     ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
+            'electron'                                                     : path.resolve(__dirname, 'src/app/browser/mock-electron'),
+            'jslib/electron/services/electronRendererMessaging.service'    : path.resolve(__dirname, 'src/app/browser/browserMessaging.service'),
+            'jslib/electron/services/electronPlatformUtils.service'        : path.resolve(__dirname, 'src/app/browser/browserPlatformUtils.service'),
+            'jslib/electron/services/electronRendererSecureStorage.service': path.resolve(__dirname, 'src/app/browser/browserStorage.service'),
+            'jslib/electron/services/electronStorage.service'              : path.resolve(__dirname, 'src/app/browser/browserStorage.service'),
+            'jslib/electron/services/electronLog.service'                  : path.resolve(__dirname, 'src/app/browser/consoleLog.service'),
+            'jslib/abstractions/platformUtils.service'                     : path.resolve(__dirname, 'src/app/browser/platformUtils.service.abstraction'),
+            'jslib/src/abstractions/platformUtils.service'                 : path.resolve(__dirname, 'src/app/browser/platformUtils.service.abstraction'),
+            'browser/functionForTarget._showDialog'                        : path.resolve(__dirname, 'src/app/browser/functionForTarget._showDialog.browser'),
+            '../services/nativeMessaging.service'                          : path.resolve(__dirname, 'src/app/browser/mock-nativeMessagingService'),
+            '../services/i18n.service'                                     : path.resolve(__dirname, 'src/app/browser/i18n.service'),
             jslib: path.join(__dirname, 'jslib/src'),
         },
         symlinks: false,
@@ -119,7 +129,7 @@ const renderer = {
     },
     plugins: [
         new AngularCompilerPlugin({
-            tsConfigPath: 'tsconfig.json',
+            tsConfigPath: './tsconfig-browser.json',
             entryModule: 'src/app/app.module#AppModule',
             sourceMap: true,
         }),

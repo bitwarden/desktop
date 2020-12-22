@@ -8,11 +8,11 @@ const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const common = {
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-            },
+            // {
+            //     test: /\.ts$/,
+            //     enforce: 'pre',
+            //     loader: 'tslint-loader',
+            // },
             {
                 test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
                 loader: '@ngtools/webpack',
@@ -35,6 +35,7 @@ const common = {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             jslib: path.join(__dirname, 'jslib/src'),
+            'browser/functionForTarget._showDialog': path.resolve(__dirname, 'src/app/browser/functionForTarget._showDialog.electron'),
         },
         symlinks: false,
         modules: [path.resolve('node_modules')],

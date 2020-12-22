@@ -3,28 +3,41 @@ const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack');
 
 const common = {
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-            },
+            // {
+            //     test: /\.ts$/,
+            //     enforce: 'pre',
+            //     loader: 'tslint-loader',
+            // },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules\/(?!(@bitwarden)\/).*/,
+                // exclude: [/node_modules\/(?!(@bitwarden)\/).*/, /src\/app/],
             },
         ],
     },
-    plugins: [],
+    plugins: [
+        // new webpack.EnvironmentPlugin(['ELECTRON_IS_DEV', 'ENV', 'MODE']),
+        // new webpack.DefinePlugin({
+        //     IS_WEB_APP: true,
+        // }),
+        new webpack.EnvironmentPlugin({
+            ELECTRON_IS_DEV: '0',        // defaults to '0' if no process.env.ELECTRON_IS_DEV is set
+            ENV            : '',         // defaults to '' if no process.env.ENV is set
+            TARGET         : 'electron', // <electron|web-app> defaults to 'electron' if no process.env.MODE is set
+        }),
+    ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             jslib: path.join(__dirname, 'jslib/src'),
             tldjs: path.join(__dirname, 'jslib/src/misc/tldjs.noop'),
+            'browser/functionForTarget._showDialog': path.resolve(__dirname, 'src/app/browser/functionForTarget._showDialog.electron'),
         },
     },
     output: {

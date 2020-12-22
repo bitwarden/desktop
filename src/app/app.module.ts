@@ -21,7 +21,7 @@ import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
-import { PremiumComponent } from './accounts/premium.component';
+// import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
 import { SettingsComponent } from './accounts/settings.component';
@@ -180,7 +180,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
-        PremiumComponent,
+        // PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
@@ -206,7 +206,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
-        PremiumComponent,
+        // PremiumComponent,
         SettingsComponent,
         ShareComponent,
         TwoFactorOptionsComponent,

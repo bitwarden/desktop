@@ -14,8 +14,14 @@
       "tldjs": [
         "jslib/src/misc/tldjs.noop"
       ],
+      "jslib/abstractions/platformUtils.service": [
+        "src/app/browser/platformUtils.service.abstraction"
+      ],
+      "jslib/electron/services/electronPlatformUtils.service": [
+        "src/app/browser/browserPlatformUtils.service"
+      ],
       "browser/functionForTarget._showDialog": [
-        "src/app/browser/functionForTarget._showDialog.electron"
+        "src/app/browser/functionForTarget._showDialog.browser"
       ],
       "jslib/*": [
         "jslib/src/*"
@@ -52,7 +58,6 @@
     "jslib/dist",
     "build",
     "build-browser",
-    "src/app/browser",
     "jslib/spec",
     "jslib/src/cli",
     "jslib/src/services/nodeApi.service.ts",

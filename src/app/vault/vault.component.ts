@@ -260,79 +260,80 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     viewCipherMenu(cipher: CipherView) {
-        const menu = new remote.Menu();
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('view'),
-            click: () => this.functionWithChangeDetection(() => {
-                this.viewCipher(cipher);
-            }),
-        }));
-        if (!cipher.isDeleted) {
-            menu.append(new remote.MenuItem({
-                label: this.i18nService.t('edit'),
-                click: () => this.functionWithChangeDetection(() => {
-                    this.editCipher(cipher);
-                }),
-            }));
-            menu.append(new remote.MenuItem({
-                label: this.i18nService.t('clone'),
-                click: () => this.functionWithChangeDetection(() => {
-                    this.cloneCipher(cipher);
-                }),
-            }));
-        }
-
-        switch (cipher.type) {
-            case CipherType.Login:
-                if (cipher.login.canLaunch || cipher.login.username != null || cipher.login.password != null) {
-                    menu.append(new remote.MenuItem({ type: 'separator' }));
-                }
-                if (cipher.login.canLaunch) {
-                    menu.append(new remote.MenuItem({
-                        label: this.i18nService.t('launch'),
-                        click: () => this.platformUtilsService.launchUri(cipher.login.launchUri),
-                    }));
-                }
-                if (cipher.login.username != null) {
-                    menu.append(new remote.MenuItem({
-                        label: this.i18nService.t('copyUsername'),
-                        click: () => this.copyValue(cipher.login.username, 'username'),
-                    }));
-                }
-                if (cipher.login.password != null && cipher.viewPassword) {
-                    menu.append(new remote.MenuItem({
-                        label: this.i18nService.t('copyPassword'),
-                        click: () => {
-                            this.copyValue(cipher.login.password, 'password');
-                            this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
-                        },
-                    }));
-                }
-                break;
-            case CipherType.Card:
-                if (cipher.card.number != null || cipher.card.code != null) {
-                    menu.append(new remote.MenuItem({ type: 'separator' }));
-                }
-                if (cipher.card.number != null) {
-                    menu.append(new remote.MenuItem({
-                        label: this.i18nService.t('copyNumber'),
-                        click: () => this.copyValue(cipher.card.number, 'number'),
-                    }));
-                }
-                if (cipher.card.code != null) {
-                    menu.append(new remote.MenuItem({
-                        label: this.i18nService.t('copySecurityCode'),
-                        click: () => {
-                            this.copyValue(cipher.card.code, 'securityCode');
-                            this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
-                        },
-                    }));
-                }
-                break;
-            default:
-                break;
-        }
-        menu.popup({ window: remote.getCurrentWindow() });
+        // TODO BJA : implement for both browser and electron
+        // const menu = new remote.Menu();
+        // menu.append(new remote.MenuItem({
+        //     label: this.i18nService.t('view'),
+        //     click: () => this.functionWithChangeDetection(() => {
+        //         this.viewCipher(cipher);
+        //     }),
+        // }));
+        // if (!cipher.isDeleted) {
+        //     menu.append(new remote.MenuItem({
+        //         label: this.i18nService.t('edit'),
+        //         click: () => this.functionWithChangeDetection(() => {
+        //             this.editCipher(cipher);
+        //         }),
+        //     }));
+        //     menu.append(new remote.MenuItem({
+        //         label: this.i18nService.t('clone'),
+        //         click: () => this.functionWithChangeDetection(() => {
+        //             this.cloneCipher(cipher);
+        //         }),
+        //     }));
+        // }
+        //
+        // switch (cipher.type) {
+        //     case CipherType.Login:
+        //         if (cipher.login.canLaunch || cipher.login.username != null || cipher.login.password != null) {
+        //             menu.append(new remote.MenuItem({ type: 'separator' }));
+        //         }
+        //         if (cipher.login.canLaunch) {
+        //             menu.append(new remote.MenuItem({
+        //                 label: this.i18nService.t('launch'),
+        //                 click: () => this.platformUtilsService.launchUri(cipher.login.launchUri),
+        //             }));
+        //         }
+        //         if (cipher.login.username != null) {
+        //             menu.append(new remote.MenuItem({
+        //                 label: this.i18nService.t('copyUsername'),
+        //                 click: () => this.copyValue(cipher.login.username, 'username'),
+        //             }));
+        //         }
+        //         if (cipher.login.password != null && cipher.viewPassword) {
+        //             menu.append(new remote.MenuItem({
+        //                 label: this.i18nService.t('copyPassword'),
+        //                 click: () => {
+        //                     this.copyValue(cipher.login.password, 'password');
+        //                     this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+        //                 },
+        //             }));
+        //         }
+        //         break;
+        //     case CipherType.Card:
+        //         if (cipher.card.number != null || cipher.card.code != null) {
+        //             menu.append(new remote.MenuItem({ type: 'separator' }));
+        //         }
+        //         if (cipher.card.number != null) {
+        //             menu.append(new remote.MenuItem({
+        //                 label: this.i18nService.t('copyNumber'),
+        //                 click: () => this.copyValue(cipher.card.number, 'number'),
+        //             }));
+        //         }
+        //         if (cipher.card.code != null) {
+        //             menu.append(new remote.MenuItem({
+        //                 label: this.i18nService.t('copySecurityCode'),
+        //                 click: () => {
+        //                     this.copyValue(cipher.card.code, 'securityCode');
+        //                     this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
+        //                 },
+        //             }));
+        //         }
+        //         break;
+        //     default:
+        //         break;
+        // }
+        // menu.popup({ window: remote.getCurrentWindow() });
     }
 
     async editCipher(cipher: CipherView) {
@@ -374,24 +375,25 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     addCipherOptions() {
-        const menu = new remote.Menu();
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeLogin'),
-            click: () => this.addCipherWithChangeDetection(CipherType.Login),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeCard'),
-            click: () => this.addCipherWithChangeDetection(CipherType.Card),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeIdentity'),
-            click: () => this.addCipherWithChangeDetection(CipherType.Identity),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeSecureNote'),
-            click: () => this.addCipherWithChangeDetection(CipherType.SecureNote),
-        }));
-        menu.popup({ window: remote.getCurrentWindow() });
+        // TODO BJA : implement for both browser and electron
+        // const menu = new remote.Menu();
+        // menu.append(new remote.MenuItem({
+        //     label: this.i18nService.t('typeLogin'),
+        //     click: () => this.addCipherWithChangeDetection(CipherType.Login),
+        // }));
+        // menu.append(new remote.MenuItem({
+        //     label: this.i18nService.t('typeCard'),
+        //     click: () => this.addCipherWithChangeDetection(CipherType.Card),
+        // }));
+        // menu.append(new remote.MenuItem({
+        //     label: this.i18nService.t('typeIdentity'),
+        //     click: () => this.addCipherWithChangeDetection(CipherType.Identity),
+        // }));
+        // menu.append(new remote.MenuItem({
+        //     label: this.i18nService.t('typeSecureNote'),
+        //     click: () => this.addCipherWithChangeDetection(CipherType.SecureNote),
+        // }));
+        // menu.popup({ window: remote.getCurrentWindow() });
     }
 
     async savedCipher(cipher: CipherView) {
@@ -638,6 +640,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     private async wantsToSaveChanges(): Promise<boolean> {
+        console.log('vault.components .wantsToSaveChanges()');
         const confirmed = await this.platformUtilsService.showDialog(
             this.i18nService.t('unsavedChangesConfirmation'), this.i18nService.t('unsavedChangesTitle'),
             this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
