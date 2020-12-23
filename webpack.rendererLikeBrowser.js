@@ -38,7 +38,6 @@ const common = {
         //     './src/package.json',
         //     { from: './src/images', to: 'images' },
         //     { from: './src/locales', to: 'locales' },
-        //     { from: './server.js', to: 'server.js' },
         // ]),
     ],
     resolve: {

@@ -3,7 +3,6 @@ const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
-const webpack = require('webpack');
 
 const common = {
     module: {
@@ -17,21 +16,10 @@ const common = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules\/(?!(@bitwarden)\/).*/,
-                // exclude: [/node_modules\/(?!(@bitwarden)\/).*/, /src\/app/],
             },
         ],
     },
-    plugins: [
-        // new webpack.EnvironmentPlugin(['ELECTRON_IS_DEV', 'ENV', 'MODE']),
-        // new webpack.DefinePlugin({
-        //     IS_WEB_APP: true,
-        // }),
-        new webpack.EnvironmentPlugin({
-            ELECTRON_IS_DEV: '0',        // defaults to '0' if no process.env.ELECTRON_IS_DEV is set
-            ENV            : '',         // defaults to '' if no process.env.ENV is set
-            TARGET         : 'electron', // <electron|web-app> defaults to 'electron' if no process.env.MODE is set
-        }),
-    ],
+    plugins: [],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {

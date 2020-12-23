@@ -10,10 +10,12 @@ var fs   = require('fs'  )
 
 http.createServer(function (req, res){
 
-    var filePath = '.' + req.url
-    if (filePath === './') {
-        filePath = 'index.html'
+    var filePath = './build-browser' + req.url
+    console.log(filePath);
+    if (filePath === './build-browser/') {
+        filePath = './build-browser/index.html'
     }
+    console.log(filePath);
 
     if (!fs.existsSync(filePath)) {
         console.log("file doesnt exist", filePath);

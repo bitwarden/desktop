@@ -40,7 +40,6 @@ const common = {
             './src/package.json',
             { from: './src/images', to: 'images' },
             { from: './src/locales', to: 'locales' },
-            { from: './server.js', to: 'server.js' },
         ]),
     ],
     resolve: {
@@ -54,6 +53,7 @@ const common = {
             'jslib/electron/services/electronLog.service'                  : path.resolve(__dirname, 'src/app/browser/consoleLog.service'),
             'jslib/abstractions/platformUtils.service'                     : path.resolve(__dirname, 'src/app/browser/platformUtils.service.abstraction'),
             'jslib/src/abstractions/platformUtils.service'                 : path.resolve(__dirname, 'src/app/browser/platformUtils.service.abstraction'),
+            // 'jslib/angular/services/validation.service'                    : path.resolve(__dirname, 'src/app/browser/validation.service'),
             'browser/functionForTarget._showDialog'                        : path.resolve(__dirname, 'src/app/browser/functionForTarget._showDialog.browser'),
             '../services/nativeMessaging.service'                          : path.resolve(__dirname, 'src/app/browser/mock-nativeMessagingService'),
             '../services/i18n.service'                                     : path.resolve(__dirname, 'src/app/browser/i18n.service'),

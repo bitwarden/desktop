@@ -21,7 +21,7 @@ The Bitwarden desktop app is written using Electron and Angular. The application
         - available through the standard Visual Studio installer.
         - and *Windows 10 SDK 17134* as additional dependencies in the Visual Studio installer.
     - to install the *Microsoft Build Tools 2015*
-    - if error " impossible to find assembly 'Windows.winmd'" : copy `C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd` in is parent `C:\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd` 
+    - if error " impossible to find assembly 'Windows.winmd'" : copy `C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.17134.0\Windows.winmd` in is parent `C:\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd`
 
 
 **Run the app**
@@ -29,6 +29,16 @@ The Bitwarden desktop app is written using Electron and Angular. The application
 ```bash
 npm install
 npm run electron
+```
+
+**Build the web-app**
+
+```bash
+npm install                  #
+npm run electron:browser     # to run the web-into electron (hot reload)
+npm run build:browser:watch  # to build into `build-browser` and watch changes
+node server-for-webapp.js    # to serve the web app on http://localhost:4242
+npm run build:browser:server # to build and run a server
 ```
 
 # Contribute
