@@ -9,7 +9,6 @@ require('../scss/styles.scss');
 import { AppModule } from './app.module';
 
 if (!isDev()) {
-    console.log("we are in PROD :::::");
     enableProdMode();
 }
 

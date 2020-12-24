@@ -1,3 +1,15 @@
+/* =================================================================================================
+
+This file is almost a copy of :
+
+Initial copied version :
+https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32f0/src/browser/safariApp.ts#L1
+
+Latest version :
+https://github.com/bitwarden/browser/blob/master/src/browser/safariApp.ts
+
+================================================================================================= */
+
 import { BrowserApi } from './browserApi';
 
 export class SafariApp {

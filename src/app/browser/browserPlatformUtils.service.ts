@@ -1,15 +1,29 @@
+/* =================================================================================================
+
+This file is almost a copy of :
+
+Initial copied version :
+https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32f0/src/services/browserPlatformUtils.service.ts#L1
+
+Latest version :
+https://github.com/bitwarden/browser/blob/master/src/services/browserPlatformUtils.service.ts#L1
+
+================================================================================================= */
+
 import { BrowserApi } from '../browser/browserApi';
 import { SafariApp } from '../browser/safariApp';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
+import { ConstantsService } from 'jslib/services/constants.service';
+
+import { AnalyticsIds } from 'jslib/misc/analytics';
+import { Utils } from 'jslib/misc/utils';
+
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
-// import { PlatformUtilsServiceAbs as PlatformUtilsService } from 'src/app/browser/platformUtils.service.abstraction';
-
-import { AnalyticsIds } from 'jslib/misc/analytics';
 
 const DialogPromiseExpiration = 600000; // 10 minutes
 
@@ -20,13 +34,20 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
     private prefersColorSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
+    private clipboardWriteCallback: any;
+    private clearClipboardTimeout: any;
+    private clearClipboardTimeoutFunction: any;
+    private platformUtilsService: any;
 
     constructor( // (i18nService, messagingService, true, storageService
         private i18nService: I18nService,
         private messagingService: MessagingService,
         private isDesktopApp: boolean,
         private storageService: StorageService,
-    ) { }
+    ) {
+        this.clipboardWriteCallback = this.clearClipboard;
+        this.platformUtilsService = this;
+    }
 
     getDevice(): DeviceType {
         if (this.deviceCache) {
@@ -101,25 +122,23 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         return;
     }
 
-    // async isViewOpen(): Promise<boolean> {
-    //     if (await BrowserApi.isPopupOpen()) {
-    //         return true;
-    //     }
-    //
-    //     if (this.isSafari()) {
-    //         return false;
-    //     }
-    //
-    //     const sidebarView = this.sidebarViewName();
-    //     const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
-    //     if (sidebarOpen) {
-    //         return true;
-    //     }
-    //
-    //     const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
-    //     return tabOpen;
-    // }
-    isViewOpen(): Promise<boolean> {
+    async isViewOpen(): Promise<boolean> {
+        // if (await BrowserApi.isPopupOpen()) {
+        //     return true;
+        // }
+        //
+        // if (this.isSafari()) {
+        //     return false;
+        // }
+        //
+        // const sidebarView = this.sidebarViewName();
+        // const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
+        // if (sidebarOpen) {
+        //     return true;
+        // }
+        //
+        // const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
+        // return tabOpen;
         return Promise.resolve(false);
     }
 
@@ -193,60 +212,60 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     }
 
     copyToClipboard(text: string, options?: any): void {
-        // TODO BJA : to be implemented both for browser and electron
-        // let win = window;
-        // let doc = window.document;
-        // if (options && (options.window || options.win)) {
-        //     win = options.window || options.win;
-        //     doc = win.document;
-        // } else if (options && options.doc) {
-        //     doc = options.doc;
-        // }
-        // const clearing = options ? !!options.clearing : false;
-        // const clearMs: number = options && options.clearMs ? options.clearMs : null;
-        // if (this.isSafariExtension()) {
-        //     SafariApp.sendMessageToApp('copyToClipboard', text).then(() => {
-        //         if (!clearing && this.clipboardWriteCallback != null) {
-        //             this.clipboardWriteCallback(text, clearMs);
-        //         }
-        //     });
-        // } else if (this.isFirefox() && (win as any).navigator.clipboard
-        //   && (win as any).navigator.clipboard.writeText) {
-        //     (win as any).navigator.clipboard.writeText(text).then(() => {
-        //         if (!clearing && this.clipboardWriteCallback != null) {
-        //             this.clipboardWriteCallback(text, clearMs);
-        //         }
-        //     });
-        // } else if ((win as any).clipboardData && (win as any).clipboardData.setData) {
-        //     // IE specific code path to prevent textarea being shown while dialog is visible.
-        //     (win as any).clipboardData.setData('Text', text);
-        //     if (!clearing && this.clipboardWriteCallback != null) {
-        //         this.clipboardWriteCallback(text, clearMs);
-        //     }
-        // } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
-        //     if (this.isChrome() && text === '') {
-        //         text = '\u0000';
-        //     }
-        //
-        //     const textarea = doc.createElement('textarea');
-        //     textarea.textContent = text == null || text === '' ? ' ' : text;
-        //     // Prevent scrolling to bottom of page in MS Edge.
-        //     textarea.style.position = 'fixed';
-        //     doc.body.appendChild(textarea);
-        //     textarea.select();
-        //
-        //     try {
-        //         // Security exception may be thrown by some browsers.
-        //         if (doc.execCommand('copy') && !clearing && this.clipboardWriteCallback != null) {
-        //             this.clipboardWriteCallback(text, clearMs);
-        //         }
-        //     } catch (e) {
-        //         // tslint:disable-next-line
-        //         console.warn('Copy to clipboard failed.', e);
-        //     } finally {
-        //         doc.body.removeChild(textarea);
-        //     }
-        // }
+        let win = window;
+        let doc = window.document;
+        if (options && (options.window || options.win)) {
+            win = options.window || options.win;
+            doc = win.document;
+        } else if (options && options.doc) {
+            doc = options.doc;
+        }
+        const clearing = options ? !!options.clearing : false;
+        const clearMs: number = options && options.clearMs ? options.clearMs : null;
+
+        if (this.isSafariExtension()) {
+            SafariApp.sendMessageToApp('copyToClipboard', text).then(() => {
+                if (!clearing && this.clipboardWriteCallback != null) {
+                    this.clipboardWriteCallback(text, clearMs);
+                }
+            });
+        } else if (this.isFirefox() && (win as any).navigator.clipboard
+          && (win as any).navigator.clipboard.writeText) {
+            (win as any).navigator.clipboard.writeText(text).then(() => {
+                if (!clearing && this.clipboardWriteCallback != null) {
+                    this.clipboardWriteCallback(text, clearMs);
+                }
+            });
+        } else if ((win as any).clipboardData && (win as any).clipboardData.setData) {
+            // IE specific code path to prevent textarea being shown while dialog is visible.
+            (win as any).clipboardData.setData('Text', text);
+            if (!clearing && this.clipboardWriteCallback != null) {
+                this.clipboardWriteCallback(text, clearMs);
+            }
+        } else if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
+            if (this.isChrome() && text === '') {
+                text = '\u0000';
+            }
+
+            const textarea = doc.createElement('textarea');
+            textarea.textContent = text == null || text === '' ? ' ' : text;
+            // Prevent scrolling to bottom of page in MS Edge.
+            textarea.style.position = 'fixed';
+            doc.body.appendChild(textarea);
+            textarea.select();
+
+            try {
+                // Security exception may be thrown by some browsers.
+                if (doc.execCommand('copy') && !clearing && this.clipboardWriteCallback != null) {
+                    this.clipboardWriteCallback(text, clearMs);
+                }
+            } catch (e) {
+                // tslint:disable-next-line
+                console.warn('Copy to clipboard failed.', e);
+            } finally {
+                doc.body.removeChild(textarea);
+            }
+        }
     }
 
     async readFromClipboard(options?: any): Promise<string> {
@@ -357,5 +376,39 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
 
     private isSafariExtension(): boolean {
         return (window as any).safariAppExtension === true;
+    }
+
+    private clearClipboard(clipboardValue: string, timeoutMs: number = null): void {
+        if (this.clearClipboardTimeout != null) {
+            clearTimeout(this.clearClipboardTimeout);
+            this.clearClipboardTimeout = null;
+        }
+        if (Utils.isNullOrWhitespace(clipboardValue)) {
+            return;
+        }
+        this.storageService.get<number>(ConstantsService.clearClipboardKey).then((clearSeconds) => {
+            if (clearSeconds == null) {
+                return;
+            }
+            if (timeoutMs == null) {
+                timeoutMs = clearSeconds * 1000;
+            }
+            this.clearClipboardTimeoutFunction = async () => {
+                const clipboardValueNow = await this.platformUtilsService.readFromClipboard();
+                if (clipboardValue === clipboardValueNow) {
+                    this.platformUtilsService.copyToClipboard('', { clearing: true });
+                }
+            };
+            this.clearClipboardTimeout = setTimeout(async () => {
+                await this.clearPendingClipboard();
+            }, timeoutMs);
+        });
+    }
+
+    private async clearPendingClipboard() {
+        if (this.clearClipboardTimeoutFunction != null) {
+            await this.clearClipboardTimeoutFunction();
+            this.clearClipboardTimeoutFunction = null;
+        }
     }
 }

@@ -89,7 +89,7 @@
         height: 36px;
         width: 34px;
         margin-left: -5px;
-        
+
         @include themify($themes) {
             color: themed('mutedColor');
         }

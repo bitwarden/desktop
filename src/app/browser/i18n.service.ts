@@ -5,10 +5,8 @@ import { SafariApp } from '../browser/safariApp';
 
 export class I18nService extends BaseI18nService {
     constructor(systemLanguage: string, localesDirectory: string) {
-        console.log('I18nService .constructor()', localesDirectory );
 
         super(systemLanguage, localesDirectory, async (formattedLocale: string) => {
-            console.log('I18nService .getLocals() localesDirectory ', localesDirectory );
             if (BrowserApi.isSafariApi) {
                 await SafariApp.sendMessageToApp('getLocaleStrings', formattedLocale);
                 return (window as any).bitwardenLocaleStrings;
@@ -29,30 +27,5 @@ export class I18nService extends BaseI18nService {
 
     t(id: string, p1?: string, p2?: string, p3?: string): string {
         return this.translate(id, p1, p2, p3);
-    }
-
-    translate(id: string, p1?: string, p2?: string, p3?: string): string {
-        if (this.localesDirectory == null) {
-            const placeholders: string[] = [];
-            if (p1 != null) {
-                placeholders.push(p1);
-            }
-            if (p2 != null) {
-                placeholders.push(p2);
-            }
-            if (p3 != null) {
-                placeholders.push(p3);
-            }
-
-            if (placeholders.length) {
-                return 'titi'; // TODO BJA: implement
-                // return chrome.i18n.getMessage(id, placeholders);
-            } else {
-                return 'tyty'; // TODO BJA: implement
-                // return chrome.i18n.getMessage(id);
-            }
-        }
-
-        return super.translate(id, p1, p2, p3);
     }
 }

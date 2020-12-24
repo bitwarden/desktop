@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports":true,
     "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -14,11 +16,11 @@
       "tldjs": [
         "jslib/src/misc/tldjs.noop"
       ],
-      "jslib/abstractions/platformUtils.service": [
-        "src/app/browser/platformUtils.service.abstraction"
-      ],
       "jslib/electron/services/electronPlatformUtils.service": [
         "src/app/browser/browserPlatformUtils.service"
+      ],
+      "jslib/abstractions/platformUtils.service": [
+        "src/app/browser/platformUtils.service.abstraction"
       ],
       "browser/functionForTarget._showDialog": [
         "src/app/browser/functionForTarget._showDialog.browser"

@@ -1,5 +1,8 @@
 const remote = {
-    app : {
+    Menu             : () => { return; },
+    MenuItem         : () => { return; },
+    getCurrentWindow : () => { return; },
+    app              : {
         getPath : () => { return; },
     },
 };

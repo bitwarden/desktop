@@ -1,3 +1,15 @@
+/* =================================================================================================
+
+This file is almost a copy of :
+
+Initial copied version :
+https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32f0/src/services/browserStorage.service.ts#L1
+
+Latest version :
+https://github.com/bitwarden/browser/blob/master/src/services/browserStorage.service.ts
+
+================================================================================================= */
+
 import {
     StorageService,
 } from 'jslib/abstractions';

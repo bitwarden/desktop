@@ -1,3 +1,10 @@
+/* =================================================================================================
+
+This file is almost a copy of :
+https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32f0/src/services/browserMessaging.service.ts#L1
+
+================================================================================================= */
+
 import { BrowserApi } from '../browser/browserApi';
 import { SafariApp } from '../browser/safariApp';
 
@@ -14,8 +21,6 @@ export class ElectronRendererMessagingService implements MessagingService {
             SafariApp.sendMessageToListeners(message, 'BrowserMessagingService', null);
         } else {
             // chrome.runtime.sendMessage(message);
-            console.log('BrowserMessagingService .send()', message);
-
             this.broadcasterService.send(message);
         }
     }

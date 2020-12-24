@@ -1,6 +1,20 @@
+/* =================================================================================================
+
+This file is almost a copy of :
+
+Initial copied version :
+https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32f0/src/browser/browserApi.ts#L1
+
+Latest version :
+https://github.com/bitwarden/browser/blob/master/src/services/browserPlatformUtils.service.ts#L1
+
+================================================================================================= */
+
 import { SafariApp } from './safariApp';
 
 import { Utils } from 'jslib/misc/utils';
+
+import manifest from '../../package.json' ; // tsconfig & tsconfig-browser properly configured despite the warning
 
 export class BrowserApi {
     static isWebExtensionsApi: boolean = (typeof browser !== 'undefined');
@@ -108,14 +122,14 @@ export class BrowserApi {
     }
 
     static getApplicationVersion(): string {
-        if (BrowserApi.isChromeApi) {
-            return '42.42.42';
-            // return chrome.runtime.getManifest().version; // TODO BJA : implement
-        } else if (BrowserApi.isSafariApi) {
-            return (window as any).bitwardenApplicationVersion;
-        } else {
-            return null;
-        }
+        return manifest.version;
+        // if (BrowserApi.isChromeApi) {
+        //     return chrome.runtime.getManifest().version;
+        // } else if (BrowserApi.isSafariApi) {
+        //     return (window as any).bitwardenApplicationVersion;
+        // } else {
+        //     return null;
+        // }
     }
 
     static async isPopupOpen(): Promise<boolean> {
