@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const common = {
     module: {
@@ -156,5 +157,9 @@ const renderer = {
         }),
     ],
 };
+
+if (process.env.BUNDLE_ANALYSE) {
+    renderer.plugins.push(new BundleAnalyzerPlugin())
+}
 
 module.exports = merge(common, renderer);
