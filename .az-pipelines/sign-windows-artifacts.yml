@@ -33,7 +33,17 @@ steps:
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
-- script: azuresigntool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvt "$(SigningTenantId)" -kvc "$(SigningCertName)" -v -ifl "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
+- script: |
+    azuresigntool sign \
+    -kvu "$(SigningVaultURL)" \
+    -kvi "$(SigningClientId)" \
+    -kvs "$(SigningClientSecret)" \
+    -kvt "$(SigningTenantId)" \
+    -kvc "$(SigningCertName)" \
+    -v \
+    -ifl \
+    "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" \
+    "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
   displayName: 'Sign artifacts'
 
 - task: PublishPipelineArtifact@1
