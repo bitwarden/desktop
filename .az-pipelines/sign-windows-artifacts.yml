@@ -35,20 +35,20 @@ steps:
 
 - script: |
     azuresigntool sign ^
-      -kvu "$(SigningVaultURL)" ^
-      -kvi "$(SigningClientId)" ^
-      -kvs "$(SigningClientSecret)" ^
-      -kvt "$(SigningTenantId)" ^
-      -kvc "$(SigningCertName)" ^
-      -v ^
+      /kvu "$(SigningVaultURL)" ^
+      /kvi "$(SigningClientId)" ^
+      /kvs "$(SigningClientSecret)" ^
+      /kvt "$(SigningTenantId)" ^
+      /kvc "$(SigningCertName)" ^
+      /v ^
       "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
     azuresigntool sign ^
-      -kvu "$(SigningVaultURL)" ^
-      -kvi "$(SigningClientId)" ^
-      -kvs "$(SigningClientSecret)" ^
-      -kvt "$(SigningTenantId)" ^
-      -kvc "$(SigningCertName)" ^
-      -v ^
+      /kvu "$(SigningVaultURL)" ^
+      /kvi "$(SigningClientId)" ^
+      /kvs "$(SigningClientSecret)" ^
+      /kvt "$(SigningTenantId)" ^
+      /kvc "$(SigningCertName)" ^
+      /v ^
       "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
   displayName: 'Sign artifacts'
 
