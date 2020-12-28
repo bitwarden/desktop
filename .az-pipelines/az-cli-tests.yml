@@ -16,4 +16,4 @@ steps:
     scriptLocation: inlineScript
     inlineScript: |
       az --verison
-      az account show
+      az keyvault certificate list --vault-name code-signing-test-vault
