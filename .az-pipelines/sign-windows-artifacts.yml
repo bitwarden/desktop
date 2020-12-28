@@ -33,7 +33,8 @@ steps:
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
-- script: azuresigntool sign
+- script: azuresigntool sign --help
+  displayName: 'debug azuresigntool'
 
 - script: |
     azuresigntool sign ^
