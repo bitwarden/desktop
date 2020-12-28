@@ -11,6 +11,7 @@ steps:
   displayName: Azure CLI KV Test
   inputs:
     azureSubscription: '$(subscription-id)'
+    connectedServiceNameARM: keyvault-signing-SP
     scriptType: ps
     scriptLocation: inlineScript
     inlineScript: |
