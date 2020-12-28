@@ -41,7 +41,6 @@ steps:
     -kvt "$(SigningTenantId)" ^
     -kvc "$(SigningCertName)" ^
     -v ^
-    -ifl ^
     "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx" ^
     "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
   displayName: 'Sign artifacts'
