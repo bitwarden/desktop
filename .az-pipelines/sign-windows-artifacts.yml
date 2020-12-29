@@ -7,14 +7,18 @@ variables:
 - group: code-signing-test
 
 steps:
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'custom'
-    custom: 'tool'
-    arguments: 'install --global azuresigntool'
-  displayName: 'install AzureSignTool'
+  #- task: DotNetCoreCLI@2
+  #  inputs:
+  #    command: 'custom'
+  #    custom: 'tool'
+  #    arguments: 'install --global azuresigntool'
+  #  displayName: 'install AzureSignTool'
 
-- script: azuresigntool sign --help
+- script: |
+    set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+    dotnet tool install --global AzureSignTool --version 2.0.17
+
+- script: AzureSignTool.exe sign --help
   displayName: 'Debugging AST'
 
 - task: DownloadGitHubRelease@0
@@ -33,18 +37,14 @@ steps:
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
-- task: CmdLine@2
-  displayName: 'Sign artifact test'
-  inputs:
-    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
-
 - script: |
-    azuresigntool sign ^
+    AzureSignTool.exe sign ^
     -kvu "$(SigningVaultURL)" ^
     -kvi "$(SigningClientId)" ^
     -kvs "$(SigningClientSecret)" ^
     -kvt "$(SigningTenantId)" ^
     -kvc "$(SigningCertName)" ^
+    -tr http://timestamp.digicert.com ^
     -v ^
     "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
   displayName: 'Sign artifacts 32-bit'
@@ -59,6 +59,11 @@ steps:
     -v ^
     "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
   displayName: 'Sign artifacts 64-bit'
+
+- task: CmdLine@2
+  displayName: 'Sign artifact test'
+  inputs:
+    script: AzureSignTool sign -du "$(SigningURL)" -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -v "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
 
 - task: PublishPipelineArtifact@1
   inputs:
