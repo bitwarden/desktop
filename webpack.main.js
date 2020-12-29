@@ -41,7 +41,7 @@ const main = {
         __filename: false,
     },
     entry: {
-        'main': './src/main.ts',
+        'main': './src/entry.ts',
     },
     optimization: {
         minimize: false,

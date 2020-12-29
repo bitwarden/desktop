@@ -1,4 +1,4 @@
-import { app, globalShortcut } from 'electron';
+import { app } from 'electron';
 import * as path from 'path';
 
 import { I18nService } from './services/i18n.service';
@@ -19,7 +19,6 @@ import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
-import { NativeMessagingProxy } from './proxy/native-messaging-proxy';
 
 export class Main {
     logService: ElectronLogService;
@@ -182,24 +181,4 @@ export class Main {
             }
         });
     }
-}
-
-if (process.argv.some(arg => arg.indexOf('chrome-extension://') !== -1 || arg.indexOf('{') !== -1)) {
-    if (process.platform === 'darwin') {
-        app.on('ready', () => {
-            app.dock.hide();
-        });
-    }
-
-    process.stdout.on('error', (e) => {
-        if (e.code === 'EPIPE') {
-            process.exit(0);
-        }
-    });
-
-    const proxy = new NativeMessagingProxy();
-    proxy.run();
-} else {
-    const main = new Main();
-    main.bootstrap();
 }
