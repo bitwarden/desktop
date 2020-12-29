@@ -38,7 +38,9 @@ steps:
     echo GIT_RELEASE_VERSION=$(git_release_version)
   displayName: 'show artifacts'
 
-- script: AzureSignTool.exe sign --azure-key-vault-url "$(SigningVaultURL)" --azure-key-vault-client-id "$(SigningClientId)" --azure-key-vault-client-secret "$(SigningClientSecret)" --azure-key-vault-tenant-id "$(SigningTenantId)" --azure-key-vault-certificate "$(SigningCertName)" --timestamp-rfc3161 http://timestamp.digicert.com -v "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
+- script: |
+    echo "File to sign: $(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
+    AzureSignTool.exe sign --azure-key-vault-url "$(SigningVaultURL)" --azure-key-vault-client-id "$(SigningClientId)" --azure-key-vault-client-secret "$(SigningClientSecret)" --azure-key-vault-tenant-id "$(SigningTenantId)" --azure-key-vault-certificate "$(SigningCertName)" --timestamp-rfc3161 http://timestamp.digicert.com -v "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
   displayName: 'Sign artifacts 32-bit'
 
 - script: |
