@@ -17,6 +17,7 @@ steps:
 - script: |
     set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
     dotnet tool install --global AzureSignTool --version 2.0.17
+  displayName: 'install AzureSignTool'
 
 - script: AzureSignTool.exe sign --help
   displayName: 'Debugging AST'
@@ -39,12 +40,12 @@ steps:
 
 - script: |
     AzureSignTool.exe sign ^
-    -kvu "$(SigningVaultURL)" ^
-    -kvi "$(SigningClientId)" ^
-    -kvs "$(SigningClientSecret)" ^
-    -kvt "$(SigningTenantId)" ^
-    -kvc "$(SigningCertName)" ^
-    -tr http://timestamp.digicert.com ^
+    --azure-key-vault-url "$(SigningVaultURL)" ^
+    --azure-key-vault-client-id "$(SigningClientId)" ^
+    --azure-key-vault-client-secret "$(SigningClientSecret)" ^
+    --azure-key-vault-tenant-id "$(SigningTenantId)" ^
+    --azure-key-vault-certificate "$(SigningCertName)" ^
+    --timestamp-rfc3161 http://timestamp.digicert.com ^
     -v ^
     "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
   displayName: 'Sign artifacts 32-bit'
