@@ -44,10 +44,10 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-ia32-store.appx'
+    pathToPublish: '$(System.ArtifactsDirectory)/Bitwarden-$(git_release_version)-ia32-store.appx'
     artifactName: 'Bitwarden-$(git_release_version)-ia32-store.appx'
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-x64-store.appx'
+    pathToPublish: '$(System.ArtifactsDirectory)/Bitwarden-$(git_release_version)-x64-store.appx'
     artifactName: 'Bitwarden-$(git_release_version)-x64-store.appx'
