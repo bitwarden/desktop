@@ -1,6 +1,6 @@
 import { NativeMessagingProxy } from './proxy/native-messaging-proxy';
 
-// We need to import the other dependencies using `reqiuire` since import will
+// We need to import the other dependencies using `require` since `import` will
 // generate `Error: Cannot find module 'electron'`. The cause of this error is
 // due to native messaging setting the ELECTRON_RUN_AS_NODE env flag on windows
 // which removes the electron module. This flag is needed for stdin/out to work
