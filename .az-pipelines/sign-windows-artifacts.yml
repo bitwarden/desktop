@@ -39,8 +39,8 @@ steps:
   displayName: 'show artifacts'
 
 - script: |
-    echo "File to sign: $(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64.appx"
-    AzureSignTool.exe sign --azure-key-vault-url "$(SigningVaultURL)" --azure-key-vault-client-id "$(SigningClientId)" --azure-key-vault-client-secret "$(SigningClientSecret)" --azure-key-vault-tenant-id "$(SigningTenantId)" --azure-key-vault-certificate "$(SigningCertName)" --timestamp-rfc3161 http://timestamp.digicert.com -v "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
+    echo "File to sign: $(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
+    azuresigntool sign -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -tr http://timestamp.digicert.com "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32.appx"
   displayName: 'Sign artifacts 32-bit'
 
 - script: |
