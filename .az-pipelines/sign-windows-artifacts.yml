@@ -39,26 +39,15 @@ steps:
   displayName: 'show artifacts'
 
 - script: |
-    azuresigntool sign -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -tr http://timestamp.digicert.com "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32-store.appx"
-  displayName: 'Sign artifacts 32-bit'
-
-- script: |
-    azuresigntool sign ^
-    -kvu "$(SigningVaultURL)" ^
-    -kvi "$(SigningClientId)" ^
-    -kvs "$(SigningClientSecret)" ^
-    -kvc "$(SigningCertName)" ^
-    -tr http://timestamp.digicert.com
-    -v ^
-    "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64-store.appx"
-  displayName: 'Sign artifacts 64-bit'
+    azuresigntool sign -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -tr http://timestamp.digicert.com "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32-store.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64-store.appx"
+  displayName: 'Sign artifacts'
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-ia32.appx'
-    artifactName: 'Bitwarden-$(git_release_version)-ia32.appx'
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-ia32-store.appx'
+    artifactName: 'Bitwarden-$(git_release_version)-ia32-store.appx'
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-x64.appx'
-    artifactName: 'Bitwarden-$(git_release_version)-x64.appx'
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-$(git_release_version)-x64-store.appx'
+    artifactName: 'Bitwarden-$(git_release_version)-x64-store.appx'
