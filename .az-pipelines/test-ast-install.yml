@@ -9,10 +9,8 @@ variables:
 steps:
 - script: |
     git clone https://github.com/vcsjones/AzureSignTool.git
+    cd AzureSignTool
     dotnet tool restore
-
-    #set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
-    #dotnet tool install --global AzureSignTool --version 2.0.17
   displayName: 'install AzureSignTool'
 
 - script: dotnet tool list
