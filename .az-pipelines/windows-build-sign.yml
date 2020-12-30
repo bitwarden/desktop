@@ -20,9 +20,9 @@ steps:
 - task: PoswerShell@v2 
   inputs:
     targetType: 'inline'
-      script: | 
-        $packageVersion = (Get-Content -Raw -Path $(System.DefaultWorkingDirectory)\src\package.json | ConvertFrom-Json).version;
-        echo "##vso[task.setvariable variable=PACKAGE_VERSION]${packageVersion}"
+    script: | 
+      $packageVersion = (Get-Content -Raw -Path $(System.DefaultWorkingDirectory)\src\package.json | ConvertFrom-Json).version;
+      echo "##vso[task.setvariable variable=PACKAGE_VERSION]${packageVersion}"
   displayName: 'Setting packageVersion'
 
 - script: |
