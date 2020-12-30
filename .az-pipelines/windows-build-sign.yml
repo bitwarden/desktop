@@ -17,7 +17,7 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- task: PoswerShell@v2 
+- task: PoswerShell@2 
   inputs:
     targetType: 'inline'
     script: | 
