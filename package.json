@@ -185,7 +185,8 @@
       "allowToChangeInstallationDirectory": true,
       "artifactName": "${productName}-Installer-${version}.${ext}",
       "uninstallDisplayName": "${productName}",
-      "deleteAppDataOnUninstall": true
+      "deleteAppDataOnUninstall": true,
+      "sign": "./sign.js"
     },
     "portable": {
       "artifactName": "${productName}-Portable-${version}.${ext}"
