@@ -27,7 +27,6 @@ steps:
 
 - script: |
     echo "package version: $(PACKAGE_VERSION)"
-    exit 1 
   displayName: Package Version testing
 
 - script: npm install
