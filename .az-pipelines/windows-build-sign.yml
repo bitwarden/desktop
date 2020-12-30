@@ -19,7 +19,7 @@ steps:
 
 - script: | 
     $packageVersion = (Get-Content -Raw -Path $(System.DefaultWorkingDirectory)\src\package.json | ConvertFrom-Json).version;
-    echo "##vso[task.setvariable variable=PACKAGE_VERSION]$(packageVersion)"
+    echo "##vso[task.setvariable variable=PACKAGE_VERSION]${packageVersion}"
   displayName: 'Setting packageVersion'
 
 - script: |
