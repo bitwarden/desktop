@@ -27,7 +27,7 @@ steps:
 
 - script: |
     echo "package version: ${ PACKAGEVERSION }"
-    echo "package version: $(PACKAGEVESRION)"
+    echo "package version: $(PACKAGEVERSION)"
     exit 1 
   displayName: Package Version testing
 
