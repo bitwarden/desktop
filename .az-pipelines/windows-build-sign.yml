@@ -38,6 +38,11 @@ steps:
 - script: ls -alht dist/nsis-web
   displayName: show nsis-web executables
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-Portable-$(GIT_COMMIT_TO_BUILD).exe'
+    artifactName: Bitwarden-Portable-$(GIT_COMMIT_TO_BUILD).exe
+
 # - task: PublishPipelineArtifact@1
 #   inputs:
 #     pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-1.23.1-ia32.appx'
