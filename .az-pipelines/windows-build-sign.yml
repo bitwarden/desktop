@@ -26,9 +26,10 @@ steps:
   displayName: 'Setting packageVersion'
 
 - script: |
-    echo "package version: ${ packageVersion }"
-    echo "package version: $(packageVersion)"
+    echo "package version: ${ PACKAGEVERSION }"
+    echo "package version: $(PACKAGEVESRION)"
     exit 1 
+  displayName: Package Version testing
 
 - script: npm install
   displayName: 'npm install'
