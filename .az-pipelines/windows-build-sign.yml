@@ -53,8 +53,8 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-Portable-${ PACKAGE_VERSION }.exe'
-    artifactName: Bitwarden-Portable-$(packageVersion).exe
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-Portable-$(PACKAGE_VERSION).exe'
+    artifactName: Bitwarden-Portable-$(PACKAGE_VERSION).exe
 
 # - task: PublishPipelineArtifact@1
 #   inputs:
