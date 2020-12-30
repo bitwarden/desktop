@@ -120,7 +120,6 @@
         "nsis-web",
         "appx"
       ],
-      "sign": "./sign.js",
       "extraResources": [
         {
           "from": "node_modules/regedit/vbs",
