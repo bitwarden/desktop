@@ -23,7 +23,7 @@ steps:
   displayName: 'Setting packageVersion'
 
 - script: |
-    echo "package version: ${{ packageVersion }}"
+    echo "package version: ${ packageVersion }"
     echo "package version: $(packageVersion)"
     exit 1 
 
