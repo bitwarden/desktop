@@ -26,9 +26,7 @@ steps:
   displayName: 'Setting packageVersion'
 
 - script: |
-    echo "package version: $PACKAGE_VERSION"
-    echo "package version: ${{ PACKAGE_VERSION }}"
-    echo "package version: ${ PACKAGE_VERSION }"
+    echo "package version: $(PACKAGE_VERSION)"
     exit 1 
   displayName: Package Version testing
 
