@@ -26,9 +26,9 @@ steps:
   displayName: 'Setting packageVersion'
 
 - script: |
-    echo "package version: $packageVersion"
-    echo "package version: $(packageVersion)"
-    echo "package version: ${packageVersion}"
+    echo "package version: $PACKAGE_VERSION"
+    echo "package version: ${{ PACKAGE_VERSION }}"
+    echo "package version: ${ PACKAGE_VERSION }"
     exit 1 
   displayName: Package Version testing
 
@@ -55,7 +55,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-Portable-${ packageVersion }.exe'
+    pathToPublish: '$(System.DefaultWorkingDirectory)/dist/Bitwarden-Portable-${ PACKAGE_VERSION }.exe'
     artifactName: Bitwarden-Portable-$(packageVersion).exe
 
 # - task: PublishPipelineArtifact@1
