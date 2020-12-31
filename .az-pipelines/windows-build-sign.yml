@@ -17,6 +17,11 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- script: |
+    set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+    dotnet tool install --global AzureSignTool --version 2.0.17
+  displayName: 'install AzureSignTool'
+
 - task: PowerShell@2 
   inputs:
     targetType: 'inline'
