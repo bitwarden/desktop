@@ -17,10 +17,18 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+  #- script: |
+  #    set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+  #    dotnet tool install --global AzureSignTool --version 2.0.17
+  #  displayName: 'install AzureSignTool'
+
 - script: |
-    set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
-    dotnet tool install --global AzureSignTool --version 2.0.17
-  displayName: 'install AzureSignTool'
+    git clone https://github.com/vcsjones/AzureSignTool.git
+    cd AzureSignTool
+    dotnet --version
+    dotnet pack --output ./nupkg
+    dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 0.0.0-gce87e84a58 azuresigntool 
+  displayName: 'Install AST'
 
 - task: PowerShell@2 
   inputs:
@@ -50,6 +58,7 @@ steps:
     CSC_KEY_PASSWORD: $(ebSigningCertKey)
     SIGNING_VAULT_URL: $(SigningVaultURL)
     SIGNING_CLIENT_ID: $(SigningClientId)
+    SIGNING_TENTANT_ID: $(SigningTenantId)
     SIGNING_CLIENT_SECRET: $(SigningClientSecret)
     SIGNING_CERT_NAME: $(SigningCertName)
     SECRET_TEST: $(secretTest)
