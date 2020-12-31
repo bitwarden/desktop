@@ -19,7 +19,7 @@ steps:
     dotnet build
   displayName: 'Install AST'
 
-- script: azuresigntool sign --help
+- script: dotnet run -- sign --help
   displayName: 'Debugging AST'
 
 - script: exit 1
