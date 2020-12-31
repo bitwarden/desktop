@@ -24,8 +24,8 @@ steps:
     azuresigntool sign --help
   displayName: 'Debugging AST'
 
-- script: exit 1
-  displayName: 'Early Exit'
+  #- script: exit 1
+  #  displayName: 'Early Exit'
 
 - task: DownloadGitHubRelease@0
   inputs:
