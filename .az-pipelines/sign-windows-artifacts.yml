@@ -21,7 +21,7 @@ steps:
 
 - script: |
     cd AzureSignTool
-    dotnet run -- sign --help
+    dotnet run --project azuresigntool -- sign --help
   displayName: 'Debugging AST'
 
 - script: exit 1
