@@ -9,7 +9,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-- group: code-signing-test
+- group: build-sign-test
 
 steps:
 - task: NodeTool@0
