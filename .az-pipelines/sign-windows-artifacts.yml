@@ -21,7 +21,7 @@ steps:
   displayName: 'Install AST'
 
 - script: |
-    azuresigntool -- sign --help
+    azuresigntool sign --help
   displayName: 'Debugging AST'
 
 - script: exit 1
