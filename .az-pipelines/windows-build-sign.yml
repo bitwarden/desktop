@@ -48,6 +48,13 @@ steps:
   env:
     CSC_LINK: $(ebSigningCertIdentifierURL)
     CSC_KEY_PASSWORD: $(ebSigningCertKey)
+    SIGNING_VAULT_URL: $(SigningVaultURL)
+    SIGNING_CLIENT_ID: $(SigningClientId)
+    SIGNING_CLIENT_SECRET: $(SigningClientSecret)
+    SIGNING_CERT_NAME: $(SigningCertName)
+    SECRET_TEST: $(secretTest)
+
+    `azuresigntool sign -kvu ${process.env.SIGNING_VAULT_URL} -kvi ${process.env.SIGNING_CLIENT_ID} -kvs ${process.env.SIGNING_CLIENT_SECRET} -kvc ${process.env.SIGNING_CERT_NAME} -fd ${configuration.hash} -du ${configuration.site} -tr http://timestamp.digicert.com ${configuration.path}`,
 
 - script: ls -alht dist
   displayName: show executables
