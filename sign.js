@@ -3,8 +3,12 @@ exports.default = async function(configuration) {
 
   require("child_process").execSync(
     `azuresigntool sign \
-    --help
-    `,
+    -kvu "${process.env.SigningVaultURL}" \
+    -kvi "${process.env.SigningClientId}" \ 
+    -kvs "${process.env.SigningClientSecret}" \
+    -kvc "${process.env.SigningCertName}" \
+    -tr http://timestamp.digicert.com \
+    ${configuration.path}`,
     {
       stdio: "inherit"
     }
