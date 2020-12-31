@@ -16,8 +16,9 @@ steps:
     git clone https://github.com/vcsjones/AzureSignTool.git
     cd AzureSignTool
     dotnet --version
-    dotnet pack --output ./nupkg
-    dotnet tool install --global --add-source ./nupkg azuresigntool
+    dotnet build -p:Version=3.0.0
+    #dotnet pack --output ./nupkg
+    dotnet tool install --global --add-source ./nupkg --version 3.0.0 azuresigntool
   displayName: 'Install AST'
 
 - script: |
