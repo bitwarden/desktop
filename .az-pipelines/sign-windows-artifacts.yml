@@ -14,6 +14,8 @@ steps:
   
 - script: |
     git clone https://github.com/vcsjones/AzureSignTool.git
+    cd AzureSignTool
+    dotnet --version
     dotnet build
   displayName: 'Install AST'
 
