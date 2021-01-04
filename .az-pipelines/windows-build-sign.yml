@@ -40,8 +40,9 @@ steps:
     dotnet --version
     dotnet restore
     dotnet pack --output ./nupkg
-    dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 0.0.0-gce87e84a58 azuresigntool 
+    dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool 
   displayName: 'Install AST'
+  shell: pwsh
     
 
 - script: |
