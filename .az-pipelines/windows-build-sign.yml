@@ -31,6 +31,7 @@ steps:
 
 - pwsh: |
     git clone https://github.com/vcsjones/AzureSignTool.git
+    cd AzureSignTool
     $latest_head = $(git rev-parse HEAD)[0..9] -join ""
     $latest_version = "0.0.0-g$latest_head"
     Write-Host "--------"
@@ -38,7 +39,7 @@ steps:
     Write-Host "latest_head - $latest_head"
     Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
     Write-Host "--------"
-    cd AzureSignTool
+
     dotnet --version
     dotnet restore
     dotnet pack --output ./nupkg
