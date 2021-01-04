@@ -21,6 +21,7 @@ steps:
   #    set DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
   #    dotnet tool install --global AzureSignTool --version 2.0.17
   #  displayName: 'install AzureSignTool'
+
 - task: UseDotNet@2
   displayName: 'Use .NET Core SDK 3.x'
   inputs:
@@ -33,14 +34,16 @@ steps:
     cd AzureSignTool
     dotnet --version
     dotnet restore
-    dotnet pack --output ./nupkg -p:Version=3.0.0-alpha
-    dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 3.0.0-alpha azuresigntool 
+    dotnet publish src/AzureSignTool.csproj -o ./dist
+    cp ./dist/AzureSignTool $(Agent.ToolsDirectory)/azuresigntool
   displayName: 'Install AST'
     
 #dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 0.0.0-gce87e84a58 azuresigntool 
+#dotnet pack --output ./nupkg -p:Version=3.0.0-alpha
+#dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 3.0.0-alpha azuresigntool 
 
 - script: |
-    AzureSignTool sign --help
+    azuresigntool sign --help
     exit 1
   displayName: 'Debug AST installation'
 
