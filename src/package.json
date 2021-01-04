@@ -21,6 +21,7 @@
     "forcefocus": "^1.1.0",
     "keytar": "4.13.0",
     "node-ipc": "^9.1.1",
+    "regedit": "^3.0.3",
     "zxcvbn": "4.4.2"
   }
 }
