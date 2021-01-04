@@ -29,7 +29,7 @@ steps:
     version: 3.x
     installationPath: $(Agent.ToolsDirectory)/dotnet
 
-- script: |
+- pwsh: |
     git clone https://github.com/vcsjones/AzureSignTool.git
     $latest_head = $(git rev-parse HEAD)[0...9] -join ""
     $latest_version = "0.0.0-g$latest_head"
@@ -42,7 +42,6 @@ steps:
     dotnet pack --output ./nupkg
     dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool 
   displayName: 'Install AST'
-  shell: pwsh
     
 
 - script: |
