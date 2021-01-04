@@ -34,6 +34,8 @@ steps:
     $latest_head = $(git rev-parse HEAD)[0...9] -join ""
     $latest_version = "0.0.0-g$latest_head"
     Write-Host "--------"
+    Write-Host "git commit - $(git rev-parse HEAD)"
+    Write-Host "latest_head - $latest_head"
     Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
     Write-Host "--------"
     cd AzureSignTool
