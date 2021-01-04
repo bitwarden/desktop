@@ -27,10 +27,10 @@ steps:
     cd AzureSignTool
     dotnet --version
     dotnet restore
-    dotnet publish src/AzureSignTool/AzureSignTool.csproj -o ./dist
-    cp ./dist/AzureSignTool %USERPROFILE%\.dotnet\tools
+    dotnet pack --output ./nupkg -p:Version=3.0.0-alpha
+    dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 3.0.0-alpha azuresigntool 
   displayName: 'Install AST'
-#dotnet pack --output ./nupkg
+    
 #dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 0.0.0-gce87e84a58 azuresigntool 
 
 - script: |
