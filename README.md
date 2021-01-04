@@ -30,7 +30,7 @@ npm run electron
 
 Native Messaging (communication with the browser extension) works by having the browser start a lightweight proxy application baked into our desktop binary. To setup an environment which allows
 for easy debugging you will need to build the application for distribution, i.e. `npm run dist:<platform>`, start the dist version and enable desktop integration. This will write some manifests
-to disk, Consult the [native manifests](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#Manifest_location) documentation for more details of the manigest
+to disk, Consult the [native manifests](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_manifests#Manifest_location) documentation for more details of the manifest
 format, and the exact locations for the different platforms. *Note* that disabling the desktop integration will delete the manifests, and the files will need to be updated again.
 
 The generated manifests are pre-configured with the production ID for the browser extensions. In order to use them with the development builds, the browser extension ID of the development build
