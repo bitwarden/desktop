@@ -31,16 +31,18 @@ steps:
 
 - script: |
     git clone https://github.com/vcsjones/AzureSignTool.git
+    $latest_head = $(git rev-parse HEAD)[0...9] -join ""
+    $latest_version = "0.0.0-g$latest_head"
+    Write-Host "--------"
+    Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
+    Write-Host "--------"
     cd AzureSignTool
     dotnet --version
     dotnet restore
-    dotnet publish src/AzureSignTool.csproj -o ./dist
-    cp ./dist/AzureSignTool $(Agent.ToolsDirectory)/azuresigntool
+    dotnet pack --output ./nupkg
+    dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 0.0.0-gce87e84a58 azuresigntool 
   displayName: 'Install AST'
     
-#dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 0.0.0-gce87e84a58 azuresigntool 
-#dotnet pack --output ./nupkg -p:Version=3.0.0-alpha
-#dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version 3.0.0-alpha azuresigntool 
 
 - script: |
     azuresigntool sign --help
