@@ -31,7 +31,7 @@ steps:
 
 - pwsh: |
     git clone https://github.com/vcsjones/AzureSignTool.git
-    $latest_head = $(git rev-parse HEAD)[0...9] -join ""
+    $latest_head = $(git rev-parse HEAD)[0..9] -join ""
     $latest_version = "0.0.0-g$latest_head"
     Write-Host "--------"
     Write-Host "git commit - $(git rev-parse HEAD)"
