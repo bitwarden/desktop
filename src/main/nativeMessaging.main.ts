@@ -80,25 +80,25 @@ export class NativeMessagingMain {
                 this.writeManifest(path.join(destination, 'firefox.json'), firefoxJson);
                 this.writeManifest(path.join(destination, 'chrome.json'), chromeJson);
 
-                this.createWindowsRegistry('HKLM\\SOFTWARE\\Mozilla\\Firefox', 'HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'firefox.json'))
-                this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'))
+                this.createWindowsRegistry('HKLM\\SOFTWARE\\Mozilla\\Firefox', 'HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'firefox.json'));
+                this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'));
                 break;
             case 'darwin':
                 if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/`)) {
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson)
+                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson);
                 }
 
                 if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome`)) {
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson)
+                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
                 break;
             case 'linux':
                 if (existsSync(`${homedir()}/.mozilla/`)) {
-                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson)
+                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson);
                 }
 
                 if (existsSync(`${homedir()}/.config/google-chrome/`)) {
-                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson)
+                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
                 break;
             default:
@@ -167,6 +167,7 @@ export class NativeMessagingMain {
         try {
             await list(check)
         } catch {
+            this.logService.warning(`Not finding registry ${check} skipping.`);
             return;
         }
 
