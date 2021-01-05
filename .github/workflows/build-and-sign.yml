@@ -27,13 +27,32 @@ jobs:
           npm --version
           dotnet --version
 
-          exit 1
+      - name: Install AST
+        shell: pwsh
+        run: |
+          cd $HOME
+
+	  	  git clone https://github.com/vcsjones/AzureSignTool.git
+		  cd AzureSignTool
+		  $latest_head = $(git rev-parse HEAD)[0..9] -join ""
+		  $latest_version = "0.0.0-g$latest_head"
+
+		  Write-Host "--------"
+		  Write-Host "git commit - $(git rev-parse HEAD)"
+		  Write-Host "latest_head - $latest_head"
+		  Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
+		  Write-Host "--------"
+
+          cd $HOME
 
       - name: Checkout repo
         uses: actions/checkout@v2
 
       - name: Load package version
-        run: ./.github/scripts/load-version.ps1
+        run: |
+          ./.github/scripts/load-version.ps1
+
+		  exit 1
         shell: pwsh
 
       - name: Install Node dependencies
