@@ -43,7 +43,14 @@ jobs:
           Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
           Write-Host "--------"
 
+          dotnet restore
+          dotnet pact --output ./nupkg
+          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
+
           cd $HOME
+
+      - name: Test AST
+        run: azuresigntool sign --help
 
       - name: Checkout repo
         uses: actions/checkout@v2
