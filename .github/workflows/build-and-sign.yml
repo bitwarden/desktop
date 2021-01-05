@@ -64,16 +64,12 @@ jobs:
         run: npm run lint
 
       - name: Build application
-        run: |
-          npm run build
-          npm run clean:dist
+        run: npm run build
 
       - name: Build & Sign
-        shell: pwsh
         run: |
-          $certName = "`u{22}Bitwarden Inc`u{22}"
-          npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName="`u{22}Bitwarden Inc`u{22}"
-          Write-Host "certName=$certName"
+          npm run build
+          npm run pack:win
         env:
           CSC_LINK: ${{ secrets.EB_SIGNING_CERT_IDENTIFIER_URL }}
           CSC_KEY_PASSWORD: ${{ secrets.EB_SIGNING_CERT_KEY }}
