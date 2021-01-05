@@ -1,0 +1,109 @@
+name: Build & Sign
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: pwsh
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "3.x"
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          dotnet --version
+
+          exit 1
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build application
+        shell: pwsh
+        run: npm run dist:win:ci
+
+      - name: Rename appx files for store
+        shell: pwsh
+        run: |
+          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx" `
+            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
+            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
+
+      - name: Upload portable exe artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+
+      - name: Upload installer exe artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+
+      - name: Upload store appx ia32 artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+
+      - name: Upload store appx x64 artifact
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+
+      - name: Deploy to Chocolatey
+        if: github.event_name == 'release'
+        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+        shell: pwsh
+
+      - name: Upload Chocolatey nupkg artifact
+        if: github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          hub release edit `
+            -a ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
+            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+            $env:RELEASE_TAG_NAME
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
