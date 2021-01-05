@@ -16,7 +16,7 @@ jobs:
         shell: pwsh
 
       - name: Setup dotnet
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "3.x"
 
