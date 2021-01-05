@@ -6,7 +6,7 @@ on:
 jobs:
   windows:
     runs-on: windows-latest
-    environment: test
+    environment: test_ast
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
@@ -79,6 +79,9 @@ jobs:
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
           SECRET_TEST: ${{ secrets.SECRET_TEST }}
+
+      - name: List Dist
+        run: dir ./dist
 
 #- name: Upload portable exe artifact
 #  if: github.ref == 'refs/heads/master' || github.event_name == 'release'

@@ -40,7 +40,7 @@
     "pack:mac": "npm run clean:dist && electron-builder --mac -p never",
     "pack:mac:mas": "npm run clean:dist && electron-builder --mac mas -p never",
     "pack:mac:masdev": "npm run clean:dist && electron-builder --mac mas-dev -p never",
-    "pack:win": "npm run clean:dist && electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"",
+    "pack:win": "npm run clean:dist && electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
     "pack:win:ci": "npm run clean:dist && electron-builder --win --x64 --ia32 -p never",
     "dist:dir": "npm run build && npm run pack:dir",
     "dist:lin": "npm run build && npm run pack:lin",
@@ -197,7 +197,7 @@
       "applicationId": "bitwardendesktop",
       "identityName": "8bitSolutionsLLC.bitwardendesktop",
       "publisher": "CN=14D52771-DE3C-4886-B8BF-825BA7690418",
-      "publisherDisplayName": "8bit Solutions LLC",
+      "publisherDisplayName": "Bitwarden Inc",
       "languages": [
         "en-US"
       ]
