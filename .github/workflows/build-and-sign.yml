@@ -44,7 +44,7 @@ jobs:
           Write-Host "--------"
 
           dotnet restore
-          dotnet pact --output ./nupkg
+          dotnet pack --output ./nupkg
           dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
           cd $HOME
