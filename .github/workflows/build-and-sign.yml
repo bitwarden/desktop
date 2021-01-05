@@ -72,7 +72,7 @@ jobs:
           npm run clean:dist
 
       - name: Build & Sign
-        run: electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
+        run: npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
         env:
           CSC_LINK: ${{ secrets.EB_SIGNING_CERT_IDENTIFIER_URL }}
           CSC_KEY_PASSWORD: ${{ secrets.EB_SIGNING_CERT_KEY }}
