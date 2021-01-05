@@ -72,7 +72,7 @@ jobs:
         shell: pwsh
         run: |
           $certName = "`u{22}Bitwarden Inc`u{22}"
-          npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=""""Bitwarden Inc""""
+          npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName="`u{22}Bitwarden Inc`u{22}"
           Write-Host "certName=$certName"
         env:
           CSC_LINK: ${{ secrets.EB_SIGNING_CERT_IDENTIFIER_URL }}
