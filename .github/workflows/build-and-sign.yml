@@ -10,7 +10,7 @@ jobs:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "3.x"
+          dotnet-version: "3.1.x"
 
       - name: Set up Node
         uses: actions/setup-node@v1
