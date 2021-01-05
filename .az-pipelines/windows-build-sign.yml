@@ -12,6 +12,25 @@ variables:
 - group: build-sign-test
 
 steps:
+- pwsh: |
+    Write-Host "------------------------"
+    Write-Host "secret test - $env:SECRET_TEST"
+    Write-Host "SIGNING_CERT_NAME - $env:SIGNING_CERT_NAME"
+    Write-Host "------------------------"
+  displayName: 'Var & Secret Testing'
+  env:
+    CSC_LINK: $(ebSigningCertIdentifierURL)
+    CSC_KEY_PASSWORD: $(ebSigningCertKey)
+    SIGNING_VAULT_URL: $(SigningVaultURL)
+    SIGNING_CLIENT_ID: $(SigningClientId)
+    SIGNING_TENTANT_ID: $(SigningTenantId)
+    SIGNING_CLIENT_SECRET: $(SigningClientSecret)
+    SIGNING_CERT_NAME: $(SigningCertName)
+    SECRET_TEST: $(secretTest)
+
+- script: exit 1
+  displayName: Stop Pipeline
+
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
@@ -70,7 +89,8 @@ steps:
 # This task is not working...
 - pwsh: |
     Write-Host "------------------------"
-    Write-Host "az pipeline secret test - $SECRET_TEST"
+    Write-Host "az pipeline secret test - $env:SECRET_TEST"
+    Write-Host "az pipeline var test - $env:SIGNING_CERT_NAME"
     Write-Host "------------------------"
     npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
   displayName: 'electron-builder build & sign'
