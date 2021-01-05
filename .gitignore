@@ -4,6 +4,7 @@ node_modules
 npm-debug.log
 vwd.webinfo
 dist/
+dist-safari/
 css/
 *.crx
 *.pem
