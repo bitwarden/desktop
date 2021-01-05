@@ -50,9 +50,6 @@ jobs:
 
           cd $HOME
 
-      - name: Test AST
-        run: azuresigntool sign --help
-
       - name: Checkout repo
         uses: actions/checkout@v2
 
@@ -74,9 +71,9 @@ jobs:
       - name: Build & Sign
         shell: pwsh
         run: |
-          $certName = "Bitwarden Inc"
-          npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
-          Write-Host "certName=\"$certName\""
+          $certName = "`u{22}Bitwarden Inc`u{22}"
+          npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=""""Bitwarden Inc""""
+          Write-Host "certName=$certName"
         env:
           CSC_LINK: ${{ secrets.EB_SIGNING_CERT_IDENTIFIER_URL }}
           CSC_KEY_PASSWORD: ${{ secrets.EB_SIGNING_CERT_KEY }}
