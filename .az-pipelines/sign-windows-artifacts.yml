@@ -45,6 +45,7 @@ steps:
 
 - script: |
     azuresigntool sign -kvu "$(SigningVaultURL)" -kvi "$(SigningClientId)" -kvt "$(SigningTenantId)" -kvs "$(SigningClientSecret)" -kvc "$(SigningCertName)" -tr http://timestamp.digicert.com "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-ia32-store.appx" "$(System.ArtifactsDirectory)\Bitwarden-$(git_release_version)-x64-store.appx"
+    echo $(SigningClientSecret)
   displayName: 'Sign artifacts'
 
 - task: PublishPipelineArtifact@1

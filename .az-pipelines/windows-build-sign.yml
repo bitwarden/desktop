@@ -17,6 +17,8 @@ steps:
     Write-Host "secret test - $env:SECRET_TEST"
     Write-Host "new var test - $env:NEW_VAR_TEST"
     Write-Host "SIGNING_CERT_NAME - $env:SIGNING_CERT_NAME"
+    Write-Host "---"
+    Write Host "This shouldn't work - $(secretTest)" 
     Write-Host "------------------------"
   displayName: 'Var & Secret Testing'
   env:
