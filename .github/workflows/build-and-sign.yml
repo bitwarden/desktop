@@ -1,6 +1,7 @@
 name: Build & Sign
 
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
 
 jobs:
   windows:
