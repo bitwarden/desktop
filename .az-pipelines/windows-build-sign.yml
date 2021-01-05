@@ -68,7 +68,11 @@ steps:
   displayName: 'npm build'
 
 # This task is not working...
-- script: npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
+- pwsh: |
+    Write-Host "------------------------"
+    Write-Host "az pipeline secret test - $SECRET_TEST"
+    Write-Host "------------------------"
+    npx electron-builder --win --x64 --ia32 -p never -c.win.certificateSubjectName=\"Bitwarden Inc\"
   displayName: 'electron-builder build & sign'
   env:
     CSC_LINK: $(ebSigningCertIdentifierURL)
