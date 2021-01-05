@@ -7,6 +7,11 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
+      - name: Set up dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "3.x"
+
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
@@ -15,11 +20,6 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: pwsh
-
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "3.x"
 
       - name: Print environment
         run: |
