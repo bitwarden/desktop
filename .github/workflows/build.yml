@@ -121,7 +121,7 @@ jobs:
 
   windows:
     runs-on: windows-latest
-
+    environment: test_ast
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
