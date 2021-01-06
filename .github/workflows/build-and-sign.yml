@@ -101,14 +101,14 @@ jobs:
         #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-signed.appx
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
 
       - name: Upload signed appx x64 artifact
         #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-signed.appx
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
 
 #- name: Upload release assets
