@@ -83,19 +83,33 @@ jobs:
       - name: List Dist
         run: dir ./dist
 
-#- name: Upload portable exe artifact
-#  if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-#  uses: actions/upload-artifact@v2
-#  with:
-#    name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-#    path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+      - name: Upload signed portable exe artifact
+        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}-signed.exe
+          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
 
-#- name: Upload installer exe artifact
-#  if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-#  uses: actions/upload-artifact@v2
-#  with:
-#    name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-#    path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+      - name: Upload signed installer exe artifact
+        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}-signed.exe
+          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+
+      - name: Upload signed appx ia32 artifact
+        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-signed.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
+
+      - name: Upload signed appx x64 artifact
+        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-signed.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
 
 #- name: Upload release assets
 #  if: github.event_name == 'release'
