@@ -1,7 +1,14 @@
 name: Build & Sign
 
-on: 
-  workflow_dispatch:
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
+  release:
+    types:
+      - published
+
 
 jobs:
   windows:
@@ -71,8 +78,7 @@ jobs:
           npm run build
           npm run pack:win
         env:
-          CSC_LINK: ${{ secrets.EB_SIGNING_CERT_IDENTIFIER_URL }}
-          CSC_KEY_PASSWORD: ${{ secrets.EB_SIGNING_CERT_KEY }}
+          ELECTRON_BUILDER_SIGN: 1
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
           SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
@@ -84,43 +90,44 @@ jobs:
         run: dir ./dist
 
       - name: Upload signed portable exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}-signed.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload signed installer exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}-signed.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload signed appx ia32 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
 
       - name: Upload signed appx x64 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
 
-#- name: Upload release assets
-#  if: github.event_name == 'release'
-#  run: |
-#    hub release edit `
-#      -a ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg `
-#      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-#      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-#      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-#      $env:RELEASE_TAG_NAME
-#  shell: pwsh
-#  env:
-#    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          hub release edit `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx `
+            -a ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe `
+            -a ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe `
+            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+            $env:RELEASE_TAG_NAME
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}

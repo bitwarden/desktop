@@ -1,16 +1,13 @@
 name: Build
 
-on: 
-  workflow_dispatch:
-    
-# on:
-#   push:
-#     branches-ignore:
-#       - 'l10n_master'
-#       - 'gh-pages'
-#   release:
-#     types:
-#       - published
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
+  release:
+    types:
+      - published
 
 jobs:
 
@@ -121,7 +118,7 @@ jobs:
 
   windows:
     runs-on: windows-latest
-
+    environment: test_ast
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
@@ -145,7 +142,7 @@ jobs:
         run: |
           node --version
           npm --version
-          choco --version
+          #choco --version
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -163,6 +160,8 @@ jobs:
       - name: Build application
         shell: pwsh
         run: npm run dist:win:ci
+        env:
+          ELECTRON_BUILDER_SIGN: 0
 
       - name: Rename appx files for store
         shell: pwsh
@@ -173,28 +172,28 @@ jobs:
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
 
       - name: Upload portable exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload installer exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload store appx ia32 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
 
       - name: Upload store appx x64 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
@@ -212,22 +211,21 @@ jobs:
       #     name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
       #     path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
-      #- name: Upload release assets
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    hub release edit `
-      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-      #      $env:RELEASE_TAG_NAME
-      #  shell: pwsh
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          hub release edit `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
+            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+            $env:RELEASE_TAG_NAME
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
   macos:
     runs-on: macos-latest
-
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
