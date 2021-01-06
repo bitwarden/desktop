@@ -71,7 +71,7 @@ jobs:
           npm run build
           npm run pack:win
         env:
-          ELECTRON_BUILDER_SIGN: true
+          ELECTRON_BUILDER_SIGN: 1
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
           SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}

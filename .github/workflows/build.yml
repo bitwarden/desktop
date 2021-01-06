@@ -164,7 +164,7 @@ jobs:
         shell: pwsh
         run: npm run dist:win:ci
         env:
-          ELECTRON_BUILDER_SIGN: false
+          ELECTRON_BUILDER_SIGN: 0
 
       - name: Rename appx files for store
         shell: pwsh
