@@ -172,28 +172,28 @@ jobs:
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
 
       - name: Upload portable exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload installer exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload store appx ia32 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
 
       - name: Upload store appx x64 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
