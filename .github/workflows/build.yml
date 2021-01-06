@@ -1,16 +1,13 @@
 name: Build
 
-on: 
-  workflow_dispatch:
-    
-# on:
-#   push:
-#     branches-ignore:
-#       - 'l10n_master'
-#       - 'gh-pages'
-#   release:
-#     types:
-#       - published
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
+  release:
+    types:
+      - published
 
 jobs:
 
@@ -214,22 +211,21 @@ jobs:
       #     name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
       #     path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
-      #- name: Upload release assets
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    hub release edit `
-      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-      #      $env:RELEASE_TAG_NAME
-      #  shell: pwsh
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        run: |
+          hub release edit `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
+            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
+            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+            $env:RELEASE_TAG_NAME
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
   macos:
     runs-on: macos-latest
-
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
