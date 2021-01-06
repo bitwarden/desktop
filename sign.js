@@ -1,11 +1,5 @@
 exports.default = async function(configuration) {
-
-  console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++')
-  console.log(`ELECTRON_BUILDER_SIGN: ${process.env.ELECTRON_BUILDER_SIGN}`)
-  console.log(`Type: ${typeof process.env.ELECTRON_BUILDER_SIGN}`)
-  console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++')
-
-  if (parseInt(process.env.ELECTRON_BUILDER_SIGN) === 1) {
+  if (process.env.ELECTRON_BUILDER_SIGN === 1) {
     require("child_process").execSync(
       `azuresigntool sign ` +
       `-kvu ${process.env.SIGNING_VAULT_URL} ` +
