@@ -71,8 +71,7 @@ jobs:
           npm run build
           npm run pack:win
         env:
-          CSC_LINK: ${{ secrets.EB_SIGNING_CERT_IDENTIFIER_URL }}
-          CSC_KEY_PASSWORD: ${{ secrets.EB_SIGNING_CERT_KEY }}
+          ELECTRON_BUILDER_SIGN: true
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
           SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
