@@ -1,7 +1,14 @@
 name: Build & Sign
 
-on: 
-  workflow_dispatch:
+on:
+  push:
+    branches-ignore:
+      - 'l10n_master'
+      - 'gh-pages'
+  release:
+    types:
+      - published
+
 
 jobs:
   windows:
