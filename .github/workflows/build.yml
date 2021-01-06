@@ -123,11 +123,6 @@ jobs:
     runs-on: windows-latest
     environment: test_ast
     steps:
-      - name: Set up dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "3.1.x"
-
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
@@ -151,30 +146,6 @@ jobs:
           node --version
           npm --version
           #choco --version
-          dotnet --version
-
-
-      - name: Install AST
-        shell: pwsh
-        run: |
-          cd $HOME
-
-          git clone https://github.com/vcsjones/AzureSignTool.git
-          cd AzureSignTool
-          $latest_head = $(git rev-parse HEAD)[0..9] -join ""
-          $latest_version = "0.0.0-g$latest_head"
-
-          Write-Host "--------"
-          Write-Host "git commit - $(git rev-parse HEAD)"
-          Write-Host "latest_head - $latest_head"
-          Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
-          Write-Host "--------"
-
-          dotnet restore
-          dotnet pack --output ./nupkg
-          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
-
-          cd $HOME
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -242,49 +213,6 @@ jobs:
       #   with:
       #     name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
       #     path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-      
-      - name: Repack & Sign
-        run: |
-          npm run pack:win
-        env:
-          ELECTRON_BUILDER_SIGN: true
-          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          SECRET_TEST: ${{ secrets.SECRET_TEST }}
-
-      - name: List Dist
-        run: dir ./dist
-
-      - name: Upload signed portable exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}-signed.exe
-          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-
-      - name: Upload signed installer exe artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}-signed.exe
-          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-
-      - name: Upload signed appx ia32 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
-
-      - name: Upload signed appx x64 artifact
-        #if: github.ref == 'refs/heads/master' || github.event_name == 'release'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
 
       #- name: Upload release assets
       #  if: github.event_name == 'release'
