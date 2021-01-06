@@ -193,12 +193,7 @@ jobs:
         shell: pwsh
         run: npm run dist:win:ci
         env:
-          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          SECRET_TEST: ${{ secrets.SECRET_TEST }}
+          ELECTRON_BUILDER_SIGN: false
 
       - name: Rename appx files for store
         shell: pwsh
@@ -252,6 +247,7 @@ jobs:
         run: |
           npm run pack:win
         env:
+          ELECTRON_BUILDER_SIGN: true
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
           SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
