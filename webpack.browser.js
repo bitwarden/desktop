@@ -74,7 +74,7 @@ const common = {
 };
 
 const renderer = {
-    mode: 'production',
+    mode: process.env.DEVELOPMENT ? 'development' :'production',
     devtool: false,
     target: 'web',
     node: {
@@ -156,6 +156,9 @@ const renderer = {
             chunkFilename: '[id].[hash].css',
         }),
     ],
+    devServer: {
+        port: 4242,
+    },
 };
 
 if (process.env.BUNDLE_ANALYSE) {
