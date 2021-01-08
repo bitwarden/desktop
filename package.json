@@ -37,7 +37,7 @@
     "build:browser:server": "gulp prebuild:renderer && cross-env DEVELOPMENT=1 webpack-dev-server --config webpack.browser.js --watch",
     "build:browser:server:analysebundle": "gulp prebuild:renderer && cross-env BUNDLE_ANALYSE=1 webpack-dev-server --config webpack.browser.js --watch",
     "electron:browser": "npm run build:main && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 ./build --watch\" \"npm run build:browser_in_electron:watch\"",
-    "electron": "npm run build:main && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 ./build --watch\" \"npm run build:renderer:watch\"",
+    "electron": "npm run build:main && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 ./build --watch\" \"cross-env DEVELOPMENT=1 npm run build:renderer:watch\"",
     "clean:dist": "rimraf ./dist/*",
     "clean:l10n": "git push origin --delete l10n_master",
     "pack:dir": "npm run clean:dist && electron-builder --dir -p never",

@@ -47,7 +47,7 @@ const common = {
 };
 
 const renderer = {
-    mode: 'production',
+    mode: process.env.DEVELOPMENT ? 'development' :'production',
     devtool: false,
     target: 'electron-renderer',
     node: {
