@@ -43,13 +43,13 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      # - name: Set up snap
-      #   if: github.event_name == 'release'
-      #   run: |
-      #     sudo snap install snapcraft --classic
-      #     echo "$SNAP_TOKEN" | snapcraft login --with -
-      #   env:
-      #     SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+      - name: Set up snap
+        if: github.event_name == 'release'
+        run: |
+          sudo snap install snapcraft --classic
+          echo "$SNAP_TOKEN" | snapcraft login --with -
+        env:
+          SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -109,12 +109,12 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
 
-      #- name: Deploy to Snap Store
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
-      #    snapcraft logout
-      #  shell: pwsh
+      - name: Deploy to Snap Store
+        if: github.event_name == 'release'
+        run: |
+          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+          snapcraft logout
+        shell: pwsh
 
   windows:
     runs-on: windows-latest
@@ -129,20 +129,20 @@ jobs:
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: pwsh
 
-      # - name: Set up environment
-      #   if: github.event_name == 'release'
-      #   shell: pwsh
-      #   run: |
-      #     choco install checksum --no-progress
-      #     choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-      #   env:
-      #     CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+      - name: Set up environment
+        if: github.event_name == 'release'
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Print environment
         run: |
           node --version
           npm --version
-          #choco --version
+          choco --version
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -199,17 +199,17 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
 
-      # - name: Deploy to Chocolatey
-      #   if: github.event_name == 'release'
-      #   run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
-      #   shell: pwsh
+      - name: Deploy to Chocolatey
+        if: github.event_name == 'release'
+        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+        shell: pwsh
 
-      # - name: Upload Chocolatey nupkg artifact
-      #   if: github.event_name == 'release'
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-      #     path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+      - name: Upload Chocolatey nupkg artifact
+        if: github.event_name == 'release'
+        uses: actions/upload-artifact@v2
+        with:
+          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
       - name: Upload release assets
         if: github.event_name == 'release'
@@ -350,12 +350,12 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
 
-      # - name: Deploy to App Store
-      #   if: github.event_name == 'release'
-      #   run: npm run upload:mas
-      #   env:
-      #     APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-      #     APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+      - name: Deploy to App Store
+        if: github.event_name == 'release'
+        run: npm run upload:mas
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload release assets
         if: github.event_name == 'release'
