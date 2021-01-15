@@ -47,9 +47,9 @@ jobs:
         if: github.event_name == 'release'
         run: |
           sudo snap install snapcraft --classic
-          echo "$SNAP_TOKEN" | snapcraft login --with -
-        env:
-          SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+        #  echo "$SNAP_TOKEN" | snapcraft login --with -
+        #env:
+        #  SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -109,12 +109,12 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
 
-      - name: Deploy to Snap Store
-        if: github.event_name == 'release'
-        run: |
-          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
-          snapcraft logout
-        shell: pwsh
+      #- name: Deploy to Snap Store
+      #  if: github.event_name == 'release'
+      #  run: |
+      #    ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+      #    snapcraft logout
+      #  shell: pwsh
 
   windows:
     runs-on: windows-latest
@@ -154,14 +154,14 @@ jobs:
           dotnet pack --output ./nupkg
           dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
-      - name: Set up environment
-        if: github.event_name == 'release'
-        shell: pwsh
-        run: |
-          choco install checksum --no-progress
-          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-        env:
-          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+      #- name: Set up environment
+      #  if: false && github.event_name == 'release'
+      #  shell: pwsh
+      #  run: |
+      #    choco install checksum --no-progress
+      #    choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+      #  env:
+      #    CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Print environment
         run: |
@@ -254,18 +254,18 @@ jobs:
           name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
-      - name: Upload release assets
-        if: github.event_name == 'release'
-        run: |
-          hub release edit `
-            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-            $env:RELEASE_TAG_NAME
-        shell: pwsh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      #- name: Upload release assets
+      #  if: github.event_name == 'release'
+      #  run: |
+      #    hub release edit `
+      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
+      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
+      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+      #      $env:RELEASE_TAG_NAME
+      #  shell: pwsh
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
   macos:
     runs-on: macos-latest
