@@ -1,6 +1,5 @@
 exports.default = async function(configuration) {
-  if (parseInt(process.env.ELECTRON_BUILDER_SIGN) === 1) {
-    console.log(`[++] File to sign: ${configuration.path}`)
+  if (parseInt(process.env.ELECTRON_BUILDER_SIGN) === 1 && configuration.path.slice(-4) == ".exe") {
     require("child_process").execSync(
       `azuresigntool sign ` +
       `-kvu ${process.env.SIGNING_VAULT_URL} ` +
