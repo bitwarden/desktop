@@ -13,7 +13,7 @@ on:
 jobs:
   windows:
     runs-on: windows-latest
-    environment: test_ast
+    environment: prod
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
