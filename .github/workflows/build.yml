@@ -120,6 +120,11 @@ jobs:
     runs-on: windows-latest
     environment: test_ast
     steps:
+      - name: Set up dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "3.1.x"
+
       - name: Set up Node
         uses: actions/setup-node@v1
         with:
@@ -128,6 +133,26 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: pwsh
+
+      - name: Install AST
+        shell: pwsh
+        run: |
+          cd $HOME
+
+          git clone https://github.com/vcsjones/AzureSignTool.git
+          cd AzureSignTool
+          $latest_head = $(git rev-parse HEAD)[0..9] -join ""
+          $latest_version = "0.0.0-g$latest_head"
+
+          Write-Host "--------"
+          Write-Host "git commit - $(git rev-parse HEAD)"
+          Write-Host "latest_head - $latest_head"
+          Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
+          Write-Host "--------"
+
+          dotnet restore
+          dotnet pack --output ./nupkg
+          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
       - name: Set up environment
         if: github.event_name == 'release'
@@ -157,11 +182,29 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Build application
-        shell: pwsh
-        run: npm run dist:win:ci
+      - name: Build & Sign (dev)
+        if: github.event_name != 'release'
+        run: |
+          npm run build
+          npm run pack:win
         env:
-          ELECTRON_BUILDER_SIGN: 0
+          ELECTRON_BUILDER_SIGN: 1
+          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
+          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
+          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
+          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
+          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+
+      - name: Build, Sign & Release
+        if: github.ref == 'release'
+        run: npm run publish:win
+        env:
+          ELECTRON_BUILDER_SIGN: 1
+          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
+          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
+          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
+          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
+          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
 
       - name: Rename appx files for store
         shell: pwsh
