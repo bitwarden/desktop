@@ -205,6 +205,7 @@ jobs:
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Rename appx files for store
         shell: pwsh
