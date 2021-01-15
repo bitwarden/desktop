@@ -196,7 +196,7 @@ jobs:
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
 
       - name: Build, Sign & Release
-        if: github.event.name == 'release'
+        if: github.event_name == 'release'
         run: npm run publish:win
         env:
           ELECTRON_BUILDER_SIGN: 1
