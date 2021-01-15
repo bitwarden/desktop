@@ -22,8 +22,9 @@ export class NativeMessagingService {
     private sharedSecrets = new Map<string, SymmetricCryptoKey>();
 
     constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
-        private platformUtilService: PlatformUtilsService, private logService: LogService, private i18nService: I18nService,
-        private userService: UserService, private messagingService: MessagingService, private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService) {
+        private platformUtilService: PlatformUtilsService, private logService: LogService,
+        private i18nService: I18nService, private userService: UserService, private messagingService: MessagingService,
+        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService) {
         ipcRenderer.on('nativeMessaging', async (event: any, message: any) => {
             this.messageHandler(message);
         });
@@ -36,6 +37,12 @@ export class NativeMessagingService {
         // Request to setup secure encryption
         if (rawMessage.command === 'setupEncryption') {
             const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
+
+            // Valudate the UserId to ensure we are logged into the same account.
+            if (rawMessage.userId !== await this.userService.getUserId()) {
+                ipcRenderer.send('nativeMessagingReply', {command: 'wrongUserId', appId: appId});
+                return;
+            }
 
             if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegrationFingerprint)) {
                 ipcRenderer.send('nativeMessagingReply', {command: 'verifyFingerprint', appId: appId});
