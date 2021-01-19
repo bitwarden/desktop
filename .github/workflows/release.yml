@@ -111,6 +111,15 @@ jobs:
     runs-on: windows-latest
     environment: test_ast
     steps:
+      - name: Testing workflow_dispatch input
+        shell: pwsh
+        run: |
+          Write-Host "Version: $($env:RELEASE_TAG_NAME)"
+          Write-Host "Release Tag Name: $($env:RELEASE_TAG_NAME.TrimStart('v'))" 
+          exit 1
+        env:
+          RELEASE_TAG_NAME: ${{ github.event.input.release_tag_name }}
+
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
         with:
@@ -356,7 +365,6 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload release assets
-        shell: pwsh
         run: |
           hub release edit `
             -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
