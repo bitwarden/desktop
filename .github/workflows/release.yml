@@ -356,6 +356,7 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload release assets
+        shell: pwsh
         run: |
           hub release edit `
             -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
