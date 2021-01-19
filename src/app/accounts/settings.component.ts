@@ -38,6 +38,7 @@ export class SettingsComponent implements OnInit {
     enableMinToTray: boolean = false;
     enableCloseToTray: boolean = false;
     enableTray: boolean = false;
+    enableTrayWindow: boolean = false;
     showMinToTray: boolean = false;
     startToTray: boolean = false;
     minimizeOnCopyToClipboard: boolean = false;
@@ -62,6 +63,8 @@ export class SettingsComponent implements OnInit {
     enableMinToTrayDescText: string;
     enableCloseToTrayText: string;
     enableCloseToTrayDescText: string;
+    enableTrayWindowText: string;
+    enableTrayWindowDescText: string;
     startToTrayText: string;
     startToTrayDescText: string;
 
@@ -86,6 +89,10 @@ export class SettingsComponent implements OnInit {
         const closeToTrayKey = isMac ? 'enableCloseToMenuBar' : 'enableCloseToTray';
         this.enableCloseToTrayText = this.i18nService.t(closeToTrayKey)
         this.enableCloseToTrayDescText = this.i18nService.t(closeToTrayKey + 'Desc');
+
+        const trayWindowKey = 'enableTrayWindow';
+        this.enableTrayWindowText = this.i18nService.t(trayWindowKey);
+        this.enableTrayWindowDescText = this.i18nService.t(trayWindowKey + 'Desc');
 
         const startToTrayKey = isMac ? 'startToMenuBar' : 'startToTray';
         this.startToTrayText = this.i18nService.t(startToTrayKey)
@@ -155,6 +162,7 @@ export class SettingsComponent implements OnInit {
         this.enableMinToTray = await this.storageService.get<boolean>(ElectronConstants.enableMinimizeToTrayKey);
         this.enableCloseToTray = await this.storageService.get<boolean>(ElectronConstants.enableCloseToTrayKey);
         this.enableTray = await this.storageService.get<boolean>(ElectronConstants.enableTrayKey);
+        this.enableTrayWindow = await this.storageService.get<boolean>(ElectronConstants.enableTrayWindowKey);
         this.startToTray = await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
@@ -305,6 +313,16 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
         this.callAnalytics('Tray', this.enableTray);
         this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
+    }
+
+    async saveTrayWindow() {
+        if (this.requireEnableTray) {
+            this.enableTray = true;
+            await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
+        }
+
+        await this.storageService.save(ElectronConstants.enableTrayWindowKey, this.enableTrayWindow);
+        this.callAnalytics('TrayWindow', this.enableTrayWindow);
     }
 
     async saveStartToTray() {

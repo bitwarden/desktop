@@ -105,7 +105,7 @@ export class Main {
         this.powerMonitorMain = new PowerMonitorMain(this);
         this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);
 
-        this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
+        this.messagingService = new ElectronMainMessagingService(this.windowMain, this.trayMain.trayWindowMain, (message) => {
             this.messagingMain.onMessage(message);
         });
 
@@ -119,7 +119,7 @@ export class Main {
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
 
-        this.nativeMessagingMain = new NativeMessagingMain(this.logService, this.windowMain, app.getPath('userData'), app.getAppPath());
+        this.nativeMessagingMain = new NativeMessagingMain(this.logService, this.windowMain, this.trayMain.trayWindowMain, app.getPath('userData'), app.getAppPath());
     }
 
     bootstrap() {

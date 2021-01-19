@@ -864,6 +864,12 @@
   "enableTrayDesc": {
     "message": "Always show an icon in the system tray."
   },
+  "enableTrayWindow": {
+    "message": "Enable Tray Mini Window"
+  },
+  "enableTrayWindowDesc": {
+    "message": "Enables the mini window when clicking the tray icon."
+  },
   "startToTray": {
     "message": "Start to tray icon"
   },

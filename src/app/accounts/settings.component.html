@@ -140,6 +140,16 @@
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
+                                <label for="enableTrayWindow">
+                                    <input id="enableTrayWindow" type="checkbox" name="EnableTrayWindow"
+                                        [(ngModel)]="enableTrayWindow" (change)="saveTrayWindow()">
+                                    {{enableTrayWindowText}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{enableTrayWindowDescText}}</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
                                 <label for="startToTray">
                                     <input id="startToTray" type="checkbox" name="StartToTray" [(ngModel)]="startToTray"
                                         (change)="saveStartToTray()">

@@ -6,13 +6,14 @@ import { homedir } from 'os';
 
 import { LogService } from 'jslib/abstractions/log.service';
 import { ipcMain } from 'electron';
+import { TrayWindowMain } from 'jslib/electron/traywindow.main';
 import { WindowMain } from 'jslib/electron/window.main';
 
 export class NativeMessagingMain {
     private connected = false;
     private socket: any;
 
-    constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private appPath: string) {}
+    constructor(private logService: LogService, private windowMain: WindowMain, private trayWindowMain: TrayWindowMain, private userPath: string, private appPath: string) {}
 
     listen() {
         ipc.config.id = 'bitwarden';
@@ -22,6 +23,7 @@ export class NativeMessagingMain {
             ipc.server.on('message', (data: any, socket: any) => {
                 this.socket = socket;
                 this.windowMain.win.webContents.send('nativeMessaging', data);
+                this.trayWindowMain.window.webContents.send('nativeMessaging', data);
             });
 
             ipcMain.on('nativeMessagingReply', (event, msg) => {
