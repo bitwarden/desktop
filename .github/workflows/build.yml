@@ -44,13 +44,13 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      - name: Set up snap
-        if: github.event_name == 'release'
-        run: |
-          sudo snap install snapcraft --classic
-        #  echo "$SNAP_TOKEN" | snapcraft login --with -
-        #env:
-        #  SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+      #- name: Set up snap
+      #  if: github.event_name == 'release'
+      #  run: |
+      #    sudo snap install snapcraft --classic
+      #    echo "$SNAP_TOKEN" | snapcraft login --with -
+      #  env:
+      #    SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -156,7 +156,7 @@ jobs:
           dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
       #- name: Set up environment
-      #  if: false && github.event_name == 'release'
+      #  if: false github.event_name == 'release'
       #  shell: pwsh
       #  run: |
       #    choco install checksum --no-progress
@@ -196,17 +196,17 @@ jobs:
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
 
-      - name: Build, Sign & Release
-        if: github.event_name == 'release'
-        run: npm run publish:win
-        env:
-          ELECTRON_BUILDER_SIGN: 1
-          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #- name: Build, Sign & Release
+      #  if: github.event_name == 'release'
+      #  run: npm run publish:win
+      #  env:
+      #    ELECTRON_BUILDER_SIGN: 1
+      #    SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
+      #    SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
+      #    SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
+      #    SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
+      #    SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Rename appx files for store
         shell: pwsh
@@ -256,18 +256,18 @@ jobs:
       #    name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
       #    path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
-      - name: Upload release assets
-        if: github.event_name == 'release'
-        run: |
-          hub release edit `
-            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-            $env:RELEASE_TAG_NAME
-        shell: pwsh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      #- name: Upload release assets
+      #  if: github.event_name == 'release'
+      #  run: |
+      #    hub release edit `
+      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
+      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
+      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+      #      $env:RELEASE_TAG_NAME
+      #  shell: pwsh
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
   macos:
     runs-on: macos-latest
@@ -395,21 +395,21 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
 
-      - name: Deploy to App Store
-        if: github.event_name == 'release'
-        run: npm run upload:mas
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+      #- name: Deploy to App Store
+      #  if: github.event_name == 'release'
+      #  run: npm run upload:mas
+      #  env:
+      #    APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+      #    APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload release assets
-        if: github.event_name == 'release'
-        run: |
-          hub release edit `
-            -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
-            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-            $env:RELEASE_TAG_NAME
-        shell: pwsh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
+      #- name: Upload release assets
+      #  if: github.event_name == 'release'
+      #  run: |
+      #    hub release edit `
+      #      -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
+      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
+      #      $env:RELEASE_TAG_NAME
+      #  shell: pwsh
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
