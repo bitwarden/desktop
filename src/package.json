@@ -2,14 +2,14 @@
   "name": "bitwarden",
   "productName": "Bitwarden",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "1.23.3-alpha",
+  "version": "1.23.1",
   "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joseph-flinn/desktop"
+    "url": "https://github.com/bitwarden/desktop"
   },
   "dependencies": {
     "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
