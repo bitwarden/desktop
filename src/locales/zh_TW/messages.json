@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "將視窗最小化時，於系統匣顯示圖示。"
   },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
+  },
   "enableCloseToTray": {
     "message": "關閉後縮小至系統匣"
   },
   "enableCloseToTrayDesc": {
     "message": "將視窗關閉時，於系統匣顯示圖示。"
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "啟用系統匣圖示"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "應用程式首次啟動時，將圖示隱藏至系統匣。"
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "語言"
@@ -1182,8 +1218,14 @@
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "您的密碼將匯出成未加密的. csv 檔案。您不應將它存放或經由未經加密的方式傳送（例如電子郵件）。用完後請立即將它刪除。"
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "輸入您的主密碼以匯出密碼庫資料。"
@@ -1407,5 +1449,47 @@
   },
   "acceptPoliciesError": {
     "message": "尚未接受服務條款與隱私權保護政策。"
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }
