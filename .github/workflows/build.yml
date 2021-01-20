@@ -5,10 +5,6 @@ on:
     branches-ignore:
       - 'l10n_master'
       - 'gh-pages'
-  release:
-    types:
-      #- published
-      - created
 
 jobs:
 
@@ -44,13 +40,9 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      #- name: Set up snap
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    sudo snap install snapcraft --classic
-      #    echo "$SNAP_TOKEN" | snapcraft login --with -
-      #  env:
-      #    SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+      - name: Set up snap
+        run: |
+          sudo snap install snapcraft --classic
 
       - name: Print environment
         run: |
@@ -76,50 +68,43 @@ jobs:
         run: npm run dist:lin
 
       - name: Upload .deb artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
 
       - name: Upload .rpm artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
 
       - name: Upload .freebsd artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
 
       - name: Upload .snap artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
           path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
 
       - name: Upload .AppImage artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
 
-      #- name: Deploy to Snap Store
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
-      #    snapcraft logout
-      #  shell: pwsh
 
   windows:
     runs-on: windows-latest
-    environment: prod
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
@@ -155,14 +140,10 @@ jobs:
           dotnet pack --output ./nupkg
           dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
-      #- name: Set up environment
-      #  if: false github.event_name == 'release'
-      #  shell: pwsh
-      #  run: |
-      #    choco install checksum --no-progress
-      #    choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-      #  env:
-      #    CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
 
       - name: Print environment
         run: |
@@ -184,7 +165,6 @@ jobs:
         run: npm run lint
 
       - name: Build & Sign (dev)
-        if: github.event_name != 'release'
         run: |
           npm run build
           npm run pack:win
@@ -196,18 +176,6 @@ jobs:
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
 
-      #- name: Build, Sign & Release
-      #  if: github.event_name == 'release'
-      #  run: npm run publish:win
-      #  env:
-      #    ELECTRON_BUILDER_SIGN: 1
-      #    SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-      #    SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-      #    SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-      #    SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-      #    SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
       - name: Rename appx files for store
         shell: pwsh
         run: |
@@ -217,57 +185,32 @@ jobs:
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
 
       - name: Upload portable exe artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload installer exe artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
 
       - name: Upload store appx ia32 artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
 
       - name: Upload store appx x64 artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-
-      #- name: Deploy to Chocolatey
-      #  if: github.event_name == 'release'
-      #  run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
-      #  shell: pwsh
-
-      #- name: Upload Chocolatey nupkg artifact
-      #  if: github.event_name == 'release'
-      #  uses: actions/upload-artifact@v2
-      #  with:
-      #    name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-      #    path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-
-      #- name: Upload release assets
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    hub release edit `
-      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-      #      -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-      #      $env:RELEASE_TAG_NAME
-      #  shell: pwsh
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}
 
   macos:
     runs-on: macos-latest
@@ -330,86 +273,67 @@ jobs:
         run: npm run lint
 
       - name: Create Safari directory
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/checkout@v2
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
 
       - name: Build Safari extension
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
       - name: Load Safari extension for .dmg
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dev)
-        if: github.ref != 'refs/heads/master' && github.event_name != 'release'
+        if: github.ref != 'refs/heads/master'
         run: npm run build
 
       - name: Build application (dist)
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         run: npm run dist:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload .zip artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
 
       - name: Upload .dmg artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
 
       - name: Load Safari extension for App Store
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload .pkg artifact
-        if: github.ref == 'refs/heads/master' || github.event_name == 'release'
+        if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-
-      #- name: Deploy to App Store
-      #  if: github.event_name == 'release'
-      #  run: npm run upload:mas
-      #  env:
-      #    APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-      #    APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-
-      #- name: Upload release assets
-      #  if: github.event_name == 'release'
-      #  run: |
-      #    hub release edit `
-      #      -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
-      #      -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-      #      $env:RELEASE_TAG_NAME
-      #  shell: pwsh
-      #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      #    RELEASE_TAG_NAME: ${{ github.event.release.tag_name }}

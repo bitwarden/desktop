@@ -44,9 +44,9 @@ jobs:
       - name: Set up snap
         run: |
           sudo snap install snapcraft --classic
-        #  echo "$SNAP_TOKEN" | snapcraft login --with -
-        #env:
-        #  SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+          echo "$SNAP_TOKEN" | snapcraft login --with -
+        env:
+          SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -101,15 +101,14 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
 
-      #- name: Deploy to Snap Store
-      #  run: |
-      #    ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
-      #    snapcraft logout
-      #  shell: pwsh
+      - name: Deploy to Snap Store
+        run: |
+          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+          snapcraft logout
+        shell: pwsh
 
   windows:
     runs-on: windows-latest
-    environment: prod
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
@@ -145,13 +144,13 @@ jobs:
           dotnet pack --output ./nupkg
           dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
-      #- name: Set up environment
-      #  shell: pwsh
-      #  run: |
-      #    choco install checksum --no-progress
-      #    choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-      #  env:
-      #    CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Print environment
         run: |
@@ -215,15 +214,15 @@ jobs:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
 
-      #- name: Deploy to Chocolatey
-      #  run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
-      #  shell: pwsh
+      - name: Deploy to Chocolatey
+        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+        shell: pwsh
 
-      #- name: Upload Chocolatey nupkg artifact
-      #  uses: actions/upload-artifact@v2
-      #  with:
-      #    name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-      #    path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+      - name: Upload Chocolatey nupkg artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
       - name: Upload release assets
         run: |
