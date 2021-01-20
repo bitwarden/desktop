@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "При сворачивании окна будет отображаться значок в области уведомлений."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
+  },
   "enableCloseToTray": {
     "message": "Закрывать в область уведомлений"
   },
   "enableCloseToTrayDesc": {
     "message": "При закрытии окна будет отображаться значок в области уведомлений."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Включить значок в области уведомлений"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "При первом запуске приложения будет отображаться только значок в области уведомлений."
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "Язык"
@@ -1182,8 +1218,14 @@
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например по электронной почте). Удалите его сразу после использования."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
@@ -1238,7 +1280,7 @@
     "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
   "unlockWithWindowsHello": {
-    "message": "Разблокировать с Windows Hello"
+    "message": "Верифицировать с Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Верификация для Bitwarden."
@@ -1407,5 +1449,47 @@
   },
   "acceptPoliciesError": {
     "message": "Условия предоставления услуг и Политика конфиденциальности не были подтверждены."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }
