@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Ao minimizar a janela, mostrar um ícone na bandeja do sistema em alternativa."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
+  },
   "enableCloseToTray": {
     "message": "Fechar para ícone de bandeja"
   },
   "enableCloseToTrayDesc": {
     "message": "Ao fechar a janela, mostrar um ícone na bandeja do sistema em alternativa."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Ativar ícone de bandeja"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Quando a aplicação é iniciada pela primeira vez, mostrar apenas um ícone na bandeja do sistema."
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "Idioma"
@@ -1182,8 +1218,14 @@
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Esta exportação contém os seus dados do cofre num formato desencriptado. Não deve armazenar ou enviar o ficheiro exportado através de canais inseguros (como email). Elimine-o imediatamente após o utilizar."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
@@ -1406,6 +1448,48 @@
     "message": "Ao marcar esta caixa concorda com o seguinte:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Os Termos de Serviço e a Política de Privacidade não foram aceites."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

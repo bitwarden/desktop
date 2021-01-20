@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Όταν ελαχιστοποιείτε το παράθυρο, εμφανίζεται ένα εικονίδιο στο δίσκο συστήματος αντί αυτού."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
+  },
   "enableCloseToTray": {
     "message": "Κλείσιμο στο Εικονίδιο Δίσκου"
   },
   "enableCloseToTrayDesc": {
     "message": "Όταν κλείνετε το παράθυρο, εμφανίζεται ένα εικονίδιο στο δίσκο συστήματος αντί αυτού."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Ενεργοποίηση Εικονιδίου Δίσκου"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Όταν ξεκινήσει η εφαρμογή, εμφανίζεται μόνο ένα εικονίδιο στο δίσκο συστήματος."
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "Γλώσσα"
@@ -1182,8 +1218,14 @@
     "message": "ΠΡΟΕΙΔΟΠΟΙΗΣΗ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Αυτή η εξαγωγή περιέχει τα δεδομένα σε μη κρυπτογραφημένη μορφή. Δεν πρέπει να αποθηκεύετε ή να στείλετε το εξαγόμενο αρχείο μέσω μη ασφαλών τρόπων (όπως μέσω email). Διαγράψτε το αμέσως μόλις τελειώσετε με τη χρήση του."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Πληκτρολογήστε τον κύριο κωδικό για εξαγωγή δεδομένων vault."
@@ -1346,25 +1388,25 @@
     "message": "Επιβεβαίωση Ενέργειας Χρονικού Ορίου"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Ενιαία είσοδος για επιχειρήσεις"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ορισμός Κύριου Κωδικού"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Για να ολοκληρώσετε τη σύνδεση με SSO, ορίστε έναν κύριο κωδικό πρόσβασης για πρόσβαση και προστασία του vault σας."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Νέος Κύριος Κωδικός"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Επιβεβαίωση Νέου Κύριου Κωδικού"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Σε μία ή περισσότερες πολιτικές του οργανισμού απαιτείται ο κύριος κωδικός να πληρεί τις ακόλουθες απαιτήσεις:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Ελάχιστος βαθμός πολυπλοκότητας: $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1415,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Ελάχιστο μήκος: $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1424,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Να περιέχει έναν ή περισσότερους κεφαλαίους χαρακτήρες"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Να περιέχει έναν ή περισσότερους πεζούς χαρακτήρες"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Να περιέχει έναν ή περισσότερους αριθμούς"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Να περιέχει έναν ή περισσότερους από τους ακόλουθους ειδικούς χαρακτήρες $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,12 +1442,54 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ο νέος κύριος κωδικός δεν πληροί τις απαιτήσεις πολιτικής."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Επιλέγοντας αυτό το πλαίσιο, συμφωνείτε με τα εξής:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Οι Όροι Παροχής Υπηρεσιών και η Πολιτική Απορρήτου δεν έχουν αναγνωριστεί."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

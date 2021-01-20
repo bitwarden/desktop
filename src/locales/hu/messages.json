@@ -97,10 +97,10 @@
     "message": "Ellenőrző kód (egyszeri-idő alapú)"
   },
   "website": {
-    "message": "Weboldal"
+    "message": "Webhely"
   },
   "notes": {
-    "message": "Megjegyzések"
+    "message": "Jegyzetek"
   },
   "customFields": {
     "message": "Egyedi mezők"
@@ -116,13 +116,13 @@
     "message": "Minimalizálás vágólapra másoláskor"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimalizálás egy elem adatainak vágólapra való másolásakor."
+    "message": "Minimalizálás asz összes elemadat vágólapra másolásakor."
   },
   "toggleVisibility": {
     "message": "Láthatóság váltása"
   },
   "toggleCollapse": {
-    "message": "Összezárás",
+    "message": "Összezárás váltása",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -165,7 +165,7 @@
     "message": "Postai cím"
   },
   "premiumRequired": {
-    "message": "Prémium szükséges"
+    "message": "Prémium verzió szükséges"
   },
   "premiumRequiredDesc": {
     "message": "A funkció használatához prémium tagság szükséges."
@@ -213,7 +213,7 @@
     "message": "december"
   },
   "ex": {
-    "message": "pl.",
+    "message": "példa:",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
@@ -340,13 +340,13 @@
     "message": "Melléklet törlése"
   },
   "deleteItemConfirmation": {
-    "message": "Biztosan törlésre kerüljön ezt az elem?"
+    "message": "Biztosan törlésre kerüljön ez az elem?"
   },
   "deletedItem": {
     "message": "Az elem törlésre került."
   },
   "overwritePasswordConfirmation": {
-    "message": "Biztosan felül akarod írni a jelenlegi jelszót?"
+    "message": "Biztosan felülírásra kerüljön a jelenlegi jelszó?"
   },
   "noneFolder": {
     "message": "Nincs mappa",
@@ -425,7 +425,7 @@
     "message": "Fájl"
   },
   "selectFile": {
-    "message": "Válassz ki egy fájlt."
+    "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
     "message": "Maximális fájl méret 100 MB."
@@ -500,7 +500,7 @@
     "message": "A mesterjelszó legyen legalább 8 karakter hosszú."
   },
   "masterPassDoesntMatch": {
-    "message": "A megadott két jelszó nem egyezik meg."
+    "message": "A mesterjelszó megerősítése nem egyezik."
   },
   "newAccountCreated": {
     "message": "A fiók létrehozásra került. Most már be lehet jelentkezni."
@@ -602,7 +602,7 @@
     "message": "Az ellenőrző kódok emailben kerülnek elküldésre."
   },
   "loginUnavailable": {
-    "message": "Bejelentkezés nem érhető el."
+    "message": "A bejelentkezés nem érhető el."
   },
   "noTwoStepProviders": {
     "message": "Ezen a fiókon kétlépcsős bejelentkezés van engedélyezve, de ez az eszköz nem támogatja egyik beállított kétlépcsős szolgáltatót sem."
@@ -665,19 +665,19 @@
     "message": "Ez a funkció nem érhető el."
   },
   "loggedOut": {
-    "message": "Kijelentkezve"
+    "message": "Megtörtént a kijelentkezés."
   },
   "loginExpired": {
     "message": "A bejelentkezési munkamenet lejárt."
   },
   "logOutConfirmation": {
-    "message": "Biztos, hogy ki szeretnél jelentkezni?"
+    "message": "Biztosan szeretnénk kijelentkezni?"
   },
   "logOut": {
     "message": "Kijelentkezés"
   },
   "addNewLogin": {
-    "message": "Új fiók hozzáadása"
+    "message": "Új bejelentkezés hozzáadása"
   },
   "addNewItem": {
     "message": "Új elem hozzáadása"
@@ -692,7 +692,7 @@
     "message": "Fiók"
   },
   "loading": {
-    "message": "Betöltés..."
+    "message": "A betöltés folyamatban van..."
   },
   "lockNow": {
     "message": "Zárolás most"
@@ -713,7 +713,7 @@
     "message": "Blog"
   },
   "followUs": {
-    "message": "Kövess minket"
+    "message": "Követés"
   },
   "syncVault": {
     "message": "Széf szinkronizálása"
@@ -722,30 +722,30 @@
     "message": "Mesterjelszó módosítása"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "A mesterjelszavad a bitwarden.com webes felületén változtathatod meg. Szeretnéd most meglátogatni a weboldalt?"
+    "message": "A mesterjelszó megváltoztatható a bitwarden.com webes széfben. Szeretnénk felkeresni a webhelyet mos?"
   },
   "fingerprintPhrase": {
-    "message": "Azonosítókifejezés",
+    "message": "Ujjlenyomat kifejezés",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "A fiókod azonosítókifejezése",
+    "message": "Fiók ujjlenyomat kifejezése",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
     "message": "Ugrás a webes széfhez"
   },
   "getMobileApp": {
-    "message": "Mobil app letöltése"
+    "message": "Mobil alkalmazás beszerzése"
   },
   "getBrowserExtension": {
     "message": "Böngésző bővítmény beszerzése"
   },
   "syncingComplete": {
-    "message": "Szinkronizálva"
+    "message": "A szinkronizálás befejezésre került."
   },
   "syncingFailed": {
-    "message": "Sikertelen szinkronizálás"
+    "message": "A szinkronizálás meghiúsult."
   },
   "yourVaultIsLocked": {
     "message": "A széf zárolásra került. A folytatáshoz meg kell adni a mesterjelszót."
@@ -776,10 +776,10 @@
     "message": "Kétlépcsős bejelentkezés"
   },
   "vaultTimeout": {
-    "message": "Széf időkorlát"
+    "message": "Széf időkifutás"
   },
   "vaultTimeoutDesc": {
-    "message": "Állítsd be a széfedhez egy időkorlátot és egy végrehajtandó műveletet."
+    "message": "Válasszuk ki, hogy a széfnél mikor legyen időkifutás és a kiválasztott művelet végrehajtása."
   },
   "immediately": {
     "message": "Azonnal"
@@ -815,13 +815,13 @@
     "message": "4 óra"
   },
   "onIdle": {
-    "message": "Tétlenség esetén"
+    "message": "Rendszer üresjárat esetén"
   },
   "onSleep": {
-    "message": "Alvó módba lépéskor"
+    "message": "Rendszer alvó mód esetén"
   },
   "onLocked": {
-    "message": "A rendszer zárolásakor"
+    "message": "Rendszer zárolás esetén"
   },
   "onRestart": {
     "message": "Újraindításkor"
@@ -847,16 +847,28 @@
     "message": "A webhelyek ikonjai felismerhető ikonként jelennek meg a széf összes eleme mellett."
   },
   "enableMinToTray": {
-    "message": "Kicsinyítés tálcára"
+    "message": "Kicsinyítés tálcaikonná"
   },
   "enableMinToTrayDesc": {
     "message": "Az ablak minimalizálásakor helyette egy ikon jelenik meg a rendszertálcán."
+  },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
   },
   "enableCloseToTray": {
     "message": "Bezárás tálcaikonba"
   },
   "enableCloseToTrayDesc": {
-    "message": "Az ablak bezárásakor egy ikon jelenik meg a tálcán."
+    "message": "Az ablak bezárásakor helyette egy ikon jelenik meg a rendszertálcán."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Tálcaikon engedélyezése"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Az alkalmazás első indításakor csak egy ikon jelenjen meg a rendszertálcán."
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "Nyelv"
@@ -957,22 +993,22 @@
     "message": "Tagság kezelése"
   },
   "premiumManageAlert": {
-    "message": "Prémium előfizetésed a bitwarden.com webes felületén kezelheted. Szeretnéd most meglátogatni az oldalt?"
+    "message": "Prémium tagság a bitwarden.com webes széfben kezelhető. Szeretnénk most felkeresni a webhelyet?"
   },
   "premiumRefresh": {
-    "message": "Előfizetés ellenőrzése"
+    "message": "Tagság frissítése"
   },
   "premiumNotCurrentMember": {
-    "message": "Jelenleg nem vagy prémium tag."
+    "message": "Jelenleg nincs prémium tagság."
   },
   "premiumSignUpAndGet": {
-    "message": "Fizess elő prémiumra, hogy különféle előnyöket élvezhess:"
+    "message": "Regisztráció a prémium tagságra az alábbi funkciókért:"
   },
   "premiumSignUpStorage": {
     "message": "1 GB titkosított fájlmelléklet tárhely."
   },
   "premiumSignUpTwoStep": {
-    "message": "További kétlépcsős bejelentkezési lehetőségek (például YubiKey, FIDO U2F és Duo)."
+    "message": "További olyan kétlépcsős bejelentkezési opciók mint a YubiKey, FIDO U2F és Duo."
   },
   "premiumSignUpReports": {
     "message": "Jelszó higiénia, felhasználói fiók biztonsága, és adatszivárgási jelentések a széf biztonsága érdekében."
@@ -981,19 +1017,19 @@
     "message": "Egyszeri időalapú TOTP ellenőrző kód (2FA) generátor a széfbe bejelentkezésekhez."
   },
   "premiumSignUpSupport": {
-    "message": "Prioritást élvezhetsz az ügyfélszolgálaton."
+    "message": "Elsőbbségi ügyfél támogatás."
   },
   "premiumSignUpFuture": {
     "message": "Minden jövőbeli prémium funkció. Hamarosan jön még több."
   },
   "premiumPurchase": {
-    "message": "Előfizetés prémiumra"
+    "message": "Prémium verzió megvásárlása"
   },
   "premiumPurchaseAlert": {
-    "message": "Prémium tagságra a bitwarden.com weboldalon fizethetsz elő. Szeretnéd most meglátogatni az oldalt?"
+    "message": "Prémium tagságot a bitwarden.com webes széfben lehet vásárolni. Szeretnénk most felkeresni a webhelyet?"
   },
   "premiumCurrentMember": {
-    "message": "Prémium tag vagy!"
+    "message": "Jelenleg a prémium tagság érvényben van."
   },
   "premiumCurrentMemberThanks": {
     "message": "Köszönjük a Bitwarden támogatását."
@@ -1044,7 +1080,7 @@
     "message": "Kicsinyítés"
   },
   "resetZoom": {
-    "message": "Nagyítás visszaállítása"
+    "message": "Nagyítás alaphelyzetbe"
   },
   "toggleFullScreen": {
     "message": "Teljes képernyős módra váltás"
@@ -1119,7 +1155,7 @@
     "message": "Alap domain"
   },
   "host": {
-    "message": "Gazdagép",
+    "message": "Kiszolgáló",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
@@ -1133,7 +1169,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Találatfelismerés",
+    "message": "Találat érzékelés",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1141,7 +1177,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Opciók megnyitása"
+    "message": "Opciók váltása"
   },
   "organization": {
     "message": "Szervezet",
@@ -1182,11 +1218,17 @@
     "message": "FIGYELEM",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
-    "message": "Az exportálás titkosítatlan formátumban menti el a széfed adatait. Ne tárold el, illetve ne oszd meg az exportált fájlt nem biztonságos helyeken (például emailben). Használat után töröld azonnal."
+    "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat.Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és továbbküldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
-    "message": "Add meg a mesterjelszót a széf adatainak exportálásához."
+    "message": "A mesterjelszó megadása a széfadatok exportálásához."
   },
   "noOrganizationsList": {
     "message": "Még nem tartozunk egyik szervezethez sem. A szervezetek lehetővé teszik az elemek megosztását más felhasználókkal."
@@ -1198,7 +1240,7 @@
     "message": "Tulajdonjog"
   },
   "whoOwnsThisItem": {
-    "message": "Kié ez az elem?"
+    "message": "Ki tulajdonolja ezt az elemet?"
   },
   "strong": {
     "message": "Erős",
@@ -1216,7 +1258,7 @@
     "message": "Gyenge mesterjelszó"
   },
   "weakMasterPasswordDesc": {
-    "message": "A választott mesterjelszó gyenge. Erős jelszót (vagy kifejezést) kell használnod a Bitwarden fiókod megfelelő védelme érdekében. Biztosan ezt a mesterjelszót szeretnéd használni?"
+    "message": "A választott mesterjelszó gyenge. Erős jelszót (vagy kifejezést) kell használni a Bitwarden fiók megfelelő védelme érdekében. Biztosan ezt a mesterjelszót szeretnénk használni?"
   },
   "pin": {
     "message": "Pinkód",
@@ -1274,7 +1316,7 @@
     "message": "Visszaállítás"
   },
   "premiumManageAlertAppStore": {
-    "message": "Az előfizetésedet az App Store-on keresztül kezelheted. Szeretnéd most meglátogatni az App Store-t?"
+    "message": "A feliratkozás az App Store szolgáltatásból kezelhető  Felkeressük az App Store-t most?"
   },
   "legal": {
     "message": "Jogi információk",
@@ -1290,7 +1332,7 @@
     "message": "Biztos a kilépés? A kilépés esetén az aktuális információ nem kerül mentésre."
   },
   "unsavedChangesTitle": {
-    "message": "Mentetlen változtatások"
+    "message": "Mentetlen változások"
   },
   "clone": {
     "message": "Klónozás"
@@ -1299,16 +1341,16 @@
     "message": "Egy vagy több szervezeti szabály érinti a generátor beállításokat."
   },
   "vaultTimeoutAction": {
-    "message": "Széf időkorlát művelet"
+    "message": "Széf időkifutás művelet"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Egy zárolt széfnél újra meg kell adni a mesterjelszót az ismételt hozzáféréshez."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A lezárt széfnél szükséges az újbóli hitelesítés az ismételt hozzáféréshez."
+    "message": "A lezárt széfnél szükséges az újra hitelesítés az ismételt eléréshez."
   },
   "lock": {
-    "message": "Zárolás",
+    "message": "Lezárás",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
@@ -1343,7 +1385,7 @@
     "message": "Kijelentkezve az összes széf elérés eltávolításra kerül és webes hitelesítésre van szükség az időkifutás után. Biztosan szeretnénk használni ezt a beállítást?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Időkifutáskori művelet megerősítése"
+    "message": "Időkifutás művelet megerősítés"
   },
   "enterpriseSingleSignOn": {
     "message": "Vállalati önálló bejelentkezés"
@@ -1407,5 +1449,47 @@
   },
   "acceptPoliciesError": {
     "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }
