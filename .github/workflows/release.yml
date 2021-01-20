@@ -178,7 +178,7 @@ jobs:
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rename appx files for store
         shell: pwsh
@@ -231,7 +231,7 @@ jobs:
             $env:RELEASE_TAG_NAME
         shell: pwsh
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG_NAME: ${{ github.event.inputs.release_tag_name }}
 
   macos:
@@ -360,5 +360,5 @@ jobs:
             $env:RELEASE_TAG_NAME
         shell: pwsh
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RELEASE_TAG_NAME: ${{ github.event.inputs.release_tag_name }}
