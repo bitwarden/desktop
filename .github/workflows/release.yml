@@ -168,6 +168,7 @@ jobs:
 
   windows:
     runs-on: windows-latest
+    environment: prod
     needs: setup
     steps:
       - name: Set up dotnet
