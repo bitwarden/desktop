@@ -95,10 +95,17 @@ jobs:
       - name: Run linter
         run: npm run lint
 
+      - name: Build & Publish
+        run: npm run publish:lin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
       - name: Build application
+        if: false
         run: npm run dist:lin
 
       - name: Upload .deb release asset
+        if: false
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -109,6 +116,7 @@ jobs:
           asset_content_type: application/x-debian-package
 
       - name: Upload .rpm release asset
+        if: false
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -119,6 +127,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload .freebsd release asset
+        if: false
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -129,6 +138,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload .snap checksum release asset
+        if: false
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -139,6 +149,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload .AppImage checksum release asset
+        if: false
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -194,12 +205,18 @@ jobs:
           dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
 
       - name: Set up environment
+        if: false
         shell: pwsh
         run: |
           choco install checksum --no-progress
-        #  choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-        #env:
-        #  CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
 
       - name: Print environment
         run: |
@@ -252,6 +269,7 @@ jobs:
 
 
   macos:
+    if: false
     runs-on: macos-latest
     needs: setup
     steps:
