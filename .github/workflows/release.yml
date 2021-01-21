@@ -7,6 +7,7 @@ on:
         description: 'Release Tag Name (vX.X.X)'
         required: true
 
+
 jobs:
   cloc:
     runs-on: ubuntu-latest
@@ -23,8 +24,36 @@ jobs:
       - name: Print lines of code
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
+
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      release_upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Create Release Name
+        run: |
+          echo "RELEASE_NAME=${RELEASE_TAG_NAME:1}" >> $GITHUB_ENV
+        env:
+          RELEASE_TAG_NAME: ${{ github.event.inputs.release_tag_name }}
+
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          tag_name: ${{ github.event.inputs.release_tag_name }}
+          release_name: ${{ env.RELEASE_NAME }}
+          draft: true
+          prerelease: false
+
+
   linux:
     runs-on: ubuntu-latest
+    needs: setup
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
@@ -42,9 +71,9 @@ jobs:
       - name: Set up snap
         run: |
           sudo snap install snapcraft --classic
-          echo "$SNAP_TOKEN" | snapcraft login --with -
-        env:
-          SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+        #  echo "$SNAP_TOKEN" | snapcraft login --with -
+        #env:
+        #  SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -69,41 +98,62 @@ jobs:
       - name: Build application
         run: npm run dist:lin
 
-      - name: Upload .deb artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload .deb release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          asset_content_type: application/x-debian-package
 
-      - name: Upload .rpm artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload .rpm release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          asset_content_type: application
 
-      - name: Upload .freebsd artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload .freebsd release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          asset_content_type: application
 
-      - name: Upload .snap artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload .snap checksum release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          asset_path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          asset_content_type: application
 
-      - name: Upload .AppImage artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload .AppImage checksum release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          asset_content_type: application
 
-      - name: Deploy to Snap Store
-        run: |
-          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
-          snapcraft logout
-        shell: pwsh
+      #- name: Deploy to Snap Store
+      #  run: |
+      #    ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+      #    snapcraft logout
+      #  shell: pwsh
+
 
   windows:
     runs-on: windows-latest
@@ -146,9 +196,9 @@ jobs:
         shell: pwsh
         run: |
           choco install checksum --no-progress
-          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-        env:
-          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+        #  choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        #env:
+        #  CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Print environment
         run: |
@@ -188,51 +238,17 @@ jobs:
           Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
 
-      - name: Upload portable exe artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-
-      - name: Upload installer exe artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-
-      - name: Upload store appx ia32 artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
-
-      - name: Upload store appx x64 artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-
-      - name: Deploy to Chocolatey
-        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
-        shell: pwsh
-
-      - name: Upload Chocolatey nupkg artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-
-      - name: Upload release assets
-        run: |
-          hub release edit `
-            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx `
-            -a ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx `
-            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-            $env:RELEASE_TAG_NAME
-        shell: pwsh
+      - name: Upload Chocolatey nupkg release asset
+        id: upload-macos-checksum
+        uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          RELEASE_TAG_NAME: ${{ github.event.inputs.release_tag_name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          asset_path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          asset_content_type: text/plain
+
 
   macos:
     runs-on: macos-latest
@@ -318,18 +334,6 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload .zip artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-
-      - name: Upload .dmg artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-
       - name: Load Safari extension for App Store
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
@@ -340,25 +344,38 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload .pkg artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-
       - name: Deploy to App Store
         run: npm run upload:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload release assets
-        run: |
-          hub release edit `
-            -a ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg `
-            -m "$($env:RELEASE_TAG_NAME.TrimStart('v'))" `
-            $env:RELEASE_TAG_NAME
-        shell: pwsh
+      - name: Upload .pkg release asset
+        uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          RELEASE_TAG_NAME: ${{ github.event.inputs.release_tag_name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_content_type: text/plain
+
+      - name: Upload zip release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          asset_content_type: text/plain
+
+      - name: Upload .dmg release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          asset_content_type: text/plain
