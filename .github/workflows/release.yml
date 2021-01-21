@@ -157,6 +157,7 @@ jobs:
 
   windows:
     runs-on: windows-latest
+    needs: setup
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
@@ -247,11 +248,12 @@ jobs:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           asset_path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-          asset_content_type: text/plain
+          asset_content_type: application
 
 
   macos:
     runs-on: macos-latest
+    needs: setup
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
@@ -358,7 +360,7 @@ jobs:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          asset_content_type: text/plain
+          asset_content_type: application/vnd.apple.installer+xml
 
       - name: Upload zip release asset
         uses: actions/upload-release-asset@v1
@@ -368,7 +370,7 @@ jobs:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
           asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          asset_content_type: text/plain
+          asset_content_type: application/zip
 
       - name: Upload .dmg release asset
         uses: actions/upload-release-asset@v1
@@ -378,4 +380,4 @@ jobs:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
           asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
           asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          asset_content_type: text/plain
+          asset_content_type: application/x-apple-diskimage
