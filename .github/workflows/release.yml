@@ -68,12 +68,10 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      - name: Set up snap
-        run: |
-          sudo snap install snapcraft --classic
-          echo "$SNAP_TOKEN" | snapcraft login --with -
-        env:
-          SNAP_TOKEN: ${{ secrets.SNAP_TOKEN }}
+      - name: Install Snap
+        uses: samuelmeuli/action-snapcraft@v1
+        with:
+          snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
