@@ -280,7 +280,7 @@ jobs:
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dist)
-        run: npm run dist:mac
+        run: npm run publish:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -300,33 +300,3 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-
-      - name: Upload .pkg release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          asset_content_type: application/vnd.apple.installer+xml
-
-      - name: Upload zip release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          asset_content_type: application/zip
-
-      - name: Upload .dmg release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          asset_content_type: application/x-apple-diskimage
