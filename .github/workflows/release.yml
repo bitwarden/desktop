@@ -100,9 +100,8 @@ jobs:
 
       - name: Deploy to Snap Store
         run: |
-          ./scripts/snap-update.ps1 -version $env:PACKAGE_VERSION
+          snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
           snapcraft logout
-        shell: pwsh
 
 
   windows:
