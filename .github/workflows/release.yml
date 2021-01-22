@@ -257,6 +257,10 @@ jobs:
           Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
 
+      - name: Deploy to Chocolatey
+        shell: pwsh
+        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+
       - name: Upload Chocolatey nupkg release asset
         id: upload-macos-checksum
         uses: actions/upload-release-asset@v1
