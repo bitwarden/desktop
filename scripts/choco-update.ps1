@@ -30,5 +30,5 @@ $chocoInstall = $distChocoDir + "\tools\chocolateyinstall.ps1";
 (Get-Content $chocoInstall).replace('__version__', $version).replace('__checksum__', $checksum) | Set-Content $chocoInstall
 choco pack $nuspec --version $version --out $distChocoDir
 cd $distChocoDir
-#choco push
+choco push
 cd $rootDir

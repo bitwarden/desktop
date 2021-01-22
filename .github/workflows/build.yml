@@ -187,13 +187,13 @@ jobs:
       - name: Deploy to Chocolatey
         shell: pwsh
         run: |
-          Copy-Item -Path ./stores/chocolatey -Destination ./chocolatey -Recurse
-          Copy-Item -Path ./dist/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./chocolatey
+          Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
+          Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          $checksum = checksum -t sha256 ./chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-          $chocoInstall = "./chocolatey/tools/chocolateyinstall.ps1"
-          (Get-Content $chocoInstall).replace('__version__', ${{ env.PACKAGE_VERSION }}).replace('__checksum__', $checksum) | Set-Content $chocoInstall
-          choco pack ./chocolatey/bitwarden.nuspec --version ${{ env.PACKAGE_VERSION }} --out ./chocolately
+          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
+          (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
         if: github.ref == 'refs/heads/master'
