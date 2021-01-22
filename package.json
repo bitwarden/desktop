@@ -13,7 +13,7 @@
   "homepage": "https://bitwarden.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitwarden/desktop"
+    "url": "https://github.com/joseph-flinn/desktop"
   },
   "license": "GPL-3.0",
   "scripts": {
