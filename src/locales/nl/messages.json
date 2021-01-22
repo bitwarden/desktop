@@ -853,10 +853,10 @@
     "message": "Wanneer het venster wordt geminimaliseerd, een pictogram in het systeemvak weergeven."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimaliseren naar menubalk"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Bij het minimaliseren van het venster, een pictogram in de menubalk weergeven."
   },
   "enableCloseToTray": {
     "message": "Sluiten naar systeemvak"
@@ -865,10 +865,10 @@
     "message": "Bij het sluiten van het venster, een pictogram in het systeemvak weergeven."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Menubalk sluiten"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Bij het sluiten van het venster, een pictogram in de menubalk weergeven."
   },
   "enableTray": {
     "message": "Systeemvakpictogram inschakelen"
@@ -883,28 +883,28 @@
     "message": "Wanneer de applicatie voor het eerst wordt gestart, alleen een pictogram in het systeemvak weergeven."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Menubalk starten"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Wanneer de applicatie voor het eerst is gestart, alleen een pictogram weergeven in de menubalk."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Automatisch starten bij inloggen"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Bitwarden-desktopapplicatie automatisch starten bij inloggen."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Altijd laten zien in het dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Toon het Bitwarden-pictogram in het dock, zelfs wanneer geminimaliseerd in de menubalk."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Tray uitschakelen bevestigen"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Het uitschakelen van deze instelling zal ook alle andere trayinstellingen uitschakelen."
   },
   "language": {
     "message": "Taal"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Kluisexport bevestigen"
   },
   "exportWarningDesc": {
     "message": "Deze export bevat jouw kluisgegevens in een niet-versleutelde opmaak. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Deze export versleutelt je gegevens met de encryptiesleutel van je account. Als je je encryptiesleutel verandert moet je opnieuw exporteren, omdat je deze export dan niet meer kunt ontcijferen."
   },
   "exportMasterPassword": {
     "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
@@ -1451,45 +1451,45 @@
     "message": "Algemene voorwaarden en privacybeleid zijn nog niet erkend."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Browserintegratie inschakelen"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Browserintegratie wordt gebruikt voor biometrie in de browser."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Browserintegratie niet ondersteund"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Helaas wordt browserintegratie momenteel alleen ondersteund in de Mac App Store-versie."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Vereis verificatie voor browserintegratie"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Schakel een extra beveiligingslaag in door een vingerafdrukzin te vereisen bij het verbinden van je desktop en browser. Wanneer ingeschakeld moet je iedere verbinding verifiëren."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Goedkeuren"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Browserverbinding verifiëren"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Verzeker je ervan dat de getoonde vingerafdruk hetzelfde is als de vingerafdruk in de browserextensie."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometrie niet ingeschakeld"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Voor browserbiometrie moet je eerst desktopbiometrie inschakelen in de instellingen."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Wegens bedrijfsbeleid mag je geen wachtwoorden opslaan in je persoonlijke kluis. Verander het eigenaarschap naar een organisatie en kies uit een van de beschikbare collecties."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Je wachtwoordhint moet anders zijn dan je wachtwoord."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Een organisatiebeleid heeft invloed op je eigendomsopties."
   }
 }
