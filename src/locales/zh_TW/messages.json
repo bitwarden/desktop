@@ -853,10 +853,10 @@
     "message": "將視窗最小化時，於系統匣顯示圖示。"
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "縮小到選單列"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "最小化視窗時，於選單列顯示圖示。"
   },
   "enableCloseToTray": {
     "message": "關閉後縮小至系統匣"
@@ -865,10 +865,10 @@
     "message": "將視窗關閉時，於系統匣顯示圖示。"
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "關閉到選單列"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "關閉視窗時，於選單列顯示圖示。"
   },
   "enableTray": {
     "message": "啟用系統匣圖示"
@@ -883,19 +883,19 @@
     "message": "應用程式首次啟動時，將圖示隱藏至系統匣。"
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "啟動到選單列"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "應用程式首次啟動時，只在選單列顯示圖示。"
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "登入時自動啟動"
   },
   "openAtLoginDesc": {
     "message": "Start the Bitwarden Desktop application automatically on login."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "總是在 Dock 中顯示"
   },
   "alwaysShowDockDesc": {
     "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
@@ -1219,7 +1219,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "確認匯出密碼庫"
   },
   "exportWarningDesc": {
     "message": "您的密碼將匯出成未加密的. csv 檔案。您不應將它存放或經由未經加密的方式傳送（例如電子郵件）。用完後請立即將它刪除。"
@@ -1451,13 +1451,13 @@
     "message": "尚未接受服務條款與隱私權保護政策。"
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "開啟瀏覽器整合"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Browser integration is used for biometrics in browser."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "不支援整合到瀏覽器"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
@@ -1469,10 +1469,10 @@
     "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
   },
   "approve": {
-    "message": "Approve"
+    "message": "核准"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "確認與瀏覽器間的連線"
   },
   "verifyBrowserDesc": {
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
@@ -1487,9 +1487,9 @@
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "密碼提示不能與您的密碼相同。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "有一項組織政策影響了您的擁有權選項。"
   }
 }

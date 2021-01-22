@@ -853,10 +853,10 @@
     "message": "ウインドウを最小化するとき、システムトレイにアイコンを表示するようにします。"
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "メニューバーに最小化"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "ウインドウを最小化するとき、メニューバーにアイコンを表示するようにします。"
   },
   "enableCloseToTray": {
     "message": "トレイアイコンへ閉じる"
@@ -865,10 +865,10 @@
     "message": "ウインドウを閉じたとき、システムトレイにアイコンを表示するようにします。"
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "閉じてメニューバーに表示"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "ウインドウを閉じたとき、メニューバーにアイコンを表示するようにします。"
   },
   "enableTray": {
     "message": "トレイアイコンの有効化"
@@ -883,28 +883,28 @@
     "message": "アプリを初めて起動した際、システムトレイにアイコンを表示するだけにします。"
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "起動してメニューバーに表示"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "アプリを初めて起動した際、メニューバーにアイコンを表示するだけにします。"
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "ログイン時に自動的に起動"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Bitwarden デスクトップアプリケーションをログイン時に自動的に起動します。"
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "常にドックに表示"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "メニューバーに最小化した場合でも、Bitwarden アイコンを表示します。"
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "トレイの無効化の確認"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "この設定を無効にすると、他のすべてのトレイ関連設定も無効になります。"
   },
   "language": {
     "message": "Language"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "保管庫のエクスポートの確認"
   },
   "exportWarningDesc": {
     "message": "このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "このエクスポートは、アカウントの暗号化キーを使用してデータを暗号化します。 暗号化キーをローテーションした場合は、このエクスポートファイルを復号することはできなくなるので、もう一度エクスポートする必要があります。"
   },
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
@@ -1451,45 +1451,45 @@
     "message": "利用規約とプライバシーポリシーを確認してください。"
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "ブラウザ統合を有効にする"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "ブラウザでの生体認証のためにブラウザ統合を使用します。"
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "ブラウザ統合はサポートされていません"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "残念ながら、ブラウザ統合は、Mac App Storeのバージョンでのみサポートされています。"
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "ブラウザ統合には検証が必要です"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "デスクトップとブラウザ間のリンクを確立する際にパスフレーズを要求することで、さらなるセキュリティ層を有効にします。 有効にすると、接続を確立するたびにユーザーによる確認が必要になります。"
   },
   "approve": {
-    "message": "Approve"
+    "message": "承認"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "ブラウザの接続を確認"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "表示されているパスフレーズがブラウザ拡張に表示されているものと同じであることを確認してください。"
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "生体認証が有効になっていません"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "ブラウザ生体認証を利用するには、最初に設定でデスクトップ生体認証を有効にする必要があります。"
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "組織のポリシーにより、個人保管庫へのアイテムの保存が制限されています。 所有権を組織に変更し、利用可能なコレクションから選択してください。"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "パスワードのヒントをパスワードと同じにすることはできません。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "組織のポリシーは、所有者のオプションに影響を与えています。"
   }
 }

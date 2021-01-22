@@ -138,7 +138,7 @@
     "message": "Erääntymisaika"
   },
   "securityCode": {
-    "message": "Turvakoodi (CVV)"
+    "message": "Turvakoodi (CVC/CVV)"
   },
   "identityName": {
     "message": "Henkilöllisyyden nimi"
@@ -337,10 +337,10 @@
     "message": "Poista kansio"
   },
   "deleteAttachment": {
-    "message": "Poista liite"
+    "message": "Poista tiedostoliite"
   },
   "deleteItemConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän kohteen?"
+    "message": "Haluatko varmasti siirtää roskakoriin?"
   },
   "deletedItem": {
     "message": "Siirrettiin kohde roskakoriin"
@@ -410,16 +410,16 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Lisää uusi liite"
+    "message": "Lisää uusi tiedostoliite"
   },
   "deletedAttachment": {
-    "message": "Poistettiin liite"
+    "message": "Poistettiin tiedostoliite"
   },
   "deleteAttachmentConfirmation": {
     "message": "Haluatko varmasti poistaa liitteen?"
   },
   "attachmentSaved": {
-    "message": "Liite on tallennettu."
+    "message": "Tiedostoliite tallennettiin."
   },
   "file": {
     "message": "Tiedosto"
@@ -557,10 +557,10 @@
     "message": "Käytä eri kaksivaiheisen kirjautumisen todennusmenetelmää"
   },
   "insertYubiKey": {
-    "message": "Kytke YubiKey-todennuslaitteesi tietokoneesi USB-porttiin ja paina sen painiketta."
+    "message": "Kytke YubiKey-todennuslaitteesi tietokoneen USB-porttiin ja paina sen painiketta."
   },
   "insertU2f": {
-    "message": "Kytke todennuslaitteesi tietokoneesi USB-porttiin ja jos laitteessa on painike, paina sitä."
+    "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin ja jos laitteessa on painike, paina sitä."
   },
   "recoveryCodeDesc": {
     "message": "Etkö pysty käyttämään kaksivaiheisen kirjautumisen todennusmenetelmiäsi? Poista kaikki menetelmät käytöstä tililtäsi palautuskoodillasi."
@@ -853,10 +853,10 @@
     "message": "Pienennä ikkuna kuvakkeeksi järjestelmän ilmoitusalueelle."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Pienennä valikkoriville"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Kun ikkuna pienennetään, näytä se kuvakkeena valikkorivillä."
   },
   "enableCloseToTray": {
     "message": "Sulje ilmoitusalueelle"
@@ -865,10 +865,10 @@
     "message": "Sulje ikkuna kuvakkeeksi järjestelmän ilmoitusalueelle."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Sulje valikkoriville"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Kun ikkuna suljetaan, näytä se sen sijaan kuvakkeena valikkorivillä."
   },
   "enableTray": {
     "message": "Näytä ilmoitusalueen kuvake"
@@ -883,28 +883,28 @@
     "message": "Kun sovellus käynnistetään, näytä vain kuvake ilmoitusalueella."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Avaa valikkoriville"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Kun sovellus avataan ensimmäisen kerran, näytä se kuvakkeena valikkorivillä."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Käynnistä automaattisesti kirjauduttaessa"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Käynnistä Bitwardenin työpöytäsovellus automaattisesti kirjautumisen yhteydessä."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Näytä aina Dockissa"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Näytä Bitwardenin kuvake Dockissa myös silloin, kun se on pienennetty valikkoriville."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Vahvista ilmoitusalueen käytöstä poisto"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Asetuksen käytöstä poisto poistaa käytöstä myös kaikki siihen liittyvät asetukset."
   },
   "language": {
     "message": "Kieli"
@@ -1005,7 +1005,7 @@
     "message": "Ryhdy Premium-jäseneksi saadaksesi:"
   },
   "premiumSignUpStorage": {
-    "message": "1 Gt salattua tallennustilaa liitetiedostoille."
+    "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
   },
   "premiumSignUpTwoStep": {
     "message": "Muita kaksivaiheisen kirjautumisen todennusmenetelmiä kuten YubiKey, FIDO U2F ja Duo Security."
@@ -1190,7 +1190,7 @@
     "message": "Poistu"
   },
   "showHide": {
-    "message": "Näytä/piilota",
+    "message": "Näytä tai piilota",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Vahvista holvin vienti"
   },
   "exportWarningDesc": {
     "message": "Tämä vienti sisältää holvisi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Tämä vienti salaa tietosi käyttäen käyttäjätilisi salausavaimella. Jos joskus uudistat tilisi salausavaimen, tulee sinun viedä tiedot uudelleen, koska et voi enää purkaa nyt viedyn tiedoston salausta."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasana viedäksesi holvisi tiedot."
@@ -1289,7 +1289,7 @@
     "message": "Avaa lukitus Touch ID:llä"
   },
   "touchIdConsentMessage": {
-    "message": "Vahvista Bitwardenille."
+    "message": "avaa holvisi lukitus"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
@@ -1338,7 +1338,7 @@
     "message": "Kloonaa"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Yksi tai useampi organisaation käytäntö vaikuttaa generaattorisi asetuksiin."
+    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa generaattorisi asetuksiin."
   },
   "vaultTimeoutAction": {
     "message": "Holvin aikakatkaisun toiminto"
@@ -1382,7 +1382,7 @@
     "message": "Poista pysyvästi"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Uloskirjautuminen estää pääsyn holviisi ja vaatii ajan umpeuduttua todennuksen internet-yhteyden välityksellä. Haluatko varmasti käyttää tätä asetusta?"
+    "message": "Uloskirjautuminen estää pääsyn holviisi ja vaatii ajan umpeuduttua todennuksen internet-yhteyden välityksellä. Haluatko varmasti käyttää asetusta?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Aikakatkaisun toiminnon vahvistus"
@@ -1403,7 +1403,7 @@
     "message": "Vahvista uusi pääsalasana"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Yksi tai useampi organisaation käytäntö edellyttää, että pääsalasanasi täyttää seuraavat vaatimukset:"
+    "message": "Yksi tai useampi organisaatiokäytäntö edellyttää, että pääsalasanasi täyttää seuraavat vaatimukset:"
   },
   "policyInEffectMinComplexity": {
     "message": "Monimutkaisuuden vähimmäispistemäärä on $SCORE$",
@@ -1442,7 +1442,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Uusi pääsalasanasi ei täytä käytännön vaatimuksia."
+    "message": "Uusi pääsalasanasi ei täytä käytännön määrittämiä vaatimuksia."
   },
   "acceptPolicies": {
     "message": "Valitsemalla tämän ruudun hyväksyt seuraavat:"
@@ -1451,45 +1451,45 @@
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Ota selainintegrointi käyttöön"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Selainintegrointia käytetään selaimessa biometriaa varten."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Selainintegrointia ei tueta"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Valitettavasti selainintegrointia tukee toistaiseksi vain Mac App Store -versio."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Vaadi selainintegroinnin vahvistus"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Käytä ylimääräistä tietoturvakerrosta ja vaadi todennus tunnistelausekkeen avulla kun luot linkin työpöytäsi ja selaimesi välille. Kun käytössä, edellyttää käyttäjältä manuaalista todennusta aina yhteyden muodostuessa."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Salli"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Varmista yhteys selaimeen"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Varmista, että näytetty tunnistelauseke on identtinen selainlaajennuksessa näkyvän lausekkeen kanssa."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometria ei ole käytössä"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Käyttääksesi biometriaa selaimessa, on biometria otettava käyttöön työpöytäsovelluksen asetuksista."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Yrityksen asettaman käytännön johdosta kohteiden tallennus omaan holviisi ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Salasanavihjeesi ei voi olla sama kuin salasanasi."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Organisaatiokäytäntö vaikuttaa omistajuusvalintoihisi."
   }
 }

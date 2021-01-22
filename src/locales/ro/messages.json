@@ -340,7 +340,7 @@
     "message": "Ștergere atașament"
   },
   "deleteItemConfirmation": {
-    "message": "Sigur doriți să ștergeți acest articol?"
+    "message": "Sigur doriți să trimiteți în coșul de reciclare?"
   },
   "deletedItem": {
     "message": "Articolul a fost trimis în coșul de reciclare"
@@ -853,10 +853,10 @@
     "message": "La minimizarea ferestrei se afișează în schimb un icon în zona de notificare."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimizați în bara de meniu"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "La minimizarea ferestrei, se afișează un icon în bara de meniu."
   },
   "enableCloseToTray": {
     "message": "Se închide în zona de notificare"
@@ -865,10 +865,10 @@
     "message": "La închiderea ferestrei se afișează în schimb un icon în zona de notificare."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Închideți în bara de meniu"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "La închiderea ferestrei se afișează un icon în bara de meniu."
   },
   "enableTray": {
     "message": "Se activează un icon în zona de notificare"
@@ -883,28 +883,28 @@
     "message": "Când aplicația este pornită, se afișează numai un icon în bara de notificări."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Pornire în bara de meniu"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Când aplicația este pornită, se afișează numai un icon în bara de meniu."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Pornire automată la conectare"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Pornește aplicația Bitwarden Desktop automat la autentificare."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Se afișează întotdeauna în Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Afișează pictograma Bitwarden în Dock chiar și atunci când este minimizată în bara de meniu."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Confirmați dezactivarea zonei de notificare"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Dezactivarea acestei setări va dezactiva, de asemenea, toate celelalte setări legate de zona de notificare."
   },
   "language": {
     "message": "Limbă"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirmare export seif"
   },
   "exportWarningDesc": {
     "message": "Acest export conține datele dvs. din seif în format necriptat. Nu ar trebui să stocați sau să trimiteți fișierul pe canale nesecurizate (cum ar fi e-mail). Ștergeți-l imediat după ce nu îl mai folosiți."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Acest export criptează datele folosind cheia de criptare a contului. Dacă schimbați vreodată cheia de criptare a contului, ar trebui să o exportați din nou, deoarece nu veți putea decripta acest fișier exportat."
   },
   "exportMasterPassword": {
     "message": "Introduceți parola principală pentru a exporta datele din seif."
@@ -1289,7 +1289,7 @@
     "message": "Deblocare cu Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verificați pentru Bitwarden."
+    "message": "deblocați-vă seiful"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornire"
@@ -1451,45 +1451,45 @@
     "message": "Termeni de utilizare și Politica de confidențialitate nu au fost recunoscute."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Activați integrarea browserului"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Integrarea browserului este folosită pentru biometria în browser."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integrarea browserului nu este acceptată"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Din păcate, integrarea browserului este acceptată numai în versiunea Mac App Store pentru moment."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Necesită verificare pentru integrarea browserului"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Activează un nivel suplimentar de securitate prin solicitarea validării frazei de amprentă la stabilirea unei legături între desktop și browser. Când este activată, aceasta necesită intervenția utilizatorului și verificarea de fiecare dată când este stabilită o conexiune."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Aprobați"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Verificați conexiunea browserului"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Vă rugăm să vă asigurați că amprenta afișată este identică cu amprenta indicată în extensia browserului."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometria nu a fost activată"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Biometria browserului necesită activarea mai întâi a biometriei de pe desktop în setări."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Datorită unei politici pentru întreprinderi, vă este restricționată salvarea de elemente în seiful dvs. personal. Schimbați opțiunea de proprietate la o organizație și alegeți dintre colecțiile disponibile."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Indiciul dvs. de parolă nu poate fi același cu parola dvs."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "O politică de organizație vă afectează opțiunile de proprietate."
   }
 }

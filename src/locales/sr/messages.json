@@ -853,10 +853,10 @@
     "message": "Када минимизујете прозор, уместо тога покажите икону у системској палети."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Смањи на траку менија"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Када минимизујете прозор, покажи икону у мени траци."
   },
   "enableCloseToTray": {
     "message": "Затвори у системску иконицу"
@@ -865,10 +865,10 @@
     "message": "Када затворите прозор, уместо тога покажите икону у системској палети."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Затвори у траку менија"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Када затворите прозор, покажите икону у траки менија."
   },
   "enableTray": {
     "message": "Омогући икону система"
@@ -883,28 +883,28 @@
     "message": "Када се апликација први пут покрене, прикажи је само као икону."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Покрени у траци менија"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Када се апликација први пут покрене, прикажи само икону у траци менија."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Ауто покрени на пријављивање"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Покрени Bitwarden Desktop апликацију на пријављивање."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Увек покажи у Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Покажи Bitwarden иконицу у Dock чак и када је умањен на траци менија."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Потврди онемогућавање треја"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Онемогућавање ове поставке онемогућиће се и сва остала подешавања у вези са трејом."
   },
   "language": {
     "message": "Језик"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Потврдите извоз сефа"
   },
   "exportWarningDesc": {
     "message": "Овај извоз садржи податке сефа у нешифрираном формату. Не бисте смели да сачувате или шаљете извезену датотеку преко несигурних канала (као што је имејл). Избришите датотеку одмах након што завршите са коришћењем."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Овај извоз шифрује податке користећи кључ за шифровање вашег налога. Ако икада промените кључ за шифровање свог налога, требало би да поново извезете, јер нећете моћи да дешифрујете овај извоз."
   },
   "exportMasterPassword": {
     "message": "Унети главну лозинку за извоз сефа."
@@ -1451,45 +1451,45 @@
     "message": "Услови услуге и Политика приватности нису признати."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Укључи интеграцију са претраживачем"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Интеграција прегледача се користи за биометрију у прегледачу."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Интеграција претраживача није подржана"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Нажалост, интеграција прегледача за сада је подржана само у верзији Mac App Store."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Захтева верификацију за интеграцију прегледача"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Омогућите додатни ниво заштите захтевајући проверу фразе отиска прста приликом успостављања везе између desktop-а и прегледача. Када је омогућено, ово захтева интервенцију и верификацију корисника сваки пут када се успостави веза."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Одобри"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Провери везу прегледача"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Уверите се да је приказани отисак идентичан отиску приказаном у додатку прегледача."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Биометрија није омогућена"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Биометрија прегледача захтева да у поставкама прво буде омогућена биометрија desktop-а."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Ваша помоћ за лозинку не може да буде иста као лозинка."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Политика организације утичу на ваше могућности власништва."
   }
 }

@@ -340,7 +340,7 @@
     "message": "Видалити файл"
   },
   "deleteItemConfirmation": {
-    "message": "Ви дійсно хочете видалити цей запис?"
+    "message": "Ви дійсно хочете перенести до смітника?"
   },
   "deletedItem": {
     "message": "Запис перенесено до смітника"
@@ -742,7 +742,7 @@
     "message": "Отримати розширення браузера"
   },
   "syncingComplete": {
-    "message": "Синхронізація завершена"
+    "message": "Синхронізацію завершено"
   },
   "syncingFailed": {
     "message": "Не вдалося синхронізувати"
@@ -853,10 +853,10 @@
     "message": "Згортати вікно до системного лотка замість панелі інструментів."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Згортати до панелі завдань"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "При згортанні вікна, показувати піктограму в панелі завдань."
   },
   "enableCloseToTray": {
     "message": "Закривати до системного лотка"
@@ -865,10 +865,10 @@
     "message": "При закритті вікна згортати в системний лоток."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Закривати до панелі завдань"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "При закритті вікна, показувати піктограму в панелі завдань."
   },
   "enableTray": {
     "message": "Увімкнути піктограму в системному лотку"
@@ -883,28 +883,28 @@
     "message": "При першому запуску програми відображатиметься лише піктограма в системному лотку."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Запускати в панелі завдань"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "При запуску програми показувати лише піктограму в панелі завдань."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Запускати автоматично при вході"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Запускати програму Bitwarden для комп'ютера автоматично при вході в систему."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Завжди показувати в панелі Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Показувати піктограму Bitwarden в панелі Dock навіть при згортанні до панелі завдань."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Підтвердити вимкнення в панелі стану"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Вимкнення цього параметра також вимкне усі інші пов'язані налаштування."
   },
   "language": {
     "message": "Мова"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Підтвердити експорт сховища"
   },
   "exportWarningDesc": {
     "message": "Експортовані дані вашого сховища знаходяться в незашифрованому вигляді. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Цей експорт шифрує ваші дані за допомогою ключа шифрування облікового запису. Якщо ви коли-небудь оновите ключ шифрування облікового запису, ви повинні виконати експорт знову, оскільки не зможете розшифрувати цей файл експорту."
   },
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
@@ -1289,7 +1289,7 @@
     "message": "Розблокувати з Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Перевірити на Bitwarden."
+    "message": "розблокувати сховище"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
@@ -1298,13 +1298,13 @@
     "message": "Налаштування"
   },
   "enableMenuBar": {
-    "message": "Увімкнути піктограму в рядку меню"
+    "message": "Увімкнути піктограму в панелі завдань"
   },
   "enableMenuBarDesc": {
-    "message": "Завжди показувати піктограму в рядку меню."
+    "message": "Завжди показувати піктограму в панелі завдань."
   },
   "hideToMenuBar": {
-    "message": "Приховати до рядка меню"
+    "message": "Приховувати до панелі завдань"
   },
   "selectOneCollection": {
     "message": "Ви повинні обрати принаймні одну збірку."
@@ -1451,45 +1451,45 @@
     "message": "Умови користування та політика приватності не погоджені."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Увімкнути інтеграцію з браузером"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Інтеграція з браузером використовується для біометрії в браузері."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Інтеграція з браузером не підтримується"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "На жаль, зараз інтеграція з браузером підтримується лише у версії для Mac з App Store."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Вимагати підтвердження для інтеграції з браузером"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Увімкніть додатковий рівень безпеки, вимагаючи перевірку фрази відбитка при встановленні зв'язку між програмою на комп'ютері та браузером. Якщо увімкнено, вимагатиметься втручання користувача і перевірка щоразу при встановленні зв'язку."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Схвалити"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Перевірка з'єднання з браузером"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Переконайтеся, що показаний відбиток ідентичний відбитку в розширенні браузера."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Біометрію не увімкнено"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Для активації біометрії в браузері необхідно спершу увімкнути біометрію в програмі на комп'ютері."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "У зв'язку з корпоративною політикою, вам не дозволено зберігати записи до особистого сховища. Змініть налаштування власності на організацію та виберіть серед доступних збірок."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Підказка для пароля не може бути такою самою, як ваш пароль."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Політика організації впливає на ваші параметри власності."
   }
 }

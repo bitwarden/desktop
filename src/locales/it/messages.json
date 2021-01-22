@@ -853,10 +853,10 @@
     "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimizza nella barra dei menu"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Quando si minimizza la finestra, mostra invece un'icona nella barra dei menu."
   },
   "enableCloseToTray": {
     "message": "Chiudi nell'area di notifica"
@@ -865,7 +865,7 @@
     "message": "Quando si chiude la finestra, mostrare invece un'icona nella barra delle applicazioni."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Chiudi nella barra dei menu"
   },
   "enableCloseToMenuBarDesc": {
     "message": "When closing the window, show an icon in the menu bar instead."
@@ -883,7 +883,7 @@
     "message": "Quando l'applicazione è stata avviata, mostra solo un'icona nella barra di sistema."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Avvia dalla barra dei menu"
   },
   "startToMenuBarDesc": {
     "message": "When the application is first started, only show an icon in the menu bar."
@@ -895,7 +895,7 @@
     "message": "Start the Bitwarden Desktop application automatically on login."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Mostra sempre nel pannello"
   },
   "alwaysShowDockDesc": {
     "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Conferma esportazione della Cassaforte"
   },
   "exportWarningDesc": {
     "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Questa esportazione crittografa i tuoi dati utilizzando la chiave di crittografia del tuo account. Se dovessi cambiare la chiave di crittografia del tuo account, dovresti esportare di nuovo poiché non sarai in grado di decifrare questo file di esportazione."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
@@ -1469,7 +1469,7 @@
     "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Approva"
   },
   "verifyBrowserTitle": {
     "message": "Verify browser connection"

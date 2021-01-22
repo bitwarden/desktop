@@ -853,10 +853,10 @@
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster minimiert wird."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "In Menüleiste minimieren"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Bei minimiertem Fenster stattdessen ein Symbol in der Menüleiste anzeigen."
   },
   "enableCloseToTray": {
     "message": "In Taskleiste minimieren"
@@ -865,10 +865,10 @@
     "message": "Zeige ein Symbol in der Taskleiste, wenn das Fenster geschlossen wird."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "In Menüleiste schließen"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Beim Schließen des Fensters stattdessen ein Symbol in der Menüleiste anzeigen."
   },
   "enableTray": {
     "message": "Taskleisten-Symbol einschalten"
@@ -883,28 +883,28 @@
     "message": "Beim ersten Start der Anwendung nur minimiert in der Taskleiste anzeigen."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "In der Menüleiste starten"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Beim ersten Start der Anwendung nur ein Symbol in der Menüleiste anzeigen."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Automatisch bei der Anmeldung starten"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Die Bitwarden Desktop-Anwendung automatisch bei der Anmeldung starten."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Immer im Dock anzeigen"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Das Bitwarden-Symbol im Dock anzeigen, auch wenn es in die Menüleiste minimiert wird."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Tray deaktivieren bestätigen"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Deaktivieren dieser Einstellung wird auch alle anderen Tray-bezogenen Einstellungen deaktivieren."
   },
   "language": {
     "message": "Sprache"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Tresor-Export bestätigen"
   },
   "exportWarningDesc": {
     "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -1289,7 +1289,7 @@
     "message": "Mit Touch ID entsperren"
   },
   "touchIdConsentMessage": {
-    "message": "Für Bitwarden verifizieren."
+    "message": "Ihren Tresor entsperren"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
@@ -1448,48 +1448,48 @@
     "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
   },
   "acceptPoliciesError": {
-    "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
+    "message": "Die Nutzungsbedingungen und die Datenschutzerklärung wurden nicht akzeptiert."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Browser-Integration aktivieren"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Die Browser-Einbindung wird für Biometrie im Browser verwendet."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Browser-Einbindung wird nicht unterstützt"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Leider wird die Browsers-Einbindung derzeit nur in der Mac App Store Version unterstützt."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Überprüfung für Browser-Einbindung verlangen"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Eine zusätzliche Sicherheitsebene aktivieren, indem eine Prüfschlüssel-Validierung verlangt wird, wenn eine Verbindung zwischen Ihrer Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff erforderlich."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Genehmigen"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Browser-Verbindung bestätigen"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Bitte stellen Sie sicher, dass der angezeigte Prüfschlüssel identisch mit dem Prüfschlüssel in der Browser-Erweiterung ist."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometrie ist nicht aktiviert"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert ist."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Aufgrund einer Unternehmensrichtlinie dürfen Sie keine Einträge in Ihrem persönlichen Tresor speichern. Ändern Sie die Eigentümer-Option in eine Organisation und wählen Sie aus den verfügbaren Sammlungen."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Ihr Passwort-Hinweis darf nicht identisch mit Ihrem Passwort sein."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Eine Organisationsrichtlinie beeinflusst Ihre Eigentümer-Optionen."
   }
 }

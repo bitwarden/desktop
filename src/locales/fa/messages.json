@@ -853,10 +853,10 @@
     "message": "هنگام کوچک‌کردن پنچره، یک نماد در قسمت نمادهای سیستم بجای آن نشان بده."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "به نوار منو کوچک کنید"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "هنگام به کوچک کردن پنجره، به جای آن یک نماد در نوار منو نشان دهید."
   },
   "enableCloseToTray": {
     "message": "بستن به نماد Tray"
@@ -865,10 +865,10 @@
     "message": "هنگام بستن پنچره، یک نماد در قسمت نمادهای سیستم بجای آن نشان بده."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "بستن به نوار منو"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "هنگام بستن پنجره، به جای آن یک نماد در نوار منو نشان دهید."
   },
   "enableTray": {
     "message": "فعال کردن نماد Tray"
@@ -883,28 +883,28 @@
     "message": "زمانی که برنامه برای بار اول شروع می‌شود، فقط یک نماد در نمادهای سیستم نشان بده."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "شروع به نوار منو"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "زمانی که برنامه برای بار اول شروع می‌شود، فقط یک نماد در نوار منو نشان بده."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "هنگام ورود به سیستم به طور خودکار شروع کنید"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "برنامه دستکتاپ Bitwarden را به طور خودکار هنگام ورود به سیستم شروع کنید."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "همیشه در داک نشان بده"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "نماد Bitwarden را در داک نمایش بده حتی زمانی که به نوار منو کوچک شود."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "غیرفعال کردن tray را تأیید کنید"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "غیرفعال کردن این تنظیم تمام تنظیمات مربوط به tray را غیرفعال می کند."
   },
   "language": {
     "message": "زبان"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "صادرات گاوصندوق را تأیید کنید"
   },
   "exportWarningDesc": {
     "message": "این خروجی شامل داده‌های گاوصندوق در یک قالب رمزنگاری نشده است. شما نباید آن را از طریق یک راه ارتباطی ناامن (مثل ایمیل) ذخیره یا ارسال کنید. به محض اینکه استفاده‌تان از آن تمام شد، آن را حذف کنید."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "این صادرات با استفاده از کلید رمزگذاری حساب شما ، اطلاعات شما را رمزگذاری می کند. اگر حتی کلید رمزگذاری حساب خود را بچرخانید ، باید دوباره صادر کنید چون قادر به رمزگشایی این پرونده صادراتی نخواهید بود."
   },
   "exportMasterPassword": {
     "message": "کلمه عبور اصلی خود را برای خروجی گرفتن از گاوصندوقتان وارد کنید."
@@ -1451,45 +1451,45 @@
     "message": "شرایط خدمات و سیاست حفظ حریم خصوصی تأیید نشده است."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "فعال کردن ادغام مرورگر"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "یکپارچه سازی مرورگر برای بیومتریک در مرورگر استفاده می شود."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "ادغام مرورگر پشتیبانی نمی شود"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "متأسفانه در حال حاضر ادغام مرورگر فقط در نسخه Mac App Store پشتیبانی می شود."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "برای ادغام مرورگر نیاز به تأیید است"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "هنگام ایجاد پیوند بین دسکتاپ و مرورگر خود، با تأیید اعتبار اثر انگشت، یک لایه امنیتی دیگر را فعال کنید. درصورت فعال بودن، این امر مستلزم مداخله و تأیید کاربر در هر بار برقراری ارتباط است."
   },
   "approve": {
-    "message": "Approve"
+    "message": "تایید"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "اتصال مرورگر را تأیید کنید"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "لطفاً اطمینان حاصل کنید که اثر انگشت نشان داده شده با اثر انگشت نشان داده شده در افزونه مرورگر یکسان است."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "بیومتریک فعال نیست"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "بیومتریک مرورگر ابتدا نیاز به فعالسازی بیومتریک دسکتاپ در تنظیمات دارد."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "نکته رمز عبور شما نمی تواند همان رمز عبور شما باشد."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "خط مشی سازمانی بر تنظیمات مالکیت شما تأثیر می گذارد."
   }
 }

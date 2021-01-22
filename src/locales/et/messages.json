@@ -850,25 +850,25 @@
     "message": "Minimeeri tegumiribale"
   },
   "enableMinToTrayDesc": {
-    "message": "Akent minimeerides kuva üksnes süsteemisalve ikooni."
+    "message": "Akna minimeerimisel kuva rakendus süsteemisalve ikoonina."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimeeri menüüribale"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Akna minimeerimisel kuva rakendus menüüriba ikoonina."
   },
   "enableCloseToTray": {
     "message": "Minimeeri süsteemisalvele"
   },
   "enableCloseToTrayDesc": {
-    "message": "Akna sulgedes minimeeritakse see süsteemisalvele."
+    "message": "Akna sulgemisel kuva rakendus süsteemisalve ikoonina."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Sulge menüüribale"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Akna sulgemisel kuva rakendus menüüriba ikoonina."
   },
   "enableTray": {
     "message": "Luba süsteemisalve ikoon"
@@ -883,28 +883,28 @@
     "message": "Rakenduse esmasel käivitusel kuvatakse seda ainult süsteemisalve ikoonina."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Käivita menüüribal"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Rakenduse esmasel käivitusel kuvatakse selle ikooni ainult menüüribal."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Käivita koos arvutiga"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Bitwardeni töölaua rakendus käivitatakse automaatselt koos arvutiga."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Kuva alati Dockis"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Bitwardeni ikooni kuvatakse alati Dockis, isegi kui see on minimeeritud menüüribale."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Kinnita süsteemisalve ikooni keelamine"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Selle seadistuse keelamine lülitab välja ka teised süsteemisalve ikooniga seonduvad võimalused."
   },
   "language": {
     "message": "Keel"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Hoidla eksportimise kinnitamine"
   },
   "exportWarningDesc": {
     "message": "Eksporditav fail sisaldab hoidla sisu, mis on krüpteeringuta. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -1451,45 +1451,45 @@
     "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Lülita sisse brauseri integratsioon"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Brauseri integratsioon on vajalik biomeetria kasutamiseks brauseris."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Brauseri integratsioon ei ole toetatud"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Paraku on brauseri integratsioon hetkel toetatud ainult Mac App Store'i versioonis."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Nõua brauseri integratsiooni ülekinnitamist"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "See seadistus võimaldab täiendavat kaitset, küsides brauseriga liidestamisel sõrmejälje fraasi. Sisselülitamisel nõuab see seadistus igakordset kasutaja sekkumist, kui luuakse ühendus brauseri ja töölaua rakenduse vahel."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Kinnita"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Brauseri ühendamise kinnitamine"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Veendu, et kuvatav sõrmejälje fraas on identne sellega, mida kuvatakse brauseri lisas."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biomeetria ei ole sisse lülitatud"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Biomeetria kasutamiseks brauseris peab esmalt Bitwardeni töölaua rakenduse seadetes biomeetria lubama."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Parooli vihje ei saa olla sama mis parool ise."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Organisatsiooni poliitika on seadnud omaniku valikutele piirangu."
   }
 }

@@ -853,10 +853,10 @@
     "message": "Az ablak minimalizálásakor helyette egy ikon jelenik meg a rendszertálcán."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Kicsinyítés a menüsávra"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Az ablak minimalizálásakor helyette egy ikon jelenik meg a rendszertálcán."
   },
   "enableCloseToTray": {
     "message": "Bezárás tálcaikonba"
@@ -865,10 +865,10 @@
     "message": "Az ablak bezárásakor helyette egy ikon jelenik meg a rendszertálcán."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Befejezés a menüsávnál"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Az ablak bezárásakor helyette egy ikon jelenik meg a menüsávon."
   },
   "enableTray": {
     "message": "Tálcaikon engedélyezése"
@@ -883,28 +883,28 @@
     "message": "Az alkalmazás első indításakor csak egy ikon jelenjen meg a rendszertálcán."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Indítás a menüsávon"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Az alkalmazás első indításakor csak egy ikon jelenjen meg a menüsávon."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Automatikus indítás bejelentkezéskor"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "A Bitwarden asztali alkalmazás automatikus indítása bejelentkezéskor."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Mindig megjelenik a dokk elemen"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "A Bitwarden ikon megjelenítése a dokk elemben még akkor is, ha a menüsorra van kicsinyítve."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Tálca letiltás megerősítése"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Ennek a beállításnak a kikapcsolásával az összes többi tálcával kapcsolatos beállítás is letiltásra kerül."
   },
   "language": {
     "message": "Nyelv"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Széf exportálás megerősítése"
   },
   "exportWarningDesc": {
     "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat.Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és továbbküldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Ez az exportálás titkosítja az adatokat a fiók titkosítási kulcsával. Ha a fiók forgatási kulcsa más lesz, akkor újra exportálni kell, mert nem lehet visszafejteni ezt az exportálási fájlt."
   },
   "exportMasterPassword": {
     "message": "A mesterjelszó megadása a széfadatok exportálásához."
@@ -1289,7 +1289,7 @@
     "message": "Feloldás Touch ID segítségével"
   },
   "touchIdConsentMessage": {
-    "message": "Bitwarden ellenőrzés."
+    "message": "Bitwarden feloldás"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"
@@ -1451,45 +1451,45 @@
     "message": "A szolgáltatási feltételeket és az adatvédelmi irányelveket nem vették figyelembe."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Böngésző integráció engedélyezése"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "A böngésző integrációt a biometrikus adatokhoz használják a böngészőben."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "A böngésző integráció nem támogatott."
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Sajnos a böngésző integrációt egyelőre csak a Mac App Store verzió támogatja."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Ellenőrzés kérése a böngésző integrációhoz"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Engedélyezzünk további biztonsági réteget ujjlenyomat kifejezés-hitelesítés kérésével az asztal és a böngésző közötti kapcsolat létrehozásakor. Ha engedélyezve van, ez minden egyes kapcsolat létrehozásakor felhasználói beavatkozást és ellenőrzést igényel."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Jóváhagyás"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Böngésző kapcsolat ellenőrzése"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Ellenőrizzük, hogy a bemutatott ujjlenyomat megegyezik a böngésző kiterjesztésében megjelenített ujjlenyomattal."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "A biometrikus adatok nincsenek engedélyezve."
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "A böngésző biometrikus adataihoz először az asztali biometrikus adatokat kell engedélyezni a beállításokban."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Egy vállalati házirend miatt korlátozásra került az elemek személyes tárolóba történő mentése. Módosítsuk a Tulajdon opciót egy szervezetre és válasszunk az elérhető gyűjtemények közül."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "A jelszavas tipp nem lehet azonos a jelszóval."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "A szervezeti házirend befolyásolja a tulajdonosi opciókat."
   }
 }
