@@ -853,10 +853,10 @@
     "message": "창을 최소화하면 작업 표시줄 대신 알림 영역에 아이콘을 표시합니다."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "메뉴 막대로 최소화"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "창을 최소화하면 메뉴 막대에 아이콘을 표시합니다."
   },
   "enableCloseToTray": {
     "message": "트레이 아이콘으로 닫기"
@@ -865,10 +865,10 @@
     "message": "창을 닫으면 프로그램 종료 대신 알림 영역에 아이콘으로 표시합니다."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "메뉴 막대로 닫기"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "창을 닫으면 메뉴 막대에 아이콘을 표시합니다."
   },
   "enableTray": {
     "message": "알림 영역 아이콘 사용"
@@ -883,25 +883,25 @@
     "message": "응용프로그램을 시작할 때 알림 영역에 아이콘으로 표시합니다."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "메뉴 막대에서 시작하기"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "앱을 시작할 때 메뉴 바에 아이콘으로 표시합니다."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "로그인할 때 자동으로 실행"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "로그인할 때 Bitwarden 데스크톱 앱을 자동으로 실행합니다."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Dock에 항상 표시하기"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "메뉴 막대에 숨겨진 경우에도 Bitwarden 아이콘을 Dock에 표시합니다."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "알림 영역 비활성화 확인"
   },
   "confirmTrayDesc": {
     "message": "Disabling this setting will also disable all other tray related settings."
@@ -1219,7 +1219,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "보관함 내보내기 확인"
   },
   "exportWarningDesc": {
     "message": "내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오."
@@ -1451,16 +1451,16 @@
     "message": "서비스 약관 및 개인 정보 보호 정책을 확인하지 않았습니다."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "브라우저와 연결 활성화"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "브라우저와 연결하면 브라우저에서 생체 인식을 사용할 수 있습니다."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "브라우저와 연결 지원되지 않음"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "브라우저와 연결은 현재 Mac App Store 버전에서만 지원됩니다."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Require verification for browser integration"
@@ -1469,7 +1469,7 @@
     "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
   },
   "approve": {
-    "message": "Approve"
+    "message": "승인"
   },
   "verifyBrowserTitle": {
     "message": "Verify browser connection"
@@ -1478,18 +1478,18 @@
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "생체 인식이 활성화되지 않음"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "브라우저에서 생체 인식을 사용하기 위해서는 설정에서 데스크톱 생체 인식을 먼저 활성화해야 합니다."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "엔터프라이즈 정책으로 인해 개인 보관함에 항목을 저장할 수 없습니다. 조직에서 소유권 설정을 변경한 다음, 사용 가능한 컬렉션 중에서 선택해주세요."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "비밀번호 힌트는 비밀번호와 같을 수 없습니다."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "조직의 정책이 소유권 설정에 영향을 미치고 있습니다."
   }
 }
