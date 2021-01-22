@@ -853,10 +853,10 @@
     "message": "Ao minimizar a janela, mostre um ícone na bandeja do sistema."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimizar para a barra de menus"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Quando minimizar a janela, mostrar um ícone na barra de menu."
   },
   "enableCloseToTray": {
     "message": "Fechar para Ícone da Bandeja"
@@ -865,10 +865,10 @@
     "message": "Quando fechar a janela, mostre um ícone na bandeja do sistema."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Fechar para barra de menus"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Quando fechar a janela, mostrar um ícone na barra de menus."
   },
   "enableTray": {
     "message": "Habilitar ícone de bandeja"
@@ -883,16 +883,16 @@
     "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na bandeja do sistema."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Iniciar na barra de menus"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na barra de menus."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Iniciar automaticamente ao iniciar sessão"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Inicia o aplicativo Bitwarden Desktop automaticamente no logon."
   },
   "alwaysShowDock": {
     "message": "Always show in the Dock"
