@@ -24,7 +24,6 @@ jobs:
           RELEASE_TAG_NAME: ${{ github.event.inputs.release_tag_name }}
 
       - name: Create Draft Release
-        if: false
         id: create_release
         uses: actions/create-release@v1
         env:
@@ -38,7 +37,6 @@ jobs:
 
   linux:
     runs-on: ubuntu-latest
-    if: false
     needs: setup
     steps:
       - name: Set up Node
@@ -92,7 +90,6 @@ jobs:
 
   windows:
     runs-on: windows-latest
-    if: false
     needs: setup
     steps:
       - name: Set up dotnet
