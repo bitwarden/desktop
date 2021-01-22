@@ -184,6 +184,17 @@ jobs:
           Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
 
+      - name: Deploy to Chocolatey
+        shell: pwsh
+        run: |
+          Copy-Item -Path ./stores/chocolatey -Destination ./chocolatey -Recurse
+          Copy-Item -Path ./dist/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./chocolatey
+
+          $checksum = checksum -t sha256 ./chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $chocoInstall = "./chocolatey/tools/chocolateyinstall.ps1"
+          (Get-Content $chocoInstall).replace('__version__', ${{ env.PACKAGE_VERSION }}).replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          choco pack ./chocolatey/bitwarden.nuspec --version ${{ env.PACKAGE_VERSION }} --out ./chocolately
+
       - name: Upload portable exe artifact
         if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@v2
@@ -211,6 +222,13 @@ jobs:
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+
+      - name: Upload nupkg artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v2
+        with:
+          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
   macos:
     runs-on: macos-latest

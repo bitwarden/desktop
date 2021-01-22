@@ -259,7 +259,16 @@ jobs:
 
       - name: Deploy to Chocolatey
         shell: pwsh
-        run: ./scripts/choco-update.ps1 -version $env:PACKAGE_VERSION
+        run: |
+          Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
+          Copy-Item -Path ./dist/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
+
+          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
+          (Get-Content $chocoInstall).replace('__version__', ${{ env.PACKAGE_VERSION }}).replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          choco pack ./dist/chocolatey/bitwarden.nuspec --version ${{ env.PACKAGE_VERSION }} --out ./dist/chocolately
+          cd ./dist/chocolately
+          #choco push
 
       - name: Upload Chocolatey nupkg release asset
         id: upload-macos-checksum
