@@ -266,7 +266,7 @@ jobs:
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
           Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          ls ./dist
+          ls ./dist/chocolatey
 
           $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
