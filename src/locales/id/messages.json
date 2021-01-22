@@ -853,10 +853,10 @@
     "message": "Ketika jendela di perkecil, tampilkan ikon di dalam sistem baki sebagai gantinya."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimalkan ke bilah menu"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Saat meminimalkan jendela, tampilkan ikon di bilah menu sebagai gantinya."
   },
   "enableCloseToTray": {
     "message": "Close to Tray Icon"
@@ -865,10 +865,10 @@
     "message": "Saat menutup jendela, tampilkan ikon di baki sistem sebagai gantinya."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Dekat dengan bilah menu"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Saat menutup jendela, tampilkan ikon di bilah menu sebagai gantinya."
   },
   "enableTray": {
     "message": "Aktifkan Ikon Baki"
