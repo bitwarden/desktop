@@ -43,7 +43,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.inputs.release_tag_name }}
           release_name: ${{ env.RELEASE_NAME }}
@@ -98,7 +98,7 @@ jobs:
       - name: Build & Publish
         run: npm run publish:lin
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to Snap Store
         run: |
@@ -181,7 +181,7 @@ jobs:
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Rename appx files for store
         shell: pwsh
