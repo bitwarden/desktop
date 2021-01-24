@@ -1,8 +1,7 @@
 exports.default = async function(configuration) {
   if (
     parseInt(process.env.ELECTRON_BUILDER_SIGN) === 1 && 
-    configuration.path.slice(-4) == ".exe" &&
-    !(configuration.path.includes('win-unpacked') || configuration.path.includes('win-ia32-unpacked'))
+    configuration.path.slice(-4) == ".exe"
   ) {
     console.log(`[*] Signing file: ${configuration.path}`)
     require("child_process").execSync(
