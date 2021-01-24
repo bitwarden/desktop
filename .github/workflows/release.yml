@@ -6,6 +6,9 @@ on:
       release_tag_name:
         description: 'Release Tag Name (vX.X.X)'
         required: true
+      browser_extension_ref:
+        description: 'Browser Extension ref (defaults to `master`):'
+        default: master
 
 
 jobs:
@@ -95,6 +98,7 @@ jobs:
 
   windows-signed:
     runs-on: windows-latest
+    environment: prod
     needs: setup
     steps:
       - name: Set up dotnet
@@ -323,6 +327,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: 'bitwarden/browser'
+          ref: ${{ github.event.inputs.browser_extension_ref }}
           path: 'dist-safari/browser'
 
       - name: Build Safari extension
