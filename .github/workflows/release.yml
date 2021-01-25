@@ -40,7 +40,6 @@ jobs:
 
   linux:
     runs-on: ubuntu-latest
-    if: false
     needs: setup
     steps:
       - name: Set up Node
@@ -58,8 +57,8 @@ jobs:
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@v1
-        #with:
-        #  snapcraft_token: ${{ secrets.SNAP_TOKEN }}
+        with:
+          snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -93,12 +92,11 @@ jobs:
         shell: pwsh
         run: |
           snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
-          #snapcraft logout
+          snapcraft logout
 
 
   windows-signed:
     runs-on: windows-latest
-    environment: prod
     needs: setup
     steps:
       - name: Set up dotnet
@@ -139,9 +137,9 @@ jobs:
         shell: pwsh
         run: |
           choco install checksum --no-progress
-        #  choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-        #env:
-        #  CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Print environment
         run: |
@@ -184,7 +182,7 @@ jobs:
           (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
           cd ./dist/chocolatey
-          #choco push
+          choco push
 
       - name: Upload Chocolatey nupkg release asset
         uses: actions/upload-release-asset@v1
@@ -259,7 +257,6 @@ jobs:
 
   macos:
     runs-on: macos-latest
-    if: false
     needs: setup
     steps:
       - name: Set up Node
