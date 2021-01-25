@@ -1462,6 +1462,12 @@
   "browserIntegrationMasOnlyDesc": {
     "message": "브라우저와 연결은 현재 Mac App Store 버전에서만 지원됩니다."
   },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
   "enableBrowserIntegrationFingerprint": {
     "message": "Require verification for browser integration"
   },
