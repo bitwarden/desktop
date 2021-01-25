@@ -1454,16 +1454,22 @@
     "message": "Browser-Integration aktivieren"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Die Browser-Einbindung wird für Biometrie im Browser verwendet."
+    "message": "Die Browser-Integration wird für Biometrie im Browser verwendet."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser-Einbindung wird nicht unterstützt"
+    "message": "Browser-Integration wird nicht unterstützt"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Leider wird die Browsers-Einbindung derzeit nur in der Mac App Store Version unterstützt."
+    "message": "Leider wird die Browser-Integration derzeit nur in der Mac App Store Version unterstützt."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Überprüfung für Browser-Einbindung verlangen"
+    "message": "Überprüfung für Browser-Integration verlangen"
   },
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Eine zusätzliche Sicherheitsebene aktivieren, indem eine Prüfschlüssel-Validierung verlangt wird, wenn eine Verbindung zwischen Ihrer Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff erforderlich."
