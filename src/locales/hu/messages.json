@@ -1463,10 +1463,10 @@
     "message": "Sajnos a böngésző integrációt egyelőre csak a Mac App Store verzió támogatja."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "A böngésző integráció nem támogatott."
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "A böngésző integrációt egyelőre csak a Windows Store verzió támogatja."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Ellenőrzés kérése a böngésző integrációhoz"
