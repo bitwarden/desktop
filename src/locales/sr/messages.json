@@ -512,7 +512,7 @@
     "message": "Дошло је до неочекиване грешке."
   },
   "itemInformation": {
-    "message": "Ставка Информације"
+    "message": "Инфо о ставци"
   },
   "noItemsInList": {
     "message": "Нама ставке у листи."
@@ -677,7 +677,7 @@
     "message": "Одјави се"
   },
   "addNewLogin": {
-    "message": "Додај Нову Пријаву"
+    "message": "Додај нову пријаву"
   },
   "addNewItem": {
     "message": "Додај нову ставку"
@@ -701,25 +701,25 @@
     "message": "Генератор Лозинке"
   },
   "emailUs": {
-    "message": "Пошаљите нам поруку"
+    "message": "Послати нам поруку"
   },
   "visitOurWebsite": {
-    "message": "Посети наш веб-сајт"
+    "message": "Посетити наш веб-сајт"
   },
   "fileBugReport": {
-    "message": "Поднесите извештај о грешци"
+    "message": "Поднети извештај о грешци"
   },
   "blog": {
     "message": "Блог"
   },
   "followUs": {
-    "message": "Прати нас"
+    "message": "Пратити нас"
   },
   "syncVault": {
     "message": "Синхронизуј сеф"
   },
   "changeMasterPass": {
-    "message": "Промени Главну Лозинку"
+    "message": "Промени главну лозинку"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Можете променити главну лозинку у Вашем сефу на bitwarden.com. Да ли желите да посетите веб страницу сада?"
@@ -748,7 +748,7 @@
     "message": "Синхронизација није успела"
   },
   "yourVaultIsLocked": {
-    "message": "Сеф је блокиран. Проверити главну лозинку за наставак."
+    "message": "Сеф је блокиран. Унесите главну лозинку за наставак."
   },
   "unlock": {
     "message": "Откључај"
@@ -931,7 +931,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Провери верзију програма"
+    "message": "Проверити верзију програма"
   },
   "version": {
     "message": "Верзија $VERSION_NUM$",
@@ -1201,7 +1201,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Ажурирано",
+    "message": "Промењено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1461,6 +1461,12 @@
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Нажалост, интеграција прегледача за сада је подржана само у верзији Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Захтева верификацију за интеграцију прегледача"
