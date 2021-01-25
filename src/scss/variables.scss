@@ -1,6 +1,6 @@
 ﻿@import '~nord/src/sass/nord.scss';
 
-$font-family-sans-serif: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+$font-family-sans-serif: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-size-base: 14px;
 $font-size-large: 18px;
@@ -13,11 +13,11 @@ $list-icon-color: #c7c7cd;
 $border-radius: 3px;
 $line-height-base: 1.42857143;
 
-$gray: #555;
-$gray-light: #777;
+$gray: #5d6165;
+$gray-light: #95999d;
 $text-muted: $gray-light;
 
-$brand-primary: #175DDC;
+$brand-primary: #297EF2;
 $brand-danger: #dd4b39;
 $brand-success: #00a65a;
 $brand-info: #555555;
@@ -39,6 +39,56 @@ $button-color-primary: darken($brand-primary, 8%);
 $button-color-danger: darken($brand-danger, 10%);
 
 $themes: (
+    cozyLight: (
+        textColor: $text-color,
+        borderColor: $border-color-dark,
+        backgroundColor: $background-color,
+        backgroundColorAlt: $background-color-alt,
+        backgroundColorAlt2: $background-color-alt2,
+        scrollbarColor: rgba(100,100,100,.2),
+        scrollbarHoverColor: rgba(100,100,100,.4),
+        boxBackgroundColor: $box-background-color,
+        boxBackgroundHoverColor: $box-background-hover-color,
+        boxBorderColor: $box-border-color,
+        headerBackgroundColor: $brand-primary,
+        headerBorderColor: darken($brand-primary, 7%),
+        headerInputBackgroundColor: darken($brand-primary, 8%),
+        headerInputBackgroundFocusColor: darken($brand-primary, 10%),
+        headerInputColor: #ffffff,
+        headerInputPlaceholderColor: lighten($brand-primary, 35%),
+        listItemBackgroundColor: $background-color,
+        listItemBackgroundHoverColor: $list-item-hover,
+        listItemBorderColor: $border-color,
+        groupingsActiveColor: darken($background-color-alt, 5%),
+        disabledIconColor: $list-icon-color,
+        headingColor: $gray-light,
+        headingButtonColor: lighten($gray-light, 30%),
+        headingButtonHoverColor: $gray-light,
+        labelColor: $gray-light,
+        mutedColor: $text-muted,
+        totpStrokeColor: $brand-primary,
+        boxRowButtonColor: $brand-primary,
+        boxRowButtonHoverColor: darken($brand-primary, 10%),
+        inputBorderColor: darken($border-color-dark, 7%),
+        inputBackgroundColor: #ffffff,
+        inputPlaceholderColor: lighten($gray-light, 35%),
+        buttonBackgroundColor: $button-background-color,
+        buttonBorderColor: $button-border-color,
+        buttonColor: $button-color,
+        buttonPrimaryColor: $button-color-primary,
+        buttonDangerColor: $button-color-danger,
+        primaryColor: $brand-primary,
+        primaryAccentColor: $brand-primary-accent,
+        dangerColor: $brand-danger,
+        successColor: $brand-success,
+        infoColor: $brand-info,
+        warningColor: $brand-warning,
+        logoSuffix: 'dark',
+        passwordNumberColor: #007fde,
+        passwordSpecialColor: #c40800,
+        calloutBorderColor: $border-color-dark,
+        calloutBackgroundColor: $background-color,
+    ),
     light: (
         textColor: $text-color,
         borderColor: $border-color-dark,

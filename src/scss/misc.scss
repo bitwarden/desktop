@@ -397,3 +397,35 @@ app-root > #loading {
         margin: 0;
     }
 }
+
+
+.icon-cozy {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+}
+
+.icon-login {
+    background-image: url('../images/icons-login.svg');
+    width: 24px;
+    height: 24px;
+}
+
+.icon-cards {
+    background-image: url('../images/icons-card.svg');
+    width: 24px;
+    height: 24px;
+}
+
+.icon-identity {
+    background-image: url('../images/icons-identity.svg');
+    width: 24px;
+    height: 24px;
+}
+
+.icon-copy {
+    background-image: url('images/icons-16-copy.svg');
+}

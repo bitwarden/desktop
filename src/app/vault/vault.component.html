@@ -9,7 +9,7 @@
         (onAddCipherOptions)="addCipherOptions()">
     </app-vault-ciphers>
     <app-vault-view id="details" *ngIf="cipherId && action === 'view'" [cipherId]="cipherId"
-        (onCloneCipher)="cloneCipher($event)" (onEditCipher)="editCipher($event)" 
+        (onCloneCipher)="cloneCipher($event)" (onEditCipher)="editCipher($event)"
         (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)" (onRestoredCipher)="restoredCipher($event)"
         (onDeletedCipher)="deletedCipher($event)">
     </app-vault-view>
@@ -28,6 +28,7 @@
         <div class="content">
             <div class="inner-content">
                 <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
+                <p>Hello Cozy !!!!!</p>
             </div>
         </div>
     </div>

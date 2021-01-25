@@ -121,9 +121,16 @@ const renderer = {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             publicPath: '../',
+                            url: false,
                         },
                     },
-                    'css-loader',
+                    // 'css-loader',
+                    {
+                        loader:'css-loader',
+                        options: {
+                            url:false,
+                        }
+                    },
                     'sass-loader',
                 ],
             },
@@ -154,6 +161,7 @@ const renderer = {
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',
+            url: false,
         }),
     ],
     devServer: {

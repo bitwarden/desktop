@@ -23,17 +23,20 @@
         <ul>
             <li [ngClass]="{active: selectedType === cipherType.Login}">
                 <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
-                    <i class="fa fa-fw fa-globe" aria-hidden="true"></i>&nbsp;{{'typeLogin' | i18n}}
+                    <!-- <i class="fa fa-fw fa-globe" aria-hidden="true"></i>&nbsp;{{'typeLogin' | i18n}} -->
+                    <i class="icon-cozy icon-login" aria-hidden="true"></i>&nbsp;{{'typeLogin' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.Card}">
                 <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Card)">
-                    <i class="fa fa-fw fa-credit-card" aria-hidden="true"></i>&nbsp;{{'typeCard' | i18n}}
+                    <!-- <i class="fa fa-fw fa-credit-card" aria-hidden="true"></i>&nbsp;{{'typeCard' | i18n}} -->
+                    <i class="icon-cozy icon-cards" aria-hidden="true"></i>&nbsp;{{'typeCard' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.Identity}">
                 <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Identity)">
-                    <i class="fa fa-fw fa-id-card-o" aria-hidden="true"></i>&nbsp;{{'typeIdentity' | i18n}}
+                    <!-- <i class="fa fa-fw fa-id-card-o" aria-hidden="true"></i>&nbsp;{{'typeIdentity' | i18n}} -->
+                    <i class="icon-cozy icon-identity" aria-hidden="true"></i>&nbsp;{{'typeIdentity' | i18n}}
                 </a>
             </li>
             <li [ngClass]="{active: selectedType === cipherType.SecureNote}">
@@ -68,6 +71,12 @@
                             <ng-container *ngTemplateOutlet="recursiveFolders; context:{ $implicit: f.children }">
                             </ng-container>
                         </ul>
+                    </li>
+
+                    <li [ngClass]="{active: selectedTrash}">
+                        <a href="#" appStopClick appBlurClick (click)="selectTrash()">
+                            <i class="fa fa-fw fa-trash-o" aria-hidden="true"></i>&nbsp;{{'trash' | i18n}}
+                        </a>
                     </li>
                 </ng-template>
                 <ng-container *ngTemplateOutlet="recursiveFolders; context:{ $implicit: nestedFolders }"></ng-container>
