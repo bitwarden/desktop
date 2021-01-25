@@ -1463,10 +1463,10 @@
     "message": "Helaas wordt browserintegratie momenteel alleen ondersteund in de Mac App Store-versie."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Browserintegratie niet ondersteund"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Helaas wordt browserintegratie momenteel niet ondersteund in de Windows Store-versie."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Vereis verificatie voor browserintegratie"
