@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimeeri kopeerimisel lõikelauale"
+    "message": "Minimeeri programm pärast sisu kopeerimist"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimeeri kirje andmete kopeerimisel."
+    "message": "Minimeerib programmi pärast kirje sisu kopeerimist."
   },
   "toggleVisibility": {
     "message": "Näita sisu"
@@ -946,7 +946,7 @@
     "message": "Vajalik on rakenduse taaskäivitamine"
   },
   "restartToUpdateDesc": {
-    "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Paigaldamise lõpetamiseks on vajalik Bitwarden taaskäivitama. Soovid seda kohe teha?",
+    "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Paigaldamise lõpetamiseks on vajalik Bitwarden taaskäivitada. Soovid seda kohe teha?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1462,6 +1462,12 @@
   "browserIntegrationMasOnlyDesc": {
     "message": "Paraku on brauseri integratsioon hetkel toetatud ainult Mac App Store'i versioonis."
   },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
   "enableBrowserIntegrationFingerprint": {
     "message": "Nõua brauseri integratsiooni ülekinnitamist"
   },
@@ -1481,7 +1487,7 @@
     "message": "Biomeetria ei ole sisse lülitatud"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Biomeetria kasutamiseks brauseris peab esmalt Bitwardeni töölaua rakenduse seadetes biomeetria lubama."
+    "message": "Selleks, et kasutada biomeetriat brauseris, peab selle esmalt Bitwardeni töölaua rakenduse seadetes sisse lülitama."
   },
   "personalOwnershipSubmitError": {
     "message": "Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest."

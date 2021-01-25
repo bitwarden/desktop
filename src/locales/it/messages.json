@@ -856,7 +856,7 @@
     "message": "Minimizza nella barra dei menu"
   },
   "enableMinToMenuBarDesc": {
-    "message": "Quando si minimizza la finestra, mostra invece un'icona nella barra dei menu."
+    "message": "Mostra un'icona nella barra dei menu quando si minimizza la finestra."
   },
   "enableCloseToTray": {
     "message": "Chiudi nell'area di notifica"
@@ -868,7 +868,7 @@
     "message": "Chiudi nella barra dei menu"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableTray": {
     "message": "Usa l'area di notifica"
@@ -886,25 +886,25 @@
     "message": "Avvia dalla barra dei menu"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Mostra solo l'icona nella barra di sistema all'avvio dell'applicazione."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Avvia automaticamente all'accesso"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Avvia automaticamente Bitwarden Desktop all'accesso."
   },
   "alwaysShowDock": {
-    "message": "Mostra sempre nel pannello"
+    "message": "Mostra sempre nel Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Mostra l'icona Bitwarden nel Dock anche quando minimizzato nella barra dei menu."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Conferma disattivazione icona del vassoio"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Disabilitando questa impostazione verranno disabilitate anche tutte le altre impostazioni del vassoio."
   },
   "language": {
     "message": "Lingua"
@@ -1225,7 +1225,7 @@
     "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "encExportWarningDesc": {
-    "message": "Questa esportazione crittografa i tuoi dati utilizzando la chiave di crittografia del tuo account. Se dovessi cambiare la chiave di crittografia del tuo account, dovresti esportare di nuovo poiché non sarai in grado di decifrare questo file di esportazione."
+    "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire nuovo export."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
@@ -1338,7 +1338,7 @@
     "message": "Clona"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
+    "message": "Una o più policy dell'organizzazione controllano le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
     "message": "Azione Timeout Cassaforte"
@@ -1451,45 +1451,51 @@
     "message": "I Termini di Servizio e l'Informativa sulla Privacy non sono stati accettati."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Abilita l'integrazione con il browser"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "L'integrazione del browser è utilizzata per l'autenticazione biometrica."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "L'integrazione del browser non è supportata"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Al momento l'integrazione del browser è supportata solo nella versione disponibile nel Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "L'integrazione del browser non è supportata"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Purtroppo l'integrazione del browser non è attualmente supportata nella versione disponibile nel Windows Store."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Richiedi verifica per l'integrazione del browser"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Abilita un livello aggiuntivo di sicurezza richiedendo la conferma della fingerprint phrase quando viene stabilito un collegamento fra il desktop e il browser. Quando abilitato, sarà necessario che l'utente esegua la verifica ad ogni nuova connessione."
   },
   "approve": {
     "message": "Approva"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Verifica connessione browser"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Assicurati che l'impronta digitale mostrata sia identica all'impronta digitale mostrata nell'estensione del browser."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Autenticazione biometrica non abilitata"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia stata abilitata prima nelle impostazioni."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Il suggerimento password non può essere uguale alla password."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
   }
 }

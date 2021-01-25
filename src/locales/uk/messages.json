@@ -1462,6 +1462,12 @@
   "browserIntegrationMasOnlyDesc": {
     "message": "На жаль, зараз інтеграція з браузером підтримується лише у версії для Mac з App Store."
   },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
   "enableBrowserIntegrationFingerprint": {
     "message": "Вимагати підтвердження для інтеграції з браузером"
   },

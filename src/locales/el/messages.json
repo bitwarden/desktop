@@ -1462,6 +1462,12 @@
   "browserIntegrationMasOnlyDesc": {
     "message": "Δυστυχώς η ενσωμάτωση του προγράμματος περιήγησης υποστηρίζεται μόνο στην έκδοση Mac App Store για τώρα."
   },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
   "enableBrowserIntegrationFingerprint": {
     "message": "Απαιτείται επαλήθευση για ολοκλήρωση περιηγητή"
   },

@@ -895,16 +895,16 @@
     "message": "Inicia o aplicativo Bitwarden Desktop automaticamente no logon."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Exibir sempre na Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Mostrar o ícone do Bitwarden na Dock, mesmo quando minimizado para a barra de menu."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Confirmar desativação da bandeja"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Desabilitar esta configuração também desativará todas as outras configurações relacionadas à bandeja."
   },
   "language": {
     "message": "Idioma"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirmar Exportação do Cofre"
   },
   "exportWarningDesc": {
     "message": "Esta exportação contém os dados do seu cofre em um formato não criptografado. Você não deve armazenar ou enviar o arquivo exportado por canais inseguros (como e-mail). Exclua o arquivo imediatamente após terminar de usá-lo."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Esta exportação criptografa seus dados usando a chave de criptografia da sua conta. Se você rotacionar a chave de criptografia da sua conta, você deve exportar novamente, já que você não será capaz de descriptografar este arquivo de exportação."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
@@ -1451,45 +1451,51 @@
     "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Ativar integração com o navegador"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "A integração do navegador é usada para dados biométricos no navegador."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integração com o navegador não suportada"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Infelizmente, por ora, a integração do navegador só é suportada na versão da Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Exigir verificação para integração com o navegador"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Ative uma camada adicional de segurança, exigindo validação de frase de impressão digital ao estabelecer uma ligação entre o computador e o navegador. Quando ativado, isto requer intervenção do usuário e verificação cada vez que uma conexão é estabelecida."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Aprovar"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Verificar conexão do navegador"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Por favor, certifique-se que a impressão digital mostrada é idêntica à impressão digital exibida na extensão do navegador."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Biometria não habilitada"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Sua dica de senha senha não pode ser a mesma que a sua senha."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Uma política de organização está afetando suas opções de propriedade."
   }
 }

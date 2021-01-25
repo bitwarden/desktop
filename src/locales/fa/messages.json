@@ -856,7 +856,7 @@
     "message": "به نوار منو کوچک کنید"
   },
   "enableMinToMenuBarDesc": {
-    "message": "هنگام به کوچک کردن پنجره، به جای آن یک نماد در نوار منو نشان دهید."
+    "message": "هنگام کوچک کردن پنجره، به جای آن یک نماد در نوار منو نشان بده."
   },
   "enableCloseToTray": {
     "message": "بستن به نماد Tray"
@@ -1461,6 +1461,12 @@
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "متأسفانه در حال حاضر ادغام مرورگر فقط در نسخه Mac App Store پشتیبانی می شود."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "ادغام مرورگر پشتیبانی نمی شود"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "متأسفانه در حال حاضر ادغام مرورگر در نسخه فروشگاه ویندوز پشتیبانی نمی شود."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "برای ادغام مرورگر نیاز به تأیید است"

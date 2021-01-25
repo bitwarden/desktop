@@ -1462,6 +1462,12 @@
   "browserIntegrationMasOnlyDesc": {
     "message": "Helaas wordt browserintegratie momenteel alleen ondersteund in de Mac App Store-versie."
   },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browserintegratie niet ondersteund"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Helaas wordt browserintegratie momenteel niet ondersteund in de Windows Store-versie."
+  },
   "enableBrowserIntegrationFingerprint": {
     "message": "Vereis verificatie voor browserintegratie"
   },
