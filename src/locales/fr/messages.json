@@ -1463,10 +1463,10 @@
     "message": "Malheureusement l'intégration avec le navigateur est uniquement supportée dans la version Mac App Store pour le moment."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Intégration avec le navigateur non supportée"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Malheureusement l'intégration avec le navigateur n'est pas supportée dans la version Windows Store pour le moment."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Exiger une vérification pour l'intégration avec le navigateur"
