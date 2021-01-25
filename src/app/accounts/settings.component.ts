@@ -23,6 +23,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 
 import { Utils } from 'jslib/misc/utils';
+import { isWindowsStore } from 'jslib/electron/utils';
 
 @Component({
     selector: 'app-settings',
@@ -354,6 +355,14 @@ export class SettingsComponent implements OnInit {
             await this.platformUtilsService.showDialog(
                 this.i18nService.t('browserIntegrationMasOnlyDesc'),
                 this.i18nService.t('browserIntegrationMasOnlyTitle'),
+                this.i18nService.t('ok'), null, 'warning');
+
+            this.enableBrowserIntegration = false;
+            return;
+        } else if (isWindowsStore()) {
+            await this.platformUtilsService.showDialog(
+                this.i18nService.t('browserIntegrationWindowsStoreDesc'),
+                this.i18nService.t('browserIntegrationWindowsStoreTitle'),
                 this.i18nService.t('ok'), null, 'warning');
 
             this.enableBrowserIntegration = false;
