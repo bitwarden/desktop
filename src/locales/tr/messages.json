@@ -916,7 +916,7 @@
     "message": "Tema"
   },
   "themeDesc": {
-    "message": "Uygulamanın temasını değiştirin."
+    "message": "Uygulamanın renk temasını değiştir."
   },
   "dark": {
     "message": "Koyu",
@@ -1080,10 +1080,10 @@
     "message": "Uzaklaştır"
   },
   "resetZoom": {
-    "message": "Yakınlaştırmayı sıfırla"
+    "message": "Yakınlaştırmayı Sıfırla"
   },
   "toggleFullScreen": {
-    "message": "Tam Ekrana Geç"
+    "message": "Tam Ekran Aç/Kapa"
   },
   "reload": {
     "message": "Yeniden yükle"
@@ -1461,6 +1461,12 @@
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Require verification for browser integration"
