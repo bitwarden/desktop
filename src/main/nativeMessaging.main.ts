@@ -115,21 +115,21 @@ export class NativeMessagingMain {
                 this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden');
                 break;
             case 'darwin':
-                if (existsSync('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json');
+                if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
 
-                if (existsSync('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json');
+                if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
                 break;
             case 'linux':
-                if (existsSync('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json');
+                if (existsSync(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`);
                 }
 
-                if (existsSync('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json');
+                if (existsSync(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
                 break;
             default:
