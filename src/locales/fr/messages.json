@@ -340,7 +340,7 @@
     "message": "Supprimer la pièce jointe"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cet identifiant ?"
+    "message": "Êtes-vous sûr(e) de vouloir envoyer cet élément vers la corbeille ?"
   },
   "deletedItem": {
     "message": "L'élément a été envoyé à la corbeille"
@@ -853,10 +853,10 @@
     "message": "Lorsque la fenêtre est réduite, afficher une icône dans la zone de notification à la place."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Réduire dans la barre de menu"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la barre de menu."
   },
   "enableCloseToTray": {
     "message": "Fermer dans la zone de notification"
@@ -865,10 +865,10 @@
     "message": "Lorsque la fenêtre est fermée, afficher une icône dans la zone de notification."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Fermer vers la barre de menu"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Lorsque la fenêtre est fermée, privilégier l'affichage d'une icône dans la barre de menu."
   },
   "enableTray": {
     "message": "Activer le raccourci dans la zone de notification"
@@ -883,28 +883,28 @@
     "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la zone de notification."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Démarrer dans la barre de menu"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la barre de menu."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Démarrer automatiquement à la connexion"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Démarrer l'application Bitwarden automatiquement à la connexion."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Toujours afficher dans le Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Afficher l'icône Bitwarden dans le Dock même si l'application est réduite dans la barre de menus."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Confirmer la désactivation de la zone de notification"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Désactiver cette option désactivera également tous les autres paramètres liés à la zone de notifications."
   },
   "language": {
     "message": "Langue"
@@ -1219,13 +1219,13 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Confirmer l'export du coffre"
   },
   "exportWarningDesc": {
     "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que par e-mail). Supprimez-le immédiatement après l'avoir utilisé."
   },
   "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
@@ -1289,7 +1289,7 @@
     "message": "Déverrouiller avec Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Vérifier pour Bitwarden."
+    "message": "déverouiller votre coffre"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1451,45 +1451,51 @@
     "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Activer l'intégration avec le navigateur"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "L'intégration avec le navigateur est utilisée pour le déverrouillage biométrique dans le navigateur."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Intégration avec le navigateur non supportée"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Malheureusement l'intégration avec le navigateur est uniquement supportée dans la version Mac App Store pour le moment."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Exiger une vérification pour l'intégration avec le navigateur"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Activez une couche de sécurité supplémentaire en exigeant la validation de la phrase d'empreinte du compte lors de l'établissement d'un lien entre l'application et votre navigateur. Lorsque cette option est activée, cela nécessite une intervention et une vérification de l'utilisateur à chaque fois qu'une connexion est établie."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Accepter"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Vérifier la connexion au navigateur"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Veuillez vous assurer que la phrase d'empreinte affichée est identique à celle affichée dans l'extension de navigateur."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Le déverrouillage biométrique n'est pas activé"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Les options de biométrie dans le navigateur nécessitent au préalable l'activation des options de biométrie dans l'application de bureau."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Votre indice de mot de passe ne peut pas être identique à votre nom d'utilisateur."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Une politique d'organisation affecte vos options de propriété."
   }
 }
