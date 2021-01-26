@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "En minimitzar la finestra, mostra una icona a la safata del sistema."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimitza a la barra de menú"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "En minimitzar la finestra, mostra una icona a la safata del sistema."
+  },
   "enableCloseToTray": {
     "message": "Tanca a la icona de safata"
   },
   "enableCloseToTrayDesc": {
     "message": "En tancar la finestra, mostra una icona a la safata del sistema."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Tanca a la barra de menú"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "En minimitzar la finestra, mostra una icona a la safata del sistema."
   },
   "enableTray": {
     "message": "Habilita la icona de safata"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Quan l'aplicació s’inicia, mostra només una icona a la safata de sistema."
+  },
+  "startToMenuBar": {
+    "message": "Inicia a la barra de menú"
+  },
+  "startToMenuBarDesc": {
+    "message": "Quan l'aplicació s’inicia, mostra només una icona a la safata de sistema."
+  },
+  "openAtLogin": {
+    "message": "Comença automàticament en iniciar la sessió"
+  },
+  "openAtLoginDesc": {
+    "message": "Inicia l'aplicació Bitwarden Desktop automàticament en iniciar la sessió."
+  },
+  "alwaysShowDock": {
+    "message": "Mostra sempre al Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Mostra la icona Bitwarden al Dock fins i tot quan es minimitza a la barra de menú."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirma la desactivació a la safata"
+  },
+  "confirmTrayDesc": {
+    "message": "Si deshabiliteu aquesta configuració, també es deshabilitaran tots els altres paràmetres relacionats amb la safata."
   },
   "language": {
     "message": "Idioma"
@@ -1182,8 +1218,14 @@
     "message": "ADVERTIMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirma l'exportació de la Caixa forta"
+  },
   "exportWarningDesc": {
     "message": "Aquesta exportació conté les dades de la vostra caixa forta en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
+  },
+  "encExportWarningDesc": {
+    "message": "Aquesta exportació xifra les vostres dades mitjançant la vostra clau de xifratge. Si alguna vegada gireu eixa clau, hauríeu d'exportar de nou, ja que no podreu desxifrar aquest fitxer d'exportació."
   },
   "exportMasterPassword": {
     "message": "Introduïu la contrasenya mestra per exportar les dades de la caixa forta."
@@ -1247,7 +1289,7 @@
     "message": "Desbloqueja amb Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verifica per Bitwarden."
+    "message": "desbloqueja la teva caixa forta"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "No s’han reconegut les condicions del servei i la declaració de privadesa."
+  },
+  "enableBrowserIntegration": {
+    "message": "Habilita la integració amb el navegador"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "La integració al navegador s’utilitza per a la biometria en aquest."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "La integració en el navegador no és compatible"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Malauradament, la integració del navegador només és compatible amb la versió de Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Requereix verificació per a la integració del navegador"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Habilita una capa de seguretat addicional mitjançant la validació de frases d'empremtes dactilars quan estableix un enllaç entre l'escriptori i el navegador. Quan està habilitat, requereix la intervenció i verificació de l'usuari cada vegada que s'estableix una connexió."
+  },
+  "approve": {
+    "message": "Aprova"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verifiqueu la connexió del navegador"
+  },
+  "verifyBrowserDesc": {
+    "message": "Assegureu-vos que l’empremta digital que es mostra és idèntica a la que es mostra a l’extensió del navegador."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "La biomètrica no està habilitada"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "La biometria del navegador primer necessita habilitar la biomètrica d’escriptori a la configuració."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "A causa d'una política empresarial, no podeu guardar elements a la vostra caixa forta personal. Canvieu l'opció Propietat en organització i trieu entre les col·leccions disponibles."
+  },
+  "hintEqualsPassword": {
+    "message": "El vostre suggeriment de contrasenya no pot ser el mateix que la vostra contrasenya."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Una política d’organització afecta les vostres opcions de propietat."
   }
 }

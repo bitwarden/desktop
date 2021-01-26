@@ -1,31 +1,59 @@
-name: Build
+name: Release
 
 on:
-  push:
-    branches-ignore:
-      - 'l10n_master'
-      - 'gh-pages'
+  workflow_dispatch:
+    inputs:
+      release_tag_name_input:
+        description: 'Release Tag Name <X.X.X>'
+        required: true
+      browser_extension_ref:
+        description: 'Browser Extension ref (defaults to `master`):'
+        default: master
+
 
 jobs:
-
-  cloc:
+  setup:
     runs-on: ubuntu-latest
-
+    outputs:
+      release_upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Set up cloc
+      - name: Create Release Vars
+        id: create_tags
         run: |
-          sudo apt-get update
-          sudo apt-get -y install cloc
+          case "${RELEASE_TAG_NAME_INPUT:0:1}" in
+            v)
+              echo "RELEASE_NAME=${RELEASE_TAG_NAME_INPUT:1}" >> $GITHUB_ENV
+              echo "RELEASE_TAG_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              ;;
+            [0-9])
+              echo "RELEASE_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              echo "RELEASE_TAG_NAME=v$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              ;;
+            *)
+              exit 1
+              ;;
+          esac
+        env:
+          RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
-      - name: Print lines of code
-        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE_TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          draft: true
+          prerelease: false
+
 
   linux:
     runs-on: ubuntu-latest
-
+    needs: setup
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
@@ -40,9 +68,10 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      - name: Set up snap
-        run: |
-          sudo snap install snapcraft --classic
+      - name: Install Snap
+        uses: samuelmeuli/action-snapcraft@v1
+        with:
+          snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -64,47 +93,20 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Build application
-        run: npm run dist:lin
+      - name: Build & Publish
+        run: npm run publish:lin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload .deb artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
-
-      - name: Upload .rpm artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
-
-      - name: Upload .freebsd artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
-
-      - name: Upload .snap artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
-
-      - name: Upload .AppImage artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+      - name: Deploy to Snap Store
+        run: |
+          snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
+          snapcraft logout
 
 
-  windows:
+  windows-signed:
     runs-on: windows-latest
+    needs: setup
     steps:
       - name: Set up dotnet
         uses: actions/setup-dotnet@v1
@@ -144,6 +146,9 @@ jobs:
         shell: pwsh
         run: |
           choco install checksum --no-progress
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: Print environment
         run: |
@@ -164,10 +169,8 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Build & Sign (dev)
-        run: |
-          npm run build
-          npm run pack:win
+      - name: Build, Sign & Release
+        run: npm run publish:win
         env:
           ELECTRON_BUILDER_SIGN: 1
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
@@ -175,14 +178,7 @@ jobs:
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-
-      - name: Rename appx files for store
-        shell: pwsh
-        run: |
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx"
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to Chocolatey
         shell: pwsh
@@ -190,48 +186,87 @@ jobs:
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
           Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
           (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
+          cd ./dist/chocolatey
+          choco push
 
-      - name: Upload portable exe artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
+      - name: Upload Chocolatey nupkg release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          asset_path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          asset_content_type: application
 
-      - name: Upload installer exe artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
 
-      - name: Upload store appx ia32 artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
+  windows-store:
+    runs-on: windows-latest
+    needs: setup
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@v1
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          node-version: '10.x'
 
-      - name: Upload store appx x64 artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: pwsh
 
-      - name: Upload nupkg artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          choco --version
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build, Sign & Release
+        run: npm run dist:win:ci
+
+      - name: Upload unsigned ia32 Windows Store release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
+          asset_content_type: application
+
+      - name: Upload unsigned x64 Windows Store release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
+          asset_content_type: application
 
   macos:
     runs-on: macos-latest
+    needs: setup
     steps:
       - name: Set up Node
         uses: actions/setup-node@v1
@@ -291,67 +326,43 @@ jobs:
         run: npm run lint
 
       - name: Create Safari directory
-        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        if: github.ref == 'refs/heads/master'
         uses: actions/checkout@v2
         with:
           repository: 'bitwarden/browser'
+          ref: ${{ github.event.inputs.browser_extension_ref }}
           path: 'dist-safari/browser'
 
       - name: Build Safari extension
-        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
       - name: Load Safari extension for .dmg
-        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -copyonly
 
-      - name: Build application (dev)
-        if: github.ref != 'refs/heads/master'
-        run: npm run build
-
       - name: Build application (dist)
-        if: github.ref == 'refs/heads/master'
-        run: npm run dist:mac
+        run: npm run publish:mac
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload .zip artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-
-      - name: Upload .dmg artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-
       - name: Load Safari extension for App Store
-        if: github.ref == 'refs/heads/master'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        if: github.ref == 'refs/heads/master'
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Upload .pkg artifact
-        if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
-        with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+      - name: Deploy to App Store
+        run: npm run upload:mas
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}

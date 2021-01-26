@@ -18,7 +18,7 @@
     "message": "Пријава"
   },
   "typeCard": {
-    "message": "Картица"
+    "message": "Кредитна Картица"
   },
   "typeIdentity": {
     "message": "Идентитет"
@@ -33,7 +33,7 @@
     "message": "Колекције"
   },
   "searchVault": {
-    "message": "Претраћи Сеф"
+    "message": "Претражи сеф"
   },
   "addItem": {
     "message": "Додај ставку"
@@ -85,7 +85,7 @@
     "message": "Лозинка"
   },
   "passphrase": {
-    "message": "Реченица"
+    "message": "Фраза лозинка"
   },
   "editItem": {
     "message": "Уреди ставку"
@@ -94,7 +94,7 @@
     "message": "Имејл"
   },
   "verificationCodeTotp": {
-    "message": "Верификациони код (TOTP)"
+    "message": "Једнократни код"
   },
   "website": {
     "message": "Веб сајт"
@@ -106,7 +106,7 @@
     "message": "Прилагођена Поља"
   },
   "launch": {
-    "message": "Покрени"
+    "message": "Отвори"
   },
   "copyValue": {
     "message": "Копирај вредност",
@@ -295,7 +295,7 @@
     "message": "Уреди"
   },
   "authenticatorKeyTotp": {
-    "message": "Кључ аутентификације (TOTP)"
+    "message": "Једнократни код"
   },
   "folder": {
     "message": "Фасцикла"
@@ -343,13 +343,13 @@
     "message": "Сигурно избрисати ову ставку?"
   },
   "deletedItem": {
-    "message": "Пошаљи ставку у Ђубре"
+    "message": "Пошаљи ставку у Отпад"
   },
   "overwritePasswordConfirmation": {
     "message": "Сигурно преписати тренутну лозинку?"
   },
   "noneFolder": {
-    "message": "Нема фасцикле",
+    "message": "Без фасцикле",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
@@ -377,7 +377,7 @@
     "message": "Одвајач речи"
   },
   "capitalize": {
-    "message": "Велика слова",
+    "message": "Прво слово велико",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
@@ -512,7 +512,7 @@
     "message": "Дошло је до неочекиване грешке."
   },
   "itemInformation": {
-    "message": "Ставка Информације"
+    "message": "Инфо о ставци"
   },
   "noItemsInList": {
     "message": "Нама ставке у листи."
@@ -677,7 +677,7 @@
     "message": "Одјави се"
   },
   "addNewLogin": {
-    "message": "Додај Нову Пријаву"
+    "message": "Додај нову пријаву"
   },
   "addNewItem": {
     "message": "Додај нову ставку"
@@ -701,25 +701,25 @@
     "message": "Генератор Лозинке"
   },
   "emailUs": {
-    "message": "Пошаљите нам поруку"
+    "message": "Послати нам поруку"
   },
   "visitOurWebsite": {
-    "message": "Посети наш веб-сајт"
+    "message": "Посетити наш веб-сајт"
   },
   "fileBugReport": {
-    "message": "Поднесите извештај о грешци"
+    "message": "Поднети извештај о грешци"
   },
   "blog": {
     "message": "Блог"
   },
   "followUs": {
-    "message": "Прати нас"
+    "message": "Пратити нас"
   },
   "syncVault": {
     "message": "Синхронизуј сеф"
   },
   "changeMasterPass": {
-    "message": "Промени Главну Лозинку"
+    "message": "Промени главну лозинку"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Можете променити главну лозинку у Вашем сефу на bitwarden.com. Да ли желите да посетите веб страницу сада?"
@@ -748,7 +748,7 @@
     "message": "Синхронизација није успела"
   },
   "yourVaultIsLocked": {
-    "message": "Сеф је блокиран. Проверити главну лозинку за наставак."
+    "message": "Сеф је блокиран. Унесите главну лозинку за наставак."
   },
   "unlock": {
     "message": "Откључај"
@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Када минимизујете прозор, уместо тога покажите икону у системској палети."
   },
+  "enableMinToMenuBar": {
+    "message": "Смањи на траку менија"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Када минимизујете прозор, покажи икону у мени траци."
+  },
   "enableCloseToTray": {
     "message": "Затвори у системску иконицу"
   },
   "enableCloseToTrayDesc": {
     "message": "Када затворите прозор, уместо тога покажите икону у системској палети."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Затвори у траку менија"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Када затворите прозор, покажите икону у траки менија."
   },
   "enableTray": {
     "message": "Омогући икону система"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Када се апликација први пут покрене, прикажи је само као икону."
+  },
+  "startToMenuBar": {
+    "message": "Покрени у траци менија"
+  },
+  "startToMenuBarDesc": {
+    "message": "Када се апликација први пут покрене, прикажи само икону у траци менија."
+  },
+  "openAtLogin": {
+    "message": "Ауто покрени на пријављивање"
+  },
+  "openAtLoginDesc": {
+    "message": "Покрени Bitwarden Desktop апликацију на пријављивање."
+  },
+  "alwaysShowDock": {
+    "message": "Увек покажи у Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Покажи Bitwarden иконицу у Dock чак и када је умањен на траци менија."
+  },
+  "confirmTrayTitle": {
+    "message": "Потврди онемогућавање треја"
+  },
+  "confirmTrayDesc": {
+    "message": "Онемогућавање ове поставке онемогућиће се и сва остала подешавања у вези са трејом."
   },
   "language": {
     "message": "Језик"
@@ -883,11 +919,11 @@
     "message": "Промени боје апликације."
   },
   "dark": {
-    "message": "Тамно",
+    "message": "Тамна",
     "description": "Dark color"
   },
   "light": {
-    "message": "Светло",
+    "message": "Светла",
     "description": "Light color"
   },
   "copy": {
@@ -895,7 +931,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Провери верзију програма"
+    "message": "Проверити верзију програма"
   },
   "version": {
     "message": "Верзија $VERSION_NUM$",
@@ -963,10 +999,10 @@
     "message": "Освежите чланство"
   },
   "premiumNotCurrentMember": {
-    "message": "Тренутно нисте премиум члан."
+    "message": "Тренутно нисте премијум члан."
   },
   "premiumSignUpAndGet": {
-    "message": "Пријавите се за премиум чланство и добијте:"
+    "message": "Пријавите се за премијум чланство и добијте:"
   },
   "premiumSignUpStorage": {
     "message": "1ГБ шифровано складиште за прилоге."
@@ -978,22 +1014,22 @@
     "message": "Извештаји о хигијени лозинки, здравственом стању налога и кршењу података да бисте заштитили сеф."
   },
   "premiumSignUpTotp": {
-    "message": "Генератор TOTP верификационог кода (2FA) за пријаве из сефа."
+    "message": "Генератор једнократног кода (2FA) за пријаве из сефа."
   },
   "premiumSignUpSupport": {
     "message": "Приоритетна корисничка подршка."
   },
   "premiumSignUpFuture": {
-    "message": "Све будуће премиум функције. Више ускоро!"
+    "message": "Све будуће премијум функције. Више ускоро!"
   },
   "premiumPurchase": {
     "message": "Купити премијум"
   },
   "premiumPurchaseAlert": {
-    "message": "Можете купити премиум претплату на bitwarden.com. Да ли желите да посетите веб сајт сада?"
+    "message": "Можете купити премијум претплату на bitwarden.com. Да ли желите да посетите веб сајт сада?"
   },
   "premiumCurrentMember": {
-    "message": "Ви сте премиум члан!"
+    "message": "Ви сте премијум члан!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Хвала Вам за подршку Bitwarden-а."
@@ -1133,7 +1169,7 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Налажење везе",
+    "message": "Налажење УРЛ",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
@@ -1165,7 +1201,7 @@
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Ажурирано",
+    "message": "Промењено",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
@@ -1182,11 +1218,17 @@
     "message": "УПОЗОРЕЊЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Потврдите извоз сефа"
+  },
   "exportWarningDesc": {
     "message": "Овај извоз садржи податке сефа у нешифрираном формату. Не бисте смели да сачувате или шаљете извезену датотеку преко несигурних канала (као што је имејл). Избришите датотеку одмах након што завршите са коришћењем."
   },
+  "encExportWarningDesc": {
+    "message": "Овај извоз шифрује податке користећи кључ за шифровање вашег налога. Ако икада промените кључ за шифровање свог налога, требало би да поново извезете, јер нећете моћи да дешифрујете овај извоз."
+  },
   "exportMasterPassword": {
-    "message": "Унети главну лозинку за извиз сефа."
+    "message": "Унети главну лозинку за извоз сефа."
   },
   "noOrganizationsList": {
     "message": "Не припадате ниједној организацији. Организације вам омогућавају да безбедно делите ставке са другим корисницима."
@@ -1216,14 +1258,14 @@
     "message": "Слаба Главна Лозинка"
   },
   "weakMasterPasswordDesc": {
-    "message": "Главна лозинка коју сте одабрали је слаба. Требали бисте користити јаку главну лозинку (или приступну фразу) да бисте правилно заштитили свој налог. Да ли сте сигурни да желите да користите ову главну лозинку?"
+    "message": "Главна лозинка коју сте одабрали је слаба. Требали бисте користити јаку главну лозинку (или фразу лозинке) да бисте правилно заштитили свој налог. Да ли сте сигурни да желите да користите ову главну лозинку?"
   },
   "pin": {
     "message": "ПИН",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Деблокирај са ПИН"
+    "message": "Откључај са ПИН"
   },
   "setYourPinCode": {
     "message": "Поставите свој ПИН код за откључавање Bitwarden-а. Поставке ПИН-а ће се ресетовати ако се икада потпуно одјавите из апликације."
@@ -1238,16 +1280,16 @@
     "message": "Сеф је блокиран. Проверити ПИН код за наставак."
   },
   "unlockWithWindowsHello": {
-    "message": "Деблокирај са Windows Hello"
+    "message": "Откључај са Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "деблокира сеф"
+    "message": "Деблокира сеф."
   },
   "unlockWithTouchId": {
-    "message": "Деблокирати са Touch ID"
+    "message": "Откључај са Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "деблокира сеф"
+    "message": "Деблокира сеф."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Закључајте са главном лозинком при поновном покретању"
@@ -1268,7 +1310,7 @@
     "message": "Морате одабрати макар једну колекцију."
   },
   "premiumUpdated": {
-    "message": "Надоградили сте на премиум."
+    "message": "Надоградили сте на премијум."
   },
   "restore": {
     "message": "Поврати"
@@ -1312,11 +1354,11 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Смеће",
+    "message": "Отпад",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Тражи смеће"
+    "message": "Тражи отпад"
   },
   "permanentlyDeleteItem": {
     "message": "Трајно избрисати ставку"
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "Услови услуге и Политика приватности нису признати."
+  },
+  "enableBrowserIntegration": {
+    "message": "Укључи интеграцију са претраживачем"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Интеграција прегледача се користи за биометрију у прегледачу."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Интеграција претраживача није подржана"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Нажалост, интеграција прегледача за сада је подржана само у верзији Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Захтева верификацију за интеграцију прегледача"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Омогућите додатни ниво заштите захтевајући проверу фразе отиска прста приликом успостављања везе између desktop-а и прегледача. Када је омогућено, ово захтева интервенцију и верификацију корисника сваки пут када се успостави веза."
+  },
+  "approve": {
+    "message": "Одобри"
+  },
+  "verifyBrowserTitle": {
+    "message": "Провери везу прегледача"
+  },
+  "verifyBrowserDesc": {
+    "message": "Уверите се да је приказани отисак идентичан отиску приказаном у додатку прегледача."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Биометрија није омогућена"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Биометрија прегледача захтева да у поставкама прво буде омогућена биометрија desktop-а."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."
+  },
+  "hintEqualsPassword": {
+    "message": "Ваша помоћ за лозинку не може да буде иста као лозинка."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Политика организације утичу на ваше могућности власништва."
   }
 }

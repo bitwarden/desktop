@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Po zminimalizowaniu okna, pokaż ikonę w zasobniku systemowym."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimalizuj do paska menu"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Po zminimalizowaniu okna, pokaż ikonę w pasku zadań."
+  },
   "enableCloseToTray": {
     "message": "Zamknij do zasobnika systemowego"
   },
   "enableCloseToTrayDesc": {
     "message": "Po zamknięciu okna, pokaż ikonę w zasobniku systemowym."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Zamknij do paska menu"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Po zamknięciu okna, pokaż ikonę w pasku menu."
   },
   "enableTray": {
     "message": "Włącz ikonę w zasobniku systemowym"
@@ -865,10 +877,34 @@
     "message": "Zawsze pokazuj ikonę w zasobniku systemowym."
   },
   "startToTray": {
-    "message": "Uruchom zminimalizowany do zasobnika"
+    "message": "Uruchom zminimalizowany do zasobnika systemowego"
   },
   "startToTrayDesc": {
     "message": "Przy pierwszym uruchomieniu aplikacji, pokaż tylko ikonę w zasobniku systemowym."
+  },
+  "startToMenuBar": {
+    "message": "Uruchom zminimalizowany do paska menu"
+  },
+  "startToMenuBarDesc": {
+    "message": "Przy pierwszym uruchomieniu aplikacji, pokaż tylko ikonę w pasku menu."
+  },
+  "openAtLogin": {
+    "message": "Uruchom automatycznie po zalogowaniu"
+  },
+  "openAtLoginDesc": {
+    "message": "Uruchom aplikację Bitwarden automatycznie po zalogowaniu."
+  },
+  "alwaysShowDock": {
+    "message": "Zawsze pokazuj w Docku"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Pokaż ikonę Bitwarden w Docku po zminimalizowaniu do paska menu."
+  },
+  "confirmTrayTitle": {
+    "message": "Potwierdź wyłączenie zasobnika systemowego"
+  },
+  "confirmTrayDesc": {
+    "message": "Wyłączenie tej opcji spowoduje wyłącznie wszystkich innych powiązanych ustawień z zasobnikiem systemowym."
   },
   "language": {
     "message": "Język"
@@ -1182,8 +1218,14 @@
     "message": "UWAGA",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Potwierdź eksportowanie sejfu"
+  },
   "exportWarningDesc": {
     "message": "Plik zawiera dane sejfu w niezaszyfrowanym formacie. Nie powinieneś go przechowywać, ani przesyłać poprzez niezabezpieczone kanały (takie jak poczta e-mail). Skasuj go natychmiast po użyciu."
+  },
+  "encExportWarningDesc": {
+    "message": "Dane eksportu zostaną zaszyfrowane za pomocą klucza szyfrowania konta. Jeśli kiedykolwiek zmienisz ten klucz, wyeksportuj dane ponownie, ponieważ nie będziesz w stanie odszyfrować tego pliku."
   },
   "exportMasterPassword": {
     "message": "Wpisz hasło główne, aby wyeksportować dane z sejfu."
@@ -1247,7 +1289,7 @@
     "message": "Odblokuj za pomocą Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Zweryfikuj dla Bitwarden."
+    "message": "odblokuj sejf"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "Nie zaakceptowałeś regulaminu i polityki prywatności."
+  },
+  "enableBrowserIntegration": {
+    "message": "Włącz połączenie z przeglądarką"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Połączenie z przeglądarką jest używane do odblokowania danymi biometrycznymi."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Połączenie z przeglądarką nie jest obsługiwane"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Połączenie z przeglądarką jest obsługiwane tylko z wersją aplikacji ze sklepu Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Połączenie z przeglądarką nie jest obsługiwane"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Połączenie z przeglądarką nie jest obecnie obsługiwane w aplikacji w wersji Windows Store."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Wymagaj weryfikacji połączenia z przeglądarką"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Włącz dodatkową warstwę zabezpieczeń, wymagając sprawdzania identyfikatora podczas tworzenia połączenia między aplikacją a przeglądarką. Po włączeniu tej funkcji, musisz zweryfikować każde nawiązywanie połączenia."
+  },
+  "approve": {
+    "message": "Zatwierdź"
+  },
+  "verifyBrowserTitle": {
+    "message": "Zweryfikuj połączenie z przeglądarką"
+  },
+  "verifyBrowserDesc": {
+    "message": "Upewnij się, że wyświetlony identyfikator jest identyczny z pokazanym w rozszerzeniu przeglądarki."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Dane biometryczne są wyłączone"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Aby włączyć dane biometryczne w przeglądarce, musisz włączyć tę samą funkcję w ustawianiach aplikacji."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Ze względu na zasadę przedsiębiorstwa nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji."
+  },
+  "hintEqualsPassword": {
+    "message": "Podpowiedź do hasła nie może być taka sama jak hasło."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Zasada organizacji ma wpływ na opcję własności elementów."
   }
 }

@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "ウインドウを最小化するとき、システムトレイにアイコンを表示するようにします。"
   },
+  "enableMinToMenuBar": {
+    "message": "メニューバーに最小化"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "ウインドウを最小化するとき、メニューバーにアイコンを表示するようにします。"
+  },
   "enableCloseToTray": {
     "message": "トレイアイコンへ閉じる"
   },
   "enableCloseToTrayDesc": {
     "message": "ウインドウを閉じたとき、システムトレイにアイコンを表示するようにします。"
+  },
+  "enableCloseToMenuBar": {
+    "message": "閉じてメニューバーに表示"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "ウインドウを閉じたとき、メニューバーにアイコンを表示するようにします。"
   },
   "enableTray": {
     "message": "トレイアイコンの有効化"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "アプリを初めて起動した際、システムトレイにアイコンを表示するだけにします。"
+  },
+  "startToMenuBar": {
+    "message": "起動してメニューバーに表示"
+  },
+  "startToMenuBarDesc": {
+    "message": "アプリを初めて起動した際、メニューバーにアイコンを表示するだけにします。"
+  },
+  "openAtLogin": {
+    "message": "ログイン時に自動的に起動"
+  },
+  "openAtLoginDesc": {
+    "message": "Bitwarden デスクトップアプリケーションをログイン時に自動的に起動します。"
+  },
+  "alwaysShowDock": {
+    "message": "常にドックに表示"
+  },
+  "alwaysShowDockDesc": {
+    "message": "メニューバーに最小化した場合でも、Bitwarden アイコンを表示します。"
+  },
+  "confirmTrayTitle": {
+    "message": "トレイの無効化の確認"
+  },
+  "confirmTrayDesc": {
+    "message": "この設定を無効にすると、他のすべてのトレイ関連設定も無効になります。"
   },
   "language": {
     "message": "Language"
@@ -1182,8 +1218,14 @@
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "保管庫のエクスポートの確認"
+  },
   "exportWarningDesc": {
     "message": "このエクスポートデータは暗号化されていない形式の保管庫データを含んでいます。メールなどのセキュリティ保護されていない方法で共有したり保管したりしないでください。使用した後はすぐに削除してください。"
+  },
+  "encExportWarningDesc": {
+    "message": "このエクスポートは、アカウントの暗号化キーを使用してデータを暗号化します。 暗号化キーをローテーションした場合は、このエクスポートファイルを復号することはできなくなるので、もう一度エクスポートする必要があります。"
   },
   "exportMasterPassword": {
     "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "利用規約とプライバシーポリシーを確認してください。"
+  },
+  "enableBrowserIntegration": {
+    "message": "ブラウザ統合を有効にする"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "ブラウザでの生体認証のためにブラウザ統合を使用します。"
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "ブラウザ統合はサポートされていません"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "残念ながら、ブラウザ統合は、Mac App Storeのバージョンでのみサポートされています。"
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "ブラウザ統合には検証が必要です"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "デスクトップとブラウザ間のリンクを確立する際にパスフレーズを要求することで、さらなるセキュリティ層を有効にします。 有効にすると、接続を確立するたびにユーザーによる確認が必要になります。"
+  },
+  "approve": {
+    "message": "承認"
+  },
+  "verifyBrowserTitle": {
+    "message": "ブラウザの接続を確認"
+  },
+  "verifyBrowserDesc": {
+    "message": "表示されているパスフレーズがブラウザ拡張に表示されているものと同じであることを確認してください。"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "生体認証が有効になっていません"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "ブラウザ生体認証を利用するには、最初に設定でデスクトップ生体認証を有効にする必要があります。"
+  },
+  "personalOwnershipSubmitError": {
+    "message": "組織のポリシーにより、個人保管庫へのアイテムの保存が制限されています。 所有権を組織に変更し、利用可能なコレクションから選択してください。"
+  },
+  "hintEqualsPassword": {
+    "message": "パスワードのヒントをパスワードと同じにすることはできません。"
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "組織のポリシーは、所有者のオプションに影響を与えています。"
   }
 }

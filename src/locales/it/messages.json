@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimizza nella barra dei menu"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Mostra un'icona nella barra dei menu quando si minimizza la finestra."
+  },
   "enableCloseToTray": {
     "message": "Chiudi nell'area di notifica"
   },
   "enableCloseToTrayDesc": {
     "message": "Quando si chiude la finestra, mostrare invece un'icona nella barra delle applicazioni."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Chiudi nella barra dei menu"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableTray": {
     "message": "Usa l'area di notifica"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Quando l'applicazione è stata avviata, mostra solo un'icona nella barra di sistema."
+  },
+  "startToMenuBar": {
+    "message": "Avvia dalla barra dei menu"
+  },
+  "startToMenuBarDesc": {
+    "message": "Mostra solo l'icona nella barra di sistema all'avvio dell'applicazione."
+  },
+  "openAtLogin": {
+    "message": "Avvia automaticamente all'accesso"
+  },
+  "openAtLoginDesc": {
+    "message": "Avvia automaticamente Bitwarden Desktop all'accesso."
+  },
+  "alwaysShowDock": {
+    "message": "Mostra sempre nel Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Mostra l'icona Bitwarden nel Dock anche quando minimizzato nella barra dei menu."
+  },
+  "confirmTrayTitle": {
+    "message": "Conferma disattivazione icona del vassoio"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabilitando questa impostazione verranno disabilitate anche tutte le altre impostazioni del vassoio."
   },
   "language": {
     "message": "Lingua"
@@ -1024,7 +1060,7 @@
     "message": "Annulla"
   },
   "redo": {
-    "message": "Rifai"
+    "message": "Ripristina"
   },
   "cut": {
     "message": "Taglia",
@@ -1182,8 +1218,14 @@
     "message": "ATTENZIONE",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Conferma esportazione della Cassaforte"
+  },
   "exportWarningDesc": {
     "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
+  },
+  "encExportWarningDesc": {
+    "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di crittografia del tuo account. Se cambi la chiave di crittografia del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire nuovo export."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
@@ -1296,7 +1338,7 @@
     "message": "Clona"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Una o più politiche dell'organizzazione stanno influenzando le impostazioni del tuo generatore."
+    "message": "Una o più policy dell'organizzazione controllano le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
     "message": "Azione Timeout Cassaforte"
@@ -1403,9 +1445,57 @@
     "message": "La tua nuova password principale non soddisfa i requisiti di sicurezza."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Selezionando la casella accetti quanto segue:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "I Termini di Servizio e l'Informativa sulla Privacy non sono stati accettati."
+  },
+  "enableBrowserIntegration": {
+    "message": "Abilita l'integrazione con il browser"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "L'integrazione del browser è utilizzata per l'autenticazione biometrica."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "L'integrazione del browser non è supportata"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Al momento l'integrazione del browser è supportata solo nella versione disponibile nel Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "L'integrazione del browser non è supportata"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Purtroppo l'integrazione del browser non è attualmente supportata nella versione disponibile nel Windows Store."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Richiedi verifica per l'integrazione del browser"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Abilita un livello aggiuntivo di sicurezza richiedendo la conferma della fingerprint phrase quando viene stabilito un collegamento fra il desktop e il browser. Quando abilitato, sarà necessario che l'utente esegua la verifica ad ogni nuova connessione."
+  },
+  "approve": {
+    "message": "Approva"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verifica connessione browser"
+  },
+  "verifyBrowserDesc": {
+    "message": "Assicurati che l'impronta digitale mostrata sia identica all'impronta digitale mostrata nell'estensione del browser."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Autenticazione biometrica non abilitata"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia stata abilitata prima nelle impostazioni."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili."
+  },
+  "hintEqualsPassword": {
+    "message": "Il suggerimento password non può essere uguale alla password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
   }
 }

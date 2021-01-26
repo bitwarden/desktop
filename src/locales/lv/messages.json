@@ -3,64 +3,64 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "Filtri"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Visi Vienumi"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favorīti"
   },
   "types": {
-    "message": "Types"
+    "message": "Veidi"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Piekļuves dati"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Kartes"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identitātes"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "Droša Piezīme"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Mapes"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolekcijas"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Meklēt Seifā"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Pievienot Vienumu"
   },
   "shared": {
     "message": "Shared"
   },
   "share": {
-    "message": "Share"
+    "message": "Koplietot"
   },
   "shareItem": {
-    "message": "Share Item"
+    "message": "Koplietot Vienumu"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "Koplietots Vienums"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Izvēlies organizāciju ar kuru koplietot šo vienumu. Koplietošana pārvieto šī vienuma piederību organizācijai. Jūs vairs nebūsiet šī vienuma tiešais īpašnieks kad tas tiks koplietots."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Pielikumi"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Skatīt Vienumu"
   },
   "name": {
-    "message": "Name"
+    "message": "Nosaukums"
   },
   "uri": {
     "message": "URI"
@@ -76,31 +76,31 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Jauns URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Lietotājvārds"
   },
   "password": {
-    "message": "Password"
+    "message": "Parole"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Paroles frāze"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Rediģēt Vienumu"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "E-pasta adrese"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verifikācijas kods (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Tīmekļvietne"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Piezīmes"
   },
   "customFields": {
     "message": "Custom Fields"
@@ -109,7 +109,7 @@
     "message": "Launch"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "Kopēt vērtību",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
@@ -129,40 +129,40 @@
     "message": "Cardholder Name"
   },
   "number": {
-    "message": "Number"
+    "message": "Numurs"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Zīmols"
   },
   "expiration": {
     "message": "Expiration"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "Drošības kods"
   },
   "identityName": {
     "message": "Identity Name"
   },
   "company": {
-    "message": "Company"
+    "message": "Uzņēmums"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Personas kods"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Pases numurs"
   },
   "licenseNumber": {
     "message": "License Number"
   },
   "email": {
-    "message": "Email"
+    "message": "E-pasts"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Tālrunis"
   },
   "address": {
-    "message": "Address"
+    "message": "Adrese"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -174,98 +174,98 @@
     "message": "An error has occurred."
   },
   "error": {
-    "message": "Error"
+    "message": "Kļūda"
   },
   "january": {
-    "message": "January"
+    "message": "Janvāris"
   },
   "february": {
-    "message": "February"
+    "message": "Februāris"
   },
   "march": {
-    "message": "March"
+    "message": "Marts"
   },
   "april": {
-    "message": "April"
+    "message": "Aprīlis"
   },
   "may": {
-    "message": "May"
+    "message": "Maijs"
   },
   "june": {
-    "message": "June"
+    "message": "Jūnijs"
   },
   "july": {
-    "message": "July"
+    "message": "Jūlijs"
   },
   "august": {
-    "message": "August"
+    "message": "Augusts"
   },
   "september": {
-    "message": "September"
+    "message": "Septembris"
   },
   "october": {
-    "message": "October"
+    "message": "Oktobris"
   },
   "november": {
-    "message": "November"
+    "message": "Novembris"
   },
   "december": {
-    "message": "December"
+    "message": "Decembris"
   },
   "ex": {
-    "message": "ex.",
+    "message": "piem.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
     "message": "Title"
   },
   "mr": {
-    "message": "Mr"
+    "message": "K-gs"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "K-dze"
   },
   "ms": {
-    "message": "Ms"
+    "message": "Jk-dze"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Derīguma mēnesis"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Derīguma gads"
   },
   "select": {
-    "message": "Select"
+    "message": "Atlasīt"
   },
   "other": {
     "message": "Other"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Ģenerēt paroli"
   },
   "type": {
     "message": "Type"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Vārds"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Otrais vārds"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Uzvārds"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adrese 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adrese 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adrese 3"
   },
   "cityTown": {
     "message": "City / Town"
@@ -274,43 +274,43 @@
     "message": "State / Province"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Pasta indekss"
   },
   "country": {
-    "message": "Country"
+    "message": "Valsts"
   },
   "save": {
-    "message": "Save"
+    "message": "Saglabāt"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Atcelt"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Dzēst"
   },
   "favorite": {
     "message": "Favorite"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Rediģēt"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Mape"
   },
   "newCustomField": {
     "message": "New Custom Field"
   },
   "value": {
-    "message": "Value"
+    "message": "Vērtība"
   },
   "dragToSort": {
     "message": "Drag to sort"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Teksts"
   },
   "cfTypeHidden": {
     "message": "Hidden"
@@ -319,7 +319,7 @@
     "message": "Boolean"
   },
   "remove": {
-    "message": "Remove"
+    "message": "Noņemt"
   },
   "nameRequired": {
     "message": "Name is required."
@@ -331,50 +331,50 @@
     "message": "Edited item"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Dzēst vienumu"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Dzēst mapi"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Dzēst pielikumu"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Vai tiešām vēlaties dzēst šo vienumu?"
   },
   "deletedItem": {
     "message": "Sent item to trash"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Vai tiešām vēlaties pārrakstīt esošo paroli?"
   },
   "noneFolder": {
     "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "Pievienot mapi"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "Rediģēt mapi"
   },
   "regeneratePassword": {
     "message": "Regenerate Password"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "Kopēt paroli"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopēt URI"
   },
   "length": {
-    "message": "Length"
+    "message": "Garums"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Vārdu skaits"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Vārdu atdalītājs"
   },
   "capitalize": {
     "message": "Capitalize",
@@ -384,7 +384,7 @@
     "message": "Include Number"
   },
   "close": {
-    "message": "Close"
+    "message": "Aizvērt"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -410,25 +410,25 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Pievienot jaunu pielikumu"
   },
   "deletedAttachment": {
     "message": "Deleted attachment"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Vai tiešām vēlaties dzēst šo pielikumu?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Pielikums tika saglabāts."
   },
   "file": {
-    "message": "File"
+    "message": "Fails"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Izvēlieties failu."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maksimālais faila lielums ir 100 MB."
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
@@ -443,7 +443,7 @@
     "message": "Added folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Vai tiešām vēlaties dzēst šo mapi?"
   },
   "deletedFolder": {
     "message": "Deleted folder"
@@ -452,16 +452,16 @@
     "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Izveidot kontu"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Ieiet"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Iesniegt"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Galvenā parole"
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
@@ -476,61 +476,61 @@
     "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Iestatījumi"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Paroles atgādinājums"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Ievadiet sava konta e-pasta adresi, lai saņemtu galvenās paroles atgādinājumu."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Saņemt galvenās paroles atgādinājumu"
   },
   "emailRequired": {
     "message": "Email address is required."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Nederīga e-pasta adrese."
   },
   "masterPassRequired": {
     "message": "Master password is required."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Galvenajai parolei ir jābūt vismaz 8 rakstzīmes garai."
   },
   "masterPassDoesntMatch": {
     "message": "Master password confirmation does not match."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Konts ir izveidots! Tagad varat tajā ieiet."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Mēs nosūtījām e-pastu ar galvenās paroles atgādinājumu."
   },
   "unexpectedError": {
     "message": "An unexpected error has occurred."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Vienuma Informācija"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Nav vienumu ko parādīt."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Verifikācijas kods"
   },
   "verificationCodeRequired": {
     "message": "Verification code is required."
   },
   "continue": {
-    "message": "Continue"
+    "message": "Turpināt"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Ievadiet 6 ciparu verifikācijas kodu no savas autentifikātora lietotnes."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Ievadiet 6 ciparu verifikācijas kodu, kas tika nosūtīts uz $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -539,7 +539,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifikācijas e-pasts nosūtīts uz $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -548,10 +548,10 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Atcerēties mani"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Nosūtīt verifikācijas kodu atkārtoti"
   },
   "useAnotherTwoStepMethod": {
     "message": "Use another two-step login method"
@@ -593,10 +593,10 @@
     "message": "Use any FIDO U2F enabled security key to access your account."
   },
   "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+    "message": "FIDO U2F drošības atslēga"
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-pasts"
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
@@ -626,10 +626,10 @@
     "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "Servera URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API servera URL"
   },
   "webVaultUrl": {
     "message": "Web Vault Server URL"
@@ -638,31 +638,31 @@
     "message": "Identity Server URL"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "Paziņojumu servera URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "Ikonu servera URL"
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "Ok"
+    "message": "Labi"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Jā"
   },
   "no": {
-    "message": "No"
+    "message": "Nē"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Pārrakstīt paroli"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Uzzināt vairāk"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funkcija nav pieejama"
   },
   "loggedOut": {
     "message": "Logged out"
@@ -671,34 +671,34 @@
     "message": "Your login session has expired."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Vai tiešām vēlies iziet?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Iziet"
   },
   "addNewLogin": {
     "message": "Add New Login"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Pievienot jaunu vienumu"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Pievienot jaunu mapi"
   },
   "view": {
-    "message": "View"
+    "message": "Skats"
   },
   "account": {
-    "message": "Account"
+    "message": "Konts"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Notiek ielāde..."
   },
   "lockNow": {
     "message": "Lock Now"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Paroles ģenerators"
   },
   "emailUs": {
     "message": "Email Us"
@@ -716,7 +716,7 @@
     "message": "Follow Us"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Sinhronizēt seifu"
   },
   "changeMasterPass": {
     "message": "Change Master Password"
@@ -751,7 +751,7 @@
     "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Atslēgt"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -767,7 +767,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Nederīga galvenā parole"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
@@ -827,13 +827,13 @@
     "message": "On Restart"
   },
   "never": {
-    "message": "Never"
+    "message": "Nekad"
   },
   "security": {
-    "message": "Security"
+    "message": "Drošība"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Notīrīt starpliktuvi",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
@@ -847,16 +847,28 @@
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "Minimizēt ikonjoslā"
   },
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
+  },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
   },
   "enableCloseToTray": {
     "message": "Close to Tray Icon"
   },
   "enableCloseToTrayDesc": {
     "message": "When closing the window, show an icon in the system tray instead."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Enable Tray Icon"
@@ -870,35 +882,59 @@
   "startToTrayDesc": {
     "message": "When the application is first started, only show an icon in the system tray."
   },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
+  },
   "language": {
-    "message": "Language"
+    "message": "Valoda"
   },
   "languageDesc": {
     "message": "Change the language used by the application. Restart is required."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Motīvs"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tumšs",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Gaišs",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopēt",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
     "message": "Check For Updates"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Versija $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -919,16 +955,16 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Pieejams atjauninājums"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Atrasts atjauninājums. Vai vēlaties to lejupielādēt?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Restartēt"
   },
   "later": {
-    "message": "Later"
+    "message": "Vēlāk"
   },
   "noUpdatesAvailable": {
     "message": "No updates are currently available. You are using the latest version."
@@ -940,14 +976,14 @@
     "message": "Unknown"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopēt lietotājvārdu"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopēt numuru",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopēt drošības kodu",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
@@ -981,7 +1017,7 @@
     "message": "TOTP verification code (2FA) generator for logins in your vault."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioritārs klientu atbalsts."
   },
   "premiumSignUpFuture": {
     "message": "All future premium features. More coming soon!"
@@ -1011,31 +1047,31 @@
     "message": "Refresh complete"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Paroļu vēsture"
   },
   "clear": {
-    "message": "Clear",
+    "message": "Notīrīt",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "Nav paroļu ko parādīt."
   },
   "undo": {
-    "message": "Undo"
+    "message": "Atsaukt"
   },
   "redo": {
-    "message": "Redo"
+    "message": "Atcelt atsaukšanu"
   },
   "cut": {
-    "message": "Cut",
+    "message": "Izgriezt",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "Ielīmēt",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "Atlasīt visu"
   },
   "zoomIn": {
     "message": "Zoom In"
@@ -1056,7 +1092,7 @@
     "message": "Toggle Developer Tools"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "Minimizēt",
     "description": "Minimize window"
   },
   "zoom": {
@@ -1067,10 +1103,10 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Par Bitwarden"
   },
   "services": {
-    "message": "Services"
+    "message": "Pakalpojumi"
   },
   "hideBitwarden": {
     "message": "Hide Bitwarden"
@@ -1095,10 +1131,10 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "Palīdzība"
   },
   "window": {
-    "message": "Window"
+    "message": "Logs"
   },
   "checkPassword": {
     "message": "Check if password has been exposed."
@@ -1116,7 +1152,7 @@
     "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "Galvenais domēns"
   },
   "host": {
     "message": "Host",
@@ -1144,14 +1180,14 @@
     "message": "Toggle Options"
   },
   "organization": {
-    "message": "Organization",
+    "message": "Organizācija",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "Noklusējums"
   },
   "exit": {
-    "message": "Exit"
+    "message": "Iziet"
   },
   "showHide": {
     "message": "Show / Hide",
@@ -1173,17 +1209,23 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "Eksportēt seifu"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "Faila formāts"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "UZMANĪBU",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
+  },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
   },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."
@@ -1198,22 +1240,22 @@
     "message": "Ownership"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Kam pieder šis vienums?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Stipra",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Laba",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Vāja",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Vāja galvenā parole"
   },
   "weakMasterPasswordDesc": {
     "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
@@ -1223,7 +1265,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "Atslēgt ar PIN"
   },
   "setYourPinCode": {
     "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
@@ -1232,28 +1274,28 @@
     "message": "PIN code is required."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "Nederīgs PIN kods."
   },
   "yourVaultIsLockedPinCode": {
     "message": "Your vault is locked. Verify your PIN code to continue."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Atslēgt ar Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Verify for Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Atslēgt ar Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "unlock your vault"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "Iestatījumi"
   },
   "enableMenuBar": {
     "message": "Enable Menu Bar Icon"
@@ -1271,7 +1313,7 @@
     "message": "You've upgraded to premium."
   },
   "restore": {
-    "message": "Restore"
+    "message": "Atjaunot"
   },
   "premiumManageAlertAppStore": {
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
@@ -1290,10 +1332,10 @@
     "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "Nesaglabātas izmaiņas"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Klonēt"
   },
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
@@ -1308,7 +1350,7 @@
     "message": "A logged out vault requires that you re-authenticate to access it again."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Slēgt",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
@@ -1328,7 +1370,7 @@
     "message": "Permanently Deleted item"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Atjaunot vienumu"
   },
   "restoreItemConfirmation": {
     "message": "Are you sure you want to restore this item?"
@@ -1373,7 +1415,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimālais garums $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

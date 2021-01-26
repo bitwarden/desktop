@@ -2,7 +2,7 @@
   "name": "bitwarden",
   "productName": "Bitwarden",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "1.23.1",
+  "version": "1.24.6",
   "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
@@ -22,6 +22,7 @@
     "keytar": "4.13.0",
     "node-ipc": "^9.1.1",
     "regedit": "^3.0.3",
-    "zxcvbn": "4.4.2"
+    "zxcvbn": "4.4.2",
+    "browser-hrtime": "^1.1.8"
   }
 }

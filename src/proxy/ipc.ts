@@ -1,9 +1,13 @@
 /* tslint:disable:no-console */
 import * as ipc from 'node-ipc';
+import { homedir } from 'os';
 
 ipc.config.id = 'proxy';
 ipc.config.retry = 1500;
 ipc.config.logger = console.warn; // Stdout is used for native messaging
+if (process.platform === 'darwin') {
+    ipc.config.socketRoot = `${homedir()}/tmp/`;
+}
 
 export default class IPC {
     onMessage: (message: object) => void
