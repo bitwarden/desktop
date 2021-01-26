@@ -20,34 +20,35 @@ jobs:
           TAG_VERSION=$(echo ${{ github.ref }} | cut -d "/" -f 3)
           PKG_VERSION=${TAG_VERSION:1}
 
-          echo "PKG_VERSION=$PKG_VERSION"
+          echo "::set-output name=package_version::$PKG_VERSION"
 
 
   linux:
     runs-on: ubuntu-latest
-    if: false
+    needs: setup
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Install Snap
-        uses: samuelmeuli/action-snapcraft@v1
-        #with:
-        #  snapcraft_token: ${{ secrets.SNAP_TOKEN }}
+      #- name: Install Snap
+      #  uses: samuelmeuli/action-snapcraft@v1
+      #  with:
+      #    snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
-        #- name: Get snap release asset
-        #  uses: dsaltares/fetch-gh-release-asset@master
-        #  with:
-        #    version: ${{ github.ref }}
-        #    file: 
+      #- name: Get snap release asset
+      #  uses: dsaltares/fetch-gh-release-asset@master
+      #  with:
+      #    version: ${{ github.ref }}
+      #    file: 
 
       - name: testing
         run: |
-          echo ${{ github.ref }}
-          echo ${{ github.event.GITHUB_REF }}
+          echo "PKG_VERSION=$PKG_VERSION"
+        env:
+          PKG_VERSION: ${{ needs.setup.package_version }}
 
-        #- name: Deploy to Snap Store
-        #  run: |
-        #    snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
-        #    snapcraft logout
+      #- name: Deploy to Snap Store
+      #  run: |
+      #    snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
+      #    snapcraft logout
 
