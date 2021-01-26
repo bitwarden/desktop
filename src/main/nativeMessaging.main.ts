@@ -2,7 +2,7 @@ import { promises as fs, existsSync } from 'fs';
 import * as ipc from 'node-ipc';
 import * as path from 'path';
 import * as util from 'util';
-import { homedir } from 'os';
+import { homedir, userInfo } from 'os';
 
 import { LogService } from 'jslib/abstractions/log.service';
 import { ipcMain } from 'electron';
@@ -17,6 +17,7 @@ export class NativeMessagingMain {
     listen() {
         ipc.config.id = 'bitwarden';
         ipc.config.retry = 1500;
+        ipc.config.socketRoot = path.join(homedir(), 'tmp');
 
         ipc.serve(() => {
             ipc.server.on('message', (data: any, socket: any) => {
@@ -84,21 +85,25 @@ export class NativeMessagingMain {
                 this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'));
                 break;
             case 'darwin':
-                if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/`)) {
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson);
+                if (existsSync(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`)) {
+                    this.writeManifest(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson);
+                } else {
+                    this.logService.warning(`Firefox not found skipping.`);
                 }
 
-                if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome`)) {
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
+                if (existsSync(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts`)) {
+                    this.writeManifest(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
+                } else {
+                    this.logService.warning(`Chrome not found skipping.`);
                 }
                 break;
             case 'linux':
-                if (existsSync(`${homedir()}/.mozilla/`)) {
-                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson);
+                if (existsSync(`${this.homedir()}/.mozilla/`)) {
+                    this.writeManifest(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson);
                 }
 
-                if (existsSync(`${homedir()}/.config/google-chrome/`)) {
-                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
+                if (existsSync(`${this.homedir()}/.config/google-chrome/`)) {
+                    this.writeManifest(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
                 break;
             default:
@@ -115,21 +120,21 @@ export class NativeMessagingMain {
                 this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden');
                 break;
             case 'darwin':
-                if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
+                if (existsSync(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
 
-                if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
+                if (existsSync(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
                 break;
             case 'linux':
-                if (existsSync(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`);
+                if (existsSync(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`);
                 }
 
-                if (existsSync(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
+                if (existsSync(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
                 break;
             default:
@@ -147,7 +152,7 @@ export class NativeMessagingMain {
         if (process.platform === 'win32') {
             return path.join(dir, 'native-messaging.bat');
         } else if (process.platform === 'darwin') {
-            return path.join(dir, '..', 'MacOS', 'Bitwarden');
+            return '/Applications/Bitwarden.app/Contents/MacOS/Bitwarden';
         }
 
         return path.join(dir, '..', 'bitwarden');
@@ -202,6 +207,14 @@ export class NativeMessagingMain {
             await deleteKey(key);
         } catch {
             // Do nothing
+        }
+    }
+
+    private homedir() {
+        if (process.platform === 'darwin') {
+            return userInfo().homedir;
+        } else {
+            return homedir();
         }
     }
 }
