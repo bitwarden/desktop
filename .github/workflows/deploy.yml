@@ -13,5 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: testing
-        run: echo ${{ github.ref }}
+        run: |
+          echo ${{ github.ref }}
+          echo ${{ github.event.GITHUB_REF }}
 
