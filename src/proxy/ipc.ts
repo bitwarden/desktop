@@ -6,7 +6,9 @@ import * as path from 'path';
 ipc.config.id = 'proxy';
 ipc.config.retry = 1500;
 ipc.config.logger = console.warn; // Stdout is used for native messaging
-ipc.config.socketRoot = path.join(homedir(), 'tmp');
+if (process.platform === 'darwin') {
+    ipc.config.socketRoot = path.join(homedir(), 'tmp');
+}
 
 export default class IPC {
     onMessage: (message: object) => void

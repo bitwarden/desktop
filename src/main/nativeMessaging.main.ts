@@ -17,7 +17,9 @@ export class NativeMessagingMain {
     listen() {
         ipc.config.id = 'bitwarden';
         ipc.config.retry = 1500;
-        ipc.config.socketRoot = path.join(homedir(), 'tmp');
+        if (process.platform === 'darwin') {
+            ipc.config.socketRoot = path.join(homedir(), 'tmp');
+        }
 
         ipc.serve(() => {
             ipc.server.on('message', (data: any, socket: any) => {
