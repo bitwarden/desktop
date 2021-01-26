@@ -18,7 +18,7 @@ export class NativeMessagingMain {
         ipc.config.id = 'bitwarden';
         ipc.config.retry = 1500;
         if (process.platform === 'darwin') {
-            ipc.config.socketRoot = path.join(homedir(), 'tmp');
+            ipc.config.socketRoot = `${homedir()}/tmp/`;
         }
 
         ipc.serve(() => {
