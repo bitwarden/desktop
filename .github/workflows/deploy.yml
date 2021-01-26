@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       package_version: ${{ steps.get_pkg_version.outputs.package_version }}
-      tag_version: ${{ steps.get_pkg_version.outputs.package_version }}
+      tag_version: ${{ steps.get_pkg_version.outputs.tag_version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
