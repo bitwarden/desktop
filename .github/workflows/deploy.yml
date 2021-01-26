@@ -45,7 +45,7 @@ jobs:
         run: |
           echo "PKG_VERSION=$PKG_VERSION"
         env:
-          PKG_VERSION: ${{ needs.setup.package_version }}
+          PKG_VERSION: ${{ needs.setup.outputs.package_version }}
 
       #- name: Deploy to Snap Store
       #  run: |
