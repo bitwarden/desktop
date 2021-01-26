@@ -183,6 +183,8 @@ jobs:
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx"
           Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
             -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.appx" `
+            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx"
 
       - name: Deploy to Chocolatey
         shell: pwsh
@@ -222,6 +224,13 @@ jobs:
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+
+      - name: Upload store appx ARM64 artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
 
       - name: Upload nupkg artifact
         if: github.ref == 'refs/heads/master'
