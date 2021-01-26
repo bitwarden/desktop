@@ -70,8 +70,6 @@ jobs:
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@v1
-        with:
-          snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
       - name: Print environment
         run: |
@@ -98,14 +96,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy to Snap Store
-        run: |
-          snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
-          snapcraft logout
-
 
   windows-signed:
     runs-on: windows-latest
+    if: false
     needs: setup
     steps:
       - name: Set up dotnet
@@ -206,6 +200,7 @@ jobs:
 
   windows-store:
     runs-on: windows-latest
+    if: false
     needs: setup
     steps:
       - name: Set up Node
@@ -266,6 +261,7 @@ jobs:
 
   macos:
     runs-on: macos-latest
+    if: false
     needs: setup
     steps:
       - name: Set up Node
