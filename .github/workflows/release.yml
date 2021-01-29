@@ -68,15 +68,10 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      - name: Install Snap
-        uses: samuelmeuli/action-snapcraft@v1
-
       - name: Print environment
         run: |
           node --version
           npm --version
-          snap --version
-          snapcraft --version || echo 'snapcraft unavailable'
 
       - name: Checkout repo
         uses: actions/checkout@v2
@@ -99,7 +94,6 @@ jobs:
 
   windows-signed:
     runs-on: windows-latest
-    if: false
     needs: setup
     steps:
       - name: Set up dotnet
@@ -174,7 +168,7 @@ jobs:
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy to Chocolatey
+      - name: Package Chocolatey
         shell: pwsh
         run: |
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
@@ -183,9 +177,11 @@ jobs:
           $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
           (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          ls -alht dist/chocolatey
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
           cd ./dist/chocolatey
-          choco push
+          ls -alht dist/chocolatey
+          #choco push
 
       - name: Upload Chocolatey nupkg release asset
         uses: actions/upload-release-asset@v1
@@ -200,7 +196,6 @@ jobs:
 
   windows-store:
     runs-on: windows-latest
-    if: false
     needs: setup
     steps:
       - name: Set up Node
