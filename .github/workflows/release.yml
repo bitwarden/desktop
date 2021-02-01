@@ -264,6 +264,16 @@ jobs:
           asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
           asset_content_type: application
 
+      - name: Upload unsigned ARM64 Windows Store release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.appx
+          asset_content_type: application
+
   macos:
     runs-on: macos-latest
     needs: setup
