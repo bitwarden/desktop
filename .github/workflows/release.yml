@@ -181,7 +181,6 @@ jobs:
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
           cd ./dist/chocolatey
           ls -alht dist/chocolatey
-          #choco push
 
       - name: Upload Chocolatey nupkg release asset
         uses: actions/upload-release-asset@v1
@@ -352,8 +351,12 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: Deploy to App Store
-        run: npm run upload:mas
+      - name: Upload Apple Store release asset
+        uses: actions/upload-release-asset@v1
         env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_content_type: application

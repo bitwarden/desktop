@@ -66,8 +66,8 @@ jobs:
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@v1
-      #  with:
-      #    snapcraft_token: ${{ secrets.SNAP_TOKEN }}
+        with:
+          snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
       - name: setup
         run: mkdir dist
@@ -84,7 +84,6 @@ jobs:
         run: ls -alht dist
 
       - name: Deploy to Snap Store
-        if: false
         run: |
           snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
           snapcraft logout
@@ -109,10 +108,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      #- name: Setup Chocolatey
-      #  run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
-      #  env:
-      #    CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+      - name: Setup Chocolatey
+        run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
       - name: make dist dir 
         shell: pwsh
@@ -127,20 +126,32 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push to Chocolatey
-        if: false
         shell: pwsh
         run: |
           cd dist
           choco push
 
 
-  # Placeholder until the build thing works with the directory-connector
   macos:
     runs-on: macos-latest
-    if: false
     needs: setup
     steps:
-      - name: Set up Node
-        uses: actions/setup-node@v1
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: make target directory
+        run: mkdir -p dist/mas
+
+      - name: Get mac release asset
+        uses: Xotl/cool-github-releases@v1
         with:
-          node-version: '10.x'
+          mode: download
+          tag_name: ${{ env.TAG_VERSION }}
+          assets: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg|./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to App Store
+        run: npm run upload:mas
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
