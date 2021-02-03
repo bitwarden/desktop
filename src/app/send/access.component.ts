@@ -8,7 +8,11 @@ import {
     templateUrl: 'access.component.html',
 })
 export class AccessComponent implements OnInit {
-    constructor() { }
+    constructor() {
+        return;
+    }
 
-    ngOnInit() { }
+    ngOnInit() {
+        return;
+    }
 }
