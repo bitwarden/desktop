@@ -16,7 +16,7 @@ if (process.argv.some(arg => arg.indexOf('chrome-extension://') !== -1 || arg.in
         });
     }
 
-    process.stdout.on('error', (e) => {
+    process.stdout.on('error', e => {
         if (e.code === 'EPIPE') {
             process.exit(0);
         }

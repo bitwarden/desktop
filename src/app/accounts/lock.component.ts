@@ -1,7 +1,7 @@
 import {
     Component,
-    OnDestroy,
     NgZone,
+    OnDestroy,
 } from '@angular/core';
 import {
     ActivatedRoute,
@@ -43,7 +43,7 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     async ngOnInit() {
         await super.ngOnInit();
-        this.route.queryParams.subscribe((params) => {
+        this.route.queryParams.subscribe(params => {
             if (this.supportsBiometric && params.promptBiometric) {
                 setTimeout(() => this.unlockBiometric(), 1000);
             }

@@ -10,7 +10,7 @@ if (process.platform === 'darwin') {
 }
 
 export default class IPC {
-    onMessage: (message: object) => void
+    onMessage: (message: object) => void;
 
     private connected = false;
 
@@ -24,7 +24,7 @@ export default class IPC {
                 );
 
                 // Notify browser extension, connection is established to desktop application.
-                this.onMessage({command: 'connected'})
+                this.onMessage({command: 'connected'});
             });
 
             ipc.of.bitwarden.on('disconnect', () => {
@@ -32,7 +32,7 @@ export default class IPC {
                 console.error('disconnected from world');
 
                 // Notify browser extension, no connection to desktop application.
-                this.onMessage({command: 'disconnected'})
+                this.onMessage({command: 'disconnected'});
             });
 
             ipc.of.bitwarden.on('message', (message: any) => {

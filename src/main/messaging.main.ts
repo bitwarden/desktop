@@ -37,7 +37,7 @@ export class MessagingMain {
                 break;
             case 'minimizeOnCopy':
                 this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey).then(
-                    (shouldMinimize) => {
+                    shouldMinimize => {
                         if (shouldMinimize && this.main.windowMain.win !== null) {
                             this.main.windowMain.win.minimize();
                         }
