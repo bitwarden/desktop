@@ -7,7 +7,6 @@ import { isSnapStore } from 'jslib/electron/utils';
 import { Main } from '../main';
 
 // tslint:disable-next-line
-const desktopIdle = require('desktop-idle');
 const IdleLockSeconds = 5 * 60; // 5 minutes
 const IdleCheckInterval = 30 * 1000; // 30 seconds
 
@@ -42,7 +41,7 @@ export class PowerMonitorMain {
 
         // System idle
         global.setInterval(async () => {
-            const idleSeconds: number = desktopIdle.getIdleTime();
+            const idleSeconds: number = powerMonitor.getSystemIdleTime();
             const idle = idleSeconds >= IdleLockSeconds;
             if (idle) {
                 if (this.idle) {
