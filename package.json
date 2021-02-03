@@ -177,7 +177,6 @@
       "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
       "hardenedRuntime": false,
       "asarUnpack": [
-        "node_modules/desktop-idle",
         "node_modules/keytar"
       ]
     },
@@ -308,13 +307,12 @@
     "big-integer": "1.6.36",
     "browser-hrtime": "^1.1.8",
     "core-js": "2.6.2",
-    "desktop-idle": "1.1.2",
     "duo_web_sdk": "git+https://github.com/duosecurity/duo_web_sdk.git",
     "electron-log": "4.3.0",
     "electron-store": "6.0.1",
     "electron-updater": "4.3.5",
     "forcefocus": "^1.1.0",
-    "keytar": "4.13.0",
+    "keytar": "7.3.0",
     "lunr": "2.3.3",
     "node-forge": "0.7.6",
     "node-ipc": "^9.1.1",
