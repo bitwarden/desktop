@@ -1,0 +1,80 @@
+<div id="sends" class="vault">
+    <div class="groupings">
+        <div class="mac-bar"></div>
+        <div class="content">
+            <div class="inner-content">
+                <div class="top-content">
+                    <h2 class="sr-only">{{'filters' | i18n}}</h2>
+                    <ul>
+                        <li [ngClass]="{active: selectedAll}">
+                            <a href="#" appStopClick appBlurClick (click)="selectAll()">
+                                <i class="fa fa-fw fa-th" aria-hidden="true"></i>&nbsp;{{'allSends' | i18n}}
+                            </a>
+                        </li>
+                    </ul>
+                    <h2>{{'types' | i18n}}</h2>
+                    <ul>
+                        <li [ngClass]="{active: selectedType === sendType.Text}">
+                            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
+                                <i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>&nbsp;{{'sendTypeText' | i18n}}
+                            </a>
+                        </li>
+                        <li [ngClass]="{active: selectedType === sendType.File}">
+                            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
+                                <i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;{{'sendTypeFile' | i18n}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottom-content">
+                    <a routerLink="/" class="fa fa-lock btn primary icon-link" title="Bitwarden Vault"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="items" class="items">
+        <div class="header header-search">
+            <div class="search">
+                <input type="search" placeholder="{{'searchSends' | i18n}}" id="search"
+                    [(ngModel)]="searchText" (input)="searchTextChanged()" autocomplete="off" appAutofocus>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="content">
+            <div class="list" *ngIf="filteredSends.length" infiniteScroll [infiniteScrollDistance]="1"
+                [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" (scrolled)="loadMore()">
+                <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s)"
+                    href="#" title="{{'viewItem' | i18n}}"
+                    [ngClass]="{'active': s.id === activeSendId}">
+                    <div class="icon" aria-hidden="true">
+                        <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-o' : 'fa-file-text-o'"></i>
+                    </div>
+                    <span class="text">
+                        {{s.name}}
+                    </span>
+                    <span class="detail">{{s.deletionDate | date}}</span>
+                </a>
+            </div>
+            <div class="no-items" *ngIf="!filteredSends.length">
+                <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+                <ng-container *ngIf="loaded">
+                    <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+                    <p>{{'noItemsInList' | i18n}}</p>
+                </ng-container>
+            </div>
+        </div>
+        <div class="footer">
+            <button appBlurClick (click)="addSend()" class="block primary" appA11yTitle="{{'addItem' | i18n}}">
+                <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <app-send-add-edit *ngIf="action == 'add' || action == 'edit'"></app-send-add-edit>
+    <div class="logo" *ngIf="!action">
+        <div class="content">
+            <div class="inner-content">
+                <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
+            </div>
+        </div>
+    </div>
+</div>

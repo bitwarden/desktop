@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-.btn, #vault .footer button, .modal-footer button {
+.btn, .vault .footer button, .modal-footer button {
     border-radius: $border-radius;
     padding: 7px 15px;
     border: 1px solid #000000;
@@ -76,6 +76,16 @@
         &:focus {
             text-decoration: underline;
         }
+    }
+
+    &.icon-link {
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 50%;
+        width: 45px;
     }
 }
 

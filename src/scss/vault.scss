@@ -1,10 +1,10 @@
 ﻿@import "variables.scss";
 
-#vault {
+.vault {
     height: 100%;
     display: flex;
 
-    > #groupings, > #items, > #details, > #logo {
+    > .groupings, > .items, > .details, > .logo {
         display: flex;
         flex-direction: column;
 
@@ -13,7 +13,7 @@
         }
     }
 
-    > #groupings {
+    > .groupings {
         width: 22%;
         min-width: 175px;
         max-width: 250px;
@@ -25,7 +25,11 @@
         }
 
         .inner-content {
-            padding-bottom: 0;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
             padding-right: 5px;
             user-select: none;
 
@@ -254,7 +258,7 @@
         }
     }
 
-    > #items {
+    > .items {
         width: 28%;
         min-width: 200px;
         max-width: 350px;
@@ -284,7 +288,7 @@
         }
     }
 
-    > #details {
+    > .details {
         flex: 1;
         min-width: 0;
         
@@ -316,7 +320,7 @@
         }
     }
 
-    > #logo {
+    > .logo {
         flex: 1;
         min-width: 0;
 
