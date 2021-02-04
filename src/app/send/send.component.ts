@@ -4,11 +4,6 @@ import {
     OnInit,
 } from '@angular/core';
 
-import {
-    ActivatedRoute ,
-    Router,
-} from '@angular/router';
-
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -41,7 +36,7 @@ export class SendComponent extends BaseSendComponent implements OnInit {
     constructor(sendService: SendService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
         broadcasterService: BroadcasterService, ngZone: NgZone,
-        private router: Router, private route: ActivatedRoute, searchService: SearchService) {
+        searchService: SearchService) {
         super(sendService, i18nService, platformUtilsService,
               environmentService, broadcasterService, ngZone, searchService);
     }
