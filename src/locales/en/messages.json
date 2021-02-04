@@ -1510,5 +1510,8 @@
   "searchSends": {
     "message": "Search Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendInformation": {
+    "message": "Send Information"
   }
 }

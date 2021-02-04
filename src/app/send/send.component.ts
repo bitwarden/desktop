@@ -20,7 +20,6 @@ import { SendComponent as BaseSendComponent } from 'jslib/angular/components/sen
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
-import { SendType } from 'jslib/enums/sendType';
 import { SendView } from 'jslib/models/view/sendView';
 
 enum Action {
@@ -38,6 +37,7 @@ export class SendComponent extends BaseSendComponent implements OnInit {
     sendId: string;
     modal: ModalComponent = null;
     action: Action = Action.None;
+    selectedSend: SendView;
 
     constructor(sendService: SendService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
@@ -52,39 +52,21 @@ export class SendComponent extends BaseSendComponent implements OnInit {
         this.sends = await this.sendService.getAllDecrypted();
 
         this.route.queryParams.subscribe(async (params) => {
-            if (params == null) {
-                this.selectedAll = true;
-                await this.reload();
-            } else {
-                const sendView = new SendView();
-                if (params.sendId) {
-                    sendView.id = params.sendId;
-                    if (params.action === 'edit') {
-                        this.editSend(sendView);
-                    } else if (params.action === 'view') {
-                        // TODO: this
-                        // this.viewSend(sendView);
-                    }
-                } else if (params.action === 'add') {
-                    this.addSend();
-                } else {
-                    if (params.files) {
-                        sendView.type = SendType.File;
-                        this.filter = (s) => {
-                            return filter(s) && s.text != null;
-                        };
-                        this.filter(sendView);
-                    } else if (params.text) {
-                        sendView.type = SendType.Text;
-                        this.filter = (s) => {
-                            return filter(s) && s.file != null;
-                        };
-                        this.filter(sendView);
-                    } else {
-                        this.selectAll();
-                    }
-                }
+            this.sendId = params.sendId;
+            if (this.sendId != null) {
+                this.selectedSend = this.sends.find((s) => s.id === params.sendId);
+                params.action === 'edit' ?
+                    this.action = Action.Edit :
+                    this.action = Action.View;
+                return;
             }
+
+            if (params.action === 'add') {
+                this.action = Action.Add;
+                return;
+            }
+
+            this.selectAll();
         });
 
         this.loading = false;
@@ -102,10 +84,11 @@ export class SendComponent extends BaseSendComponent implements OnInit {
     }
 
     editSend(send: SendView) {
-        if (this.action === Action.Edit && this.sendId === send.id) {
-            return;
-        }
-        this.action = Action.Edit;
+        return;
+    }
+
+    selectSend(send: SendView) {
+        this.action = Action.View;
         this.sendId = send.id;
         this.go();
     }
