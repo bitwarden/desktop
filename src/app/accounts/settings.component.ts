@@ -22,8 +22,8 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 
-import { Utils } from 'jslib/misc/utils';
 import { isWindowsStore } from 'jslib/electron/utils';
+import { Utils } from 'jslib/misc/utils';
 
 @Component({
     selector: 'app-settings',
@@ -81,15 +81,15 @@ export class SettingsComponent implements OnInit {
         this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
 
         const minToTrayKey = isMac ? 'enableMinToMenuBar' : 'enableMinToTray';
-        this.enableMinToTrayText = this.i18nService.t(minToTrayKey)
+        this.enableMinToTrayText = this.i18nService.t(minToTrayKey);
         this.enableMinToTrayDescText = this.i18nService.t(minToTrayKey + 'Desc');
 
         const closeToTrayKey = isMac ? 'enableCloseToMenuBar' : 'enableCloseToTray';
-        this.enableCloseToTrayText = this.i18nService.t(closeToTrayKey)
+        this.enableCloseToTrayText = this.i18nService.t(closeToTrayKey);
         this.enableCloseToTrayDescText = this.i18nService.t(closeToTrayKey + 'Desc');
 
         const startToTrayKey = isMac ? 'startToMenuBar' : 'startToTray';
-        this.startToTrayText = this.i18nService.t(startToTrayKey)
+        this.startToTrayText = this.i18nService.t(startToTrayKey);
         this.startToTrayDescText = this.i18nService.t(startToTrayKey + 'Desc');
 
         this.vaultTimeouts = [
@@ -114,7 +114,7 @@ export class SettingsComponent implements OnInit {
         ]);
 
         const localeOptions: any[] = [];
-        i18nService.supportedTranslationLocales.forEach((locale) => {
+        i18nService.supportedTranslationLocales.forEach(locale => {
             let name = locale;
             if (i18nService.localeNames.has(locale)) {
                 name += (' - ' + i18nService.localeNames.get(locale));

@@ -1,11 +1,11 @@
-import { promises as fs, existsSync } from 'fs';
+import { existsSync, promises as fs } from 'fs';
 import * as ipc from 'node-ipc';
+import { homedir, userInfo } from 'os';
 import * as path from 'path';
 import * as util from 'util';
-import { homedir, userInfo } from 'os';
 
-import { LogService } from 'jslib/abstractions/log.service';
 import { ipcMain } from 'electron';
+import { LogService } from 'jslib/abstractions/log.service';
 import { WindowMain } from 'jslib/electron/window.main';
 
 export class NativeMessagingMain {
@@ -31,11 +31,11 @@ export class NativeMessagingMain {
                 if (this.socket != null && msg != null) {
                     this.send(msg, this.socket);
                 }
-            })
+            });
 
             ipc.server.on('connect', () => {
                 this.connected = true;
-            })
+            });
 
             ipc.server.on(
                 'socket.disconnected',
@@ -66,7 +66,7 @@ export class NativeMessagingMain {
             'description': 'Bitwarden desktop <-> browser bridge',
             'path': this.binaryPath(),
             'type': 'stdio',
-        }
+        };
 
         const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}};
         const chromeJson = {...baseJson, ...{
@@ -168,11 +168,11 @@ export class NativeMessagingMain {
         const createKey = util.promisify(regedit.createKey);
         const putValue = util.promisify(regedit.putValue);
 
-        this.logService.debug(`Adding registry: ${location}`)
+        this.logService.debug(`Adding registry: ${location}`);
 
         // Check installed
         try {
-            await list(check)
+            await list(check);
         } catch {
             this.logService.warning(`Not finding registry ${check} skipping.`);
             return;
@@ -188,7 +188,7 @@ export class NativeMessagingMain {
                     value: jsonFile,
                     type: 'REG_DEFAULT',
                 },
-            }
+            };
 
             return putValue(obj);
         } catch (error) {
@@ -202,7 +202,7 @@ export class NativeMessagingMain {
         const list = util.promisify(regedit.list);
         const deleteKey = util.promisify(regedit.deleteKey);
 
-        this.logService.debug(`Removing registry: ${key}`)
+        this.logService.debug(`Removing registry: ${key}`);
 
         try {
             await list(key);
