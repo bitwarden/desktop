@@ -10,7 +10,6 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SearchService } from 'jslib/abstractions/search.service';
 import { SendService } from 'jslib/abstractions/send.service';
 
-import { ModalComponent } from 'jslib/angular/components/modal.component';
 import { SendComponent as BaseSendComponent } from 'jslib/angular/components/send/send.component';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
@@ -29,7 +28,6 @@ enum Action {
 })
 export class SendComponent extends BaseSendComponent implements OnInit {
     sendId: string;
-    modal: ModalComponent = null;
     action: Action = Action.None;
 
     constructor(sendService: SendService, i18nService: I18nService,
