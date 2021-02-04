@@ -21,7 +21,6 @@ enum Action {
     None = '',
     Add = 'add',
     Edit = 'edit',
-    View = 'view',
 }
 
 @Component({
@@ -42,8 +41,8 @@ export class SendComponent extends BaseSendComponent implements OnInit {
     }
 
     addSend() {
-        this.action = Action.Add;
         this.sendId = null;
+        this.action = Action.Add;
     }
 
     editSend(send: SendView) {
@@ -51,11 +50,11 @@ export class SendComponent extends BaseSendComponent implements OnInit {
     }
 
     selectSend(send: SendView) {
-        this.action = Action.View;
         this.sendId = send.id;
+        this.action = Action.Edit;
     }
 
-    get selectedSend() {
-        return this.sends.find((s) => s.id === this.sendId);
+    get selectedSendType() {
+        return this.sends.find((s) => s.id === this.sendId).type;
     }
 }
