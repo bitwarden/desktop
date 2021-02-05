@@ -3,32 +3,30 @@
         <div class="mac-bar"></div>
         <div class="content">
             <div class="inner-content">
-                <div class="top-content">
-                    <h2 class="sr-only">{{'filters' | i18n}}</h2>
-                    <ul>
-                        <li [ngClass]="{active: selectedAll}">
-                            <a href="#" appStopClick appBlurClick (click)="selectAll()">
-                                <i class="fa fa-fw fa-th" aria-hidden="true"></i>&nbsp;{{'allSends' | i18n}}
-                            </a>
-                        </li>
-                    </ul>
-                    <h2>{{'types' | i18n}}</h2>
-                    <ul>
-                        <li [ngClass]="{active: selectedType === sendType.Text}">
-                            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
-                                <i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>&nbsp;{{'sendTypeText' | i18n}}
-                            </a>
-                        </li>
-                        <li [ngClass]="{active: selectedType === sendType.File}">
-                            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
-                                <i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;{{'sendTypeFile' | i18n}}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bottom-content">
-                    <a routerLink="/" class="fa fa-lock btn primary icon-link" title="Bitwarden Vault"></a>
-                </div>
+                <h2 class="sr-only">{{'filters' | i18n}}</h2>
+                <ul>
+                    <li [ngClass]="{active: selectedAll}">
+                        <a href="#" appStopClick appBlurClick (click)="selectAll()">
+                            <i class="fa fa-fw fa-th" aria-hidden="true"></i>&nbsp;{{'allSends' | i18n}}
+                        </a>
+                    </li>
+                </ul>
+                <h2>{{'types' | i18n}}</h2>
+                <ul>
+                    <li [ngClass]="{active: selectedType === sendType.Text}">
+                        <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
+                            <i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>&nbsp;{{'sendTypeText' | i18n}}
+                        </a>
+                    </li>
+                    <li [ngClass]="{active: selectedType === sendType.File}">
+                        <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
+                            <i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;{{'sendTypeFile' | i18n}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <app-nav class="nav"></app-nav>
             </div>
         </div>
     </div>

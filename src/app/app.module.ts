@@ -63,9 +63,10 @@ import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
-import { AccessComponent } from './send/access.component';
 import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
 import { SendComponent } from './send/send.component';
+
+import { NavComponent } from './layout/nav.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
@@ -160,7 +161,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
     ],
     declarations: [
         A11yTitleDirective,
-        AccessComponent,
         AddEditComponent,
         ApiActionDirective,
         AppComponent,
@@ -183,6 +183,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         LockComponent,
         LoginComponent,
         ModalComponent,
+        NavComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
