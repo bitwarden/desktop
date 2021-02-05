@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { I18nService } from 'jslib/abstractions/i18n.service';
 
 @Component({
     selector: 'app-nav',
@@ -9,7 +10,7 @@ export class NavComponent {
         {
             link: '/vault',
             icon: 'fa-lock',
-            label: 'My Vault',
+            label: this.i18nService.translate('myVault'),
         },
         {
             link: '/send',
@@ -17,4 +18,6 @@ export class NavComponent {
             label: 'Send',
         },
     ];
+
+    constructor(private i18nService: I18nService) {}
 }

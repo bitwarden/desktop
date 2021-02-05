@@ -14,8 +14,9 @@ import { SetPasswordComponent } from './accounts/set-password.component';
 import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
-import { VaultComponent } from './vault/vault.component';
 import { SendComponent } from './send/send.component';
+
+import { VaultComponent } from './vault/vault.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/vault', pathMatch: 'full' },

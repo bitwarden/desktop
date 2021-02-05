@@ -1499,7 +1499,8 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
-    "message": "All Sends"
+    "message": "All Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
     "message": "File"
@@ -1512,6 +1513,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendInformation": {
-    "message": "Send Information"
+    "message": "Send Information",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "My Vault"
   }
 }
