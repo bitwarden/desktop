@@ -1,10 +1,10 @@
 ﻿@import "variables.scss";
 
-#vault {
+.vault {
     height: 100%;
     display: flex;
 
-    > #groupings, > #items, > #details, > #logo {
+    > .groupings, > .items, > .details, > .logo {
         display: flex;
         flex-direction: column;
 
@@ -13,7 +13,7 @@
         }
     }
 
-    > #groupings {
+    > .groupings {
         width: 22%;
         min-width: 175px;
         max-width: 250px;
@@ -24,13 +24,24 @@
             border-right-color: themed('borderColor');
         }
 
-        .inner-content {
-            padding-bottom: 0;
-            padding-right: 5px;
-            user-select: none;
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
 
-            > ul, > div > ul {
-                margin: 0 0 15px 0;
+            .footer {
+                padding: 0;
+            }
+
+            .inner-content {
+                padding-bottom: 0;
+                padding-right: 5px;
+                user-select: none;
+
+                > ul, > div > ul {
+                    margin: 0 0 15px 0;
+                }
             }
         }
 
@@ -254,7 +265,7 @@
         }
     }
 
-    > #items {
+    > .items {
         width: 28%;
         min-width: 200px;
         max-width: 350px;
@@ -284,7 +295,7 @@
         }
     }
 
-    > #details {
+    > .details {
         flex: 1;
         min-width: 0;
         
@@ -316,7 +327,7 @@
         }
     }
 
-    > #logo {
+    > .logo {
         flex: 1;
         min-width: 0;
 
@@ -414,7 +425,7 @@
     }
 
     .footer {
-        height: 50px;
+        height: 55px;
         flex: 0 0 auto;
         border-top: 1px solid #000000;
         display: flex;
@@ -437,6 +448,33 @@
         .right {
             margin-left: auto;
             display: flex;
+        }
+    }
+
+    .nav {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        .btn {
+            width: 100%;
+            font-size: $font-size-base * 0.8;
+            flex: 1;
+            border: 0;
+            border-radius: 0;
+            padding-bottom: 4px;
+
+            &:not(.active) {
+                @include themify($themes) {
+                    background-color: themed('backgroundColorAlt');
+                }
+            }
+
+            i {
+                font-size: $font-size-base * 1.5;
+                display: block;
+                margin-bottom: 2px;
+                text-align: center;
+            }
         }
     }
 }

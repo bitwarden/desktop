@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -61,6 +62,11 @@ import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
+
+import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
+import { SendComponent } from './send/send.component';
+
+import { NavComponent } from './layout/nav.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
@@ -177,6 +183,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         LockComponent,
         LoginComponent,
         ModalComponent,
+        NavComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
@@ -184,6 +191,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SendAddEditComponent,
+        SendComponent,
         SetPasswordComponent,
         SettingsComponent,
         ShareComponent,
@@ -209,9 +218,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PremiumComponent,
         SettingsComponent,
         ShareComponent,
+        SendAddEditComponent,
         TwoFactorOptionsComponent,
     ],
-    providers: [],
+    providers: [DatePipe],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

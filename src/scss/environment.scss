@@ -33,7 +33,7 @@ html.os_macos {
         }
     }
 
-    #vault .header-search {
+    .vault .header-search {
         -webkit-app-region: drag;
 
         input, i {
@@ -41,12 +41,12 @@ html.os_macos {
         }
     }
 
-    #vault .mac-bar {
+    .vault .mac-bar {
         height: 48px;
         -webkit-app-region: drag;
     }
 
-    #vault > #groupings > .content > .inner-content {
+    .vault > .groupings > .content > .inner-content {
         padding-top: 0;
     }
 }
