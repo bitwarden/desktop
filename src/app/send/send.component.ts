@@ -53,6 +53,6 @@ export class SendComponent extends BaseSendComponent implements OnInit {
     }
 
     get selectedSendType() {
-        return this.sends.find((s) => s.id === this.sendId).type;
+        return this.sends.find(s => s.id === this.sendId).type;
     }
 }

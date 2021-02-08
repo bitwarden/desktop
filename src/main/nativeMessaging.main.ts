@@ -73,8 +73,8 @@ export class NativeMessagingMain {
             'allowed_origins': [
                 'chrome-extension://nngceckbapebfimnlniiiahkandclblb/',
                 'chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/',
-                'chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/'
-            ]
+                'chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/',
+            ],
         }};
 
         switch (process.platform) {

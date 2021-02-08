@@ -40,11 +40,14 @@ import { EventType } from 'jslib/enums/eventType';
 import { CipherView } from 'jslib/models/view/cipherView';
 import { FolderView } from 'jslib/models/view/folderView';
 
+import { userError } from '@angular/compiler-cli/src/transformers/util';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+import { TotpService } from 'jslib/abstractions/totp.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 const BroadcasterSubscriptionId = 'VaultComponent';
@@ -77,6 +80,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     addCollectionIds: string[] = null;
     showingModal = false;
     deleted = false;
+    userHasPremiumAccess = false;
 
     private modal: ModalComponent = null;
 
@@ -85,9 +89,11 @@ export class VaultComponent implements OnInit, OnDestroy {
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService,
+        private totpService: TotpService, private userService: UserService) { }
 
     async ngOnInit() {
+        this.userHasPremiumAccess = await this.userService.canAccessPremium();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;
@@ -170,6 +176,14 @@ export class VaultComponent implements OnInit, OnDestroy {
                             this.copyValue(pCipher.login.password, 'password');
                         }
                         break;
+                    case 'copyTotp':
+                        const tComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
+                        const tCipher = tComponent != null ? tComponent.cipher : null;
+                        if (this.cipherId != null && tCipher != null && tCipher.id === this.cipherId &&
+                            tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess) {
+                            const value = await this.totpService.getCode(tCipher.login.totp);
+                            this.copyValue(value, 'verificationCodeTotp');
+                        }
                     default:
                         detectChanges = false;
                         break;
@@ -305,6 +319,15 @@ export class VaultComponent implements OnInit, OnDestroy {
                         click: () => {
                             this.copyValue(cipher.login.password, 'password');
                             this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+                        },
+                    }));
+                }
+                if (cipher.login.hasTotp && (cipher.organizationUseTotp || this.userHasPremiumAccess)) {
+                    menu.append(new remote.MenuItem({
+                        label: this.i18nService.t('copyVerificationCodeTotp'),
+                        click: async () => {
+                            const value = await this.totpService.getCode(cipher.login.totp);
+                            this.copyValue(value, 'verificationCodeTotp');
                         },
                     }));
                 }
