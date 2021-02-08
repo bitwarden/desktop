@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Copy URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Copy Verification Code (TOTP)"
+  },
   "length": {
     "message": "Length"
   },

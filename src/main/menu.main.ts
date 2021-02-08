@@ -38,6 +38,7 @@ export class MenuMain extends BaseMenu {
     searchVault: MenuItem;
     copyUsername: MenuItem;
     copyPassword: MenuItem;
+    copyTotp: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
     constructor(private main: Main) {
@@ -67,6 +68,7 @@ export class MenuMain extends BaseMenu {
         this.searchVault = this.menu.getMenuItemById('searchVault');
         this.copyUsername = this.menu.getMenuItemById('copyUsername');
         this.copyPassword = this.menu.getMenuItemById('copyPassword');
+        this.copyTotp = this.menu.getMenuItemById('copyTotp');
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
@@ -170,6 +172,12 @@ export class MenuMain extends BaseMenu {
                 click: () => this.main.messagingService.send('copyPassword'),
                 accelerator: 'CmdOrCtrl+P',
             },
+            {
+                label: this.main.i18nService.t('copyVerificationCodeTotp'),
+                id: 'copyTotp',
+                click: () => this.main.messagingService.send('copyTotp'),
+                accelerator: 'CmdOrCtrl+T'
+            }
         ]);
 
         if (!isWindowsStore() && !isMacAppStore()) {
