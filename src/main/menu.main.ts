@@ -176,8 +176,8 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('copyVerificationCodeTotp'),
                 id: 'copyTotp',
                 click: () => this.main.messagingService.send('copyTotp'),
-                accelerator: 'CmdOrCtrl+T'
-            }
+                accelerator: 'CmdOrCtrl+T',
+            },
         ]);
 
         if (!isWindowsStore() && !isMacAppStore()) {

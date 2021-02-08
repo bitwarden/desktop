@@ -328,7 +328,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         click: async () => {
                             const value = await this.totpService.getCode(cipher.login.totp);
                             this.copyValue(value, 'verificationCodeTotp');
-                        }
+                        },
                     }));
                 }
                 break;
