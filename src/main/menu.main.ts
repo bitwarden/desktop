@@ -83,6 +83,10 @@ export class MenuMain extends BaseMenu {
             }
         });
 
+        if (this.menu != null) {
+            Menu.setApplicationMenu(this.menu);
+        }
+
         if (this.logOut != null) {
             this.logOut.enabled = isAuthenticated;
         }
