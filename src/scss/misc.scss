@@ -4,6 +4,14 @@ small {
     font-size: $font-size-small;
 }
 
+.subtext {
+    font-size: $font-size-small;
+    @include themify($themes) {
+        color: themed('subtextColor') !important;
+    }
+    padding-top: 5px;
+}
+
 .bg-primary {
     @include themify($themes) {
         background-color: themed('primaryColor') !important;

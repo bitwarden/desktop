@@ -102,6 +102,9 @@
     &:hover, &:focus, &.active {
         @include themify($themes) {
             background-color: themed('boxBackgroundHoverColor');
+            > * {
+                background-color: themed('boxBackgroundHoverColor');
+            }
         }
     }
 
