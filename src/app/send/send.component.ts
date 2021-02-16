@@ -56,11 +56,6 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
             this.ngZone.run(async () => {
                 switch (message.command) {
                     case 'syncCompleted':
-                        if (message.successfully) {
-                            await this.load();
-                        }
-                        break;
-                    case 'syncCompleted':
                         await this.load();
                         break;
                 }
