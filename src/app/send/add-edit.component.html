@@ -28,8 +28,7 @@
                         </div>
                         <div *ngIf="send.type === sendType.File" class="box-content-row" appBowRow>
                             <label for="file">{{'file' | i18n}}</label>
-                            <input type="file" id="file" class="form-control-file" name="file" required
-                                [disabled]="disableSend">
+                            <input type="file" id="file" class="form-control-file" name="file" required>
                             <div class="subtext">{{'sendFileDesc' | i18n}} {{'maxFileSize' | i18n}}</div>
                         </div>
                     </ng-container>
@@ -69,7 +68,7 @@
                     </div>
                     <div class="box-content-row" *ngIf="deletionDateSelect === 0 && !editMode">
                         <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
-                            [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
+                            [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
                     </div>
                     <div class="box-content-row" appBoxRow>
                         <label for="expirationDate">{{'expirationDate' | i18n}}</label>
@@ -82,7 +81,7 @@
                     </div>
                     <div class="box-content-row" *ngIf="expirationDateSelect === 0 && !editMode">
                         <input id="expirationDateCustom" type="datetime-local" name="expirationDate" 
-                            [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
+                            [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
                     </div>
                 </div>
             </div>
