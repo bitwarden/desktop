@@ -43,7 +43,7 @@
                 [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" (scrolled)="loadMore()">
                 <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s.id)"
                     href="#" title="{{'viewItem' | i18n}}"
-                    [ngClass]="{'active': s.id === activeSendId}">
+                    [ngClass]="{'active': s.id === sendId}">
                     <div class="icon" aria-hidden="true">
                         <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-o' : 'fa-file-text-o'"></i>
                     </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <app-send-add-edit id="addEdit" class="details" *ngIf="action == 'add' || action == 'edit'" [sendId]="sendId" [type]="selectedSendType" 
-        (onSavedSend)="refresh()" (onCancelled)="cancel()"></app-send-add-edit>
+        (onSavedSend)="savedSend($event)" (onCancelled)="cancel($event)" (onDeletedSend)="deletedSend($event)"></app-send-add-edit>
     <div class="logo" *ngIf="!action">
         <div class="content">
             <div class="inner-content">

@@ -91,8 +91,20 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
         this.sendId = null;
     }
 
+    async deletedSend(s: SendView) {
+        await this.refresh();
+        this.action = Action.None;
+        this.sendId = null;
+    }
+
+    async savedSend(s: SendView) {
+        console.log(s);
+        await this.refresh();
+        this.selectSend(s.id);
+    }
+
     async selectSend(sendId: string) {
-        if (sendId === this.sendId) {
+        if (sendId === this.sendId && this.action === Action.Edit) {
             return;
         }
         this.action = Action.Edit;

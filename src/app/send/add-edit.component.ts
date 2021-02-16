@@ -26,11 +26,10 @@ export class AddEditComponent extends BaseAddEditComponent {
     }
 
     async refresh() {
+        this.password = null;
         const send = await this.loadSend();
         this.send = await send.decrypt();
-
         this.hasPassword = this.send.password != null && this.send.password.trim() !== '';
-
         this.deletionDate = this.dateToString(this.send.deletionDate);
         this.expirationDate = this.dateToString(this.send.expirationDate);
     }

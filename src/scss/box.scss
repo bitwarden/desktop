@@ -102,7 +102,7 @@
     &:hover, &:focus, &.active {
         @include themify($themes) {
             background-color: themed('boxBackgroundHoverColor');
-            textarea {
+            > * {
                 background-color: themed('boxBackgroundHoverColor');
             }
         }
@@ -169,7 +169,7 @@
     &.box-content-row-multi {
         width: 100%;
 
-        input:not([type="checkbox"]):not([type="checkbox"]) {
+        input:not([type="checkbox"]):not([type="radio"]) {
             width: 100%;
         }
 
@@ -251,8 +251,8 @@
     }
 
     &.box-content-row-radio {
-       display: grid; 
-       grid-template-columns: 1fr;
+       display: flex; 
+       flex-direction: column;
        .item {
            display: flex;
            flex: 1;

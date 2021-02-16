@@ -67,7 +67,7 @@
                         </select>
                         <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
                     </div>
-                    <div class="box-content-row" *ngIf="deletionDateSelect === 0">
+                    <div class="box-content-row" *ngIf="deletionDateSelect === 0 && !editMode">
                         <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
                             [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
                     </div>
@@ -80,7 +80,7 @@
                         </select>
                         <div class="subtext">{{'expirationDateDesc' | i18n}}</div>
                     </div>
-                    <div class="box-content-row" *ngIf="expirationDateSelect === 0">
+                    <div class="box-content-row" *ngIf="expirationDateSelect === 0 && !editMode">
                         <input id="expirationDateCustom" type="datetime-local" name="expirationDate" 
                             [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
                     </div>
