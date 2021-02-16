@@ -1,6 +1,7 @@
 import {
     Component,
     NgZone,
+    OnDestroy,
     OnInit,
     ViewChild,
 } from '@angular/core';
@@ -27,11 +28,13 @@ enum Action {
     Edit = 'edit',
 }
 
+const BroadcasterSubscriptionId = 'SendComponent';
+
 @Component({
     selector: 'app-send',
     templateUrl: 'send.component.html',
 })
-export class SendComponent extends BaseSendComponent implements OnInit {
+export class SendComponent extends BaseSendComponent implements OnInit, OnDestroy {
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
 
     sendId: string;
@@ -39,34 +42,63 @@ export class SendComponent extends BaseSendComponent implements OnInit {
 
     constructor(sendService: SendService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
-        broadcasterService: BroadcasterService, ngZone: NgZone,
+        private broadcasterService: BroadcasterService, ngZone: NgZone,
         searchService: SearchService, policyService: PolicyService,
         userService: UserService) {
         super(sendService, i18nService, platformUtilsService,
-              environmentService, broadcasterService, ngZone, searchService,
+              environmentService, ngZone, searchService,
               policyService, userService);
     }
 
     async ngOnInit() {
         super.ngOnInit();
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'syncCompleted':
+                        if (message.successfully) {
+                            await this.load();
+                        }
+                        break;
+                    case 'syncCompleted':
+                        await this.load();
+                        break;
+                }
+            });
+        });
         await this.load();
     }
 
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
+
     addSend() {
-        this.sendId = null;
         this.action = Action.Add;
+        if (this.addEditComponent != null) {
+            this.addEditComponent.sendId = null;
+            this.addEditComponent.send = null;
+            this.addEditComponent.load();
+        }
     }
 
     editSend(send: SendView) {
         return;
     }
 
-    async selectSend(sendId: string) {
-        this.sendId = sendId;
-        this.action = Action.Edit;
+    cancel(s: SendView) {
+        this.action = Action.None;
+        this.sendId = null;
+    }
 
+    async selectSend(sendId: string) {
+        if (sendId === this.sendId) {
+            return;
+        }
+        this.action = Action.Edit;
+        this.sendId = sendId;
         if (this.addEditComponent != null) {
-            this.addEditComponent.sendId = this.sendId;
+            this.addEditComponent.sendId = sendId;
             await this.addEditComponent.refresh();
         }
     }

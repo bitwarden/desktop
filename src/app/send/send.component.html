@@ -67,7 +67,8 @@
             </button>
         </div>
     </div>
-    <app-send-add-edit id="addEdit" class="details" *ngIf="action == 'add' || action == 'edit'" [sendId]="sendId" [type]="selectedSendType" (onSavedSend)="refresh()"></app-send-add-edit>
+    <app-send-add-edit id="addEdit" class="details" *ngIf="action == 'add' || action == 'edit'" [sendId]="sendId" [type]="selectedSendType" 
+        (onSavedSend)="refresh()" (onCancelled)="cancel()"></app-send-add-edit>
     <div class="logo" *ngIf="!action">
         <div class="content">
             <div class="inner-content">
