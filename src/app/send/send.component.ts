@@ -98,7 +98,6 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
     }
 
     async savedSend(s: SendView) {
-        console.log(s);
         await this.refresh();
         this.selectSend(s.id);
     }
