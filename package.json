@@ -320,7 +320,7 @@
     "papaparse": "4.6.0",
     "regedit": "^3.0.3",
     "rxjs": "6.6.2",
-    "sweetalert2": "9.8.1",
+    "sweetalert2": "10.15.4",
     "tslib": "^2.0.1",
     "zone.js": "0.10.3",
     "zxcvbn": "4.4.2"
