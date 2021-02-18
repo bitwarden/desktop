@@ -115,14 +115,14 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
         const menu = new remote.Menu();
         menu.append(new remote.MenuItem({
             label: this.i18nService.t('copyLink'),
-            click: () => this.copy(send)
+            click: () => this.copy(send),
         }));
         menu.append(new remote.MenuItem({
             label: this.i18nService.t('delete'),
             click: async () => {
                 await this.delete(send);
                 await this.deletedSend(send);
-            }
+            },
         }));
         menu.popup({ window: remote.getCurrentWindow() });
     }
