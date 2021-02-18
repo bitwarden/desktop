@@ -197,6 +197,14 @@ export class AppComponent implements OnInit {
                         break;
                     case 'ssoCallback':
                         this.router.navigate(['sso'], { queryParams: { code: message.code, state: message.state } });
+                    case 'premiumRequired':
+                        const premiumConfirmed = await this.platformUtilsService.showDialog(
+                            this.i18nService.t('premiumRequiredDesc'), this.i18nService.t('premiumRequired'),
+                            this.i18nService.t('learnMore'), this.i18nService.t('cancel'));
+                        if (premiumConfirmed) {
+                            this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
+                        }
+                        break;
                     default:
                 }
             });

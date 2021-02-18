@@ -1,6 +1,12 @@
+<!-- Fix the menu bar -->
 <form (ngSubmit)="submit()" [appApiAction]="formPromise">
     <div class="content">
         <div class="inner-content" *ngIf="send">
+            <div class="box">
+                <app-callout *ngIf="disableSend">
+                    <span>{{'sendDisabledWarning' | i18n}}</span>
+                </app-callout>
+            </div>
             <div class="box">
                 <div class="box-header">
                     {{title}}
@@ -8,7 +14,7 @@
                 <div class="box-content">
                     <div class="box-content-row" appBoxRow>
                         <label for="name">{{'name' | i18n}}</label>
-                        <input id="name" type="text" name="Name" [(ngModel)]="send.name" appAutofocus>
+                        <input id="name" type="text" name="Name" [(ngModel)]="send.name" appAutofocus [readOnly]="disableSend">
                     </div>
                 </div>
             </div>
@@ -35,18 +41,18 @@
                     <ng-container *ngIf="editMode && send.type === sendType.File">
                         <div class="box-content-row" appBoxRow>
                             <label for="file">{{'file' | i18n}}</label>
-                            <input id="file" type="text" name="file" [(ngModel)]="send.file.fileName" readonly>
+                            <input id="file" type="text" name="file" [(ngModel)]="send.file.fileName" readonly [disabled]="disableSend">
                         </div>
                     </ng-container>
                     <ng-container *ngIf="send.type === sendType.Text">
                         <div class="box-content-row" appBoxRow *ngIf="send.type === sendType.Text">
                             <label for="text">{{'text' | i18n}}</label>
-                            <textarea id="text" name="text" [(ngModel)]="send.text.text" rows="6"></textarea>
+                            <textarea id="text" name="text" [(ngModel)]="send.text.text" rows="6" [readOnly]="disableSend"></textarea>
                             <div class="subtext">{{'sendTextDesc' | i18n}}</div>
                         </div>
                         <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="send.type === sendType.Text">
                             <label for="hideText">{{'textHiddenByDefault' | i18n}}</label>
-                            <input id="hideText" name="hideText" type="checkbox" [(ngModel)]="send.text.hidden">
+                            <input id="hideText" name="hideText" type="checkbox" [(ngModel)]="send.text.hidden" [disabled]="disableSend">
                         </div>
                     </ng-container>
                 </div>
@@ -54,99 +60,123 @@
             <div class="box">
                 <div class="box-header">
                     {{'options' | i18n}}
+                    <a class="toggle" href="#" appStopClick appBlurClick role="button" (click)="toggleOptions()">
+                        <i class="fa fa-lg" aria-hidden="true" [ngClass]="{'fa-chevron-down': !showOptions, 'fa-chevron-up': showOptions}"></i>
+                    </a>
                 </div>
-                <div class="box-content">
-                    <div class="box-content-row" appBoxRow>
-                        <label for="deletionDate">{{'deletionDate' | i18n}}</label>
-                        <input id="deletionDate" type="datetime-local" name="deletionDate"
-                            [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" *ngIf="editMode">
-                        <select id="deletionDate" name="DeletionDateSelect" [(ngModel)]="deletionDateSelect" required *ngIf="!editMode">
-                            <option *ngFor="let o of deletionDateOptions" [ngValue]="o.value">{{o.name}}
-                            </option>
-                        </select>
-                        <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
+            </div>
+            <div [hidden]="!showOptions">
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-content-row" appBoxRow *ngIf="!editMode">
+                            <label for="deletionDate">{{'deletionDate' | i18n}}</label>
+                            <select id="deletionDate" name="DeletionDateSelect" [(ngModel)]="deletionDateSelect" required [readOnly]="disableSend">
+                                <option *ngFor="let o of deletionDateOptions" [ngValue]="o.value">{{o.name}}
+                                </option>
+                            </select>
+                            <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
+                        </div>
+                        <div class="box-content-row" *ngIf="deletionDateSelect === 0 || editMode">
+                            <label *ngIf="editMode" for="deletionDateCustom">{{'deletionDate' | i18n}}</label>
+                            <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
+                                [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
+                            <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
+                        </div>
+                        <div class="box-content-row" appBoxRow *ngIf="!editMode">
+                            <label for="expirationDate">{{'expirationDate' | i18n}}</label>
+                            <select id="expirationDate" name="expirationDateSelect" [(ngModel)]="expirationDateSelect" required>
+                                <option *ngFor="let o of expirationDateOptions" [ngValue]="o.value">{{o.name}}
+                                </option>
+                            </select>
+                            <div class="subtext">{{'expirationDateDesc' | i18n}}</div>
+                        </div>
+                        <div class="box-content-row" *ngIf="expirationDateSelect === 0 || editMode">
+                            <label *ngIf="editMode" for="expirationDateCustom">{{'expirationDate' | i18n}}</label>
+                            <input id="expirationDateCustom" type="datetime-local" name="expirationDate" 
+                                [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
+                            <div *ngIf="editMode" class="subtext">{{'expirationDateDesc' | i18n}}</div>
+                        </div>
                     </div>
-                    <div class="box-content-row" *ngIf="deletionDateSelect === 0 && !editMode">
-                        <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
-                            [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-content-row" appBoxRow>
+                            <label for="maxAccessCount">{{'maxAccessCount' | i18n}}</label>
+                            <input id="maxAccessCount" type="number" name="maxAccessCount" [(ngModel)]="send.maxAccessCount" [readOnly]="disableSend">
+                            <div class="subtext">{{'maxAccessCountDesc' | i18n}}</div>
+                        </div>
+                        <div *ngIf="editMode" class="box-content-row" appBoxRow>
+                            <label for="accessCount">{{'currentAccessCount' | i18n}}</label>
+                            <input id="accessCount" type="text" name="accessCount" [(ngModel)]="send.accessCount" readonly>
+                        </div>
                     </div>
-                    <div class="box-content-row" appBoxRow>
-                        <label for="expirationDate">{{'expirationDate' | i18n}}</label>
-                        <input id="expirationDate" type="datetime-local" name="expirationDate" [(ngModel)]="expirationDate" *ngIf="editMode">
-                        <select id="expirationDate" name="expirationDateSelect" [(ngModel)]="expirationDateSelect" required *ngIf="!editMode">
-                            <option *ngFor="let o of expirationDateOptions" [ngValue]="o.value">{{o.name}}
-                            </option>
-                        </select>
-                        <div class="subtext">{{'expirationDateDesc' | i18n}}</div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-content-row box-content-row-flex" appBoxRow>
+                            <div class="row-main">
+                                <label for="password">{{(hasPassword ? 'newPassword' : 'password') | i18n}}</label>
+                                <input id="password" name="password" type="{{showPassword ? 'text' : 'password'}}" [(ngModel)]="password" [readOnly]="disableSend">
+                                <div class="subtext">{{'sendPasswordDesc' | i18n}}</div>
+                            </div>
+                            <div class="action-buttons">
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
+                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePasswordVisible()"  [disabled]="disableSend">
+                                    <i class="fa fa-lg" aria-hidden="true"
+                                        [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="box-content-row" *ngIf="expirationDateSelect === 0 && !editMode">
-                        <input id="expirationDateCustom" type="datetime-local" name="expirationDate" 
-                            [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
+                </div>
+                <div class="box">
+                    <div class="box-header">
+                        {{'notes' | i18n}}
+                    </div>
+                    <div class="box-content">
+                        <div class="box-content-row" appBoxRow>
+                            <textarea id="notes" name="notes" [(ngModel)]="send.notes" rows="6" [readOnly]="disableSend"></textarea>
+                            <small class="subtext">{{'sendNotesDesc' | i18n}}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                            <label for="disabled">{{'disableSend' | i18n}}</label>
+                            <input id="disabled" type="checkbox" name="disabled" [(ngModel)]="send.disabled" [disabled]="disableSend">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="box">
-                <div class="box-content">
-                    <div class="box-content-row" appBoxRow>
-                        <label for="maxAccessCount">{{'maxAccessCount' | i18n}}</label>
-                        <input id="maxAccessCount" type="number" name="maxAccessCount" [(ngModel)]="send.maxAccessCount">
-                        <div class="subtext">{{'maxAccessCountDesc' | i18n}}</div>
-                    </div>
-                    <div *ngIf="editMode" class="box-content-row" appBoxRow>
-                        <label for="accessCount">{{'currentAccessCount' | i18n}}</label>
-                        <input id="accessCount" type="text" name="accessCount" [(ngModel)]="send.accessCount" readonly>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-content">
-                    <div class="box-content-row" appBoxRow>
-                        <label for="password">{{(hasPassword ? 'newPassword' : 'password') | i18n}}</label>
-                        <input id="password" type="password" name="password" [(ngModel)]="password">
-                        <div class="subtext">{{'sendPasswordDesc' | i18n}}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-header">
-                    {{'notes' | i18n}}
-                </div>
-                <div class="box-content">
-                    <div class="box-content-row" appBoxRow>
-                        <textarea id="notes" name="notes" [(ngModel)]="send.notes" rows="6"></textarea>
-                        <small class="subtext">{{'sendNotesDesc' | i18n}}</small>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-content">
-                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                        <label for="disabled">{{'disableSend' | i18n}}</label>
-                        <input id="disabled" type="checkbox" name="disabled" [(ngModel)]="send.disabled">
-                    </div>
-                </div>
-            </div>
-            <div class="box" *ngIf="editMode">
                 <div class="box-header">
                     {{'share' | i18n}}
                 </div>
                 <div class="box-content">
-                    <div class="box-content-row" appBoxRow>
-                        <label for="url">{{'sendLink' | i18n}}</label>
-                        <input id="url" name="url" [ngModel]="link" readonly>
+                    <div class="box-content-row" appBoxRow *ngIf="editMode">
+                        <label for="link">{{'sendLinkLabel' | i18n}}</label>
+                        <input id="link" name="link" [ngModel]="link" readonly>
+                    </div>
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="copyLink">{{'copySendLinkOnSave' | i18n}}</label>
+                        <input id="copyLink" name="copyLink" [(ngModel)]="copyLink" type="checkbox">
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer">
-        <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}">
+        <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}" *ngIf="!disableSend">
             <i class="fa fa-save fa-lg fa-fw" aria-hidden="true"></i>
         </button>
         <button appBlurClick type="button" (click)="cancel()">
             {{'cancel' | i18n}}
         </button>
         <div class="right">
+            <button appBlurClick type="button" (click)="copyLinkToClipboard(link)" appA11yTitle="{{'copySendLinkToClipboard' | i18n}}" *ngIf="editMode">
+                <i class="fa fa-copy fa-lg fa-fw" aria-hidden="true"></i>
+            </button>
             <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
                 appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
                 [appApiAction]="deletePromise">

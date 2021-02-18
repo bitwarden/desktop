@@ -7,6 +7,7 @@
     .box-header {
         margin: 0 10px 5px 10px;
         text-transform: uppercase;
+        display: flex;
 
         @include themify($themes) {
             color: themed('headingColor');
@@ -17,6 +18,15 @@
             border: none;
             text-transform: uppercase;
 
+            @include themify($themes) {
+                color: themed('headingColor');
+            }
+        }
+
+        .toggle {
+            background-color: transparent;
+            margin-left: 4px;
+            font-size: $font-size-small;
             @include themify($themes) {
                 color: themed('headingColor');
             }

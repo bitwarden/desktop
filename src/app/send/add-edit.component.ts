@@ -17,6 +17,7 @@ import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/componen
     templateUrl: 'add-edit.component.html',
 })
 export class AddEditComponent extends BaseAddEditComponent {
+    showOptions = false;
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         environmentService: EnvironmentService, datePipe: DatePipe,
         sendService: SendService, userService: UserService,
@@ -36,5 +37,15 @@ export class AddEditComponent extends BaseAddEditComponent {
 
     cancel() {
         this.onCancelled.emit(this.send);
+    }
+
+    toggleOptions() {
+        this.showOptions = !this.showOptions;
+    }
+
+    copyLinkToClipboard(link: string) {
+        super.copyLinkToClipboard(link);
+        this.platformUtilsService.showToast('success', null,
+            this.i18nService.t('valueCopied', this.i18nService.t('sendLink')));
     }
 }

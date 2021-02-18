@@ -1,3 +1,5 @@
+import { remote } from 'electron';
+
 import {
     Component,
     NgZone,
@@ -77,10 +79,6 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
         }
     }
 
-    editSend(send: SendView) {
-        return;
-    }
-
     cancel(s: SendView) {
         this.action = Action.None;
         this.sendId = null;
@@ -111,5 +109,21 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
 
     get selectedSendType() {
         return this.sends.find(s => s.id === this.sendId)?.type;
+    }
+
+    viewSendMenu(send: SendView) {
+        const menu = new remote.Menu();
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('copyLink'),
+            click: () => this.copy(send)
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('delete'),
+            click: async () => {
+                await this.delete(send);
+                await this.deletedSend(send);
+            }
+        }));
+        menu.popup({ window: remote.getCurrentWindow() });
     }
 }
