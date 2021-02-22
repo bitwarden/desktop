@@ -198,27 +198,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         await this.viewCipher(cipherView);
                     }
                 } else if (params.action === 'add') {
-                    switch (params.addType) {
-                        case 'Login':
-                        case '1':
-                            this.addType = CipherType.Login;
-                            break;
-                        case 'SecureNote':
-                        case '2':
-                            this.addType = CipherType.SecureNote;
-                            break;
-                        case 'Card':
-                        case '3':
-                            this.addType = CipherType.Card;
-                            break;
-                        case 'Identity':
-                        case '4':
-                            this.addType = CipherType.Identity;
-                            break;
-                        default:
-                            this.addType = CipherType.Login;
-                            break;
-                    }
+                    this.addType = Number(params.addType);
                     this.addCipher(this.addType);
                 }
 
