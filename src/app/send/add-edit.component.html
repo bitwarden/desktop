@@ -26,7 +26,7 @@
                                 <input type="radio" class="radio" [(ngModel)]="send.type" name="Type_{{o.value}}"
                                     id="type_{{o.value}}" [value]="o.value" (change)="typeChanged(o)"
                                     [checked]="send.type === o.value">
-                                <label class="label-hack" for="type_{{o.value}}">
+                                <label class="unstyled" for="type_{{o.value}}">
                                     {{o.name}}
                                 </label>
                             </div>

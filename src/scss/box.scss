@@ -128,7 +128,7 @@
         overflow-x: auto;
     }
 
-    .row-label, label:not(.label-hack) {
+    .row-label, label:not(.unstyled) {
         font-size: $font-size-small;
         display: block;
         width: 100%;
