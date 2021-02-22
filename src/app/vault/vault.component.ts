@@ -49,7 +49,6 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 
-const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 const BroadcasterSubscriptionId = 'VaultComponent';
 
 @Component({
@@ -63,11 +62,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
     @ViewChild('passwordGenerator', { read: ViewContainerRef, static: true }) passwordGeneratorModalRef: ViewContainerRef;
     @ViewChild('attachments', { read: ViewContainerRef, static: true }) attachmentsModalRef: ViewContainerRef;
-    @ViewChild('folderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryModalRef: ViewContainerRef;
-    @ViewChild('exportVault', { read: ViewContainerRef, static: true }) exportVaultModalRef: ViewContainerRef;
     @ViewChild('share', { read: ViewContainerRef, static: true }) shareModalRef: ViewContainerRef;
     @ViewChild('collections', { read: ViewContainerRef, static: true }) collectionsModalRef: ViewContainerRef;
+    @ViewChild('folderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
 
     action: string;
     cipherId: string = null;
@@ -111,42 +109,12 @@ export class VaultComponent implements OnInit, OnDestroy {
                     case 'newSecureNote':
                         await this.addCipher(CipherType.SecureNote);
                         break;
-                    case 'newFolder':
-                        await this.addFolder();
-                        break;
                     case 'focusSearch':
                         (document.querySelector('#search') as HTMLInputElement).select();
                         detectChanges = false;
                         break;
                     case 'openPasswordGenerator':
                         await this.openPasswordGenerator(false);
-                        break;
-                    case 'exportVault':
-                        await this.openExportVault();
-                        break;
-                    case 'syncVault':
-                        try {
-                            await this.syncService.fullSync(true, true);
-                            this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
-                            this.analytics.eventTrack.next({ action: 'Synced Full' });
-                        } catch {
-                            this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
-                        }
-                        break;
-                    case 'checkSyncVault':
-                        try {
-                            const lastSync = await this.syncService.getLastSync();
-                            let lastSyncAgo = SyncInterval + 1;
-                            if (lastSync != null) {
-                                lastSyncAgo = new Date().getTime() - lastSync.getTime();
-                            }
-
-                            if (lastSyncAgo >= SyncInterval) {
-                                await this.syncService.fullSync(false);
-                            }
-                        } catch { }
-
-                        this.messagingService.send('scheduleNextSync');
                         break;
                     case 'syncCompleted':
                         await this.load();
@@ -230,7 +198,28 @@ export class VaultComponent implements OnInit, OnDestroy {
                         await this.viewCipher(cipherView);
                     }
                 } else if (params.action === 'add') {
-                    await this.addCipher();
+                    switch (params.addType) {
+                        case 'Login':
+                        case '1':
+                            this.addType = CipherType.Login;
+                            break;
+                        case 'SecureNote':
+                        case '2':
+                            this.addType = CipherType.SecureNote;
+                            break;
+                        case 'Card':
+                        case '3':
+                            this.addType = CipherType.Card;
+                            break;
+                        case 'Identity':
+                        case '4':
+                            this.addType = CipherType.Identity;
+                            break;
+                        default:
+                            this.addType = CipherType.Login;
+                            break;
+                    }
+                    this.addCipher(this.addType);
                 }
 
                 if (params.deleted) {
@@ -239,7 +228,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 } else if (params.favorites) {
                     this.groupingsComponent.selectedFavorites = true;
                     await this.filterFavorites();
-                } else if (params.type) {
+                } else if (params.type && params.action !== 'add') {
                     const t = parseInt(params.type, null);
                     this.groupingsComponent.selectedType = t;
                     await this.filterCipherType(t);
@@ -593,42 +582,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
-    async openExportVault() {
-        if (this.modal != null) {
-            this.modal.close();
-        }
-
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.exportVaultModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<ExportComponent>(ExportComponent, this.exportVaultModalRef);
-
-        childComponent.onSaved.subscribe(() => {
-            this.modal.close();
-        });
-
-        this.modal.onClosed.subscribe(() => {
-            this.modal = null;
-        });
-    }
-
     async addFolder() {
-        if (this.modal != null) {
-            this.modal.close();
-        }
-
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef, true, comp => comp.folderId = null);
-
-        childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
-            this.modal.close();
-            await this.groupingsComponent.loadFolders();
-        });
-
-        this.modal.onClosed.subscribe(() => {
-            this.modal = null;
-        });
+        this.messagingService.send('newFolder');
     }
 
     async editFolder(folderId: string) {

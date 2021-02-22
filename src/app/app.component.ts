@@ -2,11 +2,9 @@ import {
     BodyOutputType,
     Toast,
     ToasterConfig,
-    ToasterContainerComponent,
     ToasterService,
 } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import {
     Component,
@@ -16,7 +14,6 @@ import {
     SecurityContext,
     Type,
     ViewChild,
-    ViewContainerRef,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -52,10 +49,16 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
 import { ConstantsService } from 'jslib/services/constants.service';
-import { NativeMessagingService } from '../services/nativeMessaging.service';
+
+import { CipherType } from 'jslib/enums/cipherType';
+
+import { ExportComponent } from './vault/export.component';
+import { FolderAddEditComponent } from './vault/folder-add-edit.component';
+import { PasswordGeneratorComponent } from './vault/password-generator.component';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
+const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 
 @Component({
     selector: 'app-root',
@@ -65,12 +68,18 @@ const IdleTimeout = 60000 * 10; // 10 minutes
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
         <ng-template #passwordHistory></ng-template>
+        <ng-template #appFolderAddEdit></ng-template>
+        <ng-template #exportVault></ng-template>
+        <ng-template #appPasswordGenerator></ng-template>
         <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
     @ViewChild('premium', { read: ViewContainerRef, static: true }) premiumRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryRef: ViewContainerRef;
+    @ViewChild('exportVault', { read: ViewContainerRef, static: true }) exportVaultModalRef: ViewContainerRef;
+    @ViewChild('appFolderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
+    @ViewChild('appPasswordGenerator', { read: ViewContainerRef, static: true }) passwordGeneratorModalRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
@@ -84,8 +93,7 @@ export class AppComponent implements OnInit {
     private idleTimer: number = null;
     private isIdle = false;
 
-    constructor(private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
-        private broadcasterService: BroadcasterService, private userService: UserService,
+    constructor(private broadcasterService: BroadcasterService, private userService: UserService,
         private tokenService: TokenService, private folderService: FolderService,
         private settingsService: SettingsService, private syncService: SyncService,
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
@@ -98,7 +106,7 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService, private nativeMessagingService: NativeMessagingService) { }
+        private policyService: PolicyService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -173,7 +181,7 @@ export class AppComponent implements OnInit {
                             this.i18nService.t('fingerprintPhrase'), this.i18nService.t('learnMore'),
                             this.i18nService.t('close'));
                         if (result) {
-                            this.platformUtilsService.launchUri(
+                           this.platformUtilsService.launchUri(
                                 'https://help.bitwarden.com/article/fingerprint-phrase/');
                         }
                         break;
@@ -205,7 +213,55 @@ export class AppComponent implements OnInit {
                             this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
                         }
                         break;
+                    case 'syncVault':
+                        try {
+                            await this.syncService.fullSync(true, true);
+                            this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
+                            this.analytics.eventTrack.next({ action: 'Synced Full' });
+                        } catch {
+                            this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
+                        }
+                        break;
+                    case 'checkSyncVault':
+                        try {
+                            const lastSync = await this.syncService.getLastSync();
+                            let lastSyncAgo = SyncInterval + 1;
+                            if (lastSync != null) {
+                                lastSyncAgo = new Date().getTime() - lastSync.getTime();
+                            }
+
+                            if (lastSyncAgo >= SyncInterval) {
+                                await this.syncService.fullSync(false);
+                            }
+                        } catch { }
+                        this.messagingService.send('scheduleNextSync');
+                        break;
+                    case 'exportVault':
+                        await this.openExportVault();
+                        break;
+                    case 'newLogin':
+                        this.routeToVault('add', CipherType.Login);
+                        break;
+                    case 'newCard':
+                        this.routeToVault('add', CipherType.Card);
+                        break;
+                    case 'newIdentity':
+                        this.routeToVault('add', CipherType.Identity);
+                        break;
+                    case 'newSecureNote':
+                        this.routeToVault('add', CipherType.SecureNote);
+                        break;
                     default:
+                        break;
+                    case 'newFolder':
+                        await this.addFolder();
+                        break;
+                    case 'openPasswordGenerator':
+                        // openPasswordGenerator has extended functionality if called in the vault
+                        if (!this.router.url.includes('vault')) {
+                            await this.openPasswordGenerator();
+                        }
+                        break;
                 }
             });
         });
@@ -213,6 +269,59 @@ export class AppComponent implements OnInit {
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    }
+
+    async openExportVault() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.exportVaultModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<ExportComponent>(ExportComponent, this.exportVaultModalRef);
+
+        childComponent.onSaved.subscribe(() => {
+            this.modal.close();
+        });
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
+    }
+
+    async addFolder() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<FolderAddEditComponent>(
+            FolderAddEditComponent, this.folderAddEditModalRef, true, comp => comp.folderId = null);
+
+        childComponent.onSavedFolder.subscribe(async () => {
+            this.modal.close();
+            this.syncService.fullSync(false);
+        });
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
+    }
+
+    async openPasswordGenerator() {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.passwordGeneratorModalRef.createComponent(factory).instance;
+        this.modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
+            this.passwordGeneratorModalRef, true, comp => comp.showSelect = false);
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
     }
 
     private async updateAppMenu() {
@@ -327,5 +436,17 @@ export class AppComponent implements OnInit {
             }
         }
         this.toasterService.popAsync(toast);
+    }
+
+    private routeToVault(action: string, cipherType: CipherType) {
+        if (!this.router.url.includes('vault')) {
+            this.router.navigate(['/vault'], {
+                queryParams: {
+                    action: action,
+                    addType: cipherType,
+                },
+                replaceUrl: true,
+            });
+        }
     }
 }
