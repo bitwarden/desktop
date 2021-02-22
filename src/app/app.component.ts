@@ -14,6 +14,7 @@ import {
     SecurityContext,
     Type,
     ViewChild,
+    ViewContainerRef,
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -78,8 +79,10 @@ export class AppComponent implements OnInit {
     @ViewChild('premium', { read: ViewContainerRef, static: true }) premiumRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryRef: ViewContainerRef;
     @ViewChild('exportVault', { read: ViewContainerRef, static: true }) exportVaultModalRef: ViewContainerRef;
-    @ViewChild('appFolderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
-    @ViewChild('appPasswordGenerator', { read: ViewContainerRef, static: true }) passwordGeneratorModalRef: ViewContainerRef;
+    @ViewChild('appFolderAddEdit', { read: ViewContainerRef, static: true })
+        folderAddEditModalRef: ViewContainerRef;
+    @ViewChild('appPasswordGenerator', { read: ViewContainerRef, static: true })
+        passwordGeneratorModalRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
