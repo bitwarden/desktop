@@ -47,6 +47,9 @@ export class Main {
             appDataPath = path.join(process.env.SNAP_USER_DATA, 'appdata');
         }
 
+//Disable hardware GPU accelerate
+        app.disableHardwareAcceleration();
+
         app.on('ready', () => {
             /*
             globalShortcut.register('CommandOrControl+Shift+L', async () => {
