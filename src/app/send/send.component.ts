@@ -1,6 +1,9 @@
+import { remote } from 'electron';
+
 import {
     Component,
     NgZone,
+    OnDestroy,
     OnInit,
     ViewChild,
 } from '@angular/core';
@@ -27,11 +30,13 @@ enum Action {
     Edit = 'edit',
 }
 
+const BroadcasterSubscriptionId = 'SendComponent';
+
 @Component({
     selector: 'app-send',
     templateUrl: 'send.component.html',
 })
-export class SendComponent extends BaseSendComponent implements OnInit {
+export class SendComponent extends BaseSendComponent implements OnInit, OnDestroy {
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
 
     sendId: string;
@@ -39,39 +44,86 @@ export class SendComponent extends BaseSendComponent implements OnInit {
 
     constructor(sendService: SendService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
-        broadcasterService: BroadcasterService, ngZone: NgZone,
+        private broadcasterService: BroadcasterService, ngZone: NgZone,
         searchService: SearchService, policyService: PolicyService,
         userService: UserService) {
         super(sendService, i18nService, platformUtilsService,
-              environmentService, broadcasterService, ngZone, searchService,
+              environmentService, ngZone, searchService,
               policyService, userService);
     }
 
     async ngOnInit() {
         super.ngOnInit();
+        this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+            this.ngZone.run(async () => {
+                switch (message.command) {
+                    case 'syncCompleted':
+                        await this.load();
+                        break;
+                }
+            });
+        });
         await this.load();
     }
 
-    addSend() {
-        this.sendId = null;
-        this.action = Action.Add;
+    ngOnDestroy() {
+        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
-    editSend(send: SendView) {
-        return;
+    addSend() {
+        this.action = Action.Add;
+        if (this.addEditComponent != null) {
+            this.addEditComponent.sendId = null;
+            this.addEditComponent.send = null;
+            this.addEditComponent.load();
+        }
+    }
+
+    cancel(s: SendView) {
+        this.action = Action.None;
+        this.sendId = null;
+    }
+
+    async deletedSend(s: SendView) {
+        await this.refresh();
+        this.action = Action.None;
+        this.sendId = null;
+    }
+
+    async savedSend(s: SendView) {
+        await this.refresh();
+        this.selectSend(s.id);
     }
 
     async selectSend(sendId: string) {
-        this.sendId = sendId;
+        if (sendId === this.sendId && this.action === Action.Edit) {
+            return;
+        }
         this.action = Action.Edit;
-
+        this.sendId = sendId;
         if (this.addEditComponent != null) {
-            this.addEditComponent.sendId = this.sendId;
+            this.addEditComponent.sendId = sendId;
             await this.addEditComponent.refresh();
         }
     }
 
     get selectedSendType() {
         return this.sends.find(s => s.id === this.sendId)?.type;
+    }
+
+    viewSendMenu(send: SendView) {
+        const menu = new remote.Menu();
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('copyLink'),
+            click: () => this.copy(send),
+        }));
+        menu.append(new remote.MenuItem({
+            label: this.i18nService.t('delete'),
+            click: async () => {
+                await this.delete(send);
+                await this.deletedSend(send);
+            },
+        }));
+        menu.popup({ window: remote.getCurrentWindow() });
     }
 }

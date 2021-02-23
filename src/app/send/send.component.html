@@ -42,8 +42,8 @@
             <div class="list" *ngIf="filteredSends.length" infiniteScroll [infiniteScrollDistance]="1"
                 [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" (scrolled)="loadMore()">
                 <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s.id)"
-                    href="#" title="{{'viewItem' | i18n}}"
-                    [ngClass]="{'active': s.id === activeSendId}">
+                    href="#" title="{{'viewItem' | i18n}}" (contextmenu)="viewSendMenu(s)"
+                    [ngClass]="{'active': s.id === sendId}">
                     <div class="icon" aria-hidden="true">
                         <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-o' : 'fa-file-text-o'"></i>
                     </div>
@@ -67,7 +67,8 @@
             </button>
         </div>
     </div>
-    <app-send-add-edit id="addEdit" class="details" *ngIf="action == 'add' || action == 'edit'" [sendId]="sendId" [type]="selectedSendType" (onSavedSend)="refresh()"></app-send-add-edit>
+    <app-send-add-edit id="addEdit" class="details" *ngIf="action == 'add' || action == 'edit'" [sendId]="sendId" [type]="selectedSendType" 
+        (onSavedSend)="savedSend($event)" (onCancelled)="cancel($event)" (onDeletedSend)="deletedSend($event)"></app-send-add-edit>
     <div class="logo" *ngIf="!action">
         <div class="content">
             <div class="inner-content">

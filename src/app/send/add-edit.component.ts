@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { EnvironmentService } from 'jslib/abstractions/environment.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -26,11 +26,21 @@ export class AddEditComponent extends BaseAddEditComponent {
     }
 
     async refresh() {
+        this.password = null;
         const send = await this.loadSend();
         this.send = await send.decrypt();
         this.hasPassword = this.send.password != null && this.send.password.trim() !== '';
         this.deletionDate = this.dateToString(this.send.deletionDate);
         this.expirationDate = this.dateToString(this.send.expirationDate);
-        this.password = null;
+    }
+
+    cancel() {
+        this.onCancelled.emit(this.send);
+    }
+
+    copyLinkToClipboard(link: string) {
+        super.copyLinkToClipboard(link);
+        this.platformUtilsService.showToast('success', null,
+            this.i18nService.t('valueCopied', this.i18nService.t('sendLink')));
     }
 }
