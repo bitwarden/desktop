@@ -23,6 +23,8 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib/angular/components/lock.component';
 
+import { Utils } from 'jslib/misc/utils';
+
 const BroadcasterSubscriptionId = 'LockComponent';
 
 @Component({
@@ -30,6 +32,10 @@ const BroadcasterSubscriptionId = 'LockComponent';
     templateUrl: 'lock.component.html',
 })
 export class LockComponent extends BaseLockComponent implements OnDestroy {
+
+    private isInCozyApp: boolean;
+    private baseUrl: string;
+
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService,
@@ -43,6 +49,22 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     async ngOnInit() {
         await super.ngOnInit();
+        // @override by Cozy
+        // check if code is run into a Cozy app
+        // if yes, retrive url and user email
+        const cozyDataNode = document.getElementById('cozy-app');
+        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+        if (cozyDomain) {
+            this.isInCozyApp = true;
+            this.email = `me@${cozyDomain}`;
+            this.baseUrl = `https://${cozyDomain}/`;
+            this.environmentService.setUrls({
+                base: this.baseUrl + 'bitwarden',
+            });
+            const vaultUrl = this.environmentService.getWebVaultUrl();
+            this.webVaultHostname = Utils.getHostname(vaultUrl);
+        }
+        // end Cozy override
         this.route.queryParams.subscribe((params) => {
             if (this.supportsBiometric && params.promptBiometric) {
                 setTimeout(() => this.unlockBiometric(), 1000);

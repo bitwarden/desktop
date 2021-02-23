@@ -399,33 +399,212 @@ app-root > #loading {
 }
 
 
-.icon-cozy {
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 16px;
-    height: 16px;
-    background-position: center;
-}
-
-.icon-login {
-    background-image: url('../images/icons-login.svg');
+.icon-type {
     width: 24px;
     height: 24px;
+    margin-right: 5px;
 }
 
-.icon-cards {
-    background-image: url('../images/icons-card.svg');
-    width: 24px;
-    height: 24px;
+img.icon-type {
+    width: 17px;
+    height: 17px;
+    margin-right: 9px;
+    margin-left: 4px;
 }
 
-.icon-identity {
-    background-image: url('../images/icons-identity.svg');
-    width: 24px;
-    height: 24px;
+.icon-wrapper {
+    float: left;
+    display: flex;
+    align-items: center;
+    height: 36px;
 }
 
-.icon-copy {
-    background-image: url('images/icons-16-copy.svg');
+.inner-cozy-logo {
+    width: 77%;
+    height: 100%;
+}
+
+
+.material-input {
+
+    cursor:text;
+    border: 1px solid;
+    border-radius: 4px;
+    border-color: #ffffffa3;
+    position: relative;
+    & ::selection {
+        background: #b5d4ff;;
+    }
+
+
+    .error label {
+        color: #fecece;
+    }
+
+    label {
+        font-size: 16px;
+        color: #b5d4ff;
+    }
+
+
+    $visible-label-top: 0.8rem;
+    $visible-label-padding: 0.3rem;
+    $visible-label-left: 0.75rem;
+    $visible-label-right-for-eye: 2rem;
+    $visible-label-right: 0.1rem;
+    $visible-label-focused-top: -0.7rem;
+
+    .visible-label {
+        position: absolute;
+        top: $visible-label-top;
+        transition: all 0.5s;
+        display: inline-block;
+        height: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .visible-label > label {
+        cursor:text;
+        position: absolute;
+        left: $visible-label-left;
+        padding-left: 0;
+        padding-right: 0;
+        max-width: calc(100% - #{ $visible-label-left });
+        transition: all 0.5s;
+        background-color: #297EF2;
+    }
+
+    &.eyed > .visible-label > label {
+        max-width: calc(100% - #{ 2 * $visible-label-padding + $visible-label-left + $visible-label-right-for-eye});
+    }
+
+    .shadow-placeholder {
+        opacity: 0;
+        color: black;
+        position: relative;
+        display: block;
+        padding:
+            $visible-label-top
+            $visible-label-padding
+            $visible-label-top
+            #{$visible-label-left + $visible-label-padding};
+    }
+
+    &.eyed > .shadow-placeholder {
+        padding-right: $visible-label-padding + $visible-label-right-for-eye;
+    }
+
+    &.focused-or-filled > .visible-label {
+        top: $visible-label-focused-top;
+    }
+
+    &.focused-or-filled .visible-label > label {
+        font-size: 12px;
+        max-width: calc(100% - #{ 2 * $visible-label-padding + $visible-label-left + $visible-label-right});
+        padding-left: $visible-label-padding;
+        padding-right: $visible-label-padding;
+    }
+
+    .box-labeled-input {
+        position: absolute;
+        top: $visible-label-focused-top;
+        height: calc(100% - #{$visible-label-focused-top});
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shadow-label {
+        opacity: 0;
+        cursor:text;
+        position: relative;
+        left: $visible-label-left + $visible-label-padding;
+        font-size: 12px;
+        max-width: calc(100% - #{$visible-label-left + 2*$visible-label-padding + $visible-label-right});
+        display: block;
+    }
+
+    .box-input {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    input {
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        color: inherit;
+        padding-left: $visible-label-left + $visible-label-padding;
+        box-sizing: border-box;
+        outline: none;
+        font-size: 16px;
+        &::placeholder {
+            color: #b5d4ff;
+        }
+        &::-ms-clear, &::-ms-reveal {
+            display: none;
+        }
+    }
+
+    .visibility-btn {
+        cursor: pointer;
+        margin-left: 0.25rem;
+        margin-right: 1rem;
+        padding-bottom: 4px;
+        display: flex;
+        align-items: center;
+        color: inherit;
+    }
+
+    hr {
+        margin: 0 10px 0 10px;
+        border-width: 0;
+        border-bottom: 1px solid #5892E6;
+    }
+
+    #error-label {
+        width: 100%;
+        display: block;
+        color: #fecece;
+        font-style: italic;
+        font-size: 14px;
+    }
+
+    button {
+        border: 1px solid white;
+        border-radius: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px 10px 10px 10px;
+        width: 100%;
+        color: #297ef2;
+        background-color: white;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:disabled {
+            color: #84b5f8;
+            background-color: #d3e5ff;
+            cursor: progress;
+        }
+    }
+
+    :disabled {
+        cursor: progress;
+    }
+}
+
+.waiting .material-input {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.64);
+    color: #b5d4ff;
+    cursor: progress;
+}
+
+.error .material-input {
+    border-color: #fecece;
 }

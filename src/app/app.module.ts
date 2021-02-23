@@ -30,7 +30,9 @@ import { TwoFactorOptionsComponent } from './accounts/two-factor-options.compone
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
 import { CalloutComponent } from 'jslib/angular/components/callout.component';
-import { IconComponent } from 'jslib/angular/components/icon.component';
+// import { IconComponent } from 'jslib/angular/components/icon.component';
+import { IconComponent } from './vault/icon.component';
+
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
 import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';

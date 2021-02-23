@@ -232,21 +232,21 @@
                             <option *ngFor="let f of folders" [ngValue]="f.id">{{f.name}}</option>
                         </select>
                     </div>
-                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <!-- <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="favorite">{{'favorite' | i18n}}</label>
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
-                    </div>
-                    <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+                    </div> -->
+                    <!-- <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="attachments()" *ngIf="editMode && !cloneMode" role="button">
                         <div class="row-main">{{'attachments' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
-                    </a>
-                    <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+                    </a> -->
+                    <!-- <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="editCollections()" *ngIf="editMode && !cloneMode && cipher.organizationId"
                         role="button">
                         <div class="row-main">{{'collections' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class="box">
@@ -341,27 +341,32 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="footer">
-        <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}" [disabled]="form.loading">
-            <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
-            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
-        </button>
-        <button appBlurClick type="button" (click)="cancel()">
-            {{'cancel' | i18n}}
-        </button>
-        <div class="right">
-            <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
-                *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode">
-                <i class="fa fa-share-alt fa-lg fa-fw" aria-hidden="true"></i>
-            </button>
-            <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
-                appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode && !cloneMode" [disabled]="deleteBtn.loading"
-                [appApiAction]="deletePromise">
-                <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
-                <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading" aria-hidden="true"></i>
-            </button>
+            <div class="">
+                <div class="footer">
+                    <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}" [disabled]="form.loading">
+                        <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
+                        <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
+                    </button>
+                    <button appBlurClick type="button" (click)="cancel()">
+                        {{'cancel' | i18n}}
+                    </button>
+                    <div class="right">
+                        <!-- <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
+                            *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode">
+                            <i class="fa fa-share-alt fa-lg fa-fw" aria-hidden="true"></i>
+                        </button> -->
+                        <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
+                            appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode && !cloneMode" [disabled]="deleteBtn.loading"
+                            [appApiAction]="deletePromise">
+                            <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+                            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 </form>

@@ -15,6 +15,8 @@ import {
     Router,
 } from '@angular/router';
 
+import { DomSanitizer } from '@angular/platform-browser';
+
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
 
@@ -66,7 +68,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild('share', { read: ViewContainerRef, static: true }) shareModalRef: ViewContainerRef;
     @ViewChild('collections', { read: ViewContainerRef, static: true }) collectionsModalRef: ViewContainerRef;
 
-    action: string;
+    action: string = 'view';
     cipherId: string = null;
     favorites: boolean = false;
     type: CipherType = null;
@@ -77,21 +79,28 @@ export class VaultComponent implements OnInit, OnDestroy {
     addCollectionIds: string[] = null;
     showingModal = false;
     deleted = false;
+    toolsUrl: string;
+    toolType: string = null;
+    loaded: boolean = false;
 
     private modal: ModalComponent = null;
+    private isAddonInstalled: boolean = false;
+    private isAddonTested: boolean = false;
 
     constructor(private route: ActivatedRoute, private router: Router,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService,
+        private sanitizer: DomSanitizer) { }
 
     async ngOnInit() {
+        this.isAddonInstalled = await this.checkExtensionInit();
+        this.isAddonTested = true;
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;
-
                 switch (message.command) {
                     case 'newLogin':
                         await this.addCipher(CipherType.Login);
@@ -185,6 +194,26 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.load();
         }
         document.body.classList.remove('layout_frontend');
+        let queryParamsSub1: any;
+        queryParamsSub1 = this.route.queryParams.subscribe(async (params) => {
+            console.log(`params on init :`, params);
+            this.action = params.action;
+            if (params.toolType) {
+                this.toolType = params.toolType ? params.toolType : 'installation';
+                this.groupingsComponent.selectedTool = this.toolType;
+                this.viewTool(this.toolType);
+            } else if (params && Object.keys(params).length === 0 && params.constructor === Object) {
+                if (!this.isAddonInstalled) {
+                    // no params on load, default to tools/installation if the addon is not installed
+                    this.toolType = 'installation';
+                    this.groupingsComponent.selectedTool = 'installation';
+                    this.viewTool('installation');
+                }
+            }
+            if (queryParamsSub1 != null) {
+                queryParamsSub1.unsubscribe();
+            }
+        });
     }
 
     ngOnDestroy() {
@@ -193,17 +222,23 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async load() {
-        let loaded = false;
+        console.log('vault.component.load()');
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
-            if (loaded) {
+            console.log(`vault.component.queryParams()`, params);
+
+            if (this.loaded) {
                 return;
             }
-            loaded = true;
             await this.groupingsComponent.load();
+            this.loaded = true;
 
             if (params == null) {
                 this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.reload();
+            } else if (params.toolType) {
+                this.toolType = params.toolType ? params.toolType : 'installation';
+                this.groupingsComponent.selectedTool = this.toolType;
+                this.viewTool(this.toolType);
             } else {
                 if (params.cipherId) {
                     const cipherView = new CipherView();
@@ -218,7 +253,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                 } else if (params.action === 'add') {
                     await this.addCipher();
                 }
-
                 if (params.deleted) {
                     this.groupingsComponent.selectedTrash = true;
                     await this.filterDeleted();
@@ -237,6 +271,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                     this.groupingsComponent.selectedCollectionId = params.collectionId;
                     await this.filterCollection(params.collectionId);
                 } else {
+                    this.toolType = null;
                     this.groupingsComponent.selectedAll = true;
                     await this.ciphersComponent.reload();
                 }
@@ -245,6 +280,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                 queryParamsSub.unsubscribe();
             }
         });
+    }
+
+    shouldDisplayCiphersList() {
+        return (this.toolType || !this.isAddonTested) ? 'hidden' : '';
     }
 
     async viewCipher(cipher: CipherView) {
@@ -256,6 +295,24 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         this.cipherId = cipher.id;
         this.action = 'view';
+        this.go();
+    }
+
+    async viewTool(type: string) {
+        console.log(`viewTool(${type})`)
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        }
+        this.clearFilters();
+        this.toolType = type;
+        switch (type) {
+            case 'import':
+                this.toolsUrl = 'tools/index.html/#/installation/import';
+                break;
+            case 'installation':
+                this.toolsUrl = 'tools/index2.html/#/installation';
+                break;
+        }
         this.go();
     }
 
@@ -521,6 +578,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterCipherType(type: CipherType) {
+        console.log(`filterCipherType(${type})`);
+        // this.action = 'nav';
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
         await this.ciphersComponent.reload((c) => c.type === type);
         this.clearFilters();
@@ -632,6 +691,14 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
+    getIframeURL(): any {
+        if (this.toolsUrl) {
+            return this.sanitizer.bypassSecurityTrustResourceUrl(this.toolsUrl);
+        } else {
+            return this.sanitizer.bypassSecurityTrustResourceUrl('tools/index.html/#/installation/import');
+        }
+    }
+
     private dirtyInput(): boolean {
         return (this.action === 'add' || this.action === 'edit' || this.action === 'clone') &&
             document.querySelectorAll('app-vault-add-edit .ng-dirty').length > 0;
@@ -653,6 +720,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.addType = null;
         this.addOrganizationId = null;
         this.deleted = false;
+        this.toolType = null;
     }
 
     private go(queryParams: any = null) {
@@ -665,6 +733,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 folderId: this.folderId,
                 collectionId: this.collectionId,
                 deleted: this.deleted ? true : null,
+                toolType: this.toolType,
             };
         }
 
@@ -708,5 +777,39 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         this.addOrganizationId = null;
         this.addCollectionIds = null;
+    }
+
+
+    /* ****************************************************************
+    Retrurn true of false wehther the Cozy Pass addon is installed.
+    If not, a timeout will return false after 300ms.
+    (average elapsed time to have an answer from the addon is about 60ms, so 300ms should be enough)
+    */
+    private checkExtensionInit(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            const event = document.createEvent('Event');
+            event.initEvent('cozy.passwordextension.check-status');
+            document.addEventListener(
+                'cozy.passwordextension.installed',
+                (e) => {
+                    // console.log(`== event cozy.passwordextension.installed`, e);
+                    // console.timeEnd('checkAddonStatus');
+                    resolve(true);
+                },
+            );
+            document.addEventListener(
+                'cozy.passwordextension.connected',
+                (e) => {
+                    // console.log(`== event cozy.passwordextension.connected`, e);
+                    // console.timeEnd('checkAddonStatus');
+                    resolve(true);
+                },
+            );
+            setTimeout(() => {
+                resolve(false);
+            }, 300);
+            // console.time('checkAddonStatus');
+            document.dispatchEvent(event);
+        });
     }
 }

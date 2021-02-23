@@ -14,52 +14,120 @@ import {
     StorageService,
 } from 'jslib/abstractions';
 
-const defaultValues = new Map<string, any>(JSON.parse(`[["K1",null],["environmentUrls",{"base":"https://benji.mycozy.cloud/bitwarden","api":null,"identity":null,"webVault":null,"icons":null,"notifications":null,"events":null,"enterprise":null}],["accessToken",null],["locale",null],["theme",null],["disableFavicon",null],["installedVersion",null],["rememberedEmail","me@benji.mycozy.cloud"],["rememberEmail",true]]`));
-
-const getValues = new Map<string, any>();
-
 class BrowserStorageService implements StorageService {
     private chromeStorageApi: any;
+    private isVolatileStorage: boolean;
+    private volatileStore = new Map();
+    // TODO BJA : finaliser la gestion du storage
+    private nonVolatileKeys = [
+        // data to be stored in the Local Storage of the browser.
+        // other data will stored only in memory for security
+        'kdfIterations',
+        'keyHash',
+        'accessToken',
+        'userId',
+        '',
+    ];
 
     constructor() {
-        // console.log('BrowserStorageService constructor()');
+        // Test if the app is run into a Cozy App.
+        // If yes, all data will remain in memory, no data will be stored in Local Storage.
+        // If no : all data are stored in Local Storage.
+        //         this is much easier for debug so that refresh doesn't loose the session.
         this.chromeStorageApi = window.localStorage;
+        const cozyDataNode = document.getElementById('cozy-app');
+        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+        if (cozyDomain) {
+            this.isVolatileStorage = true;
+        } else {
+            this.isVolatileStorage = false;
+        }
     }
 
     async get<T>(key: string): Promise<T> {
+        // TODO Cozy : this default value for kdfIterations should be removed when the bug
+        // on the stack will be removed, see :
+        // https://trello.com/c/tv8JW9Ux/2665-stack-pass-requ%C3%AAte-serveur-emp%C3%AAchant-le-unlock
+        if (key === 'kdfIterations') {
+            return JSON.parse('100000');
+        }
+        // if (!this.nonVolatileKeys.includes(key)) {
+        if (this.isVolatileStorage) {
+            return this.volatileGet(key);
+        } else {
+            return this.localStorageGet(key);
+        }
+    }
+
+    async save(key: string, obj: any): Promise<any> {
+        // if (!this.nonVolatileKeys.includes(key)) {
+        if (this.isVolatileStorage) {
+            return this.volatileSave(key, obj);
+        } else {
+            return this.localStorageSave(key, obj);
+        }
+    }
+
+    async remove(key: string): Promise<any> {
+        // if (!this.nonVolatileKeys.includes(key)) {
+        if (this.isVolatileStorage) {
+            return this.volatileRemove(key);
+        } else {
+            return this.localStorageRemove(key);
+        }
+    }
+
+    private async volatileGet<T>(key: string): Promise<T> {
+        let val = this.volatileStore.get(key);
+        if (val !== null) {
+            val = (val === undefined) ? null : val;
+            val = (val === 'undefined') ? null : val;
+            try {
+                val = JSON.parse(val);
+            } catch {}
+            // console.log(`GET ${key} ==> ${val}`);
+            return val;
+        } else {
+            // console.log(`GET ${key} ==> ${val}`);
+            return null;
+        }
+    }
+
+    private async volatileSave(key: string, obj: any): Promise<any> {
+        return this.volatileStore.set(key, JSON.stringify(obj));
+    }
+
+    private async volatileRemove(key: string): Promise<any> {
+        return this.volatileStore.delete(key);
+    }
+
+    private async localStorageGet<T>(key: string): Promise<T> {
         return new Promise((resolve) => {
             let val = this.chromeStorageApi.getItem(key);
             if (val !== null) {
-                // console.log('BrowserStorageService .get()', key, val);
-                // val = defaultValues.get(key);
                 val = (val === undefined) ? null : val;
                 val = (val === 'undefined') ? null : val;
                 try {
                     val = JSON.parse(val);
                 } catch {}
+                // console.log(`GET ${key} ==> ${val}`);
                 resolve(val as T);
                 return;
             } else {
-                // console.log('BrowserStorageService .get() defaultValue2', key, defaultValues.get(key));
-                // val = defaultValues.get(key);
-                // val = (val != null ? val : null);
-                // getValues.set(key, val);
-                // console.log(JSON.stringify(getValues));
-                // resolve(val);
+                // console.log(`GET ${key} ==> ${val}`);
                 resolve(null);
             }
         });
     }
 
-    async save(key: string, obj: any): Promise<any> {
-        // console.log('BrowserStorageService .save()', key, obj);
+    private async localStorageSave(key: string, obj: any): Promise<any> {
         return new Promise((resolve) => {
             this.chromeStorageApi.setItem(key, JSON.stringify(obj));
             resolve();
         });
     }
 
-    async remove(key: string): Promise<any> {
+    private async localStorageRemove(key: string): Promise<any> {
         // console.log('BrowserStorageService .remove()', key);
         return new Promise((resolve) => {
             this.chromeStorageApi.removeItem(key);

@@ -61,6 +61,7 @@
     "build",
     "build-browser",
     "jslib/spec",
+    "jslib/src/angular/components/icon.component.ts",
     "jslib/src/cli",
     "jslib/src/services/nodeApi.service.ts",
     "jslib/src/services/lowdbStorage.service.ts"

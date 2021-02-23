@@ -108,6 +108,9 @@ const renderer = {
         ],
     },
     plugins: [
+        new webpack.IgnorePlugin({
+            resourceRegExp: /browser\.scss$/,
+        }),
         new AngularCompilerPlugin({
             tsConfigPath: 'tsconfig.json',
             entryModule: 'src/app/app.module#AppModule',

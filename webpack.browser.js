@@ -40,6 +40,7 @@ const common = {
         new CopyWebpackPlugin([
             './src/package.json',
             { from: './src/images', to: 'images' },
+            { from: './src/app/browser/tools', to: 'tools' },
             { from: './src/locales', to: 'locales' },
         ]),
     ],
@@ -121,16 +122,9 @@ const renderer = {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             publicPath: '../',
-                            url: false,
                         },
                     },
-                    // 'css-loader',
-                    {
-                        loader:'css-loader',
-                        options: {
-                            url:false,
-                        }
-                    },
+                    'css-loader',
                     'sass-loader',
                 ],
             },

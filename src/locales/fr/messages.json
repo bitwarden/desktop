@@ -32,6 +32,15 @@
   "collections": {
     "message": "Collections"
   },
+  "tools": {
+    "message": "Outils"
+  },
+  "installation": {
+    "message": "Installation"
+  },
+  "import": {
+    "message": "Import"
+  },
   "searchVault": {
     "message": "Rechercher dans le coffre"
   },
@@ -297,6 +306,12 @@
   "authenticatorKeyTotp": {
     "message": "Clé d'authentification (TOTP)"
   },
+  "authentification": {
+    "message": "Authentification"
+  },
+  "confirmYourIdentity": {
+    "message": "Par sécurité, merci de confirmer votre identité"
+  },
   "folder": {
     "message": "Dossier"
   },
@@ -485,7 +500,7 @@
     "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
   },
   "getMasterPasswordHint": {
-    "message": "Obtenir l'indice du mot de passe maître"
+    "message": "J'ai oublié mon mot de passe"
   },
   "emailRequired": {
     "message": "L'adresse e-mail est requise."

@@ -66,6 +66,7 @@ const IdleTimeout = 60000 * 10; // 10 minutes
     // <div>Hello Cozy !</div>
     template: `
         <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
+        <div id="cozy-bar">This is the Cozy Bar</div>
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
         <ng-template #passwordHistory></ng-template>
@@ -120,6 +121,8 @@ export class AppComponent implements OnInit {
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(async () => {
+                console.log(`message heard =`, message);
+
                 switch (message.command) {
                     case 'loggedIn':
                     case 'unlocked':

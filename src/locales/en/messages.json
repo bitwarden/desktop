@@ -32,6 +32,15 @@
   "collections": {
     "message": "Collections"
   },
+  "tools": {
+    "message": "Tools"
+  },
+  "installation": {
+    "message": "Installation"
+  },
+  "import": {
+    "message": "Import"
+  },
   "searchVault": {
     "message": "Search Vault"
   },
@@ -297,6 +306,12 @@
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
   },
+  "authentification": {
+    "message": "Authentification"
+  },
+  "confirmYourIdentity": {
+    "message": "For security, please confirme your identity"
+  },
   "folder": {
     "message": "Folder"
   },
@@ -485,7 +500,7 @@
     "message": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "I forgot my password"
   },
   "emailRequired": {
     "message": "Email address is required."
