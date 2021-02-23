@@ -25,7 +25,7 @@
                             <div class="item" *ngFor="let o of typeOptions">
                                 <input type="radio" class="radio" [(ngModel)]="send.type" name="Type_{{o.value}}"
                                     id="type_{{o.value}}" [value]="o.value" (change)="typeChanged(o)"
-                                    [checked]="send.type === o.value">
+                                    [checked]="send.type === o.value" [disabled]="disableSend">
                                 <label class="unstyled" for="type_{{o.value}}">
                                     {{o.name}}
                                 </label>
@@ -33,7 +33,7 @@
                         </div>
                         <div *ngIf="send.type === sendType.File" class="box-content-row" appBowRow>
                             <label for="file">{{'file' | i18n}}</label>
-                            <input type="file" id="file" class="form-control-file" name="file" required>
+                            <input type="file" id="file" class="form-control-file" name="file" required [disabled]="disableSend">
                             <div class="subtext">{{'sendFileDesc' | i18n}} {{'maxFileSize' | i18n}}</div>
                         </div>
                     </ng-container>
@@ -69,7 +69,7 @@
                     <div class="box-content">
                         <div class="box-content-row" appBoxRow *ngIf="!editMode">
                             <label for="deletionDate">{{'deletionDate' | i18n}}</label>
-                            <select id="deletionDate" name="DeletionDateSelect" [(ngModel)]="deletionDateSelect" required [readOnly]="disableSend">
+                            <select id="deletionDate" name="DeletionDateSelect" [(ngModel)]="deletionDateSelect" required>
                                 <option *ngFor="let o of deletionDateOptions" [ngValue]="o.value">{{o.name}}
                                 </option>
                             </select>
@@ -78,7 +78,7 @@
                         <div class="box-content-row" *ngIf="deletionDateSelect === 0 || editMode">
                             <label *ngIf="editMode" for="deletionDateCustom">{{'deletionDate' | i18n}}</label>
                             <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
-                                [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
+                                [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
                             <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
                         </div>
                         <div class="box-content-row" appBoxRow *ngIf="!editMode">
@@ -159,7 +159,7 @@
                     </div>
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="copyLink">{{'copySendLinkOnSave' | i18n}}</label>
-                        <input id="copyLink" name="copyLink" [(ngModel)]="copyLink" type="checkbox">
+                        <input id="copyLink" name="copyLink" [(ngModel)]="copyLink" type="checkbox" [disabled]="disableSend">
                     </div>
                 </div>
             </div>
