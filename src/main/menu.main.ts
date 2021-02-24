@@ -199,7 +199,7 @@ export class MenuMain extends BaseMenu {
             },
             {
                 label: this.main.i18nService.t('fileBugReport'),
-                click: () => shell.openExternal('https://github.com/bitwarden/desktop'),
+                click: () => shell.openExternal('https://github.com/bitwarden/desktop/issues'),
             },
         ];
 
