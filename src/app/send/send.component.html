@@ -51,7 +51,7 @@
                         <div class="item-title">
                             {{s.name}}
                             <span class="title-badges">
-                                <ng-container ngIf="s.disabled">
+                                <ng-container *ngIf="s.disabled">
                                     <i class="fa fa-warning" appStopProp title="{{'disabled' | i18n}}" aria-hidden="true"></i>
                                     <span class="sr-only">{{'disabled' | i18n}}</span>
                                 </ng-container>
