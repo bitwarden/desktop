@@ -101,3 +101,43 @@
         }
     }
 }
+
+.list > a.flex-list-item {
+    display: flex;
+    align-items: center;
+
+    .item-icon {
+        margin-left: -5px;
+        margin-right: 4px;
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+    }
+
+    .item-content {
+        .item-title {
+            .title-badges {
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
+
+                .text-badge {
+                    padding-left: 2px;
+                    margin-right: 3px;
+                    font-size: $font-size-small;
+                    border-radius: 3px;
+                    @include themify($themes) {
+                        background-color: themed('mutedColorBackground');
+                    }
+                }
+            }
+        }
+
+        .item-details {
+            font-size: $font-size-small;
+            @include themify($themes) {
+                color: themed('mutedColor');
+            }
+        }
+    }
+}

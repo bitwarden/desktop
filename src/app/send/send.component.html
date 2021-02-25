@@ -43,14 +43,39 @@
                 [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" (scrolled)="loadMore()">
                 <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s.id)"
                     href="#" title="{{'viewItem' | i18n}}" (contextmenu)="viewSendMenu(s)"
-                    [ngClass]="{'active': s.id === sendId}">
-                    <div class="icon" aria-hidden="true">
+                    [ngClass]="{'active': s.id === sendId}" class="flex-list-item">
+                    <div class="item-icon" aria-hidden="true">
                         <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-o' : 'fa-file-text-o'"></i>
                     </div>
-                    <span class="text">
-                        {{s.name}}
-                    </span>
-                    <span class="detail">{{s.deletionDate | date}}</span>
+                    <div class="item-content">
+                        <div class="item-title">
+                            {{s.name}}
+                            <span class="title-badges">
+                                <span appStopClick class="text-badge" *ngIf="s.disabled">
+                                    {{'disabled' | i18n}}
+                                </span>
+                                <ng-container >
+                                    <i class="fa fa-key" appStopProp title="{{'password' | i18n}}" aria-hidden="true"></i>
+                                    <span class="sr-only">{{'password' | i18n}}</span>
+                                </ng-container>
+                                <ng-container >
+                                    <i class="fa fa-ban" appStopProp title="{{'maxAccessCountReached' | i18n}}"
+                                        aria-hidden="true"></i>
+                                    <span class="sr-only">{{'maxAccessCountReached' | i18n}}</span>
+                                </ng-container>
+                                <ng-container >
+                                    <i class="fa fa-clock-o" appStopProp title="{{'expired' | i18n}}" aria-hidden="true"></i>
+                                    <span class="sr-only">{{'expired' | i18n}}</span>
+                                </ng-container>
+                                <ng-container >
+                                    <i class="fa fa-trash" appStopProp title="{{'pendingDeletion' | i18n}}"
+                                        aria-hidden="true"></i>
+                                    <span class="sr-only">{{'pendingDeletion' | i18n}}</span>
+                                </ng-container>
+                            </span>
+                        </div>
+                        <span class="item-details">{{s.deletionDate | date}}</span>
+                    </div>
                 </a>
             </div>
             <div class="no-items" *ngIf="!filteredSends.length">
