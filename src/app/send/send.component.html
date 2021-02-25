@@ -51,23 +51,24 @@
                         <div class="item-title">
                             {{s.name}}
                             <span class="title-badges">
-                                <span appStopClick class="text-badge" *ngIf="s.disabled">
-                                    {{'disabled' | i18n}}
-                                </span>
-                                <ng-container >
+                                <ng-container ngIf="s.disabled">
+                                    <i class="fa fa-warning" appStopProp title="{{'disabled' | i18n}}" aria-hidden="true"></i>
+                                    <span class="sr-only">{{'disabled' | i18n}}</span>
+                                </ng-container>
+                                <ng-container *ngIf="s.password">
                                     <i class="fa fa-key" appStopProp title="{{'password' | i18n}}" aria-hidden="true"></i>
                                     <span class="sr-only">{{'password' | i18n}}</span>
                                 </ng-container>
-                                <ng-container >
+                                <ng-container *ngIf="s.maxAccessCountReached">
                                     <i class="fa fa-ban" appStopProp title="{{'maxAccessCountReached' | i18n}}"
                                         aria-hidden="true"></i>
                                     <span class="sr-only">{{'maxAccessCountReached' | i18n}}</span>
                                 </ng-container>
-                                <ng-container >
+                                <ng-container *ngIf="s.expired">
                                     <i class="fa fa-clock-o" appStopProp title="{{'expired' | i18n}}" aria-hidden="true"></i>
                                     <span class="sr-only">{{'expired' | i18n}}</span>
                                 </ng-container>
-                                <ng-container >
+                                <ng-container *ngIf="s.pendingDelete">
                                     <i class="fa fa-trash" appStopProp title="{{'pendingDeletion' | i18n}}"
                                         aria-hidden="true"></i>
                                     <span class="sr-only">{{'pendingDeletion' | i18n}}</span>

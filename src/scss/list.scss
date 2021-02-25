@@ -120,16 +120,6 @@
                 @include themify($themes) {
                     color: themed('mutedColor');
                 }
-
-                .text-badge {
-                    padding-left: 2px;
-                    margin-right: 3px;
-                    font-size: $font-size-small;
-                    border-radius: 3px;
-                    @include themify($themes) {
-                        background-color: themed('mutedColorBackground');
-                    }
-                }
             }
         }
 
