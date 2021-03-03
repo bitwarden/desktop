@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -62,6 +63,11 @@ import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
+import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
+import { SendComponent } from './send/send.component';
+
+import { NavComponent } from './layout/nav.component';
+
 import { registerLocaleData } from '@angular/common';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
@@ -90,8 +96,8 @@ import localePtBr from '@angular/common/locales/pt';
 import localePtPt from '@angular/common/locales/pt-PT';
 import localeRo from '@angular/common/locales/ro';
 import localeRu from '@angular/common/locales/ru';
-import localeSr from '@angular/common/locales/sr';
 import localeSk from '@angular/common/locales/sk';
+import localeSr from '@angular/common/locales/sr';
 import localeSv from '@angular/common/locales/sv';
 import localeTh from '@angular/common/locales/th';
 import localeTr from '@angular/common/locales/tr';
@@ -177,6 +183,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         LockComponent,
         LoginComponent,
         ModalComponent,
+        NavComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
@@ -184,6 +191,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SendAddEditComponent,
+        SendComponent,
         SetPasswordComponent,
         SettingsComponent,
         ShareComponent,
@@ -209,9 +218,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PremiumComponent,
         SettingsComponent,
         ShareComponent,
+        SendAddEditComponent,
         TwoFactorOptionsComponent,
     ],
-    providers: [],
+    providers: [DatePipe],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
 import {
     Component,
+    NgZone,
     OnChanges,
     OnDestroy,
-    NgZone,
 } from '@angular/core';
 
 import { AuditService } from 'jslib/abstractions/audit.service';

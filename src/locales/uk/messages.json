@@ -340,7 +340,7 @@
     "message": "Видалити файл"
   },
   "deleteItemConfirmation": {
-    "message": "Ви дійсно хочете видалити цей запис?"
+    "message": "Ви дійсно хочете перенести до смітника?"
   },
   "deletedItem": {
     "message": "Запис перенесено до смітника"
@@ -406,7 +406,7 @@
     "message": "Пошук в обраному"
   },
   "searchType": {
-    "message": "Типу пошуку",
+    "message": "Пошук за типом",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -515,7 +515,7 @@
     "message": "Інформація про запис"
   },
   "noItemsInList": {
-    "message": "Немає записів для відображення."
+    "message": "Немає записів."
   },
   "verificationCode": {
     "message": "Код підтвердження"
@@ -742,7 +742,7 @@
     "message": "Отримати розширення браузера"
   },
   "syncingComplete": {
-    "message": "Синхронізація завершена"
+    "message": "Синхронізацію завершено"
   },
   "syncingFailed": {
     "message": "Не вдалося синхронізувати"
@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Згортати вікно до системного лотка замість панелі інструментів."
   },
+  "enableMinToMenuBar": {
+    "message": "Згортати до панелі завдань"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "При згортанні вікна, показувати піктограму в панелі завдань."
+  },
   "enableCloseToTray": {
     "message": "Закривати до системного лотка"
   },
   "enableCloseToTrayDesc": {
     "message": "При закритті вікна згортати в системний лоток."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Закривати до панелі завдань"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "При закритті вікна, показувати піктограму в панелі завдань."
   },
   "enableTray": {
     "message": "Увімкнути піктограму в системному лотку"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "При першому запуску програми відображатиметься лише піктограма в системному лотку."
+  },
+  "startToMenuBar": {
+    "message": "Запускати в панелі завдань"
+  },
+  "startToMenuBarDesc": {
+    "message": "При запуску програми показувати лише піктограму в панелі завдань."
+  },
+  "openAtLogin": {
+    "message": "Запускати автоматично при вході"
+  },
+  "openAtLoginDesc": {
+    "message": "Запускати програму Bitwarden для комп'ютера автоматично при вході в систему."
+  },
+  "alwaysShowDock": {
+    "message": "Завжди показувати в панелі Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Показувати піктограму Bitwarden в панелі Dock навіть при згортанні до панелі завдань."
+  },
+  "confirmTrayTitle": {
+    "message": "Підтвердити вимкнення в панелі стану"
+  },
+  "confirmTrayDesc": {
+    "message": "Вимкнення цього параметра також вимкне усі інші пов'язані налаштування."
   },
   "language": {
     "message": "Мова"
@@ -1018,7 +1054,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "Немає паролів для відображення."
+    "message": "Немає паролів."
   },
   "undo": {
     "message": "Повернути"
@@ -1182,8 +1218,14 @@
     "message": "ПОПЕРЕДЖЕННЯ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Підтвердити експорт сховища"
+  },
   "exportWarningDesc": {
     "message": "Експортовані дані вашого сховища знаходяться в незашифрованому вигляді. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
+  },
+  "encExportWarningDesc": {
+    "message": "Цей експорт шифрує ваші дані за допомогою ключа шифрування облікового запису. Якщо ви коли-небудь оновите ключ шифрування облікового запису, ви повинні виконати експорт знову, оскільки не зможете розшифрувати цей файл експорту."
   },
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
@@ -1192,7 +1234,7 @@
     "message": "Ви не входите до жодної організації. Організації дозволяють безпечно обмінюватися елементами з іншими користувачами."
   },
   "noCollectionsInList": {
-    "message": "Немає збірок для відображення."
+    "message": "Немає збірок."
   },
   "ownership": {
     "message": "Власник"
@@ -1247,7 +1289,7 @@
     "message": "Розблокувати з Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Перевірити на Bitwarden."
+    "message": "розблокувати сховище"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
@@ -1256,13 +1298,13 @@
     "message": "Налаштування"
   },
   "enableMenuBar": {
-    "message": "Увімкнути піктограму в рядку меню"
+    "message": "Увімкнути піктограму в панелі завдань"
   },
   "enableMenuBarDesc": {
-    "message": "Завжди показувати піктограму в рядку меню."
+    "message": "Завжди показувати піктограму в панелі завдань."
   },
   "hideToMenuBar": {
-    "message": "Приховати до рядка меню"
+    "message": "Приховувати до панелі завдань"
   },
   "selectOneCollection": {
     "message": "Ви повинні обрати принаймні одну збірку."
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "Умови користування та політика приватності не погоджені."
+  },
+  "enableBrowserIntegration": {
+    "message": "Увімкнути інтеграцію з браузером"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Інтеграція з браузером використовується для біометрії в браузері."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Інтеграція з браузером не підтримується"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "На жаль, зараз інтеграція з браузером підтримується лише у версії для Mac з App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Вимагати підтвердження для інтеграції з браузером"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Увімкніть додатковий рівень безпеки, вимагаючи перевірку фрази відбитка при встановленні зв'язку між програмою на комп'ютері та браузером. Якщо увімкнено, вимагатиметься втручання користувача і перевірка щоразу при встановленні зв'язку."
+  },
+  "approve": {
+    "message": "Схвалити"
+  },
+  "verifyBrowserTitle": {
+    "message": "Перевірка з'єднання з браузером"
+  },
+  "verifyBrowserDesc": {
+    "message": "Переконайтеся, що показаний відбиток ідентичний відбитку в розширенні браузера."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Біометрію не увімкнено"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Для активації біометрії в браузері необхідно спершу увімкнути біометрію в програмі на комп'ютері."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "У зв'язку з корпоративною політикою, вам не дозволено зберігати записи до особистого сховища. Змініть налаштування власності на організацію та виберіть серед доступних збірок."
+  },
+  "hintEqualsPassword": {
+    "message": "Підказка для пароля не може бути такою самою, як ваш пароль."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Політика організації впливає на ваші параметри власності."
   }
 }

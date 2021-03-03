@@ -340,10 +340,10 @@
     "message": "Excluir Anexo"
   },
   "deleteItemConfirmation": {
-    "message": "Você tem certeza que deseja excluir este item?"
+    "message": "Tem certeza que deseja excluir este item?"
   },
   "deletedItem": {
-    "message": "Item excluído"
+    "message": "Enviar item para lixeira"
   },
   "overwritePasswordConfirmation": {
     "message": "Você tem certeza que deseja substituir a senha atual?"
@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Ao minimizar a janela, mostre um ícone na bandeja do sistema."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimizar para a barra de menus"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Quando minimizar a janela, mostrar um ícone na barra de menu."
+  },
   "enableCloseToTray": {
     "message": "Fechar para Ícone da Bandeja"
   },
   "enableCloseToTrayDesc": {
     "message": "Quando fechar a janela, mostre um ícone na bandeja do sistema."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Fechar para barra de menus"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Quando fechar a janela, mostrar um ícone na barra de menus."
   },
   "enableTray": {
     "message": "Habilitar ícone de bandeja"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na bandeja do sistema."
+  },
+  "startToMenuBar": {
+    "message": "Iniciar na barra de menus"
+  },
+  "startToMenuBarDesc": {
+    "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na barra de menus."
+  },
+  "openAtLogin": {
+    "message": "Iniciar automaticamente ao iniciar sessão"
+  },
+  "openAtLoginDesc": {
+    "message": "Inicia o aplicativo Bitwarden Desktop automaticamente no logon."
+  },
+  "alwaysShowDock": {
+    "message": "Exibir sempre na Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Mostrar o ícone do Bitwarden na Dock, mesmo quando minimizado para a barra de menu."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirmar desativação da bandeja"
+  },
+  "confirmTrayDesc": {
+    "message": "Desabilitar esta configuração também desativará todas as outras configurações relacionadas à bandeja."
   },
   "language": {
     "message": "Idioma"
@@ -1182,8 +1218,14 @@
     "message": "AVISO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirmar Exportação do Cofre"
+  },
   "exportWarningDesc": {
     "message": "Esta exportação contém os dados do seu cofre em um formato não criptografado. Você não deve armazenar ou enviar o arquivo exportado por canais inseguros (como e-mail). Exclua o arquivo imediatamente após terminar de usá-lo."
+  },
+  "encExportWarningDesc": {
+    "message": "Esta exportação criptografa seus dados usando a chave de criptografia da sua conta. Se você rotacionar a chave de criptografia da sua conta, você deve exportar novamente, já que você não será capaz de descriptografar este arquivo de exportação."
   },
   "exportMasterPassword": {
     "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
@@ -1346,7 +1388,7 @@
     "message": "Confirmação de Ação de Tempo Limite"
   },
   "enterpriseSingleSignOn": {
-    "message": "Início de Sessão Único Empresarial"
+    "message": "Iniciar Sessão Empresarial Única"
   },
   "setMasterPassword": {
     "message": "Definir Senha Mestra"
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "Os Termos de Serviço e a Política de Privacidade não foram reconhecidos."
+  },
+  "enableBrowserIntegration": {
+    "message": "Ativar integração com o navegador"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "A integração do navegador é usada para dados biométricos no navegador."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Integração com o navegador não suportada"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Infelizmente, por ora, a integração do navegador só é suportada na versão da Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Exigir verificação para integração com o navegador"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Ative uma camada adicional de segurança, exigindo validação de frase de impressão digital ao estabelecer uma ligação entre o computador e o navegador. Quando ativado, isto requer intervenção do usuário e verificação cada vez que uma conexão é estabelecida."
+  },
+  "approve": {
+    "message": "Aprovar"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verificar conexão do navegador"
+  },
+  "verifyBrowserDesc": {
+    "message": "Por favor, certifique-se que a impressão digital mostrada é idêntica à impressão digital exibida na extensão do navegador."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometria não habilitada"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
+  },
+  "hintEqualsPassword": {
+    "message": "Sua dica de senha senha não pode ser a mesma que a sua senha."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Uma política de organização está afetando suas opções de propriedade."
   }
 }

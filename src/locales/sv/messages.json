@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "När fönstret minimeras, visa en ikon i systemfältet istället."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimera till aktivitetsfältet"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "När fönstret minimeras, visa en ikon i aktivitetsfältet istället."
+  },
   "enableCloseToTray": {
     "message": "Stäng till systemfältet"
   },
   "enableCloseToTrayDesc": {
     "message": "När fönstret stängs, visa en ikon i systemfältet istället."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Stäng till aktivitetsfältet"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "När fönstret stängs, visa en ikon i aktivitetsfältet istället."
   },
   "enableTray": {
     "message": "Aktivera systemfältsikon"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "När programmet startas, visa endast en ikon i systemfältet."
+  },
+  "startToMenuBar": {
+    "message": "Öppna till aktivitetsfältet"
+  },
+  "startToMenuBarDesc": {
+    "message": "När programmet startas, visa endast en ikon i aktivitetsfältet."
+  },
+  "openAtLogin": {
+    "message": "Starta automatiskt vid inloggning"
+  },
+  "openAtLoginDesc": {
+    "message": "Starta Bitwardens skrivbordsprogram automatiskt vid inloggning."
+  },
+  "alwaysShowDock": {
+    "message": "Visa alltid i dockan"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Visa Bitwarden-ikonen i dockan även om den minimeras till aktivitetsfältet."
+  },
+  "confirmTrayTitle": {
+    "message": "Bekräfta inaktivering av fält"
+  },
+  "confirmTrayDesc": {
+    "message": "Om den här inställningen inaktiveras kommer alla andra fältrelaterade inställningar också inaktiveras."
   },
   "language": {
     "message": "Språk"
@@ -1182,8 +1218,14 @@
     "message": "VARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Bekräfta export av valv"
+  },
   "exportWarningDesc": {
     "message": "Denna export innehåller ditt valv i ett okrypterat format. Du bör inte lagra eller skicka den exporterade filen över osäkra kanaler (t.ex. e-post). Radera den omedelbart när du är färdig med den."
+  },
+  "encExportWarningDesc": {
+    "message": "Denna export krypterar dina data med kontots krypteringsnyckel. Om du någonsin roterar kontots krypteringsnyckel bör du exportera igen eftersom du inte kommer att kunna dekryptera denna exportfil."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
@@ -1247,7 +1289,7 @@
     "message": "Lås upp med Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Bekräfta för Bitwarden."
+    "message": "lås upp valvet"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med huvudlösenordet vid omstart"
@@ -1403,9 +1445,57 @@
     "message": "Ditt nya huvudlösenord uppfyller inte kraven i policyn."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Genom att markera denna ruta godkänner du följande:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Användarvillkoren och Integritetspolicyn har inte accepterats."
+  },
+  "enableBrowserIntegration": {
+    "message": "Aktivera webbläsarintegration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Webbläsarintegration används för biometri i webbläsaren."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Webbläsarintegration stöds inte"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Tyvärr stöds webbläsarintegration för tillfället endast i versionen från Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Kräv verifiering för webbläsarintegration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Aktivera ett ytterligare säkerhetslager genom att kräva validering av fingeravtrycksfrasen när du upprättar en länk mellan skrivbordet och webbläsaren. När det här är aktiverat krävs ingripande och verifiering från användaren varje gång en anslutning etableras."
+  },
+  "approve": {
+    "message": "Godkänn"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verifiera webbläsaranslutning"
+  },
+  "verifyBrowserDesc": {
+    "message": "Säkerställ att det fingeravtrycket som visas är identiskt med fingeravtrycket som visas i webbläsartillägget."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometri är inte aktiverat"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Biometri i webbläsaren kräver att biometri på skrivbordet aktiveras i inställningarna först."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "På grund av en av företagets policyer är du begränsad från att spara objekt till ditt personliga valv. Ändra ägarskap till en organisation och välj från tillgängliga samlingar."
+  },
+  "hintEqualsPassword": {
+    "message": "Din lösenordsledtråd får inte vara samma som ditt lösenord."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
   }
 }

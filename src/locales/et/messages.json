@@ -63,10 +63,10 @@
     "message": "Nimi"
   },
   "uri": {
-    "message": "URL"
+    "message": "URI"
   },
   "uriPosition": {
-    "message": "URL $POSITION$",
+    "message": "URI $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -76,7 +76,7 @@
     }
   },
   "newUri": {
-    "message": "Uus URL"
+    "message": "Uus URI"
   },
   "username": {
     "message": "Kasutajanimi"
@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimeeri kopeerimisel lõikelauale"
+    "message": "Minimeeri programm pärast sisu kopeerimist"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimeeri kirje andmete kopeerimisel."
+    "message": "Minimeerib programmi pärast kirje sisu kopeerimist."
   },
   "toggleVisibility": {
     "message": "Näita sisu"
@@ -365,7 +365,7 @@
     "message": "Kopeeri parool"
   },
   "copyUri": {
-    "message": "Kopeeri URL"
+    "message": "Kopeeri URI"
   },
   "length": {
     "message": "Pikkus"
@@ -473,7 +473,7 @@
     "message": "Sisesta ülemparool uuesti"
   },
   "masterPassHint": {
-    "message": "Ülemparooli vihje (ei ole kohutuslik)"
+    "message": "Ülemparooli vihje (ei ole kohustuslik)"
   },
   "settings": {
     "message": "Seaded"
@@ -512,7 +512,7 @@
     "message": "Tekkis ootamatu viga."
   },
   "itemInformation": {
-    "message": "Kirje informatsioon"
+    "message": "Kirje andmed"
   },
   "noItemsInList": {
     "message": "Puuduvad kirjed, mida kuvada."
@@ -521,7 +521,7 @@
     "message": "Kinnituskood"
   },
   "verificationCodeRequired": {
-    "message": "Nõuatav on kinnituskood."
+    "message": "Nõutav on kinnituskood."
   },
   "continue": {
     "message": "Jätka"
@@ -680,7 +680,7 @@
     "message": "Lisa konto andmed"
   },
   "addNewItem": {
-    "message": "Lisa uus objekt"
+    "message": "Lisa uus kirje"
   },
   "addNewFolder": {
     "message": "Lisa uus kaust"
@@ -850,13 +850,25 @@
     "message": "Minimeeri tegumiribale"
   },
   "enableMinToTrayDesc": {
-    "message": "Akent minimeerides kuva üksnes süsteemisalve ikooni."
+    "message": "Akna minimeerimisel kuva rakendus süsteemisalve ikoonina."
+  },
+  "enableMinToMenuBar": {
+    "message": "Minimeeri menüüribale"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Akna minimeerimisel kuva rakendus menüüriba ikoonina."
   },
   "enableCloseToTray": {
     "message": "Minimeeri süsteemisalvele"
   },
   "enableCloseToTrayDesc": {
-    "message": "Akna sulgedes minimeeritakse see süsteemisalvele."
+    "message": "Akna sulgemisel kuva rakendus süsteemisalve ikoonina."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Sulge menüüribale"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Akna sulgemisel kuva rakendus menüüriba ikoonina."
   },
   "enableTray": {
     "message": "Luba süsteemisalve ikoon"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Rakenduse esmasel käivitusel kuvatakse seda ainult süsteemisalve ikoonina."
+  },
+  "startToMenuBar": {
+    "message": "Käivita menüüribal"
+  },
+  "startToMenuBarDesc": {
+    "message": "Rakenduse esmasel käivitusel kuvatakse selle ikooni ainult menüüribal."
+  },
+  "openAtLogin": {
+    "message": "Käivita koos arvutiga"
+  },
+  "openAtLoginDesc": {
+    "message": "Bitwardeni töölaua rakendus käivitatakse automaatselt koos arvutiga."
+  },
+  "alwaysShowDock": {
+    "message": "Kuva alati Dockis"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Bitwardeni ikooni kuvatakse alati Dockis, isegi kui see on minimeeritud menüüribale."
+  },
+  "confirmTrayTitle": {
+    "message": "Kinnita süsteemisalve ikooni keelamine"
+  },
+  "confirmTrayDesc": {
+    "message": "Selle seadistuse keelamine lülitab välja ka teised süsteemisalve ikooniga seonduvad võimalused."
   },
   "language": {
     "message": "Keel"
@@ -910,7 +946,7 @@
     "message": "Vajalik on rakenduse taaskäivitamine"
   },
   "restartToUpdateDesc": {
-    "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Paigaldamise lõpetamiseks on vajalik Bitwarden taaskäivitama. Soovid seda kohe teha?",
+    "message": "Versioon $VERSION_NUM$ on paigaldamiseks valmis. Paigaldamise lõpetamiseks on vajalik Bitwarden taaskäivitada. Soovid seda kohe teha?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -978,7 +1014,7 @@
     "message": "Parooli hügieen, konto seisukord ja andmelekete raportid aitavad hoidlat turvalisena hoida."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP kinnituskoodide (2FA) genereeria hoidlas olevatele kasutajakontodele."
+    "message": "TOTP kinnituskoodide (2FA) genereerija hoidlas olevatele kasutajakontodele."
   },
   "premiumSignUpSupport": {
     "message": "Kiirema kasutajatoe."
@@ -1182,8 +1218,14 @@
     "message": "HOIATUS",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Hoidla eksportimise kinnitamine"
+  },
   "exportWarningDesc": {
     "message": "Eksporditav fail sisaldab hoidla sisu, mis on krüpteeringuta. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
+  },
+  "encExportWarningDesc": {
+    "message": "Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -1403,9 +1445,57 @@
     "message": "Uus ülemparool ei vasta eeskirjades väljatoodud tingimustele."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Märkeruudu markeerimisel nõustud järgnevaga:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Kasutustingimuste ja Privaatsuspoliitikaga pole nõustutud."
+  },
+  "enableBrowserIntegration": {
+    "message": "Lülita sisse brauseri integratsioon"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Brauseri integratsioon on vajalik biomeetria kasutamiseks brauseris."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Brauseri integratsioon ei ole toetatud"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Paraku on brauseri integratsioon hetkel toetatud ainult Mac App Store'i versioonis."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Nõua brauseri integratsiooni ülekinnitamist"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "See seadistus võimaldab täiendavat kaitset, küsides brauseriga liidestamisel sõrmejälje fraasi. Sisselülitamisel nõuab see seadistus igakordset kasutaja sekkumist, kui luuakse ühendus brauseri ja töölaua rakenduse vahel."
+  },
+  "approve": {
+    "message": "Kinnita"
+  },
+  "verifyBrowserTitle": {
+    "message": "Brauseri ühendamise kinnitamine"
+  },
+  "verifyBrowserDesc": {
+    "message": "Veendu, et kuvatav sõrmejälje fraas on identne sellega, mida kuvatakse brauseri lisas."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biomeetria ei ole sisse lülitatud"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Selleks, et kasutada biomeetriat brauseris, peab selle esmalt Bitwardeni töölaua rakenduse seadetes sisse lülitama."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Ettevõtte poliitika tõttu ei saa sa andmeid oma personaalsesse Hoidlasse salvestada. Vali Omanikuks organisatsioon ja vali mõni saadavaolevatest Kogumikest."
+  },
+  "hintEqualsPassword": {
+    "message": "Parooli vihje ei saa olla sama mis parool ise."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Organisatsiooni poliitika on seadnud omaniku valikutele piirangu."
   }
 }

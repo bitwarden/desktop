@@ -10,10 +10,10 @@ import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 
-import { Utils } from 'jslib/misc/utils';
-import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
 import { StorageService } from 'jslib/abstractions';
 import { ElectronConstants } from 'jslib/electron/electronConstants';
+import { Utils } from 'jslib/misc/utils';
+import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';

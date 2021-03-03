@@ -1,8 +1,8 @@
 import {
     Component,
+    NgZone,
     OnDestroy,
     OnInit,
-    NgZone,
 } from '@angular/core';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';

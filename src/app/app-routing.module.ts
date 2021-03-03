@@ -14,6 +14,8 @@ import { SetPasswordComponent } from './accounts/set-password.component';
 import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
+import { SendComponent } from './send/send.component';
+
 import { VaultComponent } from './vault/vault.component';
 
 const routes: Routes = [
@@ -30,6 +32,11 @@ const routes: Routes = [
     { path: 'hint', component: HintComponent },
     { path: 'set-password', component: SetPasswordComponent },
     { path: 'sso', component: SsoComponent },
+    {
+        path: 'send',
+        component: SendComponent,
+        canActivate: [AuthGuardService],
+    },
 ];
 
 @NgModule({

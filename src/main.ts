@@ -75,7 +75,7 @@ export class Main {
         app.setPath('logs', path.join(app.getPath('userData'), 'logs'));
 
         const args = process.argv.slice(1);
-        const watch = args.some((val) => val === '--watch');
+        const watch = args.some(val => val === '--watch');
 
         if (watch) {
             // tslint:disable-next-line
@@ -92,7 +92,7 @@ export class Main {
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService, true, undefined, undefined,
-            (arg) => this.processDeepLink(arg), (win) => this.trayMain.setupWindowListeners(win));
+            arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
         this.messagingMain = new MessagingMain(this, this.storageService);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
             this.menuMain.updateMenuItem.enabled = false;
@@ -172,7 +172,7 @@ export class Main {
     }
 
     private processDeepLink(argv: string[]): void {
-        argv.filter((s) => s.indexOf('bitwarden://') === 0).forEach((s) => {
+        argv.filter(s => s.indexOf('bitwarden://') === 0).forEach(s => {
             const url = new URL(s);
             const code = url.searchParams.get('code');
             const receivedState = url.searchParams.get('state');

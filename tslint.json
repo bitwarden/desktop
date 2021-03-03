@@ -49,6 +49,27 @@
       "check-separator",
       "check-type"
     ],
-    "max-classes-per-file": false
+    "max-classes-per-file": false,
+    "ordered-imports": true,
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "ignore",
+          "typeLiterals": "ignore"
+        },
+        "singleline": "never"
+      }
+    ]
   }
 }

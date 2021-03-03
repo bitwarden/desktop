@@ -15,7 +15,7 @@
     "message": "Тыпы"
   },
   "typeLogin": {
-    "message": "Імя карыстальніка"
+    "message": "Уліковыя даныя"
   },
   "typeCard": {
     "message": "Картка"
@@ -113,10 +113,10 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Згарнуць пасля капіявання ў буфер абмену"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Згортваць пасля капіявання даных з элемента ў буфер абмену."
   },
   "toggleVisibility": {
     "message": "Пераключыць бачнасць"
@@ -623,7 +623,7 @@
     "message": "Налады асяроддзя"
   },
   "customEnvironmentFooter": {
-    "message": "Для вопытных карыстальнікаў. Можна ўвесці URL-адрасы асобна для кжонай службы."
+    "message": "Для вопытных карыстальнікаў. Можна ўвесці URL-адрасы асобна для кожнай службы."
   },
   "baseUrl": {
     "message": "URL-адрас сервера"
@@ -677,7 +677,7 @@
     "message": "Выйсці"
   },
   "addNewLogin": {
-    "message": "Дадаць новае імя карыстальніка"
+    "message": "Дадаць новыя ўліковыя даныя"
   },
   "addNewItem": {
     "message": "Дадаць новы элемент"
@@ -776,10 +776,10 @@
     "message": "Двухэтапны ўваход"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Тайм-аўт сховішча"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Выберыце тайм-аўт для сховішча і дзеянне, якое неабходна зрабіць."
   },
   "immediately": {
     "message": "Адразу"
@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "Пры згортванні акна, будзе паказвацца значок у вообласці апавяшчэнняў."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
+  },
   "enableCloseToTray": {
     "message": "Закрываць у вобласць апавяшчэнняў"
   },
   "enableCloseToTrayDesc": {
     "message": "Пры закрыцці акна, будзе паказвацца значок у вообласці апавяшчэнняў."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Уключыць значок у вобласці апавяшчэнняў"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "Пры першым запуску праграмы, будзе паказвацца значок у вобласці апавяшчэнняў."
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "Мова"
@@ -978,7 +1014,7 @@
     "message": "Гігіена пароляў, здароўе ўліковага запісу і справаздачы аб уцечках даных для забеспячэння бяспекі вашага сховішча."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP-генератар кодаў (2ФА) для імён карыстальнікаў вашага сховішча."
+    "message": "TOTP-генератар кодаў (2ФА) для ўліковых даных вашага сховішча."
   },
   "premiumSignUpSupport": {
     "message": "Прыярытэтная падтрымка."
@@ -1182,8 +1218,14 @@
     "message": "УВАГА",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "Экспартуемы файл утрымлівае даныя вашага сховішча ў незашыфраваным фармаце. Яго не варта захоўваць ці адпраўляць па небяспечным каналам (напрыклад, па электроннай пошце). Выдаліце яго адразу пасля выкарыстання."
+  },
+  "encExportWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "exportMasterPassword": {
     "message": "Увядзіце ваш асноўны пароль для экспарту даных са сховішча."
@@ -1238,16 +1280,16 @@
     "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "Разблакіраваць з Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Праверыць на Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Разблакіраваць з Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Праверыць на Bitwarden."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блакіраваць асноўным паролем пры перазапуску"
@@ -1293,66 +1335,66 @@
     "message": "Незахаваныя змены"
   },
   "clone": {
-    "message": "Clone"
+    "message": "Кланіраваць"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "На налады генератара ўплываюць адна або некалькі палітык арганізацый."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "Дзеянне пры тайм-аўце"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "Для разблакіроўкі сховішча патрабуецца паўторна ўвесці асноўны пароль."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "Выхад са сховішча спатрабуе паўторную праверку сапраўднасці для атрымання доступу да яго."
   },
   "lock": {
-    "message": "Lock",
+    "message": "Заблакіраваць",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "Сметніца",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Пошук у сметніцы"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "Выдаліць назаўсёды"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "Вы ўпэўнены, што хочаце назаўсёды выдаліць гэты элемент?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Выдаленны назаўсёды элемент"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "Аднавіць элемент"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "Вы сапраўды жадаеце аднавіць гэты элемент?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Элемент адноўлены"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "Выдаліць назаўсёды"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "Выхад з сістэмы выдаліць доступ да сховішча і спатрабуе праверку сапраўднасці анлайн па заканчэнні перыяду чакання. Вы сапраўды жадаеце ўключыць гэтую наладу?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "Пацвярджэнне дзеяння для тайм-аута"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Адзіны ўваход у карпаратыўную сістэму (SSO)"
   },
   "setMasterPassword": {
     "message": "Задаць асноўны пароль"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Для завяршэння ўваходу праз SSO, усталюйце галоўны пароль для доступу і абароны вашаго сховішча."
   },
   "newMasterPass": {
     "message": "Новы асноўны пароль"
@@ -1364,7 +1406,7 @@
     "message": "Згодна з адной або некалькімі палітыкамі арганізацыі неабходна, каб ваш асноўны пароль адказваў наступным патрабаванням:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Мінімальны ўзровень складанасці $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1415,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Мінімальная даўжыня $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1424,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Уключыць адну ці больш прапісных літар"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Уключыць адну ці больш малых літар"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Уключыць адну ці больш лічбаў"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Уключаць хаця б адзін з наступных спецыяльных сімвалаў $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1403,9 +1445,57 @@
     "message": "Ваш новы асноўны пароль не адпавядае патрабаванням палітыкі арганізацыі."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Ставячы гэты сцяжок вы пагаджаецеся з наступным:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Умовы выкарыстання і Палітыка прыватнасці не былі пацверджаны."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Approve"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
   }
 }

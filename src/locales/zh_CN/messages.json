@@ -340,7 +340,7 @@
     "message": "删除附件"
   },
   "deleteItemConfirmation": {
-    "message": "您确定要删除此项目吗？"
+    "message": "确实要删除此项目吗?"
   },
   "deletedItem": {
     "message": "项目已发送到回收站"
@@ -852,11 +852,23 @@
   "enableMinToTrayDesc": {
     "message": "最小化窗口后在系统托盘显示一个图标。"
   },
+  "enableMinToMenuBar": {
+    "message": "最小化到菜单栏"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "最小化窗口后，改为在菜单栏中显示一个图标。"
+  },
   "enableCloseToTray": {
     "message": "关闭到托盘"
   },
   "enableCloseToTrayDesc": {
     "message": "关闭窗口后在系统托盘显示一个图标。"
+  },
+  "enableCloseToMenuBar": {
+    "message": "关闭菜单栏"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "关闭窗口后，改为在菜单栏中显示一个图标。"
   },
   "enableTray": {
     "message": "启用托盘图标"
@@ -869,6 +881,30 @@
   },
   "startToTrayDesc": {
     "message": "应用程序首次启动时，启动到系统托盘。"
+  },
+  "startToMenuBar": {
+    "message": "启动到菜单栏"
+  },
+  "startToMenuBarDesc": {
+    "message": "应用程序首次启动时，只在菜单栏中显示一个图标。"
+  },
+  "openAtLogin": {
+    "message": "登录时自启动"
+  },
+  "openAtLoginDesc": {
+    "message": "登录时自动启动 Bitwarden 桌面应用程序。"
+  },
+  "alwaysShowDock": {
+    "message": "始终在 Dock 中显示"
+  },
+  "alwaysShowDockDesc": {
+    "message": "即使已最小化到菜单栏，仍在 Dock 中显示 Bitwarden 图标。"
+  },
+  "confirmTrayTitle": {
+    "message": "确认禁用托盘"
+  },
+  "confirmTrayDesc": {
+    "message": "禁用此设置也将禁用其他与托盘相关的设置。"
   },
   "language": {
     "message": "语言"
@@ -1182,8 +1218,14 @@
     "message": "警告",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "确认密码库导出"
+  },
   "exportWarningDesc": {
     "message": "导出的密码库数据包含未加密格式。您不应该通过不安全的渠道（例如电子邮件）来存储或发送导出的文件。用完后请立即将其删除。"
+  },
+  "encExportWarningDesc": {
+    "message": "此导出将使用您账户的加密密钥来加密您的数据。 如果您曾经轮换过账户的加密密钥，您应将其重新导出，否则您将无法解密导出的文件。"
   },
   "exportMasterPassword": {
     "message": "输入主密码来导出你的密码库。"
@@ -1352,7 +1394,7 @@
     "message": "设置主密码"
   },
   "ssoCompleteRegistration": {
-    "message": "为使用单点登录（SSO）功能，请设置一个主密码以访问和保护您的密码库。"
+    "message": "要完成 SSO 登陆配置，请设置一个主密码以访问和保护您的密码库。"
   },
   "newMasterPass": {
     "message": "新的主密码"
@@ -1391,7 +1433,7 @@
     "message": "至少包含一个数字"
   },
   "policyInEffectSpecial": {
-    "message": "至少包含一个下列的特殊字符：$CHARS$",
+    "message": "至少包含一个以下特殊字符：$CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1407,5 +1449,53 @@
   },
   "acceptPoliciesError": {
     "message": "尚未同意服务条款和隐私政策。"
+  },
+  "enableBrowserIntegration": {
+    "message": "启用浏览器集成"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "浏览器集成用于在浏览器中提供生物身份识别技术。"
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "不支持浏览器集成"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "很遗憾，目前仅 Mac App Store 版本支持浏览器集成。"
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "需要浏览器集成的验证"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "在您的桌面与浏览器间建立连接时，要求指纹短语验证以实现一个额外安全层。选项启用时，每次建立连接都需要用户干预和验证。"
+  },
+  "approve": {
+    "message": "批准"
+  },
+  "verifyBrowserTitle": {
+    "message": "验证浏览器连接"
+  },
+  "verifyBrowserDesc": {
+    "message": "请确保显示的指纹与浏览器扩展中显示的指纹相同。"
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "生物识别未启用"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "需要先在桌面应用程序的设置中启用生物识别，才能使用浏览器中的生物识别。"
+  },
+  "personalOwnershipSubmitError": {
+    "message": "因一企业策略，您已被限制保存项目到您的个人密码库。请将所有权选项改为一个组织，并从可用的收藏夹中选择。"
+  },
+  "hintEqualsPassword": {
+    "message": "您的密码提示不能与您的密码相同。"
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "一项组织策略正在影响您的所有权选项。"
   }
 }
