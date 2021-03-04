@@ -34,6 +34,24 @@
                 </div>
             </div>
         </ng-container>
+        <ng-container *ngIf="selectedProviderType === providerType.WebAuthn">
+            <div class="content text-center">
+                <span *ngIf="!webAuthnReady" class="text-center"><i class="fa fa-spinner fa-spin"></i></span>
+                <div *ngIf="webAuthnReady">
+                    <p>{{'insertU2f' | i18n}}</p>
+                    <img src="../../images/u2fkey.jpg" alt="" class="img-rounded img-responsive" />
+                </div>
+            </div>
+
+            <div class="box first">
+                <div class="box-content">
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="remember">{{'rememberMe' | i18n}}</label>
+                        <input id="remember" type="checkbox" name="Remember" [(ngModel)]="remember">
+                    </div>
+                </div>
+            </div>
+        </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.Duo ||
                         selectedProviderType === providerType.OrganizationDuo">
             <div id="duo-frame"><iframe id="duo_iframe"></iframe></div>
@@ -73,3 +91,4 @@
     </div>
 </form>
 <ng-template #twoFactorOptions></ng-template>
+<iframe id="webauthn_iframe" hidden allow="publickey-credentials-get *"></iframe>
