@@ -22,11 +22,40 @@ class BrowserStorageService implements StorageService {
     private nonVolatileKeys = [
         // data to be stored in the Local Storage of the browser.
         // other data will stored only in memory for security
-        'kdfIterations',
-        'keyHash',
+        // 'kdfIterations',
+        // 'keyHash',
+        // 'accessToken',
+        // 'userId',
+        // '',
+        // 'lastActive',
+        // 'installedVersion',
+        // 'environmentUrls',
+        // 'loglevel:webpack-dev-server',
+        // 'appId',
+        // 'rememberEmail',
+        // 'rememberedEmail',
+        // 'sends_11036a581323a56ae15c013d89b33275',
+        // 'lastSync_11036a581323a56ae15c013d89b33275',
         'accessToken',
-        'userId',
-        '',
+        'refreshToken',
+        // 'userEmail',
+        // 'userId',
+        'kdf',
+        'kdfIterations',
+        // 'key',
+        // 'keyHash',
+        // 'encKey',
+        // 'encPrivateKey',
+        // 'encOrgKeys',
+        'securityStamp',
+        // 'organizations_16de2bf8221703c60110c93325142a7d',
+        // 'folders_16de2bf8221703c60110c93325142a7d',
+        // 'collections_16de2bf8221703c60110c93325142a7d',
+        // 'ciphers_16de2bf8221703c60110c93325142a7d',
+        // 'sends_16de2bf8221703c60110c93325142a7d',
+        // 'settings_16de2bf8221703c60110c93325142a7d',
+        // 'policies_16de2bf8221703c60110c93325142a7d',
+        // 'lastSync_16de2bf8221703c60110c93325142a7d',
     ];
 
     constructor() {
@@ -37,11 +66,14 @@ class BrowserStorageService implements StorageService {
         this.chromeStorageApi = window.localStorage;
         const cozyDataNode = document.getElementById('cozy-app');
         const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+
         if (cozyDomain) {
             this.isVolatileStorage = true;
         } else {
             this.isVolatileStorage = false;
         }
+        // only for tests
+        // this.isVolatileStorage = false;
     }
 
     async get<T>(key: string): Promise<T> {
@@ -51,29 +83,45 @@ class BrowserStorageService implements StorageService {
         if (key === 'kdfIterations') {
             return JSON.parse('100000');
         }
-        // if (!this.nonVolatileKeys.includes(key)) {
-        if (this.isVolatileStorage) {
-            return this.volatileGet(key);
-        } else {
+        // if (this.isVolatileStorage) {
+        //     return this.volatileGet(key);
+        // } else {
+        //     return this.localStorageGet(key);
+        // }
+        if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
             return this.localStorageGet(key);
+        } else {
+            return this.volatileGet(key);
         }
     }
 
     async save(key: string, obj: any): Promise<any> {
         // if (!this.nonVolatileKeys.includes(key)) {
-        if (this.isVolatileStorage) {
-            return this.volatileSave(key, obj);
-        } else {
+        // if (this.isVolatileStorage) {
+        //     return this.volatileSave(key, obj);
+        // } else {
+        //     return this.localStorageSave(key, obj);
+        // }
+        // console.log(`BrowserStorageService.save(${key})`);
+
+        if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
             return this.localStorageSave(key, obj);
+        } else {
+            return this.volatileSave(key, obj);
         }
     }
 
     async remove(key: string): Promise<any> {
         // if (!this.nonVolatileKeys.includes(key)) {
-        if (this.isVolatileStorage) {
-            return this.volatileRemove(key);
-        } else {
+        // if (this.isVolatileStorage) {
+        //     return this.volatileRemove(key);
+        // } else {
+        //     return this.localStorageRemove(key);
+        // }
+        if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
             return this.localStorageRemove(key);
+        } else {
+            return this.volatileRemove(key);
         }
     }
 

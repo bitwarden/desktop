@@ -8,7 +8,7 @@
                 <h1>{{'authentification' | i18n}}</h1>
                 <p>{{'confirmYourIdentity' | i18n}}</p>
                 <div class="box-content-row" appBoxRow *ngIf="!isInCozyApp">
-                    <label for="email">email address (required only when executed outside a Cozy app)</label>
+                    <label for="email">email address (required only when executed outside a Cozy app "me@fqdn.mycozy.cloud")</label>
                     <input id="email" type="text" name="Email" [(ngModel)]="email" required>
                 </div>
                 <div class="row material-input eyed" #masterPwdContainer>

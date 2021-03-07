@@ -121,8 +121,7 @@ export class AppComponent implements OnInit {
 
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(async () => {
-                console.log(`message heard =`, message);
-
+                // console.log(`message heard =`, message);
                 switch (message.command) {
                     case 'loggedIn':
                     case 'unlocked':

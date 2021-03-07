@@ -21,7 +21,7 @@
         border-right: 1px solid #000000;
 
         @include themify($themes) {
-            background-color: themed('backgroundColorAlt');
+            background-color: themed('backgroundColorAlt2');
             border-right-color: themed('borderColor');
         }
 
@@ -325,7 +325,6 @@
 
         .box {
             max-width: 550px;
-            margin: 30px auto 0 auto;
 
             &:first-child {
                 margin-top: 10px;
@@ -444,7 +443,6 @@
         background-color: unset;
         padding: 0;
         border: 0;
-        margin: 30px auto 0 auto;
         min-width: 350px;
         max-width: 550px;
         width: 100%;

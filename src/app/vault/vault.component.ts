@@ -196,7 +196,6 @@ export class VaultComponent implements OnInit, OnDestroy {
         document.body.classList.remove('layout_frontend');
         let queryParamsSub1: any;
         queryParamsSub1 = this.route.queryParams.subscribe(async (params) => {
-            console.log(`params on init :`, params);
             this.action = params.action;
             if (params.toolType) {
                 this.toolType = params.toolType ? params.toolType : 'installation';
@@ -222,10 +221,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async load() {
-        console.log('vault.component.load()');
         const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
-            console.log(`vault.component.queryParams()`, params);
-
             if (this.loaded) {
                 return;
             }
@@ -248,6 +244,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                     } else if (params.action === 'edit') {
                         await this.editCipher(cipherView);
                     } else {
+                        this.type = params.type;
                         await this.viewCipher(cipherView);
                     }
                 } else if (params.action === 'add') {
@@ -255,18 +252,18 @@ export class VaultComponent implements OnInit, OnDestroy {
                 }
                 if (params.deleted) {
                     this.groupingsComponent.selectedTrash = true;
-                    await this.filterDeleted();
+                    await this.filterDeleted(['cipherId']);
                 } else if (params.favorites) {
                     this.groupingsComponent.selectedFavorites = true;
                     await this.filterFavorites();
                 } else if (params.type) {
                     const t = parseInt(params.type, null);
                     this.groupingsComponent.selectedType = t;
-                    await this.filterCipherType(t);
+                    await this.filterCipherType(t, ['cipherId']);
                 } else if (params.folderId) {
                     this.groupingsComponent.selectedFolder = true;
                     this.groupingsComponent.selectedFolderId = params.folderId;
-                    await this.filterFolder(params.folderId);
+                    await this.filterFolder(params.folderId, ['cipherId']);
                 } else if (params.collectionId) {
                     this.groupingsComponent.selectedCollectionId = params.collectionId;
                     await this.filterCollection(params.collectionId);
@@ -301,6 +298,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     async viewTool(type: string) {
         console.log(`viewTool(${type})`)
         if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
             return;
         }
         this.clearFilters();
@@ -554,6 +552,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async clearGroupingFilters() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchVault');
         await this.ciphersComponent.reload();
         this.clearFilters();
@@ -561,6 +563,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterFavorites() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFavorites');
         await this.ciphersComponent.reload((c) => c.favorite);
         this.clearFilters();
@@ -568,35 +574,53 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.go();
     }
 
-    async filterDeleted() {
+    async filterDeleted(excluded: string[] = []) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchTrash');
         this.ciphersComponent.deleted = true;
         await this.ciphersComponent.reload(null, true);
-        this.clearFilters();
+        this.clearFilters(excluded);
+        this.action = 'view';
         this.deleted = true;
         this.go();
     }
 
-    async filterCipherType(type: CipherType) {
+    async filterCipherType(type: CipherType, excluded: string[] = []) {
         console.log(`filterCipherType(${type})`);
-        // this.action = 'nav';
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
         await this.ciphersComponent.reload((c) => c.type === type);
-        this.clearFilters();
+        this.clearFilters(excluded);
+        this.action = 'view';
         this.type = type;
         this.go();
     }
 
-    async filterFolder(folderId: string) {
+    async filterFolder(folderId: string, excluded: string[] = []) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         folderId = folderId === 'none' ? null : folderId;
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
         await this.ciphersComponent.reload((c) => c.folderId === folderId);
-        this.clearFilters();
+        this.clearFilters(excluded);
+        this.action = 'view';
         this.folderId = folderId == null ? 'none' : folderId;
         this.go();
     }
 
     async filterCollection(collectionId: string) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
         await this.ciphersComponent.reload((c) => c.collectionIds != null &&
             c.collectionIds.indexOf(collectionId) > -1);
@@ -711,16 +735,47 @@ export class VaultComponent implements OnInit, OnDestroy {
         return !confirmed;
     }
 
-    private clearFilters() {
-        this.folderId = null;
-        this.collectionId = null;
-        this.favorites = false;
-        this.type = null;
-        this.addCollectionIds = null;
-        this.addType = null;
-        this.addOrganizationId = null;
-        this.deleted = false;
-        this.toolType = null;
+    private clearFilters(excluded: string[] = []) {
+        const nullFilters = [
+            'folderId'         ,
+            'collectionId'     ,
+            'type'             ,
+            'addCollectionIds' ,
+            'addType'          ,
+            'addOrganizationId',
+            'toolType'         ,
+            'cipherId'         ,
+            'action'           ,
+        ];
+        const falseFilters = [
+            'favorites',
+            'deleted'  ,
+        ];
+        nullFilters.filter((prop) => {
+            return !excluded.includes(prop);
+        })
+        .forEach((prop: string) => {
+            // @ts-ignore
+            this[prop] = null;
+        });
+        falseFilters.filter((prop) => {
+            return !excluded.includes(prop);
+        })
+        .forEach((prop: string) => {
+            // @ts-ignore
+            this[prop] = false;
+        });
+        // this.folderId = null;
+        // this.collectionId = null;
+        // this.favorites = false;
+        // this.type = null;
+        // this.addCollectionIds = null;
+        // this.addType = null;
+        // this.addOrganizationId = null;
+        // this.deleted = false;
+        // this.toolType = null;
+        // this.cipherId = null;
+        // this.action = null;
     }
 
     private go(queryParams: any = null) {

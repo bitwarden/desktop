@@ -68,6 +68,11 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                 base: this.baseUrl + 'bitwarden',
             });
         }
+        // const cozyToken = cozyDataNode ? cozyDataNode.dataset.cozytoken : null;
+        // if (cozyToken) {
+        //     await this.storageService.save('accessToken', cozyToken);
+        // }
+
         // end Cozy override
         await super.ngOnInit();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {

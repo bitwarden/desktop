@@ -36,6 +36,7 @@ npm run electron
 ```bash
 npm install                  #
 npm run electron:browser     # to run the web-into electron (hot reload)
+npm run build:browser:prod   # to build into `build-browser` for production
 npm run build:browser:watch  # to build into `build-browser` and watch changes
 npm run build:browser:server # to build and run a server (http://localhost:4242)
 npm run build:browser:server:analysebundle # to add a size map of the bundles (on http://127.0.0.1:8888/)
