@@ -476,7 +476,7 @@
     "message": "Submit"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Password of your Cozy"
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."

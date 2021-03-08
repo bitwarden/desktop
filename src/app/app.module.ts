@@ -21,7 +21,6 @@ import { EnvironmentComponent } from './accounts/environment.component';
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
-// import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
 import { SettingsComponent } from './accounts/settings.component';
@@ -30,7 +29,6 @@ import { TwoFactorOptionsComponent } from './accounts/two-factor-options.compone
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
 import { CalloutComponent } from 'jslib/angular/components/callout.component';
-// import { IconComponent } from 'jslib/angular/components/icon.component';
 import { IconComponent } from './vault/icon.component';
 
 import { ModalComponent } from 'jslib/angular/components/modal.component';
@@ -182,7 +180,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
-        // PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
@@ -208,7 +205,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
-        // PremiumComponent,
         SettingsComponent,
         ShareComponent,
         TwoFactorOptionsComponent,

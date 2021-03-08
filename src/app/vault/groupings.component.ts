@@ -69,14 +69,12 @@ export class GroupingsComponent extends BaseGroupingsComponent {
     }
 
     selectInstallation() {
-        console.log('selectInstallation()');
         this.clearSelections();
         this.selectedTool = 'installation';
         this.onToolClicked.emit('installation');
     }
 
     selectImport() {
-        console.log('selectImport()');
         this.clearSelections();
         this.selectedTool = 'import';
         this.onToolClicked.emit('import');

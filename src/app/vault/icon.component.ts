@@ -29,8 +29,9 @@ const IconMap: any = {
 This file is a copy of the jslib file :
     * https://github.com/bitwarden/jslib/blob/abb54f007305eabd77996623dd20cbe45345e82a/src/angular/components/icon.component.ts
 
-The reason for this duplication is :
-    * to modifiy the default login icon (`icon-login` instead of `images/fa-globe.png
+The reason for this duplication is to modifiy :
+    * the default login icon (`icon-login` instead of `images/fa-globe.png`)
+    * the icon for cards and the icon for logins
 
 -------------------------------------------------------------------  */
 

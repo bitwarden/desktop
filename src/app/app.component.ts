@@ -63,7 +63,6 @@ const IdleTimeout = 60000 * 10; // 10 minutes
 @Component({
     selector: 'app-root',
     styles: [],
-    // <div>Hello Cozy !</div>
     template: `
         <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
         <div id="cozy-bar">This is the Cozy Bar</div>

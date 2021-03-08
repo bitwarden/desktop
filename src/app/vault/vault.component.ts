@@ -195,6 +195,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         document.body.classList.remove('layout_frontend');
         let queryParamsSub1: any;
+
+        // check queryParams to choose the tab to activate at init.
         queryParamsSub1 = this.route.queryParams.subscribe(async (params) => {
             this.action = params.action;
             if (params.toolType) {
@@ -296,7 +298,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async viewTool(type: string) {
-        console.log(`viewTool(${type})`)
         if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             this.groupingsComponent.revertSelection();
             return;
@@ -589,7 +590,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterCipherType(type: CipherType, excluded: string[] = []) {
-        console.log(`filterCipherType(${type})`);
         if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             this.groupingsComponent.revertSelection();
             return;
@@ -735,6 +735,10 @@ export class VaultComponent implements OnInit, OnDestroy {
         return !confirmed;
     }
 
+    /*---------------------------------------------------------------
+        re-init filter parameters except these explicitely excluded
+        with the `excluded` parameter
+     */
     private clearFilters(excluded: string[] = []) {
         const nullFilters = [
             'folderId'         ,
@@ -765,17 +769,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             // @ts-ignore
             this[prop] = false;
         });
-        // this.folderId = null;
-        // this.collectionId = null;
-        // this.favorites = false;
-        // this.type = null;
-        // this.addCollectionIds = null;
-        // this.addType = null;
-        // this.addOrganizationId = null;
-        // this.deleted = false;
-        // this.toolType = null;
-        // this.cipherId = null;
-        // this.action = null;
     }
 
     private go(queryParams: any = null) {
@@ -834,9 +827,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.addCollectionIds = null;
     }
 
-
     /* ****************************************************************
-    Retrurn true of false wehther the Cozy Pass addon is installed.
+    Return true if the Cozy Pass addon is installed.
     If not, a timeout will return false after 300ms.
     (average elapsed time to have an answer from the addon is about 60ms, so 300ms should be enough)
     */
@@ -847,23 +839,18 @@ export class VaultComponent implements OnInit, OnDestroy {
             document.addEventListener(
                 'cozy.passwordextension.installed',
                 (e) => {
-                    // console.log(`== event cozy.passwordextension.installed`, e);
-                    // console.timeEnd('checkAddonStatus');
                     resolve(true);
                 },
             );
             document.addEventListener(
                 'cozy.passwordextension.connected',
                 (e) => {
-                    // console.log(`== event cozy.passwordextension.connected`, e);
-                    // console.timeEnd('checkAddonStatus');
                     resolve(true);
                 },
             );
             setTimeout(() => {
                 resolve(false);
             }, 300);
-            // console.time('checkAddonStatus');
             document.dispatchEvent(event);
         });
     }

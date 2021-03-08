@@ -57,7 +57,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     async ngOnInit() {
         // @override by Cozy
         // check if code is run into a Cozy app
-        // if yes, retrive url and user email
+        // if yes, retrieve url and user email from the htlm
         const cozyDataNode = document.getElementById('cozy-app');
         const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
         if (cozyDomain) {
@@ -68,7 +68,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                 base: this.baseUrl + 'bitwarden',
             });
         }
-        // const cozyToken = cozyDataNode ? cozyDataNode.dataset.cozytoken : null;
+        // TODO BJA const cozyToken = cozyDataNode ? cozyDataNode.dataset.cozytoken : null;
         // if (cozyToken) {
         //     await this.storageService.save('accessToken', cozyToken);
         // }
@@ -89,7 +89,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
     ngAfterViewInit() {
         const inputContainerEl  = this.masterPwdContainer.nativeElement;
-        const labelTxt = 'Mot de passe de votre Cozy';
+        const labelTxt = this.i18nService.t('masterPass');
         this._turnIntoMaterialInput(inputContainerEl, labelTxt);
     }
 
@@ -176,21 +176,5 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
             that.showPassword = !that.showPassword;
         });
     }
-
-    /* --------------------------------------------------------------------- */
-    // Hide the visibility of the password
-    // function _hidePwdVisibility() {
-    //     pwdInput.type = 'password'
-    //     visiPwdBtn.firstElementChild.classList.replace('fa-eye-slash','fa-eye')
-    //     isPwdHidden = true
-    // }
-
-    /* --------------------------------------------------------------------- */
-    // unHide the visibility of the password
-    // function _unHidePwdVisibility() {
-    //     pwdInput.type = 'text'
-    //     visiPwdBtn.firstElementChild.classList.replace('fa-eye','fa-eye-slash')
-    //     isPwdHidden = false
-    // }
 
 }

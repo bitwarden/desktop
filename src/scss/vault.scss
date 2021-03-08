@@ -433,10 +433,8 @@
     }
 
     .content {
-        // flex: 1 1 auto;
         position: relative;
         overflow: auto;
-        // height: 100%;
     }
 
     #details .footer {
@@ -466,7 +464,6 @@
         display: unset;
         align-items: unset;
         @include themify($themes) {
-            // background-color: themed('backgroundColorAlt');
             border-top-color: themed('borderColor');
         }
 
