@@ -325,7 +325,7 @@
 
         .box {
             max-width: 550px;
-
+            margin: 30px auto 0 auto;
             &:first-child {
                 margin-top: 10px;
             }
@@ -460,7 +460,6 @@
         flex: 0 0 auto;
         border-top: 1px solid #000000;
         padding: 0 15px;
-        margin-top: 1px;
         display: unset;
         align-items: unset;
         @include themify($themes) {
@@ -480,5 +479,9 @@
             margin-left: auto;
             display: flex;
         }
+    }
+
+    #details .footer {
+        margin: 1px auto 0 auto;
     }
 }
