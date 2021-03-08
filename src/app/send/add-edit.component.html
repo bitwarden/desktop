@@ -177,8 +177,7 @@
                 <i class="fa fa-copy fa-lg fa-fw" aria-hidden="true"></i>
             </button>
             <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
-                appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode" [disabled]="deleteBtn.loading"
-                [appApiAction]="deletePromise">
+                appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode">
                 <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
                 <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading" aria-hidden="true"></i>
             </button>
