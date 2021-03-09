@@ -28,6 +28,9 @@ const BroadcasterSubscriptionId = 'AddEditComponent';
     templateUrl: 'add-edit.component.html',
 })
 export class AddEditComponent extends BaseAddEditComponent implements OnChanges, OnDestroy {
+
+    // prevFolderIdValue: any = null;
+
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
@@ -40,6 +43,9 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     }
 
     async ngOnInit() {
+        // @override by Cozy : remove the notes from the possible types of ciphers
+        this.typeOptions.pop();
+        // end override
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(() => {
                 switch (message.command) {
@@ -68,6 +74,13 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
             this.cipher = null;
         }
         super.load();
+
+        // TODO BJA : add `new folder` in the menu
+        // this.folders = this.folders.slice(0);
+        // const newFolderItem = new FolderView();
+        // newFolderItem.name = '➕ Créer un nouveau répertoire';
+        // newFolderItem.id = 'newFolderItem';
+        // this.folders.push(newFolderItem);
     }
 
     onWindowHidden() {
@@ -84,4 +97,24 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
         return (!this.editMode || this.cloneMode) && this.ownershipOptions
             && (this.ownershipOptions.length > 1 || !this.allowPersonal);
     }
+
+    // TODO BJA : make it work
+    // folderChanged(cipher: any, prevValue: any) {
+    //     console.log(`folderChanged()`);
+    //     console.log(cipher);
+    //     console.log(this.folderId, this.cipher.folderId, this.prevFolderIdValue);
+    //     if (cipher.folderId === 'newFolderItem') {
+    //         console.log("new folder requested => revert to :", this.prevFolderIdValue);
+    //         this.cipher.folderId = this.prevFolderIdValue;
+    //         cipher.folderId = this.prevFolderIdValue;
+    //         this.folderId = this.prevFolderIdValue;
+    //         this.onAddFolder.emit();
+    //     }
+    // }
+    // folderFocus(cipher: any) {
+    //     console.log(`folderFocus()`);
+    //     console.log(cipher);
+    //     console.log(this.folderId, this.cipher.folderId, this.prevFolderIdValue);
+    //     this.prevFolderIdValue = cipher.folderId
+    // }
 }

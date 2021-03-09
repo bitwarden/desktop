@@ -27,7 +27,7 @@
         (onShareCipher)="shareCipher($event)" (onEditCollections)="cipherCollections($event)"
         (onGeneratePassword)="openPasswordGenerator(true)">
     </app-vault-add-edit>
-    <div id="logo" *ngIf="!cipherId">
+    <div id="logo" *ngIf="shouldShowLogo()">
         <div class="content">
             <div class="inner-content">
                 <svg class="inner-cozy-logo" height="24" style="overflow: visible;" viewBox="0 2 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
