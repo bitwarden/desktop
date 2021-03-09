@@ -340,7 +340,7 @@
     "message": "Anhang löschen"
   },
   "deleteItemConfirmation": {
-    "message": "Soll dieser Eintrag wirklich gelöscht werden?"
+    "message": "Soll dieser Eintrag wirklich in den Papierkorb verschoben werden?"
   },
   "deletedItem": {
     "message": "Eintrag in Papierkorb verschoben"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "URI kopieren"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Copy Verification Code (TOTP)"
   },
   "length": {
     "message": "Länge"
@@ -617,7 +620,7 @@
     "message": "Selbstgehostete Anwendung"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitte geben Sie die Basis-URL Ihrer vor Ort gehosteten Bitwarden-Installation an."
+    "message": "Bitte gib die Basis-URL deiner selbst gehosteten Bitwarden-Installation an."
   },
   "customEnvironment": {
     "message": "Benutzerdefinierte Umgebung"
@@ -779,7 +782,7 @@
     "message": "Tresor-Timeout"
   },
   "vaultTimeoutDesc": {
-    "message": "Wählen Sie, wann der Timeout Ihres Tresors aktiviert werden soll und welche Aktion er bewirken soll."
+    "message": "Wähle, wann der Timeout deines Tresors aktiviert werden soll und welche Aktion er bewirken soll."
   },
   "immediately": {
     "message": "Sofort"
@@ -904,7 +907,7 @@
     "message": "Tray deaktivieren bestätigen"
   },
   "confirmTrayDesc": {
-    "message": "Deaktivieren dieser Einstellung wird auch alle anderen Tray-bezogenen Einstellungen deaktivieren."
+    "message": "Das Deaktivieren dieser Einstellung wird auch alle anderen Taskleisten-Einstellungen deaktivieren."
   },
   "language": {
     "message": "Sprache"
@@ -1222,10 +1225,13 @@
     "message": "Tresor-Export bestätigen"
   },
   "exportWarningDesc": {
-    "message": "Dieser Export enthält deine unverschlüsselten Daten im Csv-Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
+    "message": "Dieser Export enthält deine Tresordaten in einem unverschlüsseltem Format. Du solltest sie nicht speichern oder über unsichere Kanäle (z. B. E-Mail) senden. Lösche sie sofort nach ihrer Verwendung."
   },
-  "encExportWarningDesc": {
-    "message": "Dieser Export verschlüsselt Ihre Daten mit dem Verschlüsselungscode Ihres Kontos. Falls Sie Ihren Verschlüsselungscode erneuern, sollten Sie den Export erneut durchführen, da Sie die zuvor erstellte Datei ansonsten nicht mehr entschlüsseln können."
+  "encExportKeyWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "exportMasterPassword": {
     "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
@@ -1307,29 +1313,29 @@
     "message": "In Menüleiste ausblenden"
   },
   "selectOneCollection": {
-    "message": "Sie müssen mindestens eine Sammlung auswählen."
+    "message": "Du musst mindestens eine Sammlung auswählen."
   },
   "premiumUpdated": {
-    "message": "Sie haben ein Premium-Abo aktiviert."
+    "message": "Du hast ein Premium-Abo aktiviert."
   },
   "restore": {
     "message": "Wiederherstellen"
   },
   "premiumManageAlertAppStore": {
-    "message": "Sie können Ihr Abonnement über den App Store verwalten. Wollen Sie jetzt den App Store öffnen?"
+    "message": "Du kannst dein Abonnement über den App Store verwalten. Willst du jetzt den App Store öffnen?"
   },
   "legal": {
     "message": "Rechtliches",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Allgemeine Geschäftsbedingungen"
+    "message": "Nutzungsbedingungen"
   },
   "privacyPolicy": {
-    "message": "Datenschutzerklärung"
+    "message": "Datenschutzbestimmungen"
   },
   "unsavedChangesConfirmation": {
-    "message": "Wollen Sie wirklich aufhören? Wenn Sie jetzt aufhören, werden Ihre aktuellen Eingaben nicht gespeichert."
+    "message": "Willst du wirklich aufhören? Wenn du jetzt aufhörst, werden deine aktuellen Eingaben nicht gespeichert."
   },
   "unsavedChangesTitle": {
     "message": "Nicht gespeicherte Änderungen"
@@ -1338,7 +1344,7 @@
     "message": "Duplizieren"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen Ihre Generator-Einstellungen."
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen dein Generator-Einstellungen."
   },
   "vaultTimeoutAction": {
     "message": "Aktion bei Tresor-Timeout"
@@ -1382,7 +1388,7 @@
     "message": "Dauerhaft löschen"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Nach dem Ausloggen verlieren Sie jeglichen Zugriff auf Ihren Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Sind Sie sicher, dass Sie diese Einstellung nutzen möchten?"
+    "message": "Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchten?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Bestätigung der Timeout-Aktion"
@@ -1394,7 +1400,7 @@
     "message": "Masterpasswort festlegen"
   },
   "ssoCompleteRegistration": {
-    "message": "Bitte legen Sie ein Masterpasswort für den Schutz Ihres Tresors fest, um die Anmeldung über SSO abzuschließen."
+    "message": "Bitte lege ein Masterpasswort für den Schutz deines Tresors fest, um die Anmeldung über SSO abzuschließen."
   },
   "newMasterPass": {
     "message": "Neues Masterpasswort"
@@ -1403,7 +1409,7 @@
     "message": "Neues Masterpasswort bestätigen"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass Ihr Masterpasswort die folgenden Anforderungen erfüllt:"
+    "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass dein Masterpasswort die folgenden Anforderungen erfüllt:"
   },
   "policyInEffectMinComplexity": {
     "message": "Kleinster Komplexitätsgrad von $SCORE$",
@@ -1442,10 +1448,10 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Ihr neues Masterpasswort entspricht nicht den Anforderungen der Richtlinie."
+    "message": "Dein neues Masterpasswort entspricht nicht den Anforderungen der Richtlinie."
   },
   "acceptPolicies": {
-    "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
+    "message": "Durch Anwählen dieses Kästchens erklärst du dich mit folgendem einverstanden:"
   },
   "acceptPoliciesError": {
     "message": "Die Nutzungsbedingungen und die Datenschutzerklärung wurden nicht akzeptiert."
@@ -1472,16 +1478,16 @@
     "message": "Überprüfung für Browser-Integration verlangen"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Eine zusätzliche Sicherheitsebene aktivieren, indem eine Prüfschlüssel-Validierung verlangt wird, wenn eine Verbindung zwischen Ihrer Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff erforderlich."
+    "message": "Eine zusätzliche Sicherheitsebene aktivieren, indem eine Prüfschlüssel-Validierung verlangt wird, wenn eine Verbindung zwischen deiner Desktop-Anwendung und dem Browser aufgebaut wird. Nach Aktivierung ist bei jedem Verbindungsaufbau ein Benutzer-Eingriff erforderlich."
   },
   "approve": {
     "message": "Genehmigen"
   },
   "verifyBrowserTitle": {
-    "message": "Browser-Verbindung bestätigen"
+    "message": "Browser Verbindung bestätigen"
   },
   "verifyBrowserDesc": {
-    "message": "Bitte stellen Sie sicher, dass der angezeigte Prüfschlüssel identisch mit dem Prüfschlüssel in der Browser-Erweiterung ist."
+    "message": "Bitte stelle sicher, dass der angezeigte Prüfschlüssel identisch mit dem Prüfschlüssel in der Browser-Erweiterung ist."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie ist nicht aktiviert"
@@ -1490,12 +1496,162 @@
     "message": "Biometrie im Browser setzt voraus, dass Biometrie zuerst in den Einstellungen der Desktop-Anwendung aktiviert ist."
   },
   "personalOwnershipSubmitError": {
-    "message": "Aufgrund einer Unternehmensrichtlinie dürfen Sie keine Einträge in Ihrem persönlichen Tresor speichern. Ändern Sie die Eigentümer-Option in eine Organisation und wählen Sie aus den verfügbaren Sammlungen."
+    "message": "Aufgrund einer Unternehmensrichtlinie darfst du keine Einträge in deinem persönlichen Tresor speichern. Ändere die Eigentümer-Option in eine Organisation und wähle aus den verfügbaren Sammlungen."
   },
   "hintEqualsPassword": {
-    "message": "Ihr Passwort-Hinweis darf nicht identisch mit Ihrem Passwort sein."
+    "message": "Dein Passwort-Hinweis darf nicht identisch mit deinem Passwort sein."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "Eine Organisationsrichtlinie beeinflusst Ihre Eigentümer-Optionen."
+    "message": "Eine Organisationsrichtlinie beeinflusst deine Eigentümer-Optionen."
+  },
+  "allSends": {
+    "message": "All Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "File"
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "searchSends": {
+    "message": "Search Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Edit Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "My Vault"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "deletionDate": {
+    "message": "Deletion Date"
+  },
+  "deletionDateDesc": {
+    "message": "The Send will be permanently deleted on the specified date and time.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Expiration Date"
+  },
+  "expirationDateDesc": {
+    "message": "If set, access to this Send will expire on the specified date and time.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maximum Access Count"
+  },
+  "maxAccessCountDesc": {
+    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Current Access Count"
+  },
+  "disableSend": {
+    "message": "Disable this Send so that no one can access it.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Optionally require a password for users to access this Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Private notes about this Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send Link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "When accessing the Send, hide the text by default",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Created Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Edited Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Deleted Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "New Password"
+  },
+  "whatTypeOfSend": {
+    "message": "What type of Send is this?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Create Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "The text you want to send."
+  },
+  "sendFileDesc": {
+    "message": "The file you want to send."
+  },
+  "days": {
+    "message": "$DAYS$ days",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 day"
+  },
+  "custom": {
+    "message": "Custom"
+  },
+  "deleteSendConfirmation": {
+    "message": "Are you sure you want to delete this Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Copy Send link to clipboard",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copy the link to share this Send to my clipboard upon save."
+  },
+  "sendDisabled": {
+    "message": "Send disabled",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Copy link"
+  },
+  "disabled": {
+    "message": "Disabled"
+  },
+  "maxAccessCountReached": {
+    "message": "Max access count reached"
+  },
+  "expired": {
+    "message": "Expired"
+  },
+  "pendingDeletion": {
+    "message": "Pending deletion"
   }
 }
