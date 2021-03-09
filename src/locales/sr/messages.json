@@ -368,7 +368,7 @@
     "message": "Копирај УРЛ"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Копирај потврдни код (TOTP)"
   },
   "length": {
     "message": "Дужина"
@@ -1228,10 +1228,10 @@
     "message": "Овај извоз садржи податке сефа у нешифрираном формату. Не бисте смели да сачувате или шаљете извезену датотеку преко несигурних канала (као што је имејл). Избришите датотеку одмах након што завршите са коришћењем."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Овај извоз шифрује податке користећи кључ за шифровање вашег налога. Ако икада промените кључ за шифровање свог налога, требало би да поново извезете, јер нећете моћи да дешифрујете овај извоз."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Кључеви за шифровање налога су јединствени за сваки Bitwarden кориснички налог, тако да не можете да увезете шифровани извоз на други налог."
   },
   "exportMasterPassword": {
     "message": "Унети главну лозинку за извоз сефа."
@@ -1505,71 +1505,71 @@
     "message": "Политика организације утичу на ваше могућности власништва."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Сва слања",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Датотека"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Текст"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Претражи слања",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Уреди слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Мој сеф"
   },
   "text": {
-    "message": "Text"
+    "message": "Текст"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Датум брисања"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Слање ће бити трајно обрисано у наведени датум и време.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Датум истека"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Ако је подешено, приступ овом слању истиче у наведени датум и време.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Максималан број приступа"
   },
   "maxAccessCountDesc": {
     "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Тренутни број приступа"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Онемогући ово слање да нико други нема приступ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Опционо захтевај лозинку од корисника за приступ овом слању.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Приватне белешке о овом слању.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Линк слања",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Линк слања",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1577,19 +1577,19 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Креирано слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Измењено слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Обрисано слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Нова лозинка"
   },
   "whatTypeOfSend": {
     "message": "What type of Send is this?",
@@ -1606,7 +1606,7 @@
     "message": "The file you want to send."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ дана",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,10 +1615,10 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 дан"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Прилагођено"
   },
   "deleteSendConfirmation": {
     "message": "Are you sure you want to delete this Send?",
@@ -1632,7 +1632,7 @@
     "message": "Copy the link to share this Send to my clipboard upon save."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Слање онемогућено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1640,16 +1640,16 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Копирај везу"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Онемогућено"
   },
   "maxAccessCountReached": {
     "message": "Max access count reached"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Истекло"
   },
   "pendingDeletion": {
     "message": "Pending deletion"
