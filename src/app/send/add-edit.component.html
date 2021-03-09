@@ -40,7 +40,7 @@
                     <ng-container *ngIf="editMode && send.type === sendType.File">
                         <div class="box-content-row" appBoxRow>
                             <label for="file">{{'file' | i18n}}</label>
-                            <input id="file" type="text" name="file" [(ngModel)]="send.file.fileName" readonly [disabled]="disableSend">
+                            <div class="row-main">{{send.file.fileName}} ({{send.file.sizeName}})</div>
                         </div>
                     </ng-container>
                     <ng-container *ngIf="send.type === sendType.Text">
