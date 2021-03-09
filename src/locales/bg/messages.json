@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Копиране на адреса"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Copy Verification Code (TOTP)"
+  },
   "length": {
     "message": "Дължина"
   },
@@ -853,10 +856,10 @@
     "message": "При смаляване на прозореца да се показва иконка в областта за уведомяване."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Минимизиране в лентата за меню"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "При минимизиране на прозореца да се показва иконка в лентата за меню."
   },
   "enableCloseToTray": {
     "message": "Затваряне в областта за уведомяване"
@@ -865,10 +868,10 @@
     "message": "При затваряне на прозореца да се показва иконка в областта за уведомяване."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Затваряне в лентата за меню"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "При затваряне на прозореца да се показва иконка в лентата за меню."
   },
   "enableTray": {
     "message": "Включване на иконката в областта за уведомяване"
@@ -883,28 +886,28 @@
     "message": "При пускането на програмата да се показва само иконка в областта за уведомяване."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Стартиране в лентата за меню"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "При пускането на програмата да се показва само иконка в лентата за меню."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Автоматично стартиране със системата"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Автоматично стартиране на самостоятелното приложение на Битуорден при вписване в системата."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Винаги да се показва в дока"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Показване на иконата на Битуорден в дока, дори когато е минимизиран в лентата за меню."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Потвърждаване на изключване на областта за уведомяванията"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Изключването на настройката изключва всички други настройки за областта за уведомяванията."
   },
   "language": {
     "message": "Език"
@@ -1219,13 +1222,16 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "Потвърждаване на изнасянето на трезора"
   },
   "exportWarningDesc": {
     "message": "Данните от трезора ви ще се изнесат в незащитен формат. Не го пращайте по незащитени канали като е-поща. Изтрийте файла незабавно след като свършите работата си с него."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "exportMasterPassword": {
     "message": "Въведете главната парола, за да изнесете данните."
@@ -1445,57 +1451,207 @@
     "message": "Паролата ви не отговаря на политиките."
   },
   "acceptPolicies": {
-    "message": "Чрез тази отметка вие се съгласявате със следните:"
+    "message": "Чрез тази отметка вие се съгласявате със следното:"
   },
   "acceptPoliciesError": {
     "message": "Условията за използване и политиката за поверителност не бяха приети."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Включване на интеграцията с браузър"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "За потвърждаване с биометрични данни е необходима интеграция с браузъра."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Интеграцията с браузър не се поддържа"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за магазина на Mac."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Интеграцията с браузър не се поддържа"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за магазина на Windows."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Потвърждаване на интеграцията с браузър"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Допълнително ниво на сигурност, чрез изискване на потвърждаване на биометричните данни при създаване на връзка между самостоятелното приложение и браузъра. При включваното му потребителят трябва да потвърждава всяко установяване на връзка."
   },
   "approve": {
-    "message": "Approve"
+    "message": "Одобряване"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Проверка на връзката с браузъра"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Уверете се, че идентификаторът в разширението съвпада с показания."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "Потвърждаването с биометрични данни не е включено"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "Потвърждаването с биометрични данни в браузъра изисква включването включването им в настройките за самостоятелното приложение."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Заради някоя политика за голяма организация не може да запазвате елементи в собствения си трезор. Променете собствеността да е на организация и изберете от наличните колекции."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "Подсказването за паролата не може да съвпада с нея."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Политика от някоя организация влияе на вариантите за собственост."
+  },
+  "allSends": {
+    "message": "All Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "File"
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "searchSends": {
+    "message": "Search Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Edit Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "My Vault"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "deletionDate": {
+    "message": "Deletion Date"
+  },
+  "deletionDateDesc": {
+    "message": "The Send will be permanently deleted on the specified date and time.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Expiration Date"
+  },
+  "expirationDateDesc": {
+    "message": "If set, access to this Send will expire on the specified date and time.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maximum Access Count"
+  },
+  "maxAccessCountDesc": {
+    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Current Access Count"
+  },
+  "disableSend": {
+    "message": "Disable this Send so that no one can access it.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Optionally require a password for users to access this Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Private notes about this Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send Link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "When accessing the Send, hide the text by default",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Created Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Edited Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Deleted Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "New Password"
+  },
+  "whatTypeOfSend": {
+    "message": "What type of Send is this?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Create Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "The text you want to send."
+  },
+  "sendFileDesc": {
+    "message": "The file you want to send."
+  },
+  "days": {
+    "message": "$DAYS$ days",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 day"
+  },
+  "custom": {
+    "message": "Custom"
+  },
+  "deleteSendConfirmation": {
+    "message": "Are you sure you want to delete this Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Copy Send link to clipboard",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copy the link to share this Send to my clipboard upon save."
+  },
+  "sendDisabled": {
+    "message": "Send disabled",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Copy link"
+  },
+  "disabled": {
+    "message": "Disabled"
+  },
+  "maxAccessCountReached": {
+    "message": "Max access count reached"
+  },
+  "expired": {
+    "message": "Expired"
+  },
+  "pendingDeletion": {
+    "message": "Pending deletion"
   }
 }
