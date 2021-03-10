@@ -98,7 +98,7 @@ export class NativeMessagingMain {
                 } else {
                     this.logService.warning(`Chrome not found skipping.`);
                 }
-                
+
                 if (existsSync(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts`)) {
                     this.writeManifest(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 } else {
@@ -113,7 +113,7 @@ export class NativeMessagingMain {
                 if (existsSync(`${this.homedir()}/.config/google-chrome/`)) {
                     this.writeManifest(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
-                
+
                 if (existsSync(`${this.homedir()}/.config/microsoft-edge/`)) {
                     this.writeManifest(`${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
@@ -139,7 +139,7 @@ export class NativeMessagingMain {
                 if (existsSync(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
                     fs.unlink(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
-                
+
                 if (existsSync(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
                     fs.unlink(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
@@ -152,7 +152,7 @@ export class NativeMessagingMain {
                 if (existsSync(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
                     fs.unlink(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
-                
+
                 if (existsSync(`${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
                     fs.unlink(`${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
