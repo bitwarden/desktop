@@ -57,7 +57,7 @@
     "message": "Allegati"
   },
   "viewItem": {
-    "message": "Mostra Elemento"
+    "message": "Mostra elemento"
   },
   "name": {
     "message": "Nome"
@@ -229,7 +229,7 @@
     "message": "Sig.na"
   },
   "dr": {
-    "message": "Dottore"
+    "message": "Dott."
   },
   "expirationMonth": {
     "message": "Mese di scadenza"
@@ -368,7 +368,7 @@
     "message": "Copia URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Copia codice di verifica (TOTP)"
   },
   "length": {
     "message": "Lunghezza"
@@ -1228,10 +1228,10 @@
     "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di cifratura del tuo account. Se cambi la chiave di cifratura del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire una nuova esportazione."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Le chiavi di cifratura dell'account sono uniche per ogni account utente Bitwarden, quindi non è possibile importare un'esportazione cifrata in un account diverso."
   },
   "exportMasterPassword": {
     "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
@@ -1505,108 +1505,108 @@
     "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Tutti i Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
     "message": "File"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Testo"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Cerca Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Modifica Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "La mia cassaforte"
   },
   "text": {
-    "message": "Text"
+    "message": "Testo"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Data di eliminazione"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Il Send sarà definitivamente eliminato alla data e all'ora specificate.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Data di scadenza"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Se impostata, l'accesso a questo Send scadrà alla data e all'ora specificate.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Numero massimo di accessi"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Se impostata, gli utenti non saranno più in grado di accedere a questo Send una volta raggiunto il numero massimo di accessi.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Conteggio accessi corrente"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Disabilita il Send per renderlo inaccessibile.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Facoltativamente, richiedi una password agli utenti per accedere al Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Note private sul Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Link del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Link del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Quando si accede al Send, nascondi il testo in modo predefinito",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send creato",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send modificato",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send eliminato",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nuova password"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Di quale tipo di Send si tratta?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Crea Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Il testo che desideri inviare."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Il file che desideri inviare."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ giorni",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1615,43 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 giorno"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Personalizzato"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Sei sicuro di voler eliminare questo Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Copia collegamento Send negli appunti",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Copia il collegamento per condividere questo Send nei miei appunti dopo aver salvato."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send disabilitato",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "A causa di una policy aziendale, è possibile eliminare solo un Send esistente.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Copia link"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Disattivo"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Numero massimo di accessi raggiunto"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Scaduto"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "In attesa di eliminazione"
   }
 }
