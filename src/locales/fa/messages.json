@@ -1360,11 +1360,11 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "زباله ها",
+    "message": "زباله‌ها",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "جستجوی زباله ها"
+    "message": "جستجوی زباله‌ها"
   },
   "permanentlyDeleteItem": {
     "message": "حذف دائمی مورد"
@@ -1499,7 +1499,7 @@
     "message": "به دلیل خط مشی Enterprise ، برای ذخیره موارد در گاوصندوق شخصی خود محدود شده اید. گزینه مالکیت را به یک سازمان تغییر دهید و مجموعه های موجود را انتخاب کنید."
   },
   "hintEqualsPassword": {
-    "message": "نکته رمز عبور شما نمی تواند همان رمز عبور شما باشد."
+    "message": "نکته کلمه عبور شما نمی تواند همان کلمه عبور شما باشد."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "خط مشی سازمانی بر تنظیمات مالکیت شما تأثیر می گذارد."
@@ -1557,7 +1557,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "به صورت اختیاری برای دسترسی کاربران به این ارسال به یک رمز عبور نیاز دارید.",
+    "message": "به صورت اختیاری برای دسترسی کاربران به این ارسال به یک کلمه عبور نیاز دارید.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1589,7 +1589,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "رمز عبور جدید"
+    "message": "کلمه عبور جدید"
   },
   "whatTypeOfSend": {
     "message": "این چه نوع ارسالی است؟",
