@@ -1546,7 +1546,7 @@
     "message": "Максималан број приступа"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Ако је постављено, корисници више неће моћи да приступе овом „Send“ када се достигне максимални број приступа.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1573,7 +1573,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "На притуп „Send“-а, сакриј текст по дефаулту",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1592,18 +1592,18 @@
     "message": "Нова лозинка"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Који је ово тип „Send“-a?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Креирај слање",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Текст који желиш да пошаљеш."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Датотека коју желиш да пошаљеш."
   },
   "days": {
     "message": "$DAYS$ дана",
@@ -1621,22 +1621,22 @@
     "message": "Прилагођено"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Сигурно обрисати ово слање?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Копирај везу слања у бележницу",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Копирај везу да би поделио слање на бележницу након снимања."
   },
   "sendDisabled": {
     "message": "Слање онемогућено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Због полисе компаније, можеш само да бришеш постојећа слања.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1646,12 +1646,12 @@
     "message": "Онемогућено"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Достигнут максималан број приступа"
   },
   "expired": {
     "message": "Истекло"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Брисање на чекању"
   }
 }
