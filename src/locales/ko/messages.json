@@ -368,7 +368,7 @@
     "message": "URI 복사"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "인증 코드 (TOTP) 복사"
   },
   "length": {
     "message": "길이"
@@ -1228,10 +1228,10 @@
     "message": "내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "이 내보내기는 계정의 암호화 키를 사용하여 데이터를 암호화합니다. 추후 계정의 암호화 키를 교체할 경우 다시 내보내기를 진행해야 합니다. 그러지 않을 경우 이 내보내기 파일을 해독할 수 없게 됩니다."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
@@ -1505,63 +1505,63 @@
     "message": "조직의 정책이 소유권 설정에 영향을 미치고 있습니다."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "모든 Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "파일"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "텍스트"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Send 검색",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Send 편집",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "내 보관함"
   },
   "text": {
-    "message": "Text"
+    "message": "텍스트"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "삭제 날짜"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "이 Send가 정해진 일시에 영구적으로 삭제됩니다.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "만료 날짜"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "설정할 경우, 이 Send에 대한 접근 권한이 정해진 일시에 만료됩니다.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "최대 접근 횟수"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "설정할 경우, 최대 접근 횟수에 도달할 때 이 Send에 접근할 수 없게 됩니다.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "현재 접근 횟수"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "이 Send를 비활성화하여 아무도 접근할 수 없게 합니다.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "이 Send에 접근하기 위해 암호를 입력하도록 선택적으로 요구합니다.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "이 Send에 대한 비공개 메모",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1573,40 +1573,40 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Send에 접근할 때 기본적으로 텍스트를 숨김",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send 생성함",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send 수정함",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send 삭제함",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "새 비밀번호"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "어떤 유형의 Send인가요?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Send 생성",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "전송하려는 텍스트"
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "전송하려는 파일"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$일",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1615,43 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1일"
   },
   "custom": {
-    "message": "Custom"
+    "message": "사용자 지정"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "정말 이 Send를 삭제하시겠습니까?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Send 링크를 클립보드에 복사",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "저장할 때 이 Send를 공유하기 위한 링크를 클립보드에 복사합니다."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send 비활성화됨",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "엔터프라이즈 정책으로 인해 이미 생성된 Send를 삭제하는 것만 허용됩니다.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "링크 복사"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "비활성화됨"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "최대 접근 횟수 도달"
   },
   "expired": {
-    "message": "Expired"
+    "message": "만료됨"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "삭제 대기 중"
   }
 }
