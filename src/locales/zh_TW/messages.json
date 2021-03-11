@@ -135,7 +135,7 @@
     "message": "品牌"
   },
   "expiration": {
-    "message": "到期"
+    "message": "逾期"
   },
   "securityCode": {
     "message": "安全代碼"
@@ -368,7 +368,7 @@
     "message": "複製 URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "複製驗證碼 (TOTP)"
   },
   "length": {
     "message": "長度"
@@ -1228,10 +1228,10 @@
     "message": "此匯出包含未加密格式的密碼庫檔案。您不應將它存放或經由不安全的方式（例如電子郵件）傳送。用完後請立即將它刪除。"
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "將使用您帳戶的加密金鑰來加密匯出資料，若您更新了帳戶的加密金鑰，請重新匯出，才有辦法解密匯出的檔案。"
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "每個 Bitwarden 使用者帳戶的帳戶加密金鑰都不同，因此無法將加密過的匯出檔案匯入到不同帳戶中。"
   },
   "exportMasterPassword": {
     "message": "輸入您的主密碼以匯出密碼庫資料。"
@@ -1344,7 +1344,7 @@
     "message": "複製"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "一個或多個組織策略正影響密碼產生器設定。"
+    "message": "一個或多個組織原则正影響密碼產生器設定。"
   },
   "vaultTimeoutAction": {
     "message": "密碼庫逾時動作"
@@ -1409,7 +1409,7 @@
     "message": "確認新的主密碼"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "一個或多個組織策略要求您的主密碼須符合下列條件："
+    "message": "一個或多個組織原则要求您的主密碼須符合下列條件："
   },
   "policyInEffectMinComplexity": {
     "message": "最小複雜度為 $SCORE$",
@@ -1448,7 +1448,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "您的新主密碼不符合策略要求。"
+    "message": "您的新主密碼不符合原则要求。"
   },
   "acceptPolicies": {
     "message": "選中此選取框，代表您同意下列項目："
@@ -1496,117 +1496,117 @@
     "message": "需首先在桌面應用程式的設定中啓用生物識別，才能使用瀏覽器的生物識別。"
   },
   "personalOwnershipSubmitError": {
-    "message": "由於某個企業策略，您被限制為儲存項目到您的個人密碼庫。將擁有權改爲組織，並從可用的集合中選擇。"
+    "message": "由於某個企業原则，您被限制為儲存項目到您的個人密碼庫。將擁有權改爲組織，並從可用的集合中選擇。"
   },
   "hintEqualsPassword": {
     "message": "密碼提示不能與您的密碼相同。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "一個組織策略正在影響您的擁有權選項。"
+    "message": "一個組織原则正在影響您的擁有權選項。"
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "所有 Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "檔案"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "文字"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "搜尋 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "編輯 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "我的密碼庫"
   },
   "text": {
-    "message": "Text"
+    "message": "文字"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "刪除日期"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "此 Send 將在指定的日期和時間被永久删除。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "逾期日期"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "如果設定，對此 Send 的存取將在指定的日期和時間后逾期。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "最大存取次數"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "如果設定，達到最大存取次數后，使用者將無法再次存取此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "目前已存取次數"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "停用此 Send 則沒有任何人能存取它。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "可選。使用者需提供密碼才能存取此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "關於此 Send 的私人注釋。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Send 連結",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Send 連結",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "存取此 Send 時，預設將隱藏文本",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send 已創建",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send 已編輯",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send 已刪除",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "新的密碼"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "這是什麽類型的 Send？",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "創建 Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "您想要傳送的文字。"
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "您想要傳送的檔案。"
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ 天",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1615,43 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 天"
   },
   "custom": {
-    "message": "Custom"
+    "message": "自訂"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "您確定要刪除此 Send 嗎？",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "複製 Send 連結到剪貼簿",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "保存時複製連結以共享此 Send 到我的剪貼簿。"
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send 已停用",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "由於某個企業原则，您只能刪除已有的 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "複製連結"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "已停用"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "已達最大存取次數"
   },
   "expired": {
-    "message": "Expired"
+    "message": "已逾期"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "等待刪除中"
   }
 }

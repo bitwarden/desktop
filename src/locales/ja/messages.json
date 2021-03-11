@@ -1505,7 +1505,7 @@
     "message": "組織のポリシーは、所有者のオプションに影響を与えています。"
   },
   "allSends": {
-    "message": "すべての送信",
+    "message": "すべての Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
@@ -1515,11 +1515,11 @@
     "message": "テキスト"
   },
   "searchSends": {
-    "message": "送信を検索",
+    "message": "Send を検索",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "送信を編集",
+    "message": "Send を編集",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
@@ -1529,81 +1529,81 @@
     "message": "テキスト"
   },
   "deletionDate": {
-    "message": "削除日"
+    "message": "削除日時"
   },
   "deletionDateDesc": {
-    "message": "送信は指定された日時に完全に削除されます。",
+    "message": "Send は指定された日時に完全に削除されます。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "有効期限"
   },
   "expirationDateDesc": {
-    "message": "設定されている場合、この送信へのアクセスは指定された日時に失効します。",
+    "message": "設定されている場合、この Send へのアクセスは指定された日時に失効します。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "最大アクセス数"
   },
   "maxAccessCountDesc": {
-    "message": "設定されている場合、最大アクセス数に達すると、ユーザーはこの送信にアクセスできなくなります。",
+    "message": "設定されている場合、最大アクセス数に達するとユーザーはこの Send にアクセスできなくなります。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "現在のアクセス数"
   },
   "disableSend": {
-    "message": "誰もアクセスできないように、この送信を無効にします。",
+    "message": "誰もアクセスできないように、この Send を無効にします。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "必要に応じて、ユーザーがこの送信にアクセスするためのパスワードを要求します。",
+    "message": "必要に応じて、ユーザーがこの Send にアクセスするためのパスワードを要求します。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "この送信に関するプライベートメモ。",
+    "message": "この Send に関するプライベートメモ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "リンクを送信",
+    "message": "Send リンク",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "リンクを送信",
+    "message": "Send リンク",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "送信時、既定でテキストを非表示にする",
+    "message": "Send へのアクセス時に既定でテキストを非表示にする",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "送信を作成",
+    "message": "作成した Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "編集済みの送信",
+    "message": "編集済みの Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "送信を削除",
+    "message": "削除した Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "新しいパスワード"
   },
   "whatTypeOfSend": {
-    "message": "この送信の種類は何ですか？",
+    "message": "この Send の種類は何ですか？",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "送信を作成",
+    "message": "Send を作成",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "送信するテキスト。"
+    "message": "送信するテキスト"
   },
   "sendFileDesc": {
-    "message": "送信するファイル。"
+    "message": "送信するファイル"
   },
   "days": {
     "message": "$DAYS$日",
@@ -1621,37 +1621,37 @@
     "message": "カスタム"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "この Send を削除してもよろしいですか?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Send リンクをクリップボードにコピー",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Send の保存時にクリップボードへリンクをコピーします。"
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send 無効",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "組織のポリシーにより、既存の Send のみを削除できます。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "リンクをコピー"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "無効"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "最大アクセス数に達しました"
   },
   "expired": {
-    "message": "Expired"
+    "message": "有効期限切れ"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "削除の保留中"
   }
 }
