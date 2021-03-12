@@ -15,45 +15,43 @@
                         <label for="name">{{'name' | i18n}}</label>
                         <input id="name" type="text" name="Name" [(ngModel)]="send.name" appAutofocus [readOnly]="disableSend">
                     </div>
+                    <div class="box-content-row box-content-row-radio" *ngIf="!editMode">
+                        <label class="radio-header">{{'whatTypeOfSend' | i18n}}</label>
+                        <div class="item" *ngFor="let o of typeOptions">
+                            <input type="radio" class="radio" [(ngModel)]="send.type" name="Type_{{o.value}}"
+                                id="type_{{o.value}}" [value]="o.value" (change)="typeChanged(o)"
+                                [checked]="send.type === o.value" [disabled]="disableSend">
+                            <label class="unstyled" for="type_{{o.value}}">
+                                {{o.name}}
+                            </label>
+                        </div>
+                    </div>
+                    <div class="box-content-row" appBowRow *ngIf="!editMode && send.type === sendType.File">
+                        <label for="file">{{'file' | i18n}}</label>
+                        <input type="file" id="file" class="form-control-file" name="file" required [disabled]="disableSend">
+                    </div>
+                    <div class="box-content-row" appBowRow *ngIf="editMode && send.type === sendType.File">
+                        <label for="file">{{'file' | i18n}}</label>
+                        <div class="row-main">{{send.file.fileName}} ({{send.file.sizeName}})</div>
+                    </div>
+                    <div class="box-content-row" appBoxRow *ngIf="send.type === sendType.Text">
+                        <label for="text">{{'text' | i18n}}</label>
+                        <textarea id="text" name="text" [(ngModel)]="send.text.text" rows="6" [readOnly]="disableSend"></textarea>
+                    </div>
+                </div>
+                <div class="box-footer" *ngIf="!editMode && send.type === sendType.File">
+                    {{'sendFileDesc' | i18n}} {{'maxFileSize' | i18n}}
+                </div>
+                <div class="box-footer" *ngIf="send.type === sendType.Text">
+                    {{'sendTextDesc' | i18n}}
                 </div>
             </div>
-            <div class="box">
+            <div class="box" *ngIf="send.type === sendType.Text">
                 <div class="box-content">
-                    <ng-container *ngIf="!editMode">
-                        <div class="box-content-row box-content-row-radio">
-                            <label class="radio-header">{{'whatTypeOfSend' | i18n}}</label>
-                            <div class="item" *ngFor="let o of typeOptions">
-                                <input type="radio" class="radio" [(ngModel)]="send.type" name="Type_{{o.value}}"
-                                    id="type_{{o.value}}" [value]="o.value" (change)="typeChanged(o)"
-                                    [checked]="send.type === o.value" [disabled]="disableSend">
-                                <label class="unstyled" for="type_{{o.value}}">
-                                    {{o.name}}
-                                </label>
-                            </div>
-                        </div>
-                        <div *ngIf="send.type === sendType.File" class="box-content-row" appBowRow>
-                            <label for="file">{{'file' | i18n}}</label>
-                            <input type="file" id="file" class="form-control-file" name="file" required [disabled]="disableSend">
-                            <div class="subtext">{{'sendFileDesc' | i18n}} {{'maxFileSize' | i18n}}</div>
-                        </div>
-                    </ng-container>
-                    <ng-container *ngIf="editMode && send.type === sendType.File">
-                        <div class="box-content-row" appBoxRow>
-                            <label for="file">{{'file' | i18n}}</label>
-                            <div class="row-main">{{send.file.fileName}} ({{send.file.sizeName}})</div>
-                        </div>
-                    </ng-container>
-                    <ng-container *ngIf="send.type === sendType.Text">
-                        <div class="box-content-row" appBoxRow *ngIf="send.type === sendType.Text">
-                            <label for="text">{{'text' | i18n}}</label>
-                            <textarea id="text" name="text" [(ngModel)]="send.text.text" rows="6" [readOnly]="disableSend"></textarea>
-                            <div class="subtext">{{'sendTextDesc' | i18n}}</div>
-                        </div>
-                        <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="send.type === sendType.Text">
-                            <label for="hideText">{{'textHiddenByDefault' | i18n}}</label>
-                            <input id="hideText" name="hideText" type="checkbox" [(ngModel)]="send.text.hidden" [disabled]="disableSend">
-                        </div>
-                    </ng-container>
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="hideText">{{'textHiddenByDefault' | i18n}}</label>
+                        <input id="hideText" name="hideText" type="checkbox" [(ngModel)]="send.text.hidden" [disabled]="disableSend">
+                    </div>
                 </div>
             </div>
             <div class="box">
@@ -73,13 +71,13 @@
                                 <option *ngFor="let o of deletionDateOptions" [ngValue]="o.value">{{o.name}}
                                 </option>
                             </select>
-                            <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
+                            <small class="help-block">{{'deletionDateDesc' | i18n}}</small>
                         </div>
                         <div class="box-content-row" *ngIf="deletionDateSelect === 0 || editMode">
                             <label *ngIf="editMode" for="deletionDateCustom">{{'deletionDate' | i18n}}</label>
                             <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
                                 [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
-                            <div class="subtext">{{'deletionDateDesc' | i18n}}</div>
+                            <small class="help-block" *ngIf="editMode">{{'deletionDateDesc' | i18n}}</small>
                         </div>
                         <div class="box-content-row" appBoxRow *ngIf="!editMode">
                             <label for="expirationDate">{{'expirationDate' | i18n}}</label>
@@ -87,13 +85,13 @@
                                 <option *ngFor="let o of expirationDateOptions" [ngValue]="o.value">{{o.name}}
                                 </option>
                             </select>
-                            <div class="subtext">{{'expirationDateDesc' | i18n}}</div>
+                            <small class="help-block">{{'expirationDateDesc' | i18n}}</small>
                         </div>
                         <div class="box-content-row" *ngIf="expirationDateSelect === 0 || editMode">
                             <label *ngIf="editMode" for="expirationDateCustom">{{'expirationDate' | i18n}}</label>
                             <input id="expirationDateCustom" type="datetime-local" name="expirationDate" 
                                 [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
-                            <div *ngIf="editMode" class="subtext">{{'expirationDateDesc' | i18n}}</div>
+                            <small *ngIf="editMode" class="help-block">{{'expirationDateDesc' | i18n}}</small>
                         </div>
                     </div>
                 </div>
@@ -102,12 +100,14 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="maxAccessCount">{{'maxAccessCount' | i18n}}</label>
                             <input id="maxAccessCount" type="number" name="maxAccessCount" [(ngModel)]="send.maxAccessCount" [readOnly]="disableSend">
-                            <div class="subtext">{{'maxAccessCountDesc' | i18n}}</div>
                         </div>
-                        <div *ngIf="editMode" class="box-content-row" appBoxRow>
-                            <label for="accessCount">{{'currentAccessCount' | i18n}}</label>
-                            <input id="accessCount" type="text" name="accessCount" [(ngModel)]="send.accessCount" readonly>
-                        </div>
+                    </div>
+                    <div class="box-footer" *ngIf="!editMode">
+                        {{'maxAccessCountDesc' | i18n}}
+                    </div>
+                    <div class="box-footer" *ngIf="editMode">
+                        <p>{{'maxAccessCountDesc' | i18n}}</p>
+                        {{'currentAccessCount' | i18n}}: <strong>{{send.accessCount}}</strong>
                     </div>
                 </div>
                 <div class="box">
@@ -116,7 +116,6 @@
                             <div class="row-main">
                                 <label for="password">{{(hasPassword ? 'newPassword' : 'password') | i18n}}</label>
                                 <input id="password" name="password" type="{{showPassword ? 'text' : 'password'}}" [(ngModel)]="password" [readOnly]="disableSend">
-                                <div class="subtext">{{'sendPasswordDesc' | i18n}}</div>
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick role="button"
@@ -127,6 +126,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="box-footer">
+                        {{'sendPasswordDesc' | i18n}}
+                    </div>
                 </div>
                 <div class="box">
                     <div class="box-header">
@@ -135,8 +137,10 @@
                     <div class="box-content">
                         <div class="box-content-row" appBoxRow>
                             <textarea id="notes" name="notes" [(ngModel)]="send.notes" rows="6" [readOnly]="disableSend"></textarea>
-                            <small class="subtext">{{'sendNotesDesc' | i18n}}</small>
                         </div>
+                    </div>
+                    <div class="box-footer">
+                        {{'sendNotesDesc' | i18n}}
                     </div>
                 </div>
                 <div class="box">

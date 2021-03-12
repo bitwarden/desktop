@@ -88,7 +88,6 @@ $themes: (
         passwordSpecialColor: #c40800,
         calloutBorderColor: $border-color-dark,
         calloutBackgroundColor: $background-color,
-        subtextColor: #6c757d,
     ),
     dark: (
         textColor: #ffffff,
@@ -139,7 +138,6 @@ $themes: (
         passwordSpecialColor: #ff7c70,
         calloutBorderColor: #2f2f2f,
         calloutBackgroundColor: #363636,
-        subtextColor: #938a82,
     ),
     nord: (
         textColor: $nord5,
@@ -190,7 +188,6 @@ $themes: (
         passwordSpecialColor: $nord12,
         calloutBorderColor: $nord1,
         calloutBackgroundColor: $nord2,
-        subtextColor: $nord4,
     ),
 );
 
