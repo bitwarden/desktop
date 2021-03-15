@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Copiere URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Copiere cod de verificare (TOTP)"
+  },
   "length": {
     "message": "Lungime"
   },
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Acest export conține datele dvs. din seif în format necriptat. Nu ar trebui să stocați sau să trimiteți fișierul pe canale nesecurizate (cum ar fi e-mail). Ștergeți-l imediat după ce nu îl mai folosiți."
   },
-  "encExportWarningDesc": {
-    "message": "Acest export criptează datele folosind cheia de criptare a contului. Dacă schimbați vreodată cheia de criptare a contului, ar trebui să o exportați din nou, deoarece nu veți putea decripta acest fișier exportat."
+  "encExportKeyWarningDesc": {
+    "message": "Acest export criptează datele, utilizând cheia de criptare a contului. Dacă revocați vreodată cheia de criptare a contului dvs., ar trebui să exportați din nou, deoarece nu veți putea decripta acest fișier de export."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Cheile de criptare a contului sunt unice fiecărui cont de utilizator Bitwarden, astfel încât nu puteți importa un export criptat într-un cont diferit."
   },
   "exportMasterPassword": {
     "message": "Introduceți parola principală pentru a exporta datele din seif."
@@ -1463,10 +1469,10 @@
     "message": "Din păcate, integrarea browserului este acceptată numai în versiunea Mac App Store pentru moment."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integrarea browserului nu este acceptată"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Din păcate, integrarea browserului nu este acceptată în prezent în versiunea Windows Store."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Necesită verificare pentru integrarea browserului"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "O politică de organizație vă afectează opțiunile de proprietate."
+  },
+  "allSends": {
+    "message": "Toate Send-urile",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fișier"
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "searchSends": {
+    "message": "Căutare Send-uri",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Editare Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Seiful meu"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "deletionDate": {
+    "message": "Data ștergerii"
+  },
+  "deletionDateDesc": {
+    "message": "Send-ul va fi șters definitiv la data și ora specificate.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Data expirării"
+  },
+  "expirationDateDesc": {
+    "message": "Dacă este setat, accesul la acest Send va expira la data și ora specificate.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Număr maxim de accesări"
+  },
+  "maxAccessCountDesc": {
+    "message": "Dacă este setată, utilizatorii nu vor mai putea accesa acest Send după atingerea numărului maxim de accesării.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Număr actual de accesări"
+  },
+  "disableSend": {
+    "message": "Dezactivați acest Send astfel încât nimeni să nu-l poată accesa.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Opțional, este necesară o parolă pentru ca utilizatorii să acceseze acest Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Note private despre acest Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Link Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Link Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Când Send-ul este accesat, ascundeți textul în mod implicit",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send creat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send editat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send șters",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Parolă nouă"
+  },
+  "whatTypeOfSend": {
+    "message": "Ce fel de Send este acesta?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Creare de Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Textul pe care doriți să-l trimiteți."
+  },
+  "sendFileDesc": {
+    "message": "Fișierul pe care doriți să-l trimiteți."
+  },
+  "days": {
+    "message": "$DAYS$ zile",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 zi"
+  },
+  "custom": {
+    "message": "Personalizat"
+  },
+  "deleteSendConfirmation": {
+    "message": "Sigur doriți să ștergeți acest Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Copiați link-ul Send-ului în clipboard",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copiați în clipboard linkul pentru partajarea acestui Send după salvare."
+  },
+  "sendDisabled": {
+    "message": "Send dezactivat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Datorită unei politici de întreprindere, puteți șterge numai un Send existent.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Copiere link"
+  },
+  "disabled": {
+    "message": "Dezactivat"
+  },
+  "maxAccessCountReached": {
+    "message": "S-a atins numărul maxim de accesări"
+  },
+  "expired": {
+    "message": "Expirat"
+  },
+  "pendingDeletion": {
+    "message": "Ștergere în așteptare"
   }
 }

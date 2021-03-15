@@ -340,7 +340,7 @@
     "message": "Удалить вложение"
   },
   "deleteItemConfirmation": {
-    "message": "Вы действительно хотите удалить этот элемент?"
+    "message": "Вы действительно хотите отправить в корзину?"
   },
   "deletedItem": {
     "message": "Элемент отправлен в корзину"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "Скопировать URI"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Скопировать код подтверждения (TOTP)"
   },
   "length": {
     "message": "Длина"
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например по электронной почте). Удалите его сразу после использования."
   },
-  "encExportWarningDesc": {
-    "message": "При экспорте данные шифруются с помощью ключа шифрования учетной записи. Если вы когда-либо повернете ключ шифрования учетной записи, вам следует экспортировать данные повторно, поскольку вы не сможете расшифровать этот файл экспорта."
+  "encExportKeyWarningDesc": {
+    "message": "При экспорте данные шифруются с помощью ключа шифрования вашей учетной записи. Если решите сменить ключ шифрования, вам придется повторить операцию снова, поскольку этот файл экспорта станет непригодным к расшифровке."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Ключи шифрования уникальны для каждой учетной записи Bitwarden, поэтому нельзя просто импортировать зашифрованное хранилище на другой аккаунт."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
@@ -1280,7 +1286,7 @@
     "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
   "unlockWithWindowsHello": {
-    "message": "Верифицировать с Windows Hello"
+    "message": "Разблокировать с Windows Hello"
   },
   "windowsHelloConsentMessage": {
     "message": "Верификация для Bitwarden."
@@ -1289,7 +1295,7 @@
     "message": "Разблокировать с Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Верификация для Bitwarden."
+    "message": "разблокировать ваше хранилище"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске"
@@ -1466,7 +1472,7 @@
     "message": "Интеграция с браузером не поддерживается"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "К сожалению, интеграция с браузером на текущий момент поддерживается только в версии из магазина Windows."
+    "message": "К сожалению, интеграция с браузером на текущий момент не поддерживается в версии из магазина Windows."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Требовать верификацию для интеграции с браузером"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Политика организации влияет на ваши варианты владения."
+  },
+  "allSends": {
+    "message": "Все Send’ы",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Файл"
+  },
+  "sendTypeText": {
+    "message": "Текст"
+  },
+  "searchSends": {
+    "message": "Поиск Send’ов",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Изменить Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Хранилище"
+  },
+  "text": {
+    "message": "Текст"
+  },
+  "deletionDate": {
+    "message": "Дата удаления"
+  },
+  "deletionDateDesc": {
+    "message": "Эта Send будет окончательно удалена в указанные дату и время.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Дата истечения"
+  },
+  "expirationDateDesc": {
+    "message": "Если задано, доступ к этой Send истечет в указанные дату и время.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Максимум обращений"
+  },
+  "maxAccessCountDesc": {
+    "message": "Если задано, пользователи больше не смогут получить доступ к этой Send, как только будет достигнуто максимальное количество обращений.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Текущих обращений"
+  },
+  "disableSend": {
+    "message": "Отключить эту Send, чтобы никто не мог получить к ней доступ.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "По возможности запрашивать у пользователей пароль для доступа к этой Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Личные заметки об этой Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Ссылка на Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Ссылка на Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "При доступе к Send скрывать текст по умолчанию",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Созданная Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Измененная Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Удаленная Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Новый пароль"
+  },
+  "whatTypeOfSend": {
+    "message": "Выберите тип Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Создать Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Текст, который вы хотите отправить."
+  },
+  "sendFileDesc": {
+    "message": "Файл, который вы хотите отправить."
+  },
+  "days": {
+    "message": "$DAYS$ дн.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 день"
+  },
+  "custom": {
+    "message": "Другой"
+  },
+  "deleteSendConfirmation": {
+    "message": "Вы действительно хотите удалить Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Копировать ссылку на Send в буфер обмена",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Копирование ссылки в мой буфер обмена после сохранения, чтобы поделиться этой Send."
+  },
+  "sendDisabled": {
+    "message": "Send выключена",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Из-за корпоративной политики вы можете удалять только существующую Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Скопировать ссылку"
+  },
+  "disabled": {
+    "message": "Отключено"
+  },
+  "maxAccessCountReached": {
+    "message": "Достигнут максимум обращений"
+  },
+  "expired": {
+    "message": "Истекло"
+  },
+  "pendingDeletion": {
+    "message": "Ожидание удаления"
   }
 }

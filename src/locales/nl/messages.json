@@ -340,7 +340,7 @@
     "message": "Bijlage verwijderen"
   },
   "deleteItemConfirmation": {
-    "message": "Weet je zeker dat je dit item wilt verwijderen?"
+    "message": "Weet je zeker dat je dit naar de prullenbak wilt verplaatsen?"
   },
   "deletedItem": {
     "message": "Item is verwijderd"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "URI kopiëren"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Verificatiecode kopiëren (TOTP)"
   },
   "length": {
     "message": "Lengte"
@@ -901,10 +904,10 @@
     "message": "Toon het Bitwarden-pictogram in het dock, zelfs wanneer geminimaliseerd in de menubalk."
   },
   "confirmTrayTitle": {
-    "message": "Tray uitschakelen bevestigen"
+    "message": "Uitschakelen van het systeemvakpictogram bevestigen"
   },
   "confirmTrayDesc": {
-    "message": "Het uitschakelen van deze instelling zal ook alle andere trayinstellingen uitschakelen."
+    "message": "Het uitschakelen van deze instelling zal ook alle andere instellingen van het systeemvakpictogram uitschakelen."
   },
   "language": {
     "message": "Taal"
@@ -943,7 +946,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Herstart Bitwarden om bij te werken"
+    "message": "Bitwarden opnieuw starten om bij te werken"
   },
   "restartToUpdateDesc": {
     "message": "Versie $VERSION_NUM$ is klaar voor installatie. Je moet Bitwarden opnieuw opstarten om de installatie af te ronden. Wil je nu opnieuw opstarten en bijwerken?",
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Deze export bevat jouw kluisgegevens in een niet-versleutelde opmaak. Je moet het geëxporteerde bestand niet opslaan of verzenden over onbeveiligde kanalen (zoals e-mail). Verwijder het exportbestand direct na gebruik."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Deze export versleutelt je gegevens met de encryptiesleutel van je account. Als je je encryptiesleutel verandert moet je opnieuw exporteren, omdat je deze export dan niet meer kunt ontcijferen."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Encryptiesleutels zijn uniek voor elk Bitwarden-gebruikersaccount, je kun kunt een versleutelde niet in een ander account importeren."
   },
   "exportMasterPassword": {
     "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
@@ -1289,7 +1295,7 @@
     "message": "Ontgrendelen met Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verifiëren voor Bitwarden."
+    "message": "ontgrendel je kluis"
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bij herstart vergrendelen met hoofdwachtwoord"
@@ -1472,7 +1478,7 @@
     "message": "Vereis verificatie voor browserintegratie"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Schakel een extra beveiligingslaag in door een vingerafdrukzin te vereisen bij het verbinden van je desktop en browser. Wanneer ingeschakeld moet je iedere verbinding verifiëren."
+    "message": "Schakel een extra beveiligingsniveau in door een vingerafdrukzin te vereisen bij het verbinden van je desktop en browser. Wanneer ingeschakeld moet je iedere verbinding verifiëren."
   },
   "approve": {
     "message": "Goedkeuren"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Een organisatiebeleid heeft invloed op je eigendomsopties."
+  },
+  "allSends": {
+    "message": "Alle Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Bestand"
+  },
+  "sendTypeText": {
+    "message": "Tekst"
+  },
+  "searchSends": {
+    "message": "Sends zoeken",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Send bewerken",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Mijn kluis"
+  },
+  "text": {
+    "message": "Tekst"
+  },
+  "deletionDate": {
+    "message": "Verwijderingsdatum"
+  },
+  "deletionDateDesc": {
+    "message": "Deze Send wordt op de aangegeven datum en tijd definitief verwijderd.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Vervaldatum"
+  },
+  "expirationDateDesc": {
+    "message": "Als dit is ingesteld verloopt deze Send op een specifieke datum en tijd.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maximum toegangsaantal"
+  },
+  "maxAccessCountDesc": {
+    "message": "Als dit is ingesteld kunnen gebruikers deze Send niet meer benaderen zodra het maximale aantal toegang is bereikt.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Huidige toegangsaantal"
+  },
+  "disableSend": {
+    "message": "Schakel deze Send uit zodat niemand hem kan benaderen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Vereis optioneel een wachtwoord voor gebruikers om toegang te krijgen tot deze Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Privénotities over deze Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send-link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send-link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Verberg de tekst standaard bij het gebruiken van de Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send aangemaakt",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send bewerkt",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send verwijderd",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nieuw wachtwoord"
+  },
+  "whatTypeOfSend": {
+    "message": "Wat voor soort Send is dit?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Send aanmaken",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "De tekst die je wilt versturen."
+  },
+  "sendFileDesc": {
+    "message": "Het bestand dat je wilt versturen."
+  },
+  "days": {
+    "message": "$DAYS$ dagen",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 dag"
+  },
+  "custom": {
+    "message": "Aangepast"
+  },
+  "deleteSendConfirmation": {
+    "message": "Weet je zeker dat je deze Send wilt verwijderen?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Send-link naar klembord kopiëren",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopieer de link om deze Share te delen bij het opslaan naar mijn klembord."
+  },
+  "sendDisabled": {
+    "message": "Send uitgeschakeld",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Als gevolg van een ondernemingsbeleid kun je alleen een bestaande Send verwijderen.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Link kopiëren"
+  },
+  "disabled": {
+    "message": "Uitgeschakeld"
+  },
+  "maxAccessCountReached": {
+    "message": "Maximum aantal keren benaderd"
+  },
+  "expired": {
+    "message": "Verlopen"
+  },
+  "pendingDeletion": {
+    "message": "Wordt verwijderd"
   }
 }

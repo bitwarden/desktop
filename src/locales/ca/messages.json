@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Copia URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Copia codi de verificació (TOTP)"
+  },
   "length": {
     "message": "Longitud"
   },
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Aquesta exportació conté les dades de la vostra caixa forta en un format no xifrat. No hauríeu d'emmagatzemar o enviar el fitxer exportat a través de canals no segurs (com ara el correu electrònic). Elimineu-lo immediatament després d'haver acabat d'usar-lo."
   },
-  "encExportWarningDesc": {
-    "message": "Aquesta exportació xifra les vostres dades mitjançant la vostra clau de xifratge. Si alguna vegada gireu eixa clau, hauríeu d'exportar de nou, ja que no podreu desxifrar aquest fitxer d'exportació."
+  "encExportKeyWarningDesc": {
+    "message": "Aquesta exportació xifra les vostres dades mitjançant la clau de xifratge del vostre compte. Si alguna vegada gireu eixa clau, hauríeu d'exportar de nou, ja que no podreu desxifrar aquest fitxer d'exportació."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Les claus de xifratge són exclusives de cada compte d'usuari Bitwarden, de manera que no podeu importar una exportació xifrada a un compte diferent."
   },
   "exportMasterPassword": {
     "message": "Introduïu la contrasenya mestra per exportar les dades de la caixa forta."
@@ -1463,10 +1469,10 @@
     "message": "Malauradament, la integració del navegador només és compatible amb la versió de Mac App Store."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "La integració en el navegador no és compatible"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Malauradament, la integració del navegador només és compatible amb la versió de Microsoft Store."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Requereix verificació per a la integració del navegador"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Una política d’organització afecta les vostres opcions de propietat."
+  },
+  "allSends": {
+    "message": "Tots els Send",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fitxer"
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "searchSends": {
+    "message": "Cerca Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Edita Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "La meua caixa forta"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "deletionDate": {
+    "message": "Data de supressió"
+  },
+  "deletionDateDesc": {
+    "message": "El Send se suprimirà permanentment a la data i hora especificades.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Data de caducitat"
+  },
+  "expirationDateDesc": {
+    "message": "Si s'estableix, l'accés a aquest Send caducarà en la data i hora especificades.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Recompte màxim d'accessos"
+  },
+  "maxAccessCountDesc": {
+    "message": "Si s’estableix, els usuaris ja no podran accedir a aquest Send una vegada s’assolisca el nombre màxim d’accessos.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Recompte d’accessos actual"
+  },
+  "disableSend": {
+    "message": "Deshabiliteu aquest Send perquè ningú no hi puga accedir.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Opcionalment, necessiteu una contrasenya perquè els usuaris accedisquen a aquest Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Notes privades sobre aquest Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Enllaç Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Enllaç Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Quan accediu a Send, amaga el text per defecte",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send creat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send editat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send suprimit",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Contrasenya nova"
+  },
+  "whatTypeOfSend": {
+    "message": "Quin tipus de Send és aquest?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Crea Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "El text que voleu enviar."
+  },
+  "sendFileDesc": {
+    "message": "El fitxer que voleu enviar."
+  },
+  "days": {
+    "message": "$DAYS$ dies",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 dia"
+  },
+  "custom": {
+    "message": "Personalitzat"
+  },
+  "deleteSendConfirmation": {
+    "message": "Esteu segur que voleu suprimir aquest Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Copia l'enllaç Send al porta-retalls",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copie l'enllaç per compartir aquest Send al meu porta-retalls després de guardar-lo."
+  },
+  "sendDisabled": {
+    "message": "Send desactivat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "A causa d'una política empresarial, només podeu suprimir un Send existent.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Copia l'enllaç"
+  },
+  "disabled": {
+    "message": "Deshabilitat"
+  },
+  "maxAccessCountReached": {
+    "message": "S'ha assolit el recompte màxim d'accesos"
+  },
+  "expired": {
+    "message": "Caducat"
+  },
+  "pendingDeletion": {
+    "message": "Pendent de supressió"
   }
 }

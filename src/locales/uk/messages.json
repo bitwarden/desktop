@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Копіювати URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Копіювати код підтвердження (TOTP)"
+  },
   "length": {
     "message": "Довжина"
   },
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Експортовані дані вашого сховища знаходяться в незашифрованому вигляді. Вам не слід зберігати чи надсилати їх через незахищені канали (наприклад, е-поштою). Після використання негайно видаліть їх."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Цей експорт шифрує ваші дані за допомогою ключа шифрування облікового запису. Якщо ви коли-небудь оновите ключ шифрування облікового запису, ви повинні виконати експорт знову, оскільки не зможете розшифрувати цей файл експорту."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Ключі шифрування унікальні для кожного облікового запису користувача Bitwarden, тому ви не можете імпортувати зашифрований експорт до іншого облікового запису."
   },
   "exportMasterPassword": {
     "message": "Введіть головний пароль, щоб експортувати дані сховища."
@@ -1463,10 +1469,10 @@
     "message": "На жаль, зараз інтеграція з браузером підтримується лише у версії для Mac з App Store."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Інтеграція з браузером не підтримується"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "На жаль, зараз інтеграція з браузером не підтримується у версії з Windows Store."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Вимагати підтвердження для інтеграції з браузером"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Політика організації впливає на ваші параметри власності."
+  },
+  "allSends": {
+    "message": "Усі відправлення",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Файл"
+  },
+  "sendTypeText": {
+    "message": "Текст"
+  },
+  "searchSends": {
+    "message": "Пошук відправлень",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Змінити відправлення",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Моє сховище"
+  },
+  "text": {
+    "message": "Текст"
+  },
+  "deletionDate": {
+    "message": "Дата видалення"
+  },
+  "deletionDateDesc": {
+    "message": "Відправлення буде остаточно видалено у вказаний час.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Дата завершення"
+  },
+  "expirationDateDesc": {
+    "message": "Якщо встановлено, термін дії цього відправлення завершиться у вказаний час.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Максимальна кількість доступів"
+  },
+  "maxAccessCountDesc": {
+    "message": "Якщо встановлено, користувачі більше не зможуть отримати доступ до цього відправлення після досягнення максимальної кількості доступів.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Поточна кількість доступів"
+  },
+  "disableSend": {
+    "message": "Деактивувати це відправлення для скасування доступу до нього.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "За бажанням вимагати пароль в користувачів для доступу до цього відправлення.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Особисті нотатки про це відправлення.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Посилання на відправлення",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Посилання на відправлення",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "При доступі до відправлення типово приховувати текст",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Відправлення створено",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Відправлення змінено",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Відправлення видалено",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Новий пароль"
+  },
+  "whatTypeOfSend": {
+    "message": "Який це тип відправлення?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Створити відправлення",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Текст, який ви хочете відправити."
+  },
+  "sendFileDesc": {
+    "message": "Файл, який ви хочете відправити."
+  },
+  "days": {
+    "message": "$DAYS$ днів",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 день"
+  },
+  "custom": {
+    "message": "Спеціальний"
+  },
+  "deleteSendConfirmation": {
+    "message": "Ви дійсно хочете видалити це відправлення?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Копіювати посилання на відправлення",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Копіювати посилання, щоб поділитися відправленням після збереження."
+  },
+  "sendDisabled": {
+    "message": "Відправлення вимкнено",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "У зв'язку з політикою компанії, ви можете лише видалити наявне відправлення.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Копіювати посилання"
+  },
+  "disabled": {
+    "message": "Вимкнено"
+  },
+  "maxAccessCountReached": {
+    "message": "Досягнуто максимальну кількість доступів"
+  },
+  "expired": {
+    "message": "Термін дії завершився"
+  },
+  "pendingDeletion": {
+    "message": "Очікується видалення"
   }
 }

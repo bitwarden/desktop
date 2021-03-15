@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Kopiuj URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Kopiuj kod weryfikacyjny (TOTP)"
+  },
   "length": {
     "message": "Długość"
   },
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Plik zawiera dane sejfu w niezaszyfrowanym formacie. Nie powinieneś go przechowywać, ani przesyłać poprzez niezabezpieczone kanały (takie jak poczta e-mail). Skasuj go natychmiast po użyciu."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Dane eksportu zostaną zaszyfrowane za pomocą klucza szyfrowania konta. Jeśli kiedykolwiek zmienisz ten klucz, wyeksportuj dane ponownie, ponieważ nie będziesz w stanie odszyfrować tego pliku."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Klucze szyfrowania konta są unikalne dla każdego użytkownika Bitwarden, więc nie możesz zaimportować zaszyfrowanego pliku eksportu na inne konto."
   },
   "exportMasterPassword": {
     "message": "Wpisz hasło główne, aby wyeksportować dane z sejfu."
@@ -1490,12 +1496,162 @@
     "message": "Aby włączyć dane biometryczne w przeglądarce, musisz włączyć tę samą funkcję w ustawianiach aplikacji."
   },
   "personalOwnershipSubmitError": {
-    "message": "Ze względu na zasadę przedsiębiorstwa nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji."
+    "message": "Ze względu na zasadę przedsiębiorstwa, nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji,."
   },
   "hintEqualsPassword": {
     "message": "Podpowiedź do hasła nie może być taka sama jak hasło."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Zasada organizacji ma wpływ na opcję własności elementów."
+  },
+  "allSends": {
+    "message": "Wszystkie wysyłki",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Plik"
+  },
+  "sendTypeText": {
+    "message": "Tekst"
+  },
+  "searchSends": {
+    "message": "Szukaj w wysyłkach",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Edytuj wysyłkę",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Mój sejf"
+  },
+  "text": {
+    "message": "Tekst"
+  },
+  "deletionDate": {
+    "message": "Data usunięcia"
+  },
+  "deletionDateDesc": {
+    "message": "Wysyłka zostanie trwale usunięta w określonym czasie.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Data wygaśnięcia"
+  },
+  "expirationDateDesc": {
+    "message": "Jeśli funkcja jest włączona, dostęp do wysyłki wygaśnie po określonym czasie.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maksymalna liczba dostępów"
+  },
+  "maxAccessCountDesc": {
+    "message": "Jeśli funkcja jest włączona, po osiągnięciu maksymalnej liczby dostępów, użytkownicy nie będą mieli dostępu do tej wysyłki.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Obecna liczba dostępów"
+  },
+  "disableSend": {
+    "message": "Wyłącz tę wysyłkę, aby nikt nie miał do niej dostępu.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Opcjonalne hasło dla użytkownika, aby uzyskać dostęp do wysyłki.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Prywatne notatki o tej wysyłce.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Link wysyłki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Ukryj tekst podczas dostępu do wysyłki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Wysyłka została utworzona",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Wysyłka została zaktualizowana",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Wysyłka została usunięta",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nowe hasło"
+  },
+  "whatTypeOfSend": {
+    "message": "Jakiego typu jest to wysyłka?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Utwórz wysyłkę",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Tekst, który chcesz wysłać."
+  },
+  "sendFileDesc": {
+    "message": "Plik, który chcesz wysłać."
+  },
+  "days": {
+    "message": "$DAYS$ dni",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 dzień"
+  },
+  "custom": {
+    "message": "Niestandardowy"
+  },
+  "deleteSendConfirmation": {
+    "message": "Czy na pewno chcesz usunąć tę wysyłkę?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopiuj link wysyłki do schowka",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopiuj link wysyłki po zapisaniu."
+  },
+  "sendDisabled": {
+    "message": "Wysyłka została wyłączona",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Ze względu na zasadę przedsiębiorstwa, tylko Ty możesz usunąć obecną wysyłkę.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopiuj link"
+  },
+  "disabled": {
+    "message": "Wyłączona"
+  },
+  "maxAccessCountReached": {
+    "message": "Maksymalna liczba dostępów została osiągnięta"
+  },
+  "expired": {
+    "message": "Wygasła"
+  },
+  "pendingDeletion": {
+    "message": "Oczekiwanie na usunięcie"
   }
 }

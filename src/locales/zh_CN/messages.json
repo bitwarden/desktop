@@ -18,7 +18,7 @@
     "message": "登录"
   },
   "typeCard": {
-    "message": "卡片"
+    "message": "支付卡"
   },
   "typeIdentity": {
     "message": "身份"
@@ -48,7 +48,7 @@
     "message": "共享项目"
   },
   "sharedItem": {
-    "message": "已共享的项目"
+    "message": "项目已共享"
   },
   "shareDesc": {
     "message": "选择要与之共享此项目的组织。共享会将此项目的所有权转移到组织。一旦共享，您将不再是此项目的直接所有者。"
@@ -340,7 +340,7 @@
     "message": "删除附件"
   },
   "deleteItemConfirmation": {
-    "message": "确实要删除此项目吗?"
+    "message": "您确定要删除此项目吗？"
   },
   "deletedItem": {
     "message": "项目已发送到回收站"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "复制 URI"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "复制验证码 (TOTP)"
   },
   "length": {
     "message": "长度"
@@ -394,7 +397,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "避免模棱两可"
+    "message": "避免含糊的字符"
   },
   "searchCollection": {
     "message": "搜索集合"
@@ -449,7 +452,7 @@
     "message": "文件夹已删除"
   },
   "loginOrCreateNewAccount": {
-    "message": "登录或者新建一个账号来访问您的安全密码库。"
+    "message": "登录或者创建一个账号来访问您的安全密码库。"
   },
   "createAccount": {
     "message": "创建账号"
@@ -576,7 +579,7 @@
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey NEO 安全钥匙"
+    "message": "YubiKey OTP 安全钥匙"
   },
   "yubiKeyDesc": {
     "message": "使用 YubiKey 来访问您的账户。支持 YubiKey 4、4 Nano、4C 以及 NEO 设备。"
@@ -608,7 +611,7 @@
     "message": "此账户已启用两步登录，但此设备不支持任何已配置的两步登录提供程序。"
   },
   "noTwoStepProviders2": {
-    "message": "请添加能更好支持跨设备使用的提供程序（比如身份验证器应用）。"
+    "message": "请添加能更好支持跨设备使用的提供程序（比如验证器应用）。"
   },
   "twoStepOptions": {
     "message": "两步登录选项"
@@ -665,16 +668,16 @@
     "message": "功能不可用"
   },
   "loggedOut": {
-    "message": "已登出"
+    "message": "已注销"
   },
   "loginExpired": {
     "message": "您的登录会话已过期。"
   },
   "logOutConfirmation": {
-    "message": "您确定要登出吗？"
+    "message": "您确定要注销吗？"
   },
   "logOut": {
-    "message": "登出"
+    "message": "注销"
   },
   "addNewLogin": {
     "message": "添加新登录"
@@ -754,7 +757,7 @@
     "message": "解锁​​​​"
   },
   "loggedInAsOn": {
-    "message": "以 $EMAIL$ 在 $HOSTNAME$ 上登录。",
+    "message": "已使用 $EMAIL$ 在 $HOSTNAME$ 上登录。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -821,7 +824,7 @@
     "message": "系统休眠时"
   },
   "onLocked": {
-    "message": "在系统锁定时"
+    "message": "系统锁定时"
   },
   "onRestart": {
     "message": "重启时"
@@ -850,7 +853,7 @@
     "message": "最小化到托盘图标"
   },
   "enableMinToTrayDesc": {
-    "message": "最小化窗口后在系统托盘显示一个图标。"
+    "message": "最小化窗口后，改为在系统托盘中显示一个图标。"
   },
   "enableMinToMenuBar": {
     "message": "最小化到菜单栏"
@@ -859,13 +862,13 @@
     "message": "最小化窗口后，改为在菜单栏中显示一个图标。"
   },
   "enableCloseToTray": {
-    "message": "关闭到托盘"
+    "message": "关闭到托盘图标"
   },
   "enableCloseToTrayDesc": {
-    "message": "关闭窗口后在系统托盘显示一个图标。"
+    "message": "关闭窗口后，改为在系统托盘中显示一个图标。"
   },
   "enableCloseToMenuBar": {
-    "message": "关闭菜单栏"
+    "message": "关闭到菜单栏"
   },
   "enableCloseToMenuBarDesc": {
     "message": "关闭窗口后，改为在菜单栏中显示一个图标。"
@@ -874,10 +877,10 @@
     "message": "启用托盘图标"
   },
   "enableTrayDesc": {
-    "message": "始终显示系统托盘图标。"
+    "message": "始终在系统托盘中显示一个图标。"
   },
   "startToTray": {
-    "message": "启动到托盘"
+    "message": "启动到托盘图标"
   },
   "startToTrayDesc": {
     "message": "应用程序首次启动时，启动到系统托盘。"
@@ -886,10 +889,10 @@
     "message": "启动到菜单栏"
   },
   "startToMenuBarDesc": {
-    "message": "应用程序首次启动时，只在菜单栏中显示一个图标。"
+    "message": "应用程序首次启动时，启动到菜单栏。"
   },
   "openAtLogin": {
-    "message": "登录时自启动"
+    "message": "登录时自动启动"
   },
   "openAtLoginDesc": {
     "message": "登录时自动启动 Bitwarden 桌面应用程序。"
@@ -955,7 +958,7 @@
     }
   },
   "updateAvailable": {
-    "message": "发现可更新版本"
+    "message": "有可用的更新"
   },
   "updateAvailableDesc": {
     "message": "发现更新。是否立即下载？"
@@ -1014,7 +1017,7 @@
     "message": "密码健康、账户体检以及数据泄露报告，保障您的密码库安全。"
   },
   "premiumSignUpTotp": {
-    "message": "用于密码库中登录的 TOTP 验证码（两步验证）生成器。"
+    "message": "用于密码库中登录项目的 TOTP 验证码（2FA）生成器。"
   },
   "premiumSignUpSupport": {
     "message": "优先客户支持。"
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "导出的密码库数据包含未加密格式。您不应该通过不安全的渠道（例如电子邮件）来存储或发送导出的文件。用完后请立即将其删除。"
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "此导出将使用您账户的加密密钥来加密您的数据。 如果您曾经轮换过账户的加密密钥，您应将其重新导出，否则您将无法解密导出的文件。"
+  },
+  "encExportAccountWarningDesc": {
+    "message": "账户加密密钥对每个 Bitwarden 用户账户都是唯一的，所以您不能将加密的导出导入到另一个账户。"
   },
   "exportMasterPassword": {
     "message": "输入主密码来导出你的密码库。"
@@ -1268,7 +1274,7 @@
     "message": "使用 PIN 解锁"
   },
   "setYourPinCode": {
-    "message": "设定您用来解锁 Bitwarden 的 PIN 码。您的 PIN 设置将在您完全退出本应用程序时被重置。"
+    "message": "设定您用来解锁 Bitwarden 的 PIN 码。您的 PIN 设置将在您完全注销本应用程序时被重置。"
   },
   "pinRequired": {
     "message": "需要 PIN 码。"
@@ -1289,10 +1295,10 @@
     "message": "使用触控 ID 解锁"
   },
   "touchIdConsentMessage": {
-    "message": "验证 Bitwarden。"
+    "message": "解锁您的密码库"
   },
   "lockWithMasterPassOnRestart": {
-    "message": "重启后改用主密码锁定"
+    "message": "重启后使用主密码锁定"
   },
   "preferences": {
     "message": "设置"
@@ -1313,7 +1319,7 @@
     "message": "您已升级到高级会员。"
   },
   "restore": {
-    "message": "还原"
+    "message": "恢复"
   },
   "premiumManageAlertAppStore": {
     "message": "您可以从 App Store 管理您的订阅。现在要访问 App Store 吗？"
@@ -1332,7 +1338,7 @@
     "message": "您确定要离开吗？如果您现在离开，您当前的信息不会被保存。"
   },
   "unsavedChangesTitle": {
-    "message": "未保存的更改"
+    "message": "更改未保存"
   },
   "clone": {
     "message": "克隆"
@@ -1347,7 +1353,7 @@
     "message": "已锁定的密码库需要重新输入主密码才能再次访问。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "已登出的密码库需要重新认证才能再次访问。"
+    "message": "已注销的密码库需要重新认证才能再次访问。"
   },
   "lock": {
     "message": "锁定",
@@ -1376,13 +1382,13 @@
     "message": "您确定要恢复此项目吗？"
   },
   "restoredItem": {
-    "message": "已恢复项目"
+    "message": "项目已恢复"
   },
   "permanentlyDelete": {
     "message": "永久删除"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "超时后登出将解除对密码库的所有访问权限，并需要进行在线认证。确定使用此设置吗？"
+    "message": "超时后注销将解除对密码库的所有访问权限，并需要进行在线认证。确定使用此设置吗？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "超时动作确认"
@@ -1454,7 +1460,7 @@
     "message": "启用浏览器集成"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "浏览器集成用于在浏览器中提供生物身份识别技术。"
+    "message": "浏览器集成用于在浏览器中提供生物识别。"
   },
   "browserIntegrationMasOnlyTitle": {
     "message": "不支持浏览器集成"
@@ -1463,16 +1469,16 @@
     "message": "很遗憾，目前仅 Mac App Store 版本支持浏览器集成。"
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "不支持浏览器集成"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "很不幸，当前 Windows Store 版本不支持浏览器集成。"
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "需要浏览器集成的验证"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "在您的桌面与浏览器间建立连接时，要求指纹短语验证以实现一个额外安全层。选项启用时，每次建立连接都需要用户干预和验证。"
+    "message": "在您的桌面与浏览器间建立连接时，要求验证指纹短语以实现一个额外安全层。此选项启用后，每次建立连接都需要用户干预和验证。"
   },
   "approve": {
     "message": "批准"
@@ -1490,12 +1496,162 @@
     "message": "需要先在桌面应用程序的设置中启用生物识别，才能使用浏览器中的生物识别。"
   },
   "personalOwnershipSubmitError": {
-    "message": "因一企业策略，您已被限制保存项目到您的个人密码库。请将所有权选项改为一个组织，并从可用的收藏夹中选择。"
+    "message": "由于企业策略，您被限制为保存项目到您的个人密码库。将所有权选项更改为组织，并从可用的集合中选择。"
   },
   "hintEqualsPassword": {
     "message": "您的密码提示不能与您的密码相同。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "一项组织策略正在影响您的所有权选项。"
+    "message": "一个组织策略正影响您的所有权选项。"
+  },
+  "allSends": {
+    "message": "所有的 Send",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "文件"
+  },
+  "sendTypeText": {
+    "message": "文本"
+  },
+  "searchSends": {
+    "message": "搜索 Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "编辑 Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "我的密码库"
+  },
+  "text": {
+    "message": "文本"
+  },
+  "deletionDate": {
+    "message": "删除日期"
+  },
+  "deletionDateDesc": {
+    "message": "此 Send 将在指定的日期和时间后被永久删除。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "过期日期"
+  },
+  "expirationDateDesc": {
+    "message": "如果设定，此 Send 将在指定的日期和时间后过期。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "最大访问次数"
+  },
+  "maxAccessCountDesc": {
+    "message": "如果设定，达到最大访问次数后用户将无法访问此 Send。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "当前访问次数"
+  },
+  "disableSend": {
+    "message": "禁用此 Send 则没有人能访问它。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "可选，用户需要提供密码才能访问此 Send。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "关于此 Send 的私密备注。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send 链接",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send 链接",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "访问 Send 时，默认将隐藏文本",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send 已创建",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send 已编辑",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send 已删除",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "新密码"
+  },
+  "whatTypeOfSend": {
+    "message": "这是什么类型的 Send？",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "创建 Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "您要发送的文本。"
+  },
+  "sendFileDesc": {
+    "message": "您想要发送的文件。"
+  },
+  "days": {
+    "message": "$DAYS$ 天",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 天"
+  },
+  "custom": {
+    "message": "自定义"
+  },
+  "deleteSendConfirmation": {
+    "message": "确定要删除此 Send 吗？",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "复制 Send 链接到剪贴板",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "保存时复制链接到剪贴板以便分享此 Send。"
+  },
+  "sendDisabled": {
+    "message": "Send 已禁用",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "由于企业策略，您只能删除现有的 Send。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "复制链接"
+  },
+  "disabled": {
+    "message": "已禁用"
+  },
+  "maxAccessCountReached": {
+    "message": "已达最大访问次数"
+  },
+  "expired": {
+    "message": "已过期"
+  },
+  "pendingDeletion": {
+    "message": "等待删除"
   }
 }

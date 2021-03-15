@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Kopírovať URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Kopírovať overovací kód (TOTP)"
+  },
   "length": {
     "message": "Dĺžka"
   },
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Tento export obsahuje vaše dáta v nešifrovanom formáte. Nemali by ste ich ukladať, ani posielať cez nezabezpečené kanály (napr. email). Okamžite ho odstráňte, keď ho prestanete používať."
   },
-  "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+  "encExportKeyWarningDesc": {
+    "message": "Tento export zašifruje vaše údaje pomocou šifrovacieho kľúča vášho účtu. Ak niekedy budete rotovať šifrovací kľúč svojho účtu, mali by ste exportovať znova, pretože nebudete môcť dešifrovať tento exportovaný súbor."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Šifrovacie kľúče účtu sú jedinečné pre každý používateľský účet Bitwarden, takže nemôžete importovať šifrovaný export do iného účtu."
   },
   "exportMasterPassword": {
     "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
@@ -1388,7 +1394,7 @@
     "message": "Potvrdenie akcie pre vypršaný časový limit"
   },
   "enterpriseSingleSignOn": {
-    "message": "Prihlásenie cez prihlasovací formulár spoločnosti (SSO)"
+    "message": "Jednotné prihlásenie pre podniky (SSO)"
   },
   "setMasterPassword": {
     "message": "Nastaviť hlavné heslo"
@@ -1490,12 +1496,162 @@
     "message": "Biometria prehliadača vyžaduje, aby bola najskôr v nastaveniach povolená biometria počítača."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Z dôvodu podnikovej politiky máte obmedzené ukladanie položiek do osobného trezora. Zmeňte možnosť vlastníctvo na organizáciu a vyberte si z dostupných zbierok."
   },
   "hintEqualsPassword": {
     "message": "Nápoveda pre heslo nemôže byť rovnaká ako heslo."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "Politika organizácie ovplyvňuje vaše možnosti vlastníctva."
+  },
+  "allSends": {
+    "message": "Všetky Sendy",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Súbor"
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "searchSends": {
+    "message": "Hľadať Sendy",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Upraviť Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Môj trezor"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "deletionDate": {
+    "message": "Dátum odstránenia"
+  },
+  "deletionDateDesc": {
+    "message": "Send bude natrvalo odstránený v zadaný dátum a čas.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Dátum exspirácie"
+  },
+  "expirationDateDesc": {
+    "message": "Ak je nastavené, prístup k tomuto Sendu vyprší v zadaný dátum a čas.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maximálny počet prístupov"
+  },
+  "maxAccessCountDesc": {
+    "message": "Ak je nastavené, používatelia už nebudú mať prístup k tomuto Sendu po dosiahnutí maximálneho počtu prístupov.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Súčasný počet prístupov"
+  },
+  "disableSend": {
+    "message": "Vypnúť tento Send, aby k nemu nikto nemal prístup.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Voliteľne môžete vyžadovať heslo pre používateľov na prístup k tomuto Sendu.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Zabezpečená poznámka o tomto Sende.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Odkaz na Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Odkaz na Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Pri prístupe k Sendu, predvolene skryť text",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send vytvorený",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send upravený",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send odstránený",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nové heslo"
+  },
+  "whatTypeOfSend": {
+    "message": "Aký typ Sendu to je?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Vytvoriť Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Text, ktorý chcete odoslať."
+  },
+  "sendFileDesc": {
+    "message": "Súbor, ktorý chcete odoslať."
+  },
+  "days": {
+    "message": "$DAYS$ dní",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 deň"
+  },
+  "custom": {
+    "message": "Vlastné"
+  },
+  "deleteSendConfirmation": {
+    "message": "Naozaj chcete odstrániť tento Send?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopírovať odkaz na Send do schránky",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopírovať odkaz na zdieľanie tohto Sendu do schránky počas ukladania."
+  },
+  "sendDisabled": {
+    "message": "Funkcia Send zakázaná",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Z dôvodu podnikovej politiky môžete odstrániť iba existujúci Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopírovať odkaz"
+  },
+  "disabled": {
+    "message": "Zakázané"
+  },
+  "maxAccessCountReached": {
+    "message": "Bol dosiahnutý maximálny počet prístupov"
+  },
+  "expired": {
+    "message": "Exspirované"
+  },
+  "pendingDeletion": {
+    "message": "Čakajúce odstránenie"
   }
 }

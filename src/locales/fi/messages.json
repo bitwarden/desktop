@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Kopioi URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Kopioi todennuskoodi (TOTP)"
+  },
   "length": {
     "message": "Pituus"
   },
@@ -668,7 +671,7 @@
     "message": "Kirjauduttu ulos"
   },
   "loginExpired": {
-    "message": "Kirjautumisesi on vanhentunut."
+    "message": "Kirjautumisistuntosi on erääntynyt."
   },
   "logOutConfirmation": {
     "message": "Haluatko varmasti kirjautua ulos?"
@@ -868,7 +871,7 @@
     "message": "Sulje valikkoriville"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "Kun ikkuna suljetaan, näytä se sen sijaan kuvakkeena valikkorivillä."
+    "message": "Kun ikkuna suljetaan, näytä se sulun sijaan kuvakkeena valikkorivillä."
   },
   "enableTray": {
     "message": "Näytä ilmoitusalueen kuvake"
@@ -898,13 +901,13 @@
     "message": "Näytä aina Dockissa"
   },
   "alwaysShowDockDesc": {
-    "message": "Näytä Bitwardenin kuvake Dockissa myös silloin, kun se on pienennetty valikkoriville."
+    "message": "Näytä Bitwardenin kuvake Dockissa myös sen ollessa pienennettynä valikkoriville."
   },
   "confirmTrayTitle": {
     "message": "Vahvista ilmoitusalueen käytöstä poisto"
   },
   "confirmTrayDesc": {
-    "message": "Asetuksen käytöstä poisto poistaa käytöstä myös kaikki siihen liittyvät asetukset."
+    "message": "Asetuksen käytöstä poisto poistaa käytöstä myös kaikki muut ilmoitusalueeseen liittyvät asetukset."
   },
   "language": {
     "message": "Kieli"
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Tämä vienti sisältää holvisi tiedot salaamattomassa muodossa. Sinun ei tulisi säilyttää tai lähettää vietyä tiedostoa suojaamattomien kanavien (kuten sähköpostin) välityksellä. Poista se välittömästi kun sille ei enää ole käyttöä."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Tämä vienti salaa tietosi käyttäen käyttäjätilisi salausavaimella. Jos joskus uudistat tilisi salausavaimen, tulee sinun viedä tiedot uudelleen, koska et voi enää purkaa nyt viedyn tiedoston salausta."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Tilin salausavaimet ovat ainutlaatuisia jokaiselle Bitwarden-käyttäjätilille, joten et voi tuoda salattua vientitiedostoa toiselle tilille."
   },
   "exportMasterPassword": {
     "message": "Syötä pääsalasana viedäksesi holvisi tiedot."
@@ -1451,7 +1457,7 @@
     "message": "Käyttöehtoja ja tietosuojakäytäntöä ei ole vahvistettu."
   },
   "enableBrowserIntegration": {
-    "message": "Ota selainintegrointi käyttöön"
+    "message": "Käytä selainintegrointia"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Selainintegrointia käytetään selaimessa biometriaa varten."
@@ -1463,10 +1469,10 @@
     "message": "Valitettavasti selainintegrointia tukee toistaiseksi vain Mac App Store -versio."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Selainintegrointia ei tueta"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Valitettavasti selainintegrointia ei toistaiseksi tueta sovelluksen Microsoft Store -versiossa."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Vaadi selainintegroinnin vahvistus"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Organisaatiokäytäntö vaikuttaa omistajuusvalintoihisi."
+  },
+  "allSends": {
+    "message": "Kaikki Sendit",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Tiedosto"
+  },
+  "sendTypeText": {
+    "message": "Teksti"
+  },
+  "searchSends": {
+    "message": "Hae Sendeistä",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Muokkaa Sendiä",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Oma holvi"
+  },
+  "text": {
+    "message": "Teksti"
+  },
+  "deletionDate": {
+    "message": "Poistopäivä"
+  },
+  "deletionDateDesc": {
+    "message": "Send poistetaan pysyvästi määritettynä ajankohtana.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Erääntymispäivä"
+  },
+  "expirationDateDesc": {
+    "message": "Jos määritetty, Send erääntyy määritettynä ajankohtana.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Käyttöoikeuksien enimmäismäärä"
+  },
+  "maxAccessCountDesc": {
+    "message": "Jos määritetty, käyttäjät eivät voi avata Sendiä käyttökertojen enimmäismäärän täytyttyä.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Nykyinen käyttökertojen määrä"
+  },
+  "disableSend": {
+    "message": "Poista Send käytöstä, jottei kukaan voi avata sitä.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Halutessasi, vaadi käyttäjiä syöttämään salasana Sendin avaamiseksi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Yksityiset muistiinpanot tästä Sendistä.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send-linkki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send-linkki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Piilota teksti oletuksena kun Send avataan",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Luotiin Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Muokattiin Sendiä",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Poistettiin Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Uusi salasana"
+  },
+  "whatTypeOfSend": {
+    "message": "Minkä tyyppinen Send tämä on?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Luotiin Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Teksti, jonka haluat lähettää."
+  },
+  "sendFileDesc": {
+    "message": "Tiedosto, jonka haluat lähettää."
+  },
+  "days": {
+    "message": "$DAYS$ päivää",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 päivä"
+  },
+  "custom": {
+    "message": "Mukautettu"
+  },
+  "deleteSendConfirmation": {
+    "message": "Haluatko varmasti poistaa Sendin?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopioi Sendin linkki leikepöydälle",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopioi Sendin linkki leikepöydälle tallennettaessa."
+  },
+  "sendDisabled": {
+    "message": "Send on poistettu käytöstä",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Yrityksen käytännön vuoksi voit poistaa vain olemassa olevan Sendin.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopioi linkki"
+  },
+  "disabled": {
+    "message": "Poistettu käytöstä"
+  },
+  "maxAccessCountReached": {
+    "message": "Käyttökertojen enimmäismäärä saavutettu"
+  },
+  "expired": {
+    "message": "Erääntynyt"
+  },
+  "pendingDeletion": {
+    "message": "Odottaa poistoa"
   }
 }

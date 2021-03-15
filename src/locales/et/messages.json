@@ -116,7 +116,7 @@
     "message": "Minimeeri programm pärast sisu kopeerimist"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimeerib programmi pärast kirje sisu kopeerimist."
+    "message": "Minimeerib programmi pärast kirje kopeerimist."
   },
   "toggleVisibility": {
     "message": "Näita sisu"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "Kopeeri URI"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Kopeeri Kinnituskood (TOTP)"
   },
   "length": {
     "message": "Pikkus"
@@ -695,7 +698,7 @@
     "message": "Laadimine..."
   },
   "lockNow": {
-    "message": "Kliki paroolihoidla lukustamiseks"
+    "message": "Lukusta paroolihoidla"
   },
   "passwordGenerator": {
     "message": "Parooli genereerimine"
@@ -850,19 +853,19 @@
     "message": "Minimeeri tegumiribale"
   },
   "enableMinToTrayDesc": {
-    "message": "Akna minimeerimisel kuva rakendus süsteemisalve ikoonina."
+    "message": "Akna minimeerimisel kuvatakse rakendus süsteemisalve ikoonina."
   },
   "enableMinToMenuBar": {
     "message": "Minimeeri menüüribale"
   },
   "enableMinToMenuBarDesc": {
-    "message": "Akna minimeerimisel kuva rakendus menüüriba ikoonina."
+    "message": "Akna minimeerimisel kuvatakse rakendus menüüriba ikoonina."
   },
   "enableCloseToTray": {
     "message": "Minimeeri süsteemisalvele"
   },
   "enableCloseToTrayDesc": {
-    "message": "Akna sulgemisel kuva rakendus süsteemisalve ikoonina."
+    "message": "Akna sulgemisel kuvatakse rakendus süsteemisalve ikoonina."
   },
   "enableCloseToMenuBar": {
     "message": "Sulge menüüribale"
@@ -871,7 +874,7 @@
     "message": "Akna sulgemisel kuva rakendus menüüriba ikoonina."
   },
   "enableTray": {
-    "message": "Luba süsteemisalve ikoon"
+    "message": "Näita süsteemisalve ikooni"
   },
   "enableTrayDesc": {
     "message": "Kuva süsteemisalve ikoon alati."
@@ -916,7 +919,7 @@
     "message": "Teema"
   },
   "themeDesc": {
-    "message": "Muuda rakenduse värvikujundust."
+    "message": "Muudab rakenduse värvikujundust."
   },
   "dark": {
     "message": "Tume",
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Eksporditav fail sisaldab hoidla sisu, mis on krüpteeringuta. Seda faili ei tohiks kaua käidelda ning mitte mingil juhul ebaturvaliselt saata (näiteks e-postiga). Kustuta see koheselt pärast kasutamist."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Eksporditavate andmete krüpteerimiseks kasutatakse kontol olevat krüpteerimisvõtit. Kui sa peaksid seda krüpteerimise võtit roteerima, ei saa sa järgnevalt eksporditavaid andmeid enam dekrüpteerida."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Iga Bitwardeni kasutaja krüpteerimisvõti on unikaalne. Eksporditud andmeid ei saa importida teise Bitwardeni kasutajakontosse."
   },
   "exportMasterPassword": {
     "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
@@ -1301,7 +1307,7 @@
     "message": "Lülita menüüriba ikoon sisse"
   },
   "enableMenuBarDesc": {
-    "message": "Kuva alati süsteemisalve ikooni."
+    "message": "Sisselülitatuna kuvatakse süsteemisalve ikooni alati."
   },
   "hideToMenuBar": {
     "message": "Peida süsteemisalve ikoon"
@@ -1463,10 +1469,10 @@
     "message": "Paraku on brauseri integratsioon hetkel toetatud ainult Mac App Store'i versioonis."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Brauseri integratsioon ei ole toetatud"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Paraku ei ole brauseri integratsioon hetkel Microsoft Store versioonis toetatud."
   },
   "enableBrowserIntegrationFingerprint": {
     "message": "Nõua brauseri integratsiooni ülekinnitamist"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Organisatsiooni poliitika on seadnud omaniku valikutele piirangu."
+  },
+  "allSends": {
+    "message": "Kõik Sendid",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fail"
+  },
+  "sendTypeText": {
+    "message": "Tekst"
+  },
+  "searchSends": {
+    "message": "Otsi Sende",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Muuda Sendi",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Minu hoidla"
+  },
+  "text": {
+    "message": "Tekst"
+  },
+  "deletionDate": {
+    "message": "Kustutamise kuupäev"
+  },
+  "deletionDateDesc": {
+    "message": "Send kustutatakse määratud kuupäeval ja kellaajal jäädavalt.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Aegumiskuupäev"
+  },
+  "expirationDateDesc": {
+    "message": "Seadistamisel ei pääse sellele Sendile enam pärast määratud kuupäeva ligi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maksimaalne ligipääsude arv"
+  },
+  "maxAccessCountDesc": {
+    "message": "Seadistamisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Hetkeline ligipääsude arv"
+  },
+  "disableSend": {
+    "message": "Keela see Send, et keegi ei pääseks sellele ligi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Mittekohustuslik parooli küsimine, et Sendile ligi pääseda.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Privaatne märkus selle Sendi kohta.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Sendi link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Sendi link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Sendi avamisel peida tekst automaatselt",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Lõi Sendi",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Muutis Sendi",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Kustutas Sendi",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Uus Parool"
+  },
+  "whatTypeOfSend": {
+    "message": "Mis tüüpi Send see on?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Loo Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Tekst, mida soovid saata."
+  },
+  "sendFileDesc": {
+    "message": "Fail, mida soovid saata."
+  },
+  "days": {
+    "message": "$DAYS$ päeva",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 päev"
+  },
+  "custom": {
+    "message": "Kohandatud"
+  },
+  "deleteSendConfirmation": {
+    "message": "Soovid tõesti selle Sendi kustutada?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopeeri Sendi link lõikelauale",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Salvestamisel kopeeri Sendi jagamise link lõikepuhvrisse."
+  },
+  "sendDisabled": {
+    "message": "Send on väljalülitatud",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Ettevõtte poliitika kohaselt saad ainult olemasolevat Sendi kustutada.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopeeri link"
+  },
+  "disabled": {
+    "message": "Keelatud"
+  },
+  "maxAccessCountReached": {
+    "message": "Maksimaalne ligipääsude arv on saavutatud"
+  },
+  "expired": {
+    "message": "Aegunud"
+  },
+  "pendingDeletion": {
+    "message": "Kustutamise ootel"
   }
 }

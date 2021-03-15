@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "URI másolása"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Ellenőrző kód másolása (TOTP)"
+  },
   "length": {
     "message": "Hossz"
   },
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "Ez az exportálás titkosítás nélkül tartalmazza a széfadatokat.Nem célszerű az exportált fájlt nem biztonságos csatornákon tárolni és továbbküldeni (például emailben). A felhasználás után erősen ajánlott a törlés."
   },
-  "encExportWarningDesc": {
+  "encExportKeyWarningDesc": {
     "message": "Ez az exportálás titkosítja az adatokat a fiók titkosítási kulcsával. Ha a fiók forgatási kulcsa más lesz, akkor újra exportálni kell, mert nem lehet visszafejteni ezt az exportálási fájlt."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "A fiók titkosítási kulcsai minden Bitwarden felhasználói fiókhoz egyediek, ezért nem importálhatunk titkosított exportálást egy másik fiókba."
   },
   "exportMasterPassword": {
     "message": "A mesterjelszó megadása a széfadatok exportálásához."
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "A szervezeti házirend befolyásolja a tulajdonosi opciókat."
+  },
+  "allSends": {
+    "message": "Összes küldés",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fájl"
+  },
+  "sendTypeText": {
+    "message": "Szöveg"
+  },
+  "searchSends": {
+    "message": "Küldés keresése",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Küldés szerkesztése",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Saját széf"
+  },
+  "text": {
+    "message": "Szöveg"
+  },
+  "deletionDate": {
+    "message": "Törlési dátum"
+  },
+  "deletionDateDesc": {
+    "message": "A Send véglegesen törlésre kerül a meghatározott időpontban.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Lejárati dátum"
+  },
+  "expirationDateDesc": {
+    "message": "Beállítva a hozzáférés ehhez a Küldéshez lejár a meghatározott időpontban.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maximális elérési szám"
+  },
+  "maxAccessCountDesc": {
+    "message": "Beállítva a Küldés elérhetetlen lesz a meghatározott hozzáférések számának elérése után.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Aktuális elérési szám"
+  },
+  "disableSend": {
+    "message": "A Küldés letiltásával mindenki hozzáférése megvonható.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Opcionálissan egy jelszó kérhető a felhasználóktól a Küldés eléréséhez.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Személyes megjegyzések erről a Küldésről.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Hivatkozás küldése",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Hivatkozás küldése",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "A Küldés elérésekor alapértelmezés szerint a szöveg elrejtése",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "A küldés létrejött",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "A küldés szerkesztésre került",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "A küldés törlésre került",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Új jelszó"
+  },
+  "whatTypeOfSend": {
+    "message": "Milyen típusú ez a küldés?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "A küldés létrejött.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "A küldendő szöveg."
+  },
+  "sendFileDesc": {
+    "message": "A küldendő fájl."
+  },
+  "days": {
+    "message": "$DAYS$ nap",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 nap"
+  },
+  "custom": {
+    "message": "Egyedi"
+  },
+  "deleteSendConfirmation": {
+    "message": "Biztosan törlésre kerüljön ez a küldés?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Hivatkozás küldése másolás a vágólapra",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "A hivatkozás másolása a Küldés megosztásához a vágólapra mentéskor."
+  },
+  "sendDisabled": {
+    "message": "A küldés kikapcsolásra került",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "A vállalati házirend miatt csak egy meglévő Küldés törölhető.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Hivatkozás másolása"
+  },
+  "disabled": {
+    "message": "Letiltva"
+  },
+  "maxAccessCountReached": {
+    "message": "A maximális hozzáférések száma elérésre került."
+  },
+  "expired": {
+    "message": "Lejárt"
+  },
+  "pendingDeletion": {
+    "message": "Függőben lévő törlés"
   }
 }

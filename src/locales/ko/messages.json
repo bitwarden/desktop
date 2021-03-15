@@ -340,7 +340,7 @@
     "message": "첨부 파일 삭제"
   },
   "deleteItemConfirmation": {
-    "message": "정말 이 항목을 삭제하시겠습니까?"
+    "message": "정말로 휴지통으로 이동시킬까요?"
   },
   "deletedItem": {
     "message": "삭제한 항목"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "URI 복사"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "인증 코드 (TOTP) 복사"
   },
   "length": {
     "message": "길이"
@@ -904,7 +907,7 @@
     "message": "알림 영역 비활성화 확인"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "이 설정을 끄면 알림 영역과 관련된 다른 모든 설정이 함께 꺼집니다."
   },
   "language": {
     "message": "언어(Language)"
@@ -1224,8 +1227,11 @@
   "exportWarningDesc": {
     "message": "내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오."
   },
-  "encExportWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+  "encExportKeyWarningDesc": {
+    "message": "이 내보내기는 계정의 암호화 키를 사용하여 데이터를 암호화합니다. 추후 계정의 암호화 키를 교체할 경우 다시 내보내기를 진행해야 합니다. 그러지 않을 경우 이 내보내기 파일을 해독할 수 없게 됩니다."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
@@ -1289,7 +1295,7 @@
     "message": "Touch ID를 사용하여 잠금 해제"
   },
   "touchIdConsentMessage": {
-    "message": "Bitwarden에서 인증을 요청합니다."
+    "message": "보관함 잠금 해제"
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
@@ -1463,25 +1469,25 @@
     "message": "브라우저와 연결은 현재 Mac App Store 버전에서만 지원됩니다."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "브라우저와 연결 지원되지 않음"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "현재 Microsoft Store 버전에서는 브라우저와 연결이 지원되지 않습니다."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "브라우저와 연결을 위해 인증이 필요함"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "데스크탑 앱과 브라우저를 연결할 때 지문 구절을 확인하는 과정을 제공함으로써 추가적인 보안을 제공합니다. 이 옵션을 켜면, 연결이 설정될 때마다 사용자의 확인을 요구합니다."
   },
   "approve": {
     "message": "승인"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "브라우저와 연결 인증"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "다음의 지문 구절이 브라우저 확장 프로그램에 표시된 지문 구절과 동일한지 확인해주세요."
   },
   "biometricsNotEnabledTitle": {
     "message": "생체 인식이 활성화되지 않음"
@@ -1497,5 +1503,155 @@
   },
   "personalOwnershipPolicyInEffect": {
     "message": "조직의 정책이 소유권 설정에 영향을 미치고 있습니다."
+  },
+  "allSends": {
+    "message": "모든 Send",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "파일"
+  },
+  "sendTypeText": {
+    "message": "텍스트"
+  },
+  "searchSends": {
+    "message": "Send 검색",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Send 편집",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "내 보관함"
+  },
+  "text": {
+    "message": "텍스트"
+  },
+  "deletionDate": {
+    "message": "삭제 날짜"
+  },
+  "deletionDateDesc": {
+    "message": "이 Send가 정해진 일시에 영구적으로 삭제됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "만료 날짜"
+  },
+  "expirationDateDesc": {
+    "message": "설정할 경우, 이 Send에 대한 접근 권한이 정해진 일시에 만료됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "최대 접근 횟수"
+  },
+  "maxAccessCountDesc": {
+    "message": "설정할 경우, 최대 접근 횟수에 도달할 때 이 Send에 접근할 수 없게 됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "현재 접근 횟수"
+  },
+  "disableSend": {
+    "message": "이 Send를 비활성화하여 아무도 접근할 수 없게 합니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "이 Send에 접근하기 위해 암호를 입력하도록 선택적으로 요구합니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "이 Send에 대한 비공개 메모",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Send link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send Link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Send에 접근할 때 기본적으로 텍스트를 숨김",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send 생성함",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send 수정함",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send 삭제함",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "새 비밀번호"
+  },
+  "whatTypeOfSend": {
+    "message": "어떤 유형의 Send인가요?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Send 생성",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "전송하려는 텍스트"
+  },
+  "sendFileDesc": {
+    "message": "전송하려는 파일"
+  },
+  "days": {
+    "message": "$DAYS$일",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1일"
+  },
+  "custom": {
+    "message": "사용자 지정"
+  },
+  "deleteSendConfirmation": {
+    "message": "정말 이 Send를 삭제하시겠습니까?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Send 링크를 클립보드에 복사",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "저장할 때 이 Send를 공유하기 위한 링크를 클립보드에 복사합니다."
+  },
+  "sendDisabled": {
+    "message": "Send 비활성화됨",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "엔터프라이즈 정책으로 인해 이미 생성된 Send를 삭제하는 것만 허용됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "링크 복사"
+  },
+  "disabled": {
+    "message": "비활성화됨"
+  },
+  "maxAccessCountReached": {
+    "message": "최대 접근 횟수 도달"
+  },
+  "expired": {
+    "message": "만료됨"
+  },
+  "pendingDeletion": {
+    "message": "삭제 대기 중"
   }
 }
