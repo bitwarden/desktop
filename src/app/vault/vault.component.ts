@@ -101,6 +101,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;
+                // console.log('vault.message.heard = ', message.command);
                 switch (message.command) {
                     case 'newLogin':
                         await this.addCipher(CipherType.Login);
@@ -152,6 +153,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         this.messagingService.send('scheduleNextSync');
                         break;
                     case 'syncCompleted':
+                        this.loaded = false;
                         await this.load();
                         break;
                     case 'refreshCiphers':

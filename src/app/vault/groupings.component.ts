@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
+import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
@@ -20,11 +21,12 @@ export class GroupingsComponent extends BaseGroupingsComponent {
 
     selectedTool: string = null;
     browserName: string;
+    hasNotes: boolean;
     private prevSelection: any = new Object();
 
     constructor(collectionService: CollectionService, folderService: FolderService,
         storageService: StorageService, userService: UserService,
-        private broadcasterService: BroadcasterService) {
+        private broadcasterService: BroadcasterService, private cipherService: CipherService) {
         super(collectionService, folderService, storageService, userService);
     }
 
@@ -46,6 +48,17 @@ export class GroupingsComponent extends BaseGroupingsComponent {
         if (!knownBrowsers.includes(this.browserName)) {
             this.browserName = 'chrome' ;
         }
+    }
+
+    async load(setLoaded = true) {
+        // check if there are notes to display
+        const ciphers = await this.cipherService.getAllDecrypted();
+        const noteIndex = ciphers.findIndex( (c) => {
+            return (c.type === 2 && !c.isDeleted);
+        });
+        this.hasNotes = (noteIndex > -1) ;
+        // run super
+        super.load(setLoaded);
     }
 
     lock() {
