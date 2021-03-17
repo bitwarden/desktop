@@ -87,22 +87,18 @@ export class NativeMessagingMain {
                 this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'));
                 break;
             case 'darwin':
-                if (existsSync(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`)) {
-                    this.writeManifest(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson);
-                } else {
-                    this.logService.warning(`Firefox not found skipping.`);
-                }
-
-                if (existsSync(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts`)) {
-                    this.writeManifest(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
-                } else {
-                    this.logService.warning(`Chrome not found skipping.`);
-                }
-
-                if (existsSync(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts`)) {
-                    this.writeManifest(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
-                } else {
-                    this.logService.warning(`Microsoft Edge not found skipping.`);
+                const nmhs = this.getDarwinNMHS();
+                for (const [key, value] of Object.entries(nmhs)) {
+                    if (existsSync(value)) {
+                        const p = path.join(value, 'com.8bit.bitwarden.json');
+                        if (key === 'Firefox') {
+                            this.writeManifest(p, firefoxJson);
+                        } else {
+                            this.writeManifest(p, chromeJson);
+                        }
+                    } else {
+                        this.logService.warning(`${key} not found skipping.`);
+                    }
                 }
                 break;
             case 'linux':
@@ -132,16 +128,12 @@ export class NativeMessagingMain {
                 this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden');
                 break;
             case 'darwin':
-                if (existsSync(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`);
-                }
-
-                if (existsSync(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
-                }
-
-                if (existsSync(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
-                    fs.unlink(`${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/com.8bit.bitwarden.json`);
+                const nmhs = this.getDarwinNMHS();
+                for (const [_, value] of Object.entries(nmhs)) {
+                    const p = path.join(value, 'com.8bit.bitwarden.json');
+                    if (existsSync(p)) {
+                        fs.unlink(p);
+                    }
                 }
                 break;
             case 'linux':
@@ -160,6 +152,15 @@ export class NativeMessagingMain {
             default:
                 break;
         }
+    }
+
+    private getDarwinNMHS() {
+        return {
+            'Firefox': `${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`,
+            'Chrome': `${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/`,
+            'Microsoft Edge': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/`,
+            'Vivaldi': `${this.homedir()}/Library/Application\ Support/Vivaldi/NativeMessagingHosts/`,
+        };
     }
 
     private writeManifest(destination: string, manifest: object) {
