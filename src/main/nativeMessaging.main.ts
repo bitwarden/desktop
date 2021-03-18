@@ -14,10 +14,13 @@ export class NativeMessagingMain {
 
     constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private appPath: string) {}
 
-    listen() {
+    async listen() {
         ipc.config.id = 'bitwarden';
         ipc.config.retry = 1500;
         if (process.platform === 'darwin') {
+            if (!existsSync(`${homedir()}/tmp`)) {
+                await fs.mkdir(`${homedir()}/tmp`);
+            }
             ipc.config.socketRoot = `${homedir()}/tmp/`;
         }
 
@@ -163,8 +166,10 @@ export class NativeMessagingMain {
         };
     }
 
-    private writeManifest(destination: string, manifest: object) {
-        fs.mkdir(path.dirname(destination));
+    private async writeManifest(destination: string, manifest: object) {
+        if (!existsSync(path.dirname(destination))) {
+            await fs.mkdir(path.dirname(destination));
+        }
         fs.writeFile(destination, JSON.stringify(manifest, null, 2)).catch(this.logService.error);
     }
 
