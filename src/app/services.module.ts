@@ -156,7 +156,7 @@ export function initFactory(): Function {
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
             theme = platformUtilsService.getDevice() === DeviceType.MacOsDesktop &&
-                remote.systemPreferences.isDarkMode() ? 'dark' : 'light';
+                remote.systemPreferences.isDarkMode() ? 'dark' : 'cozyLight';
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
