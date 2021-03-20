@@ -46,6 +46,7 @@
     "dist:dir": "npm run build && npm run pack:dir",
     "dist:lin": "npm run build && npm run pack:lin",
     "dist:mac": "npm run build && npm run pack:mac",
+    "dist:mac:arm64": "npm run build && npm run pack:mac:arm64",
     "dist:mac:mas": "npm run build && npm run pack:mac:mas",
     "dist:mac:masdev": "npm run build && npm run pack:mac:masdev",
     "dist:win": "npm run build && npm run pack:win",
