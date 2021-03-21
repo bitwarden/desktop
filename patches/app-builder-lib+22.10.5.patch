@@ -1,12 +1,15 @@
 diff --git a/node_modules/app-builder-lib/out/macPackager.js b/node_modules/app-builder-lib/out/macPackager.js
-index 41e067c..a10a214 100644
+index 41e067c..0607d09 100644
 --- a/node_modules/app-builder-lib/out/macPackager.js
 +++ b/node_modules/app-builder-lib/out/macPackager.js
-@@ -292,6 +292,15 @@ class MacPackager extends _platformPackager().PlatformPackager {
+@@ -292,6 +292,18 @@ class MacPackager extends _platformPackager().PlatformPackager {
  
            const appFile = `${this.appInfo.productFilename}.app`;
  
-+          // Bitwarden Patch: Remove existing PlugIns dirs to avoid errors universal errors
++          // Bitwarden Patch: Electron-Builder currently does not support including our Safari extension which
++          // is already cross-compiled. Hence we remove it prior to making the universal package, and re-add
++          // it afterwards
++          // https://github.com/electron-userland/electron-builder/issues/5552
 +          const rmdir2 = (0, _util().promisify)(require('fs').rmdir);
 +          await rmdir2(`${x64AppOutDir}/Bitwarden.app/Contents/PlugIns`, {
 +            recursive: true
@@ -18,12 +21,12 @@ index 41e067c..a10a214 100644
            const {
              makeUniversalApp
            } = require('@electron/universal');
-@@ -302,6 +311,10 @@ class MacPackager extends _platformPackager().PlatformPackager {
+@@ -302,6 +314,10 @@ class MacPackager extends _platformPackager().PlatformPackager {
              outAppPath: path.join(appOutDir, appFile),
              force: true
            });
 +
-+          // Bitwarden Patch: Copy PlugIns dir to Universal binary
++          // Bitwarden Patch: Re-add PlugIns dir to Universal binary
 +          await ((0, _fsExtra().copy)(path.join(this.projectDir, 'PlugIns'), `${path.join(appOutDir, appFile)}/Contents/PlugIns`));
 +
            const rmdir = (0, _util().promisify)(require('fs').rmdir);
