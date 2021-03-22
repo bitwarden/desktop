@@ -161,7 +161,13 @@ export class NativeMessagingMain {
         return {
             'Firefox': `${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`,
             'Chrome': `${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/`,
+            'Chrome Beta': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Beta/NativeMessagingHosts/`,
+            'Chrome Dev': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Dev/NativeMessagingHosts/`,
+            'Chrome Canary': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Canary/NativeMessagingHosts/`,
             'Microsoft Edge': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/`,
+            'Microsoft Edge Beta': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Beta/NativeMessagingHosts/`,
+            'Microsoft Edge Dev': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Dev/NativeMessagingHosts/`,
+            'Microsoft Edge Canary': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Canary/NativeMessagingHosts/`,
             'Vivaldi': `${this.homedir()}/Library/Application\ Support/Vivaldi/NativeMessagingHosts/`,
         };
     }
