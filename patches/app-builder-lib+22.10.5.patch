@@ -1,8 +1,8 @@
 diff --git a/node_modules/app-builder-lib/out/macPackager.js b/node_modules/app-builder-lib/out/macPackager.js
-index 41e067c..0607d09 100644
+index 41e067c..1aec3a6 100644
 --- a/node_modules/app-builder-lib/out/macPackager.js
 +++ b/node_modules/app-builder-lib/out/macPackager.js
-@@ -292,6 +292,18 @@ class MacPackager extends _platformPackager().PlatformPackager {
+@@ -292,6 +292,23 @@ class MacPackager extends _platformPackager().PlatformPackager {
  
            const appFile = `${this.appInfo.productFilename}.app`;
  
@@ -10,25 +10,36 @@ index 41e067c..0607d09 100644
 +          // is already cross-compiled. Hence we remove it prior to making the universal package, and re-add
 +          // it afterwards
 +          // https://github.com/electron-userland/electron-builder/issues/5552
-+          const rmdir2 = (0, _util().promisify)(require('fs').rmdir);
-+          await rmdir2(`${x64AppOutDir}/Bitwarden.app/Contents/PlugIns`, {
-+            recursive: true
-+          });
-+          await rmdir2(`${arm64AppOutPath}/Bitwarden.app/Contents/PlugIns`, {
-+            recursive: true
-+          });
++          const rmdir = (0, _fsExtra().remove);
++          try {
++            await rmdir(`${x64AppOutDir}/Bitwarden.app/Contents/PlugIns`, {
++              recursive: true
++            });
++            await rmdir(`${arm64AppOutPath}/Bitwarden.app/Contents/PlugIns`, {
++              recursive: true
++            });
++          } catch (e) {
++            // Catches errors where PlugIns does not exist
++            console.log(e);
++          }
 +
            const {
              makeUniversalApp
            } = require('@electron/universal');
-@@ -302,6 +314,10 @@ class MacPackager extends _platformPackager().PlatformPackager {
+@@ -302,7 +319,15 @@ class MacPackager extends _platformPackager().PlatformPackager {
              outAppPath: path.join(appOutDir, appFile),
              force: true
            });
+-          const rmdir = (0, _util().promisify)(require('fs').rmdir);
 +
 +          // Bitwarden Patch: Re-add PlugIns dir to Universal binary
-+          await ((0, _fsExtra().copy)(path.join(this.projectDir, 'PlugIns'), `${path.join(appOutDir, appFile)}/Contents/PlugIns`));
++          try {
++            await ((0, _fsExtra().copy)(path.join(this.projectDir, 'PlugIns'), `${path.join(appOutDir, appFile)}/Contents/PlugIns`));
++          } catch (e) {
++            // Catches errors where PlugIns does not exist
++            console.log(e);
++          }
 +
-           const rmdir = (0, _util().promisify)(require('fs').rmdir);
            await rmdir(x64AppOutDir, {
              recursive: true
+           });
