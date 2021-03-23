@@ -16,7 +16,6 @@ import { ElectronLogService } from 'jslib/electron/services/electronLog.service'
 import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
 import { TrayMain } from 'jslib/electron/tray.main';
-import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
 
@@ -29,7 +28,6 @@ export class Main {
 
     windowMain: WindowMain;
     messagingMain: MessagingMain;
-    updaterMain: UpdaterMain;
     menuMain: MenuMain;
     powerMonitorMain: PowerMonitorMain;
     trayMain: TrayMain;
@@ -94,13 +92,6 @@ export class Main {
         this.windowMain = new WindowMain(this.storageService, true, undefined, undefined,
             (arg) => this.processDeepLink(arg), (win) => this.trayMain.setupWindowListeners(win));
         this.messagingMain = new MessagingMain(this, this.storageService);
-        this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
-            this.menuMain.updateMenuItem.enabled = false;
-        }, () => {
-            this.menuMain.updateMenuItem.enabled = true;
-        }, () => {
-            this.menuMain.updateMenuItem.label = this.i18nService.t('restartToUpdate');
-        }, 'bitwarden');
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
         this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);
@@ -139,7 +130,6 @@ export class Main {
                 this.trayMain.hideToTray();
             }
             this.powerMonitorMain.init();
-            await this.updaterMain.init();
             if (this.biometricMain != null) {
                 await this.biometricMain.init();
             }

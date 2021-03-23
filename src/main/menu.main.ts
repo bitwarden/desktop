@@ -20,7 +20,6 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 export class MenuMain extends BaseMenu {
     menu: Menu;
-    updateMenuItem: MenuItem;
     addNewLogin: MenuItem;
     addNewItem: MenuItem;
     addNewFolder: MenuItem;
@@ -49,7 +48,6 @@ export class MenuMain extends BaseMenu {
         this.initContextMenu();
         this.initApplicationMenu();
 
-        this.updateMenuItem = this.menu.getMenuItemById('checkForUpdates');
         this.addNewLogin = this.menu.getMenuItemById('addNewLogin');
         this.addNewItem = this.menu.getMenuItemById('addNewItem');
         this.addNewFolder = this.menu.getMenuItemById('addNewFolder');
@@ -405,12 +403,6 @@ export class MenuMain extends BaseMenu {
             },
         ];
 
-        const updateMenuItem = {
-            label: this.main.i18nService.t('checkForUpdates'),
-            click: () => this.main.updaterMain.checkForUpdate(true),
-            id: 'checkForUpdates',
-        };
-
         if (process.platform === 'darwin') {
             const firstMenuPart: MenuItemConstructorOptions[] = [
                 {
@@ -418,10 +410,6 @@ export class MenuMain extends BaseMenu {
                     role: 'about',
                 },
             ];
-
-            if (!isMacAppStore()) {
-                firstMenuPart.push(updateMenuItem);
-            }
 
             template.unshift({
                 label: 'Bitwarden',
@@ -444,10 +432,6 @@ export class MenuMain extends BaseMenu {
             const aboutMenuAdditions: MenuItemConstructorOptions[] = [
                 { type: 'separator' },
             ];
-
-            if (!isWindowsStore() && !isSnapStore()) {
-                aboutMenuAdditions.push(updateMenuItem);
-            }
 
             aboutMenuAdditions.push({
                 label: this.i18nService.t('aboutBitwarden'),
