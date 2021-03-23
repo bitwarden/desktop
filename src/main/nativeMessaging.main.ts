@@ -94,16 +94,13 @@ export class NativeMessagingMain {
                 for (const [key, value] of Object.entries(nmhs)) {
                     if (existsSync(value)) {
                         const p = path.join(value, 'NativeMessagingHosts', 'com.8bit.bitwarden.json');
-                        try {
-                            if (key === 'Firefox') {
-                                this.writeManifest(p, firefoxJson);
-                            } else {
-                                this.writeManifest(p, chromeJson);
-                            }
-                        } catch (e) {
-                            // Catch error to prevent crash
-                            console.error(e);
+
+                        let manifest: any = chromeJson;
+                        if (key === 'Firefox') {
+                            manifest = firefoxJson;
                         }
+
+                        this.writeManifest(p, manifest).catch(e => this.logService.error(`Error writing manifest for ${key}. ${e}`));
                     } else {
                         this.logService.warning(`${key} not found skipping.`);
                     }
