@@ -93,11 +93,16 @@ export class NativeMessagingMain {
                 const nmhs = this.getDarwinNMHS();
                 for (const [key, value] of Object.entries(nmhs)) {
                     if (existsSync(value)) {
-                        const p = path.join(value, 'com.8bit.bitwarden.json');
-                        if (key === 'Firefox') {
-                            this.writeManifest(p, firefoxJson);
-                        } else {
-                            this.writeManifest(p, chromeJson);
+                        const p = path.join(value, 'NativeMessagingHosts', 'com.8bit.bitwarden.json');
+                        try {
+                            if (key === 'Firefox') {
+                                this.writeManifest(p, firefoxJson);
+                            } else {
+                                this.writeManifest(p, chromeJson);
+                            }
+                        } catch (e) {
+                            // Catch error to prevent crash
+                            console.error(e);
                         }
                     } else {
                         this.logService.warning(`${key} not found skipping.`);
@@ -133,7 +138,7 @@ export class NativeMessagingMain {
             case 'darwin':
                 const nmhs = this.getDarwinNMHS();
                 for (const [_, value] of Object.entries(nmhs)) {
-                    const p = path.join(value, 'com.8bit.bitwarden.json');
+                    const p = path.join(value, 'NativeMessagingHosts', 'com.8bit.bitwarden.json');
                     if (existsSync(p)) {
                         fs.unlink(p);
                     }
@@ -159,16 +164,16 @@ export class NativeMessagingMain {
 
     private getDarwinNMHS() {
         return {
-            'Firefox': `${this.homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/`,
-            'Chrome': `${this.homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/`,
-            'Chrome Beta': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Beta/NativeMessagingHosts/`,
-            'Chrome Dev': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Dev/NativeMessagingHosts/`,
-            'Chrome Canary': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Canary/NativeMessagingHosts/`,
-            'Microsoft Edge': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/NativeMessagingHosts/`,
-            'Microsoft Edge Beta': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Beta/NativeMessagingHosts/`,
-            'Microsoft Edge Dev': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Dev/NativeMessagingHosts/`,
-            'Microsoft Edge Canary': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Canary/NativeMessagingHosts/`,
-            'Vivaldi': `${this.homedir()}/Library/Application\ Support/Vivaldi/NativeMessagingHosts/`,
+            'Firefox': `${this.homedir()}/Library/Application\ Support/Mozilla/`,
+            'Chrome': `${this.homedir()}/Library/Application\ Support/Google/Chrome/`,
+            'Chrome Beta': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Beta/`,
+            'Chrome Dev': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Dev/`,
+            'Chrome Canary': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Canary/`,
+            'Microsoft Edge': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/`,
+            'Microsoft Edge Beta': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Beta/`,
+            'Microsoft Edge Dev': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Dev/`,
+            'Microsoft Edge Canary': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Canary/`,
+            'Vivaldi': `${this.homedir()}/Library/Application\ Support/Vivaldi/`,
         };
     }
 
