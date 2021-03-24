@@ -1,5 +1,5 @@
 diff --git a/node_modules/app-builder-lib/out/macPackager.js b/node_modules/app-builder-lib/out/macPackager.js
-index 41e067c..1aec3a6 100644
+index 41e067c..cd97293 100644
 --- a/node_modules/app-builder-lib/out/macPackager.js
 +++ b/node_modules/app-builder-lib/out/macPackager.js
 @@ -292,6 +292,23 @@ class MacPackager extends _platformPackager().PlatformPackager {
@@ -43,3 +43,12 @@ index 41e067c..1aec3a6 100644
            await rmdir(x64AppOutDir, {
              recursive: true
            });
+@@ -611,7 +636,7 @@ exports.default = MacPackager;
+ 
+ function getCertificateType(isMas, isDevelopment) {
+   if (isDevelopment) {
+-    return "Mac Developer";
++    return "Apple Development";
+   }
+ 
+   return isMas ? "3rd Party Mac Developer Application" : "Developer ID Application";
