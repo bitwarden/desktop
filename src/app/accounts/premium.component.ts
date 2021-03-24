@@ -8,7 +8,7 @@ import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
-import { TokenService } from 'jslib/abstractions/token.service';
+import { UserService } from 'jslib/abstractions/user.service';
 
 import { PremiumComponent as BasePremiumComponent } from 'jslib/angular/components/premium.component';
 
@@ -18,9 +18,9 @@ import { PremiumComponent as BasePremiumComponent } from 'jslib/angular/componen
 })
 export class PremiumComponent extends BasePremiumComponent {
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
-        tokenService: TokenService, apiService: ApiService,
+        apiService: ApiService, userService: UserService,
         private ngZone: NgZone, private messagingService: MessagingService,
         private syncService: SyncService) {
-        super(i18nService, platformUtilsService, tokenService, apiService);
+        super(i18nService, platformUtilsService, apiService, userService);
     }
 }
