@@ -1,5 +1,4 @@
 [![Github Workflow build on master](https://github.com/bitwarden/desktop/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/bitwarden/desktop/actions/workflows/build.yml?query=branch:master)
-[![travis build](https://travis-ci.org/bitwarden/desktop.svg?branch=master)](https://travis-ci.org/bitwarden/desktop)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-desktop/localized.svg)](https://crowdin.com/project/bitwarden-desktop)
 [![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
