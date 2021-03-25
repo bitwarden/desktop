@@ -1656,5 +1656,11 @@
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
   }
 }
