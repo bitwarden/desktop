@@ -12,7 +12,7 @@ export class NativeMessagingMain {
     private connected = false;
     private socket: any;
 
-    constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private appPath: string) {}
+    constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private exePath: string) {}
 
     async listen() {
         ipc.config.id = 'bitwarden';
@@ -182,14 +182,11 @@ export class NativeMessagingMain {
     }
 
     private binaryPath() {
-        const dir = path.join(this.appPath, '..');
         if (process.platform === 'win32') {
-            return path.join(dir, 'native-messaging.bat');
-        } else if (process.platform === 'darwin') {
-            return '/Applications/Bitwarden.app/Contents/MacOS/Bitwarden';
+            return path.join(path.basename(this.exePath), 'resources', 'native-messaging.bat');
         }
 
-        return path.join(dir, '..', 'bitwarden');
+        return this.exePath;
     }
 
     private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
