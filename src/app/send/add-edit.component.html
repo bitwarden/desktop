@@ -5,6 +5,9 @@
                 <app-callout *ngIf="disableSend">
                     <span>{{'sendDisabledWarning' | i18n}}</span>
                 </app-callout>
+                <app-callout type="info" *ngIf="disableHideEmail && !disableSend">
+                    {{'sendOptionsPolicyInEffect' | i18n}}
+                </app-callout>
             </div>
             <div class="box">
                 <div class="box-header">
@@ -141,6 +144,15 @@
                     </div>
                     <div class="box-footer">
                         {{'sendNotesDesc' | i18n}}
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-content">
+                        <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                            <label for="hideEmail">{{'hideEmail' | i18n}}</label>
+                            <input id="hideEmail" type="checkbox" name="HideEmail" [(ngModel)]="send.hideEmail"
+                                [disabled]="(disableHideEmail && !send.hideEmail) || disableSend">
+                        </div>
                     </div>
                 </div>
                 <div class="box">

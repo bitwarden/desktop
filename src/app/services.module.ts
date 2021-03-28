@@ -38,6 +38,7 @@ import { CryptoService } from 'jslib/services/crypto.service';
 import { EnvironmentService } from 'jslib/services/environment.service';
 import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
+import { FileUploadService } from 'jslib/services/fileUpload.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
@@ -65,6 +66,7 @@ import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from 'jslib
 import { EnvironmentService as EnvironmentServiceAbstraction } from 'jslib/abstractions/environment.service';
 import { EventService as EventServiceAbstraction } from 'jslib/abstractions/event.service';
 import { ExportService as ExportServiceAbstraction } from 'jslib/abstractions/export.service';
+import { FileUploadService as FileUploadServiceAbstraction }  from 'jslib/abstractions/fileUpload.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib/abstractions/i18n.service';
 import { LogService as LogServiceAbstraction } from 'jslib/abstractions/log.service';
@@ -103,6 +105,7 @@ const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
+const fileUploadService: FileUploadServiceAbstraction = new FileUploadService(logService, apiService);
 const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
 export let searchService: SearchService = null;
@@ -112,7 +115,7 @@ const folderService = new FolderService(cryptoService, userService, apiService, 
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 searchService = new SearchService(cipherService, logService);
-const sendService = new SendService(cryptoService, userService, apiService, storageService,
+const sendService = new SendService(cryptoService, userService, apiService, fileUploadService, storageService,
     i18nService, cryptoFunctionService);
 const policyService = new PolicyService(userService, storageService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
