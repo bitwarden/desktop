@@ -369,3 +369,8 @@ jobs:
           asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
           asset_content_type: application
+
+      - name: Build ARM application
+        run: npm run dist:mac:arm64
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
