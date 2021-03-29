@@ -83,6 +83,7 @@ export class CiphersComponent extends BaseCiphersComponent {
         }
         try {
             await this.restoreCiphers();
+            this.onDeletedCipher.emit(); // the aim is to hide the displayed item from the trash after restoration
             const notification = this.ciphers.length > 1 ? 'restoredItems' : 'restoredItem';
             this.platformUtilsService.showToast('success', null,
                 this.i18nService.t(notification).replace('€€€', ciphersNumber));
