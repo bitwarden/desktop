@@ -309,6 +309,55 @@
                 }
             }
         }
+        .footer {
+            padding: 20px 0 0 15px;
+            border-top: 1px solid #000000;
+            position: relative;
+            z-index: 1;
+            @include themify($themes) {
+                border-top-color: themed('borderColor');
+            }
+            #param-btn {
+                border: none;
+            }
+            svg {
+                box-sizing: content-box;
+                height: 100%;
+                cursor: pointer;
+                @include themify($themes) {
+                    background-color: themed('buttonBackgroundColor');
+                    fill: themed('buttonColor');
+                }
+                &:hover {
+                    @include themify($themes) {
+                        background-color: darken(themed('buttonBackgroundColor'), 1.5%);
+                        fill: darken(themed('buttonColor'), 10%);
+                    }
+                }
+            }
+            #bottom-menu {
+                position: absolute;
+                padding: 8px 0;
+                border: 1px solid;
+                border-radius: 4px;
+                box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.20);
+                @include themify($themes) {
+                    background-color: themed('buttonBackgroundColor');
+                    border-color: themed('buttonBorderColor');
+                }
+                right: 5px;
+                bottom: calc(100% - 28px);
+                button {
+                    border: none;
+                    width: 100%;
+                    text-align: left;
+                }
+                button:first-child {
+                    padding: 0;
+                    display: block;
+                }
+            }
+        }
     }
 
     > #details {
@@ -329,9 +378,14 @@
             &:first-child {
                 margin-top: 10px;
             }
-
             &:last-child {
-                margin-bottom: 30px;
+                margin-top: 0;
+                margin-left: 0;
+                font-size: $font-size-small;
+
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
             }
         }
 
@@ -339,6 +393,25 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+        }
+
+        .footer {
+            margin: 30px auto 10px auto;
+            max-width: 550px;
+            align-items: flex-end;
+            & i {
+                margin-right: 5px;
+            }
+            & span {
+                color: $text-color;
+            }
+            button {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
         }
     }
 
@@ -437,50 +510,11 @@
         overflow: auto;
     }
 
-    #details .footer {
-        background-color: unset;
-        padding: 0;
-        border: 0;
-        max-width: 550px;
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        & i {
-            margin-right: 5px;
-        }
-        & span {
-            color: $text-color;
-        }
-    }
-
     .footer {
-        height: 90px;
-        flex: 0 0 auto;
-        border-top: 1px solid #000000;
-        padding: 0 15px;
-        display: unset;
-        align-items: unset;
-        @include themify($themes) {
-            border-top-color: themed('borderColor');
-        }
-
-        button {
-            margin-right: 10px;
-            margin-top: 20px;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
+        display: flex;
         .right {
             margin-left: auto;
             display: flex;
         }
-    }
-
-    #details .footer {
-        margin: 1px auto 0 auto;
     }
 }

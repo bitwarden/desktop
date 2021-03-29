@@ -355,10 +355,19 @@
     "message": "Supprimer la pièce jointe"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cet élément ?"
+    "message": "Mettre à la corbeille cet élément ?"
+  },
+  "deleteItemsConfirmation": {
+      "message": "Mettre à la corbeille ces €€€ éléments ?"
+  },
+  "deleteItems": {
+    "message": "Mettre à la corbeille ces éléments"
   },
   "deletedItem": {
     "message": "L'élément a été envoyé à la corbeille"
+  },
+  "deletedItems": {
+    "message": "€€€ éléments ont été envoyés à la corbeille"
   },
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
@@ -1339,17 +1348,38 @@
   "permanentlyDeleteItemConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir supprimer définitivement cet élément ?"
   },
+  "permanentlyDeleteItems": {
+    "message": "Vider la corbeille"
+  },
+  "permanentlyDeleteItemsConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir supprimer définitivement ces €€€ éléments ?"
+  },
   "permanentlyDeletedItem": {
     "message": "Élément supprimé définitivement"
+  },
+  "permanentlyDeletedItems": {
+    "message": "€€€ éléments supprimés définitivement"
   },
   "restoreItem": {
     "message": "Restaurer l'élément"
   },
+  "restoreItems": {
+    "message": "Restaurer ces €€€ éléments"
+  },
+  "restoreAllItems": {
+    "message": "Restaurer tous ces éléments"
+  },
   "restoreItemConfirmation": {
     "message": "Êtes-vous sûr(e) de vouloir restaurer cet élément ?"
   },
+  "restoreItemsConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir restaurer tous ces éléments ?"
+  },
   "restoredItem": {
     "message": "Élément restauré"
+  },
+  "restoredItems": {
+    "message": "€€€ éléments restaurés"
   },
   "permanentlyDelete": {
     "message": "Supprimer définitivement"

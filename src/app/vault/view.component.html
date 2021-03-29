@@ -275,22 +275,20 @@
             </div>
         </div>
         <div class="box">
-            <div class="box-footer">
-                <div>
-                    <b class="font-weight-semibold">{{'dateUpdated' | i18n}}:</b>
-                    {{cipher.revisionDate | date:'medium'}}
-                </div>
-                <div *ngIf="cipher.passwordRevisionDisplayDate">
-                    <b class="font-weight-semibold">{{'datePasswordUpdated' | i18n}}:</b>
-                    {{cipher.passwordRevisionDisplayDate | date:'medium'}}
-                </div>
-                <div *ngIf="cipher.hasPasswordHistory">
-                    <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
-                    <a href="#" (click)="viewHistory()" appStopClick role="button"
-                        appA11yTitle="{{'passwordHistory' | i18n}}, {{cipher.passwordHistory.length}}">
-                        <span aria-hidden="true">{{cipher.passwordHistory.length}}</span>
-                    </a>
-                </div>
+            <div>
+                <b class="font-weight-semibold">{{'dateUpdated' | i18n}}:</b>
+                {{cipher.revisionDate | date:'medium'}}
+            </div>
+            <div *ngIf="cipher.passwordRevisionDisplayDate">
+                <b class="font-weight-semibold">{{'datePasswordUpdated' | i18n}}:</b>
+                {{cipher.passwordRevisionDisplayDate | date:'medium'}}
+            </div>
+            <div *ngIf="cipher.hasPasswordHistory">
+                <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
+                <a href="#" (click)="viewHistory()" appStopClick role="button"
+                    appA11yTitle="{{'passwordHistory' | i18n}}, {{cipher.passwordHistory.length}}">
+                    <span aria-hidden="true">{{cipher.passwordHistory.length}}</span>
+                </a>
             </div>
         </div>
     </div>

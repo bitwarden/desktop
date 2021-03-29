@@ -346,7 +346,7 @@
     "message": "Edited item"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Delete item"
   },
   "deleteFolder": {
     "message": "Delete Folder"
@@ -355,10 +355,19 @@
     "message": "Delete Attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "Move this element to trash?"
+  },
+  "deleteItemsConfirmation": {
+      "message": "Move these €€€ items to trash ?"
+  },
+  "deleteItems": {
+    "message": "Move these items to trash"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "Item moved to trash"
+  },
+  "deletedItems": {
+    "message": "€€€ items moved to trash"
   },
   "overwritePasswordConfirmation": {
     "message": "Are you sure you want to overwrite the current password?"
@@ -1378,17 +1387,38 @@
   "permanentlyDeleteItemConfirmation": {
     "message": "Are you sure you want to permanently delete this item?"
   },
+  "permanentlyDeleteItems": {
+    "message": "Empty trash"
+  },
+  "permanentlyDeleteItemsConfirmation": {
+    "message": "Are you sure you want to permanently delete these €€€ items?"
+  },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "Permanently deleted item"
+  },
+  "permanentlyDeletedItems": {
+    "message": "€€€ permanently deleted items"
   },
   "restoreItem": {
     "message": "Restore Item"
   },
+  "restoreItems": {
+    "message": "Restore these €€€ items"
+  },
+  "restoreAllItems": {
+    "message": "Restore all these items"
+  },
   "restoreItemConfirmation": {
     "message": "Are you sure you want to restore this item?"
   },
+  "restoreItemsConfirmation": {
+    "message": "Are you sure you want to restore all these items?"
+  },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "Item restored"
+  },
+  "restoredItems": {
+    "message": "€€€ elements restored"
   },
   "permanentlyDelete": {
     "message": "Permanently Delete"
