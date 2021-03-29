@@ -382,7 +382,6 @@ app-vault {
             }
             &:last-child {
                 margin-top: 0;
-                margin-left: 0;
                 font-size: $font-size-small;
 
                 @include themify($themes) {
