@@ -9,7 +9,7 @@
         class="{{shouldDisplayCiphersList()}}"
         [activeCipherId]="cipherId" (onCipherClicked)="viewCipher($event)"
         (onCipherRightClicked)="viewCipherMenu($event)" (onAddCipher)="addCipher($event)"
-        (onAddCipherOptions)="addCipherOptions()">
+        (onAddCipherOptions)="addCipherOptions()" (onDeletedCipher)="deletedCipher($event)">
     </app-vault-ciphers>
     <app-vault-view id="details" *ngIf="cipherId && action === 'view'" [cipherId]="cipherId"
         (onCloneCipher)="cloneCipher($event)" (onEditCipher)="editCipher($event)"

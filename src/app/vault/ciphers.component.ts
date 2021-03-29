@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -13,6 +13,7 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 })
 export class CiphersComponent extends BaseCiphersComponent {
 
+    @Output() onDeletedCipher = new EventEmitter();
     isMenuOpened: boolean = false;
     @ViewChild('menu') menu: ElementRef;
 
@@ -58,6 +59,7 @@ export class CiphersComponent extends BaseCiphersComponent {
         }
         try {
             await this.deleteCiphers();
+            this.onDeletedCipher.emit();
             const notification = this.ciphers.length > 1 ?
                 (this.deleted ? 'permanentlyDeletedItems' : 'deletedItems') :
                 (this.deleted ? 'permanentlyDeletedItem'  : 'deletedItem' );
