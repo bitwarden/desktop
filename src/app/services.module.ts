@@ -105,12 +105,12 @@ const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
-const fileUploadService: FileUploadServiceAbstraction = new FileUploadService(logService, apiService);
 const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
 export let searchService: SearchService = null;
+const fileUploadService = new FileUploadService(logService, apiService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
-    apiService, storageService, i18nService, () => searchService);
+    apiService, fileUploadService, storageService, i18nService, () => searchService);
 const folderService = new FolderService(cryptoService, userService, apiService, storageService,
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
@@ -224,6 +224,7 @@ export function initFactory(): Function {
         { provide: SendServiceAbstraction, useValue: sendService },
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
+        { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

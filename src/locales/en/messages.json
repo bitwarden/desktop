@@ -431,7 +431,7 @@
     "message": "Select a file."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maximum file size is 500 MB."
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
