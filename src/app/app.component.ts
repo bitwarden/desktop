@@ -208,6 +208,7 @@ export class AppComponent implements OnInit {
                         break;
                     case 'ssoCallback':
                         this.router.navigate(['sso'], { queryParams: { code: message.code, state: message.state } });
+                        break;
                     case 'premiumRequired':
                         const premiumConfirmed = await this.platformUtilsService.showDialog(
                             this.i18nService.t('premiumRequiredDesc'), this.i18nService.t('premiumRequired'),
