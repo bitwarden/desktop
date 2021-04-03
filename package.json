@@ -316,7 +316,7 @@
     "forcefocus": "^1.1.0",
     "keytar": "7.3.0",
     "lunr": "2.3.3",
-    "node-forge": "0.7.6",
+    "node-forge": "0.10.0",
     "node-ipc": "^9.1.1",
     "nord": "0.2.1",
     "papaparse": "4.6.0",
