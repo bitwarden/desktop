@@ -164,6 +164,9 @@ export class AppComponent implements OnInit {
                         break;
                     case 'syncCompleted':
                         break;
+                    case 'fullSync':
+                        this.syncService.fullSync(true);
+                        break;
                     case 'openSettings':
                         this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
                         break;
