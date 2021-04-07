@@ -12,7 +12,6 @@ import {
     ActivatedRoute,
     Router,
 } from '@angular/router';
-import { ipcRenderer } from 'electron';
 
 import { ToasterService } from 'angular2-toaster';
 import { Angulartics2 } from 'angulartics2';
