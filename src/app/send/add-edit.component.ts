@@ -8,6 +8,7 @@ import { MessagingService } from 'jslib/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SendService } from 'jslib/abstractions/send.service';
+import { TokenService } from 'jslib/abstractions';
 import { UserService } from 'jslib/abstractions/user.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/send/add-edit.component';
@@ -20,9 +21,9 @@ export class AddEditComponent extends BaseAddEditComponent {
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         environmentService: EnvironmentService, datePipe: DatePipe,
         sendService: SendService, userService: UserService,
-        messagingService: MessagingService, policyService: PolicyService) {
+        messagingService: MessagingService, policyService: PolicyService, tokenService: TokenService) {
         super(i18nService, platformUtilsService, environmentService,
-              datePipe, sendService, userService, messagingService, policyService);
+              datePipe, sendService, userService, messagingService, policyService, tokenService);
     }
 
     async refresh() {
