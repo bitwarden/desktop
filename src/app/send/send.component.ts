@@ -1,5 +1,3 @@
-import { remote } from 'electron';
-
 import {
     Component,
     NgZone,
@@ -19,6 +17,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { SendComponent as BaseSendComponent } from 'jslib/angular/components/send/send.component';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
 
 import { SendView } from 'jslib/models/view/sendView';
 
@@ -112,18 +111,19 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
     }
 
     viewSendMenu(send: SendView) {
-        const menu = new remote.Menu();
-        menu.append(new remote.MenuItem({
+        const menu: RendererMenuItem[] = [];
+        menu.push({
             label: this.i18nService.t('copyLink'),
             click: () => this.copy(send),
-        }));
-        menu.append(new remote.MenuItem({
+        });
+        menu.push({
             label: this.i18nService.t('delete'),
             click: async () => {
                 await this.delete(send);
                 await this.deletedSend(send);
             },
-        }));
-        menu.popup({ window: remote.getCurrentWindow() });
+        });
+
+        invokeMenu(menu);
     }
 }
