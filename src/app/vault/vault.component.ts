@@ -45,6 +45,7 @@ import { SyncService } from 'jslib/abstractions/sync.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 
 const BroadcasterSubscriptionId = 'VaultComponent';
 
@@ -85,7 +86,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
         private toasterService: ToasterService, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
-        private totpService: TotpService, private userService: UserService) { }
+        private totpService: TotpService, private userService: UserService, private passwordRepromptService: PasswordRepromptService) { }
 
     async ngOnInit() {
         this.userHasPremiumAccess = await this.userService.canAccessPremium();
@@ -130,24 +131,24 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const uCipher = uComponent != null ? uComponent.cipher : null;
                         if (this.cipherId != null && uCipher != null && uCipher.id === this.cipherId &&
                             uCipher.login != null && uCipher.login.username != null) {
-                            this.copyValue(uCipher.login.username, 'username');
+                            this.copyValue(uCipher, uCipher.login.username, 'username', 'Username');
                         }
                         break;
                     case 'copyPassword':
                         const pComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
                         const pCipher = pComponent != null ? pComponent.cipher : null;
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
-                            pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword && !pCipher.passwordPrompt) {
-                            this.copyValue(pCipher.login.password, 'password');
+                            pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword) {
+                            this.copyValue(pCipher, pCipher.login.password, 'password', 'Password');
                         }
                         break;
                     case 'copyTotp':
                         const tComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
                         const tCipher = tComponent != null ? tComponent.cipher : null;
                         if (this.cipherId != null && tCipher != null && tCipher.id === this.cipherId &&
-                            tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess && !pCipher.passwordPrompt) {
+                            tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess) {
                             const value = await this.totpService.getCode(tCipher.login.totp);
-                            this.copyValue(value, 'verificationCodeTotp');
+                            this.copyValue(tCipher, value, 'verificationCodeTotp', 'TOTP');
                         }
                     default:
                         detectChanges = false;
@@ -277,14 +278,14 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.username != null) {
                     menu.push({
                         label: this.i18nService.t('copyUsername'),
-                        click: () => this.copyValue(cipher.login.username, 'username'),
+                        click: () => this.copyValue(cipher, cipher.login.username, 'username', 'Username'),
                     });
                 }
                 if (cipher.login.password != null && cipher.viewPassword) {
                     menu.push({
                         label: this.i18nService.t('copyPassword'),
                         click: () => {
-                            this.copyValue(cipher.login.password, 'password');
+                            this.copyValue(cipher, cipher.login.password, 'password', 'Password');
                             this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
                         },
                     });
@@ -294,7 +295,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         label: this.i18nService.t('copyVerificationCodeTotp'),
                         click: async () => {
                             const value = await this.totpService.getCode(cipher.login.totp);
-                            this.copyValue(value, 'verificationCodeTotp');
+                            this.copyValue(cipher, value, 'verificationCodeTotp', 'TOTP');
                         },
                     });
                 }
@@ -306,14 +307,14 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.card.number != null) {
                     menu.push({
                         label: this.i18nService.t('copyNumber'),
-                        click: () => this.copyValue(cipher.card.number, 'number'),
+                        click: () => this.copyValue(cipher, cipher.card.number, 'number', 'Card Number'),
                     });
                 }
                 if (cipher.card.code != null) {
                     menu.push({
                         label: this.i18nService.t('copySecurityCode'),
                         click: () => {
-                            this.copyValue(cipher.card.code, 'securityCode');
+                            this.copyValue(cipher, cipher.card.code, 'securityCode', 'Security Code');
                             this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
                         },
                     });
@@ -639,8 +640,12 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.functionWithChangeDetection(() => this.addCipher(type));
     }
 
-    private copyValue(value: string, labelI18nKey: string) {
-        this.functionWithChangeDetection(() => {
+    private copyValue(cipher: CipherView, value: string, labelI18nKey: string, aType: string) {
+        this.functionWithChangeDetection(async () => {
+            if (cipher.passwordPrompt && this.passwordRepromptService.protectedFields().includes(aType) && ! await this.passwordRepromptService.showPasswordPrompt()) {
+                return;
+            }
+
             this.platformUtilsService.copyToClipboard(value);
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
