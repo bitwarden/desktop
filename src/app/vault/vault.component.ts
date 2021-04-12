@@ -137,7 +137,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const pComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
                         const pCipher = pComponent != null ? pComponent.cipher : null;
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
-                            pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword) {
+                            pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword && !pCipher.passwordPrompt) {
                             this.copyValue(pCipher.login.password, 'password');
                         }
                         break;
@@ -145,7 +145,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const tComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
                         const tCipher = tComponent != null ? tComponent.cipher : null;
                         if (this.cipherId != null && tCipher != null && tCipher.id === this.cipherId &&
-                            tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess) {
+                            tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess && !pCipher.passwordPrompt) {
                             const value = await this.totpService.getCode(tCipher.login.totp);
                             this.copyValue(value, 'verificationCodeTotp');
                         }

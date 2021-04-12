@@ -73,6 +73,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/a
 import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
 } from 'jslib/abstractions/passwordGeneration.service';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
@@ -86,6 +87,7 @@ import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/toke
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib/abstractions/vaultTimeout.service';
+import { BrowserPasswordRepromptService } from 'jslib/services/BrowserPasswordReprompt.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -137,6 +139,7 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
+const passwordRepromptService = new BrowserPasswordRepromptService(i18nService, cryptoService);
 
 const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);
@@ -226,6 +229,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: PasswordRepromptService, useValue: passwordRepromptService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
