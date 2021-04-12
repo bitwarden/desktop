@@ -217,6 +217,15 @@ export class AppComponent implements OnInit {
                             this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
                         }
                         break;
+                    case 'emailVerificationRequired':
+                        const emailVerificationConfirmed = await this.platformUtilsService.showDialog(
+                            this.i18nService.t('emailVerificationRequiredDesc'),
+                            this.i18nService.t('emailVerificationRequired'),
+                            this.i18nService.t('learnMore'), this.i18nService.t('cancel'));
+                        if (emailVerificationConfirmed) {
+                            this.platformUtilsService.launchUri('https://bitwarden.com/help/article/create-bitwarden-account/');
+                        }
+                        break;
                     case 'syncVault':
                         try {
                             await this.syncService.fullSync(true, true);

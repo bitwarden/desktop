@@ -1,5 +1,3 @@
-import { remote } from 'electron';
-
 import {
     APP_INITIALIZER,
     LOCALE_ID,
@@ -12,7 +10,7 @@ import { ElectronLogService } from 'jslib/electron/services/electronLog.service'
 import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib/electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
-import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
+import { ElectronRendererStorageService } from 'jslib/electron/services/electronRendererStorage.service';
 import { isDev } from 'jslib/electron/utils';
 
 import { DeviceType } from 'jslib/enums/deviceType';
@@ -94,7 +92,7 @@ const i18nService = new I18nService(window.navigator.language, './locales');
 const stateService = new StateService();
 const broadcasterService = new BroadcasterService();
 const messagingService = new ElectronRendererMessagingService(broadcasterService);
-const storageService: StorageServiceAbstraction = new ElectronStorageService(remote.app.getPath('userData'));
+const storageService: StorageServiceAbstraction = new ElectronRendererStorageService();
 const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true, storageService);
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
@@ -114,7 +112,7 @@ const cipherService = new CipherService(cryptoService, userService, settingsServ
 const folderService = new FolderService(cryptoService, userService, apiService, storageService,
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
-searchService = new SearchService(cipherService, logService);
+searchService = new SearchService(cipherService, logService, i18nService);
 const sendService = new SendService(cryptoService, userService, apiService, fileUploadService, storageService,
     i18nService, cryptoFunctionService);
 const policyService = new PolicyService(userService, storageService);
@@ -158,8 +156,11 @@ export function initFactory(): Function {
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
-            theme = platformUtilsService.getDevice() === DeviceType.MacOsDesktop &&
-                remote.nativeTheme.shouldUseDarkColors ? 'dark' : 'light';
+            if (platformUtilsService.getDevice() === DeviceType.MacOsDesktop) {
+                theme = await platformUtilsService.getDefaultSystemTheme();
+            } else {
+                theme = 'light';
+            }
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
@@ -167,7 +168,7 @@ export function initFactory(): Function {
 
         let installAction = null;
         const installedVersion = await storageService.get<string>(ConstantsService.installedVersionKey);
-        const currentVersion = platformUtilsService.getApplicationVersion();
+        const currentVersion = await platformUtilsService.getApplicationVersion();
         if (installedVersion == null) {
             installAction = 'install';
         } else if (installedVersion !== currentVersion) {
