@@ -23,7 +23,7 @@ export class AddEditComponent extends BaseAddEditComponent {
         sendService: SendService, userService: UserService,
         messagingService: MessagingService, policyService: PolicyService, tokenService: TokenService) {
         super(i18nService, platformUtilsService, environmentService,
-              datePipe, sendService, userService, messagingService, policyService, tokenService);
+              datePipe, sendService, userService, messagingService, policyService);
     }
 
     async refresh() {
