@@ -1670,7 +1670,7 @@
     "message": "You must verify your email to use this feature."
   },
   "passwordPrompt": {
-    "message": "Require master password verification to use"
+    "message": "Master password re-prompt"
   },
   "passwordConfirmation": {
     "message": "Master password confirmation"

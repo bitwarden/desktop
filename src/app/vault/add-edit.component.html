@@ -251,7 +251,8 @@
                     </div>
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="passwordPrompt">{{'passwordPrompt' | i18n}}</label>
-                        <input id="passwordPrompt" type="checkbox" name="PasswordPrompt" [(ngModel)]="cipher.passwordPrompt">
+                        <input id="passwordPrompt" type="checkbox" name="PasswordPrompt" [ngModel]="reprompt"
+                            (change)="repromptChanged()">
                     </div>
                     <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="attachments()" *ngIf="editMode && !cloneMode" role="button">

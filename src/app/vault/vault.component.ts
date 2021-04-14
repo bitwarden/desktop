@@ -40,12 +40,13 @@ import { FolderView } from 'jslib/models/view/folderView';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
-import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 
 const BroadcasterSubscriptionId = 'VaultComponent';
 
@@ -642,7 +643,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     private copyValue(cipher: CipherView, value: string, labelI18nKey: string, aType: string) {
         this.functionWithChangeDetection(async () => {
-            if (cipher.passwordPrompt && this.passwordRepromptService.protectedFields().includes(aType) && ! await this.passwordRepromptService.showPasswordPrompt()) {
+            if (cipher.reprompt !== CipherRepromptType.None && this.passwordRepromptService.protectedFields().includes(aType) &&
+               ! await this.passwordRepromptService.showPasswordPrompt()) {
                 return;
             }
 
