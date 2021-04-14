@@ -4,7 +4,6 @@ import {
     ToasterConfig,
     ToasterService,
 } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
 
 import {
     Component,
@@ -100,7 +99,7 @@ export class AppComponent implements OnInit {
         private tokenService: TokenService, private folderService: FolderService,
         private settingsService: SettingsService, private syncService: SyncService,
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
-        private authService: AuthService, private router: Router, private analytics: Angulartics2,
+        private authService: AuthService, private router: Router,
         private toasterService: ToasterService, private i18nService: I18nService,
         private sanitizer: DomSanitizer, private ngZone: NgZone,
         private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
@@ -195,12 +194,6 @@ export class AppComponent implements OnInit {
                     case 'showToast':
                         this.showToast(message);
                         break;
-                    case 'analyticsEventTrack':
-                        this.analytics.eventTrack.next({
-                            action: message.action,
-                            properties: { label: message.label },
-                        });
-                        break;
                     case 'copiedToClipboard':
                         if (!message.clearing) {
                             this.systemService.clearClipboard(message.clipboardValue, message.clearMs);
@@ -230,7 +223,6 @@ export class AppComponent implements OnInit {
                         try {
                             await this.syncService.fullSync(true, true);
                             this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
-                            this.analytics.eventTrack.next({ action: 'Synced Full' });
                         } catch {
                             this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
                         }
@@ -367,7 +359,6 @@ export class AppComponent implements OnInit {
         this.vaultTimeoutService.biometricLocked = true;
         this.searchService.clearIndex();
         this.authService.logOut(async () => {
-            this.analytics.eventTrack.next({ action: 'Logged Out' });
             if (expired) {
                 this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
                     this.i18nService.t('loginExpired'));
