@@ -22,8 +22,6 @@ import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 import { ValidationService } from 'jslib/angular/services/validation.service';
 
-import { Analytics } from 'jslib/misc/analytics';
-
 import { ApiService } from 'jslib/services/api.service';
 import { AppIdService } from 'jslib/services/appId.service';
 import { AuditService } from 'jslib/services/audit.service';
@@ -141,7 +139,6 @@ const nativeMessagingService = new NativeMessagingService(cryptoFunctionService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
 const passwordRepromptService = new BrowserPasswordRepromptService(i18nService, cryptoService);
 
-const analytics = new Analytics(window, () => isDev(), platformUtilsService, storageService, appIdService);
 containerService.attachToGlobal(window);
 
 export function initFactory(): Function {
@@ -180,10 +177,6 @@ export function initFactory(): Function {
 
         if (installAction != null) {
             await storageService.save(ConstantsService.installedVersionKey, currentVersion);
-            analytics.ga('send', {
-                hitType: 'event',
-                eventAction: installAction,
-            });
         }
     };
 }

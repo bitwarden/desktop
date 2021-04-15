@@ -14,7 +14,6 @@ import {
 } from '@angular/router';
 
 import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
@@ -84,7 +83,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     constructor(private route: ActivatedRoute, private router: Router,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
-        private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
+        private ngZone: NgZone, private syncService: SyncService,
         private toasterService: ToasterService, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
         private totpService: TotpService, private userService: UserService, private passwordRepromptService: PasswordRepromptService) { }

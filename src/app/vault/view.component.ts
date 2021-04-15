@@ -71,7 +71,6 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     }
 
     viewHistory() {
-        this.platformUtilsService.eventTrack('View Password History');
         this.onViewCipherPasswordHistory.emit(this.cipher);
     }
 

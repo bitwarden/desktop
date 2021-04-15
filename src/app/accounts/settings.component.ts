@@ -3,8 +3,6 @@ import {
     OnInit,
 } from '@angular/core';
 
-import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import { DeviceType } from 'jslib/enums/deviceType';
@@ -66,8 +64,7 @@ export class SettingsComponent implements OnInit {
     startToTrayText: string;
     startToTrayDescText: string;
 
-    constructor(private analytics: Angulartics2, private toasterService: ToasterService,
-        private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
+    constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
         private userService: UserService, private cryptoService: CryptoService) {
@@ -267,12 +264,10 @@ export class SettingsComponent implements OnInit {
         await this.storageService.save(ConstantsService.disableFaviconKey, this.disableFavicons);
         await this.stateService.save(ConstantsService.disableFaviconKey, this.disableFavicons);
         this.messagingService.send('refreshCiphers');
-        this.callAnalytics('Favicons', !this.disableFavicons);
     }
 
     async saveMinToTray() {
         await this.storageService.save(ElectronConstants.enableMinimizeToTrayKey, this.enableMinToTray);
-        this.callAnalytics('MinimizeToTray', this.enableMinToTray);
     }
 
     async saveCloseToTray() {
@@ -282,7 +277,6 @@ export class SettingsComponent implements OnInit {
         }
 
         await this.storageService.save(ElectronConstants.enableCloseToTrayKey, this.enableCloseToTray);
-        this.callAnalytics('CloseToTray', this.enableCloseToTray);
     }
 
     async saveTray() {
@@ -304,7 +298,6 @@ export class SettingsComponent implements OnInit {
         }
 
         await this.storageService.save(ElectronConstants.enableTrayKey, this.enableTray);
-        this.callAnalytics('Tray', this.enableTray);
         this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
     }
 
@@ -315,30 +308,23 @@ export class SettingsComponent implements OnInit {
         }
 
         await this.storageService.save(ElectronConstants.enableStartToTrayKey, this.startToTray);
-        this.callAnalytics('StartToTray', this.startToTray);
     }
 
     async saveLocale() {
         await this.storageService.save(ConstantsService.localeKey, this.locale);
-        this.analytics.eventTrack.next({ action: 'Set Locale ' + this.locale });
     }
 
     async saveTheme() {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
-        this.analytics.eventTrack.next({ action: 'Set Theme ' + this.theme });
         window.setTimeout(() => window.location.reload(), 200);
     }
 
     async saveMinOnCopyToClipboard() {
         await this.storageService.save(ElectronConstants.minimizeOnCopyToClipboardKey, this.minimizeOnCopyToClipboard);
-        this.callAnalytics('MinOnCopyToClipboard', this.minimizeOnCopyToClipboard);
     }
 
     async saveClearClipboard() {
         await this.storageService.save(ConstantsService.clearClipboardKey, this.clearClipboard);
-        this.analytics.eventTrack.next({
-            action: 'Set Clear Clipboard ' + (this.clearClipboard == null ? 'Disabled' : this.clearClipboard),
-        });
     }
 
     async saveAlwaysShowDock() {
@@ -380,10 +366,5 @@ export class SettingsComponent implements OnInit {
 
     async saveBrowserIntegrationFingerprint() {
         await this.storageService.save(ElectronConstants.enableBrowserIntegrationFingerprint, this.enableBrowserIntegrationFingerprint);
-    }
-
-    private callAnalytics(name: string, enabled: boolean) {
-        const status = enabled ? 'Enabled' : 'Disabled';
-        this.analytics.eventTrack.next({ action: `${status} ${name}` });
     }
 }
