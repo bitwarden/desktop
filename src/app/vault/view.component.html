@@ -31,7 +31,7 @@
                             <div [hidden]="showPassword" class="monospaced">
                                 {{cipher.login.maskedPassword}}</div>
                             <div [hidden]="!showPassword" class="monospaced password-wrapper" appSelectCopy
-                                [innerHTML]="cipher.login.password | colorPassword"></div>
+                                [innerHTML]="cipher.login.password | colorPasswordWithEmoji"></div>
                         </div>
                         <div class="action-buttons" *ngIf=cipher.viewPassword>
                             <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick

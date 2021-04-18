@@ -43,7 +43,7 @@ import { StopClickDirective } from 'jslib/angular/directives/stop-click.directiv
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
 
-import { ColorPasswordPipe } from 'jslib/angular/pipes/color-password.pipe';
+import { ColorPasswordPipeWithEmoji } from '../custom-pipes/color-password-with-emoji';
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
 
@@ -164,7 +164,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         CalloutComponent,
         CiphersComponent,
         CollectionsComponent,
-        ColorPasswordPipe,
+        ColorPasswordPipeWithEmoji,
         EnvironmentComponent,
         ExportComponent,
         FallbackSrcDirective,
