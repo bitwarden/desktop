@@ -20,6 +20,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 
+import { GlobalShortcuts } from 'jslib/electron/services/electronGlobalShortcuts.service';
 import { isWindowsStore } from 'jslib/electron/utils';
 import { Utils } from 'jslib/misc/utils';
 
@@ -54,6 +55,8 @@ export class SettingsComponent implements OnInit {
     showAlwaysShowDock: boolean = false;
     openAtLogin: boolean;
     requireEnableTray: boolean = false;
+    globalShortcuts: GlobalShortcuts;
+    enableGlobalShortcuts: boolean;
 
     enableTrayText: string;
     enableTrayDescText: string;
@@ -165,6 +168,8 @@ export class SettingsComponent implements OnInit {
         this.alwaysShowDock = await this.storageService.get<boolean>(ElectronConstants.alwaysShowDock);
         this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
         this.openAtLogin = await this.storageService.get<boolean>(ElectronConstants.openAtLogin);
+        this.globalShortcuts = await this.storageService.get<GlobalShortcuts>(ElectronConstants.globalShortcuts);
+        this.enableGlobalShortcuts = Array.from(Object.keys(this.globalShortcuts)).length !== 0;
     }
 
     async saveVaultTimeoutOptions() {
@@ -366,5 +371,13 @@ export class SettingsComponent implements OnInit {
 
     async saveBrowserIntegrationFingerprint() {
         await this.storageService.save(ElectronConstants.enableBrowserIntegrationFingerprint, this.enableBrowserIntegrationFingerprint);
+    }
+
+    async saveGlobalShortcuts() {
+        const globalShortcuts = {
+            [ElectronConstants.globalShortcutOpenWindow]: 'CommandOrControl+Shift+L',
+            [ElectronConstants.globalShortcutOpenPasswordGenerator]: 'CommandOrControl+Shift+G',
+        };
+        this.platformUtilsService.registerGlobalShortcuts(this.enableGlobalShortcuts ? globalShortcuts : {});
     }
 }

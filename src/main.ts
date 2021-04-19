@@ -12,6 +12,7 @@ import { ConstantsService } from 'jslib/services/constants.service';
 import { BiometricMain } from 'jslib/abstractions/biometric.main';
 import { ElectronConstants } from 'jslib/electron/electronConstants';
 import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
+import { ElectronGlobalShortcutsService, GlobalShortcuts } from 'jslib/electron/services/electronGlobalShortcuts.service';
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
 import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
@@ -26,6 +27,7 @@ export class Main {
     storageService: ElectronStorageService;
     messagingService: ElectronMainMessagingService;
     keytarStorageListener: KeytarStorageListener;
+    globalShortcutsService: ElectronGlobalShortcutsService;
 
     windowMain: WindowMain;
     messagingMain: MessagingMain;
@@ -47,28 +49,6 @@ export class Main {
             appDataPath = path.join(process.env.SNAP_USER_DATA, 'appdata');
         }
 
-        app.on('ready', () => {
-            /*
-            globalShortcut.register('CommandOrControl+Shift+L', async () => {
-                if (this.windowMain.win === null) {
-                    await this.windowMain.createWindow();
-                }
-
-                this.messagingService.send('focusSearch');
-                this.windowMain.win.show();
-            });
-
-            globalShortcut.register('CommandOrControl+Shift+G', async () => {
-                if (this.windowMain.win === null) {
-                    await this.windowMain.createWindow();
-                }
-
-                this.messagingService.send('openPasswordGenerator');
-                this.windowMain.win.show();
-            });
-            */
-        });
-
         if (appDataPath != null) {
             app.setPath('userData', appDataPath);
         }
@@ -89,7 +69,33 @@ export class Main {
         // Default vault timeout to "on restart", and action to "lock"
         storageDefaults[ConstantsService.vaultTimeoutKey] = -1;
         storageDefaults[ConstantsService.vaultTimeoutActionKey] = 'lock';
+        storageDefaults[ElectronConstants.globalShortcuts] = {};
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
+
+        this.globalShortcutsService = new ElectronGlobalShortcutsService(this.storageService);
+        this.globalShortcutsService.assignShortcut(
+            ElectronConstants.globalShortcutOpenWindow,
+            async () => {
+                if (this.windowMain.win === null) {
+                    await this.windowMain.createWindow();
+                }
+
+                this.messagingService.send('focusSearch');
+                this.windowMain.win.show();
+            }
+        );
+
+        this.globalShortcutsService.assignShortcut(
+            ElectronConstants.globalShortcutOpenPasswordGenerator,
+            async () => {
+                if (this.windowMain.win === null) {
+                    await this.windowMain.createWindow();
+                }
+
+                this.messagingService.send('openPasswordGenerator');
+                this.windowMain.win.show();
+            }
+        );
 
         this.windowMain = new WindowMain(this.storageService, true, undefined, undefined,
             arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
@@ -105,7 +111,7 @@ export class Main {
         this.powerMonitorMain = new PowerMonitorMain(this);
         this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);
 
-        this.messagingService = new ElectronMainMessagingService(this.windowMain, message => {
+        this.messagingService = new ElectronMainMessagingService(this.windowMain, this.globalShortcutsService, message => {
             this.messagingMain.onMessage(message);
         });
 
@@ -125,6 +131,9 @@ export class Main {
     bootstrap() {
         this.keytarStorageListener.init();
         this.windowMain.init().then(async () => {
+            const globalShortcuts = await this.storageService.get<GlobalShortcuts>(ElectronConstants.globalShortcuts);
+            this.globalShortcutsService.registerShortcuts(globalShortcuts);
+
             const locale = await this.storageService.get<string>(ConstantsService.localeKey);
             await this.i18nService.init(locale != null ? locale : app.getLocale());
             this.messagingMain.init();

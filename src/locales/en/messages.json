@@ -867,6 +867,12 @@
   "enableCloseToTrayDesc": {
     "message": "When closing the window, show an icon in the system tray instead."
   },
+  "enableGlobalShortcuts": {
+    "message": "Enable Global Shortcuts"
+  },
+  "enableGlobalShortcutsDesc": {
+    "message": "Enables keyboard shortcuts that can be used anywhere."
+  },
   "enableCloseToMenuBar": {
     "message": "Close to menu bar"
   },
