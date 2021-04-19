@@ -3,8 +3,9 @@ import {
   PipeTransform,
 } from '@angular/core';
 
-/**
-* A pipe that sanitizes HTML and highlights numbers and special characters (in different colors each).
+/*
+ An updated pipe that sanitizes HTML, highlights numbers and special characters (in different colors each)
+ and handles Unicode / Emoji characters correctly.
 */
 @Pipe({ name: 'colorPasswordWithEmoji' })
 export class ColorPasswordPipeWithEmoji implements PipeTransform {

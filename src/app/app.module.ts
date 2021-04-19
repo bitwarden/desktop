@@ -43,9 +43,11 @@ import { StopClickDirective } from 'jslib/angular/directives/stop-click.directiv
 import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
 import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
 
-import { ColorPasswordPipeWithEmoji } from '../custom-pipes/color-password-with-emoji';
 import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
+
+// custom-pipes
+import { ColorPasswordPipeWithEmoji } from '../custom-pipes/color-password-with-emoji';
 
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
