@@ -182,6 +182,16 @@
                             </select>
                             <small class="help-block">{{'languageDesc' | i18n}}</small>
                         </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="enableGlobalShortcuts">
+                                    <input id="enableGlobalShortcuts" type="checkbox" name="EnableGlobalShortcuts"
+                                        [(ngModel)]="enableGlobalShortcuts" (change)="saveGlobalShortcuts()">
+                                    {{'enableGlobalShortcuts' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'enableGlobalShortcutsDesc' | i18n}}</small>
+                        </div>
                     </div>
                 </div>
             </div>

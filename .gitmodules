@@ -1,4 +1,4 @@
 [submodule "jslib"]
 	path = jslib
-	url = https://github.com/bitwarden/jslib.git
-	branch = master
+	url = https://github.com/SEAPUNK/bitwarden-jslib.git
+	branch = feature/configurable-global-shortcuts
