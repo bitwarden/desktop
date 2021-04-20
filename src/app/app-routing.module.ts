@@ -5,7 +5,7 @@ import {
 } from '@angular/router';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
-import { lockGuardService } from 'jslib/angular/services/lock-guard.service';
+import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
 import { UnauthGuardService } from 'jslib/angular/services/unauth-guard.service';
 
 import { HintComponent } from './accounts/hint.component';
@@ -25,7 +25,7 @@ const routes: Routes = [
     {
         path: 'lock',
         component: LockComponent,
-        canActivate: [lockGuardService],
+        canActivate: [LockGuardService],
     },
     {
         path: 'login',
