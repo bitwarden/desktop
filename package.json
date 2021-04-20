@@ -309,7 +309,7 @@
     "core-js": "2.6.2",
     "duo_web_sdk": "git+https://github.com/duosecurity/duo_web_sdk.git",
     "electron-log": "^4.3.4",
-    "electron-store": "^7.0.3",
+    "electron-store": "8.0.0",
     "electron-updater": "^4.3.8",
     "forcefocus": "^1.1.0",
     "keytar": "^7.6.0",
