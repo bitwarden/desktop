@@ -337,6 +337,11 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
+      - name: test
+        run: |
+          tree dist-safari
+          exit 1
+
       - name: Build Mac
         run: npm run build
 
