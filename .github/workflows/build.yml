@@ -266,7 +266,7 @@ jobs:
 
       - name: Get current datetime
         id: date
-        run: echo "::set-output name=date::$(date + %Y-%m-%dT%H:%M:%S')"
+        run: echo "::set-output name=date::$(date + '%Y-%m-%dT%H:%M:%S')"
 
       - name: Cache Build
         id: cache-macos-build
