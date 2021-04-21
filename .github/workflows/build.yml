@@ -277,6 +277,7 @@ jobs:
             build
             dist-safari
             package.json
+            jslib
           key: ${{ github.run_id }}-${{ steps.date.outputs.date }}
           restore-keys:
             ${{ github.run_id }}-
@@ -357,6 +358,7 @@ jobs:
             build
             dist-safari
             package.json
+            jslib
           key: ${{ github.run_id }}-${{ steps.date.outputs.date }}
           restore-keys:
             ${{ github.run_id }}-
@@ -433,6 +435,7 @@ jobs:
             build
             dist-safari
             package.json
+            jslib
           key: ${{ github.run_id }}-${{ steps.date.outputs.date }}
           restore-keys:
             ${{ github.run_id }}-
@@ -509,6 +512,7 @@ jobs:
             build
             dist-safari
             package.json
+            jslib
           key: ${{ github.run_id }}-${{ steps.date.outputs.date }}
           restore-keys:
             ${{ github.run_id }}-
