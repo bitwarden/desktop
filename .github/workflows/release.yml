@@ -263,7 +263,7 @@ jobs:
           asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.appx
           asset_content_type: application
 
-  macos:
+  macos-build:
     runs-on: macos-latest
     needs: setup
     steps:
