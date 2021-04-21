@@ -339,7 +339,13 @@ jobs:
 
       - name: test
         run: |
-          tree dist-safari
+          ls -tlh dist-safari
+          ls -tlh dist-safari/browser
+          ls -tlh dist-safari/browser/dist
+          ls -tlh dist-safari/browser/dist/Safari
+          ls -tlh dist-safari/browser/dist/Safari/dmg
+          ls -tlh dist-safari/browser/dist/Safari/dmg/build
+          ls -tlh dist-safari/browser/dist/Safari/dmg/build/Release
           exit 1
 
       - name: Build Mac
