@@ -340,12 +340,20 @@ jobs:
       - name: test
         run: |
           ls -tlh dist-safari
+          echo '-----'
           ls -tlh dist-safari/browser
+          echo '-----'
           ls -tlh dist-safari/browser/dist
+          echo '-----'
           ls -tlh dist-safari/browser/dist/Safari
+          echo '-----'
           ls -tlh dist-safari/browser/dist/Safari/dmg
+          echo '-----'
           ls -tlh dist-safari/browser/dist/Safari/dmg/build
+          echo '-----'
           ls -tlh dist-safari/browser/dist/Safari/dmg/build/Release
+          echo '-----'
+          find dist-safari -name safari.appex
           exit 1
 
       - name: Build Mac
