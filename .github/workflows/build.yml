@@ -6,7 +6,7 @@ on:
       - 'l10n_master'
       - 'gh-pages'
 
-env:
+environment:
   GH_ACTION_TESTING_BRANCH='refs/heads/feature/add-mac-arm-support-testing'
 
 jobs:
