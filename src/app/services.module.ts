@@ -38,6 +38,7 @@ import { FileUploadService } from 'jslib/services/fileUpload.service';
 import { FolderService } from 'jslib/services/folder.service';
 import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
+import { PasswordRepromptService } from 'jslib/services/passwordReprompt.service';
 import { PolicyService } from 'jslib/services/policy.service';
 import { SearchService } from 'jslib/services/search.service';
 import { SendService } from 'jslib/services/send.service';
@@ -71,6 +72,9 @@ import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/a
 import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
 } from 'jslib/abstractions/passwordGeneration.service';
+import {
+    PasswordRepromptService as PasswordRepromptServiceAbstraction
+} from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
@@ -121,6 +125,7 @@ const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
     sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
+const passwordRepromptService = new PasswordRepromptService(i18nService, cryptoService, platformUtilsService);
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
@@ -198,6 +203,7 @@ export function initFactory(): Function {
         { provide: CryptoServiceAbstraction, useValue: cryptoService },
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: PlatformUtilsServiceAbstraction, useValue: platformUtilsService },
+        { provide: PasswordRepromptServiceAbstraction, useValue: passwordRepromptService },
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         { provide: ApiServiceAbstraction, useValue: apiService },
         { provide: SyncServiceAbstraction, useValue: syncService },
