@@ -6,11 +6,10 @@ on:
       - 'l10n_master'
       - 'gh-pages'
 
-environment:
-  GH_ACTION_TESTING_BRANCH='refs/heads/feature/add-mac-arm-support-testing'
+env:
+  GH_ACTION_TESTING_BRANCH: 'refs/heads/feature/add-mac-arm-support-testing'
 
 jobs:
-
   cloc:
     runs-on: ubuntu-latest
 
