@@ -7,6 +7,7 @@ import {
     Output,
 } from '@angular/core';
 
+import { ApiService } from 'jslib/abstractions/api.service';
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -39,10 +40,10 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
-        userService: UserService, eventService: EventService,
+        userService: UserService, eventService: EventService, apiService: ApiService,
         private messagingService: MessagingService, private storageService: StorageService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService, apiService);
     }
     ngOnInit() {
         super.ngOnInit();
