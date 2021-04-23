@@ -12,7 +12,7 @@
             (scrolled)="loadMore()">
             <a *ngFor="let c of filteredCiphers" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
-                [ngClass]="{'active': c.id === activeCipherId}">
+                [ngClass]="{'active': c.id === activeCipherId}" class="box-content-row box-content-row-flex">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
                 <span class="text">
                     {{c.name}}
