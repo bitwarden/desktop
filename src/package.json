@@ -13,14 +13,14 @@
   },
   "dependencies": {
     "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
-    "big-integer": "1.6.36",
+    "big-integer": "1.6.48",
     "browser-hrtime": "^1.1.8",
-    "electron-log": "4.3.0",
-    "electron-store": "6.0.1",
-    "electron-updater": "4.3.5",
+    "electron-log": "4.3.4",
+    "electron-store": "8.0.0",
+    "electron-updater": "4.3.8",
     "forcefocus": "^1.1.0",
-    "keytar": "7.3.0",
-    "node-ipc": "^9.1.1",
+    "keytar": "7.6.0",
+    "node-ipc": "^9.1.4",
     "regedit": "^3.0.3",
     "zxcvbn": "4.4.2"
   }

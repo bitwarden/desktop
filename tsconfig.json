@@ -6,9 +6,8 @@
     "experimentalDecorators": true,
     "module": "es6",
     "target": "ES2016",
-    "allowJs": true,
     "sourceMap": true,
-    "types": ["sweetalert2"],
+    "types": [],
     "baseUrl": ".",
     "paths": {
       "tldjs": [
@@ -17,24 +16,6 @@
       "jslib/*": [
         "jslib/src/*"
       ],
-      "@angular/*": [
-        "node_modules/@angular/*"
-      ],
-      "electron": [
-        "node_modules/electron"
-      ],
-      "electron-log": [
-        "node_modules/electron-log"
-      ],
-      "electron-store": [
-        "node_modules/electron-store"
-      ],
-      "node": [
-        "node_modules/@types/node"
-      ],
-      "duo_web_sdk": [
-        "node_modules/duo_web_sdk"
-      ]
     }
   },
   "angularCompilerOptions": {
