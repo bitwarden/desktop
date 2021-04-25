@@ -38,7 +38,7 @@
                 </button>
             </div>
             <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
-                <button class="btn block" appBlurClick (click)="unlockBiometric()">
+                <button type="button" class="btn block" appBlurClick (click)="unlockBiometric()">
                     {{biometricText | i18n}}
                 </button>
             </div>
