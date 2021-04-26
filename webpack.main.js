@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const WorkerPlugin = require('worker-plugin');
 
 const common = {
     module: {
@@ -19,7 +20,7 @@ const common = {
             },
         ],
     },
-    plugins: [],
+    plugins: [new WorkerPlugin()],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {

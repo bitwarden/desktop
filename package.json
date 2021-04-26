@@ -255,6 +255,7 @@
     "@types/semver": "^5.5.0",
     "@types/webcrypto": "^0.0.28",
     "@types/webpack": "^4.4.11",
+    "@types/worker-plugin": "^4.0.1",
     "@types/zxcvbn": "4.4.0",
     "clean-webpack-plugin": "^0.1.19",
     "concurrently": "^4.0.1",
@@ -289,7 +290,7 @@
     "webpack-cli": "^3.2.1",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2",
-    "worker-loader": "^3.0.8"
+    "worker-plugin": "^5.0.0"
   },
   "dependencies": {
     "@angular/animations": "9.1.12",
