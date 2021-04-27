@@ -55,6 +55,7 @@ import { CipherType } from 'jslib/enums/cipherType';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
+import { WebWorkerService } from 'jslib/abstractions';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -108,7 +109,7 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService) { }
+        private policyService: PolicyService, private webWorkerService: WebWorkerService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -354,6 +355,7 @@ export class AppComponent implements OnInit {
             this.vaultTimeoutService.clear(),
             this.stateService.purge(),
             this.policyService.clear(userId),
+            this.webWorkerService.terminateAll(),
         ]);
 
         this.vaultTimeoutService.biometricLocked = true;

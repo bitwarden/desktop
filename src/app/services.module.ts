@@ -223,6 +223,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: WebWorkerServiceAbstraction, useValue: webWorkerService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
