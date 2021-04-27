@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const WorkerPlugin = require('worker-plugin');
 
 const common = {
     module: {
@@ -126,6 +127,10 @@ const renderer = {
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',
+        }),
+        new WorkerPlugin({
+            plugins: ['AngularCompilerPlugin'],
+            globalObject: 'self'
         }),
     ],
 };
