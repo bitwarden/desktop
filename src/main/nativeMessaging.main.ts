@@ -5,8 +5,8 @@ import * as path from 'path';
 import * as util from 'util';
 
 import { ipcMain } from 'electron';
-import { LogService } from 'jslib/abstractions/log.service';
-import { WindowMain } from 'jslib/electron/window.main';
+import { LogService } from 'jslib-common/abstractions/log.service';
+import { WindowMain } from 'jslib-electron/window.main';
 
 export class NativeMessagingMain {
     private connected = false;

@@ -11,27 +11,27 @@
     "baseUrl": ".",
     "paths": {
       "tldjs": [
-        "jslib/src/misc/tldjs.noop"
+        "jslib/common/src/misc/tldjs.noop"
       ],
-      "jslib/*": [
-        "jslib/src/*"
+      "jslib-common/*": [
+        "jslib/common/src/*"
       ],
+      "jslib-angular/*": [
+        "jslib/angular/src/*"
+      ],
+      "jslib-electron/*": [
+        "jslib/electron/src/*"
+      ]
     }
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "exclude": [
-    "node_modules",
-    "jslib/node_modules",
-    "proxy",
-    "dist",
-    "dist-safari",
-    "jslib/dist",
-    "build",
-    "jslib/spec",
-    "jslib/src/cli",
-    "jslib/src/services/nodeApi.service.ts",
-    "jslib/src/services/lowdbStorage.service.ts"
+  "files": [
+    "src/entry.ts",
+    "src/app/main.ts"
+  ],
+  "include": [
+    "jslib/*/src/*.d.ts"
   ]
 }

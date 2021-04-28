@@ -11,20 +11,20 @@ import { Router } from '@angular/router';
 
 import { EnvironmentComponent } from './environment.component';
 
-import { AuthService } from 'jslib/abstractions/auth.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StateService } from 'jslib/abstractions/state.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { SyncService } from 'jslib/abstractions/sync.service';
+import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
+import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { SyncService } from 'jslib-common/abstractions/sync.service';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
-import { ModalComponent } from 'jslib/angular/components/modal.component';
+import { LoginComponent as BaseLoginComponent } from 'jslib-angular/components/login.component';
+import { ModalComponent } from 'jslib-angular/components/modal.component';
 
 const BroadcasterSubscriptionId = 'LoginComponent';
 

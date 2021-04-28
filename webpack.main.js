@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const common = {
     module: {
@@ -26,6 +27,7 @@ const common = {
             jslib: path.join(__dirname, 'jslib/src'),
             tldjs: path.join(__dirname, 'jslib/src/misc/tldjs.noop'),
         },
+        plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })]
     },
     output: {
         filename: '[name].js',
