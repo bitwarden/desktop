@@ -166,6 +166,7 @@ export class NativeMessagingMain {
             'Chrome Beta': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Beta/`,
             'Chrome Dev': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Dev/`,
             'Chrome Canary': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Canary/`,
+            'Chromium': `${this.homedir()}/Library/Application\ Support/Chromium/`,
             'Microsoft Edge': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/`,
             'Microsoft Edge Beta': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Beta/`,
             'Microsoft Edge Dev': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Dev/`,
