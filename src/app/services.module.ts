@@ -19,6 +19,8 @@ import { NativeMessagingService } from '../services/nativeMessaging.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
+import { UnauthGuardService } from 'jslib/angular/services/unauth-guard.service';
 import { ValidationService } from 'jslib/angular/services/validation.service';
 
 import { ApiService } from 'jslib/services/api.service';
@@ -187,6 +189,8 @@ export function initFactory(): Function {
     providers: [
         ValidationService,
         AuthGuardService,
+        UnauthGuardService,
+        LockGuardService,
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },

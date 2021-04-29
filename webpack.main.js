@@ -1,7 +1,7 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const common = {
@@ -55,14 +55,14 @@ const main = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin([
-            path.resolve(__dirname, 'build/*'),
-        ]),
-        new CopyWebpackPlugin([
-            './src/package.json',
-            { from: './src/images', to: 'images' },
-            { from: './src/locales', to: 'locales' },
-        ]),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                './src/package.json',
+                { from: './src/images', to: 'images' },
+                { from: './src/locales', to: 'locales' },
+            ]
+        }),
     ],
     externals: [nodeExternals()],
 };
