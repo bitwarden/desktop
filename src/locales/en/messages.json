@@ -1676,6 +1676,6 @@
     "message": "Master password confirmation"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected, to continue please re-enter your master password to verify your identity."
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
