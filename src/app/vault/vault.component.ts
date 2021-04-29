@@ -332,6 +332,8 @@ export class VaultComponent implements OnInit, OnDestroy {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
+        } else if (cipher.reprompt !== CipherRepromptType.None && ! await this.passwordRepromptService.showPasswordPrompt()) {
+            return;
         }
 
         this.cipherId = cipher.id;
@@ -343,6 +345,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         if (this.action === 'clone' && this.cipherId === cipher.id) {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        } else if (cipher.reprompt !== CipherRepromptType.None && ! await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
