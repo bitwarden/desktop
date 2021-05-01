@@ -92,5 +92,5 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
 
     markPasswordAsDirty() {
         this.form.controls['Login.Password'].markAsDirty();
-      }
+    }
 }
