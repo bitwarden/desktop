@@ -554,6 +554,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
                 this.addEditComponent.cipher.type === CipherType.Login && this.addEditComponent.cipher.login != null) {
+                this.addEditComponent.markPasswordAsDirty();
                 this.addEditComponent.cipher.login.password = password;
             }
         });

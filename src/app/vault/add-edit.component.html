@@ -1,4 +1,4 @@
-<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form #form="ngForm" (ngSubmit)="submit()" [appApiAction]="formPromise">
     <div class="content">
         <div class="inner-content" *ngIf="cipher">
             <div class="box">
