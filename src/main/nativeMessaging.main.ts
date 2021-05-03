@@ -1,4 +1,5 @@
 import { existsSync, promises as fs } from 'fs';
+import { Socket } from 'net';
 import * as ipc from 'node-ipc';
 import { homedir, userInfo } from 'os';
 import * as path from 'path';
@@ -9,7 +10,7 @@ import { LogService } from 'jslib/abstractions/log.service';
 import { WindowMain } from 'jslib/electron/window.main';
 
 export class NativeMessagingMain {
-    private connected = false;
+    private connected: Socket[] = [];
     private socket: any;
 
     constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private exePath: string) {}
@@ -36,14 +37,18 @@ export class NativeMessagingMain {
                 }
             });
 
-            ipc.server.on('connect', () => {
-                this.connected = true;
+            ipc.server.on('connect', (socket: Socket) => {
+                this.connected.push(socket);
             });
 
             ipc.server.on(
                 'socket.disconnected',
-                (socket: any, destroyedSocketID: any) => {
-                    this.connected = false;
+                (socket, destroyedSocketID) => {
+                    const index = this.connected.indexOf(socket);
+                    if (index > -1) {
+                        this.connected.splice(index, 1);
+                    }
+
                     this.socket = null;
                     ipc.log(
                         'client ' + destroyedSocketID + ' has disconnected!'
@@ -57,6 +62,12 @@ export class NativeMessagingMain {
 
     stop() {
         ipc.server.stop();
+        // Kill all existing connections
+        this.connected.forEach(socket => {
+            if (!socket.destroyed) {
+                socket.destroy();
+            }
+        });
     }
 
     send(message: object, socket: any) {
@@ -183,7 +194,7 @@ export class NativeMessagingMain {
 
     private binaryPath() {
         if (process.platform === 'win32') {
-            return path.join(path.basename(this.exePath), 'resources', 'native-messaging.bat');
+            return path.join(path.dirname(this.exePath), 'resources', 'native-messaging.bat');
         }
 
         return this.exePath;
