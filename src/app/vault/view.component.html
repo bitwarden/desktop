@@ -87,11 +87,17 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
                         <div class="row-main">
                             <span class="row-label">{{'number' | i18n}}</span>
-                            {{cipher.card.number}}
+                            <span [hidden]="showCardNumber" class="monospaced">{{cipher.card.maskedNumber}}</span>
+                            <span [hidden]="!showCardNumber" class="monospaced">{{cipher.card.number}}</span>
                         </div>
                         <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                                (click)="toggleCardNumber()" role="button">
+                                <i class="fa fa-lg" aria-hidden="true"
+                                    [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
+                            </a>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyNumber' | i18n}}"
-                                (click)="copy(cipher.card.number, 'number', 'Number')" role="button">
+                                (click)="copy(cipher.card.number, 'number', 'Card Number')" role="button">
                                 <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
