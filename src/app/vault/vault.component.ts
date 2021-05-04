@@ -332,7 +332,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
-        } else if (cipher.reprompt !== CipherRepromptType.None && ! await this.passwordRepromptService.showPasswordPrompt()) {
+        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
@@ -346,7 +346,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
-        } else if (cipher.reprompt !== CipherRepromptType.None && ! await this.passwordRepromptService.showPasswordPrompt()) {
+        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
@@ -647,7 +647,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private copyValue(cipher: CipherView, value: string, labelI18nKey: string, aType: string) {
         this.functionWithChangeDetection(async () => {
             if (cipher.reprompt !== CipherRepromptType.None && this.passwordRepromptService.protectedFields().includes(aType) &&
-               ! await this.passwordRepromptService.showPasswordPrompt()) {
+               !await this.passwordRepromptService.showPasswordPrompt()) {
                 return;
             }
 
