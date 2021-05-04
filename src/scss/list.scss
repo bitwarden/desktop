@@ -130,4 +130,14 @@
             }
         }
     }
+
+    .flex-cipher-list-item {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
