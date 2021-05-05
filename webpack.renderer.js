@@ -108,7 +108,7 @@ const renderer = {
     },
     plugins: [
         new AngularCompilerPlugin({
-            tsConfigPath: 'tsconfig.json',
+            tsConfigPath: 'tsconfig.renderer.json',
             entryModule: 'src/app/app.module#AppModule',
             sourceMap: true,
         }),

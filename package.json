@@ -248,6 +248,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^11.2.10",
     "@ngtools/webpack": "^11.2.10",
+    "@types/duo_web_sdk": "^2.7.0",
     "@types/lunr": "^2.3.3",
     "@types/node": "^10.17.58",
     "@types/node-forge": "^0.9.7",
