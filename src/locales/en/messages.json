@@ -1297,6 +1297,12 @@
   "touchIdConsentMessage": {
     "message": "unlock your vault"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
