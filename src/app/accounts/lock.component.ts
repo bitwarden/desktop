@@ -23,6 +23,8 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib/angular/components/lock.component';
 
+import { ElectronConstants } from 'jslib/electron/electronConstants';
+
 const BroadcasterSubscriptionId = 'LockComponent';
 
 @Component({
@@ -43,8 +45,10 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     async ngOnInit() {
         await super.ngOnInit();
+        const autoPromptBiometric = !await this.storageService.get<boolean>(ElectronConstants.noAutoPromptBiometrics);
+
         this.route.queryParams.subscribe(params => {
-            if (this.supportsBiometric && params.promptBiometric) {
+            if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {
                 setTimeout(() => this.unlockBiometric(), 1000);
             }
         });
