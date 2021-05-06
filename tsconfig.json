@@ -21,9 +21,7 @@
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "files": [
-    "src/entry.ts",
-    "src/global.d.ts",
-    "jslib/src/globals.d.ts"
+  "include": [
+    "src"
   ]
 }
