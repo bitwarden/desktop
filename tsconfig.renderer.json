@@ -1,8 +1,10 @@
 {
   "extends": "./tsconfig.json",
-  "files": [
-    "src/app/main.ts",
-    "src/global.d.ts",
-    "jslib/src/globals.d.ts"
+  "exclude": [
+    "src/entry.ts",
+    "src/main.ts",
+    "src/main",
+    "src/proxy",
+    "jslib/**/*.main.ts"
   ]
 }
