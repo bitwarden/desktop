@@ -7,6 +7,7 @@ import {
     ActivatedRoute,
     Router,
 } from '@angular/router';
+import { ipcRenderer } from 'electron';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -49,7 +50,11 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
         this.route.queryParams.subscribe(params => {
             if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {
-                setTimeout(() => this.unlockBiometric(), 1000);
+                setTimeout(async() => {
+                    if (await ipcRenderer.invoke('windowVisible')) {
+                        this.unlockBiometric();
+                    }
+                }, 1000);
             }
         });
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
