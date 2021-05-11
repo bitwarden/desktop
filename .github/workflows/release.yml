@@ -180,7 +180,6 @@ jobs:
           ls dist/chocolatey
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
           cd ./dist/chocolatey
-          ls  dist/chocolatey
 
       - name: Upload Chocolatey nupkg release asset
         uses: actions/upload-release-asset@v1
