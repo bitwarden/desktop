@@ -592,11 +592,11 @@
     "message": "Ověřit pomocí Duo Security pro vaši organizaci prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo U2F bezpečnostního kódu.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Použít jakýkoliv FIDO U2F bezpečnostní klíč pro přístup k vašemu trezoru."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F bezpečnostní klíč"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1297,6 +1297,12 @@
   "touchIdConsentMessage": {
     "message": "odemknout váš trezor"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
   },
@@ -1505,25 +1511,25 @@
     "message": "Zásady organizace ovlivňují možnosti vlastnictví."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Všechny Sends",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Soubor"
   },
   "sendTypeText": {
     "message": "Text"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Hledat Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Upravit Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Můj trezor"
   },
   "text": {
     "message": "Text"
@@ -1546,7 +1552,7 @@
     "message": "Maximum Access Count"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Je-li nastaveno, uživatelé již nebudou mít přístup k tomuto Send, jakmile bude dosaženo maximálního počtu přístupů.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1561,7 +1567,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Soukromé poznámky o tomto Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1589,24 +1595,24 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nové heslo"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Jakého typu je tento Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Vytvořit Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Text, který chcete odeslat."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Soubor, který chcete odeslat."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ dní",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1621,67 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 den"
   },
   "custom": {
     "message": "Custom"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Jste si jisti, že chcete odstranit tento Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Zkopírovat odkaz Send do schránky",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Zkopírovat odkaz tohoto Send do mé schránky při uložení."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send deaktivován",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Kvůli zásadám podniku můžete odstranit pouze existující Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopírovat odkaz"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Zakázáno"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Dosažen maximální počet přístupů"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Vypršela platnost"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Čeká na smazání"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

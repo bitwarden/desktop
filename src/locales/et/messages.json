@@ -592,11 +592,11 @@
     "message": "Kinnita organisatsiooni jaoks Duo Security abil, kasutades selleks Duo Mobile rakendust, SMS-i, telefonikõnet või U2F turvavõtit.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Kasuta mistahes FIDO U2F toetavad turvalist võtit, et oma kontole ligi pääseda."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Turvaline võti"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-post"
@@ -1106,7 +1106,7 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "Teave Bitwardenist"
+    "message": "Rohkem infot"
   },
   "services": {
     "message": "Teenused"
@@ -1296,6 +1296,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Kinnita Bitwardenisse sisselogimine."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
@@ -1539,14 +1545,14 @@
     "message": "Aegumiskuupäev"
   },
   "expirationDateDesc": {
-    "message": "Seadistamisel ei pääse sellele Sendile enam pärast määratud kuupäeva ligi.",
+    "message": "Selle valimisel ei pääse sellele Sendile enam pärast määratud kuupäeva ligi.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Maksimaalne ligipääsude arv"
   },
   "maxAccessCountDesc": {
-    "message": "Seadistamisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.",
+    "message": "Selle valimisel ei saa kasutajad pärast maksimaalse ligipääsude arvu saavutamist sellele Sendile enam ligi.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1557,7 +1563,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Mittekohustuslik parooli küsimine, et Sendile ligi pääseda.",
+    "message": "Soovi korral nõua parooli, millega Sendile ligi pääseb.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1577,15 +1583,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Lõi Sendi",
+    "message": "Send on loodud",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Muutis Sendi",
+    "message": "Muudetud",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Kustutas Sendi",
+    "message": "Send on kustutatud",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1653,5 +1659,29 @@
   },
   "pendingDeletion": {
     "message": "Kustutamise ootel"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

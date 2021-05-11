@@ -60,7 +60,7 @@
     "message": "Prikaz stavke"
   },
   "name": {
-    "message": "Ime"
+    "message": "Naziv"
   },
   "uri": {
     "message": "URI"
@@ -368,7 +368,7 @@
     "message": "Kopiraj URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Kopiraj kôd za provjeru (TOTP)"
   },
   "length": {
     "message": "Duljina"
@@ -592,11 +592,11 @@
     "message": "Potvrdi s Duo Security za svoju organizaciju pomoću aplikacije Duo Mobile, SMS-om, telefonskim pozivom ili U2F sigurnosnim ključem.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Koristi bilo koji FIDO U2F omogućen sigurnosni ključ za pristup svojem računu."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F sigurnosni ključ"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-pošta"
@@ -1121,7 +1121,7 @@
     "message": "Prikaži sve"
   },
   "quitBitwarden": {
-    "message": "Izađi iz Bitwardena"
+    "message": "Zatvori Bitwarden"
   },
   "valueCopied": {
     "message": " kopirano",
@@ -1228,10 +1228,10 @@
     "message": "Ovaj izvoz sadrži podatke trezora u nešifriranom obliku! Izvezenu datoteku se ne bi smjelo pohranjivati ili slati putem nesigurnih kanala (npr. e-poštom). Izbriši ju odmah nakon završetka korištenja."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Ovaj izvoz šifrira tvoje podatke koristeći ključ za šifriranje. Promijeniš li naknadno ključ za šifriranje, potrebno je ponovno napraviti izvoz jer nećeš moći dešifrirati ovu izvezenu datoteku."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Ključ za šifriranje jedinstven je za svakog Bitwarden korisnika, kako bi se šifrirani izvoz mogao uvesti u drugi korisnički račun."
   },
   "exportMasterPassword": {
     "message": "Unesi glavnu lozinku za izvoz podataka iz trezora."
@@ -1296,6 +1296,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Otključaj trezor"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključaj glavnom lozinkom kod svakog pokretanja"
@@ -1505,108 +1511,108 @@
     "message": "Pravila organizacije utječu na tvoje mogućnosti vlasništva."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Svi Sendovi",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Datoteka"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Pretraži Sendove",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Uredi Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Moj trezor"
   },
   "text": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Datum brisanja"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Send će biti trajno izbrisan navedenog datuma.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Datum isteka"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Ako je određeno, pristup ovom Sendu će isteći navedenog dana u navedeno vrijeme.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Najveći proj pristupanja"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Ako je određen, korisnici neće moći pristupiti ovom Sendu nakon što se postigne najveći broj pristupanja.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Trenutni broj pristupanja"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Onemogući ovaj Send da mu nitko ne može pristupiti.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Neobavezno zahtijevaj korisnika lozinku za pristup ovom Sendu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Privatne bilješke o Sendu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Veza na Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Veza na Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Zadano sakrij tekst pri pristupanju Sendu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send stvoren",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send uređen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send izbrisan",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nova lozinka"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Koja je ovo vrsta Senda?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Stvori Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Tekst kojeg želiš poslati."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Datoteka koju želiš poslati."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ dana",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1621,67 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 dan"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Prilagođeno"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Sigurno želiš izbrisati ovaj Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Kopiraj vezu na Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Kopiraj vezu za dijeljenje ovog Senda nakon spremanja."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send onemogućen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Pravila tvrtke omogućuju brisanje samo postojećeg Senda.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopiraj vezu"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Onemogućeno"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Dostignut najveći broj pristupanja"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Isteklo"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Čeka brisanje"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
