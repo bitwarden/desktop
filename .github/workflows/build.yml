@@ -337,25 +337,6 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
-      - name: test
-        run: |
-          find dist-safari -name safari.appex
-          echo '-----'
-          ls -tlh dist-safari
-          echo '-----'
-          ls -tlh dist-safari/browser
-          echo '-----'
-          ls -tlh dist-safari/browser/dist
-          echo '-----'
-          ls -tlh dist-safari/browser/dist/Safari
-          echo '-----'
-          ls -tlh dist-safari/browser/dist/Safari/dmg
-          echo '-----'
-          ls -tlh dist-safari/browser/dist/Safari/dmg/build
-          echo '-----'
-          ls -tlh dist-safari/browser/dist/Safari/dmg/build/Release
-          echo '-----'
-
       - name: Build Mac
         run: npm run build
 
@@ -505,6 +486,11 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: test
+        run: |
+          ls -alh dist
+          echo '----------'
 
       - name: Upload .zip artifact
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == ${{ env.GH_ACTIONS_TESTING_BRANCH }}
