@@ -361,7 +361,6 @@ jobs:
 
 
   dist-macos-x64-dmg:
-    if: false
     runs-on: macos-latest
     needs: macos-build
     steps:
