@@ -76,7 +76,7 @@
     }
   },
   "newUri": {
-    "message": "新 URI"
+    "message": "新增 URI"
   },
   "username": {
     "message": "用户名"
@@ -100,7 +100,7 @@
     "message": "网站"
   },
   "notes": {
-    "message": "笔记"
+    "message": "备注"
   },
   "customFields": {
     "message": "自定义字段"
@@ -397,7 +397,7 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "避免含糊的字符"
+    "message": "避免易混淆的字符"
   },
   "searchCollection": {
     "message": "搜索集合"
@@ -592,11 +592,11 @@
     "message": "为您的组织使用 Duo Security 的 Duo 移动应用、短信、电话或 U2F 安全钥匙来进行验证。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "使用任何支持 FIDO U2F 的安全钥匙来访问您的帐户。"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F 安全钥匙"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "电子邮件地址"
@@ -1267,11 +1267,11 @@
     "message": "您选择的主密码较弱。您应该使用强密码（或密码短语）来正确保护您的 Bitwarden 账户。仍要使用此主密码吗？"
   },
   "pin": {
-    "message": "PIN",
+    "message": "PIN 码",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "使用 PIN 解锁"
+    "message": "使用 PIN 码解锁"
   },
   "setYourPinCode": {
     "message": "设定您用来解锁 Bitwarden 的 PIN 码。您的 PIN 设置将在您完全注销本应用程序时被重置。"
@@ -1296,6 +1296,12 @@
   },
   "touchIdConsentMessage": {
     "message": "解锁您的密码库"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后使用主密码锁定"
@@ -1353,7 +1359,7 @@
     "message": "已锁定的密码库需要重新输入主密码才能再次访问。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "已注销的密码库需要重新认证才能再次访问。"
+    "message": "已注销的密码库需要重新验证才能再次访问。"
   },
   "lock": {
     "message": "锁定",
@@ -1388,7 +1394,7 @@
     "message": "永久删除"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "超时后注销将解除对密码库的所有访问权限，并需要进行在线认证。确定使用此设置吗？"
+    "message": "超时后注销将解除对密码库的所有访问权限，并需要进行在线验证。确定使用此设置吗？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "超时动作确认"
@@ -1457,25 +1463,25 @@
     "message": "尚未同意服务条款和隐私政策。"
   },
   "enableBrowserIntegration": {
-    "message": "启用浏览器集成"
+    "message": "启用浏览器整合"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "浏览器集成用于在浏览器中提供生物识别。"
+    "message": "浏览器整合用于在浏览器中提供生物识别。"
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "不支持浏览器集成"
+    "message": "不支持浏览器整合"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "很遗憾，目前仅 Mac App Store 版本支持浏览器集成。"
+    "message": "很遗憾，目前仅 Mac App Store 版本支持浏览器整合。"
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "不支持浏览器集成"
+    "message": "不支持浏览器整合"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "很不幸，当前 Windows Store 版本不支持浏览器集成。"
+    "message": "很不幸，当前 Windows Store 版本不支持浏览器整合。"
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "需要浏览器集成的验证"
+    "message": "要求浏览器整合验证"
   },
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "在您的桌面与浏览器间建立连接时，要求验证指纹短语以实现一个额外安全层。此选项启用后，每次建立连接都需要用户干预和验证。"
@@ -1553,7 +1559,7 @@
     "message": "当前访问次数"
   },
   "disableSend": {
-    "message": "禁用此 Send 则没有人能访问它。",
+    "message": "禁用此 Send 以阻止任何人访问它。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1600,7 +1606,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "您要发送的文本。"
+    "message": "您想要发送的文本。"
   },
   "sendFileDesc": {
     "message": "您想要发送的文件。"
@@ -1653,5 +1659,29 @@
   },
   "pendingDeletion": {
     "message": "等待删除"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
