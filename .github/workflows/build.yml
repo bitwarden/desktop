@@ -361,6 +361,7 @@ jobs:
 
 
   dist-macos-x64-dmg:
+    if: false
     runs-on: macos-latest
     needs: macos-build
     steps:
@@ -487,6 +488,10 @@ jobs:
 
       - name: Set up provisioning profiles
         run: ./.github/scripts/macos/setup-profiles.ps1
+        shell: pwsh
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
       - name: Load Safari extension for .dmg
