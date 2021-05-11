@@ -269,7 +269,7 @@ jobs:
 
       - name: Get current datetime
         id: date
-        run: echo "::set-output name=date::$(date + '%Y-%m-%dT%H:%M:%S')"
+        run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
 
       - name: Cache Build
         id: cache-macos-build
@@ -355,13 +355,13 @@ jobs:
           echo '-----'
           ls -tlh dist-safari/browser/dist/Safari/dmg/build/Release
           echo '-----'
-          exit 1
 
       - name: Build Mac
         run: npm run build
 
 
   dist-macos-x64-dmg:
+    if: false
     runs-on: macos-latest
     needs: macos-build
     steps:
@@ -518,6 +518,7 @@ jobs:
 
 
   dist-macos-mas:
+    if: false
     runs-on: macos-latest
     needs: macos-build
     steps:
