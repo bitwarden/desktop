@@ -431,7 +431,7 @@
     "message": "Select a file."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 100 MB."
+    "message": "Maximum file size is 500 MB."
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
@@ -592,11 +592,11 @@
     "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Use any FIDO U2F enabled security key to access your account."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Security Key"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -1297,6 +1297,12 @@
   "touchIdConsentMessage": {
     "message": "unlock your vault"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
@@ -1653,5 +1659,29 @@
   },
   "pendingDeletion": {
     "message": "Pending deletion"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
