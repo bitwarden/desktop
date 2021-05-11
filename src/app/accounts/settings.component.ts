@@ -50,6 +50,8 @@ export class SettingsComponent implements OnInit {
     supportsBiometric: boolean;
     biometric: boolean;
     biometricText: string;
+    noAutoPromptBiometrics: boolean;
+    noAutoPromptBiometricsText: string;
     alwaysShowDock: boolean;
     showAlwaysShowDock: boolean = false;
     openAtLogin: boolean;
@@ -162,6 +164,8 @@ export class SettingsComponent implements OnInit {
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
         this.biometricText = await this.storageService.get<string>(ConstantsService.biometricText);
+        this.noAutoPromptBiometrics = await this.storageService.get<boolean>(ElectronConstants.noAutoPromptBiometrics);
+        this.noAutoPromptBiometricsText = await this.storageService.get<string>(ElectronConstants.noAutoPromptBiometricsText);
         this.alwaysShowDock = await this.storageService.get<boolean>(ElectronConstants.alwaysShowDock);
         this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
         this.openAtLogin = await this.storageService.get<boolean>(ElectronConstants.openAtLogin);
@@ -255,9 +259,23 @@ export class SettingsComponent implements OnInit {
             await this.storageService.save(ConstantsService.biometricUnlockKey, true);
         } else {
             await this.storageService.remove(ConstantsService.biometricUnlockKey);
+            await this.storageService.remove(ElectronConstants.noAutoPromptBiometrics);
+            this.noAutoPromptBiometrics = false;
         }
         this.vaultTimeoutService.biometricLocked = false;
         await this.cryptoService.toggleKey();
+    }
+
+    async updateNoAutoPromptBiometrics() {
+        if (!this.biometric) {
+            this.noAutoPromptBiometrics = false;
+        }
+
+        if (this.noAutoPromptBiometrics) {
+            await this.storageService.save(ElectronConstants.noAutoPromptBiometrics, true);
+        } else {
+            await this.storageService.remove(ElectronConstants.noAutoPromptBiometrics);
+        }
     }
 
     async saveFavicons() {

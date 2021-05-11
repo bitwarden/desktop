@@ -39,11 +39,13 @@ import { FolderView } from 'jslib/models/view/folderView';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 import { TotpService } from 'jslib/abstractions/totp.service';
 import { UserService } from 'jslib/abstractions/user.service';
 import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 
 const BroadcasterSubscriptionId = 'VaultComponent';
 
@@ -84,7 +86,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private ngZone: NgZone, private syncService: SyncService,
         private toasterService: ToasterService, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
-        private totpService: TotpService, private userService: UserService) { }
+        private totpService: TotpService, private userService: UserService, private passwordRepromptService: PasswordRepromptService) { }
 
     async ngOnInit() {
         this.userHasPremiumAccess = await this.userService.canAccessPremium();
@@ -129,7 +131,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const uCipher = uComponent != null ? uComponent.cipher : null;
                         if (this.cipherId != null && uCipher != null && uCipher.id === this.cipherId &&
                             uCipher.login != null && uCipher.login.username != null) {
-                            this.copyValue(uCipher.login.username, 'username');
+                            this.copyValue(uCipher, uCipher.login.username, 'username', 'Username');
                         }
                         break;
                     case 'copyPassword':
@@ -137,7 +139,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const pCipher = pComponent != null ? pComponent.cipher : null;
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
                             pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword) {
-                            this.copyValue(pCipher.login.password, 'password');
+                            this.copyValue(pCipher, pCipher.login.password, 'password', 'Password');
                         }
                         break;
                     case 'copyTotp':
@@ -146,7 +148,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         if (this.cipherId != null && tCipher != null && tCipher.id === this.cipherId &&
                             tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess) {
                             const value = await this.totpService.getCode(tCipher.login.totp);
-                            this.copyValue(value, 'verificationCodeTotp');
+                            this.copyValue(tCipher, value, 'verificationCodeTotp', 'TOTP');
                         }
                     default:
                         detectChanges = false;
@@ -276,14 +278,14 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.login.username != null) {
                     menu.push({
                         label: this.i18nService.t('copyUsername'),
-                        click: () => this.copyValue(cipher.login.username, 'username'),
+                        click: () => this.copyValue(cipher, cipher.login.username, 'username', 'Username'),
                     });
                 }
                 if (cipher.login.password != null && cipher.viewPassword) {
                     menu.push({
                         label: this.i18nService.t('copyPassword'),
                         click: () => {
-                            this.copyValue(cipher.login.password, 'password');
+                            this.copyValue(cipher, cipher.login.password, 'password', 'Password');
                             this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
                         },
                     });
@@ -293,7 +295,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         label: this.i18nService.t('copyVerificationCodeTotp'),
                         click: async () => {
                             const value = await this.totpService.getCode(cipher.login.totp);
-                            this.copyValue(value, 'verificationCodeTotp');
+                            this.copyValue(cipher, value, 'verificationCodeTotp', 'TOTP');
                         },
                     });
                 }
@@ -305,14 +307,14 @@ export class VaultComponent implements OnInit, OnDestroy {
                 if (cipher.card.number != null) {
                     menu.push({
                         label: this.i18nService.t('copyNumber'),
-                        click: () => this.copyValue(cipher.card.number, 'number'),
+                        click: () => this.copyValue(cipher, cipher.card.number, 'number', 'Card Number'),
                     });
                 }
                 if (cipher.card.code != null) {
                     menu.push({
                         label: this.i18nService.t('copySecurityCode'),
                         click: () => {
-                            this.copyValue(cipher.card.code, 'securityCode');
+                            this.copyValue(cipher, cipher.card.code, 'securityCode', 'Security Code');
                             this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
                         },
                     });
@@ -330,6 +332,8 @@ export class VaultComponent implements OnInit, OnDestroy {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
             return;
+        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
+            return;
         }
 
         this.cipherId = cipher.id;
@@ -341,6 +345,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         if (this.action === 'clone' && this.cipherId === cipher.id) {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
@@ -554,6 +560,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
                 this.addEditComponent.cipher.type === CipherType.Login && this.addEditComponent.cipher.login != null) {
+                this.addEditComponent.markPasswordAsDirty();
                 this.addEditComponent.cipher.login.password = password;
             }
         });
@@ -638,8 +645,13 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.functionWithChangeDetection(() => this.addCipher(type));
     }
 
-    private copyValue(value: string, labelI18nKey: string) {
-        this.functionWithChangeDetection(() => {
+    private copyValue(cipher: CipherView, value: string, labelI18nKey: string, aType: string) {
+        this.functionWithChangeDetection(async () => {
+            if (cipher.reprompt !== CipherRepromptType.None && this.passwordRepromptService.protectedFields().includes(aType) &&
+               !await this.passwordRepromptService.showPasswordPrompt()) {
+                return;
+            }
+
             this.platformUtilsService.copyToClipboard(value);
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));

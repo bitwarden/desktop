@@ -7,19 +7,20 @@ import {
 import { ToasterModule } from 'angular2-toaster';
 
 import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
-import { ElectronPlatformUtilsService } from 'jslib/electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib/electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib/electron/services/electronRendererSecureStorage.service';
 import { ElectronRendererStorageService } from 'jslib/electron/services/electronRendererStorage.service';
-import { isDev } from 'jslib/electron/utils';
 
 import { DeviceType } from 'jslib/enums/deviceType';
 
+import { ElectronPlatformUtilsService } from '../services/electronPlatformUtils.service';
 import { I18nService } from '../services/i18n.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
+import { UnauthGuardService } from 'jslib/angular/services/unauth-guard.service';
 import { ValidationService } from 'jslib/angular/services/validation.service';
 
 import { ApiService } from 'jslib/services/api.service';
@@ -52,7 +53,6 @@ import { VaultTimeoutService } from 'jslib/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib/abstractions/api.service';
-import { AppIdService as AppIdServiceAbstraction } from 'jslib/abstractions/appId.service';
 import { AuditService as AuditServiceAbstraction } from 'jslib/abstractions/audit.service';
 import { AuthService as AuthServiceAbstraction } from 'jslib/abstractions/auth.service';
 import { CipherService as CipherServiceAbstraction } from 'jslib/abstractions/cipher.service';
@@ -71,6 +71,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from 'jslib/a
 import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
 } from 'jslib/abstractions/passwordGeneration.service';
+import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from 'jslib/abstractions/platformUtils.service';
 import { PolicyService as PolicyServiceAbstraction } from 'jslib/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib/abstractions/search.service';
@@ -84,6 +85,7 @@ import { TokenService as TokenServiceAbstraction } from 'jslib/abstractions/toke
 import { TotpService as TotpServiceAbstraction } from 'jslib/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib/abstractions/vaultTimeout.service';
+import { PasswordRepromptService } from 'jslib/services/passwordReprompt.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -135,6 +137,7 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
+const passwordRepromptService = new PasswordRepromptService(i18nService, cryptoService, platformUtilsService);
 
 containerService.attachToGlobal(window);
 
@@ -186,6 +189,8 @@ export function initFactory(): Function {
     providers: [
         ValidationService,
         AuthGuardService,
+        UnauthGuardService,
+        LockGuardService,
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
@@ -219,6 +224,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: PasswordRepromptServiceAbstraction, useValue: passwordRepromptService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
