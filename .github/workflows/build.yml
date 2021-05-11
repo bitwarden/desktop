@@ -487,24 +487,19 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-      - name: test
-        run: |
-          ls -alh dist
-          echo '----------'
-
       - name: Upload .zip artifact
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == ${{ env.GH_ACTIONS_TESTING_BRANCH }}
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac-arm64.zip
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-mac.zip
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-mac.zip
 
       - name: Upload .dmg artifact
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == ${{ env.GH_ACTIONS_TESTING_BRANCH }}
         uses: actions/upload-artifact@v2
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.dmg
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.dmg
 
 
   dist-macos-mas:
