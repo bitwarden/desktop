@@ -53,7 +53,7 @@ export class NativeMessagingService {
 
                 // Await confirmation that fingerprint is correct
                 const submitted = await Swal.fire({
-                    title: this.i18nService.t('verifyBrowserTitle'),
+                    titleText: this.i18nService.t('verifyBrowserTitle'),
                     html: `${this.i18nService.t('verifyBrowserDesc')}<br><br><strong>${fingerprint}</strong>`,
                     showCancelButton: true,
                     cancelButtonText: this.i18nService.t('cancel'),
