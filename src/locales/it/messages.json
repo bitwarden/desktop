@@ -6,7 +6,7 @@
     "message": "Filtri"
   },
   "allItems": {
-    "message": "Tutti gli Elementi"
+    "message": "Tutti gli elementi"
   },
   "favorites": {
     "message": "Preferiti"
@@ -36,7 +36,7 @@
     "message": "Cerca nella cassaforte"
   },
   "addItem": {
-    "message": "Aggiungi Elemento"
+    "message": "Aggiungi elemento"
   },
   "shared": {
     "message": "Condiviso"
@@ -88,22 +88,22 @@
     "message": "Frase segreta"
   },
   "editItem": {
-    "message": "Modifica Elemento"
+    "message": "Modifica elemento"
   },
   "emailAddress": {
-    "message": "Indirizzo Email"
+    "message": "Indirizzo email"
   },
   "verificationCodeTotp": {
-    "message": "Codice di Verifica (TOTP)"
+    "message": "Codice di verifica (TOTP)"
   },
   "website": {
-    "message": "Sito Web"
+    "message": "Sito web"
   },
   "notes": {
     "message": "Note"
   },
   "customFields": {
-    "message": "Campi Personalizzati"
+    "message": "Campi personalizzati"
   },
   "launch": {
     "message": "Avvia"
@@ -113,7 +113,7 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Ridurre a icona durante la copia negli appunti"
+    "message": "Riduci a icona durante la copia negli appunti"
   },
   "minimizeOnCopyToClipboardDesc": {
     "message": "Riduci a icona durante la copia dei dati dell'elemento negli appunti."
@@ -138,7 +138,7 @@
     "message": "Scadenza"
   },
   "securityCode": {
-    "message": "Codice di Sicurezza"
+    "message": "Codice di sicurezza"
   },
   "identityName": {
     "message": "Nome dell'identità"
@@ -268,7 +268,7 @@
     "message": "Indirizzo 3"
   },
   "cityTown": {
-    "message": "Città o comune"
+    "message": "Città / Comune"
   },
   "stateProvince": {
     "message": "Stato / Provincia"
@@ -340,10 +340,10 @@
     "message": "Elimina allegato"
   },
   "deleteItemConfirmation": {
-    "message": "Sei sicuro di voler eliminare questo elemento?"
+    "message": "Sei sicuro di voler cestinare questo elemento?"
   },
   "deletedItem": {
-    "message": "Elemento eliminato"
+    "message": "Elemento cestinato"
   },
   "overwritePasswordConfirmation": {
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
@@ -409,7 +409,7 @@
     "message": "Cerca tra i preferiti"
   },
   "searchType": {
-    "message": "Tipo di ricerca",
+    "message": "Cerca tipo",
     "description": "Search item type"
   },
   "newAttachment": {
@@ -431,7 +431,7 @@
     "message": "Seleziona un file."
   },
   "maxFileSize": {
-    "message": "La dimensione massima del file è di 100 MB."
+    "message": "La dimensione massima del file è 100 MB."
   },
   "updateKey": {
     "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave."
@@ -506,7 +506,7 @@
     "message": "La conferma della password principale non corrisponde."
   },
   "newAccountCreated": {
-    "message": "Il tuo account è stato creato! Ora puoi effettuare il login."
+    "message": "Il tuo account è stato creato! Ora puoi effettuare l'accesso."
   },
   "masterPassSent": {
     "message": "Ti abbiamo inviato un'email con il tuo suggerimento per la password principale."
@@ -518,7 +518,7 @@
     "message": "Informazioni sull'elemento"
   },
   "noItemsInList": {
-    "message": "Non ci sono elementi da mostrare."
+    "message": "Non ci sono elementi da elencare."
   },
   "verificationCode": {
     "message": "Codice di verifica"
@@ -530,7 +530,7 @@
     "message": "Continua"
   },
   "enterVerificationCodeApp": {
-    "message": "Inserisci il codice di verifica a 6 cifre dalla tua app di autenticazione."
+    "message": "Inserisci il codice di verifica a 6 cifre dalla tua applicazione di autenticazione."
   },
   "enterVerificationCodeEmail": {
     "message": "Inserisci il codice di verifica a 6 cifre che è stato inviato all'indirizzo $EMAIL$.",
@@ -554,16 +554,16 @@
     "message": "Ricordami"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Reinvia il codice di verifica all'indirizzo email"
+    "message": "Invia nuovamente l'email con il codice di verifica"
   },
   "useAnotherTwoStepMethod": {
     "message": "Usa un altro metodo di verifica in due passaggi"
   },
   "insertYubiKey": {
-    "message": "Inserisci la tua YubiKey nella porta USB del computer e poi premi il tasto."
+    "message": "Inserisci la tua YubiKey nella porta USB del computer e poi premi il suo pulsante."
   },
   "insertU2f": {
-    "message": "Inserisci la tua security key nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
+    "message": "Inserisci la tua chiave di sicurezza nella porta USB del tuo computer. Se dispone di un pulsante, premilo."
   },
   "recoveryCodeDesc": {
     "message": "Hai perso l'accesso a tutti i tuoi metodi di verifica in due passaggi? Usa il tuo codice di recupero per disattivare tutti i metodi di verifica in due passaggi sul tuo account."
@@ -572,7 +572,7 @@
     "message": "Codice di recupero"
   },
   "authenticatorAppTitle": {
-    "message": "App di autenticazione"
+    "message": "Applicazione di autenticazione"
   },
   "authenticatorAppDesc": {
     "message": "Usa un'app di autenticazione (come Authy o Google Authenticator) per generare codici di verifica a tempo.",
@@ -585,18 +585,18 @@
     "message": "Usa YubiKey per accedere al tuo account. Compatibile con YubiKey 4, 4 Nano, 4C, e dispositivi NEO."
   },
   "duoDesc": {
-    "message": "Verifica con Duo Security usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verifica con Duo Security per la tua azienda usando l'app Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
+    "message": "Verifica con Duo Security per la tua azienda usando l'applicazione Duo Mobile, SMS, chiamata telefonica, o chiave di sicurezza U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Usa una chiave di sicurezza compatibile con FIDO U2F per accedere al tuo account."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Security key FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -605,16 +605,16 @@
     "message": "I codici di verifica ti saranno inviati per email."
   },
   "loginUnavailable": {
-    "message": "Login non disponibile"
+    "message": "Accesso non disponibile"
   },
   "noTwoStepProviders": {
     "message": "Questo account ha abilitato la verifica in due passaggi, ma nessuno dei provider configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
-    "message": "Si prega di aggiungere altri metodi che sono supportati meglio su tutti i dispositivi (ad esempio, un'app di autenticazione)."
+    "message": "Aggiungi altri metodi che sono supportati meglio su tutti i dispositivi (ad esempio, un'applicazione di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di login in due passaggi"
+    "message": "Opzioni di verifica in due passaggi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente self-hosted"
@@ -680,7 +680,7 @@
     "message": "Disconnetti"
   },
   "addNewLogin": {
-    "message": "Aggiungi nuovo login"
+    "message": "Aggiungi nuovo accesso"
   },
   "addNewItem": {
     "message": "Aggiungi nuovo elemento"
@@ -704,7 +704,7 @@
     "message": "Generatore di password"
   },
   "emailUs": {
-    "message": "Mandaci un'email"
+    "message": "Inviaci un'email"
   },
   "visitOurWebsite": {
     "message": "Visita il nostro sito"
@@ -739,7 +739,7 @@
     "message": "Vai alla cassaforte web"
   },
   "getMobileApp": {
-    "message": "Scarica l'app mobile"
+    "message": "Scarica l'applicazione mobile"
   },
   "getBrowserExtension": {
     "message": "Scarica l'estensione del browser"
@@ -748,7 +748,7 @@
     "message": "Sincronizzazione completata"
   },
   "syncingFailed": {
-    "message": "Sincronizzazione fallita"
+    "message": "Sincronizzazione non riuscita"
   },
   "yourVaultIsLocked": {
     "message": "La tua cassaforte è bloccata. Inserisci la tua password principale per continuare."
@@ -773,7 +773,7 @@
     "message": "Password principale errata"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una security key, app di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?"
+    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?"
   },
   "twoStepLogin": {
     "message": "Verifica in due passaggi"
@@ -865,7 +865,7 @@
     "message": "Chiudi nell'area di notifica"
   },
   "enableCloseToTrayDesc": {
-    "message": "Mostra un'icona nell'area di notifica quando si minimizza la finestra."
+    "message": "Mostra un'icona nell'area di notifica quando si chiude la finestra."
   },
   "enableCloseToMenuBar": {
     "message": "Chiudi nella barra dei menu"
@@ -877,7 +877,7 @@
     "message": "Usa l'area di notifica"
   },
   "enableTrayDesc": {
-    "message": "Mosta sempre un'icona nell'area di notifica."
+    "message": "Mostra sempre un'icona nell'area di notifica."
   },
   "startToTray": {
     "message": "Avvio dall'area di notifica"
@@ -949,7 +949,7 @@
     "message": "Riavvia per aggiornare"
   },
   "restartToUpdateDesc": {
-    "message": "Versione $VERSION_NUM$ è pronto per l'installazione. È necessario riavviare Bitwarden per completare l'installazione. Si desidera riavviare e aggiornare ora?",
+    "message": "Versione $VERSION_NUM$ è pronto per l'installazione. È necessario riavviare Bitwarden per completare l'installazione. Desideri riavviare e aggiornare ora?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -961,7 +961,7 @@
     "message": "Aggiornamento disponibile"
   },
   "updateAvailableDesc": {
-    "message": "Un aggiornamento è stato trovato. Si desidera scaricarlo adesso?"
+    "message": "Un aggiornamento è stato trovato. Desideri scaricarlo adesso?"
   },
   "restart": {
     "message": "Riavvia"
@@ -973,7 +973,7 @@
     "message": "Non sono attualmente disponibili aggiornamenti. Stai utilizzando la versione più recente."
   },
   "updateError": {
-    "message": "Errore aggiornamento"
+    "message": "Errore di aggiornamento"
   },
   "unknown": {
     "message": "Sconosciuto"
@@ -1005,10 +1005,10 @@
     "message": "Al momento non sei un membro premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Iscriviti ad un abbonamento premium e ottieni:"
+    "message": "Iscriviti a un abbonamento premium e ottieni:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB di spazio di archiviazione crittografato."
+    "message": "1 GB di spazio di archiviazione cifrato per gli allegati."
   },
   "premiumSignUpTwoStep": {
     "message": "Opzioni di verifica in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
@@ -1023,7 +1023,7 @@
     "message": "Supporto clienti prioritario."
   },
   "premiumSignUpFuture": {
-    "message": "Tutte le funzioni Premium future. Nuove in arrivo!"
+    "message": "Tutte le funzioni premium future. Nuove in arrivo!"
   },
   "premiumPurchase": {
     "message": "Acquista Premium"
@@ -1057,13 +1057,13 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "Non ci sono password da mostrare."
+    "message": "Non ci sono password da elencare."
   },
   "undo": {
     "message": "Annulla"
   },
   "redo": {
-    "message": "Ripristina"
+    "message": "Rifai"
   },
   "cut": {
     "message": "Taglia",
@@ -1080,7 +1080,7 @@
     "message": "Ingrandisci"
   },
   "zoomOut": {
-    "message": "Diminuisci"
+    "message": "Rimpicciolisci"
   },
   "resetZoom": {
     "message": "Ripristina zoom"
@@ -1095,7 +1095,7 @@
     "message": "Attiva/disattiva strumenti di sviluppo"
   },
   "minimize": {
-    "message": "Riduci a icona",
+    "message": "Minimizza",
     "description": "Minimize window"
   },
   "zoom": {
@@ -1106,7 +1106,7 @@
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "Su Bitwarden"
+    "message": "Informazioni su Bitwarden"
   },
   "services": {
     "message": "Servizi"
@@ -1143,7 +1143,7 @@
     "message": "Verifica se la password è stata esposta."
   },
   "passwordExposed": {
-    "message": "Questa password è stata esposta $VALUE$ volta/e in dati violati. Dovresti cambiarla.",
+    "message": "Questa password è presente $VALUE$ volta/e in database di violazioni. Dovresti cambiarla.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1240,7 +1240,7 @@
     "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
   },
   "noCollectionsInList": {
-    "message": "Nessuna raccolta da visualizzare."
+    "message": "Nessuna raccolta da elencare."
   },
   "ownership": {
     "message": "Proprietà"
@@ -1249,11 +1249,11 @@
     "message": "A chi appartiene questo elemento?"
   },
   "strong": {
-    "message": "Forte",
+    "message": "Robusta",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Buono",
+    "message": "Buona",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
@@ -1264,7 +1264,7 @@
     "message": "Password principale debole"
   },
   "weakMasterPasswordDesc": {
-    "message": "La password principale che hai scelto è debole. È necessario utilizzare una password principale forte (o una passphrase) per proteggere adeguatamente il tuo account Bitwarden. Sei sicuro di voler utilizzare questa password principale?"
+    "message": "La password principale che hai scelto è debole. È necessario utilizzare una password principale forte (o una frase segreta) per proteggere adeguatamente il tuo account Bitwarden. Sei sicuro di voler utilizzare questa password principale?"
   },
   "pin": {
     "message": "PIN",
@@ -1295,13 +1295,19 @@
     "message": "Sblocca con Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Sblocca la cassaforte"
+    "message": "sblocca la cassaforte"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio"
   },
   "preferences": {
-    "message": "Impostazioni"
+    "message": "Preferenze"
   },
   "enableMenuBar": {
     "message": "Abilita icona barra dei menu"
@@ -1316,7 +1322,7 @@
     "message": "Devi selezionare almeno una raccolta."
   },
   "premiumUpdated": {
-    "message": "Hai effettuato l'aggiornamento a Premium."
+    "message": "Hai effettuato l'aggiornamento a premium."
   },
   "restore": {
     "message": "Ripristina"
@@ -1367,16 +1373,16 @@
     "message": "Cerca nel cestino"
   },
   "permanentlyDeleteItem": {
-    "message": "Elimina Definitivamente Elemento"
+    "message": "Elimina definitivamente l'elemento"
   },
   "permanentlyDeleteItemConfirmation": {
     "message": "Sei sicuro di voler eliminare definitivamente questo elemento?"
   },
   "permanentlyDeletedItem": {
-    "message": "Elemento Definitivamente Eliminato"
+    "message": "Elemento eliminato definitivamente"
   },
   "restoreItem": {
-    "message": "Ripristina Elemento"
+    "message": "Ripristina elemento"
   },
   "restoreItemConfirmation": {
     "message": "Sei sicuro di voler ripristinare questo elemento?"
@@ -1565,11 +1571,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Link del Send",
+    "message": "Collegamento del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Link del Send",
+    "message": "Collegamento del Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1640,10 +1646,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copia link"
+    "message": "Copia collegamento"
   },
   "disabled": {
-    "message": "Disattivo"
+    "message": "Disabilitato"
   },
   "maxAccessCountReached": {
     "message": "Numero massimo di accessi raggiunto"
@@ -1653,5 +1659,29 @@
   },
   "pendingDeletion": {
     "message": "In attesa di eliminazione"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
