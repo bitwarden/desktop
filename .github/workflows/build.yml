@@ -362,5 +362,5 @@ jobs:
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@v2
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
