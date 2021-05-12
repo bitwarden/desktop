@@ -140,14 +140,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: make target directory
-        run: mkdir -p dist/mas
+        run: mkdir -p dist/mas-universal
 
       - name: Get mac release asset
         uses: Xotl/cool-github-releases@v1
         with:
           mode: download
           tag_name: ${{ env.TAG_VERSION }}
-          assets: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg|./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          assets: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg|./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to App Store

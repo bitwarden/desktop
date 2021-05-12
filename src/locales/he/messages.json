@@ -368,7 +368,7 @@
     "message": "העתק שורת כתובת"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "העתקת קוד אימות (TOTP)"
   },
   "length": {
     "message": "אורך"
@@ -592,11 +592,11 @@
     "message": "בצע אימות מול Duo Security עבור הארגון שלך באמצעות אפליקצית Duo לפלאפון, SMS, שיחת טלפון, או מפתח אבטחה U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "השתמש בכל מפתח אבטחה התומך בFIDO U2F עבור גישה לחשבונך."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "מפתח אבטחה FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "אימייל"
@@ -895,7 +895,7 @@
     "message": "Start automatically on login"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "התחל באופן אוטומטי את אפליקציית שולחן העבודה של Bitwarden בהתחברות."
   },
   "alwaysShowDock": {
     "message": "Always show in the Dock"
@@ -1297,6 +1297,12 @@
   "touchIdConsentMessage": {
     "message": "פתח את הכספת שלך"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "נעל בעזרת הסיסמה הראשית בהפעלה מחדש"
   },
@@ -1457,19 +1463,19 @@
     "message": "לא הסכמת לתנאי השירות ומדיניות הפרטיות."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "אפשר אינטגרציה עם הדפדפן"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "אינטגרצייה עם הדפדפן מאפשרת שימוש באמצעיים ביומטריים בדפדפן."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "אינטגרצייה עם הדפדפן אינה נמתכמת"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "למצער, אינטגרצייה עם הדפדפן בשלב זה נתמכת רק על ידי גרסת חנות האפליקציות של מקינטוש."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "אינטגרצייה עם הדפדפן אינה נמתכמת"
   },
   "browserIntegrationWindowsStoreDesc": {
     "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
@@ -1653,5 +1659,29 @@
   },
   "pendingDeletion": {
     "message": "Pending deletion"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
