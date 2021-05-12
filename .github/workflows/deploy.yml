@@ -64,6 +64,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+        with:
+          ref: tag/${{ env.TAG_VERSION }}
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@v1
@@ -100,6 +102,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+        with:
+          ref: tag/${{ env.TAG_VERSION }}
 
       - name: Get choco release asset
         uses: Xotl/cool-github-releases@v1
@@ -142,6 +146,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          ref: tag/${{ env.TAG_VERSION }}
 
       - name: make target directory
         run: mkdir -p dist/mas-universal
