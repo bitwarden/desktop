@@ -59,7 +59,7 @@ jobs:
     needs: setup
     env:
       PKG_VERSION: ${{ needs.setup.outputs.package_version }}
-      TAG_VERSION: ${{ needs.setup.ouputs.tag_version }}
+      TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
