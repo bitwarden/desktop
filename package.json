@@ -314,7 +314,7 @@
     "electron-store": "8.0.0",
     "electron-updater": "^4.3.8",
     "forcefocus": "^1.1.0",
-    "keytar": "^7.6.0",
+    "keytar": "^7.7.0",
     "lunr": "^2.3.9",
     "ngx-infinite-scroll": "^10.0.1",
     "node-forge": "0.10.0",
