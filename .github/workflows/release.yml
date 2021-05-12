@@ -10,7 +10,6 @@ on:
         description: 'Browser Extension ref (defaults to `master`):'
         default: master
 
-
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -49,7 +48,6 @@ jobs:
           release_name: ${{ env.RELEASE_NAME }}
           draft: true
           prerelease: false
-
 
   linux:
     runs-on: ubuntu-latest
@@ -90,7 +88,6 @@ jobs:
         run: npm run publish:lin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
   windows-signed:
     runs-on: windows-latest
@@ -190,7 +187,6 @@ jobs:
           asset_name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           asset_path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           asset_content_type: application
-
 
   windows-store:
     runs-on: windows-latest

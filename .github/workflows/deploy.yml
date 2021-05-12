@@ -10,7 +10,6 @@ on:
     types:
       - published
 
-
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -52,7 +51,6 @@ jobs:
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
-
   snap:
     name: Deploy Snap
     runs-on: ubuntu-latest
@@ -87,7 +85,6 @@ jobs:
         run: |
           snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
           snapcraft logout
-
 
   choco:
     name: Deploy Choco
@@ -130,7 +127,6 @@ jobs:
         run: |
           cd dist
           choco push
-
 
   macos:
     runs-on: macos-latest
