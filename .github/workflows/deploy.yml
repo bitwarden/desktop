@@ -50,6 +50,8 @@ jobs:
             echo "::set-output name=package_version::$PKG_VERSION"
             echo "::set-output name=tag_version::$TAG_VERSION"
           fi
+          echo "PKG_VERISON: $PKG_VERSION"
+          echo "TAG_VERISON: $TAG_VERSION"
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
@@ -65,7 +67,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          ref: tag/${{ env.TAG_VERSION }}
+          ref: ${{ env.TAG_VERSION }}
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@v1
@@ -103,7 +105,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          ref: tag/${{ env.TAG_VERSION }}
+          ref: ${{ env.TAG_VERSION }}
 
       - name: Get choco release asset
         uses: Xotl/cool-github-releases@v1
@@ -147,7 +149,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
-          ref: tag/${{ env.TAG_VERSION }}
+          ref: ${{ env.TAG_VERSION }}
 
       - name: make target directory
         run: mkdir -p dist/mas-universal
