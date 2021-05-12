@@ -101,12 +101,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get choco release asset
-        uses: dsaltares/fetch-gh-release-asset@0.0.5
+        uses: Xotl/cool-github-releases@v1
         with:
-          version: tags/${{ env.TAG_VERSION }}
-          file: bitwarden.${{ env.PKG_VERSION }}.nupkg
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          mode: download
+          tag_name: ${{ env.TAG_VERSION }}
+          assets: bitwarden.${{ env.PKG_VERSION }}.nupkg
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Chocolatey
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
