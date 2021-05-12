@@ -65,7 +65,8 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
         const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
         if (cozyDomain) {
             this.email = `me@${cozyDomain}`;
-            this.baseUrl = `https://${cozyDomain}/`;
+            const protocol = window.location ? window.location.protocol : 'https:'
+            this.baseUrl =  `${protocol}//${cozyDomain}/`;
             this.environmentService.setUrls({
                 base: this.baseUrl + 'bitwarden',
             });

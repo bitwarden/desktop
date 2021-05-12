@@ -63,7 +63,8 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         if (cozyDomain) {
             this.isInCozyApp = true;
             this.email = `me@${cozyDomain}`;
-            this.baseUrl = `https://${cozyDomain}/`;
+            const protocol = window.location ? window.location.protocol : 'https:'
+            this.baseUrl =  `${protocol}//${cozyDomain}/`;
             this.environmentService.setUrls({
                 base: this.baseUrl + 'bitwarden',
             });
