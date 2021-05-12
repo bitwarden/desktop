@@ -38,7 +38,7 @@ export class AddEditComponent extends BaseAddEditComponent {
         this.onCancelled.emit(this.send);
     }
 
-    copyLinkToClipboard(link: string) {
+    async copyLinkToClipboard(link: string) {
         super.copyLinkToClipboard(link);
         this.platformUtilsService.showToast('success', null,
             this.i18nService.t('valueCopied', this.i18nService.t('sendLink')));
