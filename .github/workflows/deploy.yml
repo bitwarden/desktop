@@ -85,7 +85,7 @@ jobs:
 
       - name: Deploy to Snap Store
         run: |
-          snapcraft upload dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap --release stable
+          snapcraft upload dist/bitwarden_${{ env.PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
 
 
