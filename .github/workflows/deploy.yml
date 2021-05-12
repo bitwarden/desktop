@@ -25,7 +25,7 @@ jobs:
         id: create_tags
         run: |
           echo "Github event name: ${{ github.event_name }}";
-          if [[ "${{ github.event_name }}" -ne "release" ]]; then
+          if [ "${{ github.event_name }}" -ne "release" ]; then
             case "${RELEASE_TAG_NAME_INPUT:0:1}" in
               v)
                 echo "RELEASE_NAME=${RELEASE_TAG_NAME_INPUT:1}" >> $GITHUB_ENV
