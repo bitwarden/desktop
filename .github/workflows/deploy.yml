@@ -50,8 +50,6 @@ jobs:
             echo "::set-output name=package_version::$PKG_VERSION"
             echo "::set-output name=tag_version::$TAG_VERSION"
           fi
-          echo "PKG_VERISON: $PKG_VERSION"
-          echo "TAG_VERISON: $TAG_VERSION"
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
