@@ -21,17 +21,7 @@
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "exclude": [
-    "node_modules",
-    "jslib/node_modules",
-    "proxy",
-    "dist",
-    "dist-safari",
-    "jslib/dist",
-    "build",
-    "jslib/spec",
-    "jslib/src/cli",
-    "jslib/src/services/nodeApi.service.ts",
-    "jslib/src/services/lowdbStorage.service.ts"
+  "include": [
+    "src"
   ]
 }

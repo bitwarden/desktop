@@ -177,10 +177,9 @@ jobs:
           $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
           (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
-          ls -alht dist/chocolatey
+          ls dist/chocolatey
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
           cd ./dist/chocolatey
-          ls -alht dist/chocolatey
 
       - name: Upload Chocolatey nupkg release asset
         uses: actions/upload-release-asset@v1
@@ -366,6 +365,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          asset_path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
           asset_content_type: application

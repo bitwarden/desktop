@@ -18,10 +18,7 @@ export default class IPC {
         ipc.connectTo('bitwarden', () => {
             ipc.of.bitwarden.on('connect', () => {
                 this.connected = true;
-                console.error(
-                    '## connected to bitwarden desktop ##',
-                    ipc.config.delay
-                );
+                console.error('## connected to bitwarden desktop ##');
 
                 // Notify browser extension, connection is established to desktop application.
                 this.onMessage({command: 'connected'});

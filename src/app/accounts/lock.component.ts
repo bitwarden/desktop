@@ -7,6 +7,7 @@ import {
     ActivatedRoute,
     Router,
 } from '@angular/router';
+import { ipcRenderer } from 'electron';
 
 import { ApiService } from 'jslib/abstractions/api.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
@@ -22,6 +23,8 @@ import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib/angular/components/lock.component';
+
+import { ElectronConstants } from 'jslib/electron/electronConstants';
 
 const BroadcasterSubscriptionId = 'LockComponent';
 
@@ -43,9 +46,15 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     async ngOnInit() {
         await super.ngOnInit();
+        const autoPromptBiometric = !await this.storageService.get<boolean>(ElectronConstants.noAutoPromptBiometrics);
+
         this.route.queryParams.subscribe(params => {
-            if (this.supportsBiometric && params.promptBiometric) {
-                setTimeout(() => this.unlockBiometric(), 1000);
+            if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {
+                setTimeout(async() => {
+                    if (await ipcRenderer.invoke('windowVisible')) {
+                        this.unlockBiometric();
+                    }
+                }, 1000);
             }
         });
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
