@@ -365,6 +365,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          asset_path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
           asset_content_type: application
