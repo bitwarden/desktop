@@ -135,6 +135,9 @@ jobs:
   macos:
     runs-on: macos-latest
     needs: setup
+    env:
+      PKG_VERSION: ${{ needs.setup.outputs.package_version }}
+      TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
