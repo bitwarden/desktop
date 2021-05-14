@@ -127,7 +127,7 @@ const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
     i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService);
-const exportService = new ExportService(folderService, cipherService, apiService);
+const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }), logService);

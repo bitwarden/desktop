@@ -14,7 +14,7 @@ The Bitwarden desktop app is written using Electron and Angular. The application
 
 **Requirements**
 
-- [Node.js](https://nodejs.org/)
+- [Node.js](https://nodejs.org) v14.17 or greater
 - Windows users: To compile the native node modules used in the app you will need the *Visual C++ toolset*, available through the standard Visual Studio installer. You will also need to install the *Microsoft Build Tools 2015* and *Windows 10 SDK 17134* as additional dependencies in the Visual Studio installer.
 
 

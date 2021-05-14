@@ -18,7 +18,7 @@ export class ElectronPlatformUtilsService extends BaseElectronPlatformUtilsServi
         Promise<boolean> {
         const result = await Swal.fire({
             heightAuto: false,
-            title: title,
+            titleText: title,
             input: 'password',
             text: body,
             confirmButtonText: this.i18nService.t('ok'),
