@@ -90,7 +90,7 @@ import localeIt from '@angular/common/locales/it';
 import localeJa from '@angular/common/locales/ja';
 import localeKo from '@angular/common/locales/ko';
 import localeLv from '@angular/common/locales/lv';
-import localeMe from '@angular/common/locales/me';
+import localeMe from '@angular/common/locales/sr-Latn-ME';
 import localeMl from '@angular/common/locales/ml';
 import localeNb from '@angular/common/locales/nb';
 import localeNl from '@angular/common/locales/nl';
