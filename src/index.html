@@ -12,11 +12,12 @@
 </head>
 <!-- usefull to simulate execution into a Cozy application -->
 <!--<div id="cozy-app" data-cozy-domain="benji.mycozy.cloud"></div>-->
-<div id="cozy-app" role="application" data-cozy-token="{{.Token}}" data-cozy-domain="{{.Domain}}" data-cozy-subdomain-type="{{.SubDomain}}" data-cozy-locale="{{.Locale}}" data-cozy-app-name="{{.AppName}}" data-cozy-app-slug="{{.AppSlug}}" data-cozy-app-name-prefix="{{.AppNamePrefix}}" data-cozy-app-editor="{{.AppEditor}}" data-cozy-icon-path="{{.IconPath}}"></div>
 <body class="layout_frontend">
+    <div id="cozy-app" role="application" data-cozy-token="{{.Token}}" data-cozy-domain="{{.Domain}}" data-cozy-subdomain-type="{{.SubDomain}}" data-cozy-locale="{{.Locale}}" data-cozy-app-name="{{.AppName}}" data-cozy-app-slug="{{.AppSlug}}" data-cozy-app-name-prefix="{{.AppNamePrefix}}" data-cozy-app-editor="{{.AppEditor}}" data-cozy-icon-path="{{.IconPath}}">
     <app-root>
         <div id="loading"><i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i></div>
     </app-root>
+    </div>
 </body>
 
 </html>
