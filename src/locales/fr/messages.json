@@ -15,13 +15,13 @@
     "message": "Types"
   },
   "typeLogin": {
-    "message": "Identifiant"
+    "message": "Identifiants"
   },
   "typeCard": {
-    "message": "Carte de paiement"
+    "message": "Cartes de paiement"
   },
   "typeIdentity": {
-    "message": "Identité"
+    "message": "Profils"
   },
   "typeSecureNote": {
     "message": "Note sécurisée"

@@ -15,13 +15,13 @@
     "message": "Types"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Logins"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Cards"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Profils"
   },
   "typeSecureNote": {
     "message": "Secure note"
