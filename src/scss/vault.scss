@@ -1,6 +1,8 @@
 ﻿@import "variables.scss";
 app-vault {
-    height: 100%;
+    height: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 #vault {
     height: 100%;
@@ -312,7 +314,7 @@ app-vault {
             }
         }
         .footer {
-            padding: 20px 0 0 15px;
+            padding: 20px 0 20px 15px;
             border-top: 1px solid #000000;
             position: relative;
             z-index: 1;
@@ -426,7 +428,6 @@ app-vault {
         }
 
         .inner-content {
-            min-width: 320px;
             height: 100%;
             display: flex;
             flex-direction: column;
