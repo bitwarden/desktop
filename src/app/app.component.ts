@@ -75,7 +75,6 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
     styles: [],
     template: `
         <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
-        <div id="cozy-bar">This is the Cozy Bar</div>
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
         <ng-template #passwordHistory></ng-template>
