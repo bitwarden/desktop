@@ -19,7 +19,7 @@ jobs:
       tag_version: ${{ steps.create_tags.outputs.tag_version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Create Deploy version vars
         id: create_tags
@@ -62,10 +62,10 @@ jobs:
       TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Install Snap
-        uses: samuelmeuli/action-snapcraft@v1
+        uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d
         with:
           snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
@@ -73,7 +73,7 @@ jobs:
         run: mkdir dist
 
       - name: get snap package
-        uses: Xotl/cool-github-releases@v1
+        uses: Xotl/cool-github-releases@16c58a5863d6ba9944f63ca8bb78bb3249ce1d81
         with:
           mode: download
           tag_name: ${{ env.TAG_VERSION }}
@@ -98,10 +98,10 @@ jobs:
       TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Get choco release asset
-        uses: Xotl/cool-github-releases@v1
+        uses: Xotl/cool-github-releases@16c58a5863d6ba9944f63ca8bb78bb3249ce1d81
         with:
           mode: download
           tag_name: ${{ env.TAG_VERSION }}
@@ -118,7 +118,7 @@ jobs:
         run: New-Item -ItemType directory -Path ./dist
 
       - name: Get nupkg
-        uses: Xotl/cool-github-releases@v1
+        uses: Xotl/cool-github-releases@16c58a5863d6ba9944f63ca8bb78bb3249ce1d81
         with:
           mode: download
           tag_name: ${{ env.TAG_VERSION }}
@@ -140,13 +140,13 @@ jobs:
       TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: make target directory
         run: mkdir -p dist/mas-universal
 
       - name: Get mac release asset
-        uses: Xotl/cool-github-releases@v1
+        uses: Xotl/cool-github-releases@16c58a5863d6ba9944f63ca8bb78bb3249ce1d81
         with:
           mode: download
           tag_name: ${{ env.TAG_VERSION }}
