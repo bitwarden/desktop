@@ -35,6 +35,8 @@ jobs:
       - name: Update NPM
         run: |
           npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -123,6 +125,8 @@ jobs:
       - name: Update NPM
         run: |
           npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
@@ -258,6 +262,8 @@ jobs:
       - name: Update NPM
         run: |
           npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
