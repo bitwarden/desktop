@@ -1,0 +1,369 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag_name_input:
+        description: 'Release Tag Name <X.X.X>'
+        required: true
+      browser_extension_ref:
+        description: 'Browser Extension ref (defaults to `master`):'
+        default: master
+
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      release_upload_url: ${{ steps.create_release.outputs.upload_url }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Create Release Vars
+        id: create_tags
+        run: |
+          case "${RELEASE_TAG_NAME_INPUT:0:1}" in
+            v)
+              echo "RELEASE_NAME=${RELEASE_TAG_NAME_INPUT:1}" >> $GITHUB_ENV
+              echo "RELEASE_TAG_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              ;;
+            [0-9])
+              echo "RELEASE_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              echo "RELEASE_TAG_NAME=v$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              ;;
+            *)
+              exit 1
+              ;;
+          esac
+        env:
+          RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
+
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE_TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          draft: true
+          prerelease: false
+
+
+  linux:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        with:
+          node-version: '14'
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
+
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build & Publish
+        run: npm run publish:lin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+  windows-signed:
+    runs-on: windows-latest
+    needs: setup
+    steps:
+      - name: Set up dotnet
+        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea
+        with:
+          dotnet-version: "3.1.x"
+
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        with:
+          node-version: '14'
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: pwsh
+
+      - name: Install AST
+        shell: pwsh
+        run: |
+          cd $HOME
+
+          git clone https://github.com/vcsjones/AzureSignTool.git
+          cd AzureSignTool
+          $latest_head = $(git rev-parse HEAD)[0..9] -join ""
+          $latest_version = "0.0.0-g$latest_head"
+
+          Write-Host "--------"
+          Write-Host "git commit - $(git rev-parse HEAD)"
+          Write-Host "latest_head - $latest_head"
+          Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
+          Write-Host "--------"
+
+          dotnet restore
+          dotnet pack --output ./nupkg
+          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
+
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
+          choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          choco --version
+
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build, Sign & Release
+        run: npm run publish:win
+        env:
+          ELECTRON_BUILDER_SIGN: 1
+          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
+          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
+          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
+          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
+          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Package Chocolatey
+        shell: pwsh
+        run: |
+          Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
+          Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
+
+          $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
+          (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          ls dist/chocolatey
+          choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
+          cd ./dist/chocolatey
+
+      - name: Upload Chocolatey nupkg release asset
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          asset_path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          asset_content_type: application
+
+
+  windows-store:
+    runs-on: windows-latest
+    needs: setup
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        with:
+          node-version: '14'
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: pwsh
+
+      - name: Set up environment
+        shell: pwsh
+        run: |
+          choco install checksum --no-progress
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          choco --version
+
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build, Sign & Release
+        run: npm run dist:win:ci
+
+      - name: Upload unsigned ia32 Windows Store release asset
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx
+          asset_content_type: application
+
+      - name: Upload unsigned x64 Windows Store release asset
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx
+          asset_content_type: application
+
+      - name: Upload unsigned ARM64 Windows Store release asset
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
+          asset_path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.appx
+          asset_content_type: application
+
+  macos:
+    runs-on: macos-latest
+    needs: setup
+    steps:
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        with:
+          node-version: '14'
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          echo "GitHub ref: $GITHUB_REF"
+          echo "GitHub event: $GITHUB_EVENT"
+        env:
+          GITHUB_REF: ${{ github.ref }}
+          GITHUB_EVENT: ${{ github.event_name }}
+
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Decrypt secrets
+        run: ./.github/scripts/macos/decrypt-secrets.ps1
+        shell: pwsh
+        env:
+          DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+
+      - name: Set up keychain
+        run: ./.github/scripts/macos/setup-keychain.ps1
+        shell: pwsh
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
+          DEVID_CERT_PASSWORD: ${{ secrets.DEVID_CERT_PASSWORD }}
+          APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
+          MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Set up provisioning profiles
+        run: ./.github/scripts/macos/setup-profiles.ps1
+        shell: pwsh
+
+      - name: Increment version
+        run: ./.github/scripts/macos/increment-version.ps1
+        shell: pwsh
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Create Safari directory
+        shell: pwsh
+        run: New-Item ./dist-safari -ItemType Directory -ea 0
+
+      - name: Checkout browser extension
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        with:
+          repository: 'bitwarden/browser'
+          ref: ${{ github.event.inputs.browser_extension_ref }}
+          path: 'dist-safari/browser'
+
+      - name: Build Safari extension
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+
+      - name: Load Safari extension for .dmg
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -copyonly
+
+      - name: Build application (dist)
+        run: npm run publish:mac
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Load Safari extension for App Store
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -mas -copyonly
+
+      - name: Build application for App Store
+        run: npm run dist:mac:mas
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Upload Apple Store release asset
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.setup.outputs.release_upload_url }}
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          asset_path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          asset_content_type: application

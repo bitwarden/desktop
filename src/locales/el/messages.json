@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Αντιγραφή URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Αντιγραφή κωδικού επαλήθευσης (TOTP)"
+  },
   "length": {
     "message": "Μήκος"
   },
@@ -589,11 +592,11 @@
     "message": "Επαληθεύστε με το Duo Security για τον οργανισμό σας χρησιμοποιώντας την εφαρμογή Duo Mobile, μήνυμα SMS, τηλεφωνική κλήση ή κλειδί ασφαλείας U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Χρησιμοποιήστε οποιοδήποτε κλειδί ασφαλείας με δυνατότητα FIDO U2F για πρόσβαση στον λογαριασμό σας."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Κλειδί ασφαλείας FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "Όταν ελαχιστοποιείτε το παράθυρο, εμφανίζεται ένα εικονίδιο στο δίσκο συστήματος αντί αυτού."
   },
+  "enableMinToMenuBar": {
+    "message": "Ελαχιστοποίηση στη γραμμή μενού"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Όταν ελαχιστοποιείται το παράθυρο, εμφανίζεται ένα εικονίδιο στη γραμμή μενού."
+  },
   "enableCloseToTray": {
     "message": "Κλείσιμο στο Εικονίδιο Δίσκου"
   },
   "enableCloseToTrayDesc": {
     "message": "Όταν κλείνετε το παράθυρο, εμφανίζεται ένα εικονίδιο στο δίσκο συστήματος αντί αυτού."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Κλείσιμο στη γραμμή μενού"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Κατά το κλείσιμο του παραθύρου, εμφανίζεται ένα εικονίδιο στη γραμμή μενού."
   },
   "enableTray": {
     "message": "Ενεργοποίηση Εικονιδίου Δίσκου"
@@ -869,6 +884,30 @@
   },
   "startToTrayDesc": {
     "message": "Όταν ξεκινήσει η εφαρμογή, εμφανίζεται μόνο ένα εικονίδιο στο δίσκο συστήματος."
+  },
+  "startToMenuBar": {
+    "message": "Έναρξη στη γραμμή μενού"
+  },
+  "startToMenuBarDesc": {
+    "message": "Όταν ξεκινήσει η εφαρμογή, εμφανίζεται μόνο ένα εικονίδιο στη γραμμή μενού."
+  },
+  "openAtLogin": {
+    "message": "Εκκίνηση αυτόματα κατά τη σύνδεση"
+  },
+  "openAtLoginDesc": {
+    "message": "Εκκίνηση της εφαρμογής Bitwarden Desktop αυτόματα κατά τη σύνδεση."
+  },
+  "alwaysShowDock": {
+    "message": "Να εμφανίζεται πάντα στο Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Εμφάνιση του εικονιδίου Bitwarden στο Dock ακόμα και όταν ελαχιστοποιείται στη γραμμή μενού."
+  },
+  "confirmTrayTitle": {
+    "message": "Επιβεβαίωση απενεργοποίησης συστήματος"
+  },
+  "confirmTrayDesc": {
+    "message": "Η απενεργοποίηση αυτής της ρύθμισης θα απενεργοποιήσει επίσης όλες τις άλλες ρυθμίσεις που σχετίζονται με το δίσκο."
   },
   "language": {
     "message": "Γλώσσα"
@@ -1182,8 +1221,17 @@
     "message": "ΠΡΟΕΙΔΟΠΟΙΗΣΗ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Επιβεβαίωση εξαγωγής Vault"
+  },
   "exportWarningDesc": {
     "message": "Αυτή η εξαγωγή περιέχει τα δεδομένα σε μη κρυπτογραφημένη μορφή. Δεν πρέπει να αποθηκεύετε ή να στείλετε το εξαγόμενο αρχείο μέσω μη ασφαλών τρόπων (όπως μέσω email). Διαγράψτε το αμέσως μόλις τελειώσετε με τη χρήση του."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Αυτή η εξαγωγή κρυπτογραφεί τα δεδομένα σας χρησιμοποιώντας το κλειδί κρυπτογράφησης του λογαριασμού σας. Εάν ποτέ περιστρέψετε το κλειδί κρυπτογράφησης του λογαριασμού σας, θα πρέπει να κάνετε εξαγωγή ξανά, καθώς δεν θα μπορείτε να αποκρυπτογραφήσετε αυτό το αρχείο εξαγωγής."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Τα κλειδιά κρυπτογράφησης λογαριασμού είναι μοναδικά για κάθε λογαριασμό χρήστη Bitwarden, οπότε δεν μπορείτε να εισάγετε μια κρυπτογραφημένη εξαγωγή σε διαφορετικό λογαριασμό."
   },
   "exportMasterPassword": {
     "message": "Πληκτρολογήστε τον κύριο κωδικό για εξαγωγή δεδομένων vault."
@@ -1247,7 +1295,13 @@
     "message": "Ξεκλείδωμα με Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Επαληθεύστε για το Bitwarden."
+    "message": "Ξεκλειδώστε το vault σας"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
@@ -1346,25 +1400,25 @@
     "message": "Επιβεβαίωση Ενέργειας Χρονικού Ορίου"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Ενιαία είσοδος για επιχειρήσεις"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "Ορισμός Κύριου Κωδικού"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "Για να ολοκληρώσετε τη σύνδεση με SSO, ορίστε έναν κύριο κωδικό πρόσβασης για πρόσβαση και προστασία του vault σας."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Νέος Κύριος Κωδικός"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Επιβεβαίωση Νέου Κύριου Κωδικού"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "Σε μία ή περισσότερες πολιτικές του οργανισμού απαιτείται ο κύριος κωδικός να πληρεί τις ακόλουθες απαιτήσεις:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Ελάχιστος βαθμός πολυπλοκότητας: $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1373,7 +1427,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Ελάχιστο μήκος: $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1382,16 +1436,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Να περιέχει έναν ή περισσότερους κεφαλαίους χαρακτήρες"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Να περιέχει έναν ή περισσότερους πεζούς χαρακτήρες"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Να περιέχει έναν ή περισσότερους αριθμούς"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Να περιέχει έναν ή περισσότερους από τους ακόλουθους ειδικούς χαρακτήρες $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1400,12 +1454,234 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "Ο νέος κύριος κωδικός δεν πληροί τις απαιτήσεις πολιτικής."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Επιλέγοντας αυτό το πλαίσιο, συμφωνείτε με τα εξής:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Οι Όροι Παροχής Υπηρεσιών και η Πολιτική Απορρήτου δεν έχουν αναγνωριστεί."
+  },
+  "enableBrowserIntegration": {
+    "message": "Ενεργοποίηση ενσωμάτωσης περιηγητή"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Η ενσωμάτωση του προγράμματος περιήγησης χρησιμοποιείται για βιομετρικά στοιχεία στο πρόγραμμα περιήγησης."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Η ενσωμάτωση του περιηγητή δεν υποστηρίζεται"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Δυστυχώς η ενσωμάτωση του προγράμματος περιήγησης υποστηρίζεται μόνο στην έκδοση Mac App Store για τώρα."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Η ενσωμάτωση του περιηγητή δεν υποστηρίζεται"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Δυστυχώς η ενσωμάτωση του προγράμματος περιήγησης, δεν υποστηρίζεται στην έκδοση Windows Store."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Απαιτείται επαλήθευση για ολοκλήρωση περιηγητή"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Ενεργοποιήστε ένα πρόσθετο επίπεδο ασφάλειας απαιτώντας επικύρωση φράσης δακτυλικών αποτυπωμάτων κατά τη δημιουργία μιας σύνδεσης μεταξύ της επιφάνειας εργασίας σας και του προγράμματος περιήγησης. Όταν ενεργοποιηθεί, αυτό απαιτεί παρέμβαση χρήστη και επαλήθευση κάθε φορά που δημιουργείται σύνδεση."
+  },
+  "approve": {
+    "message": "Έγκριση"
+  },
+  "verifyBrowserTitle": {
+    "message": "Επαλήθευση σύνδεσης περιηγητή"
+  },
+  "verifyBrowserDesc": {
+    "message": "Βεβαιωθείτε ότι το εμφανιζόμενο δακτυλικό αποτύπωμα είναι ταυτόσημο με το δακτυλικό αποτύπωμα που εμφανίζεται στην επέκταση του προγράμματος περιήγησης."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Η βιομετρική δεν είναι ενεργοποιημένη"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Η βιομετρική περιήγηση απαιτεί την ενεργοποίηση των βιομετρικών στοιχείων επιφάνειας εργασίας στις ρυθμίσεις πρώτα."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Λόγω μιας Πολιτικής Επιχειρήσεων, δεν επιτρέπεται η αποθήκευση στοιχείων στο προσωπικό σας vault. Αλλάξτε την επιλογή Ιδιοκτησίας σε έναν οργανισμό και επιλέξτε από τις διαθέσιμες Συλλογές."
+  },
+  "hintEqualsPassword": {
+    "message": "Η υπόδειξη κωδικού πρόσβασης, δεν μπορεί να είναι η ίδια με τον κωδικό πρόσβασης σας."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Μια πολιτική του οργανισμού, επηρεάζει τις επιλογές ιδιοκτησίας σας."
+  },
+  "allSends": {
+    "message": "Όλα τα Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Αρχείο"
+  },
+  "sendTypeText": {
+    "message": "Κείμενο"
+  },
+  "searchSends": {
+    "message": "Αναζήτηση Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Επεξεργασία Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Το Vault μου"
+  },
+  "text": {
+    "message": "Κείμενο"
+  },
+  "deletionDate": {
+    "message": "Ημερομηνία διαγραφής"
+  },
+  "deletionDateDesc": {
+    "message": "Το Send θα διαγραφεί οριστικά την καθορισμένη ημερομηνία και ώρα.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Ημερομηνία Λήξης"
+  },
+  "expirationDateDesc": {
+    "message": "Εάν οριστεί, η πρόσβαση σε αυτό το Send θα λήξει την καθορισμένη ημερομηνία και ώρα.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Μέγιστος Αριθμός Πρόσβασης"
+  },
+  "maxAccessCountDesc": {
+    "message": "Εάν οριστεί, οι χρήστες δεν θα μπορούν πλέον να έχουν πρόσβαση σε αυτό το send μόλις επιτευχθεί ο μέγιστος αριθμός πρόσβασης.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Τρέχων Αριθμός Πρόσβασης"
+  },
+  "disableSend": {
+    "message": "Απενεργοποιήστε αυτό το Send έτσι ώστε κανείς να μην μπορεί να έχει πρόσβαση σε αυτό.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Προαιρετικά απαιτείται κωδικός πρόσβασης για τους χρήστες για να έχουν πρόσβαση σε αυτό το Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Ιδιωτικές σημειώσεις σχετικά με αυτό το Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Σύνδεσμος Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Αποστολή Συνδέσμου",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Κατά την πρόσβαση στην αποστολή, απόκρυψη του κειμένου από προεπιλογή",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Το Send Δημιουργήθηκε",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Το Send Επεξεργάστηκε",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Το Send Διαγράφηκε",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Νέος Κωδικός"
+  },
+  "whatTypeOfSend": {
+    "message": "Τι είδους Send είναι αυτό;",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Δημιουργήστε Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Το κείμενο που θέλετε να στείλετε."
+  },
+  "sendFileDesc": {
+    "message": "Το αρχείο που θέλετε να στείλετε."
+  },
+  "days": {
+    "message": "$DAYS$ ημέρες",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 ημέρα"
+  },
+  "custom": {
+    "message": "Προσαρμοσμένο"
+  },
+  "deleteSendConfirmation": {
+    "message": "Είστε βέβαιοι ότι θέλετε να διαγράψετε το Send;",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Αντιγραφή συνδέσμου Send στο πρόχειρο",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Αντιγράψτε το σύνδεσμο, για να μοιραστείτε αυτό το Send στο πρόχειρο μου, κατά την αποθήκευση."
+  },
+  "sendDisabled": {
+    "message": "Send Απενεργοποιημένο",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Λόγω μιας επιχειρηματικής πολιτικής, είστε σε θέση να διαγράψετε μόνο ένα υπάρχον Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Αντιγραφή συνδέσμου"
+  },
+  "disabled": {
+    "message": "Απενεργοποιημένο"
+  },
+  "maxAccessCountReached": {
+    "message": "Φτάσατε στον μέγιστο αριθμό πρόσβασης"
+  },
+  "expired": {
+    "message": "Έληξε"
+  },
+  "pendingDeletion": {
+    "message": "Εκκρεμεί διαγραφή"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

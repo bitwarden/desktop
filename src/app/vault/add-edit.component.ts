@@ -1,9 +1,11 @@
 import {
     Component,
+    NgZone,
     OnChanges,
     OnDestroy,
-    NgZone,
+    ViewChild
 } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
@@ -21,6 +23,7 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
 
+
 const BroadcasterSubscriptionId = 'AddEditComponent';
 
 @Component({
@@ -28,9 +31,8 @@ const BroadcasterSubscriptionId = 'AddEditComponent';
     templateUrl: 'add-edit.component.html',
 })
 export class AddEditComponent extends BaseAddEditComponent implements OnChanges, OnDestroy {
-
-    // prevFolderIdValue: any = null;
-
+    @ViewChild('form')
+    private form: NgForm;
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
@@ -117,4 +119,8 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     //     console.log(this.folderId, this.cipher.folderId, this.prevFolderIdValue);
     //     this.prevFolderIdValue = cipher.folderId
     // }
+
+    markPasswordAsDirty() {
+        this.form.controls['Login.Password'].markAsDirty();
+    }
 }

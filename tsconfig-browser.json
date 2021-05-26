@@ -64,6 +64,18 @@
     "jslib/src/angular/components/icon.component.ts",
     "jslib/src/cli",
     "jslib/src/services/nodeApi.service.ts",
-    "jslib/src/services/lowdbStorage.service.ts"
+    "jslib/src/services/lowdbStorage.service.ts",
+    "src/app/accounts/premium.component.ts",
+    "src/proxy/ipc.ts",
+    "src/proxy/nativemessage.ts",
+    "src/proxy/native-messaging-proxy.ts",
+    "src/entry.ts",
+    "src/main/menu.main.ts",
+    "src/main/messaging.main.ts",
+    "src/main/powerMonitor.main.ts",
+    "src/main/nativeMessaging.main.ts",
+    "src/main.ts",
+    "src/app/browser/functionForTarget._showDialog.electron.ts",
+    "src/scripts/duo.js"
   ]
 }

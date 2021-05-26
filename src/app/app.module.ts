@@ -1,15 +1,13 @@
-import 'core-js';
 import 'zone.js/dist/zone';
 
 import { ToasterModule } from 'angular2-toaster';
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -62,26 +60,36 @@ import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
+import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
+import { SendComponent } from './send/send.component';
+
+import { NavComponent } from './layout/nav.component';
+
 import { registerLocaleData } from '@angular/common';
+import localeAf from '@angular/common/locales/af';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
+import localeBn from '@angular/common/locales/bn';
 import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
 import localeDe from '@angular/common/locales/de';
 import localeEl from '@angular/common/locales/el';
-import localEnGb from '@angular/common/locales/en-GB';
+import localeEnGb from '@angular/common/locales/en-GB';
+import localeEnIn from '@angular/common/locales/en-IN';
 import localeEs from '@angular/common/locales/es';
 import localeEt from '@angular/common/locales/et';
 import localeFa from '@angular/common/locales/fa';
 import localeFi from '@angular/common/locales/fi';
 import localeFr from '@angular/common/locales/fr';
+import localeHe from '@angular/common/locales/he';
 import localeHr from '@angular/common/locales/hr';
 import localeHu from '@angular/common/locales/hu';
 import localeId from '@angular/common/locales/id';
 import localeIt from '@angular/common/locales/it';
 import localeJa from '@angular/common/locales/ja';
 import localeKo from '@angular/common/locales/ko';
+import localeLv from '@angular/common/locales/lv';
 import localeMl from '@angular/common/locales/ml';
 import localeNb from '@angular/common/locales/nb';
 import localeNl from '@angular/common/locales/nl';
@@ -90,8 +98,9 @@ import localePtBr from '@angular/common/locales/pt';
 import localePtPt from '@angular/common/locales/pt-PT';
 import localeRo from '@angular/common/locales/ro';
 import localeRu from '@angular/common/locales/ru';
-import localeSr from '@angular/common/locales/sr';
 import localeSk from '@angular/common/locales/sk';
+import localeSr from '@angular/common/locales/sr';
+import localeMe from '@angular/common/locales/sr-Latn-ME';
 import localeSv from '@angular/common/locales/sv';
 import localeTh from '@angular/common/locales/th';
 import localeTr from '@angular/common/locales/tr';
@@ -100,25 +109,31 @@ import localeVi from '@angular/common/locales/vi';
 import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
+registerLocaleData(localeAf, 'af');
 registerLocaleData(localeBe, 'be');
 registerLocaleData(localeBg, 'bg');
+registerLocaleData(localeBn, 'bn');
 registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
 registerLocaleData(localeDa, 'da');
 registerLocaleData(localeDe, 'de');
 registerLocaleData(localeEl, 'el');
-registerLocaleData(localEnGb, 'en-GB');
+registerLocaleData(localeEnGb, 'en-GB');
+registerLocaleData(localeEnIn, 'en-IN');
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEt, 'et');
 registerLocaleData(localeFa, 'fa');
 registerLocaleData(localeFi, 'fi');
 registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeHe, 'he');
 registerLocaleData(localeHr, 'hr');
 registerLocaleData(localeHu, 'hu');
 registerLocaleData(localeId, 'id');
 registerLocaleData(localeIt, 'it');
 registerLocaleData(localeJa, 'ja');
 registerLocaleData(localeKo, 'ko');
+registerLocaleData(localeLv, 'lv');
+registerLocaleData(localeMe, 'me');
 registerLocaleData(localeMl, 'ml');
 registerLocaleData(localeNb, 'nb');
 registerLocaleData(localeNl, 'nl');
@@ -144,11 +159,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FormsModule,
         AppRoutingModule,
         ServicesModule,
-        Angulartics2Module.forRoot({
-            pageTracking: {
-                clearQueryParams: true,
-            },
-        }),
         ToasterModule.forRoot(),
         InfiniteScrollModule,
         DragDropModule,
@@ -177,12 +187,15 @@ registerLocaleData(localeZhTw, 'zh-TW');
         LockComponent,
         LoginComponent,
         ModalComponent,
+        NavComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
+        SendAddEditComponent,
+        SendComponent,
         SetPasswordComponent,
         SettingsComponent,
         ShareComponent,
@@ -207,9 +220,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordHistoryComponent,
         SettingsComponent,
         ShareComponent,
+        SendAddEditComponent,
         TwoFactorOptionsComponent,
     ],
-    providers: [],
+    providers: [DatePipe],
     bootstrap: [AppComponent],
 })
 export class AppModule { }

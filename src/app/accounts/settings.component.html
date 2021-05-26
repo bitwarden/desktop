@@ -52,6 +52,15 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form-group" *ngIf="supportsBiometric">
+                            <div class="checkbox">
+                                <label for="noAutoPromptBiometrics">
+                                    <input id="noAutoPromptBiometrics" type="checkbox" name="noAutoPromptBiometrics" [(ngModel)]="noAutoPromptBiometrics"
+                                        [disabled]="!biometric" (change)="updateNoAutoPromptBiometrics()">
+                                    {{noAutoPromptBiometricsText | i18n}}
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="box">
@@ -97,6 +106,16 @@
                                 </label>
                             </div>
                             <small class="help-block">{{'enableBrowserIntegrationDesc' | i18n}}</small>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="enableBrowserIntegrationFingerprint">
+                                    <input id="enableBrowserIntegrationFingerprint" type="checkbox" name="EnableBrowserIntegrationFingerprint"
+                                        [(ngModel)]="enableBrowserIntegrationFingerprint" (change)="saveBrowserIntegrationFingerprint()" [disabled]="!enableBrowserIntegration">
+                                    {{'enableBrowserIntegrationFingerprint' | i18n}}
+                                </label>
+                            </div>
+                            <small class="help-block">{{'enableBrowserIntegrationFingerprintDesc' | i18n}}</small>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">

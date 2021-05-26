@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Копиране на адреса"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Код за потвърждаване (TOTP)"
+  },
   "length": {
     "message": "Дължина"
   },
@@ -589,11 +592,11 @@
     "message": "Удостоверяване чрез Duo Security за организацията ви, с ползване на приложението Duo Mobile, SMS, телефонен разговор или устройство U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Използвайте всяко устройство, поддържащо FIDO U2F, за да влезете в абонамента си."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Устройство FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Електронна поща"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "При смаляване на прозореца да се показва иконка в областта за уведомяване."
   },
+  "enableMinToMenuBar": {
+    "message": "Минимизиране в лентата за меню"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "При минимизиране на прозореца да се показва иконка в лентата за меню."
+  },
   "enableCloseToTray": {
     "message": "Затваряне в областта за уведомяване"
   },
   "enableCloseToTrayDesc": {
     "message": "При затваряне на прозореца да се показва иконка в областта за уведомяване."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Затваряне в лентата за меню"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "При затваряне на прозореца да се показва иконка в лентата за меню."
   },
   "enableTray": {
     "message": "Включване на иконката в областта за уведомяване"
@@ -869,6 +884,30 @@
   },
   "startToTrayDesc": {
     "message": "При пускането на програмата да се показва само иконка в областта за уведомяване."
+  },
+  "startToMenuBar": {
+    "message": "Стартиране в лентата за меню"
+  },
+  "startToMenuBarDesc": {
+    "message": "При пускането на програмата да се показва само иконка в лентата за меню."
+  },
+  "openAtLogin": {
+    "message": "Автоматично стартиране със системата"
+  },
+  "openAtLoginDesc": {
+    "message": "Автоматично стартиране на самостоятелното приложение на Битуорден при вписване в системата."
+  },
+  "alwaysShowDock": {
+    "message": "Винаги да се показва в дока"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Показване на иконата на Битуорден в дока, дори когато е минимизиран в лентата за меню."
+  },
+  "confirmTrayTitle": {
+    "message": "Потвърждаване на изключване на областта за уведомяванията"
+  },
+  "confirmTrayDesc": {
+    "message": "Изключването на настройката изключва всички други настройки за областта за уведомяванията."
   },
   "language": {
     "message": "Език"
@@ -1182,8 +1221,17 @@
     "message": "ВНИМАНИЕ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Потвърждаване на изнасянето на трезора"
+  },
   "exportWarningDesc": {
     "message": "Данните от трезора ви ще се изнесат в незащитен формат. Не го пращайте по незащитени канали като е-поща. Изтрийте файла незабавно след като свършите работата си с него."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "При изнасяне данните се шифрират с ключа ви. Ако го смените, ще трябва наново да ги изнесете, защото няма да може да дешифрирате настоящия файл."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Ключовете за шифриране са уникални за всеки потребител, затова не може да внесете шифрирани данни от един потребител в регистрацията на друг."
   },
   "exportMasterPassword": {
     "message": "Въведете главната парола, за да изнесете данните."
@@ -1248,6 +1296,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Потвърждаване за Битуорден."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"
@@ -1403,9 +1457,231 @@
     "message": "Паролата ви не отговаря на политиките."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Чрез тази отметка вие се съгласявате със следното:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Условията за използване и политиката за поверителност не бяха приети."
+  },
+  "enableBrowserIntegration": {
+    "message": "Включване на интеграцията с браузър"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "За потвърждаване с биометрични данни е необходима интеграция с браузъра."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Интеграцията с браузър не се поддържа"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за магазина на Mac."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Интеграцията с браузър не се поддържа"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "За жалост в момента интеграцията с браузър не се поддържа във версията за магазина на Windows."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Потвърждаване на интеграцията с браузър"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Допълнително ниво на сигурност, чрез изискване на потвърждаване на биометричните данни при създаване на връзка между самостоятелното приложение и браузъра. При включваното му потребителят трябва да потвърждава всяко установяване на връзка."
+  },
+  "approve": {
+    "message": "Одобряване"
+  },
+  "verifyBrowserTitle": {
+    "message": "Проверка на връзката с браузъра"
+  },
+  "verifyBrowserDesc": {
+    "message": "Уверете се, че идентификаторът в разширението съвпада с показания."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Потвърждаването с биометрични данни не е включено"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Потвърждаването с биометрични данни в браузъра изисква включването включването им в настройките за самостоятелното приложение."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Заради някоя политика за голяма организация не може да запазвате елементи в собствения си трезор. Променете собствеността да е на организация и изберете от наличните колекции."
+  },
+  "hintEqualsPassword": {
+    "message": "Подсказването за паролата не може да съвпада с нея."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Политика от някоя организация влияе на вариантите за собственост."
+  },
+  "allSends": {
+    "message": "Всички изпращания",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Файл"
+  },
+  "sendTypeText": {
+    "message": "Текст"
+  },
+  "searchSends": {
+    "message": "Търсене в изпратените",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Редактиране на изпращане",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Моят трезор"
+  },
+  "text": {
+    "message": "Текст"
+  },
+  "deletionDate": {
+    "message": "Дата на изтриване"
+  },
+  "deletionDateDesc": {
+    "message": "Изпращането ще бъде окончателно изтрито на зададената дата и време.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Срок на валидност"
+  },
+  "expirationDateDesc": {
+    "message": "При задаване — това изпращане ще се изключи на зададената дата и време.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Максимален брой достъпвания"
+  },
+  "maxAccessCountDesc": {
+    "message": "При задаване — това изпращане ще се изключи след определен брой достъпвания.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Текущ брой на достъпванията"
+  },
+  "disableSend": {
+    "message": "Пълно спиране на това изпращане — никой няма да има достъп.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Изискване на парола за достъп до това изпращане.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Скрити бележки за това изпращане.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Изпращане на връзката",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Изпращане на връзката",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "При достъп до изпращането стандартно текстът да се скрива",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Създадено изпращане",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Редактиране на изпращане",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Изтрито изпращане",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Нова парола"
+  },
+  "whatTypeOfSend": {
+    "message": "Вид на изпратеното",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Създаване на изпращане",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Текст за изпращане."
+  },
+  "sendFileDesc": {
+    "message": "Файл за изпращане."
+  },
+  "days": {
+    "message": "$DAYS$ ден/дни",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 ден"
+  },
+  "custom": {
+    "message": "По избор"
+  },
+  "deleteSendConfirmation": {
+    "message": "Сигурни ли сте, че искате да изтриете това изпращане?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Копиране на връзката към изпращането",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Копиране на връзката към изпращането при запазването му за лесно споделяне."
+  },
+  "sendDisabled": {
+    "message": "Изпращането е изключено",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Поради политика на организация, може само да изтривате съществуващи изпращания.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Копиране на връзката"
+  },
+  "disabled": {
+    "message": "Изключено"
+  },
+  "maxAccessCountReached": {
+    "message": "Достигнат е максималният брой достъпвания"
+  },
+  "expired": {
+    "message": "Изтекъл"
+  },
+  "pendingDeletion": {
+    "message": "Предстои изтриване"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

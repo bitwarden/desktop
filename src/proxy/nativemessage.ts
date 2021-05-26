@@ -83,7 +83,11 @@ export default class NativeMessage {
                 chunks.push(chunk);
             }
 
-            processData();
+            try {
+                processData();
+            } catch (e) {
+                console.error(e);
+            }
         });
     }
 }

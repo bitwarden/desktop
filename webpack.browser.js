@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -34,15 +34,15 @@ const common = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin([
-            path.resolve(__dirname, 'build-browser/*'),
-        ]),
-        new CopyWebpackPlugin([
-            './src/package.json',
-            { from: './src/images', to: 'images' },
-            { from: './src/app/browser/tools', to: 'tools' },
-            { from: './src/locales', to: 'locales' },
-        ]),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                './src/package.json',
+                { from: './src/images', to: 'images' },
+                { from: './src/app/browser/tools', to: 'tools' },
+                { from: './src/locales', to: 'locales' },
+            ]
+        }),
     ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -51,6 +51,7 @@ const common = {
             'jslib/electron/services/electronRendererMessaging.service'    : path.resolve(__dirname, 'src/app/browser/browserMessaging.service'),
             'jslib/electron/services/electronRendererSecureStorage.service': path.resolve(__dirname, 'src/app/browser/browserStorage.service'),
             'jslib/electron/services/electronStorage.service'              : path.resolve(__dirname, 'src/app/browser/browserStorage.service'),
+            'jslib/electron/services/electronRendererStorage.service'      : path.resolve(__dirname, 'src/app/browser/browserStorage.service'),
             'jslib/electron/services/electronLog.service'                  : path.resolve(__dirname, 'src/app/browser/consoleLog.service'),
             'jslib/electron/services/electronPlatformUtils.service'        : path.resolve(__dirname, 'src/app/browser/browserPlatformUtils.service'),
             'jslib/electron/utils'                                         : path.resolve(__dirname, 'src/app/browser/utils'),
@@ -155,7 +156,7 @@ const renderer = {
         new MiniCssExtractPlugin({
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',
-            url: false,
+            // url: false,
         }),
     ],
     devServer: {

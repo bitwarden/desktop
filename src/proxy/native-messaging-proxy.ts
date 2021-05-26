@@ -1,5 +1,5 @@
-import NativeMessage from './nativemessage';
 import IPC from './ipc';
+import NativeMessage from './nativemessage';
 
 // Proxy is a lightweight application which provides bi-directional communication
 // between the browser extension and a running desktop application.

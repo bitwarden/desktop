@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Sao chép URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Sao chép Mã xác thực (TOTP)"
+  },
   "length": {
     "message": "Độ dài"
   },
@@ -589,11 +592,11 @@
     "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Sử dụng bất kỳ khoá bảo mật được kích hoạt FIDO U2F nào để truy cập tài khoản của bạn."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Khóa bảo mật FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "When minimizing the window, show an icon in the system tray instead."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimize to menu bar"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "When minimizing the window, show an icon in the menu bar instead."
+  },
   "enableCloseToTray": {
     "message": "Close to Tray Icon"
   },
   "enableCloseToTrayDesc": {
     "message": "Khi đóng cửa sổ, thay vào đó sẽ hiện một biểu tượng trên khay hệ thống."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Close to menu bar"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "When closing the window, show an icon in the menu bar instead."
   },
   "enableTray": {
     "message": "Enable Tray Icon"
@@ -869,6 +884,30 @@
   },
   "startToTrayDesc": {
     "message": "Khi ứng dụng mới mở, chỉ hiện biểu tượng trên khay hệ thống."
+  },
+  "startToMenuBar": {
+    "message": "Start to menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "When the application is first started, only show an icon in the menu bar."
+  },
+  "openAtLogin": {
+    "message": "Start automatically on login"
+  },
+  "openAtLoginDesc": {
+    "message": "Start the Bitwarden Desktop application automatically on login."
+  },
+  "alwaysShowDock": {
+    "message": "Always show in the Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirm disable tray"
+  },
+  "confirmTrayDesc": {
+    "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
     "message": "Ngôn ngữ"
@@ -1182,8 +1221,17 @@
     "message": "CẢNH BÁO",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirm Vault Export"
+  },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "exportMasterPassword": {
     "message": "Nhập mật khẩu chính để trích xuất kho của bạn."
@@ -1248,6 +1296,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Xác minh cho Bitwarden."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Khóa với mật khẩu chính khi khởi động lại"
@@ -1355,10 +1409,10 @@
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Mật khẩu chính mới"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Xác nhận mật khẩu chính mới"
   },
   "masterPasswordPolicyInEffect": {
     "message": "One or more organization policies require your master password to meet the following requirements:"
@@ -1382,16 +1436,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "Có chứa một hay nhiều ký tự viết hoa"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "Chứa một hoặc nhiều kí tự viết thường"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "Có chứa một hay nhiều số"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "Có chứa một hay nhiều ký tự đặc biệt sau: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1407,5 +1461,227 @@
   },
   "acceptPoliciesError": {
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
+  },
+  "enableBrowserIntegration": {
+    "message": "Enable browser integration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Browser integration is used for biometrics in browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Browser integration not supported"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Require verification for browser integration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+  },
+  "approve": {
+    "message": "Chấp nhận"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verify browser connection"
+  },
+  "verifyBrowserDesc": {
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrics not enabled"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+  },
+  "hintEqualsPassword": {
+    "message": "Your password hint cannot be the same as your password."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "An organization policy is affecting your ownership options."
+  },
+  "allSends": {
+    "message": "Toàn bộ Send",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Tập tin"
+  },
+  "sendTypeText": {
+    "message": "Văn bản"
+  },
+  "searchSends": {
+    "message": "Tìm kiếm Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Chỉnh sửa Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Hầm của tôi"
+  },
+  "text": {
+    "message": "Văn bản"
+  },
+  "deletionDate": {
+    "message": "Deletion Date"
+  },
+  "deletionDateDesc": {
+    "message": "Send sẽ được xóa vĩnh viễn vào ngày và giờ được chỉ định.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Ngày Hết Hạn"
+  },
+  "expirationDateDesc": {
+    "message": "Nếu được thiết lập, truy cập vào Send này sẽ hết hạn vào ngày và giờ được chỉ định.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Số lượng truy cập tối đa"
+  },
+  "maxAccessCountDesc": {
+    "message": "Nếu được thiết lập, khi đã đạt tới số lượng truy cập tối đa, người dùng sẽ không thể truy cập Send này nữa.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Số lượng truy cập hiện tại"
+  },
+  "disableSend": {
+    "message": "Disable this Send so that no one can access it.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Optionally require a password for users to access this Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Private notes about this Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Gửi liên kết",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Send Link",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "When accessing the Send, hide the text by default",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Đã tạo Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Đã chỉnh sửa Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Đã xóa Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Mật khẩu mới"
+  },
+  "whatTypeOfSend": {
+    "message": "Đây là loại Send gì?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Tạo Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Văn bản bạn muốn gửi."
+  },
+  "sendFileDesc": {
+    "message": "Tập tin bạn muốn gửi."
+  },
+  "days": {
+    "message": "$DAYS$ ngày",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 ngày"
+  },
+  "custom": {
+    "message": "Custom"
+  },
+  "deleteSendConfirmation": {
+    "message": "Bạn có chắc chắn muốn xóa Send này?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Copy Send link to clipboard",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copy the link to share this Send to my clipboard upon save."
+  },
+  "sendDisabled": {
+    "message": "Đã tắt Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Do chính sách doanh nghiệp, bạn chỉ có thể xóa những Send hiện có.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Sao chép liên kết"
+  },
+  "disabled": {
+    "message": "Disabled"
+  },
+  "maxAccessCountReached": {
+    "message": "Max access count reached"
+  },
+  "expired": {
+    "message": "Expired"
+  },
+  "pendingDeletion": {
+    "message": "Đang chờ xóa"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

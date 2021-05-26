@@ -169,7 +169,7 @@ class BrowserStorageService implements StorageService {
     }
 
     private async localStorageSave(key: string, obj: any): Promise<any> {
-        return new Promise((resolve) => {
+        return new Promise<void>((resolve) => {
             this.chromeStorageApi.setItem(key, JSON.stringify(obj));
             resolve();
         });
@@ -177,7 +177,7 @@ class BrowserStorageService implements StorageService {
 
     private async localStorageRemove(key: string): Promise<any> {
         // console.log('BrowserStorageService .remove()', key);
-        return new Promise((resolve) => {
+        return new Promise<void>((resolve) => {
             this.chromeStorageApi.removeItem(key);
             resolve();
         });
@@ -187,4 +187,5 @@ class BrowserStorageService implements StorageService {
 export {
     BrowserStorageService as ElectronRendererSecureStorageService,
     BrowserStorageService as ElectronStorageService,
+    BrowserStorageService as ElectronRendererStorageService,
 };

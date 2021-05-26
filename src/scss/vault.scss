@@ -4,12 +4,12 @@ app-vault, app-login {
     flex-grow: 1;
     flex-shrink: 1;
 }
-#vault {
+.vault {
     height: 100%;
     max-width: 1450px;
     display: flex;
 
-    > #groupings, > #items, > #details, > #logo {
+    > .groupings, > .items, > .details, > .logo {
         display: flex;
         flex-direction: column;
 
@@ -18,7 +18,7 @@ app-vault, app-login {
         }
     }
 
-    > #groupings {
+    > .groupings {
         width: 22%;
         min-width: 175px;
         max-width: 250px;
@@ -29,13 +29,24 @@ app-vault, app-login {
             border-right-color: themed('borderColor');
         }
 
-        .inner-content {
-            padding-bottom: 0;
-            padding-right: 5px;
-            user-select: none;
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
 
-            > ul, > div > ul {
-                margin: 0 0 15px 0;
+            .footer {
+                padding: 0;
+            }
+
+            .inner-content {
+                padding-bottom: 0;
+                padding-right: 5px;
+                user-select: none;
+
+                > ul, > div > ul {
+                    margin: 0 0 15px 0;
+                }
             }
         }
 
@@ -285,7 +296,7 @@ app-vault, app-login {
         }
     }
 
-    > #items {
+    > .items {
         width: 28%;
         min-width: 200px;
         max-width: 350px;
@@ -364,7 +375,7 @@ app-vault, app-login {
         }
     }
 
-    > #details {
+    > .details {
         flex: 1;
         min-width: 0;
 
@@ -418,7 +429,7 @@ app-vault, app-login {
         }
     }
 
-    > #logo {
+    > .logo {
         flex: 1;
         min-width: 0;
 
@@ -513,10 +524,38 @@ app-vault, app-login {
     }
 
     .footer {
+        flex: 0 0 auto;
         display: flex;
         .right {
             margin-left: auto;
             display: flex;
+        }
+    }
+
+    .nav {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        .btn {
+            width: 100%;
+            font-size: $font-size-base * 0.8;
+            flex: 1;
+            border: 0;
+            border-radius: 0;
+            padding-bottom: 4px;
+
+            &:not(.active) {
+                @include themify($themes) {
+                    background-color: themed('backgroundColorAlt');
+                }
+            }
+
+            i {
+                font-size: $font-size-base * 1.5;
+                display: block;
+                margin-bottom: 2px;
+                text-align: center;
+            }
         }
     }
 }

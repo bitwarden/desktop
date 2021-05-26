@@ -101,3 +101,43 @@
         }
     }
 }
+
+.list > a.flex-list-item {
+    display: flex;
+    align-items: center;
+
+    .item-icon {
+        margin-left: -5px;
+        margin-right: 4px;
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+    }
+
+    .item-content {
+        .item-title {
+            .title-badges {
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
+            }
+        }
+
+        .item-details {
+            font-size: $font-size-small;
+            @include themify($themes) {
+                color: themed('mutedColor');
+            }
+        }
+    }
+
+    .flex-cipher-list-item {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

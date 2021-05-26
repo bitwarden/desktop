@@ -48,7 +48,7 @@
     "message": "항목 공유"
   },
   "sharedItem": {
-    "message": "Shared Item"
+    "message": "항목 공유함"
   },
   "shareDesc": {
     "message": "이 항목을 공유할 조직을 선택하십시오. 항목이 공유되면 소유권이 조직으로 이전됩니다. 일단 공유가 되면, 더는 항목의 직접적인 소유자가 아니게 됩니다."
@@ -340,7 +340,7 @@
     "message": "첨부 파일 삭제"
   },
   "deleteItemConfirmation": {
-    "message": "정말 이 항목을 삭제하시겠습니까?"
+    "message": "정말로 휴지통으로 이동시킬까요?"
   },
   "deletedItem": {
     "message": "삭제한 항목"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "URI 복사"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "인증 코드 (TOTP) 복사"
   },
   "length": {
     "message": "길이"
@@ -589,11 +592,11 @@
     "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 조직용 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "FIDO U2F가 활성화된 보안 키를 사용하여 계정에 접근하세요."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F 보안 키"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "이메일"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "창을 최소화하면 작업 표시줄 대신 알림 영역에 아이콘을 표시합니다."
   },
+  "enableMinToMenuBar": {
+    "message": "메뉴 막대로 최소화"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "창을 최소화하면 메뉴 막대에 아이콘을 표시합니다."
+  },
   "enableCloseToTray": {
     "message": "트레이 아이콘으로 닫기"
   },
   "enableCloseToTrayDesc": {
     "message": "창을 닫으면 프로그램 종료 대신 알림 영역에 아이콘으로 표시합니다."
+  },
+  "enableCloseToMenuBar": {
+    "message": "메뉴 막대로 닫기"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "창을 닫으면 메뉴 막대에 아이콘을 표시합니다."
   },
   "enableTray": {
     "message": "알림 영역 아이콘 사용"
@@ -869,6 +884,30 @@
   },
   "startToTrayDesc": {
     "message": "응용프로그램을 시작할 때 알림 영역에 아이콘으로 표시합니다."
+  },
+  "startToMenuBar": {
+    "message": "메뉴 막대에서 시작하기"
+  },
+  "startToMenuBarDesc": {
+    "message": "앱을 시작할 때 메뉴 바에 아이콘으로 표시합니다."
+  },
+  "openAtLogin": {
+    "message": "로그인할 때 자동으로 실행"
+  },
+  "openAtLoginDesc": {
+    "message": "로그인할 때 Bitwarden 데스크톱 앱을 자동으로 실행합니다."
+  },
+  "alwaysShowDock": {
+    "message": "Dock에 항상 표시하기"
+  },
+  "alwaysShowDockDesc": {
+    "message": "메뉴 막대에 숨겨진 경우에도 Bitwarden 아이콘을 Dock에 표시합니다."
+  },
+  "confirmTrayTitle": {
+    "message": "알림 영역 비활성화 확인"
+  },
+  "confirmTrayDesc": {
+    "message": "이 설정을 끄면 알림 영역과 관련된 다른 모든 설정이 함께 꺼집니다."
   },
   "language": {
     "message": "언어(Language)"
@@ -1182,14 +1221,23 @@
     "message": "경고",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "보관함 내보내기 확인"
+  },
   "exportWarningDesc": {
     "message": "내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "이 내보내기는 계정의 암호화 키를 사용하여 데이터를 암호화합니다. 추후 계정의 암호화 키를 교체할 경우 다시 내보내기를 진행해야 합니다. 그러지 않을 경우 이 내보내기 파일을 해독할 수 없게 됩니다."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
   },
   "exportMasterPassword": {
     "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
   },
   "noOrganizationsList": {
-    "message": "당신은 어떤 조직에도 속해있지 않습니다. 조직은 다른 사용자들과 안전하게 항목을 공유할 수 있게 해줍니다."
+    "message": "속해 있는 조직이 없습니다. 조직에 속하면 다른 사용자들과 항목을 안전하게 공유할 수 있습니다."
   },
   "noCollectionsInList": {
     "message": "컬렉션이 없습니다."
@@ -1247,7 +1295,13 @@
     "message": "Touch ID를 사용하여 잠금 해제"
   },
   "touchIdConsentMessage": {
-    "message": "Bitwarden에서 인증을 요청합니다."
+    "message": "보관함 잠금 해제"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
@@ -1403,9 +1457,231 @@
     "message": "새 마스터 비밀번호가 정책 요구 사항을 따르지 않습니다."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "이 박스를 체크하면 다음에 동의하는 것으로 간주됩니다:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "서비스 약관 및 개인 정보 보호 정책을 확인하지 않았습니다."
+  },
+  "enableBrowserIntegration": {
+    "message": "브라우저와 연결 활성화"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "브라우저와 연결하면 브라우저에서 생체 인식을 사용할 수 있습니다."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "브라우저와 연결 지원되지 않음"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "브라우저와 연결은 현재 Mac App Store 버전에서만 지원됩니다."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "브라우저와 연결 지원되지 않음"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "현재 Microsoft Store 버전에서는 브라우저와 연결이 지원되지 않습니다."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "브라우저와 연결을 위해 인증이 필요함"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "데스크탑 앱과 브라우저를 연결할 때 지문 구절을 확인하는 과정을 제공함으로써 추가적인 보안을 제공합니다. 이 옵션을 켜면, 연결이 설정될 때마다 사용자의 확인을 요구합니다."
+  },
+  "approve": {
+    "message": "승인"
+  },
+  "verifyBrowserTitle": {
+    "message": "브라우저와 연결 인증"
+  },
+  "verifyBrowserDesc": {
+    "message": "다음의 지문 구절이 브라우저 확장 프로그램에 표시된 지문 구절과 동일한지 확인해주세요."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "생체 인식이 활성화되지 않음"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "브라우저에서 생체 인식을 사용하기 위해서는 설정에서 데스크톱 생체 인식을 먼저 활성화해야 합니다."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "엔터프라이즈 정책으로 인해 개인 보관함에 항목을 저장할 수 없습니다. 조직에서 소유권 설정을 변경한 다음, 사용 가능한 컬렉션 중에서 선택해주세요."
+  },
+  "hintEqualsPassword": {
+    "message": "비밀번호 힌트는 비밀번호와 같을 수 없습니다."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "조직의 정책이 소유권 설정에 영향을 미치고 있습니다."
+  },
+  "allSends": {
+    "message": "모든 Send",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "파일"
+  },
+  "sendTypeText": {
+    "message": "텍스트"
+  },
+  "searchSends": {
+    "message": "Send 검색",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Send 편집",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "내 보관함"
+  },
+  "text": {
+    "message": "텍스트"
+  },
+  "deletionDate": {
+    "message": "삭제 날짜"
+  },
+  "deletionDateDesc": {
+    "message": "이 Send가 정해진 일시에 영구적으로 삭제됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "만료 날짜"
+  },
+  "expirationDateDesc": {
+    "message": "설정할 경우, 이 Send에 대한 접근 권한이 정해진 일시에 만료됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "최대 접근 횟수"
+  },
+  "maxAccessCountDesc": {
+    "message": "설정할 경우, 최대 접근 횟수에 도달할 때 이 Send에 접근할 수 없게 됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "현재 접근 횟수"
+  },
+  "disableSend": {
+    "message": "이 Send를 비활성화하여 아무도 접근할 수 없게 합니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "이 Send에 접근하기 위해 암호를 입력하도록 선택적으로 요구합니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "이 Send에 대한 비공개 메모",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "링크 보내기",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "링크 보내기",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Send에 접근할 때 기본적으로 텍스트를 숨김",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send 생성함",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send 수정함",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send 삭제함",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "새 비밀번호"
+  },
+  "whatTypeOfSend": {
+    "message": "어떤 유형의 Send인가요?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Send 생성",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "전송하려는 텍스트"
+  },
+  "sendFileDesc": {
+    "message": "전송하려는 파일"
+  },
+  "days": {
+    "message": "$DAYS$일",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1일"
+  },
+  "custom": {
+    "message": "사용자 지정"
+  },
+  "deleteSendConfirmation": {
+    "message": "정말 이 Send를 삭제하시겠습니까?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Send 링크를 클립보드에 복사",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "저장할 때 이 Send를 공유하기 위한 링크를 클립보드에 복사합니다."
+  },
+  "sendDisabled": {
+    "message": "Send 비활성화됨",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "엔터프라이즈 정책으로 인해 이미 생성된 Send를 삭제하는 것만 허용됩니다.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "링크 복사"
+  },
+  "disabled": {
+    "message": "비활성화됨"
+  },
+  "maxAccessCountReached": {
+    "message": "최대 접근 횟수 도달"
+  },
+  "expired": {
+    "message": "만료됨"
+  },
+  "pendingDeletion": {
+    "message": "삭제 대기 중"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

@@ -91,7 +91,7 @@ export class BrowserApi {
         }
 
         if (BrowserApi.isChromeApi) {
-            return new Promise((resolve) => {
+            return new Promise<void>(resolve => {
                 chrome.tabs.sendMessage(tab.id, obj, options, () => {
                     if (chrome.runtime.lastError) {
                         // Some error happened

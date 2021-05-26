@@ -198,9 +198,13 @@ $fa-font-path: "~font-awesome/fonts";
             @extend .btn;
 
             &.swal2-confirm {
-                @extend .btn.primary;
+                @extend .btn, .primary;
                 font-weight: bold;
             }
         }
+    }
+
+    .swal2-validation-message {
+        margin-top: 20px;
     }
 }

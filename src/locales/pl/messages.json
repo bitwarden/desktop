@@ -340,7 +340,7 @@
     "message": "Usuń załącznik"
   },
   "deleteItemConfirmation": {
-    "message": "Czy na pewno chcesz usunąć ten element?"
+    "message": "Czy na pewno chcesz to usunąć?"
   },
   "deletedItem": {
     "message": "Element został przeniesiony do kosza"
@@ -366,6 +366,9 @@
   },
   "copyUri": {
     "message": "Kopiuj URI"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Kopiuj kod weryfikacyjny (TOTP)"
   },
   "length": {
     "message": "Długość"
@@ -589,11 +592,11 @@
     "message": "Weryfikacja dostępu do Twojej organizacji z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Użyj dowolnego klucza bezpieczeństwa FIDO U2F, aby uzyskać dostęp do Twojego konta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Klucz bezpieczeństwa FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Adres e-mail"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "Po zminimalizowaniu okna, pokaż ikonę w zasobniku systemowym."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimalizuj do paska menu"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Po zminimalizowaniu okna, pokaż ikonę w pasku zadań."
+  },
   "enableCloseToTray": {
     "message": "Zamknij do zasobnika systemowego"
   },
   "enableCloseToTrayDesc": {
     "message": "Po zamknięciu okna, pokaż ikonę w zasobniku systemowym."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Zamknij do paska menu"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Po zamknięciu okna, pokaż ikonę w pasku menu."
   },
   "enableTray": {
     "message": "Włącz ikonę w zasobniku systemowym"
@@ -865,10 +880,34 @@
     "message": "Zawsze pokazuj ikonę w zasobniku systemowym."
   },
   "startToTray": {
-    "message": "Uruchom zminimalizowany do zasobnika"
+    "message": "Uruchom zminimalizowany do zasobnika systemowego"
   },
   "startToTrayDesc": {
     "message": "Przy pierwszym uruchomieniu aplikacji, pokaż tylko ikonę w zasobniku systemowym."
+  },
+  "startToMenuBar": {
+    "message": "Uruchom zminimalizowany do paska menu"
+  },
+  "startToMenuBarDesc": {
+    "message": "Przy pierwszym uruchomieniu aplikacji, pokaż tylko ikonę w pasku menu."
+  },
+  "openAtLogin": {
+    "message": "Uruchom automatycznie po zalogowaniu"
+  },
+  "openAtLoginDesc": {
+    "message": "Uruchom aplikację Bitwarden automatycznie po zalogowaniu."
+  },
+  "alwaysShowDock": {
+    "message": "Zawsze pokazuj w Docku"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Pokaż ikonę Bitwarden w Docku po zminimalizowaniu do paska menu."
+  },
+  "confirmTrayTitle": {
+    "message": "Potwierdź wyłączenie zasobnika systemowego"
+  },
+  "confirmTrayDesc": {
+    "message": "Wyłączenie tej opcji spowoduje wyłącznie wszystkich innych powiązanych ustawień z zasobnikiem systemowym."
   },
   "language": {
     "message": "Język"
@@ -1182,8 +1221,17 @@
     "message": "UWAGA",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Potwierdź eksportowanie sejfu"
+  },
   "exportWarningDesc": {
     "message": "Plik zawiera dane sejfu w niezaszyfrowanym formacie. Nie powinieneś go przechowywać, ani przesyłać poprzez niezabezpieczone kanały (takie jak poczta e-mail). Skasuj go natychmiast po użyciu."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Dane eksportu zostaną zaszyfrowane za pomocą klucza szyfrowania konta. Jeśli kiedykolwiek zmienisz ten klucz, wyeksportuj dane ponownie, ponieważ nie będziesz w stanie odszyfrować tego pliku."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Klucze szyfrowania konta są unikalne dla każdego użytkownika Bitwarden, więc nie możesz zaimportować zaszyfrowanego pliku eksportu na inne konto."
   },
   "exportMasterPassword": {
     "message": "Wpisz hasło główne, aby wyeksportować dane z sejfu."
@@ -1247,7 +1295,13 @@
     "message": "Odblokuj za pomocą Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Zweryfikuj dla Bitwarden."
+    "message": "odblokuj sejf"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
@@ -1407,5 +1461,227 @@
   },
   "acceptPoliciesError": {
     "message": "Nie zaakceptowałeś regulaminu i polityki prywatności."
+  },
+  "enableBrowserIntegration": {
+    "message": "Włącz połączenie z przeglądarką"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Połączenie z przeglądarką jest używane do odblokowania danymi biometrycznymi."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Połączenie z przeglądarką nie jest obsługiwane"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Połączenie z przeglądarką jest obsługiwane tylko z wersją aplikacji ze sklepu Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Połączenie z przeglądarką nie jest obsługiwane"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Połączenie z przeglądarką nie jest obecnie obsługiwane w aplikacji w wersji Windows Store."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Wymagaj weryfikacji połączenia z przeglądarką"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Wymagaj sprawdzenia identyfikatora podczas tworzenia połączenia między aplikacją a przeglądarką. Po włączeniu tej funkcji, musisz zweryfikować każde nawiązywane połączenie."
+  },
+  "approve": {
+    "message": "Zatwierdź"
+  },
+  "verifyBrowserTitle": {
+    "message": "Zweryfikuj połączenie z przeglądarką"
+  },
+  "verifyBrowserDesc": {
+    "message": "Upewnij się, że wyświetlony identyfikator jest identyczny z pokazanym w rozszerzeniu przeglądarki."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Dane biometryczne są wyłączone"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Aby włączyć dane biometryczne w przeglądarce, musisz włączyć tę samą funkcję w ustawianiach aplikacji."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Ze względu na zasadę przedsiębiorstwa, nie możesz zapisywać elementów w osobistym sejfie. Zmień właściciela elementu na organizację i wybierz jedną z dostępnych kolekcji,."
+  },
+  "hintEqualsPassword": {
+    "message": "Podpowiedź do hasła nie może być taka sama jak hasło."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Zasada organizacji ma wpływ na opcję własności elementów."
+  },
+  "allSends": {
+    "message": "Wszystkie wysyłki",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Plik"
+  },
+  "sendTypeText": {
+    "message": "Tekst"
+  },
+  "searchSends": {
+    "message": "Szukaj w wysyłkach",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Edytuj wysyłkę",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Mój sejf"
+  },
+  "text": {
+    "message": "Tekst"
+  },
+  "deletionDate": {
+    "message": "Data usunięcia"
+  },
+  "deletionDateDesc": {
+    "message": "Wysyłka zostanie trwale usunięta w określonym czasie.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Data wygaśnięcia"
+  },
+  "expirationDateDesc": {
+    "message": "Jeśli funkcja jest włączona, dostęp do wysyłki wygaśnie po określonym czasie.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maksymalna liczba dostępów"
+  },
+  "maxAccessCountDesc": {
+    "message": "Jeśli funkcja jest włączona, po osiągnięciu maksymalnej liczby dostępów, użytkownicy nie będą mieli dostępu do tej wysyłki.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Obecna liczba dostępów"
+  },
+  "disableSend": {
+    "message": "Wyłącz tę wysyłkę, aby nikt nie miał do niej dostępu.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Opcjonalne hasło dla użytkownika, aby uzyskać dostęp do wysyłki.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Prywatne notatki o tej wysyłce.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Link wysyłki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Link wysyłki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Ukryj domyślnie tekst wysyłki",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Wysyłka została utworzona",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Wysyłka została zaktualizowana",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Wysyłka została usunięta",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nowe hasło"
+  },
+  "whatTypeOfSend": {
+    "message": "Jakiego typu jest to wysyłka?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Utwórz wysyłkę",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Tekst, który chcesz wysłać."
+  },
+  "sendFileDesc": {
+    "message": "Plik, który chcesz wysłać."
+  },
+  "days": {
+    "message": "$DAYS$ dni",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 dzień"
+  },
+  "custom": {
+    "message": "Niestandardowa"
+  },
+  "deleteSendConfirmation": {
+    "message": "Czy na pewno chcesz usunąć tę wysyłkę?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopiuj link wysyłki do schowka",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Po zapisaniu wysyłki, skopiuj link do schowka."
+  },
+  "sendDisabled": {
+    "message": "Wysyłka została wyłączona",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Ze względu na zasadę przedsiębiorstwa, tylko Ty możesz usunąć obecną wysyłkę.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopiuj link"
+  },
+  "disabled": {
+    "message": "Wyłączona"
+  },
+  "maxAccessCountReached": {
+    "message": "Maksymalna liczba dostępów została osiągnięta"
+  },
+  "expired": {
+    "message": "Wygasła"
+  },
+  "pendingDeletion": {
+    "message": "Oczekiwanie na usunięcie"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

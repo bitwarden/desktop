@@ -1,41 +1,55 @@
-import { promises as fs, existsSync } from 'fs';
+import { existsSync, promises as fs } from 'fs';
+import { Socket } from 'net';
 import * as ipc from 'node-ipc';
+import { homedir, userInfo } from 'os';
 import * as path from 'path';
 import * as util from 'util';
-import { homedir } from 'os';
 
-import { LogService } from 'jslib/abstractions/log.service';
 import { ipcMain } from 'electron';
+import { LogService } from 'jslib/abstractions/log.service';
 import { WindowMain } from 'jslib/electron/window.main';
 
 export class NativeMessagingMain {
-    private connected = false;
+    private connected: Socket[] = [];
+    private socket: any;
 
-    constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private appPath: string) {}
+    constructor(private logService: LogService, private windowMain: WindowMain, private userPath: string, private exePath: string) {}
 
-    listen() {
+    async listen() {
         ipc.config.id = 'bitwarden';
         ipc.config.retry = 1500;
+        if (process.platform === 'darwin') {
+            if (!existsSync(`${homedir()}/tmp`)) {
+                await fs.mkdir(`${homedir()}/tmp`);
+            }
+            ipc.config.socketRoot = `${homedir()}/tmp/`;
+        }
 
         ipc.serve(() => {
             ipc.server.on('message', (data: any, socket: any) => {
-                // This is a ugly hack until electron is updated 7.0.0 which supports ipcMain.invoke
+                this.socket = socket;
                 this.windowMain.win.webContents.send('nativeMessaging', data);
-                ipcMain.once('nativeMessagingReply', (event, msg) => {
-                    if (msg != null) {
-                        this.send(msg, socket);
-                    }
-                });
             });
 
-            ipc.server.on('connect', () => {
-                this.connected = true;
-            })
+            ipcMain.on('nativeMessagingReply', (event, msg) => {
+                if (this.socket != null && msg != null) {
+                    this.send(msg, this.socket);
+                }
+            });
+
+            ipc.server.on('connect', (socket: Socket) => {
+                this.connected.push(socket);
+            });
 
             ipc.server.on(
                 'socket.disconnected',
-                (socket: any, destroyedSocketID: any) => {
-                    this.connected = false;
+                (socket, destroyedSocketID) => {
+                    const index = this.connected.indexOf(socket);
+                    if (index > -1) {
+                        this.connected.splice(index, 1);
+                    }
+
+                    this.socket = null;
                     ipc.log(
                         'client ' + destroyedSocketID + ' has disconnected!'
                     );
@@ -48,6 +62,12 @@ export class NativeMessagingMain {
 
     stop() {
         ipc.server.stop();
+        // Kill all existing connections
+        this.connected.forEach(socket => {
+            if (!socket.destroyed) {
+                socket.destroy();
+            }
+        });
     }
 
     send(message: object, socket: any) {
@@ -60,15 +80,15 @@ export class NativeMessagingMain {
             'description': 'Bitwarden desktop <-> browser bridge',
             'path': this.binaryPath(),
             'type': 'stdio',
-        }
+        };
 
         const firefoxJson = {...baseJson, ...{ 'allowed_extensions': ['{446900e4-71c2-419f-a6a7-df9c091e268b}']}};
         const chromeJson = {...baseJson, ...{
             'allowed_origins': [
                 'chrome-extension://nngceckbapebfimnlniiiahkandclblb/',
                 'chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/',
-                'chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/'
-            ]
+                'chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/',
+            ],
         }};
 
         switch (process.platform) {
@@ -77,25 +97,37 @@ export class NativeMessagingMain {
                 this.writeManifest(path.join(destination, 'firefox.json'), firefoxJson);
                 this.writeManifest(path.join(destination, 'chrome.json'), chromeJson);
 
-                this.createWindowsRegistry('HKLM\\SOFTWARE\\Mozilla\\Firefox', 'HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'firefox.json'))
-                this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'))
+                this.createWindowsRegistry('HKLM\\SOFTWARE\\Mozilla\\Firefox', 'HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'firefox.json'));
+                this.createWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome', 'HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden', path.join(destination, 'chrome.json'));
                 break;
             case 'darwin':
-                if (existsSync(`${homedir()}/Library/Application\ Support/Mozilla/`)) {
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json`, firefoxJson)
-                }
+                const nmhs = this.getDarwinNMHS();
+                for (const [key, value] of Object.entries(nmhs)) {
+                    if (existsSync(value)) {
+                        const p = path.join(value, 'NativeMessagingHosts', 'com.8bit.bitwarden.json');
 
-                if (existsSync(`${homedir()}/Library/Application\ Support/Google/Chrome`)) {
-                    this.writeManifest(`${homedir()}/Library/Application\ Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson)
+                        let manifest: any = chromeJson;
+                        if (key === 'Firefox') {
+                            manifest = firefoxJson;
+                        }
+
+                        this.writeManifest(p, manifest).catch(e => this.logService.error(`Error writing manifest for ${key}. ${e}`));
+                    } else {
+                        this.logService.warning(`${key} not found skipping.`);
+                    }
                 }
                 break;
             case 'linux':
-                if (existsSync(`${homedir()}/.mozilla/`)) {
-                    this.writeManifest(`${homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson)
+                if (existsSync(`${this.homedir()}/.mozilla/`)) {
+                    this.writeManifest(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`, firefoxJson);
                 }
 
-                if (existsSync(`${homedir()}/.config/google-chrome/`)) {
-                    this.writeManifest(`${homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson)
+                if (existsSync(`${this.homedir()}/.config/google-chrome/`)) {
+                    this.writeManifest(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
+                }
+
+                if (existsSync(`${this.homedir()}/.config/microsoft-edge/`)) {
+                    this.writeManifest(`${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`, chromeJson);
                 }
                 break;
             default:
@@ -112,21 +144,25 @@ export class NativeMessagingMain {
                 this.deleteWindowsRegistry('HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden');
                 break;
             case 'darwin':
-                if (existsSync('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json');
-                }
-
-                if (existsSync('~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/Library/Application Support/Mozilla/NativeMessagingHosts/com.8bit.bitwarden.json');
+                const nmhs = this.getDarwinNMHS();
+                for (const [_, value] of Object.entries(nmhs)) {
+                    const p = path.join(value, 'NativeMessagingHosts', 'com.8bit.bitwarden.json');
+                    if (existsSync(p)) {
+                        fs.unlink(p);
+                    }
                 }
                 break;
             case 'linux':
-                if (existsSync('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json');
+                if (existsSync(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`);
                 }
 
-                if (existsSync('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json')) {
-                    fs.unlink('~/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json');
+                if (existsSync(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`);
+                }
+
+                if (existsSync(`${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`)) {
+                    fs.unlink(`${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`);
                 }
                 break;
             default:
@@ -134,20 +170,35 @@ export class NativeMessagingMain {
         }
     }
 
-    private writeManifest(destination: string, manifest: object) {
-        fs.mkdir(path.dirname(destination));
+    private getDarwinNMHS() {
+        return {
+            'Firefox': `${this.homedir()}/Library/Application\ Support/Mozilla/`,
+            'Chrome': `${this.homedir()}/Library/Application\ Support/Google/Chrome/`,
+            'Chrome Beta': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Beta/`,
+            'Chrome Dev': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Dev/`,
+            'Chrome Canary': `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Canary/`,
+            'Chromium': `${this.homedir()}/Library/Application\ Support/Chromium/`,
+            'Microsoft Edge': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/`,
+            'Microsoft Edge Beta': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Beta/`,
+            'Microsoft Edge Dev': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Dev/`,
+            'Microsoft Edge Canary': `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Canary/`,
+            'Vivaldi': `${this.homedir()}/Library/Application\ Support/Vivaldi/`,
+        };
+    }
+
+    private async writeManifest(destination: string, manifest: object) {
+        if (!existsSync(path.dirname(destination))) {
+            await fs.mkdir(path.dirname(destination));
+        }
         fs.writeFile(destination, JSON.stringify(manifest, null, 2)).catch(this.logService.error);
     }
 
     private binaryPath() {
-        const dir = path.join(this.appPath, '..');
         if (process.platform === 'win32') {
-            return path.join(dir, 'native-messaging.bat');
-        } else if (process.platform === 'darwin') {
-            return path.join(dir, '..', 'MacOS', 'Bitwarden');
+            return path.join(path.dirname(this.exePath), 'resources', 'native-messaging.bat');
         }
 
-        return path.join(dir, '..', 'bitwarden');
+        return this.exePath;
     }
 
     private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
@@ -158,12 +209,13 @@ export class NativeMessagingMain {
         const createKey = util.promisify(regedit.createKey);
         const putValue = util.promisify(regedit.putValue);
 
-        this.logService.debug(`Adding registry: ${location}`)
+        this.logService.debug(`Adding registry: ${location}`);
 
         // Check installed
         try {
-            await list(check)
+            await list(check);
         } catch {
+            this.logService.warning(`Not finding registry ${check} skipping.`);
             return;
         }
 
@@ -177,7 +229,7 @@ export class NativeMessagingMain {
                     value: jsonFile,
                     type: 'REG_DEFAULT',
                 },
-            }
+            };
 
             return putValue(obj);
         } catch (error) {
@@ -191,13 +243,21 @@ export class NativeMessagingMain {
         const list = util.promisify(regedit.list);
         const deleteKey = util.promisify(regedit.deleteKey);
 
-        this.logService.debug(`Removing registry: ${key}`)
+        this.logService.debug(`Removing registry: ${key}`);
 
         try {
             await list(key);
             await deleteKey(key);
         } catch {
             // Do nothing
+        }
+    }
+
+    private homedir() {
+        if (process.platform === 'darwin') {
+            return userInfo().homedir;
+        } else {
+            return homedir();
         }
     }
 }

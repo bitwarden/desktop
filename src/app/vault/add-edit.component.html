@@ -1,7 +1,10 @@
-<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form #form="ngForm" (ngSubmit)="submit()" [appApiAction]="formPromise">
     <div class="content">
         <div class="inner-content" *ngIf="cipher">
             <div class="box">
+                <app-callout type="info" *ngIf="allowOwnershipOptions() && !allowPersonal">
+                    {{'personalOwnershipPolicyInEffect' | i18n}}
+                </app-callout>
                 <div class="box-header">
                     {{title}}
                 </div>
@@ -63,9 +66,19 @@
                             <input id="cardCardholderName" type="text" name="Card.CardCardholderName"
                                 [(ngModel)]="cipher.card.cardholderName">
                         </div>
-                        <div class="box-content-row" appBoxRow>
-                            <label for="cardNumber">{{'number' | i18n}}</label>
-                            <input id="cardNumber" type="text" name="Card.Number" [(ngModel)]="cipher.card.number">
+                        <div class="box-content-row box-content-row-flex" appBoxRow>
+                            <div class="row-main">
+                                <label for="cardNumber">{{'number' | i18n}}</label>
+                                <input id="cardNumber" class="monospaced" type="{{showCardNumber ? 'text' : 'password'}}"
+                                    name="Card.Number" [(ngModel)]="cipher.card.number">
+                            </div>
+                            <div class="action-buttons">
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
+                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardNumber()">
+                                    <i class="fa fa-lg" aria-hidden="true"
+                                        [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="cardBrand">{{'brand' | i18n}}</label>
@@ -236,6 +249,11 @@
                         <label for="favorite">{{'favorite' | i18n}}</label>
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
                     </div> -->
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="passwordPrompt">{{'passwordPrompt' | i18n}}</label>
+                        <input id="passwordPrompt" type="checkbox" name="PasswordPrompt" [ngModel]="reprompt"
+                            (change)="repromptChanged()">
+                    </div>
                     <!-- <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="attachments()" *ngIf="editMode && !cloneMode" role="button">
                         <div class="row-main">{{'attachments' | i18n}}</div>

@@ -1,8 +1,8 @@
 import {
     Component,
     ComponentFactoryResolver,
-    OnDestroy,
     NgZone,
+    OnDestroy,
     ViewChild,
     ViewContainerRef,
     ElementRef,

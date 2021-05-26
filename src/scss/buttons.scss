@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-.btn, #vault .footer button, .modal-footer button {
+.btn, .vault .footer button, .modal-footer button {
     border-radius: $border-radius;
     padding: 8px 15px;
     border: 1px solid #000000;
@@ -83,6 +83,32 @@
     .btn {
         &:focus {
             outline: auto;
+        }
+    }
+}
+
+.btn-submit {
+    position: relative;
+    overflow: hidden;
+
+    .fa-spinner {
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &:disabled:not(.manual), &.loading {
+        .fa-spinner {
+            display: flex;
+        }
+
+        span {
+            visibility: hidden;
         }
     }
 }

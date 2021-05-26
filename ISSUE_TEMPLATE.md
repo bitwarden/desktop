@@ -42,6 +42,7 @@ If applicable, add screenshots and/or a short video to help explain your problem
 ## Environment
 
 - Operating system: [e.g. Windows 10, Mac OS Catalina]
+- Installation method: [e.g. Downloaded from Bitwarden.com, Mac App Store / Microsoft Store, Homebrew, Snap] 
 - Build Version (go to "Settings" → "About"): [e.g. 1.16.10]
 
 ## Additional Context

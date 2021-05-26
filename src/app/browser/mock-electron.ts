@@ -7,4 +7,10 @@ const remote = {
     },
 };
 
-export { remote };
+const ipcRenderer = {
+    invoke : (channel: string, ...args: any[]): Promise<any> => {
+        throw new Error('ipcRenderer.invoke not implemented');
+    },
+};
+
+export { remote, ipcRenderer };

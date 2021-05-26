@@ -1,9 +1,11 @@
 import {
     Component,
+    NgZone,
     OnDestroy,
     OnInit,
-    NgZone,
 } from '@angular/core';
+
+import * as os from 'os';
 
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EventService } from 'jslib/abstractions/event.service';
@@ -48,5 +50,22 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
 
     onWindowHidden() {
         this.showPassword = false;
+    }
+
+    async warningDialog() {
+        if (this.encryptedFormat) {
+            return await this.platformUtilsService.showDialog(
+                this.i18nService.t('encExportKeyWarningDesc') +
+                os.EOL + os.EOL +
+                this.i18nService.t('encExportAccountWarningDesc'),
+                this.i18nService.t('confirmVaultExport'), this.i18nService.t('exportVault'),
+                this.i18nService.t('cancel'), 'warning',
+                true);
+        } else {
+            return await this.platformUtilsService.showDialog(
+                this.i18nService.t('exportWarningDesc'),
+                this.i18nService.t('confirmVaultExport'), this.i18nService.t('exportVault'),
+                this.i18nService.t('cancel'), 'warning');
+        }
     }
 }

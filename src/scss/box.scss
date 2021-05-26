@@ -7,6 +7,7 @@
     .box-header {
         margin: 0 10px 5px 10px;
         text-transform: uppercase;
+        display: flex;
 
         @include themify($themes) {
             color: themed('headingColor');
@@ -17,6 +18,15 @@
             border: none;
             text-transform: uppercase;
 
+            @include themify($themes) {
+                color: themed('headingColor');
+            }
+        }
+
+        .toggle {
+            background-color: transparent;
+            margin-left: 4px;
+            font-size: $font-size-small;
             @include themify($themes) {
                 color: themed('headingColor');
             }
@@ -102,6 +112,9 @@
     &:hover, &:focus, &.active {
         @include themify($themes) {
             background-color: themed('boxBackgroundHoverColor');
+            > * {
+                background-color: themed('boxBackgroundHoverColor');
+            }
         }
     }
 
@@ -115,7 +128,7 @@
         overflow-x: auto;
     }
 
-    .row-label, label {
+    .row-label, label:not(.unstyled) {
         font-size: $font-size-small;
         display: block;
         width: 100%;
@@ -166,7 +179,7 @@
     &.box-content-row-multi {
         width: 100%;
 
-        input:not([type="checkbox"]) {
+        input:not([type="checkbox"]):not([type="radio"]) {
             width: 100%;
         }
 
@@ -247,7 +260,22 @@
         }
     }
 
-    input:not([type="checkbox"]), textarea {
+    &.box-content-row-radio {
+       display: flex; 
+       flex-direction: column;
+       .item {
+           display: flex;
+           flex: 1;
+           align-items: center;
+
+           > .radio {
+                margin-right: 5px;
+                margin-top: 0;
+           }
+       }
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]), textarea {
         border: none;
         width: 100%;
         background-color: transparent;

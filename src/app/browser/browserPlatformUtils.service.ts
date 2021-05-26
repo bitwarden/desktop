@@ -1,14 +1,3 @@
-/* =================================================================================================
-
-This file is almost a copy of :
-
-Initial copied version :
-https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32f0/src/services/browserPlatformUtils.service.ts#L1
-
-Latest version :
-https://github.com/bitwarden/browser/blob/master/src/services/browserPlatformUtils.service.ts#L1
-
-================================================================================================= */
 
 import { BrowserApi } from '../browser/browserApi';
 import { SafariApp } from '../browser/safariApp';
@@ -17,7 +6,6 @@ import { DeviceType } from 'jslib/enums/deviceType';
 
 import { ConstantsService } from 'jslib/services/constants.service';
 
-import { AnalyticsIds } from 'jslib/misc/analytics';
 import { Utils } from 'jslib/misc/utils';
 
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -31,8 +19,8 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     identityClientId: string = 'webapp';
 
     private showDialogResolves = new Map<number, { resolve: (value: boolean) => void, date: Date }>();
+    private passwordDialogResolves = new Map<number, { tryResolve: (canceled: boolean, password: string) => Promise<boolean>, date: Date }>();
     private deviceCache: DeviceType = null;
-    private analyticsIdCache: string = null;
     private prefersColorSchemeDark = window.matchMedia('(prefers-color-scheme: dark)');
     private clipboardWriteCallback: any;
     private clearClipboardTimeout: any;
@@ -40,7 +28,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     private platformUtilsService: any;
 
     constructor( // (i18nService, messagingService, true, storageService
-        private i18nService: I18nService,
+        protected i18nService: I18nService,
         private messagingService: MessagingService,
         private isDesktopApp: boolean,
         private storageService: StorageService,
@@ -54,9 +42,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
             return this.deviceCache;
         }
 
-        if (this.isSafariExtension()) {
-            this.deviceCache = DeviceType.SafariExtension;
-        } else if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
+        if (navigator.userAgent.indexOf(' Firefox/') !== -1 || navigator.userAgent.indexOf(' Gecko/') !== -1) {
             this.deviceCache = DeviceType.FirefoxExtension;
         } else if ((!!(window as any).opr && !!opr.addons) || !!(window as any).opera ||
             navigator.userAgent.indexOf(' OPR/') >= 0) {
@@ -67,6 +53,8 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
             this.deviceCache = DeviceType.VivaldiExtension;
         } else if ((window as any).chrome && navigator.userAgent.indexOf(' Chrome/') !== -1) {
             this.deviceCache = DeviceType.ChromeExtension;
+        } else if (navigator.userAgent.indexOf(' Safari/') !== -1) {
+            this.deviceCache = DeviceType.SafariExtension;
         }
 
         return this.deviceCache;
@@ -154,8 +142,12 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         BrowserApi.downloadFile(win, blobData, blobOptions, fileName);
     }
 
-    getApplicationVersion(): string {
-        return BrowserApi.getApplicationVersion();
+    getApplicationVersion(): Promise<string> {
+        return Promise.resolve(BrowserApi.getApplicationVersion());
+    }
+
+    supportsWebAuthn(win: Window): boolean {
+        return (typeof(PublicKeyCredential) !== 'undefined');
     }
 
     supportsU2f(win: Window): boolean {
@@ -195,6 +187,33 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         });
     }
 
+    async showPasswordDialog(title: string, body: string, passwordValidation: (value: string) => Promise<boolean>) {
+        const dialogId = Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+
+        this.messagingService.send('showPasswordDialog', {
+            title: title,
+            body: body,
+            dialogId: dialogId,
+        });
+
+        return new Promise<boolean>(resolve => {
+            this.passwordDialogResolves.set(dialogId, {
+                tryResolve: async (canceled: boolean, password: string) => {
+                    if (canceled) {
+                        resolve(false);
+                        return false;
+                    }
+
+                    if (await passwordValidation(password)) {
+                        resolve(true);
+                        return true;
+                    }
+                },
+                date: new Date(),
+            });
+        });
+    }
+
     eventTrack(action: string, label?: string, options?: any) {
         this.messagingService.send('analyticsEventTrack', {
             action: action,
@@ -223,7 +242,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         const clearing = options ? !!options.clearing : false;
         const clearMs: number = options && options.clearMs ? options.clearMs : null;
 
-        if (this.isSafariExtension()) {
+        if (this.isSafari()) {
             SafariApp.sendMessageToApp('copyToClipboard', text).then(() => {
                 if (!clearing && this.clipboardWriteCallback != null) {
                     this.clipboardWriteCallback(text, clearMs);
@@ -278,7 +297,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
             doc = options.doc;
         }
 
-        if (this.isSafariExtension()) {
+        if (this.isSafari()) {
             return await SafariApp.sendMessageToApp('readFromClipboard');
         } else if (this.isFirefox() && (win as any).navigator.clipboard && (win as any).navigator.clipboard.readText) {
             return await (win as any).navigator.clipboard.readText();
@@ -311,20 +330,41 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         }
 
         // Clean up old promises
-        const deleteIds: number[] = [];
         this.showDialogResolves.forEach((val, key) => {
             const age = new Date().getTime() - val.date.getTime();
             if (age > DialogPromiseExpiration) {
-                deleteIds.push(key);
+                this.showDialogResolves.delete(key);
             }
-        });
-        deleteIds.forEach((id) => {
-            this.showDialogResolves.delete(id);
         });
     }
 
-    supportsBiometric() {
-        return Promise.resolve(true);
+    async resolvePasswordDialogPromise(dialogId: number, canceled: boolean, password: string): Promise<boolean> {
+        let result = false;
+        if (this.passwordDialogResolves.has(dialogId)) {
+            const resolveObj = this.passwordDialogResolves.get(dialogId);
+            if (await resolveObj.tryResolve(canceled, password)) {
+                this.passwordDialogResolves.delete(dialogId);
+                result = true;
+            }
+        }
+
+        // Clean up old promises
+        this.passwordDialogResolves.forEach((val, key) => {
+            const age = new Date().getTime() - val.date.getTime();
+            if (age > DialogPromiseExpiration) {
+                this.passwordDialogResolves.delete(key);
+            }
+        });
+
+        return result;
+    }
+
+    async supportsBiometric() {
+        if (this.isFirefox()) {
+            return parseInt((await browser.runtime.getBrowserInfo()).version.split('.')[0], 10) >= 87;
+        }
+
+        return true;
     }
 
     /* @override by Cozy
@@ -364,8 +404,8 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         return false;
     }
 
-    getDefaultSystemTheme() {
-        return this.prefersColorSchemeDark.matches ? 'dark' : 'light';
+    getDefaultSystemTheme(): Promise<'light' | 'dark'> {
+        return Promise.resolve(this.prefersColorSchemeDark.matches ? 'dark' : 'light');
     }
 
     onDefaultSystemThemeChange(callback: ((theme: 'light' | 'dark') => unknown)) {

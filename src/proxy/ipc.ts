@@ -1,12 +1,16 @@
 /* tslint:disable:no-console */
 import * as ipc from 'node-ipc';
+import { homedir } from 'os';
 
 ipc.config.id = 'proxy';
 ipc.config.retry = 1500;
 ipc.config.logger = console.warn; // Stdout is used for native messaging
+if (process.platform === 'darwin') {
+    ipc.config.socketRoot = `${homedir()}/tmp/`;
+}
 
 export default class IPC {
-    onMessage: (message: object) => void
+    onMessage: (message: object) => void;
 
     private connected = false;
 
@@ -14,13 +18,10 @@ export default class IPC {
         ipc.connectTo('bitwarden', () => {
             ipc.of.bitwarden.on('connect', () => {
                 this.connected = true;
-                console.error(
-                    '## connected to bitwarden desktop ##',
-                    ipc.config.delay
-                );
+                console.error('## connected to bitwarden desktop ##');
 
                 // Notify browser extension, connection is established to desktop application.
-                this.onMessage({command: 'connected'})
+                this.onMessage({command: 'connected'});
             });
 
             ipc.of.bitwarden.on('disconnect', () => {
@@ -28,7 +29,7 @@ export default class IPC {
                 console.error('disconnected from world');
 
                 // Notify browser extension, no connection to desktop application.
-                this.onMessage({command: 'disconnected'})
+                this.onMessage({command: 'disconnected'});
             });
 
             ipc.of.bitwarden.on('message', (message: any) => {

@@ -1,3 +1,8 @@
+export type RendererMenuItem = {label?: string, type?: ('normal' | 'separator' | 'submenu' | 'checkbox' | 'radio'), click?: () => any};
+
+export function invokeMenu(menu: RendererMenuItem[]) {
+    throw new Error('Contextual menu not implemented');
+}
 
 export function isDev() {
     if (process.env.ELECTRON_IS_DEV === '1') {
@@ -15,14 +20,9 @@ export function isDev() {
 //     return process.platform === 'darwin' && process.mas && process.mas === true;
 // }
 //
-// export function isWindowsStore() {
-//     const isWindows = process.platform === 'win32';
-//     if (isWindows && !process.windowsStore &&
-//         process.resourcesPath.indexOf('8bitSolutionsLLC.bitwardendesktop_') > -1) {
-//         process.windowsStore = true;
-//     }
-//     return isWindows && process.windowsStore && process.windowsStore === true;
-// }
+export function isWindowsStore() {
+    return false;
+}
 //
 // export function isSnapStore() {
 //     return process.platform === 'linux' && process.env.SNAP_USER_DATA != null;
