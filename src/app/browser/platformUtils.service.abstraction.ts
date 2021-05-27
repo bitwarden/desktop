@@ -1,3 +1,15 @@
+/* =================================================================================================
+
+This file is almost a copy of :
+\jslib\src\abstractions\platformUtils.service.ts
+
+Initial copied version :
+https://github.com/bitwarden/jslib/blob/2c297e2f45cd42c1260bb5d49d22d0ddae27d8f0/src/abstractions/platformUtils.service.ts
+
+Latest version :
+https://github.com/bitwarden/jslib/blob/master/src/abstractions/platformUtils.service.ts
+
+================================================================================================= */
 import { DeviceType } from 'jslib/enums/deviceType';
 
 export abstract class PlatformUtilsService {
@@ -36,5 +48,7 @@ export abstract class PlatformUtilsService {
     getDefaultSystemTheme: () => Promise<'light' | 'dark'>;
     onDefaultSystemThemeChange: (callback: ((theme: 'light' | 'dark') => unknown)) => unknown;
     supportsSecureStorage: () => boolean;
+    // @override by Cozy
     resolveDialogPromise: (dialogId: number, confirmed: boolean) => void;
+    // end @override
 }
