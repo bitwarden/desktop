@@ -86,7 +86,7 @@ const renderer = {
         'app/main': './src/app/main.ts',
     },
     optimization: {
-        minimize: false,
+        minimize: process.env.DEVELOPMENT ? true : false,
         splitChunks: {
             cacheGroups: {
                 commons: {
