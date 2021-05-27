@@ -72,8 +72,11 @@
     &.link {
         border: none !important;
         background: none !important;
-
-        &:focus {
+        color: none !important;
+        @include themify($themes) {
+            color: themed('buttonPrimaryColor');
+        }
+        &:focus, &:hover {
             text-decoration: underline;
         }
     }
