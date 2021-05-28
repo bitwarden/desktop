@@ -688,7 +688,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.addOrganizationId = null;
         this.addCollectionIds = null;
     }
-    
+
     private async canNavigateAway(action: string, cipher?: CipherView) {
         // Don't navigate to same route
         if (this.action === action && (cipher == null || this.cipherId === cipher.id)) {
