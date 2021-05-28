@@ -369,11 +369,12 @@ jobs:
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
+          SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload .pkg artifact
         if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
