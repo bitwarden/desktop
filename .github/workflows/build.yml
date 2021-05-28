@@ -369,6 +369,7 @@ jobs:
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
