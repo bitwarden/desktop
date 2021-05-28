@@ -229,9 +229,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async viewCipher(cipher: CipherView) {
-        if (this.action === 'view' && this.cipherId === cipher.id) {
-            return;
-        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+        if (!await this.canNavigateAway('view', cipher)) {
             return;
         }
 
@@ -328,11 +326,17 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async editCipher(cipher: CipherView) {
-        if (this.action === 'edit' && this.cipherId === cipher.id) {
+        if (!await this.canNavigateAway('edit', cipher)) {
             return;
-        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+        } else if (!await this.passwordReprompt(cipher)) {
             return;
-        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
+        }
+
+        await this.editCipherWithoutPasswordPrompt(cipher);
+    }
+
+    async editCipherWithoutPasswordPrompt(cipher: CipherView) {
+        if (!await this.canNavigateAway('edit', cipher)) {
             return;
         }
 
@@ -342,11 +346,17 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async cloneCipher(cipher: CipherView) {
-        if (this.action === 'clone' && this.cipherId === cipher.id) {
+        if (!await this.canNavigateAway('clone', cipher)) {
             return;
-        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+        } else if (!await this.passwordReprompt(cipher)) {
             return;
-        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
+        }
+
+        await this.cloneCipherWithoutPasswordPrompt(cipher);
+    }
+
+    async cloneCipherWithoutPasswordPrompt(cipher: CipherView) {
+        if (!await this.canNavigateAway('edit', cipher)) {
             return;
         }
 
@@ -356,9 +366,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async addCipher(type: CipherType = null) {
-        if (this.action === 'add') {
-            return;
-        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+        if (!await this.canNavigateAway('add', null)) {
             return;
         }
 
@@ -679,5 +687,20 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         this.addOrganizationId = null;
         this.addCollectionIds = null;
+    }
+
+    private async canNavigateAway(action: string, cipher?: CipherView) {
+        // Don't navigate to same route
+        if (this.action === action && (cipher == null || this.cipherId === cipher.id)) {
+            return false;
+        } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private async passwordReprompt(cipher: CipherView) {
+        return cipher.reprompt === CipherRepromptType.None || await this.passwordRepromptService.showPasswordPrompt();
     }
 }

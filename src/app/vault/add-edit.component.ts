@@ -77,6 +77,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
 
     onWindowHidden() {
         this.showPassword = false;
+        this.showCardNumber = false;
         this.showCardCode = false;
         if (this.cipher !== null && this.cipher.hasFields) {
             this.cipher.fields.forEach(field => {
