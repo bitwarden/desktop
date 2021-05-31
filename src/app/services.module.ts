@@ -156,11 +156,7 @@ export function initFactory(): Function {
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
-            if (platformUtilsService.getDevice() === DeviceType.MacOsDesktop) {
-                theme = await platformUtilsService.getDefaultSystemTheme();
-            } else {
-                theme = 'light';
-            }
+            theme = await platformUtilsService.getDefaultSystemTheme();
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
