@@ -155,14 +155,14 @@ jobs:
           ref: ${{ env.TAG_VERSION }}
 
       - name: make target directory
-        run: mkdir -p dist/mas-universal
+        run: mkdir -p dist/mas
 
       - name: Get mac release asset
         uses: Xotl/cool-github-releases@v1
         with:
           mode: download
           tag_name: ${{ env.TAG_VERSION }}
-          assets: Bitwarden-${{ env.PKG_VERSION }}-universal.pkg|./dist/mas-universal/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg
+          assets: Bitwarden-${{ env.PKG_VERSION }}.pkg|./dist/mas/Bitwarden-${{ env.PKG_VERSION }}.pkg
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to App Store
