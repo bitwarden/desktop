@@ -340,7 +340,7 @@ jobs:
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dev)
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+        if: github.ref != 'refs/heads/master' || github.ref != 'refs/heads/rc'
         run: npm run build
 
       - name: Build application (dist)
