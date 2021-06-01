@@ -7,10 +7,9 @@ on:
       - 'gh-pages'
 
 jobs:
-
   cloc:
+    name: CLOC
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
@@ -24,8 +23,8 @@ jobs:
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
   linux:
+    name: Linux
     runs-on: ubuntu-latest
-
     steps:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
@@ -110,6 +109,7 @@ jobs:
 
 
   windows:
+    name: Windows
     runs-on: windows-latest
     steps:
       - name: Set up dotnet
@@ -252,6 +252,7 @@ jobs:
           path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
 
   macos:
+    name: MacOS
     runs-on: macos-latest
     steps:
       - name: Set up Node

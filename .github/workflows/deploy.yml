@@ -10,9 +10,9 @@ on:
     types:
       - published
 
-
 jobs:
   setup:
+    name: Setup
     runs-on: ubuntu-latest
     outputs:
       package_version: ${{ steps.create_tags.outputs.package_version }}
@@ -52,7 +52,6 @@ jobs:
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
-
   snap:
     name: Deploy Snap
     runs-on: ubuntu-latest
@@ -69,10 +68,10 @@ jobs:
         with:
           snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
-      - name: setup
+      - name: Setup
         run: mkdir dist
 
-      - name: get snap package
+      - name: Get snap package
         uses: Xotl/cool-github-releases@16c58a5863d6ba9944f63ca8bb78bb3249ce1d81
         with:
           mode: download
@@ -80,14 +79,13 @@ jobs:
           assets: bitwarden_${{ env.PKG_VERSION }}_amd64.snap|./dist/bitwarden_${{ env.PKG_VERSION }}_amd64.snap
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: test
+      - name: Test
         run: ls -alht dist
 
       - name: Deploy to Snap Store
         run: |
           snapcraft upload dist/bitwarden_${{ env.PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
-
 
   choco:
     name: Deploy Choco
@@ -113,7 +111,7 @@ jobs:
         env:
           CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
 
-      - name: make dist dir 
+      - name: Make dist dir 
         shell: pwsh
         run: New-Item -ItemType directory -Path ./dist
 
@@ -131,8 +129,8 @@ jobs:
           cd dist
           choco push
 
-
   macos:
+    name: Deploy MacOS
     runs-on: macos-latest
     needs: setup
     env:
@@ -142,10 +140,10 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
-      - name: make target directory
+      - name: Make target directory
         run: mkdir -p dist/mas-universal
 
-      - name: Get mac release asset
+      - name: Get Mac release asset
         uses: Xotl/cool-github-releases@16c58a5863d6ba9944f63ca8bb78bb3249ce1d81
         with:
           mode: download
