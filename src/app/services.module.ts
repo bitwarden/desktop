@@ -157,6 +157,10 @@ export function initFactory(): Function {
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
             theme = await platformUtilsService.getDefaultSystemTheme();
+            platformUtilsService.onDefaultSystemThemeChange(sysTheme => {
+                window.document.documentElement.classList.remove('theme_light', 'theme_dark');
+                window.document.documentElement.classList.add('theme_' + sysTheme);
+            });
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,

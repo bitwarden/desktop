@@ -124,14 +124,6 @@ export class AppComponent implements OnInit {
             window.onkeypress = () => this.recordActivity();
         });
 
-        this.platformUtilsService.onDefaultSystemThemeChange(async systemTheme => {
-            const theme = await this.storageService.get<string>(ConstantsService.themeKey);
-            if (theme == null) {
-                window.document.documentElement.classList.remove('theme_light', 'theme_dark');
-                window.document.documentElement.classList.add('theme_' + systemTheme);
-            }
-        });
-
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
