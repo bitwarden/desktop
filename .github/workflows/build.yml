@@ -73,39 +73,39 @@ jobs:
         run: npm run dist:lin
 
       - name: Upload .deb artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          if-no-files-found: error
 
       - name: Upload .rpm artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          if-no-files-found: error
 
       - name: Upload .freebsd artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          if-no-files-found: error
 
       - name: Upload .snap artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
           path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          if-no-files-found: error
 
       - name: Upload .AppImage artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          if-no-files-found: error
 
 
   windows:
@@ -210,46 +210,46 @@ jobs:
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+          if-no-files-found: error
 
       - name: Upload installer exe artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          if-no-files-found: error
 
       - name: Upload store appx x64 artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
+          if-no-files-found: error
 
       - name: Upload nupkg artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          if-no-files-found: error
 
   macos:
     name: MacOS
@@ -318,59 +318,51 @@ jobs:
         run: npm run lint
 
       - name: Create Safari directory
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
 
       - name: Build Safari extension
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
       - name: Load Safari extension for .dmg
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dev)
-        if: github.ref != 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run build
 
       - name: Build application (dist)
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run dist:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload .zip artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          if-no-files-found: error
 
       - name: Upload .dmg artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          if-no-files-found: error
 
       - name: Load Safari extension for App Store
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
@@ -379,8 +371,8 @@ jobs:
           SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload .pkg artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
           path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          if-no-files-found: error
