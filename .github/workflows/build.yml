@@ -318,33 +318,40 @@ jobs:
         run: npm run lint
 
       - name: Create Safari directory
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
 
       - name: Build Safari extension
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
       - name: Load Safari extension for .dmg
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dev)
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run build
 
       - name: Build application (dist)
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run dist:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload .zip artifact
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
@@ -352,6 +359,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload .dmg artifact
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
@@ -359,10 +367,12 @@ jobs:
           if-no-files-found: error
 
       - name: Load Safari extension for App Store
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         run: npm run dist:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
@@ -371,6 +381,7 @@ jobs:
           SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload .pkg artifact
+        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
