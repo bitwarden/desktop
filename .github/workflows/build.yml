@@ -357,7 +357,7 @@ jobs:
 
 
   macos-package-github:
-    name: MacOS Package Prod Release Asset
+    name: MacOS Package GitHub Release Assets
     runs-on: macos-latest
     needs: macos-build
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
