@@ -452,7 +452,7 @@ jobs:
       - name: Build application (dist)
         run: |
           npm run clean:dist 
-          electron-builder --mac -p never
+          npx electron-builder --mac -p never
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -555,7 +555,7 @@ jobs:
       - name: Build application for App Store
         run: |
           npm run clean:dist 
-          electron-builder --mac mas --universal -p never
+          npx electron-builder --mac mas --universal -p never
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -651,7 +651,7 @@ jobs:
       - name: Build dev application for App Store
         run: |
           npm run clean:dist
-          electron-builder --mac mas-dev --universal -p never
+          npx electron-builder --mac mas-dev --universal -p never
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
