@@ -659,7 +659,7 @@ jobs:
         working-directory: ./dist/mas-dev-universal
         run: |
           zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
-github
+
       - name: Upload masdev artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
         with:
