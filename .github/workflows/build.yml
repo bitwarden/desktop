@@ -23,7 +23,7 @@ jobs:
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
   linux:
-    name: Linux
+    name: Linux Build
     runs-on: ubuntu-latest
     steps:
       - name: Set up Node
@@ -109,7 +109,7 @@ jobs:
 
 
   windows:
-    name: Windows
+    name: Windows Build
     runs-on: windows-latest
     steps:
       - name: Set up dotnet
@@ -429,6 +429,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
+          ref: ${ github.ref }
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -535,6 +536,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
+          ref: ${ github.ref }
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -643,7 +645,7 @@ jobs:
 
       - name: Load Safari extension for App Store
         shell: pwsh
-        run: ./scripts/safari-build.ps1 -mas -copyonly
+        run: ./scripts/safari-build.ps1 -masdev -copyonly
 
       - name: Build dev application for App Store
         run: |
