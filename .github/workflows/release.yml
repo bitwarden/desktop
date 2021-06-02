@@ -64,6 +64,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: setup
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
@@ -95,9 +98,6 @@ jobs:
           node --version
           npm --version
 
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
-
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
@@ -119,6 +119,9 @@ jobs:
     runs-on: windows-latest
     needs: setup
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
       - name: Set up dotnet
         uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea # v1.8.0
         with:
@@ -180,9 +183,6 @@ jobs:
           npm --version
           choco --version
 
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
-
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
@@ -233,6 +233,9 @@ jobs:
     runs-on: windows-latest
     needs: setup
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
@@ -265,9 +268,6 @@ jobs:
           node --version
           npm --version
           choco --version
-
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
@@ -318,6 +318,9 @@ jobs:
     runs-on: macos-latest
     needs: setup
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
@@ -345,9 +348,6 @@ jobs:
           npm --version
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
-
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Decrypt secrets
         run: ./.github/scripts/macos/decrypt-secrets.ps1
