@@ -306,14 +306,14 @@ jobs:
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
-          key: ${{ github.run_id }}-build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Cache Safari 
         id: safari-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
-          key: ${{ github.run_id }}-safari-extension
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
         run: ./.github/scripts/macos/decrypt-secrets.ps1
@@ -410,14 +410,14 @@ jobs:
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
-          key: ${{ github.run_id }}-build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
-          key: ${{ github.run_id }}-safari-extension
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: NPM install
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
@@ -513,14 +513,14 @@ jobs:
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
-          key: ${{ github.run_id }}-build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
-          key: ${{ github.run_id }}-safari-extension
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: NPM install
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
@@ -610,14 +610,14 @@ jobs:
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
-          key: ${{ github.run_id }}-build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
-          key: ${{ github.run_id }}-safari-extension
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: NPM install
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
