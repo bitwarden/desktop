@@ -638,6 +638,10 @@ jobs:
         run: ./.github/scripts/macos/setup-profiles.ps1
         shell: pwsh
 
+      - name: Increment version
+        run: ./.github/scripts/macos/increment-version.ps1
+        shell: pwsh
+
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
