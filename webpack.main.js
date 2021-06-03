@@ -23,10 +23,6 @@ const common = {
     plugins: [],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
-        alias: {
-            jslib: path.join(__dirname, 'jslib/src'),
-            tldjs: path.join(__dirname, 'jslib/src/misc/tldjs.noop'),
-        },
         plugins: [new TsconfigPathsPlugin({ configFile: "./tsconfig.json" })]
     },
     output: {
