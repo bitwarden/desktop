@@ -372,7 +372,7 @@ jobs:
     name: MacOS Package GitHub Release Assets
     runs-on: macos-latest
     needs: macos-build
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/better-build-assets'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
@@ -503,7 +503,7 @@ jobs:
     name: MacOS Package Prod Release Asset
     runs-on: macos-latest
     needs: macos-build
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/better-build-assets'
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
