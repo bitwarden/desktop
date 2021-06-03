@@ -22,6 +22,7 @@
     "sub:update": "git submodule update --remote",
     "sub:pull": "git submodule foreach git pull origin master",
     "sub:commit": "npm run sub:pull && git commit -am \"update submodule\"",
+    "preinstall": "npm run sub:init",
     "postinstall": "patch-package && electron-rebuild",
     "symlink:win": "rm -rf ./jslib && cmd /c mklink /J .\\jslib ..\\jslib",
     "symlink:mac": "npm run symlink:lin",
