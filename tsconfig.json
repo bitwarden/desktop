@@ -27,11 +27,7 @@
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "files": [
-    "src/entry.ts",
-    "src/app/main.ts"
-  ],
   "include": [
-    "jslib/*/src/*.d.ts"
+    "src"
   ]
 }

@@ -7,13 +7,11 @@ import {
 import { ToasterModule } from 'angular2-toaster';
 
 import { ElectronLogService } from 'jslib-electron/services/electronLog.service';
-import { ElectronPlatformUtilsService } from 'jslib-electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib-electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib-electron/services/electronRendererSecureStorage.service';
 import { ElectronRendererStorageService } from 'jslib-electron/services/electronRendererStorage.service';
 
-import { DeviceType } from 'jslib-common/enums/deviceType';
-
+import { ElectronPlatformUtilsService } from '../services/electronPlatformUtils.service';
 import { I18nService } from '../services/i18n.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
 
@@ -39,6 +37,7 @@ import { FileUploadService } from 'jslib-common/services/fileUpload.service';
 import { FolderService } from 'jslib-common/services/folder.service';
 import { NotificationsService } from 'jslib-common/services/notifications.service';
 import { PasswordGenerationService } from 'jslib-common/services/passwordGeneration.service';
+import { PasswordRepromptService } from 'jslib-common/services/passwordReprompt.service';
 import { PolicyService } from 'jslib-common/services/policy.service';
 import { SearchService } from 'jslib-common/services/search.service';
 import { SendService } from 'jslib-common/services/send.service';
@@ -53,7 +52,6 @@ import { VaultTimeoutService } from 'jslib-common/services/vaultTimeout.service'
 import { WebCryptoFunctionService } from 'jslib-common/services/webCryptoFunction.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib-common/abstractions/api.service';
-import { AppIdService as AppIdServiceAbstraction } from 'jslib-common/abstractions/appId.service';
 import { AuditService as AuditServiceAbstraction } from 'jslib-common/abstractions/audit.service';
 import { AuthService as AuthServiceAbstraction } from 'jslib-common/abstractions/auth.service';
 import { CipherService as CipherServiceAbstraction } from 'jslib-common/abstractions/cipher.service';
@@ -72,6 +70,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from 'jslib-c
 import {
     PasswordGenerationService as PasswordGenerationServiceAbstraction,
 } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from 'jslib-common/abstractions/passwordReprompt.service';
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService as PolicyServiceAbstraction } from 'jslib-common/abstractions/policy.service';
 import { SearchService as SearchServiceAbstraction } from 'jslib-common/abstractions/search.service';
@@ -85,6 +84,7 @@ import { TokenService as TokenServiceAbstraction } from 'jslib-common/abstractio
 import { TotpService as TotpServiceAbstraction } from 'jslib-common/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
+
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -126,7 +126,7 @@ const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
     i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService);
-const exportService = new ExportService(folderService, cipherService, apiService);
+const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }), logService);
@@ -136,6 +136,7 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
+const passwordRepromptService = new PasswordRepromptService(i18nService, cryptoService, platformUtilsService);
 
 containerService.attachToGlobal(window);
 
@@ -154,11 +155,11 @@ export function initFactory(): Function {
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
         let theme = await storageService.get<string>(ConstantsService.themeKey);
         if (theme == null) {
-            if (platformUtilsService.getDevice() === DeviceType.MacOsDesktop) {
-                theme = await platformUtilsService.getDefaultSystemTheme();
-            } else {
-                theme = 'light';
-            }
+            theme = await platformUtilsService.getDefaultSystemTheme();
+            platformUtilsService.onDefaultSystemThemeChange(sysTheme => {
+                window.document.documentElement.classList.remove('theme_light', 'theme_dark');
+                window.document.documentElement.classList.add('theme_' + sysTheme);
+            });
         }
         htmlEl.classList.add('theme_' + theme);
         stateService.save(ConstantsService.disableFaviconKey,
@@ -222,6 +223,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: PasswordRepromptServiceAbstraction, useValue: passwordRepromptService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,

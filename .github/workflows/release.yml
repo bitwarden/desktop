@@ -10,15 +10,24 @@ on:
         description: 'Browser Extension ref (defaults to `master`):'
         default: master
 
-
 jobs:
   setup:
+    name: Setup
     runs-on: ubuntu-latest
     outputs:
       release_upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
+      - name: Branch check
+        run: |
+          if [[ "$GITHUB_REF" != "refs/heads/rc" ]]; then
+            echo "==================================="
+            echo "[!] Can only release from rc branch"
+            echo "==================================="
+            exit 1
+          fi
+
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Create Release Vars
         id: create_tags
@@ -41,7 +50,7 @@ jobs:
 
       - name: Create Draft Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -50,15 +59,21 @@ jobs:
           draft: true
           prerelease: false
 
-
   linux:
+    name: Linux
     runs-on: ubuntu-latest
     needs: setup
     steps:
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: '10.x'
+          node-version: '14'
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -74,7 +89,7 @@ jobs:
           npm --version
 
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
@@ -91,20 +106,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
   windows-signed:
+    name: Windows Signed
     runs-on: windows-latest
     needs: setup
     steps:
       - name: Set up dotnet
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea
         with:
           dotnet-version: "3.1.x"
 
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: '10.x'
+          node-version: '14'
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
@@ -145,7 +166,7 @@ jobs:
           choco --version
 
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
@@ -177,13 +198,12 @@ jobs:
           $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
           (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
-          ls -alht dist/chocolatey
+          ls dist/chocolatey
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
           cd ./dist/chocolatey
-          ls -alht dist/chocolatey
 
       - name: Upload Chocolatey nupkg release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -192,15 +212,21 @@ jobs:
           asset_path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           asset_content_type: application
 
-
   windows-store:
+    name: Windows Store
     runs-on: windows-latest
     needs: setup
     steps:
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: '10.x'
+          node-version: '14'
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
@@ -218,7 +244,7 @@ jobs:
           choco --version
 
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
@@ -234,7 +260,7 @@ jobs:
         run: npm run dist:win:ci
 
       - name: Upload unsigned ia32 Windows Store release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -244,7 +270,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload unsigned x64 Windows Store release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -254,7 +280,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload unsigned ARM64 Windows Store release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -264,13 +290,20 @@ jobs:
           asset_content_type: application
 
   macos:
+    name: MacOS
     runs-on: macos-latest
     needs: setup
     steps:
       - name: Set up Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
         with:
-          node-version: '10.x'
+          node-version: '14'
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -279,15 +312,14 @@ jobs:
         run: |
           node --version
           npm --version
-          Write-Output "GitHub ref: $env:GITHUB_REF"
-          Write-Output "GitHub event: $env:GITHUB_EVENT"
-        shell: pwsh
+          echo "GitHub ref: $GITHUB_REF"
+          echo "GitHub event: $GITHUB_EVENT"
         env:
           GITHUB_REF: ${{ github.ref }}
           GITHUB_EVENT: ${{ github.event_name }}
 
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
       - name: Decrypt secrets
         run: ./.github/scripts/macos/decrypt-secrets.ps1
@@ -329,7 +361,7 @@ jobs:
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        uses: actions/checkout@v2
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
         with:
           repository: 'bitwarden/browser'
           ref: ${{ github.event.inputs.browser_extension_ref }}
@@ -361,11 +393,11 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload Apple Store release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.setup.outputs.release_upload_url }}
-          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
-          asset_path: ./dist/mas/Bitwarden-${{ env.PACKAGE_VERSION }}.pkg
+          asset_name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          asset_path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
           asset_content_type: application

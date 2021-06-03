@@ -14,8 +14,8 @@ import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
@@ -41,9 +41,10 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
         userService: UserService, eventService: EventService, apiService: ApiService,
-        private messagingService: MessagingService, private storageService: StorageService) {
+        private messagingService: MessagingService, passwordRepromptService: PasswordRepromptService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService, apiService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService,
+            apiService, passwordRepromptService);
     }
     ngOnInit() {
         super.ngOnInit();
@@ -72,13 +73,14 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         this.onViewCipherPasswordHistory.emit(this.cipher);
     }
 
-    copy(value: string, typeI18nKey: string, aType: string) {
+    async copy(value: string, typeI18nKey: string, aType: string) {
         super.copy(value, typeI18nKey, aType);
         this.messagingService.send('minimizeOnCopy');
     }
 
     onWindowHidden() {
         this.showPassword = false;
+        this.showCardNumber = false;
         this.showCardCode = false;
         if (this.cipher !== null && this.cipher.hasFields) {
             this.cipher.fields.forEach(field => {
