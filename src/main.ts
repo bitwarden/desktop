@@ -109,7 +109,6 @@ export class Main {
             this.messagingMain.onMessage(message);
         });
 
-        this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
 
         if (process.platform === 'win32') {
             const BiometricWindowsMain = require('jslib-electron/biometric.windows.main').default;
@@ -118,6 +117,8 @@ export class Main {
             const BiometricDarwinMain = require('jslib-electron/biometric.darwin.main').default;
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
+
+        this.keytarStorageListener = new KeytarStorageListener('Bitwarden', this.biometricMain);
 
         this.nativeMessagingMain = new NativeMessagingMain(this.logService, this.windowMain, app.getPath('userData'), app.getPath('exe'));
     }
