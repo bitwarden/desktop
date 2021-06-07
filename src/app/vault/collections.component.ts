@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { CollectionService } from 'jslib/abstractions/collection.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { CollectionService } from 'jslib-common/abstractions/collection.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
-import { CollectionsComponent as BaseCollectionsComponent } from 'jslib/angular/components/collections.component';
+import { CollectionsComponent as BaseCollectionsComponent } from 'jslib-angular/components/collections.component';
 
 @Component({
     selector: 'app-vault-collections',

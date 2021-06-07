@@ -6,20 +6,20 @@ import {
     ViewChild,
 } from '@angular/core';
 
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { PolicyService } from 'jslib/abstractions/policy.service';
-import { SearchService } from 'jslib/abstractions/search.service';
-import { SendService } from 'jslib/abstractions/send.service';
-import { UserService } from 'jslib/abstractions/user.service';
+import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib-common/abstractions/policy.service';
+import { SearchService } from 'jslib-common/abstractions/search.service';
+import { SendService } from 'jslib-common/abstractions/send.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
-import { SendComponent as BaseSendComponent } from 'jslib/angular/components/send/send.component';
+import { SendComponent as BaseSendComponent } from 'jslib-angular/components/send/send.component';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
-import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
+import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
-import { SendView } from 'jslib/models/view/sendView';
+import { SendView } from 'jslib-common/models/view/sendView';
 
 import { AddEditComponent } from './add-edit.component';
 

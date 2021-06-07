@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { I18nService as BaseI18nService } from 'jslib/services/i18n.service';
+import { I18nService as BaseI18nService } from 'jslib-common/services/i18n.service';
 
 export class I18nService extends BaseI18nService {
     constructor(systemLanguage: string, localesDirectory: string) {

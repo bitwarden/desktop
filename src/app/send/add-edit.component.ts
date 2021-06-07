@@ -2,15 +2,15 @@ import { DatePipe } from '@angular/common';
 
 import { Component } from '@angular/core';
 
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { PolicyService } from 'jslib/abstractions/policy.service';
-import { SendService } from 'jslib/abstractions/send.service';
-import { UserService } from 'jslib/abstractions/user.service';
+import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib-common/abstractions/policy.service';
+import { SendService } from 'jslib-common/abstractions/send.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
-import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/send/add-edit.component';
+import { AddEditComponent as BaseAddEditComponent } from 'jslib-angular/components/send/add-edit.component';
 
 @Component({
     selector: 'app-send-add-edit',

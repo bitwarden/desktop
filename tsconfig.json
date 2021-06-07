@@ -11,11 +11,17 @@
     "baseUrl": ".",
     "paths": {
       "tldjs": [
-        "jslib/src/misc/tldjs.noop"
+        "jslib/common/src/misc/tldjs.noop"
       ],
-      "jslib/*": [
-        "jslib/src/*"
+      "jslib-common/*": [
+        "jslib/common/src/*"
       ],
+      "jslib-angular/*": [
+        "jslib/angular/src/*"
+      ],
+      "jslib-electron/*": [
+        "jslib/electron/src/*"
+      ]
     }
   },
   "angularCompilerOptions": {

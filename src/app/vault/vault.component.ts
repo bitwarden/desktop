@@ -15,9 +15,9 @@ import {
 
 import { ToasterService } from 'angular2-toaster';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { ModalComponent } from 'jslib/angular/components/modal.component';
+import { ModalComponent } from 'jslib-angular/components/modal.component';
 
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
@@ -30,22 +30,22 @@ import { PasswordHistoryComponent } from './password-history.component';
 import { ShareComponent } from './share.component';
 import { ViewComponent } from './view.component';
 
-import { CipherType } from 'jslib/enums/cipherType';
-import { EventType } from 'jslib/enums/eventType';
+import { CipherRepromptType } from 'jslib-common/enums/cipherRepromptType';
+import { CipherType } from 'jslib-common/enums/cipherType';
+import { EventType } from 'jslib-common/enums/eventType';
 
-import { CipherView } from 'jslib/models/view/cipherView';
-import { FolderView } from 'jslib/models/view/folderView';
+import { CipherView } from 'jslib-common/models/view/cipherView';
+import { FolderView } from 'jslib-common/models/view/folderView';
 
-import { EventService } from 'jslib/abstractions/event.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { SyncService } from 'jslib/abstractions/sync.service';
-import { TotpService } from 'jslib/abstractions/totp.service';
-import { UserService } from 'jslib/abstractions/user.service';
-import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
-import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { TotpService } from 'jslib-common/abstractions/totp.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
+import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
 const BroadcasterSubscriptionId = 'VaultComponent';
 

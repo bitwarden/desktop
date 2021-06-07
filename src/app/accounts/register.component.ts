@@ -6,17 +6,17 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ApiService } from 'jslib/abstractions/api.service';
-import { AuthService } from 'jslib/abstractions/auth.service';
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StateService } from 'jslib/abstractions/state.service';
+import { ApiService } from 'jslib-common/abstractions/api.service';
+import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { CryptoService } from 'jslib-common/abstractions/crypto.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { RegisterComponent as BaseRegisterComponent } from 'jslib/angular/components/register.component';
+import { RegisterComponent as BaseRegisterComponent } from 'jslib-angular/components/register.component';
 
 const BroadcasterSubscriptionId = 'RegisterComponent';
 

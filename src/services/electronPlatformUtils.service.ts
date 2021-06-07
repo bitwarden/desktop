@@ -1,11 +1,11 @@
 import Swal from 'sweetalert2';
 
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 import {
     ElectronPlatformUtilsService as BaseElectronPlatformUtilsService
-} from 'jslib/electron/services/electronPlatformUtils.service';
+} from 'jslib-electron/services/electronPlatformUtils.service';
 
 export class ElectronPlatformUtilsService extends BaseElectronPlatformUtilsService {
 

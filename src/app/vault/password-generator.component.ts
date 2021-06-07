@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
 import {
     PasswordGeneratorComponent as BasePasswordGeneratorComponent,
-} from 'jslib/angular/components/password-generator.component';
+} from 'jslib-angular/components/password-generator.component';
 
 @Component({
     selector: 'app-password-generator',

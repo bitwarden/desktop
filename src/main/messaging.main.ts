@@ -4,9 +4,9 @@ import * as path from 'path';
 
 import { Main } from '../main';
 
-import { ElectronConstants } from 'jslib/electron/electronConstants';
+import { ElectronConstants } from 'jslib-electron/electronConstants';
 
-import { StorageService } from 'jslib/abstractions/storage.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 

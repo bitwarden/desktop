@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-import { FolderService } from 'jslib/abstractions/folder.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { FolderService } from 'jslib-common/abstractions/folder.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
 import {
     FolderAddEditComponent as BaseFolderAddEditComponent,
-} from 'jslib/angular/components/folder-add-edit.component';
+} from 'jslib-angular/components/folder-add-edit.component';
 
 @Component({
     selector: 'app-folder-add-edit',

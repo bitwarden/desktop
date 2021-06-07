@@ -4,9 +4,9 @@ import {
     Routes,
 } from '@angular/router';
 
-import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
-import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
-import { UnauthGuardService } from 'jslib/angular/services/unauth-guard.service';
+import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
+import { LockGuardService } from 'jslib-angular/services/lock-guard.service';
+import { UnauthGuardService } from 'jslib-angular/services/unauth-guard.service';
 
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
