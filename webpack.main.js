@@ -28,7 +28,9 @@ const common = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
+        devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     },
+    devtool: 'cheap-source-map'
 };
 
 const main = {
