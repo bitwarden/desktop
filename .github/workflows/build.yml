@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up cloc
         run: |
@@ -23,13 +23,26 @@ jobs:
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
   linux:
-    name: Linux
+    name: Linux Build
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
           node-version: '14'
+
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Update NPM
         run: |
@@ -37,15 +50,12 @@ jobs:
           npm install -g node-gyp
           node-gyp install $(node -v)
 
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
-
       - name: Set up environment
         run: |
           sudo apt-get update
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
-      - name: Set up snap
+      - name: Set up Snap
         run: |
           sudo snap install snapcraft --classic
 
@@ -56,14 +66,12 @@ jobs:
           snap --version
           snapcraft --version || echo 'snapcraft unavailable'
 
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
       - name: Install Node dependencies
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Run linter
@@ -73,64 +81,73 @@ jobs:
         run: npm run dist:lin
 
       - name: Upload .deb artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
           path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
-
   windows:
-    name: Windows
+    name: Windows Build
     runs-on: windows-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
       - name: Set up dotnet
-        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea
+        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea # v1.8.0
         with:
           dotnet-version: "3.1.x"
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
           node-version: '14'
+
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        shell: pwsh
 
       - name: Update NPM
         run: |
           npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-        shell: pwsh
 
       - name: Install AST
         shell: pwsh
@@ -163,14 +180,12 @@ jobs:
           npm --version
           choco --version
 
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-
       - name: Load package version
         run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
       - name: Install Node dependencies
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Run linter
@@ -210,55 +225,68 @@ jobs:
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
           if-no-files-found: error
 
       - name: Upload nupkg artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
-  macos:
-    name: MacOS
+  macos-build:
+    name: MacOS Build
     runs-on: macos-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
           node-version: '14'
+
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Update NPM
         run: |
@@ -266,21 +294,26 @@ jobs:
           npm install -g node-gyp
           node-gyp install $(node -v)
 
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
-
       - name: Print environment
         run: |
           node --version
           npm --version
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
-        env:
-          GITHUB_REF: ${{ github.ref }}
-          GITHUB_EVENT: ${{ github.event_name }}
 
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+      - name: Cache Build 
+        id: build-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
+
+      - name: Cache Safari 
+        id: safari-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: dist-safari
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
         run: ./.github/scripts/macos/decrypt-secrets.ps1
@@ -312,68 +345,273 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Run linter
         run: npm run lint
 
+      - name: Build application (dev)
+        run: npm run build
+
       - name: Create Safari directory
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
 
       - name: Build Safari extension
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+
+  macos-package-github:
+    name: MacOS Package GitHub Release Assets
+    runs-on: macos-latest
+    needs: macos-build
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        with:
+          node-version: '14'
+
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          echo "GitHub ref: $GITHUB_REF"
+          echo "GitHub event: $GITHUB_EVENT"
+
+      - name: Get Build Cache
+        id: build-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
+
+      - name: Setup Safari Cache
+        id: safari-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: dist-safari
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
+
+      - name: Decrypt secrets
+        run: ./.github/scripts/macos/decrypt-secrets.ps1
+        shell: pwsh
+        env:
+          DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+
+      - name: Set up keychain
+        run: ./.github/scripts/macos/setup-keychain.ps1
+        shell: pwsh
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
+          DEVID_CERT_PASSWORD: ${{ secrets.DEVID_CERT_PASSWORD }}
+          APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
+          MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Set up provisioning profiles
+        run: ./.github/scripts/macos/setup-profiles.ps1
+        shell: pwsh
+
+      - name: Increment version
+        run: ./.github/scripts/macos/increment-version.ps1
+        shell: pwsh
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: NPM install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        run: npm run build
+
+      - name: Create Safari directory
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: New-Item ./dist-safari -ItemType Directory -ea 0
+
+      - name: Checkout browser extension
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        with:
+          repository: 'bitwarden/browser'
+          path: 'dist-safari/browser'
+          ref: ${{ github.ref }}
+
+      - name: Build Safari extension
+        if: steps.safari-cache.outputs.cache-hit != 'true'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
       - name: Load Safari extension for .dmg
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -copyonly
 
-      - name: Build application (dev)
-        if: github.ref != 'refs/heads/master' || github.ref != 'refs/heads/rc'
-        run: npm run build
-
       - name: Build application (dist)
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
-        run: npm run dist:mac
+        run: |
+          npm run pack:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload .zip artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
           path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
           if-no-files-found: error
 
+  macos-package-mas:
+    name: MacOS Package Prod Release Asset
+    runs-on: macos-latest
+    needs: macos-build
+    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        with:
+          node-version: '14'
+
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          echo "GitHub ref: $GITHUB_REF"
+          echo "GitHub event: $GITHUB_EVENT"
+
+      - name: Get Build Cache
+        id: build-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
+
+      - name: Setup Safari Cache
+        id: safari-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: dist-safari
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
+
+      - name: Decrypt secrets
+        run: ./.github/scripts/macos/decrypt-secrets.ps1
+        shell: pwsh
+        env:
+          DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+
+      - name: Set up keychain
+        run: ./.github/scripts/macos/setup-keychain.ps1
+        shell: pwsh
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
+          DEVID_CERT_PASSWORD: ${{ secrets.DEVID_CERT_PASSWORD }}
+          APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
+          MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Set up provisioning profiles
+        run: ./.github/scripts/macos/setup-profiles.ps1
+        shell: pwsh
+
+      - name: Increment version
+        run: ./.github/scripts/macos/increment-version.ps1
+        shell: pwsh
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: NPM install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        run: npm run build
+
+      - name: Create Safari directory
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: New-Item ./dist-safari -ItemType Directory -ea 0
+
+      - name: Checkout browser extension
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        with:
+          repository: 'bitwarden/browser'
+          path: 'dist-safari/browser'
+          ref: ${{ github.ref }}
+
+      - name: Build Safari extension
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+
       - name: Load Safari extension for App Store
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
         shell: pwsh
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
-        run: npm run dist:mac:mas
+        run: |
+          npm run pack:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -381,9 +619,138 @@ jobs:
           SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload .pkg artifact
-        if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
           path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          if-no-files-found: error
+
+  macos-package-dev:
+    name: MacOS Package Dev Release Asset
+    if: false # We need to look into how code signing works for dev
+    runs-on: macos-latest
+    needs: macos-build
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
+      - name: Set up Node
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        with:
+          node-version: '14'
+
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set Node options
+        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
+
+      - name: Update NPM
+        run: |
+          npm install -g npm@7
+          npm install -g node-gyp
+          node-gyp install $(node -v)
+
+      - name: Print environment
+        run: |
+          node --version
+          npm --version
+          echo "GitHub ref: $GITHUB_REF"
+          echo "GitHub event: $GITHUB_EVENT"
+
+      - name: Get Build Cache
+        id: build-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: build
+          key: ${{ runner.os }}-${{ github.run_id }}-build
+
+      - name: Setup Safari Cache
+        id: safari-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: dist-safari
+          key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
+
+      - name: Decrypt secrets
+        run: ./.github/scripts/macos/decrypt-secrets.ps1
+        shell: pwsh
+        env:
+          DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+
+      - name: Set up keychain
+        run: ./.github/scripts/macos/setup-keychain.ps1
+        shell: pwsh
+        env:
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
+          DEVID_CERT_PASSWORD: ${{ secrets.DEVID_CERT_PASSWORD }}
+          APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
+          MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+      - name: Set up provisioning profiles
+        run: ./.github/scripts/macos/setup-profiles.ps1
+        shell: pwsh
+
+      - name: Increment version
+        run: ./.github/scripts/macos/increment-version.ps1
+        shell: pwsh
+
+      - name: Load package version
+        run: ./.github/scripts/load-version.ps1
+        shell: pwsh
+
+      - name: NPM install
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: Build
+        if: steps.build-cache.outputs.cache-hit != 'true'
+        run: npm run build
+
+      - name: Create Safari directory
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: New-Item ./dist-safari -ItemType Directory -ea 0
+
+      - name: Checkout browser extension
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        with:
+          repository: 'bitwarden/browser'
+          path: 'dist-safari/browser'
+
+      - name: Build Safari extension
+        if: steps.safari-cache.outputs.cache-hit != 'true'
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+
+      - name: Load Safari extension for App Store
+        shell: pwsh
+        run: ./scripts/safari-build.ps1 -masdev -copyonly
+
+      - name: Build dev application for App Store
+        run: |
+          npm run pack:mac:masdev
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
+          SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
+
+      - name: Zip masdev asset
+        working-directory: ./dist/mas-dev-universal
+        run: |
+          zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
+
+      - name: Upload masdev artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
+        with:
+          name: Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip
+          path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
