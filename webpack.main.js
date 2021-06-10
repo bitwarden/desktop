@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
-const NODE_ENV = process.env.NODE_ENV == null ? 'production' : process.env.NODE_ENV;
+const NODE_ENV = process.env.NODE_ENV == null ? 'development' : process.env.NODE_ENV;
 
 const common = {
     module: {
