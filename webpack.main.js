@@ -5,6 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
+const NODE_ENV = process.env.NODE_ENV == null ? 'production' : process.env.NODE_ENV;
+
 const common = {
     module: {
         rules: [
@@ -25,16 +27,26 @@ const common = {
         extensions: ['.tsx', '.ts', '.js'],
         plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })]
     },
+};
+
+const prod = {
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'build'),
+    },
+};
+
+const dev = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'build'),
         devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     },
     devtool: 'cheap-source-map'
-};
+}
 
 const main = {
-    mode: 'production',
+    mode: NODE_ENV,
     target: 'electron-main',
     node: {
         __dirname: false,
@@ -67,4 +79,4 @@ const main = {
     externals: [nodeExternals()],
 };
 
-module.exports = merge(common, main);
+module.exports = merge(common, NODE_ENV === 'development' ? dev : prod, main);
