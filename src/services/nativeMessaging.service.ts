@@ -102,11 +102,12 @@ export class NativeMessagingService {
                     });
                 }
 
-                const response = await this.platformUtilService.authenticateBiometric();
-                if (response) {
-                    this.send({command: 'biometricUnlock', response: 'unlocked', keyB64: (await this.cryptoService.getKey()).keyB64}, appId);
+                const keyB64 = await (await this.cryptoService.getKey('biometric')).keyB64;
+
+                if (keyB64 != null) {
+                    this.send({ command: 'biometricUnlock', response: 'unlocked', keyB64: keyB64 }, appId);
                 } else {
-                    this.send({command: 'biometricUnlock', response: 'canceled'}, appId);
+                    this.send({ command: 'biometricUnlock', response: 'canceled' }, appId);
                 }
 
                 break;
