@@ -38,7 +38,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '.npm'
+          path: '~/.npm'
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -71,7 +71,7 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
-        run: npm ci --cache .npm
+        run: npm ci
 
       - name: Run linter
         run: npm run lint
@@ -135,7 +135,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '.npm'
+          path: '%AppData%/npm-cache'
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -184,7 +184,7 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
-        run: npm ci --cache .npm
+        run: npm ci
 
       - name: Run linter
         run: npm run lint
@@ -280,7 +280,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '.npm'
+          path: '~/.npm'
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -343,7 +343,7 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
-        run: npm ci --cache .npm
+        run: npm ci
 
       - name: Run linter
         run: npm run lint
@@ -383,7 +383,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '.npm'
+          path: '~/.npm'
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -446,7 +446,7 @@ jobs:
         shell: pwsh
 
       - name: NPM install
-        run: npm ci --cache .npm
+        run: npm ci
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -513,7 +513,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '.npm'
+          path: '~/.npm'
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -576,7 +576,7 @@ jobs:
         shell: pwsh
 
       - name: NPM install
-        run: npm ci --cache .npm
+        run: npm ci
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -638,7 +638,7 @@ jobs:
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '.npm'
+          path: '~/.npm'
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -701,7 +701,7 @@ jobs:
         shell: pwsh
 
       - name: NPM install
-        run: npm ci --cache .npm
+        run: npm ci
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
