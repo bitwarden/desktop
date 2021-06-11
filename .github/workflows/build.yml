@@ -34,13 +34,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Cache Node Modules
-        id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
-
       - name: Cache npm
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
@@ -137,13 +130,6 @@ jobs:
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
           node-version: '14'
-
-      - name: Cache Node Modules
-        id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
       - name: Cache npm
         id: npm-cache
@@ -290,13 +276,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Cache Node Modules
-        id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
-
       - name: Cache npm
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
@@ -399,13 +378,6 @@ jobs:
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
           node-version: '14'
-
-      - name: Cache Node Modules
-        id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
       - name: Cache npm
         id: npm-cache
@@ -537,13 +509,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Cache Node Modules
-        id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
-
       - name: Cache npm
         id: npm-cache
         uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
@@ -668,13 +633,6 @@ jobs:
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
           node-version: '14'
-
-      - name: Cache Node Modules
-        id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
       - name: Cache npm
         id: npm-cache
