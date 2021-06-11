@@ -41,6 +41,13 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '.npm'
+          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
@@ -71,8 +78,7 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --cache .npm
 
       - name: Run linter
         run: npm run lint
@@ -139,6 +145,13 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '.npm'
+          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: pwsh
@@ -185,8 +198,7 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --cache .npm
 
       - name: Run linter
         run: npm run lint
@@ -285,6 +297,13 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '.npm'
+          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
@@ -345,8 +364,7 @@ jobs:
         shell: pwsh
 
       - name: Install Node dependencies
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --cache .npm
 
       - name: Run linter
         run: npm run lint
@@ -388,6 +406,13 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '.npm'
+          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
@@ -449,8 +474,7 @@ jobs:
         shell: pwsh
 
       - name: NPM install
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --cache .npm
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -520,6 +544,13 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '.npm'
+          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
@@ -580,8 +611,7 @@ jobs:
         shell: pwsh
 
       - name: NPM install
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --cache .npm
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
@@ -646,6 +676,13 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
 
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        with:
+          path: '.npm'
+          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
+
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
@@ -706,8 +743,7 @@ jobs:
         shell: pwsh
 
       - name: NPM install
-        if: steps.node-modules-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm ci --cache .npm
 
       - name: Build
         if: steps.build-cache.outputs.cache-hit != 'true'
