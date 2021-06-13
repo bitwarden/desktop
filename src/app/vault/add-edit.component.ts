@@ -63,10 +63,12 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
         await super.init();
         await this.load();
 
-        const topUsernames = this.cipherService.topUsernames;
-        if (topUsernames != null) {
-            this.defaultUsernames = topUsernames;
-            this.defaultUsernames.unshift('');
+        if (this.cipher.type === CipherType.Login) {
+            const topUsernames = this.cipherService.topUsernames;
+            if (topUsernames != null) {
+                this.defaultUsernames = topUsernames;
+                this.defaultUsernames.unshift('');
+            }
         }
     }
 
