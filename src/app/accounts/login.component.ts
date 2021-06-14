@@ -60,9 +60,10 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         // if yes, retrieve url and user email from the htlm
         const cozyDataNode = document.getElementById('cozy-app');
         const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+        const domainWithoutPort = cozyDomain && cozyDomain.split(':')[0];
         if (cozyDomain) {
             this.isInCozyApp = true;
-            this.email = `me@${cozyDomain}`;
+            this.email = `me@${domainWithoutPort}`;
             const protocol = window.location ? window.location.protocol : 'https:'
             this.baseUrl =  `${protocol}//${cozyDomain}/`;
             this.environmentService.setUrls({
