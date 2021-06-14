@@ -42,6 +42,7 @@ const common = {
                 { from: './src/app/browser/tools', to: 'tools' },
                 { from: './src/locales', to: 'locales' },
                 {from: './src/images/icon.svg'},
+                {from: './src/images/favicon.ico'},
                 './manifest.webapp',
             ]
         }),
