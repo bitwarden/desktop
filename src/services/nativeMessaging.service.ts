@@ -102,7 +102,7 @@ export class NativeMessagingService {
                     });
                 }
 
-                const keyB64 = await (await this.cryptoService.getKey('biometric')).keyB64;
+                const keyB64 = await (await this.cryptoService.getKeyFromStorage('biometric')).keyB64;
 
                 if (keyB64 != null) {
                     this.send({ command: 'biometricUnlock', response: 'unlocked', keyB64: keyB64 }, appId);
