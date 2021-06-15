@@ -1,12 +1,12 @@
 import 'zone.js/dist/zone';
 
 import { ToasterModule } from 'angular2-toaster';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -160,7 +160,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         AppRoutingModule,
         ServicesModule,
         ToasterModule.forRoot(),
-        InfiniteScrollModule,
+        ScrollingModule,
         DragDropModule,
     ],
     declarations: [

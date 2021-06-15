@@ -6,11 +6,9 @@
     </div>
 </div>
 <div class="content">
-    <ng-container *ngIf="(isPaging() ? pagedCiphers : ciphers) as filteredCiphers">
-        <div class="list" *ngIf="filteredCiphers.length" infiniteScroll [infiniteScrollDistance]="1"
-            [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" [infiniteScrollDisabled]="!isPaging()"
-            (scrolled)="loadMore()">
-            <a *ngFor="let c of filteredCiphers" appStopClick (click)="selectCipher(c)"
+    <cdk-virtual-scroll-viewport itemSize="42" *ngIf="ciphers">
+        <div class="list" *ngIf="ciphers.length">
+            <a *cdkVirtualFor="let c of ciphers" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
                 [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -30,7 +28,7 @@
                 </div>
             </a>
         </div>
-        <div class="no-items" *ngIf="!filteredCiphers.length">
+        <div class="no-items" *ngIf="!ciphers.length">
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
             <ng-container *ngIf="loaded">
                 <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
@@ -38,7 +36,7 @@
                 <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
             </ng-container>
         </div>
-    </ng-container>
+    </cdk-virtual-scroll-viewport>
 </div>
 <div class="footer">
     <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" 
