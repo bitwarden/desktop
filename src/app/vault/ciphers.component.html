@@ -5,10 +5,10 @@
         <i class="fa fa-search" aria-hidden="true"></i>
     </div>
 </div>
-<div class="content">
-    <cdk-virtual-scroll-viewport itemSize="42" *ngIf="ciphers">
+<cdk-virtual-scroll-viewport itemSize="42" *ngIf="ciphers">
+    <div class="content">
         <div class="list" *ngIf="ciphers.length">
-            <a *cdkVirtualFor="let c of ciphers" appStopClick (click)="selectCipher(c)"
+            <a *cdkVirtualFor="let c of ciphers; trackBy: trackByFn" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
                 [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -36,8 +36,8 @@
                 <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
             </ng-container>
         </div>
-    </cdk-virtual-scroll-viewport>
-</div>
+    </div>
+</cdk-virtual-scroll-viewport>
 <div class="footer">
     <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" 
         class="block primary" appA11yTitle="{{'addItem' | i18n}}" [disabled]="deleted">
