@@ -29,7 +29,6 @@ import { CipherService } from 'jslib-common/services/cipher.service';
 import { CollectionService } from 'jslib-common/services/collection.service';
 import { ConstantsService } from 'jslib-common/services/constants.service';
 import { ContainerService } from 'jslib-common/services/container.service';
-import { CryptoService } from 'jslib-common/services/crypto.service';
 import { EnvironmentService } from 'jslib-common/services/environment.service';
 import { EventService } from 'jslib-common/services/event.service';
 import { ExportService } from 'jslib-common/services/export.service';
@@ -50,6 +49,8 @@ import { TotpService } from 'jslib-common/services/totp.service';
 import { UserService } from 'jslib-common/services/user.service';
 import { VaultTimeoutService } from 'jslib-common/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib-common/services/webCryptoFunction.service';
+
+import { ElectronCryptoService } from 'jslib-electron/services/electronCrypto.service';
 
 import { ApiService as ApiServiceAbstraction } from 'jslib-common/abstractions/api.service';
 import { AuditService as AuditServiceAbstraction } from 'jslib-common/abstractions/audit.service';
@@ -96,7 +97,7 @@ const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messa
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
-const cryptoService = new CryptoService(storageService, secureStorageService, cryptoFunctionService,
+const cryptoService = new ElectronCryptoService(storageService, secureStorageService, cryptoFunctionService,
     platformUtilsService, logService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
