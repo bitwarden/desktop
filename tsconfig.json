@@ -38,7 +38,8 @@
     "jslib/spec",
     "jslib/src/cli",
     "jslib/src/services/nodeApi.service.ts",
-    "jslib/src/services/lowdbStorage.service.ts",
+    "jslib/src/services/lowdbStorage.service.ts"
+  ],
   "include": [
     "src"
   ]
