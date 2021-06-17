@@ -16,11 +16,34 @@ export class ElectronPlatformUtilsService extends BaseElectronPlatformUtilsServi
 
     async showPasswordDialog(title: string, body: string, passwordValidation: (value: string) => Promise<boolean>):
         Promise<boolean> {
+
+        const html = `
+        ${body}
+        <div class="box password-reprompt">
+            <div class="box-content">
+                <div class="box-content-row box-content-row-flex">
+                    <div class="row-main">
+                        <label for="masterPassword">${this.i18nService.t('masterPass')}</label>
+                        <input id="masterPassword" type="password" name="MasterPassword" class="monospaced" required>
+                    </div>
+                    <div class="action-buttons">
+                        <a class="row-btn" href="#" id="toggleVisibility" role="button"
+                            title="${this.i18nService.t('toggleVisibility')}">
+                            <i class="fa fa-lg fa-eye" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        let el: HTMLElement;
+        let visible = false;
+
         const result = await Swal.fire({
             heightAuto: false,
             titleText: title,
-            input: 'password',
-            text: body,
+            html: html,
             confirmButtonText: this.i18nService.t('ok'),
             showCancelButton: true,
             cancelButtonText: this.i18nService.t('cancel'),
@@ -28,12 +51,32 @@ export class ElectronPlatformUtilsService extends BaseElectronPlatformUtilsServi
                 autocapitalize: 'off',
                 autocorrect: 'off',
             },
-            inputValidator: async (value: string): Promise<any> => {
-                if (await passwordValidation(value)) {
-                    return false;
+            preConfirm: async (): Promise<any> => {
+                const input = el.querySelector('#masterPassword') as any;
+                if (await passwordValidation(input.value)) {
+                    return true;
                 }
 
-                return this.i18nService.t('invalidMasterPassword');
+                return Swal.showValidationMessage(this.i18nService.t('invalidMasterPassword'));
+            },
+            didOpen: el2 => {
+                el = el2;
+
+                const input = (el.querySelector('#masterPassword') as HTMLInputElement);
+                input.focus();
+                input.onkeydown = (event: KeyboardEvent) => {
+                    if (event.key === 'Enter') {
+                        Swal.clickConfirm();
+                    }
+                };
+
+                const icon = el.querySelector('#toggleVisibility i');
+                (el.querySelector('#toggleVisibility') as HTMLElement).onclick = () => {
+                    visible = !visible;
+                    icon.classList.remove('fa-eye', 'fa-eye-slash');
+                    icon.classList.add(visible ? 'fa-eye-slash' : 'fa-eye');
+                    input.type = visible ? 'text' : 'password';
+                };
             },
         });
 
