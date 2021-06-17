@@ -182,7 +182,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
             type: type,
             dialogId: dialogId,
         });
-        return new Promise<boolean>((resolve) => {
+        return new Promise<boolean>(resolve => {
             this.showDialogResolves.set(dialogId, { resolve: resolve, date: new Date() });
         });
     }
@@ -426,7 +426,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
         if (Utils.isNullOrWhitespace(clipboardValue)) {
             return;
         }
-        this.storageService.get<number>(ConstantsService.clearClipboardKey).then((clearSeconds) => {
+        this.storageService.get<number>(ConstantsService.clearClipboardKey).then(clearSeconds => {
             if (clearSeconds == null) {
                 return;
             }

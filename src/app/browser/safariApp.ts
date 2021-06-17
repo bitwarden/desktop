@@ -90,7 +90,7 @@ export class SafariApp {
                     removeIds.push(key);
                 }
             });
-        removeIds.forEach((id) => {
+        removeIds.forEach(id => {
             (window as any).bitwardenSafariAppRequests.delete(id);
         });
     }

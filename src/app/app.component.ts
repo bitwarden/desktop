@@ -289,7 +289,6 @@ export class AppComponent implements OnInit {
                 }
             });
         });
-        
     }
 
     initCozy() {
@@ -301,14 +300,14 @@ export class AppComponent implements OnInit {
             const cozyUrl = `${protocol}//${data.cozyDomain}`;
             const appMetadata = {
                 slug: 'password',
-                version: '1'
+                version: '1',
             };
 
             const client = new CozyClient({
                 uri: cozyUrl,
                 token: data.cozyToken,
-                appMetadata,
-                schema: {}
+                appMetadata: appMetadata,
+                schema: {},
             });
 
             cozy.bar.init({
@@ -317,7 +316,7 @@ export class AppComponent implements OnInit {
                 cozyClient: client,
                 iconPath: data.cozyIconPath,
                 lang: data.cozyLocale,
-                replaceTitleOnMobile: false
+                replaceTitleOnMobile: false,
             });
         }
     }

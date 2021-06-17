@@ -179,7 +179,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         let queryParamsSub1: any;
 
         // check queryParams to choose the tab to activate at init.
-        queryParamsSub1 = this.route.queryParams.subscribe(async (params) => {
+        queryParamsSub1 = this.route.queryParams.subscribe(async params => {
             this.action = params.action;
             if (params.toolType) {
                 this.toolType = params.toolType ? params.toolType : 'installation';
@@ -727,14 +727,14 @@ export class VaultComponent implements OnInit, OnDestroy {
             'favorites',
             'deleted'  ,
         ];
-        nullFilters.filter((prop) => {
+        nullFilters.filter(prop => {
             return !excluded.includes(prop);
         })
         .forEach((prop: string) => {
             // @ts-ignore
             this[prop] = null;
         });
-        falseFilters.filter((prop) => {
+        falseFilters.filter(prop => {
             return !excluded.includes(prop);
         })
         .forEach((prop: string) => {
@@ -815,13 +815,13 @@ export class VaultComponent implements OnInit, OnDestroy {
             event.initEvent('cozy.passwordextension.check-status');
             document.addEventListener(
                 'cozy.passwordextension.installed',
-                (e) => {
+                e => {
                     resolve(true);
                 },
             );
             document.addEventListener(
                 'cozy.passwordextension.connected',
-                (e) => {
+                e => {
                     resolve(true);
                 },
             );

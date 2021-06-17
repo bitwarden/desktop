@@ -65,7 +65,7 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
         const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
         if (cozyDomain) {
             this.email = `me@${cozyDomain}`;
-            const protocol = window.location ? window.location.protocol : 'https:'
+            const protocol = window.location ? window.location.protocol : 'https:';
             this.baseUrl =  `${protocol}//${cozyDomain}/`;
             this.environmentService.setUrls({
                 base: this.baseUrl + 'bitwarden',
@@ -126,8 +126,6 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
         * https://github.com/bitwarden/jslib/blob/42348e2fdc6206157d68d8a9f496eaa70520ab01/src/angular/components/lock.component.ts#L63
      */
     async submit() {
-        console.log(`lock.submit()`);
-
         const kdf = await this.userService.getKdf();
         const kdfIterations = await this.userService.getKdfIterations();
 

@@ -53,7 +53,7 @@ export class GroupingsComponent extends BaseGroupingsComponent {
     async load(setLoaded = true) {
         // check if there are notes to display
         const ciphers = await this.cipherService.getAllDecrypted();
-        const noteIndex = ciphers.findIndex( (c) => {
+        const noteIndex = ciphers.findIndex(c => {
             return (c.type === 2 && !c.isDeleted);
         });
         this.hasNotes = (noteIndex > -1) ;

@@ -101,24 +101,28 @@ export class CiphersComponent extends BaseCiphersComponent {
         // } else {
         //     return this.cipherService.softDeleteManyWithServer(ids);
         // }
-        const promises = this.ciphers.map( (cipher) => {
+        const promises = this.ciphers.map(cipher => {
             return cipher.isDeleted ? this.cipherService.deleteWithServer(cipher.id)
             : this.cipherService.softDeleteWithServer(cipher.id);
         });
-        return Promise.all(promises).catch((e) => {
-            console.log('there was a pb during deletions !', e);
-        });
+        return Promise.all(promises)
+            .catch(e => {
+                // should be used only for debug purpose
+                // console.log('there was a pb during deletions !', e);
+            });
     }
 
     protected restoreCiphers() {
-        const promises = this.ciphers.map( (cipher) => {
+        const promises = this.ciphers.map(cipher => {
             if (!cipher.isDeleted) {
                 return true;
             }
             return this.cipherService.restoreWithServer(cipher.id);
         });
-        return Promise.all(promises).catch((e) => {
-            console.log('there was a pb during restorations !', e);
-        });
+        return Promise.all(promises)
+            .catch(e => {
+                // should be used only for debug purpose
+                // console.log('there was a pb during restorations !', e);
+            });
     }
 }

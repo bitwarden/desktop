@@ -1,11 +1,11 @@
 import {
     Component,
     ComponentFactoryResolver,
+    ElementRef,
     NgZone,
     OnDestroy,
     ViewChild,
     ViewContainerRef,
-    ElementRef,
 } from '@angular/core';
 
 import { Router } from '@angular/router';
@@ -64,7 +64,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         if (cozyDomain) {
             this.isInCozyApp = true;
             this.email = `me@${domainWithoutPort}`;
-            const protocol = window.location ? window.location.protocol : 'https:'
+            const protocol = window.location ? window.location.protocol : 'https:';
             this.baseUrl =  `${protocol}//${cozyDomain}/`;
             this.environmentService.setUrls({
                 base: this.baseUrl + 'bitwarden',

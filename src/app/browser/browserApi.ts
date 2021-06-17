@@ -53,7 +53,7 @@ export class BrowserApi {
 
     static async tabsQuery(options: any): Promise<any[]> {
         if (BrowserApi.isChromeApi) {
-            return new Promise((resolve) => {
+            return new Promise(resolve => {
                 chrome.tabs.query(options, (tabs: any[]) => {
                     resolve(tabs);
                 });
@@ -235,7 +235,7 @@ export class BrowserApi {
     static reloadOpenWindows() {
         if (!BrowserApi.isSafariApi) {
             const views = chrome.extension.getViews() as Window[];
-            views.filter((w) => w.location.href != null).forEach((w) => {
+            views.filter(w => w.location.href != null).forEach(w => {
                 w.location.reload();
             });
         }

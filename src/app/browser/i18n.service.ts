@@ -13,7 +13,7 @@ export class I18nService extends BaseI18nService {
             } else {
                 // Deprecated
                 // const file = await fetch(localesDirectory + '/' + formattedLocale + '/messages.json');
-                const file = await fetch("locales/fr/messages.json", {mode: 'no-cors'});
+                const file = await fetch('locales/fr/messages.json', {mode: 'no-cors'});
                 return await file.json();
             }
         });
