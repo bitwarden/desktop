@@ -1,7 +1,7 @@
 {
   "name": "Passwords",
   "name_prefix": "Cozy",
-  "slug": "password",
+  "slug": "passwords",
   "icon": "icon.svg",
   "categories": ["cozy"],
   "version": "0.0.1",
@@ -39,6 +39,6 @@
       "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
       "type": "io.cozy.settings",
       "verbs": ["GET"]
-    },	
+    }
   }
 }
