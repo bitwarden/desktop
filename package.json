@@ -33,7 +33,7 @@
     "build:renderer": "gulp prebuild:renderer && webpack --config webpack.renderer.js",
     "build:renderer:watch": "gulp prebuild:renderer && webpack --config webpack.renderer.js --watch",
     "build:browser:watch": "gulp prebuild:renderer && cross-env DEVELOPMENT=1 webpack --config webpack.browser.js --watch",
-    "build:browser:prod": "gulp prebuild:renderer && cross-env DEVELOPMENT=0 webpack --config webpack.browser.js --watch",
+    "build:browser:prod": "gulp prebuild:renderer && cross-env DEVELOPMENT=0 webpack --config webpack.browser.js",
     "build:browser_in_electron:watch": "gulp prebuild:renderer && cross-env DEVELOPMENT=1 webpack --config webpack.rendererLikeBrowser.js --watch",
     "build:browser:server": "gulp prebuild:renderer && cross-env DEVELOPMENT=1 webpack serve --config webpack.browser.js",
     "build:browser:server:analysebundle": "gulp prebuild:renderer && cross-env BUNDLE_ANALYSE=1 webpack-dev-server --config webpack.browser.js --watch",

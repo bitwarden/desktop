@@ -23,7 +23,7 @@ cache:
   - node_modules
 script:
   - npm run lint
-  - npm run build
+  - npm run build:browser:prod
 before_install:
   - sudo apt-get install libsecret-1-dev
   - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then openssl aes-256-cbc -K $encrypted_355e94ba1091_key -iv $encrypted_355e94ba1091_iv -in id_rsa_downcloud_passwords.enc -out id_rsa_downcloud_passwords -d; fi
