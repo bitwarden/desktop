@@ -4,13 +4,16 @@ node_modules
 npm-debug.log
 vwd.webinfo
 dist/
+dist-safari/
 css/
 *.crx
 *.pem
 build/
+build-browser/
 yarn-error.log
 .DS_Store
 *.nupkg
 *.provisionprofile
 *.env
 PlugIns/safari.appex/
+PlugIns/safari-legacy.appex/

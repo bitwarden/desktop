@@ -1,0 +1,81 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports":true,
+    "noImplicitAny": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "es6",
+    "target": "ES2016",
+    "allowJs": true,
+    "sourceMap": true,
+    "types": ["sweetalert2"],
+    "baseUrl": ".",
+    "paths": {
+      "tldjs": [
+        "jslib/src/misc/tldjs.noop"
+      ],
+      "jslib/electron/services/electronPlatformUtils.service": [
+        "src/app/browser/browserPlatformUtils.service"
+      ],
+      "jslib/abstractions/platformUtils.service": [
+        "src/app/browser/platformUtils.service.abstraction"
+      ],
+      "browser/functionForTarget._showDialog": [
+        "src/app/browser/functionForTarget._showDialog.browser"
+      ],
+      "jslib/*": [
+        "jslib/src/*"
+      ],
+      "@angular/*": [
+        "node_modules/@angular/*"
+      ],
+      "electron": [
+        "node_modules/electron"
+      ],
+      "electron-log": [
+        "node_modules/electron-log"
+      ],
+      "electron-store": [
+        "node_modules/electron-store"
+      ],
+      "node": [
+        "node_modules/@types/node"
+      ],
+      "duo_web_sdk": [
+        "node_modules/duo_web_sdk"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
+  },
+  "exclude": [
+    "node_modules",
+    "jslib/node_modules",
+    "proxy",
+    "dist",
+    "dist-safari",
+    "jslib/dist",
+    "build",
+    "build-browser",
+    "jslib/spec",
+    "jslib/src/angular/components/icon.component.ts",
+    "jslib/src/cli",
+    "jslib/src/services/nodeApi.service.ts",
+    "jslib/src/services/lowdbStorage.service.ts",
+    "src/app/accounts/premium.component.ts",
+    "src/proxy/ipc.ts",
+    "src/proxy/nativemessage.ts",
+    "src/proxy/native-messaging-proxy.ts",
+    "src/entry.ts",
+    "src/main/menu.main.ts",
+    "src/main/messaging.main.ts",
+    "src/main/powerMonitor.main.ts",
+    "src/main/nativeMessaging.main.ts",
+    "src/main.ts",
+    "src/app/browser/functionForTarget._showDialog.electron.ts",
+    "src/scripts/duo.js"
+  ]
+}

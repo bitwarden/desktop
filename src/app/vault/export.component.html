@@ -12,6 +12,7 @@
                             <select id="format" name="Format" [(ngModel)]="format">
                                 <option value="json">.json</option>
                                 <option value="csv">.csv</option>
+                                <option value="encrypted_json">.json (Encrypted)</option>
                             </select>
                         </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
@@ -32,7 +33,6 @@
                     </div>
                     <div class="box-footer">
                         <p>{{'exportMasterPassword' | i18n}}</p>
-                        <strong>{{'warning' | i18n}}</strong>: {{'exportWarningDesc' | i18n}}
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { app, globalShortcut } from 'electron';
+import { app } from 'electron';
 import * as path from 'path';
 
 import { I18nService } from './services/i18n.service';
@@ -18,6 +18,7 @@ import { ElectronStorageService } from 'jslib/electron/services/electronStorage.
 import { TrayMain } from 'jslib/electron/tray.main';
 import { UpdaterMain } from 'jslib/electron/updater.main';
 import { WindowMain } from 'jslib/electron/window.main';
+import { NativeMessagingMain } from './main/nativeMessaging.main';
 
 export class Main {
     logService: ElectronLogService;
@@ -33,6 +34,7 @@ export class Main {
     powerMonitorMain: PowerMonitorMain;
     trayMain: TrayMain;
     biometricMain: BiometricMain;
+    nativeMessagingMain: NativeMessagingMain;
 
     constructor() {
         // Set paths for portable builds
@@ -73,7 +75,7 @@ export class Main {
         app.setPath('logs', path.join(app.getPath('userData'), 'logs'));
 
         const args = process.argv.slice(1);
-        const watch = args.some((val) => val === '--watch');
+        const watch = args.some(val => val === '--watch');
 
         if (watch) {
             // tslint:disable-next-line
@@ -90,7 +92,7 @@ export class Main {
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
         this.windowMain = new WindowMain(this.storageService, true, undefined, undefined,
-            (arg) => this.processDeepLink(arg));
+            arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
         this.messagingMain = new MessagingMain(this, this.storageService);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
             this.menuMain.updateMenuItem.enabled = false;
@@ -103,7 +105,7 @@ export class Main {
         this.powerMonitorMain = new PowerMonitorMain(this);
         this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);
 
-        this.messagingService = new ElectronMainMessagingService(this.windowMain, (message) => {
+        this.messagingService = new ElectronMainMessagingService(this.windowMain, message => {
             this.messagingMain.onMessage(message);
         });
 
@@ -111,11 +113,13 @@ export class Main {
 
         if (process.platform === 'win32') {
             const BiometricWindowsMain = require('jslib/electron/biometric.windows.main').default;
-            this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService);
+            this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService, this.windowMain);
         } else if (process.platform === 'darwin') {
             const BiometricDarwinMain = require('jslib/electron/biometric.darwin.main').default;
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
+
+        this.nativeMessagingMain = new NativeMessagingMain(this.logService, this.windowMain, app.getPath('userData'), app.getPath('exe'));
     }
 
     bootstrap() {
@@ -138,6 +142,10 @@ export class Main {
             await this.updaterMain.init();
             if (this.biometricMain != null) {
                 await this.biometricMain.init();
+            }
+
+            if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegration)) {
+                this.nativeMessagingMain.listen();
             }
 
             if (!app.isDefaultProtocolClient('bitwarden')) {
@@ -164,7 +172,7 @@ export class Main {
     }
 
     private processDeepLink(argv: string[]): void {
-        argv.filter((s) => s.indexOf('bitwarden://') === 0).forEach((s) => {
+        argv.filter(s => s.indexOf('bitwarden://') === 0).forEach(s => {
             const url = new URL(s);
             const code = url.searchParams.get('code');
             const receivedState = url.searchParams.get('state');
@@ -174,6 +182,3 @@ export class Main {
         });
     }
 }
-
-const main = new Main();
-main.bootstrap();

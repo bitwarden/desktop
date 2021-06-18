@@ -1,10 +1,15 @@
 ﻿@import "variables.scss";
-
-#vault {
+app-vault, app-login {
+    height: 100px;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.vault {
     height: 100%;
+    max-width: 1450px;
     display: flex;
 
-    > #groupings, > #items, > #details, > #logo {
+    > .groupings, > .items, > .details, > .logo {
         display: flex;
         flex-direction: column;
 
@@ -13,24 +18,35 @@
         }
     }
 
-    > #groupings {
+    > .groupings {
         width: 22%;
         min-width: 175px;
         max-width: 250px;
         border-right: 1px solid #000000;
 
         @include themify($themes) {
-            background-color: themed('backgroundColorAlt');
+            background-color: themed('backgroundColorAlt2');
             border-right-color: themed('borderColor');
         }
 
-        .inner-content {
-            padding-bottom: 0;
-            padding-right: 5px;
-            user-select: none;
+        .content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
 
-            > ul, > div > ul {
-                margin: 0 0 15px 0;
+            .footer {
+                padding: 0;
+            }
+
+            .inner-content {
+                padding-bottom: 0;
+                padding-right: 5px;
+                user-select: none;
+
+                > ul, > div > ul {
+                    margin: 0 0 15px 0;
+                }
             }
         }
 
@@ -93,6 +109,21 @@
                     padding-left: 12px;
                 }
 
+                .fa-folder-open, .fa-trash-o {
+                    width: 24px;
+                    height: 24px;
+                    @include themify($themes) {
+                        color: themed('groupingsFolderIconColor');
+                    }
+                    padding-right: 5px;
+                    position: relative;
+                    left: -7px;
+                    top: 4px;
+                }
+                .fa-trash-o {
+                    left: -5px;
+                }
+
                 .fa-li {
                     left: -4px;
                 }
@@ -103,7 +134,7 @@
             }
 
             // Level 2
-            ul li { 
+            ul li {
                 > a {
                     padding-left: 23px;
                 }
@@ -118,7 +149,7 @@
             }
 
             // Level 3
-            ul ul li { 
+            ul ul li {
                 > a {
                     padding-left: 34px;
                 }
@@ -133,7 +164,7 @@
             }
 
             // Level 4
-            ul ul ul li { 
+            ul ul ul li {
                 > a {
                     padding-left: 45px;
                 }
@@ -148,7 +179,7 @@
             }
 
             // Level 5
-            ul ul ul ul li { 
+            ul ul ul ul li {
                 > a {
                     padding-left: 56px;
                 }
@@ -163,7 +194,7 @@
             }
 
             // Level 6
-            ul ul ul ul ul li { 
+            ul ul ul ul ul li {
                 > a {
                     padding-left: 67px;
                 }
@@ -178,7 +209,7 @@
             }
 
             // Level 7
-            ul ul ul ul ul ul li { 
+            ul ul ul ul ul ul li {
                 > a {
                     padding-left: 78px;
                 }
@@ -199,7 +230,7 @@
 
             li {
                 a {
-                    padding: 5px 0;
+                    padding: 7px 0;
                     display: flex;
                     align-items: center;
 
@@ -210,11 +241,11 @@
                     span {
                         visibility: hidden;
                         margin-left: auto;
-                        
+
                         @include themify($themes) {
                             color: themed('headingButtonColor');
                         }
-        
+
                         &:hover, &:focus {
                             @include themify($themes) {
                                 color: themed('headingButtonHoverColor');
@@ -229,6 +260,16 @@
                     }
                 }
 
+                &:hover {
+                    margin-left: -15px;
+                    margin-right: -5px;
+                    padding-left: 15px;
+                    padding-right: 5px;
+                    @include themify($themes) {
+                        background-color: themed('groupingsHoverColor');
+                    }
+                }
+
                 &.active {
                     margin-left: -15px;
                     margin-right: -5px;
@@ -236,6 +277,7 @@
                     padding-right: 5px;
 
                     @include themify($themes) {
+                        box-shadow: inset 0.25rem 0 0 0 themed('primaryColor');
                         background-color: themed('groupingsActiveColor');
                     }
 
@@ -254,12 +296,12 @@
         }
     }
 
-    > #items {
+    > .items {
         width: 28%;
         min-width: 200px;
         max-width: 350px;
         border-right: 1px solid #000000;
-        
+
         @include themify($themes) {
             background-color: themed('backgroundColor');
             border-right-color: themed('borderColor');
@@ -272,7 +314,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 10px;
+            padding: 30px 10px 20px 10px;
 
             .fa {
                 margin-bottom: 10px;
@@ -282,30 +324,82 @@
                 }
             }
         }
+        .footer {
+            padding: 20px 0 20px 15px;
+            border-top: 1px solid #000000;
+            position: relative;
+            z-index: 1;
+            @include themify($themes) {
+                border-top-color: themed('borderColor');
+            }
+            #param-btn {
+                border: none;
+            }
+            svg {
+                box-sizing: content-box;
+                height: 100%;
+                cursor: pointer;
+                @include themify($themes) {
+                    background-color: themed('buttonBackgroundColor');
+                    fill: themed('buttonColor');
+                }
+                &:hover {
+                    @include themify($themes) {
+                        background-color: darken(themed('buttonBackgroundColor'), 1.5%);
+                        fill: darken(themed('buttonColor'), 10%);
+                    }
+                }
+            }
+            #bottom-menu {
+                position: absolute;
+                padding: 8px 0;
+                border: 1px solid;
+                border-radius: 4px;
+                box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.20);
+                @include themify($themes) {
+                    background-color: themed('buttonBackgroundColor');
+                    border-color: themed('buttonBorderColor');
+                }
+                right: 5px;
+                bottom: calc(100% - 28px);
+                button {
+                    border: none;
+                    width: 100%;
+                    text-align: left;
+                }
+                button:first-child {
+                    padding: 0;
+                    display: block;
+                }
+            }
+        }
     }
 
-    > #details {
+    > .details {
         flex: 1;
         min-width: 0;
-        
+
         @include themify($themes) {
             background-color: themed('backgroundColorAlt2');
         }
 
         .inner-content {
-            min-width: 400px;
+            min-width: 350px;
         }
 
         .box {
             max-width: 550px;
             margin: 30px auto 0 auto;
-
             &:first-child {
                 margin-top: 10px;
             }
-
             &:last-child {
-                margin-bottom: 30px;
+                margin-top: 0;
+                font-size: $font-size-small;
+
+                @include themify($themes) {
+                    color: themed('mutedColor');
+                }
             }
         }
 
@@ -314,9 +408,28 @@
             flex-direction: column;
             height: 100%;
         }
+
+        .footer {
+            margin: 30px auto 10px auto;
+            max-width: 550px;
+            align-items: flex-end;
+            & i {
+                margin-right: 5px;
+            }
+            & span {
+                color: $text-color;
+            }
+            button {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
     }
 
-    > #logo {
+    > .logo {
         flex: 1;
         min-width: 0;
 
@@ -326,7 +439,6 @@
         }
 
         .inner-content {
-            min-width: 320px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -407,36 +519,43 @@
     }
 
     .content {
-        flex: 1 1 auto;
         position: relative;
         overflow: auto;
-        height: 100%;
     }
 
     .footer {
-        height: 50px;
         flex: 0 0 auto;
-        border-top: 1px solid #000000;
         display: flex;
-        align-items: center;
-        padding: 0 15px;
-
-        @include themify($themes) {
-            background-color: themed('backgroundColorAlt');
-            border-top-color: themed('borderColor');
-        }
-
-        button {
-            margin-right: 10px;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
         .right {
             margin-left: auto;
             display: flex;
+        }
+    }
+
+    .nav {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        .btn {
+            width: 100%;
+            font-size: $font-size-base * 0.8;
+            flex: 1;
+            border: 0;
+            border-radius: 0;
+            padding-bottom: 4px;
+
+            &:not(.active) {
+                @include themify($themes) {
+                    background-color: themed('backgroundColorAlt');
+                }
+            }
+
+            i {
+                font-size: $font-size-base * 1.5;
+                display: block;
+                margin-bottom: 2px;
+                text-align: center;
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 import {
     Component,
+    NgZone,
     OnDestroy,
     OnInit,
-    NgZone,
 } from '@angular/core';
 import { Router } from '@angular/router';
 

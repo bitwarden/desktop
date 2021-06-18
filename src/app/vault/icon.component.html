@@ -1,0 +1,37 @@
+<div class="icon-wrapper" aria-hidden="true">
+
+    <img class="icon-type" [src]="image" appFallbackSrc="{{fallbackImage}}" *ngIf="imageEnabled && image" alt="" />
+
+    <svg *ngIf="cipher.type === 3" class="icon-type" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+        <defs>
+            <path id="a" d="M0 0h32v22H0z"/>
+            <path id="c" d="M0 22h32V0H0z"/>
+        </defs>
+        <g fill="none" fill-rule="evenodd" transform="translate(0 5)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#16B52D" d="M0 1.991C0 .891.889.001 2.001.001h27.998C31.104 0 32 .888 32 1.99V20.01A1.992 1.992 0 0 1 29.999 22H2.001A1.995 1.995 0 0 1 0 20.01V1.99z" mask="url(#b)"/>
+            <mask id="d" fill="#fff">
+                <use xlink:href="#c"/>
+            </mask>
+            <path fill="#8EE39B" d="M2 20h28V2H2z" mask="url(#d)"/>
+            <path fill="#16B52D" d="M16 6.005a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM7 9a2.002 2.002 0 0 1 0 4.003A2 2 0 0 1 7 9zm18 0a2.002 2.002 0 0 1 0 4.003A2 2 0 0 1 25 9z" mask="url(#d)"/>
+        </g>
+    </svg>
+
+    <svg *ngIf="cipher.type===4" class="icon-type" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 24">
+        <g fill="none" fill-rule="evenodd">
+            <path fill="#FFD799" d="M32 21.995A1.997 1.997 0 0 1 30.002 24H24v-2.499c0-.829-.666-1.5-1.5-1.5-.829 0-1.5.678-1.5 1.5v2.5H11v-2.5c0-.829-.666-1.5-1.5-1.5-.829 0-1.5.678-1.5 1.5v2.5H1.998A2.002 2.002 0 0 1 0 21.994V2.005C0 .897.889 0 2.001 0h27.997C31.104 0 32 .897 32 2.005v19.99z"/>
+            <path fill="#FF9300" d="M12 11.5c1.5 0 3 2.25 3 3s0 1.5-.75 1.5H3.75C3 16 3 15.25 3 14.5s1.5-3 3-3 .75.75 3 .75 1.5-.75 3-.75zM28 14v1H17v-1h11zm0-3v1H17v-1h11zM9 4c1.657 0 3 1.511 3 3.375s-1.343 3.375-3 3.375-3-1.511-3-3.375S7.343 4 9 4zm19 4v1H17V8h11zm-5-3v1h-6V5h6z"/>
+        </g>
+    </svg>
+
+    <svg *ngIf="cipher.type===2" class="icon-type" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <g fill="none" fill-rule="evenodd">
+            <path fill="#ACF5F7" d="M3 2.002C3 .896 3.89 0 4.997 0H22l7 7v22.996C29 31.103 28.105 32 27.003 32H4.997C3.894 32 3 31.11 3 29.998V2.002z"/>
+            <path fill="#0DCBCF" d="M21.5 0c-.276 0-.5.23-.5.5V8h7.5c.276 0 .5-.232.5-.5V7l-7-7h-.5zM19 23v2H9v-2h10zm4-4v2H9v-2h14zm-2-4v2H9v-2h12zm2-4v2H9v-2h14z"/>
+        </g>
+    </svg>
+
+</div>

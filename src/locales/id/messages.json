@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Salin URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Salin Kode Verifikasi (TOTP)"
+  },
   "length": {
     "message": "Panjang"
   },
@@ -589,11 +592,11 @@
     "message": "Verifikasi dengan Duo Security untuk organisasi anda dengan menggunakan Aplikasi Duo Mobile, SMS, panggilan telepon atau kunci keamanan U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Menggunakan FIDO U2F mengaktifkan kunci keamanan untuk mengakses akun anda."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Kunci Keamanan FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "Ketika jendela di perkecil, tampilkan ikon di dalam sistem baki sebagai gantinya."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimalkan ke bilah menu"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Saat meminimalkan jendela, tampilkan ikon di bilah menu sebagai gantinya."
+  },
   "enableCloseToTray": {
     "message": "Close to Tray Icon"
   },
   "enableCloseToTrayDesc": {
     "message": "Saat menutup jendela, tampilkan ikon di baki sistem sebagai gantinya."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Dekat dengan bilah menu"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Saat menutup jendela, tampilkan ikon di bilah menu sebagai gantinya."
   },
   "enableTray": {
     "message": "Aktifkan Ikon Baki"
@@ -869,6 +884,30 @@
   },
   "startToTrayDesc": {
     "message": "Saat aplikasi pertama kali dijalankan, hanya tampilkan ikon di baki sistem."
+  },
+  "startToMenuBar": {
+    "message": "Mulai menu bar"
+  },
+  "startToMenuBarDesc": {
+    "message": "Saat aplikasi pertama kali dijalankan, hanya tampilkan ikon di bilah menu."
+  },
+  "openAtLogin": {
+    "message": "Mulai secara otomatis saat login"
+  },
+  "openAtLoginDesc": {
+    "message": "Jalankan aplikasi Bitwarden Desktop secara otomatis saat login."
+  },
+  "alwaysShowDock": {
+    "message": "Selalu tampilkan di Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Tampilkan ikon Bitwarden di Dock bahkan saat diminimalkan ke bilah menu."
+  },
+  "confirmTrayTitle": {
+    "message": "Konfirmasi nonaktifkan baki"
+  },
+  "confirmTrayDesc": {
+    "message": "Menonaktifkan pengaturan ini juga akan menonaktifkan semua pengaturan terkait baki lainnya."
   },
   "language": {
     "message": "Bahasa"
@@ -1182,8 +1221,17 @@
     "message": "PERINGATAN",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Konfirmasi Ekspor Vault"
+  },
   "exportWarningDesc": {
     "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Ekspor ini mengenkripsi data Anda menggunakan kunci enkripsi akun Anda. Jika Anda pernah merotasi kunci enkripsi akun Anda, Anda harus mengekspor lagi karena Anda tidak akan dapat mendekripsi file ekspor ini."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Kunci enkripsi akun unik untuk setiap akun pengguna Bitwarden, jadi Anda tidak dapat mengimpor ekspor terenkripsi ke akun lain."
   },
   "exportMasterPassword": {
     "message": "Masukkan kata sandi utama untuk ekspor data brankas anda."
@@ -1248,6 +1296,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Verifikasi untuk Bitwarden."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Kunci dengan kata sandi utama saat komputer dihidupkan ulang"
@@ -1407,5 +1461,227 @@
   },
   "acceptPoliciesError": {
     "message": "Persyaratan Layanan dan Kebijakan Privasi belum diakui."
+  },
+  "enableBrowserIntegration": {
+    "message": "Aktifkan integrasi browser"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Integrasi browser digunakan untuk biometrik di browser."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Integrasi browser tidak didukung"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Sayangnya integrasi browser hanya didukung di versi Mac App Store untuk saat ini."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Integrasi browser tidak didukung"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Sayangnya integrasi browser saat ini tidak didukung di versi Windows Store."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Mewajibkan verifikasi untuk integrasi browser"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Aktifkan lapisan keamanan tambahan dengan meminta validasi frase sidik jari saat membuat tautan antara desktop dan browser Anda. Saat diaktifkan, ini membutuhkan intervensi pengguna dan verifikasi setiap kali koneksi dibuat."
+  },
+  "approve": {
+    "message": "Menyetujui"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verifikasi koneksi browser"
+  },
+  "verifyBrowserDesc": {
+    "message": "Harap pastikan sidik jari yang ditampilkan identik dengan sidik jari yang ditunjukkan di ekstensi browser."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometrik tidak diaktifkan"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Biometrik browser mengharuskan biometrik desktop diaktifkan di pengaturan terlebih dahulu."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "Karena Kebijakan Perusahaan, Anda dilarang menyimpan item ke lemari besi pribadi Anda. Ubah opsi Kepemilikan ke organisasi dan pilih dari Koleksi yang tersedia."
+  },
+  "hintEqualsPassword": {
+    "message": "Petunjuk kata sandi Anda tidak boleh sama dengan kata sandi Anda."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Kebijakan organisasi memengaruhi opsi kepemilikan Anda."
+  },
+  "allSends": {
+    "message": "Semua Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Berkas"
+  },
+  "sendTypeText": {
+    "message": "Teks"
+  },
+  "searchSends": {
+    "message": "Pencarian Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Edit Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Brankas Saya"
+  },
+  "text": {
+    "message": "Teks"
+  },
+  "deletionDate": {
+    "message": "Tanggal Penghapusan"
+  },
+  "deletionDateDesc": {
+    "message": "Send akan dihapus secara permanen pada tanggal dan waktu yang ditentukan.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Tanggal habis tempo"
+  },
+  "expirationDateDesc": {
+    "message": "Jika disetel, akses ke Send ini akan berakhir pada tanggal dan waktu yang ditentukan.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Hitungan Akses Maksimum"
+  },
+  "maxAccessCountDesc": {
+    "message": "Jika disetel, pengguna tidak dapat lagi mengakses Send ini setelah jumlah akses maksimum tercapai.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Hitungan Akses Saat Ini"
+  },
+  "disableSend": {
+    "message": "Nonaktifkan Send ini sehingga tidak ada yang dapat mengaksesnya.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Secara opsional, minta kata sandi bagi pengguna untuk mengakses Send ini.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Catatan pribadi tentang Send ini.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Tautan Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Tautan Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Saat mengakses Send, sembunyikan teks secara default",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send Dibuat",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send diedit",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send Dihapus",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Kata Sandi baru"
+  },
+  "whatTypeOfSend": {
+    "message": "Jenis Send apakah ini?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Buat Send Baru",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Teks yang ingin Anda kirim."
+  },
+  "sendFileDesc": {
+    "message": "File yang ingin Anda kirim."
+  },
+  "days": {
+    "message": "$DAYS$ hari",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 hari"
+  },
+  "custom": {
+    "message": "Kustom"
+  },
+  "deleteSendConfirmation": {
+    "message": "Anda yakin ingin menghapus Send ini?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Salin Send tautan ke papan klip",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Salin tautan untuk membagikan Send ke papan klip saya ini setelah disimpan."
+  },
+  "sendDisabled": {
+    "message": "Send Dinonaktifkan",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "Karena kebijakan perusahaan, Anda hanya dapat menghapus Send yang sudah ada.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Salin tautan"
+  },
+  "disabled": {
+    "message": "Dinonaktifkan"
+  },
+  "maxAccessCountReached": {
+    "message": "Jumlah akses maksimum tercapai"
+  },
+  "expired": {
+    "message": "Kedaluwarsa"
+  },
+  "pendingDeletion": {
+    "message": "Penghapusan menunggu keputusan"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

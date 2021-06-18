@@ -12,35 +12,63 @@
             (scrolled)="loadMore()">
             <a *ngFor="let c of filteredCiphers" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
-                [ngClass]="{'active': c.id === activeCipherId}">
+                [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
-                <span class="text">
-                    {{c.name}}
-                    <ng-container *ngIf="c.organizationId">
-                        <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
-                        <span class="sr-only">{{'shared' | i18n}}</span>
-                    </ng-container>
-                    <ng-container *ngIf="c.hasAttachments">
-                        <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
-                        <span class="sr-only">{{'attachments' | i18n}}</span>
-                    </ng-container>
-                </span>
-                <span class="detail">{{c.subTitle}}</span>
+                <div class="flex-cipher-list-item">
+                    <span class="text">
+                        {{c.name}}
+                        <ng-container *ngIf="c.organizationId">
+                            <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
+                            <span class="sr-only">{{'shared' | i18n}}</span>
+                        </ng-container>
+                        <ng-container *ngIf="c.hasAttachments">
+                            <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
+                            <span class="sr-only">{{'attachments' | i18n}}</span>
+                        </ng-container>
+                    </span>
+                    <span *ngIf="c.subTitle" class="detail">{{c.subTitle}}</span>
+                </div>
             </a>
         </div>
         <div class="no-items" *ngIf="!filteredCiphers.length">
             <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
             <ng-container *ngIf="loaded">
-                <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32" fill="#297EF2">
+                    <path id="a" d="M23.527 24H8.473C3.8 24 0 20.254 0 15.648c0-2.196.858-4.27 2.417-5.84a8.471 8.471 0 0 1 5.047-2.451A8.253 8.253 0 0 1 9.952 2.38 8.485 8.485 0 0 1 15.877 0c2.228 0 4.333.844 5.926 2.38a8.26 8.26 0 0 1 2.485 4.95C28.605 7.713 32 11.298 32 15.65 32 20.254 28.197 24 23.526 24zm-.181-2h.063C27.043 22 30 19.11 30 15.56c0-3.55-2.957-6.439-6.591-6.439h-.066a.864.864 0 0 1-.874-.833C22.387 4.82 19.43 2 15.88 2c-3.551 0-6.508 2.821-6.59 6.289a.865.865 0 0 1-.854.834C4.887 9.203 2 12.09 2 15.561 2 19.11 4.957 22 8.591 22h.054l.02-.001.057.001h14.624zm-2.502-6.666v-.002a.303.303 0 0 1 .1.44.363.363 0 0 1-.475.093 1.863 1.863 0 0 1-.388-.31C18.922 16.519 17.457 17 15.993 17c-1.462 0-2.923-.48-4.08-1.439-.105.11-.231.213-.381.303a.364.364 0 0 1-.476-.092c-.104-.146-.06-.342.1-.439.585-.35.613-.998.613-1.023.007-.174.165-.314.352-.31.189.005.34.149.336.322 0 .024-.01.331-.172.693 2.083 1.804 5.348 1.802 7.426-.01-.157-.357-.167-.66-.168-.683-.003-.174.148-.319.338-.322.19-.003.345.135.35.31 0 .029.03.673.613 1.024z"/>
+                </svg>
                 <p>{{'noItemsInList' | i18n}}</p>
-                <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+                <button (click)="addCipher()" class="btn block primary link" *ngIf="!deleted"
+                >{{'addItem' | i18n}}</button>
             </ng-container>
         </div>
     </ng-container>
 </div>
 <div class="footer">
-    <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" 
+    <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()"
         class="block primary" appA11yTitle="{{'addItem' | i18n}}" [disabled]="deleted">
         <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
     </button>
+    <button id="param-btn" (click)="openMenu()">
+        <svg width="4" height="17" viewBox="0 0 8 34" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.41665 0.583239C7.02784 0.194535 6.55584 0 6.00022 0H2.00007C1.4443 0 0.972306 0.194316 0.583354 0.583239C0.194402 0.972162 0 1.44449 0 1.99985V6.00007C0 6.5558 0.194402 7.02776 0.583354 7.41669C0.972087 7.80539 1.4443 8 2.00007 8H6.00022C6.55584 8 7.02784 7.80561 7.41665 7.41669C7.80545 7.02798 8 6.5558 8 6.00007V1.99978C8.00022 1.44442 7.80596 0.972089 7.41665 0.583239Z"/>
+            <path d="M7.41665 26.5832C7.02784 26.1945 6.55584 26 6.00022 26H2.00007C1.4443 26 0.972306 26.1943 0.583354 26.5832C0.194402 26.9722 0 27.4445 0 27.9999V32.0001C0 32.5558 0.194402 33.0278 0.583354 33.4167C0.972087 33.8054 1.4443 34 2.00007 34H6.00022C6.55584 34 7.02784 33.8056 7.41665 33.4167C7.80545 33.028 8 32.5558 8 32.0001V27.9998C8.00022 27.4444 7.80596 26.9721 7.41665 26.5832Z"/>
+            <path d="M7.41665 13.5832C7.02784 13.1945 6.55584 13 6.00022 13H2.00007C1.4443 13 0.972306 13.1943 0.583354 13.5832C0.194402 13.9722 0 14.4445 0 14.9999V19.0001C0 19.5558 0.194402 20.0278 0.583354 20.4167C0.972087 20.8054 1.4443 21 2.00007 21H6.00022C6.55584 21 7.02784 20.8056 7.41665 20.4167C7.80545 20.028 8 19.5558 8 19.0001V14.9998C8.00022 14.4444 7.80596 13.9721 7.41665 13.5832Z"/>
+        </svg>
+    </button>
+    <div id="bottom-menu" *ngIf="isMenuOpened" #menu >
+        <button (blur)="onMenuFocusOut($event)"></button> <!-- this button is not visible but here to get the focus -->
+        <button class="danger" (click)="deleteCurrentCiphers()" *ngIf="!deleted" [disabled]="ciphers.length === 0">
+            <i class="fa fa-trash-o fa-lg fa-fw" aria-hidden="true"></i>
+            {{'deleteItems' | i18n}}
+        </button>
+        <button class="danger" (click)="deleteCurrentCiphers()" *ngIf="deleted" [disabled]="ciphers.length === 0">
+            <i class="fa fa-trash-o fa-lg fa-fw" aria-hidden="true"></i>
+            {{'permanentlyDeleteItems' | i18n}}
+        </button>
+        <button class="" (click)="restoreCurrentCiphers()" *ngIf="deleted" [disabled]="ciphers.length === 0">
+            <i class="fa fa-undo fa-fw fa-lg" aria-hidden="true"></i>
+            {{'restoreAllItems' | i18n}}
+        </button>
+    </div>
+
 </div>

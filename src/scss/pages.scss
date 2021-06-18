@@ -5,16 +5,17 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    max-height: 900px;
 
-    @media (min-height: 500px) {
-        height: calc(100% + 50px);
-        margin-top: -50px;
-    }
-
-    @media (min-height: 800px) {
-        height: calc(100% + 300px);
-        margin-top: -300px;
-    }
+    // @media (min-height: 500px) {
+    //     height: calc(100% + 50px);
+    //     margin-top: -50px;
+    // }
+    //
+    // @media (min-height: 800px) {
+    //     height: calc(100% + 300px);
+    //     margin-top: -300px;
+    // }
 
     img {
         margin: 0 auto 15px;
@@ -149,7 +150,7 @@
             margin-bottom: 20px;
             font-weight: normal;
         }
-        
+
         .buttons {
             &:not(.with-rows), .buttons-row {
                 display: flex;
@@ -183,8 +184,56 @@
     }
 }
 
-#register-page {
+#login-page {
     .content {
-        width: 400px;
+        flex-grow: 1;
+        max-width: 600px;
+        padding: 40px;
     }
+    .box-content {
+        background-color: $brand-primary;
+        padding: 48px 24px 24px 24px;
+        font-size: 16px;
+        color : white;
+        svg {
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+        }
+        h1 {
+            font-size: 24px;
+            color : white;
+            margin-bottom: 0.35em;
+        }
+        .material-input{
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        input {
+            background-color: unset;
+            color : white;
+        }
+        a {
+            color:white;
+            margin-bottom: 40px;
+        }
+        a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .buttons-row {
+            padding-top: 40px;
+            text-transform: uppercase;
+        }
+        b {
+            text-transform: uppercase;
+        }
+    }
+    .box-content-row {
+        background-color: unset !important;
+        label {
+            color:#b5d4ff;
+        }
+    }
+
 }

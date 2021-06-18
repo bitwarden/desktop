@@ -1,40 +1,25 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "noImplicitAny": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "es6",
     "target": "ES2016",
-    "allowJs": true,
     "sourceMap": true,
-    "types": ["sweetalert2"],
+    "types": [],
     "baseUrl": ".",
     "paths": {
       "tldjs": [
         "jslib/src/misc/tldjs.noop"
       ],
+      "browser/functionForTarget._showDialog": [
+        "src/app/browser/functionForTarget._showDialog.electron"
+      ],
       "jslib/*": [
         "jslib/src/*"
       ],
-      "@angular/*": [
-        "node_modules/@angular/*"
-      ],
-      "electron": [
-        "node_modules/electron"
-      ],
-      "electron-log": [
-        "node_modules/electron-log"
-      ],
-      "electron-store": [
-        "node_modules/electron-store"
-      ],
-      "node": [
-        "node_modules/@types/node"
-      ],
-      "duo_web_sdk": [
-        "node_modules/duo_web_sdk"
-      ]
     }
   },
   "angularCompilerOptions": {
@@ -43,13 +28,19 @@
   "exclude": [
     "node_modules",
     "jslib/node_modules",
+    "proxy",
     "dist",
     "dist-safari",
     "jslib/dist",
     "build",
+    "build-browser",
+    "src/app/browser",
     "jslib/spec",
     "jslib/src/cli",
     "jslib/src/services/nodeApi.service.ts",
     "jslib/src/services/lowdbStorage.service.ts"
+  ],
+  "include": [
+    "src"
   ]
 }

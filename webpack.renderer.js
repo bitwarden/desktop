@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
@@ -8,11 +8,11 @@ const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const common = {
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-            },
+            // {
+            //     test: /\.ts$/,
+            //     enforce: 'pre',
+            //     loader: 'tslint-loader',
+            // },
             {
                 test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
                 loader: '@ngtools/webpack',
@@ -35,6 +35,7 @@ const common = {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
             jslib: path.join(__dirname, 'jslib/src'),
+            'browser/functionForTarget._showDialog': path.resolve(__dirname, 'src/app/browser/functionForTarget._showDialog.electron'),
         },
         symlinks: false,
         modules: [path.resolve('node_modules')],
@@ -46,7 +47,7 @@ const common = {
 };
 
 const renderer = {
-    mode: 'production',
+    mode: process.env.DEVELOPMENT ? 'development' :'production',
     devtool: false,
     target: 'electron-renderer',
     node: {
@@ -107,8 +108,11 @@ const renderer = {
         ],
     },
     plugins: [
+        new webpack.IgnorePlugin({
+            resourceRegExp: /browser\.scss$/,
+        }),
         new AngularCompilerPlugin({
-            tsConfigPath: 'tsconfig.json',
+            tsConfigPath: 'tsconfig.renderer.json',
             entryModule: 'src/app/app.module#AppModule',
             sourceMap: true,
         }),

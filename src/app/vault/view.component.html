@@ -87,11 +87,17 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
                         <div class="row-main">
                             <span class="row-label">{{'number' | i18n}}</span>
-                            {{cipher.card.number}}
+                            <span [hidden]="showCardNumber" class="monospaced">{{cipher.card.maskedNumber}}</span>
+                            <span [hidden]="!showCardNumber" class="monospaced">{{cipher.card.number}}</span>
                         </div>
                         <div class="action-buttons">
+                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                                (click)="toggleCardNumber()" role="button">
+                                <i class="fa fa-lg" aria-hidden="true"
+                                    [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
+                            </a>
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyNumber' | i18n}}"
-                                (click)="copy(cipher.card.number, 'number', 'Number')" role="button">
+                                (click)="copy(cipher.card.number, 'number', 'Card Number')" role="button">
                                 <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -252,43 +258,44 @@
                 </a>
             </div>
         </div>
-        <div class="box">
-            <div class="box-footer">
-                <div>
-                    <b class="font-weight-semibold">{{'dateUpdated' | i18n}}:</b>
-                    {{cipher.revisionDate | date:'medium'}}
-                </div>
-                <div *ngIf="cipher.passwordRevisionDisplayDate">
-                    <b class="font-weight-semibold">{{'datePasswordUpdated' | i18n}}:</b>
-                    {{cipher.passwordRevisionDisplayDate | date:'medium'}}
-                </div>
-                <div *ngIf="cipher.hasPasswordHistory">
-                    <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
-                    <a href="#" (click)="viewHistory()" appStopClick role="button"
-                        appA11yTitle="{{'passwordHistory' | i18n}}, {{cipher.passwordHistory.length}}">
-                        <span aria-hidden="true">{{cipher.passwordHistory.length}}</span>
-                    </a>
-                </div>
+        <div class="footer" *ngIf="cipher">
+            <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}" *ngIf="!cipher.isDeleted">
+                <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
+                <span>{{'edit' | i18n}}</span>
+            </button>
+            <button appBlurClick class="primary" (click)="restore()" appA11yTitle="{{'restore' | i18n}}"
+                *ngIf="cipher.isDeleted">
+                <i class="fa fa-undo fa-fw fa-lg" aria-hidden="true"></i>
+                <span>{{'restore' | i18n}}</span>
+            </button>
+            <button appBlurClick class="primary" *ngIf="!cipher?.organizationId && !cipher.isDeleted" (click)="clone()"
+                appA11yTitle="{{'clone' | i18n}}">
+                <i class="fa fa-files-o fa-fw fa-lg" aria-hidden="true"></i>
+                <span>{{'clone' | i18n}}</span>
+            </button>
+            <div class="right">
+                <button appBlurClick type="button" (click)="delete()" class="danger"
+                    appA11yTitle="{{(cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n}}">
+                    <i class="fa fa-trash-o fa-lg fa-fw" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
-    </div>
-</div>
-<div class="footer" *ngIf="cipher">
-    <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}" *ngIf="!cipher.isDeleted">
-        <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
-    </button>
-    <button appBlurClick class="primary" (click)="restore()" appA11yTitle="{{'restore' | i18n}}" 
-        *ngIf="cipher.isDeleted">
-        <i class="fa fa-undo fa-fw fa-lg" aria-hidden="true"></i>
-    </button>
-    <button appBlurClick class="primary" *ngIf="!cipher?.organizationId && !cipher.isDeleted" (click)="clone()" 
-        appA11yTitle="{{'clone' | i18n}}">
-        <i class="fa fa-files-o fa-fw fa-lg" aria-hidden="true"></i>
-    </button>
-    <div class="right">
-        <button appBlurClick type="button" (click)="delete()" class="danger"
-            appA11yTitle="{{(cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n}}">
-            <i class="fa fa-trash-o fa-lg fa-fw" aria-hidden="true"></i>
-        </button>
+        <div class="box">
+            <div>
+                <b class="font-weight-semibold">{{'dateUpdated' | i18n}}:</b>
+                {{cipher.revisionDate | date:'medium'}}
+            </div>
+            <div *ngIf="cipher.passwordRevisionDisplayDate">
+                <b class="font-weight-semibold">{{'datePasswordUpdated' | i18n}}:</b>
+                {{cipher.passwordRevisionDisplayDate | date:'medium'}}
+            </div>
+            <div *ngIf="cipher.hasPasswordHistory">
+                <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
+                <a href="#" (click)="viewHistory()" appStopClick role="button"
+                    appA11yTitle="{{'passwordHistory' | i18n}}, {{cipher.passwordHistory.length}}">
+                    <span aria-hidden="true">{{cipher.passwordHistory.length}}</span>
+                </a>
+            </div>
+        </div>
     </div>
 </div>

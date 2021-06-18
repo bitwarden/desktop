@@ -1,7 +1,10 @@
-<form #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+<form #form="ngForm" (ngSubmit)="submit()" [appApiAction]="formPromise">
     <div class="content">
         <div class="inner-content" *ngIf="cipher">
             <div class="box">
+                <app-callout type="info" *ngIf="allowOwnershipOptions() && !allowPersonal">
+                    {{'personalOwnershipPolicyInEffect' | i18n}}
+                </app-callout>
                 <div class="box-header">
                     {{title}}
                 </div>
@@ -63,9 +66,19 @@
                             <input id="cardCardholderName" type="text" name="Card.CardCardholderName"
                                 [(ngModel)]="cipher.card.cardholderName">
                         </div>
-                        <div class="box-content-row" appBoxRow>
-                            <label for="cardNumber">{{'number' | i18n}}</label>
-                            <input id="cardNumber" type="text" name="Card.Number" [(ngModel)]="cipher.card.number">
+                        <div class="box-content-row box-content-row-flex" appBoxRow>
+                            <div class="row-main">
+                                <label for="cardNumber">{{'number' | i18n}}</label>
+                                <input id="cardNumber" class="monospaced" type="{{showCardNumber ? 'text' : 'password'}}"
+                                    name="Card.Number" [(ngModel)]="cipher.card.number">
+                            </div>
+                            <div class="action-buttons">
+                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
+                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="toggleCardNumber()">
+                                    <i class="fa fa-lg" aria-hidden="true"
+                                        [ngClass]="{'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber}"></i>
+                                </a>
+                            </div>
                         </div>
                         <div class="box-content-row" appBoxRow>
                             <label for="cardBrand">{{'brand' | i18n}}</label>
@@ -232,21 +245,26 @@
                             <option *ngFor="let f of folders" [ngValue]="f.id">{{f.name}}</option>
                         </select>
                     </div>
-                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <!-- <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="favorite">{{'favorite' | i18n}}</label>
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
-                    </div>
-                    <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+                    </div> -->
+                    <!-- <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                        <label for="passwordPrompt">{{'passwordPrompt' | i18n}}</label>
+                        <input id="passwordPrompt" type="checkbox" name="PasswordPrompt" [ngModel]="reprompt"
+                            (change)="repromptChanged()">
+                    </div> -->
+                    <!-- <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="attachments()" *ngIf="editMode && !cloneMode" role="button">
                         <div class="row-main">{{'attachments' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
-                    </a>
-                    <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
+                    </a> -->
+                    <!-- <a class="box-content-row box-content-row-flex text-default" href="#" appStopClick appBlurClick
                         (click)="editCollections()" *ngIf="editMode && !cloneMode && cipher.organizationId"
                         role="button">
                         <div class="row-main">{{'collections' | i18n}}</div>
                         <i class="fa fa-chevron-right row-sub-icon" aria-hidden="true"></i>
-                    </a>
+                    </a> -->
                 </div>
             </div>
             <div class="box">
@@ -311,7 +329,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box" *ngIf="(!editMode || cloneMode) && ownershipOptions && ownershipOptions.length > 1">
+            <!-- <div class="box" *ngIf="allowOwnershipOptions()">
                 <div class="box-header">
                     {{'ownership' | i18n}}
                 </div>
@@ -324,7 +342,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="box" *ngIf="(!editMode || cloneMode) && cipher.organizationId">
                 <div class="box-header">
                     {{'collections' | i18n}}
@@ -341,27 +359,32 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="footer">
-        <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}" [disabled]="form.loading">
-            <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
-            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
-        </button>
-        <button appBlurClick type="button" (click)="cancel()">
-            {{'cancel' | i18n}}
-        </button>
-        <div class="right">
-            <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
-                *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode">
-                <i class="fa fa-share-alt fa-lg fa-fw" aria-hidden="true"></i>
-            </button>
-            <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
-                appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode && !cloneMode" [disabled]="deleteBtn.loading"
-                [appApiAction]="deletePromise">
-                <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
-                <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading" aria-hidden="true"></i>
-            </button>
+            <div class="">
+                <div class="footer">
+                    <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}" [disabled]="form.loading">
+                        <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
+                        <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
+                    </button>
+                    <button appBlurClick type="button" (click)="cancel()">
+                        {{'cancel' | i18n}}
+                    </button>
+                    <div class="right">
+                        <!-- <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
+                            *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode">
+                            <i class="fa fa-share-alt fa-lg fa-fw" aria-hidden="true"></i>
+                        </button> -->
+                        <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
+                            appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode && !cloneMode" [disabled]="deleteBtn.loading"
+                            [appApiAction]="deletePromise">
+                            <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+                            <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 </form>

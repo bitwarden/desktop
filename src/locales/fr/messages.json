@@ -15,13 +15,13 @@
     "message": "Types"
   },
   "typeLogin": {
-    "message": "Identifiant"
+    "message": "Identifiants"
   },
   "typeCard": {
-    "message": "Carte de paiement"
+    "message": "Cartes de paiement"
   },
   "typeIdentity": {
-    "message": "Identité"
+    "message": "Profils"
   },
   "typeSecureNote": {
     "message": "Note sécurisée"
@@ -31,6 +31,15 @@
   },
   "collections": {
     "message": "Collections"
+  },
+  "tools": {
+    "message": "Outils"
+  },
+  "installation": {
+    "message": "Installation"
+  },
+  "import": {
+    "message": "Import"
   },
   "searchVault": {
     "message": "Rechercher dans le coffre"
@@ -297,6 +306,12 @@
   "authenticatorKeyTotp": {
     "message": "Clé d'authentification (TOTP)"
   },
+  "authentification": {
+    "message": "Authentification"
+  },
+  "confirmYourIdentity": {
+    "message": "Par sécurité, merci de confirmer votre identité"
+  },
   "folder": {
     "message": "Dossier"
   },
@@ -340,13 +355,22 @@
     "message": "Supprimer la pièce jointe"
   },
   "deleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cet élément ?"
+    "message": "Mettre à la corbeille cet élément ?"
+  },
+  "deleteItemsConfirmation": {
+      "message": "Mettre à la corbeille ces €€€ éléments ?"
+  },
+  "deleteItems": {
+    "message": "Mettre à la corbeille ces éléments"
   },
   "deletedItem": {
     "message": "L'élément a été envoyé à la corbeille"
   },
+  "deletedItems": {
+    "message": "€€€ éléments ont été envoyés à la corbeille"
+  },
   "overwritePasswordConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir écraser le mot de passe actuel ?"
+    "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
   },
   "noneFolder": {
     "message": "Aucun dossier",
@@ -366,6 +390,9 @@
   },
   "copyUri": {
     "message": "Copier l'URI"
+  },
+  "copyVerificationCodeTotp": {
+    "message": "Copier le code de vérification (TOTP)"
   },
   "length": {
     "message": "Longueur"
@@ -416,7 +443,7 @@
     "message": "Pièce jointe supprimée"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer cette pièce jointe ?"
+    "message": "Êtes-vous sûr de vouloir supprimer cette pièce jointe ?"
   },
   "attachmentSaved": {
     "message": "La pièce jointe a été enregistrée."
@@ -443,7 +470,7 @@
     "message": "Dossier ajouté"
   },
   "deleteFolderConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer ce dossier ?"
+    "message": "Êtes-vous sûr de vouloir supprimer ce dossier ?"
   },
   "deletedFolder": {
     "message": "Dossier supprimé"
@@ -461,7 +488,7 @@
     "message": "Soumettre"
   },
   "masterPass": {
-    "message": "Mot de passe maître"
+    "message": "Mot de passe de votre Cozy"
   },
   "masterPassDesc": {
     "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
@@ -485,7 +512,7 @@
     "message": "Saisissez l'adresse e-mail de votre compte pour recevoir l'indice de votre mot de passe maître."
   },
   "getMasterPasswordHint": {
-    "message": "Obtenir l'indice du mot de passe maître"
+    "message": "J'ai oublié mon mot de passe"
   },
   "emailRequired": {
     "message": "L'adresse e-mail est requise."
@@ -589,11 +616,11 @@
     "message": "Sécurisez votre organisation avec Duo Security à l'aide de l'application Duo Mobile, l'envoi d'un SMS, un appel vocal ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utiliser n'importe quelle clé de sécurité FIDO U2F active pour accéder à votre compte."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Clé de sécurité FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -671,7 +698,7 @@
     "message": "Votre session a expiré."
   },
   "logOutConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir vous déconnecter ?"
+    "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
   },
   "logOut": {
     "message": "Déconnexion"
@@ -852,11 +879,23 @@
   "enableMinToTrayDesc": {
     "message": "Lorsque la fenêtre est réduite, afficher une icône dans la zone de notification à la place."
   },
+  "enableMinToMenuBar": {
+    "message": "Réduire dans la barre de menu"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "Lorsque la fenêtre est réduite, privilégier l'affichage d'une icône dans la barre de menu."
+  },
   "enableCloseToTray": {
     "message": "Fermer dans la zone de notification"
   },
   "enableCloseToTrayDesc": {
     "message": "Lorsque la fenêtre est fermée, afficher une icône dans la zone de notification."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Fermer vers la barre de menu"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "Lorsque la fenêtre est fermée, privilégier l'affichage d'une icône dans la barre de menu."
   },
   "enableTray": {
     "message": "Activer le raccourci dans la zone de notification"
@@ -869,6 +908,30 @@
   },
   "startToTrayDesc": {
     "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la zone de notification."
+  },
+  "startToMenuBar": {
+    "message": "Démarrer dans la barre de menu"
+  },
+  "startToMenuBarDesc": {
+    "message": "Au premier démarrage de l'application, afficher uniquement une icône dans la barre de menu."
+  },
+  "openAtLogin": {
+    "message": "Démarrer automatiquement à la connexion"
+  },
+  "openAtLoginDesc": {
+    "message": "Démarrer l'application Bitwarden automatiquement à la connexion."
+  },
+  "alwaysShowDock": {
+    "message": "Toujours afficher dans le Dock"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Afficher l'icône Bitwarden dans le Dock même si l'application est réduite dans la barre de menus."
+  },
+  "confirmTrayTitle": {
+    "message": "Confirmer la désactivation de la zone de notification"
+  },
+  "confirmTrayDesc": {
+    "message": "Désactiver cette option désactivera également tous les autres paramètres liés à la zone de notifications."
   },
   "language": {
     "message": "Langue"
@@ -963,10 +1026,10 @@
     "message": "Actualiser l'adhésion"
   },
   "premiumNotCurrentMember": {
-    "message": "Vous n'êtes actuellement pas un(e) membre premium."
+    "message": "Vous n'êtes actuellement pas un membre premium."
   },
   "premiumSignUpAndGet": {
-    "message": "Devenez un(e) membre premium et obtenez :"
+    "message": "Devenez un membre premium et obtenez :"
   },
   "premiumSignUpStorage": {
     "message": "1 Go de stockage de fichiers chiffrés."
@@ -1182,8 +1245,17 @@
     "message": "AVERTISSEMENT",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Confirmer l'export du coffre"
+  },
   "exportWarningDesc": {
     "message": "Cet export contient les données de votre coffre dans un format non chiffré. Vous ne devriez ni le stocker ni l'envoyer via des canaux non sécurisés (tel que par e-mail). Supprimez-le immédiatement après l'avoir utilisé."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Les clés de chiffrement du compte sont spécifiques à chaque utilisateur Bitwarden. Vous ne pouvez donc pas importer d'export chiffré dans un compte différent."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
@@ -1216,7 +1288,7 @@
     "message": "Mot de passe maître faible"
   },
   "weakMasterPasswordDesc": {
-    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr(e) de vouloir utiliser ce mot de passe maître ?"
+    "message": "Le mot de passe maître que vous avez choisi est faible. Vous devriez utiliser un mot de passe (ou une phrase secrète) fort(e) pour protéger correctement votre compte Bitwarden. Êtes-vous sûr de vouloir utiliser ce mot de passe maître ?"
   },
   "pin": {
     "message": "Code PIN",
@@ -1247,7 +1319,13 @@
     "message": "Déverrouiller avec Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Vérifier pour Bitwarden."
+    "message": "déverouiller votre coffre"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1287,7 +1365,7 @@
     "message": "Politique de confidentialité"
   },
   "unsavedChangesConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir quitter ? Si vous le faites maintenant, vos informations actuelles ne seront pas sauvegardées."
+    "message": "Êtes-vous sûr de vouloir quitter ? Si vous le faites maintenant, vos informations actuelles ne seront pas sauvegardées."
   },
   "unsavedChangesTitle": {
     "message": "Modifications non sauvegardées"
@@ -1322,19 +1400,40 @@
     "message": "Supprimer définitivement l'élément"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir supprimer définitivement cet élément ?"
+    "message": "Êtes-vous sûr de vouloir supprimer définitivement cet élément ?"
+  },
+  "permanentlyDeleteItems": {
+    "message": "Vider la corbeille"
+  },
+  "permanentlyDeleteItemsConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir supprimer définitivement ces €€€ éléments ?"
   },
   "permanentlyDeletedItem": {
     "message": "Élément supprimé définitivement"
   },
+  "permanentlyDeletedItems": {
+    "message": "€€€ éléments supprimés définitivement"
+  },
   "restoreItem": {
     "message": "Restaurer l'élément"
   },
+  "restoreItems": {
+    "message": "Restaurer ces €€€ éléments"
+  },
+  "restoreAllItems": {
+    "message": "Restaurer tous ces éléments"
+  },
   "restoreItemConfirmation": {
-    "message": "Êtes-vous sûr(e) de vouloir restaurer cet élément ?"
+    "message": "Êtes-vous sûr de vouloir restaurer cet élément ?"
+  },
+  "restoreItemsConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir restaurer tous ces éléments ?"
   },
   "restoredItem": {
     "message": "Élément restauré"
+  },
+  "restoredItems": {
+    "message": "€€€ éléments restaurés"
   },
   "permanentlyDelete": {
     "message": "Supprimer définitivement"
@@ -1407,5 +1506,227 @@
   },
   "acceptPoliciesError": {
     "message": "Les conditions d'utilisation et la politique de confidentialité n'ont pas été acceptées."
+  },
+  "enableBrowserIntegration": {
+    "message": "Activer l'intégration avec le navigateur"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "L'intégration avec le navigateur est utilisée pour le déverrouillage biométrique dans le navigateur."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Intégration avec le navigateur non supportée"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Malheureusement l'intégration avec le navigateur est uniquement supportée dans la version Mac App Store pour le moment."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Intégration avec le navigateur non supportée"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Malheureusement l'intégration avec le navigateur n'est pas supportée dans la version Windows Store pour le moment."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Exiger une vérification pour l'intégration avec le navigateur"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Activez une couche de sécurité supplémentaire en exigeant la validation de la phrase d'empreinte du compte lors de l'établissement d'un lien entre l'application et votre navigateur. Lorsque cette option est activée, cela nécessite une intervention et une vérification de l'utilisateur à chaque fois qu'une connexion est établie."
+  },
+  "approve": {
+    "message": "Accepter"
+  },
+  "verifyBrowserTitle": {
+    "message": "Vérifier la connexion au navigateur"
+  },
+  "verifyBrowserDesc": {
+    "message": "Veuillez vous assurer que la phrase d'empreinte affichée est identique à celle affichée dans l'extension de navigateur."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Le déverrouillage biométrique n'est pas activé"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Les options de biométrie dans le navigateur nécessitent au préalable l'activation des options de biométrie dans l'application de bureau."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "En raison d'une politique d'entreprise, il vous est interdit d'enregistrer des éléments dans votre coffre personnel. Sélectionnez une organisation dans l'option Propriété et choisissez parmi les collections disponibles."
+  },
+  "hintEqualsPassword": {
+    "message": "Votre indice de mot de passe ne peut pas être identique à votre nom d'utilisateur."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "Une politique d'organisation affecte vos options de propriété."
+  },
+  "allSends": {
+    "message": "Tous les Sends",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fichier"
+  },
+  "sendTypeText": {
+    "message": "Texte"
+  },
+  "searchSends": {
+    "message": "Rechercher dans les Sends",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Modifier le Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Mon Coffre"
+  },
+  "text": {
+    "message": "Texte"
+  },
+  "deletionDate": {
+    "message": "Date de suppression"
+  },
+  "deletionDateDesc": {
+    "message": "Le Send sera définitivement supprimé à la date et heure spécifiées.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Date d'expiration"
+  },
+  "expirationDateDesc": {
+    "message": "Si défini, l'accès à ce Send expirera à la date et heure spécifiées.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Nombre maximum d'accès"
+  },
+  "maxAccessCountDesc": {
+    "message": "Si défini, les utilisateurs ne seront plus en mesure d'accéder à ce Send une fois que le nombre maximum d'accès sera atteint.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Nombre d'accès actuel"
+  },
+  "disableSend": {
+    "message": "Désactiver ce Send pour que personne ne puisse y accéder.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Vous pouvez, si vous le souhaitez, exiger un mot de passe pour accéder à ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Notes privées à propos de ce Send.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Lien du Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Lors de l'accès à ce Send, masquer le texte par défaut",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Send créé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Send modifié",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Send supprimé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nouveau mot de passe"
+  },
+  "whatTypeOfSend": {
+    "message": "De quel type de Send s'agit-il ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Créer un Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Le texte que vous voulez envoyer."
+  },
+  "sendFileDesc": {
+    "message": "Le fichier que vous voulez envoyer."
+  },
+  "days": {
+    "message": "$DAYS$ jours",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 jour"
+  },
+  "custom": {
+    "message": "Personnalisé"
+  },
+  "deleteSendConfirmation": {
+    "message": "Êtes-vous sûr de vouloir supprimer ce Send ?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Copier le lien du Send dans le presse-papier",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Copier le lien de ce Send dans mon presse-papiers lors de l'enregistrement."
+  },
+  "sendDisabled": {
+    "message": "Send désactivé",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "En raison d'une politique d'entreprise, vous ne pouvez que supprimer un Send existant.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Copier le lien"
+  },
+  "disabled": {
+    "message": "Désactivé"
+  },
+  "maxAccessCountReached": {
+    "message": "Nombre maximum d'accès atteint"
+  },
+  "expired": {
+    "message": "Expiré"
+  },
+  "pendingDeletion": {
+    "message": "En attente de suppression"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

@@ -1,0 +1,27 @@
+#login-page {
+
+    .logo-image {
+        display: none !important;
+    }
+    .lead {
+        display: none !important;
+    }
+    .sub-options {
+        display: none !important;
+    }
+    .btn {
+        margin-right: 0 !important;
+    }
+    [routerlink="/register"] {
+        display: none !important;
+    }
+}
+
+iframe {
+    width: 100%;
+    border: 0;
+}
+
+.hidden {
+    display: none !important;
+}

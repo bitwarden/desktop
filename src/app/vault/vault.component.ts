@@ -1,5 +1,3 @@
-import { remote } from 'electron';
-
 import {
     ChangeDetectorRef,
     Component,
@@ -15,8 +13,9 @@ import {
     Router,
 } from '@angular/router';
 
+import { DomSanitizer } from '@angular/platform-browser';
+
 import { ToasterService } from 'angular2-toaster';
-import { Angulartics2 } from 'angulartics2';
 
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
@@ -26,7 +25,6 @@ import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
 import { CollectionsComponent } from './collections.component';
-import { ExportComponent } from './export.component';
 import { FolderAddEditComponent } from './folder-add-edit.component';
 import { GroupingsComponent } from './groupings.component';
 import { PasswordGeneratorComponent } from './password-generator.component';
@@ -43,10 +41,14 @@ import { FolderView } from 'jslib/models/view/folderView';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
+import { PasswordRepromptService } from 'jslib/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
+import { TotpService } from 'jslib/abstractions/totp.service';
+import { UserService } from 'jslib/abstractions/user.service';
+import { invokeMenu, RendererMenuItem } from 'jslib/electron/utils';
+import { CipherRepromptType } from 'jslib/enums/cipherRepromptType';
 
-const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 const BroadcasterSubscriptionId = 'VaultComponent';
 
 @Component({
@@ -60,13 +62,12 @@ export class VaultComponent implements OnInit, OnDestroy {
     @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
     @ViewChild('passwordGenerator', { read: ViewContainerRef, static: true }) passwordGeneratorModalRef: ViewContainerRef;
     @ViewChild('attachments', { read: ViewContainerRef, static: true }) attachmentsModalRef: ViewContainerRef;
-    @ViewChild('folderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
     @ViewChild('passwordHistory', { read: ViewContainerRef, static: true }) passwordHistoryModalRef: ViewContainerRef;
-    @ViewChild('exportVault', { read: ViewContainerRef, static: true }) exportVaultModalRef: ViewContainerRef;
     @ViewChild('share', { read: ViewContainerRef, static: true }) shareModalRef: ViewContainerRef;
     @ViewChild('collections', { read: ViewContainerRef, static: true }) collectionsModalRef: ViewContainerRef;
+    @ViewChild('folderAddEdit', { read: ViewContainerRef, static: true }) folderAddEditModalRef: ViewContainerRef;
 
-    action: string;
+    action: string = 'view';
     cipherId: string = null;
     favorites: boolean = false;
     type: CipherType = null;
@@ -77,21 +78,32 @@ export class VaultComponent implements OnInit, OnDestroy {
     addCollectionIds: string[] = null;
     showingModal = false;
     deleted = false;
+    toolsUrl: string;
+    toolType: string = null;
+    loaded: boolean = false;
+    userHasPremiumAccess = false;
 
     private modal: ModalComponent = null;
+    private isAddonInstalled: boolean = false;
+    private isAddonTested: boolean = false;
 
     constructor(private route: ActivatedRoute, private router: Router,
         private componentFactoryResolver: ComponentFactoryResolver, private i18nService: I18nService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
-        private ngZone: NgZone, private syncService: SyncService, private analytics: Angulartics2,
+        private ngZone: NgZone, private syncService: SyncService,
         private toasterService: ToasterService, private messagingService: MessagingService,
-        private platformUtilsService: PlatformUtilsService, private eventService: EventService) { }
+        private platformUtilsService: PlatformUtilsService, private eventService: EventService,
+        private totpService: TotpService, private userService: UserService, private passwordRepromptService: PasswordRepromptService,
+        private sanitizer: DomSanitizer) { }
 
     async ngOnInit() {
+        this.isAddonInstalled = await this.checkExtensionInit();
+        this.isAddonTested = true;
+        this.userHasPremiumAccess = await this.userService.canAccessPremium();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;
-
+                // console.log('vault.message.heard = ', message.command);
                 switch (message.command) {
                     case 'newLogin':
                         await this.addCipher(CipherType.Login);
@@ -105,9 +117,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                     case 'newSecureNote':
                         await this.addCipher(CipherType.SecureNote);
                         break;
-                    case 'newFolder':
-                        await this.addFolder();
-                        break;
                     case 'focusSearch':
                         (document.querySelector('#search') as HTMLInputElement).select();
                         detectChanges = false;
@@ -115,34 +124,8 @@ export class VaultComponent implements OnInit, OnDestroy {
                     case 'openPasswordGenerator':
                         await this.openPasswordGenerator(false);
                         break;
-                    case 'exportVault':
-                        await this.openExportVault();
-                        break;
-                    case 'syncVault':
-                        try {
-                            await this.syncService.fullSync(true, true);
-                            this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
-                            this.analytics.eventTrack.next({ action: 'Synced Full' });
-                        } catch {
-                            this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
-                        }
-                        break;
-                    case 'checkSyncVault':
-                        try {
-                            const lastSync = await this.syncService.getLastSync();
-                            let lastSyncAgo = SyncInterval + 1;
-                            if (lastSync != null) {
-                                lastSyncAgo = new Date().getTime() - lastSync.getTime();
-                            }
-
-                            if (lastSyncAgo >= SyncInterval) {
-                                await this.syncService.fullSync(false);
-                            }
-                        } catch { }
-
-                        this.messagingService.send('scheduleNextSync');
-                        break;
                     case 'syncCompleted':
+                        this.loaded = false;
                         await this.load();
                         break;
                     case 'refreshCiphers':
@@ -159,7 +142,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const uCipher = uComponent != null ? uComponent.cipher : null;
                         if (this.cipherId != null && uCipher != null && uCipher.id === this.cipherId &&
                             uCipher.login != null && uCipher.login.username != null) {
-                            this.copyValue(uCipher.login.username, 'username');
+                            this.copyValue(uCipher, uCipher.login.username, 'username', 'Username');
                         }
                         break;
                     case 'copyPassword':
@@ -167,9 +150,17 @@ export class VaultComponent implements OnInit, OnDestroy {
                         const pCipher = pComponent != null ? pComponent.cipher : null;
                         if (this.cipherId != null && pCipher != null && pCipher.id === this.cipherId &&
                             pCipher.login != null && pCipher.login.password != null && pCipher.viewPassword) {
-                            this.copyValue(pCipher.login.password, 'password');
+                            this.copyValue(pCipher, pCipher.login.password, 'password', 'Password');
                         }
                         break;
+                    case 'copyTotp':
+                        const tComponent = this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
+                        const tCipher = tComponent != null ? tComponent.cipher : null;
+                        if (this.cipherId != null && tCipher != null && tCipher.id === this.cipherId &&
+                            tCipher.login != null && tCipher.login.hasTotp && this.userHasPremiumAccess) {
+                            const value = await this.totpService.getCode(tCipher.login.totp);
+                            this.copyValue(tCipher, value, 'verificationCodeTotp', 'TOTP');
+                        }
                     default:
                         detectChanges = false;
                         break;
@@ -185,6 +176,27 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.load();
         }
         document.body.classList.remove('layout_frontend');
+        let queryParamsSub1: any;
+
+        // check queryParams to choose the tab to activate at init.
+        queryParamsSub1 = this.route.queryParams.subscribe(async params => {
+            this.action = params.action;
+            if (params.toolType) {
+                this.toolType = params.toolType ? params.toolType : 'installation';
+                this.groupingsComponent.selectedTool = this.toolType;
+                this.viewTool(this.toolType);
+            } else if (params && Object.keys(params).length === 0 && params.constructor === Object) {
+                if (!this.isAddonInstalled) {
+                    // no params on load, default to tools/installation if the addon is not installed
+                    this.toolType = 'installation';
+                    this.groupingsComponent.selectedTool = 'installation';
+                    this.viewTool('installation');
+                }
+            }
+            if (queryParamsSub1 != null) {
+                queryParamsSub1.unsubscribe();
+            }
+        });
     }
 
     ngOnDestroy() {
@@ -193,17 +205,20 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async load() {
-        let loaded = false;
-        const queryParamsSub = this.route.queryParams.subscribe(async (params) => {
-            if (loaded) {
+        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+            if (this.loaded) {
                 return;
             }
-            loaded = true;
             await this.groupingsComponent.load();
+            this.loaded = true;
 
             if (params == null) {
                 this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.reload();
+            } else if (params.toolType) {
+                this.toolType = params.toolType ? params.toolType : 'installation';
+                this.groupingsComponent.selectedTool = this.toolType;
+                this.viewTool(this.toolType);
             } else {
                 if (params.cipherId) {
                     const cipherView = new CipherView();
@@ -213,30 +228,32 @@ export class VaultComponent implements OnInit, OnDestroy {
                     } else if (params.action === 'edit') {
                         await this.editCipher(cipherView);
                     } else {
+                        this.type = params.type;
                         await this.viewCipher(cipherView);
                     }
                 } else if (params.action === 'add') {
-                    await this.addCipher();
+                    this.addType = Number(params.addType);
+                    this.addCipher(this.addType);
                 }
-
                 if (params.deleted) {
                     this.groupingsComponent.selectedTrash = true;
-                    await this.filterDeleted();
+                    await this.filterDeleted(['cipherId']);
                 } else if (params.favorites) {
                     this.groupingsComponent.selectedFavorites = true;
                     await this.filterFavorites();
-                } else if (params.type) {
+                } else if (params.type && params.action !== 'add') {
                     const t = parseInt(params.type, null);
                     this.groupingsComponent.selectedType = t;
-                    await this.filterCipherType(t);
+                    await this.filterCipherType(t, ['cipherId']);
                 } else if (params.folderId) {
                     this.groupingsComponent.selectedFolder = true;
                     this.groupingsComponent.selectedFolderId = params.folderId;
-                    await this.filterFolder(params.folderId);
+                    await this.filterFolder(params.folderId, ['cipherId']);
                 } else if (params.collectionId) {
                     this.groupingsComponent.selectedCollectionId = params.collectionId;
                     await this.filterCollection(params.collectionId);
                 } else {
+                    this.toolType = null;
                     this.groupingsComponent.selectedAll = true;
                     await this.ciphersComponent.reload();
                 }
@@ -245,6 +262,10 @@ export class VaultComponent implements OnInit, OnDestroy {
                 queryParamsSub.unsubscribe();
             }
         });
+    }
+
+    shouldDisplayCiphersList() {
+        return (this.toolType || !this.isAddonTested) ? 'hidden' : '';
     }
 
     async viewCipher(cipher: CipherView) {
@@ -259,86 +280,117 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.go();
     }
 
+    async viewTool(type: string) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
+        this.clearFilters();
+        this.toolType = type;
+        switch (type) {
+            case 'import':
+                this.toolsUrl = 'tools/index.html/#/installation/import';
+                break;
+            case 'installation':
+                this.toolsUrl = 'tools/index2.html/#/installation';
+                break;
+        }
+        this.go();
+    }
+
     viewCipherMenu(cipher: CipherView) {
-        const menu = new remote.Menu();
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('view'),
-            click: () => this.functionWithChangeDetection(() => {
-                this.viewCipher(cipher);
-            }),
-        }));
+        const menu: RendererMenuItem[] = [
+            {
+                label: this.i18nService.t('view'),
+                click: () => this.functionWithChangeDetection(() => {
+                    this.viewCipher(cipher);
+                }),
+            },
+        ];
         if (!cipher.isDeleted) {
-            menu.append(new remote.MenuItem({
+            menu.push({
                 label: this.i18nService.t('edit'),
                 click: () => this.functionWithChangeDetection(() => {
                     this.editCipher(cipher);
                 }),
-            }));
-            menu.append(new remote.MenuItem({
+            });
+            menu.push({
                 label: this.i18nService.t('clone'),
                 click: () => this.functionWithChangeDetection(() => {
                     this.cloneCipher(cipher);
                 }),
-            }));
+            });
         }
 
         switch (cipher.type) {
             case CipherType.Login:
                 if (cipher.login.canLaunch || cipher.login.username != null || cipher.login.password != null) {
-                    menu.append(new remote.MenuItem({ type: 'separator' }));
+                    menu.push({ type: 'separator' });
                 }
                 if (cipher.login.canLaunch) {
-                    menu.append(new remote.MenuItem({
+                    menu.push({
                         label: this.i18nService.t('launch'),
                         click: () => this.platformUtilsService.launchUri(cipher.login.launchUri),
-                    }));
+                    });
                 }
                 if (cipher.login.username != null) {
-                    menu.append(new remote.MenuItem({
+                    menu.push({
                         label: this.i18nService.t('copyUsername'),
-                        click: () => this.copyValue(cipher.login.username, 'username'),
-                    }));
+                        click: () => this.copyValue(cipher, cipher.login.username, 'username', 'Username'),
+                    });
                 }
                 if (cipher.login.password != null && cipher.viewPassword) {
-                    menu.append(new remote.MenuItem({
+                    menu.push({
                         label: this.i18nService.t('copyPassword'),
                         click: () => {
-                            this.copyValue(cipher.login.password, 'password');
+                            this.copyValue(cipher, cipher.login.password, 'password', 'Password');
                             this.eventService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
                         },
-                    }));
+                    });
+                }
+                if (cipher.login.hasTotp && (cipher.organizationUseTotp || this.userHasPremiumAccess)) {
+                    menu.push({
+                        label: this.i18nService.t('copyVerificationCodeTotp'),
+                        click: async () => {
+                            const value = await this.totpService.getCode(cipher.login.totp);
+                            this.copyValue(cipher, value, 'verificationCodeTotp', 'TOTP');
+                        },
+                    });
                 }
                 break;
             case CipherType.Card:
                 if (cipher.card.number != null || cipher.card.code != null) {
-                    menu.append(new remote.MenuItem({ type: 'separator' }));
+                    menu.push({ type: 'separator' });
                 }
                 if (cipher.card.number != null) {
-                    menu.append(new remote.MenuItem({
+                    menu.push({
                         label: this.i18nService.t('copyNumber'),
-                        click: () => this.copyValue(cipher.card.number, 'number'),
-                    }));
+                        click: () => this.copyValue(cipher, cipher.card.number, 'number', 'Card Number'),
+                    });
                 }
                 if (cipher.card.code != null) {
-                    menu.append(new remote.MenuItem({
+                    menu.push({
                         label: this.i18nService.t('copySecurityCode'),
                         click: () => {
-                            this.copyValue(cipher.card.code, 'securityCode');
+                            this.copyValue(cipher, cipher.card.code, 'securityCode', 'Security Code');
                             this.eventService.collect(EventType.Cipher_ClientCopiedCardCode, cipher.id);
                         },
-                    }));
+                    });
                 }
                 break;
             default:
                 break;
         }
-        menu.popup({ window: remote.getCurrentWindow() });
+
+        invokeMenu(menu);
     }
 
     async editCipher(cipher: CipherView) {
         if (this.action === 'edit' && this.cipherId === cipher.id) {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
@@ -351,6 +403,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         if (this.action === 'clone' && this.cipherId === cipher.id) {
             return;
         } else if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            return;
+        } else if (cipher.reprompt !== CipherRepromptType.None && !await this.passwordRepromptService.showPasswordPrompt()) {
             return;
         }
 
@@ -374,24 +428,27 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     addCipherOptions() {
-        const menu = new remote.Menu();
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeLogin'),
-            click: () => this.addCipherWithChangeDetection(CipherType.Login),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeCard'),
-            click: () => this.addCipherWithChangeDetection(CipherType.Card),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeIdentity'),
-            click: () => this.addCipherWithChangeDetection(CipherType.Identity),
-        }));
-        menu.append(new remote.MenuItem({
-            label: this.i18nService.t('typeSecureNote'),
-            click: () => this.addCipherWithChangeDetection(CipherType.SecureNote),
-        }));
-        menu.popup({ window: remote.getCurrentWindow() });
+        const menu: RendererMenuItem[] = [
+            {
+                label: this.i18nService.t('typeLogin'),
+                click: () => this.addCipherWithChangeDetection(CipherType.Login),
+            },
+            {
+                label: this.i18nService.t('typeCard'),
+                click: () => this.addCipherWithChangeDetection(CipherType.Card),
+            },
+            {
+                label: this.i18nService.t('typeIdentity'),
+                click: () => this.addCipherWithChangeDetection(CipherType.Identity),
+            },
+            {
+                label: this.i18nService.t('typeSecureNote'),
+                click: () => this.addCipherWithChangeDetection(CipherType.SecureNote),
+            },
+
+        ];
+
+        invokeMenu(menu);
     }
 
     async savedCipher(cipher: CipherView) {
@@ -423,7 +480,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.attachmentsModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<AttachmentsComponent>(AttachmentsComponent, this.attachmentsModalRef,
-            true, (comp) => comp.cipherId = cipher.id);
+            true, comp => comp.cipherId = cipher.id);
         let madeAttachmentChanges = false;
         childComponent.onUploadedAttachment.subscribe(() => madeAttachmentChanges = true);
         childComponent.onDeletedAttachment.subscribe(() => madeAttachmentChanges = true);
@@ -445,7 +502,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.shareModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<ShareComponent>(ShareComponent, this.shareModalRef, true,
-            (comp) => comp.cipherId = cipher.id);
+            comp => comp.cipherId = cipher.id);
 
         childComponent.onSharedCipher.subscribe(async () => {
             this.modal.close();
@@ -465,7 +522,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.collectionsModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<CollectionsComponent>(CollectionsComponent, this.collectionsModalRef,
-            true, (comp) => comp.cipherId = cipher.id);
+            true, comp => comp.cipherId = cipher.id);
 
         childComponent.onSavedCollections.subscribe(() => {
             this.modal.close();
@@ -484,7 +541,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.passwordHistoryModalRef.createComponent(factory).instance;
         this.modal.show<PasswordHistoryComponent>(PasswordHistoryComponent,
-            this.passwordHistoryModalRef, true, (comp) => comp.cipherId = cipher.id);
+            this.passwordHistoryModalRef, true, comp => comp.cipherId = cipher.id);
         this.modal.onClosed.subscribe(async () => {
             this.modal = null;
         });
@@ -497,6 +554,10 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async clearGroupingFilters() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchVault');
         await this.ciphersComponent.reload();
         this.clearFilters();
@@ -504,42 +565,65 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterFavorites() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFavorites');
-        await this.ciphersComponent.reload((c) => c.favorite);
+        await this.ciphersComponent.reload(c => c.favorite);
         this.clearFilters();
         this.favorites = true;
         this.go();
     }
 
-    async filterDeleted() {
+    async filterDeleted(excluded: string[] = []) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchTrash');
         this.ciphersComponent.deleted = true;
         await this.ciphersComponent.reload(null, true);
-        this.clearFilters();
+        this.clearFilters(excluded);
+        this.action = 'view';
         this.deleted = true;
         this.go();
     }
 
-    async filterCipherType(type: CipherType) {
+    async filterCipherType(type: CipherType, excluded: string[] = []) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
-        await this.ciphersComponent.reload((c) => c.type === type);
-        this.clearFilters();
+        await this.ciphersComponent.reload(c => c.type === type);
+        this.clearFilters(excluded);
+        this.action = 'view';
         this.type = type;
         this.go();
     }
 
-    async filterFolder(folderId: string) {
+    async filterFolder(folderId: string, excluded: string[] = []) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         folderId = folderId === 'none' ? null : folderId;
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
-        await this.ciphersComponent.reload((c) => c.folderId === folderId);
-        this.clearFilters();
+        await this.ciphersComponent.reload(c => c.folderId === folderId);
+        this.clearFilters(excluded);
+        this.action = 'view';
         this.folderId = folderId == null ? 'none' : folderId;
         this.go();
     }
 
     async filterCollection(collectionId: string) {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
         this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
-        await this.ciphersComponent.reload((c) => c.collectionIds != null &&
+        await this.ciphersComponent.reload(c => c.collectionIds != null &&
             c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
         this.collectionId = collectionId;
@@ -555,12 +639,13 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.passwordGeneratorModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
-            this.passwordGeneratorModalRef, true, (comp) => comp.showSelect = showSelect);
+            this.passwordGeneratorModalRef, true, comp => comp.showSelect = showSelect);
 
         childComponent.onSelected.subscribe((password: string) => {
             this.modal.close();
             if (this.addEditComponent != null && this.addEditComponent.cipher != null &&
                 this.addEditComponent.cipher.type === CipherType.Login && this.addEditComponent.cipher.login != null) {
+                this.addEditComponent.markPasswordAsDirty();
                 this.addEditComponent.cipher.login.password = password;
             }
         });
@@ -570,42 +655,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
-    async openExportVault() {
-        if (this.modal != null) {
-            this.modal.close();
-        }
-
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.exportVaultModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<ExportComponent>(ExportComponent, this.exportVaultModalRef);
-
-        childComponent.onSaved.subscribe(() => {
-            this.modal.close();
-        });
-
-        this.modal.onClosed.subscribe(() => {
-            this.modal = null;
-        });
-    }
-
     async addFolder() {
-        if (this.modal != null) {
-            this.modal.close();
-        }
-
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef, true, (comp) => comp.folderId = null);
-
-        childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
-            this.modal.close();
-            await this.groupingsComponent.loadFolders();
-        });
-
-        this.modal.onClosed.subscribe(() => {
-            this.modal = null;
-        });
+        this.messagingService.send('newFolder');
     }
 
     async editFolder(folderId: string) {
@@ -616,7 +667,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
         this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
         const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef, true, (comp) => comp.folderId = folderId);
+            FolderAddEditComponent, this.folderAddEditModalRef, true, comp => comp.folderId = folderId);
 
         childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
             this.modal.close();
@@ -632,6 +683,18 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
+    getIframeURL(): any {
+        if (this.toolsUrl) {
+            return this.sanitizer.bypassSecurityTrustResourceUrl(this.toolsUrl);
+        } else {
+            return this.sanitizer.bypassSecurityTrustResourceUrl('tools/index.html/#/installation/import');
+        }
+    }
+
+    shouldShowLogo() {
+        return (!this.cipherId && this.action !== 'add');
+    }
+
     private dirtyInput(): boolean {
         return (this.action === 'add' || this.action === 'edit' || this.action === 'clone') &&
             document.querySelectorAll('app-vault-add-edit .ng-dirty').length > 0;
@@ -644,15 +707,40 @@ export class VaultComponent implements OnInit, OnDestroy {
         return !confirmed;
     }
 
-    private clearFilters() {
-        this.folderId = null;
-        this.collectionId = null;
-        this.favorites = false;
-        this.type = null;
-        this.addCollectionIds = null;
-        this.addType = null;
-        this.addOrganizationId = null;
-        this.deleted = false;
+    /*---------------------------------------------------------------
+        re-init filter parameters except these explicitely excluded
+        with the `excluded` parameter
+     */
+    private clearFilters(excluded: string[] = []) {
+        const nullFilters = [
+            'folderId'         ,
+            'collectionId'     ,
+            'type'             ,
+            'addCollectionIds' ,
+            'addType'          ,
+            'addOrganizationId',
+            'toolType'         ,
+            'cipherId'         ,
+            'action'           ,
+        ];
+        const falseFilters = [
+            'favorites',
+            'deleted'  ,
+        ];
+        nullFilters.filter(prop => {
+            return !excluded.includes(prop);
+        })
+        .forEach((prop: string) => {
+            // @ts-ignore
+            this[prop] = null;
+        });
+        falseFilters.filter(prop => {
+            return !excluded.includes(prop);
+        })
+        .forEach((prop: string) => {
+            // @ts-ignore
+            this[prop] = false;
+        });
     }
 
     private go(queryParams: any = null) {
@@ -665,6 +753,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 folderId: this.folderId,
                 collectionId: this.collectionId,
                 deleted: this.deleted ? true : null,
+                toolType: this.toolType,
             };
         }
 
@@ -679,8 +768,13 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.functionWithChangeDetection(() => this.addCipher(type));
     }
 
-    private copyValue(value: string, labelI18nKey: string) {
-        this.functionWithChangeDetection(() => {
+    private copyValue(cipher: CipherView, value: string, labelI18nKey: string, aType: string) {
+        this.functionWithChangeDetection(async () => {
+            if (cipher.reprompt !== CipherRepromptType.None && this.passwordRepromptService.protectedFields().includes(aType) &&
+               !await this.passwordRepromptService.showPasswordPrompt()) {
+                return;
+            }
+
             this.platformUtilsService.copyToClipboard(value);
             this.toasterService.popAsync('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
@@ -699,7 +793,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     private updateCollectionProperties() {
         if (this.collectionId != null) {
-            const collection = this.groupingsComponent.collections.filter((c) => c.id === this.collectionId);
+            const collection = this.groupingsComponent.collections.filter(c => c.id === this.collectionId);
             if (collection.length > 0) {
                 this.addOrganizationId = collection[0].organizationId;
                 this.addCollectionIds = [this.collectionId];
@@ -708,5 +802,33 @@ export class VaultComponent implements OnInit, OnDestroy {
         }
         this.addOrganizationId = null;
         this.addCollectionIds = null;
+    }
+
+    /* ****************************************************************
+    Return true if the Cozy Pass addon is installed.
+    If not, a timeout will return false after 300ms.
+    (average elapsed time to have an answer from the addon is about 60ms, so 300ms should be enough)
+    */
+    private checkExtensionInit(): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            const event = document.createEvent('Event');
+            event.initEvent('cozy.passwordextension.check-status');
+            document.addEventListener(
+                'cozy.passwordextension.installed',
+                e => {
+                    resolve(true);
+                },
+            );
+            document.addEventListener(
+                'cozy.passwordextension.connected',
+                e => {
+                    resolve(true);
+                },
+            );
+            setTimeout(() => {
+                resolve(false);
+            }, 300);
+            document.dispatchEvent(event);
+        });
     }
 }

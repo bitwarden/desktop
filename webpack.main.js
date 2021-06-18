@@ -1,17 +1,17 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
 const common = {
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                enforce: 'pre',
-                loader: 'tslint-loader',
-            },
+            // {
+            //     test: /\.ts$/,
+            //     enforce: 'pre',
+            //     loader: 'tslint-loader',
+            // },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
@@ -25,6 +25,7 @@ const common = {
         alias: {
             jslib: path.join(__dirname, 'jslib/src'),
             tldjs: path.join(__dirname, 'jslib/src/misc/tldjs.noop'),
+            'browser/functionForTarget._showDialog': path.resolve(__dirname, 'src/app/browser/functionForTarget._showDialog.electron'),
         },
     },
     output: {
@@ -41,7 +42,7 @@ const main = {
         __filename: false,
     },
     entry: {
-        'main': './src/main.ts',
+        'main': './src/entry.ts',
     },
     optimization: {
         minimize: false,
@@ -55,14 +56,14 @@ const main = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin([
-            path.resolve(__dirname, 'build/*'),
-        ]),
-        new CopyWebpackPlugin([
-            './src/package.json',
-            { from: './src/images', to: 'images' },
-            { from: './src/locales', to: 'locales' },
-        ]),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                './src/package.json',
+                { from: './src/images', to: 'images' },
+                { from: './src/locales', to: 'locales' },
+            ]
+        }),
     ],
     externals: [nodeExternals()],
 };

@@ -367,6 +367,9 @@
   "copyUri": {
     "message": "Kopiera URI"
   },
+  "copyVerificationCodeTotp": {
+    "message": "Kopiera verifieringskod (TOTP)"
+  },
   "length": {
     "message": "Längd"
   },
@@ -589,11 +592,11 @@
     "message": "Verifiera med Duo Security för din organisation genom att använda Duo Mobile-appen, SMS, telefonsamtal eller en U2F-säkerhetsnyckel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Använd en FIDO U2F-aktiverad säkerhetsnyckel för att komma åt ditt konto."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F-säkerhetsnyckel"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "E-post"
@@ -852,11 +855,23 @@
   "enableMinToTrayDesc": {
     "message": "När fönstret minimeras, visa en ikon i systemfältet istället."
   },
+  "enableMinToMenuBar": {
+    "message": "Minimera till aktivitetsfältet"
+  },
+  "enableMinToMenuBarDesc": {
+    "message": "När fönstret minimeras, visa en ikon i aktivitetsfältet istället."
+  },
   "enableCloseToTray": {
     "message": "Stäng till systemfältet"
   },
   "enableCloseToTrayDesc": {
     "message": "När fönstret stängs, visa en ikon i systemfältet istället."
+  },
+  "enableCloseToMenuBar": {
+    "message": "Stäng till aktivitetsfältet"
+  },
+  "enableCloseToMenuBarDesc": {
+    "message": "När fönstret stängs, visa en ikon i aktivitetsfältet istället."
   },
   "enableTray": {
     "message": "Aktivera systemfältsikon"
@@ -869,6 +884,30 @@
   },
   "startToTrayDesc": {
     "message": "När programmet startas, visa endast en ikon i systemfältet."
+  },
+  "startToMenuBar": {
+    "message": "Öppna till aktivitetsfältet"
+  },
+  "startToMenuBarDesc": {
+    "message": "När programmet startas, visa endast en ikon i aktivitetsfältet."
+  },
+  "openAtLogin": {
+    "message": "Starta automatiskt vid inloggning"
+  },
+  "openAtLoginDesc": {
+    "message": "Starta Bitwardens skrivbordsprogram automatiskt vid inloggning."
+  },
+  "alwaysShowDock": {
+    "message": "Visa alltid i dockan"
+  },
+  "alwaysShowDockDesc": {
+    "message": "Visa Bitwarden-ikonen i dockan även om den minimeras till aktivitetsfältet."
+  },
+  "confirmTrayTitle": {
+    "message": "Bekräfta inaktivering av fält"
+  },
+  "confirmTrayDesc": {
+    "message": "Om den här inställningen inaktiveras kommer alla andra fältrelaterade inställningar också inaktiveras."
   },
   "language": {
     "message": "Språk"
@@ -1182,8 +1221,17 @@
     "message": "VARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
+  "confirmVaultExport": {
+    "message": "Bekräfta export av valv"
+  },
   "exportWarningDesc": {
     "message": "Denna export innehåller ditt valv i ett okrypterat format. Du bör inte lagra eller skicka den exporterade filen över osäkra kanaler (t.ex. e-post). Radera den omedelbart när du är färdig med den."
+  },
+  "encExportKeyWarningDesc": {
+    "message": "Denna export krypterar dina data med kontots krypteringsnyckel. Om du någonsin roterar kontots krypteringsnyckel bör du exportera igen eftersom du inte kommer att kunna dekryptera denna exportfil."
+  },
+  "encExportAccountWarningDesc": {
+    "message": "Kypteringsnycklar är unika för varje Bitwarden-konto, så du kan inte importera en krypterad export till ett annat konto."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
@@ -1247,7 +1295,13 @@
     "message": "Lås upp med Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Bekräfta för Bitwarden."
+    "message": "lås upp valvet"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med huvudlösenordet vid omstart"
@@ -1403,9 +1457,231 @@
     "message": "Ditt nya huvudlösenord uppfyller inte kraven i policyn."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "Genom att markera denna ruta godkänner du följande:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Användarvillkoren och Integritetspolicyn har inte accepterats."
+  },
+  "enableBrowserIntegration": {
+    "message": "Aktivera webbläsarintegration"
+  },
+  "enableBrowserIntegrationDesc": {
+    "message": "Webbläsarintegration används för biometri i webbläsaren."
+  },
+  "browserIntegrationMasOnlyTitle": {
+    "message": "Webbläsarintegration stöds inte"
+  },
+  "browserIntegrationMasOnlyDesc": {
+    "message": "Tyvärr stöds webbläsarintegration för tillfället endast i versionen från Mac App Store."
+  },
+  "browserIntegrationWindowsStoreTitle": {
+    "message": "Webbläsarintegration stöds inte"
+  },
+  "browserIntegrationWindowsStoreDesc": {
+    "message": "Tyvärr stöds webbläsarintegration för tillfället inte i versionen från Windows Store."
+  },
+  "enableBrowserIntegrationFingerprint": {
+    "message": "Kräv verifiering för webbläsarintegration"
+  },
+  "enableBrowserIntegrationFingerprintDesc": {
+    "message": "Aktivera ett ytterligare säkerhetslager genom att kräva validering av fingeravtrycksfrasen när du upprättar en länk mellan skrivbordet och webbläsaren. När det här är aktiverat krävs ingripande och verifiering från användaren varje gång en anslutning etableras."
+  },
+  "approve": {
+    "message": "Godkänn"
+  },
+  "verifyBrowserTitle": {
+    "message": "Verifiera webbläsaranslutning"
+  },
+  "verifyBrowserDesc": {
+    "message": "Säkerställ att det fingeravtrycket som visas är identiskt med fingeravtrycket som visas i webbläsartillägget."
+  },
+  "biometricsNotEnabledTitle": {
+    "message": "Biometri är inte aktiverat"
+  },
+  "biometricsNotEnabledDesc": {
+    "message": "Biometri i webbläsaren kräver att biometri på skrivbordet aktiveras i inställningarna först."
+  },
+  "personalOwnershipSubmitError": {
+    "message": "På grund av en av företagets policyer är du begränsad från att spara objekt till ditt personliga valv. Ändra ägarskap till en organisation och välj från tillgängliga samlingar."
+  },
+  "hintEqualsPassword": {
+    "message": "Din lösenordsledtråd får inte vara samma som ditt lösenord."
+  },
+  "personalOwnershipPolicyInEffect": {
+    "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
+  },
+  "allSends": {
+    "message": "Alla försändelser",
+    "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTypeFile": {
+    "message": "Fil"
+  },
+  "sendTypeText": {
+    "message": "Text"
+  },
+  "searchSends": {
+    "message": "Sök försändelser",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editSend": {
+    "message": "Redigera försändelse",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "myVault": {
+    "message": "Mitt valv"
+  },
+  "text": {
+    "message": "Text"
+  },
+  "deletionDate": {
+    "message": "Raderingsdatum"
+  },
+  "deletionDateDesc": {
+    "message": "Skicka kommer att raderas permanent på angivet datum och tid.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "expirationDate": {
+    "message": "Utgångsdatum"
+  },
+  "expirationDateDesc": {
+    "message": "Om angivet kommer åtkomst till denna försändelse upphöra på angivet datum och tid.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "maxAccessCount": {
+    "message": "Maximalt antal åtkomster"
+  },
+  "maxAccessCountDesc": {
+    "message": "Om angivet kommer användare inte längre komma åt denna försändelse när det maximala antalet åtkomster har uppnåtts.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "currentAccessCount": {
+    "message": "Nuvarande antal åtkomster"
+  },
+  "disableSend": {
+    "message": "Inaktivera denna försändelse så att ingen kan komma åt den.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendPasswordDesc": {
+    "message": "Kräv ett lösenord från användare innan de kommer åt denna försändelse.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendNotesDesc": {
+    "message": "Egna anteckningar om denna försändelse.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLink": {
+    "message": "Försändelselänk",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendLinkLabel": {
+    "message": "Försändelselänk",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "textHiddenByDefault": {
+    "message": "Dölj texten som standard när försändelsen öppnas",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSend": {
+    "message": "Skapade försändelse",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "editedSend": {
+    "message": "Redigerade försändelse",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "deletedSend": {
+    "message": "Raderade försändelse",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "newPassword": {
+    "message": "Nytt lösenord"
+  },
+  "whatTypeOfSend": {
+    "message": "Vilken typ av försändelse är det här?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createSend": {
+    "message": "Skapa försändelse",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendTextDesc": {
+    "message": "Texten du vill skicka."
+  },
+  "sendFileDesc": {
+    "message": "Filen du vill skicka."
+  },
+  "days": {
+    "message": "$DAYS$ dagar",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "oneDay": {
+    "message": "1 dag"
+  },
+  "custom": {
+    "message": "Anpassad"
+  },
+  "deleteSendConfirmation": {
+    "message": "Är du säker på att du vill radera denna försändelse?",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkToClipboard": {
+    "message": "Kopiera försändelselänk till urklipp",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copySendLinkOnSave": {
+    "message": "Kopiera länken för att dela den här försändelsen när den har sparats."
+  },
+  "sendDisabled": {
+    "message": "Försändelse inaktiverad",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendDisabledWarning": {
+    "message": "På grund av en företagspolicy kan du bara radera befintliga försändelser.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "copyLink": {
+    "message": "Kopiera länk"
+  },
+  "disabled": {
+    "message": "Inaktiverad"
+  },
+  "maxAccessCountReached": {
+    "message": "Det maximala antalet åtkomster har uppnåtts"
+  },
+  "expired": {
+    "message": "Utgången"
+  },
+  "pendingDeletion": {
+    "message": "Väntar på radering"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAutn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

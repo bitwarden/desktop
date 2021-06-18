@@ -1,7 +1,7 @@
 import {
     Component,
-    OnDestroy,
     NgZone,
+    OnDestroy,
 } from '@angular/core';
 
 import {

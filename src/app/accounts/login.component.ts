@@ -1,8 +1,9 @@
 import {
     Component,
     ComponentFactoryResolver,
-    OnDestroy,
+    ElementRef,
     NgZone,
+    OnDestroy,
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
@@ -34,8 +35,11 @@ const BroadcasterSubscriptionId = 'LoginComponent';
 })
 export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
+    @ViewChild('masterPwdContainer') masterPwdContainer: ElementRef ;
 
     showingModal = false;
+    isInCozyApp: boolean = false;
+    baseUrl: string;
 
     constructor(authService: AuthService, router: Router, i18nService: I18nService,
         syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
@@ -51,6 +55,27 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     }
 
     async ngOnInit() {
+        // @override by Cozy
+        // check if code is run into a Cozy app
+        // if yes, retrieve url and user email from the htlm
+        const cozyDataNode = document.getElementById('cozy-app');
+        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+        const domainWithoutPort = cozyDomain && cozyDomain.split(':')[0];
+        if (cozyDomain) {
+            this.isInCozyApp = true;
+            this.email = `me@${domainWithoutPort}`;
+            const protocol = window.location ? window.location.protocol : 'https:';
+            this.baseUrl =  `${protocol}//${cozyDomain}/`;
+            this.environmentService.setUrls({
+                base: this.baseUrl + 'bitwarden',
+            });
+        }
+        // TODO BJA const cozyToken = cozyDataNode ? cozyDataNode.dataset.cozytoken : null;
+        // if (cozyToken) {
+        //     await this.storageService.save('accessToken', cozyToken);
+        // }
+
+        // end Cozy override
         await super.ngOnInit();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(() => {
@@ -62,6 +87,12 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                 }
             });
         });
+    }
+
+    ngAfterViewInit() {
+        const inputContainerEl  = this.masterPwdContainer.nativeElement;
+        const labelTxt = this.i18nService.t('masterPass');
+        this._turnIntoMaterialInput(inputContainerEl, labelTxt);
     }
 
     ngOnDestroy() {
@@ -90,4 +121,62 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     onWindowHidden() {
         this.showPassword = false;
     }
+
+    openHint() {
+        window.open(this.baseUrl + 'auth/passphrase_reset');
+    }
+
+    /* --------------------------------------------------------------------- */
+    // Prepare an input element to have a material UX
+    _turnIntoMaterialInput(container: any, labelText: string) { // BJA : labelEL to be removed
+        // const container = inputEl.closest('.material-input');
+        const inputEl = container.querySelector('input');
+        container.querySelectorAll('label').forEach((label: any) => {label.textContent = labelText; });
+        container.addEventListener('click', () => {
+            inputEl.focus();
+        });
+        let isFocusedOrFilled = false;
+        const initialPlaceholder = inputEl.placeholder;
+        // init input state
+        if (inputEl.value) {
+            container.classList.add('focused-or-filled');
+            inputEl.placeholder = initialPlaceholder;
+            isFocusedOrFilled = true;
+        }
+        inputEl.addEventListener('focus', () => {
+            container.classList.add('focused-or-filled');
+            setTimeout( () => {inputEl.placeholder = initialPlaceholder; }, 100);
+            isFocusedOrFilled = true;
+        });
+        inputEl.addEventListener('blur', () => {
+            // console.log('blur to transition a meterial UI Input');
+            if (!inputEl.value) {
+                container.classList.remove('focused-or-filled');
+                inputEl.placeholder = '';
+                isFocusedOrFilled = false;
+            }
+        });
+        inputEl.addEventListener('input', () => {
+            // console.log('input HEARD !!!');
+            if (!isFocusedOrFilled && inputEl.value) {
+                container.classList.add('focused-or-filled');
+                inputEl.placeholder = initialPlaceholder;
+                isFocusedOrFilled = true;
+            }
+        });
+        const visibilityBtn = container.querySelector('.visibility-btn');
+        if (!visibilityBtn) { return; }
+        const that = this;
+        visibilityBtn.addEventListener('click', () => {
+            if (that.showPassword) {
+                inputEl.type = 'password';
+                visibilityBtn.firstElementChild.classList.replace('fa-eye-slash', 'fa-eye');
+            } else {
+                inputEl.type = 'text';
+                visibilityBtn.firstElementChild.classList.replace('fa-eye', 'fa-eye-slash');
+            }
+            that.showPassword = !that.showPassword;
+        });
+    }
+
 }
