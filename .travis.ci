@@ -1,0 +1,46 @@
+language: node_js
+matrix:
+  fast_finish: true
+node_js:
+- '14'
+branches:
+  only:
+  - master
+  # tags
+  - /^\d+\.\d+\.\d+(\-beta.\d+)?$/
+env:
+  global:
+    - MATTERMOST_CHANNEL='{"dev":"feat---password-mgr","beta":"feat---password-mgr,publication","stable":"feat---password-mgr,publication"}'
+    # GITHUB_TOKEN for yarn deploy script
+    - secure: "JMfkkHGFCze6uOEgz2zA8Ae2mGi2tF7bTWABCIspvrQ/D8z7JmD/xCUPeCjJSQN6bEo3I4MIxN57KmL8PEN1VD4FzHS1liKFKHkCgtnXFe+yEzpvRku6E0mSmg97sauCdXHNWsOIvb26SR+ODxfESBJkN0WVRvtFmYwO0Ru+O8sRfg94k2eKtLLBYaXpg6Wbm5Fj3p1eQiOIRtaSl3uybIBtjsZJNtbPdBsUwHjRKKDPg6t4Kl1PV4H2LlMX2GGPamf21L/tEn5iM0qG0tB3fVr9VXrkhXQpP2ztAi2uxnpbaMlWpvYeTU3OogWfWrplRFeGpmeppat+tT36t3J6GMzHTtNXtgS+Y7R4hLa9ZrDMhgubfHapOr2rfGsCKmEvi47Yl4IJRVsQtZJc7c1rDz6Chx43ZKzuZ96eX0HrWWXC2gjv6phcN91lrpLjk45ucxJkspmnp+wDgcCjWz/fzvnS/hdYpFaRUDPiuFxiBdOtBlN6P2aEa7sVdeW8X8ooVxZvuQrvJiOZLO7SX2fZYPCO+h8+iLoyAOXApSYuvGejuPocRhBOeNlzOyY2b+og2Y2cNM2jvnlAhIildsGIOX3gK/P50IH+0KNiR2ZvlgtprYrMGWmhq57220bE32bn8Qr5DtefwsiE840t60+RVW6+JreH568FgjpRAPdSuPM="
+    # REGISTRY_TOKEN for yarn cozyPublish script
+    - secure: "YxAjk2805uV/IZUpoMq7/ghySx9IDrggNduHjitOcHFkFRAd8nEY4aTfeCjjuqQqknUe/0aqH3edaOdy+OT0ZgC9Z66mVFke6wJEt9QxWaEfXzKTzYJDyAt5Bkny74SQ3VVbNoF8qEmo+vDdF0aw1VfLXOA+Bb0hXoch4qQlygq2Ae7dxuGRNT/i3LL2FifHeAzRkX1+SG1E/vr2xinXHVWfuYLnTZKIMJqfdJL32qPt1TLYniYU3bcPy+qObdxxv2OLi51JIwModn1zVYD+1mKKX9XvDvMdRf/29j0J+3ZOtfWOAmXSjWaj6GgukyiXnkhOHsAwvvJ+kUjAeJx8KTaWqtoxvGpryjAc4+B4xp2L1l5dvyzIo/MQcHW1rkvXDOVPoofxMf8VhYBgiRHmqzm04ZA5koOI+9Vr7sf3Ffrs+zGr7/JtUlZcjalz8Y/i6+KphPOjapIFV4Nh6lWdNdO/P7YhXMmb8yQxx4prf1aOhUtlIFn2eB9r+p7hVcG7swPZitIa3qul7ysFwIUa/3xb15zvwJk8xcFImjvn4HPGPxBBFeH1B9GBQBufjOXJpklQY2y85TuITi6K2CAhhO6TBweNFZg8VNwcQ6f7VmdfVMLZTSMTXmvO6Ne8yhkZJfuxE32xFusqWPgA5VkJ7wzNz4M89K8MoBS0UFx4D5s="
+    # MATTERMOST_HOOK_URL for yarn cozyPublish script
+    - secure: "lMsV9lObdh3GIYLHQYUi/+66CLiy6IoWKBxHkJcswIaeVvirtKKJop5DH+CQ8fTdR9GPNVZ8ZMZK2q9Pkm3x88Yglf5wW1kjY2uKfQF3Y7rwoDSdrsxRtwQnM618tRH2touRgGImsCpn7yVTXIqNi8QfZJDlHaPGvq1goyIsQVthEVTSY4o2i70ZltxpafEZ85m7HED5IRBV9xzLFzUjplP21BhTU3CC4V5VGwHjTCXJMl/rknsX6dQKlwtisJ/lnAO9T0tKkgl8KncmmSpft86c+9OI7yjzrq90Ju79CzXwGuWZ4F/LhLijRly4Uiv9UAu/C+nYrqjjYXuch5hMyLomg/X5vQrp39dfklBNqknHfWA1rr4c0NKsUoqLJYtYIgqndAC832SQU6ZV4BSZruA+aDd+ZuLLoAk1fP2npRrKZkjDd1iHwY8d/HdTrVnOG2ZlxRJNE2Vc4LiEw59zLMFzKhZgcIregDSTs/noV57FJtyB0mWI8Jx4YRReA1xwEtH2tbepCWQZnw+OGRmvRldH/LH9zuqBKGBy0OmSmReyjmeqGdtjfZzb/tViaMiEef/HKym1cv35krIBQEWU0PuTBGiUmRmdoXA+3I9fLfYVuHNkl1nlsi6fbe13TnE4GzXnWfPBTFxlVAFK7DrL4CUO0YcHDsuoZUs0nS1XuDA="
+cache:
+  yarn: true
+  directories:
+  - node_modules
+script:
+  - npm run lint
+  - npm run build
+before_install:
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then openssl aes-256-cbc -K $encrypted_355e94ba1091_key -iv $encrypted_355e94ba1091_iv -in id_rsa_downcloud_passwords.enc -out id_rsa_downcloud_passwords -d; fi
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then eval "$(ssh-agent -s)"; fi
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then chmod 600 id_rsa_downcloud_passwords; fi
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then ssh-add id_rsa_downcloud_passwords; fi
+before_deploy:
+  - yarn add cozy-app-publish
+deploy:
+  - provider: script
+    skip_cleanup: true
+    # deploy the build on downcloud and publish to the Cozy registry
+    script: yarn cozyPublish
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    # publish stable or beta versions using Github Releases (git tag)
+    script: yarn cozyPublish
+    on:
+      tags: true
