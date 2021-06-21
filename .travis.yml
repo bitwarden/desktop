@@ -26,10 +26,10 @@ script:
   - npm run build:browser:prod
 before_install:
   - sudo apt-get install libsecret-1-dev
-  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then openssl aes-256-cbc -K $encrypted_355e94ba1091_key -iv $encrypted_355e94ba1091_iv -in id_rsa_downcloud_passwords.enc -out id_rsa_downcloud_passwords -d; fi
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then openssl aes-256-cbc -K $encrypted_95a52b3b9b3c_key -iv $encrypted_95a52b3b9b3c_iv -in id_rsa_downcloud_cozy_pass_web.enc -out id_rsa_downcloud_cozy_pass_web -d; fi
   - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then eval "$(ssh-agent -s)"; fi
-  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then chmod 600 id_rsa_downcloud_passwords; fi
-  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then ssh-add id_rsa_downcloud_passwords; fi
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then chmod 600 id_rsa_downcloud_cozy_pass_web; fi
+  - if [ "$TRAVIS_SECURE_ENV_VARS" != "false" ]; then ssh-add id_rsa_downcloud_cozy_pass_web; fi 
 before_deploy:
   - yarn add cozy-app-publish
 deploy:
