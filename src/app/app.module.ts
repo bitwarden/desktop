@@ -65,6 +65,8 @@ import { SendComponent } from './send/send.component';
 
 import { NavComponent } from './layout/nav.component';
 
+import { PasswordRepromptComponent } from './components/password-reprompt.component';
+
 import { registerLocaleData } from '@angular/common';
 import localeAf from '@angular/common/locales/af';
 import localeBe from '@angular/common/locales/be';
@@ -208,6 +210,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorOptionsComponent,
         VaultComponent,
         ViewComponent,
+        PasswordRepromptComponent,
     ],
     entryComponents: [
         AttachmentsComponent,

@@ -7,17 +7,19 @@ import {
 import { ToasterModule } from 'angular2-toaster';
 
 import { ElectronLogService } from 'jslib-electron/services/electronLog.service';
+import { ElectronPlatformUtilsService } from 'jslib-electron/services/electronPlatformUtils.service';
 import { ElectronRendererMessagingService } from 'jslib-electron/services/electronRendererMessaging.service';
 import { ElectronRendererSecureStorageService } from 'jslib-electron/services/electronRendererSecureStorage.service';
 import { ElectronRendererStorageService } from 'jslib-electron/services/electronRendererStorage.service';
 
-import { ElectronPlatformUtilsService } from '../services/electronPlatformUtils.service';
 import { I18nService } from '../services/i18n.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
+import { PasswordRepromptService } from '../services/passwordReprompt.service';
 
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 import { LockGuardService } from 'jslib-angular/services/lock-guard.service';
+import { ModalService } from 'jslib-angular/services/modal.service';
 import { UnauthGuardService } from 'jslib-angular/services/unauth-guard.service';
 import { ValidationService } from 'jslib-angular/services/validation.service';
 
@@ -36,7 +38,6 @@ import { FileUploadService } from 'jslib-common/services/fileUpload.service';
 import { FolderService } from 'jslib-common/services/folder.service';
 import { NotificationsService } from 'jslib-common/services/notifications.service';
 import { PasswordGenerationService } from 'jslib-common/services/passwordGeneration.service';
-import { PasswordRepromptService } from 'jslib-common/services/passwordReprompt.service';
 import { PolicyService } from 'jslib-common/services/policy.service';
 import { SearchService } from 'jslib-common/services/search.service';
 import { SendService } from 'jslib-common/services/send.service';
@@ -137,7 +138,6 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
-const passwordRepromptService = new PasswordRepromptService(i18nService, cryptoService, platformUtilsService);
 
 containerService.attachToGlobal(window);
 
@@ -191,6 +191,7 @@ export function initFactory(): Function {
         AuthGuardService,
         UnauthGuardService,
         LockGuardService,
+        ModalService,
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
@@ -224,7 +225,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
-        { provide: PasswordRepromptServiceAbstraction, useValue: passwordRepromptService },
+        { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         {
             provide: APP_INITIALIZER,
             useFactory: initFactory,
