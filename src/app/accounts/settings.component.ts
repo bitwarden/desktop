@@ -219,10 +219,12 @@ export class SettingsComponent implements OnInit {
                     pinInput.setAttribute('type', 'text');
                     toggleIcon.classList.remove('fa-eye');
                     toggleIcon.classList.add('fa-eye-slash');
+                    pinInput.focus();
                 } else {
                     pinInput.setAttribute('type', 'password');
                     toggleIcon.classList.remove('fa-eye-slash');
                     toggleIcon.classList.add('fa-eye');
+                    pinInput.focus();
                 }
             });
 
