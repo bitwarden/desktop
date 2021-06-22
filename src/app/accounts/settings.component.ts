@@ -209,10 +209,11 @@ export class SettingsComponent implements OnInit {
                         <i id="toggle-icon" class="fa fa-lg fa-eye" aria-hidden="true"></i>
                     </a>
                 </div>`;
-            
+
             const pinInput = div.querySelector('#pin-input') as HTMLInputElement;
             const toggleIcon = div.querySelector('#toggle-icon') as HTMLInputElement;
-            (div.querySelector('#toggle-btn') as HTMLInputElement).addEventListener('click', () => {
+            (div.querySelector('#toggle-btn') as HTMLInputElement).addEventListener('click', event => {
+                event.preventDefault();
                 showPin = !showPin;
                 if (showPin) {
                     pinInput.setAttribute('type', 'text');
@@ -223,7 +224,7 @@ export class SettingsComponent implements OnInit {
                     toggleIcon.classList.remove('fa-eye-slash');
                     toggleIcon.classList.add('fa-eye');
                 }
-            })
+            });
 
             div.appendChild(label);
 
