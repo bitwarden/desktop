@@ -215,17 +215,10 @@ export class SettingsComponent implements OnInit {
             (div.querySelector('#toggle-btn') as HTMLInputElement).addEventListener('click', event => {
                 event.preventDefault();
                 showPin = !showPin;
-                if (showPin) {
-                    pinInput.setAttribute('type', 'text');
-                    toggleIcon.classList.remove('fa-eye');
-                    toggleIcon.classList.add('fa-eye-slash');
-                    pinInput.focus();
-                } else {
-                    pinInput.setAttribute('type', 'password');
-                    toggleIcon.classList.remove('fa-eye-slash');
-                    toggleIcon.classList.add('fa-eye');
-                    pinInput.focus();
-                }
+                pinInput.setAttribute('type', showPin ? 'text' : 'password');
+                toggleIcon.classList.remove(showPin ? 'fa-eye' : 'fa-eye-slash');
+                toggleIcon.classList.add(showPin ? 'fa-eye-slash' : 'fa-eye');
+                pinInput.focus();
             });
 
             div.appendChild(label);
