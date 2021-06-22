@@ -1,10 +1,10 @@
-<div class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+<div class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="moveToOrgTitle">
     <div class="modal-dialog" role="document">
         <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
             <div class="modal-body">
                 <div class="box">
-                    <div class="box-header" id="shareTitle">
-                        {{'share' | i18n}}
+                    <div class="box-header" id="moveToOrgTitle">
+                        {{'moveToOrganization' | i18n}}
                     </div>
                     <div class="box-content" *ngIf="!organizations || !organizations.length">
                         <div class="box-content-row">
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="box-footer">
-                        {{'shareDesc' | i18n}}
+                        {{'moveToOrgDesc' | i18n}}
                     </div>
                 </div>
                 <div class="box" *ngIf="organizations && organizations.length">
