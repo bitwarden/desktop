@@ -31,6 +31,19 @@ const common = {
                     },
                 }],
             },
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules(\/|\\)(?!(cozy-ui))/,
+                options: {
+                    cacheDirectory: 'node_modules/.cache/babel-loader/react',
+                    presets: ['cozy-app'],
+                }
+            },
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
     plugins: [
@@ -48,7 +61,7 @@ const common = {
         }),
     ],
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
         alias: {
             'electron'                                                     : path.resolve(__dirname, 'src/app/browser/mock-electron'),
             'jslib/electron/services/electronRendererMessaging.service'    : path.resolve(__dirname, 'src/app/browser/browserMessaging.service'),
