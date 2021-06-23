@@ -702,7 +702,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     shouldShowLogo() {
-        return (!this.cipherId && this.action !== 'add');
+        return (!this.cipherId && this.action !== 'add' && this.action !== 'import');
     }
 
     private dirtyInput(): boolean {
