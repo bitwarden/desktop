@@ -60,7 +60,7 @@ const ImportPage = ({ vaultClient }) => {
   }
 
   const reloadPage = () => {
-    window.location.reload()
+    setImportStatus('waiting')
   }
 
   return (
