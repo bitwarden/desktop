@@ -1,4 +1,9 @@
-﻿@import "variables.scss";
+﻿/* Cozy UI utilities classes */
+@import '~cozy-ui/dist/cozy-ui.min.css';
+/* Cozy UI React components styles */
+@import '~cozy-ui/transpiled/react/stylesheet.css';
+
+@import "variables.scss";
 app-vault, app-login {
     height: 100px;
     flex-grow: 1;
