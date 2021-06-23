@@ -4,7 +4,7 @@ import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import { MainTitle } from 'cozy-ui/transpiled/react/Text'
 import VerticallyCentered from '../VerticallyCentered'
-import Wrapper from 'components/Wrapper'
+import Wrapper from '../Wrapper'
 import Label from 'cozy-ui/transpiled/react/Label'
 import Button from 'cozy-ui/transpiled/react/Button'
 import Modal, {
@@ -17,7 +17,7 @@ import { getFileContent } from './helpers'
 import logger from '../../logger'
 import flag from 'cozy-flags'
 import useBreakpoints from 'cozy-ui/transpiled/react/hooks/useBreakpoints'
-import BarTitle from 'BarTitle'
+import BarTitle from 'cozy-ui/transpiled/react/BarTitle'
 
 const ImportPage = ({ vaultClient }) => {
   const { t } = useI18n()
