@@ -462,6 +462,13 @@ app-vault, app-login {
         }
     }
 
+    > .import-page {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+
     .header {
         min-height: 44px;
         max-height: 44px;

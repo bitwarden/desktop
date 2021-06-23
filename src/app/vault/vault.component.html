@@ -27,7 +27,7 @@
         (onShareCipher)="shareCipher($event)" (onEditCollections)="cipherCollections($event)"
         (onGeneratePassword)="openPasswordGenerator(true)">
     </app-vault-add-edit>
-    <app-import-page *ngIf="action === 'import'">
+    <app-import-page id="importPage" class="import-page" *ngIf="action === 'import'">
     </app-import-page>
     <div id="logo" class="logo" *ngIf="shouldShowLogo()">
         <div class="content">
