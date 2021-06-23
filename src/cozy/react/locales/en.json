@@ -1,0 +1,150 @@
+{
+  "Nav": {
+    "presentation": "Presentation",
+    "security": "Security",
+    "installation": "Installation",
+    "import": "Import"
+  },
+
+  "PresentationStep": {
+    "title": "Stop losing your passwords",
+    "description": "Keep your passwords safe in your Cozy",
+    "item1": "Your passwords will be saved once and for all in your 100% personal and secured safe.",
+    "item2": "Your cozy will allow you to instantly fill in the forms of websites, for easy connection to all your services.",
+    "item3": "You can connect your brands to your Cozy to recover your data in the blink of an eye.",
+    "cta": "Let's go!",
+   "notSupportedInfos": {
+      "title": "Not available on %{browser}",
+      "description": "The feature is currently not available on %{browser}. You can however take advantage of it on the following browsers:"
+    }
+  },
+
+  "SecurityStep": {
+    "title": "Improve your Cozy password",
+    "description": "The password of your Cozy becomes the unique key to decrypt your securely stored passwords",
+    "advices": {
+      "strong_passphrase": "**Privilege a strong password:** A long password with numbers and special characters will be impossible to break.",
+      "memorize": "**Memorize it well:** In case of loss, you will not be able to recover the encrypted passwords in your cozy.",
+      "our_tip": "**Our tip:** Find a short phrase that suits you, for example: "
+    },
+    "enhance-password": "Improve my password",
+    "keep-password": "Keep my current password",
+    "password-example": "Claude est le meilleur nuage français !"
+  },
+
+  "SecurityStepOIDC": {
+    "title": "Choose your Cozy Pass password",
+    "title-configured": "Cozy Pass password configured",
+    "description": "Your Cozy Pass password becomes the unique key to decrypt your securely stored passwords",
+    "description-configured": "You configured your Cozy Pass password earlier, your passwords vault is ready.",
+    "next-step": "Next",
+    "passphrase": {
+      "placeholder": "Cozy Pass Password",
+      "confirmationPlaceholder": "Confirm the password",
+      "error-setting-passphrase": "Could not set passphrase, please retry later"
+    }
+  },
+
+  "HintStep": {
+    "title": "Leave a password hint",
+    "description": "The hint will be sent to you by email in case you forgot your password, choose a hint that only you can understand",
+    "placeholder": "Hint (required)",
+    "submit": "Save the hint",
+    "skip": "Skip",
+    "error": "Error while updating hint",
+    "please-configure-hint": "Please configure a hint",
+    "hint-configured": "Hint configured ✅ You can still change it here."
+  },
+
+  "InstallationStep": {
+    "title": "Install Cozy extension",
+    "descriptionStart": "Add the",
+    "descriptionEnd": "to your browser. This installation is necessary to allow you to automatically fill in and save your passwords while browsing.",
+    "cozyExtension": "Cozy extension",
+    "steps": {
+      "choose-pass-password": "Choose Cozy Pass password",
+      "pass-password-chosen": "Cozy Pass password configured ✅",
+      "improve-password": "Improve password",
+      "leave-hint": "Leave hint",
+      "install-extension": "Install extension",
+      "install-app": "Install app"
+    },
+    "step1": {
+      "chrome": "Click below to open the Chrome Web Store",
+      "edge-chromium": "Click below to open the Chrome Web Store",
+      "firefox": "Click below to open Firefox Add-ons",
+      "safari": "Click below to open the Mac App Store then click on **Get**"
+    },
+    "step2": {
+      "chrome": "Then click on **Add to Chrome**",
+      "edge-chromium": "Then click on **Add to Chrome**. You may have to click on the **Allow extensions from other stores** button first.",
+      "firefox": "Then click on **Add to Firefox**",
+      "safari": "Then open Safari preferences to activate the extension (Preferences > Extensions)"
+    },
+    "step3": "Log in with your address **%{address}** and your password!",
+    "step3-oidc": "Log in with your address **%{address}** and your Cozy Pass password!",
+    "cta": "Install Cozy extension"
+  },
+
+  "InstallationStepMobile": {
+    "title": "Install the Cozy Pass App",
+    "description": "Access your credentials on the go, and automatically fill forms on your mobile.",
+    "installApp": "Install the app"
+  },
+
+  "InstalledStep": {
+    "title": "It's almost finished!",
+    "descriptionStart": "Click on the ",
+    "descriptionEnd": "icon on the top right corner of your screen to log in with your address **%{address}** and your Cozy password.",
+    "descriptionEnd-oidc": "icon on the top right corner of your screen to log in with your address **%{address}** and your Cozy Pass password."
+  },
+
+  "ConnectedStep": {
+    "title": "Your password manager is configured!",
+    "description": "Go to your Cozy browser extension to manage your passwords"
+  },
+
+  "Help": {
+    "faq": "<a href='https://help.cozy.io/article/405-how-to-configure-your-password-manager' target='_blank' rel='noopener noreferrer'>__Help:__ I can't connect</a>",
+    "import": "Import my credentials from another manager"
+  },
+
+  "AvailablePlatforms": {
+    "text": "Find the Cozy extension on the following platforms:",
+    "smartphone": "Smartphone",
+    "smartphone-soon": "Smartphone (available soon)"
+  },
+
+  "ImportPage": {
+    "title": "Import your credentials",
+    "options": {
+      "label": "1. Select the source format",
+      "placeholder": "Select a format"
+    },
+    "file": {
+      "label": "2. Select the file to import"
+    },
+    "submit": "Import",
+    "modal": {
+      "importing": {
+        "title": "Importing your credentials"
+      },
+      "imported": {
+        "title": "Credentials imported",
+        "content": "You can now find your credentials in your Cozy vault."
+      },
+      "errored": {
+        "title": "Error while importing your credentials",
+        "content": "There was an error while importing your credentials. Please try again."
+      },
+      "close": "OK"
+    }
+  },
+
+  "UpdateCozyPassPassword": "Update Cozy Pass password",
+
+  "manifest": {
+    "short_description": "Stop losing your passwords",
+    "long_description": "Keep your passwords safe in your Cozy.\n\nYour passwords are saved once and for all in your 100% personal and secured safe.\n\nYour Cozy allows you to instantly fill in the forms of websites, for easy connection to all your services.\n\nConnect your brands to your Cozy to recover your data in the blink of an eye."
+  }
+}

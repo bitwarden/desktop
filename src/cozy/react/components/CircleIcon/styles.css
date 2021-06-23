@@ -1,0 +1,16 @@
+.CircleIcon {
+  display: inline-block;
+  border: 1px solid var(--silver);
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.CircleIcon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

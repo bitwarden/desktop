@@ -1,0 +1,32 @@
+.c-nav-link {
+  padding: 0 1rem;
+}
+
+.c-nav-link .c-nav-number {
+  display: inline-block;
+  padding-right: 0.5rem;
+  font-weight: bold;
+}
+
+.c-nav-link.is-active .c-nav-number {
+  color: #297EF2;
+}
+
+@media (max-width: 63.9375rem) {
+  .c-nav-link {
+    padding: 0;
+  }
+
+  .c-nav-link.is-active {
+    color: #297EF2;
+  }
+
+  .c-nav-link .c-nav-icon {
+    display: block;
+    padding: 0;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin: auto;
+    margin-bottom: 0.25rem;
+  }
+}

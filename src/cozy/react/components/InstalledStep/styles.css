@@ -1,0 +1,19 @@
+.InstalledPage__illustration {
+  position: relative;
+}
+
+.InstalledPage__illustration svg {
+  position: absolute;
+  top: -1.25rem;
+  left: calc(100% - 2rem);
+  transform: rotateY(0.5turn);
+  fill: var(--dodgerBlue);
+}
+
+.InstalledPage__title {
+  font-size: 2rem;
+}
+
+.InstalledPage__description {
+  font-size: 1.25rem;
+}

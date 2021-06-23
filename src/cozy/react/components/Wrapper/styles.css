@@ -1,0 +1,12 @@
+.Wrapper {
+  max-width: 768px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+}

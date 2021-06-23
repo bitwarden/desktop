@@ -1,0 +1,149 @@
+{
+  "Nav": {
+    "presentation": "Présentation",
+    "security": "Sécurité",
+    "installation": "Installation",
+    "import": "Import"
+  },
+
+  "PresentationStep": {
+    "title": "Ne perdez plus vos mots de passe",
+    "description": "Conservez vos mots de passe en sécurité dans votre Cozy",
+    "item1": "Vos mots de passe seront enregistrés une bonne fois pour toute dans votre coffre 100% personnel et sécurisé.",
+    "item2": "Votre cozy vous permettra un remplissage instantané des formulaires des sites internet, pour une connexion facilitée à tous vos services.",
+    "item3": "Vous pourrez connecter vos marques à votre Cozy pour récupérer vos données en un clin d'oeil.",
+    "cta": "C'est parti !",
+    "notSupportedInfos": {
+      "title": "Indisponible sur %{browser}",
+      "description": "La fonctionnalité n'est actuellement pas proposée sur %{browser}. Vous pouvez toutefois en profiter sur les navigateurs suivants :"
+    }
+  },
+
+  "SecurityStep": {
+    "title": "Améliorer votre mot de passe Cozy",
+    "description": "Le mot de passe de votre Cozy devient l'unique clé pour décoder vos mots de passe sauvegardés de manière sécurisée",
+    "advices": {
+      "strong_passphrase": "**Privilégiez un mot de passe fort :** Un mot de passe long avec des chiffres et des caractères spéciaux sera impossible à casser.",
+      "memorize": "**Mémorisez-le bien :** En cas de perte, il vous sera impossible de récupérer les mots de passe chiffrés dans votre Cozy.",
+      "our_tip": "**Notre conseil :** Trouvez une phrase courte qui vous corresponde, par exemple : "
+    },
+    "enhance-password": "Améliorer mon mot de passe",
+    "keep-password": "Garder mon mot de passe actuel",
+    "password-example": "Claude is the best French cloud !"
+  },
+
+
+  "SecurityStepOIDC": {
+    "title": "Choisissez votre mot de passe Cozy Pass",
+    "title-configured": "Votre mot de passe Cozy Pass est configuré",
+    "description": "Votre mot de passe Cozy Pass devient la clé unique pour décoder vos mots de passe sauvegardés de manière sécurisée.",
+    "description-configured": "Vous avez configuré votre mot de passe Cozy Pass, vous pouvez maintenant stocker vos mot de passe.",
+    "passphrase": {
+      "placeholder": "Mot de passe Cozy Pass",
+      "confirmationPlaceholder": "Confirmez le mot de passe"
+    },
+    "next-step": "Suivant"
+  },
+
+  "HintStep": {
+    "title": "Définir un indice de mot de passe",
+    "description": "L'indice vous sera envoyé par email en cas d'oubli de votre mot de passe, choisissez un indice que vous-seul pouvez comprendre",
+    "placeholder": "Indice (obligatoire)",
+    "submit": "Enregistrer l'indice",
+    "skip": "Passer",
+    "error": "Erreur lors de la mise à jour de l'indice",
+    "please-configure-hint": "Merci de configurer un indice",
+    "hint-configured": "Indice défini ✅ Vous pouvez toujours le changer ici."
+  },
+
+  "InstallationStep": {
+    "title": "Installer l'extension Cozy",
+    "descriptionStart": "Ajoutez",
+    "descriptionEnd": "à votre navigateur. Cette installation est nécessaire pour vous permettre de remplir et enregistrer automatiquement vos mots de passe lors de votre navigation.",
+    "cozyExtension": "l'extension Cozy",
+    "step1": {
+      "chrome": "Cliquez ci-dessous pour ouvrir le Chrome Web Store",
+      "edge-chromium": "Cliquez ci-dessous pour ouvrir le Chrome Web Store",
+      "firefox": "Cliquez ci-dessous pour ouvrir Firefox Add-ons",
+      "safari": "Cliquez ci-dessous pour ouvrir le Mac App Store puis cliquez sur **Obtenir**"
+    },
+    "step2": {
+      "chrome": "Cliquez ensuite sur **Ajouter à Chrome**",
+      "edge-chromium": "Cliquez ensuite sur **Ajouter à Chrome**. Si nécessaire, cliquez sur le bouton **Autoriser les extensions provenant d'autres magasins** au préalable.",
+      "firefox": "Cliquez ensuite sur **Ajouter à Firefox**",
+      "safari": "Ouvrez ensuite les préférences Safari pour activer l'extension (Préférences > Extensions)"
+    },
+    "steps": {
+      "choose-pass-password": "Choisir votre mot de passe Cozy Pass",
+      "improve-password": "Renforcer le mot de passe de votre Cozy",
+      "leave-hint": "Définir un indice",
+      "install-extension": "Installer l'extension",
+      "install-app": "Installer l'app"
+    },
+    "step3": "Connectez-vous avec votre adresse **%{address}** et votre mot de passe !",
+    "step3-oidc": "Connectez-vous avec votre adresse **%{address}** et votre mot de passe Cozy Pass !",
+    "cta": "Installer l'extension Cozy"
+  },
+
+  "InstallationStepMobile": {
+    "title": "Installer l'application Cozy Pass",
+    "description": "Vous permet d'accéder à mots de passe depuis votre mobile, et remplis vos mots de passe automatiquement dans les formulaires.",
+    "installApp": "Installer l'application"
+  },
+
+  "InstalledStep": {
+    "title": "C'est presque fini !",
+    "descriptionStart": "Cliquez sur l'icône",
+    "descriptionEnd": "en haut à droite de votre écran pour vous connecter à l'aide de votre addresse **%{address}** et de votre mot de passe Cozy.",
+    "descriptionEnd-oidc": "en haut à droite de votre écran pour vous connecter à l'aide de votre addresse **%{address}** et de votre mot de passe Cozy Pass."
+  },
+
+  "ConnectedStep": {
+    "title": "Votre gestionnaire de mots de passe est configuré !",
+    "description": "Rendez vous sur votre extension navigateur Cozy pour gérer vos mots de passe"
+  },
+
+  "Help": {
+    "faq": "<a href='https://support.cozy.io/article/394-comment-puis-je-parametrer-mon-gestionnaire-de-mot-de-passe' target='_blank' rel='noopener noreferrer'>__Aide :__ Je ne parviens pas à me connecter</a>",
+    "import": "Importer mes identifiants à partir d'un autre gestionnaire"
+  },
+
+  "AvailablePlatforms": {
+    "text": "Retrouvez l'extension Cozy sur les plateformes suivantes :",
+    "smartphone": "Smartphone",
+    "smartphone-soon": "Smartphone (disponible bientôt)"
+  },
+
+  "ImportPage": {
+    "title": "Importez vos identifiants",
+    "options": {
+      "label": "1. Sélectionnez le format source",
+      "placeholder": "Sélectionner un format"
+    },
+    "file": {
+      "label": "2. Sélectionnez le fichier à importer"
+    },
+    "submit": "Importer",
+    "modal": {
+      "importing": {
+        "title": "Import de vos identifiants en cours"
+      },
+      "imported": {
+        "title": "Vos identifiants ont été importés",
+        "content": "Vous pouvez maintenant trouver vos identifiants dans votre gestionnaire de mots de passe cozy."
+      },
+      "errored": {
+        "title": "Erreur lors de l'import de vos identifiants",
+        "content": "Une erreur est survenue lors de l'import de vos identifiants. Veuillez réessayer."
+      },
+      "close": "OK"
+    }
+  },
+
+  "UpdateCozyPassPassword": "Modifier le mot de passe Cozy Pass",
+
+  "manifest": {
+    "short_description": "Ne perdez plus vos mots de passe",
+    "long_description": "Conservez vos mots de passe en sécurité dans votre Cozy.\n\nVos mots de passe sont enregistrés une bonne fois pour toute dans votre coffre 100% personnel et sécurisé.\n\nVotre Cozy vous permet un remplissage instantané des formulaires des sites Internet, pour une connexion facilitée à tous vos services.\n\nConnectez vos marques à votre Cozy pour récupérer vos données en un clin d'oeil."
+  }
+}

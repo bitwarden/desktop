@@ -1,0 +1,7 @@
+.StoreButton__Image {
+  height: 3rem;
+}
+
+.StoreButton:not(:last-child) {
+  margin-right: 0.5rem;
+}
