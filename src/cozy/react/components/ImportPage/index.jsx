@@ -17,7 +17,6 @@ import { getFileContent } from './helpers'
 import logger from '../../logger'
 import flag from 'cozy-flags'
 import useBreakpoints from 'cozy-ui/transpiled/react/hooks/useBreakpoints'
-import BarTitle from 'cozy-ui/transpiled/react/BarTitle'
 
 const ImportPage = ({ vaultClient }) => {
   const { t } = useI18n()
@@ -69,7 +68,6 @@ const ImportPage = ({ vaultClient }) => {
         <Wrapper>
           <Stack spacing="l">
             {!isMobile ? <MainTitle>{t('ImportPage.title')}</MainTitle> : null}
-            <BarTitle>{t('Nav.import')}</BarTitle>
             <form onSubmit={handleSubmit}>
               <ImportOptionsField
                 vaultClient={vaultClient}
