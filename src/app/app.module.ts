@@ -60,6 +60,7 @@ import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
+import { IconSpriteComponent } from '../cozy/wrappers/icon-sprite/icon-sprite.component';
 import { ImportPageComponent } from '../cozy/wrappers/import-page/import-page.component';
 
 import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
@@ -210,6 +211,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         VaultComponent,
         ViewComponent,
         ImportPageComponent,
+        IconSpriteComponent,
     ],
     entryComponents: [
         AttachmentsComponent,
