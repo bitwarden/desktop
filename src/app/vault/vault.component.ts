@@ -252,7 +252,7 @@ export class VaultComponent implements OnInit, OnDestroy {
                 } else if (params.collectionId) {
                     this.groupingsComponent.selectedCollectionId = params.collectionId;
                     await this.filterCollection(params.collectionId);
-                } else {
+                } else if (params.action !== 'import') {
                     this.toolType = null;
                     this.groupingsComponent.selectedAll = true;
                     await this.ciphersComponent.reload();
@@ -587,6 +587,16 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.clearFilters(excluded);
         this.action = 'view';
         this.deleted = true;
+        this.go();
+    }
+
+    async startImport() {
+        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
+            this.groupingsComponent.revertSelection();
+            return;
+        }
+        this.clearFilters();
+        this.action = 'import';
         this.go();
     }
 

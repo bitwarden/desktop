@@ -18,6 +18,7 @@ import { detect } from 'detect-browser';
 export class GroupingsComponent extends BaseGroupingsComponent {
 
     @Output() onToolClicked = new EventEmitter<string>();
+    @Output() onImportClicked = new EventEmitter<void>();
 
     selectedTool: string = null;
     browserName: string;
@@ -89,8 +90,7 @@ export class GroupingsComponent extends BaseGroupingsComponent {
 
     selectImport() {
         this.clearSelections();
-        this.selectedTool = 'import';
-        this.onToolClicked.emit('import');
+        this.onImportClicked.emit();
     }
 
     revertSelection() {
