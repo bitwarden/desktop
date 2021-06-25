@@ -60,6 +60,8 @@ import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
+import { ImportPageComponent } from '../cozy/wrappers/import-page/import-page.component';
+
 import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
 import { SendComponent } from './send/send.component';
 
@@ -207,6 +209,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorOptionsComponent,
         VaultComponent,
         ViewComponent,
+        ImportPageComponent,
     ],
     entryComponents: [
         AttachmentsComponent,

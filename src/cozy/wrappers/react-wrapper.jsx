@@ -1,0 +1,56 @@
+import {
+  createGenerateClassName,
+  StylesProvider,
+} from "@material-ui/core/styles";
+import { CozyProvider } from "cozy-client";
+import { VaultProvider } from "cozy-keys-lib";
+import { BreakpointsProvider } from "cozy-ui/transpiled/react/hooks/useBreakpoints";
+import { I18n } from "cozy-ui/transpiled/react/I18n";
+import React from "react";
+import { BitwardenSettingsContext } from "../react/bitwarden-settings";
+
+/* 
+With MUI V4, it is possible to generate deterministic class names. 
+In the case of multiple react roots, it is necessary to disable this 
+feature. Since we have the cozy-bar root, we need to disable the 
+feature. 
+ 
+https://material-ui.com/styles/api/#stylesprovider 
+*/
+const generateClassName = createGenerateClassName({
+  disableGlobal: true,
+});
+
+// return a defaultData if the template hasn't been replaced by cozy-stack
+const getDataOrDefault = function (toTest, defaultData) {
+  const templateRegex = /^\{\{\.[a-zA-Z]*\}\}$/; // {{.Example}}
+  return templateRegex.test(toTest) ? defaultData : toTest;
+};
+
+// wrap a component in all needed providers
+const ReactWrapper = ({ client, bitwardenData, ...props }) => {
+  const root = document.querySelector("[role=application]");
+  const data = root.dataset;
+  let appLocale = getDataOrDefault(data.cozyLocale, "en");
+
+  return (
+    <StylesProvider generateClassName={generateClassName}>
+      <I18n
+        lang={appLocale}
+        dictRequire={(appLocale) =>
+          require(`../react/locales/${appLocale}.json`)
+        }
+      >
+        <CozyProvider client={client}>
+          <VaultProvider instance={client.getStackClient().uri}>
+            <BitwardenSettingsContext.Provider value={bitwardenData}>
+              <BreakpointsProvider>{props.children}</BreakpointsProvider>
+            </BitwardenSettingsContext.Provider>
+          </VaultProvider>
+        </CozyProvider>
+      </I18n>
+    </StylesProvider>
+  );
+};
+
+export default ReactWrapper;
