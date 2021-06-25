@@ -1,3 +1,8 @@
+/* Cozy UI utilities classes */
+@import '~cozy-ui/dist/cozy-ui.min.css';
+/* Cozy UI React components styles */
+@import '~cozy-ui/transpiled/react/stylesheet.css';
+
 [role=application] {
     display: block;
 }
