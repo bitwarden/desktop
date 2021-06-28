@@ -8,14 +8,14 @@ import InstallationStep from './InstallationStep'
 import InstalledStep from './InstalledStep'
 import ConnectedStep from './ConnectedStep'
 
-const ConfigureExtensionStep = ({ onConnected }) => {
+const ConfigureExtensionStep = ({ onConnected, onSkipExtension }) => {
   const extensionStatus = useExtensionStatus()
   if (extensionStatus == extensionStatuses.installed) {
     return <InstalledStep onConnected={onConnected} />
   } else if (extensionStatus === extensionStatuses.connected) {
     return <ConnectedStep />
   } else {
-    return <InstallationStep />
+    return <InstallationStep onSkipExtension={onSkipExtension} />
   }
 }
 

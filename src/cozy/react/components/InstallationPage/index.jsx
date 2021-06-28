@@ -43,7 +43,7 @@ const STEPS = {
   configureExtension: 3
 }
 
-function getStepContent(step, setActiveStep, { hasHint }) {
+function getStepContent(step, setActiveStep, { hasHint, onSkipExtension }) {
   switch (step) {
     case STEPS.presentation:
       return <PresentationStep onLetsGo={() => setActiveStep(STEPS.security)} />
@@ -63,11 +63,11 @@ function getStepContent(step, setActiveStep, { hasHint }) {
         />
       )
     case STEPS.configureExtension:
-      return <ConfigureExtensionStep />
+      return <ConfigureExtensionStep onSkipExtension={onSkipExtension} />
   }
 }
 
-const InstallationPage = function() {
+const InstallationPage = function({onSkipExtension}) {
   const params = useParams()
   const { t } = useI18n()
 
@@ -130,7 +130,7 @@ const InstallationPage = function() {
             )
           })}
         </Stepper>
-        {getStepContent(activeStep, setActiveStep, { hasHint })}
+        {getStepContent(activeStep, setActiveStep, { hasHint, onSkipExtension })}
       </div>
     </StepsContext.Provider>
   )

@@ -14,6 +14,7 @@ interface InstallationPageProps {
     bitwardenData: {
         extension_installed: boolean;
     };
+    onSkipExtension: any;
 }
 
 @Component({
@@ -33,6 +34,11 @@ export class InstallationPageComponent extends AngularWrapperComponent {
     /* Props Bindings */
     /******************/
 
+    protected onSkipExtension() {
+        this.vaultInstallationService.setIsInstalled();
+        this.messagingService.send('installed');
+    }
+
     protected getProps(): InstallationPageProps {
         const data = {
             extension_installed: false, // to be replaced with client fetch
@@ -43,6 +49,7 @@ export class InstallationPageComponent extends AngularWrapperComponent {
         return {
             client: client,
             bitwardenData: data,
+            onSkipExtension: this.onSkipExtension.bind(this),
         };
     }
 

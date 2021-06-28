@@ -6,6 +6,7 @@ import ReactWrapper from '../react-wrapper';
 const InstallationPageWrapper = ({
   client,
   bitwardenData,
+  onSkipExtension,
   ...props
 }) => {
   return (
@@ -14,7 +15,7 @@ const InstallationPageWrapper = ({
       bitwardenData={bitwardenData}
       {...props}
     >
-      <InstallationPage></InstallationPage>
+      <InstallationPage onSkipExtension={onSkipExtension}></InstallationPage>
     </ReactWrapper>
   );
 };

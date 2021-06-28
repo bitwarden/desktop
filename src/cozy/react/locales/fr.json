@@ -82,7 +82,8 @@
     },
     "step3": "Connectez-vous avec votre adresse **%{address}** et votre mot de passe !",
     "step3-oidc": "Connectez-vous avec votre adresse **%{address}** et votre mot de passe Cozy Pass !",
-    "cta": "Installer l'extension Cozy"
+    "cta": "Installer l'extension Cozy",
+    "skip": "Passer"
   },
 
   "InstallationStepMobile": {

@@ -29,7 +29,7 @@ import BarTitle from 'cozy/react/BarTitle'
 
 const browser = detectBrowser()
 
-const InstallationStep = ({ onExtensionInstalled }) => {
+const InstallationStep = ({ onExtensionInstalled, onSkipExtension }) => {
   const client = useClient()
   const { t } = useI18n()
   const cozyURL = new URL(client.getStackClient().uri)
@@ -131,6 +131,13 @@ const InstallationStep = ({ onExtensionInstalled }) => {
                 label={t('InstallationStep.cta')}
                 extension="full"
                 className="u-mt-2-half"
+              />
+              <Button
+                label={t('InstallationStep.skip')}
+                extension="full"
+                onClick={onSkipExtension}
+                theme="secondary"
+                className="u-mt-half"
               />
             </Stack>
           )}
