@@ -8,6 +8,7 @@ import { BreakpointsProvider } from "cozy-ui/transpiled/react/hooks/useBreakpoin
 import { I18n } from "cozy-ui/transpiled/react/I18n";
 import React from "react";
 import { BitwardenSettingsContext } from "../react/bitwarden-settings";
+import { HashRouter } from "react-router-dom";
 
 /* 
 With MUI V4, it is possible to generate deterministic class names. 
@@ -44,7 +45,9 @@ const ReactWrapper = ({ client, bitwardenData, ...props }) => {
         <CozyProvider client={client}>
           <VaultProvider instance={client.getStackClient().uri}>
             <BitwardenSettingsContext.Provider value={bitwardenData}>
-              <BreakpointsProvider>{props.children}</BreakpointsProvider>
+              <BreakpointsProvider>
+                <HashRouter>{props.children}</HashRouter>
+              </BreakpointsProvider>
             </BitwardenSettingsContext.Provider>
           </VaultProvider>
         </CozyProvider>
