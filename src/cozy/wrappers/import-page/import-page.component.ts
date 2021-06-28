@@ -6,7 +6,6 @@ import { AngularWrapperComponent } from '../angular-wrapper.component.js';
 // @ts-ignore
 import ImportPage from './import-page.jsx';
 
-
 interface ImportPageProps {
     client: CozyClient;
     bitwardenData: {
@@ -29,7 +28,7 @@ export class ImportPageComponent extends AngularWrapperComponent {
             extension_installed: true, // to be replaced with client fetch
         };
 
-        const client = CozyClient.fromDOM();
+        const client = this.clientService.GetClient();
 
         return {
             client: client,

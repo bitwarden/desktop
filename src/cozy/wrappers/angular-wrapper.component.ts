@@ -4,10 +4,11 @@ import {
     OnChanges,
     OnDestroy,
     OnInit,
-    ViewEncapsulation
+    ViewEncapsulation,
 } from '@angular/core';
 import * as invariant from 'invariant';
 import * as uuid from 'uuid';
+import { CozyClientService } from '../services/cozy-client.service';
 
 @Component({
     templateUrl: './angular-wrapper.component.html',
@@ -17,6 +18,8 @@ export class AngularWrapperComponent
     implements OnChanges, OnDestroy, OnInit, AfterViewInit
 {
     rootDomID: string = '';
+
+    constructor(protected clientService: CozyClientService) {}
 
     /*************/
     /* Lifecycle */

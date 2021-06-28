@@ -87,6 +87,7 @@ import { UserService as UserServiceAbstraction } from 'jslib/abstractions/user.s
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib/abstractions/vaultTimeout.service';
 import { PasswordRepromptService } from 'jslib/services/passwordReprompt.service';
 
+import { CozyClientService } from '../cozy/services/cozy-client.service';
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
 const stateService = new StateService();
@@ -191,6 +192,7 @@ export function initFactory(): Function {
         AuthGuardService,
         UnauthGuardService,
         LockGuardService,
+        CozyClientService,
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
