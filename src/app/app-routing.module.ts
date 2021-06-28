@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import {
-    RouterModule,
-    Routes,
-} from '@angular/router';
+    VaultInstalledGuardService,
+    VaultUninstalledGuardService,
+} from '../cozy/services/installation-guard.service';
+import { InstallationPageComponent } from '../cozy/wrappers/installation-page/installation-page.component';
 
 import { AuthGuardService } from 'jslib/angular/services/auth-guard.service';
 import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
@@ -25,36 +27,50 @@ const routes: Routes = [
     {
         path: 'lock',
         component: LockComponent,
-        canActivate: [LockGuardService],
+        canActivate: [LockGuardService, VaultInstalledGuardService],
     },
     {
         path: 'login',
         component: LoginComponent,
-        canActivate: [UnauthGuardService],
-
+        canActivate: [UnauthGuardService, VaultInstalledGuardService],
     },
-    { path: '2fa', component: TwoFactorComponent },
+    {
+        path: '2fa',
+        component: TwoFactorComponent,
+        canActivate: [VaultInstalledGuardService],
+    },
     { path: 'register', component: RegisterComponent },
     {
         path: 'vault',
         component: VaultComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, VaultInstalledGuardService],
     },
     { path: 'hint', component: HintComponent },
-    { path: 'set-password', component: SetPasswordComponent },
+    {
+        path: 'set-password',
+        component: SetPasswordComponent,
+        canActivate: [VaultInstalledGuardService],
+    },
     { path: 'sso', component: SsoComponent },
     {
         path: 'send',
         component: SendComponent,
-        canActivate: [AuthGuardService],
+        canActivate: [AuthGuardService, VaultInstalledGuardService],
+    },
+    {
+        path: 'installation',
+        component: InstallationPageComponent,
+        canActivate: [VaultUninstalledGuardService],
     },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, {
-        useHash: true,
-        /*enableTracing: true,*/
-    })],
+    imports: [
+        RouterModule.forRoot(routes, {
+            useHash: true,
+            /*enableTracing: true,*/
+        }),
+    ],
     exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -17,3 +17,7 @@ export class CozyClientService {
         return StaticCozyClient.client;
     }
 }
+
+export class IsInstalled {
+    static value = false;
+}

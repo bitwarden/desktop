@@ -157,7 +157,11 @@ export class AppComponent implements OnInit {
                         await this.systemService.clearPendingClipboard();
                         break;
                     case 'authBlocked':
+                    case 'uninstallBlocked':
                         this.router.navigate(['login']);
+                        break;
+                    case 'installBlocked':
+                        this.router.navigate(['installation']);
                         break;
                     case 'logout':
                         this.logOut(!!message.expired);
