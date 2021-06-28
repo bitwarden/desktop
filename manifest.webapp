@@ -38,7 +38,7 @@
     "settings": {
       "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
       "type": "io.cozy.settings",
-      "verbs": ["GET"]
+      "verbs": ["GET", "PUT"]
     }
   }
 }
