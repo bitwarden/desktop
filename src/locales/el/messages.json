@@ -44,14 +44,24 @@
   "share": {
     "message": "Κοινοποίηση"
   },
-  "shareItem": {
-    "message": "Κοινή χρήση στοιχείου"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Κοινόχρηστο στοιχείο"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Επιλέξτε έναν οργανισμό στον οποίο θέλετε να μοιραστείτε αυτό το στοιχείο. Η κοινή χρήση μεταβιβάζει την ιδιοκτησία του στοιχείου στον οργανισμό. Δεν θα είστε πλέον ο άμεσος ιδιοκτήτης αυτού του στοιχείου μόλις το μοιραστείτε."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Συνημμένα"
@@ -431,7 +441,7 @@
     "message": "Επιλέξτε ένα αρχείο."
   },
   "maxFileSize": {
-    "message": "Το μέγιστο μέγεθος αρχείου είναι 100 MB."
+    "message": "Το μέγιστο μέγεθος αρχείου είναι 500 MB."
   },
   "updateKey": {
     "message": "Δεν μπορείτε να χρησιμοποιήσετε αυτήν τη λειτουργία μέχρι να ενημερώσετε το κλειδί κρυπτογράφησης."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Χρησιμοποιήστε οποιοδήποτε κλειδί ασφαλείας WebAuthn για να αποκτήσετε πρόσβαση στο λογαριασμό σας."
   },
   "emailTitle": {
     "message": "Email"
@@ -1298,10 +1308,10 @@
     "message": "Ξεκλειδώστε το vault σας"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Μην προτρέξετε για τα Windows Hello κατά την εκκίνηση."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Να μην ζητηθεί το Touch ID κατά την εκκίνηση."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Κλείδωμα με τον κύριο κωδικό πρόσβασης κατά την επανεκκίνηση"
@@ -1661,27 +1671,27 @@
     "message": "Εκκρεμεί διαγραφή"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Ταυτοποίηση WebAutn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Απόκρυψη της διεύθυνσης email μου από τους παραλήπτες."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Μία ή περισσότερες οργανωτικές πολιτικές επηρεάζουν τις επιλογές send σας."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Απαιτείται Επαλήθευση Email"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Πρέπει να επαληθεύσετε το email σας για να χρησιμοποιήσετε αυτή τη δυνατότητα."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Προτροπή νέου κωδικού πρόσβασης"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Επιβεβαίωση κύριου κωδικού πρόσβασης"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Αυτή η ενέργεια προστατεύεται. Για να συνεχίσετε, πληκτρολογήστε ξανά τον κύριο κωδικό πρόσβασης για να επαληθεύσετε την ταυτότητά σας."
   }
 }

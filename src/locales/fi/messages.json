@@ -44,14 +44,24 @@
   "share": {
     "message": "Jaa"
   },
-  "shareItem": {
-    "message": "Jaa kohde"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Jaettu kohde"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Valitse organisaatio, jonka kanssa haluat jakaa kohteen. Jako siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Liitteet"
@@ -431,7 +441,7 @@
     "message": "Valitse tiedosto."
   },
   "maxFileSize": {
-    "message": "Tiedoston enimmäiskoko on 100 Mt."
+    "message": "Tiedoston enimmäiskoko on 500 Mt."
   },
   "updateKey": {
     "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Käytä mitä tahansa WebAuthn‑yhteensopivaa todennuslaitetta päästäksesi käsiksi tiliisi."
   },
   "emailTitle": {
     "message": "Sähköposti"
@@ -1298,10 +1308,10 @@
     "message": "avaa holvisi lukitus"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Älä pyydä Windows Hello -kirjautumista käynnistettäessä."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Älä pyydä Touch ID -kirjautumista käynnistettäessä."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukitse pääsalasanalla uudelleenkäynnistyksen yhteydessä"
@@ -1661,27 +1671,27 @@
     "message": "Odottaa poistoa"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Todenna WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Piilota sähköpostiosoitteeni vastaanottajilta."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Yksi tai useampi organisaatiokäytäntö vaikuttaa Send-asetuksiisi."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Sähköpostiosoitteen vahvistus vaaditaan"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Sinun on vahvistettava sähköpostiosoitteesi käyttääksesi tätä ominaisuutta."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Pääsalasanan uudelleenkysely"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Pääsalasanan vahvistus"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Toiminto on suojattu. Jatkaaksesi, syötä pääsalasanasi uudelleen vahvistaaksesi henkilöllisyytesi."
   }
 }

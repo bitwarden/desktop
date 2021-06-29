@@ -44,14 +44,24 @@
   "share": {
     "message": "Compartilhar"
   },
-  "shareItem": {
-    "message": "Compartilhar Item"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Compartilhar Item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Escolha uma organização com a qual você deseja compartilhar este item. O compartilhamento transfere a propriedade do item para a organização. Você não será mais o proprietário direto deste item depois que ele for compartilhado."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Anexos"
@@ -431,7 +441,7 @@
     "message": "Selecione um arquivo."
   },
   "maxFileSize": {
-    "message": "O tamanho máximo do arquivo é de 100 MB."
+    "message": "O tamanho máximo do arquivo é de 500 MB."
   },
   "updateKey": {
     "message": "Você não pode usar este recurso até você atualizar sua chave de criptografia."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Utilize qualquer chave de segurança ativada por WebAuthn para acessar a sua conta."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1298,10 +1308,10 @@
     "message": "Verifique para o Bitwarden."
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Não solicite por Windows Hello na inicialização."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Não solicite por Touch ID na inicialização."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar"
@@ -1542,7 +1552,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Data de Validade"
+    "message": "Data de Expiração"
   },
   "expirationDateDesc": {
     "message": "Se definido, o acesso a este Send expirará na data e hora especificadas.",
@@ -1661,27 +1671,27 @@
     "message": "Exclusão pendente"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Autenticar WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ocultar meu endereço de e-mail dos destinatários."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Uma ou mais políticas da organização estão afetando as suas opções de Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Verificação de E-mail Necessária"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Você precisa verificar o seu e-mail para usar este recurso."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Solicitação nova de senha mestra"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmação de senha mestra"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Esta ação está protegida. Para continuar, por favor, reinsira a sua senha mestra para verificar sua identidade."
   }
 }

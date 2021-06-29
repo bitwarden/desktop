@@ -44,14 +44,24 @@
   "share": {
     "message": "Абагуліць"
   },
-  "shareItem": {
-    "message": "Абагуліць элемент"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Абагулены элемент"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Выберыце арганізацыю, якой вы хочаце даць доступ да гэтага элемента. Пасля выканання гэтай аперацыі, правы на элемент будуць перададзены арганізацыі і вы не будзеце з'яўляцца непасрэдным уладальнікам гэтага элемента."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Далучэнні"
@@ -431,7 +441,7 @@
     "message": "Выберыце файл."
   },
   "maxFileSize": {
-    "message": "Максімальны памер файла 100 МБ."
+    "message": "Максімальны памер файла 500 МБ."
   },
   "updateKey": {
     "message": "Вы не можаце выкарыстоўваць гэту функцыю, пакуль не абнавіце свой ключ шыфравання."
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."

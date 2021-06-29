@@ -44,14 +44,24 @@
   "share": {
     "message": "പങ്കിടുക"
   },
-  "shareItem": {
-    "message": "ഇനങ്ങൾ പങ്കിടുക"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "പങ്കിട്ട ഇനം"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "ഈ ഇനം പങ്കിടാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഒരു സംഘടന തിരഞ്ഞെടുക്കുക. പങ്കിട്ട ഇനത്തിന്റെ ഉടമസ്ഥാവകാശം ആ സംഘടനക്ക് കൈമാറുന്നു. ഈ ഇനം പങ്കിട്ടുകഴിഞ്ഞാൽ നിങ്ങൾ അതിന്റെ നേരിട്ടുള്ള ഉടമയാകില്ല."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "അറ്റാച്ചുമെന്റുകൾ"
@@ -431,7 +441,7 @@
     "message": "ഫയൽ തിരഞ്ഞെടുക്കുക."
   },
   "maxFileSize": {
-    "message": "പരമാവധി ഫയൽ വലുപ്പം 100 MB ആണ്."
+    "message": "പരമാവധി ഫയൽ വലുപ്പം 500 MB ആണ്."
   },
   "updateKey": {
     "message": "നിങ്ങളുടെ എൻ‌ക്രിപ്ഷൻ കീ അപ്‌ഡേറ്റ് ചെയ്യുന്നതുവരെ നിങ്ങൾക്ക് ഈ സവിശേഷത ഉപയോഗിക്കാൻ കഴിയില്ല."
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."

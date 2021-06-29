@@ -44,14 +44,24 @@
   "share": {
     "message": "Condividi"
   },
-  "shareItem": {
-    "message": "Condividi elemento"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Elemento condiviso"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Scegli un'organizzazione con cui desideri condividere questo elemento. La condivisione trasferisce la proprietà dell'elemento all'organizzazione. Non sarai più il proprietario diretto di questo elemento una volta condiviso."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Allegati"
@@ -147,7 +157,7 @@
     "message": "Azienda"
   },
   "ssn": {
-    "message": "Numero di previdenza sociale/codice fiscale"
+    "message": "Codice fiscale/Previdenza sociale"
   },
   "passportNumber": {
     "message": "Numero del passaporto"
@@ -393,7 +403,7 @@
     "message": "Minimo di numeri"
   },
   "minSpecial": {
-    "message": "Minimo di Speciali",
+    "message": "Minimo di speciali",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -431,7 +441,7 @@
     "message": "Seleziona un file."
   },
   "maxFileSize": {
-    "message": "La dimensione massima del file è 100 MB."
+    "message": "La dimensione massima del file è 500 MB."
   },
   "updateKey": {
     "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave."
@@ -473,10 +483,10 @@
     "message": "Un suggerimento può aiutarti a ricordare la tua password principale nel caso in cui la dimentichi."
   },
   "reTypeMasterPass": {
-    "message": "Ridigita la tua password principale"
+    "message": "Digita nuovamente la password principale"
   },
   "masterPassHint": {
-    "message": "Suggerimento per la password principale (facoltativo)"
+    "message": "Suggerimento password principale (facoltativo)"
   },
   "settings": {
     "message": "Impostazioni"
@@ -575,7 +585,7 @@
     "message": "Applicazione di autenticazione"
   },
   "authenticatorAppDesc": {
-    "message": "Usa un'app di autenticazione (come Authy o Google Authenticator) per generare codici di verifica a tempo.",
+    "message": "Usa un'applicazione di autenticazione (come Authy o Google Authenticator) per generare codici di verifica a tempo.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Usa qualsiasi chiave di sicurezza abilitata WebAuthn per accedere al tuo account."
   },
   "emailTitle": {
     "message": "Email"
@@ -608,13 +618,13 @@
     "message": "Accesso non disponibile"
   },
   "noTwoStepProviders": {
-    "message": "Questo account ha abilitato la verifica in due passaggi, ma nessuno dei provider configurati è supportato da questo browser."
+    "message": "Questo account ha la verifica in due passaggi abilitata, ma nessuno dei provider configurati è supportato da questo browser."
   },
   "noTwoStepProviders2": {
     "message": "Aggiungi altri metodi che sono supportati meglio su tutti i dispositivi (ad esempio, un'applicazione di autenticazione)."
   },
   "twoStepOptions": {
-    "message": "Opzioni di verifica in due passaggi"
+    "message": "Opzioni di accesso in due passaggi"
   },
   "selfHostedEnvironment": {
     "message": "Ambiente self-hosted"
@@ -641,7 +651,7 @@
     "message": "URL del server di identità"
   },
   "notificationsUrl": {
-    "message": "URL del server di notifica"
+    "message": "URL del server delle notifiche"
   },
   "iconsUrl": {
     "message": "URL del server di icone"
@@ -874,7 +884,7 @@
     "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableTray": {
-    "message": "Usa l'area di notifica"
+    "message": "Icona nell'area di notifica"
   },
   "enableTrayDesc": {
     "message": "Mostra sempre un'icona nell'area di notifica."
@@ -907,7 +917,7 @@
     "message": "Conferma disattivazione icona del vassoio"
   },
   "confirmTrayDesc": {
-    "message": "Disabilitando questa impostazione verranno disabilitate anche tutte le altre impostazioni del vassoio."
+    "message": "La disabilitazione di questa impostazione disabiliterà anche tutte le altre impostazioni del vassoio."
   },
   "language": {
     "message": "Lingua"
@@ -1183,7 +1193,7 @@
     "message": "Attiva/Disattiva opzioni"
   },
   "organization": {
-    "message": "Società",
+    "message": "Organizzazione",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
@@ -1225,7 +1235,7 @@
     "message": "Conferma esportazione della cassaforte"
   },
   "exportWarningDesc": {
-    "message": "Questa esportazione contiene i dati della cassaforte in un formato non criptato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
+    "message": "Questa esportazione contiene i dati della cassaforte in un formato non cifrato. Non archiviare o inviare il file esportato su canali non protetti (come la posta elettronica). Eliminalo immediatamente dopo aver finito di usarlo."
   },
   "encExportKeyWarningDesc": {
     "message": "Questa esportazione cifra i tuoi dati utilizzando la chiave di cifratura del tuo account. Se cambi la chiave di cifratura del tuo account, non sarai più in grado di decifrare il file esportato e sarà necessario eseguire una nuova esportazione."
@@ -1274,7 +1284,7 @@
     "message": "Sblocca con PIN"
   },
   "setYourPinCode": {
-    "message": "Imposta il tuo codice PIN per sbloccare Bitwarden. Le impostazioni del PIN verranno reimpostate se eri fuori dall'applicazione."
+    "message": "Imposta il tuo codice PIN per sbloccare Bitwarden. Le impostazioni del PIN saranno reimpostate se ti disconnetti dall'applicazione."
   },
   "pinRequired": {
     "message": "È richiesto il PIN."
@@ -1298,10 +1308,10 @@
     "message": "sblocca la cassaforte"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Non richiedere Windows Hello all'avvio."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Non richiedere Touch ID all'avvio."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocca con la password principale al riavvio"
@@ -1341,7 +1351,7 @@
     "message": "Informativa sulla privacy"
   },
   "unsavedChangesConfirmation": {
-    "message": "Sei sicuro di voler uscire? Se esci adesso, le informazioni attuali non verranno salvate."
+    "message": "Sei sicuro di voler uscire? Se esci adesso, le informazioni attuali non saranno salvate."
   },
   "unsavedChangesTitle": {
     "message": "Modifiche non salvate"
@@ -1353,7 +1363,7 @@
     "message": "Una o più policy dell'organizzazione controllano le impostazioni del tuo generatore."
   },
   "vaultTimeoutAction": {
-    "message": "Azione Timeout Cassaforte"
+    "message": "Azione timeout cassaforte"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Una cassaforte bloccata richiede l'inserimento della password principale per accedere nuovamente."
@@ -1394,7 +1404,7 @@
     "message": "Elimina definitivamente"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "La disconnessione rimuove tutti gli accessi alla tua cassaforte e richiede l'autenticazione online dopo il periodo di timeout. Sei sicuro di voler utilizzare questa impostazione?"
+    "message": "La disconnessione rimuove tutti gli accessi alla tua cassaforte e richiede l'autenticazione in linea dopo il periodo di timeout. Sei sicuro di voler utilizzare questa impostazione?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Conferma azione di timeout"
@@ -1457,13 +1467,13 @@
     "message": "La tua nuova password principale non soddisfa i requisiti di sicurezza."
   },
   "acceptPolicies": {
-    "message": "Selezionando la casella accetti quanto segue:"
+    "message": "Marcando la casella accetti quanto segue:"
   },
   "acceptPoliciesError": {
     "message": "I termini di servizio e l'informativa sulla privacy non sono stati accettati."
   },
   "enableBrowserIntegration": {
-    "message": "Abilita l'integrazione con il browser"
+    "message": "Abilita l'integrazione del browser"
   },
   "enableBrowserIntegrationDesc": {
     "message": "L'integrazione del browser è utilizzata per l'autenticazione biometrica."
@@ -1472,7 +1482,7 @@
     "message": "L'integrazione del browser non è supportata"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Al momento l'integrazione del browser è supportata solo nella versione disponibile nel Mac App Store."
+    "message": "Purtroppo l'integrazione del browser è supportata solo nella versione disponibile nel Mac App Store."
   },
   "browserIntegrationWindowsStoreTitle": {
     "message": "L'integrazione del browser non è supportata"
@@ -1484,7 +1494,7 @@
     "message": "Richiedi verifica per l'integrazione del browser"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Abilita un livello aggiuntivo di sicurezza richiedendo la conferma della fingerprint phrase quando viene stabilito un collegamento fra il desktop e il browser. Quando abilitato, sarà necessario che l'utente esegua la verifica ad ogni nuova connessione."
+    "message": "Abilita un livello aggiuntivo di sicurezza richiedendo la conferma della frase impronta quando viene stabilito un collegamento fra il desktop e il browser. Quando abilitato, sarà necessario che l'utente esegua la verifica ad ogni nuova connessione."
   },
   "approve": {
     "message": "Approva"
@@ -1502,10 +1512,10 @@
     "message": "L'autenticazione biometrica del browser richiede che l'autenticazione biometrica del desktop sia stata abilitata prima nelle impostazioni."
   },
   "personalOwnershipSubmitError": {
-    "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione proprietà in un'organizzazione e scegli tra le raccolte disponibili."
+    "message": "A causa di una policy aziendale, non è possibile salvare elementi nella tua cassaforte personale. Cambia l'opzione Proprietà in un'organizzazione e scegli tra le raccolte disponibili."
   },
   "hintEqualsPassword": {
-    "message": "Il suggerimento password non può essere uguale alla password."
+    "message": "Il suggerimento della password non può essere uguale alla password."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Una policy dell'organizzazione controlla le opzioni di proprietà."
@@ -1579,7 +1589,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "Quando si accede al Send, nascondi il testo in modo predefinito",
+    "message": "Quando accedi al Send, nascondi il testo in modo predefinito",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1661,27 +1671,27 @@
     "message": "In attesa di eliminazione"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Autenticazione WebAutn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Nascondi il mio indirizzo email dai destinatari."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Una o più policy dell'organizzazione influenzano le opzioni dei Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Verifica email necessaria"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Devi verificare la tua email per utilizzare questa funzionalità."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Nuova richiesta della password principale"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Conferma della password principale"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Questa azione è protetta. Per continuare, inserisci nuovamente la tua password principale per verificare la tua identità."
   }
 }
