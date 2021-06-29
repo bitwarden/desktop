@@ -22,6 +22,8 @@ import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 
+import { Utils } from 'jslib-common/misc/utils';
+
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib-angular/components/login.component';
@@ -37,6 +39,8 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
 
     showingModal = false;
+    
+    protected focusInputOnPageLoad = process.platform !== 'darwin';
 
     private deferFocus: boolean = null;
 
