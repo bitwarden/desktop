@@ -8,12 +8,12 @@
                     <div class="row-main" *ngIf="pinLock">
                         <label for="pin">{{'pin' | i18n}}</label>
                         <input id="pin" type="{{showPassword ? 'text' : 'password'}}" name="PIN" class="monospaced"
-                            [(ngModel)]="pin" required appAutofocus>
+                            [(ngModel)]="pin" required>
                     </div>
                     <div class="row-main" *ngIf="!pinLock">
                         <label for="masterPassword">{{'masterPass' | i18n}}</label>
                         <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                            class="monospaced" [(ngModel)]="masterPassword" required appAutofocus>
+                            class="monospaced" [(ngModel)]="masterPassword" required>
                     </div>
                     <div class="action-buttons">
                         <a class="row-btn" href="#" appStopClick appBlurClick role="button"
