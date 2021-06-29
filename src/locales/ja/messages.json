@@ -44,14 +44,24 @@
   "share": {
     "message": "共有"
   },
-  "shareItem": {
-    "message": "アイテムを共有する"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "共有しました"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "このアイテムを共有する組織を選択してください。共有するとアイテムの所有権は組織に移行し、あなたはもはやこのアイテムの直接の所有者ではなくなります。"
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "添付ファイル"
@@ -431,7 +441,7 @@
     "message": "ファイルを選択してください。"
   },
   "maxFileSize": {
-    "message": "最大ファイルサイズは100MBです。"
+    "message": "最大ファイルサイズは500MBです。"
   },
   "updateKey": {
     "message": "暗号キーを更新するまでこの機能は使用できません。"
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "アカウントにアクセスするには、WebAuthn 対応のセキュリティキーを使用してください。"
   },
   "emailTitle": {
     "message": "メールアドレス"
@@ -1298,10 +1308,10 @@
     "message": "Bitwarden の認証を行います。"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "起動時に Windows Hello のプロンプトを表示しない"
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "起動時に Touch ID を要求しない"
   },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
@@ -1661,27 +1671,27 @@
     "message": "削除の保留中"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAuthn の認証"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "メールアドレスを受信者に表示しない"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "一つ以上の組織ポリシーが Send の設定に影響しています。"
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "メールアドレスの確認が必要です"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "この機能を使用するにはメールアドレスを確認する必要があります。"
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "マスターパスワードの再要求"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "マスターパスワードの確認"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "この操作は保護されています。続行するには、確認のためにマスターパスワードを再入力してください。"
   }
 }
