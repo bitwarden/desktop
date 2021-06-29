@@ -39,7 +39,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
 
     showingModal = false;
-    
+
     protected focusInputOnPageLoad = process.platform !== 'darwin';
 
     private deferFocus: boolean = null;
@@ -49,7 +49,8 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone, private messagingService: MessagingService) {
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        private messagingService: MessagingService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
