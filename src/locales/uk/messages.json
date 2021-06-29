@@ -44,14 +44,24 @@
   "share": {
     "message": "Поділитися"
   },
-  "shareItem": {
-    "message": "Поділитися записом"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Спільний запис"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Оберіть організацію, з якою хочете поділитися. Зробивши це, ви передасте доступ до цього запису іншій організації та більше не будете його одноосібним власником."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Вкладення"
@@ -431,7 +441,7 @@
     "message": "Оберіть файл."
   },
   "maxFileSize": {
-    "message": "Максимальний розмір файлу 100 Мб."
+    "message": "Максимальний розмір файлу 500 Мб."
   },
   "updateKey": {
     "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Використовуйте будь-який ключ безпеки WebAuthn для доступу до сховища."
   },
   "emailTitle": {
     "message": "Е-пошта"
@@ -1298,10 +1308,10 @@
     "message": "розблокувати сховище"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Не запитувати Windows Hello під час запуску."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Не запитувати Touch ID під час запуску."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
@@ -1350,7 +1360,7 @@
     "message": "Клонувати"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Політика однієї або декількох організацій впливає на ваші параметри генерування."
+    "message": "На параметри генератора впливають одна чи декілька політик організації."
   },
   "vaultTimeoutAction": {
     "message": "Дія після часу очікування сховища"
@@ -1661,27 +1671,27 @@
     "message": "Очікується видалення"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Авторизація WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Приховувати мою адресу електронної пошти від отримувачів."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "На параметри відправлень впливають одна чи декілька політик організації."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Необхідно підтвердити е-пошту"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Для використання цієї функції необхідно підтвердити електронну пошту."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Повторний запит головного пароля"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Підтвердження головного пароля"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ця дія захищена. Щоб продовжити, повторно введіть головний пароль."
   }
 }
