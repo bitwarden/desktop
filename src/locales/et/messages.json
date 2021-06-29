@@ -44,14 +44,24 @@
   "share": {
     "message": "Jaga"
   },
-  "shareItem": {
-    "message": "Jaga kirjet"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Kirje on jagatud"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Vali organisatsioon, millega soovid seda kirjet jagada. Jagamisega saab kirje omanikuks organisatsioon. Pärast kirje jagamist ei ole sa enam selle otsene omanik."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Manused"
@@ -295,7 +305,7 @@
     "message": "Muuda"
   },
   "authenticatorKeyTotp": {
-    "message": "Autentiseerimise võti (TOTP)"
+    "message": "Autentimise võti (TOTP)"
   },
   "folder": {
     "message": "Kaust"
@@ -431,7 +441,7 @@
     "message": "Vali fail."
   },
   "maxFileSize": {
-    "message": "Maksimaalne faili suurus on 100 MB."
+    "message": "Maksimaalne faili suurus on 500 MB."
   },
   "updateKey": {
     "message": "Seda funktsiooni ei saa enne krüpteerimise võtme uuendamist kasutada."
@@ -530,7 +540,7 @@
     "message": "Jätka"
   },
   "enterVerificationCodeApp": {
-    "message": "Sisesta autentiseerimise rakendusest 6 kohaline number."
+    "message": "Sisesta autentimise rakendusest 6 kohaline number."
   },
   "enterVerificationCodeEmail": {
     "message": "Sisesta 6 kohaline number, mis saadeti e-posti aadressile $EMAIL$.",
@@ -572,10 +582,10 @@
     "message": "Taastamise kood"
   },
   "authenticatorAppTitle": {
-    "message": "Autentiseerimise rakendus"
+    "message": "Autentimise rakendus"
   },
   "authenticatorAppDesc": {
-    "message": "Kausta autentiseerimise rakendust (näiteks Authy või Google Authenticator), et luua ajal baseeruvaid kinnituskoode.",
+    "message": "Kausta autentimise rakendust (näiteks Authy või Google Authenticator), et luua ajal baseeruvaid kinnituskoode.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Kasuta mistahes WebAuthn toetavat turvalist võtit, et oma kontole ligi pääseda."
   },
   "emailTitle": {
     "message": "E-post"
@@ -1176,7 +1186,7 @@
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Vaikse sobivuse tuvastamine",
+    "message": "Tavaline sobivuse tuvastamine",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1298,10 +1308,10 @@
     "message": "Kinnita Bitwardenisse sisselogimine."
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Ära küsi käivitudes Windows Hello't."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Ära küsi käivitudes Touch ID'd."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lukusta ülemparooliga, kui rakendus taaskäivitatakse"
@@ -1661,27 +1671,27 @@
     "message": "Kustutamise ootel"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAuthn kinnitamine"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ära näita saajatele minu e-posti aadressi."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Organisatsiooni seaded mõjutavad sinu Sendi sätteid."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Vajalik on e-posti kinnitamine"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Enne selle funktsiooni kasutamist pead oma e-posti kinnitama."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Nõutav on ülemparool"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Ülemparooli kinnitamine"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "See tegevus on kaitstud. Jätkamiseks sisesta oma ülemparool."
   }
 }
