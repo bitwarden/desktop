@@ -44,14 +44,24 @@
   "share": {
     "message": "Comparteix"
   },
-  "shareItem": {
-    "message": "Comparteix element"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Element compartit"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Trieu una organització amb la qual vulgueu compartir aquest element. En compartir transferiu la propietat de l'element a l'organització. Ja no sereu el propietari directe d'aquest element una vegada que s'haja compartit."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Adjunts"
@@ -431,7 +441,7 @@
     "message": "Seleccioneu un fitxer."
   },
   "maxFileSize": {
-    "message": "La mida màxima del fitxer és de 100 MB."
+    "message": "La mida màxima del fitxer és de 500 MB."
   },
   "updateKey": {
     "message": "No podeu utilitzar aquesta característica fins que no actualitzeu la vostra clau de xifratge."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Utilitzeu qualsevol clau de seguretat habilitada per WebAuthn per accedir al vostre compte."
   },
   "emailTitle": {
     "message": "Correu electrònic"
@@ -1298,10 +1308,10 @@
     "message": "desbloqueja la teva caixa forta"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "No demaneu que Windows Hello en iniciar."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "No sol·liciteu Touch ID en iniciar."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
@@ -1661,27 +1671,27 @@
     "message": "Pendent de supressió"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Autenticar WebAutn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Amagueu la meua adreça de correu electrònic als destinataris."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Una o més polítiques d'organització afecten les vostres opcions del Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Es requereix verificació per correu electrònic"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Heu de verificar el vostre correu electrònic per utilitzar aquesta característica."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Sol·licitud de la contrasenya mestra"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmació de la contrasenya mestra"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Aquesta acció està protegida. Per continuar, torneu a introduir la contrasenya principal per verificar la vostra identitat."
   }
 }
