@@ -44,14 +44,24 @@
   "share": {
     "message": "Partager"
   },
-  "shareItem": {
-    "message": "Partager l'élément"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Élément partagé"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Choisissez une organisation avec laquelle vous voulez partager cet élément. Le partage transfère la propriété de l'élément à l'organisation. Vous ne serez plus le propriétaire direct de cet élément après le partage."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Pièces jointes"
@@ -431,7 +441,7 @@
     "message": "Sélectionnez un fichier."
   },
   "maxFileSize": {
-    "message": "La taille maximale du fichier est de 100 Mo."
+    "message": "La taille maximale du fichier est de 500 Mo."
   },
   "updateKey": {
     "message": "Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez pas à jour votre clé de chiffrement."
@@ -593,10 +603,10 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "WebAuthn FIDO2"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Utilisez n'importe quelle clé de sécurité compatible WebAuthn pour accéder à votre compte."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1298,10 +1308,10 @@
     "message": "déverouiller votre coffre"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Ne pas proposer Windows Hello au lancement."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Ne pas proposer Touch ID au lancement."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1661,27 +1671,27 @@
     "message": "En attente de suppression"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authentifier WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Cacher mon adresse e-mail aux destinataires."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Une ou plusieurs politiques d'organisation affectent vos options Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Vérification de l'adresse e-mail nécessaire"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Vous devez vérifier votre adresse e-mail pour utiliser cette fonctionnalité."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Ressaisie du mot de passe maître"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmation du mot de passe maître"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
   }
 }
