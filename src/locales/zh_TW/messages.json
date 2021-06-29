@@ -44,14 +44,24 @@
   "share": {
     "message": "共享"
   },
-  "shareItem": {
-    "message": "共享項目"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "項目已共享"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "選擇您希望共享這個項目的組織。項目的擁有權將會轉移到組織。一經共享，您將不再是此項目的直接擁有者。"
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "附件"
@@ -431,7 +441,7 @@
     "message": "選擇檔案。"
   },
   "maxFileSize": {
-    "message": "檔案最大為 100MB。"
+    "message": "檔案最大為 500MB。"
   },
   "updateKey": {
     "message": "更新加密金鑰前不能使用此功能。"
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "使用任何具有 WebAuthn 功能的安全金鑰來存取您的帳戶。"
   },
   "emailTitle": {
     "message": "電子郵件"
@@ -1298,10 +1308,10 @@
     "message": "解鎖您的密碼庫"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "啟動時不要提示使用 Windows Hello。"
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "啟動時不要提示使用 Touch ID。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重啟後使用主密碼鎖定"
@@ -1661,27 +1671,27 @@
     "message": "等待刪除中"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "驗證 WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "對收件人隱藏我的電子郵件位址。"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "一個或多個組織原则正影響您的 Send 選項。"
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "需要驗證電子郵件"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "必須驗證您的電子郵件才能使用此功能。"
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "重新提示主密碼"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "確認主密碼"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "此操作受到保護。若要繼續，請重新輸入您的主密碼以驗證您的身份。"
   }
 }
