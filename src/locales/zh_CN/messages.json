@@ -44,14 +44,24 @@
   "share": {
     "message": "共享"
   },
-  "shareItem": {
-    "message": "共享项目"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "项目已共享"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "选择要与之共享此项目的组织。共享会将此项目的所有权转移到组织。一旦共享，您将不再是此项目的直接所有者。"
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "附件"
@@ -431,7 +441,7 @@
     "message": "选择一个文件。"
   },
   "maxFileSize": {
-    "message": "文件最大为 100 MB。"
+    "message": "文件最大为 500 MB。"
   },
   "updateKey": {
     "message": "在您更新加密密钥前，您不能使用此功能。"
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "使用任何 WebAuthn 安全密钥访问您的帐户。"
   },
   "emailTitle": {
     "message": "电子邮件地址"
@@ -1298,10 +1308,10 @@
     "message": "解锁您的密码库"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "启动时不提示 Windows Hello。"
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "启动时不提示 Touch ID。"
   },
   "lockWithMasterPassOnRestart": {
     "message": "重启后使用主密码锁定"
@@ -1661,27 +1671,27 @@
     "message": "等待删除"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "验证 WebAutn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "对收件人隐藏我的电子邮件地址。"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "一个或多个组织策略正在影响您的 Send 设置。"
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "需要验证电子邮件"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "您必须验证您的电子邮件才能使用此功能。"
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "重新提示主密码"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "确认主密码"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "此操作受到保护。若要继续，请重新输入您的主密码以验证您的身份。"
   }
 }

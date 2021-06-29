@@ -44,14 +44,24 @@
   "share": {
     "message": "ভাগ করুন"
   },
-  "shareItem": {
-    "message": "বস্তু ভাগ করুন"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "ভাগকৃত বস্তু"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "এমন একটি সংস্থা চয়ন করুন যার সাথে আপনি এই বস্তুটি ভাগ করতে চান। ভাগ করে নেওয়া বস্তুটির মালিকানা প্রতিষ্ঠানে স্থানান্তর করে। এই বস্তুটি ভাগ হয়ে যাওয়ার পরে আপনি আর তার সরাসরি মালিক হতে পারবেন না।"
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "সংযুক্তি"
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."
