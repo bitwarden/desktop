@@ -21,31 +21,31 @@ jobs:
       - name: Create Deploy version vars
         id: create_tags
         run: |
-          if ! [[ "${{ github.event_name }}" -eq "release" ]]; then
-            case "${RELEASE_TAG_NAME_INPUT:0:1}" in
-              v)
-                echo "RELEASE_NAME=${RELEASE_TAG_NAME_INPUT:1}" >> $GITHUB_ENV
-                echo "RELEASE_TAG_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
-                echo "::set-output name=package_version::${RELEASE_TAG_NAME_INPUT:1}"
-                echo "::set-output name=tag_version::$RELEASE_TAG_NAME_INPUT"
-                ;;
-              [0-9])
-                echo "RELEASE_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
-                echo "RELEASE_TAG_NAME=v$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
-                echo "::set-output name=package_version::$RELEASE_TAG_NAME_INPUT"
-                echo "::set-output name=tag_version::v$RELEASE_TAG_NAME_INPUT"
-                ;;
-              *)
-                exit 1
-                ;;
-            esac
-          else
-            TAG_VERSION=$(echo ${{ github.ref }} | cut -d "/" -f 3)
-            PKG_VERSION=${TAG_VERSION:1}
+          #if ! [[ "${{ github.event_name }}" -eq "release" ]]; then
+          case "${RELEASE_TAG_NAME_INPUT:0:1}" in
+            v)
+              echo "RELEASE_NAME=${RELEASE_TAG_NAME_INPUT:1}" >> $GITHUB_ENV
+              echo "RELEASE_TAG_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              echo "::set-output name=package_version::${RELEASE_TAG_NAME_INPUT:1}"
+              echo "::set-output name=tag_version::$RELEASE_TAG_NAME_INPUT"
+              ;;
+            [0-9])
+              echo "RELEASE_NAME=$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              echo "RELEASE_TAG_NAME=v$RELEASE_TAG_NAME_INPUT" >> $GITHUB_ENV
+              echo "::set-output name=package_version::$RELEASE_TAG_NAME_INPUT"
+              echo "::set-output name=tag_version::v$RELEASE_TAG_NAME_INPUT"
+              ;;
+            *)
+              exit 1
+              ;;
+          esac
+          #else
+          #  TAG_VERSION=$(echo ${{ github.ref }} | cut -d "/" -f 3)
+          #  PKG_VERSION=${TAG_VERSION:1}
 
-            echo "::set-output name=package_version::$PKG_VERSION"
-            echo "::set-output name=tag_version::$TAG_VERSION"
-          fi
+          #  echo "::set-output name=package_version::$PKG_VERSION"
+          #  echo "::set-output name=tag_version::$TAG_VERSION"
+          #fi
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
