@@ -8,7 +8,7 @@ on:
         required: true
       browser_extension_ref:
         description: 'Browser Extension ref (defaults to `master`):'
-        default: master
+        default: rc
 
 jobs:
   setup:
