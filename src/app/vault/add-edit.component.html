@@ -250,7 +250,11 @@
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
                     </div>
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
-                        <label for="passwordPrompt">{{'passwordPrompt' | i18n}}</label>
+                        <label for="passwordPrompt">{{'passwordPrompt' | i18n}}
+                            <a href="#" appA11yTitle="{{'learnMore' | i18n}}" (click)="openHelpReprompt()">
+                                <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                            </a>
+                        </label>
                         <input id="passwordPrompt" type="checkbox" name="PasswordPrompt" [ngModel]="reprompt"
                             (change)="repromptChanged()">
                     </div>
@@ -370,9 +374,9 @@
             {{'cancel' | i18n}}
         </button>
         <div class="right">
-            <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
+            <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'moveToOrganization' | i18n}}"
                 *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode">
-                <i class="fa fa-share-alt fa-lg fa-fw" aria-hidden="true"></i>
+                <i class="fa fa-arrow-circle-o-right fa-lg fa-fw" aria-hidden="true"></i>
             </button>
             <button #deleteBtn appBlurClick type="button" (click)="delete()" class="danger"
                 appA11yTitle="{{'delete' | i18n}}" *ngIf="editMode && !cloneMode" [disabled]="deleteBtn.loading"

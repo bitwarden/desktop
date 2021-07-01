@@ -44,14 +44,24 @@
   "share": {
     "message": "Compartir"
   },
-  "shareItem": {
-    "message": "Compartir elemento"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Elemento compartido"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Elige una organización con la que quieras compartir este elemento. Compartir transfiere la propiedad del elemento a la organización. No podrás volver a ser el propietario de este elemento una vez haya sido compartido."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Adjuntos"
@@ -431,7 +441,7 @@
     "message": "Selecciona un archivo."
   },
   "maxFileSize": {
-    "message": "El tamaño máximo de archivo es de 100MB."
+    "message": "El tamaño máximo de archivo es de 500MB."
   },
   "updateKey": {
     "message": "No puedes usar esta característica hasta que actualices tu clave de cifrado."
@@ -1661,7 +1671,7 @@
     "message": "Pendiente de eliminación"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."

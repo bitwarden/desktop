@@ -94,4 +94,8 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     markPasswordAsDirty() {
         this.form.controls['Login.Password'].markAsDirty();
     }
+
+    openHelpReprompt() {
+        this.platformUtilsService.launchUri('https://bitwarden.com/help/article/managing-items/#protect-individual-items');
+    }
 }

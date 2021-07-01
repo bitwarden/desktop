@@ -44,14 +44,24 @@
   "share": {
     "message": "Paylaş"
   },
-  "shareItem": {
-    "message": "Kaydı paylaş"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Kayıt paylaşıldı"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Bu kaydı paylaşmak istediğiniz kuruluşu seçin. Paylaştığınız kaydın sahipliği seçtiğiniz kuruluşa aktarılacak. Artık bu kaydın doğrudan sahibi olmayacaksınız."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Ekler"
@@ -431,7 +441,7 @@
     "message": "Bir dosya seç."
   },
   "maxFileSize": {
-    "message": "En büyük dosya boyutu 100MB."
+    "message": "Maksimum dosya boyutu 500 MB'dir."
   },
   "updateKey": {
     "message": "Şifreleme anahtarınızı güncelleştirene kadar bu özelliği kullanamazsınız."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Hesabınıza erişmek için WebAuthn uyumlu bir güvenlik anahtarı kullanın."
   },
   "emailTitle": {
     "message": "E-posta"
@@ -1298,10 +1308,10 @@
     "message": "kasanızın kilidini açma"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Açılışta Windows Hello doğrulaması isteme."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Açılışta Touch ID doğrulaması isteme."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"
@@ -1661,27 +1671,27 @@
     "message": "Silinmesi bekleniyor"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "WebAutn ile doğrula"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "E-posta adresimi alıcılardan gizle."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Bir veya daha fazla kuruluş ilkesi Send seçeneklerinizi etkiliyor."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "E-posta doğrulaması gerekiyor"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Bu özelliği kullanmak için e-postanızı doğrulamalısınız."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Ana parola yeniden isteği"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Ana parola onayı"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Bu işleme devam etmek için lütfen ana parolanızı yeniden girin."
   }
 }

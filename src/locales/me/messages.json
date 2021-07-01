@@ -44,14 +44,24 @@
   "share": {
     "message": "Podijeli"
   },
-  "shareItem": {
-    "message": "Podijeli stavku"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Podijeljena stavka"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Izaberi organizaciju sa kojom želiš da podijeliš ovu stavku. Dijeljenje prenosi vlasništvo nad stavkom organizaciji. Nećete više biti direktni vlasnik ove stavke kada je podijelite."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Prilog"
@@ -431,7 +441,7 @@
     "message": "Izaberi datoteku."
   },
   "maxFileSize": {
-    "message": "Maximalna veličina datoteke je 100 MB."
+    "message": "Maximalna veličina datoteke je 500 MB."
   },
   "updateKey": {
     "message": "Ovu funkciju ne možete da koristite dok ne ažurirate ključ za šifrovanje."
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."
