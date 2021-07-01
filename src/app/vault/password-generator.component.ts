@@ -13,13 +13,8 @@ import {
     templateUrl: 'password-generator.component.html',
 })
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
-    passTypeOptions: any[];
     constructor(passwordGenerationService: PasswordGenerationService, platformUtilsService: PlatformUtilsService,
         i18nService: I18nService) {
         super(passwordGenerationService, platformUtilsService, i18nService, window);
-        this.passTypeOptions = [
-            { name: 'password', value: 'password' },
-            { name: 'passphrase', value: 'passphrase' }
-        ]
     }
 }
