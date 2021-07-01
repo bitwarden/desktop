@@ -41,6 +41,7 @@ jobs:
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
+
   snap:
     name: Deploy Snap
     runs-on: ubuntu-latest
@@ -75,6 +76,7 @@ jobs:
         run: |
           snapcraft upload dist/bitwarden_${{ env.PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
+
 
   choco:
     name: Deploy Choco
@@ -118,6 +120,7 @@ jobs:
           cd dist
           choco push
 
+
   macos:
     name: Deploy MacOS
     runs-on: macos-latest
@@ -145,6 +148,7 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
 
   publish:
     name: Publish Release
