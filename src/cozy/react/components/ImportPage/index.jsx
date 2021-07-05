@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { withVaultClient, VaultUnlocker } from 'cozy-keys-lib'
+import { withVaultClient } from 'cozy-keys-lib'
 import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import { MainTitle } from 'cozy-ui/transpiled/react/Text'
@@ -104,11 +104,6 @@ const ImportPage = ({ vaultClient }) => {
             </MainTitle>
           </ModalHeader>
           <ModalDescription>
-            <VaultUnlocker
-              onUnlock={importFile}
-              closable
-              onDismiss={() => setImportStatus('waiting')}
-            >
               {importStatus === 'importing' ? (
                 <div className="u-flex">
                   <Spinner size="xxlarge" className="u-mh-auto" />
@@ -130,7 +125,6 @@ const ImportPage = ({ vaultClient }) => {
                   label={t('ImportPage.modal.close')}
                 />
               ) : null}
-            </VaultUnlocker>
           </ModalDescription>
         </Modal>
       ) : null}
