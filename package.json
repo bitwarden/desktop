@@ -342,6 +342,7 @@
     "invariant": "^2.2.4",
     "keytar": "7.6.0",
     "lunr": "^2.3.9",
+    "minilog": "https://github.com/cozy/minilog.git#master",
     "ngx-infinite-scroll": "^10.0.1",
     "node-forge": "0.10.0",
     "node-ipc": "^9.1.4",
