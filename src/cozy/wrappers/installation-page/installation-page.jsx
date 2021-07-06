@@ -14,7 +14,6 @@ const InstallationPageWrapper = ({
       client={client}
       bitwardenData={bitwardenData}
       {...props}
-      useVaultProvider={false}
     >
       <InstallationPage onSkipExtension={onSkipExtension}></InstallationPage>
     </ReactWrapper>

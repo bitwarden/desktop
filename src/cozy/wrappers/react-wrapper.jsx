@@ -28,35 +28,16 @@ const getDataOrDefault = function (toTest, defaultData) {
   return templateRegex.test(toTest) ? defaultData : toTest;
 };
 
-const BitwardenWrapper = ({ bitwardenData, ...props }) => {
-  return (
-    <BitwardenSettingsContext.Provider value={bitwardenData}>
-      <BreakpointsProvider>
-        <HashRouter>{props.children}</HashRouter>
-      </BreakpointsProvider>
-    </BitwardenSettingsContext.Provider>
-  );
-};
-
 // wrap a component in all needed providers
 const ReactWrapper = ({
   client,
   bitwardenData,
   vaultData,
-  useVaultProvider = true,
   ...props
 }) => {
   const root = document.querySelector("[role=application]");
   const data = root.dataset;
   let appLocale = getDataOrDefault(data.cozyLocale, "en");
-
-  const subComponent = useVaultProvider ? (
-    <VaultProvider instance={client.getStackClient().uri} vaultData={vaultData}>
-      <BitwardenWrapper bitwardenData={bitwardenData} {...props} />
-    </VaultProvider>
-  ) : (
-    <BitwardenWrapper bitwardenData={bitwardenData} {...props} />
-  );
 
   return (
     <StylesProvider generateClassName={generateClassName}>
@@ -66,7 +47,15 @@ const ReactWrapper = ({
           require(`../react/locales/${appLocale}.json`)
         }
       >
-        <CozyProvider client={client}>{subComponent}</CozyProvider>
+        <CozyProvider client={client}>
+          <VaultProvider instance={client.getStackClient().uri} vaultData={vaultData}>
+            <BitwardenSettingsContext.Provider value={bitwardenData}>
+              <BreakpointsProvider>
+                <HashRouter>{props.children}</HashRouter>
+              </BreakpointsProvider>
+            </BitwardenSettingsContext.Provider>
+          </VaultProvider>
+        </CozyProvider>
       </I18n>
     </StylesProvider>
   );
