@@ -42,6 +42,7 @@ const BitwardenWrapper = ({ bitwardenData, ...props }) => {
 const ReactWrapper = ({
   client,
   bitwardenData,
+  vaultData,
   useVaultProvider = true,
   ...props
 }) => {
@@ -50,7 +51,7 @@ const ReactWrapper = ({
   let appLocale = getDataOrDefault(data.cozyLocale, "en");
 
   const subComponent = useVaultProvider ? (
-    <VaultProvider instance={client.getStackClient().uri}>
+    <VaultProvider instance={client.getStackClient().uri} vaultData={vaultData}>
       <BitwardenWrapper bitwardenData={bitwardenData} {...props} />
     </VaultProvider>
   ) : (
