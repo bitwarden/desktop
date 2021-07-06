@@ -5,18 +5,25 @@ import {
     RouterStateSnapshot,
 } from '@angular/router';
 import { MessagingService } from '../../../jslib/src/abstractions/messaging.service';
-import { CozyClientService, IsInstalled } from './cozy-client.service';
+import { CozyClientService, UserFinishedInstallation } from './cozy-client.service';
 
 @Injectable({ providedIn: 'root' })
 export class VaultInstallationService {
     constructor(private clientService: CozyClientService) {}
 
     async IsVaultInstalled(): Promise<boolean> {
-        return IsInstalled.value;
+        const client = this.clientService.GetClient();
+        const vault = await client.stackClient.fetchJSON(
+            'GET',
+            '/data/io.cozy.settings/io.cozy.settings.bitwarden',
+            []
+        );
+
+        return vault.extension_installed || UserFinishedInstallation.value;
     }
 
     setIsInstalled() {
-        IsInstalled.value = true;
+        UserFinishedInstallation.value = true;
     }
 }
 

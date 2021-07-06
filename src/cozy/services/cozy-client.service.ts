@@ -18,6 +18,6 @@ export class CozyClientService {
     }
 }
 
-export class IsInstalled {
+export class UserFinishedInstallation {
     static value = false;
 }
