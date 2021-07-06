@@ -1,7 +1,7 @@
 import React from 'react'
 import { Bold } from 'cozy-ui/transpiled/react/Text'
 import { Media, Bd, Img } from 'cozy-ui/transpiled/react/Media'
-import CloudIcon from 'components/CloudIcon'
+import CloudIcon from 'cozy/react/components/CloudIcon'
 import './styles.css'
 
 const WithCozyIcon = props => {

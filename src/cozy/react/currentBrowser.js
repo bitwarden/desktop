@@ -1,6 +1,6 @@
 import { detect as detectBrowser } from 'detect-browser'
 import capitalize from 'lodash/capitalize'
-import { isSupportedPlatform } from 'supportedPlatforms'
+import { isSupportedPlatform } from './supportedPlatforms'
 import flag from 'cozy-flags'
 
 const normalizedBrowserNames = {

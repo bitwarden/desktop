@@ -1,6 +1,6 @@
 import React from 'react'
 
-import generateWebAppLink from 'helpers/generateWebAppLink'
+import generateWebAppLink from 'cozy/react/helpers/generateWebAppLink'
 import AppLinker from 'cozy-ui/transpiled/react/AppLinker'
 import { ButtonLink } from 'cozy-ui/transpiled/react/Button'
 

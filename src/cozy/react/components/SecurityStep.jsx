@@ -13,13 +13,13 @@ import { UnorderedList, ListItem } from 'cozy-ui/transpiled/react/UnorderedList'
 import { useClient } from 'cozy-client'
 import flag from 'cozy-flags'
 
-import Wrapper from 'components/Wrapper'
-import VerticallyCentered from 'components/VerticallyCentered'
-import strongPasswordIcon from 'assets/strong-password.svg'
-import { canAuthWithOIDC } from 'helpers/oidc'
-import { useStepsContext } from 'components/InstallationPage/stepsContext'
-import ChangePasswordLink from 'components/ChangePasswordLink'
-import SetVaultPasswordForm from 'components/SetVaultPasswordForm'
+import Wrapper from 'cozy/react/components/Wrapper'
+import VerticallyCentered from 'cozy/react/components/VerticallyCentered'
+import strongPasswordIcon from 'cozy/react/assets/strong-password.svg'
+import { canAuthWithOIDC } from 'cozy/react/helpers/oidc'
+import { useStepsContext } from 'cozy/react/components/InstallationPage/stepsContext'
+import ChangePasswordLink from 'cozy/react/components/ChangePasswordLink'
+import SetVaultPasswordForm from 'cozy/react/components/SetVaultPasswordForm'
 
 const DefaultSecurityStep = ({ onSkip }) => {
   const { t } = useI18n()

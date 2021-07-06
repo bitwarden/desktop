@@ -8,7 +8,7 @@ import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 
 import Infos from 'cozy-ui/transpiled/react/Infos'
 import Icon from 'cozy-ui/transpiled/react/Icon'
-import BarTitle from 'BarTitle'
+import BarTitle from 'cozy/react/BarTitle'
 import Hero, {
   Title,
   Section,
@@ -19,11 +19,11 @@ import PasswordIcon from 'cozy-ui/transpiled/react/Icons/Password'
 import LockIcon from 'cozy-ui/transpiled/react/Icons/Lock'
 import ToTheCloudIcon from 'cozy-ui/transpiled/react/Icons/ToTheCloud'
 
-import importPasswordsIcon from 'assets/import-passwords.svg'
-import CircleIcon from 'components/CircleIcon'
-import Wrapper from 'components/Wrapper'
-import getSupportedPlatforms from 'supportedPlatforms'
-import { isSupportedBrowser, browserName } from 'currentBrowser'
+import importPasswordsIcon from 'cozy/react/assets/import-passwords.svg'
+import CircleIcon from './CircleIcon'
+import Wrapper from './Wrapper'
+import getSupportedPlatforms from 'cozy/react/supportedPlatforms'
+import { isSupportedBrowser, browserName } from 'cozy/react/currentBrowser'
 import browserIcons from './browserIcons'
 import VerticallyCentered from './VerticallyCentered'
 

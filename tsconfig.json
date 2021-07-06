@@ -20,6 +20,9 @@
       "jslib/*": [
         "jslib/src/*"
       ],
+      "cozy/*": [
+        "src/cozy/*"
+      ]
     }
   },
   "angularCompilerOptions": {

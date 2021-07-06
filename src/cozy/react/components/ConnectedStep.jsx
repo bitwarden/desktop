@@ -1,15 +1,15 @@
 import React from 'react'
-import Wrapper from 'components/Wrapper'
+import Wrapper from 'cozy/react/components/Wrapper'
 import NarrowContent from 'cozy-ui/transpiled/react/NarrowContent'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import { MainTitle, Text } from 'cozy-ui/transpiled/react/Text'
 import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 import { currentBrowser } from '../currentBrowser'
-import chromeIllustration from 'assets/extension-connected-chrome.svg'
-import firefoxIllustration from 'assets/extension-connected-firefox.svg'
+import chromeIllustration from 'cozy/react/assets/extension-connected-chrome.svg'
+import firefoxIllustration from 'cozy/react/assets/extension-connected-firefox.svg'
 import Help from './Help'
 import { ButtonLink } from 'cozy-ui/transpiled/react/Button'
-import BarTitle from 'BarTitle'
+import BarTitle from 'cozy/react/BarTitle'
 
 const illustrations = {
   chrome: chromeIllustration,

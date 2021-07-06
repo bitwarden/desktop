@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react'
 import keyBy from 'lodash/keyBy'
 
 import { ButtonLink } from 'cozy-ui/transpiled/react/Button'
-import getSupportedPlatforms, { platforms } from 'supportedPlatforms'
+import getSupportedPlatforms, { platforms } from 'cozy/react/supportedPlatforms'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 import Card from 'cozy-ui/transpiled/react/Card'

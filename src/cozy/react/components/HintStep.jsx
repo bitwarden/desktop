@@ -4,14 +4,14 @@ import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 import Input from 'cozy-ui/transpiled/react/Input'
 import { withClient, useClient } from 'cozy-client'
 import Alerter from 'cozy-ui/transpiled/react/Alerter'
-import Wrapper from 'components/Wrapper'
+import Wrapper from 'cozy/react/components/Wrapper'
 import NarrowContent from 'cozy-ui/transpiled/react/NarrowContent'
-import passwordClueIcon from 'assets/password-clue.svg'
+import passwordClueIcon from 'cozy/react/assets/password-clue.svg'
 import { MainTitle, Text } from 'cozy-ui/transpiled/react/Text'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import Spinner from 'cozy-ui/transpiled/react/Spinner'
 import VerticallyCentered from './VerticallyCentered'
-import BarTitle from 'BarTitle'
+import BarTitle from 'cozy/react/BarTitle'
 
 const DumbHintStep = props => {
   const client = useClient()

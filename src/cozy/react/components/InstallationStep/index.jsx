@@ -7,25 +7,25 @@ import NarrowContent from 'cozy-ui/transpiled/react/NarrowContent'
 import Stack from 'cozy-ui/transpiled/react/Stack'
 import { MainTitle, Text } from 'cozy-ui/transpiled/react/Text'
 import Card from 'cozy-ui/transpiled/react/Card'
-import { ButtonLink } from 'cozy-ui/transpiled/react/Button'
+import { ButtonLink, Button } from 'cozy-ui/transpiled/react/Button'
 import { OrderedList, ListItem } from 'cozy-ui/transpiled/react/OrderedList'
 import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 
 import { useClient } from 'cozy-client'
 import { isMobile } from 'cozy-device-helper'
 
-import browserExtensionIcon from 'assets/browser-extension.svg'
+import browserExtensionIcon from 'cozy/react/assets/browser-extension.svg'
 
-import Wrapper from 'components/Wrapper'
-import WithCozyIcon from 'components/WithCozyIcon'
-import VerticallyCentered from 'components/VerticallyCentered'
-import { InstallNativeAppButton } from 'components/AvailablePlatforms'
+import Wrapper from 'cozy/react/components/Wrapper'
+import WithCozyIcon from 'cozy/react/components/WithCozyIcon'
+import VerticallyCentered from 'cozy/react/components/VerticallyCentered'
+import { InstallNativeAppButton } from 'cozy/react/components/AvailablePlatforms'
 
-import { useExtensionStatus, extensionStatuses } from 'helpers/extensionStatus'
-import { canAuthWithOIDC } from 'helpers/oidc'
+import { useExtensionStatus, extensionStatuses } from 'cozy/react/helpers/extensionStatus'
+import { canAuthWithOIDC } from 'cozy/react/helpers/oidc'
 
-import getSupportedPlatforms from 'supportedPlatforms'
-import BarTitle from 'BarTitle'
+import getSupportedPlatforms from 'cozy/react/supportedPlatforms'
+import BarTitle from 'cozy/react/BarTitle'
 
 const browser = detectBrowser()
 

@@ -81,6 +81,7 @@ const common = {
             '../../abstractions/platformUtils.service'                     : path.resolve(__dirname, 'src/app/browser/platformUtils.service.abstraction'),
             '../../../abstractions/platformUtils.service'                  : path.resolve(__dirname, 'src/app/browser/platformUtils.service.abstraction'),
             jslib: path.join(__dirname, 'jslib/src'),
+            cozy: path.join(__dirname, 'src/cozy')
         },
         symlinks: false,
         modules: [path.resolve('node_modules')],
@@ -123,7 +124,7 @@ const renderer = {
             },
             {
                 test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                exclude: /loading.svg/,
+                exclude: /loading.svg|[\\/]cozy\/react\/assets[\\/]/,
                 use: [{
                     loader: 'file-loader',
                     options: {

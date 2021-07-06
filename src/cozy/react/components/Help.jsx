@@ -7,9 +7,9 @@ import { useI18n } from 'cozy-ui/transpiled/react/I18n'
 import Icon from 'cozy-ui/transpiled/react/Icon'
 import GearIcon from 'cozy-ui/transpiled/react/Icons/Gear'
 
-import AvailablePlatforms from 'components/AvailablePlatforms'
-import ChangePasswordLink from 'components/ChangePasswordLink'
-import { canAuthWithOIDC } from 'helpers/oidc'
+import AvailablePlatforms from 'cozy/react/components/AvailablePlatforms'
+import ChangePasswordLink from 'cozy/react/components/ChangePasswordLink'
+import { canAuthWithOIDC } from 'cozy/react/helpers/oidc'
 
 const Help = () => {
   const { t } = useI18n()
