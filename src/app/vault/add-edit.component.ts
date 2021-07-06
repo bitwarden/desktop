@@ -54,6 +54,9 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
                     case 'cancel':
                         this.cancel();
                         break;
+                    case 'saveItem':
+                        this.submit();
+                        break;
                     default:
                 }
             });

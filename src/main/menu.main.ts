@@ -41,6 +41,7 @@ export class MenuMain extends BaseMenu {
     copyPassword: MenuItem;
     copyTotp: MenuItem;
     editItem: MenuItem;
+    saveItem: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
     constructor(private main: Main) {
@@ -73,12 +74,13 @@ export class MenuMain extends BaseMenu {
         this.copyPassword = this.menu.getMenuItemById('copyPassword');
         this.copyTotp = this.menu.getMenuItemById('copyTotp');
         this.editItem = this.menu.getMenuItemById('editItem');
+        this.saveItem = this.menu.getMenuItemById('saveItem');
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
             this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
-            this.searchVault, this.copyUsername, this.copyPassword, this.editItem];
+            this.searchVault, this.copyUsername, this.copyPassword, this.editItem, this.saveItem];
         this.updateApplicationMenuState(false, true);
     }
 
@@ -169,6 +171,12 @@ export class MenuMain extends BaseMenu {
                 id: 'editItem',
                 click: () => this.main.messagingService.send('editItem'),
                 accelerator: 'CmdOrCtrl+E',
+            },
+            {
+                label: this.main.i18nService.t('save'),
+                id: 'saveItem',
+                click: () => this.main.messagingService.send('saveItem'),
+                accelerator: 'CmdOrCtrl+S',
             },
             {
                 label: this.main.i18nService.t('copyUsername'),
