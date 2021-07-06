@@ -14,7 +14,7 @@ interface InstallationPageProps {
     bitwardenData: {
         extension_installed: boolean;
     };
-    onSkipExtension: any;
+    onSkipExtension: () => void;
 }
 
 @Component({
