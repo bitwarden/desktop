@@ -5,10 +5,12 @@ import {
     RouterStateSnapshot,
 } from '@angular/router';
 import { MessagingService } from '../../../jslib/src/abstractions/messaging.service';
-import { CozyClientService, UserFinishedInstallation } from './cozy-client.service';
+import { CozyClientService } from './cozy-client.service';
 
 @Injectable({ providedIn: 'root' })
 export class VaultInstallationService {
+    userFinishedInstallation = false;
+
     constructor(private clientService: CozyClientService) {}
 
     async IsVaultInstalled(): Promise<boolean> {
@@ -19,11 +21,11 @@ export class VaultInstallationService {
             []
         );
 
-        return vault.extension_installed || UserFinishedInstallation.value;
+        return vault.extension_installed || this.userFinishedInstallation;
     }
 
     setIsInstalled() {
-        UserFinishedInstallation.value = true;
+        this.userFinishedInstallation = true;
     }
 }
 

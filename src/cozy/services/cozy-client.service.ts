@@ -17,7 +17,3 @@ export class CozyClientService {
         return StaticCozyClient.client;
     }
 }
-
-export class UserFinishedInstallation {
-    static value = false;
-}
