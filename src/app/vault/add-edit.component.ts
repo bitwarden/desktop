@@ -51,6 +51,9 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
+                    case 'cancel':
+                        this.cancel();
+                        break;
                     default:
                 }
             });

@@ -22,6 +22,7 @@ export class MenuMain extends BaseMenu {
     menu: Menu;
     updateMenuItem: MenuItem;
     addNewLogin: MenuItem;
+    cancel: MenuItem;
     addNewItem: MenuItem;
     addNewFolder: MenuItem;
     syncVault: MenuItem;
@@ -39,6 +40,7 @@ export class MenuMain extends BaseMenu {
     copyUsername: MenuItem;
     copyPassword: MenuItem;
     copyTotp: MenuItem;
+    editItem: MenuItem;
     unlockedRequiredMenuItems: MenuItem[] = [];
 
     constructor(private main: Main) {
@@ -52,6 +54,7 @@ export class MenuMain extends BaseMenu {
 
         this.updateMenuItem = this.menu.getMenuItemById('checkForUpdates');
         this.addNewLogin = this.menu.getMenuItemById('addNewLogin');
+        this.cancel = this.menu.getMenuItemById('cancel');
         this.addNewItem = this.menu.getMenuItemById('addNewItem');
         this.addNewFolder = this.menu.getMenuItemById('addNewFolder');
         this.syncVault = this.menu.getMenuItemById('syncVault');
@@ -69,12 +72,13 @@ export class MenuMain extends BaseMenu {
         this.copyUsername = this.menu.getMenuItemById('copyUsername');
         this.copyPassword = this.menu.getMenuItemById('copyPassword');
         this.copyTotp = this.menu.getMenuItemById('copyTotp');
+        this.editItem = this.menu.getMenuItemById('editItem');
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
             this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
-            this.searchVault, this.copyUsername, this.copyPassword];
+            this.searchVault, this.copyUsername, this.copyPassword, this.editItem];
         this.updateApplicationMenuState(false, true);
     }
 
@@ -160,6 +164,12 @@ export class MenuMain extends BaseMenu {
 
         this.editMenuItemOptions.submenu = (this.editMenuItemOptions.submenu as MenuItemConstructorOptions[]).concat([
             { type: 'separator' },
+            {
+                label: this.main.i18nService.t('editItem'),
+                id: 'editItem',
+                click: () => this.main.messagingService.send('editItem'),
+                accelerator: 'CmdOrCtrl+E',
+            },
             {
                 label: this.main.i18nService.t('copyUsername'),
                 id: 'copyUsername',
@@ -361,6 +371,13 @@ export class MenuMain extends BaseMenu {
                         label: this.main.i18nService.t('exportVault'),
                         id: 'exportVault',
                         click: () => this.main.messagingService.send('exportVault'),
+                    },
+                    { type: 'separator' },
+                    {
+                        label: this.main.i18nService.t('cancel'),
+                        id: 'cancel',
+                        click: () => this.main.messagingService.send('cancel'),
+                        accelerator: 'Esc',
                     },
                 ],
             },

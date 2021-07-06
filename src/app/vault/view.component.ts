@@ -54,6 +54,9 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
+                    case 'editItem':
+                        this.edit();
+                        break;
                     default:
                 }
             });
