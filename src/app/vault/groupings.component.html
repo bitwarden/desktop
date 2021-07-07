@@ -89,12 +89,15 @@
         <ng-container *ngIf="loaded">
             <div class="heading">
                 <h2>{{'folders' | i18n}}</h2>
+                <!-- folders disabled until sharing feature is implemented
                 <button appBlurClick (click)="addFolder()" appA11yTitle="{{'addFolder' | i18n}}">
                     <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
                 </button>
+                -->
             </div>
             <ul>
                 <ng-template #recursiveFolders let-folders>
+                    <!-- folders disabled until sharing feature is implemented
                     <li *ngFor="let f of folders"
                         [ngClass]="{active: selectedFolder && f.node.id === selectedFolderId}">
                         <a href="#" appStopClick appBlurClick (click)="selectFolder(f.node)">
@@ -112,6 +115,7 @@
                             </ng-container>
                         </ul>
                     </li>
+                    -->
 
                     <li [ngClass]="{active: selectedTrash}">
                         <a href="#" appStopClick appBlurClick (click)="selectTrash()">

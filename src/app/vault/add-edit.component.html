@@ -239,12 +239,14 @@
             </div>
             <div class="box">
                 <div class="box-content">
+                    <!-- folders disabled until sharing feature is implemented
                     <div class="box-content-row" appBoxRow>
                         <label for="folder">{{'folder' | i18n}}</label>
                         <select id="folder" name="FolderId" [(ngModel)]="cipher.folderId">
                             <option *ngFor="let f of folders" [ngValue]="f.id">{{f.name}}</option>
                         </select>
                     </div>
+                    -->
                     <!-- <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="favorite">{{'favorite' | i18n}}</label>
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
