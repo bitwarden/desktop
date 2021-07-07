@@ -45,10 +45,10 @@
     "message": "共享"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "移動至組織"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "已將 $ITEMNAME$ 移動至 $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "選擇您希望將這個項目移動到哪個組織。項目的擁有權將會轉移到該組織。一經移動，您將不再是此項目的直接擁有者。"
   },
   "attachments": {
     "message": "附件"
@@ -1686,7 +1686,7 @@
     "message": "必須驗證您的電子郵件才能使用此功能。"
   },
   "passwordPrompt": {
-    "message": "重新提示主密碼"
+    "message": "重新詢問主密碼"
   },
   "passwordConfirmation": {
     "message": "確認主密碼"
