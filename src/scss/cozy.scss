@@ -31,4 +31,8 @@ app-import-page {
             color: var(--secondaryButtonContrastColor);
         }
     }
+
+    svg[class*="MuiStepIcon-active"] {
+        color: var(--primaryColor);
+    }
 }
