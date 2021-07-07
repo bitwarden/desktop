@@ -45,7 +45,7 @@
     "message": "Udostępnij"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Przenieś do organizacji"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ moved to $ORGNAME$",
@@ -477,7 +477,7 @@
     "message": "Hasło główne"
   },
   "masterPassDesc": {
-    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, abyś je pamiętał. Jeśli je zapomnisz, nie będzie możliwości, aby je przywrócić."
+    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, aby je pamiętać, ponieważ zapomnianego hasła nie będzie można odzyskać."
   },
   "masterPassHintDesc": {
     "message": "Podpowiedź do hasła głównego może pomóc Ci przypomnieć hasło, jeśli je zapomnisz."
@@ -1686,7 +1686,7 @@
     "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
   },
   "passwordPrompt": {
-    "message": "Poproś ponownie o hasło główne"
+    "message": "Powtórz hasło główne"
   },
   "passwordConfirmation": {
     "message": "Potwierdź hasło główne"
