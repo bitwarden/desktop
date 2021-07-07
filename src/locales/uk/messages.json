@@ -45,10 +45,10 @@
     "message": "Поділитися"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Перемістити до організації"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ переміщено до $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Виберіть організацію, до якої ви бажаєте перемістити цей запис. При переміщенні до організації власність запису передається тій організації. Ви більше не будете єдиним власником цього запису після переміщення."
   },
   "attachments": {
     "message": "Вкладення"
@@ -1425,7 +1425,7 @@
     "message": "Підтвердьте новий головний пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Політика однієї або декількох організацій зобов'язує дотримання таких вимог для головного пароля:"
+    "message": "Одна або декілька політик організації вимагають дотримання таких вимог для головного пароля:"
   },
   "policyInEffectMinComplexity": {
     "message": "Мінімальна оцінка складності $SCORE$",

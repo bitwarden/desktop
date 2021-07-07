@@ -45,10 +45,10 @@
     "message": "Подели"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Прмести у организацију"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ премештен у $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Изаберите организацију коју желите да преместите овај предмет. Прелазак на организацију преноси власништво над ставком у ту организацију. Више нећете бити директни власник ове ставке након што је премештена."
   },
   "attachments": {
     "message": "Прилози"
@@ -860,7 +860,7 @@
     "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
   },
   "enableMinToTray": {
-    "message": "Умањи у систем трају"
+    "message": "Умањи у систем траку"
   },
   "enableMinToTrayDesc": {
     "message": "Када минимизујете прозор, уместо тога покажите икону у системској палети."

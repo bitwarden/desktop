@@ -45,10 +45,10 @@
     "message": "Partajare"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Mutare la organizație"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ mutat la $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Alegeți o organizație la care doriți să mutați acest articol. Mutarea într-o organizație, transferă proprietatea asupra articolului către organizația respectivă. Nu veți mai fi proprietarul direct al acestui articol odată ce a fost mutat."
   },
   "attachments": {
     "message": "Atașamente"
@@ -603,10 +603,10 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
-    "message": "Congrats! You just installed the Bitwarden browser extension"
+    "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Utilizați orice cheie de securitate activată Fido U2F pentru a accesa contul dvs."
+    "message": "Utilizați orice cheie de securitate activată WebAuthn pentru a vă accesa contul."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1308,10 +1308,10 @@
     "message": "deblocați-vă seiful"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Nu solicitați Windows Hello la pornire."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Nu solicitați Touch ID la pornire."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornire"
@@ -1671,27 +1671,27 @@
     "message": "Ștergere în așteptare"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "Autentificare WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ascundeți adresa mea de e-mail de la destinatari."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Una sau mai multe politici organizaționale vă afectează opțiunile Send-ului."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Este necesară verificarea adresei de e-mail"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Trebuie să vă verificați e-mailul pentru a utiliza această caracteristică."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Re-solicitare parolă principală"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmare parolă principală"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Această acțiune este protejată. Pentru a continua, vă rugăm să reintroduceți parola principală pentru a vă verifica identitatea."
   }
 }
