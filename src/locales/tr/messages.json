@@ -45,10 +45,10 @@
     "message": "Paylaş"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Kuruluşa taşı"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ $ORGNAME$ kuruluşuna taşındı",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Bu kaydı taşımak istediğiniz kuruluşu seçin. Taşıdığınız kaydın sahipliği seçtiğiniz kuruluşa aktarılacak. Artık bu kaydın doğrudan sahibi olmayacaksınız."
   },
   "attachments": {
     "message": "Ekler"
@@ -1671,7 +1671,7 @@
     "message": "Silinmesi bekleniyor"
   },
   "webAuthnAuthenticate": {
-    "message": "WebAutn ile doğrula"
+    "message": "WebAuthn ile doğrula"
   },
   "hideEmail": {
     "message": "E-posta adresimi alıcılardan gizle."
