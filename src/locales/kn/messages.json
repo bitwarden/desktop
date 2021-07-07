@@ -1,54 +1,54 @@
 {
   "bitwarden": {
-    "message": "Bitwarden"
+    "message": "ಬಿಟ್ವಾರ್ಡೆನ್"
   },
   "filters": {
-    "message": "Filters"
+    "message": "ಶೋಧಕಗಳು"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "ಎಲ್ಲಾ ವಸ್ತುಗಳು"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "ಮೆಚ್ಚುಗೆಗಳು"
   },
   "types": {
-    "message": "Types"
+    "message": "ರೀತಿಯ"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "ಲಾಗಿನ್"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "ಕಾರ್ಡ್"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "ಗುರುತಿಸುವಿಕೆ"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "ಸುರಕ್ಷಿತ ಟಿಪ್ಪಣಿ"
   },
   "folders": {
-    "message": "Folders"
+    "message": "ಫೋಲ್ಡರ್‌ಗಳು"
   },
   "collections": {
-    "message": "Collections"
+    "message": "ಸಂಗ್ರಹಣೆಗಳು"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "ವಾಲ್ಟ್ ಹುಡುಕಿ"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "ಐಟಂ ಸೇರಿಸಿ"
   },
   "shared": {
-    "message": "Shared"
+    "message": "ಹಂಚಿಕೊಳ್ಳಲಾಗಿದೆ"
   },
   "share": {
-    "message": "Share"
+    "message": "ಹಂಚಿಕೊಳ್ಳಿ"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "ಸಂಸ್ಥೆಗೆ ಸರಿಸಿ"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ ಅನ್ನು $ORGNAME$ ಗೆ ಸರಿಸಲಾಗಿದೆ",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,22 +61,22 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "ಈ ಐಟಂ ಅನ್ನು ಸರಿಸಲು ನೀವು ಬಯಸುವ ಸಂಸ್ಥೆಯನ್ನು ಆರಿಸಿ. ಸಂಸ್ಥೆಗೆ ಹೋಗುವುದರಿಂದ ವಸ್ತುವಿನ ಮಾಲೀಕತ್ವವನ್ನು ಆ ಸಂಸ್ಥೆಗೆ ವರ್ಗಾಯಿಸುತ್ತದೆ. ಈ ಐಟಂ ಅನ್ನು ಸರಿಸಿದ ನಂತರ ನೀವು ಇನ್ನು ಮುಂದೆ ಅದರ ನೇರ ಮಾಲೀಕರಾಗಿರುವುದಿಲ್ಲ."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "ಲಗತ್ತುಗಳು"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "ಐಟಂ ವೀಕ್ಷಿಸಿ"
   },
   "name": {
-    "message": "Name"
+    "message": "ಹೆಸರು"
   },
   "uri": {
     "message": "URI"
   },
   "uriPosition": {
-    "message": "URI $POSITION$",
+    "message": "ಯುಆರ್ಐ $POSITION$",
     "description": "A listing of URIs. Ex: URI 1, URI 2, URI 3, etc.",
     "placeholders": {
       "position": {
@@ -86,464 +86,464 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "ಹೊಸ ಯುಆರ್ಐ"
   },
   "username": {
-    "message": "Username"
+    "message": "ಬಳಕೆದಾರ ಹೆಸರು"
   },
   "password": {
-    "message": "Password"
+    "message": "ಪಾಸ್ವರ್ಡ್"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "ಪಾಸ್ಫ್ರೇಸ್"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "ವಸ್ತುಗಳನ್ನು ಸಂಪಾದಿಸಿ"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "ಇಮೇಲ್ ವಿಳಾಸ"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "ಪರಿಶೀಲನಾ ಕೋಡ್‌ಗಳು (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "ಜಾಲತಾಣ"
   },
   "notes": {
-    "message": "Notes"
+    "message": "ಟಿಪ್ಪಣಿಗಳು"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "ಕಸ್ಟಮ್ ಕ್ಷೇತ್ರಗಳು"
   },
   "launch": {
-    "message": "Launch"
+    "message": "ಶುರು"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "ಮೌಲ್ಯವನ್ನು ನಕಲಿಸಿ",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "ಕ್ಲಿಪ್ಬೋರ್ಡ್ಗೆ ನಕಲಿಸಿದಾಗ ಕಡಿಮೆ ಮಾಡಿ"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "ಐಟಂನ ಡೇಟಾವನ್ನು ಕ್ಲಿಪ್ಬೋರ್ಡ್ಗೆ ನಕಲಿಸುವಾಗ ಕಡಿಮೆ ಮಾಡಿ."
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "ಟಾಗಲ್ ಕುಸಿತ",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "ಕಾರ್ಡುದಾರನ ಹೆಸರು"
   },
   "number": {
-    "message": "Number"
+    "message": "ಸಂಖ್ಯೆ"
   },
   "brand": {
-    "message": "Brand"
+    "message": "ಬ್ರ್ಯಾಂಡ್"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "ಮುಕ್ತಾಯ"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "ಭದ್ರತಾ ಕೋಡ್"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "ಹೆಸರು ಗುರುತು"
   },
   "company": {
-    "message": "Company"
+    "message": "ಕಂಪನಿ"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "ಸಾಮಾಜಿಕ ಭದ್ರತೆ ಸಂಖ್ಯೆ"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "ಪಾಸ್ಪೋರ್ಟ್ ಸಂಖ್ಯೆ"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "ಪರವಾನಗಿ ಸಂಖ್ಯೆ"
   },
   "email": {
-    "message": "Email"
+    "message": "ಇಮೇಲ್"
   },
   "phone": {
-    "message": "Phone"
+    "message": "ಫೋನ್‌"
   },
   "address": {
-    "message": "Address"
+    "message": "ವಿಳಾಸ"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "ಪ್ರೀಮಿಯಂ ಅಗತ್ಯವಿದೆ"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು ಪ್ರೀಮಿಯಂ ಸದಸ್ಯತ್ವ ಅಗತ್ಯವಿದೆ."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "ದೋಷ ಸಂಭವಿಸಿದೆ."
   },
   "error": {
-    "message": "Error"
+    "message": "ದೋಷ"
   },
   "january": {
-    "message": "January"
+    "message": "ಜನವರಿ"
   },
   "february": {
-    "message": "February"
+    "message": "ಫೆಬ್ರವರಿ"
   },
   "march": {
-    "message": "March"
+    "message": "ಮಾರ್ಚ್"
   },
   "april": {
-    "message": "April"
+    "message": "ಏಪ್ರಿಲ್"
   },
   "may": {
-    "message": "May"
+    "message": "ಮೇ"
   },
   "june": {
-    "message": "June"
+    "message": "ಜೂನ್"
   },
   "july": {
-    "message": "July"
+    "message": "ಜುಲೈ"
   },
   "august": {
-    "message": "August"
+    "message": "ಆಗಸ್ಟ್"
   },
   "september": {
-    "message": "September"
+    "message": "ಸೆಪ್ಟೆಂಬರ್"
   },
   "october": {
-    "message": "October"
+    "message": "ಅಕ್ಟೋಬರ್"
   },
   "november": {
-    "message": "November"
+    "message": "ನವೆಂಬರ್"
   },
   "december": {
-    "message": "December"
+    "message": "ಡಿಸೆಂಬರ್"
   },
   "ex": {
-    "message": "ex.",
+    "message": "ಉದಾಹರಣೆ.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "ಶೀರ್ಷಿಕೆ"
   },
   "mr": {
-    "message": "Mr"
+    "message": "ಶ್ರೀ"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "ಶ್ರೀಮತಿ"
   },
   "ms": {
-    "message": "Ms"
+    "message": "ಎಂ ಎಸ್"
   },
   "dr": {
     "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "ಮುಕ್ತಾಯ ತಿಂಗಳು"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "ಮುಕ್ತಾಯ ವರ್ಷ"
   },
   "select": {
-    "message": "Select"
+    "message": "ಆಯ್ಕೆಮಾಡಿ"
   },
   "other": {
-    "message": "Other"
+    "message": "ಇತರೆ"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "ಪಾಸ್ವರ್ಡ್ ರಚಿಸಿ"
   },
   "type": {
-    "message": "Type"
+    "message": "ಪ್ರಕಾರ"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "ಮೊದಲ ಹೆಸರು"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "ಮಧ್ಯದ ಹೆಸರು"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "ಕೊನೆ ಹೆಸರು"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "ವಿಳಾಸ 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "ವಿಳಾಸ 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "ವಿಳಾಸ 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "ನಗರ / ಪಟ್ಟಣ"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "ರಾಜ್ಯ / ಪ್ರಾಂತ್ಯ"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "ಪಿನ್ / ಅಂಚೆ ಕೋಡ್"
   },
   "country": {
-    "message": "Country"
+    "message": "ದೇಶ"
   },
   "save": {
-    "message": "Save"
+    "message": "ಉಳಿಸಿ"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "ರದ್ದು"
   },
   "delete": {
-    "message": "Delete"
+    "message": "ಅಳಿಸು"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "ಮೆಚ್ಚಿನ"
   },
   "edit": {
-    "message": "Edit"
+    "message": "ಎಡಿಟ್"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "ದೃಢೀಕರಣ ಕೀ (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "ಫೋಲ್ಡರ್"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "ಹೊಸ ಕಸ್ಟಮ್ ಕ್ಷೇತ್ರ"
   },
   "value": {
-    "message": "Value"
+    "message": "ಮೌಲ್ಯ"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "ವಿಂಗಡಿಸಲು ಎಳೆಯಿರಿ"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "ಪಠ್ಯ"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "ಮರೆಮಾಡಲಾಗಿದೆ"
   },
   "cfTypeBoolean": {
-    "message": "Boolean"
+    "message": "ಬೂಲಿಯನ್"
   },
   "remove": {
-    "message": "Remove"
+    "message": "ತೆಗೆ"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "ಹೆಸರೊಂದು ಅಗತ್ಯವಿದೆ."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "ಐಟಂ ಸೇರಿಸಲಾಗಿದೆ"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "ಐಟಂ ಸಂಪಾದಿಸಲಾಗಿದೆ"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "ಐಟಂ ಅಳಿಸಿ"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "ಫೋಲ್ಡರ್ ಅಳಿಸಿ"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "ಲಗತ್ತನ್ನು ಅಳಿಸಿ"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "ನೀವು ನಿಜವಾಗಿಯೂ ಅನುಪಯುಕ್ತಕ್ಕೆ ಕಳುಹಿಸಲು ಬಯಸುವಿರಾ?"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "ಐಟಂ ಅನ್ನು ಅನುಪಯುಕ್ತಕ್ಕೆ ಕಳುಹಿಸಲಾಗಿದೆ"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "ಪ್ರಸ್ತುತ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ತಿದ್ದಿಬರೆಯಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "ಫೋಲ್ಡರ್ ಇಲ್ಲ",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "ಫೋಲ್ಡರ್ ಸೇರಿಸಿ"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "ಫೋಲ್ಡರ್ ಸಂಪಾದಿಸಿ"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ಪುನರುತ್ಪಾದಿಸಿ"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "ಪಾಸ್ವರ್ಡ್ ನಕಲಿಸಿ"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI ಅನ್ನು ನಕಲಿಸಿ"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "ನಕಲಿಸಿ ಪರಿಶೀಲನೆ ಕೋಡ್ (TOTP)"
   },
   "length": {
-    "message": "Length"
+    "message": "ಉದ್ದ"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "ಪದಗಳ ಸಂಖ್ಯೆ"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "ಪದ ವಿಭಜಕ"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "ದೊಡ್ಡಕ್ಷರ ಮಾಡಿ",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "ಸಂಖ್ಯೆಯನ್ನು ಸೇರಿಸಿ"
   },
   "close": {
-    "message": "Close"
+    "message": "ಮುಚ್ಚಿ"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "ಕನಿಷ್ಠ ಸಂಖ್ಯೆಗಳು"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "ಕನಿಷ್ಠ ವಿಶೇಷ",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "ಅಸ್ಪಷ್ಟ ಅಕ್ಷರಗಳನ್ನು ತಪ್ಪಿಸಿ"
   },
   "searchCollection": {
-    "message": "Search Collection"
+    "message": "ಸಂಗ್ರಹಣೆ ಹುಡುಕಿ"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "ಫೋಲ್ಡರ್ ಹುಡುಕಿ"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "ಮೆಚ್ಚುಗೆಗಳಲ್ಲಿ ಶೋಧ"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "ಹುಡುಕಾಟ ಪ್ರಕಾರ",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "ಹೊಸ ಲಗತ್ತನ್ನು ಸೇರಿಸಿ"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "ಲಗತ್ತು ಅಳಿಸಲಾಗಿದೆ"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "ಈ ಲಗತ್ತನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "ಲಗತ್ತನ್ನು ಉಳಿಸಲಾಗಿದೆ."
   },
   "file": {
-    "message": "File"
+    "message": "ಫೈಲ್"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "ಕಡತವನ್ನು ಆಯ್ಕೆಮಾಡು."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "ಗರಿಷ್ಠ ಫೈಲ್ ಗಾತ್ರ 500 ಎಂಬಿ."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "ನಿಮ್ಮ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಕೀಲಿಯನ್ನು ನವೀಕರಿಸುವವರೆಗೆ ನೀವು ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲಾಗುವುದಿಲ್ಲ."
   },
   "options": {
-    "message": "Options"
+    "message": "ಆಯ್ಕೆಗಳು"
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "ಫೋಲ್ಡರ್ ತಿದ್ದಲಾಗಿದೆ"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "ಫೋಲ್ಡರ್ ಸೇರಿಸಿ"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "ನೀವು ಈ ಕಡತಕೋಶವನ್ನು ಖಚಿತವಾಗಿಯೂ ಅಳಿಸಬಯಸುವಿರಾ?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "ಫೋಲ್ಡರ್ ಅಳಿಸಿ"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "ನಿಮ್ಮ ಸುರಕ್ಷಿತ ವಾಲ್ಟ್ ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಲಾಗ್ ಇನ್ ಮಾಡಿ ಅಥವಾ ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಿ."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "ಖಾತೆ ತೆರೆ"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "ಲಾಗಿನ್"
   },
   "submit": {
-    "message": "Submit"
+    "message": "ಒಪ್ಪಿಸು"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಅನ್ನು ಪ್ರವೇಶಿಸಲು ನೀವು ಬಳಸುವ ಪಾಸ್ವರ್ಡ್ ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಆಗಿದೆ. ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವು ಮರೆಯದಿರುವುದು ಬಹಳ ಮುಖ್ಯ. ನೀವು ಅದನ್ನು ಮರೆತ ಸಂದರ್ಭದಲ್ಲಿ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರುಪಡೆಯಲು ಯಾವುದೇ ಮಾರ್ಗವಿಲ್ಲ."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವು ಮರೆತರೆ ಅದನ್ನು ನೆನಪಿಟ್ಟುಕೊಳ್ಳಲು ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಸುಳಿವು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ಮರು-ಟೈಪ್ ಮಾಡಿ"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಸುಳಿವು (ಐಚ್ಛಿಕ)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "ಸೆಟ್ಟಿಂಗ್‍ಗಳು"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "ಪಾಸ್ವರ್ಡ್ ಸುಳಿವು"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "ವಿಸ್ತರಣೆಯನ್ನು ಪ್ರಾರಂಭಿಸಲು ಮೆನುವಿನಲ್ಲಿರುವ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಐಕಾನ್ ಟ್ಯಾಪ್ ಮಾಡಿ."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಸುಳಿವನ್ನು ಪಡೆಯಿರಿ"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "ಇಮೇಲ್ ವಿಳಾಸದ ಅಗತ್ಯವಿದೆ."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "ಅಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸ."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಅಗತ್ಯವಿದೆ."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಕನಿಷ್ಠ 8 ಅಕ್ಷರಗಳಷ್ಟು ಉದ್ದವಾಗಿರಬೇಕು."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ದೃಢೀಕರಣವು ಹೊಂದಿಕೆಯಾಗುವುದಿಲ್ಲ."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "ನಿಮ್ಮ ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಲಾಗಿದೆ! ನೀವು ಈಗ ಲಾಗ್ ಇನ್ ಮಾಡಬಹುದು."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಸುಳಿವಿನೊಂದಿಗೆ ನಾವು ನಿಮಗೆ ಇಮೇಲ್ ಕಳುಹಿಸಿದ್ದೇವೆ."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "ಅನಿರೀಕ್ಷಿತ ದೋಷ ಸಂಭವಿಸಿದೆ."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "ಐಟಂ ಮಾಹಿತಿ"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "ಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ."
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "ಪರಿಶೀಲನಾ ಕೋಡ್‌ಗಳು"
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "ಪರಿಶೀಲನೆ ಕೋಡ್ ಅಗತ್ಯವಿದೆ."
   },
   "continue": {
-    "message": "Continue"
+    "message": "ಮುಂದುವರಿಸಿ"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "ನಿಮ್ಮ ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್‌ನಿಂದ 6 ಅಂಕಿಯ ಪರಿಶೀಲನಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "$EMAIL$ಗೆ ಇಮೇಲ್ ಮಾಡಲಾದ 6 ಅಂಕಿಯ ಪರಿಶೀಲನಾ ಕೋಡ್ ಅನ್ನು ನಮೂದಿಸಿ.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -552,7 +552,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "ಪರಿಶೀಲನೆ ಇಮೇಲ್ $EMAIL$ ಗೆ ಕಳುಹಿಸಲಾಗಿದೆ.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -561,213 +561,213 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "ನನ್ನನ್ನು ನೆನಪಿನಲ್ಲಿ ಇಡು"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "ಪರಿಶೀಲನೆ ಕೋಡ್ ಇಮೇಲ್ ಅನ್ನು ಮತ್ತೆ ಕಳುಹಿಸಿ"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "ಮತ್ತೊಂದು ಎರಡು-ಹಂತದ ಲಾಗಿನ್ ವಿಧಾನವನ್ನು ಬಳಸಿ"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "ನಿಮ್ಮ ಯುಬಿಕಿಯನ್ನು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ನ ಯುಎಸ್‌ಬಿ ಪೋರ್ಟ್ಗೆ ಸೇರಿಸಿ, ನಂತರ ಅದರ ಗುಂಡಿಯನ್ನು ಸ್ಪರ್ಶಿಸಿ."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‌ನ ಯುಎಸ್‌ಬಿ ಪೋರ್ಟ್ಗೆ ನಿಮ್ಮ ಭದ್ರತಾ ಕೀಲಿಯನ್ನು ಸೇರಿಸಿ. ಅದು ಬಟನ್ ಹೊಂದಿದ್ದರೆ, ಅದನ್ನು ಸ್ಪರ್ಶಿಸಿ."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "ನಿಮ್ಮ ಎಲ್ಲಾ ಎರಡು ಅಂಶ ಪೂರೈಕೆದಾರರಿಗೆ ಪ್ರವೇಶವನ್ನು ಕಳೆದುಕೊಂಡಿದ್ದೀರಾ? ನಿಮ್ಮ ಖಾತೆಯಿಂದ ಎಲ್ಲಾ ಎರಡು ಅಂಶ ಪೂರೈಕೆದಾರರನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು ನಿಮ್ಮ ಮರುಪಡೆಯುವಿಕೆ ಕೋಡ್ ಬಳಸಿ."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "ಮರುಪಡೆಯುವಿಕೆ ಕೋಡ್"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "ಸಮಯ ಆಧಾರಿತ ಪರಿಶೀಲನಾ ಕೋಡ್‌ಗಳನ್ನು ರಚಿಸಲು ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಬಳಸಿ (ಆಥಿ ಅಥವಾ ಗೂಗಲ್ ಅಥೆಂಟಿಕೇಟರ್).",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "ಯುಬಿಕೆ ಒಟಿಪಿ ಭದ್ರತಾ ಕೀ"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಪ್ರವೇಶಿಸಲು ಯುಬಿಕೆ ಬಳಸಿ. ಯುಬಿಕೆ 4, 4 ನ್ಯಾನೋ, 4 ಸಿ ಮತ್ತು ಎನ್ಇಒ ಸಾಧನಗಳೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "ಡ್ಯುಯೊ ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್, ಎಸ್‌ಎಂಎಸ್, ಫೋನ್ ಕರೆ ಅಥವಾ ಯು 2 ಎಫ್ ಭದ್ರತಾ ಕೀಲಿಯನ್ನು ಬಳಸಿಕೊಂಡು ಡ್ಯುಯೊ ಸೆಕ್ಯುರಿಟಿಯೊಂದಿಗೆ ಪರಿಶೀಲಿಸಿ.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "ಡ್ಯುಯೊ ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್, ಎಸ್‌ಎಂಎಸ್, ಫೋನ್ ಕರೆ ಅಥವಾ ಯು 2 ಎಫ್ ಭದ್ರತಾ ಕೀಲಿಯನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಸಂಸ್ಥೆಗಾಗಿ ಡ್ಯುಯೊ ಸೆಕ್ಯುರಿಟಿಯೊಂದಿಗೆ ಪರಿಶೀಲಿಸಿ.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಪ್ರವೇಶಿಸಲು ಯಾವುದೇ ವೆಬ್‌ಆಥ್ನ್ ಸಕ್ರಿಯಗೊಳಿಸಿದ ಭದ್ರತಾ ಕೀಲಿಯನ್ನು ಬಳಸಿ."
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "ಇಮೇಲ್"
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "ಪರಿಶೀಲನೆ ಕೋಡ್‌ಗಳನ್ನು ನಿಮಗೆ ಇಮೇಲ್ ಮಾಡಲಾಗುತ್ತದೆ."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "ಲಾಗಿನ್ ಲಭ್ಯವಿಲ್ಲ"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "ಈ ಖಾತೆಯು ಎರಡು-ಹಂತದ ಲಾಗಿನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿದೆ, ಆದಾಗ್ಯೂ, ಕಾನ್ಫಿಗರ್ ಮಾಡಲಾದ ಎರಡು-ಹಂತದ ಪೂರೈಕೆದಾರರಲ್ಲಿ ಯಾರೂ ಈ ವೆಬ್ ಬ್ರೌಸರ್‌ನಿಂದ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "ಸಾಧನಗಳಲ್ಲಿ (ಅಥೆಂಟಿಕೇಟರ್ ಅಪ್ಲಿಕೇಶನ್‌ನಂತಹ) ಉತ್ತಮವಾಗಿ ಬೆಂಬಲಿತವಾಗಿರುವ ಹೆಚ್ಚುವರಿ ಪೂರೈಕೆದಾರರನ್ನು ದಯವಿಟ್ಟು ಸೇರಿಸಿ."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "ಎರಡು ಹಂತದ ಲಾಗಿನ್ ಆಯ್ಕೆಗಳು"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "ಸ್ವಯಂ ಆತಿಥೇಯ ಪರಿಸರ"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+    "message": "ನಿಮ್ಮ ಆನ್-ಪ್ರಮೇಯ ಹೋಸ್ಟ್ ಮಾಡಿದ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಸ್ಥಾಪನೆಯ ಮೂಲ URL ಅನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸಿ."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "ಕಸ್ಟಮ್ ಪರಿಸರ"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "ಸುಧಾರಿತ ಬಳಕೆದಾರರಿಗಾಗಿ. ನೀವು ಪ್ರತಿ ಸೇವೆಯ ಮೂಲ URL ಅನ್ನು ಸ್ವತಂತ್ರವಾಗಿ ನಿರ್ದಿಷ್ಟಪಡಿಸಬಹುದು."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "ಸರ್ವರ್ URL"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "API ಸರ್ವರ್ URL"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "ವೆಬ್ ವಾಲ್ಟ್ ಸರ್ವರ್ URL"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "ಗುರುತಿನ ಸರ್ವರ್ URL"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "ಅಧಿಸೂಚನೆಗಳು ಸರ್ವರ್ URL"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "ಚಿಹ್ನೆಗಳು ಸರ್ವರ್ URL"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "ಪರಿಸರ URL ಗಳನ್ನು ಉಳಿಸಲಾಗಿದೆ."
   },
   "ok": {
-    "message": "Ok"
+    "message": "ಸರಿ"
   },
   "yes": {
-    "message": "Yes"
+    "message": "ಹೌದು"
   },
   "no": {
-    "message": "No"
+    "message": "ಇಲ್ಲ"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ಬದಲಿಸಿ"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "ವೈಶಿಷ್ಟ್ಯ ಲಭ್ಯವಿಲ್ಲ"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "ಲಾಗ್ ಔಟ್"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "ನಿಮ್ಮ ಲಾಗಿನ್ ಸೆಷನ್ ಅವಧಿ ಮೀರಿದೆ."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "ಲಾಗ್ ಔಟ್ ಮಾಡಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "ಲಾಗ್ ಔಟ್"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "ಹೊಸ ಲಾಗಿನ್ ಸೇರಿಸಿ"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "ಐಟಂ ಸೇರಿಸಿ"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "ಹೊಸ ಫೋಲ್ಡರ್ ಸೇರಿಸಿ"
   },
   "view": {
-    "message": "View"
+    "message": "ವೀಕ್ಷಣೆ"
   },
   "account": {
-    "message": "Account"
+    "message": "ಖಾತೆ"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "ಲೋಡ್‌ಆಗುತ್ತಿದೆ..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "ಈಗ ಲಾಕ್ ಮಾಡಿ"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "ಪಾಸ್ವರ್ಡ್ ಜನರೇಟರ್"
   },
   "emailUs": {
-    "message": "Email Us"
+    "message": "ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ"
   },
   "visitOurWebsite": {
-    "message": "Visit Our Website"
+    "message": "ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ ಅನ್ನು ಭೇಟಿಮಾಡಿ"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "ದೋಷ ವರದಿಯನ್ನು ಫೈಲ್ ಮಾಡಿ"
   },
   "blog": {
-    "message": "Blog"
+    "message": "ಬ್ಲಾಗ್"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "ನಮ್ಮನ್ನು ಅನುಸರಿಸಿ"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "ಸಿಂಕ್ ವಾಲ್ಟ್"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಬದಲಾಯಿಸಿ"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನೀವು bitwarden.com ವೆಬ್ ವಾಲ್ಟ್‌ನಲ್ಲಿ ಬದಲಾಯಿಸಬಹುದು. ನೀವು ಈಗ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಲು ಬಯಸುವಿರಾ?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "ಫಿಂಗರ್ಪ್ರಿಂಟ್ ಫ್ರೇಸ್",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "ನಿಮ್ಮ ಖಾತೆಯ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ನುಡಿಗಟ್ಟು",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "ವೆಬ್ ಚಾವಣಿಗೆ ಹೋಗಿ"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್ ಪಡೆಯಿರಿ"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "ಬ್ರೌಸರ್ ವಿಸ್ತರಣೆ ಪಡೆಯಿರಿ"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "ಒಡವಾಗುನಂಟು ಪೂರ್ಣಗೊಂಡಿದೆ"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "ಸಿಂಕ್ ವಿಫಲಗೊಂಡಿದೆ"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "ಅನ್‌ಲಾಕ್ ಮಾಡಿ"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "$HOSTNAME$ನಲ್ಲಿ $EMAIL$ಆಗಿ ಲಾಗ್ ಇನ್ ಮಾಡಲಾಗಿದೆ.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -780,174 +780,174 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "ಅಮಾನ್ಯ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "ಭದ್ರತಾ ಕೀ, ದೃಢೀಕರಣ ಅಪ್ಲಿಕೇಶನ್, ಎಸ್‌ಎಂಎಸ್, ಫೋನ್ ಕರೆ ಅಥವಾ ಇಮೇಲ್‌ನಂತಹ ಮತ್ತೊಂದು ಸಾಧನದೊಂದಿಗೆ ನಿಮ್ಮ ಲಾಗಿನ್ ಅನ್ನು ಪರಿಶೀಲಿಸುವ ಅಗತ್ಯವಿರುವ ಎರಡು ಹಂತದ ಲಾಗಿನ್ ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಹೆಚ್ಚು ಸುರಕ್ಷಿತಗೊಳಿಸುತ್ತದೆ. ಬಿಟ್ವಾರ್ಡೆನ್.ಕಾಮ್ ವೆಬ್ ವಾಲ್ಟ್ನಲ್ಲಿ ಎರಡು-ಹಂತದ ಲಾಗಿನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬಹುದು. ನೀವು ಈಗ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಲು ಬಯಸುವಿರಾ?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "ಎರಡು ಹಂತದ ಲಾಗಿನ್"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "ವಾಲ್ಟ್ ಕಾಲಾವಧಿ"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "ನಿಮ್ಮ ಕಮಾನು ಸಮಯ ಮೀರಲಿ ಮತ್ತು ಆಯ್ದ ಕ್ರಮವನ್ನು ನಿರ್ವಹಿಸುವಾಗ ಆರಿಸಿಕೊಳ್ಳಿ."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "ತಕ್ಷಣ"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "೧೦ ಕ್ಷಣ"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "೨0 ಸೆಕೆಂಡುಗಳು"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "೩೦ ಕ್ಷಣ"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "೧ ನಿಮಿಷ"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "೨ ನಿಮಿಷಗಳು"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "೫ ನಿಮಿಷಗಳು"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "೧೫ ನಿಮಿಷಗಳು"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 ನಿಮಿಷಗಳು"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "೧ ಗಂಟೆ"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "೪ ಗಂಟೆಗಳು"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "ಸಿಸ್ಟಮ್ ಐಡಲ್‌ನಲ್ಲಿ"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "ಸಿಸ್ಟಮ್ ಸ್ಲೀಪ್‌ನಲ್ಲಿ"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "ಸಿಸ್ಟಮ್ ಲಾಕ್‌ನಲ್ಲಿ"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "ಅಪ್ಲಿಕೇಶನ್ ಮರುಪ್ರಾರಂಭದಲ್ಲಿ"
   },
   "never": {
-    "message": "Never"
+    "message": "ಇಲ್ಲವೇ ಇಲ್ಲ"
   },
   "security": {
-    "message": "Security"
+    "message": "ಭದ್ರತೆ"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "ಕ್ಲಿಪ್‌ಬೋರ್ಡ್ ತೆರವುಗೊಳಿಸಿ",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ನಿಂದ ನಕಲಿಸಿದ ಮೌಲ್ಯಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ತೆರವುಗೊಳಿಸಿ.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "ವೆಬ್‌ಸೈಟ್ ಚಿಹ್ನೆಗಳನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ"
   },
   "disableFaviconDesc": {
-    "message": "Website Icons provide a recognizable image next to each login item in your vault."
+    "message": "ವೆಬ್‌ಸೈಟ್ ಐಕಾನ್‌ಗಳು ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿರುವ ಪ್ರತಿ ಲಾಗಿನ್ ಐಟಂನ ಪಕ್ಕದಲ್ಲಿ ಗುರುತಿಸಬಹುದಾದ ಚಿತ್ರವನ್ನು ಒದಗಿಸುತ್ತದೆ."
   },
   "enableMinToTray": {
-    "message": "Minimize to Tray Icon"
+    "message": "ಟ್ರೇ ಐಕಾನ್‌ಗೆ ಕಡಿಮೆ ಮಾಡಿ"
   },
   "enableMinToTrayDesc": {
-    "message": "When minimizing the window, show an icon in the system tray instead."
+    "message": "ವಿಂಡೋವನ್ನು ಕಡಿಮೆ ಮಾಡುವಾಗ, ಸಿಸ್ಟಮ್ ಟ್ರೇನಲ್ಲಿ ಐಕಾನ್ ಅನ್ನು ತೋರಿಸಿ."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "ಮೆನು ಬಾರ್‌ಗೆ ಕಡಿಮೆ ಮಾಡಿ"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "ವಿಂಡೋವನ್ನು ಕಡಿಮೆ ಮಾಡುವಾಗ, ಬದಲಿಗೆ ಮೆನು ಬಾರ್‌ನಲ್ಲಿ ಐಕಾನ್ ತೋರಿಸಿ."
   },
   "enableCloseToTray": {
-    "message": "Close to Tray Icon"
+    "message": "ಟ್ರೇ ಐಕಾನ್ ಹತ್ತಿರ"
   },
   "enableCloseToTrayDesc": {
-    "message": "When closing the window, show an icon in the system tray instead."
+    "message": "ವಿಂಡೋವನ್ನು ಮುಚ್ಚುವಾಗ, ಸಿಸ್ಟಮ್ ಟ್ರೇನಲ್ಲಿ ಐಕಾನ್ ಅನ್ನು ತೋರಿಸಿ."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "ಮೆನು ಬಾರ್‌ಗೆ ಹತ್ತಿರದಲ್ಲಿದೆ"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "ವಿಂಡೋವನ್ನು ಮುಚ್ಚುವಾಗ, ಬದಲಿಗೆ ಮೆನು ಬಾರ್‌ನಲ್ಲಿ ಐಕಾನ್ ತೋರಿಸಿ."
   },
   "enableTray": {
-    "message": "Enable Tray Icon"
+    "message": "ಟ್ರೇ ಐಕಾನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"
   },
   "enableTrayDesc": {
-    "message": "Always show an icon in the system tray."
+    "message": "ಸಿಸ್ಟಮ್ ಟ್ರೇನಲ್ಲಿ ಯಾವಾಗಲೂ ಐಕಾನ್ ತೋರಿಸಿ."
   },
   "startToTray": {
-    "message": "Start To Tray Icon"
+    "message": "ಐಕಾನ್ ಟ್ರೇ ಮಾಡಲು ಪ್ರಾರಂಭಿಸಿ"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮೊದಲು ಪ್ರಾರಂಭಿಸಿದಾಗ, ಸಿಸ್ಟಮ್ ಟ್ರೇನಲ್ಲಿ ಐಕಾನ್ ಅನ್ನು ಮಾತ್ರ ತೋರಿಸಿ."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "ಮೆನು ಬಾರ್‌ಗೆ ಪ್ರಾರಂಭಿಸಿ"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮೊದಲು ಪ್ರಾರಂಭಿಸಿದಾಗ, ಮೆನು ಬಾರ್‌ನಲ್ಲಿ ಐಕಾನ್ ಅನ್ನು ಮಾತ್ರ ತೋರಿಸಿ."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "ಲಾಗಿನ್‌ನಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "ಲಾಗಿನ್‌ನಲ್ಲಿ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಡೆಸ್ಕ್‌ಟಾಪ್ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪ್ರಾರಂಭಿಸಿ."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "ಯಾವಾಗಲೂ ಡಾಕ್‌ನಲ್ಲಿ ತೋರಿಸಿ"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "ಮೆನು ಬಾರ್‌ಗೆ ಕಡಿಮೆಗೊಳಿಸಿದಾಗಲೂ ಡಾಕ್‌ನಲ್ಲಿ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಐಕಾನ್ ತೋರಿಸಿ."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "ಟ್ರೇ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವುದನ್ನು ದೃಢೀಕರಿಸಿ"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "ಈ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ಇತರ ಎಲ್ಲಾ ಟ್ರೇ ಸಂಬಂಧಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಹ ನಿಷ್ಕ್ರಿಯಗೊಳಿಸುತ್ತದೆ."
   },
   "language": {
-    "message": "Language"
+    "message": "ಭಾಷೆ"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "ಅಪ್ಲಿಕೇಶನ್ ಬಳಸುವ ಭಾಷೆಯನ್ನು ಬದಲಾಯಿಸಿ. ಮರುಪ್ರಾರಂಭಿಸುವ ಅಗತ್ಯವಿದೆ."
   },
   "theme": {
-    "message": "Theme"
+    "message": "ಥೀಮ್ಸ್"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "ಅಪ್ಲಿಕೇಶನ್‌ನ ಬಣ್ಣ ಥೀಮ್ ಅನ್ನು ಬದಲಾಯಿಸಿ."
   },
   "dark": {
-    "message": "Dark",
+    "message": "ಡಾರ್ಕ್",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "ಬೆಳಕು",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "ನಕಲಿಸಿ",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "ನವೀಕರಣೆಗಳಿಗಾಗಿ ಪರೀಕ್ಷಿಸಿ"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "ಸಂವಹನ $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -956,10 +956,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "ನವೀಕರಿಸಲು ಮರುಪ್ರಾರಂಭಿಸಿ"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
+    "message": "ಆವೃತ್ತಿ $VERSION_NUM$ ಸ್ಥಾಪಿಸಲು ಸಿದ್ಧವಾಗಿದೆ. ಅನುಸ್ಥಾಪನೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು ನೀವು ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಬೇಕು. ನೀವು ಈಗ ಮರುಪ್ರಾರಂಭಿಸಲು ಮತ್ತು ನವೀಕರಿಸಲು ಬಯಸುವಿರಾ?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -968,87 +968,87 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "ನವೀಕರಣ ಲಭ್ಯವಿದೆ"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "ಒಂದು ಅಪ್ಡೇಟ್ ಕಂಡುಬಂದಿದೆ. ನೀವು ಈಗ ಅದನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಲು ಬಯಸುತ್ತೀರಾ?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "ಪುನರಾರಂಭ"
   },
   "later": {
-    "message": "Later"
+    "message": "ನಂತರ"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "ಯಾವುದೇ ನವೀಕರಣಗಳು ಪ್ರಸ್ತುತ ಲಭ್ಯವಿಲ್ಲ. ನೀವು ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಯನ್ನು ಬಳಸುತ್ತಿರುವಿರಿ."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "ದೋಷವನ್ನು ನವೀಕರಿಸಿ"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "ಅಪರಿಚಿತ"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "ಬಳಕೆಹೆಸರು ನಕಲಿಸು"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "ನಕಲು ಸಂಖ್ಯೆ",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "ಭದ್ರತಾ ಕೋಡ್ ಅನ್ನು ನಕಲಿಸಿ",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "ಪ್ರೀಮಿಯಂ ಸದಸ್ಯತ್ವ"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "ಸದಸ್ಯತ್ವವನ್ನು ನಿರ್ವಹಿಸಿ"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "ನಿಮ್ಮ ಸದಸ್ಯತ್ವವನ್ನು ನೀವು bitwarden.com ವೆಬ್ ವಾಲ್ಟ್‌ನಲ್ಲಿ ನಿರ್ವಹಿಸಬಹುದು. ನೀವು ಈಗ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಲು ಬಯಸುವಿರಾ?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "ಸದಸ್ಯತ್ವವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "ನೀವು ಪ್ರಸ್ತುತ ಪ್ರೀಮಿಯಂ ಸದಸ್ಯರಲ್ಲ."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "ಪ್ರೀಮಿಯಂ ಸದಸ್ಯತ್ವಕ್ಕಾಗಿ ಸೈನ್ ಅಪ್ ಮಾಡಿ ಮತ್ತು ಪಡೆಯಿರಿ:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB encrypted storage for file attachments."
+    "message": "ಫೈಲ್ ಲಗತ್ತುಗಳಿಗಾಗಿ 1 ಜಿಬಿ ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿದ ಸಂಗ್ರಹ."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "ಹೆಚ್ಚುವರಿ ಎರಡು-ಹಂತದ ಲಾಗಿನ್ ಆಯ್ಕೆಗಳಾದ ಯೂಬಿಕೆ, ಎಫ್‌ಐಡಿಒ ಯು 2 ಎಫ್, ಮತ್ತು ಡ್ಯುವೋ."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಅನ್ನು ಸುರಕ್ಷಿತವಾಗಿರಿಸಲು ಪಾಸ್ವರ್ಡ್ ನೈರ್ಮಲ್ಯ, ಖಾತೆ ಆರೋಗ್ಯ ಮತ್ತು ಡೇಟಾ ಉಲ್ಲಂಘನೆ ವರದಿಗಳು."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿನ ಲಾಗಿನ್‌ಗಳಿಗಾಗಿ TOTP ಪರಿಶೀಲನಾ ಕೋಡ್ (2FA) ಜನರೇಟರ್."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "ಆದ್ಯತೆಯ ಗ್ರಾಹಕ ಬೆಂಬಲ."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "ಎಲ್ಲಾ ಭವಿಷ್ಯದ ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳು. ಹೆಚ್ಚು ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "ಪ್ರೀಮಿಯಂ ಖರೀದಿಸಿ"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "ನೀವು ಬಿಟ್ವಾರ್ಡೆನ್.ಕಾಮ್ ವೆಬ್ ವಾಲ್ಟ್ನಲ್ಲಿ ಪ್ರೀಮಿಯಂ ಸದಸ್ಯತ್ವವನ್ನು ಖರೀದಿಸಬಹುದು. ನೀವು ಈಗ ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಲು ಬಯಸುವಿರಾ?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "ನೀವು ಪ್ರೀಮಿಯಂ ಸದಸ್ಯರಾಗಿದ್ದೀರಿ!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "ಬಿಟ್ವಾರ್ಡೆನ್ ಅವರನ್ನು ಬೆಂಬಲಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "ಎಲ್ಲವೂ ಕೇವಲ $PRICE$ / ವರ್ಷಕ್ಕೆ!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1057,84 +1057,84 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "ರಿಫ್ರೆಶ್ ಪೂರ್ಣಗೊಂಡಿದೆ"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "ಪಾಸ್ವರ್ಡ್ ಇತಿಹಾಸ"
   },
   "clear": {
-    "message": "Clear",
+    "message": "ಕ್ಲಿಯರ್‌",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "There are no passwords to list."
+    "message": "ಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಪಾಸ್ವರ್ಡ್ಗಳು ಇಲ್ಲ."
   },
   "undo": {
-    "message": "Undo"
+    "message": "ರದ್ದುಮಾಡು"
   },
   "redo": {
-    "message": "Redo"
+    "message": "ಮತ್ತೆಮಾಡು"
   },
   "cut": {
-    "message": "Cut",
+    "message": "ಕತ್ತರಿಸು",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Paste",
+    "message": "ಅಂಟಿಸಿ",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Select All"
+    "message": "ಎಲ್ಲವನ್ನು ಆರಿಸು"
   },
   "zoomIn": {
-    "message": "Zoom In"
+    "message": "ಗಾತ್ರ ಹಿಗ್ಗಿಸಿ"
   },
   "zoomOut": {
-    "message": "Zoom Out"
+    "message": "ಗಾತ್ರ ಕುಗ್ಗಿಸಿ"
   },
   "resetZoom": {
-    "message": "Reset Zoom"
+    "message": "ಜೂಮ್ ಮರುಹೊಂದಿಸಿ"
   },
   "toggleFullScreen": {
-    "message": "Toggle Full Screen"
+    "message": "ಟಾಗಲ್ ಫುಲ್ ಸ್ಕ್ರೀನ್"
   },
   "reload": {
-    "message": "Reload"
+    "message": "ಮರುತುಂಬಿಸು"
   },
   "toggleDevTools": {
-    "message": "Toggle Developer Tools"
+    "message": "ಡೆವೆಲಪರ್ ಟೂಲ್ಸ್ನ ಸ್ವಿಚ್ ಮಾಡಿ"
   },
   "minimize": {
-    "message": "Minimize",
+    "message": "ಕನಿಷ್ಟ ಮಾಡಿ",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoom"
+    "message": "ಝೂಮ್"
   },
   "bringAllToFront": {
-    "message": "Bring All to Front",
+    "message": "ಎಲ್ಲಾವನ್ನು ಮುಂದೆ ತನ್ನಿ",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "ಬಿಟ್ವಾರ್ಡನ್ ಬಗ್ಗೆ"
   },
   "services": {
-    "message": "Services"
+    "message": "ಸೇವೆಗಳು"
   },
   "hideBitwarden": {
-    "message": "Hide Bitwarden"
+    "message": "ಬಿಟ್ವಾರ್ಡೆನ್ ಅನ್ನು ಮರೆಮಾಡಿ"
   },
   "hideOthers": {
-    "message": "Hide Others"
+    "message": "ಬೇರೆಲ್ಲವನ್ನೂ ಮರೆಮಾಚು"
   },
   "showAll": {
-    "message": "Show All"
+    "message": "ಎಲ್ಲಾ ತೋರಿಸಿ"
   },
   "quitBitwarden": {
-    "message": "Quit Bitwarden"
+    "message": "ಬಿಟ್ವಾರ್ಡೆನ್ ಬಿಟ್ಟುಬಿಡಿ"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ ನಕಲಿಸಲಾಗಿದೆ",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1144,16 +1144,16 @@
     }
   },
   "help": {
-    "message": "Help"
+    "message": "ಸಹಾಯ"
   },
   "window": {
-    "message": "Window"
+    "message": "ಕಿಟಕಿ"
   },
   "checkPassword": {
-    "message": "Check if password has been exposed."
+    "message": "ಪಾಸ್ವರ್ಡ್ ಬಹಿರಂಗಗೊಂಡಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ."
   },
   "passwordExposed": {
-    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
+    "message": "ಈ ಗುಪ್ತಪದವು ಡೇಟಾ ಉಲ್ಲಂಘನೆಯಲ್ಲಿ $VALUE$ ಮೌಲ್ಯವನ್ನು (ಗಳು) ಬಹಿರಂಗಪಡಿಸಲಾಗಿದೆ. ನೀವು ಅದನ್ನು ಬದಲಾಯಿಸಬೇಕು.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1162,273 +1162,273 @@
     }
   },
   "passwordSafe": {
-    "message": "This password was not found in any known data breaches. It should be safe to use."
+    "message": "ತಿಳಿದಿರುವ ಯಾವುದೇ ಡೇಟಾ ಉಲ್ಲಂಘನೆಗಳಲ್ಲಿ ಈ ಪಾಸ್‌ವರ್ಡ್ ಕಂಡುಬಂದಿಲ್ಲ. ಅದನ್ನು ಬಳಸಲು ಸುರಕ್ಷಿತವಾಗಿರಬೇಕು."
   },
   "baseDomain": {
-    "message": "Base domain"
+    "message": "ಮೂಲ ಡೊಮೇನ್"
   },
   "host": {
-    "message": "Host",
+    "message": "ಅತಿಥೆಯ",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Exact"
+    "message": "ನಿಖರವಾಗಿ"
   },
   "startsWith": {
-    "message": "Starts with"
+    "message": "ಇದರೊಂದಿಗೆ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ"
   },
   "regEx": {
-    "message": "Regular expression",
+    "message": "ನಿಯಮಿತ ಅಭಿವ್ಯಕ್ತಿ",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Match Detection",
+    "message": "ಹೊಂದಾಣಿಕೆ ಪತ್ತೆ",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Default match detection",
+    "message": "ಡೀಫಾಲ್ಟ್ ಪಂದ್ಯ ಪತ್ತೆ",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Toggle Options"
+    "message": "ಟಾಗಲ್ ಆಯ್ಕೆಗಳು"
   },
   "organization": {
-    "message": "Organization",
+    "message": "ಸಂಸ್ಥೆ",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Default"
+    "message": "ಡಿಫಾಲ್ಟ್"
   },
   "exit": {
-    "message": "Exit"
+    "message": "ನಿರ್ಗಮಿಸು"
   },
   "showHide": {
-    "message": "Show / Hide",
+    "message": "ತೋರಿಸು / ಮರೆಮಾಡಿ",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Hide to Tray"
+    "message": "ಟ್ರೇಗೆ ಮರೆಮಾಡಿ"
   },
   "alwaysOnTop": {
-    "message": "Always on Top",
+    "message": "ಯಾವಾಗಲೂ ಮೇಲೆ",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Updated",
+    "message": "ಅಪ್‌ಡೇಟ್",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Password Updated",
+    "message": "ಪಾಸ್ವರ್ಡ್ ನವೀಕರಿಸಲಾಗಿದೆ",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Export Vault"
+    "message": "ರಫ್ತು ವಾಲ್ಟ್"
   },
   "fileFormat": {
-    "message": "File Format"
+    "message": "ಕಡತದ ಮಾದರಿ"
   },
   "warning": {
-    "message": "WARNING",
+    "message": "ಎಚ್ಚರಿಕೆ",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "ವಾಲ್ಟ್ ರಫ್ತು ಖಚಿತಪಡಿಸಿ"
   },
   "exportWarningDesc": {
-    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
+    "message": "ಈ ರಫ್ತು ನಿಮ್ಮ ವಾಲ್ಟ್ ಡೇಟಾವನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡದ ಸ್ವರೂಪದಲ್ಲಿ ಒಳಗೊಂಡಿದೆ. ನೀವು ರಫ್ತು ಮಾಡಿದ ಫೈಲ್ ಅನ್ನು ಅಸುರಕ್ಷಿತ ಚಾನಲ್‌ಗಳಲ್ಲಿ (ಇಮೇಲ್ ನಂತಹ) ಸಂಗ್ರಹಿಸಬಾರದು ಅಥವಾ ಕಳುಹಿಸಬಾರದು. ನೀವು ಅದನ್ನು ಬಳಸಿದ ನಂತರ ಅದನ್ನು ಅಳಿಸಿ."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "ಈ ರಫ್ತು ನಿಮ್ಮ ಖಾತೆಯ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಕೀಲಿಯನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡುತ್ತದೆ. ನಿಮ್ಮ ಖಾತೆಯ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಕೀಲಿಯನ್ನು ನೀವು ಎಂದಾದರೂ ತಿರುಗಿಸಿದರೆ ನೀವು ಈ ರಫ್ತು ಫೈಲ್ ಅನ್ನು ಡೀಕ್ರಿಪ್ಟ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗದ ಕಾರಣ ನೀವು ಮತ್ತೆ ರಫ್ತು ಮಾಡಬೇಕು."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "ಖಾತೆ ಎನ್‌ಕ್ರಿಪ್ಶನ್ ಕೀಗಳು ಪ್ರತಿ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಬಳಕೆದಾರ ಖಾತೆಗೆ ಅನನ್ಯವಾಗಿವೆ, ಆದ್ದರಿಂದ ನೀವು ಎನ್‌ಕ್ರಿಪ್ಟ್ ಮಾಡಿದ ರಫ್ತು ಬೇರೆ ಖಾತೆಗೆ ಆಮದು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ."
   },
   "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಡೇಟಾವನ್ನು ರಫ್ತು ಮಾಡಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ನಮೂದಿಸಿ."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "ನೀವು ಯಾವುದೇ ಸಂಸ್ಥೆಗಳಿಗೆ ಸೇರಿಲ್ಲ. ಇತರ ಬಳಕೆದಾರರೊಂದಿಗೆ ವಸ್ತುಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಹಂಚಿಕೊಳ್ಳಲು ಸಂಘಟನೆಗಳು ನಿಮಗೆ ಅವಕಾಶ ನೀಡುತ್ತವೆ."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "ಪಟ್ಟಿ ಮಾಡಲು ಯಾವುದೇ ಸಂಗ್ರಹಗಳಿಲ್ಲ."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "ಮಾಲೀಕತ್ವ"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "ಈ ಐಟಂ ಅನ್ನು ಯಾರು ಹೊಂದಿದ್ದಾರೆ?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "ಬಲಶಾಲಿ",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "ಒಳ್ಳೆಯ",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "ದುರ್ಬಲ",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "ದುರ್ಬಲ ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "ನೀವು ಆಯ್ಕೆ ಮಾಡಿದ ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ದುರ್ಬಲವಾಗಿದೆ. ನಿಮ್ಮ ಬಿಟ್ವರ್ಡ್ ಖಾತೆಯನ್ನು ಸರಿಯಾಗಿ ರಕ್ಷಿಸಲು ನೀವು ಬಲವಾದ ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ (ಅಥವಾ ಪಾಸ್ಫ್ರೇಸ್) ಅನ್ನು ಬಳಸಬೇಕು. ಈ ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ನೀವು ಬಳಸಲು ಬಯಸುತ್ತೀರಾ?"
   },
   "pin": {
-    "message": "PIN",
+    "message": "ಪಿನ್",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Unlock with PIN"
+    "message": "ಪಿನ್‌ನೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ"
   },
   "setYourPinCode": {
-    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
+    "message": "ಬಿಟ್‌ವಾರ್ಡೆನ್ ಅನ್ಲಾಕ್ ಮಾಡಲು ನಿಮ್ಮ ಪಿನ್ ಕೋಡ್ ಅನ್ನು ಹೊಂದಿಸಿ. ನೀವು ಎಂದಾದರೂ ಅಪ್ಲಿಕೇಶನ್‌ನಿಂದ ಸಂಪೂರ್ಣವಾಗಿ ಲಾಗ್ ಔಟ್ ಆಗಿದ್ದರೆ ನಿಮ್ಮ ಪಿನ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮರುಹೊಂದಿಸಲಾಗುತ್ತದೆ."
   },
   "pinRequired": {
-    "message": "PIN code is required."
+    "message": "ಪಿನ್ ಕೋಡ್ ಅಗತ್ಯವಿದೆ."
   },
   "invalidPin": {
-    "message": "Invalid PIN code."
+    "message": "ಅಮಾನ್ಯ ಪಿನ್ ಕೋಡ್."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಪಿನ್ ಕೋಡ್ ಪರಿಶೀಲಿಸಿ."
   },
   "unlockWithWindowsHello": {
-    "message": "Unlock with Windows Hello"
+    "message": "ವಿಂಡೋಸ್ ಹಲೋನೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "ಬಿಟ್‌ವಾರ್ಡೆನ್‌ಗಾಗಿ ಪರಿಶೀಲಿಸಿ."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "ಟಚ್ ಐಡಿ ಯೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ"
   },
   "touchIdConsentMessage": {
-    "message": "unlock your vault"
+    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಅನ್ನು ಅನ್ಲಾಕ್ ಮಾಡಿ"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "ಪ್ರಾರಂಭದಲ್ಲಿ ವಿಂಡೋಸ್ ಹಲೋಗಾಗಿ ಕೇಳಬೇಡಿ."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "ಪ್ರಾರಂಭದಲ್ಲಿ ಟಚ್ ಐಡಿಗಾಗಿ ಕೇಳಬೇಡಿ."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Lock with master password on restart"
+    "message": "ಮರುಪ್ರಾರಂಭಿಸಿದಾಗ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್‌ನೊಂದಿಗೆ ಲಾಕ್ ಮಾಡಿ"
   },
   "preferences": {
-    "message": "Preferences"
+    "message": "ಆದ್ಯತೆಗಳು"
   },
   "enableMenuBar": {
-    "message": "Enable Menu Bar Icon"
+    "message": "ಮೆನು ಬಾರ್ ಐಕಾನ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"
   },
   "enableMenuBarDesc": {
-    "message": "Always show an icon in the menu bar."
+    "message": "ಮೆನು ಬಾರ್‌ನಲ್ಲಿ ಯಾವಾಗಲೂ ಐಕಾನ್ ತೋರಿಸಿ."
   },
   "hideToMenuBar": {
-    "message": "Hide to Menu Bar"
+    "message": "ಮೆನು ಬಾರ್‌ಗೆ ಮರೆಮಾಡಿ"
   },
   "selectOneCollection": {
-    "message": "You must select at least one collection."
+    "message": "ನೀವು ಕನಿಷ್ಠ ಒಂದು ಸಂಗ್ರಹವನ್ನು ಆರಿಸಬೇಕು."
   },
   "premiumUpdated": {
-    "message": "You've upgraded to premium."
+    "message": "ನೀವು ಪ್ರೀಮಿಯಂಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿದ್ದೀರಿ."
   },
   "restore": {
-    "message": "Restore"
+    "message": "ಪುನಸ್ಥಾಪಿಸಿ"
   },
   "premiumManageAlertAppStore": {
-    "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
+    "message": "ಆಪ್ ಸ್ಟೋರ್‌ನಿಂದ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ನೀವು ನಿರ್ವಹಿಸಬಹುದು. ನೀವು ಈಗ ಆಪ್ ಸ್ಟೋರ್‌ಗೆ ಭೇಟಿ ನೀಡಲು ಬಯಸುವಿರಾ?"
   },
   "legal": {
-    "message": "Legal",
+    "message": "ಕಾನೂನು",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "ಸೇವಾ ನಿಯಮಗಳು"
   },
   "privacyPolicy": {
-    "message": "Privacy Policy"
+    "message": "ಗೌಪ್ಯತಾ ನೀತಿ"
   },
   "unsavedChangesConfirmation": {
-    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
+    "message": "ನೀವು ಬಿಡಲು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ? ನೀವು ಈಗ ಹೊರಟು ಹೋದರೆ ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಮಾಹಿತಿಯನ್ನು ಉಳಿಸಲಾಗುವುದಿಲ್ಲ."
   },
   "unsavedChangesTitle": {
-    "message": "Unsaved Changes"
+    "message": "ಉಳಿಸದ ಬದಲಾವಣೆಗಳು"
   },
   "clone": {
-    "message": "Clone"
+    "message": "ಕ್ಲೋನ್"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "One or more organization policies are affecting your generator settings."
+    "message": "ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಸಂಸ್ಥೆ ನೀತಿಗಳು ನಿಮ್ಮ ಜನರೇಟರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುತ್ತವೆ."
   },
   "vaultTimeoutAction": {
-    "message": "Vault Timeout Action"
+    "message": "ವಾಲ್ಟ್ ಸಮಯ ಮೀರುವ ಕ್ರಿಯೆ"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "A locked vault requires that you re-enter your master password to access it again."
+    "message": "ಲಾಕ್ ಮಾಡಿದ ವಾಲ್ಟ್‌ಗೆ ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮತ್ತೆ ಪ್ರವೇಶಿಸಲು ನೀವು ಅದನ್ನು ಮರು ನಮೂದಿಸುವ ಅಗತ್ಯವಿದೆ."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "A logged out vault requires that you re-authenticate to access it again."
+    "message": "ಲಾಗ್ out ಟ್ ವಾಲ್ಟ್‌ಗೆ ನೀವು ಅದನ್ನು ಮತ್ತೆ ಪ್ರವೇಶಿಸಲು ಮರು ದೃಢೀಕರಿಸುವ ಅಗತ್ಯವಿದೆ."
   },
   "lock": {
-    "message": "Lock",
+    "message": "ಲಾಕ್‌",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Trash",
+    "message": "ಅನುಪಯುಕ್ತ",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "ಅನುಪಯುಕ್ತವನ್ನು ಹುಡುಕಿ"
   },
   "permanentlyDeleteItem": {
-    "message": "Permanently Delete Item"
+    "message": "ಐಟಂ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿ"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Are you sure you want to permanently delete this item?"
+    "message": "ಈ ಐಟಂ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanently Deleted item"
+    "message": "ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲಾದ ಐಟಂ"
   },
   "restoreItem": {
-    "message": "Restore Item"
+    "message": "ಐಟಂ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಿ"
   },
   "restoreItemConfirmation": {
-    "message": "Are you sure you want to restore this item?"
+    "message": "ಈ ಐಟಂ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "restoredItem": {
-    "message": "Restored Item"
+    "message": "ಐಟಂ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ"
   },
   "permanentlyDelete": {
-    "message": "Permanently Delete"
+    "message": "ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿ"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
+    "message": "ಲಾಗ್ out ಟ್ ಆಗುವುದರಿಂದ ನಿಮ್ಮ ವಾಲ್ಟ್‌ನ ಎಲ್ಲಾ ಪ್ರವೇಶವನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ ಮತ್ತು ಕಾಲಾವಧಿ ಅವಧಿಯ ನಂತರ ಆನ್‌ಲೈನ್ ದೃ hentic ೀಕರಣದ ಅಗತ್ಯವಿದೆ. ಈ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಬಳಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Timeout Action Confirmation"
+    "message": "ಕಾಲಾವಧಿ ಕ್ರಿಯೆಯ ದೃಢೀಕರಣ"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "ಎಂಟರ್‌ಪ್ರೈಸ್ ಏಕ ಸೈನ್-ಆನ್"
   },
   "setMasterPassword": {
-    "message": "Set Master Password"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಹೊಂದಿಸಿ"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "ಎಸ್‌ಎಸ್‌ಒನೊಂದಿಗೆ ಲಾಗಿನ್ ಆಗುವುದನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು, ದಯವಿಟ್ಟು ನಿಮ್ಮ ವಾಲ್ಟ್ ಅನ್ನು ಪ್ರವೇಶಿಸಲು ಮತ್ತು ರಕ್ಷಿಸಲು ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಹೊಂದಿಸಿ."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "ಹೊಸ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "ಹೊಸ ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಅನ್ನು ದೃಢೀಕರಣ"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಸಂಸ್ಥೆ ನೀತಿಗಳಿಗೆ ಈ ಕೆಳಗಿನ ಅವಶ್ಯಕತೆಗಳನ್ನು ಪೂರೈಸಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅಗತ್ಯವಿದೆ:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "$SCORE$ ನ ಕನಿಷ್ಠ ಸಂಕೀರ್ಣತೆಯ ಸ್ಕೋರ್",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1437,7 +1437,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "$LENGTH$ನ ಕನಿಷ್ಠ ಉದ್ದ",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1446,16 +1446,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Contain one or more uppercase characters"
+    "message": "ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ದೊಡ್ಡಕ್ಷರಗಳನ್ನು ಹೊಂದಿರುತ್ತದೆ"
   },
   "policyInEffectLowercase": {
-    "message": "Contain one or more lowercase characters"
+    "message": "ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಸಣ್ಣ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿರುತ್ತದೆ"
   },
   "policyInEffectNumbers": {
-    "message": "Contain one or more numbers"
+    "message": "ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಸಂಖ್ಯೆಗಳನ್ನು ಹೊಂದಿರುತ್ತದೆ"
   },
   "policyInEffectSpecial": {
-    "message": "Contain one or more of the following special characters $CHARS$",
+    "message": "ಕೆಳಗಿನ ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ವಿಶೇಷ ಅಕ್ಷರಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ: $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1464,165 +1464,165 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Your new master password does not meet the policy requirements."
+    "message": "ನಿಮ್ಮ ಹೊಸ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ನೀತಿಯ ಅವಶ್ಯಕತೆಗಳನ್ನು ಪೂರೈಸುವುದಿಲ್ಲ."
   },
   "acceptPolicies": {
-    "message": "By checking this box you agree to the following:"
+    "message": "ಈ ಪೆಟ್ಟಿಗೆಯನ್ನು ಪರಿಶೀಲಿಸುವ ಮೂಲಕ ನೀವು ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಒಪ್ಪುತ್ತೀರಿ:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "ಸೇವಾ ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತೆ ನೀತಿಯನ್ನು ಅಂಗೀಕರಿಸಲಾಗಿಲ್ಲ."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "ಬ್ರೌಸರ್ನಲ್ಲಿ ಬಯೋಮೆಟ್ರಿಕ್ಸ್ಗಾಗಿ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬಳಸಲಾಗುತ್ತದೆ."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "ದುರದೃಷ್ಟವಶಾತ್ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಇದೀಗ ಮ್ಯಾಕ್ ಆಪ್ ಸ್ಟೋರ್ ಆವೃತ್ತಿಯಲ್ಲಿ ಮಾತ್ರ ಬೆಂಬಲಿಸಲಾಗುತ್ತದೆ."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "ದುರದೃಷ್ಟವಶಾತ್ ವಿಂಡೋಸ್ ಸ್ಟೋರ್ ಆವೃತ್ತಿಯಲ್ಲಿ ಬ್ರೌಸರ್ ಏಕೀಕರಣವನ್ನು ಪ್ರಸ್ತುತ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "ಬ್ರೌಸರ್ ಏಕೀಕರಣಕ್ಕಾಗಿ ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "ನಿಮ್ಮ ಡೆಸ್ಕ್‌ಟಾಪ್ ಮತ್ತು ಬ್ರೌಸರ್ ನಡುವೆ ಲಿಂಕ್ ಅನ್ನು ಸ್ಥಾಪಿಸುವಾಗ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಪದಗುಚ್ ಕಾಯಂಗೊಳಿಸುವಿಕೆ ಅಗತ್ಯವಿರುವ ಮೂಲಕ ಹೆಚ್ಚುವರಿ ಭದ್ರತೆಯ ಪದರವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ. ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ, ಪ್ರತಿ ಬಾರಿ ಸಂಪರ್ಕವನ್ನು ಸ್ಥಾಪಿಸಿದಾಗ ಬಳಕೆದಾರರ ಹಸ್ತಕ್ಷೇಪ ಮತ್ತು ಪರಿಶೀಲನೆ ಅಗತ್ಯವಾಗಿರುತ್ತದೆ."
   },
   "approve": {
-    "message": "Approve"
+    "message": "ಅನುಮೋದಿಸಿದೆ"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "ಬ್ರೌಸರ್ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "ತೋರಿಸಿದ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಬ್ರೌಸರ್ ವಿಸ್ತರಣೆಯಲ್ಲಿ ತೋರಿಸಿರುವ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್‌ಗೆ ಹೋಲುತ್ತದೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "ಬಯೊಮಿಟ್ರಿಕ್ಸ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿಲ್ಲ"
   },
   "biometricsNotEnabledDesc": {
-    "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
+    "message": "ಬ್ರೌಸರ್ ಬಯೋಮೆಟ್ರಿಕ್ಸ್ ಮೊದಲು ಸೆಟ್ಟಿಂಗ್ಗಳಲ್ಲಿ ಡೆಸ್ಕ್ಟಾಪ್ ಬಯೋಮೆಟ್ರಿಕ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬೇಕಾಗುತ್ತದೆ."
   },
   "personalOwnershipSubmitError": {
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್ ಸುಳಿವು ನಿಮ್ಮ ಪಾಸ್‌ವರ್ಡ್‌ನಂತೆಯೇ ಇರಬಾರದು."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "ಸಂಸ್ಥೆಯ ನೀತಿಯು ನಿಮ್ಮ ಮಾಲೀಕತ್ವದ ಆಯ್ಕೆಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುತ್ತಿದೆ."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "ಎಲ್ಲಾ ಕಳುಹಿಸುತ್ತದೆ",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "ಫೈಲ್"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "ಪಠ್ಯ"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "ಹುಡುಕಾಟ ಕಳುಹಿಸುತ್ತದೆ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "ಕಳುಹಿಸು ಸಂಪಾದಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "ನನ್ನ ವಾಲ್ಟ್"
   },
   "text": {
-    "message": "Text"
+    "message": "ಪಠ್ಯ"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "ಅಳಿಸುವ ದಿನಾಂಕ"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "ಕಳುಹಿಸಿದ ದಿನಾಂಕ ಮತ್ತು ಸಮಯದ ಮೇಲೆ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಲಾಗುತ್ತದೆ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "ಮುಕ್ತಾಯ ದಿನಾಂಕ"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "ಹೊಂದಿಸಿದ್ದರೆ, ಈ ಕಳುಹಿಸುವಿಕೆಯ ಪ್ರವೇಶವು ನಿಗದಿತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯದ ಮೇಲೆ ಮುಕ್ತಾಯಗೊಳ್ಳುತ್ತದೆ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "ಗರಿಷ್ಠ ಪ್ರವೇಶ ಎಣಿಕೆ"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "ಹೊಂದಿಸಿದ್ದರೆ, ಗರಿಷ್ಠ ಪ್ರವೇಶ ಎಣಿಕೆ ತಲುಪಿದ ನಂತರ ಬಳಕೆದಾರರಿಗೆ ಈ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಪ್ರವೇಶಿಸಲು ಸಾಧ್ಯವಾಗುವುದಿಲ್ಲ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "ಪ್ರಸ್ತುತ ಪ್ರವೇಶ ಎಣಿಕೆ"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "ಇದನ್ನು ಕಳುಹಿಸುವುದನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಿ ಇದರಿಂದ ಯಾರೂ ಅದನ್ನು ಪ್ರವೇಶಿಸಲಾಗುವುದಿಲ್ಲ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "ಈ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಪ್ರವೇಶಿಸಲು ಬಳಕೆದಾರರಿಗೆ ಪಾಸ್‌ವರ್ಡ್ ಐಚ್ ಗತ್ಯವಿದೆ.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "ಈ ಕಳುಹಿಸುವ ಬಗ್ಗೆ ಖಾಸಗಿ ಟಿಪ್ಪಣಿಗಳು.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "ಲಿಂಕ್ ಕಳುಹಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "ಲಿಂಕ್ ಕಳುಹಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಪ್ರವೇಶಿಸುವಾಗ, ಪಠ್ಯವನ್ನು ಪೂರ್ವನಿಯೋಜಿತವಾಗಿ ಮರೆಮಾಡಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "ಕಳುಹಿಸು ರಚಿಸಲಾಗಿದೆ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "ಕಳುಹಿಸಿದ ಸಂಪಾದನೆ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "ಅಳಿಸಿದ ಕಳುಹಿಸಲಾಗಿದೆ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "ಹೊಸ ಪಾಸ್‌ವರ್ಡ್"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "ಇದು ಯಾವ ರೀತಿಯ ಕಳುಹಿಸುತ್ತದೆ?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "ಕಳುಹಿಸು ರಚಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "ನೀವು ಕಳುಹಿಸಲು ಬಯಸುವ ಪಠ್ಯ."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "ನೀವು ಕಳುಹಿಸಲು ಬಯಸುವ ಫೈಲ್."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ ದಿನಗಳು",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1631,24 +1631,24 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 ದಿನ"
   },
   "custom": {
-    "message": "Custom"
+    "message": "ಕಸ್ಟಮ್"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "ಈ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ಅಳಿಸಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "ನಕಲಿಸಿ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ಲಿಂಕ್ ಕಳುಹಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "ಇದನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಲಿಂಕ್ ಅನ್ನು ನಕಲಿಸಿ ಉಳಿಸಿದ ನಂತರ ನನ್ನ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ಕಳುಹಿಸಿ."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ ಕಳುಹಿಸಿ",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1656,42 +1656,42 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "ಲಿಂಕ್ ಕಾಪಿ ಮಾಡಿ"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "ಗರಿಷ್ಠ ಪ್ರವೇಶ ಎಣಿಕೆ ತಲುಪಿದೆ"
   },
   "expired": {
-    "message": "Expired"
+    "message": "ಅವಧಿ ಮೀರಿದೆ"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "ಅಳಿಸುವಿಕೆ ಬಾಕಿ ಉಳಿದಿದೆ"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "WebAuthn ಅನ್ನು ಪ್ರಮಾಣಿಕರಿಸು"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "ಸ್ವೀಕರಿಸುವವರಿಂದ ನನ್ನ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಮರೆಮಾಡಿ."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "ಒಂದು ಅಥವಾ ಹೆಚ್ಚಿನ ಸಂಸ್ಥೆಯ ನೀತಿಗಳು ನಿಮ್ಮ ಕಳುಹಿಸುವ ಆಯ್ಕೆಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುತ್ತವೆ."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "ಇಮೇಲ್ ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿದೆ"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "ಈ ವೈಶಿಷ್ಟ್ಯವನ್ನು ಬಳಸಲು ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ನೀವು ಪರಿಶೀಲಿಸಬೇಕು."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಮರು-ಪ್ರಾಂಪ್ಟ್"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ದೃಢೀಕರಣ"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "ಮುಂದುವರಿಯಲು ಈ ಕ್ರಿಯೆಯನ್ನು ರಕ್ಷಿಸಲಾಗಿದೆ, ದಯವಿಟ್ಟು ನಿಮ್ಮ ಗುರುತನ್ನು ಪರಿಶೀಲಿಸಲು ನಿಮ್ಮ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ಅನ್ನು ಮರು ನಮೂದಿಸಿ."
   }
 }
