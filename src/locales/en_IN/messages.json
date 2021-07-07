@@ -45,7 +45,7 @@
     "message": "Share"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Move to Organisation"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ moved to $ORGNAME$",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Choose an organisation that you wish to move this item to. Moving to an organisation transfers ownership of the item to that organistaion. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Attachments"
@@ -1674,10 +1674,10 @@
     "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Hide my email address from recepients."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "One or more organistaion policies are affecting your Send options."
   },
   "emailVerificationRequired": {
     "message": "Email Verification Required"
