@@ -45,10 +45,10 @@
     "message": "Condividi"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Sposta in Organizzazione"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ spostato in $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Scegli un'organizzazione in cui desideri spostare questo elemento. Spostare in un'organizzazione trasferisce la proprietà dell'elemento all'organizzazione. Non sarai più il proprietario diretto di questo elemento una volta spostato."
   },
   "attachments": {
     "message": "Allegati"
@@ -1671,7 +1671,7 @@
     "message": "In attesa di eliminazione"
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticazione WebAutn"
+    "message": "Autenticazione WebAuthn"
   },
   "hideEmail": {
     "message": "Nascondi il mio indirizzo email dai destinatari."
