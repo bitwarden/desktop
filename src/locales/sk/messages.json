@@ -45,10 +45,10 @@
     "message": "Zdieľať"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Presunúť do Organizácie"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ presunuté do $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Vyberte organizáciu, do ktorej chcete presunúť túto položku. Presunom do organizácie sa vlastníctvo položky prenáša na túto organizáciu. Po presunutí už nebudete priamym vlastníkom danej položky."
   },
   "attachments": {
     "message": "Prílohy"
@@ -603,10 +603,10 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuth"
+    "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Použiť akýkoľvek WebAuth bezpečnostný kľúč pre prístup k vášmu účtu."
+    "message": "Použiť akýkoľvek WebAuthn bezpečnostný kľúč pre prístup k vášmu účtu."
   },
   "emailTitle": {
     "message": "Email"
@@ -1671,7 +1671,7 @@
     "message": "Čakajúce odstránenie"
   },
   "webAuthnAuthenticate": {
-    "message": "Overiť cez WebAuth"
+    "message": "Overiť cez WebAuthn"
   },
   "hideEmail": {
     "message": "Skryť moju emailovú adresu pred príjemcami."
@@ -1680,7 +1680,7 @@
     "message": "Jedno alebo viac pravidiel organizácie ovplyvňujú vaše možnosti funkcie Send."
   },
   "emailVerificationRequired": {
-    "message": "Vyžaduje sa overenie e-mailom"
+    "message": "Vyžaduje sa overenie e-mailu"
   },
   "emailVerificationRequiredDesc": {
     "message": "Na používanie tejto funkcie musíte overiť svoj e-mail."

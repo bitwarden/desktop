@@ -45,10 +45,10 @@
     "message": "Dela"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Flytta till organisation"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ flyttades till $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Välj en organisation som du vill flytta detta objektet till. Flytt till en organisation överför ägandet av objektet till den organisationen. Du kommer inte längre att vara direkt ägare till detta objekt när det har flyttats."
   },
   "attachments": {
     "message": "Bilagor"
@@ -1671,7 +1671,7 @@
     "message": "Väntar på radering"
   },
   "webAuthnAuthenticate": {
-    "message": "Autentisera WebAutn"
+    "message": "Autentisera WebAuthn"
   },
   "hideEmail": {
     "message": "Dölj min e-postadress för mottagare."
