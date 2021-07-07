@@ -45,10 +45,10 @@
     "message": "Jaa"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Siirrä organisaatioon"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ siirrettiin organisaatioon $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Valitse organisaatio, johon haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
   },
   "attachments": {
     "message": "Liitteet"
@@ -1671,7 +1671,7 @@
     "message": "Odottaa poistoa"
   },
   "webAuthnAuthenticate": {
-    "message": "Todenna WebAuthn"
+    "message": "WebAuthn-todennus"
   },
   "hideEmail": {
     "message": "Piilota sähköpostiosoitteeni vastaanottajilta."
