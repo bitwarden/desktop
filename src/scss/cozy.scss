@@ -19,3 +19,16 @@ app-installation-page {
 app-import-page {
     background: $background-color;
 }
+
+.angular-react-wrapper {
+    a[class*="btn___"] {
+        &, &:hover, &:focus {
+            color: var(--primaryContrastTextColor);
+        }
+    }
+    a[class*="btn--secondary___"] {
+        &, &:hover, &:focus {
+            color: var(--secondaryButtonContrastColor);
+        }
+    }
+}
