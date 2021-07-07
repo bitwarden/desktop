@@ -45,10 +45,10 @@
     "message": "Поделиться"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Переместить в организацию"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ перемещен в $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Выберите организацию, в которую вы хотите переместить этот элемент. При перемещении в организацию право собственности на элемент переходит к этой организации. Вы больше не будете прямым владельцем этого элемента после его перемещения."
   },
   "attachments": {
     "message": "Вложения"
