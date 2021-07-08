@@ -53,11 +53,13 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- TOTP is disabled until it is implemented on Stack side
                         <div class="box-content-row" appBoxRow>
                             <label for="loginTotp">{{'authenticatorKeyTotp' | i18n}}</label>
                             <input id="loginTotp" type="{{cipher.viewPassword ? 'text' : 'password'}}" name="Login.Totp"
                                 class="monospaced" [(ngModel)]="cipher.login.totp" [disabled]="!cipher.viewPassword">
                         </div>
+                        -->
                     </div>
                     <!-- Card -->
                     <div *ngIf="cipher.type === cipherType.Card">
