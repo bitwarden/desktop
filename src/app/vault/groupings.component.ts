@@ -9,19 +9,15 @@ import { UserService } from 'jslib/abstractions/user.service';
 import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/components/groupings.component';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
-import { detect } from 'detect-browser';
-
 @Component({
     selector: 'app-vault-groupings',
     templateUrl: 'groupings.component.html',
 })
 export class GroupingsComponent extends BaseGroupingsComponent {
 
-    @Output() onToolClicked = new EventEmitter<string>();
     @Output() onImportClicked = new EventEmitter<void>();
+    importSelected = false;
 
-    selectedTool: string = null;
-    browserName: string;
     hasNotes: boolean;
     private prevSelection: any = new Object();
 
@@ -29,26 +25,6 @@ export class GroupingsComponent extends BaseGroupingsComponent {
         storageService: StorageService, userService: UserService,
         private broadcasterService: BroadcasterService, private cipherService: CipherService) {
         super(collectionService, folderService, storageService, userService);
-    }
-
-    async ngOnInit() {
-        // Detect browser
-        const browser = detect();
-        // @ts-ignore
-        const isBrave = (navigator.brave && await navigator.brave.isBrave() || false);
-        this.browserName = browser.name;
-        if (isBrave) { (this.browserName = 'brave'); }
-        const knownBrowsers = [
-            'edge-chromium',
-            'chrome',
-            'firefox',
-            'opera',
-            'safari',
-            'brave',
-        ];
-        if (!knownBrowsers.includes(this.browserName)) {
-            this.browserName = 'chrome' ;
-        }
     }
 
     async load(setLoaded = true) {
@@ -77,19 +53,13 @@ export class GroupingsComponent extends BaseGroupingsComponent {
         this.prevSelection.selectedFolder       = this.selectedFolder      ;
         this.prevSelection.selectedFolderId     = this.selectedFolderId    ;
         this.prevSelection.selectedCollectionId = this.selectedCollectionId;
-        this.prevSelection.selectedTool         = this.selectedTool        ;
+        this.importSelected = false;
         super.clearSelections();
-        this.selectedTool = null;
-    }
-
-    selectInstallation() {
-        this.clearSelections();
-        this.selectedTool = 'installation';
-        this.onToolClicked.emit('installation');
     }
 
     selectImport() {
         this.clearSelections();
+        this.importSelected = true;
         this.onImportClicked.emit();
     }
 
@@ -101,7 +71,6 @@ export class GroupingsComponent extends BaseGroupingsComponent {
         this.selectedFolder       = this.prevSelection.selectedFolder      ;
         this.selectedFolderId     = this.prevSelection.selectedFolderId    ;
         this.selectedCollectionId = this.prevSelection.selectedCollectionId;
-        this.selectedTool         = this.prevSelection.selectedTool        ;
     }
 
 }

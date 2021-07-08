@@ -79,7 +79,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     showingModal = false;
     deleted = false;
     toolsUrl: string;
-    toolType: string = null;
     loaded: boolean = false;
     userHasPremiumAccess = false;
 
@@ -176,27 +175,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.load();
         }
         document.body.classList.remove('layout_frontend');
-        let queryParamsSub1: any;
-
-        // check queryParams to choose the tab to activate at init.
-        queryParamsSub1 = this.route.queryParams.subscribe(async params => {
-            this.action = params.action;
-            if (params.toolType) {
-                this.toolType = params.toolType ? params.toolType : 'installation';
-                this.groupingsComponent.selectedTool = this.toolType;
-                this.viewTool(this.toolType);
-            } else if (params && Object.keys(params).length === 0 && params.constructor === Object) {
-                if (!this.isAddonInstalled) {
-                    // no params on load, default to tools/installation if the addon is not installed
-                    this.toolType = 'installation';
-                    this.groupingsComponent.selectedTool = 'installation';
-                    this.viewTool('installation');
-                }
-            }
-            if (queryParamsSub1 != null) {
-                queryParamsSub1.unsubscribe();
-            }
-        });
     }
 
     ngOnDestroy() {
@@ -215,10 +193,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             if (params == null) {
                 this.groupingsComponent.selectedAll = true;
                 await this.ciphersComponent.reload();
-            } else if (params.toolType) {
-                this.toolType = params.toolType ? params.toolType : 'installation';
-                this.groupingsComponent.selectedTool = this.toolType;
-                this.viewTool(this.toolType);
             } else {
                 if (params.cipherId) {
                     const cipherView = new CipherView();
@@ -253,7 +227,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                     this.groupingsComponent.selectedCollectionId = params.collectionId;
                     await this.filterCollection(params.collectionId);
                 } else if (params.action !== 'import') {
-                    this.toolType = null;
                     this.groupingsComponent.selectedAll = true;
                     await this.ciphersComponent.reload();
                 }
@@ -265,7 +238,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     shouldDisplayCiphersList() {
-        return (this.toolType || !this.isAddonTested) ? 'hidden' : '';
+        return (!this.isAddonTested) ? 'hidden' : '';
     }
 
     async viewCipher(cipher: CipherView) {
@@ -277,24 +250,6 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         this.cipherId = cipher.id;
         this.action = 'view';
-        this.go();
-    }
-
-    async viewTool(type: string) {
-        if (this.dirtyInput() && await this.wantsToSaveChanges()) {
-            this.groupingsComponent.revertSelection();
-            return;
-        }
-        this.clearFilters();
-        this.toolType = type;
-        switch (type) {
-            case 'import':
-                this.toolsUrl = 'tools/index.html/#/installation/import';
-                break;
-            case 'installation':
-                this.toolsUrl = 'tools/index2.html/#/installation';
-                break;
-        }
         this.go();
     }
 
@@ -693,14 +648,6 @@ export class VaultComponent implements OnInit, OnDestroy {
         });
     }
 
-    getIframeURL(): any {
-        if (this.toolsUrl) {
-            return this.sanitizer.bypassSecurityTrustResourceUrl(this.toolsUrl);
-        } else {
-            return this.sanitizer.bypassSecurityTrustResourceUrl('tools/index.html/#/installation/import');
-        }
-    }
-
     shouldShowLogo() {
         return (!this.cipherId && this.action !== 'add' && this.action !== 'import');
     }
@@ -729,7 +676,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             'addCollectionIds' ,
             'addType'          ,
             'addOrganizationId',
-            'toolType'         ,
             'cipherId'         ,
             'action'           ,
         ];
@@ -763,7 +709,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                 folderId: this.folderId,
                 collectionId: this.collectionId,
                 deleted: this.deleted ? true : null,
-                toolType: this.toolType,
             };
         }
 
