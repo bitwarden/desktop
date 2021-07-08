@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import snarkdown from 'snarkdown'
 
 import { detect as detectBrowser } from 'detect-browser'
@@ -32,6 +32,8 @@ const browser = detectBrowser()
 const InstallationStep = ({ onExtensionInstalled, onSkipExtension }) => {
   const client = useClient()
   const { t } = useI18n()
+  const [storeVisited, setStoreVisited] = useState(false)
+
   const cozyURL = new URL(client.getStackClient().uri)
 
   const supportedPlatforms = getSupportedPlatforms()
@@ -45,6 +47,10 @@ const InstallationStep = ({ onExtensionInstalled, onSkipExtension }) => {
       onExtensionInstalled && onExtensionInstalled()
     }
   }, [extensionStatus, onExtensionInstalled])
+
+  const onGoToStore = () => {
+    setStoreVisited(true)
+  }
 
   return (
     <VerticallyCentered>
@@ -131,9 +137,10 @@ const InstallationStep = ({ onExtensionInstalled, onSkipExtension }) => {
                 label={t('InstallationStep.cta')}
                 extension="full"
                 className="u-mt-2-half"
+                onClick={onGoToStore}
               />
               <Button
-                label={t('InstallationStep.skip')}
+                label={storeVisited ? t('InstallationStep.login') : t('InstallationStep.skip')}
                 extension="full"
                 onClick={onSkipExtension}
                 theme="secondary"
