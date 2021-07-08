@@ -148,5 +148,16 @@
   "manifest": {
     "short_description": "Stop losing your passwords",
     "long_description": "Keep your passwords safe in your Cozy.\n\nYour passwords are saved once and for all in your 100% personal and secured safe.\n\nYour Cozy allows you to instantly fill in the forms of websites, for easy connection to all your services.\n\nConnect your brands to your Cozy to recover your data in the blink of an eye."
+  },
+
+  "Vault": {
+    "extension": {
+      "cta": {
+        "chrome": "Install on Chrome",
+        "edge-chromium": "Install on Edge",
+        "firefox": "Install on Firefox",
+        "safari": "Install on Safari"
+      }
+    }
   }
 }

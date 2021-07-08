@@ -20,13 +20,18 @@ app-import-page {
     background: $background-color;
 }
 
+app-button-extension {
+    margin: 16px;
+}
+
 .angular-react-wrapper {
     a[class*="btn___"] {
         &, &:hover, &:focus {
             color: var(--primaryContrastTextColor);
         }
     }
-    a[class*="btn--secondary___"] {
+    a[class*="btn--secondary___"],
+    a[class*="c-btn-client___"] {
         &, &:hover, &:focus {
             color: var(--secondaryButtonContrastColor);
         }
