@@ -77,21 +77,36 @@ export class InstallationPageComponent extends AngularWrapperComponent {
     /* Props Bindings */
     /******************/
 
+    protected async fetchHintExists(client: CozyClient) {
+        try {
+            await client
+                .getStackClient()
+                .collection('io.cozy.settings')
+                .get('hint');
+
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
     protected onSkipExtension() {
         this.vaultInstallationService.setIsInstalled();
         this.messagingService.send('installed');
     }
 
-    protected getProps(): InstallationPageProps {
-        const data = {
-            extension_installed: false, // to be replaced with client fetch
-        };
-
+    protected async getProps(): Promise<InstallationPageProps> {
         const client = this.clientService.GetClient();
+
+        const hasHint = await this.fetchHintExists(client);
+
+        const bitwardenData = {
+            extension_installed: hasHint,
+        };
 
         return {
             client: client,
-            bitwardenData: data,
+            bitwardenData: bitwardenData,
             onSkipExtension: this.onSkipExtension.bind(this),
             vaultData: this.getVaultData(),
         };
@@ -101,9 +116,9 @@ export class InstallationPageComponent extends AngularWrapperComponent {
     /* Render */
     /**********/
 
-    protected renderReact() {
+    protected async renderReact() {
         ReactDOM.render(
-            React.createElement(InstallationPage, this.getProps()),
+            React.createElement(InstallationPage, await this.getProps()),
             this.getRootDomNode()
         );
     }
