@@ -18,18 +18,15 @@ import * as ReactDOM from 'react-dom';
 import { MessagingService } from '../../../../jslib/src/abstractions/messaging.service';
 import { CozyClientService } from '../../services/cozy-client.service';
 import { VaultInstallationService } from '../../services/installation-guard.service';
-import { AngularWrapperComponent } from '../angular-wrapper.component';
+import {
+    AngularWrapperComponent,
+    AngularWrapperProps,
+} from '../angular-wrapper.component';
 // @ts-ignore
 import InstallationPage from './installation-page.jsx';
 
-
-interface InstallationPageProps {
-    client: CozyClient;
-    bitwardenData: {
-        extension_installed: boolean;
-    };
+interface InstallationPageProps extends AngularWrapperProps {
     onSkipExtension: () => void;
-    vaultData: any;
 }
 
 @Component({

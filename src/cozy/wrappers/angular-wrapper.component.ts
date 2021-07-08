@@ -6,6 +6,7 @@ import {
     OnInit,
     ViewEncapsulation
 } from '@angular/core';
+import CozyClient from 'cozy-client';
 import * as invariant from 'invariant';
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuthService } from 'jslib/abstractions/auth.service';
@@ -25,6 +26,14 @@ import { ContainerService } from 'jslib/services/container.service';
 import { ImportService } from 'jslib/services/import.service';
 import * as uuid from 'uuid';
 import { CozyClientService } from '../services/cozy-client.service';
+
+export interface AngularWrapperProps {
+    client: CozyClient;
+    bitwardenData: {
+        extension_installed: boolean;
+    };
+    vaultData: any;
+}
 
 @Component({
     templateUrl: './angular-wrapper.component.html',

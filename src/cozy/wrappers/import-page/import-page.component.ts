@@ -2,17 +2,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import CozyClient from 'cozy-client';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { AngularWrapperComponent } from '../angular-wrapper.component';
+import { AngularWrapperComponent, AngularWrapperProps } from '../angular-wrapper.component';
 // @ts-ignore
 import ImportPage from './import-page.jsx';
-
-interface ImportPageProps {
-    client: CozyClient;
-    bitwardenData: {
-        extension_installed: boolean;
-    };
-    vaultData: any;
-}
 
 @Component({
     selector: 'app-import-page',
@@ -24,7 +16,7 @@ export class ImportPageComponent extends AngularWrapperComponent {
     /* Props Bindings */
     /******************/
 
-    protected getProps(): ImportPageProps {
+    protected getProps(): AngularWrapperProps {
         const data = {
             extension_installed: true, // to be replaced with client fetch
         };
