@@ -24,7 +24,11 @@ const ButtonClient = (props) => {
 
   const storeURL = platform.storeUrl;
 
-  const icon = () => <img src={extensionStoresIcons[browser.name]}></img>;
+  const svg = extensionStoresIcons[browser.name];
+
+  const icon = svg
+    ? () => <img src={extensionStoresIcons[browser.name]}></img>
+    : null;
 
   const label = t(`Vault.extension.cta.${browser.name}`);
 
