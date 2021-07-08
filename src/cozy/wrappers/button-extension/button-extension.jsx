@@ -16,7 +16,12 @@ const ButtonClient = (props) => {
   const { t } = useI18n();
 
   const supportedPlatforms = getSupportedPlatforms();
-  const platform = supportedPlatforms[browser.name] || {};
+  const platform = supportedPlatforms[browser.name];
+
+  if (platform === undefined) {
+      return null;
+  }
+
   const storeURL = platform.storeUrl;
 
   const icon = () => <img src={extensionStoresIcons[browser.name]}></img>;
