@@ -93,36 +93,20 @@ export class CiphersComponent extends BaseCiphersComponent {
     }
 
     protected deleteCiphers() {
-        // TODO BJA  : the following routes are not yet implemented but are the proper way to send
-        // a bulk of deletion.
-        // const ids = this.ciphers.map( (c) => c.id );
-        // if (this.deleted) {
-        //     return this.cipherService.softDeleteManyWithServer(ids);
-        // } else {
-        //     return this.cipherService.softDeleteManyWithServer(ids);
-        // }
-        const promises = this.ciphers.map(cipher => {
-            return cipher.isDeleted ? this.cipherService.deleteWithServer(cipher.id)
-            : this.cipherService.softDeleteWithServer(cipher.id);
-        });
-        return Promise.all(promises)
-            .catch(e => {
-                // should be used only for debug purpose
-                // console.log('there was a pb during deletions !', e);
-            });
+        const ids = this.ciphers.map(cipher => cipher.id);
+
+        if (this.deleted) {
+            return this.cipherService.deleteManyWithServer(ids);
+        } else {
+            return this.cipherService.softDeleteManyWithServer(ids);
+        }
     }
 
     protected restoreCiphers() {
-        const promises = this.ciphers.map(cipher => {
-            if (!cipher.isDeleted) {
-                return true;
-            }
-            return this.cipherService.restoreWithServer(cipher.id);
-        });
-        return Promise.all(promises)
-            .catch(e => {
-                // should be used only for debug purpose
-                // console.log('there was a pb during restorations !', e);
-            });
+        const ids = this.ciphers
+            .filter(cipher => cipher.isDeleted)
+            .map(cipher => cipher.id);
+
+        return this.cipherService.restoreManyWithServer(ids);
     }
 }
