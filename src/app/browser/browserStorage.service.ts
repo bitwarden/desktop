@@ -10,14 +10,13 @@ https://github.com/bitwarden/browser/blob/master/src/services/browserStorage.ser
 
 ================================================================================================= */
 
-import {
-    StorageService,
-} from 'jslib/abstractions';
+import { StorageService } from 'jslib/abstractions';
 
 class BrowserStorageService implements StorageService {
     private chromeStorageApi: any;
     private isVolatileStorage: boolean;
     private volatileStore = new Map();
+
     // TODO BJA : finaliser la gestion du storage
     private nonVolatileKeys = [
         // data to be stored in the Local Storage of the browser.
@@ -65,15 +64,15 @@ class BrowserStorageService implements StorageService {
         //         this is much easier for debug so that refresh doesn't loose the session.
         this.chromeStorageApi = window.localStorage;
         const cozyDataNode = document.getElementById('cozy-app');
-        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+        const cozyDomain = cozyDataNode
+            ? cozyDataNode.dataset.cozyDomain
+            : null;
 
         if (cozyDomain) {
             this.isVolatileStorage = true;
         } else {
             this.isVolatileStorage = false;
         }
-        // only for tests
-        // this.isVolatileStorage = false;
     }
 
     async get<T>(key: string): Promise<T> {
@@ -83,11 +82,7 @@ class BrowserStorageService implements StorageService {
         if (key === 'kdfIterations') {
             return JSON.parse('100000');
         }
-        // if (this.isVolatileStorage) {
-        //     return this.volatileGet(key);
-        // } else {
-        //     return this.localStorageGet(key);
-        // }
+
         if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
             return this.localStorageGet(key);
         } else {
@@ -96,14 +91,6 @@ class BrowserStorageService implements StorageService {
     }
 
     async save(key: string, obj: any): Promise<any> {
-        // if (!this.nonVolatileKeys.includes(key)) {
-        // if (this.isVolatileStorage) {
-        //     return this.volatileSave(key, obj);
-        // } else {
-        //     return this.localStorageSave(key, obj);
-        // }
-        // console.log(`BrowserStorageService.save(${key})`);
-
         if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
             return this.localStorageSave(key, obj);
         } else {
@@ -112,12 +99,6 @@ class BrowserStorageService implements StorageService {
     }
 
     async remove(key: string): Promise<any> {
-        // if (!this.nonVolatileKeys.includes(key)) {
-        // if (this.isVolatileStorage) {
-        //     return this.volatileRemove(key);
-        // } else {
-        //     return this.localStorageRemove(key);
-        // }
         if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
             return this.localStorageRemove(key);
         } else {
@@ -128,15 +109,14 @@ class BrowserStorageService implements StorageService {
     private async volatileGet<T>(key: string): Promise<T> {
         let val = this.volatileStore.get(key);
         if (val !== null) {
-            val = (val === undefined) ? null : val;
-            val = (val === 'undefined') ? null : val;
+            val = val === undefined ? null : val;
+            val = val === 'undefined' ? null : val;
             try {
                 val = JSON.parse(val);
             } catch {}
-            // console.log(`GET ${key} ==> ${val}`);
+
             return val;
         } else {
-            // console.log(`GET ${key} ==> ${val}`);
             return null;
         }
     }
@@ -153,16 +133,15 @@ class BrowserStorageService implements StorageService {
         return new Promise(resolve => {
             let val = this.chromeStorageApi.getItem(key);
             if (val !== null) {
-                val = (val === undefined) ? null : val;
-                val = (val === 'undefined') ? null : val;
+                val = val === undefined ? null : val;
+                val = val === 'undefined' ? null : val;
                 try {
                     val = JSON.parse(val);
                 } catch {}
-                // console.log(`GET ${key} ==> ${val}`);
+
                 resolve(val as T);
                 return;
             } else {
-                // console.log(`GET ${key} ==> ${val}`);
                 resolve(null);
             }
         });
@@ -176,7 +155,6 @@ class BrowserStorageService implements StorageService {
     }
 
     private async localStorageRemove(key: string): Promise<any> {
-        // console.log('BrowserStorageService .remove()', key);
         return new Promise<void>(resolve => {
             this.chromeStorageApi.removeItem(key);
             resolve();
