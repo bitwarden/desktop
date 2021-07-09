@@ -13,8 +13,9 @@ https://github.com/bitwarden/browser/blob/master/src/services/browserStorage.ser
 import { StorageService } from 'jslib/abstractions';
 
 class BrowserStorageService implements StorageService {
+    private persistDataForDevPurposes: boolean;
+
     private chromeStorageApi: any;
-    private isVolatileStorage: boolean;
     private volatileStore = new Map();
 
     // TODO BJA : finaliser la gestion du storage
@@ -58,21 +59,14 @@ class BrowserStorageService implements StorageService {
     ];
 
     constructor() {
-        // Test if the app is run into a Cozy App.
-        // If yes, all data will remain in memory, no data will be stored in Local Storage.
-        // If no : all data are stored in Local Storage.
-        //         this is much easier for debug so that refresh doesn't loose the session.
         this.chromeStorageApi = window.localStorage;
         const cozyDataNode = document.getElementById('cozy-app');
-        const cozyDomain = cozyDataNode
-            ? cozyDataNode.dataset.cozyDomain
-            : null;
+        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
 
-        if (cozyDomain) {
-            this.isVolatileStorage = true;
-        } else {
-            this.isVolatileStorage = false;
-        }
+        // If true  : all data will remain in memory, no data will be stored in Local Storage.
+        // If false : some data are stored in Local Storage.
+        //            this is much easier for debug so that refresh doesn't loose the session.
+        this.persistDataForDevPurposes = false; // TODO: this should be set by an ENV variabe
     }
 
     async get<T>(key: string): Promise<T> {
@@ -83,7 +77,10 @@ class BrowserStorageService implements StorageService {
             return JSON.parse('100000');
         }
 
-        if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
+        if (
+            this.persistDataForDevPurposes &&
+            this.nonVolatileKeys.includes(key)
+        ) {
             return this.localStorageGet(key);
         } else {
             return this.volatileGet(key);
@@ -91,7 +88,10 @@ class BrowserStorageService implements StorageService {
     }
 
     async save(key: string, obj: any): Promise<any> {
-        if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
+        if (
+            this.persistDataForDevPurposes &&
+            this.nonVolatileKeys.includes(key)
+        ) {
             return this.localStorageSave(key, obj);
         } else {
             return this.volatileSave(key, obj);
@@ -99,7 +99,10 @@ class BrowserStorageService implements StorageService {
     }
 
     async remove(key: string): Promise<any> {
-        if (this.nonVolatileKeys.includes(key) || !this.isVolatileStorage) {
+        if (
+            this.persistDataForDevPurposes &&
+            this.nonVolatileKeys.includes(key)
+        ) {
             return this.localStorageRemove(key);
         } else {
             return this.volatileRemove(key);
