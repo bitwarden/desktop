@@ -4,9 +4,9 @@ import * as path from 'path';
 
 import { Main } from '../main';
 
-import { ElectronConstants } from 'jslib/electron/electronConstants';
+import { ElectronConstants } from 'jslib-electron/electronConstants';
 
-import { StorageService } from 'jslib/abstractions/storage.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
@@ -59,6 +59,9 @@ export class MessagingMain {
                 this.removeOpenAtLogin();
             case 'setFocus':
                 this.setFocus();
+                break;
+            case 'getWindowIsFocused':
+                this.windowIsFocused();
                 break;
             case 'enableBrowserIntegration':
                 this.main.nativeMessagingMain.generateManifests();
@@ -138,5 +141,13 @@ Terminal=false`;
     private setFocus() {
         this.main.trayMain.restoreFromTray();
         this.main.windowMain.win.focusOnWebView();
+    }
+
+    private windowIsFocused() {
+        const windowIsFocused = this.main.windowMain.win.isFocused();
+        this.main.windowMain.win.webContents.send('messagingService', {
+            command: 'windowIsFocused',
+            windowIsFocused: windowIsFocused,
+        });
     }
 }

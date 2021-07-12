@@ -44,14 +44,24 @@
   "share": {
     "message": "Kopīgot"
   },
-  "shareItem": {
-    "message": "Kopīgot vienumu"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Vienums kopīgots"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Izvēlies apvienību, ar kuru kopīgot šo vienumu. Koplietošana nodod šī vienuma piederību apvienībai. Pēc tā kopīgošanas Tu vairs nebūsi šī vienuma tiešais īpašnieks."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Pielikumi"
@@ -431,7 +441,7 @@
     "message": "Atlasīt datni."
   },
   "maxFileSize": {
-    "message": "Lielākais pieļaujamais datnes izmērs ir 100 MB."
+    "message": "Lielākais pieļaujamais datnes izmērs ir 500 MB."
   },
   "updateKey": {
     "message": "Šo iespēju nevar izmantot, kamēr nav atjaunināta šifrēšanas atslēga."
@@ -592,11 +602,11 @@
     "message": "Apstiprini ar Duo Security savā apvienībā, izmantojot Duo Mobile lietotni, īsziņu, tālruņa zvanu vai U2F drošības atslēgu!",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Izmanto jebkuru FIDO U2F atbalstošu drošības atslēgu, lai piekļūtu kontam!"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F drošības atslēga"
+  "webAuthnDesc": {
+    "message": "Izmantot jebkuru WebAuthn atbalstošu drošības atslēgu, lai piekļūtu kontam."
   },
   "emailTitle": {
     "message": "E-pasts"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "atslēgt glabātavu"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Palaišanas brīdī nevaicāt par Windows Hello."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Palaišanas brīdī nevaicāt par Touch ID."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Aizslēgt ar galveno paroli pēc pārsāknēšanas"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Gaida dzēšanu"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autentificēt WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Slēpt e-pasta adresi no saņēmējiem."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Viens vai vairāki apvienības nosacījumi ietekmē \"Send\" iestatījumus."
+  },
+  "emailVerificationRequired": {
+    "message": "Nepieciešama e-pasta adreses apstiprināšana"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Ir jāapstiprina e-pasta adrese, lai izmantotu šo iespēju."
+  },
+  "passwordPrompt": {
+    "message": "Galvenās paroles pārvaicāšana"
+  },
+  "passwordConfirmation": {
+    "message": "Galvenās paroles apstiprināšana"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Šī darbība ir aizsargāta. Lai turpinātu, ir jāievada galvenā parole, lai apstiprinātu identitāti."
   }
 }

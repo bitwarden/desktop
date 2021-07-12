@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { SearchService } from 'jslib/abstractions/search.service';
+import { SearchService } from 'jslib-common/abstractions/search.service';
 
-import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/components/ciphers.component';
+import { CiphersComponent as BaseCiphersComponent } from 'jslib-angular/components/ciphers.component';
 
 @Component({
     selector: 'app-vault-ciphers',

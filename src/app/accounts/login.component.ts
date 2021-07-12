@@ -11,20 +11,21 @@ import { Router } from '@angular/router';
 
 import { EnvironmentComponent } from './environment.component';
 
-import { AuthService } from 'jslib/abstractions/auth.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StateService } from 'jslib/abstractions/state.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { SyncService } from 'jslib/abstractions/sync.service';
+import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
+import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { SyncService } from 'jslib-common/abstractions/sync.service';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
-import { ModalComponent } from 'jslib/angular/components/modal.component';
+import { LoginComponent as BaseLoginComponent } from 'jslib-angular/components/login.component';
+import { ModalComponent } from 'jslib-angular/components/modal.component';
 
 const BroadcasterSubscriptionId = 'LoginComponent';
 
@@ -37,12 +38,15 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
     showingModal = false;
 
+    private deferFocus: boolean = null;
+
     constructor(authService: AuthService, router: Router, i18nService: I18nService,
         syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        private messagingService: MessagingService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
@@ -58,10 +62,22 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
+                    case 'windowIsFocused':
+                        if (this.deferFocus === null) {
+                            this.deferFocus = !message.windowIsFocused;
+                            if (!this.deferFocus) {
+                                this.focusInput();
+                            }
+                        } else if (this.deferFocus && message.windowIsFocused) {
+                            this.focusInput();
+                            this.deferFocus = false;
+                        }
+                        break;
                     default:
                 }
             });
         });
+        this.messagingService.send('getWindowIsFocused');
     }
 
     ngOnDestroy() {

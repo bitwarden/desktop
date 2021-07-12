@@ -44,14 +44,24 @@
   "share": {
     "message": "Paylaş"
   },
-  "shareItem": {
-    "message": "Kaydı paylaş"
+  "moveToOrganization": {
+    "message": "Kuruluşa taşı"
   },
-  "sharedItem": {
-    "message": "Kayıt paylaşıldı"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ $ORGNAME$ kuruluşuna taşındı",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Bu kaydı paylaşmak istediğiniz kuruluşu seçin. Paylaştığınız kaydın sahipliği seçtiğiniz kuruluşa aktarılacak. Artık bu kaydın doğrudan sahibi olmayacaksınız."
+  "moveToOrgDesc": {
+    "message": "Bu kaydı taşımak istediğiniz kuruluşu seçin. Taşıdığınız kaydın sahipliği seçtiğiniz kuruluşa aktarılacak. Artık bu kaydın doğrudan sahibi olmayacaksınız."
   },
   "attachments": {
     "message": "Ekler"
@@ -368,7 +378,7 @@
     "message": "URI'yi kopyala"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Doğrulama kodunu kopyala (TOTP)"
   },
   "length": {
     "message": "Uzunluk"
@@ -431,7 +441,7 @@
     "message": "Bir dosya seç."
   },
   "maxFileSize": {
-    "message": "En büyük dosya boyutu 100MB."
+    "message": "Maksimum dosya boyutu 500 MB'dir."
   },
   "updateKey": {
     "message": "Şifreleme anahtarınızı güncelleştirene kadar bu özelliği kullanamazsınız."
@@ -592,11 +602,11 @@
     "message": "Kuruluşunuzun Duo Security doğrulaması için Duo Mobile uygulaması, SMS, telefon görüşmesi veya U2F güvenlik anahtarını kullanın.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Hesabınıza erişmek için herhangi bir FIDO U2F etkin güvenlik anahtarı kullanın."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Güvenlik Anahtarı"
+  "webAuthnDesc": {
+    "message": "Hesabınıza erişmek için WebAuthn uyumlu bir güvenlik anahtarı kullanın."
   },
   "emailTitle": {
     "message": "E-posta"
@@ -1228,10 +1238,10 @@
     "message": "Dışa aktarılan dosyadaki verileriniz şifrelenmemiş olacak. Bu dosyayı güvensiz yöntemlerle (örn. e-posta) göndermemeli ve saklamamalısınız. İşiniz bittikten sonra dosyayı hemen silin."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Dışa aktardığınız bu dosyadaki verileriniz, hesabınızın şifreleme anahtarıyla şifrelenir. Hesabınızın şifreleme anahtarını değiştirirseniz bu dosyanın şifresi çözülemez hale gelir, dolayısıyla dosyayı yeniden dışa aktarmanız gerekir."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Hesap şifreleme anahtarları her Bitwarden kullanıcı hesabı için farklıdır. Dolayısıyla şifrelenmiş bir dışa aktarmayı başka bir hesapta içe aktaramazsınız."
   },
   "exportMasterPassword": {
     "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
@@ -1296,6 +1306,12 @@
   },
   "touchIdConsentMessage": {
     "message": "kasanızın kilidini açma"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Açılışta Windows Hello doğrulaması isteme."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Açılışta Touch ID doğrulaması isteme."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Yeniden başlatmada ana şifre ile kilitle"
@@ -1505,108 +1521,108 @@
     "message": "Bir kuruluş ilkesi sahiplik seçeneklerinizi etkiliyor."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Tüm Send'ler",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Dosya"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Metin"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Send'lerde ara",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Send'i düzenle",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Kasam"
   },
   "text": {
-    "message": "Text"
+    "message": "Metin"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Silinme tarihi"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Bu Send belirtilen tarih ve saatte kalıcı olacak silinecek.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Son kullanma tarihi"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Bunu ayarlarsanız belirtilen tarih ve saatten sonra bu Send'e erişilemeyecektir.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Maksimum erişim sayısı"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Bunu ayarlarsanız maksimum erişim sayısına ulaşıldıktan sonra bu Send'e erişilemeyecektir.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Mevcut erişim sayısı"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Kimsenin erişememesi için bu Send'i devre dışı bırak.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Kullanıcıların bu Send'e erişmek için parola girmelerini isteyebilirsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Bu Send ile ilgili özel notlar.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Send bağlantısı",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Send bağlantısı",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Send'e erişirken varsayılan olarak metni gizle",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send oluşturuldu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send düzenlendi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send silindi",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Yeni parola"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Bu ne tür bir Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Send oluştur",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Göndermek istediğiniz metin."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Göndermek istediğiniz dosya."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ gün",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1631,67 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 gün"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Özel"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Bu Send'i silmek istediğinizden emin misiniz?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Send linkini panoya kopyala",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Kaydettikten sonra bu Send'i paylaşma linkini panoya kopyala."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send devre dışı",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Bir kuruluş ilkesi nedeniyle yalnızca mevcut Send'leri silebilirsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Bağlantıyı kopyala"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Devre dışı"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Maksimum erişim sayısına ulaşıldı"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Süresi doldu"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Silinmesi bekleniyor"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAuthn ile doğrula"
+  },
+  "hideEmail": {
+    "message": "E-posta adresimi alıcılardan gizle."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Bir veya daha fazla kuruluş ilkesi Send seçeneklerinizi etkiliyor."
+  },
+  "emailVerificationRequired": {
+    "message": "E-posta doğrulaması gerekiyor"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Bu özelliği kullanmak için e-postanızı doğrulamalısınız."
+  },
+  "passwordPrompt": {
+    "message": "Ana parola yeniden isteği"
+  },
+  "passwordConfirmation": {
+    "message": "Ana parola onayı"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Bu işleme devam etmek için lütfen ana parolanızı yeniden girin."
   }
 }

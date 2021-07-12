@@ -44,14 +44,24 @@
   "share": {
     "message": "Delen"
   },
-  "shareItem": {
-    "message": "Item delen"
+  "moveToOrganization": {
+    "message": "Naar organisatie verplaatsen"
   },
-  "sharedItem": {
-    "message": "Gedeeld item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ verplaatst naar $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Kies een organisatie waarmee je dit item wilt delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
+  "moveToOrgDesc": {
+    "message": "Kies een organisatie waarnaar je dit item wilt verplaatsen. Door het verplaatsen krijgt de organisatie de eigendomsrechten van het item. Je bent niet langer de directe eigenaar meer van het item als het is verplaatst."
   },
   "attachments": {
     "message": "Bijlagen"
@@ -431,7 +441,7 @@
     "message": "Selecteer een bestand."
   },
   "maxFileSize": {
-    "message": "De maximale bestandsgrootte is 100 MB."
+    "message": "Maximale bestandsgrootte is 500 MB."
   },
   "updateKey": {
     "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
@@ -592,11 +602,11 @@
     "message": "Verificatie met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Gebruik een FIDO U2F-beveiligingssleutel om toegang te krijgen tot je account."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F-beveiligingssleutel"
+  "webAuthnDesc": {
+    "message": "Gebruik een WebAuthn-beveilingssleutel om toegang te krijgen tot je account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "ontgrendel je kluis"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Bij het opstarten niet om Windows Hello vragen."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Bij het opstarten niet om Touch ID vragen."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Bij herstart vergrendelen met hoofdwachtwoord"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Wordt verwijderd"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticeer WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Verberg mijn e-mailadres voor ontvangers."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Een of meer organisatiebeleidseisen heeft invloed op de mogelijkheden van je Send."
+  },
+  "emailVerificationRequired": {
+    "message": "E-mailverificatie vereist"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Je moet je e-mailadres verifiëren om deze functionaliteit te gebruiken."
+  },
+  "passwordPrompt": {
+    "message": "Hoofdwachtwoord opnieuw vragen"
+  },
+  "passwordConfirmation": {
+    "message": "Hoofdwachtwoord bevestigen"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Deze actie is beveiligd. Voer je hoofdwachtwoord opnieuw in om je identiteit vast te stellen en door te gaan."
   }
 }

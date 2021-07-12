@@ -21,7 +21,7 @@
     "message": "Карта"
   },
   "typeIdentity": {
-    "message": "Личные данные"
+    "message": "Личная информация"
   },
   "typeSecureNote": {
     "message": "Защищенная заметка"
@@ -44,14 +44,24 @@
   "share": {
     "message": "Поделиться"
   },
-  "shareItem": {
-    "message": "Поделиться элементом"
+  "moveToOrganization": {
+    "message": "Переместить в организацию"
   },
-  "sharedItem": {
-    "message": "Общий элемент"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ перемещен в $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Выберите организацию, которой хотите предоставить доступ к этому элементу. После выполнения этой операции права на элемент будут переданы организации и вы не будете являться непосредственным владельцем этого элемента."
+  "moveToOrgDesc": {
+    "message": "Выберите организацию, в которую вы хотите переместить этот элемент. При перемещении в организацию право собственности на элемент переходит к этой организации. Вы больше не будете прямым владельцем этого элемента после его перемещения."
   },
   "attachments": {
     "message": "Вложения"
@@ -384,7 +394,7 @@
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Включить цифру"
+    "message": "Добавить цифру"
   },
   "close": {
     "message": "Закрыть"
@@ -431,7 +441,7 @@
     "message": "Выберите файл."
   },
   "maxFileSize": {
-    "message": "Максимальный размер файла 100 МБ."
+    "message": "Максимальный размер файла 500 МБ."
   },
   "updateKey": {
     "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
@@ -467,7 +477,7 @@
     "message": "Мастер-пароль"
   },
   "masterPassDesc": {
-    "message": "Мастер-пароль это ключ к вашему защищенному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
+    "message": "Мастер-пароль – это ключ к вашему защищенному хранилищу. Он очень важен, поэтому не забывайте его. Восстановить мастер-пароль невозможно."
   },
   "masterPassHintDesc": {
     "message": "Подсказка к мастер-паролю может помочь вам его вспомнить."
@@ -512,7 +522,7 @@
     "message": "Мы отправили вам письмо с подсказкой к мастер-паролю."
   },
   "unexpectedError": {
-    "message": "Возникла неожиданная ошибка."
+    "message": "Произошла непредвиденная ошибка."
   },
   "itemInformation": {
     "message": "Информация об элементе"
@@ -592,11 +602,11 @@
     "message": "Подтвердите с помощью Duo Security для вашей организации, используя приложение Duo Mobile, SMS, телефонный звонок или ключ безопасности U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Используйте любой ключ безопасности FIDO U2F для доступа к вашему аккаунту."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Ключ безопасности FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к своей учетной записи."
   },
   "emailTitle": {
     "message": "Email"
@@ -698,16 +708,16 @@
     "message": "Загрузка..."
   },
   "lockNow": {
-    "message": "Заблокировать"
+    "message": "Заблокировать сейчас"
   },
   "passwordGenerator": {
     "message": "Генератор паролей"
   },
   "emailUs": {
-    "message": "Напишите нам"
+    "message": "Написать нам"
   },
   "visitOurWebsite": {
-    "message": "Посетите наш сайт"
+    "message": "Посетить наш сайт"
   },
   "fileBugReport": {
     "message": "Сообщить об ошибке"
@@ -716,7 +726,7 @@
     "message": "Блог"
   },
   "followUs": {
-    "message": "Подписывайтесь"
+    "message": "Мы в соцсетях"
   },
   "syncVault": {
     "message": "Синхронизировать хранилище"
@@ -739,10 +749,10 @@
     "message": "Перейти в веб-хранилище"
   },
   "getMobileApp": {
-    "message": "Получить мобильное приложение"
+    "message": "Мобильное приложение"
   },
   "getBrowserExtension": {
-    "message": "Получить расширение браузера"
+    "message": "Расширение для браузера"
   },
   "syncingComplete": {
     "message": "Синхронизация завершена"
@@ -1190,7 +1200,7 @@
     "message": "По умолчанию"
   },
   "exit": {
-    "message": "Выход"
+    "message": "Выйти"
   },
   "showHide": {
     "message": "Показать/скрыть",
@@ -1228,10 +1238,10 @@
     "message": "Экспортируемый файл содержит данные вашего хранилища в незашифрованном формате. Его не следует хранить или отправлять по небезопасным каналам (например по электронной почте). Удалите его сразу после использования."
   },
   "encExportKeyWarningDesc": {
-    "message": "При экспорте данные шифруются с помощью ключа шифрования вашей учетной записи. Если решите сменить ключ шифрования, вам придется повторить операцию снова, поскольку этот файл экспорта станет непригодным к расшифровке."
+    "message": "При экспорте данные шифруются при помощи ключа шифрования учетной записи. Если вы решите сменить ключ шифрования, вам следует экспортировать данные повторно, поскольку вы не сможете расшифровать этот файл экспорта."
   },
   "encExportAccountWarningDesc": {
-    "message": "Ключи шифрования уникальны для каждой учетной записи Bitwarden, поэтому нельзя просто импортировать зашифрованное хранилище на другой аккаунт."
+    "message": "Ключи шифрования уникальны для каждой учетной записи Bitwarden, поэтому нельзя импортировать зашифрованное хранилище в другой аккаунт."
   },
   "exportMasterPassword": {
     "message": "Для экспорта данных из хранилища введите мастер-пароль."
@@ -1296,6 +1306,12 @@
   },
   "touchIdConsentMessage": {
     "message": "разблокировать ваше хранилище"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Не запрашивать Windows Hello при запуске."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Не запрашивать Touch ID при запуске."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске"
@@ -1451,7 +1467,7 @@
     "message": "Ваш новый мастер-пароль не соответствует требованиям политики."
   },
   "acceptPolicies": {
-    "message": "Устанавливая этот флажок, вы соглашаетесь со следующим:"
+    "message": "Отметив этот флажок, вы соглашаетесь со следующим:"
   },
   "acceptPoliciesError": {
     "message": "Условия предоставления услуг и Политика конфиденциальности не были подтверждены."
@@ -1529,14 +1545,14 @@
     "message": "Текст"
   },
   "deletionDate": {
-    "message": "Дата удаления"
+    "message": "Срок удаления"
   },
   "deletionDateDesc": {
     "message": "Эта Send будет окончательно удалена в указанные дату и время.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Дата истечения"
+    "message": "Срок истечения"
   },
   "expirationDateDesc": {
     "message": "Если задано, доступ к этой Send истечет в указанные дату и время.",
@@ -1621,22 +1637,22 @@
     "message": "Другой"
   },
   "deleteSendConfirmation": {
-    "message": "Вы действительно хотите удалить Send?",
+    "message": "Вы действительно хотите удалить эту Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Копировать ссылку на Send в буфер обмена",
+    "message": "Скопировать ссылку на Send в буфер обмена",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Копирование ссылки в мой буфер обмена после сохранения, чтобы поделиться этой Send."
+    "message": "Скопировать ссылку в буфер обмена после сохранения, чтобы поделиться этой Send."
   },
   "sendDisabled": {
-    "message": "Send выключена",
+    "message": "Send отключена",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Из-за корпоративной политики вы можете удалять только существующую Send.",
+    "message": "В соответствии с корпоративной политикой вы можете удалить только существующую Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1649,9 +1665,33 @@
     "message": "Достигнут максимум обращений"
   },
   "expired": {
-    "message": "Истекло"
+    "message": "Срок истек"
   },
   "pendingDeletion": {
     "message": "Ожидание удаления"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Аутентификация WebAutn"
+  },
+  "hideEmail": {
+    "message": "Скрыть мой адрес email от получателей."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "На параметры Send влияют одна или несколько политик организации."
+  },
+  "emailVerificationRequired": {
+    "message": "Требуется подтверждение электронной почты"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Для использования этой функции необходимо подтвердить свою электронную почту."
+  },
+  "passwordPrompt": {
+    "message": "Повторный запрос мастер-пароля"
+  },
+  "passwordConfirmation": {
+    "message": "Подтверждение мастер-пароля"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Это действие защищено. Для продолжения введите свой мастер-пароль, чтобы подтвердить свою личность."
   }
 }

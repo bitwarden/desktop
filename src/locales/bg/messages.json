@@ -44,14 +44,24 @@
   "share": {
     "message": "Споделяне"
   },
-  "shareItem": {
-    "message": "Споделяне на запис"
+  "moveToOrganization": {
+    "message": "Преместване в организация"
   },
-  "sharedItem": {
-    "message": "Споделен запис"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ се премести в $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Изберете организацията, с която искате да споделите записа. Споделянето ѝ прехвърля собствеността. След това няма вече директно да го притежавате."
+  "moveToOrgDesc": {
+    "message": "Изберете организацията, в която искате да преместите записа. Преместването прехвърля собствеността му към новата организация. След това няма вече директно да го притежавате."
   },
   "attachments": {
     "message": "Прикачени файлове"
@@ -368,7 +378,7 @@
     "message": "Копиране на адреса"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Код за потвърждаване (TOTP)"
   },
   "length": {
     "message": "Дължина"
@@ -431,7 +441,7 @@
     "message": "Избор на файл."
   },
   "maxFileSize": {
-    "message": "Големината на файла е най-много 100 MB."
+    "message": "Големината на файла е най-много 500 MB."
   },
   "updateKey": {
     "message": "Трябва да обновите шифриращия си ключ, за да използвате тази възможност."
@@ -592,11 +602,11 @@
     "message": "Удостоверяване чрез Duo Security за организацията ви, с ползване на приложението Duo Mobile, SMS, телефонен разговор или устройство U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Използвайте всяко устройство, поддържащо FIDO U2F, за да влезете в абонамента си."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Устройство FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Използвайте всяко устройство, поддържащо WebAuthn, за да влезете в абонамента си."
   },
   "emailTitle": {
     "message": "Електронна поща"
@@ -1228,10 +1238,10 @@
     "message": "Данните от трезора ви ще се изнесат в незащитен формат. Не го пращайте по незащитени канали като е-поща. Изтрийте файла незабавно след като свършите работата си с него."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "При изнасяне данните се шифрират с ключа ви. Ако го смените, ще трябва наново да ги изнесете, защото няма да може да дешифрирате настоящия файл."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Ключовете за шифриране са уникални за всеки потребител, затова не може да внесете шифрирани данни от един потребител в регистрацията на друг."
   },
   "exportMasterPassword": {
     "message": "Въведете главната парола, за да изнесете данните."
@@ -1296,6 +1306,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Потвърждаване за Битуорден."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Да не се изисква Windows Hello при стартиране."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Да не се изисква Touch ID при стартиране."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"
@@ -1505,108 +1521,108 @@
     "message": "Политика от някоя организация влияе на вариантите за собственост."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Всички изпращания",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Файл"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Текст"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Търсене в изпратените",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Редактиране на изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Моят трезор"
   },
   "text": {
-    "message": "Text"
+    "message": "Текст"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Дата на изтриване"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Изпращането ще бъде окончателно изтрито на зададената дата и време.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Срок на валидност"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "При задаване — това изпращане ще се изключи на зададената дата и време.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Максимален брой достъпвания"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "При задаване — това изпращане ще се изключи след определен брой достъпвания.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Текущ брой на достъпванията"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Пълно спиране на това изпращане — никой няма да има достъп.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Изискване на парола за достъп до това изпращане.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Скрити бележки за това изпращане.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Изпращане на връзката",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Изпращане на връзката",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "При достъп до изпращането стандартно текстът да се скрива",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Създадено изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Редактиране на изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Изтрито изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Нова парола"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Вид на изпратеното",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Създаване на изпращане",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Текст за изпращане."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Файл за изпращане."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ ден/дни",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1631,67 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 ден"
   },
   "custom": {
-    "message": "Custom"
+    "message": "По избор"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Сигурни ли сте, че искате да изтриете това изпращане?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Копиране на връзката към изпращането",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Копиране на връзката към изпращането при запазването му за лесно споделяне."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Изпращането е изключено",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Поради политика на организация, може само да изтривате съществуващи изпращания.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Копиране на връзката"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Изключено"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Достигнат е максималният брой достъпвания"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Изтекъл"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Предстои изтриване"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Идентификация WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Скриване на е-пощата ми от получателите."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Поне една политика на организация влияе на настройките за изпращане."
+  },
+  "emailVerificationRequired": {
+    "message": "Изисква се потвърждение на е-пощата"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Трябва да потвърдите е-пощата си, за да можете да използвате тази функционалност."
+  },
+  "passwordPrompt": {
+    "message": "Повторно запитване за главната парола"
+  },
+  "passwordConfirmation": {
+    "message": "Потвърждение на главната парола"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Това действие е защитено. За да продължите, въведете отново главната си парола, за да потвърдите самоличността си."
   }
 }

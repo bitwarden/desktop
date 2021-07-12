@@ -12,11 +12,11 @@ import {
 
 import { Main } from '../main';
 
-import { BaseMenu } from 'jslib/electron/baseMenu';
+import { BaseMenu } from 'jslib-electron/baseMenu';
 
-import { isMacAppStore, isSnapStore, isWindowsStore } from 'jslib/electron/utils';
+import { isMacAppStore, isSnapStore, isWindowsStore } from 'jslib-electron/utils';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
 export class MenuMain extends BaseMenu {
     menu: Menu;

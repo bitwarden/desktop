@@ -44,14 +44,24 @@
   "share": {
     "message": "പങ്കിടുക"
   },
-  "shareItem": {
-    "message": "ഇനങ്ങൾ പങ്കിടുക"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "പങ്കിട്ട ഇനം"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "ഈ ഇനം പങ്കിടാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഒരു സംഘടന തിരഞ്ഞെടുക്കുക. പങ്കിട്ട ഇനത്തിന്റെ ഉടമസ്ഥാവകാശം ആ സംഘടനക്ക് കൈമാറുന്നു. ഈ ഇനം പങ്കിട്ടുകഴിഞ്ഞാൽ നിങ്ങൾ അതിന്റെ നേരിട്ടുള്ള ഉടമയാകില്ല."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "അറ്റാച്ചുമെന്റുകൾ"
@@ -431,7 +441,7 @@
     "message": "ഫയൽ തിരഞ്ഞെടുക്കുക."
   },
   "maxFileSize": {
-    "message": "പരമാവധി ഫയൽ വലുപ്പം 100 MB ആണ്."
+    "message": "പരമാവധി ഫയൽ വലുപ്പം 500 MB ആണ്."
   },
   "updateKey": {
     "message": "നിങ്ങളുടെ എൻ‌ക്രിപ്ഷൻ കീ അപ്‌ഡേറ്റ് ചെയ്യുന്നതുവരെ നിങ്ങൾക്ക് ഈ സവിശേഷത ഉപയോഗിക്കാൻ കഴിയില്ല."
@@ -592,11 +602,11 @@
     "message": "Duo Mobile, SMS, ഫോൺ കോൾ അല്ലെങ്കിൽ U2F സുരക്ഷാ കീ ഉപയോഗിച്ച് നിങ്ങളുടെ ഓർഗനൈസേഷനെ Duo Security ഉപയോഗിച്ച് പരിശോധിക്കുക.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "നിങ്ങളുടെ അക്കൗണ്ട് ആക്സസ് ചെയ്യുന്നതിന് ഏതെങ്കിലും FIDO U2F പ്രാപ്തമാക്കിയ സുരക്ഷാ കീ ഉപയോഗിക്കുക."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F സുരക്ഷാ കീ"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "ഇമെയിൽ"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "Bitwarden വേണ്ടി പരിശോധിച്ചുറപ്പിക്കുക."
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "പുനരാരംഭിക്കുമ്പോൾ പ്രാഥമിക പാസ്‌വേഡ് ഉപയോഗിച്ച് പൂട്ടുക"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Pending deletion"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

@@ -44,14 +44,24 @@
   "share": {
     "message": "Udostępnij"
   },
-  "shareItem": {
-    "message": "Udostępnij element"
+  "moveToOrganization": {
+    "message": "Przenieś do organizacji"
   },
-  "sharedItem": {
-    "message": "Element został udostępniony"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Wybierz organizację, której chcesz udostępnić ten element. Udostępnianie przenosi własność elementu do wybranej organizacji. Nie będziesz już bezpośrednim właścicielem tego elementu, gdy zostanie on udostępniony."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Załączniki"
@@ -340,7 +350,7 @@
     "message": "Usuń załącznik"
   },
   "deleteItemConfirmation": {
-    "message": "Czy na pewno chcesz usunąć ten element?"
+    "message": "Czy na pewno chcesz to usunąć?"
   },
   "deletedItem": {
     "message": "Element został przeniesiony do kosza"
@@ -431,7 +441,7 @@
     "message": "Wybierz plik."
   },
   "maxFileSize": {
-    "message": "Maksymalny rozmiar pliku to 100 MB."
+    "message": "Maksymalny rozmiar pliku to 500 MB."
   },
   "updateKey": {
     "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
@@ -467,7 +477,7 @@
     "message": "Hasło główne"
   },
   "masterPassDesc": {
-    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, abyś je pamiętał. Jeśli je zapomnisz, nie będzie możliwości, aby je przywrócić."
+    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, aby je pamiętać, ponieważ zapomnianego hasła nie będzie można odzyskać."
   },
   "masterPassHintDesc": {
     "message": "Podpowiedź do hasła głównego może pomóc Ci przypomnieć hasło, jeśli je zapomnisz."
@@ -503,7 +513,7 @@
     "message": "Hasło główne musi zawierać co najmniej 8 znaków."
   },
   "masterPassDoesntMatch": {
-    "message": "Potwierdzenie hasła głównego nie pasuje."
+    "message": "Hasła nie pasują do siebie."
   },
   "newAccountCreated": {
     "message": "Konto zostało utworzone! Teraz możesz się zalogować."
@@ -592,11 +602,11 @@
     "message": "Weryfikacja dostępu do Twojej organizacji z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Użyj dowolnego klucza bezpieczeństwa FIDO U2F, aby uzyskać dostęp do Twojego konta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Klucz bezpieczeństwa FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Użyj dowolnego klucza bezpieczeństwa WebAuthn, aby uzyskać dostęp do swojego konta."
   },
   "emailTitle": {
     "message": "Adres e-mail"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "odblokuj sejf"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Nie pytaj o autoryzację Windows Hello podczas uruchamiania."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Nie pytaj o autoryzację Touch ID podczas uruchamiania."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
   },
@@ -1478,7 +1494,7 @@
     "message": "Wymagaj weryfikacji połączenia z przeglądarką"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Włącz dodatkową warstwę zabezpieczeń, wymagając sprawdzania identyfikatora podczas tworzenia połączenia między aplikacją a przeglądarką. Po włączeniu tej funkcji, musisz zweryfikować każde nawiązywanie połączenia."
+    "message": "Wymagaj sprawdzenia identyfikatora podczas tworzenia połączenia między aplikacją a przeglądarką. Po włączeniu tej funkcji, musisz zweryfikować każde nawiązywane połączenie."
   },
   "approve": {
     "message": "Zatwierdź"
@@ -1553,7 +1569,7 @@
     "message": "Obecna liczba dostępów"
   },
   "disableSend": {
-    "message": "Wyłącz tę wysyłkę, aby nikt nie miał do niej dostępu.",
+    "message": "Wyłącz wysyłkę, aby nikt nie miał do niej dostępu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1565,7 +1581,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Link wysyłki",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
@@ -1573,7 +1589,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "Ukryj tekst podczas dostępu do wysyłki",
+    "message": "Ukryj domyślnie tekst wysyłki",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1618,7 +1634,7 @@
     "message": "1 dzień"
   },
   "custom": {
-    "message": "Niestandardowy"
+    "message": "Niestandardowa"
   },
   "deleteSendConfirmation": {
     "message": "Czy na pewno chcesz usunąć tę wysyłkę?",
@@ -1629,7 +1645,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Kopiuj link wysyłki po zapisaniu."
+    "message": "Po zapisaniu wysyłki, skopiuj link do schowka."
   },
   "sendDisabled": {
     "message": "Wysyłka została wyłączona",
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Oczekiwanie na usunięcie"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Uwierzytelnianie WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Ukryj mój adres e-mail przed odbiorcami."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
+  },
+  "emailVerificationRequired": {
+    "message": "Wymagana weryfikacja adresu e-mail"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
+  },
+  "passwordPrompt": {
+    "message": "Powtórz hasło główne"
+  },
+  "passwordConfirmation": {
+    "message": "Potwierdź hasło główne"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Ta operacja jest chroniona. Aby kontynuować, wpisz ponownie hasło główne."
   }
 }

@@ -44,14 +44,24 @@
   "share": {
     "message": "Подели"
   },
-  "shareItem": {
-    "message": "Поделити ставку"
+  "moveToOrganization": {
+    "message": "Прмести у организацију"
   },
-  "sharedItem": {
-    "message": "Ставка дељена"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ премештен у $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Изаберите организацију са којом желите да делите ову ставку. Дељење преноси власништво предмета на организацију. Више нећете бити директни власник ове ставке када се она дели."
+  "moveToOrgDesc": {
+    "message": "Изаберите организацију коју желите да преместите овај предмет. Прелазак на организацију преноси власништво над ставком у ту организацију. Више нећете бити директни власник ове ставке након што је премештена."
   },
   "attachments": {
     "message": "Прилози"
@@ -431,7 +441,7 @@
     "message": "Изабери датотеку."
   },
   "maxFileSize": {
-    "message": "Максимална величина је 100МБ."
+    "message": "Максимална величина је 500МБ."
   },
   "updateKey": {
     "message": "Не можете да користите ову способност док не промените Ваш кључ за шифровање."
@@ -592,11 +602,11 @@
     "message": "Провери са Duo Security за вашу организацију користећи Duo Mobile апликацију, СМС, телефонски позив, или U2F кључ.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Користите било који FIDO U2F сигурносни кључ за присту налога."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F сигурносни кључ"
+  "webAuthnDesc": {
+    "message": "Користите било који WebAuthn сигурносни кључ за присту налога."
   },
   "emailTitle": {
     "message": "Имејл"
@@ -745,7 +755,7 @@
     "message": "Додатак за прегледач"
   },
   "syncingComplete": {
-    "message": "Синхронизација завршена"
+    "message": "Синхронизација је завршена"
   },
   "syncingFailed": {
     "message": "Синхронизација није успела"
@@ -850,7 +860,7 @@
     "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
   },
   "enableMinToTray": {
-    "message": "Умањи у систем трају"
+    "message": "Умањи у систем траку"
   },
   "enableMinToTrayDesc": {
     "message": "Када минимизујете прозор, уместо тога покажите икону у системској палети."
@@ -1124,7 +1134,7 @@
     "message": "Затвори Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ копирано",
+    "message": "$VALUE$ копиран(а/о)",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1296,6 +1306,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Деблокира сеф."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Не тражи Windows Hello на покретање."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Не тражи Touch ID на покретање."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Закључајте са главном лозинком при поновном покретању"
@@ -1529,14 +1545,14 @@
     "message": "Текст"
   },
   "deletionDate": {
-    "message": "Датум брисања"
+    "message": "Брисање после"
   },
   "deletionDateDesc": {
     "message": "Слање ће бити трајно обрисано у наведени датум и време.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Датум истека"
+    "message": "Рок употребе"
   },
   "expirationDateDesc": {
     "message": "Ако је подешено, приступ овом слању истиче у наведени датум и време.",
@@ -1618,7 +1634,7 @@
     "message": "1 дан"
   },
   "custom": {
-    "message": "Прилагођено"
+    "message": "Друго"
   },
   "deleteSendConfirmation": {
     "message": "Сигурно обрисати ово слање?",
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Брисање на чекању"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAutn аутентификација"
+  },
+  "hideEmail": {
+    "message": "Сакриј моју е-адресу од примаоца."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Једна или више смерница организације утичу на опције „Send“-а."
+  },
+  "emailVerificationRequired": {
+    "message": "Потребна је верификација е-поште"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Морате да проверите е-пошту да бисте користили ову функцију."
+  },
+  "passwordPrompt": {
+    "message": "Поновно тражење главне лозинке"
+  },
+  "passwordConfirmation": {
+    "message": "Потврда главне лозинке"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Ова акција је заштићена. Да бисте наставили, поново унесите своју главну лозинку да бисте проверили идентитет."
   }
 }

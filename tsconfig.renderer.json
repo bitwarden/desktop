@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "src/entry.ts",
+    "src/main.ts",
+    "src/main",
+    "src/proxy",
+    "jslib/**/*.main.ts"
+  ]
+}

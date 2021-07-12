@@ -44,14 +44,24 @@
   "share": {
     "message": "Megosztás"
   },
-  "shareItem": {
-    "message": "Elem megosztása"
+  "moveToOrganization": {
+    "message": "Áthelyezés szervezethez"
   },
-  "sharedItem": {
-    "message": "Megosztott elem"
+  "movedItemToOrg": {
+    "message": "Példaérték $itemname$: titkos elem változóhoz\nPéldaérték $itemname$: cégnév változóhoz\nFájl: messages.json",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Szervezet választása az elem megosztásához. Az elemtulajdon átadása a szervezetnek. Innentől nem közvetlen tulajdonosa leszünk az elemnek a megosztás után."
+  "moveToOrgDesc": {
+    "message": "Válasszunk egy szervezetet, ahová áthelyezni szeretnénk ezt az elemet. A szervezetbe áthelyezés átruházza az elem tulajdonjogát az adott szervezetre. Az áthelyezés után többé nem leszünk az elem közvetlen tulajdonosa."
   },
   "attachments": {
     "message": "Mellékletek"
@@ -431,7 +441,7 @@
     "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
-    "message": "Maximális fájl méret 100 MB."
+    "message": "Maximális fájl méret 500 MB."
   },
   "updateKey": {
     "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
@@ -592,11 +602,11 @@
     "message": "Ellenőrzés szervezeti Duo Security segítségével a Duo Mobile alkalmazás, SMS, telefonhívás vagy U2F biztonsági kulcs használatával.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Bármilyen FIDO U2F által engedélyezett biztonsági kulcs használata a fiók eléréséhez."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Biztonsági kulcs"
+  "webAuthnDesc": {
+    "message": "Használjunk bármilyen WebAuthn engedélyezett biztonsági kulcsot a saját fiók eléréséhez."
   },
   "emailTitle": {
     "message": "Email cím"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "Bitwarden feloldás"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Indításkor ne kérje a Windows Hello alkalmazást."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Indításkor ne kérje a Touch ID alkalmazást."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Függőben lévő törlés"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAutn hitelesítés"
+  },
+  "hideEmail": {
+    "message": "Saját email cím elrejtése a címzettek elől."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Egy vagy több szervezeti szabály érinti a Send opciókat."
+  },
+  "emailVerificationRequired": {
+    "message": "E-mail hitelesítés szükséges"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "A funkció használatához ellenőrizni kell az email címet."
+  },
+  "passwordPrompt": {
+    "message": "Mesterjelszó ismételt megadás"
+  },
+  "passwordConfirmation": {
+    "message": "Mesterjelszó megerősítése"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
   }
 }

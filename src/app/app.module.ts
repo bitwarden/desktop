@@ -1,4 +1,3 @@
-import 'core-js';
 import 'zone.js/dist/zone';
 
 import { ToasterModule } from 'angular2-toaster';
@@ -28,24 +27,24 @@ import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 
-import { CalloutComponent } from 'jslib/angular/components/callout.component';
-import { IconComponent } from 'jslib/angular/components/icon.component';
-import { ModalComponent } from 'jslib/angular/components/modal.component';
+import { CalloutComponent } from 'jslib-angular/components/callout.component';
+import { IconComponent } from 'jslib-angular/components/icon.component';
+import { ModalComponent } from 'jslib-angular/components/modal.component';
 
-import { A11yTitleDirective } from 'jslib/angular/directives/a11y-title.directive';
-import { ApiActionDirective } from 'jslib/angular/directives/api-action.directive';
-import { AutofocusDirective } from 'jslib/angular/directives/autofocus.directive';
-import { BlurClickDirective } from 'jslib/angular/directives/blur-click.directive';
-import { BoxRowDirective } from 'jslib/angular/directives/box-row.directive';
-import { FallbackSrcDirective } from 'jslib/angular/directives/fallback-src.directive';
-import { SelectCopyDirective } from 'jslib/angular/directives/select-copy.directive';
-import { StopClickDirective } from 'jslib/angular/directives/stop-click.directive';
-import { StopPropDirective } from 'jslib/angular/directives/stop-prop.directive';
-import { TrueFalseValueDirective } from 'jslib/angular/directives/true-false-value.directive';
+import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
+import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
+import { AutofocusDirective } from 'jslib-angular/directives/autofocus.directive';
+import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directive';
+import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
+import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
+import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
+import { StopClickDirective } from 'jslib-angular/directives/stop-click.directive';
+import { StopPropDirective } from 'jslib-angular/directives/stop-prop.directive';
+import { TrueFalseValueDirective } from 'jslib-angular/directives/true-false-value.directive';
 
-import { ColorPasswordPipe } from 'jslib/angular/pipes/color-password.pipe';
-import { I18nPipe } from 'jslib/angular/pipes/i18n.pipe';
-import { SearchCiphersPipe } from 'jslib/angular/pipes/search-ciphers.pipe';
+import { ColorPasswordPipe } from 'jslib-angular/pipes/color-password.pipe';
+import { I18nPipe } from 'jslib-angular/pipes/i18n.pipe';
+import { SearchCiphersPipe } from 'jslib-angular/pipes/search-ciphers.pipe';
 
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
@@ -67,25 +66,32 @@ import { SendComponent } from './send/send.component';
 import { NavComponent } from './layout/nav.component';
 
 import { registerLocaleData } from '@angular/common';
+import localeAf from '@angular/common/locales/af';
+import localeAz from '@angular/common/locales/az';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
+import localeBn from '@angular/common/locales/bn';
 import localeCa from '@angular/common/locales/ca';
 import localeCs from '@angular/common/locales/cs';
 import localeDa from '@angular/common/locales/da';
 import localeDe from '@angular/common/locales/de';
 import localeEl from '@angular/common/locales/el';
-import localEnGb from '@angular/common/locales/en-GB';
+import localeEnGb from '@angular/common/locales/en-GB';
+import localeEnIn from '@angular/common/locales/en-IN';
 import localeEs from '@angular/common/locales/es';
 import localeEt from '@angular/common/locales/et';
 import localeFa from '@angular/common/locales/fa';
 import localeFi from '@angular/common/locales/fi';
 import localeFr from '@angular/common/locales/fr';
+import localeHe from '@angular/common/locales/he';
 import localeHr from '@angular/common/locales/hr';
 import localeHu from '@angular/common/locales/hu';
 import localeId from '@angular/common/locales/id';
 import localeIt from '@angular/common/locales/it';
 import localeJa from '@angular/common/locales/ja';
+import localeKn from '@angular/common/locales/kn';
 import localeKo from '@angular/common/locales/ko';
+import localeLv from '@angular/common/locales/lv';
 import localeMl from '@angular/common/locales/ml';
 import localeNb from '@angular/common/locales/nb';
 import localeNl from '@angular/common/locales/nl';
@@ -96,6 +102,7 @@ import localeRo from '@angular/common/locales/ro';
 import localeRu from '@angular/common/locales/ru';
 import localeSk from '@angular/common/locales/sk';
 import localeSr from '@angular/common/locales/sr';
+import localeMe from '@angular/common/locales/sr-Latn-ME';
 import localeSv from '@angular/common/locales/sv';
 import localeTh from '@angular/common/locales/th';
 import localeTr from '@angular/common/locales/tr';
@@ -104,25 +111,33 @@ import localeVi from '@angular/common/locales/vi';
 import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
+registerLocaleData(localeAf, 'af');
+registerLocaleData(localeAz, 'az');
 registerLocaleData(localeBe, 'be');
 registerLocaleData(localeBg, 'bg');
+registerLocaleData(localeBn, 'bn');
 registerLocaleData(localeCa, 'ca');
 registerLocaleData(localeCs, 'cs');
 registerLocaleData(localeDa, 'da');
 registerLocaleData(localeDe, 'de');
 registerLocaleData(localeEl, 'el');
-registerLocaleData(localEnGb, 'en-GB');
+registerLocaleData(localeEnGb, 'en-GB');
+registerLocaleData(localeEnIn, 'en-IN');
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEt, 'et');
 registerLocaleData(localeFa, 'fa');
 registerLocaleData(localeFi, 'fi');
 registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeHe, 'he');
 registerLocaleData(localeHr, 'hr');
 registerLocaleData(localeHu, 'hu');
 registerLocaleData(localeId, 'id');
 registerLocaleData(localeIt, 'it');
 registerLocaleData(localeJa, 'ja');
+registerLocaleData(localeKn, 'kn');
 registerLocaleData(localeKo, 'ko');
+registerLocaleData(localeLv, 'lv');
+registerLocaleData(localeMe, 'me');
 registerLocaleData(localeMl, 'ml');
 registerLocaleData(localeNb, 'nb');
 registerLocaleData(localeNl, 'nl');
@@ -197,22 +212,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorOptionsComponent,
         VaultComponent,
         ViewComponent,
-    ],
-    entryComponents: [
-        AttachmentsComponent,
-        CollectionsComponent,
-        EnvironmentComponent,
-        ExportComponent,
-        FolderAddEditComponent,
-        ModalComponent,
-        PasswordGeneratorComponent,
-        PasswordGeneratorHistoryComponent,
-        PasswordHistoryComponent,
-        PremiumComponent,
-        SettingsComponent,
-        ShareComponent,
-        SendAddEditComponent,
-        TwoFactorOptionsComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],

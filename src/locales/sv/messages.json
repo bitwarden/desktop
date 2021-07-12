@@ -44,14 +44,24 @@
   "share": {
     "message": "Dela"
   },
-  "shareItem": {
-    "message": "Dela objekt"
+  "moveToOrganization": {
+    "message": "Flytta till organisation"
   },
-  "sharedItem": {
-    "message": "Delat objekt"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ flyttades till $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Välj en organisation som du vill dela detta objekt med. Delning överför ägandet av objektet till organisationen. Du kommer inte längre vara direkt ägare till detta objekt när det har delats."
+  "moveToOrgDesc": {
+    "message": "Välj en organisation som du vill flytta detta objektet till. Flytt till en organisation överför ägandet av objektet till den organisationen. Du kommer inte längre att vara direkt ägare till detta objekt när det har flyttats."
   },
   "attachments": {
     "message": "Bilagor"
@@ -368,7 +378,7 @@
     "message": "Kopiera URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Kopiera verifieringskod (TOTP)"
   },
   "length": {
     "message": "Längd"
@@ -431,7 +441,7 @@
     "message": "Välj en fil."
   },
   "maxFileSize": {
-    "message": "Filen får vara maximalt 100 MB."
+    "message": "Filen får vara maximalt 500 MB."
   },
   "updateKey": {
     "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
@@ -592,11 +602,11 @@
     "message": "Verifiera med Duo Security för din organisation genom att använda Duo Mobile-appen, SMS, telefonsamtal eller en U2F-säkerhetsnyckel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Använd en FIDO U2F-aktiverad säkerhetsnyckel för att komma åt ditt konto."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F-säkerhetsnyckel"
+  "webAuthnDesc": {
+    "message": "Använd en WebAuthn-aktiverad säkerhetsnyckel för att komma åt ditt konto."
   },
   "emailTitle": {
     "message": "E-post"
@@ -1228,10 +1238,10 @@
     "message": "Denna export innehåller ditt valv i ett okrypterat format. Du bör inte lagra eller skicka den exporterade filen över osäkra kanaler (t.ex. e-post). Radera den omedelbart när du är färdig med den."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Denna export krypterar dina data med kontots krypteringsnyckel. Om du någonsin roterar kontots krypteringsnyckel bör du exportera igen eftersom du inte kommer att kunna dekryptera denna exportfil."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Kypteringsnycklar är unika för varje Bitwarden-konto, så du kan inte importera en krypterad export till ett annat konto."
   },
   "exportMasterPassword": {
     "message": "Ange ditt huvudlösenord för att exportera ditt valv."
@@ -1296,6 +1306,12 @@
   },
   "touchIdConsentMessage": {
     "message": "lås upp valvet"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Fråga inte efter Windows Hello vid uppstart."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Fråga inte efter Touch-ID vid uppstart."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med huvudlösenordet vid omstart"
@@ -1505,108 +1521,108 @@
     "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Alla försändelser",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Fil"
   },
   "sendTypeText": {
     "message": "Text"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Sök försändelser",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Redigera försändelse",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Mitt valv"
   },
   "text": {
     "message": "Text"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Raderingsdatum"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Skicka kommer att raderas permanent på angivet datum och tid.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Utgångsdatum"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Om angivet kommer åtkomst till denna försändelse upphöra på angivet datum och tid.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Maximalt antal åtkomster"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Om angivet kommer användare inte längre komma åt denna försändelse när det maximala antalet åtkomster har uppnåtts.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Nuvarande antal åtkomster"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Inaktivera denna försändelse så att ingen kan komma åt den.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Kräv ett lösenord från användare innan de kommer åt denna försändelse.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Egna anteckningar om denna försändelse.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Försändelselänk",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Försändelselänk",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Dölj texten som standard när försändelsen öppnas",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Skapade försändelse",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Redigerade försändelse",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Raderade försändelse",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nytt lösenord"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Vilken typ av försändelse är det här?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Skapa försändelse",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Texten du vill skicka."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Filen du vill skicka."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ dagar",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1631,67 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 dag"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Anpassad"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Är du säker på att du vill radera denna försändelse?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Kopiera försändelselänk till urklipp",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Kopiera länken för att dela den här försändelsen när den har sparats."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Försändelse inaktiverad",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "På grund av en företagspolicy kan du bara radera befintliga försändelser.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopiera länk"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Inaktiverad"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Det maximala antalet åtkomster har uppnåtts"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Utgången"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Väntar på radering"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autentisera WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Dölj min e-postadress för mottagare."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "En eller flera organisationsriktlinjer påverkar dina Send-inställningar."
+  },
+  "emailVerificationRequired": {
+    "message": "E-postverifiering krävs"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Du måste verifiera din e-post för att använda den här funktionen."
+  },
+  "passwordPrompt": {
+    "message": "Återupprepa huvudlösenord"
+  },
+  "passwordConfirmation": {
+    "message": "Bekräfta huvudlösenord"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Denna åtgärd är skyddad. För att fortsätta, vänligen verifiera din identitet genom att ange ditt huvudlösenord."
   }
 }

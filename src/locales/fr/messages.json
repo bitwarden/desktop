@@ -44,14 +44,24 @@
   "share": {
     "message": "Partager"
   },
-  "shareItem": {
-    "message": "Partager l'élément"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Élément partagé"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Choisissez une organisation avec laquelle vous voulez partager cet élément. Le partage transfère la propriété de l'élément à l'organisation. Vous ne serez plus le propriétaire direct de cet élément après le partage."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Pièces jointes"
@@ -431,7 +441,7 @@
     "message": "Sélectionnez un fichier."
   },
   "maxFileSize": {
-    "message": "La taille maximale du fichier est de 100 Mo."
+    "message": "La taille maximale du fichier est de 500 Mo."
   },
   "updateKey": {
     "message": "Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez pas à jour votre clé de chiffrement."
@@ -592,11 +602,11 @@
     "message": "Sécurisez votre organisation avec Duo Security à l'aide de l'application Duo Mobile, l'envoi d'un SMS, un appel vocal ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utiliser n'importe quelle clé de sécurité FIDO U2F active pour accéder à votre compte."
+  "webAuthnTitle": {
+    "message": "WebAuthn FIDO2"
   },
-  "u2fTitle": {
-    "message": "Clé de sécurité FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilisez n'importe quelle clé de sécurité compatible WebAuthn pour accéder à votre compte."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "déverouiller votre coffre"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Ne pas proposer Windows Hello au lancement."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Ne pas proposer Touch ID au lancement."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "En attente de suppression"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authentifier WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Cacher mon adresse e-mail aux destinataires."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Une ou plusieurs politiques d'organisation affectent vos options Send."
+  },
+  "emailVerificationRequired": {
+    "message": "Vérification de l'adresse e-mail nécessaire"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Vous devez vérifier votre adresse e-mail pour utiliser cette fonctionnalité."
+  },
+  "passwordPrompt": {
+    "message": "Ressaisie du mot de passe maître"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmation du mot de passe maître"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
   }
 }

@@ -44,14 +44,24 @@
   "share": {
     "message": "Поділитися"
   },
-  "shareItem": {
-    "message": "Поділитися записом"
+  "moveToOrganization": {
+    "message": "Перемістити до організації"
   },
-  "sharedItem": {
-    "message": "Спільний запис"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ переміщено до $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Оберіть організацію, з якою хочете поділитися. Зробивши це, ви передасте доступ до цього запису іншій організації та більше не будете його одноосібним власником."
+  "moveToOrgDesc": {
+    "message": "Виберіть організацію, до якої ви бажаєте перемістити цей запис. При переміщенні до організації власність запису передається тій організації. Ви більше не будете єдиним власником цього запису після переміщення."
   },
   "attachments": {
     "message": "Вкладення"
@@ -431,7 +441,7 @@
     "message": "Оберіть файл."
   },
   "maxFileSize": {
-    "message": "Максимальний розмір файлу 100 Мб."
+    "message": "Максимальний розмір файлу 500 Мб."
   },
   "updateKey": {
     "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
@@ -592,11 +602,11 @@
     "message": "Авторизуйтесь за допомогою Duo Security для вашої організації з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Ключ безпеки FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Використовуйте будь-який ключ безпеки WebAuthn для доступу до сховища."
   },
   "emailTitle": {
     "message": "Е-пошта"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "розблокувати сховище"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Не запитувати Windows Hello під час запуску."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Не запитувати Touch ID під час запуску."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
   },
@@ -1344,7 +1360,7 @@
     "message": "Клонувати"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Політика однієї або декількох організацій впливає на ваші параметри генерування."
+    "message": "На параметри генератора впливають одна чи декілька політик організації."
   },
   "vaultTimeoutAction": {
     "message": "Дія після часу очікування сховища"
@@ -1409,7 +1425,7 @@
     "message": "Підтвердьте новий головний пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Політика однієї або декількох організацій зобов'язує дотримання таких вимог для головного пароля:"
+    "message": "Одна або декілька політик організації вимагають дотримання таких вимог для головного пароля:"
   },
   "policyInEffectMinComplexity": {
     "message": "Мінімальна оцінка складності $SCORE$",
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Очікується видалення"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Авторизація WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Приховувати мою адресу електронної пошти від отримувачів."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "На параметри відправлень впливають одна чи декілька політик організації."
+  },
+  "emailVerificationRequired": {
+    "message": "Необхідно підтвердити е-пошту"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Для використання цієї функції необхідно підтвердити електронну пошту."
+  },
+  "passwordPrompt": {
+    "message": "Повторний запит головного пароля"
+  },
+  "passwordConfirmation": {
+    "message": "Підтвердження головного пароля"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Ця дія захищена. Щоб продовжити, повторно введіть головний пароль."
   }
 }

@@ -1,7 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { isDev } from 'jslib/electron/utils';
+import { isDev } from 'jslib-electron/utils';
 
 // tslint:disable-next-line
 require('../scss/styles.scss');

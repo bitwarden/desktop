@@ -7,17 +7,17 @@ import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
-import { BiometricMain } from 'jslib/abstractions/biometric.main';
-import { ElectronConstants } from 'jslib/electron/electronConstants';
-import { KeytarStorageListener } from 'jslib/electron/keytarStorageListener';
-import { ElectronLogService } from 'jslib/electron/services/electronLog.service';
-import { ElectronMainMessagingService } from 'jslib/electron/services/electronMainMessaging.service';
-import { ElectronStorageService } from 'jslib/electron/services/electronStorage.service';
-import { TrayMain } from 'jslib/electron/tray.main';
-import { UpdaterMain } from 'jslib/electron/updater.main';
-import { WindowMain } from 'jslib/electron/window.main';
+import { BiometricMain } from 'jslib-common/abstractions/biometric.main';
+import { ElectronConstants } from 'jslib-electron/electronConstants';
+import { KeytarStorageListener } from 'jslib-electron/keytarStorageListener';
+import { ElectronLogService } from 'jslib-electron/services/electronLog.service';
+import { ElectronMainMessagingService } from 'jslib-electron/services/electronMainMessaging.service';
+import { ElectronStorageService } from 'jslib-electron/services/electronStorage.service';
+import { TrayMain } from 'jslib-electron/tray.main';
+import { UpdaterMain } from 'jslib-electron/updater.main';
+import { WindowMain } from 'jslib-electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
 
 export class Main {
@@ -109,15 +109,16 @@ export class Main {
             this.messagingMain.onMessage(message);
         });
 
-        this.keytarStorageListener = new KeytarStorageListener('Bitwarden');
 
         if (process.platform === 'win32') {
-            const BiometricWindowsMain = require('jslib/electron/biometric.windows.main').default;
+            const BiometricWindowsMain = require('jslib-electron/biometric.windows.main').default;
             this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService, this.windowMain);
         } else if (process.platform === 'darwin') {
-            const BiometricDarwinMain = require('jslib/electron/biometric.darwin.main').default;
+            const BiometricDarwinMain = require('jslib-electron/biometric.darwin.main').default;
             this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
         }
+
+        this.keytarStorageListener = new KeytarStorageListener('Bitwarden', this.biometricMain);
 
         this.nativeMessagingMain = new NativeMessagingMain(this.logService, this.windowMain, app.getPath('userData'), app.getPath('exe'));
     }

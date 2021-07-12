@@ -44,14 +44,24 @@
   "share": {
     "message": "ভাগ করুন"
   },
-  "shareItem": {
-    "message": "বস্তু ভাগ করুন"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "ভাগকৃত বস্তু"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "এমন একটি সংস্থা চয়ন করুন যার সাথে আপনি এই বস্তুটি ভাগ করতে চান। ভাগ করে নেওয়া বস্তুটির মালিকানা প্রতিষ্ঠানে স্থানান্তর করে। এই বস্তুটি ভাগ হয়ে যাওয়ার পরে আপনি আর তার সরাসরি মালিক হতে পারবেন না।"
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "সংযুক্তি"
@@ -592,11 +602,11 @@
     "message": "Duo Mobile app, এসএমএস, ফোন কল, বা U2F সুরক্ষা কী ব্যবহার করে আপনার সংস্থার জন্য Duo Security এর মাধ্যমে যাচাই করুন।",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "আপনার অ্যাকাউন্ট ব্যাবহার করতে যেকোন FIDO U2F সক্ষম সুরক্ষা কী ব্যবহার করুন।"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F সুরক্ষা কী"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "ইমেইল"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "unlock your vault"
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Pending deletion"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

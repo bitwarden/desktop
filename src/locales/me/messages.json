@@ -44,14 +44,24 @@
   "share": {
     "message": "Podijeli"
   },
-  "shareItem": {
-    "message": "Podijeli stavku"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Podijeljena stavka"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Izaberi organizaciju sa kojom želiš da podijeliš ovu stavku. Dijeljenje prenosi vlasništvo nad stavkom organizaciji. Nećete više biti direktni vlasnik ove stavke kada je podijelite."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Prilog"
@@ -431,7 +441,7 @@
     "message": "Izaberi datoteku."
   },
   "maxFileSize": {
-    "message": "Maximalna veličina datoteke je 100 MB."
+    "message": "Maximalna veličina datoteke je 500 MB."
   },
   "updateKey": {
     "message": "Ovu funkciju ne možete da koristite dok ne ažurirate ključ za šifrovanje."
@@ -592,11 +602,11 @@
     "message": "Potvrdite sa Duo Security za svoju organizaciju pomoću aplikacije Duo Mobile, SMS-a, telefonskog poziva ili U2F sigurnosnog ključa.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Za pristup nalogu koristite bilo koji sigurnosni ključ koji podržava FIDO U2F."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Sigurnosni ključ"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Email"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "Verifikuj za Bitwarden."
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključajte glavnom lozinkom pri ponovnom pokretanju"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Pending deletion"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

@@ -44,14 +44,24 @@
   "share": {
     "message": "اشتراک‌گذاری"
   },
-  "shareItem": {
-    "message": "اشتراک‌گذاری مورد"
+  "moveToOrganization": {
+    "message": "انتقال به سازمان"
   },
-  "sharedItem": {
-    "message": "مورد اشتراک‌گذاری شد"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ منتقل شد به $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "تشکیلاتی که می‌خواهید این مورد را با آن به اشتراک بگذارید انتخاب کنید. پس از اشتراک‌گذاری مالکیت موارد به آن تشکیلات انتقال می‌یابد. پس از اشتراک‌گذاری این مورد شما دیگر نمی‌توانید صاحب اصلی آن باشید."
+  "moveToOrgDesc": {
+    "message": "سازمانی را انتخاب کنید که می خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود."
   },
   "attachments": {
     "message": "پیوست‌ها"
@@ -592,11 +602,11 @@
     "message": "از Duo Security با استفاده از برنامه تلفن همراه، پیامک، تماس تلفنی یا کلید امنیتی U2F برای تایید سازمان خود استفاده کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "از هر کلید امنیتی با FIDO U2F فعال استفاده کنید تا به حساب کاربریتان دسترسی یابید."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "کلید امنیتی FIDO U2F"
+  "webAuthnDesc": {
+    "message": "برای دسترسی به حساب خود از هر کلید امنیتی فعال شده WebAuthn استفاده کنید."
   },
   "emailTitle": {
     "message": "رایانامه"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "تایید برای Bitwarden."
   },
+  "noAutoPromptWindowsHello": {
+    "message": "در هنگام راه اندازی ، درخواست Windows Hello نکنید."
+  },
+  "noAutoPromptTouchId": {
+    "message": "در هنگام راه اندازی ، درخواست Touch ID نکنید."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد، با کلمه عبور اصلی قفل کن"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "در انتظار حذف"
+  },
+  "webAuthnAuthenticate": {
+    "message": "تأیید اعتبار در WebAuthn"
+  },
+  "hideEmail": {
+    "message": "آدرس ایمیلم را از گیرندگان مخفی کن."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "یک یا چند سیاست سازمان بر گزینه های ارسال شما تأثیر می گذارد."
+  },
+  "emailVerificationRequired": {
+    "message": "تایید ایمیل لازم است"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید."
+  },
+  "passwordPrompt": {
+    "message": "کلمه عبور اصلی دوباره تولید می شود"
+  },
+  "passwordConfirmation": {
+    "message": "تأیید کلمه عبور اصلی"
+  },
+  "passwordConfirmationDesc": {
+    "message": "این عمل محافظت می شود. برای ادامه، لطفاً کلمه ورود اصلی خود را دوباره وارد کنید تا هویتان را تأیید کنید."
   }
 }

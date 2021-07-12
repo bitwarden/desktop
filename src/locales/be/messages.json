@@ -44,14 +44,24 @@
   "share": {
     "message": "Абагуліць"
   },
-  "shareItem": {
-    "message": "Абагуліць элемент"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Абагулены элемент"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Выберыце арганізацыю, якой вы хочаце даць доступ да гэтага элемента. Пасля выканання гэтай аперацыі, правы на элемент будуць перададзены арганізацыі і вы не будзеце з'яўляцца непасрэдным уладальнікам гэтага элемента."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Далучэнні"
@@ -431,7 +441,7 @@
     "message": "Выберыце файл."
   },
   "maxFileSize": {
-    "message": "Максімальны памер файла 100 МБ."
+    "message": "Максімальны памер файла 500 МБ."
   },
   "updateKey": {
     "message": "Вы не можаце выкарыстоўваць гэту функцыю, пакуль не абнавіце свой ключ шыфравання."
@@ -592,11 +602,11 @@
     "message": "Пацвярдзіце з дапамогай Duo Security для вашай арганізацыі, выкарыстоўваючы праграму Duo Mobile, SMS, тэлефонны выклік або ключ бяспекі.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Выкарыстоўвайце любы ключ бяспекі FIDO U2F для доступу да вашага ўліковага запісу."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Ключ бяспекі FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Электронная пошта"
@@ -1297,6 +1307,12 @@
   "touchIdConsentMessage": {
     "message": "Праверыць на Bitwarden."
   },
+  "noAutoPromptWindowsHello": {
+    "message": "Do not prompt for Windows Hello on launch."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Do not prompt for Touch ID on launch."
+  },
   "lockWithMasterPassOnRestart": {
     "message": "Блакіраваць асноўным паролем пры перазапуску"
   },
@@ -1653,5 +1669,29 @@
   },
   "pendingDeletion": {
     "message": "Pending deletion"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticate WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Hide my email address from recipients."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "One or more organization policies are affecting your Send options."
+  },
+  "emailVerificationRequired": {
+    "message": "Email Verification Required"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "You must verify your email to use this feature."
+  },
+  "passwordPrompt": {
+    "message": "Master password re-prompt"
+  },
+  "passwordConfirmation": {
+    "message": "Master password confirmation"
+  },
+  "passwordConfirmationDesc": {
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

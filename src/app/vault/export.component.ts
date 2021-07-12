@@ -7,15 +7,15 @@ import {
 
 import * as os from 'os';
 
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { EventService } from 'jslib/abstractions/event.service';
-import { ExportService } from 'jslib/abstractions/export.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { CryptoService } from 'jslib-common/abstractions/crypto.service';
+import { EventService } from 'jslib-common/abstractions/event.service';
+import { ExportService } from 'jslib-common/abstractions/export.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 
-import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { ExportComponent as BaseExportComponent } from 'jslib/angular/components/export.component';
+import { ExportComponent as BaseExportComponent } from 'jslib-angular/components/export.component';
 
 const BroadcasterSubscriptionId = 'ExportComponent';
 

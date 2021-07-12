@@ -1,8 +1,8 @@
 import { powerMonitor } from 'electron';
 
-import { ConstantsService } from 'jslib/services/constants.service';
+import { ConstantsService } from 'jslib-common/services/constants.service';
 
-import { isSnapStore } from 'jslib/electron/utils';
+import { isSnapStore } from 'jslib-electron/utils';
 
 import { Main } from '../main';
 

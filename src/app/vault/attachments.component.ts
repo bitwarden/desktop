@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 
-import { ApiService } from 'jslib/abstractions/api.service';
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { UserService } from 'jslib/abstractions/user.service';
+import { ApiService } from 'jslib-common/abstractions/api.service';
+import { CipherService } from 'jslib-common/abstractions/cipher.service';
+import { CryptoService } from 'jslib-common/abstractions/crypto.service';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
-import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/components/attachments.component';
+import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib-angular/components/attachments.component';
 
 @Component({
     selector: 'app-vault-attachments',
