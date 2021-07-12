@@ -124,7 +124,7 @@ const renderer = {
             },
             {
                 test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                exclude: /loading.svg|[\\/]cozy\/react\/assets[\\/]/,
+                exclude: /loading.svg|icons-16-cozy-sync.svg|[\\/]cozy\/react\/assets[\\/]/,
                 use: [{
                     loader: 'file-loader',
                     options: {

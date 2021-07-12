@@ -45,3 +45,16 @@ app-button-extension {
 app-vault-icon {
     color: var(--secondaryTextColor);
 }
+
+.icon-cozy {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+}
+
+.icon-cozy-sync {
+    background-image: url('../images/icons-16-cozy-sync.svg');
+}
