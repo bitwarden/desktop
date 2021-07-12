@@ -47,6 +47,7 @@ import { SystemService } from 'jslib-common/abstractions/system.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { WebWorkerService } from 'jslib-common/abstractions/webWorker.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
 
@@ -55,7 +56,6 @@ import { CipherType } from 'jslib-common/enums/cipherType';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
-import { WebWorkerService } from 'jslib/abstractions';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes

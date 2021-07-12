@@ -10,7 +10,7 @@ const common = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /(?<!\.worker)\.ts$/,
                 enforce: 'pre',
                 loader: 'tslint-loader',
             },
@@ -129,9 +129,14 @@ const renderer = {
             chunkFilename: '[id].[hash].css',
         }),
         new WorkerPlugin({
-            plugins: ['AngularCompilerPlugin'],
+            plugins: [
+                new AngularCompilerPlugin({
+                    tsConfigPath: 'jslib/common/tsconfig.worker.json',
+                    sourceMap: true
+                })
+            ],
             globalObject: 'self'
-        }),
+        })
     ],
 };
 
