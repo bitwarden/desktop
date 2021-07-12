@@ -4,12 +4,13 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const WorkerPlugin = require('worker-plugin');
 
 const common = {
     module: {
         rules: [
             {
-                test: /\.ts$/,
+                test: /(?<!\.worker)\.ts$/,
                 enforce: 'pre',
                 loader: 'tslint-loader',
             },
@@ -127,6 +128,15 @@ const renderer = {
             filename: '[name].[hash].css',
             chunkFilename: '[id].[hash].css',
         }),
+        new WorkerPlugin({
+            plugins: [
+                new AngularCompilerPlugin({
+                    tsConfigPath: 'jslib/common/tsconfig.worker.json',
+                    sourceMap: true
+                })
+            ],
+            globalObject: 'self'
+        })
     ],
 };
 

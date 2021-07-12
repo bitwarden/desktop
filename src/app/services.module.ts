@@ -49,6 +49,7 @@ import { TotpService } from 'jslib-common/services/totp.service';
 import { UserService } from 'jslib-common/services/user.service';
 import { VaultTimeoutService } from 'jslib-common/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib-common/services/webCryptoFunction.service';
+import { WebWorkerService } from 'jslib-common/services/webWorker.service';
 
 import { ElectronCryptoService } from 'jslib-electron/services/electronCrypto.service';
 
@@ -85,7 +86,7 @@ import { TokenService as TokenServiceAbstraction } from 'jslib-common/abstractio
 import { TotpService as TotpServiceAbstraction } from 'jslib-common/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
-
+import { WebWorkerService as WebWorkerServiceAbstraction } from 'jslib-common/abstractions/webWorker.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -107,8 +108,10 @@ const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
 export let searchService: SearchService = null;
 const fileUploadService = new FileUploadService(logService, apiService);
+const webWorkerService = new WebWorkerService();
 const cipherService = new CipherService(cryptoService, userService, settingsService,
-    apiService, fileUploadService, storageService, i18nService, () => searchService);
+    apiService, fileUploadService, storageService, i18nService, () => searchService, webWorkerService,
+    logService, platformUtilsService);
 const folderService = new FolderService(cryptoService, userService, apiService, storageService,
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
@@ -118,7 +121,7 @@ const sendService = new SendService(cryptoService, userService, apiService, file
 const policyService = new PolicyService(userService, storageService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
-    null, async () => messagingService.send('logout', { expired: false }));
+    null, async () => messagingService.send('logout', { expired: false }), webWorkerService);
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
     sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
@@ -224,6 +227,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: WebWorkerServiceAbstraction, useValue: webWorkerService },
         { provide: PasswordRepromptServiceAbstraction, useValue: passwordRepromptService },
         {
             provide: APP_INITIALIZER,

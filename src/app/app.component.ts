@@ -47,6 +47,7 @@ import { SystemService } from 'jslib-common/abstractions/system.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { WebWorkerService } from 'jslib-common/abstractions/webWorker.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
 
@@ -108,7 +109,7 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService) { }
+        private policyService: PolicyService, private webWorkerService: WebWorkerService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -354,6 +355,7 @@ export class AppComponent implements OnInit {
             this.vaultTimeoutService.clear(),
             this.stateService.purge(),
             this.policyService.clear(userId),
+            this.webWorkerService.terminateAll(),
         ]);
 
         this.vaultTimeoutService.biometricLocked = true;

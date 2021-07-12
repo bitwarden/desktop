@@ -22,7 +22,6 @@ const common = {
             },
         ],
     },
-    plugins: [],
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })]
