@@ -33,6 +33,7 @@ const BroadcasterSubscriptionId = 'AddEditComponent';
 export class AddEditComponent extends BaseAddEditComponent implements OnChanges, OnDestroy {
     @ViewChild('form')
     private form: NgForm;
+    private defaultUsernames: string[] = [];
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
@@ -61,6 +62,14 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     async ngOnChanges() {
         await super.init();
         await this.load();
+
+        if (this.cipher.type === CipherType.Login) {
+            const topUsernames = this.cipherService.topUsernames;
+            if (topUsernames != null) {
+                this.defaultUsernames = topUsernames;
+                this.defaultUsernames.unshift('');
+            }
+        }
     }
 
     ngOnDestroy() {

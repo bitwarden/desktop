@@ -24,7 +24,10 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="loginUsername">{{'username' | i18n}}</label>
                             <input id="loginUsername" type="text" name="Login.Username"
-                                [(ngModel)]="cipher.login.username">
+                                [(ngModel)]="cipher.login.username" list="defaultLoginUsernames">
+                            <datalist id="defaultLoginUsernames">
+                                <option *ngFor="let u of defaultUsernames" [ngValue]="u">{{u}}</option>
+                            </datalist>
                         </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
