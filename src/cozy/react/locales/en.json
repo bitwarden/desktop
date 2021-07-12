@@ -85,7 +85,7 @@
     "step3-oidc": "Log in with your address **%{address}** and your Cozy Pass password!",
     "cta": "Install Cozy extension",
     "skip": "Skip",
-    "login": "Open Cozy Pass"
+    "login": "Open my passwords"
   },
 
   "InstallationStepMobile": {
