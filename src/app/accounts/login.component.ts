@@ -52,6 +52,10 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
+        super.onCaptchaRequired = async () => {
+            const content = document.getElementById('content') as HTMLDivElement;
+            content.setAttribute('style', 'width:325px');
+        };
     }
 
     async ngOnInit() {
