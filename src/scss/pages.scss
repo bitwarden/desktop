@@ -42,6 +42,7 @@
 #login-page, #register-page, #hint-page, #two-factor-page, #lock-page {
     .content {
         width: 300px;
+        transition: width 0.25s linear;
 
         p {
             text-align: center
