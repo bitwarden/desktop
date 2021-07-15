@@ -60,8 +60,6 @@ class BrowserStorageService implements StorageService {
 
     constructor() {
         this.chromeStorageApi = window.localStorage;
-        const cozyDataNode = document.getElementById('cozy-app');
-        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
 
         // If true  : all data will remain in memory, no data will be stored in Local Storage.
         // If false : some data are stored in Local Storage.

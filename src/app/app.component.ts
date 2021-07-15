@@ -66,6 +66,9 @@ import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 
+import { CozyClientInstanceOption } from '../cozy/CozyClientTypes';
+import { CozyClientService } from '../cozy/services/cozy-client.service';
+
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
@@ -119,7 +122,7 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService) { }
+        private policyService: PolicyService, private clientService: CozyClientService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -298,33 +301,32 @@ export class AppComponent implements OnInit {
     }
 
     initCozy() {
-        const root = document.querySelector('[role=application]');
-        if (root instanceof HTMLElement) {
-            const data = root.dataset;
+        const data = (this.clientService.GetClient().getInstanceOptions() as CozyClientInstanceOption);
 
-            const protocol = window.location ? window.location.protocol : 'https:';
-            const cozyUrl = `${protocol}//${data.cozyDomain}`;
-            const appMetadata = {
-                slug: 'password',
-                version: '1',
-            };
+        const protocol = window.location ? window.location.protocol : 'https:';
+        const cozyUrl = `${protocol}//${data.domain}`;
+        const appMetadata = {
+            slug: 'password',
+            version: '1',
+        };
 
-            const client = new CozyClient({
-                uri: cozyUrl,
-                token: data.cozyToken,
-                appMetadata: appMetadata,
-                schema: {},
-            });
+        const client = new CozyClient({
+            uri: cozyUrl,
+            token: data.token,
+            appMetadata: appMetadata,
+            schema: {},
+        });
 
-            cozy.bar.init({
-                appName: data.cozyAppName,
-                appEditor: data.cozyAppEditor,
-                cozyClient: client,
-                iconPath: data.cozyIconPath,
-                lang: data.cozyLocale,
-                replaceTitleOnMobile: false,
-            });
-        }
+        cozy.bar.init({
+            appName: data.app.name,
+            appEditor: data.app.editor,
+            cozyClient: client,
+            iconPath: data.app.icon,
+            lang: data.locale,
+            replaceTitleOnMobile: false,
+            appSlug: data.app.slug,
+            appNamePrefix: data.app.prefix,
+        });
     }
 
     ngOnDestroy() {

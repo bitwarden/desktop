@@ -2,7 +2,7 @@ import { I18nService as BaseI18nService } from 'jslib/services/i18n.service';
 
 class CozyAppElement extends Element {
     dataset: {
-        cozyLocale: string;
+        cozy: string
     };
 }
 
@@ -29,14 +29,8 @@ export class I18nService extends BaseI18nService {
 
     getCozyLanguage() {
         const root = document.querySelector<CozyAppElement>('[role=application]');
-        const data = root.dataset;
+        const data = JSON.parse(root?.dataset?.cozy);
 
-        return this.getDataOrDefault(data.cozyLocale, 'en');
-    }
-
-    // return a defaultData if the template hasn't been replaced by cozy-stack
-    getDataOrDefault(toTest: string, defaultData: string) {
-        const templateRegex = /^\{\{\.[a-zA-Z]*\}\}$/; // {{.Example}}
-        return templateRegex.test(toTest) ? defaultData : toTest;
+        return data.locale ?? 'en';
     }
 }

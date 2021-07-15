@@ -22,12 +22,6 @@ const generateClassName = createGenerateClassName({
   disableGlobal: true,
 });
 
-// return a defaultData if the template hasn't been replaced by cozy-stack
-const getDataOrDefault = function (toTest, defaultData) {
-  const templateRegex = /^\{\{\.[a-zA-Z]*\}\}$/; // {{.Example}}
-  return templateRegex.test(toTest) ? defaultData : toTest;
-};
-
 // wrap a component in all needed providers
 const ReactWrapper = ({
   client,
@@ -35,9 +29,7 @@ const ReactWrapper = ({
   vaultData,
   ...props
 }) => {
-  const root = document.querySelector("[role=application]");
-  const data = root.dataset;
-  let appLocale = getDataOrDefault(data.cozyLocale, "en");
+  const appLocale = client.getInstanceOptions().locale ?? 'en';
 
   return (
     <StylesProvider generateClassName={generateClassName}>

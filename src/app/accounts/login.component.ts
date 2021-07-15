@@ -27,6 +27,8 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
+import { CozyClientInstanceOption } from '../../cozy/CozyClientTypes';
+
 const BroadcasterSubscriptionId = 'LoginComponent';
 
 @Component({
@@ -58,9 +60,9 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         // @override by Cozy
         // check if code is run into a Cozy app
         // if yes, retrieve url and user email from the htlm
-        const cozyDataNode = document.getElementById('cozy-app');
-        const cozyDomain = cozyDataNode ? cozyDataNode.dataset.cozyDomain : null;
+        const { domain: cozyDomain } = (this.clientService.GetClient().getInstanceOptions() as CozyClientInstanceOption);
         const domainWithoutPort = cozyDomain && cozyDomain.split(':')[0];
+
         if (cozyDomain) {
             this.isInCozyApp = true;
             this.email = `me@${domainWithoutPort}`;
