@@ -32,6 +32,15 @@
   "collections": {
     "message": "Colecciones"
   },
+  "tools": {
+    "message": "Tools"
+  },
+  "installation": {
+    "message": "Installation"
+  },
+  "import": {
+    "message": "Import"
+  },
   "searchVault": {
     "message": "Buscar en caja fuerte"
   },
@@ -297,6 +306,15 @@
   "authenticatorKeyTotp": {
     "message": "Clave de autenticación (TOTP)"
   },
+  "authentification": {
+    "message": "Authentification"
+  },
+  "authentification-oidc": {
+    "message": "Cozy Pass"
+  },
+  "confirmYourIdentity": {
+    "message": "For security, please confirme your identity"
+  },
   "folder": {
     "message": "Carpeta"
   },
@@ -342,8 +360,17 @@
   "deleteItemConfirmation": {
     "message": "¿Estás seguro de que quieres eliminar este elemento?"
   },
+  "deleteItemsConfirmation": {
+      "message": "Move these €€€ items to trash ?"
+  },
+  "deleteItems": {
+    "message": "Move these items to trash"
+  },
   "deletedItem": {
     "message": "Elemento eliminado"
+  },
+  "deletedItems": {
+    "message": "€€€ items moved to trash"
   },
   "overwritePasswordConfirmation": {
     "message": "¿Estás seguro de que quieres sobreescribir la contraseña actual?"
@@ -465,6 +492,9 @@
   },
   "masterPass": {
     "message": "Contraseña maestra"
+  },
+  "masterPass-oidc": {
+    "message": "Password for Cozy Pass"
   },
   "masterPassDesc": {
     "message": "La contraseña maestra es la clave que utilizas para acceder a tu caja fuerte. Es muy importante que no olvides tu contraseña maestra. No hay forma de recuperarla si la olvidas."
@@ -1378,17 +1408,38 @@
   "permanentlyDeleteItemConfirmation": {
     "message": "¿Estás seguro de eliminar de forma permanente este elemento?"
   },
+  "permanentlyDeleteItems": {
+    "message": "Empty trash"
+  },
+  "permanentlyDeleteItemsConfirmation": {
+    "message": "Are you sure you want to permanently delete these €€€ items?"
+  },
   "permanentlyDeletedItem": {
     "message": "Elemento eliminado de forma permanente"
+  },
+  "permanentlyDeletedItems": {
+    "message": "€€€ permanently deleted items"
   },
   "restoreItem": {
     "message": "Restaurar elemento"
   },
+  "restoreItems": {
+    "message": "Restore these €€€ items"
+  },
+  "restoreAllItems": {
+    "message": "Restore all these items"
+  },
   "restoreItemConfirmation": {
     "message": "¿Estás seguro de que quieres restaurar este elemento?"
   },
+  "restoreItemsConfirmation": {
+    "message": "Are you sure you want to restore all these items?"
+  },
   "restoredItem": {
     "message": "Elemento restaurado"
+  },
+  "restoredItems": {
+    "message": "€€€ elements restored"
   },
   "permanentlyDelete": {
     "message": "Eliminar de forma permanente"
