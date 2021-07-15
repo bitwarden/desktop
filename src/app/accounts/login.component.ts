@@ -28,6 +28,7 @@ import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/l
 import { ModalComponent } from 'jslib/angular/components/modal.component';
 
 import { CozyClientInstanceOption } from '../../cozy/CozyClientTypes';
+import { CozyClientService } from '../../cozy/services/cozy-client.service';
 
 const BroadcasterSubscriptionId = 'LoginComponent';
 
@@ -42,13 +43,15 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     showingModal = false;
     isInCozyApp: boolean = false;
     baseUrl: string;
+    canAuthWithOIDC = false;
+    appIconForOIDC = 'images/icons-login.svg';
 
     constructor(authService: AuthService, router: Router, i18nService: I18nService,
         syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
+        private broadcasterService: BroadcasterService, private ngZone: NgZone, private clientService: CozyClientService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
@@ -72,6 +75,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                 base: this.baseUrl + 'bitwarden',
             });
         }
+        await this.checkIfClientCanAuthWithOIDC();
         // TODO BJA const cozyToken = cozyDataNode ? cozyDataNode.dataset.cozytoken : null;
         // if (cozyToken) {
         //     await this.storageService.save('accessToken', cozyToken);
@@ -91,9 +95,13 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         });
     }
 
+    async checkIfClientCanAuthWithOIDC() {
+        this.canAuthWithOIDC = this.clientService.GetClient().capabilities?.can_auth_with_oidc;
+    }
+
     ngAfterViewInit() {
         const inputContainerEl  = this.masterPwdContainer.nativeElement;
-        const labelTxt = this.i18nService.t('masterPass');
+        const labelTxt = this.canAuthWithOIDC ? this.i18nService.t('masterPass-oidc') : this.i18nService.t('masterPass');
         this._turnIntoMaterialInput(inputContainerEl, labelTxt);
     }
 

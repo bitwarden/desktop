@@ -309,6 +309,9 @@
   "authentification": {
     "message": "Authentification"
   },
+  "authentification-oidc": {
+    "message": "Cozy Pass"
+  },
   "confirmYourIdentity": {
     "message": "For security, please confirme your identity"
   },
@@ -489,6 +492,9 @@
   },
   "masterPass": {
     "message": "Password of your Cozy"
+  },
+  "masterPass-oidc": {
+    "message": "Password for Cozy Pass"
   },
   "masterPassDesc": {
     "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."

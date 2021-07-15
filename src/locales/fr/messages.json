@@ -309,6 +309,9 @@
   "authentification": {
     "message": "Authentification"
   },
+  "authentification-oidc": {
+    "message": "Cozy Pass"
+  },
   "confirmYourIdentity": {
     "message": "Par sécurité, merci de confirmer votre identité"
   },
@@ -489,6 +492,9 @@
   },
   "masterPass": {
     "message": "Mot de passe de votre Cozy"
+  },
+  "masterPass-oidc": {
+    "message": "Mot de passe Cozy Pass"
   },
   "masterPassDesc": {
     "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
