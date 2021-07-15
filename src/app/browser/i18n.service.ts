@@ -1,21 +1,19 @@
 import { I18nService as BaseI18nService } from 'jslib/services/i18n.service';
 
-import { BrowserApi } from '../browser/browserApi';
-import { SafariApp } from '../browser/safariApp';
+class CozyAppElement extends Element {
+    dataset: {
+        cozyLocale: string;
+    };
+}
 
 export class I18nService extends BaseI18nService {
     constructor(systemLanguage: string, localesDirectory: string) {
 
         super(systemLanguage, localesDirectory, async (formattedLocale: string) => {
-            if (BrowserApi.isSafariApi) {
-                await SafariApp.sendMessageToApp('getLocaleStrings', formattedLocale);
-                return (window as any).bitwardenLocaleStrings;
-            } else {
-                // Deprecated
-                // const file = await fetch(localesDirectory + '/' + formattedLocale + '/messages.json');
-                const file = await fetch('locales/fr/messages.json', {mode: 'no-cors'});
-                return await file.json();
-            }
+            const appLocale = this.getCozyLanguage();
+
+            const file = await fetch(`locales/${appLocale}/messages.json`, {mode: 'no-cors'});
+            return await file.json();
         });
 
         this.supportedTranslationLocales = [
@@ -27,5 +25,18 @@ export class I18nService extends BaseI18nService {
 
     t(id: string, p1?: string, p2?: string, p3?: string): string {
         return this.translate(id, p1, p2, p3);
+    }
+
+    getCozyLanguage() {
+        const root = document.querySelector<CozyAppElement>('[role=application]');
+        const data = root.dataset;
+
+        return this.getDataOrDefault(data.cozyLocale, 'en');
+    }
+
+    // return a defaultData if the template hasn't been replaced by cozy-stack
+    getDataOrDefault(toTest: string, defaultData: string) {
+        const templateRegex = /^\{\{\.[a-zA-Z]*\}\}$/; // {{.Example}}
+        return templateRegex.test(toTest) ? defaultData : toTest;
     }
 }
