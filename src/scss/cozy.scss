@@ -47,6 +47,10 @@ app-button-extension {
     svg[class*="MuiStepIcon-active"] {
         color: var(--primaryColor);
     }
+
+    button {
+        white-space: inherit;
+    }
 }
 
 app-vault-icon {
