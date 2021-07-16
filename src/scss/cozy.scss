@@ -25,6 +25,8 @@ app-button-extension {
 }
 
 .angular-react-wrapper {
+    font-family: var(--primaryFont);
+
     a[class*="btn___"] {
         &, &:hover, &:focus {
             color: var(--primaryContrastTextColor);
@@ -35,6 +37,11 @@ app-button-extension {
         &, &:hover, &:focus {
             color: var(--secondaryButtonContrastColor);
         }
+    }
+
+    span[class*="MuiTypography"],
+    svg text[class*="MuiStepIcon-text"] {
+        font-family: var(--primaryFont);
     }
 
     svg[class*="MuiStepIcon-active"] {
