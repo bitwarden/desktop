@@ -1261,7 +1261,7 @@
     "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Account encryption keys are unique to each Cozy user account, so you can't import an encrypted export into a different account."
   },
   "exportMasterPassword": {
     "message": "Enter your master password to export your vault data."

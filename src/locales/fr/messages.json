@@ -1261,7 +1261,7 @@
     "message": "Cet export chiffre vos données en utilisant la clé de chiffrement de votre compte. Si jamais vous modifiez la clé de chiffrement de votre compte, vous devriez exporter à nouveau car vous ne pourrez pas déchiffrer ce fichier."
   },
   "encExportAccountWarningDesc": {
-    "message": "Les clés de chiffrement du compte sont spécifiques à chaque utilisateur Bitwarden. Vous ne pouvez donc pas importer d'export chiffré dans un compte différent."
+    "message": "Les clés de chiffrement du compte sont spécifiques à chaque utilisateur Cozy. Vous ne pouvez donc pas importer d'export chiffré dans un compte différent."
   },
   "exportMasterPassword": {
     "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
