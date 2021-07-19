@@ -9,7 +9,7 @@ import { ServicesModule } from './services.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -61,6 +61,7 @@ import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
 import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
+import { EffluxDatesComponent as SendEffluxDatesComponent } from './send/efflux-dates.component';
 import { SendComponent } from './send/send.component';
 
 import { NavComponent } from './layout/nav.component';
@@ -158,14 +159,15 @@ registerLocaleData(localeZhTw, 'zh-TW');
 
 @NgModule({
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
         AppRoutingModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        DragDropModule,
+        FormsModule,
+        InfiniteScrollModule,
+        ReactiveFormsModule,
         ServicesModule,
         ToasterModule.forRoot(),
-        InfiniteScrollModule,
-        DragDropModule,
     ],
     declarations: [
         A11yTitleDirective,
@@ -200,6 +202,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         SearchCiphersPipe,
         SelectCopyDirective,
         SendAddEditComponent,
+        SendEffluxDatesComponent,
         SendComponent,
         SetPasswordComponent,
         SettingsComponent,

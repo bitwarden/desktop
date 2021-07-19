@@ -66,38 +66,10 @@
                 </div>
             </div>
             <div [hidden]="!showOptions">
-                <div class="box">
-                    <div class="box-content">
-                        <div class="box-content-row" appBoxRow *ngIf="!editMode">
-                            <label for="deletionDate">{{'deletionDate' | i18n}}</label>
-                            <select id="deletionDate" name="DeletionDateSelect" [(ngModel)]="deletionDateSelect" required>
-                                <option *ngFor="let o of deletionDateOptions" [ngValue]="o.value">{{o.name}}
-                                </option>
-                            </select>
-                            <small class="help-block">{{'deletionDateDesc' | i18n}}</small>
-                        </div>
-                        <div class="box-content-row" *ngIf="deletionDateSelect === 0 || editMode">
-                            <label *ngIf="editMode" for="deletionDateCustom">{{'deletionDate' | i18n}}</label>
-                            <input id="deletionDateCustom" type="datetime-local" name="deletionDate" 
-                                [(ngModel)]="deletionDate" required placeholder="MM/DD/YYYY HH:MM AM/PM">
-                            <small class="help-block" *ngIf="editMode">{{'deletionDateDesc' | i18n}}</small>
-                        </div>
-                        <div class="box-content-row" appBoxRow *ngIf="!editMode">
-                            <label for="expirationDate">{{'expirationDate' | i18n}}</label>
-                            <select id="expirationDate" name="expirationDateSelect" [(ngModel)]="expirationDateSelect" required>
-                                <option *ngFor="let o of expirationDateOptions" [ngValue]="o.value">{{o.name}}
-                                </option>
-                            </select>
-                            <small class="help-block">{{'expirationDateDesc' | i18n}}</small>
-                        </div>
-                        <div class="box-content-row" *ngIf="expirationDateSelect === 0 || editMode">
-                            <label *ngIf="editMode" for="expirationDateCustom">{{'expirationDate' | i18n}}</label>
-                            <input id="expirationDateCustom" type="datetime-local" name="expirationDate" 
-                                [(ngModel)]="expirationDate" required placeholder="MM/DD/YYYY HH:MM AM/PM" [readOnly]="disableSend">
-                            <small *ngIf="editMode" class="help-block">{{'expirationDateDesc' | i18n}}</small>
-                        </div>
-                    </div>
-                </div>
+                <app-send-efflux-dates
+                    [initialDeletionDate]="send.deletionDate" [initialExpirationDate]="send.expirationDate" 
+                    [editMode]="editMode" [disabled]="disableSend" (datesChanged)="setDates($event)">
+                </app-send-efflux-dates>
                 <div class="box">
                     <div class="box-content">
                         <div class="box-content-row" appBoxRow>
