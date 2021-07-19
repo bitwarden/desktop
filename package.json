@@ -1,19 +1,23 @@
 {
-  "name": "bitwarden",
-  "productName": "Bitwarden",
+  "name": "cozy-pass-web",
+  "productName": "Cozy Pass",
   "description": "A secure and free password manager for all of your devices.",
   "version": "0.0.0",
   "keywords": [
+    "cozy",
     "bitwarden",
     "password",
     "vault",
     "password manager"
   ],
-  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
-  "homepage": "https://bitwarden.com",
+  "author": "Cozy Cloud <contact@cozycloud.cc> (https://cozy.io/)",
+  "homepage": "https://github.com/cozy/cozy-pass-web#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitwarden/desktop"
+    "url": "git+https://github.com/cozy/cozy-pass-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cozy/cozy-pass-web/issues"
   },
   "license": "GPL-3.0",
   "scripts": {
