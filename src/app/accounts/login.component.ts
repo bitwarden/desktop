@@ -52,10 +52,6 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
-        super.onCaptchaRequired = async () => {
-            const content = document.getElementById('content') as HTMLDivElement;
-            content.setAttribute('style', 'width:325px');
-        };
     }
 
     async ngOnInit() {
@@ -109,5 +105,13 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
     onWindowHidden() {
         this.showPassword = false;
+    }
+
+    async submit() {
+        await super.submit();
+        if (this.captchaSiteKey) {
+            const content = document.getElementById('content') as HTMLDivElement;
+            content.setAttribute('style', 'width:325px');
+        }
     }
 }
