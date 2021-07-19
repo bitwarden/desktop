@@ -119,7 +119,8 @@
 
                     <li [ngClass]="{active: selectedTrash}">
                         <a href="#" appStopClick appBlurClick (click)="selectTrash()">
-                            <i class="fa-lg fa fa-lg fa-trash-o" aria-hidden="true"></i>&nbsp;{{'trash' | i18n}}
+                            <app-cozy-icon ref="trash" width="24" height="16"></app-cozy-icon>
+                            &nbsp;{{'trash' | i18n}}
                         </a>
                     </li>
                 </ng-template>
