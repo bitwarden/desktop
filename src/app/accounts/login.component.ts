@@ -1,6 +1,5 @@
 import {
     Component,
-    ComponentFactoryResolver,
     NgZone,
     OnDestroy,
     ViewChild,
@@ -22,9 +21,9 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
+import { ModalService } from 'jslib-angular/services/modal.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib-angular/components/login.component';
-import { ModalComponent } from 'jslib-angular/components/modal.component';
 
 const BroadcasterSubscriptionId = 'LoginComponent';
 
@@ -38,7 +37,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     showingModal = false;
 
     constructor(authService: AuthService, router: Router, i18nService: I18nService,
-        syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
+        syncService: SyncService, private modalService: ModalService,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
@@ -68,20 +67,16 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     }
 
-    settings() {
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.environmentModal.createComponent(factory).instance;
+    async settings() {
+        const [modal, childComponent] = await this.modalService.openViewRef(EnvironmentComponent, this.environmentModal);
+
         modal.onShown.subscribe(() => {
             this.showingModal = true;
         });
         modal.onClosed.subscribe(() => {
             this.showingModal = false;
-            modal.onShown.unsubscribe();
-            modal.onClosed.unsubscribe();
         });
 
-        const childComponent = modal.show<EnvironmentComponent>(EnvironmentComponent,
-            this.environmentModal);
         childComponent.onSaved.subscribe(() => {
             modal.close();
         });

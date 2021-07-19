@@ -29,7 +29,6 @@ import { TwoFactorComponent } from './accounts/two-factor.component';
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
-import { ModalComponent } from 'jslib-angular/components/modal.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
@@ -188,7 +187,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         IconComponent,
         LockComponent,
         LoginComponent,
-        ModalComponent,
         NavComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
@@ -218,7 +216,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         EnvironmentComponent,
         ExportComponent,
         FolderAddEditComponent,
-        ModalComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
