@@ -56,6 +56,7 @@ const common = {
                 { from: './src/locales', to: 'locales' },
                 {from: './src/images/icon.svg'},
                 {from: './src/images/favicon.ico'},
+                {from: './stores/cozy/screenshots', to: 'screenshots'},
                 './manifest.webapp',
             ]
         }),

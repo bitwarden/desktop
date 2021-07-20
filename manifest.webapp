@@ -14,8 +14,32 @@
   },
   "screenshots": [
     "screenshots/fr/screenshot01.png",
-    "screenshots/fr/screenshot02.png"
+    "screenshots/fr/screenshot02.png",
+    "screenshots/fr/screenshot03.png"
   ],
+  "default_locale": "en",
+  "locales": {
+    "en": {
+      "short_description": "Escape the password's hell.",
+      "long_description": "Save your passwords and log in to sites with a single click. Cozy Pass remembers and synchronises all your passwords for you. By installing the password manager, your digital life will be more secure and simple.\n\n- Get your passwords from anywhere\n\nYour passwords will be saved once and for all in your 100% personal and secured safe that you can access from your mobile thanks to the Cozy Pass app.\nThe Cozy pass app also allows you to store payments details and identity details that will help you fill in forms.\nThe access is secured thanks to your Cozy password, but you can also lock your mobile app with fingerprint or a PIN code.\nBy default any item in your password manager is only readable by you, secured by your password. Even Cozy Cloud is unable to access your vault.\n\n- Log in automatically on your apps and websites\n\nYour cozy will allow you to instantly fill in the forms of websites, for easy connection to all your services.\nIt will offer you to save credentials that you manually fill in on your websites so that Cozy Pass can fill in them for you for the next connections.\nIt will also offer to generate strong and secured passwords when you need to create accounts.\n\n- Your passwords synchronized accross all your devices\n\nCozy Pass ensures that your credentials are always up to date accross your different devices. Data is synchronized between the mobile app and the add-on on your computer browsers.\n\n- Retrieve your data more easily in your Cozy\n\nYou can connect your brands to your Cozy to recover your data in the blink of an eye. Cozy Pass will highlight brands that can be synchronized to your Cozy and make it easier to connect them. Whenever your credentials are edited, Cozy Pass will be able to be updated and secure the synchronization automatically.\n\n\n- Cozy Pass is secured thanks to Bitwarden technology\n\nAs an open source company, we have worked on password management technologies by screening the best open source global experts on this field. Our open-source philosphy enables independant experts accross the globe to audit our work and make sure our code is secure, stable and flawless. We use the Bitwarden thechnology with GPL 3.0 licence as mentionned here . https://github.com/bitwarden/mobile/blob/master/LICENSE.txt.",
+      "changes": "",
+      "screenshots": [
+        "screenshots/en/screenshot01.png",
+        "screenshots/en/screenshot02.png",
+        "screenshots/en/screenshot03.png"
+      ]
+    },
+    "fr": {
+      "short_description": "Libérez-vous de l'enfer des mots de passe.",
+      "long_description": "Avec Cozy Pass, vos mots de passe, moyens de paiement et coordonnées sont regroupés et chiffrés au sein de votre cloud personnel dont vous êtes l'unique propriétaire.\n\nCozy Pass vous simplifie et sécurise vos mots de passe : finis les post-it et autres \"maman1234\" !\n\nEnfin sécurité va rimer avec simplicité.\n\n- Il enregistre et renseigne automatiquement tous vos mots de passe lorsque vous naviguez sur Internet\n- Vos mots de passe sont désormais sûrs car tous différents, C0mpl3x3s et stockés chiffrés\n- Il synchronise vos mots de passe entre vos ordinateurs, navigateurs et téléphone : vos mots de passe accessibles à tout moment, n'importe où et à jour\n- Il remplit en un clic les formulaires (nom, prénom, date de naissance, numéro de carte bancaire, adresse de livraison...)\n- Il importe vos mots de passe déjà enregistrés dans un autre gestionnaire ou navigateur\n- Il crée des mots de passe sécurisés avec le générateur de mots de passe\n- Il utilise la technologie Bitwarden sous licence GPL 3.0 comme mentionné ici https://github.com/bitwarden/mobile/blob/master/LICENSE.txt",
+      "changes": "",
+      "screenshots": [
+        "screenshots/fr/screenshot01.png",
+        "screenshots/fr/screenshot02.png",
+        "screenshots/fr/screenshot03.png"
+      ]
+    }
+  },
   "langs": ["en", "fr"],
   "routes": {
     "/": {
