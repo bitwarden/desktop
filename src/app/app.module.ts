@@ -61,6 +61,7 @@ import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
 import { ButtonExtensionComponent } from '../cozy/wrappers/button-extension/button-extension.component';
+import { CozyIconComponent } from '../cozy/wrappers/cozy-icon/cozy-icon.component';
 import { IconSpriteComponent } from '../cozy/wrappers/icon-sprite/icon-sprite.component';
 import { ImportPageComponent } from '../cozy/wrappers/import-page/import-page.component';
 import { InstallationPageComponent } from '../cozy/wrappers/installation-page/installation-page.component';
@@ -216,6 +217,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         InstallationPageComponent,
         IconSpriteComponent,
         ButtonExtensionComponent,
+        CozyIconComponent,
     ],
     entryComponents: [
         AttachmentsComponent,

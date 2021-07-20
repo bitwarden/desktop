@@ -69,3 +69,14 @@ app-vault-icon {
 .icon-cozy-sync {
     background-image: url('../images/icons-16-cozy-sync.svg');
 }
+
+app-vault-groupings {
+    app-cozy-icon {
+        display: flex;
+        margin-right: 5px;
+
+        svg {
+            fill: var(--coolGrey);
+        }
+    }
+}
