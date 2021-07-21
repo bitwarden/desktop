@@ -26,12 +26,14 @@ export class EffluxDatesComponent extends BaseEffluxDatesComponent implements On
 
     // We reuse the same form on desktop and just swap content, so need to watch these to maintin proper values.
     ngOnChanges() {
+        this.selectedExpirationDatePreset.setValue(0);
+        this.selectedDeletionDatePreset.setValue(0);
+        this.defaultDeletionDateTime.setValue(this.datePipe.transform(new Date(this.initialDeletionDate), 'yyyy-MM-ddTHH:mm'));
         if (this.initialExpirationDate) {
             this.defaultExpirationDateTime.setValue(
                 this.datePipe.transform(new Date(this.initialExpirationDate), 'yyyy-MM-ddTHH:mm'));
         } else {
             this.defaultExpirationDateTime.setValue(null);
         }
-        this.defaultDeletionDateTime.setValue(this.datePipe.transform(new Date(this.initialDeletionDate), 'yyyy-MM-ddTHH:mm'));
     }
 }
