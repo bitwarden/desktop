@@ -96,59 +96,32 @@
                 -->
             </div>
             <ul>
-                <ng-template #recursiveFolders let-folders>
-                    <!-- folders disabled until sharing feature is implemented
-                    <li *ngFor="let f of folders"
-                        [ngClass]="{active: selectedFolder && f.node.id === selectedFolderId}">
-                        <a href="#" appStopClick appBlurClick (click)="selectFolder(f.node)">
-                            <i *ngIf="f.children.length" class="fa-lg fa-fw fa fa-folder-open" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
-                                (click)="collapse(f.node)" appStopProp></i>
-                            <i *ngIf="f.children.length === 0" class="fa-lg fa-fw fa fa-folder-o" aria-hidden="true"></i>
-                            &nbsp;{{f.node.name}}
-                            <span appStopProp appStopClick (click)="editFolder(f.node)" role="button"
-                                appA11yTitle="{{'editFolder' | i18n}}" *ngIf="f.node.id">
-                                <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>
-                            </span>
+                <ng-template #recursiveCollections let-collections>
+                    <li *ngFor="let c of collections" [ngClass]="{active: c.node.id === selectedCollectionId}">
+                        <a href="#" appStopClick appBlurClick (click)="selectCollection(c.node)">
+                            <i *ngIf="c.children.length" class="fa-fw fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
+                                [ngClass]="{'fa-caret-right': isCollapsed(c.node), 'fa-caret-down': !isCollapsed(c.node)}"
+                                (click)="collapse(c.node)" appStopProp></i>
+                            <i *ngIf="c.children.length === 0" class="fa-fw fa fa-cube" aria-hidden="true"></i>
+                            &nbsp;{{c.node.name}}
                         </a>
-                        <ul class="fa-ul" *ngIf="f.children.length && !isCollapsed(f.node)">
-                            <ng-container *ngTemplateOutlet="recursiveFolders; context:{ $implicit: f.children }">
+                        <ul class="fa-ul" *ngIf="c.children.length && !isCollapsed(c.node)">
+                            <ng-container
+                                *ngTemplateOutlet="recursiveCollections; context:{ $implicit: c.children }">
                             </ng-container>
                         </ul>
                     </li>
-                    -->
-
-                    <li [ngClass]="{active: selectedTrash}">
-                        <a href="#" appStopClick appBlurClick (click)="selectTrash()">
-                            <app-cozy-icon ref="trash" width="24" height="16"></app-cozy-icon>
-                            &nbsp;{{'trash' | i18n}}
-                        </a>
-                    </li>
                 </ng-template>
-                <ng-container *ngTemplateOutlet="recursiveFolders; context:{ $implicit: nestedFolders }"></ng-container>
+                <ng-container *ngTemplateOutlet="recursiveCollections; context:{ $implicit: nestedCollections }">
+                </ng-container>
+
+                <li [ngClass]="{active: selectedTrash}">
+                    <a href="#" appStopClick appBlurClick (click)="selectTrash()">
+                        <app-cozy-icon ref="trash" width="24" height="16"></app-cozy-icon>
+                        &nbsp;{{'trash' | i18n}}
+                    </a>
+                </li>
             </ul>
-            <!-- <div *ngIf="collections && collections.length">
-                <h2>{{'collections' | i18n}}</h2>
-                <ul>
-                    <ng-template #recursiveCollections let-collections>
-                        <li *ngFor="let c of collections" [ngClass]="{active: c.node.id === selectedCollectionId}">
-                            <a href="#" appStopClick appBlurClick (click)="selectCollection(c.node)">
-                                <i *ngIf="c.children.length" class="fa-fw fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
-                                    [ngClass]="{'fa-caret-right': isCollapsed(c.node), 'fa-caret-down': !isCollapsed(c.node)}"
-                                    (click)="collapse(c.node)" appStopProp></i>
-                                <i *ngIf="c.children.length === 0" class="fa-fw fa fa-cube" aria-hidden="true"></i>
-                                &nbsp;{{c.node.name}}
-                            </a>
-                            <ul class="fa-ul" *ngIf="c.children.length && !isCollapsed(c.node)">
-                                <ng-container
-                                    *ngTemplateOutlet="recursiveCollections; context:{ $implicit: c.children }">
-                                </ng-container>
-                            </ul>
-                        </li>
-                    </ng-template>
-                    <ng-container *ngTemplateOutlet="recursiveCollections; context:{ $implicit: nestedCollections }">
-                    </ng-container>
-                </ul>
-            </div> -->
         </ng-container>
         <h2>{{'tools' | i18n}}</h2>
         <ul>
