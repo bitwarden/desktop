@@ -587,7 +587,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             this.groupingsComponent.revertSelection();
             return;
         }
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
+        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
         await this.ciphersComponent.reload(c => c.collectionIds != null &&
             c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
