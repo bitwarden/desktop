@@ -22,8 +22,9 @@
                         </a>
                     </div>
                 </div>
-                <div [hidden]="!showCaptcha()"><iframe id="hcaptcha_iframe"
-                        height=80></iframe></div>
+                <div class="box-content-row box-content-row-captcha" [hidden]="!showCaptcha()">
+                    <iframe id="hcaptcha_iframe" height=80></iframe>
+                </div>
             </div>
         </div>
         

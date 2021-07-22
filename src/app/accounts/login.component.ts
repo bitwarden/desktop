@@ -111,7 +111,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         await super.submit();
         if (this.captchaSiteKey) {
             const content = document.getElementById('content') as HTMLDivElement;
-            content.setAttribute('style', 'width:325px');
+            content.setAttribute('style', 'width:335px');
         }
     }
 }
