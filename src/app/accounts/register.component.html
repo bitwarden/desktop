@@ -61,6 +61,9 @@
                     <label for="hint">{{'masterPassHint' | i18n}}</label>
                     <input id="hint" type="text" name="Hint" [(ngModel)]="hint">
                 </div>
+                <div class="box-content-row box-content-row-captcha" [hidden]="!showCaptcha()">
+                    <iframe id="hcaptcha_iframe" height=80></iframe>
+                </div>
             </div>
             <div class="box-footer">
                 {{'masterPassHintDesc' | i18n}}
