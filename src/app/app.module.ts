@@ -168,7 +168,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ServicesModule,
         ToasterModule.forRoot(),
         ScrollingModule,
-        DragDropModule,
     ],
     declarations: [
         A11yTitleDirective,
