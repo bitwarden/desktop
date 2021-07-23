@@ -8,7 +8,7 @@ import { CipherView } from 'jslib-common/models/view/cipherView';
     selector: 'app-vault-ciphers',
     templateUrl: 'ciphers.component.html',
 })
-export class CiphersComponent extends BaseCiphersComponent { 
+export class CiphersComponent extends BaseCiphersComponent {
     trackByFn(index: number, c: CipherView) {
         return c.id;
     }
