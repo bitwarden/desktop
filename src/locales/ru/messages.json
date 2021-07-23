@@ -44,14 +44,24 @@
   "share": {
     "message": "Поделиться"
   },
-  "shareItem": {
-    "message": "Поделиться элементом"
+  "moveToOrganization": {
+    "message": "Переместить в организацию"
   },
-  "sharedItem": {
-    "message": "Общий элемент"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ перемещен в $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Выберите организацию, которой хотите предоставить доступ к этому элементу. После выполнения этой операции права на элемент будут переданы организации и вы не будете являться непосредственным владельцем этого элемента."
+  "moveToOrgDesc": {
+    "message": "Выберите организацию, в которую вы хотите переместить этот элемент. При перемещении в организацию право собственности на элемент переходит к этой организации. Вы больше не будете прямым владельцем этого элемента после его перемещения."
   },
   "attachments": {
     "message": "Вложения"
@@ -431,7 +441,7 @@
     "message": "Выберите файл."
   },
   "maxFileSize": {
-    "message": "Максимальный размер файла 100 МБ."
+    "message": "Максимальный размер файла 500 МБ."
   },
   "updateKey": {
     "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Используйте любой ключ безопасности с поддержкой WebAuthn для доступа к своей учетной записи."
   },
   "emailTitle": {
     "message": "Email"
@@ -1298,10 +1308,10 @@
     "message": "разблокировать ваше хранилище"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Не запрашивать Windows Hello при запуске."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Не запрашивать Touch ID при запуске."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокировать мастер-паролем при перезапуске"
@@ -1529,7 +1539,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "Мое хранилище"
+    "message": "Хранилище"
   },
   "text": {
     "message": "Текст"
@@ -1661,27 +1671,27 @@
     "message": "Ожидание удаления"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Аутентификация WebAutn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Скрыть мой адрес email от получателей."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "На параметры Send влияют одна или несколько политик организации."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Требуется подтверждение электронной почты"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Для использования этой функции необходимо подтвердить свою электронную почту."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Повторный запрос мастер-пароля"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Подтверждение мастер-пароля"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Это действие защищено. Для продолжения введите свой мастер-пароль, чтобы подтвердить свою личность."
   }
 }

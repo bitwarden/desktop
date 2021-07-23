@@ -44,14 +44,24 @@
   "share": {
     "message": "Deel"
   },
-  "shareItem": {
-    "message": "Deel Item"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Gedeelde Item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Aanhegsels"
@@ -313,7 +323,7 @@
     "message": "Teks"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Versteek"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
@@ -346,7 +356,7 @@
     "message": "Geskrapte item"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Is u seker u wil oor die huidige wagwoord skryf?"
   },
   "noneFolder": {
     "message": "Geen Vouer",
@@ -431,10 +441,10 @@
     "message": "Kies ’n lêer."
   },
   "maxFileSize": {
-    "message": "Maksimumlêergrootte is 100 MB."
+    "message": "Maksimumlêergrootte is 500 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "U kan nie hierdie funksie gebruik tot u u enkripsiesleutel bygewerk het nie."
   },
   "options": {
     "message": "Opsies"
@@ -452,7 +462,7 @@
     "message": "Geskrapte vouer"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Teken aan of skep ’n nuwe rekening vir toegang tot u beveiligde kluis."
   },
   "createAccount": {
     "message": "Skep Rekening"
@@ -467,13 +477,13 @@
     "message": "Hoofwagwoord"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Die hoofwagwoord is die wagwoord wat u gebruik vir toegang tot die kluis. Dit is baie belangrik dat u dit onthou. Dit kan op geen manier teruggevind word indien u dit vergeet nie."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "’n Hoofwagwoordwenk kan u help om u wagwoord te onthou indien u dit sou vergeet."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Tik weer hoofwagwoord in"
   },
   "masterPassHint": {
     "message": "Hoofwagwoordwenk (opsioneel)"
@@ -485,7 +495,7 @@
     "message": "Wagwoordwenk"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Voer u e-posadres in om u hoofwagwoordwenk te ontvang."
   },
   "getMasterPasswordHint": {
     "message": "Kry hoofwagwoordwenk"
@@ -509,7 +519,7 @@
     "message": "U nuwe rekening is geskep! U kan nou aanteken."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Ons het ’n e-pos gestuur met u hoofwagwoordwenk."
   },
   "unexpectedError": {
     "message": "'n Onverwagte fout het voorgekom."
@@ -518,7 +528,7 @@
     "message": "Iteminligting"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Daar is geen items om te lys nie."
   },
   "verificationCode": {
     "message": "Bevestigingskode"
@@ -530,10 +540,10 @@
     "message": "Gaan Voort"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Voer die 6-syferbevestigingskode van u waarmerktoep in."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Voer die 8-syferbevestigingskode in wat aan $EMAIL$ gestuur is.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -572,10 +582,10 @@
     "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Waarmerktoep"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Gebruik ’n waarmerktoep (soos Authy of Google Authenticator) om tydgebaseerde bevestigingskodes te genereer.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -659,7 +669,7 @@
     "message": "Nee"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Skryf oor wagwoord"
   },
   "learnMore": {
     "message": "Leer meer"
@@ -776,7 +786,7 @@
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Tweestapaantekening"
   },
   "vaultTimeout": {
     "message": "Vault Timeout"
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."

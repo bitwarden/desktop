@@ -44,14 +44,24 @@
   "share": {
     "message": "Udostępnij"
   },
-  "shareItem": {
-    "message": "Udostępnij element"
+  "moveToOrganization": {
+    "message": "Przenieś do organizacji"
   },
-  "sharedItem": {
-    "message": "Element został udostępniony"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Wybierz organizację, której chcesz udostępnić ten element. Udostępnianie przenosi własność elementu do wybranej organizacji. Nie będziesz już bezpośrednim właścicielem tego elementu, gdy zostanie on udostępniony."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Załączniki"
@@ -431,7 +441,7 @@
     "message": "Wybierz plik."
   },
   "maxFileSize": {
-    "message": "Maksymalny rozmiar pliku to 100 MB."
+    "message": "Maksymalny rozmiar pliku to 500 MB."
   },
   "updateKey": {
     "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
@@ -467,7 +477,7 @@
     "message": "Hasło główne"
   },
   "masterPassDesc": {
-    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, abyś je pamiętał. Jeśli je zapomnisz, nie będzie możliwości, aby je przywrócić."
+    "message": "Hasło główne zapewnia dostęp do sejfu. To bardzo ważne, aby je pamiętać, ponieważ zapomnianego hasła nie będzie można odzyskać."
   },
   "masterPassHintDesc": {
     "message": "Podpowiedź do hasła głównego może pomóc Ci przypomnieć hasło, jeśli je zapomnisz."
@@ -503,7 +513,7 @@
     "message": "Hasło główne musi zawierać co najmniej 8 znaków."
   },
   "masterPassDoesntMatch": {
-    "message": "Potwierdzenie hasła głównego nie pasuje."
+    "message": "Hasła nie pasują do siebie."
   },
   "newAccountCreated": {
     "message": "Konto zostało utworzone! Teraz możesz się zalogować."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Użyj dowolnego klucza bezpieczeństwa WebAuthn, aby uzyskać dostęp do swojego konta."
   },
   "emailTitle": {
     "message": "Adres e-mail"
@@ -1298,10 +1308,10 @@
     "message": "odblokuj sejf"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Nie pytaj o autoryzację Windows Hello podczas uruchamiania."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Nie pytaj o autoryzację Touch ID podczas uruchamiania."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
@@ -1559,7 +1569,7 @@
     "message": "Obecna liczba dostępów"
   },
   "disableSend": {
-    "message": "Wyłącz tę wysyłkę, aby nikt nie miał do niej dostępu.",
+    "message": "Wyłącz wysyłkę, aby nikt nie miał do niej dostępu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1661,27 +1671,27 @@
     "message": "Oczekiwanie na usunięcie"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Uwierzytelnianie WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ukryj mój adres e-mail przed odbiorcami."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Wymagana weryfikacja adresu e-mail"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Powtórz hasło główne"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Potwierdź hasło główne"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ta operacja jest chroniona. Aby kontynuować, wpisz ponownie hasło główne."
   }
 }

@@ -9,7 +9,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -61,12 +61,14 @@ import { VaultComponent } from './vault/vault.component';
 import { ViewComponent } from './vault/view.component';
 
 import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
+import { EffluxDatesComponent as SendEffluxDatesComponent } from './send/efflux-dates.component';
 import { SendComponent } from './send/send.component';
 
 import { NavComponent } from './layout/nav.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeAf from '@angular/common/locales/af';
+import localeAz from '@angular/common/locales/az';
 import localeBe from '@angular/common/locales/be';
 import localeBg from '@angular/common/locales/bg';
 import localeBn from '@angular/common/locales/bn';
@@ -88,6 +90,7 @@ import localeHu from '@angular/common/locales/hu';
 import localeId from '@angular/common/locales/id';
 import localeIt from '@angular/common/locales/it';
 import localeJa from '@angular/common/locales/ja';
+import localeKn from '@angular/common/locales/kn';
 import localeKo from '@angular/common/locales/ko';
 import localeLv from '@angular/common/locales/lv';
 import localeMl from '@angular/common/locales/ml';
@@ -110,6 +113,7 @@ import localeZhCn from '@angular/common/locales/zh-Hans';
 import localeZhTw from '@angular/common/locales/zh-Hant';
 
 registerLocaleData(localeAf, 'af');
+registerLocaleData(localeAz, 'az');
 registerLocaleData(localeBe, 'be');
 registerLocaleData(localeBg, 'bg');
 registerLocaleData(localeBn, 'bn');
@@ -131,6 +135,7 @@ registerLocaleData(localeHu, 'hu');
 registerLocaleData(localeId, 'id');
 registerLocaleData(localeIt, 'it');
 registerLocaleData(localeJa, 'ja');
+registerLocaleData(localeKn, 'kn');
 registerLocaleData(localeKo, 'ko');
 registerLocaleData(localeLv, 'lv');
 registerLocaleData(localeMe, 'me');
@@ -154,10 +159,12 @@ registerLocaleData(localeZhTw, 'zh-TW');
 
 @NgModule({
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
         AppRoutingModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        DragDropModule,
+        FormsModule,
+        ReactiveFormsModule,
         ServicesModule,
         ToasterModule.forRoot(),
         ScrollingModule,
@@ -196,6 +203,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         SearchCiphersPipe,
         SelectCopyDirective,
         SendAddEditComponent,
+        SendEffluxDatesComponent,
         SendComponent,
         SetPasswordComponent,
         SettingsComponent,
@@ -208,22 +216,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorOptionsComponent,
         VaultComponent,
         ViewComponent,
-    ],
-    entryComponents: [
-        AttachmentsComponent,
-        CollectionsComponent,
-        EnvironmentComponent,
-        ExportComponent,
-        FolderAddEditComponent,
-        ModalComponent,
-        PasswordGeneratorComponent,
-        PasswordGeneratorHistoryComponent,
-        PasswordHistoryComponent,
-        PremiumComponent,
-        SettingsComponent,
-        ShareComponent,
-        SendAddEditComponent,
-        TwoFactorOptionsComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],

@@ -44,14 +44,24 @@
   "share": {
     "message": "اشتراک‌گذاری"
   },
-  "shareItem": {
-    "message": "اشتراک‌گذاری مورد"
+  "moveToOrganization": {
+    "message": "انتقال به سازمان"
   },
-  "sharedItem": {
-    "message": "مورد اشتراک‌گذاری شد"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ منتقل شد به $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "تشکیلاتی که می‌خواهید این مورد را با آن به اشتراک بگذارید انتخاب کنید. پس از اشتراک‌گذاری مالکیت موارد به آن تشکیلات انتقال می‌یابد. پس از اشتراک‌گذاری این مورد شما دیگر نمی‌توانید صاحب اصلی آن باشید."
+  "moveToOrgDesc": {
+    "message": "سازمانی را انتخاب کنید که می خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود."
   },
   "attachments": {
     "message": "پیوست‌ها"
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "برای دسترسی به حساب خود از هر کلید امنیتی فعال شده WebAuthn استفاده کنید."
   },
   "emailTitle": {
     "message": "رایانامه"
@@ -1298,10 +1308,10 @@
     "message": "تایید برای Bitwarden."
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "در هنگام راه اندازی ، درخواست Windows Hello نکنید."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "در هنگام راه اندازی ، درخواست Touch ID نکنید."
   },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد، با کلمه عبور اصلی قفل کن"
@@ -1661,27 +1671,27 @@
     "message": "در انتظار حذف"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "تأیید اعتبار در WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "آدرس ایمیلم را از گیرندگان مخفی کن."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "یک یا چند سیاست سازمان بر گزینه های ارسال شما تأثیر می گذارد."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "تایید ایمیل لازم است"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "کلمه عبور اصلی دوباره تولید می شود"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "تأیید کلمه عبور اصلی"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "این عمل محافظت می شود. برای ادامه، لطفاً کلمه ورود اصلی خود را دوباره وارد کنید تا هویتان را تأیید کنید."
   }
 }

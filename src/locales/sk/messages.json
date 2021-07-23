@@ -44,14 +44,24 @@
   "share": {
     "message": "Zdieľať"
   },
-  "shareItem": {
-    "message": "Zdieľať položku"
+  "moveToOrganization": {
+    "message": "Presunúť do Organizácie"
   },
-  "sharedItem": {
-    "message": "Položka zdieľaná"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ presunuté do $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Vyberte organizáciu, s ktorou chcete zdieľať túto položku. Zdieľanie presunie vlastníctvo položky na organizáciu. Po zdieľaní už nebudete priamym vlastníkom danej položky."
+  "moveToOrgDesc": {
+    "message": "Vyberte organizáciu, do ktorej chcete presunúť túto položku. Presunom do organizácie sa vlastníctvo položky prenáša na túto organizáciu. Po presunutí už nebudete priamym vlastníkom danej položky."
   },
   "attachments": {
     "message": "Prílohy"
@@ -431,7 +441,7 @@
     "message": "Vybrať súbor."
   },
   "maxFileSize": {
-    "message": "Maximálna veľkosť súboru je 100 MB."
+    "message": "Maximálna veľkosť súboru je 500 MB."
   },
   "updateKey": {
     "message": "Túto funkciu je možné použiť, až keď si aktualizujete svoj šifrovací kľúč."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Použiť akýkoľvek WebAuthn bezpečnostný kľúč pre prístup k vášmu účtu."
   },
   "emailTitle": {
     "message": "Email"
@@ -1298,10 +1308,10 @@
     "message": "odomknúť svoj trezor"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Pri spustení nezobrazovať výzvu na Windows Hello."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Pri spustení nezobrazovať výzvu na Touch ID."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
@@ -1661,27 +1671,27 @@
     "message": "Čakajúce odstránenie"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Overiť cez WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Skryť moju emailovú adresu pred príjemcami."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Jedno alebo viac pravidiel organizácie ovplyvňujú vaše možnosti funkcie Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Vyžaduje sa overenie e-mailu"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Na používanie tejto funkcie musíte overiť svoj e-mail."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Znova zadajte hlavné heslo"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Potvrdenie hlavného hesla"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Táto akcia je chránená. Ak chcete pokračovať, znova zadajte hlavné heslo a overte svoju totožnosť."
   }
 }
