@@ -30,7 +30,8 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
         i18nService: I18nService, cryptoService: CryptoService,
         apiService: ApiService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, passwordGenerationService: PasswordGenerationService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone, environmentService: EnvironmentService) {
+        environmentService: EnvironmentService, private broadcasterService: BroadcasterService,
+        private ngZone: NgZone) {
         super(authService, router, i18nService, cryptoService, apiService, stateService, platformUtilsService,
             passwordGenerationService, environmentService);
     }
@@ -46,6 +47,8 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
                 }
             });
         });
+
+        super.ngOnInit();
     }
 
     ngOnDestroy() {
