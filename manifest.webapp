@@ -63,6 +63,11 @@
       "description": "Required by the cozy-bar to display Claudy and know which applications are coming soon",
       "type": "io.cozy.settings",
       "verbs": ["GET", "PUT"]
+    },
+    "organizations": {
+      "description": "Required to share passwords with other persons",
+      "type": "com.bitwarden.organizations",
+      "verbs": ["GET", "POST"]
     }
   }
 }
