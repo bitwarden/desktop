@@ -2,42 +2,23 @@
     <div class="modal-dialog" role="document">
         <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
             <div class="modal-body">
-                <div class="box">
-                    <div class="box-header" id="shareTitle">
-                        {{'share' | i18n}}
+                <div class="box" *ngIf="organizations && organizations.length">
+                    <div class="box-header">
+                        {{'folders' | i18n}}
                     </div>
-                    <div class="box-content" *ngIf="!organizations || !organizations.length">
-                        <div class="box-content-row">
-                            {{'noOrganizationsList' | i18n}}
-                        </div>
+                    <div class="box-content" *ngIf="!collections || !collections.length">
+                        {{'noFolderInList' | i18n}}
                     </div>
-                    <div class="box-content" *ngIf="organizations && organizations.length">
+                    <div class="box-content" *ngIf="collections && collections.length">
                         <div class="box-content-row" appBoxRow>
-                            <label for="organization">{{'organization' | i18n}}</label>
-                            <select id="organization" name="OrganizationId" [(ngModel)]="organizationId"
-                                (change)="filterCollections()">
-                                <option *ngFor="let o of organizations" [ngValue]="o.id">{{o.name}}</option>
+                            <label for="folder">{{'folder' | i18n}}</label>
+                            <select id="folder" name="FolderId" [(ngModel)]="selectedCollectionId" (change)="onSelectedCollectionChange()">
+                                <option *ngFor="let collection of collections" [ngValue]="collection.id">{{collection.name}}</option>
                             </select>
                         </div>
                     </div>
                     <div class="box-footer">
                         {{'shareDesc' | i18n}}
-                    </div>
-                </div>
-                <div class="box" *ngIf="organizations && organizations.length">
-                    <div class="box-header">
-                        {{'collections' | i18n}}
-                    </div>
-                    <div class="box-content" *ngIf="!collections || !collections.length">
-                        {{'noCollectionsInList' | i18n}}
-                    </div>
-                    <div class="box-content" *ngIf="collections && collections.length">
-                        <div class="box-content-row box-content-row-checkbox"
-                            *ngFor="let c of collections; let i = index" appBoxRow>
-                            <label for="collection_{{i}}">{{c.name}}</label>
-                            <input id="collection_{{i}}" type="checkbox" [(ngModel)]="c.checked"
-                                name="Collection[{{i}}].Checked">
-                        </div>
                     </div>
                 </div>
             </div>

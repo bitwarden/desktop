@@ -13,9 +13,52 @@ import { ShareComponent as BaseShareComponent } from 'jslib/angular/components/s
     templateUrl: 'share.component.html',
 })
 export class ShareComponent extends BaseShareComponent {
+    selectedCollectionId: string = undefined;
+
     constructor(cipherService: CipherService, i18nService: I18nService,
         collectionService: CollectionService, userService: UserService,
         platformUtilsService: PlatformUtilsService) {
         super(collectionService, platformUtilsService, i18nService, userService, cipherService);
+    }
+
+    filterCollections() {
+        this.writeableCollections.forEach(c => (c as any).checked = false);
+
+        this.collections = this.writeableCollections;
+    }
+
+    onSelectedCollectionChange() {
+        this.collections.forEach(collection => {
+            (collection as any).checked = this.selectedCollectionId === collection.id;
+        });
+    }
+
+    async submit(): Promise<boolean> {
+        const selectedCollection = this.collections
+            .filter(c => !!(c as any).checked);
+
+        if (selectedCollection.length !== 1) {
+            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
+                this.i18nService.t('selectOneFolder'));
+            return;
+        }
+
+        const selectedCollectionIds = selectedCollection.map(c => c.id);
+
+        const organizationId = selectedCollection[0].organizationId;
+
+        const cipherDomain = await this.cipherService.get(this.cipherId);
+        const cipherView = await cipherDomain.decrypt();
+
+        try {
+            this.formPromise = this.cipherService.shareWithServer(cipherView, organizationId,
+                selectedCollectionIds).then(async () => {
+                    this.onSharedCipher.emit();
+                    this.platformUtilsService.showToast('success', null, this.i18nService.t('sharedItem'));
+                });
+            await this.formPromise;
+            return true;
+        } catch { }
+        return false;
     }
 }

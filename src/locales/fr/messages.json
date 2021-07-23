@@ -60,7 +60,7 @@
     "message": "Élément partagé"
   },
   "shareDesc": {
-    "message": "Choisissez une organisation avec laquelle vous voulez partager cet élément. Le partage transfère la propriété de l'élément à l'organisation. Vous ne serez plus le propriétaire direct de cet élément après le partage."
+    "message": "Choisissez un dossier avec lequel vous voulez partager cet élément. Le partage transfère la propriété de l'élément au dossier. Vous ne serez plus le propriétaire direct de cet élément après le partage."
   },
   "attachments": {
     "message": "Pièces jointes"
@@ -1272,6 +1272,9 @@
   "noCollectionsInList": {
     "message": "Aucune collection à afficher."
   },
+  "noFolderInList": {
+    "message": "Aucun dossier à afficher."
+  },
   "ownership": {
     "message": "Propriété"
   },
@@ -1350,6 +1353,9 @@
   },
   "selectOneCollection": {
     "message": "Vous devez sélectionner au moins une collection."
+  },
+  "selectOneFolder": {
+    "message": "Vous devez sélectionner un dossier."
   },
   "premiumUpdated": {
     "message": "Vous venez de passer à un compte Premium."

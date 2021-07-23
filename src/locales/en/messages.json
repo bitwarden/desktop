@@ -60,7 +60,7 @@
     "message": "Shared Item"
   },
   "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+    "message": "Choose an folder that you wish to share this item with. Sharing transfers ownership of the item to the folder. You will no longer be the direct owner of this item once it has been shared."
   },
   "attachments": {
     "message": "Attachments"
@@ -1272,6 +1272,9 @@
   "noCollectionsInList": {
     "message": "There are no collections to list."
   },
+  "noFolderInList": {
+    "message": "There are no folder to list."
+  },
   "ownership": {
     "message": "Ownership"
   },
@@ -1350,6 +1353,9 @@
   },
   "selectOneCollection": {
     "message": "You must select at least one collection."
+  },
+  "selectOneFolder": {
+    "message": "You must select one folder."
   },
   "premiumUpdated": {
     "message": "You've upgraded to premium."
