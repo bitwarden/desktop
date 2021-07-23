@@ -351,10 +351,10 @@
             </div> -->
             <div class="box" *ngIf="(!editMode || cloneMode) && cipher.organizationId">
                 <div class="box-header">
-                    {{'collections' | i18n}}
+                    {{'folder' | i18n}}
                 </div>
                 <div class="box-content" *ngIf="!collections || !collections.length">
-                    {{'noCollectionsInList' | i18n}}
+                    {{'noFolderInList' | i18n}}
                 </div>
                 <div class="box-content" *ngIf="collections && collections.length">
                     <div class="box-content-row box-content-row-checkbox" *ngFor="let c of collections; let i = index"
