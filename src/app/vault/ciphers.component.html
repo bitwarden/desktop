@@ -5,9 +5,9 @@
         <i class="fa fa-search" aria-hidden="true"></i>
     </div>
 </div>
-<cdk-virtual-scroll-viewport itemSize="42" *ngIf="ciphers">
-    <div class="content">
-        <div class="list" *ngIf="ciphers.length">
+<div class="content">
+    <cdk-virtual-scroll-viewport itemSize="42" minBufferPx="300" maxBufferPx="300" *ngIf="ciphers.length">
+        <div class="list">
             <a *cdkVirtualFor="let c of ciphers; trackBy: trackByFn" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
                 [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item">
@@ -28,16 +28,16 @@
                 </div>
             </a>
         </div>
-        <div class="no-items" *ngIf="!ciphers.length">
-            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
-            <ng-container *ngIf="loaded">
-                <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
-                <p>{{'noItemsInList' | i18n}}</p>
-                <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
-            </ng-container>
-        </div>
+    </cdk-virtual-scroll-viewport>
+    <div class="no-items" *ngIf="!ciphers.length">
+        <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+        <ng-container *ngIf="loaded">
+            <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+            <p>{{'noItemsInList' | i18n}}</p>
+            <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+        </ng-container>
     </div>
-</cdk-virtual-scroll-viewport>
+</div>
 <div class="footer">
     <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" 
         class="block primary" appA11yTitle="{{'addItem' | i18n}}" [disabled]="deleted">
