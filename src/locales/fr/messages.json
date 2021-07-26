@@ -342,6 +342,9 @@
   "nameRequired": {
     "message": "Le nom est requis."
   },
+  "nameAlreadyExists": {
+    "message": "Le nom est déjà utilisé."
+  },
   "addedItem": {
     "message": "Élément ajouté"
   },

@@ -342,6 +342,9 @@
   "nameRequired": {
     "message": "Name is required."
   },
+  "nameAlreadyExists": {
+    "message": "Name already exists."
+  },
   "addedItem": {
     "message": "Added item"
   },
