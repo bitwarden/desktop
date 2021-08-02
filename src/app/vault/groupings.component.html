@@ -100,7 +100,7 @@
                             <i *ngIf="c.children.length" class="fa-fw fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
                                 [ngClass]="{'fa-caret-right': isCollapsed(c.node), 'fa-caret-down': !isCollapsed(c.node)}"
                                 (click)="collapse(c.node)" appStopProp></i>
-                            <i *ngIf="c.children.length === 0" class="fa-fw fa fa-cube" aria-hidden="true"></i>
+                            <app-cozy-icon ref="folder" width="24" height="16"></app-cozy-icon>
                             &nbsp;{{c.node.name}}
                         </a>
                         <ul class="fa-ul" *ngIf="c.children.length && !isCollapsed(c.node)">
