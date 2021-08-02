@@ -12,4 +12,8 @@ export class CiphersComponent extends BaseCiphersComponent {
     trackByFn(index: number, c: CipherView) {
         return c.id;
     }
+
+    async refresh() {
+        await this.reload(this.filter, this.deleted);
+    }
 }
