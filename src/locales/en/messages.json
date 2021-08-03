@@ -931,6 +931,12 @@
   "themeDesc": {
     "message": "Change the application's color theme."
   },
+  "trayIcon": {
+    "message": "Tray Icon"
+  },
+  "trayIconDesc": {
+    "message": "Change the application's tray icon."
+  },
   "dark": {
     "message": "Dark",
     "description": "Dark color"

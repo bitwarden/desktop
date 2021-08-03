@@ -184,6 +184,13 @@
                             </select>
                             <small class="help-block">{{'themeDesc' | i18n}}</small>
                         </div>
+                        <div class="form-group" *ngIf="showTrayIcon">
+                            <label for="trayIcon">{{'trayIcon' | i18n}}</label>
+                            <select id="trayIcon" name="TrayIcon" [(ngModel)]="trayIcon" (change)="saveTrayIcon()">
+                                <option *ngFor="let o of trayIconOptions" [ngValue]="o.value">{{o.name}}</option>
+                            </select>
+                            <small class="help-block">{{'trayIconDesc' | i18n}}</small>
+                        </div>
                         <div class="form-group">
                             <label for="locale">{{'language' | i18n}}</label>
                             <select id="locale" name="Locale" [(ngModel)]="locale" (change)="saveLocale()">

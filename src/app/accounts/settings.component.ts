@@ -45,6 +45,9 @@ export class SettingsComponent implements OnInit {
     localeOptions: any[];
     theme: string;
     themeOptions: any[];
+    trayIcon: string;
+    trayIconOptions: any[];
+    showTrayIcon: boolean = false;
     clearClipboard: number;
     clearClipboardOptions: any[];
     supportsBiometric: boolean;
@@ -131,6 +134,12 @@ export class SettingsComponent implements OnInit {
             { name: 'Nord', value: 'nord' },
         ];
 
+        this.trayIconOptions = [
+            { name: i18nService.t('default'), value: null },
+            { name: i18nService.t('light'), value: 'light' },
+            { name: i18nService.t('dark'), value: 'dark' },
+        ];
+
         this.clearClipboardOptions = [
             { name: i18nService.t('never'), value: null },
             { name: i18nService.t('tenSeconds'), value: 10 },
@@ -158,6 +167,8 @@ export class SettingsComponent implements OnInit {
         this.startToTray = await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey);
         this.locale = await this.storageService.get<string>(ConstantsService.localeKey);
         this.theme = await this.storageService.get<string>(ConstantsService.themeKey);
+        this.trayIcon = await this.storageService.get<string>(ElectronConstants.trayIconKey);
+        this.showTrayIcon = await this.platformUtilsService.getDevice() === DeviceType.LinuxDesktop;
         this.clearClipboard = await this.storageService.get<number>(ConstantsService.clearClipboardKey);
         this.minimizeOnCopyToClipboard = await this.storageService.get<boolean>(
             ElectronConstants.minimizeOnCopyToClipboardKey);
@@ -335,6 +346,10 @@ export class SettingsComponent implements OnInit {
     async saveTheme() {
         await this.storageService.save(ConstantsService.themeKey, this.theme);
         window.setTimeout(() => window.location.reload(), 200);
+    }
+
+    async saveTrayIcon() {
+        await this.storageService.save(ElectronConstants.trayIconKey, this.trayIcon);
     }
 
     async saveMinOnCopyToClipboard() {
