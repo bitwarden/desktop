@@ -113,6 +113,7 @@
     "browser-hrtime": "^1.1.8",
     "cozy-client": "^23.15.0",
     "cozy-doctypes": "^1.82.2",
+    "cozy-flags": "^2.7.2",
     "cozy-keys-lib": "^3.9.0",
     "cozy-ui": "^51.2.0",
     "date-fns": "^1.30.1",
