@@ -7,6 +7,10 @@ import {
 import { MessagingService } from '../../../jslib/src/abstractions/messaging.service';
 import { CozyClientService } from './cozy-client.service';
 
+// @ts-ignore
+import flag from 'cozy-flags';
+import { FORCE_VAULT_UNCONFIGURED } from '../flags';
+
 @Injectable({ providedIn: 'root' })
 export class VaultInstallationService {
     userFinishedInstallation = false;
@@ -21,7 +25,7 @@ export class VaultInstallationService {
             []
         );
 
-        return vault.extension_installed || this.userFinishedInstallation;
+        return !flag(FORCE_VAULT_UNCONFIGURED) && (vault.extension_installed || this.userFinishedInstallation);
     }
 
     setIsInstalled() {
