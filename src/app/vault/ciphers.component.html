@@ -6,7 +6,7 @@
     </div>
 </div>
 <div class="content">
-    <cdk-virtual-scroll-viewport itemSize="42" minBufferPx="300" maxBufferPx="300" *ngIf="ciphers.length">
+    <cdk-virtual-scroll-viewport itemSize="43" minBufferPx="200" maxBufferPx="300" *ngIf="ciphers.length">
         <div class="list">
             <a *cdkVirtualFor="let c of ciphers; trackBy: trackByFn" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
