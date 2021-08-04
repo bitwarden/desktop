@@ -60,6 +60,11 @@ const common = {
                 './manifest.webapp',
             ]
         }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': process.env.DEVELOPMENT === '1'
+                ? JSON.stringify('development')
+                : JSON.stringify('production'),
+        })
     ],
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
@@ -94,7 +99,7 @@ const common = {
 };
 
 const renderer = {
-    mode: process.env.DEVELOPMENT ? 'development' :'production',
+    mode: process.env.DEVELOPMENT === '1' ? 'development' : 'production',
     devtool: false,
     target: 'web',
     node: {
@@ -104,7 +109,7 @@ const renderer = {
         'app/main': './src/app/main.ts',
     },
     optimization: {
-        minimize: process.env.DEVELOPMENT ? true : false,
+        minimize: process.env.DEVELOPMENT === '1' ? false : true,
         splitChunks: {
             cacheGroups: {
                 commons: {
