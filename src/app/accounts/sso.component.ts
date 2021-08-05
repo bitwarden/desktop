@@ -15,6 +15,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { SsoComponent as BaseSsoComponent } from 'jslib-angular/components/sso.component';
 
@@ -28,7 +29,7 @@ export class SsoComponent extends BaseSsoComponent {
         storageService: StorageService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, apiService: ApiService,
         cryptoFunctionService: CryptoFunctionService, environmentService: EnvironmentService,
-        passwordGenerationService: PasswordGenerationService) {
+        passwordGenerationService: PasswordGenerationService, private userService: UserService) {
         super(authService, router, i18nService, route, storageService, stateService, platformUtilsService,
             apiService, cryptoFunctionService, environmentService, passwordGenerationService);
         super.onSuccessfulLogin = () => {
@@ -36,5 +37,12 @@ export class SsoComponent extends BaseSsoComponent {
         };
         this.redirectUri = 'bitwarden://sso-callback';
         this.clientId = 'desktop';
+        super.onSuccessfulLoginNavigate = async () => {
+            if (await this.userService.getForcePasswordReset()) {
+                this.router.navigate(['update-temp-password']);
+            } else {
+                this.router.navigate([this.successRoute]);
+            }
+        };
     }
 }

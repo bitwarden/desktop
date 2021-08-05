@@ -21,6 +21,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
@@ -46,11 +47,18 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
         private broadcasterService: BroadcasterService, private ngZone: NgZone,
-        private messagingService: MessagingService) {
+        private messagingService: MessagingService, private userService: UserService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
+        };
+        super.onSuccessfulLoginNavigate = async () => {
+            if (await this.userService.getForcePasswordReset()) {
+                this.router.navigate(['update-temp-password']);
+            } else {
+                this.router.navigate([this.successRoute]);
+            }
         };
     }
 

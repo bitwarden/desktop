@@ -22,6 +22,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { ModalComponent } from 'jslib-angular/components/modal.component';
 import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib-angular/components/two-factor.component';
@@ -39,12 +40,24 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver,
-        stateService: StateService, storageService: StorageService, route: ActivatedRoute) {
+        stateService: StateService, storageService: StorageService, route: ActivatedRoute,
+        private userService: UserService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
             stateService, storageService, route);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
+        super.onSuccessfulLoginNavigate = async () => {
+            if (await this.userService.getForcePasswordReset()) {
+                this.router.navigate(['update-temp-password']);
+            } else {
+                this.router.navigate([this.successRoute], {
+                    queryParams: {
+                        identifier: this.identifier,
+                    },
+                });
+            }
+        }
     }
 
     anotherMethod() {
