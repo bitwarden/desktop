@@ -13,7 +13,7 @@ const Sharing = ({
 
   return (
     <ReactWrapper reactWrapperProps={reactWrapperProps}>
-      <SharingProvider doctype="com.bitwarden.organizations" documentType="Organizations">
+      <SharingProvider doctype="com.bitwarden.organizations" documentType="Organizations" previewPath="">
         {showShareModal && (
           <ShareModal
           document={file}
