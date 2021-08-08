@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { CAN_SHARE_ORGANIZATION } from '../../cozy/flags';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
@@ -17,6 +18,7 @@ export class GroupingsComponent extends BaseGroupingsComponent {
 
     @Output() onImportClicked = new EventEmitter<void>();
     importSelected = false;
+    CAN_SHARE_ORGANIZATION = CAN_SHARE_ORGANIZATION;
 
     hasNotes: boolean;
     private prevSelection: any = new Object();

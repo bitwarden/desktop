@@ -23,6 +23,7 @@ import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib/angular/components/add-edit.component';
 
+import { CAN_SHARE_ORGANIZATION } from '../../cozy/flags';
 
 const BroadcasterSubscriptionId = 'AddEditComponent';
 
@@ -31,6 +32,7 @@ const BroadcasterSubscriptionId = 'AddEditComponent';
     templateUrl: 'add-edit.component.html',
 })
 export class AddEditComponent extends BaseAddEditComponent implements OnChanges, OnDestroy {
+    CAN_SHARE_ORGANIZATION = CAN_SHARE_ORGANIZATION;
     @ViewChild('form')
     private form: NgForm;
     constructor(cipherService: CipherService, folderService: FolderService,

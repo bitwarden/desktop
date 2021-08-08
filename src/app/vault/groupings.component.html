@@ -89,7 +89,7 @@
         <ng-container *ngIf="loaded">
             <div class="heading">
                 <h2>{{'folders' | i18n}}</h2>
-                <button appBlurClick (click)="addFolder()" appA11yTitle="{{'addFolder' | i18n}}">
+                <button appBlurClick (click)="addFolder()" appA11yTitle="{{'addFolder' | i18n}}" *ifFlag="CAN_SHARE_ORGANIZATION">
                     <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
                 </button>
             </div>
@@ -110,7 +110,9 @@
                         </ul>
                     </li>
                 </ng-template>
+                <ng-container *ifFlag="CAN_SHARE_ORGANIZATION">
                 <ng-container *ngTemplateOutlet="recursiveCollections; context:{ $implicit: nestedCollections }">
+                </ng-container>
                 </ng-container>
 
                 <li [ngClass]="{active: selectedTrash}">
