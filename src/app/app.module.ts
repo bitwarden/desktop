@@ -35,6 +35,7 @@ import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directiv
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib-angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directive';
+import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
 import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
 import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
@@ -179,6 +180,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CalloutComponent,
+        CipherListVirtualScroll,
         CiphersComponent,
         CollectionsComponent,
         ColorPasswordPipe,
