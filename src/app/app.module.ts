@@ -35,8 +35,8 @@ import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directiv
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
 import { AutofocusDirective } from 'jslib-angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directive';
-import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
+import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
 import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
 import { StopClickDirective } from 'jslib-angular/directives/stop-click.directive';
