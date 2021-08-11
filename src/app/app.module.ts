@@ -26,6 +26,7 @@ import { SettingsComponent } from './accounts/settings.component';
 import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { UpdateTempPasswordComponent } from './accounts/update-temp-password.component';
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
@@ -215,6 +216,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TrueFalseValueDirective,
         TwoFactorComponent,
         TwoFactorOptionsComponent,
+        UpdateTempPasswordComponent,
         VaultComponent,
         ViewComponent,
     ],
