@@ -45,19 +45,12 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
             stateService, storageService, route);
         super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
+            return syncService.fullSync(true).then(async () => {
+                if (await this.userService.getForcePasswordReset()) {
+                    this.router.navigate(['update-temp-password']);
+                }
+            });
         };
-        super.onSuccessfulLoginNavigate = async () => {
-            if (await this.userService.getForcePasswordReset()) {
-                this.router.navigate(['update-temp-password']);
-            } else {
-                this.router.navigate([this.successRoute], {
-                    queryParams: {
-                        identifier: this.identifier,
-                    },
-                });
-            }
-        }
     }
 
     anotherMethod() {
