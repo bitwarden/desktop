@@ -65,8 +65,28 @@
       "verbs": ["GET", "PUT"]
     },
     "organizations": {
-      "description": "Required to share passwords with other persons",
+      "description": "Required to share passwords with other people",
       "type": "com.bitwarden.organizations",
+      "verbs": ["ALL"]
+    },
+    "ciphers": {
+      "description": "Required to share passwords with other people",
+      "type": "com.bitwarden.ciphers",
+      "verbs": ["ALL"]
+    },
+    "contacts": {
+      "description": "Required to share passwords with other people",
+      "type": "io.cozy.contacts",
+      "verbs": ["GET", "POST"]
+    },
+    "groups": {
+      "description": "Required to share passwords with other people",
+      "type": "io.cozy.contacts.groups",
+      "verbs": ["GET"]
+    },
+    "sharings": {
+      "description": "Required to have access to the sharings in realtime",
+      "type": "io.cozy.sharings",
       "verbs": ["GET", "POST"]
     }
   }
