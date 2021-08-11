@@ -7,6 +7,7 @@ import { PolicyService } from 'jslib/abstractions/policy.service';
 import { SendService } from 'jslib/abstractions/send.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
+import { TokenService } from 'jslib/abstractions/token.service';
 import { SyncCipherNotification } from 'jslib/models/response/notificationResponse';
 import { ProfileOrganizationResponse } from 'jslib/models/response/profileOrganizationResponse';
 import { SyncService as SyncServiceBase } from 'jslib/services/sync.service';
@@ -32,7 +33,8 @@ export class SyncService extends SyncServiceBase {
         cipherService: CipherService, cryptoService: CryptoService,
         collectionService: CollectionService, storageService: StorageService,
         messagingService: MessagingService, policyService: PolicyService,
-        sendService: SendService, logoutCallback: (expired: boolean) => Promise<void>) {
+        sendService: SendService, logoutCallback: (expired: boolean) => Promise<void>,
+        private tokenService: TokenService) {
           super(userService, apiService,
             settingsService, folderService,
             cipherService, cryptoService,
@@ -46,6 +48,38 @@ export class SyncService extends SyncServiceBase {
           this.localMessagingService = messagingService;
           this.localCryptoService = cryptoService;
           this.localStorageService = storageService;
+    }
+
+    /**
+     * Cozy stack may change how userId is computed in the future
+     * So this userId can be desynchronized between client and server
+     * This impacts realtime notifications that would be broken if wrong userId is used
+     * This method allows to synchronize user identity from the server
+     */
+    async refreshIdentityToken() {
+        const isAuthenticated = await this.localUserService.isAuthenticated();
+        if (!isAuthenticated) {
+            return;
+        }
+
+        const currentToken = await this.tokenService.getToken();
+
+        await this.localApiService.refreshIdentityToken();
+        const refreshedToken = await this.tokenService.getToken();
+
+        if (currentToken !== refreshedToken) {
+            const newUserId = this.tokenService.getUserId();
+            const email = this.tokenService.getEmail();
+            const kdf = await this.localUserService.getKdf();
+            const kdfIterations = await this.localUserService.getKdfIterations();
+
+            await this.localUserService.setInformation(newUserId, email, kdf, kdfIterations);
+        }
+    }
+
+    async fullSync(forceSync: boolean, allowThrowOnError = false): Promise<boolean> {
+        await this.refreshIdentityToken();
+        return await super.fullSync(forceSync, allowThrowOnError);
     }
 
     async syncUpsertCipher(notification: SyncCipherNotification, isEdit: boolean): Promise<boolean> {

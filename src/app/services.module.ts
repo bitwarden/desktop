@@ -124,7 +124,7 @@ const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService
     null, async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
-    sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
+    sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }), tokenService);
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
