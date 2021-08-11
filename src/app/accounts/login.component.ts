@@ -51,14 +51,11 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
-        };
-        super.onSuccessfulLoginNavigate = async () => {
-            if (await this.userService.getForcePasswordReset()) {
-                this.router.navigate(['update-temp-password']);
-            } else {
-                this.router.navigate([this.successRoute]);
-            }
+            return syncService.fullSync(true).then(async () => {
+                if (await this.userService.getForcePasswordReset()) {
+                    this.router.navigate(['update-temp-password']);
+                }
+            });
         };
     }
 
