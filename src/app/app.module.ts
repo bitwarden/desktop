@@ -1,12 +1,12 @@
 import 'zone.js/dist/zone';
 
 import { ToasterModule } from 'angular2-toaster';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,6 +36,7 @@ import { ApiActionDirective } from 'jslib-angular/directives/api-action.directiv
 import { AutofocusDirective } from 'jslib-angular/directives/autofocus.directive';
 import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directive';
 import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
+import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
 import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
 import { StopClickDirective } from 'jslib-angular/directives/stop-click.directive';
@@ -164,10 +165,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BrowserModule,
         DragDropModule,
         FormsModule,
-        InfiniteScrollModule,
         ReactiveFormsModule,
         ServicesModule,
         ToasterModule.forRoot(),
+        ScrollingModule,
     ],
     declarations: [
         A11yTitleDirective,
@@ -179,6 +180,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BlurClickDirective,
         BoxRowDirective,
         CalloutComponent,
+        CipherListVirtualScroll,
         CiphersComponent,
         CollectionsComponent,
         ColorPasswordPipe,
