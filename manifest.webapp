@@ -69,6 +69,11 @@
       "type": "com.bitwarden.organizations",
       "verbs": ["ALL"]
     },
+    "contacts": {
+      "description": "Required to share passwords with other people",
+      "type": "com.bitwarden.contacts",
+      "verbs": ["ALL"]
+    },
     "ciphers": {
       "description": "Required to share passwords with other people",
       "type": "com.bitwarden.ciphers",
