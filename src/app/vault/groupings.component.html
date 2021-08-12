@@ -89,11 +89,9 @@
         <ng-container *ngIf="loaded">
             <div class="heading">
                 <h2>{{'folders' | i18n}}</h2>
-                <!-- folders disabled until sharing feature is implemented
                 <button appBlurClick (click)="addFolder()" appA11yTitle="{{'addFolder' | i18n}}">
                     <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
                 </button>
-                -->
             </div>
             <ul>
                 <ng-template #recursiveCollections let-collections>
