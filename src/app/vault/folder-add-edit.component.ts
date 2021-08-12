@@ -66,7 +66,10 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
                 this.i18nService.t(this.editMode ? 'editedFolder' : 'addedFolder'));
             this.onSavedFolder.emit(this.folder);
             return true;
-        } catch { }
+        } catch {
+            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
+                this.i18nService.t('unexpectedError'));
+        }
 
         return false;
     }
