@@ -45,10 +45,10 @@
     "message": "Compartir"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Mover a la organización"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ se desplazó a $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Elige una organización a la que deseas mover este objeto. Moviendo a una organización transfiere la propiedad del objeto a esa organización. Ya no serás el dueño directo de este objeto una vez que haya sido movido."
   },
   "attachments": {
     "message": "Adjuntos"
@@ -606,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Utilice cualquier clave de seguridad WebAuthn habilitada para acceder a su cuenta."
   },
   "emailTitle": {
     "message": "Correo electrónico"
@@ -1308,10 +1308,10 @@
     "message": "Verificar para Bitwarden."
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "No solicite Windows Hello al empezar."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "No solicite Touch ID al empezar."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"
@@ -1671,27 +1671,27 @@
     "message": "Pendiente de eliminación"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "Autenticar WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ocultar mi dirección de correo electrónico a los destinatarios."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Una o más políticas de organización están afectando sus opciones del Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Verificación de correo electrónico requerida"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Debes verificar tu correo electrónico para usar esta característica."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Volver a preguntar contraseña maestra"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmación de contraseña maestra"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Esta acción está protegida. Para continuar, vuelva a introducir su contraseña maestra para verificar su identidad."
   }
 }

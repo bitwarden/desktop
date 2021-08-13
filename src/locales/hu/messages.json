@@ -441,7 +441,7 @@
     "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
-    "message": "Maximális fájl méret 500 MB."
+    "message": "Max. fájl méret 500 MB."
   },
   "updateKey": {
     "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."

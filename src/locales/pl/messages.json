@@ -48,7 +48,7 @@
     "message": "Przenieś do organizacji"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "Element $ITEMNAME$ został przeniesiony do organizacji $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Wybierz organizację, do której chcesz przenieść ten element. Ta czynność spowoduje utratę własności elementu i przenosi te uprawnienia do organizacji."
   },
   "attachments": {
     "message": "Załączniki"
@@ -1680,7 +1680,7 @@
     "message": "Co najmniej jedna zasada organizacji wpływa na ustawienia wysyłek."
   },
   "emailVerificationRequired": {
-    "message": "Wymagana weryfikacja adresu e-mail"
+    "message": "Weryfikacja adresu e-mail jest wymagana"
   },
   "emailVerificationRequiredDesc": {
     "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
