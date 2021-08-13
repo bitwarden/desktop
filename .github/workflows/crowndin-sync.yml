@@ -130,27 +130,43 @@ jobs:
           unzip -o $SAVE_FILE
           rm $SAVE_FILE
 
+      - name: Check changes
+        id: files-changed
+        env:
+          DIFF_BRANCH: master
+        run: |
+          DIFF_LEN=$(git diff origin/${DIFF_BRANCH} | wc -l | xargs)
+          echo "[*] git diff lines: ${DIFF_LEN}"
+          echo "::set-output name=num::$DIFF_LEN"
+
       - name: Commit changes
         env:
           BRANCH_NAME: ${{ steps.branch.outputs.branch-name }}
           BRANCH_EXISTS: ${{ steps.branch.outputs.branch-exists }}
+          DIFF_BRANCH: master
+          DIFF_LEN: ${{ steps.files-changed.outputs.num }}
         run: |
-          echo "[*] Adding new translations"
-          git add .
           echo "=====Translations Changed====="
-          git status
+          git diff --name-only origin/${DIFF_BRANCH}
           echo "=============================="
-          echo "[*] Committing"
-          git commit -m "Autosync Crowdin translations"
 
-          echo "[*] Pushing"
-          if [ "$BRANCH_EXISTS" == "false" ]; then
-            git push -u origin $BRANCH_NAME
+          if [ "$DIFF_LEN" != "0" ]; then
+            echo "[*] Adding new translations"
+            git add .
+            echo "[*] Committing"
+            git commit -m "Autosync Crowdin translations"
+            echo "[*] Pushing"
+            if [ "$BRANCH_EXISTS" == "false" ]; then
+              git push -u origin $BRANCH_NAME
+            else
+              git push
+            fi
           else
-            git push
+            echo "[*] No new docs"
           fi
 
       - name: Create/Update PR
+        if: ${{ steps.files-changed.outputs.num }} != 0
         env:
           BRANCH_NAME: ${{ steps.branch.outputs.branch-name }}
           BRANCH_EXISTS: ${{ steps.branch.outputs.branch-exists }}
