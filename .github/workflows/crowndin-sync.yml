@@ -63,6 +63,7 @@ jobs:
               curl -s -H "Authorization: Bearer $CROWDIN_API_TOKEN" \
               $CROWDIN_BASE_URL/$CROWDIN_PROJECT_ID/branches | jq -r '.data[0].data.id'
           )
+          echo "[*] Crowin master branch id: $BRANCH_ID"
           echo "::set-output name=id::$BRANCH_ID"
 
       - name: Get Crowdin build id
@@ -79,6 +80,7 @@ jobs:
               $CROWDIN_BASE_URL/$CROWDIN_PROJECT_ID/translations/builds \
               -d "{\"branchId\": $CROWDIN_MASTER_BRANCH_ID}" | jq -r '.data.id'
           )
+          echo "[*] Crowin translations build id: $BRANCH_ID"
           echo "::set-output name=id::$BUILD_ID"
 
       - name: Wait for Crowdin build to finish
@@ -113,6 +115,7 @@ jobs:
               curl -s -H "Authorization: Bearer $CROWDIN_API_TOKEN" \
               $CROWDIN_BASE_URL/$CROWDIN_PROJECT_ID/translations/builds/$CROWDIN_BUILD_ID/download | jq -r '.data.url'
           )
+          echo "[*] Crowin translations download url: $DOWNLOAD_URL"
           echo "::set-output name=value::$DOWNLOAD_URL"
 
       - name: Download Crowdin translations
