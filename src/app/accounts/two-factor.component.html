@@ -36,7 +36,7 @@
         </ng-container>
         <ng-container *ngIf="selectedProviderType === providerType.WebAuthn">
             <div id="web-authn-frame">
-                <iframe id="webauthn_iframe"></iframe>
+                <iframe id="webauthn_iframe" [allow]="webAuthnAllow"></iframe>
             </div>
             <div class="box first">
                 <div class="box-content">
