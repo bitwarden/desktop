@@ -133,8 +133,14 @@ jobs:
       - name: Check changes
         id: files-changed
         env:
-          DIFF_BRANCH: master
+          BRANCH_NAME: ${{ steps.branch.outputs.branch-name }}
+          BRANCH_EXISTS: ${{ steps.branch.outputs.branch-exists }}
         run: |
+          DIFF_BRANCH=master
+          if [[ "$BRANCH_EXISTS" == "true" ]]; then
+            DIFF_BRANCH=$BRANCH_NAME
+          fi
+
           DIFF_LEN=$(git diff origin/${DIFF_BRANCH} | wc -l | xargs)
           echo "[*] git diff lines: ${DIFF_LEN}"
           echo "::set-output name=num::$DIFF_LEN"
