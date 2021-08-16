@@ -74,38 +74,17 @@ export class InstallationPageComponent extends AngularWrapperComponent {
     /* Props Bindings */
     /******************/
 
-    protected async fetchHintExists(client: CozyClient) {
-        try {
-            await client
-                .getStackClient()
-                .collection('io.cozy.settings')
-                .get('hint');
-
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
-
     protected onSkipExtension() {
         this.vaultInstallationService.setIsInstalled();
         this.messagingService.send('installed');
     }
 
     protected async getProps(): Promise<InstallationPageProps> {
-        const client = this.clientService.GetClient();
-
-        const hasHint = await this.fetchHintExists(client);
-
-        const bitwardenData = {
-            extension_installed: hasHint,
-        };
+        const reactWrapperProps = await this.getReactWrapperProps(true);
 
         return {
-            client: client,
-            bitwardenData: bitwardenData,
+            reactWrapperProps: reactWrapperProps,
             onSkipExtension: this.onSkipExtension.bind(this),
-            vaultData: this.getVaultData(),
         };
     }
 

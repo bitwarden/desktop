@@ -16,17 +16,11 @@ export class ImportPageComponent extends AngularWrapperComponent {
     /* Props Bindings */
     /******************/
 
-    protected getProps(): AngularWrapperProps {
-        const data = {
-            extension_installed: true, // to be replaced with client fetch
-        };
-
-        const client = this.clientService.GetClient();
+    protected async getProps(): Promise<AngularWrapperProps> {
+        const reactWrapperProps = await this.getReactWrapperProps();
 
         return {
-            client: client,
-            bitwardenData: data,
-            vaultData: this.getVaultData(),
+            reactWrapperProps: reactWrapperProps,
         };
     }
 
@@ -34,9 +28,9 @@ export class ImportPageComponent extends AngularWrapperComponent {
     /* Render */
     /**********/
 
-    protected renderReact() {
+    protected async renderReact() {
         ReactDOM.render(
-            React.createElement(ImportPage, this.getProps()),
+            React.createElement(ImportPage, await this.getProps()),
             this.getRootDomNode()
         );
     }

@@ -18,17 +18,11 @@ export class ButtonExtensionComponent extends AngularWrapperComponent {
     /* Props Bindings */
     /******************/
 
-    protected getProps(): AngularWrapperProps {
-        const data = {
-            extension_installed: false, // not used in this component
-        };
-
-        const client = this.clientService.GetClient();
+    protected async getProps(): Promise<AngularWrapperProps> {
+        const reactWrapperProps = await this.getReactWrapperProps();
 
         return {
-            client: client,
-            bitwardenData: data,
-            vaultData: this.getVaultData(),
+            reactWrapperProps: reactWrapperProps,
         };
     }
 
@@ -38,7 +32,7 @@ export class ButtonExtensionComponent extends AngularWrapperComponent {
 
     protected async renderReact() {
         ReactDOM.render(
-            React.createElement(ButtonExtension, this.getProps()),
+            React.createElement(ButtonExtension, await this.getProps()),
             this.getRootDomNode()
         );
     }

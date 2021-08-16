@@ -1,14 +1,18 @@
 import React from "react";
 import ImportPage from "../../react/components/ImportPage";
-import ReactWrapper from "../react-wrapper";
+import ReactWrapper, { reactWrapperProps } from "../react-wrapper";
 
 // wrap original ImportPage component into
-const ImportPageWrapper = ({ client, bitwardenData, ...props }) => {
+const ImportPageWrapper = ({ reactWrapperProps }) => {
   return (
-    <ReactWrapper client={client} bitwardenData={bitwardenData} {...props}>
+    <ReactWrapper reactWrapperProps={reactWrapperProps}>
       <ImportPage></ImportPage>
     </ReactWrapper>
   );
 };
+
+ImportPageWrapper.propTypes = {
+  reactWrapperProps: reactWrapperProps.isRequired
+}
 
 export default ImportPageWrapper;

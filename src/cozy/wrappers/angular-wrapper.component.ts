@@ -27,12 +27,32 @@ import { ImportService } from 'jslib/services/import.service';
 import * as uuid from 'uuid';
 import { CozyClientService } from '../services/cozy-client.service';
 
-export interface AngularWrapperProps {
+export interface VaultData {
+    apiService: ApiService;
+    environmentService: EnvironmentService;
+    authService: AuthService;
+    syncService: SyncService;
+    cryptoService: CryptoService;
+    cipherService: CipherService;
+    userService: UserService;
+    collectionService: CollectionService;
+    passwordGenerationService: PasswordGenerationService;
+    vaultTimeoutService: VaultTimeoutService;
+    containerService: ContainerService;
+    importService: ImportService;
+    utils: Utils;
+}
+
+export interface ReactWrapperProps {
     client: CozyClient;
     bitwardenData: {
         extension_installed: boolean;
     };
-    vaultData: any;
+    vaultData: VaultData;
+}
+
+export interface AngularWrapperProps {
+    reactWrapperProps: ReactWrapperProps;
 }
 
 @Component({
@@ -61,7 +81,56 @@ export class AngularWrapperComponent
         protected platformUtilsService: PlatformUtilsService
     ) {}
 
-    getVaultData() {
+    /*************/
+    /* Lifecycle */
+    /*************/
+
+    ngOnInit() {
+        this.rootDomID = uuid.v1();
+    }
+
+    ngOnChanges() {
+        this.renderReactIfMounted();
+    }
+
+    ngAfterViewInit() {
+        this.renderReactIfMounted();
+    }
+
+    ngOnDestroy() {
+        // Uncomment if Angular 4 issue that ngOnDestroy is called AFTER DOM node removal is resolved
+        // ReactDOM.unmountComponentAtNode(this.getRootDomNode())
+    }
+
+    /******************/
+    /* Props Bindings */
+    /******************/
+
+    /**
+     * Get props that will be injected into the ReactWrapper
+     *
+     * @param checkExtensionInstalled Set to true if the component needs to query the installation state online (ex: for installation page).
+     * Else installation state will be set to true without any query
+     *
+     * @returns props to be injected into the ReactWrapper
+     */
+    async getReactWrapperProps(checkExtensionInstalled = false): Promise<ReactWrapperProps> {
+        const client = this.clientService.GetClient();
+
+        const hasHint = checkExtensionInstalled ? true : await this.fetchHintExists(client);
+
+        const bitwardenData = {
+            extension_installed: hasHint,
+        };
+
+        return {
+            client: client,
+            bitwardenData: bitwardenData,
+            vaultData: this.getVaultData(),
+        };
+    }
+
+    protected getVaultData(): VaultData {
         const importService = new ImportService(
             this.cipherService,
             this.folderService,
@@ -93,25 +162,17 @@ export class AngularWrapperComponent
         return vaultData;
     }
 
-    /*************/
-    /* Lifecycle */
-    /*************/
+    protected async fetchHintExists(client: CozyClient) {
+        try {
+            await client
+                .getStackClient()
+                .collection('io.cozy.settings')
+                .get('hint');
 
-    ngOnInit() {
-        this.rootDomID = uuid.v1();
-    }
-
-    ngOnChanges() {
-        this.renderReactIfMounted();
-    }
-
-    ngAfterViewInit() {
-        this.renderReactIfMounted();
-    }
-
-    ngOnDestroy() {
-        // Uncomment if Angular 4 issue that ngOnDestroy is called AFTER DOM node removal is resolved
-        // ReactDOM.unmountComponentAtNode(this.getRootDomNode())
+            return true;
+        } catch (e) {
+            return false;
+        }
     }
 
     /**********/

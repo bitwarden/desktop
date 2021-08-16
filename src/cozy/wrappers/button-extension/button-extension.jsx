@@ -8,7 +8,7 @@ import {
 import getSupportedPlatforms from 'cozy/react/supportedPlatforms';
 import { detect as detectBrowser } from 'detect-browser';
 import React from 'react';
-import ReactWrapper from '../react-wrapper';
+import ReactWrapper, { reactWrapperProps } from '../react-wrapper';
 
 const browser = detectBrowser();
 
@@ -43,7 +43,7 @@ const ButtonClient = (props) => {
 };
 
 // wrap original UIButtonClient component
-const ImportPageWrapper = ({ client, bitwardenData, ...props }) => {
+const ButtonExtensionWrapper = ({ reactWrapperProps, ...props }) => {
   const extensionStatus = useExtensionStatus();
 
   if (extensionStatus !== extensionStatuses.notInstalled) {
@@ -51,10 +51,14 @@ const ImportPageWrapper = ({ client, bitwardenData, ...props }) => {
   }
 
   return (
-    <ReactWrapper client={client} bitwardenData={bitwardenData} {...props}>
+    <ReactWrapper reactWrapperProps={reactWrapperProps}>
       <ButtonClient {...props}></ButtonClient>
     </ReactWrapper>
   );
 };
 
-export default ImportPageWrapper;
+ButtonExtensionWrapper.propTypes = {
+  reactWrapperProps: reactWrapperProps.isRequired
+}
+
+export default ButtonExtensionWrapper;
