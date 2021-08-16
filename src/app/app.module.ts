@@ -65,6 +65,7 @@ import { CozyIconComponent } from '../cozy/wrappers/cozy-icon/cozy-icon.componen
 import { IconSpriteComponent } from '../cozy/wrappers/icon-sprite/icon-sprite.component';
 import { ImportPageComponent } from '../cozy/wrappers/import-page/import-page.component';
 import { InstallationPageComponent } from '../cozy/wrappers/installation-page/installation-page.component';
+import { SharingComponent } from '../cozy/wrappers/sharing/sharing.component';
 
 import { FlagConditionalComponent } from '../cozy/components/flag-conditional/flag-conditional.component';
 import { IfFlagDirective } from '../cozy/components/flag-conditional/if-flag.directive';
@@ -225,6 +226,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FlagSwitcherComponent,
         FlagConditionalComponent,
         IfFlagDirective,
+        SharingComponent,
     ],
     entryComponents: [
         AttachmentsComponent,

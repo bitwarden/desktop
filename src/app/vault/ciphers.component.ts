@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 import { CipherService } from 'jslib/abstractions/cipher.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -14,6 +14,8 @@ import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/componen
 export class CiphersComponent extends BaseCiphersComponent {
 
     @Output() onDeletedCipher = new EventEmitter();
+    @Input() collectionId: string = null;
+
     isMenuOpened: boolean = false;
     @ViewChild('menu') menu: ElementRef;
 
