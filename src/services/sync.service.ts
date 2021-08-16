@@ -62,18 +62,17 @@ export class SyncService extends SyncServiceBase {
             return;
         }
 
-        const currentToken = await this.tokenService.getToken();
+        const currentUserId = this.tokenService.getUserId();
 
         await this.localApiService.refreshIdentityToken();
-        const refreshedToken = await this.tokenService.getToken();
+        const refreshedUserId = this.tokenService.getUserId();
 
-        if (currentToken !== refreshedToken) {
-            const newUserId = this.tokenService.getUserId();
+        if (currentUserId !== refreshedUserId) {
             const email = this.tokenService.getEmail();
             const kdf = await this.localUserService.getKdf();
             const kdfIterations = await this.localUserService.getKdfIterations();
 
-            await this.localUserService.setInformation(newUserId, email, kdf, kdfIterations);
+            await this.localUserService.setInformation(refreshedUserId, email, kdf, kdfIterations);
         }
     }
 
