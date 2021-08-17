@@ -273,7 +273,7 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('getBrowserExtension'),
                 submenu: [
                     {
-                        label: 'Chrome',
+                        label: 'Chrome / Brave / Vivaldi / Tor Browser',
                         click: () => {
                             shell.openExternal('https://chrome.google.com/webstore/detail/' +
                                 'bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb');
