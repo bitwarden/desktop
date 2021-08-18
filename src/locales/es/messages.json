@@ -1521,7 +1521,7 @@
     "message": "Una política de organización está afectando a sus opciones de propiedad."
   },
   "allSends": {
-    "message": "Todos los envíos",
+    "message": "Todos los Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
@@ -1531,11 +1531,11 @@
     "message": "Texto"
   },
   "searchSends": {
-    "message": "Búsqueda de envíos",
+    "message": "Búsqueda de Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Editar Envío",
+    "message": "Editar Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
@@ -1548,44 +1548,44 @@
     "message": "Fecha de eliminación"
   },
   "deletionDateDesc": {
-    "message": "El envío se borrará definitivamente en la fecha y hora especificadas.",
+    "message": "El Send se borrará definitivamente en la fecha y hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Fecha de caducidad"
   },
   "expirationDateDesc": {
-    "message": "Si se establece, el acceso a este Envío expirará en la fecha y hora especificadas.",
+    "message": "Si se establece, el acceso a este Send expirará en la fecha y hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Número máximo de accesos"
   },
   "maxAccessCountDesc": {
-    "message": "Si se establece, los usuarios ya no podrán acceder a este Envío una vez que se alcance el número máximo de accesos.",
+    "message": "Si se establece, los usuarios ya no podrán acceder a este Send una vez que se alcance el número máximo de accesos.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Conteo actual de accesos"
   },
   "disableSend": {
-    "message": "Desactive este Envío para que nadie pueda acceder a él.",
+    "message": "Desactive este Send para que nadie pueda acceder a él.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Opcionalmente, se requiere una contraseña para que los usuarios accedan a este Envío.",
+    "message": "Opcionalmente, se requiere una contraseña para que los usuarios accedan a este Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Notas privadas sobre este Envío.",
+    "message": "Notas privadas sobre este Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Enviar enlace",
+    "message": "Send enlace",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Enviar enlace",
+    "message": "Send enlace",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1593,26 +1593,26 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Envío creado",
+    "message": "Send creado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Envío editado",
+    "message": "Send editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Envío eliminado",
+    "message": "Send eliminado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Nueva contraseña"
   },
   "whatTypeOfSend": {
-    "message": "¿Qué tipo de envío es éste?",
+    "message": "¿Qué tipo de Send es éste?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Crear envío",
+    "message": "Crear Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1641,7 +1641,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copiar el enlace de envío al portapapeles",
+    "message": "Copiar el enlace del Send al portapapeles",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
