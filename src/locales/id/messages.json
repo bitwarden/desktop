@@ -45,10 +45,10 @@
     "message": "Berbagi"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Pindah ke Organisasi"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ pindah ke $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -1674,13 +1674,13 @@
     "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Sembunyikan alamat surel saya dari penerima."
   },
   "sendOptionsPolicyInEffect": {
     "message": "One or more organization policies are affecting your Send options."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Verifikasi Email Diperlukan"
   },
   "emailVerificationRequiredDesc": {
     "message": "You must verify your email to use this feature."
