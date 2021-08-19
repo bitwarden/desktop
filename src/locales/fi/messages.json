@@ -917,7 +917,7 @@
     "message": "Vahvista ilmoitusalueen käytöstä poisto"
   },
   "confirmTrayDesc": {
-    "message": "Asetuksen käytöstä poisto kytkee myös kaikki muut ilmoitusalueeseen liittyvät asetukset pois käytöstä."
+    "message": "Asetuksen käytöstä poisto poistaa käytöstä myös kaikki muut ilmoitusalueeseen liittyvät asetukset."
   },
   "language": {
     "message": "Kieli"
@@ -944,7 +944,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Tarkista päivitykset"
+    "message": "Tarkasta päivitykset"
   },
   "version": {
     "message": "Versio $VERSION_NUM$",
@@ -1093,7 +1093,7 @@
     "message": "Loitonna"
   },
   "resetZoom": {
-    "message": "Palauta zoomaus"
+    "message": "Palauta Lähennys"
   },
   "toggleFullScreen": {
     "message": "Kytke koko näytön tila"
@@ -1109,7 +1109,7 @@
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoomaus"
+    "message": "Lähennä"
   },
   "bringAllToFront": {
     "message": "Tuo kaikki eteen",
@@ -1545,17 +1545,17 @@
     "message": "Teksti"
   },
   "deletionDate": {
-    "message": "Poistoajankohta"
+    "message": "Poistopäivä"
   },
   "deletionDateDesc": {
-    "message": "Send poistuu pysyvästi määritettynä ajankohtana.",
+    "message": "Send poistetaan pysyvästi määritettynä ajankohtana.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Erääntymisajankohta"
+    "message": "Erääntymispäivä"
   },
   "expirationDateDesc": {
-    "message": "Send erääntyy määritettynä ajankohtana.",
+    "message": "Jos määritetty, Send erääntyy määritettynä ajankohtana.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {

@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "filters": {
     "message": "Filtri"
@@ -45,7 +45,7 @@
     "message": "Condividi"
   },
   "moveToOrganization": {
-    "message": "Sposta in organizzazione"
+    "message": "Sposta in Organizzazione"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ spostato in $ORGNAME$",
@@ -630,7 +630,7 @@
     "message": "Ambiente self-hosted"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specifica l'URL principale della tua installazione Bitwarden locale."
+    "message": "Specifica l'URL principale della tua installazione Bitwarden self-hosted."
   },
   "customEnvironment": {
     "message": "Ambiente personalizzato"
@@ -783,7 +783,7 @@
     "message": "Password principale errata"
   },
   "twoStepLoginConfirmation": {
-    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare l'accesso con un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?"
+    "message": "L'autenticazione in due passaggi rende il tuo account più sicuro richiedendo di verificare il login con un altro dispositivo come una chiave di sicurezza, applicazione di autenticazione, SMS, telefonata o email. Può essere abilitata su bitwarden.com. Vuoi visitare il sito ora?"
   },
   "twoStepLogin": {
     "message": "Verifica in due passaggi"
@@ -881,7 +881,7 @@
     "message": "Chiudi nella barra dei menu"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "Quando chiudi la finestra, mostra invece un'icona nella barra dei menu."
+    "message": "Minimizza nell'area di notifica invece di ridurre a icona."
   },
   "enableTray": {
     "message": "Icona nell'area di notifica"
@@ -911,7 +911,7 @@
     "message": "Mostra sempre nel Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Mostra l'icona di Bitwarden nel Dock anche quando minimizzato nella barra dei menu."
+    "message": "Mostra l'icona Bitwarden nel Dock anche quando minimizzato nella barra dei menu."
   },
   "confirmTrayTitle": {
     "message": "Conferma disattivazione icona del vassoio"
@@ -1024,7 +1024,7 @@
     "message": "Opzioni di verifica in due passaggi addizionali come YubiKey, FIDO U2F, e Duo."
   },
   "premiumSignUpReports": {
-    "message": "Sicurezza delle password, integrità dell'account e resoconti sulla violazione dei dati per mantenere sicura la tua cassaforte."
+    "message": "Sicurezza delle password, integrità dell'account e rapporti sulla violazione dei dati per mantenere sicura la tua cassaforte."
   },
   "premiumSignUpTotp": {
     "message": "Generatore di codice di verifica TOTP (2FA) per i login nella tua cassaforte."
@@ -1566,7 +1566,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Conteggio accessi attuale"
+    "message": "Conteggio accessi corrente"
   },
   "disableSend": {
     "message": "Disabilita il Send per renderlo inaccessibile.",

@@ -45,10 +45,10 @@
     "message": "Podijeli"
   },
   "moveToOrganization": {
-    "message": "Premjesti u organizaciju"
+    "message": "Move to Organization"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ premješteno u $ORGNAME$",
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Odaberi organizaciju u koju želiš premjestiti ovu stavku. Premještanje prenosi vlasništvo stavke na organizaciju. Nakon premještanja više nećeš biti izravni vlasnik ove stavke."
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Privitci"

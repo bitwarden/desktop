@@ -45,10 +45,10 @@
     "message": "Compartir"
   },
   "moveToOrganization": {
-    "message": "Mover a la organización"
+    "message": "Move to Organization"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ se desplazó a $ORGNAME$",
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Elige una organización a la que deseas mover este objeto. Moviendo a una organización transfiere la propiedad del objeto a esa organización. Ya no serás el dueño directo de este objeto una vez que haya sido movido."
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Adjuntos"
@@ -606,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Utilice cualquier clave de seguridad WebAuthn habilitada para acceder a su cuenta."
+    "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
     "message": "Correo electrónico"
@@ -1308,10 +1308,10 @@
     "message": "Verificar para Bitwarden."
   },
   "noAutoPromptWindowsHello": {
-    "message": "No solicite Windows Hello al empezar."
+    "message": "Do not prompt for Windows Hello on launch."
   },
   "noAutoPromptTouchId": {
-    "message": "No solicite Touch ID al empezar."
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"
@@ -1521,7 +1521,7 @@
     "message": "Una política de organización está afectando a sus opciones de propiedad."
   },
   "allSends": {
-    "message": "Todos los Send",
+    "message": "Todos los envíos",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
@@ -1531,11 +1531,11 @@
     "message": "Texto"
   },
   "searchSends": {
-    "message": "Búsqueda de Send",
+    "message": "Búsqueda de envíos",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Editar Send",
+    "message": "Editar Envío",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
@@ -1548,44 +1548,44 @@
     "message": "Fecha de eliminación"
   },
   "deletionDateDesc": {
-    "message": "El Send se borrará definitivamente en la fecha y hora especificadas.",
+    "message": "El envío se borrará definitivamente en la fecha y hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Fecha de caducidad"
   },
   "expirationDateDesc": {
-    "message": "Si se establece, el acceso a este Send expirará en la fecha y hora especificadas.",
+    "message": "Si se establece, el acceso a este Envío expirará en la fecha y hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Número máximo de accesos"
   },
   "maxAccessCountDesc": {
-    "message": "Si se establece, los usuarios ya no podrán acceder a este Send una vez que se alcance el número máximo de accesos.",
+    "message": "Si se establece, los usuarios ya no podrán acceder a este Envío una vez que se alcance el número máximo de accesos.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Conteo actual de accesos"
   },
   "disableSend": {
-    "message": "Desactive este Send para que nadie pueda acceder a él.",
+    "message": "Desactive este Envío para que nadie pueda acceder a él.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Opcionalmente, se requiere una contraseña para que los usuarios accedan a este Send.",
+    "message": "Opcionalmente, se requiere una contraseña para que los usuarios accedan a este Envío.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Notas privadas sobre este Send.",
+    "message": "Notas privadas sobre este Envío.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send enlace",
+    "message": "Enviar enlace",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send enlace",
+    "message": "Enviar enlace",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1593,26 +1593,26 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send creado",
+    "message": "Envío creado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send editado",
+    "message": "Envío editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Send eliminado",
+    "message": "Envío eliminado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Nueva contraseña"
   },
   "whatTypeOfSend": {
-    "message": "¿Qué tipo de Send es éste?",
+    "message": "¿Qué tipo de envío es éste?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Crear Send",
+    "message": "Crear envío",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1641,7 +1641,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copiar el enlace del Send al portapapeles",
+    "message": "Copiar el enlace de envío al portapapeles",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
@@ -1671,27 +1671,27 @@
     "message": "Pendiente de eliminación"
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticar WebAuthn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Ocultar mi dirección de correo electrónico a los destinatarios."
+    "message": "Hide my email address from recipients."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "Una o más políticas de organización están afectando sus opciones del Send."
+    "message": "One or more organization policies are affecting your Send options."
   },
   "emailVerificationRequired": {
-    "message": "Verificación de correo electrónico requerida"
+    "message": "Email Verification Required"
   },
   "emailVerificationRequiredDesc": {
-    "message": "Debes verificar tu correo electrónico para usar esta característica."
+    "message": "You must verify your email to use this feature."
   },
   "passwordPrompt": {
-    "message": "Volver a preguntar contraseña maestra"
+    "message": "Master password re-prompt"
   },
   "passwordConfirmation": {
-    "message": "Confirmación de contraseña maestra"
+    "message": "Master password confirmation"
   },
   "passwordConfirmationDesc": {
-    "message": "Esta acción está protegida. Para continuar, vuelva a introducir su contraseña maestra para verificar su identidad."
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }

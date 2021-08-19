@@ -45,10 +45,10 @@
     "message": "പങ്കിടുക"
   },
   "moveToOrganization": {
-    "message": "സംഘടനയിലേക്ക് മാറുക"
+    "message": "Move to Organization"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ $ORGNAME$-യിലേക്ക് മാറ്റി",
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -1232,7 +1232,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "വാൾട് എക്‌സ്‌പോർട്ട് ഉറപ്പാക്കു"
+    "message": "Confirm Vault Export"
   },
   "exportWarningDesc": {
     "message": "ഈ എക്‌സ്‌പോർട്ടിൽ എൻക്രിപ്റ്റ് ചെയ്യാത്ത ഫോർമാറ്റിൽ നിങ്ങളുടെ വാൾട് ഡാറ്റ അടങ്ങിയിരിക്കുന്നു. എക്‌സ്‌പോർട് ചെയ്ത ഫയൽ സുരക്ഷിതമല്ലാത്ത ചാനലുകളിൽ (ഇമെയിൽ പോലുള്ളവ) നിങ്ങൾ സംഭരിക്കുകയോ അയയ്ക്കുകയോ ചെയ്യരുത്. നിങ്ങൾ ഇത് ഉപയോഗിച്ചുകഴിഞ്ഞാലുടൻ അത് മായ്ച്ചുകളയണം."
@@ -1497,16 +1497,16 @@
     "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
   },
   "approve": {
-    "message": "അംഗീകരിക്കുക"
+    "message": "Approve"
   },
   "verifyBrowserTitle": {
-    "message": "ബ്രൗസർ കണക്ഷൻ ഉറപ്പാക്കുക"
+    "message": "Verify browser connection"
   },
   "verifyBrowserDesc": {
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
   },
   "biometricsNotEnabledTitle": {
-    "message": "ബയോമെട്രിക്സ് പ്രാപ്തമാക്കിയിട്ടില്ല"
+    "message": "Biometrics not enabled"
   },
   "biometricsNotEnabledDesc": {
     "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
@@ -1521,31 +1521,31 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
-    "message": "എല്ലാം Send-കൾ",
+    "message": "All Sends",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "ഫയൽ"
+    "message": "File"
   },
   "sendTypeText": {
-    "message": "വാചകം"
+    "message": "Text"
   },
   "searchSends": {
-    "message": "Sends തിരയുക",
+    "message": "Search Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Send തിരുത്തുക",
+    "message": "Edit Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "എൻ്റെ വാൾട്"
+    "message": "My Vault"
   },
   "text": {
-    "message": "വാചകം"
+    "message": "Text"
   },
   "deletionDate": {
-    "message": "ഇല്ലാതാക്കൽ തീയതി"
+    "message": "Deletion Date"
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
