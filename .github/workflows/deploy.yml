@@ -21,7 +21,7 @@ jobs:
       - name: Create Deploy version vars
         id: create_tags
         run: |
-          if ! [[ "${{ github.event_name }}" -eq "release" ]]; then
+          #if ! [[ "${{ github.event_name }}" -eq "release" ]]; then
             case "${RELEASE_TAG_NAME_INPUT:0:1}" in
               v)
                 echo "RELEASE_NAME=${RELEASE_TAG_NAME_INPUT:1}" >> $GITHUB_ENV
@@ -39,13 +39,13 @@ jobs:
                 exit 1
                 ;;
             esac
-          else
-            TAG_VERSION=$(echo ${{ github.ref }} | cut -d "/" -f 3)
-            PKG_VERSION=${TAG_VERSION:1}
+          #else
+          #  TAG_VERSION=$(echo ${{ github.ref }} | cut -d "/" -f 3)
+          #  PKG_VERSION=${TAG_VERSION:1}
 
-            echo "::set-output name=package_version::$PKG_VERSION"
-            echo "::set-output name=tag_version::$TAG_VERSION"
-          fi
+          #  echo "::set-output name=package_version::$PKG_VERSION"
+          #  echo "::set-output name=tag_version::$TAG_VERSION"
+          #fi
         env:
           RELEASE_TAG_NAME_INPUT: ${{ github.event.inputs.release_tag_name_input }}
 
