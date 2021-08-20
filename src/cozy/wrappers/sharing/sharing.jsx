@@ -1,15 +1,21 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-import SharingProvider, { ShareModal, ShareButton } from 'cozy-sharing'
+import SharingProvider, { ShareModal, ShareButton, CozyPassFingerprintDialogContent } from 'cozy-sharing'
 
 import ReactWrapper, { reactWrapperProps } from '../react-wrapper';
 
 const Sharing = ({ 
     file,
-    reactWrapperProps
+    reactWrapperProps,
+    confirmationMethods
 }) => {
   const [showShareModal, setShowShareModal] = useState(false)
+
+  const twoStepsConfirmationMethods = {
+    ...confirmationMethods,
+    recipientConfirmationDialogContent: CozyPassFingerprintDialogContent,
+  }
 
   return (
     <ReactWrapper reactWrapperProps={reactWrapperProps}>
@@ -21,6 +27,9 @@ const Sharing = ({
           sharingDesc={file.name}
           onClose={() => setShowShareModal(false)}
           showShareOnlyByLink={false}
+          
+          hasTwoStepsConfirmation={true}
+          twoStepsConfirmationMethods={twoStepsConfirmationMethods}
           />
         )}
         <ShareButton
