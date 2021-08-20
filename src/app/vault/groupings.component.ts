@@ -75,4 +75,7 @@ export class GroupingsComponent extends BaseGroupingsComponent {
         this.selectedCollectionId = this.prevSelection.selectedCollectionId;
     }
 
+    async showFingerprint() {
+        this.broadcasterService.send({command: 'showFingerprintPhrase'});
+    }
 }

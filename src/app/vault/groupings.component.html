@@ -123,7 +123,12 @@
                 </li>
             </ul>
         </ng-container>
-        <h2>{{'tools' | i18n}}</h2>
+        <div class="heading">
+            <h2>{{'tools' | i18n}}</h2>
+            <button appBlurClick (click)="showFingerprint()" appA11yTitle="{{'addFolder' | i18n}}" *ifFlag="CAN_SHARE_ORGANIZATION">
+                <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
+            </button>
+        </div>
         <ul>
             <li [ngClass]="{active: importSelected }">
                 <a href="#" appStopClick appBlurClick (click)="selectImport()">
