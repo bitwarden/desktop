@@ -23,7 +23,7 @@
     }
 }
 
-#register-page, #hint-page, #two-factor-page {
+#register-page, #hint-page, #two-factor-page, #update-temp-password-page {
     padding-top: 20px;
 
     .content {
@@ -39,9 +39,10 @@
     }
 }
 
-#login-page, #register-page, #hint-page, #two-factor-page, #lock-page {
+#login-page, #register-page, #hint-page, #two-factor-page, #lock-page, #update-temp-password-page {
     .content {
         width: 300px;
+        transition: width 0.25s linear;
 
         p {
             text-align: center
@@ -183,7 +184,7 @@
     }
 }
 
-#register-page {
+#register-page, #update-temp-password-page {
     .content {
         width: 400px;
     }

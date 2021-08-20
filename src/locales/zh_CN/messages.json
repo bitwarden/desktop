@@ -45,10 +45,10 @@
     "message": "共享"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "移动到组织"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ 已移动到 $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "选择一个您想要移动此项目的组织。移动到一个组织将该项目的所有权转让给该组织。 一旦移动，您将不再是此项目的直接拥有者。"
   },
   "attachments": {
     "message": "附件"
@@ -1539,7 +1539,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "我的密码库"
+    "message": "密码库"
   },
   "text": {
     "message": "文本"
@@ -1671,7 +1671,7 @@
     "message": "等待删除"
   },
   "webAuthnAuthenticate": {
-    "message": "验证 WebAutn"
+    "message": "验证 WebAuthn"
   },
   "hideEmail": {
     "message": "对收件人隐藏我的电子邮件地址。"
@@ -1686,7 +1686,7 @@
     "message": "您必须验证您的电子邮件才能使用此功能。"
   },
   "passwordPrompt": {
-    "message": "重新提示主密码"
+    "message": "重新询问主密码"
   },
   "passwordConfirmation": {
     "message": "确认主密码"

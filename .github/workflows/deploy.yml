@@ -150,8 +150,9 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
 
-  publish:
-    name: Publish Release
+
+  auto-updater-deploy:
+    name: Release auto-updater files
     runs-on: ubuntu-latest
     needs: 
       - setup
@@ -162,11 +163,61 @@ jobs:
       RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
       TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
-      - name: Publish release
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+
+      - name: Rename publish asset
         run: |
-          hub release edit \
-            --draft=false \
-            --message "" \
-            $TAG_VERSION
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          curl \
+              -H "Authorization:token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Accept:application/vnd.github.v3+json" \
+              https://api.github.com/repos/$GITHUB_REPOSITORY/releases \
+              | jq -r " .[] | select( .tag_name == \"$TAG_VERSION\")" > release.json
+
+          echo "=====RELEASE====="
+          echo Release:
+          #cat release.json
+
+          RELEASE_UPLOAD_URL=$(cat release.json | jq -r ' .upload_url ' | cut -d { -f 1)
+          cat release.json | jq -rc ' .assets[] | select( .name | test("prerelease-latest.*[yml|json]")) | {name: .name,  url: .url, content_type: .content_type}' > release_assets.jsonl
+
+          echo "=====ASSETS====="
+          echo Release Upload URL: $RELEASE_UPLOAD_URL
+          echo Release Assets:
+          cat release_assets.jsonl
+
+          while read -r asset; do 
+              FILE_NAME=$(echo $asset | jq -r '.name')
+              FILE_URL=$(echo $asset | jq -r '.url')
+              FILE_ID=$(echo $asset | jq -r '.id')
+              echo "Asset name: $FILE_NAME"
+              echo "Asset url: $FILE_URL"
+
+              echo "Grabbing asset..."
+              curl \
+                  -L -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "Accept: application/octet-stream" \
+                  $FILE_URL --output  $FILE_NAME
+
+              NEW_FILE_SIZE=$(wc -c < $FILE_NAME | xargs)
+              NEW_FILE_NAME=$(echo $FILE_NAME | awk '{split($0,a,"prerelease-"); print a[2]}')
+              echo "New file size: $NEW_FILE_SIZE"
+              echo "New file name: $NEW_FILE_NAME"
+              echo "================"
+
+              echo "Deleting remote asset..."
+              curl \
+                  -X DELETE \
+                  -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "accept: application/vnd.github.v3+json" \
+                  $FILE_URL
+
+              echo "Pushing updated asset..."
+              curl \
+                  -X POST \
+                  -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "content-type: text/yaml" \
+                  -H "content-length: $NEW_FILE_SIZE" \
+                  --data-binary @$FILE_NAME \
+                  "$RELEASE_UPLOAD_URL?name=$NEW_FILE_NAME" --http1.1
+          done < release_assets.jsonl

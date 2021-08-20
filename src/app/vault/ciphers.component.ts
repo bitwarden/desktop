@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
 
-import { SearchService } from 'jslib-common/abstractions/search.service';
-
 import { CiphersComponent as BaseCiphersComponent } from 'jslib-angular/components/ciphers.component';
+
+import { CipherView } from 'jslib-common/models/view/cipherView';
 
 @Component({
     selector: 'app-vault-ciphers',
     templateUrl: 'ciphers.component.html',
 })
 export class CiphersComponent extends BaseCiphersComponent {
-    constructor(searchService: SearchService) {
-        super(searchService);
-        this.pageSize = 250;
+    trackByFn(index: number, c: CipherView) {
+        return c.id;
     }
 }

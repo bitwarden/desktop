@@ -45,10 +45,10 @@
     "message": "Jaa"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Siirrä organisaatioon"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ siirrettiin organisaatioon $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Valitse organisaatio, johon haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
   },
   "attachments": {
     "message": "Liitteet"
@@ -917,7 +917,7 @@
     "message": "Vahvista ilmoitusalueen käytöstä poisto"
   },
   "confirmTrayDesc": {
-    "message": "Asetuksen käytöstä poisto poistaa käytöstä myös kaikki muut ilmoitusalueeseen liittyvät asetukset."
+    "message": "Asetuksen käytöstä poisto kytkee myös kaikki muut ilmoitusalueeseen liittyvät asetukset pois käytöstä."
   },
   "language": {
     "message": "Kieli"
@@ -944,7 +944,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Tarkasta päivitykset"
+    "message": "Tarkista päivitykset"
   },
   "version": {
     "message": "Versio $VERSION_NUM$",
@@ -1093,7 +1093,7 @@
     "message": "Loitonna"
   },
   "resetZoom": {
-    "message": "Palauta Lähennys"
+    "message": "Palauta zoomaus"
   },
   "toggleFullScreen": {
     "message": "Kytke koko näytön tila"
@@ -1109,7 +1109,7 @@
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Lähennä"
+    "message": "Zoomaus"
   },
   "bringAllToFront": {
     "message": "Tuo kaikki eteen",
@@ -1545,17 +1545,17 @@
     "message": "Teksti"
   },
   "deletionDate": {
-    "message": "Poistopäivä"
+    "message": "Poistoajankohta"
   },
   "deletionDateDesc": {
-    "message": "Send poistetaan pysyvästi määritettynä ajankohtana.",
+    "message": "Send poistuu pysyvästi määritettynä ajankohtana.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Erääntymispäivä"
+    "message": "Erääntymisajankohta"
   },
   "expirationDateDesc": {
-    "message": "Jos määritetty, Send erääntyy määritettynä ajankohtana.",
+    "message": "Send erääntyy määritettynä ajankohtana.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
@@ -1671,7 +1671,7 @@
     "message": "Odottaa poistoa"
   },
   "webAuthnAuthenticate": {
-    "message": "Todenna WebAuthn"
+    "message": "WebAuthn-todennus"
   },
   "hideEmail": {
     "message": "Piilota sähköpostiosoitteeni vastaanottajilta."

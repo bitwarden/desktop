@@ -89,5 +89,9 @@ export default class NativeMessage {
                 console.error(e);
             }
         });
+
+        process.stdin.on('end', () => {
+            process.exit(0);
+        });
     }
 }

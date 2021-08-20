@@ -1,5 +1,5 @@
 <form id="login-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise" attr.aria-hidden="{{showingModal}}">
-    <div class="content">
+    <div id="content" class="content">
         <img class="logo-image" alt="Bitwarden">
         <p class="lead">{{'loginOrCreateNewAccount' | i18n}}</p>
         <div class="box last">
@@ -21,6 +21,9 @@
                                 [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
                         </a>
                     </div>
+                </div>
+                <div class="box-content-row" [hidden]="!showCaptcha()">
+                    <iframe id="hcaptcha_iframe" height="80"></iframe>
                 </div>
             </div>
         </div>

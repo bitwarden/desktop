@@ -45,10 +45,10 @@
     "message": "Comparteix"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Desplaça a l'organització"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ desplaçat a $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Trieu una organització a la qual vulgueu desplaçar aquest element. El trasllat a una organització transfereix la propietat de l'element a aquesta organització. Ja no sereu el propietari directe d'aquest element una vegada s'haja mogut."
   },
   "attachments": {
     "message": "Adjunts"
@@ -1671,7 +1671,7 @@
     "message": "Pendent de supressió"
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticar WebAutn"
+    "message": "Autenticar WebAuthn"
   },
   "hideEmail": {
     "message": "Amagueu la meua adreça de correu electrònic als destinataris."
