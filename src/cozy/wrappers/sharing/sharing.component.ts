@@ -148,7 +148,18 @@ export class SharingComponent extends AngularWrapperComponent {
     }
 
     protected async rejectUser(user: User) {
-        // console.log('rejectUser', user)
+        try {
+            const client = this.clientService.GetClient();
+
+            await client.stackClient.fetchJSON(
+                'DELETE',
+                `/bitwarden/contacts/${user.id}`,
+                []
+            );
+        } catch {
+            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
+                this.i18nService.t('unexpectedError'));
+        }
     }
 
     protected getTwoStepsConfirmationMethods(): ConfirmationMethods {
