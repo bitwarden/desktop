@@ -27,8 +27,6 @@ const Sharing = ({
           sharingDesc={file.name}
           onClose={() => setShowShareModal(false)}
           showShareOnlyByLink={false}
-          
-          hasTwoStepsConfirmation={true}
           twoStepsConfirmationMethods={twoStepsConfirmationMethods}
           />
         )}
