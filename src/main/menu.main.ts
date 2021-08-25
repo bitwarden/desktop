@@ -296,8 +296,8 @@ export class MenuMain extends BaseMenu {
                     {
                         label: 'Edge',
                         click: () => {
-                            shell.openExternal('https://www.microsoft.com/store/p/' +
-                                'bitwarden-free-password-manager/9p6kxl0svnnl');
+                            shell.openExternal('https://microsoftedge.microsoft.com/addons/' +
+                                'detail/jbkfoedolllekgbhcbcoahefnbanhhlh');
                         },
                     },
                     {

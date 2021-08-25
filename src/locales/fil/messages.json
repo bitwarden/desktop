@@ -6,49 +6,49 @@
     "message": "Filters"
   },
   "allItems": {
-    "message": "Alle Items"
+    "message": "All Items"
   },
   "favorites": {
-    "message": "Gunstelinge"
+    "message": "Favorites"
   },
   "types": {
-    "message": "Tipes"
+    "message": "Types"
   },
   "typeLogin": {
-    "message": "Aantekening"
+    "message": "Login"
   },
   "typeCard": {
-    "message": "Kaart"
+    "message": "Card"
   },
   "typeIdentity": {
-    "message": "Identiteit"
+    "message": "Identity"
   },
   "typeSecureNote": {
-    "message": "Beveiligde Nota"
+    "message": "Secure Note"
   },
   "folders": {
-    "message": "Vouers"
+    "message": "Folders"
   },
   "collections": {
-    "message": "Versamelings"
+    "message": "Collections"
   },
   "searchVault": {
-    "message": "Deursoek kluis"
+    "message": "Search Vault"
   },
   "addItem": {
-    "message": "Voeg item toe"
+    "message": "Add Item"
   },
   "shared": {
-    "message": "Gedeel"
+    "message": "Shared"
   },
   "share": {
-    "message": "Deel"
+    "message": "Share"
   },
   "moveToOrganization": {
-    "message": "Skuif na organisasie"
+    "message": "Move to Organization"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ geskuif na $ORGNAME$",
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -64,13 +64,13 @@
     "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
-    "message": "Aanhegsels"
+    "message": "Attachments"
   },
   "viewItem": {
-    "message": "Bekyk Item"
+    "message": "View Item"
   },
   "name": {
-    "message": "Naam"
+    "message": "Name"
   },
   "uri": {
     "message": "URI"
@@ -86,40 +86,40 @@
     }
   },
   "newUri": {
-    "message": "Nuwe URI"
+    "message": "New URI"
   },
   "username": {
-    "message": "Gebruikersnaam"
+    "message": "Username"
   },
   "password": {
-    "message": "Wagwoord"
+    "message": "Password"
   },
   "passphrase": {
-    "message": "Wagfrase"
+    "message": "Passphrase"
   },
   "editItem": {
-    "message": "Wysig Item"
+    "message": "Edit Item"
   },
   "emailAddress": {
-    "message": "E-posadres"
+    "message": "Email Address"
   },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
   },
   "website": {
-    "message": "Webwerf"
+    "message": "Website"
   },
   "notes": {
-    "message": "Notas"
+    "message": "Notes"
   },
   "customFields": {
-    "message": "Pasgemaakte Velde"
+    "message": "Custom Fields"
   },
   "launch": {
-    "message": "Lanseer"
+    "message": "Launch"
   },
   "copyValue": {
-    "message": "Kopieer Waarde",
+    "message": "Copy Value",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
@@ -129,50 +129,50 @@
     "message": "Minimize when copying an item's data to the clipboard."
   },
   "toggleVisibility": {
-    "message": "Tokkel sigbaarheid"
+    "message": "Toggle Visibility"
   },
   "toggleCollapse": {
-    "message": "Tokkel invou",
+    "message": "Toggle Collapse",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Kaarthouernaam"
+    "message": "Cardholder Name"
   },
   "number": {
-    "message": "Nommer"
+    "message": "Number"
   },
   "brand": {
-    "message": "Handelsmerk"
+    "message": "Brand"
   },
   "expiration": {
-    "message": "Vervaldatum"
+    "message": "Expiration"
   },
   "securityCode": {
-    "message": "Sekuriteitskode"
+    "message": "Security Code"
   },
   "identityName": {
-    "message": "Identiteitnaam"
+    "message": "Identity Name"
   },
   "company": {
-    "message": "Maatskappy"
+    "message": "Company"
   },
   "ssn": {
-    "message": "Identiteitsnommer"
+    "message": "Social Security Number"
   },
   "passportNumber": {
-    "message": "Paspoortnommer"
+    "message": "Passport Number"
   },
   "licenseNumber": {
-    "message": "Lisensienommer"
+    "message": "License Number"
   },
   "email": {
-    "message": "E-pos"
+    "message": "Email"
   },
   "phone": {
-    "message": "Telefoon"
+    "message": "Phone"
   },
   "address": {
-    "message": "Adres"
+    "message": "Address"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -181,223 +181,223 @@
     "message": "A premium membership is required to use this feature."
   },
   "errorOccurred": {
-    "message": "’n Fout het voorgekom."
+    "message": "An error has occurred."
   },
   "error": {
-    "message": "Fout"
+    "message": "Error"
   },
   "january": {
-    "message": "Januarie"
+    "message": "January"
   },
   "february": {
-    "message": "Februarie"
+    "message": "February"
   },
   "march": {
-    "message": "Maart"
+    "message": "March"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "Mei"
+    "message": "May"
   },
   "june": {
-    "message": "Junie"
+    "message": "June"
   },
   "july": {
-    "message": "Julie"
+    "message": "July"
   },
   "august": {
-    "message": "Augustus"
+    "message": "August"
   },
   "september": {
     "message": "September"
   },
   "october": {
-    "message": "Oktober"
+    "message": "October"
   },
   "november": {
     "message": "November"
   },
   "december": {
-    "message": "Desember"
+    "message": "December"
   },
   "ex": {
-    "message": "bv.",
+    "message": "ex.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Titel"
+    "message": "Title"
   },
   "mr": {
-    "message": "Mnr."
+    "message": "Mr"
   },
   "mrs": {
-    "message": "Mev."
+    "message": "Mrs"
   },
   "ms": {
-    "message": "Mej."
+    "message": "Ms"
   },
   "dr": {
-    "message": "Dr."
+    "message": "Dr"
   },
   "expirationMonth": {
-    "message": "Vervalmaand"
+    "message": "Expiration Month"
   },
   "expirationYear": {
-    "message": "Vervaljaar"
+    "message": "Expiration Year"
   },
   "select": {
-    "message": "Kies"
+    "message": "Select"
   },
   "other": {
-    "message": "Ander"
+    "message": "Other"
   },
   "generatePassword": {
-    "message": "Genereer Wagwoord"
+    "message": "Generate Password"
   },
   "type": {
-    "message": "Tipe"
+    "message": "Type"
   },
   "firstName": {
-    "message": "Voornaam"
+    "message": "First Name"
   },
   "middleName": {
-    "message": "Middelnaam"
+    "message": "Middle Name"
   },
   "lastName": {
-    "message": "Van"
+    "message": "Last Name"
   },
   "address1": {
-    "message": "Adres 1"
+    "message": "Address 1"
   },
   "address2": {
-    "message": "Adres 2"
+    "message": "Address 2"
   },
   "address3": {
-    "message": "Adres 3"
+    "message": "Address 3"
   },
   "cityTown": {
-    "message": "Stad / Dorp"
+    "message": "City / Town"
   },
   "stateProvince": {
-    "message": "Staat / Provinsie"
+    "message": "State / Province"
   },
   "zipPostalCode": {
-    "message": "Poskode"
+    "message": "Zip / Postal Code"
   },
   "country": {
-    "message": "Land"
+    "message": "Country"
   },
   "save": {
-    "message": "Bewaar"
+    "message": "Save"
   },
   "cancel": {
-    "message": "Kanselleer"
+    "message": "Cancel"
   },
   "delete": {
-    "message": "Skrap"
+    "message": "Delete"
   },
   "favorite": {
-    "message": "Gunsteling"
+    "message": "Favorite"
   },
   "edit": {
-    "message": "Wysig"
+    "message": "Edit"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "Vouer"
+    "message": "Folder"
   },
   "newCustomField": {
-    "message": "Nuwe Pasgemaakte Veld"
+    "message": "New Custom Field"
   },
   "value": {
-    "message": "Waarde"
+    "message": "Value"
   },
   "dragToSort": {
-    "message": "Sleep om te sorteer"
+    "message": "Drag to sort"
   },
   "cfTypeText": {
-    "message": "Teks"
+    "message": "Text"
   },
   "cfTypeHidden": {
-    "message": "Versteek"
+    "message": "Hidden"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "remove": {
-    "message": "Verwyder"
+    "message": "Remove"
   },
   "nameRequired": {
-    "message": "Naam word vereis."
+    "message": "Name is required."
   },
   "addedItem": {
-    "message": "Toegevoegde item"
+    "message": "Added item"
   },
   "editedItem": {
-    "message": "Gewysigde item"
+    "message": "Edited item"
   },
   "deleteItem": {
-    "message": "Skrap Item"
+    "message": "Delete Item"
   },
   "deleteFolder": {
-    "message": "Skrap Vouer"
+    "message": "Delete Folder"
   },
   "deleteAttachment": {
-    "message": "Skrap Aanhegsel"
+    "message": "Delete Attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Is u seker u wil hierdie item skrap?"
+    "message": "Do you really want to send to the trash?"
   },
   "deletedItem": {
-    "message": "Geskrapte item"
+    "message": "Sent item to trash"
   },
   "overwritePasswordConfirmation": {
-    "message": "Is u seker u wil oor die huidige wagwoord skryf?"
+    "message": "Are you sure you want to overwrite the current password?"
   },
   "noneFolder": {
-    "message": "Geen Vouer",
+    "message": "No Folder",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Voeg Vouer Toe"
+    "message": "Add Folder"
   },
   "editFolder": {
-    "message": "Wysig Vouer"
+    "message": "Edit Folder"
   },
   "regeneratePassword": {
-    "message": "Hergenereer Wagwoord"
+    "message": "Regenerate Password"
   },
   "copyPassword": {
-    "message": "Kopieer Wagwoord"
+    "message": "Copy Password"
   },
   "copyUri": {
-    "message": "Kopieer URI"
+    "message": "Copy URI"
   },
   "copyVerificationCodeTotp": {
     "message": "Copy Verification Code (TOTP)"
   },
   "length": {
-    "message": "Lengte"
+    "message": "Length"
   },
   "numWords": {
-    "message": "Aantal Woorde"
+    "message": "Number of Words"
   },
   "wordSeparator": {
-    "message": "Woordskeier"
+    "message": "Word Separator"
   },
   "capitalize": {
-    "message": "Maak beginhoofletters",
+    "message": "Capitalize",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
     "message": "Include Number"
   },
   "close": {
-    "message": "Sluit"
+    "message": "Close"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -407,143 +407,143 @@
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Vermy dubbelsinnige karakters"
+    "message": "Avoid Ambiguous Characters"
   },
   "searchCollection": {
-    "message": "Deursoek versameling"
+    "message": "Search Collection"
   },
   "searchFolder": {
-    "message": "Deursoek Vouer"
+    "message": "Search Folder"
   },
   "searchFavorites": {
-    "message": "Deursoek Gunstelinge"
+    "message": "Search Favorites"
   },
   "searchType": {
-    "message": "Deursoek Tipe",
+    "message": "Search Type",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Voeg Nuwe Aanhegsel Toe"
+    "message": "Add New Attachment"
   },
   "deletedAttachment": {
-    "message": "Geskrapte aanhegsel"
+    "message": "Deleted attachment"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Is u seker u wil hierdie aanhegsel skrap?"
+    "message": "Are you sure you want to delete this attachment?"
   },
   "attachmentSaved": {
-    "message": "Die aanhegsel is bewaar."
+    "message": "The attachment has been saved."
   },
   "file": {
-    "message": "Lêer"
+    "message": "File"
   },
   "selectFile": {
-    "message": "Kies ’n lêer."
+    "message": "Select a file."
   },
   "maxFileSize": {
-    "message": "Maksimumlêergrootte is 500 MB."
+    "message": "Maximum file size is 500 MB."
   },
   "updateKey": {
-    "message": "U kan nie hierdie funksie gebruik tot u u enkripsiesleutel bygewerk het nie."
+    "message": "You cannot use this feature until you update your encryption key."
   },
   "options": {
-    "message": "Opsies"
+    "message": "Options"
   },
   "editedFolder": {
-    "message": "Gewysigde vouer"
+    "message": "Edited folder"
   },
   "addedFolder": {
-    "message": "Toegevoegde vouer"
+    "message": "Added folder"
   },
   "deleteFolderConfirmation": {
-    "message": "Is u seker u wil hierdie vouer skrap?"
+    "message": "Are you sure you want to delete this folder?"
   },
   "deletedFolder": {
-    "message": "Geskrapte vouer"
+    "message": "Deleted folder"
   },
   "loginOrCreateNewAccount": {
-    "message": "Teken aan of skep ’n nuwe rekening vir toegang tot u beveiligde kluis."
+    "message": "Log in or create a new account to access your secure vault."
   },
   "createAccount": {
-    "message": "Skep Rekening"
+    "message": "Create Account"
   },
   "logIn": {
-    "message": "Teken Aan"
+    "message": "Log In"
   },
   "submit": {
-    "message": "Dien In"
+    "message": "Submit"
   },
   "masterPass": {
-    "message": "Hoofwagwoord"
+    "message": "Master Password"
   },
   "masterPassDesc": {
-    "message": "Die hoofwagwoord is die wagwoord wat u gebruik vir toegang tot die kluis. Dit is baie belangrik dat u dit onthou. Dit kan op geen manier teruggevind word indien u dit vergeet nie."
+    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
   },
   "masterPassHintDesc": {
-    "message": "’n Hoofwagwoordwenk kan u help om u wagwoord te onthou indien u dit sou vergeet."
+    "message": "A master password hint can help you remember your password if you forget it."
   },
   "reTypeMasterPass": {
-    "message": "Tik weer hoofwagwoord in"
+    "message": "Re-type Master Password"
   },
   "masterPassHint": {
-    "message": "Hoofwagwoordwenk (opsioneel)"
+    "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "Instellings"
+    "message": "Settings"
   },
   "passwordHint": {
-    "message": "Wagwoordwenk"
+    "message": "Password Hint"
   },
   "enterEmailToGetHint": {
-    "message": "Voer u e-posadres in om u hoofwagwoordwenk te ontvang."
+    "message": "Enter your account email address to receive your master password hint."
   },
   "getMasterPasswordHint": {
-    "message": "Kry hoofwagwoordwenk"
+    "message": "Get master password hint"
   },
   "emailRequired": {
-    "message": "E-posadres word benodig."
+    "message": "Email address is required."
   },
   "invalidEmail": {
-    "message": "Ongeldige e-posadres."
+    "message": "Invalid email address."
   },
   "masterPassRequired": {
-    "message": "Hoofwagwoord word benodig."
+    "message": "Master password is required."
   },
   "masterPassLength": {
-    "message": "Hoofwagwoord moet ten minste 8 karakters lank wees."
+    "message": "Master password must be at least 8 characters long."
   },
   "masterPassDoesntMatch": {
-    "message": "Hoofwagwoordbevestiging stem nie ooreen nie."
+    "message": "Master password confirmation does not match."
   },
   "newAccountCreated": {
-    "message": "U nuwe rekening is geskep! U kan nou aanteken."
+    "message": "Your new account has been created! You may now log in."
   },
   "masterPassSent": {
-    "message": "Ons het ’n e-pos gestuur met u hoofwagwoordwenk."
+    "message": "We've sent you an email with your master password hint."
   },
   "unexpectedError": {
-    "message": "'n Onverwagte fout het voorgekom."
+    "message": "An unexpected error has occurred."
   },
   "itemInformation": {
-    "message": "Iteminligting"
+    "message": "Item Information"
   },
   "noItemsInList": {
-    "message": "Daar is geen items om te lys nie."
+    "message": "There are no items to list."
   },
   "verificationCode": {
-    "message": "Bevestigingskode"
+    "message": "Verification Code"
   },
   "verificationCodeRequired": {
-    "message": "Bevestigingskode word vereis."
+    "message": "Verification code is required."
   },
   "continue": {
-    "message": "Gaan Voort"
+    "message": "Continue"
   },
   "enterVerificationCodeApp": {
-    "message": "Voer die 6-syferbevestigingskode van u waarmerktoep in."
+    "message": "Enter the 6 digit verification code from your authenticator app."
   },
   "enterVerificationCodeEmail": {
-    "message": "Voer die 8-syferbevestigingskode in wat aan $EMAIL$ gestuur is.",
+    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -561,7 +561,7 @@
     }
   },
   "rememberMe": {
-    "message": "Onthou my"
+    "message": "Remember me"
   },
   "sendVerificationCodeEmailAgain": {
     "message": "Send verification code email again"
@@ -582,17 +582,17 @@
     "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
-    "message": "Waarmerktoep"
+    "message": "Authenticator App"
   },
   "authenticatorAppDesc": {
-    "message": "Gebruik ’n waarmerktoep (soos Authy of Google Authenticator) om tydgebaseerde bevestigingskodes te genereer.",
+    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP Security Key"
   },
   "yubiKeyDesc": {
-    "message": "Gebruik ’n YubiKey vir toegang tot u rekening. Werk met YubiKey 4, 4 Nano, 4C en NEO-toestelle."
+    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
   },
   "duoDesc": {
     "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
@@ -609,13 +609,13 @@
     "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
-    "message": "E-pos"
+    "message": "Email"
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
   },
   "loginUnavailable": {
-    "message": "Aantekening onbeskikbaar"
+    "message": "Login Unavailable"
   },
   "noTwoStepProviders": {
     "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
@@ -636,138 +636,138 @@
     "message": "Custom Environment"
   },
   "customEnvironmentFooter": {
-    "message": "Vir gevorderde gebruikers. U kan die basisbronadres van elke diens onafhanklik instel."
+    "message": "For advanced users. You can specify the base URL of each service independently."
   },
   "baseUrl": {
-    "message": "Bedienerbronadres"
+    "message": "Server URL"
   },
   "apiUrl": {
-    "message": "API-bedienerbronadres"
+    "message": "API Server URL"
   },
   "webVaultUrl": {
-    "message": "Webkluisbedienerbronadres"
+    "message": "Web Vault Server URL"
   },
   "identityUrl": {
-    "message": "Identiteitbedienerbronadres"
+    "message": "Identity Server URL"
   },
   "notificationsUrl": {
-    "message": "Kennisgewingsbedienerbronadres"
+    "message": "Notifications Server URL"
   },
   "iconsUrl": {
-    "message": "Ikoonbedienerbronadres"
+    "message": "Icons Server URL"
   },
   "environmentSaved": {
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "Goed"
+    "message": "Ok"
   },
   "yes": {
-    "message": "Ja"
+    "message": "Yes"
   },
   "no": {
-    "message": "Nee"
+    "message": "No"
   },
   "overwritePassword": {
-    "message": "Skryf oor wagwoord"
+    "message": "Overwrite Password"
   },
   "learnMore": {
-    "message": "Leer meer"
+    "message": "Learn more"
   },
   "featureUnavailable": {
-    "message": "Funksie Onbeskikbaar"
+    "message": "Feature Unavailable"
   },
   "loggedOut": {
-    "message": "Uitgeteken"
+    "message": "Logged out"
   },
   "loginExpired": {
-    "message": "U aantekensessie het verstryk."
+    "message": "Your login session has expired."
   },
   "logOutConfirmation": {
-    "message": "Is u seker u wil uitteken?"
+    "message": "Are you sure you want to log out?"
   },
   "logOut": {
-    "message": "Teken Uit"
+    "message": "Log Out"
   },
   "addNewLogin": {
-    "message": "Voeg Nuwe Intekening Toe"
+    "message": "Add New Login"
   },
   "addNewItem": {
-    "message": "Voeg Nuwe Item Toe"
+    "message": "Add New Item"
   },
   "addNewFolder": {
-    "message": "Voeg Nuwe Vouer Toe"
+    "message": "Add New Folder"
   },
   "view": {
-    "message": "Bekyk"
+    "message": "View"
   },
   "account": {
-    "message": "Rekening"
+    "message": "Account"
   },
   "loading": {
-    "message": "Laai tans…"
+    "message": "Loading..."
   },
   "lockNow": {
-    "message": "Vergrendel Nou"
+    "message": "Lock Now"
   },
   "passwordGenerator": {
-    "message": "Wagwoordgenereerder"
+    "message": "Password Generator"
   },
   "emailUs": {
     "message": "Email Us"
   },
   "visitOurWebsite": {
-    "message": "Besoek Ons Webwerf"
+    "message": "Visit Our Website"
   },
   "fileBugReport": {
-    "message": "Rapporteer ’n fout"
+    "message": "File a Bug Report"
   },
   "blog": {
-    "message": "Woernaal"
+    "message": "Blog"
   },
   "followUs": {
-    "message": "Volg Ons"
+    "message": "Follow Us"
   },
   "syncVault": {
-    "message": "Sichroniseer Kluis"
+    "message": "Sync Vault"
   },
   "changeMasterPass": {
-    "message": "Verander Hoofwagwoord"
+    "message": "Change Master Password"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "U kan u hoofwagwoord op die bitwarden.com-webkluis verander. Wil u die webwerf nou besoek?"
+    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "fingerprintPhrase": {
-    "message": "Vingerafdrukfrase",
+    "message": "Fingerprint Phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "U rekening se vingerafdrukfrase",
+    "message": "Your account's fingerprint phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Gaan Na Webkluis"
+    "message": "Go To Web Vault"
   },
   "getMobileApp": {
-    "message": "Kry Mobiele Toep"
+    "message": "Get Mobile App"
   },
   "getBrowserExtension": {
-    "message": "Kry Blaaieruitbreiding"
+    "message": "Get Browser Extension"
   },
   "syncingComplete": {
-    "message": "Klaar gesinchroniseer"
+    "message": "Syncing complete"
   },
   "syncingFailed": {
-    "message": "Sinkronisasie het misluk"
+    "message": "Syncing failed"
   },
   "yourVaultIsLocked": {
-    "message": "U kluis is vergrendel. Verifieer u hoofwagwoord om voort te gaan."
+    "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Ontgrendel"
+    "message": "Unlock"
   },
   "loggedInAsOn": {
-    "message": "Aangeteken as $EMAIL$ by $HOSTNAME$.",
+    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -780,13 +780,13 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Ongeldige hoofwagwoord"
+    "message": "Invalid master password"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "twoStepLogin": {
-    "message": "Tweestapaantekening"
+    "message": "Two-step Login"
   },
   "vaultTimeout": {
     "message": "Vault Timeout"
@@ -795,37 +795,37 @@
     "message": "Choose when your vault will timeout and perform the selected action."
   },
   "immediately": {
-    "message": "Onmiddellik"
+    "message": "Immediately"
   },
   "tenSeconds": {
-    "message": "10 sekondes"
+    "message": "10 seconds"
   },
   "twentySeconds": {
-    "message": "20 sekondes"
+    "message": "20 seconds"
   },
   "thirtySeconds": {
-    "message": "30 sekondes"
+    "message": "30 seconds"
   },
   "oneMinute": {
-    "message": "1 minuut"
+    "message": "1 minute"
   },
   "twoMinutes": {
-    "message": "2 minute"
+    "message": "2 minutes"
   },
   "fiveMinutes": {
-    "message": "5 minute"
+    "message": "5 minutes"
   },
   "fifteenMinutes": {
-    "message": "15 minute"
+    "message": "15 minutes"
   },
   "thirtyMinutes": {
-    "message": "30 minute"
+    "message": "30 minutes"
   },
   "oneHour": {
-    "message": "1 uur"
+    "message": "1 hour"
   },
   "fourHours": {
-    "message": "4 uur"
+    "message": "4 hours"
   },
   "onIdle": {
     "message": "On System Idle"
@@ -840,24 +840,24 @@
     "message": "On Restart"
   },
   "never": {
-    "message": "Nooit"
+    "message": "Never"
   },
   "security": {
-    "message": "Sekuriteit"
+    "message": "Security"
   },
   "clearClipboard": {
-    "message": "Wis Knipbord",
+    "message": "Clear Clipboard",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Wis gekopieerde waardes outomaties vanuit u knipbord.",
+    "message": "Automatically clear copied values from your clipboard.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Deaktiveer Webwerfikone"
+    "message": "Disable Website Icons"
   },
   "disableFaviconDesc": {
-    "message": "Webwerfikone verskaf ’n herkenbare beeld langs elke aantekenitem in u kluis."
+    "message": "Website Icons provide a recognizable image next to each login item in your vault."
   },
   "enableMinToTray": {
     "message": "Minimize to Tray Icon"
@@ -908,7 +908,7 @@
     "message": "Start the Bitwarden Desktop application automatically on login."
   },
   "alwaysShowDock": {
-    "message": "Toon altyd in die dok"
+    "message": "Always show in the Dock"
   },
   "alwaysShowDockDesc": {
     "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
@@ -920,34 +920,34 @@
     "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
-    "message": "Taal"
+    "message": "Language"
   },
   "languageDesc": {
-    "message": "Verander die taal van die toepassing. Herbegin word vereis."
+    "message": "Change the language used by the application. Restart is required."
   },
   "theme": {
-    "message": "Tema"
+    "message": "Theme"
   },
   "themeDesc": {
-    "message": "Verander die toepassing se kleurtema."
+    "message": "Change the application's color theme."
   },
   "dark": {
-    "message": "Donker",
+    "message": "Dark",
     "description": "Dark color"
   },
   "light": {
-    "message": "Lig",
+    "message": "Light",
     "description": "Light color"
   },
   "copy": {
-    "message": "Kopieer",
+    "message": "Copy",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Gaan na vir bywerkings"
+    "message": "Check For Updates"
   },
   "version": {
-    "message": "Weergawe $VERSION_NUM$",
+    "message": "Version $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -959,7 +959,7 @@
     "message": "Restart To Update"
   },
   "restartToUpdateDesc": {
-    "message": "Weergawe $VERSION_NUM$ is gereed vir installasie. U moet die toepassing herbegin om die installasie te voltooi. Wil u nou herbegin en bywerk?",
+    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -968,87 +968,87 @@
     }
   },
   "updateAvailable": {
-    "message": "Bywerking Beskikbaar"
+    "message": "Update Available"
   },
   "updateAvailableDesc": {
-    "message": "’n Bywerking is gevind. Wil u dit nou aflaai?"
+    "message": "An update was found. Do you want to download it now?"
   },
   "restart": {
-    "message": "Herbegin"
+    "message": "Restart"
   },
   "later": {
     "message": "Later"
   },
   "noUpdatesAvailable": {
-    "message": "Geen bywerkings is tans beskikbaar nie. U gebruik die nuutste weergawe."
+    "message": "No updates are currently available. You are using the latest version."
   },
   "updateError": {
-    "message": "Bywerkfout"
+    "message": "Update Error"
   },
   "unknown": {
-    "message": "Onbekend"
+    "message": "Unknown"
   },
   "copyUsername": {
-    "message": "Kopieer Gebruikersnaam"
+    "message": "Copy Username"
   },
   "copyNumber": {
-    "message": "Kopieer Nommer",
+    "message": "Copy Number",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Kopieer Sekureiteitskode",
+    "message": "Copy Security Code",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premie-lidmaatskap"
+    "message": "Premium Membership"
   },
   "premiumManage": {
-    "message": "Bestuur Lidmaatskap"
+    "message": "Manage Membership"
   },
   "premiumManageAlert": {
-    "message": "U kan u lidmaatskap op die bitwarden.com-webkluis bestuur. Wil u nou na die webwerf gaan?"
+    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Verfris lidmaatskap"
+    "message": "Refresh Membership"
   },
   "premiumNotCurrentMember": {
-    "message": "U is nie tans ’n premie-lid nie."
+    "message": "You are not currently a premium member."
   },
   "premiumSignUpAndGet": {
-    "message": "Teken aan vir ’n premie-lidmaatskap en kry:"
+    "message": "Sign up for a premium membership and get:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GG geënkripteerde berging vir lêeraanhegsels."
+    "message": "1 GB encrypted storage for file attachments."
   },
   "premiumSignUpTwoStep": {
-    "message": "Bykomende tweestapaantekenopsies soos YubiKey, FIDO U2F en Duo."
+    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
   },
   "premiumSignUpReports": {
-    "message": "Wagwoordhigiëne, rekeningwelstand en databreukverslae om u kluis veilig te hou."
+    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
   },
   "premiumSignUpTotp": {
     "message": "TOTP verification code (2FA) generator for logins in your vault."
   },
   "premiumSignUpSupport": {
-    "message": "Klantediens met hoë prioriteit."
+    "message": "Priority customer support."
   },
   "premiumSignUpFuture": {
-    "message": "Alle toekomstige premie-funksies. Binnekort meer!"
+    "message": "All future premium features. More coming soon!"
   },
   "premiumPurchase": {
-    "message": "Koop Premie"
+    "message": "Purchase Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "U kan lidmaatskap op die bitwarden.com-webkluis koop. Wil u nou na die webwerf gaan?"
+    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumCurrentMember": {
-    "message": "U is ’n premie-lid!"
+    "message": "You are a premium member!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Dankie dat u Bitwarden ondersteun."
+    "message": "Thank you for supporting Bitwarden."
   },
   "premiumPrice": {
-    "message": "Alles vir slegs $PRICE$ /jaar!",
+    "message": "All for just $PRICE$ /year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1060,81 +1060,81 @@
     "message": "Refresh complete"
   },
   "passwordHistory": {
-    "message": "Wagwoordgeskiedenis"
+    "message": "Password History"
   },
   "clear": {
-    "message": "Wis",
+    "message": "Clear",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "Daar is geen wagwoorde om te lys nie."
+    "message": "There are no passwords to list."
   },
   "undo": {
-    "message": "Ontdoen"
+    "message": "Undo"
   },
   "redo": {
-    "message": "Herdoen"
+    "message": "Redo"
   },
   "cut": {
-    "message": "Knip",
+    "message": "Cut",
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Plak",
+    "message": "Paste",
     "description": "Paste from clipboard"
   },
   "selectAll": {
-    "message": "Kies Alles"
+    "message": "Select All"
   },
   "zoomIn": {
-    "message": "Zoem in"
+    "message": "Zoom In"
   },
   "zoomOut": {
-    "message": "Zoem uit"
+    "message": "Zoom Out"
   },
   "resetZoom": {
-    "message": "Stel zoem terug"
+    "message": "Reset Zoom"
   },
   "toggleFullScreen": {
-    "message": "Tokkel Volskerm"
+    "message": "Toggle Full Screen"
   },
   "reload": {
-    "message": "Herlaai"
+    "message": "Reload"
   },
   "toggleDevTools": {
-    "message": "Tokkel Ontwikkelaarsnutsmiddels"
+    "message": "Toggle Developer Tools"
   },
   "minimize": {
-    "message": "Verklein",
+    "message": "Minimize",
     "description": "Minimize window"
   },
   "zoom": {
-    "message": "Zoem"
+    "message": "Zoom"
   },
   "bringAllToFront": {
-    "message": "Bring Alles na Vore",
+    "message": "Bring All to Front",
     "description": "Bring all windows to front (foreground)"
   },
   "aboutBitwarden": {
-    "message": "Oor Bitwarden"
+    "message": "About Bitwarden"
   },
   "services": {
-    "message": "Dienste"
+    "message": "Services"
   },
   "hideBitwarden": {
-    "message": "Versteek Bitwarden"
+    "message": "Hide Bitwarden"
   },
   "hideOthers": {
-    "message": "Versteek Ander"
+    "message": "Hide Others"
   },
   "showAll": {
-    "message": "Toon Alles"
+    "message": "Show All"
   },
   "quitBitwarden": {
-    "message": "Sluit Bitwarden Af"
+    "message": "Quit Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ gekopieer",
+    "message": "$VALUE$ copied",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1147,13 +1147,13 @@
     "message": "Help"
   },
   "window": {
-    "message": "Venster"
+    "message": "Window"
   },
   "checkPassword": {
-    "message": "Gaan na of wagwoord blootgestel is."
+    "message": "Check if password has been exposed."
   },
   "passwordExposed": {
-    "message": "Hierdie wagwoord is $VALUE$ keer in databreuke blootgestel. U behoort dit te verander.",
+    "message": "This password has been exposed $VALUE$ time(s) in data breaches. You should change it.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1162,138 +1162,138 @@
     }
   },
   "passwordSafe": {
-    "message": "Hierdie wagwoord is in geen bekende databreuke gevind nie. Dit behoort veilig vir gebruik te wees."
+    "message": "This password was not found in any known data breaches. It should be safe to use."
   },
   "baseDomain": {
-    "message": "Basisdomein"
+    "message": "Base domain"
   },
   "host": {
-    "message": "Gasheer",
+    "message": "Host",
     "description": "A URL's host value. For example, the host of https://sub.domain.com:443 is 'sub.domain.com:443'."
   },
   "exact": {
-    "message": "Presies"
+    "message": "Exact"
   },
   "startsWith": {
-    "message": "Begin met"
+    "message": "Starts with"
   },
   "regEx": {
-    "message": "Gewone uitdrukking",
+    "message": "Regular expression",
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Ooreenkomsbespeuring",
+    "message": "Match Detection",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Verstekooreenkomsbespeuring",
+    "message": "Default match detection",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Tokkel Opsies"
+    "message": "Toggle Options"
   },
   "organization": {
-    "message": "Organisasie",
+    "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
   "default": {
-    "message": "Verstek"
+    "message": "Default"
   },
   "exit": {
-    "message": "Verlaat"
+    "message": "Exit"
   },
   "showHide": {
-    "message": "Vertoon/Versteek",
+    "message": "Show / Hide",
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
     "message": "Hide to Tray"
   },
   "alwaysOnTop": {
-    "message": "Altyd Bo",
+    "message": "Always on Top",
     "description": "Application window should always stay on top of other windows"
   },
   "dateUpdated": {
-    "message": "Bygewerk",
+    "message": "Updated",
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Wagwoord bygewerk",
+    "message": "Password Updated",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Stuur Kluis Uit"
+    "message": "Export Vault"
   },
   "fileFormat": {
-    "message": "Lêerformaat"
+    "message": "File Format"
   },
   "warning": {
-    "message": "WAARSKUWING",
+    "message": "WARNING",
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
     "message": "Confirm Vault Export"
   },
   "exportWarningDesc": {
-    "message": "Hierdie uitstuur bevat u kluisdata in ’n ongeënkripteerde formaat. U behoort dit nie oor onbeveiligde kanale (soos e-pos) te bewaar of verstuur nie. Skrap dit sodra u dit klaar gebruik het."
+    "message": "This export contains your vault data in an unencrypted format. You should not store or send the exported file over unsecure channels (such as email). Delete it immediately after you are done using it."
   },
   "encExportKeyWarningDesc": {
-    "message": "Hierdie uitstuur vergrendel u data met u rekening se enkripsiesleutel. Indien u ooit u rekening se enkripsiesleitel wil verander moet u dit weer uitstuur aangesien u dan nie hierdie uitstuurlêer sal kan dekripteer nie."
+    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
   },
   "encExportAccountWarningDesc": {
-    "message": "Rekeningenkripsiesleutels is uniek tot elke Bitwarden-gebruikersrekening, daarom kan u nie ’n geënkripteerde uitstuur in ’n ander rekening invoer nie."
+    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "exportMasterPassword": {
-    "message": "Voer u hoofwagwoord in om u kluisdata uit te stuur."
+    "message": "Enter your master password to export your vault data."
   },
   "noOrganizationsList": {
-    "message": "U behoort aan geen organisasies nie. Organisasies laat u toe om items op beveiligde wyse met ander gebruikers te deel."
+    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
   "noCollectionsInList": {
-    "message": "Daar is geen versamelings om te lys nie."
+    "message": "There are no collections to list."
   },
   "ownership": {
-    "message": "Eienaarskap"
+    "message": "Ownership"
   },
   "whoOwnsThisItem": {
-    "message": "Wie besit hierdie item?"
+    "message": "Who owns this item?"
   },
   "strong": {
-    "message": "Sterk",
+    "message": "Strong",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Goed",
+    "message": "Good",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Swak",
+    "message": "Weak",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Swak Hoofwagwoord"
+    "message": "Weak Master Password"
   },
   "weakMasterPasswordDesc": {
-    "message": "U gekose hoofwagwoord is swak. U moet ’n sterk hoofwagwoord (of ’n wagfrase) gebruik ten einde u Bitwarde-rekening te beveilig. Is u seker u wil hierdie wagwoord gebruik?"
+    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
   },
   "pin": {
     "message": "PIN",
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "Ontgrendel met PIN"
+    "message": "Unlock with PIN"
   },
   "setYourPinCode": {
-    "message": "Stel u PIN-kode in om Bitwarden te ontgrendel. U PIN-kode word heringestel indien u ooit volledig by die toep uitteken."
+    "message": "Set your PIN code for unlocking Bitwarden. Your PIN settings will be reset if you ever fully log out of the application."
   },
   "pinRequired": {
-    "message": "PIN-kode word vereis."
+    "message": "PIN code is required."
   },
   "invalidPin": {
-    "message": "Ongeldige PIN-kode."
+    "message": "Invalid PIN code."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "U kluis is gesluit. Verifieer u PIN-kode om voort te gaan."
+    "message": "Your vault is locked. Verify your PIN code to continue."
   },
   "unlockWithWindowsHello": {
     "message": "Unlock with Windows Hello"
@@ -1302,65 +1302,65 @@
     "message": "Verify for Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Ontgrendel met Touch ID"
+    "message": "Unlock with Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "ontgrendel u kluis"
+    "message": "unlock your vault"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Moenie by lansering vra vir Windows Hello nie."
+    "message": "Do not prompt for Windows Hello on launch."
   },
   "noAutoPromptTouchId": {
-    "message": "Moenie by lansering vra vir Touch ID nie."
+    "message": "Do not prompt for Touch ID on launch."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lock with master password on restart"
   },
   "preferences": {
-    "message": "Voorkeure"
+    "message": "Preferences"
   },
   "enableMenuBar": {
-    "message": "Aktiveer Kieslysstaafikoon"
+    "message": "Enable Menu Bar Icon"
   },
   "enableMenuBarDesc": {
-    "message": "Toon altyd ’n ikoon in die kieslysstaaf."
+    "message": "Always show an icon in the menu bar."
   },
   "hideToMenuBar": {
     "message": "Hide to Menu Bar"
   },
   "selectOneCollection": {
-    "message": "U moet ten minste een versameling kies."
+    "message": "You must select at least one collection."
   },
   "premiumUpdated": {
-    "message": "U het na premie opgegradeer."
+    "message": "You've upgraded to premium."
   },
   "restore": {
-    "message": "Stel terug"
+    "message": "Restore"
   },
   "premiumManageAlertAppStore": {
     "message": "You can manage your subscription from the App Store. Do you want to visit the App Store now?"
   },
   "legal": {
-    "message": "Juridies",
+    "message": "Legal",
     "description": "Noun. As in 'legal documents', like our terms of service and privacy policy."
   },
   "termsOfService": {
-    "message": "Gebruiksvoorwaardes"
+    "message": "Terms of Service"
   },
   "privacyPolicy": {
-    "message": "Privaatheidsbeleid"
+    "message": "Privacy Policy"
   },
   "unsavedChangesConfirmation": {
-    "message": "Is u seker u wil afsluit? Indien u nou afsluit sal u huidige inligting nie bewaar word nie."
+    "message": "Are you sure you want to leave? If you leave now then your current information will not be saved."
   },
   "unsavedChangesTitle": {
-    "message": "Onbewaarde Veranderinge"
+    "message": "Unsaved Changes"
   },
   "clone": {
-    "message": "Kloon"
+    "message": "Clone"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Een of meer organisasiebeleide beïnvloed u genereerderinstellings."
+    "message": "One or more organization policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
     "message": "Vault Timeout Action"
@@ -1372,36 +1372,36 @@
     "message": "A logged out vault requires that you re-authenticate to access it again."
   },
   "lock": {
-    "message": "Vergrendel",
+    "message": "Lock",
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Asblik",
+    "message": "Trash",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Deursoek Asblik"
+    "message": "Search trash"
   },
   "permanentlyDeleteItem": {
-    "message": "Skrap item permanent"
+    "message": "Permanently Delete Item"
   },
   "permanentlyDeleteItemConfirmation": {
-    "message": "Is u seker u wil hierdie item permanent skrap?"
+    "message": "Are you sure you want to permanently delete this item?"
   },
   "permanentlyDeletedItem": {
-    "message": "Permanent geskrapte item"
+    "message": "Permanently Deleted item"
   },
   "restoreItem": {
-    "message": "Stel item terug"
+    "message": "Restore Item"
   },
   "restoreItemConfirmation": {
-    "message": "Is u seker u wil hierdie item terugstel?"
+    "message": "Are you sure you want to restore this item?"
   },
   "restoredItem": {
-    "message": "Teruggestelde item"
+    "message": "Restored Item"
   },
   "permanentlyDelete": {
-    "message": "Skrap permanent"
+    "message": "Permanently Delete"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Logging out will remove all access to your vault and requires online authentication after the timeout period. Are you sure you want to use this setting?"
@@ -1413,22 +1413,22 @@
     "message": "Enterprise Single Sign-On"
   },
   "setMasterPassword": {
-    "message": "Stel Hoofwagwoord"
+    "message": "Set Master Password"
   },
   "ssoCompleteRegistration": {
     "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
   },
   "newMasterPass": {
-    "message": "Nuwe hoofwagwoord"
+    "message": "New Master Password"
   },
   "confirmNewMasterPass": {
-    "message": "Bevestig nuwe hoofwagwoord"
+    "message": "Confirm New Master Password"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Een of meer organisasiebeleide stel die volgende eise aan u hoofwagwoord:"
+    "message": "One or more organization policies require your master password to meet the following requirements:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum ingewikkeldheidstelling van $SCORE$",
+    "message": "Minimum complexity score of $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1437,7 +1437,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum lengte van $LENGTH$",
+    "message": "Minimum length of $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1446,16 +1446,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Bevat een of meer hoofletterkarakters"
+    "message": "Contain one or more uppercase characters"
   },
   "policyInEffectLowercase": {
-    "message": "Bevat een of meer kleinletterkarakters"
+    "message": "Contain one or more lowercase characters"
   },
   "policyInEffectNumbers": {
-    "message": "Bevat een of meer syfers"
+    "message": "Contain one or more numbers"
   },
   "policyInEffectSpecial": {
-    "message": "Bevat een of meer van die volgende spesiale karakters $CHARS$",
+    "message": "Contain one or more of the following special characters $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1464,13 +1464,13 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "U nuwe hoofwagwoord voldoen nie aan die beleidsvereistes nie."
+    "message": "Your new master password does not meet the policy requirements."
   },
   "acceptPolicies": {
     "message": "By checking this box you agree to the following:"
   },
   "acceptPoliciesError": {
-    "message": "Gebruiksvoorwaardes en privaatheidsbeleid is nie erken nie."
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Enable browser integration"
@@ -1497,7 +1497,7 @@
     "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
   },
   "approve": {
-    "message": "Keur goed"
+    "message": "Approve"
   },
   "verifyBrowserTitle": {
     "message": "Verify browser connection"
@@ -1515,47 +1515,47 @@
     "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
   },
   "hintEqualsPassword": {
-    "message": "U wagwoordwenk kan nie dieselfde as u wagwoord wees nie."
+    "message": "Your password hint cannot be the same as your password."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "’n Organisasiebeleid beïnvloed u eienaarskapopsies."
+    "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
-    "message": "Alle Sends",
+    "message": "All Sends",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "Lêer"
+    "message": "File"
   },
   "sendTypeText": {
-    "message": "Teks"
+    "message": "Text"
   },
   "searchSends": {
-    "message": "Deursoek Sends",
+    "message": "Search Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Wysig Send",
+    "message": "Edit Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My kluis"
+    "message": "My Vault"
   },
   "text": {
-    "message": "Teks"
+    "message": "Text"
   },
   "deletionDate": {
-    "message": "Skrapdatum"
+    "message": "Deletion Date"
   },
   "deletionDateDesc": {
-    "message": "Die Send sal outomaties op die aangewese datum en tyd geskrap word.",
+    "message": "The Send will be permanently deleted on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Vervaldatum"
+    "message": "Expiration Date"
   },
   "expirationDateDesc": {
-    "message": "Indien ingestel sal toegang tot hierdie Send op die aangewese datum en tyd verstryk.",
+    "message": "If set, access to this Send will expire on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
@@ -1569,23 +1569,23 @@
     "message": "Current Access Count"
   },
   "disableSend": {
-    "message": "Deaktiveer hierdie Send sodat niemand toegang daartoe het nie.",
+    "message": "Disable this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Vereis opsioneel ’n wagwoord vir gebruikers om toegang tot hierdie Send te verkry.",
+    "message": "Optionally require a password for users to access this Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Privaat notas oor hierdie Send.",
+    "message": "Private notes about this Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send-skakel",
+    "message": "Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send-skakel",
+    "message": "Send Link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1593,36 +1593,36 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Send geskep",
+    "message": "Created Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Send gewysig",
+    "message": "Edited Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Send geskrap",
+    "message": "Deleted Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "Nuwe wagwoord"
+    "message": "New Password"
   },
   "whatTypeOfSend": {
-    "message": "Welke tipe Send is dit?",
+    "message": "What type of Send is this?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Skep Send",
+    "message": "Create Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "Die teks wat u wil verstuur."
+    "message": "The text you want to send."
   },
   "sendFileDesc": {
-    "message": "Die lêer wat u wil verstuur."
+    "message": "The file you want to send."
   },
   "days": {
-    "message": "$DAYS$ dae",
+    "message": "$DAYS$ days",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1631,24 +1631,24 @@
     }
   },
   "oneDay": {
-    "message": "1 dag"
+    "message": "1 day"
   },
   "custom": {
-    "message": "Pasgemaak"
+    "message": "Custom"
   },
   "deleteSendConfirmation": {
-    "message": "Is u seker u wil hierdie Send skrap?",
+    "message": "Are you sure you want to delete this Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Kopieer Send-skakel na knipbord",
+    "message": "Copy Send link to clipboard",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Kopieer die skakel om hierdie Send te deel tydens bewaar na my knipbord."
+    "message": "Copy the link to share this Send to my clipboard upon save."
   },
   "sendDisabled": {
-    "message": "Send gedeaktiveer",
+    "message": "Send disabled",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
@@ -1656,10 +1656,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Kopieer skakel"
+    "message": "Copy link"
   },
   "disabled": {
-    "message": "Gedeaktiveer"
+    "message": "Disabled"
   },
   "maxAccessCountReached": {
     "message": "Max access count reached"
@@ -1668,16 +1668,16 @@
     "message": "Expired"
   },
   "pendingDeletion": {
-    "message": "Word geskrap"
+    "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
     "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Versteek my e-posadres vir ontvangers."
+    "message": "Hide my email address from recipients."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "Een of meer organisasiebeleide beïnvloed u Send-opsies."
+    "message": "One or more organization policies are affecting your Send options."
   },
   "emailVerificationRequired": {
     "message": "Email Verification Required"
@@ -1689,9 +1689,9 @@
     "message": "Master password re-prompt"
   },
   "passwordConfirmation": {
-    "message": "Hoofwagwoordbevestiging"
+    "message": "Master password confirmation"
   },
   "passwordConfirmationDesc": {
-    "message": "Hierdie aksie is beskerm. Voer u hoofwagwoord in om u identiteit te bevestig om voort te gaan."
+    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
   }
 }
