@@ -44,14 +44,24 @@
   "share": {
     "message": "പങ്കിടുക"
   },
-  "shareItem": {
-    "message": "ഇനങ്ങൾ പങ്കിടുക"
+  "moveToOrganization": {
+    "message": "സംഘടനയിലേക്ക് മാറുക"
   },
-  "sharedItem": {
-    "message": "പങ്കിട്ട ഇനം"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ $ORGNAME$-യിലേക്ക് മാറ്റി",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "ഈ ഇനം പങ്കിടാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്ന ഒരു സംഘടന തിരഞ്ഞെടുക്കുക. പങ്കിട്ട ഇനത്തിന്റെ ഉടമസ്ഥാവകാശം ആ സംഘടനക്ക് കൈമാറുന്നു. ഈ ഇനം പങ്കിട്ടുകഴിഞ്ഞാൽ നിങ്ങൾ അതിന്റെ നേരിട്ടുള്ള ഉടമയാകില്ല."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "അറ്റാച്ചുമെന്റുകൾ"
@@ -431,7 +441,7 @@
     "message": "ഫയൽ തിരഞ്ഞെടുക്കുക."
   },
   "maxFileSize": {
-    "message": "പരമാവധി ഫയൽ വലുപ്പം 100 MB ആണ്."
+    "message": "പരമാവധി ഫയൽ വലുപ്പം 500 MB ആണ്."
   },
   "updateKey": {
     "message": "നിങ്ങളുടെ എൻ‌ക്രിപ്ഷൻ കീ അപ്‌ഡേറ്റ് ചെയ്യുന്നതുവരെ നിങ്ങൾക്ക് ഈ സവിശേഷത ഉപയോഗിക്കാൻ കഴിയില്ല."
@@ -1222,7 +1232,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Confirm Vault Export"
+    "message": "വാൾട് എക്‌സ്‌പോർട്ട് ഉറപ്പാക്കു"
   },
   "exportWarningDesc": {
     "message": "ഈ എക്‌സ്‌പോർട്ടിൽ എൻക്രിപ്റ്റ് ചെയ്യാത്ത ഫോർമാറ്റിൽ നിങ്ങളുടെ വാൾട് ഡാറ്റ അടങ്ങിയിരിക്കുന്നു. എക്‌സ്‌പോർട് ചെയ്ത ഫയൽ സുരക്ഷിതമല്ലാത്ത ചാനലുകളിൽ (ഇമെയിൽ പോലുള്ളവ) നിങ്ങൾ സംഭരിക്കുകയോ അയയ്ക്കുകയോ ചെയ്യരുത്. നിങ്ങൾ ഇത് ഉപയോഗിച്ചുകഴിഞ്ഞാലുടൻ അത് മായ്ച്ചുകളയണം."
@@ -1487,16 +1497,16 @@
     "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
   },
   "approve": {
-    "message": "Approve"
+    "message": "അംഗീകരിക്കുക"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "ബ്രൗസർ കണക്ഷൻ ഉറപ്പാക്കുക"
   },
   "verifyBrowserDesc": {
     "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometrics not enabled"
+    "message": "ബയോമെട്രിക്സ് പ്രാപ്തമാക്കിയിട്ടില്ല"
   },
   "biometricsNotEnabledDesc": {
     "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
@@ -1511,31 +1521,31 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "എല്ലാം Send-കൾ",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "ഫയൽ"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "വാചകം"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Sends തിരയുക",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Send തിരുത്തുക",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "എൻ്റെ വാൾട്"
   },
   "text": {
-    "message": "Text"
+    "message": "വാചകം"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "ഇല്ലാതാക്കൽ തീയതി"
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."

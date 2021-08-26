@@ -6,19 +6,17 @@
     </div>
 </div>
 <div class="content">
-    <ng-container *ngIf="(isPaging() ? pagedCiphers : ciphers) as filteredCiphers">
-        <div class="list" *ngIf="filteredCiphers.length" infiniteScroll [infiniteScrollDistance]="1"
-            [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" [infiniteScrollDisabled]="!isPaging()"
-            (scrolled)="loadMore()">
-            <a *ngFor="let c of filteredCiphers" appStopClick (click)="selectCipher(c)"
+    <cdk-virtual-scroll-viewport itemSize="42" minBufferPx="400" maxBufferPx="600" *ngIf="ciphers.length">
+        <div class="list">
+            <a *cdkVirtualFor="let c of ciphers; trackBy: trackByFn" appStopClick (click)="selectCipher(c)"
                 (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
-                [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item">
+                [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item virtual-scroll-item">
                 <app-vault-icon [cipher]="c"></app-vault-icon>
                 <div class="flex-cipher-list-item">
                     <span class="text">
                         {{c.name}}
                         <ng-container *ngIf="c.organizationId">
-                            <i class="fa fa-share-alt text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
+                            <i class="fa fa-cube text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
                             <span class="sr-only">{{'shared' | i18n}}</span>
                         </ng-container>
                         <ng-container *ngIf="c.hasAttachments">
@@ -30,15 +28,15 @@
                 </div>
             </a>
         </div>
-        <div class="no-items" *ngIf="!filteredCiphers.length">
-            <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
-            <ng-container *ngIf="loaded">
-                <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
-                <p>{{'noItemsInList' | i18n}}</p>
-                <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
-            </ng-container>
-        </div>
-    </ng-container>
+    </cdk-virtual-scroll-viewport>
+    <div class="no-items" *ngIf="!ciphers.length">
+        <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+        <ng-container *ngIf="loaded">
+            <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+            <p>{{'noItemsInList' | i18n}}</p>
+            <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
+        </ng-container>
+    </div>
 </div>
 <div class="footer">
     <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" 

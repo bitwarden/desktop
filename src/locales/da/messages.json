@@ -44,14 +44,24 @@
   "share": {
     "message": "Del"
   },
-  "shareItem": {
-    "message": "Del element"
+  "moveToOrganization": {
+    "message": "Flyt til organisation"
   },
-  "sharedItem": {
-    "message": "Delte element"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ flyttet til $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Vælg en organisation, som du ønsker at dele dette element med. Deling overfører ejerskab af elementet til organisationen. Du vil ikke længere være den direkte ejer af dette element, når det er blevet delt."
+  "moveToOrgDesc": {
+    "message": "Vælg den organisation, som du vil flytte dette emne til. Flytning overfører ejerskab af emnet til organisationen, og du vil efter flytningen ikke længere være den direkte ejer af emnet."
   },
   "attachments": {
     "message": "Vedhæftninger"
@@ -431,7 +441,7 @@
     "message": "Vælg en fil."
   },
   "maxFileSize": {
-    "message": "Maksimum filstørrelse er 100 MB."
+    "message": "Maksimum filstørrelse er 500 MB."
   },
   "updateKey": {
     "message": "Du kan ikke bruge denne funktion, før du opdaterer din krypteringsnøgle."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Brug en hvilken som helst WebAuthn-aktiveret sikkerhedsnøgle til at få adgang til din konto."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1298,10 +1308,10 @@
     "message": "lås din boks op"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Bed ikke om Windows Hello ved start."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Bed ikke om Touch ID ved start."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedadgangskode ved genstart"
@@ -1661,27 +1671,27 @@
     "message": "Afventer sletning"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Godkend WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Skjul min e-mailadresse for modtagere."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Én eller flere organisationspolitikker påvirker dine Send-valgmuligheder."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "E-mailbekræftelse kræves"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Du skal bekræfte din mailadresse for at bruge denne funktion."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Genanmodning om hovedadgangskode"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Bekræftelse af hovedadgangskode"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Denne handling er beskyttet. For at fortsætte, indtast venligst din hovedadgangskode igen for at bekræfte din identitet."
   }
 }

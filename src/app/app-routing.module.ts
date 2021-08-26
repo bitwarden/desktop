@@ -15,6 +15,7 @@ import { RegisterComponent } from './accounts/register.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
 import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
+import { UpdateTempPasswordComponent } from './accounts/update-temp-password.component';
 
 import { SendComponent } from './send/send.component';
 
@@ -46,6 +47,11 @@ const routes: Routes = [
     {
         path: 'send',
         component: SendComponent,
+        canActivate: [AuthGuardService],
+    },
+    {
+        path: 'update-temp-password',
+        component: UpdateTempPasswordComponent,
         canActivate: [AuthGuardService],
     },
 ];

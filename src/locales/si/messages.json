@@ -9,22 +9,22 @@
     "message": "All Items"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "ප්‍රියතමයන්"
   },
   "types": {
-    "message": "Types"
+    "message": "වර්ග"
   },
   "typeLogin": {
     "message": "පිවිසෙන්න"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "පත"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "අනන්‍යතාව"
   },
   "typeSecureNote": {
-    "message": "Secure Note"
+    "message": "ආරක්ෂිත සටහන"
   },
   "folders": {
     "message": "බහාලුම්"
@@ -42,16 +42,26 @@
     "message": "Shared"
   },
   "share": {
-    "message": "Share"
+    "message": "බෙදාගන්න"
   },
-  "shareItem": {
-    "message": "Share Item"
+  "moveToOrganization": {
+    "message": "Move to Organization"
   },
-  "sharedItem": {
-    "message": "Shared Item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Choose an organization that you wish to share this item with. Sharing transfers ownership of the item to the organization. You will no longer be the direct owner of this item once it has been shared."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Attachments"
@@ -91,13 +101,13 @@
     "message": "Edit Item"
   },
   "emailAddress": {
-    "message": "Email Address"
+    "message": "වි-තැපැල් ලිපිනය"
   },
   "verificationCodeTotp": {
     "message": "Verification Code (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "වියමන අඩවිය"
   },
   "notes": {
     "message": "සටහන්"
@@ -106,10 +116,10 @@
     "message": "Custom Fields"
   },
   "launch": {
-    "message": "Launch"
+    "message": "දියත් කරන්න"
   },
   "copyValue": {
-    "message": "Copy Value",
+    "message": "අගය පිටපත් කරන්න",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
@@ -129,22 +139,22 @@
     "message": "Cardholder Name"
   },
   "number": {
-    "message": "Number"
+    "message": "අංකය"
   },
   "brand": {
     "message": "Brand"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "කල් ඉකුත් වීම"
   },
   "securityCode": {
-    "message": "Security Code"
+    "message": "ආරක්ෂිත කේතය"
   },
   "identityName": {
     "message": "Identity Name"
   },
   "company": {
-    "message": "Company"
+    "message": "සමාගම"
   },
   "ssn": {
     "message": "Social Security Number"
@@ -156,10 +166,10 @@
     "message": "License Number"
   },
   "email": {
-    "message": "Email"
+    "message": "වි-තැපෑල"
   },
   "phone": {
-    "message": "Phone"
+    "message": "දුරකථනය"
   },
   "address": {
     "message": "ලිපිනය"
@@ -174,43 +184,43 @@
     "message": "An error has occurred."
   },
   "error": {
-    "message": "Error"
+    "message": "දෝෂය"
   },
   "january": {
-    "message": "January"
+    "message": "දුරුතු"
   },
   "february": {
-    "message": "February"
+    "message": "නවම්"
   },
   "march": {
-    "message": "March"
+    "message": "මැදින්"
   },
   "april": {
-    "message": "අප්‍රේල්"
+    "message": "බක්"
   },
   "may": {
-    "message": "මැයි"
+    "message": "වෙසක්"
   },
   "june": {
-    "message": "ජූනි"
+    "message": "පොසොන්"
   },
   "july": {
-    "message": "ජූලි"
+    "message": "ඇසළ"
   },
   "august": {
-    "message": "August"
+    "message": "නිකිණි"
   },
   "september": {
-    "message": "සැප්තැම්බර්"
+    "message": "බිනර"
   },
   "october": {
-    "message": "ඔක්තෝබර්"
+    "message": "වප්"
   },
   "november": {
-    "message": "නොවැම්බර්"
+    "message": "ඉල්"
   },
   "december": {
-    "message": "December"
+    "message": "උඳුවප්"
   },
   "ex": {
     "message": "ex.",
@@ -277,34 +287,34 @@
     "message": "Zip / Postal Code"
   },
   "country": {
-    "message": "Country"
+    "message": "රට"
   },
   "save": {
-    "message": "Save"
+    "message": "සුරකින්න"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "අවලංගු කරන්න"
   },
   "delete": {
     "message": "Delete"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "ප්‍රියතමය"
   },
   "edit": {
-    "message": "Edit"
+    "message": "සංස්කරණය"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "බහාලුම"
   },
   "newCustomField": {
     "message": "New Custom Field"
   },
   "value": {
-    "message": "Value"
+    "message": "අගය"
   },
   "dragToSort": {
     "message": "Drag to sort"
@@ -319,7 +329,7 @@
     "message": "Boolean"
   },
   "remove": {
-    "message": "Remove"
+    "message": "ඉවත් කරන්න"
   },
   "nameRequired": {
     "message": "Name is required."
@@ -349,20 +359,20 @@
     "message": "Are you sure you want to overwrite the current password?"
   },
   "noneFolder": {
-    "message": "No Folder",
+    "message": "බහාලුමක් නැත",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add Folder"
+    "message": "බහාලුම එකතු කරන්න"
   },
   "editFolder": {
-    "message": "Edit Folder"
+    "message": "බහාලුම සංස්කරණය කරන්න"
   },
   "regeneratePassword": {
     "message": "Regenerate Password"
   },
   "copyPassword": {
-    "message": "Copy Password"
+    "message": "මුරපදය පිටපත් කරන්න"
   },
   "copyUri": {
     "message": "Copy URI"
@@ -387,7 +397,7 @@
     "message": "Include Number"
   },
   "close": {
-    "message": "Close"
+    "message": "වසන්න"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -403,10 +413,10 @@
     "message": "Search Collection"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "බහාලුම සොයන්න"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "ප්‍රියතමයන් සොයන්න"
   },
   "searchType": {
     "message": "Search Type",
@@ -479,7 +489,7 @@
     "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "සැකසුම්"
   },
   "passwordHint": {
     "message": "Password Hint"
@@ -494,7 +504,7 @@
     "message": "Email address is required."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "වලංගු නොවන වි-තැපැල් ලිපිනයකි."
   },
   "masterPassRequired": {
     "message": "Master password is required."
@@ -527,7 +537,7 @@
     "message": "Verification code is required."
   },
   "continue": {
-    "message": "Continue"
+    "message": "ඉදිරියට"
   },
   "enterVerificationCodeApp": {
     "message": "Enter the 6 digit verification code from your authenticator app."
@@ -569,7 +579,7 @@
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "ප්‍රතිසාධන කේතය"
   },
   "authenticatorAppTitle": {
     "message": "Authenticator App"
@@ -599,7 +609,7 @@
     "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "වි-තැපෑල"
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
@@ -650,13 +660,13 @@
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "Ok"
+    "message": "හරි"
   },
   "yes": {
-    "message": "Yes"
+    "message": "ඔව්"
   },
   "no": {
-    "message": "No"
+    "message": "නැහැ"
   },
   "overwritePassword": {
     "message": "Overwrite Password"
@@ -677,7 +687,7 @@
     "message": "Are you sure you want to log out?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "නික්මෙන්න"
   },
   "addNewLogin": {
     "message": "Add New Login"
@@ -686,19 +696,19 @@
     "message": "Add New Item"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "නව බහාලුමක් එකතු කරන්න"
   },
   "view": {
     "message": "View"
   },
   "account": {
-    "message": "Account"
+    "message": "ගිණුම"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "පූරණය වෙමින්..."
   },
   "lockNow": {
-    "message": "Lock Now"
+    "message": "දැන් අගුලුදමන්න"
   },
   "passwordGenerator": {
     "message": "Password Generator"
@@ -754,7 +764,7 @@
     "message": "Your vault is locked. Verify your master password to continue."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "අනවහිර"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -788,25 +798,25 @@
     "message": "Immediately"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "තත්පර 10"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "තත්පර 20"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "තත්පර 30"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "විනාඩි 1"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "විනාඩි 2"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "විනාඩි 5"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "විනාඩි 15"
   },
   "thirtyMinutes": {
     "message": "30 minutes"
@@ -910,13 +920,13 @@
     "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
-    "message": "Language"
+    "message": "භාෂාව"
   },
   "languageDesc": {
     "message": "Change the language used by the application. Restart is required."
   },
   "theme": {
-    "message": "Theme"
+    "message": "තේමාව"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
@@ -930,7 +940,7 @@
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "පිටපත්",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
@@ -967,7 +977,7 @@
     "message": "Restart"
   },
   "later": {
-    "message": "Later"
+    "message": "පසුව"
   },
   "noUpdatesAvailable": {
     "message": "No updates are currently available. You are using the latest version."
@@ -1661,7 +1671,7 @@
     "message": "Pending deletion"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
     "message": "Hide my email address from recipients."

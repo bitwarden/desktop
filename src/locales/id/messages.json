@@ -44,14 +44,24 @@
   "share": {
     "message": "Berbagi"
   },
-  "shareItem": {
-    "message": "Berbagi Item"
+  "moveToOrganization": {
+    "message": "Pindah ke Organisasi"
   },
-  "sharedItem": {
-    "message": "Item Yang Dibagikan"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ pindah ke $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Pilih sebuah organisasi yang Anda ingin berbagi item ini. Berbagi kepemilikan transfer untuk item bersangkutan dengan organisasi tersebut. Anda tidak akan lagi menjadi pemilik item ini setelah dibagi."
+  "moveToOrgDesc": {
+    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Lampiran"
@@ -431,7 +441,7 @@
     "message": "Pilih berkas."
   },
   "maxFileSize": {
-    "message": "Ukuran berkas maksimal adalah 100 MB."
+    "message": "Ukuran berkas maksimal adalah 500 MB."
   },
   "updateKey": {
     "message": "Anda tidak dapat menggunakan fitur ini sampai Anda memperbarui kunci enkripsi Anda."
@@ -1661,16 +1671,16 @@
     "message": "Penghapusan menunggu keputusan"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Sembunyikan alamat surel saya dari penerima."
   },
   "sendOptionsPolicyInEffect": {
     "message": "One or more organization policies are affecting your Send options."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Verifikasi Email Diperlukan"
   },
   "emailVerificationRequiredDesc": {
     "message": "You must verify your email to use this feature."

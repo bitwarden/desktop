@@ -60,6 +60,9 @@ export class MessagingMain {
             case 'setFocus':
                 this.setFocus();
                 break;
+            case 'getWindowIsFocused':
+                this.windowIsFocused();
+                break;
             case 'enableBrowserIntegration':
                 this.main.nativeMessagingMain.generateManifests();
                 this.main.nativeMessagingMain.listen();
@@ -138,5 +141,13 @@ Terminal=false`;
     private setFocus() {
         this.main.trayMain.restoreFromTray();
         this.main.windowMain.win.focusOnWebView();
+    }
+
+    private windowIsFocused() {
+        const windowIsFocused = this.main.windowMain.win.isFocused();
+        this.main.windowMain.win.webContents.send('messagingService', {
+            command: 'windowIsFocused',
+            windowIsFocused: windowIsFocused,
+        });
     }
 }

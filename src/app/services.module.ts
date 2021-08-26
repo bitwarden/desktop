@@ -102,7 +102,8 @@ const cryptoService = new ElectronCryptoService(storageService, secureStorageSer
     platformUtilsService, logService);
 const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
-const apiService = new ApiService(tokenService, platformUtilsService,
+const environmentService = new EnvironmentService(storageService);
+const apiService = new ApiService(tokenService, platformUtilsService, environmentService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const userService = new UserService(tokenService, storageService);
 const settingsService = new SettingsService(userService, storageService);
@@ -131,8 +132,7 @@ const authService = new AuthService(cryptoService, apiService, userService, toke
 const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
-    apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }), logService);
-const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
+    apiService, vaultTimeoutService, environmentService, async () => messagingService.send('logout', { expired: true }), logService);
 const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
     null);
@@ -150,7 +150,7 @@ export function initFactory(): Function {
         await i18nService.init(locale);
         eventService.init(true);
         authService.init();
-        setTimeout(() => notificationsService.init(environmentService), 3000);
+        setTimeout(() => notificationsService.init(), 3000);
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
         htmlEl.classList.add('locale_' + i18nService.translationLocale);

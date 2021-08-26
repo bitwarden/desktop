@@ -44,14 +44,24 @@
   "share": {
     "message": "Sdílet"
   },
-  "shareItem": {
-    "message": "Sdílet položku"
+  "moveToOrganization": {
+    "message": "Přesunout do organizace"
   },
-  "sharedItem": {
-    "message": "Položka byla sdílena"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ přesunut do $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Vyberte organizaci se kterou chcete tuto položku sdílet. Sdílením přenese vlastnictví položky na organizaci a již nadále nebudete přímým vlastníkem."
+  "moveToOrgDesc": {
+    "message": "Vyberte organizaci, do které chcete tuto položku přesunout. Přesun do organizace převede vlastnictví položky této organizaci. Po přesunutí této položky již nebudete přímým vlastníkem této položky."
   },
   "attachments": {
     "message": "Přílohy"
@@ -368,7 +378,7 @@
     "message": "Kopírovat URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Kopírovat ověřovací kód (TOTP)"
   },
   "length": {
     "message": "Délka"
@@ -431,7 +441,7 @@
     "message": "Vybrat soubor."
   },
   "maxFileSize": {
-    "message": "Maximální velikost souboru je 100 MB."
+    "message": "Maximální velikost souboru je 500 MB."
   },
   "updateKey": {
     "message": "Tuto funkci nemůžete použít dokud neaktualizujete svůj šifrovací klíč."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Použijte jakýkoliv WebAuthn bezpečnostní klíč pro přístup k vašemu účtu."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1228,10 +1238,10 @@
     "message": "Tento export obsahuje data vašeho trezoru v nezašifrovaném formátu. Soubor exportu byste neměli ukládat ani odesílat přes nezabezpečené kanály (např. e-mailem). Odstraňte jej okamžitě po jeho použití."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Tento export zašifruje vaše data pomocí šifrovacího klíče vašeho účtu. Pokud někdy změníte šifrovací klíč vašeho účtu, měli by jste vyexportovat data znovu, protože tento exportovaný soubor nebudete moci dešifrovat."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
+    "message": "Šifrovací klíče účtů jsou jedinečné pro každý Bitwarden uživatelský účet, takže nelze importovat šifrovaný export do jiného účtu."
   },
   "exportMasterPassword": {
     "message": "Zadejte své hlavní heslo pro export dat."
@@ -1298,10 +1308,10 @@
     "message": "odemknout váš trezor"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Neptat se na Windows Hello při spuštění."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Neptat se na Touch ID při spuštění."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zamknout trezor při restartu pomocí hlavního hesla"
@@ -1535,35 +1545,35 @@
     "message": "Text"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Datum smazání"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Tento Send bude trvale smazán v určený datum a čas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Datum expirace"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Je-li nastaveno, přístup k tomuto Send vyprší v daný datum a čas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Maximální počet přístupů"
   },
   "maxAccessCountDesc": {
     "message": "Je-li nastaveno, uživatelé již nebudou mít přístup k tomuto Send, jakmile bude dosaženo maximálního počtu přístupů.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Počet aktuálních přístupů"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Deaktivujte tento Send, aby k němu nikdo neměl přístup.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Volitelně vyžadovat heslo pro přístup k tomuto Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1571,27 +1581,27 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Odkaz tohoto Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Odkaz tohoto Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Při přístupu k tomuto Send, ve výchozím nastavení skrýt text",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send vytvořen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send upraven",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send smazán",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1624,7 +1634,7 @@
     "message": "1 den"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Vlastní"
   },
   "deleteSendConfirmation": {
     "message": "Jste si jisti, že chcete odstranit tento Send?",
@@ -1661,27 +1671,27 @@
     "message": "Čeká na smazání"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Ověřit WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Skrýt moji e-mailovou adresu před příjemci."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Jedna nebo více zásad organizace ovlivňuje nastavení Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Je vyžadováno ověření emailu"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "K použití této funkce je zapotřebí ověření vašeho e-mailu."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Zeptat se znovu na hlavní heslo"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Potvrzení hlavního hesla"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Tato akce je chráněna. Chcete-li pokračovat, zadejte znovu vaše hlavní heslo, abychom ověřili vaší totožnost."
   }
 }

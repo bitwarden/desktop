@@ -40,6 +40,13 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
         private broadcasterService: BroadcasterService, private ngZone: NgZone) {
         super(i18nService, cryptoService, messagingService, userService, passwordGenerationService,
             platformUtilsService, policyService, router, apiService, syncService, route);
+        super.onSuccessfulChangePassword = async () => {
+            if (await this.userService.getForcePasswordReset()) {
+                this.router.navigate(['update-temp-password']);
+            } else {
+                this.router.navigate([this.successRoute]);
+            }
+        };
     }
 
     get masterPasswordScoreWidth() {

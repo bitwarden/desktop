@@ -14,11 +14,13 @@ import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 import { ModalService } from 'jslib-angular/services/modal.service';
@@ -36,16 +38,23 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
     showingModal = false;
 
+    private deferFocus: boolean = null;
+
     constructor(authService: AuthService, router: Router, i18nService: I18nService,
         syncService: SyncService, private modalService: ModalService,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        private messagingService: MessagingService, private userService: UserService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
             passwordGenerationService, cryptoFunctionService, storageService);
         super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
+            return syncService.fullSync(true).then(async () => {
+                if (await this.userService.getForcePasswordReset()) {
+                    this.router.navigate(['update-temp-password']);
+                }
+            });
         };
     }
 
@@ -57,10 +66,22 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
+                    case 'windowIsFocused':
+                        if (this.deferFocus === null) {
+                            this.deferFocus = !message.windowIsFocused;
+                            if (!this.deferFocus) {
+                                this.focusInput();
+                            }
+                        } else if (this.deferFocus && message.windowIsFocused) {
+                            this.focusInput();
+                            this.deferFocus = false;
+                        }
+                        break;
                     default:
                 }
             });
         });
+        this.messagingService.send('getWindowIsFocused');
     }
 
     ngOnDestroy() {
@@ -84,5 +105,13 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
     onWindowHidden() {
         this.showPassword = false;
+    }
+
+    async submit() {
+        await super.submit();
+        if (this.captchaSiteKey) {
+            const content = document.getElementById('content') as HTMLDivElement;
+            content.setAttribute('style', 'width:335px');
+        }
     }
 }

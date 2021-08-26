@@ -33,6 +33,8 @@ const BroadcasterSubscriptionId = 'LockComponent';
     templateUrl: 'lock.component.html',
 })
 export class LockComponent extends BaseLockComponent implements OnDestroy {
+    private deferFocus: boolean = null;
+
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
         userService: UserService, cryptoService: CryptoService,
@@ -63,10 +65,22 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
                     case 'windowHidden':
                         this.onWindowHidden();
                         break;
+                    case 'windowIsFocused':
+                        if (this.deferFocus === null) {
+                            this.deferFocus = !message.windowIsFocused;
+                            if (!this.deferFocus) {
+                                this.focusInput();
+                            }
+                        } else if (this.deferFocus && message.windowIsFocused) {
+                            this.focusInput();
+                            this.deferFocus = false;
+                        }
+                        break;
                     default:
                 }
             });
         });
+        this.messagingService.send('getWindowIsFocused');
     }
 
     ngOnDestroy() {
@@ -75,5 +89,9 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     onWindowHidden() {
         this.showPassword = false;
+    }
+
+    private focusInput() {
+        document.getElementById(this.pinLock ? 'pin' : 'masterPassword').focus();
     }
 }

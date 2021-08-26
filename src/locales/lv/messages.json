@@ -44,14 +44,24 @@
   "share": {
     "message": "Kopīgot"
   },
-  "shareItem": {
-    "message": "Kopīgot vienumu"
+  "moveToOrganization": {
+    "message": "Pārvietot uz apvienību"
   },
-  "sharedItem": {
-    "message": "Vienums kopīgots"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ pārvietots uz $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Izvēlies apvienību, ar kuru kopīgot šo vienumu. Koplietošana nodod šī vienuma piederību apvienībai. Pēc tā kopīgošanas Tu vairs nebūsi šī vienuma tiešais īpašnieks."
+  "moveToOrgDesc": {
+    "message": "Izvēlies apvienību, uz kuru pārvietot šo vienumu. Pārvietošana nodod šī vienuma piederību apvienībai. Tu vairs nebūsi šī vienuma tiešais īpašnieks pēc tā pārvietošanas."
   },
   "attachments": {
     "message": "Pielikumi"
@@ -431,7 +441,7 @@
     "message": "Atlasīt datni."
   },
   "maxFileSize": {
-    "message": "Lielākais pieļaujamais datnes izmērs ir 100 MB."
+    "message": "Lielākais pieļaujamais datnes izmērs ir 500 MB."
   },
   "updateKey": {
     "message": "Šo iespēju nevar izmantot, kamēr nav atjaunināta šifrēšanas atslēga."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Izmantot jebkuru WebAuthn atbalstošu drošības atslēgu, lai piekļūtu kontam."
   },
   "emailTitle": {
     "message": "E-pasts"
@@ -1298,10 +1308,10 @@
     "message": "atslēgt glabātavu"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Palaišanas brīdī nevaicāt par Windows Hello."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Palaišanas brīdī nevaicāt par Touch ID."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Aizslēgt ar galveno paroli pēc pārsāknēšanas"
@@ -1661,27 +1671,27 @@
     "message": "Gaida dzēšanu"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Autentificēt WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Slēpt e-pasta adresi no saņēmējiem."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Viens vai vairāki apvienības nosacījumi ietekmē \"Send\" iestatījumus."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Nepieciešama e-pasta adreses apstiprināšana"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Ir jāapstiprina e-pasta adrese, lai izmantotu šo iespēju."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Galvenās paroles pārvaicāšana"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Galvenās paroles apstiprināšana"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Šī darbība ir aizsargāta. Lai turpinātu, ir jāievada galvenā parole, lai apstiprinātu identitāti."
   }
 }

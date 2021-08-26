@@ -39,13 +39,12 @@
             </div>
         </div>
         <div class="content">
-            <div class="list" *ngIf="filteredSends.length" infiniteScroll [infiniteScrollDistance]="1"
-                [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" (scrolled)="loadMore()">
+            <div class="list" *ngIf="filteredSends.length">
                 <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s.id)"
                     title="{{'viewItem' | i18n}}" (contextmenu)="viewSendMenu(s)"
                     [ngClass]="{'active': s.id === sendId}" class="flex-list-item">
                     <div class="item-icon" aria-hidden="true">
-                        <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-o' : 'fa-file-text-o'"></i>
+                        <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-text-o' : 'fa-file-o'"></i>
                     </div>
                     <div class="item-content">
                         <div class="item-title">

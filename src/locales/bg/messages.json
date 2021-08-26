@@ -44,14 +44,24 @@
   "share": {
     "message": "Споделяне"
   },
-  "shareItem": {
-    "message": "Споделяне на запис"
+  "moveToOrganization": {
+    "message": "Преместване в организация"
   },
-  "sharedItem": {
-    "message": "Споделен запис"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ се премести в $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Изберете организацията, с която искате да споделите записа. Споделянето ѝ прехвърля собствеността. След това няма вече директно да го притежавате."
+  "moveToOrgDesc": {
+    "message": "Изберете организацията, в която искате да преместите записа. Преместването прехвърля собствеността му към новата организация. След това няма вече директно да го притежавате."
   },
   "attachments": {
     "message": "Прикачени файлове"
@@ -431,7 +441,7 @@
     "message": "Избор на файл."
   },
   "maxFileSize": {
-    "message": "Големината на файла е най-много 100 MB."
+    "message": "Големината на файла е най-много 500 MB."
   },
   "updateKey": {
     "message": "Трябва да обновите шифриращия си ключ, за да използвате тази възможност."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Използвайте всяко устройство, поддържащо WebAuthn, за да влезете в абонамента си."
   },
   "emailTitle": {
     "message": "Електронна поща"
@@ -1298,10 +1308,10 @@
     "message": "Потвърждаване за Битуорден."
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Да не се изисква Windows Hello при стартиране."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Да не се изисква Touch ID при стартиране."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Заключване с главната парола при повторно пускане"
@@ -1661,27 +1671,27 @@
     "message": "Предстои изтриване"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Идентификация WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Скриване на е-пощата ми от получателите."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Поне една политика на организация влияе на настройките за изпращане."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Изисква се потвърждение на е-пощата"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Трябва да потвърдите е-пощата си, за да можете да използвате тази функционалност."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Повторно запитване за главната парола"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Потвърждение на главната парола"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Това действие е защитено. За да продължите, въведете отново главната си парола, за да потвърдите самоличността си."
   }
 }

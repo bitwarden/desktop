@@ -44,14 +44,24 @@
   "share": {
     "message": "Partajare"
   },
-  "shareItem": {
-    "message": "Partajare articol"
+  "moveToOrganization": {
+    "message": "Mutare la organizație"
   },
-  "sharedItem": {
-    "message": "Articol partajat"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ mutat la $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Alegeți o organizație cu care doriți să partajați acest articol. Partajarea transferă proprietatea asupra articolului către organizație. Nu veți mai fi proprietarul direct al acestuia după ce a fost partajat."
+  "moveToOrgDesc": {
+    "message": "Alegeți o organizație la care doriți să mutați acest articol. Mutarea într-o organizație, transferă proprietatea asupra articolului către organizația respectivă. Nu veți mai fi proprietarul direct al acestui articol odată ce a fost mutat."
   },
   "attachments": {
     "message": "Atașamente"
@@ -431,7 +441,7 @@
     "message": "Selectare fișier."
   },
   "maxFileSize": {
-    "message": "Mărimea maximă a fișierului este de 100 MB."
+    "message": "Mărimea maximă a fișierului este de 500 MB."
   },
   "updateKey": {
     "message": "Nu puteți utiliza această caracteristică înainte de a actualiza cheia de criptare."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Utilizați orice cheie de securitate activată WebAuthn pentru a vă accesa contul."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1298,10 +1308,10 @@
     "message": "deblocați-vă seiful"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Nu solicitați Windows Hello la pornire."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Nu solicitați Touch ID la pornire."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornire"
@@ -1661,27 +1671,27 @@
     "message": "Ștergere în așteptare"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Autentificare WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Ascundeți adresa mea de e-mail de la destinatari."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Una sau mai multe politici organizaționale vă afectează opțiunile Send-ului."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Este necesară verificarea adresei de e-mail"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Trebuie să vă verificați e-mailul pentru a utiliza această caracteristică."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Re-solicitare parolă principală"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Confirmare parolă principală"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Această acțiune este protejată. Pentru a continua, vă rugăm să reintroduceți parola principală pentru a vă verifica identitatea."
   }
 }

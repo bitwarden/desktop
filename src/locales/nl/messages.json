@@ -44,14 +44,24 @@
   "share": {
     "message": "Delen"
   },
-  "shareItem": {
-    "message": "Item delen"
+  "moveToOrganization": {
+    "message": "Naar organisatie verplaatsen"
   },
-  "sharedItem": {
-    "message": "Gedeeld item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ verplaatst naar $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Kies een organisatie waarmee je dit item wilt delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
+  "moveToOrgDesc": {
+    "message": "Kies een organisatie waarnaar je dit item wilt verplaatsen. Door het verplaatsen krijgt de organisatie de eigendomsrechten van het item. Je bent niet langer de directe eigenaar meer van het item als het is verplaatst."
   },
   "attachments": {
     "message": "Bijlagen"
@@ -431,7 +441,7 @@
     "message": "Selecteer een bestand."
   },
   "maxFileSize": {
-    "message": "De maximale bestandsgrootte is 100 MB."
+    "message": "Maximale bestandsgrootte is 500 MB."
   },
   "updateKey": {
     "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Gebruik een WebAuthn-beveilingssleutel om toegang te krijgen tot je account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -1298,10 +1308,10 @@
     "message": "ontgrendel je kluis"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Bij het opstarten niet om Windows Hello vragen."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Bij het opstarten niet om Touch ID vragen."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bij herstart vergrendelen met hoofdwachtwoord"
@@ -1661,27 +1671,27 @@
     "message": "Wordt verwijderd"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Authenticeer WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Verberg mijn e-mailadres voor ontvangers."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Een of meer organisatiebeleidseisen heeft invloed op de mogelijkheden van je Send."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "E-mailverificatie vereist"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Je moet je e-mailadres verifiëren om deze functionaliteit te gebruiken."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Hoofdwachtwoord opnieuw vragen"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Hoofdwachtwoord bevestigen"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Deze actie is beveiligd. Voer je hoofdwachtwoord opnieuw in om je identiteit vast te stellen en door te gaan."
   }
 }

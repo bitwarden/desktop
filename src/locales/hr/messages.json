@@ -44,14 +44,24 @@
   "share": {
     "message": "Podijeli"
   },
-  "shareItem": {
-    "message": "Podijeli stavku"
+  "moveToOrganization": {
+    "message": "Premjesti u organizaciju"
   },
-  "sharedItem": {
-    "message": "Stavka podijeljena"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ premješteno u $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Odaberi organizaciju s kojom želiš podijeliti ovu stavku. Nakon dijeljenja više nećeš biti izravni vlasnik ove stavke jer dijeljenje prenosi vlasništvo stavke na organizaciju."
+  "moveToOrgDesc": {
+    "message": "Odaberi organizaciju u koju želiš premjestiti ovu stavku. Premještanje prenosi vlasništvo stavke na organizaciju. Nakon premještanja više nećeš biti izravni vlasnik ove stavke."
   },
   "attachments": {
     "message": "Privitci"
@@ -431,7 +441,7 @@
     "message": "Odaberi datoteku."
   },
   "maxFileSize": {
-    "message": "Najveća veličina datoteke je 100 MB."
+    "message": "Najveća veličina datoteke je 500 MB."
   },
   "updateKey": {
     "message": "Ne možeš koristiti ovu značajku prije nego ažuriraš ključ za šifriranje."
@@ -596,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Koristi bilo koji WebAuthn omogućen sigurnosni ključ za pristup svojem računu."
   },
   "emailTitle": {
     "message": "E-pošta"
@@ -1298,10 +1308,10 @@
     "message": "Otključaj trezor"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Ne traži Windows Hello pri pokretanju."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Ne traži Touch ID pri pokretanju."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zaključaj glavnom lozinkom kod svakog pokretanja"
@@ -1535,24 +1545,24 @@
     "message": "Tekst"
   },
   "deletionDate": {
-    "message": "Datum brisanja"
+    "message": "Obriši za"
   },
   "deletionDateDesc": {
-    "message": "Send će biti trajno izbrisan navedenog datuma.",
+    "message": "Send će nakon navedenog vremena biti trajno izbrisan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Datum isteka"
+    "message": "Vremenski ograničeni pristup"
   },
   "expirationDateDesc": {
-    "message": "Ako je određeno, pristup ovom Sendu će isteći navedenog dana u navedeno vrijeme.",
+    "message": "Pristup ovom Sendu neće biti moguć nakon navednog roka.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Najveći proj pristupanja"
+    "message": "Ograničeni broj pristupanja"
   },
   "maxAccessCountDesc": {
-    "message": "Ako je određen, korisnici neće moći pristupiti ovom Sendu nakon što se postigne najveći broj pristupanja.",
+    "message": "Ako je određen, ovom Sendu će se moći pristupiti samo ograničeni broj puta.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1635,7 +1645,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Kopiraj vezu za dijeljenje ovog Senda nakon spremanja."
+    "message": "Kopiraj vezu na Send nakon spremanja"
   },
   "sendDisabled": {
     "message": "Send onemogućen",
@@ -1661,27 +1671,27 @@
     "message": "Čeka brisanje"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAutn"
+    "message": "Ovjeri WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Sakrij moju adresu e-pošte od primatelja."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Jedno ili više pravila organizacije utječe na postavke Senda."
   },
   "emailVerificationRequired": {
-    "message": "Email Verification Required"
+    "message": "Potrebna je potvrda e-pošte"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Za korištenje ove značajke, potrebna je ovjera e-pošte."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Ponovno zatraži glavnu lozinku"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Potvrda glavne lozinke"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Ova radnja je zaštićena. Za nastavak i potvrdu identiteta, unesi svoju glavnu lozinku."
   }
 }
