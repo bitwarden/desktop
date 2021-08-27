@@ -30,7 +30,6 @@ import { UpdateTempPasswordComponent } from './accounts/update-temp-password.com
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
-import { ModalComponent } from 'jslib-angular/components/modal.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
@@ -67,6 +66,8 @@ import { EffluxDatesComponent as SendEffluxDatesComponent } from './send/efflux-
 import { SendComponent } from './send/send.component';
 
 import { NavComponent } from './layout/nav.component';
+
+import { PasswordRepromptComponent } from './components/password-reprompt.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeAf from '@angular/common/locales/af';
@@ -195,7 +196,6 @@ registerLocaleData(localeZhTw, 'zh-TW');
         IconComponent,
         LockComponent,
         LoginComponent,
-        ModalComponent,
         NavComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
@@ -219,6 +219,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         UpdateTempPasswordComponent,
         VaultComponent,
         ViewComponent,
+        PasswordRepromptComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],
