@@ -1,6 +1,5 @@
 import {
     Component,
-    ComponentFactoryResolver,
     ViewChild,
     ViewContainerRef,
 } from '@angular/core';
@@ -24,7 +23,8 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 
-import { ModalComponent } from 'jslib-angular/components/modal.component';
+import { ModalService } from 'jslib-angular/services/modal.service';
+
 import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib-angular/components/two-factor.component';
 
 @Component({
@@ -39,7 +39,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     constructor(authService: AuthService, router: Router,
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
-        environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver,
+        environmentService: EnvironmentService, private modalService: ModalService,
         stateService: StateService, storageService: StorageService, route: ActivatedRoute,
         private userService: UserService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
@@ -53,20 +53,16 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         };
     }
 
-    anotherMethod() {
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.twoFactorOptionsModal.createComponent(factory).instance;
+    async anotherMethod() {
+        const [modal, childComponent] = await this.modalService.openViewRef(TwoFactorOptionsComponent, this.twoFactorOptionsModal);
+
         modal.onShown.subscribe(() => {
             this.showingModal = true;
         });
         modal.onClosed.subscribe(() => {
             this.showingModal = false;
-            modal.onShown.unsubscribe();
-            modal.onClosed.unsubscribe();
         });
 
-        const childComponent = modal.show<TwoFactorOptionsComponent>(TwoFactorOptionsComponent,
-            this.twoFactorOptionsModal);
         childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
             modal.close();
             this.selectedProviderType = provider;

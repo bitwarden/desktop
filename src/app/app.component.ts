@@ -22,8 +22,6 @@ import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 
-import { ModalComponent } from 'jslib-angular/components/modal.component';
-
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { AuthService } from 'jslib-common/abstractions/auth.service';
@@ -52,6 +50,8 @@ import { ConstantsService } from 'jslib-common/services/constants.service';
 
 import { CipherType } from 'jslib-common/enums/cipherType';
 
+import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
+import { ModalService } from 'jslib-angular/services/modal.service';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
@@ -91,7 +91,7 @@ export class AppComponent implements OnInit {
     });
 
     private lastActivity: number = null;
-    private modal: ModalComponent = null;
+    private modal: ModalRef = null;
     private idleTimer: number = null;
     private isIdle = false;
 
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService) { }
+        private policyService: PolicyService, private modalService: ModalService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -170,10 +170,10 @@ export class AppComponent implements OnInit {
                     case 'syncCompleted':
                         break;
                     case 'openSettings':
-                        this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
+                        await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
                         break;
                     case 'openPremium':
-                        this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
+                        await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
                         break;
                     case 'showFingerprintPhrase':
                         const fingerprint = await this.cryptoService.getFingerprint(
@@ -188,7 +188,7 @@ export class AppComponent implements OnInit {
                         }
                         break;
                     case 'openPasswordHistory':
-                        this.openModal<PasswordGeneratorHistoryComponent>(
+                        await this.openModal<PasswordGeneratorHistoryComponent>(
                             PasswordGeneratorHistoryComponent, this.passwordHistoryRef);
                         break;
                     case 'showToast':
@@ -207,7 +207,7 @@ export class AppComponent implements OnInit {
                             this.i18nService.t('premiumRequiredDesc'), this.i18nService.t('premiumRequired'),
                             this.i18nService.t('learnMore'), this.i18nService.t('cancel'));
                         if (premiumConfirmed) {
-                            this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
+                            await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
                         }
                         break;
                     case 'emailVerificationRequired':
@@ -281,9 +281,8 @@ export class AppComponent implements OnInit {
             this.modal.close();
         }
 
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.exportVaultModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<ExportComponent>(ExportComponent, this.exportVaultModalRef);
+        const [modal, childComponent] = await this.modalService.openViewRef(ExportComponent, this.exportVaultModalRef);
+        this.modal = modal;
 
         childComponent.onSaved.subscribe(() => {
             this.modal.close();
@@ -299,10 +298,9 @@ export class AppComponent implements OnInit {
             this.modal.close();
         }
 
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.folderAddEditModalRef.createComponent(factory).instance;
-        const childComponent = this.modal.show<FolderAddEditComponent>(
-            FolderAddEditComponent, this.folderAddEditModalRef, true, comp => comp.folderId = null);
+        const [modal, childComponent] = await this.modalService.openViewRef(FolderAddEditComponent,
+            this.folderAddEditModalRef, comp => comp.folderId = null);
+        this.modal = modal;
 
         childComponent.onSavedFolder.subscribe(async () => {
             this.modal.close();
@@ -319,10 +317,8 @@ export class AppComponent implements OnInit {
             this.modal.close();
         }
 
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = this.passwordGeneratorModalRef.createComponent(factory).instance;
-        this.modal.show<PasswordGeneratorComponent>(PasswordGeneratorComponent,
-            this.passwordGeneratorModalRef, true, comp => comp.showSelect = false);
+        [this.modal] = await this.modalService.openViewRef(PasswordGeneratorComponent, this.folderAddEditModalRef,
+            comp => comp.showSelect = false);
 
         this.modal.onClosed.subscribe(() => {
             this.modal = null;
@@ -401,14 +397,12 @@ export class AppComponent implements OnInit {
         }
     }
 
-    private openModal<T>(type: Type<T>, ref: ViewContainerRef) {
+    private async openModal<T>(type: Type<T>, ref: ViewContainerRef) {
         if (this.modal != null) {
             this.modal.close();
         }
 
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.modal = ref.createComponent(factory).instance;
-        this.modal.show<T>(type, ref);
+        [this.modal] = await this.modalService.openViewRef(type, ref);
 
         this.modal.onClosed.subscribe(() => {
             this.modal = null;
