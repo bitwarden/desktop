@@ -2,7 +2,8 @@ import {
     Component,
     OnInit,
 } from '@angular/core';
-
+import { FormControl } from '@angular/forms';
+import { ToasterService } from 'angular2-toaster';
 import Swal from 'sweetalert2/src/sweetalert2.js';
 
 import { DeviceType } from 'jslib-common/enums/deviceType';
@@ -28,7 +29,6 @@ import { isWindowsStore } from 'jslib-electron/utils';
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    vaultTimeout: number = null;
     vaultTimeoutAction: string;
     pin: boolean = null;
     disableFavicons: boolean = false;
@@ -66,10 +66,13 @@ export class SettingsComponent implements OnInit {
     startToTrayText: string;
     startToTrayDescText: string;
 
+    vaultTimeout: FormControl = new FormControl(null);
+
     constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
-        private userService: UserService, private cryptoService: CryptoService) {
+        private userService: UserService, private cryptoService: CryptoService,
+        private toasterService: ToasterService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
         // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
@@ -112,6 +115,10 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('never'), value: null },
         ]);
 
+        this.vaultTimeout.valueChanges.subscribe(() => {
+            this.saveVaultTimeoutOptions();
+        });
+
         const localeOptions: any[] = [];
         i18nService.supportedTranslationLocales.forEach(locale => {
             let name = locale;
@@ -144,7 +151,7 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-        this.vaultTimeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        this.vaultTimeout.setValue(await this.vaultTimeoutService.getVaultTimeout());
         this.vaultTimeoutAction = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
@@ -182,8 +189,13 @@ export class SettingsComponent implements OnInit {
                 return;
             }
         }
-        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
-            this.vaultTimeoutAction);
+
+        if (!this.vaultTimeout.valid) {
+            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            return;
+        }
+
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout.value, this.vaultTimeoutAction);
     }
 
     async updatePin() {

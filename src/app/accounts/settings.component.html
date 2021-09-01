@@ -7,14 +7,7 @@
                         {{'security' | i18n}}
                     </div>
                     <div class="box-content box-content-padded">
-                        <div class="form-group">
-                            <label for="vaultTimeouts">{{'vaultTimeout' | i18n}}</label>
-                            <select id="vaultTimeouts" name="VaultTimeouts" [(ngModel)]="vaultTimeout"
-                                (change)="saveVaultTimeoutOptions()">
-                                <option *ngFor="let o of vaultTimeouts" [ngValue]="o.value">{{o.name}}</option>
-                            </select>
-                            <small class="help-block">{{'vaultTimeoutDesc' | i18n}}</small>
-                        </div>
+                        <app-vault-timeout-input [vaultTimeouts]="vaultTimeouts" [formControl]="vaultTimeout" ngDefaultControl></app-vault-timeout-input>
                         <div class="form-group">
                             <label>{{'vaultTimeoutAction' | i18n}}</label>
                             <div class="radio radio-mt-2">

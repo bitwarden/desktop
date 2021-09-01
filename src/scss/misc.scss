@@ -253,6 +253,11 @@ form, .form {
                 border-color: themed('inputBorderColor');
             }
         }
+
+        input[type=text], input[type=number] {
+            padding: 5px;
+            width: 100%;
+        }
     }
 
     .checkbox {
