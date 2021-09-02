@@ -1,3 +1,4 @@
+---
 name: Release
 
 on:
@@ -27,7 +28,7 @@ jobs:
           fi
 
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
       - name: Create Release Vars
         id: create_tags
@@ -50,7 +51,7 @@ jobs:
 
       - name: Create Draft Release
         id: create_release
-        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e  # v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -65,16 +66,16 @@ jobs:
     needs: setup
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
           node-version: '14'
 
       - name: Cache Node Modules
         id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -120,21 +121,21 @@ jobs:
     needs: setup
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
       - name: Set up dotnet
-        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea # v1.8.0
+        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
         with:
           dotnet-version: "3.1.x"
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
           node-version: '14'
 
       - name: Cache Node Modules
         id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -219,7 +220,7 @@ jobs:
           cd ./dist/chocolatey
 
       - name: Upload Chocolatey nupkg release asset
-        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5  # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -234,16 +235,16 @@ jobs:
     needs: setup
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
           node-version: '14'
 
       - name: Cache Node Modules
         id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -284,7 +285,7 @@ jobs:
         run: npm run dist:win:ci
 
       - name: Upload unsigned ia32 Windows Store release asset
-        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5  # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -294,7 +295,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload unsigned x64 Windows Store release asset
-        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5  # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -304,7 +305,7 @@ jobs:
           asset_content_type: application
 
       - name: Upload unsigned ARM64 Windows Store release asset
-        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5  # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -319,16 +320,16 @@ jobs:
     needs: setup
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
           node-version: '14'
 
       - name: Cache Node Modules
         id: node-modules-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-${{ github.run_id }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -390,7 +391,7 @@ jobs:
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
         with:
           repository: 'bitwarden/browser'
           ref: ${{ github.event.inputs.browser_extension_ref }}
@@ -424,7 +425,7 @@ jobs:
           SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload Apple Store release asset
-        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5 # v1.0.2
+        uses: actions/upload-release-asset@e8f9f06c4b078e705bd2ea027f0926603fc9b4d5  # v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -435,16 +436,16 @@ jobs:
 
 
   update-release-assets:
+    name: Update Release Assets
     runs-on: ubuntu-latest
-    needs: 
-     - setup
-     - linux
+    needs:
+      - setup
+      - linux
     env:
-      PKG_VERSION: ${{ needs.setup.outputs.package_version }}
-      TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
+      _TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
       - name: Rename publish asset
         run: |
@@ -452,7 +453,7 @@ jobs:
               -H "Authorization:token ${{ secrets.GITHUB_TOKEN }}" \
               -H "Accept:application/vnd.github.v3+json" \
               https://api.github.com/repos/$GITHUB_REPOSITORY/releases \
-              | jq -r " .[] | select( .tag_name == \"$TAG_VERSION\")" > release.json
+              | jq -r " .[] | select( .tag_name == \"$_TAG_VERSION\")" > release.json
 
           echo "=====RELEASE====="
           echo Release:
@@ -466,7 +467,7 @@ jobs:
           echo Release Assets:
           cat release_assets.jsonl
 
-          while read -r asset; do 
+          while read -r asset; do
               FILE_NAME=$(echo $asset | jq -r '.name')
               FILE_URL=$(echo $asset | jq -r '.url')
               FILE_ID=$(echo $asset | jq -r '.id')
