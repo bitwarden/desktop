@@ -441,6 +441,8 @@ jobs:
     needs:
       - setup
       - linux
+      - windows-signed
+      - macos
     env:
       _TAG_VERSION: ${{ needs.setup.outputs.tag_version }}
     steps:
