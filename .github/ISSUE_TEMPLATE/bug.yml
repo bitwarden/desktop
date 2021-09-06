@@ -42,7 +42,8 @@ body:
   - type: dropdown
     id: os
     attributes:
-      label: What operating system are you seeing the problem on?
+      label: Operating System
+      description: What operating system are you seeing the problem on?
       multiple: true
       options:
         - Windows
@@ -53,7 +54,8 @@ body:
   - type: input
     id: os-version
     attributes:
-      label: What version of the operating system(s) are you seeing the problem on?
+      label: Operating System Version
+      description: What version of the operating system(s) are you seeing the problem on?
   - type: dropdown
     id: browsers
     attributes:
