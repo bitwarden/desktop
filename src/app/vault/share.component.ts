@@ -33,6 +33,14 @@ export class ShareComponent extends BaseShareComponent {
         });
     }
 
+    async load() {
+        await super.load();
+
+        if (this.cipher.organizationId) {
+            this.selectedCollectionId = this.collections.find(col => col.organizationId === this.cipher.organizationId)?.id;
+        }
+    }
+
     async submit(): Promise<boolean> {
         const selectedCollection = this.collections
             .filter(c => !!(c as any).checked);
