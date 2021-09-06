@@ -209,12 +209,8 @@ export class AppComponent implements OnInit {
                             await this.userService.getUserId());
                         const result = await this.platformUtilsService.showDialog(
                             this.i18nService.t('yourAccountsFingerprint') + ':\n' + fingerprint.join('-'),
-                            this.i18nService.t('fingerprintPhrase'), this.i18nService.t('learnMore'),
-                            this.i18nService.t('close'));
-                        if (result) {
-                           this.platformUtilsService.launchUri(
-                                'https://help.bitwarden.com/article/fingerprint-phrase/');
-                        }
+                            this.i18nService.t('fingerprintPhrase'), this.i18nService.t('close'),
+                            null);
                         break;
                     case 'openPasswordHistory':
                         this.openModal<PasswordGeneratorHistoryComponent>(
