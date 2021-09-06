@@ -377,7 +377,7 @@
                     <div class="right">
                         <ng-container *ifFlag="CAN_SHARE_ORGANIZATION">
                         <button appBlurClick type="button" (click)="share()" appA11yTitle="{{'shareItem' | i18n}}"
-                            *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode">
+                            *ngIf="editMode && cipher && !cloneMode">
                             <i class="fa fa-share-alt fa-lg fa-fw" aria-hidden="true"></i>
                         </button>
                         </ng-container>
