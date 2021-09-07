@@ -117,7 +117,9 @@ export class AngularWrapperComponent
     async getReactWrapperProps(checkExtensionInstalled = false): Promise<ReactWrapperProps> {
         const client = this.clientService.GetClient();
 
-        const hasHint = checkExtensionInstalled ? true : await this.fetchHintExists(client);
+        const hasHint = checkExtensionInstalled
+            ? await this.fetchHintExists(client)
+            : true;
 
         const bitwardenData = {
             extension_installed: hasHint,
