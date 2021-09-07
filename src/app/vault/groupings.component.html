@@ -125,9 +125,6 @@
         </ng-container>
         <div class="heading">
             <h2>{{'tools' | i18n}}</h2>
-            <button appBlurClick (click)="showFingerprint()" appA11yTitle="{{'addFolder' | i18n}}" *ifFlag="CAN_SHARE_ORGANIZATION">
-                <i class="fa fa-plus fa-fw" aria-hidden="true"></i>
-            </button>
         </div>
         <ul>
             <li [ngClass]="{active: importSelected }">
@@ -140,6 +137,14 @@
                     &nbsp;{{'import' | i18n}}
                 </a>
             </li>
+            <ng-container *ifFlag="CAN_SHARE_ORGANIZATION">
+                <li>
+                    <a href="#" appStopClick appBlurClick (click)="showFingerprint()">
+                        <app-cozy-icon ref="shield" width="24" height="16"></app-cozy-icon>
+                        &nbsp;{{'fingerprintPhrase' | i18n}}
+                    </a>
+                </li>
+            </ng-container>
             <li>
                 <a href="#" appStopClick appBlurClick (click)="logout()">
                     <svg class="icon-type" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 24 24">
