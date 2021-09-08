@@ -68,6 +68,7 @@ import { SendComponent } from './send/send.component';
 import { NavComponent } from './layout/nav.component';
 
 import { PasswordRepromptComponent } from './components/password-reprompt.component';
+import { SetPinComponent } from './components/set-pin.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeAf from '@angular/common/locales/af';
@@ -220,6 +221,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         VaultComponent,
         ViewComponent,
         PasswordRepromptComponent,
+        SetPinComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],

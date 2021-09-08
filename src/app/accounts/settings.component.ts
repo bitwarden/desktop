@@ -18,10 +18,14 @@ import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.serv
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
 
+import { ModalService } from 'jslib-angular/services/modal.service';
+
 import { ElectronConstants } from 'jslib-electron/electronConstants';
 
 import { Utils } from 'jslib-common/misc/utils';
 import { isWindowsStore } from 'jslib-electron/utils';
+
+import { SetPinComponent } from '../components/set-pin.component';
 
 @Component({
     selector: 'app-settings',
@@ -69,7 +73,8 @@ export class SettingsComponent implements OnInit {
     constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
-        private userService: UserService, private cryptoService: CryptoService) {
+        private userService: UserService, private cryptoService: CryptoService,
+        private modalService: ModalService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
         // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
@@ -188,56 +193,14 @@ export class SettingsComponent implements OnInit {
 
     async updatePin() {
         if (this.pin) {
-            const div = document.createElement('div');
-            const label = document.createElement('label');
-            label.className = 'checkbox';
-            const checkboxText = document.createElement('span');
-            const restartText = document.createTextNode(this.i18nService.t('lockWithMasterPassOnRestart'));
-            checkboxText.appendChild(restartText);
-            label.innerHTML = '<input type="checkbox" id="master-pass-restart" checked>';
-            label.appendChild(checkboxText);
+            const ref = this.modalService.open(SetPinComponent, { allowMultipleModals: true });
 
-            div.innerHTML =
-                `<div class="swal2-text">${this.i18nService.t('setYourPinCode')}</div>` +
-                '<input type="text" class="swal2-input" id="pin-val" autocomplete="off" ' +
-                'autocapitalize="none" autocorrect="none" spellcheck="false" inputmode="verbatim">';
-
-            (div.querySelector('#pin-val') as HTMLInputElement).placeholder = this.i18nService.t('pin');
-            div.appendChild(label);
-
-            const submitted = await Swal.fire({
-                heightAuto: false,
-                buttonsStyling: false,
-                html: div,
-                showCancelButton: true,
-                cancelButtonText: this.i18nService.t('cancel'),
-                showConfirmButton: true,
-                confirmButtonText: this.i18nService.t('submit'),
-            });
-
-            let pin: string = null;
-            let masterPassOnRestart: boolean = null;
-            if (submitted.value) {
-                pin = (document.getElementById('pin-val') as HTMLInputElement).value;
-                masterPassOnRestart = (document.getElementById('master-pass-restart') as HTMLInputElement).checked;
-            }
-            if (pin != null && pin.trim() !== '') {
-                const kdf = await this.userService.getKdf();
-                const kdfIterations = await this.userService.getKdfIterations();
-                const email = await this.userService.getEmail();
-                const pinKey = await this.cryptoService.makePinKey(pin, email, kdf, kdfIterations);
-                const key = await this.cryptoService.getKey();
-                const pinProtectedKey = await this.cryptoService.encrypt(key.key, pinKey);
-                if (masterPassOnRestart) {
-                    const encPin = await this.cryptoService.encrypt(pin);
-                    await this.storageService.save(ConstantsService.protectedPin, encPin.encryptedString);
-                    this.vaultTimeoutService.pinProtectedKey = pinProtectedKey;
-                } else {
-                    await this.storageService.save(ConstantsService.pinProtectedKey, pinProtectedKey.encryptedString);
-                }
-            } else {
+            if (ref == null) {
                 this.pin = false;
+                return;
             }
+
+            this.pin = await ref.onClosedPromise();
         }
         if (!this.pin) {
             await this.cryptoService.clearPinProtectedKey();
