@@ -62,7 +62,7 @@ body:
       label: Operating System Version
       description: What version of the operating system(s) are you seeing the problem on?
   - type: dropdown
-    id: browsers
+    id: install-method
     attributes:
       label: Installation method
       multiple: true
