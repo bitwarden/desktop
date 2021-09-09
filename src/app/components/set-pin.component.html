@@ -10,8 +10,8 @@
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
                                 <label for="pin">{{'pin' | i18n}}</label>
-                                <input #pinInput id="pin" type="{{showPin ? 'text' : 'password'}}" name="Pin"
-                                    class="monospaced" [(ngModel)]="pin" required appInputVerbatim cdkFocusInitial>
+                                <input id="pin" type="{{showPin ? 'text' : 'password'}}" name="Pin" class="monospaced"
+                                    [(ngModel)]="pin" required appInputVerbatim cdkFocusInitial>
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick
