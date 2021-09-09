@@ -5,6 +5,7 @@ import { ToasterModule } from 'angular2-toaster';
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
+import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DatePipe } from '@angular/common';
@@ -172,6 +173,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ServicesModule,
         ToasterModule.forRoot(),
         ScrollingModule,
+        A11yModule,
     ],
     declarations: [
         A11yTitleDirective,
