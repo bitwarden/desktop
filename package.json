@@ -114,7 +114,7 @@
     "cozy-client": "^23.19.1",
     "cozy-doctypes": "^1.82.2",
     "cozy-flags": "^2.7.2",
-    "cozy-keys-lib": "^3.9.0",
+    "cozy-keys-lib": "^3.9.1",
     "cozy-realtime": "^3.13.0",
     "cozy-sharing": "3.6.0",
     "cozy-ui": "^51.10.0",

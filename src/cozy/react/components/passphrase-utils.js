@@ -104,13 +104,17 @@ export const forceSetVaultPassphrase = async (
   vaultClient,
   passphrase
 ) => {
-  const {
+  let {
     Kdf: kdf,
     KdfIterations: kdfIterations
   } = await client.stackClient.fetchJSON(
     'POST',
     '/bitwarden/api/accounts/prelogin'
   )
+
+  if (kdfIterations === 0) {
+    kdfIterations = 100000;
+  }
 
   const masterKey = await vaultClient.computeMasterKey(
     passphrase,

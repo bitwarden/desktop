@@ -18,14 +18,18 @@ export class VaultInstallationService {
     constructor(private clientService: CozyClientService) {}
 
     async IsVaultInstalled(): Promise<boolean> {
-        const client = this.clientService.GetClient();
-        const vault = await client.stackClient.fetchJSON(
-            'GET',
-            '/data/io.cozy.settings/io.cozy.settings.bitwarden',
-            []
-        );
+        try {
+            const client = this.clientService.GetClient();
+            const vault = await client.stackClient.fetchJSON(
+                'GET',
+                '/data/io.cozy.settings/io.cozy.settings.bitwarden',
+                []
+            );
 
-        return !flag(FORCE_VAULT_UNCONFIGURED) && (vault.extension_installed || this.userFinishedInstallation);
+            return !flag(FORCE_VAULT_UNCONFIGURED) && (vault.extension_installed || this.userFinishedInstallation);
+        } catch {
+            return false;
+        }
     }
 
     setIsInstalled() {
