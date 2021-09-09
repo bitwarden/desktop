@@ -14,9 +14,22 @@ import { SyncService as SyncServiceBase } from 'jslib/services/sync.service';
 import { CryptoService } from './crypto.service';
 import { UserService } from './user.service';
 
+import { CozyClientService } from '../cozy/services/cozy-client.service';
+
 const Keys = {
     lastSyncPrefix: 'lastSync_',
 };
+
+interface Member {
+    user_id: string;
+    key?: string;
+}
+
+type Members = { [id: string]: Member };
+
+interface CozyOrganizationDocument {
+    members?: Members;
+}
 
 export class SyncService extends SyncServiceBase {
     syncInProgress: boolean = false;
@@ -34,7 +47,7 @@ export class SyncService extends SyncServiceBase {
         collectionService: CollectionService, storageService: StorageService,
         messagingService: MessagingService, policyService: PolicyService,
         sendService: SendService, logoutCallback: (expired: boolean) => Promise<void>,
-        private tokenService: TokenService) {
+        private tokenService: TokenService, private clientService: CozyClientService) {
           super(userService, apiService,
             settingsService, folderService,
             cipherService, cryptoService,
@@ -92,6 +105,28 @@ export class SyncService extends SyncServiceBase {
         return super.syncUpsertCipher(notification, isEdit);
     }
 
+    protected async getOrganizationKey(organizationId: string): Promise<string> {
+        const client = this.clientService.GetClient();
+        const remoteOrganizationData: CozyOrganizationDocument = await client.stackClient.fetchJSON(
+            'GET',
+            `/data/com.bitwarden.organizations/${organizationId}`,
+            []
+        );
+
+        const userId = await this.localUserService.getUserId();
+
+        const remoteOrganizationUser = Object.values(remoteOrganizationData.members)
+            .find(member => member.user_id === userId);
+
+        return remoteOrganizationUser?.key || '';
+    }
+
+    protected async syncUpsertOrganizationKey(organizationId: string) {
+        const remoteOrganizationKey = await this.getOrganizationKey(organizationId);
+
+        await this.localCryptoService.upsertOrganizationKey(organizationId, remoteOrganizationKey);
+    }
+
     protected async syncUpsertOrganization(organizationId: string, isEdit: boolean) {
         if (isEdit) {
             return;
@@ -115,7 +150,7 @@ export class SyncService extends SyncServiceBase {
         if (remoteOrganization !== null) {
             await this.localUserService.upsertOrganization(remoteProfileOrganizationResponse);
 
-            await this.localCryptoService.upsertOrganizationKey(remoteProfileOrganizationResponse);
+            await this.syncUpsertOrganizationKey(organizationId);
 
             await this.syncUpsertCollections(organizationId, isEdit);
         }

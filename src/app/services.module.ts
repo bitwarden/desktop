@@ -90,6 +90,7 @@ import { PasswordRepromptService } from 'jslib/services/passwordReprompt.service
 import { CozyClientService } from '../cozy/services/cozy-client.service';
 import { VaultInstallationService, VaultInstalledGuardService, VaultUninstalledGuardService } from '../cozy/services/installation-guard.service';
 
+const clientService = new CozyClientService();
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
 const stateService = new StateService();
@@ -124,7 +125,7 @@ const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService
     null, async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
-    sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }), tokenService);
+    sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }), tokenService, clientService);
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
 const totpService = new TotpService(storageService, cryptoFunctionService);
 const containerService = new ContainerService(cryptoService);
@@ -197,7 +198,7 @@ export function initFactory(): Function {
         VaultInstallationService,
         VaultInstalledGuardService,
         VaultUninstalledGuardService,
-        CozyClientService,
+        { provide: CozyClientService, useValue: clientService },
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
