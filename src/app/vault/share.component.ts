@@ -25,7 +25,10 @@ export class ShareComponent extends BaseShareComponent {
     filterCollections() {
         this.writeableCollections.forEach(c => (c as any).checked = false);
 
-        this.collections = this.writeableCollections;
+        const organizationIds = this.organizations.map(organization => organization.id);
+
+        this.collections = this.writeableCollections
+            .filter(collection => organizationIds.includes(collection.organizationId));
     }
 
     onSelectedCollectionChange() {
