@@ -1724,5 +1724,11 @@
   },
   "vaultTimeoutToLarge": {
     "message": "Your vault timeout exceeds the restrictions set by your organization."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatic Enrollment"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   }
 }
