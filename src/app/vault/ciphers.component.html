@@ -18,7 +18,7 @@
                     <span class="text">
                         {{c.name}}
                         <ng-container *ngIf="c.organizationId">
-                            <i class="icon-cozy icon-cozy-sync" title="{{'shared' | i18n}}" aria-hidden="true"></i>
+                            <app-cozy-icon ref="share" width="16" height="16" title="{{'shared' | i18n}}"></app-cozy-icon>
                             <span class="sr-only">{{'shared' | i18n}}</span>
                         </ng-container>
                         <ng-container *ngIf="c.hasAttachments">
