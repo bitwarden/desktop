@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CipherService } from '../../services/cipher.service';
+
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
@@ -15,10 +16,10 @@ import { ShareComponent as BaseShareComponent } from 'jslib/angular/components/s
 export class ShareComponent extends BaseShareComponent {
     selectedCollectionId: string = undefined;
 
-    constructor(cipherService: CipherService, i18nService: I18nService,
+    constructor(private localCipherService: CipherService, i18nService: I18nService,
         collectionService: CollectionService, userService: UserService,
         platformUtilsService: PlatformUtilsService) {
-        super(collectionService, platformUtilsService, i18nService, userService, cipherService);
+        super(collectionService, platformUtilsService, i18nService, userService, localCipherService);
     }
 
     filterCollections() {
@@ -42,10 +43,14 @@ export class ShareComponent extends BaseShareComponent {
     }
 
     async submit(): Promise<boolean> {
+        const isCipherInOrganization = !!this.cipher.organizationId;
+
         const selectedCollection = this.collections
             .filter(c => !!(c as any).checked);
 
-        if (selectedCollection.length !== 1) {
+        if (isCipherInOrganization && selectedCollection.length === 0) {
+            return await this.unshare();
+        } else if (!isCipherInOrganization && selectedCollection.length !== 1) {
             this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('selectOneFolder'));
             return;
@@ -64,6 +69,27 @@ export class ShareComponent extends BaseShareComponent {
                     this.onSharedCipher.emit();
                     this.platformUtilsService.showToast('success', null, this.i18nService.t('sharedItem'));
                 });
+            await this.formPromise;
+            return true;
+        } catch { }
+        return false;
+    }
+
+    get canSave() {
+        const isCipherInOrganization = !!this.cipher.organizationId;
+        const hasSelectedCollection = this.collections.some(c => !!(c as any).checked);
+
+        return hasSelectedCollection || isCipherInOrganization;
+    }
+
+    async unshare(): Promise<boolean> {
+        try {
+            this.formPromise = this.localCipherService.unshare(this.cipher)
+                .then(async () => {
+                    this.onSharedCipher.emit();
+                    this.platformUtilsService.showToast('success', null, this.i18nService.t('unsharedItem'));
+                });
+
             await this.formPromise;
             return true;
         } catch { }

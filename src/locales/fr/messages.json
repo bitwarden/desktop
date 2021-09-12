@@ -59,8 +59,14 @@
   "sharedItem": {
     "message": "Élément partagé"
   },
+  "unsharedItem": {
+    "message": "Élément enlevé du dossier"
+  },
   "shareDesc": {
     "message": "Choisissez un dossier avec lequel vous voulez partager cet élément. Le partage transfère la propriété de l'élément au dossier. Vous ne serez plus le propriétaire direct de cet élément après le partage."
+  },
+  "shareNone": {
+    "message": "Aucun"
   },
   "attachments": {
     "message": "Pièces jointes"

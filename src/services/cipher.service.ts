@@ -59,4 +59,13 @@ export class CipherService extends CipherServiceBase {
         this.decryptedCipherCache = decCiphers;
         return this.decryptedCipherCache;
     }
+
+    async unshare(cipher: CipherView) {
+        cipher.organizationId = null;
+        cipher.collectionIds = [];
+
+        const encCipher = await this.encrypt(cipher);
+
+        await this.saveWithServer(encCipher);
+    }
 }

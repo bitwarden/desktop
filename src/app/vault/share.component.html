@@ -13,6 +13,7 @@
                         <div class="box-content-row" appBoxRow>
                             <label for="folder">{{'folder' | i18n}}</label>
                             <select id="folder" name="FolderId" [(ngModel)]="selectedCollectionId" (change)="onSelectedCollectionChange()">
+                                <option value="">{{'shareNone' | i18n}}</option>
                                 <option *ngFor="let collection of collections" [ngValue]="collection.id">{{collection.name}}</option>
                             </select>
                         </div>
