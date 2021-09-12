@@ -90,3 +90,28 @@ app-vault-ciphers {
         }
     }
 }
+
+.navbar-entry {
+    display: flex;
+
+    a {
+        flex-grow: 1;
+    }
+
+    button {
+        margin-left: auto;
+        background: none;
+        border: none;
+
+        &:hover, &:focus {
+            cursor: pointer;
+        }
+
+        app-cozy-icon {
+            margin-right: 0px;
+            svg {
+                fill: var(--secondaryButtonActiveColor);
+            } 
+        }
+    }
+}

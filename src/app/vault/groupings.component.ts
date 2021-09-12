@@ -9,6 +9,7 @@ import { UserService } from 'jslib/abstractions/user.service';
 
 import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/components/groupings.component';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
+import { CollectionView } from 'jslib/models/view/collectionView';
 
 @Component({
     selector: 'app-vault-groupings',
@@ -77,5 +78,12 @@ export class GroupingsComponent extends BaseGroupingsComponent {
 
     async showFingerprint() {
         this.broadcasterService.send({command: 'showFingerprintPhrase'});
+    }
+
+    async deleteCollection(collection: CollectionView) {
+        this.broadcasterService.send({
+            command: 'deleteOrganization',
+            organizationId: collection.organizationId,
+        });
     }
 }
