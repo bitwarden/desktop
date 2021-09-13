@@ -202,6 +202,7 @@ export function initFactory(): Function {
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
+        { provide: CipherService, useValue: cipherService },
         { provide: FolderServiceAbstraction, useValue: folderService },
         { provide: CollectionServiceAbstraction, useValue: collectionService },
         { provide: EnvironmentServiceAbstraction, useValue: environmentService },

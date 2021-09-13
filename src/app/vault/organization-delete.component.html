@@ -1,0 +1,34 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="deleteOrganizationTitle">
+  <div class="modal-dialog" role="document">
+      <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+          <div class="modal-body">
+              <div class="box">
+                  <div class="box-header" id="deleteOrganizationTitle">
+                      {{title}}
+                  </div>
+                  <div class="box-content">
+                      <div class="box-content-row" appBoxRow>
+                          <p>{{'deleteOrganizationDesc' | i18n}}</p>
+                          <app-callout type="warning">{{'deleteOrganizationWarning' | i18n}}</app-callout>
+
+                          <label for="name">{{'name' | i18n}}</label>
+                          <input id="name" type="text" name="Name" [(ngModel)]="organizationName" disabled>
+
+                          <label for="masterPassword">{{'masterPass' | i18n}}</label>
+                          <input id="masterPassword" type="password" name="MasterPasswordHash" class="form-control"
+                              [(ngModel)]="masterPassword" required appAutofocus appInputVerbatim>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button appBlurClick type="submit" class="danger" appA11yTitle="{{'delete' | i18n}}"
+                  [disabled]="form.loading">
+                  <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
+                  <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
+              </button>
+              <button type="button" data-dismiss="modal">{{'cancel' | i18n}}</button>
+          </div>
+      </form>
+  </div>
+</div>

@@ -53,6 +53,7 @@ import { CollectionsComponent } from './vault/collections.component';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { GroupingsComponent } from './vault/groupings.component';
+import { OrganizationDeleteComponent } from './vault/organization-delete.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
 import { PasswordHistoryComponent } from './vault/password-history.component';
@@ -192,6 +193,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FallbackSrcDirective,
         FolderAddEditComponent,
         GroupingsComponent,
+        OrganizationDeleteComponent,
         HintComponent,
         I18nPipe,
         IconComponent,
@@ -235,6 +237,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ExportComponent,
         FolderAddEditComponent,
         ModalComponent,
+        OrganizationDeleteComponent,
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,

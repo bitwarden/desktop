@@ -1225,6 +1225,21 @@
     "message": "Organisation",
     "description": "An entity of multiple related people (ex. a team or business organization)."
   },
+  "deleteOrganization": {
+    "message": "Supprimer le dossier partagé"
+  },
+  "deleteOrganizationDesc": {
+    "message": "Poursuivez ci-dessous pour supprimer ce dossier partagé ainsi que toutes les données associées."
+  },
+  "deleteOrganizationWarning": {
+    "message": "La suppression d'un dossier partagé est définitive. Cette action ne peut pas être annulée."
+  },
+  "organizationDeleted": {
+    "message": "Dossier partagé supprimée"
+  },
+  "organizationDeletedDesc": {
+    "message": "Le dossier partagé et toutes les données associées ont été supprimés."
+  },
   "default": {
     "message": "Par défaut"
   },

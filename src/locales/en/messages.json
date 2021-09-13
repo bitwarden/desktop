@@ -1,4 +1,4 @@
-﻿{
+{
   "bitwarden": {
     "message": "Bitwarden"
   },
@@ -1224,6 +1224,21 @@
   "organization": {
     "message": "Organization",
     "description": "An entity of multiple related people (ex. a team or business organization)."
+  },
+  "deleteOrganization": {
+    "message": "Delete Shared Folder"
+  },
+  "deleteOrganizationDesc": {
+    "message": "Proceed below to delete this shared folder and all associated data."
+  },
+  "deleteOrganizationWarning": {
+    "message": "Deleting the shared folder is permanent. It cannot be undone."
+  },
+  "organizationDeleted": {
+    "message": "Shared Folder Deleted"
+  },
+  "organizationDeletedDesc": {
+    "message": "The shared folder and all associated data has been deleted."
   },
   "default": {
     "message": "Default"
