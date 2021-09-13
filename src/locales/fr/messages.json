@@ -1240,6 +1240,9 @@
   "organizationDeletedDesc": {
     "message": "Le dossier partagé et toutes les données associées ont été supprimés."
   },
+  "organizationNoOwnerError": {
+    "message": "Vous ne pouvez pas supprimer ce dossier partagé car vous n'êtes pas son propriétaire."
+  },
   "default": {
     "message": "Par défaut"
   },

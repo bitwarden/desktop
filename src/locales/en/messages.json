@@ -1240,6 +1240,9 @@
   "organizationDeletedDesc": {
     "message": "The shared folder and all associated data has been deleted."
   },
+  "organizationNoOwnerError": {
+    "message": "You cannot delete this shared folder because you are not its owner."
+  },
   "default": {
     "message": "Default"
   },

@@ -68,6 +68,9 @@ import { PasswordGeneratorComponent } from './vault/password-generator.component
 
 import { CozyClientInstanceOption } from '../cozy/CozyClientTypes';
 import { CozyClientService } from '../cozy/services/cozy-client.service';
+import { OrganizationDeleteComponent } from './vault/organization-delete.component';
+
+import { OrganizationUserType } from 'jslib/enums/organizationUserType';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -84,6 +87,7 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
         <ng-template #appFolderAddEdit></ng-template>
         <ng-template #exportVault></ng-template>
         <ng-template #appPasswordGenerator></ng-template>
+        <ng-template #deleteOrganization></ng-template>
         <router-outlet></router-outlet>
         <app-icon-sprite></app-icon-sprite>
         <app-flag-switcher></app-flag-switcher>`,
@@ -97,6 +101,8 @@ export class AppComponent implements OnInit {
         folderAddEditModalRef: ViewContainerRef;
     @ViewChild('appPasswordGenerator', { read: ViewContainerRef, static: true })
         passwordGeneratorModalRef: ViewContainerRef;
+    @ViewChild('deleteOrganization', { read: ViewContainerRef, static: true })
+        deleteOrganizationRef: ViewContainerRef;
 
     toasterConfig: ToasterConfig = new ToasterConfig({
         showCloseButton: true,
@@ -286,6 +292,9 @@ export class AppComponent implements OnInit {
                     case 'newFolder':
                         await this.addFolder();
                         break;
+                    case 'deleteOrganization':
+                        await this.deleteOrganization(message.organizationId);
+                        break;
                     case 'openPasswordGenerator':
                         // openPasswordGenerator has extended functionality if called in the vault
                         if (!this.router.url.includes('vault')) {
@@ -361,6 +370,37 @@ export class AppComponent implements OnInit {
         childComponent.onSavedFolder.subscribe(async () => {
             this.modal.close();
             this.syncService.fullSync(false);
+        });
+
+        this.modal.onClosed.subscribe(() => {
+            this.modal = null;
+        });
+    }
+
+    async deleteOrganization(organizationId: string) {
+        if (this.modal != null) {
+            this.modal.close();
+        }
+
+        const organization = await this.userService.getOrganization(organizationId);
+
+        if (organization.type !== OrganizationUserType.Owner) {
+            this.toasterService.popAsync('error', null, this.i18nService.t('organizationNoOwnerError'));
+            return;
+        }
+
+        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.modal = this.deleteOrganizationRef.createComponent(factory).instance;
+        const childComponent = this.modal.show<OrganizationDeleteComponent>(
+            OrganizationDeleteComponent,
+            this.deleteOrganizationRef,
+            true,
+            comp => comp.organizationId = organizationId
+        );
+
+        childComponent.onDeletedOrganization.subscribe(async () => {
+            this.modal.close();
+            this.syncService.fullSync(true);
         });
 
         this.modal.onClosed.subscribe(() => {
