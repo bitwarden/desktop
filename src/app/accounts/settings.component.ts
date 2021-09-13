@@ -3,8 +3,7 @@ import {
     OnInit,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ToasterService } from 'angular2-toaster';
-import Swal from 'sweetalert2/src/sweetalert2.js';
+import { debounceTime } from 'rxjs/operators';
 
 import { DeviceType } from 'jslib-common/enums/deviceType';
 
@@ -14,7 +13,6 @@ import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
@@ -75,8 +73,7 @@ export class SettingsComponent implements OnInit {
     constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
-        private userService: UserService, private cryptoService: CryptoService,
-        private toasterService: ToasterService, private modalService: ModalService) {
+        private cryptoService: CryptoService, private modalService: ModalService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
         // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
@@ -119,7 +116,7 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('never'), value: null },
         ]);
 
-        this.vaultTimeout.valueChanges.subscribe(() => {
+        this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
             this.saveVaultTimeoutOptions();
         });
 
@@ -194,8 +191,13 @@ export class SettingsComponent implements OnInit {
             }
         }
 
+        // Avoid saving 0 since it's useless as a timeout value.
+        if (this.vaultTimeout.value === 0) {
+            return;
+        }
+
         if (!this.vaultTimeout.valid) {
-            this.toasterService.popAsync('error', null, this.i18nService.t('vaultTimeoutToLarge'));
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('vaultTimeoutTooLarge'));
             return;
         }
 

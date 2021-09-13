@@ -1722,7 +1722,7 @@
       }
     }
   },
-  "vaultTimeoutToLarge": {
+  "vaultTimeoutTooLarge": {
     "message": "Your vault timeout exceeds the restrictions set by your organization."
   },
   "resetPasswordPolicyAutoEnroll": {
