@@ -111,7 +111,7 @@
     "angular2-toaster": "^11.0.1",
     "big-integer": "1.6.48",
     "browser-hrtime": "^1.1.8",
-    "cozy-client": "^24.3.3",
+    "cozy-client": "^24.6.1",
     "cozy-doctypes": "^1.82.2",
     "cozy-flags": "^2.7.2",
     "cozy-keys-lib": "^3.9.1",
