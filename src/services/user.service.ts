@@ -38,4 +38,19 @@ export class UserService extends UserServiceBase {
 
         await this.localStorageService.save(Keys.organizationsPrefix + userId, organizationsData);
     }
+
+    async deleteOrganization(organizationId: string) {
+        const userId = await this.getUserId();
+
+        const oldOrganizations = await this.getAllOrganizations();
+
+        const newOrganizations = oldOrganizations.filter(organization => organization.id === organizationId);
+
+        const organizationsData: { [id: string]: OrganizationData; } = {};
+        newOrganizations.forEach(o => {
+            organizationsData[o.id] = o as OrganizationData;
+        });
+
+        await this.localStorageService.save(Keys.organizationsPrefix + userId, organizationsData);
+    }
 }

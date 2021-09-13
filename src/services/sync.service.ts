@@ -100,12 +100,41 @@ export class SyncService extends SyncServiceBase {
 
         this.localSyncStarted();
         try {
-            await this.syncUpsertOrganization(notification.organizationId, isEdit);
+            await this.upsertOrganization(notification.organizationId, isEdit);
 
             return super.syncUpsertCipher(notification, isEdit);
         } catch (e) {
             return this.localSyncCompleted(false);
         }
+    }
+
+    async syncUpsertOrganization(organizationId: string, isEdit: boolean) {
+        this.localSyncStarted();
+        if (await this.localUserService.isAuthenticated()) {
+            await this.upsertOrganization(organizationId, isEdit);
+
+            return this.localSyncCompleted(true);
+        }
+        return this.localSyncCompleted(false);
+    }
+
+    async syncDeleteOrganization(organizationId: string): Promise<boolean> {
+        this.localSyncStarted();
+        if (await this.localUserService.isAuthenticated()) {
+            const allCollections = await this.localCollectionService.getAll();
+
+            const collectionsToDelete = allCollections
+                .filter(collection => collection.organizationId === organizationId);
+
+            for (const collection of collectionsToDelete) {
+                await this.localCollectionService.delete(collection.id);
+            }
+
+            await this.localUserService.deleteOrganization(organizationId);
+
+            return this.localSyncCompleted(true);
+        }
+        return this.localSyncCompleted(false);
     }
 
     protected async getOrganizationKey(organizationId: string): Promise<string> {
@@ -130,7 +159,7 @@ export class SyncService extends SyncServiceBase {
         await this.localCryptoService.upsertOrganizationKey(organizationId, remoteOrganizationKey);
     }
 
-    protected async syncUpsertOrganization(organizationId: string, isEdit: boolean) {
+    protected async upsertOrganization(organizationId: string, isEdit: boolean) {
         if (!organizationId) {
             return;
         }

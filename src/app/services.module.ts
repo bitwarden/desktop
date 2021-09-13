@@ -35,7 +35,6 @@ import { EventService } from 'jslib/services/event.service';
 import { ExportService } from 'jslib/services/export.service';
 import { FileUploadService } from 'jslib/services/fileUpload.service';
 import { FolderService } from 'jslib/services/folder.service';
-import { NotificationsService } from 'jslib/services/notifications.service';
 import { PasswordGenerationService } from 'jslib/services/passwordGeneration.service';
 import { PolicyService } from 'jslib/services/policy.service';
 import { SearchService } from 'jslib/services/search.service';
@@ -49,6 +48,7 @@ import { VaultTimeoutService } from 'jslib/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
 import { CipherService } from '../services/cipher.service';
 import { CryptoService } from '../services/crypto.service';
+import { NotificationsService } from '../services/notifications.service';
 import { SyncService } from '../services/sync.service';
 import { UserService } from '../services/user.service';
 
@@ -134,7 +134,7 @@ const authService = new AuthService(cryptoService, apiService, userService, toke
 const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
-    apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }), logService);
+    apiService, vaultTimeoutService, async () => messagingService.send('logout', { expired: true }), logService, clientService, broadcasterService);
 const environmentService = new EnvironmentService(apiService, storageService, notificationsService);
 const eventService = new EventService(storageService, apiService, userService, cipherService);
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
@@ -215,6 +215,7 @@ export function initFactory(): Function {
         { provide: PasswordGenerationServiceAbstraction, useValue: passwordGenerationService },
         { provide: ApiServiceAbstraction, useValue: apiService },
         { provide: SyncServiceAbstraction, useValue: syncService },
+        { provide: SyncService, useValue: syncService },
         { provide: UserServiceAbstraction, useValue: userService },
         { provide: MessagingServiceAbstraction, useValue: messagingService },
         { provide: BroadcasterService, useValue: broadcasterService },
