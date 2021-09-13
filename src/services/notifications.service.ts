@@ -75,11 +75,23 @@ export class NotificationsService extends NotificationsServiceBase {
 
     async handleOrganizationCreate(organization: any) {
         await this.waitForSyncCompleted();
-        await this.localSyncService.syncUpsertOrganization(organization._id, false);
+
+        // Hack: syncUpsertOrganization has been replaced by a fullSync until we find a way
+        // to synchronize cipher created before the sharing was initialized
+        //
+        // to remove hack, uncomment following line and delete fullSync call
+        // await this.localSyncService.syncUpsertOrganization(organization._id, false);
+        await this.localSyncService.fullSync(organization._id, false);
     }
 
     async handleOrganizationUpdate(organization: any) {
         await this.waitForSyncCompleted();
-        await this.localSyncService.syncUpsertOrganization(organization._id, false);
+
+        // Hack: syncUpsertOrganization has been replaced by a fullSync until we find a way
+        // to synchronize cipher created before the sharing was initialized
+        //
+        // to remove hack, uncomment following line and delete fullSync call
+        // await this.localSyncService.syncUpsertOrganization(organization._id, false);
+        await this.localSyncService.fullSync(organization._id, false);
     }
 }
