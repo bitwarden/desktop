@@ -99,10 +99,13 @@ export class SyncService extends SyncServiceBase {
         if (!isAuthenticated) return false;
 
         this.localSyncStarted();
+        try {
+            await this.syncUpsertOrganization(notification.organizationId, isEdit);
 
-        await this.syncUpsertOrganization(notification.organizationId, isEdit);
-
-        return super.syncUpsertCipher(notification, isEdit);
+            return super.syncUpsertCipher(notification, isEdit);
+        } catch (e) {
+            return this.localSyncCompleted(false);
+        }
     }
 
     protected async getOrganizationKey(organizationId: string): Promise<string> {
@@ -169,5 +172,11 @@ export class SyncService extends SyncServiceBase {
     protected localSyncStarted() {
         this.syncInProgress = true;
         this.localMessagingService.send('syncStarted');
+    }
+
+    protected localSyncCompleted(successfully: boolean): boolean {
+        this.syncInProgress = false;
+        this.localMessagingService.send('syncCompleted', { successfully: successfully });
+        return successfully;
     }
 }
