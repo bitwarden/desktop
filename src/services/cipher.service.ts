@@ -60,9 +60,33 @@ export class CipherService extends CipherServiceBase {
         return this.decryptedCipherCache;
     }
 
+    /**
+     * Hack of shareWithServer that deletes/recreates the cipher instead of updating the existing one
+     * This hack allows to temporary fix a realtime sync problem from stack when we try
+     * to remove a cipher from an organization
+     */
+    async shareWithServer(cipher: CipherView, organizationId: string, collectionIds: string[]): Promise<any> {
+        await this.deleteWithServer(cipher.id);
+
+        cipher.id = null;
+        const encCipher = await this.encrypt(cipher);
+        await this.saveWithServer(encCipher);
+
+        cipher.id = encCipher.id;
+        return super.shareWithServer(cipher, organizationId, collectionIds);
+    }
+
     async unshare(cipher: CipherView) {
+        // Hack: following line allows to delete/recreated a cipher instead of updating the existing one
+        // This hack allows to temporary fix a realtime sync problem from stack when we try
+        // to remove a cipher from an organization
+        //
+        // to remove hack, cipher.id = null should also be removed
+        await this.deleteWithServer(cipher.id);
+
         cipher.organizationId = null;
-        cipher.collectionIds = [];
+        cipher.collectionIds = null;
+        cipher.id = null;
 
         const encCipher = await this.encrypt(cipher);
 
