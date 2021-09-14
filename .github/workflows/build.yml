@@ -157,7 +157,7 @@ jobs:
       - name: Install AST
         shell: pwsh
         env:
-          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
+          AST_PINNED_COMMIT: "a67eca560bf95cd765579721f2787189c75e96ae"
         run: |
           cd $HOME
 
