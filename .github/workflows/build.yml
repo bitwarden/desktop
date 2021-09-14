@@ -191,13 +191,14 @@ jobs:
             -fd sha1 \
             -du https://bitwarden.com \
             -tr http://timestamp.digicert.com \
-            test.exe,
+            test.exe
         env:
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
           SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+
 
   windows:
     name: Windows Build
