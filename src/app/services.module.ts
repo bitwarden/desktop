@@ -15,6 +15,7 @@ import { ElectronRendererStorageService } from 'jslib-electron/services/electron
 import { I18nService } from '../services/i18n.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
 import { PasswordRepromptService } from '../services/passwordReprompt.service';
+import { SearchBarService } from './layout/search/search-bar.service';
 
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
@@ -192,6 +193,7 @@ export function initFactory(): Function {
         UnauthGuardService,
         LockGuardService,
         ModalService,
+        SearchBarService,
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },

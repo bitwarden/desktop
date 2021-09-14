@@ -71,7 +71,8 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
         <ng-template #appFolderAddEdit></ng-template>
         <ng-template #exportVault></ng-template>
         <ng-template #appPasswordGenerator></ng-template>
-        <router-outlet></router-outlet>`,
+        <app-header></app-header>
+        <div id="container"><router-outlet></router-outlet></div>`,
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;

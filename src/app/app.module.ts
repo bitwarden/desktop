@@ -29,6 +29,7 @@ import { TwoFactorOptionsComponent } from './accounts/two-factor-options.compone
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { UpdateTempPasswordComponent } from './accounts/update-temp-password.component';
 
+import { AvatarComponent } from 'jslib-angular/components/avatar.component';
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
 
@@ -66,7 +67,10 @@ import { AddEditComponent as SendAddEditComponent } from './send/add-edit.compon
 import { EffluxDatesComponent as SendEffluxDatesComponent } from './send/efflux-dates.component';
 import { SendComponent } from './send/send.component';
 
+import { AccountSwitcherComponent } from './layout/account-switcher.component';
+import { HeaderComponent } from './layout/header.component';
 import { NavComponent } from './layout/nav.component';
+import { SearchComponent } from './layout/search/search.component';
 
 import { PasswordRepromptComponent } from './components/password-reprompt.component';
 import { SetPinComponent } from './components/set-pin.component';
@@ -224,6 +228,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ViewComponent,
         PasswordRepromptComponent,
         SetPinComponent,
+        HeaderComponent,
+        AccountSwitcherComponent,
+        AvatarComponent,
+        SearchComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],

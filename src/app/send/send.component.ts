@@ -21,6 +21,7 @@ import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
 import { SendView } from 'jslib-common/models/view/sendView';
 
+import { SearchBarService } from '../layout/search/search-bar.service';
 import { AddEditComponent } from './add-edit.component';
 
 enum Action {
@@ -45,13 +46,21 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
         private broadcasterService: BroadcasterService, ngZone: NgZone,
         searchService: SearchService, policyService: PolicyService,
-        userService: UserService) {
+        userService: UserService, private searchBarService: SearchBarService) {
         super(sendService, i18nService, platformUtilsService,
               environmentService, ngZone, searchService,
               policyService, userService);
+
+        this.searchBarService.searchText.subscribe(searchText => {
+            this.searchText = searchText;
+            this.searchTextChanged();
+        });
     }
 
     async ngOnInit() {
+        this.searchBarService.setEnabled(true);
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchSends'));
+
         super.ngOnInit();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
@@ -67,6 +76,7 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        this.searchBarService.setEnabled(false);
     }
 
     addSend() {

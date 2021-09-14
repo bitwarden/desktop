@@ -1,0 +1,83 @@
+.header {
+    min-height: 44px;
+    max-height: 44px;
+    border-bottom: 1px solid #000000;
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    grid-column-gap: 5px;
+    justify-items: center;
+    align-items: center;
+
+    @include themify($themes) {
+        background-color: themed('headerBackgroundColor');
+        border-bottom-color: themed('headerBorderColor');
+    }
+
+    app-search {
+        grid-column-start: 2;
+        width: 100%;
+    }
+
+    app-account-switcher {
+        justify-self: end;
+        display: grid;
+        grid-template-columns: 25px 1fr;
+        grid-column-gap: 5px;
+        align-items: center;
+        justify-items: center;
+        margin-right: 5px;
+
+        @include themify($themes) {
+            color: themed('headerInputColor'); // TODO: Change to headerTextColor?
+        }
+
+        img {
+            display: block;
+        }
+    }
+
+    .search {
+        padding: 0 7px;
+        width: 100%;
+        text-align: left;
+        position: relative;
+
+        .fa {
+            position: absolute;
+            top: 7px;
+            left: 15px;
+
+            @include themify($themes) {
+                color: themed('headerInputPlaceholderColor');
+            }
+        }
+
+        input {
+            width: 100%;
+            margin: 0;
+            border: none;
+            padding: 5px 10px 5px 30px;
+            border-radius: $border-radius;
+
+            @include themify($themes) {
+                background-color: themed('headerInputBackgroundColor');
+                color: themed('headerInputColor');
+            }
+
+            &:focus {
+                border-radius: $border-radius;
+                outline: none;
+
+                @include themify($themes) {
+                    background-color: themed('headerInputBackgroundFocusColor');
+                }
+            }
+
+            &::-webkit-input-placeholder {
+                @include themify($themes) {
+                    color: themed('headerInputPlaceholderColor');
+                }
+            }
+        }
+    }
+}
