@@ -151,17 +151,18 @@ jobs:
 
       - name: Install AST
         shell: pwsh
+        env:
+          AST_PINNED_COMMIT: "a67eca560bf95cd765579721f2787189c75e96ae"
         run: |
           cd $HOME
 
           git clone https://github.com/vcsjones/AzureSignTool.git
           cd AzureSignTool
-          $pinned_commit = $(git rev-parse HEAD)[0..9] -join ""
-          $pinned_short_commit = "$pinned_commit"[0..9]
+          $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9]
           $ast_version = "0.0.0-g$pinned_short_commit"
 
           Write-Host "--------"
-          Write-Host "pinned git commit - $(git rev-parse HEAD)"
+          Write-Host "pinned git commit - $env:AST_PINNED_COMMIT"
           Write-Host "pinned short git commit - $pinned_short_commit"
           Write-Host "PACKAGE VERSION TO BUILD - $ast_version"
           Write-Host "--------"
