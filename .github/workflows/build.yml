@@ -117,7 +117,7 @@ jobs:
 
   windows:
     name: Windows Build
-    runs-on: windows-latest
+    runs-on: windows-2019
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -125,7 +125,7 @@ jobs:
       - name: Set up dotnet
         uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
         with:
-          dotnet-version: "3.1.x"
+          dotnet-version: "3.1.18"
 
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
