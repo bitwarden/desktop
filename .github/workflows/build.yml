@@ -156,18 +156,19 @@ jobs:
 
           git clone https://github.com/vcsjones/AzureSignTool.git
           cd AzureSignTool
-          $latest_head = $(git rev-parse HEAD)[0..9] -join ""
-          $latest_version = "0.0.0-g$latest_head"
+          $pinned_commit = $(git rev-parse HEAD)[0..9] -join ""
+          $pinned_short_commit = "$pinned_commit"[0..9]
+          $ast_version = "0.0.0-g$pinned_short_commit"
 
           Write-Host "--------"
-          Write-Host "git commit - $(git rev-parse HEAD)"
-          Write-Host "latest_head - $latest_head"
-          Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
+          Write-Host "pinned git commit - $(git rev-parse HEAD)"
+          Write-Host "pinned short git commit - $pinned_short_commit"
+          Write-Host "PACKAGE VERSION TO BUILD - $ast_version"
           Write-Host "--------"
 
           dotnet restore
           dotnet pack --output ./nupkg
-          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
+          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $ast_version azuresigntool
 
       - name: Set up environment
         shell: pwsh
