@@ -8,13 +8,11 @@ import { debounceTime } from 'rxjs/operators';
 import { DeviceType } from 'jslib-common/enums/deviceType';
 import { ThemeType } from 'jslib-common/enums/themeType';
 
-import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ModalService } from 'jslib-angular/services/modal.service';
@@ -24,7 +22,7 @@ import { SetPinComponent } from '../components/set-pin.component';
 import { Utils } from 'jslib-common/misc/utils';
 import { isWindowsStore } from 'jslib-electron/utils';
 
-import { StorageKey } from 'jslib-common/enums/storageKey';
+import { StorageLocation } from 'jslib-common/enums/storageLocation';
 
 @Component({
     selector: 'app-settings',
@@ -73,8 +71,7 @@ export class SettingsComponent implements OnInit {
     constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private vaultTimeoutService: VaultTimeoutService, private stateService: StateService,
         private messagingService: MessagingService, private cryptoService: CryptoService,
-        private modalService: ModalService, private activeAccount: ActiveAccountService,
-        private storageService: StorageService) {
+        private modalService: ModalService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
         // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
@@ -153,31 +150,29 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-        this.vaultTimeout.setValue(await this.activeAccount.getInformation<number>(StorageKey.VaultTimeout) ?? 1);
-        this.vaultTimeoutAction = await this.activeAccount.getInformation<string>(StorageKey.VaultTimeoutAction) ?? 'lock';
+        this.vaultTimeout.setValue(await this.stateService.getVaultTimeout() ?? 1);
+        this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction() ?? 'lock';
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
-        this.disableFavicons = await this.storageService.get(StorageKey.DisableFavicon) ?? false;
-        this.enableBrowserIntegration = await this.activeAccount.getInformation<boolean>(
-            StorageKey.EnableBrowserIntegration);
-        this.enableBrowserIntegrationFingerprint = await this.activeAccount.getInformation<boolean>(StorageKey.EnableBrowserIntegrationFingerprint);
-        this.enableMinToTray = await this.activeAccount.getInformation<boolean>(StorageKey.EnableMinimizeToTrayKey);
-        this.enableCloseToTray = await this.activeAccount.getInformation<boolean>(StorageKey.EnableCloseToTrayKey);
-        this.enableTray = await this.activeAccount.getInformation<boolean>(StorageKey.EnableTrayKey);
-        this.startToTray = await this.activeAccount.getInformation<boolean>(StorageKey.EnableStartToTrayKey);
-        this.locale = await this.activeAccount.getInformation<string>(StorageKey.Locale);
-        this.theme = await this.activeAccount.getInformation<string>(StorageKey.Theme);
-        this.clearClipboard = await this.activeAccount.getInformation<number>(StorageKey.ClearClipboard);
-        this.minimizeOnCopyToClipboard = await this.activeAccount.getInformation<boolean>(
-            StorageKey.MinimizeOnCopyToClipboardKey);
+        this.disableFavicons = await this.stateService.getDisableFavicon() ?? false;
+        this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration() ?? false;
+        this.enableBrowserIntegrationFingerprint = await this.stateService.getEnableBrowserIntegrationFingerprint() ?? false;
+        this.enableMinToTray = await this.stateService.getEnableMinimizeToTray() ?? false;
+        this.enableCloseToTray = await this.stateService.getEnableCloseToTray() ?? false;
+        this.enableTray = await this.stateService.getEnableTray() ?? false;
+        this.startToTray = await this.stateService.getEnableStartToTray() ?? false;
+        this.locale = await this.stateService.getLocale() ?? 'en';
+        this.theme = await this.stateService.getTheme() ?? null;
+        this.clearClipboard = await this.stateService.getClearClipboard() ?? 0;
+        this.minimizeOnCopyToClipboard = await this.stateService.getMinimizeOnCopyToClipboard() ?? false;
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-        this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
-        this.biometricText = await this.activeAccount.getInformation<string>(StorageKey.BiometricText);
-        this.noAutoPromptBiometrics = await this.activeAccount.getInformation<boolean>(StorageKey.NoAutoPromptBiometrics);
-        this.noAutoPromptBiometricsText = await this.activeAccount.getInformation<string>(StorageKey.NoAutoPromptBiometricsText);
-        this.alwaysShowDock = await this.activeAccount.getInformation<boolean>(StorageKey.AlwaysShowDock);
+        this.biometric = await this.vaultTimeoutService.isBiometricLockSet() ?? false;
+        this.biometricText = await this.stateService.getBiometricText();
+        this.noAutoPromptBiometrics = await this.stateService.getNoAutoPromptBiometrics() ?? false;
+        this.noAutoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
+        this.alwaysShowDock = await this.stateService.getAlwaysShowDock() ?? false;
         this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
-        this.openAtLogin = await this.activeAccount.getInformation<boolean>(StorageKey.OpenAtLogin);
+        this.openAtLogin = await this.stateService.getOpenAtLogin() ?? false;
     }
 
     async saveVaultTimeoutOptions() {
@@ -233,13 +228,13 @@ export class SettingsComponent implements OnInit {
             return;
         }
         if (this.biometric) {
-            await this.activeAccount.saveInformation(StorageKey.BiometricUnlock, true);
+            await this.stateService.setBiometricUnlock(true);
         } else {
-            await this.activeAccount.removeInformation(StorageKey.BiometricUnlock);
-            await this.activeAccount.removeInformation(StorageKey.NoAutoPromptBiometrics);
+            await this.stateService.setBiometricUnlock(null);
+            await this.stateService.setNoAutoPromptBiometrics(null);
             this.noAutoPromptBiometrics = false;
         }
-        this.vaultTimeoutService.biometricLocked = false;
+        this.stateService.setBiometricLocked(false);
         await this.cryptoService.toggleKey();
     }
 
@@ -249,29 +244,29 @@ export class SettingsComponent implements OnInit {
         }
 
         if (this.noAutoPromptBiometrics) {
-            await this.activeAccount.saveInformation(StorageKey.NoAutoPromptBiometrics, true);
+            await this.stateService.setNoAutoPromptBiometrics(true);
         } else {
-            await this.activeAccount.removeInformation(StorageKey.NoAutoPromptBiometrics);
+            await this.stateService.setNoAutoPromptBiometrics(null);
         }
     }
 
     async saveFavicons() {
-        await this.activeAccount.saveInformation(StorageKey.DisableFavicon, this.disableFavicons);
-        await this.stateService.save(StorageKey.DisableFavicon, this.disableFavicons);
+        await this.stateService.setDisableFavicon(this.disableFavicons);
+        await this.stateService.setDisableFavicon(this.disableFavicons, { storageLocation: StorageLocation.Disk });
         this.messagingService.send('refreshCiphers');
     }
 
     async saveMinToTray() {
-        await this.activeAccount.saveInformation(StorageKey.EnableMinimizeToTrayKey, this.enableMinToTray);
+        await this.stateService.setEnableMinimizeToTray(this.enableMinToTray);
     }
 
     async saveCloseToTray() {
         if (this.requireEnableTray) {
             this.enableTray = true;
-            await this.activeAccount.saveInformation(StorageKey.EnableTrayKey, this.enableTray);
+            await this.stateService.setEnableTray(this.enableTray);
         }
 
-        await this.activeAccount.saveInformation(StorageKey.EnableCloseToTrayKey, this.enableCloseToTray);
+        await this.stateService.setEnableCloseToTray(this.enableCloseToTray);
     }
 
     async saveTray() {
@@ -282,9 +277,9 @@ export class SettingsComponent implements OnInit {
 
             if (confirm) {
                 this.startToTray = false;
-                await this.activeAccount.saveInformation(StorageKey.EnableStartToTrayKey, this.startToTray);
+                await this.stateService.setEnableStartToTray(this.startToTray);
                 this.enableCloseToTray = false;
-                await this.activeAccount.saveInformation(StorageKey.EnableCloseToTrayKey, this.enableCloseToTray);
+                await this.stateService.setEnableCloseToTray(this.enableCloseToTray);
             } else {
                 this.enableTray = true;
             }
@@ -292,43 +287,42 @@ export class SettingsComponent implements OnInit {
             return;
         }
 
-        await this.activeAccount.saveInformation(StorageKey.EnableTrayKey, this.enableTray);
+        await this.stateService.setEnableTray(this.enableTray);
         this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
     }
 
     async saveStartToTray() {
         if (this.requireEnableTray) {
             this.enableTray = true;
-            await this.activeAccount.saveInformation(StorageKey.EnableTrayKey, this.enableTray);
+            await this.stateService.setEnableTray(this.enableTray);
         }
 
-        await this.activeAccount.saveInformation(StorageKey.EnableStartToTrayKey, this.startToTray);
+        await this.stateService.setEnableStartToTray(this.startToTray);
     }
 
     async saveLocale() {
-        await this.activeAccount.saveInformation(StorageKey.Locale, this.locale);
+        await this.stateService.setLocale(this.locale);
     }
 
     async saveTheme() {
-        await this.activeAccount.saveInformation(StorageKey.Theme, this.theme);
-        await this.storageService.save(`global.${StorageKey.Theme}`, this.theme);
+        await this.stateService.setTheme(this.theme);
         window.setTimeout(() => window.location.reload(), 200);
     }
 
     async saveMinOnCopyToClipboard() {
-        await this.activeAccount.saveInformation(StorageKey.MinimizeOnCopyToClipboardKey, this.minimizeOnCopyToClipboard);
+        await this.stateService.setMinimizeOnCopyToClipboard(this.minimizeOnCopyToClipboard);
     }
 
     async saveClearClipboard() {
-        await this.activeAccount.saveInformation(StorageKey.ClearClipboard, this.clearClipboard);
+        await this.stateService.setClearClipboard(this.clearClipboard);
     }
 
     async saveAlwaysShowDock() {
-        await this.activeAccount.saveInformation(StorageKey.AlwaysShowDock, this.alwaysShowDock);
+        await this.stateService.setAlwaysShowDock(this.alwaysShowDock);
     }
 
     async saveOpenAtLogin() {
-        this.activeAccount.saveInformation(StorageKey.OpenAtLogin, this.openAtLogin);
+        this.stateService.setOpenAtLogin(this.openAtLogin);
         this.messagingService.send(this.openAtLogin ? 'addOpenAtLogin' : 'removeOpenAtLogin');
     }
 
@@ -351,7 +345,7 @@ export class SettingsComponent implements OnInit {
             return;
         }
 
-        await this.activeAccount.saveInformation(StorageKey.EnableBrowserIntegration, this.enableBrowserIntegration);
+        await this.stateService.setEnableBrowserIntegration(this.enableBrowserIntegration);
         this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
 
         if (!this.enableBrowserIntegration) {
@@ -361,6 +355,6 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveBrowserIntegrationFingerprint() {
-        await this.activeAccount.saveInformation(StorageKey.EnableBrowserIntegrationFingerprint, this.enableBrowserIntegrationFingerprint);
+        await this.stateService.setEnableBrowserIntegrationFingerprint(this.enableBrowserIntegrationFingerprint);
     }
 }

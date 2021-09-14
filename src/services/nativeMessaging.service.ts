@@ -1,20 +1,20 @@
 import { ipcRenderer } from 'electron';
 import Swal from 'sweetalert2';
 
-import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { Utils } from 'jslib-common/misc/utils';
 
 import { SymmetricCryptoKey } from 'jslib-common/models/domain/symmetricCryptoKey';
 
-import { StorageKey } from 'jslib-common/enums/storageKey';
+import { KeySuffixOptions } from 'jslib-common/enums/keySuffixOptions';
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
@@ -25,7 +25,7 @@ export class NativeMessagingService {
     constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
         private platformUtilService: PlatformUtilsService, private logService: LogService,
         private i18nService: I18nService, private messagingService: MessagingService,
-        private vaultTimeoutService: VaultTimeoutService, private activeAccount: ActiveAccountService) {
+        private vaultTimeoutService: VaultTimeoutService, private stateService: StateService) {
         ipcRenderer.on('nativeMessaging', async (_event: any, message: any) => {
             this.messageHandler(message);
         });
@@ -40,15 +40,15 @@ export class NativeMessagingService {
             const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
 
             // Valudate the UserId to ensure we are logged into the same account.
-            if (rawMessage.userId !== this.activeAccount.userId) {
+            if (rawMessage.userId !== await this.stateService.getUserId()) {
                 ipcRenderer.send('nativeMessagingReply', {command: 'wrongUserId', appId: appId});
                 return;
             }
 
-            if (await this.activeAccount.getInformation<boolean>(StorageKey.EnableBrowserIntegrationFingerprint)) {
+            if (await this.stateService.getEnableBrowserIntegrationFingerprint()) {
                 ipcRenderer.send('nativeMessagingReply', {command: 'verifyFingerprint', appId: appId});
 
-                const fingerprint = (await this.cryptoService.getFingerprint(this.activeAccount.userId, remotePublicKey)).join(' ');
+                const fingerprint = (await this.cryptoService.getFingerprint(await this.stateService.getUserId(), remotePublicKey)).join(' ');
 
                 this.messagingService.send('setFocus');
 
@@ -103,7 +103,7 @@ export class NativeMessagingService {
                     });
                 }
 
-                const keyB64 = (await this.cryptoService.getKeyFromStorage('biometric')).keyB64;
+                const keyB64 = (await this.cryptoService.getKeyFromStorage(KeySuffixOptions.Biometric)).keyB64;
 
                 if (keyB64 != null) {
                     this.send({ command: 'biometricUnlock', response: 'unlocked', keyB64: keyB64 }, appId);

@@ -124,6 +124,27 @@
     }
 }
 
+.login-header {
+    padding: 1em;
+    font-size: 1.2em;
+    .environment-urls-settings-icon {
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+
+        span {
+            visibility: hidden;
+        }
+
+        &:hover, &:focus {
+            text-decoration: none;
+
+            @include themify($themes) {
+                color: themed('primaryColor');
+            }
+        }
+    }
+}
 #sso-page {
     .content {
         width: 300px;

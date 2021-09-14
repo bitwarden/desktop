@@ -6,7 +6,6 @@ import {
 
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 import { LockGuardService } from 'jslib-angular/services/lock-guard.service';
-import { UnauthGuardService } from 'jslib-angular/services/unauth-guard.service';
 
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
@@ -31,8 +30,6 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
-        canActivate: [UnauthGuardService],
-
     },
     { path: '2fa', component: TwoFactorComponent },
     { path: 'register', component: RegisterComponent },

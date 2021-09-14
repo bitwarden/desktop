@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { AuditService } from 'jslib-common/abstractions/audit.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
@@ -40,11 +39,9 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
         collectionService: CollectionService, messagingService: MessagingService,
         eventService: EventService, policyService: PolicyService,
         private broadcasterService: BroadcasterService, private ngZone: NgZone,
-        logService: LogService, activeAccountService: ActiveAccountService,
-        organizationService: OrganizationService) {
+        logService: LogService, organizationService: OrganizationService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            collectionService, messagingService, eventService, policyService, logService, activeAccountService,
-            organizationService);
+            collectionService, messagingService, eventService, policyService, logService, organizationService);
     }
 
     async ngOnInit() {

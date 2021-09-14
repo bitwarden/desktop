@@ -23,8 +23,6 @@ import { PasswordGeneratorHistoryComponent } from './vault/password-generator-hi
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
-import { AccountsManagementService } from 'jslib-common/abstractions/accountsManagement.service';
-import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
@@ -47,13 +45,14 @@ import { TokenService } from 'jslib-common/abstractions/token.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { CipherType } from 'jslib-common/enums/cipherType';
-import { StorageKey } from 'jslib-common/enums/storageKey';
 
-import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
-import { ModalService } from 'jslib-angular/services/modal.service';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
+
+import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
+
+import { ModalService } from 'jslib-angular/services/modal.service';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -70,7 +69,8 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
         <ng-template #appFolderAddEdit></ng-template>
         <ng-template #exportVault></ng-template>
         <ng-template #appPasswordGenerator></ng-template>
-        <router-outlet></router-outlet>`,
+        <app-header></app-header>
+        <div id="container"><router-outlet></router-outlet></div>`,
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
@@ -94,20 +94,19 @@ export class AppComponent implements OnInit {
     private idleTimer: number = null;
     private isIdle = false;
 
-    constructor(private broadcasterService: BroadcasterService, private activeAccount: ActiveAccountService,
-        private tokenService: TokenService, private folderService: FolderService,
-        private settingsService: SettingsService, private syncService: SyncService,
-        private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
-        private authService: AuthService, private router: Router,
-        private toasterService: ToasterService, private i18nService: I18nService,
-        private sanitizer: DomSanitizer, private ngZone: NgZone,
-        private vaultTimeoutService: VaultTimeoutService, private cryptoService: CryptoService,
-        private logService: LogService, private messagingService: MessagingService,
-        private collectionService: CollectionService, private searchService: SearchService,
-        private notificationsService: NotificationsService, private platformUtilsService: PlatformUtilsService,
-        private systemService: SystemService, private stateService: StateService,
-        private eventService: EventService, private policyService: PolicyService,
-        private modalService: ModalService, private accountsManagementService: AccountsManagementService) { }
+    constructor(private broadcasterService: BroadcasterService, private tokenService: TokenService,
+        private folderService: FolderService, private settingsService: SettingsService,
+        private syncService: SyncService, private passwordGenerationService: PasswordGenerationService,
+        private cipherService: CipherService, private authService: AuthService,
+        private router: Router, private toasterService: ToasterService,
+        private i18nService: I18nService, private sanitizer: DomSanitizer,
+        private ngZone: NgZone, private vaultTimeoutService: VaultTimeoutService,
+        private cryptoService: CryptoService, private logService: LogService,
+        private messagingService: MessagingService, private collectionService: CollectionService,
+        private searchService: SearchService, private notificationsService: NotificationsService,
+        private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
+        private stateService: StateService, private eventService: EventService,
+        private policyService: PolicyService, private modalService: ModalService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -154,7 +153,7 @@ export class AppComponent implements OnInit {
                         if (this.modal != null) {
                             this.modal.close();
                         }
-                        this.stateService.purge();
+                        await this.stateService.purge();
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
@@ -176,7 +175,7 @@ export class AppComponent implements OnInit {
                         break;
                     case 'showFingerprintPhrase':
                         const fingerprint = await this.cryptoService.getFingerprint(
-                            this.activeAccount.userId);
+                            await this.stateService.getUserId());
                         const result = await this.platformUtilsService.showDialog(
                             this.i18nService.t('yourAccountsFingerprint') + ':\n' + fingerprint.join('-'),
                             this.i18nService.t('fingerprintPhrase'), this.i18nService.t('learnMore'),
@@ -328,14 +327,14 @@ export class AppComponent implements OnInit {
 
     private async updateAppMenu() {
         this.messagingService.send('updateAppMenu', {
-            isAuthenticated: this.activeAccount.isAuthenticated,
+            isAuthenticated: await this.stateService.getIsAuthenticated(),
             isLocked: await this.vaultTimeoutService.isLocked(),
         });
     }
 
     private async logOut(expired: boolean) {
         await this.eventService.uploadEvents();
-        const userId = this.activeAccount.userId;
+        const userId = await this.stateService.getUserId();
 
         await Promise.all([
             this.eventService.clearEvents(),
@@ -348,12 +347,11 @@ export class AppComponent implements OnInit {
             this.collectionService.clear(userId),
             this.passwordGenerationService.clear(),
             this.vaultTimeoutService.clear(),
-            this.stateService.purge(),
             this.policyService.clear(userId),
-            this.accountsManagementService.remove(userId),
+            await this.stateService.purge(),
         ]);
 
-        this.vaultTimeoutService.biometricLocked = true;
+        await this.stateService.setBiometricLocked(true);
         this.searchService.clearIndex();
         this.authService.logOut(async () => {
             if (expired) {
@@ -371,7 +369,7 @@ export class AppComponent implements OnInit {
         }
 
         this.lastActivity = now;
-        this.activeAccount.saveInformation(StorageKey.LastActive, now);
+        await this.stateService.setLastActive(now);
 
         // Idle states
         if (this.isIdle) {

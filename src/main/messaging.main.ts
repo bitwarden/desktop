@@ -4,24 +4,22 @@ import * as path from 'path';
 
 import { Main } from '../main';
 
-import { StorageService } from 'jslib-common/abstractions/storage.service';
-
-import { StorageKey } from 'jslib-common/enums/storageKey';
+import { StateService } from 'jslib-common/abstractions/state.service';
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
 export class MessagingMain {
     private syncTimeout: NodeJS.Timer;
 
-    constructor(private main: Main, private storageService: StorageService) { }
+    constructor(private main: Main, private stateService: StateService) { }
 
     init() {
         this.scheduleNextSync();
         if (process.platform === 'linux') {
-            this.storageService.save(StorageKey.OpenAtLogin, fs.existsSync(this.linuxStartupFile()));
+            this.stateService.setOpenAtLogin(fs.existsSync(this.linuxStartupFile()));
         } else {
             const loginSettings = app.getLoginItemSettings();
-            this.storageService.save(StorageKey.OpenAtLogin, loginSettings.openAtLogin);
+            this.stateService.setOpenAtLogin(loginSettings.openAtLogin);
         }
         ipcMain.on('messagingService', async (event: any, message: any) => this.onMessage(message));
     }
@@ -36,7 +34,7 @@ export class MessagingMain {
                 this.updateTrayMenu(message.isAuthenticated, message.isLocked);
                 break;
             case 'minimizeOnCopy':
-                this.storageService.get<boolean>(StorageKey.MinimizeOnCopyToClipboardKey).then(
+                this.stateService.getMinimizeOnCopyToClipboard().then(
                     shouldMinimize => {
                         if (shouldMinimize && this.main.windowMain.win !== null) {
                             this.main.windowMain.win.minimize();

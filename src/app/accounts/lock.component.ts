@@ -9,7 +9,6 @@ import {
 } from '@angular/router';
 import { ipcRenderer } from 'electron';
 
-import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
@@ -23,8 +22,6 @@ import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.serv
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib-angular/components/lock.component';
-
-import { StorageKey } from 'jslib-common/enums/storageKey';
 
 const BroadcasterSubscriptionId = 'LockComponent';
 
@@ -41,15 +38,14 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
         environmentService: EnvironmentService, stateService: StateService,
         apiService: ApiService, private route: ActivatedRoute,
         private broadcasterService: BroadcasterService, private ngZone: NgZone,
-        logService: LogService, activeAccount: ActiveAccountService) {
+        logService: LogService) {
         super(router, i18nService, platformUtilsService, messagingService, cryptoService,
-            vaultTimeoutService, environmentService, stateService, apiService, logService,
-            activeAccount);
+            vaultTimeoutService, environmentService, stateService, apiService, logService);
     }
 
     async ngOnInit() {
         await super.ngOnInit();
-        const autoPromptBiometric = !await this.activeAccount.getInformation<boolean>(StorageKey.NoAutoPromptBiometrics);
+        const autoPromptBiometric = !await this.stateService.getNoAutoPromptBiometrics();
 
         this.route.queryParams.subscribe(params => {
             if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {

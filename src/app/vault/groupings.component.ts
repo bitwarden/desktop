@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 
 import { GroupingsComponent as BaseGroupingsComponent } from 'jslib-angular/components/groupings.component';
 
@@ -12,7 +12,7 @@ import { GroupingsComponent as BaseGroupingsComponent } from 'jslib-angular/comp
 })
 export class GroupingsComponent extends BaseGroupingsComponent {
     constructor(collectionService: CollectionService, folderService: FolderService,
-        activeAccountService: ActiveAccountService) {
-        super(collectionService, folderService, activeAccountService);
+        stateService: StateService) {
+        super(collectionService, folderService, stateService);
     }
 }
