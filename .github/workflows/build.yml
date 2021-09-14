@@ -125,7 +125,7 @@ jobs:
       - name: Set up dotnet
         uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
         with:
-          dotnet-version: "3.1.18"
+          dotnet-version: "3.1.x"
 
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
@@ -152,7 +152,7 @@ jobs:
       - name: Install AST
         shell: pwsh
         env:
-          AST_PINNED_COMMIT: "a67eca560bf95cd765579721f2787189c75e96ae"
+          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
         run: |
           cd $HOME
 
