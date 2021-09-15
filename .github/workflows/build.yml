@@ -42,9 +42,7 @@ jobs:
           keyvault: "bitwarden-qa-kv"
           secrets: "ast-test-client-id,
                     ast-test-client-secret,
-                    ast-test-tenant-id,
-                    ast-test-vault-url,
-                    ast-test-cert-name"
+                    ast-test-tenant-id"
 
       - name: Cache npm
         id: npm-cache
@@ -87,14 +85,19 @@ jobs:
 
       - name: Test Sign
         env:
-          SIGNING_VAULT_URL: ${{ steps.retrieve-secrets.outputs.ast-test-vault-url }}
-          SIGNING_CLIENT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-client-id}}
-          SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-tenant-id }}
-          SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.ast-test-client-secret }}
-          SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
+          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
+          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
+          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
+          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
+          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+          #SIGNING_VAULT_URL: ${{ steps.retrieve-secrets.outputs.ast-test-vault-url }}
+          #SIGNING_CLIENT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-client-id}}
+          #SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-tenant-id }}
+          #SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.ast-test-client-secret }}
+          #SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
         run: |
           Set-Content -Path test.exe -Value "this is a test"
-          azuresigntool sign `
+          azuresigntool sign --verbose `
             -kvu $SIGNING_VAULT_URL `
             -kvi $SIGNING_CLIENT_ID `
             -kvt $SIGNING_TENANT_ID `
