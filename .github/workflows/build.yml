@@ -25,11 +25,6 @@ jobs:
         with:
           dotnet-version: "2.1.x"
 
-      - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
-        with:
-          node-version: '14'
-
       - name: Login to Azure
         uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
         with:
@@ -43,23 +38,6 @@ jobs:
           secrets: "ast-test-client-id,
                     ast-test-client-secret,
                     ast-test-tenant-id"
-
-      - name: Cache npm
-        id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
-        with:
-          path: '%AppData%/npm-cache'
-          key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-        shell: pwsh
-
-      - name: Update NPM
-        run: |
-          npm install -g npm@7
-          npm install -g node-gyp
-          node-gyp install $(node -v)
 
       - name: Install AST
         shell: pwsh
