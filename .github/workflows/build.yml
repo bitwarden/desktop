@@ -9,7 +9,6 @@ on:
 
 jobs:
   test-ast:
-    if: false
     name: Test AST
     runs-on: windows-2019
     steps:
@@ -54,11 +53,6 @@ jobs:
           git switch --detach $env:AST_PINNED_COMMIT
           $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9] -join ""
           $ast_version = "0.0.0-g$pinned_short_commit"
-          
-          #git clone https://github.com/joseph-flinn/AzureSignTool.git
-          #cd AzureSignTool
-          #$pinned_short_commit = $(git rev-parse HEAD)[0..9] -join ""
-          #$ast_version = "0.0.0-g$pinned_short_commit"
 
           Write-Host "--------"
           Write-Host "pinned git commit - $AST_PINNED_COMMIT"
