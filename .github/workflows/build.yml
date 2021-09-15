@@ -70,16 +70,16 @@ jobs:
 
       - name: Test Sign
         env:
-          #SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-          #SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-          #SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-          #SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-          #SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          SIGNING_VAULT_URL: ${{ steps.retrieve-secrets.outputs.ast-test-vault-url }}
-          SIGNING_CLIENT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-client-id}}
-          SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-tenant-id }}
-          SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.ast-test-client-secret }}
-          SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
+          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
+          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
+          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
+          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
+          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+          #SIGNING_VAULT_URL: ${{ steps.retrieve-secrets.outputs.ast-test-vault-url }}
+          #SIGNING_CLIENT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-client-id}}
+          #SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-tenant-id }}
+          #SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.ast-test-client-secret }}
+          #SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
         shell: pwsh
         run: |
           Set-Content -Path test.exe -Value "this is a test"
