@@ -8,89 +8,8 @@ on:
       - 'gh-pages'
 
 jobs:
-  test-ast:
-    name: Test AST
-    runs-on: windows-2019
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-
-      - name: Set up dotnet 3.1.x
-        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
-        with:
-          dotnet-version: "3.1.x"
-
-      - name: Set up dotnet 2.1.x
-        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
-        with:
-          dotnet-version: "2.1.x"
-
-      - name: Login to Azure
-        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
-        with:
-          creds: ${{ secrets.AZURE_QA_KV_CREDENTIALS }}
-
-      - name: Retrieve secrets
-        id: retrieve-secrets
-        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
-        with:
-          keyvault: "bitwarden-qa-kv"
-          secrets: "ast-test-client-id,
-                    ast-test-client-secret,
-                    ast-test-tenant-id,
-                    ast-test-vault-url,
-                    ast-test-cert-name"
-
-      - name: Install AST
-        shell: pwsh
-        env:
-          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
-        run: |
-          cd $HOME
-
-          git clone https://github.com/vcsjones/AzureSignTool.git
-          cd AzureSignTool
-          git switch --detach $env:AST_PINNED_COMMIT
-          $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9] -join ""
-          $ast_version = "0.0.0-g$pinned_short_commit"
-
-          Write-Host "--------"
-          Write-Host "pinned git commit - $AST_PINNED_COMMIT"
-          Write-Host "pinned short git commit - $pinned_short_commit"
-          Write-Host "PACKAGE VERSION TO BUILD - $ast_version"
-          Write-Host "--------"
-
-          dotnet restore
-          dotnet pack --output ./nupkg
-          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $ast_version azuresigntool
-
-      - name: Test Sign
-        env:
-          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
-          #SIGNING_VAULT_URL: ${{ steps.retrieve-secrets.outputs.ast-test-vault-url }}
-          #SIGNING_CLIENT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-client-id}}
-          #SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-tenant-id }}
-          #SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.ast-test-client-secret }}
-          #SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
-        shell: pwsh
-        run: |
-          Set-Content -Path test.exe -Value "this is a test"
-
-          Write-Host "Vault URL: $env:SIGNING_VAULT_URL"
-          Write-Host "Client ID: $env:SIGNING_CLIENT_ID"
-          Write-Host "Client Secret: $env:SIGNING_CLIENT_SECRET"
-          Write-Host "Tenant ID: $env:SIGNING_TENANT_ID"
-          Write-Host "Cert Name: $env:SIGNING_CERT_NAME"
-          azuresigntool sign -v -kvu $env:SIGNING_VAULT_URL -kvi $env:SIGNING_CLIENT_ID -kvt $env:SIGNING_TENANT_ID -kvs $env:SIGNING_CLIENT_SECRET -kvc $env:SIGNING_CERT_NAME -fd sha1 -du https://bitwarden.com -tr http://timestamp.digicert.com test.exe
-
-
   cloc:
     name: CLOC
-    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -107,7 +26,6 @@ jobs:
 
   linux:
     name: Linux Build
-    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -206,11 +124,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
 
-      - name: Set up dotnet
-        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
-        with:
-          dotnet-version: "3.1.x"
-
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
@@ -234,27 +147,7 @@ jobs:
           node-gyp install $(node -v)
 
       - name: Install AST
-        shell: pwsh
-        env:
-          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
-        run: |
-          cd $HOME
-
-          git clone https://github.com/vcsjones/AzureSignTool.git
-          cd AzureSignTool
-          git switch --detach $env:AST_PINNED_COMMIT
-          $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9] -join ""
-          $ast_version = "0.0.0-g$pinned_short_commit"
-
-          Write-Host "--------"
-          Write-Host "pinned git commit - $env:AST_PINNED_COMMIT"
-          Write-Host "pinned short git commit - $pinned_short_commit"
-          Write-Host "PACKAGE VERSION TO BUILD - $ast_version"
-          Write-Host "--------"
-
-          dotnet restore
-          dotnet pack --output ./nupkg
-          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $ast_version azuresigntool
+        uses: bitwarden/gh-actions@1fda0b3e691f96efa10dd0729795375f6c65a096
 
       - name: Set up environment
         shell: pwsh
