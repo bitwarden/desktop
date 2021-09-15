@@ -54,7 +54,7 @@ jobs:
           git clone https://github.com/joseph-flinn/AzureSignTool.git
           cd AzureSignTool
           $pinned_short_commit = $(git rev-parse HEAD)[0..9] -join ""
-          $ast_version = "0.0.0-g$latest_head"
+          $ast_version = "0.0.0-g$pinned_short_commit"
 
           Write-Host "--------"
           Write-Host "pinned git commit - $AST_PINNED_COMMIT"
@@ -78,6 +78,7 @@ jobs:
           SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.ast-test-tenant-id }}
           SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.ast-test-client-secret }}
           SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
+        shell: pwsh
         run: |
           Set-Content -Path test.exe -Value "this is a test"
           azuresigntool sign --help
