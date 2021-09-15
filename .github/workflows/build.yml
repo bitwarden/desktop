@@ -97,16 +97,8 @@ jobs:
           SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.ast-test-cert-name }}
         run: |
           Set-Content -Path test.exe -Value "this is a test"
-          azuresigntool sign --verbose `
-            -kvu $SIGNING_VAULT_URL `
-            -kvi $SIGNING_CLIENT_ID `
-            -kvt $SIGNING_TENANT_ID `
-            -kvs $SIGNING_CLIENT_SECRET `
-            -kvc $SIGNING_CERT_NAME `
-            -fd sha1 `
-            -du https://bitwarden.com `
-            -tr http://timestamp.digicert.com `
-            test.exe
+          azuresigntool sign --help
+          azuresigntool sign -v -kvu $env:SIGNING_VAULT_URL -kvi $env:SIGNING_CLIENT_ID -kvt $env:SIGNING_TENANT_ID -kvs $env:SIGNING_CLIENT_SECRET -kvc $env:SIGNING_CERT_NAME -fd sha1 -du https://bitwarden.com -tr http://timestamp.digicert.com test.exe
 
 
   cloc:
