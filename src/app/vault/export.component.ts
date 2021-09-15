@@ -1,7 +1,6 @@
 import {
     Component,
     NgZone,
-    OnDestroy,
     OnInit,
 } from '@angular/core';
 
@@ -16,6 +15,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { ExportComponent as BaseExportComponent } from 'jslib-angular/components/export.component';
+import { PolicyService } from 'jslib-common/abstractions/policy.service';
 
 const BroadcasterSubscriptionId = 'ExportComponent';
 
@@ -26,12 +26,13 @@ const BroadcasterSubscriptionId = 'ExportComponent';
 export class ExportComponent extends BaseExportComponent implements OnInit {
     constructor(cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
-        eventService: EventService, private broadcasterService: BroadcasterService,
-        private ngZone: NgZone) {
-        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, window);
+        eventService: EventService, policyService: PolicyService,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
+        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, policyService, window);
     }
 
     async ngOnInit() {
+        super.ngOnInit();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
             this.ngZone.run(() => {
                 switch (message.command) {
