@@ -42,28 +42,21 @@ jobs:
       - name: Install AST
         shell: pwsh
         env:
-          #AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
-          AST_PINNED_COMMIT: "latest"
+          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
         run: |
           cd $HOME
 
           #git clone https://github.com/vcsjones/AzureSignTool.git
           #cd AzureSignTool
+          #$pinned_short_commit = $AST_PINNED_COMMIT[0..9] -join ""
+          #$ast_version = "0.0.0-g$pinned_short_commit"
           
           git clone https://github.com/joseph-flinn/AzureSignTool.git
           cd AzureSignTool
+          $pinned_short_commit = $(git rev-parse HEAD)[0..9] -join ""
+          $ast_version = "0.0.0-g$latest_head"
 
           Write-Host "--------"
-          if ( $AST_PINNED_COMMIT -eq "latest") {
-            Write-Host "using latest commit"
-            $pinned_short_commit = $(git rev-parse HEAD)[0..9] -join ""
-            $ast_version = "0.0.0-g$latest_head"
-          }
-          else {
-            $pinned_short_commit = $AST_PINNED_COMMIT[0..9] -join ""
-            $ast_version = "0.0.0-g$pinned_short_commit"
-          }
-
           Write-Host "pinned git commit - $AST_PINNED_COMMIT"
           Write-Host "pinned short git commit - $pinned_short_commit"
           Write-Host "PACKAGE VERSION TO BUILD - $ast_version"
