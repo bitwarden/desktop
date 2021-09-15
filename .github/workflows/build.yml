@@ -42,7 +42,7 @@ jobs:
       - name: Install AST
         shell: pwsh
         env:
-          AST_PINNED_COMMIT: "02845a3b631ea24852e72873b7a422e46d0bbae3"
+          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
         run: |
           cd $HOME
 
@@ -76,7 +76,7 @@ jobs:
         run: |
           Set-Content -Path test.exe -Value "this is a test"
           azuresigntool sign --help
-          azuresigntool sign -v -kvu $env:SIGNING_VAULT_URL -kvi $env:SIGNING_CLIENT_ID -kvs $env:SIGNING_CLIENT_SECRET -kvc $env:SIGNING_CERT_NAME -fd sha1 -du https://bitwarden.com -tr http://timestamp.digicert.com test.exe
+          azuresigntool sign -v -kvu $env:SIGNING_VAULT_URL -kvi $env:SIGNING_CLIENT_ID -kvt $env:SIGNING_TENANT_ID -kvs $env:SIGNING_CLIENT_SECRET -kvc $env:SIGNING_CERT_NAME -fd sha1 -du https://bitwarden.com -tr http://timestamp.digicert.com test.exe
 
 
   cloc:
