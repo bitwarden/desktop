@@ -241,8 +241,8 @@ jobs:
           cd $HOME
 
           git clone https://github.com/vcsjones/AzureSignTool.git
-          git switch --detach $env:AST_PINNED_COMMIT
           cd AzureSignTool
+          git switch --detach $env:AST_PINNED_COMMIT
           $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9] -join ""
           $ast_version = "0.0.0-g$pinned_short_commit"
 
