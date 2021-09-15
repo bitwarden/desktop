@@ -9,6 +9,7 @@ on:
 
 jobs:
   test-ast:
+    if: false
     name: Test AST
     runs-on: windows-2019
     steps:
@@ -206,7 +207,6 @@ jobs:
 
   windows:
     name: Windows Build
-    if: false
     runs-on: windows-2019
     steps:
       - name: Checkout repo
@@ -247,11 +247,12 @@ jobs:
       - name: Install AST
         shell: pwsh
         env:
-          AST_PINNED_COMMIT: "02845a3b631ea24852e72873b7a422e46d0bbae3"
+          AST_PINNED_COMMIT: "ce87e84a58dff318f62ffe5177bf3e179d815108"
         run: |
           cd $HOME
 
           git clone https://github.com/vcsjones/AzureSignTool.git
+          git switch --detach $env:AST_PINNED_COMMIT
           cd AzureSignTool
           $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9] -join ""
           $ast_version = "0.0.0-g$pinned_short_commit"
