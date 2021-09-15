@@ -50,7 +50,7 @@ jobs:
 
           git clone https://github.com/vcsjones/AzureSignTool.git
           cd AzureSignTool
-          $pinned_short_commit = $AST_PINNED_COMMIT[0..9] -join ""
+          $pinned_short_commit = $env:AST_PINNED_COMMIT[0..9] -join ""
           $ast_version = "0.0.0-g$pinned_short_commit"
           
           #git clone https://github.com/joseph-flinn/AzureSignTool.git
