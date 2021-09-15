@@ -37,7 +37,9 @@ jobs:
           keyvault: "bitwarden-qa-kv"
           secrets: "ast-test-client-id,
                     ast-test-client-secret,
-                    ast-test-tenant-id"
+                    ast-test-tenant-id,
+                    ast-test-vault-url,
+                    ast-test-cert-name"
 
       - name: Install AST
         shell: pwsh
@@ -81,7 +83,6 @@ jobs:
         shell: pwsh
         run: |
           Set-Content -Path test.exe -Value "this is a test"
-          azuresigntool sign --help
 
           Write-Host "Vault URL: $env:SIGNING_VAULT_URL"
           Write-Host "Client ID: $env:SIGNING_CLIENT_ID"
