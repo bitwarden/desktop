@@ -2,8 +2,8 @@ import {
     Component,
     OnInit,
 } from '@angular/core';
-
-import Swal from 'sweetalert2/src/sweetalert2.js';
+import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators';
 
 import { DeviceType } from 'jslib-common/enums/deviceType';
 
@@ -13,7 +13,6 @@ import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ConstantsService } from 'jslib-common/services/constants.service';
@@ -32,7 +31,6 @@ import { SetPinComponent } from '../components/set-pin.component';
     templateUrl: 'settings.component.html',
 })
 export class SettingsComponent implements OnInit {
-    vaultTimeout: number = null;
     vaultTimeoutAction: string;
     pin: boolean = null;
     disableFavicons: boolean = false;
@@ -70,11 +68,12 @@ export class SettingsComponent implements OnInit {
     startToTrayText: string;
     startToTrayDescText: string;
 
+    vaultTimeout: FormControl = new FormControl(null);
+
     constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
         private storageService: StorageService, private vaultTimeoutService: VaultTimeoutService,
         private stateService: StateService, private messagingService: MessagingService,
-        private userService: UserService, private cryptoService: CryptoService,
-        private modalService: ModalService) {
+        private cryptoService: CryptoService, private modalService: ModalService) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
         // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
@@ -117,6 +116,10 @@ export class SettingsComponent implements OnInit {
             { name: i18nService.t('never'), value: null },
         ]);
 
+        this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
+            this.saveVaultTimeoutOptions();
+        });
+
         const localeOptions: any[] = [];
         i18nService.supportedTranslationLocales.forEach(locale => {
             let name = locale;
@@ -149,7 +152,7 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-        this.vaultTimeout = await this.storageService.get<number>(ConstantsService.vaultTimeoutKey);
+        this.vaultTimeout.setValue(await this.vaultTimeoutService.getVaultTimeout());
         this.vaultTimeoutAction = await this.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
@@ -187,8 +190,18 @@ export class SettingsComponent implements OnInit {
                 return;
             }
         }
-        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout != null ? this.vaultTimeout : null,
-            this.vaultTimeoutAction);
+
+        // Avoid saving 0 since it's useless as a timeout value.
+        if (this.vaultTimeout.value === 0) {
+            return;
+        }
+
+        if (!this.vaultTimeout.valid) {
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('vaultTimeoutTooLarge'));
+            return;
+        }
+
+        await this.vaultTimeoutService.setVaultTimeoutOptions(this.vaultTimeout.value, this.vaultTimeoutAction);
     }
 
     async updatePin() {
