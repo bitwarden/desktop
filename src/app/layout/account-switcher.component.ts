@@ -1,4 +1,4 @@
-import { OnInit, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { UserService } from 'jslib-common/abstractions/user.service';
 
