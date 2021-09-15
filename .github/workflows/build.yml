@@ -147,7 +147,7 @@ jobs:
           node-gyp install $(node -v)
 
       - name: Install AST
-        uses: bitwarden/gh-actions@1fda0b3e691f96efa10dd0729795375f6c65a096
+        uses: bitwarden/gh-actions/install-ast@1fda0b3e691f96efa10dd0729795375f6c65a096
 
       - name: Set up environment
         shell: pwsh
