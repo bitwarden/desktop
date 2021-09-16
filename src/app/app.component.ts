@@ -23,6 +23,8 @@ import { PasswordGeneratorHistoryComponent } from './vault/password-generator-hi
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
+import { AccountsManagementService } from 'jslib-common/abstractions/accountsManagement.service';
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
@@ -39,16 +41,13 @@ import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SearchService } from 'jslib-common/abstractions/search.service';
 import { SettingsService } from 'jslib-common/abstractions/settings.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { SystemService } from 'jslib-common/abstractions/system.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
-import { ConstantsService } from 'jslib-common/services/constants.service';
-
 import { CipherType } from 'jslib-common/enums/cipherType';
+import { StorageKey } from 'jslib-common/enums/storageKey';
 
 import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
 import { ModalService } from 'jslib-angular/services/modal.service';
@@ -95,20 +94,20 @@ export class AppComponent implements OnInit {
     private idleTimer: number = null;
     private isIdle = false;
 
-    constructor(private broadcasterService: BroadcasterService, private userService: UserService,
+    constructor(private broadcasterService: BroadcasterService, private activeAccount: ActiveAccountService,
         private tokenService: TokenService, private folderService: FolderService,
         private settingsService: SettingsService, private syncService: SyncService,
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
         private authService: AuthService, private router: Router,
         private toasterService: ToasterService, private i18nService: I18nService,
         private sanitizer: DomSanitizer, private ngZone: NgZone,
-        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
-        private cryptoService: CryptoService, private logService: LogService,
-        private messagingService: MessagingService, private collectionService: CollectionService,
-        private searchService: SearchService, private notificationsService: NotificationsService,
-        private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
-        private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService, private modalService: ModalService) { }
+        private vaultTimeoutService: VaultTimeoutService, private cryptoService: CryptoService,
+        private logService: LogService, private messagingService: MessagingService,
+        private collectionService: CollectionService, private searchService: SearchService,
+        private notificationsService: NotificationsService, private platformUtilsService: PlatformUtilsService,
+        private systemService: SystemService, private stateService: StateService,
+        private eventService: EventService, private policyService: PolicyService,
+        private modalService: ModalService, private accountsManagementService: AccountsManagementService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -177,7 +176,7 @@ export class AppComponent implements OnInit {
                         break;
                     case 'showFingerprintPhrase':
                         const fingerprint = await this.cryptoService.getFingerprint(
-                            await this.userService.getUserId());
+                            this.activeAccount.userId);
                         const result = await this.platformUtilsService.showDialog(
                             this.i18nService.t('yourAccountsFingerprint') + ':\n' + fingerprint.join('-'),
                             this.i18nService.t('fingerprintPhrase'), this.i18nService.t('learnMore'),
@@ -329,21 +328,20 @@ export class AppComponent implements OnInit {
 
     private async updateAppMenu() {
         this.messagingService.send('updateAppMenu', {
-            isAuthenticated: await this.userService.isAuthenticated(),
+            isAuthenticated: this.activeAccount.isAuthenticated,
             isLocked: await this.vaultTimeoutService.isLocked(),
         });
     }
 
     private async logOut(expired: boolean) {
         await this.eventService.uploadEvents();
-        const userId = await this.userService.getUserId();
+        const userId = this.activeAccount.userId;
 
         await Promise.all([
             this.eventService.clearEvents(),
             this.syncService.setLastSync(new Date(0)),
             this.tokenService.clearToken(),
             this.cryptoService.clearKeys(),
-            this.userService.clear(),
             this.settingsService.clear(userId),
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
@@ -352,6 +350,7 @@ export class AppComponent implements OnInit {
             this.vaultTimeoutService.clear(),
             this.stateService.purge(),
             this.policyService.clear(userId),
+            this.accountsManagementService.remove(userId),
         ]);
 
         this.vaultTimeoutService.biometricLocked = true;
@@ -372,7 +371,7 @@ export class AppComponent implements OnInit {
         }
 
         this.lastActivity = now;
-        this.storageService.save(ConstantsService.lastActiveKey, now);
+        this.activeAccount.saveInformation(StorageKey.LastActive, now);
 
         // Idle states
         if (this.isIdle) {

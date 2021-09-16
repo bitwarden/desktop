@@ -27,11 +27,10 @@ const BroadcasterSubscriptionId = 'ExportComponent';
 export class ExportComponent extends BaseExportComponent implements OnInit {
     constructor(cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
-        eventService: EventService, policyService: PolicyService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        eventService: EventService, private broadcasterService: BroadcasterService,
+        private ngZone: NgZone, policyService: PolicyService,
         logService: LogService) {
-        super(cryptoService, i18nService, platformUtilsService, exportService, eventService,
-            policyService, window, logService);
+        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, policyService, window, logService);
     }
 
     async ngOnInit() {

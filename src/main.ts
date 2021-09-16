@@ -7,24 +7,33 @@ import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 
-import { ConstantsService } from 'jslib-common/services/constants.service';
-
 import { BiometricMain } from 'jslib-common/abstractions/biometric.main';
-import { ElectronConstants } from 'jslib-electron/electronConstants';
+
 import { KeytarStorageListener } from 'jslib-electron/keytarStorageListener';
+
 import { ElectronLogService } from 'jslib-electron/services/electronLog.service';
 import { ElectronMainMessagingService } from 'jslib-electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib-electron/services/electronStorage.service';
+
 import { TrayMain } from 'jslib-electron/tray.main';
 import { UpdaterMain } from 'jslib-electron/updater.main';
 import { WindowMain } from 'jslib-electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
+
+import { StorageKey } from 'jslib-common/enums/storageKey';
+
+import { AccountsManagementService } from 'jslib-common/services/accountsManagement.service';
+import { ActiveAccountService } from 'jslib-common/services/activeAccount.service';
+import { StoreService } from 'jslib-common/services/store.service';
 
 export class Main {
     logService: ElectronLogService;
     i18nService: I18nService;
     storageService: ElectronStorageService;
     messagingService: ElectronMainMessagingService;
+    accountsManagementService: AccountsManagementService;
+    activeAccount: ActiveAccountService;
+    storeService: StoreService;
     keytarStorageListener: KeytarStorageListener;
 
     windowMain: WindowMain;
@@ -69,9 +78,12 @@ export class Main {
 
         const storageDefaults: any = {};
         // Default vault timeout to "on restart", and action to "lock"
-        storageDefaults[ConstantsService.vaultTimeoutKey] = -1;
-        storageDefaults[ConstantsService.vaultTimeoutActionKey] = 'lock';
+        storageDefaults[StorageKey.VaultTimeout] = -1;
+        storageDefaults[StorageKey.VaultTimeoutAction] = 'lock';
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
+        this.accountsManagementService = new AccountsManagementService(this.storageService, null);
+        this.storeService = new StoreService(this.storageService, null);
+        this.activeAccount = new ActiveAccountService(this.accountsManagementService, this.storeService);
 
         this.windowMain = new WindowMain(this.storageService, this.logService, true, undefined, undefined,
             arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
@@ -94,10 +106,10 @@ export class Main {
 
         if (process.platform === 'win32') {
             const BiometricWindowsMain = require('jslib-electron/biometric.windows.main').default;
-            this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService, this.windowMain);
+            this.biometricMain = new BiometricWindowsMain(this.i18nService, this.windowMain, this.storageService);
         } else if (process.platform === 'darwin') {
             const BiometricDarwinMain = require('jslib-electron/biometric.darwin.main').default;
-            this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
+            this.biometricMain = new BiometricDarwinMain(this.i18nService, this.storageService);
         }
 
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden', this.biometricMain);
@@ -108,7 +120,7 @@ export class Main {
     bootstrap() {
         this.keytarStorageListener.init();
         this.windowMain.init().then(async () => {
-            const locale = await this.storageService.get<string>(ConstantsService.localeKey);
+            const locale = await this.activeAccount.getInformation<string>(StorageKey.Locale);
             await this.i18nService.init(locale != null ? locale : app.getLocale());
             this.messagingMain.init();
             this.menuMain.init();
@@ -118,7 +130,7 @@ export class Main {
                 id: 'lockNow',
                 click: () => this.messagingService.send('lockVault'),
             }]);
-            if (await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey)) {
+            if (await this.activeAccount.getInformation<boolean>(StorageKey.EnableStartToTrayKey)) {
                 this.trayMain.hideToTray();
             }
             this.powerMonitorMain.init();
@@ -127,7 +139,7 @@ export class Main {
                 await this.biometricMain.init();
             }
 
-            if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegration)) {
+            if (await this.activeAccount.getInformation<boolean>(StorageKey.EnableBrowserIntegration)) {
                 this.nativeMessagingMain.listen();
             }
 

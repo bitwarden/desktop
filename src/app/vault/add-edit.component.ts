@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { AuditService } from 'jslib-common/abstractions/audit.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
@@ -15,15 +16,14 @@ import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { OrganizationService } from 'jslib-common/abstractions/organization.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib-angular/components/add-edit.component';
-
 
 const BroadcasterSubscriptionId = 'AddEditComponent';
 
@@ -37,12 +37,14 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     constructor(cipherService: CipherService, folderService: FolderService,
         i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, stateService: StateService,
-        userService: UserService, collectionService: CollectionService,
-        messagingService: MessagingService, eventService: EventService,
-        policyService: PolicyService, private broadcasterService: BroadcasterService,
-        private ngZone: NgZone, logService: LogService) {
+        collectionService: CollectionService, messagingService: MessagingService,
+        eventService: EventService, policyService: PolicyService,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        logService: LogService, activeAccountService: ActiveAccountService,
+        organizationService: OrganizationService) {
         super(cipherService, folderService, i18nService, platformUtilsService, auditService, stateService,
-            userService, collectionService, messagingService, eventService, policyService, logService);
+            collectionService, messagingService, eventService, policyService, logService, activeAccountService,
+            organizationService);
     }
 
     async ngOnInit() {

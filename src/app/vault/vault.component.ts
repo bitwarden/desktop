@@ -38,7 +38,7 @@ import { FolderView } from 'jslib-common/models/view/folderView';
 
 import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
 
-import { ModalService } from 'jslib-angular/services/modal.service';
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
@@ -46,7 +46,9 @@ import { PasswordRepromptService } from 'jslib-common/abstractions/passwordRepro
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
+
+import { ModalService } from 'jslib-angular/services/modal.service';
+
 import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
 const BroadcasterSubscriptionId = 'VaultComponent';
@@ -88,11 +90,11 @@ export class VaultComponent implements OnInit, OnDestroy {
         private ngZone: NgZone, private syncService: SyncService,
         private toasterService: ToasterService, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
-        private totpService: TotpService, private userService: UserService,
-        private passwordRepromptService: PasswordRepromptService) { }
+        private totpService: TotpService, private passwordRepromptService: PasswordRepromptService,
+        private activeAccount: ActiveAccountService) { }
 
     async ngOnInit() {
-        this.userHasPremiumAccess = await this.userService.canAccessPremium();
+        this.userHasPremiumAccess = this.activeAccount.canAccessPremium;
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;

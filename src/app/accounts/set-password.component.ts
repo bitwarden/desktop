@@ -9,6 +9,7 @@ import {
     Router,
 } from '@angular/router';
 
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -17,7 +18,8 @@ import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGen
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
+
+import { StorageKey } from 'jslib-common/enums/storageKey';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
@@ -34,12 +36,14 @@ import {
 export class SetPasswordComponent extends BaseSetPasswordComponent implements OnDestroy {
     constructor(apiService: ApiService, i18nService: I18nService,
         cryptoService: CryptoService, messagingService: MessagingService,
-        userService: UserService, passwordGenerationService: PasswordGenerationService,
-        platformUtilsService: PlatformUtilsService, policyService: PolicyService, router: Router,
+        passwordGenerationService: PasswordGenerationService, platformUtilsService: PlatformUtilsService,
+        policyService: PolicyService, router: Router,
         syncService: SyncService, route: ActivatedRoute,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
-        super(i18nService, cryptoService, messagingService, userService, passwordGenerationService,
-            platformUtilsService, policyService, router, apiService, syncService, route);
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        activeAccount: ActiveAccountService) {
+        super(i18nService, cryptoService, messagingService, passwordGenerationService,
+            platformUtilsService, policyService, router, apiService, syncService, route,
+            activeAccount);
     }
 
     get masterPasswordScoreWidth() {

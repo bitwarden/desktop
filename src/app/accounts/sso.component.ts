@@ -5,6 +5,7 @@ import {
     Router,
 } from '@angular/router';
 
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
@@ -29,9 +30,11 @@ export class SsoComponent extends BaseSsoComponent {
         storageService: StorageService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, apiService: ApiService,
         cryptoFunctionService: CryptoFunctionService, environmentService: EnvironmentService,
-        passwordGenerationService: PasswordGenerationService, logService: LogService) {
+        passwordGenerationService: PasswordGenerationService, logService: LogService,
+        activeAccount: ActiveAccountService) {
         super(authService, router, i18nService, route, storageService, stateService, platformUtilsService,
-            apiService, cryptoFunctionService, environmentService, passwordGenerationService, logService);
+            apiService, cryptoFunctionService, environmentService, passwordGenerationService, logService,
+            activeAccount);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

@@ -9,6 +9,7 @@ import {
 } from '@angular/router';
 import { ipcRenderer } from 'electron';
 
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
@@ -17,15 +18,13 @@ import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib-angular/components/lock.component';
 
-import { ConstantsService } from 'jslib-common/services/constants.service';
+import { StorageKey } from 'jslib-common/enums/storageKey';
 
 const BroadcasterSubscriptionId = 'LockComponent';
 
@@ -38,19 +37,19 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
-        userService: UserService, cryptoService: CryptoService,
-        storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
+        cryptoService: CryptoService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
         apiService: ApiService, private route: ActivatedRoute,
         private broadcasterService: BroadcasterService, private ngZone: NgZone,
-        logService: LogService) {
-        super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
-            storageService, vaultTimeoutService, environmentService, stateService, apiService, logService);
+        logService: LogService, activeAccount: ActiveAccountService) {
+        super(router, i18nService, platformUtilsService, messagingService, cryptoService,
+            vaultTimeoutService, environmentService, stateService, apiService, logService,
+            activeAccount);
     }
 
     async ngOnInit() {
         await super.ngOnInit();
-        const autoPromptBiometric = !await this.storageService.get<boolean>(ConstantsService.disableAutoBiometricsPromptKey);
+        const autoPromptBiometric = !await this.activeAccount.getInformation<boolean>(StorageKey.NoAutoPromptBiometrics);
 
         this.route.queryParams.subscribe(params => {
             if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {

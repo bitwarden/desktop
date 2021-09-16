@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -9,7 +10,6 @@ import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGen
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { UpdateTempPasswordComponent as BaseUpdateTempPasswordComponent } from 'jslib-angular/components/update-temp-password.component';
 
@@ -56,10 +56,10 @@ export class UpdateTempPasswordComponent extends BaseUpdateTempPasswordComponent
     }
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         passwordGenerationService: PasswordGenerationService, policyService: PolicyService,
-        cryptoService: CryptoService, userService: UserService,
-        messagingService: MessagingService, apiService: ApiService,
-        syncService: SyncService, logService: LogService) {
+        cryptoService: CryptoService, messagingService: MessagingService,
+        apiService: ApiService, syncService: SyncService,
+        logService: LogService, activeAccount: ActiveAccountService) {
         super(i18nService, platformUtilsService, passwordGenerationService, policyService, cryptoService,
-            userService, messagingService, apiService, syncService, logService);
+            messagingService, apiService, activeAccount, syncService, logService);
     }
 }

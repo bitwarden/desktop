@@ -1,9 +1,7 @@
 import {
     app,
-    BrowserWindow,
     clipboard,
     dialog,
-    ipcMain,
     Menu,
     MenuItem,
     MenuItemConstructorOptions,
@@ -12,11 +10,11 @@ import {
 
 import { Main } from '../main';
 
+import { StorageKey } from 'jslib-common/enums/storageKey';
+
 import { BaseMenu } from 'jslib-electron/baseMenu';
 
 import { isMacAppStore, isSnapStore, isWindowsStore } from 'jslib-electron/utils';
-
-import { ConstantsService } from 'jslib-common/services/constants.service';
 
 export class MenuMain extends BaseMenu {
     menu: Menu;
@@ -506,7 +504,7 @@ export class MenuMain extends BaseMenu {
 
     private async openWebVault() {
         let webUrl = 'https://vault.bitwarden.com';
-        const urlsObj: any = await this.main.storageService.get(ConstantsService.environmentUrlsKey);
+        const urlsObj: any = await this.main.activeAccount.getInformation(StorageKey.EnvironmentUrls);
         if (urlsObj != null) {
             if (urlsObj.base != null) {
                 webUrl = urlsObj.base;

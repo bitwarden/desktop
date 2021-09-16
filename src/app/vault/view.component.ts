@@ -7,6 +7,7 @@ import {
     Output,
 } from '@angular/core';
 
+import { ActiveAccountService } from 'jslib-common/abstractions/activeAccount.service';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { AuditService } from 'jslib-common/abstractions/audit.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
@@ -19,7 +20,6 @@ import { PasswordRepromptService } from 'jslib-common/abstractions/passwordRepro
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
@@ -41,12 +41,12 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
-        userService: UserService, eventService: EventService, apiService: ApiService,
+        eventService: EventService, apiService: ApiService,
         private messagingService: MessagingService, passwordRepromptService: PasswordRepromptService,
-        logService: LogService) {
+        logService: LogService, activeAccountService: ActiveAccountService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService,
-            apiService, passwordRepromptService, logService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, eventService,
+            apiService, passwordRepromptService, logService, activeAccountService);
     }
     ngOnInit() {
         super.ngOnInit();
