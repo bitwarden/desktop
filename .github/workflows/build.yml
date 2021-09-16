@@ -247,7 +247,7 @@ jobs:
 
   macos-build:
     name: MacOS Build
-    runs-on: macos-11
+    runs-on: macos-10.15
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -348,7 +348,7 @@ jobs:
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
-    runs-on: macos-11
+    runs-on: macos-10.15
     needs: macos-build
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
@@ -478,7 +478,7 @@ jobs:
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
-    runs-on: macos-11
+    runs-on: macos-10.15
     needs: macos-build
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
@@ -604,7 +604,7 @@ jobs:
   macos-package-dev:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
-    runs-on: macos-11
+    runs-on: macos-10.15
     needs: macos-build
     steps:
       - name: Checkout repo
