@@ -11,7 +11,7 @@ on:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       package_version: ${{ steps.create_tags.outputs.package_version }}
       tag_version: ${{ steps.create_tags.outputs.tag_version }}
@@ -45,7 +45,7 @@ jobs:
 
   snap:
     name: Deploy Snap
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: setup
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -81,7 +81,7 @@ jobs:
 
   choco:
     name: Deploy Choco
-    runs-on: windows-latest
+    runs-on: windows-2019
     needs: setup
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -124,7 +124,7 @@ jobs:
 
   macos:
     name: Deploy MacOS
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: setup
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -153,7 +153,7 @@ jobs:
 
   auto-updater-deploy:
     name: Release auto-updater files
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs:
       - setup
       - snap
@@ -178,7 +178,8 @@ jobs:
           #cat release.json
 
           RELEASE_UPLOAD_URL=$(cat release.json | jq -r ' .upload_url ' | cut -d { -f 1)
-          cat release.json | jq -rc ' .assets[] | select( .name | test("prerelease-latest.*[yml|json]")) | {name: .name,  url: .url, content_type: .content_type}' > release_assets.jsonl
+          cat release.json \
+            | jq -rc ' .assets[] | select( .name | test("prerelease-latest.*[yml|json]")) | {name: .name,  url: .url, content_type: .content_type}' > release_assets.jsonl
 
           echo "=====ASSETS====="
           echo Release Upload URL: $RELEASE_UPLOAD_URL

@@ -14,7 +14,7 @@ on:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       release_upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
@@ -62,7 +62,7 @@ jobs:
 
   linux:
     name: Linux
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: setup
     steps:
       - name: Checkout repo
@@ -117,7 +117,7 @@ jobs:
 
   windows-signed:
     name: Windows Signed
-    runs-on: windows-latest
+    runs-on: windows-2019
     needs: setup
     steps:
       - name: Checkout repo
@@ -209,7 +209,7 @@ jobs:
 
   windows-store:
     name: Windows Store
-    runs-on: windows-latest
+    runs-on: windows-2019
     needs: setup
     steps:
       - name: Checkout repo
@@ -294,7 +294,7 @@ jobs:
 
   macos:
     name: MacOS
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: setup
     steps:
       - name: Checkout repo
@@ -415,7 +415,7 @@ jobs:
 
   update-release-assets:
     name: Update Release Assets
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs:
       - setup
       - linux
