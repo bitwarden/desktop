@@ -14,7 +14,7 @@ on:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     outputs:
       release_upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
@@ -62,7 +62,7 @@ jobs:
 
   linux:
     name: Linux
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: setup
     steps:
       - name: Checkout repo
@@ -117,16 +117,11 @@ jobs:
 
   windows-signed:
     name: Windows Signed
-    runs-on: windows-latest
+    runs-on: windows-2019
     needs: setup
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-
-      - name: Set up dotnet
-        uses: actions/setup-dotnet@a71d1eb2c86af85faa8c772c03fb365e377e45ea  # v1.8.0
-        with:
-          dotnet-version: "3.1.x"
 
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
@@ -151,24 +146,7 @@ jobs:
           node-gyp install $(node -v)
 
       - name: Install AST
-        shell: pwsh
-        run: |
-          cd $HOME
-
-          git clone https://github.com/vcsjones/AzureSignTool.git
-          cd AzureSignTool
-          $latest_head = $(git rev-parse HEAD)[0..9] -join ""
-          $latest_version = "0.0.0-g$latest_head"
-
-          Write-Host "--------"
-          Write-Host "git commit - $(git rev-parse HEAD)"
-          Write-Host "latest_head - $latest_head"
-          Write-Host "PACKAGE VERSION TO BUILD - $latest_version"
-          Write-Host "--------"
-
-          dotnet restore
-          dotnet pack --output ./nupkg
-          dotnet tool install --global --ignore-failed-sources --add-source ./nupkg --version $latest_version azuresigntool
+        uses: bitwarden/gh-actions/install-ast@f135c42c8596cb535c5bcb7523c0b2eef89709ac
 
       - name: Set up environment
         shell: pwsh
@@ -231,7 +209,7 @@ jobs:
 
   windows-store:
     name: Windows Store
-    runs-on: windows-latest
+    runs-on: windows-2019
     needs: setup
     steps:
       - name: Checkout repo
@@ -316,7 +294,7 @@ jobs:
 
   macos:
     name: MacOS
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: setup
     steps:
       - name: Checkout repo
@@ -437,7 +415,7 @@ jobs:
 
   update-release-assets:
     name: Update Release Assets
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs:
       - setup
       - linux
