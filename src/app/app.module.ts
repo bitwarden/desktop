@@ -49,6 +49,7 @@ import { ColorPasswordPipe } from 'jslib-angular/pipes/color-password.pipe';
 import { I18nPipe } from 'jslib-angular/pipes/i18n.pipe';
 import { SearchCiphersPipe } from 'jslib-angular/pipes/search-ciphers.pipe';
 
+import { AddEditCustomFieldsComponent } from './vault/add-edit-custom-fields.component';
 import { AddEditComponent } from './vault/add-edit.component';
 import { AttachmentsComponent } from './vault/attachments.component';
 import { CiphersComponent } from './vault/ciphers.component';
@@ -61,6 +62,7 @@ import { PasswordGeneratorComponent } from './vault/password-generator.component
 import { PasswordHistoryComponent } from './vault/password-history.component';
 import { ShareComponent } from './vault/share.component';
 import { VaultComponent } from './vault/vault.component';
+import { ViewCustomFieldsComponent } from './vault/view-custom-fields.component';
 import { ViewComponent } from './vault/view.component';
 
 import { AddEditComponent as SendAddEditComponent } from './send/add-edit.component';
@@ -226,6 +228,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordRepromptComponent,
         SetPinComponent,
         VaultTimeoutInputComponent,
+        AddEditCustomFieldsComponent,
+        ViewCustomFieldsComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],
