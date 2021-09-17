@@ -43,7 +43,7 @@
         </div>
     </ng-container>
 </div>
-<div class="footer">
+<div class="footer" [class.readonlyCipher]="isReadOnly">
     <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" *ngIf="!isReadOnly"
         class="block primary" appA11yTitle="{{'addItem' | i18n}}" [disabled]="deleted">
         <i class="fa fa-plus fa-lg" aria-hidden="true"></i>

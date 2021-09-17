@@ -89,6 +89,14 @@ app-vault-ciphers {
             fill: var(--secondaryTextColor);
         }
     }
+
+    app-sharing {
+        margin: 0 10px;
+    }
+    
+    .footer.readonlyCipher {
+        justify-content: center;
+    }
 }
 
 .navbar-entry {
