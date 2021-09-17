@@ -5,6 +5,7 @@ import { ToasterModule } from 'angular2-toaster';
 import { AppRoutingModule } from './app-routing.module';
 import { ServicesModule } from './services.module';
 
+import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DatePipe } from '@angular/common';
@@ -27,6 +28,7 @@ import { SsoComponent } from './accounts/sso.component';
 import { TwoFactorOptionsComponent } from './accounts/two-factor-options.component';
 import { TwoFactorComponent } from './accounts/two-factor.component';
 import { UpdateTempPasswordComponent } from './accounts/update-temp-password.component';
+import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.component';
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
@@ -68,6 +70,7 @@ import { SendComponent } from './send/send.component';
 import { NavComponent } from './layout/nav.component';
 
 import { PasswordRepromptComponent } from './components/password-reprompt.component';
+import { SetPinComponent } from './components/set-pin.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeAf from '@angular/common/locales/af';
@@ -171,6 +174,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         ServicesModule,
         ToasterModule.forRoot(),
         ScrollingModule,
+        A11yModule,
     ],
     declarations: [
         A11yTitleDirective,
@@ -220,6 +224,8 @@ registerLocaleData(localeZhTw, 'zh-TW');
         VaultComponent,
         ViewComponent,
         PasswordRepromptComponent,
+        SetPinComponent,
+        VaultTimeoutInputComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],

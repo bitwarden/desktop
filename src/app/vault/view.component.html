@@ -28,9 +28,9 @@
                         <div class="row-main">
                             <span class="row-label draggable" draggable="true"
                                 (dragstart)="setTextDataOnDrag($event, cipher.login.password)">{{'password' | i18n}}</span>
-                            <div [hidden]="showPassword" class="monospaced">
+                            <div *ngIf="!showPassword" class="monospaced">
                                 {{cipher.login.maskedPassword}}</div>
-                            <div [hidden]="!showPassword" class="monospaced password-wrapper" appSelectCopy
+                            <div *ngIf="showPassword" class="monospaced password-wrapper" appSelectCopy
                                 [innerHTML]="cipher.login.password | colorPassword"></div>
                         </div>
                         <div class="action-buttons" *ngIf=cipher.viewPassword>
@@ -87,8 +87,8 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
                         <div class="row-main">
                             <span class="row-label">{{'number' | i18n}}</span>
-                            <span [hidden]="showCardNumber" class="monospaced">{{cipher.card.maskedNumber}}</span>
-                            <span [hidden]="!showCardNumber" class="monospaced">{{cipher.card.number}}</span>
+                            <span *ngIf="!showCardNumber" class="monospaced">{{cipher.card.maskedNumber}}</span>
+                            <span *ngIf="showCardNumber" class="monospaced">{{cipher.card.number}}</span>
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
@@ -113,8 +113,8 @@
                     <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.code">
                         <div class="row-main">
                             <span class="row-label">{{'securityCode' | i18n}}</span>
-                            <span [hidden]="showCardCode" class="monospaced">{{cipher.card.maskedCode}}</span>
-                            <span [hidden]="!showCardCode" class="monospaced">{{cipher.card.code}}</span>
+                            <span *ngIf="!showCardCode" class="monospaced">{{cipher.card.maskedCode}}</span>
+                            <span *ngIf="showCardCode" class="monospaced">{{cipher.card.code}}</span>
                         </div>
                         <div class="action-buttons">
                             <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
@@ -216,8 +216,8 @@
                             {{field.value || '&nbsp;'}}
                         </div>
                         <div *ngIf="field.type === fieldType.Hidden">
-                            <span [hidden]="!field.showValue" class="monospaced show-whitespace">{{field.value}}</span>
-                            <span [hidden]="field.showValue" class="monospaced">{{field.maskedValue}}</span>
+                            <span *ngIf="field.showValue" class="monospaced show-whitespace">{{field.value}}</span>
+                            <span *ngIf="!field.showValue" class="monospaced">{{field.maskedValue}}</span>
                         </div>
                         <div *ngIf="field.type === fieldType.Boolean">
                             <i class="fa fa-check-square-o" *ngIf="field.value === 'true'" aria-hidden="true"></i>

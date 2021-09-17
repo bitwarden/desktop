@@ -2,6 +2,9 @@
     <div class="modal-dialog" role="document">
         <form class="modal-content" #form (ngSubmit)="submit()">
             <div class="modal-body">
+                <app-callout type="warning" title="{{'vaultExportDisabled' | i18n}}" *ngIf="disabledByPolicy">
+                    {{'personalVaultExportPolicyInEffect' | i18n}}
+                </app-callout>
                 <div class="box">
                     <div class="box-header" id="exportTitle">
                         {{'exportVault' | i18n}}
@@ -9,7 +12,7 @@
                     <div class="box-content">
                         <div class="box-content-row" appBoxRow>
                             <label for="format">{{'fileFormat' | i18n}}</label>
-                            <select id="format" name="Format" [(ngModel)]="format">
+                            <select id="format" name="Format" [(ngModel)]="format" [disabled]="disabledByPolicy">
                                 <option value="json">.json</option>
                                 <option value="csv">.csv</option>
                                 <option value="encrypted_json">.json (Encrypted)</option>
@@ -20,7 +23,7 @@
                                 <label for="masterPassword">{{'masterPass' | i18n}}</label>
                                 <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
                                     name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword" required
-                                    appAutofocus>
+                                    appAutofocus [disabled]="disabledByPolicy">
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick role="button"
@@ -37,7 +40,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'submit' | i18n}}">
+                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'submit' | i18n}}"
+                    [disabled]="disabledByPolicy">
                     <i class="fa fa-download fa-lg fa-fw" aria-hidden="true"></i>
                 </button>
                 <button type="button" data-dismiss="modal">{{'cancel' | i18n}}</button>
