@@ -19,6 +19,8 @@ export class CiphersComponent extends BaseCiphersComponent {
     isMenuOpened: boolean = false;
     @ViewChild('menu') menu: ElementRef;
 
+    isReadOnly = false;
+
     constructor(searchService: SearchService, protected platformUtilsService: PlatformUtilsService,
         protected i18nService: I18nService, protected cipherService: CipherService,
     ) {

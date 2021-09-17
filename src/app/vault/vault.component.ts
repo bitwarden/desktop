@@ -38,6 +38,7 @@ import { EventType } from 'jslib/enums/eventType';
 import { CipherView } from 'jslib/models/view/cipherView';
 import { FolderView } from 'jslib/models/view/folderView';
 
+import { CollectionService } from 'jslib/abstractions/collection.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
 import { MessagingService } from 'jslib/abstractions/messaging.service';
@@ -93,7 +94,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private toasterService: ToasterService, private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
         private totpService: TotpService, private userService: UserService, private passwordRepromptService: PasswordRepromptService,
-        private sanitizer: DomSanitizer) { }
+        private sanitizer: DomSanitizer, private collectionService: CollectionService) { }
 
     async ngOnInit() {
         this.isAddonInstalled = await this.checkExtensionInit();
@@ -591,6 +592,9 @@ export class VaultComponent implements OnInit, OnDestroy {
         await this.ciphersComponent.reload(c => c.collectionIds != null &&
             c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();
+
+        const collection = await this.collectionService.get(collectionId);
+        this.ciphersComponent.isReadOnly = collection.readOnly;
         this.collectionId = collectionId;
         this.updateCollectionProperties();
         this.go();
@@ -697,6 +701,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             // @ts-ignore
             this[prop] = false;
         });
+        this.ciphersComponent.isReadOnly = false;
     }
 
     private go(queryParams: any = null) {
