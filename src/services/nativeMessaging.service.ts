@@ -9,8 +9,8 @@ import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 
-import { StorageService } from 'jslib-common/abstractions';
 import { Utils } from 'jslib-common/misc/utils';
 import { SymmetricCryptoKey } from 'jslib-common/models/domain/symmetricCryptoKey';
 import { ElectronConstants } from 'jslib-electron/electronConstants';
