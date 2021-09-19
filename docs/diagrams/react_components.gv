@@ -1,0 +1,123 @@
+digraph angular_react {
+	graph [splines=true];
+	node [shape="box", fontname="lato", fontsize=11, margin=0.12, color="#297EF2", fontcolor="#32363F"];
+	edge [color="#32363F"];
+	ranksep=0.45; nodesep=0.6;
+
+  // enforce nodes ordering
+  node [color="#55cf4c", fillcolor="#baffb5", style="filled"];
+  child_renderReact
+  child_getProps
+  
+  node [color="#ffa6a6", fillcolor="#ffc7c7", style="filled"];
+  ngOnInit
+  renderReact
+  ngOnChanges
+  ngAfterViewInit
+  renderReactIfMounted
+  isMounted
+  getReactWrapperProps
+  angular_services
+  
+  node [color="#64dafa", fillcolor="#9fe8fc", style="filled"];
+  render
+  create_element
+
+  subgraph cluster_AngularWrapperComponent {
+    label="Angular Wrapper";
+    labeljust="l";
+    fontname="lato";
+    fontsize=12;
+    margin=24;
+    fillcolor="#f0f0f0";
+    style="filled";
+    
+    subgraph cluster_react {
+      label="React lifecycle";
+      fillcolor="#bff1ff";
+      style="filled";
+
+      render [
+        label="ReactDOM.render()";
+      ]
+
+      create_element [
+        label="React.createElement()";
+      ]
+      
+      render -> create_element
+    }
+
+    subgraph cluster_angular {
+      label="Angular lifecycle";
+      fillcolor="#ffe3e3";
+      style="filled";
+
+      ngOnInit [
+        label="{ngOnInit() | init component's unique ID}",
+        shape="record"
+      ];
+
+      renderReact [
+        label="{renderReact() | Render the React component | Must be overriden}",
+        color="#888888",
+        fontcolor="#888888",
+        fillcolor="#EEEEEE",
+        style="filled",
+        shape="record",
+      ];
+
+      ngOnChanges [
+        label="ngOnChanges()"
+      ];
+      
+      ngAfterViewInit [
+        label="ngAfterViewInit()"
+      ];
+
+      renderReactIfMounted [
+        label="renderReactIfMounted()"
+      ];
+
+      isMounted [
+        label="isMounted()"
+      ];
+
+      getReactWrapperProps [
+        label="{getReactWrapperProps() | Get props to be injected\nin the React component | Those props are common\nprops that may be used\nby Cozy's components}",
+        shape="record"
+      ];
+
+      angular_services [
+        label="{Angular Services | Angular's global services that\nare injected in constructor}",
+        shape="record"
+      ];
+
+      ngAfterViewInit -> renderReactIfMounted
+      renderReactIfMounted -> isMounted -> renderReact
+      renderReact -> render
+      renderReact -> getReactWrapperProps
+      getReactWrapperProps -> angular_services [label="use"]
+      ngOnChanges -> renderReactIfMounted
+    }
+  }
+  
+  subgraph cluster_ChildComponent {
+    label="You custom wrapper component";
+    fillcolor="#e5ffe3";
+    style="filled";
+
+    child_renderReact [
+      label="{renderReact() | Render the React component}",
+      shape="record",
+    ];
+
+    child_getProps [
+      label="{getProps() | Get props to be injected\nin the React component}",
+      shape="record",
+    ]
+
+    child_renderReact -> renderReact [label="override"]
+    child_renderReact -> child_getProps -> getReactWrapperProps [label="use"]
+  }
+}
