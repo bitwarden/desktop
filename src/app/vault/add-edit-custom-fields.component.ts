@@ -4,7 +4,7 @@ import {
     AddEditCustomFieldsComponent as BaseAddEditCustomFieldsComponent
 } from 'jslib-angular/components/add-edit-custom-fields.component';
 
-import { I18nService } from 'jslib-common/abstractions';
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 
 @Component({
