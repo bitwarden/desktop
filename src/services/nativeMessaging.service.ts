@@ -7,9 +7,9 @@ import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
 
 import { Utils } from 'jslib-common/misc/utils';
 import { SymmetricCryptoKey } from 'jslib-common/models/domain/symmetricCryptoKey';
