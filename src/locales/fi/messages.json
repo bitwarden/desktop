@@ -45,7 +45,7 @@
     "message": "Jaa"
   },
   "moveToOrganization": {
-    "message": "Siirrä organisaatioon"
+    "message": "Siirrä organisaatiolle"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ siirrettiin organisaatioon $ORGNAME$",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Valitse organisaatio, johon haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
+    "message": "Valitse organisaatio, jolle haluat siirtää kohteen. Tämä siirtää kohteen organisaation omistukseen, etkä tämän jälkeen ole enää sen suora omistaja."
   },
   "attachments": {
     "message": "Liitteet"
@@ -764,7 +764,7 @@
     "message": "Holvisi on lukittu. Syötä pääsalasana jatkaaksesi."
   },
   "unlock": {
-    "message": "Avaa lukitus"
+    "message": "Avaa"
   },
   "loggedInAsOn": {
     "message": "Kirjautuneena tunnuksella $EMAIL$ palveluun $HOSTNAME$.",
@@ -1284,7 +1284,7 @@
     "message": "Avaa PIN-koodilla"
   },
   "setYourPinCode": {
-    "message": "Aseta PIN-koodisi Bitwardenin avausta varten. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta."
+    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos laajennuksesta."
   },
   "pinRequired": {
     "message": "PIN-koodi vaaditaan."
@@ -1296,16 +1296,16 @@
     "message": "Holvisi on lukittu. Vahvista PIN-koodisi jatkaaksesi."
   },
   "unlockWithWindowsHello": {
-    "message": "Avaa lukitus Windows Hellolla"
+    "message": "Avaa Windows Hellolla"
   },
   "windowsHelloConsentMessage": {
     "message": "Vahvista Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Avaa lukitus Touch ID:llä"
+    "message": "Avaa Touch ID:llä"
   },
   "touchIdConsentMessage": {
-    "message": "avaa holvisi lukitus"
+    "message": "avaa holvisi"
   },
   "noAutoPromptWindowsHello": {
     "message": "Älä pyydä Windows Hello -kirjautumista käynnistettäessä."
