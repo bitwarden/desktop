@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "filters": {
-    "message": "Filters"
+    "message": "फ़िल्टर"
   },
   "allItems": {
     "message": "All Items"
@@ -70,7 +70,7 @@
     "message": "View Item"
   },
   "name": {
-    "message": "Name"
+    "message": "नाम"
   },
   "uri": {
     "message": "URI"
