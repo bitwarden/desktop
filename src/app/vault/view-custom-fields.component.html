@@ -1,0 +1,38 @@
+<div class="box" >
+    <div class="box-header">
+        {{'customFields' | i18n}}
+    </div>
+    <div class="box-content">
+        <div class="box-content-row box-content-row-flex" *ngFor="let field of cipher.fields">
+            <div class="row-main">
+                <span class="row-label">{{field.name}}</span>
+                <div *ngIf="field.type === fieldType.Text">
+                    {{field.value || '&nbsp;'}}
+                </div>
+                <div *ngIf="field.type === fieldType.Hidden">
+                    <span *ngIf="field.showValue" class="monospaced show-whitespace">{{field.value}}</span>
+                    <span *ngIf="!field.showValue" class="monospaced">{{field.maskedValue}}</span>
+                </div>
+                <div *ngIf="field.type === fieldType.Boolean">
+                    <i class="fa fa-check-square-o" *ngIf="field.value === 'true'" aria-hidden="true"></i>
+                    <i class="fa fa-square-o" *ngIf="field.value !== 'true'" aria-hidden="true"></i>
+                    <span class="sr-only">{{field.value}}</span>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
+                    *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
+                    (click)="toggleFieldValue(field)" role="button">
+                    <i class="fa fa-lg" aria-hidden="true"
+                        [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
+                </a>
+                <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
+                    *ngIf="field.value && field.type !== fieldType.Boolean && !(field.type === fieldType.Hidden && !cipher.viewPassword)"
+                    (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')"
+                    role="button">
+                    <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
