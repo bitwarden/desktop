@@ -1,2 +1,22 @@
-<app-avatar [data]="email" size="25" [circle]="true" [fontSize]="14" *ngIf="email != null"></app-avatar>
-<span>{{email}}</span>
+<a class="account-switcher" (click)="toggle()" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+    <app-avatar [data]="email" size="25" [circle]="true" [fontSize]="14" *ngIf="email != null"></app-avatar>
+    <span>{{email}}</span>
+    <i class="fa" aria-hidden="true" [ngClass]="{'fa-chevron-down': !isOpen, 'fa-chevron-up': isOpen}"></i>
+</a>
+
+<ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen" cdkConnectedOverlayMinWidth="250px">
+    <div class="account-switcher-dropdown" [@transformPanel]="'open'">
+        <div class="accounts">
+            <a *ngFor="let a of accounts" class="account" [ngClass]="{'active': a.status == accountStatuses.Active}"
+                href="#" appStopClick (click)="switch(a)">
+                <span class="email">{{a.email}}</span>
+                <span class="server">{{a.server}}</span>
+                <span class="status">{{a.status}}</span>
+            </a>
+        </div>
+        <div class="border"></div>
+        <a class="add" href="#" appStopClick (click)="add()">
+            <i class="fa fa-plus" aria-hidden="true"></i> {{'addAccount' | i18n}}
+        </a>
+    </div>
+</ng-template>

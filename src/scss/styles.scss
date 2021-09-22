@@ -1,4 +1,6 @@
-﻿@import "../css/webfonts.css";
+﻿@import '~@angular/cdk/overlay-prebuilt.css';
+
+@import "../css/webfonts.css";
 @import "variables.scss";
 @import "base.scss";
 @import "grid.scss";
