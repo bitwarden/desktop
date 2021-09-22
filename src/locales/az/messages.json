@@ -123,7 +123,7 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Lövhəyə kopyalanda kiçilt"
+    "message": "Lövhəyə kopyalananda kiçilt"
   },
   "minimizeOnCopyToClipboardDesc": {
     "message": "Elementin verilənlərini lövhəyə kopyalayarkən kiçilt."
@@ -789,7 +789,7 @@
     "message": "İki mərhələli giriş"
   },
   "vaultTimeout": {
-    "message": "Anbara müraciət vaxtı bitdi"
+    "message": "Anbara müraciət bitəcək"
   },
   "vaultTimeoutDesc": {
     "message": "Anbara müraciətin bitəcəyi vaxtı seçin və seçilən əməliyyatı icra edin."
@@ -1476,7 +1476,7 @@
     "message": "Səyyah inteqrasiyasını fəallaşdır"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Səyyah inteqrasiyası səyyada biometrik təsdiqləmə üçün istifadə olunur."
+    "message": "Səyyah inteqrasiyası səyyahda biometrik təsdiqləmə üçün istifadə olunur."
   },
   "browserIntegrationMasOnlyTitle": {
     "message": "Səyyah inteqrasiyası dəstəklənmir"
