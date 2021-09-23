@@ -19,10 +19,10 @@ async function run(context) {
         if (fse.existsSync(plugIn)) {
             fse.mkdirSync(path.join(appPath, 'Contents/PlugIns'));
             fse.copySync(path.join(plugIn, 'safari.appex'), path.join(appPath, 'Contents/PlugIns/safari.appex'));
+        
+            // Resign to sign safari extension
+            await context.packager.signApp(context, true);
         }
-
-        // Resign to sign safari extension
-        await context.packager.signApp(context, true);
 
         console.log('### Notarizing ' + appPath);
         const appleId = process.env.APPLE_ID_USERNAME || process.env.APPLEID;
