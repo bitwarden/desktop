@@ -6,6 +6,24 @@ import { OrganizationUserConfirmRequest } from 'jslib/models/request/organizatio
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AngularWrapperComponent, AngularWrapperProps } from '../angular-wrapper.component';
+
+import { ApiService } from 'jslib/abstractions/api.service';
+import { AuthService } from 'jslib/abstractions/auth.service';
+import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
+import { CryptoService } from 'jslib/abstractions/crypto.service';
+import { EnvironmentService } from 'jslib/abstractions/environment.service';
+import { FolderService } from 'jslib/abstractions/folder.service';
+import { I18nService } from 'jslib/abstractions/i18n.service';
+import { PasswordGenerationService } from 'jslib/abstractions/passwordGeneration.service';
+import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
+import { SyncService } from 'jslib/abstractions/sync.service';
+import { UserService } from 'jslib/abstractions/user.service';
+import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
+
+import { CozyClientService } from '../../services/cozy-client.service';
+import { SharingService } from '../../services/sharing.service';
+
 // @ts-ignore
 import Sharing from './sharing.jsx';
 
@@ -46,6 +64,41 @@ interface User {
 export class SharingComponent extends AngularWrapperComponent {
     @Input() collectionId: string = null;
 
+    constructor(
+        clientService: CozyClientService,
+        apiService: ApiService,
+        environmentService: EnvironmentService,
+        authService: AuthService,
+        syncService: SyncService,
+        cryptoService: CryptoService,
+        cipherService: CipherService,
+        userService: UserService,
+        collectionService: CollectionService,
+        passwordGenerationService: PasswordGenerationService,
+        vaultTimeoutService: VaultTimeoutService,
+        folderService: FolderService,
+        i18nService: I18nService,
+        platformUtilsService: PlatformUtilsService,
+        protected sharingService: SharingService
+    ) {
+        super(
+            clientService,
+            apiService,
+            environmentService,
+            authService,
+            syncService,
+            cryptoService,
+            cipherService,
+            userService,
+            collectionService,
+            passwordGenerationService,
+            vaultTimeoutService,
+            folderService,
+            i18nService,
+            platformUtilsService
+        );
+    }
+
     /******************/
     /* Props Bindings */
     /******************/
@@ -85,81 +138,15 @@ export class SharingComponent extends AngularWrapperComponent {
     /************************/
 
     protected async loadOrganizationUsersToBeConfirmed(organizationId: string) {
-        const organizationUsers = await this.apiService.getOrganizationUsers(organizationId);
-
-        const currentUserId = await this.userService.getUserId();
-
-        const isOwner = organizationUsers.data.find(user => {
-            return user.type === OrganizationUserType.Owner
-                && user.id === currentUserId;
-        });
-
-        if (!isOwner) {
-            return [];
-        }
-
-        const invitedUsers = organizationUsers.data.filter(user => {
-            return user.type === OrganizationUserType.User
-                && user.status === OrganizationUserStatusType.Accepted
-                && user.id !== currentUserId;
-        });
-
-        const finalUsers: User[] = [];
-        for (const user of invitedUsers) {
-            const publicKey = (await this.apiService.getUserPublicKey(user.id)).publicKey;
-
-            const fingerprint = await this.cryptoService.getFingerprint(user.id, Utils.fromB64ToArray(publicKey).buffer);
-
-            finalUsers.push({
-                name: user.name,
-                id: user.id,
-                email: user.email,
-                publicKey: publicKey,
-                fingerprint: fingerprint,
-                fingerprintPhrase: fingerprint.join('-'),
-            });
-        }
-
-        return finalUsers;
+        return await this.sharingService.loadOrganizationUsersToBeConfirmed(organizationId);
     }
 
     protected async confirmUser(user: User) {
-        const organizations = await this.userService.getAllOrganizations();
-
-        const organizationsWithoutCozy = organizations.filter(organization => organization.name !== 'Cozy');
-
-        for (const organization of organizationsWithoutCozy) {
-            const organizationUsers = await this.apiService.getOrganizationUsers(organization.id);
-
-            const userInOrganization = organizationUsers.data
-                .filter(organizationUser => organizationUser.status === OrganizationUserStatusType.Accepted)
-                .map(organizationUser => organizationUser.id)
-                .includes(user.id);
-
-            if (userInOrganization) {
-                const orgKey = await this.cryptoService.getOrgKey(organization.id);
-                const key = await this.cryptoService.rsaEncrypt(orgKey.key, Utils.fromB64ToArray(user.publicKey).buffer);
-                const request = new OrganizationUserConfirmRequest();
-                request.key = key.encryptedString;
-
-                await this.apiService.postOrganizationUserConfirm(organization.id, user.id, request);
-            }
-        }
+        return await this.sharingService.confirmUser(user);
     }
 
     protected async rejectUser(user: User) {
-        try {
-            const client = this.clientService.GetClient();
-
-            await client.stackClient.fetchJSON(
-                'DELETE',
-                `/bitwarden/contacts/${user.id}`,
-                []
-            );
-        } catch {
-            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
-                this.i18nService.t('unexpectedError'));
-        }
+        return await this.sharingService.rejectUser(user);
     }
 
     protected getTwoStepsConfirmationMethods(): ConfirmationMethods {

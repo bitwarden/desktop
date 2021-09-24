@@ -89,6 +89,7 @@ import { PasswordRepromptService } from 'jslib/services/passwordReprompt.service
 
 import { CozyClientService } from '../cozy/services/cozy-client.service';
 import { VaultInstallationService, VaultInstalledGuardService, VaultUninstalledGuardService } from '../cozy/services/installation-guard.service';
+import { SharingService } from '../cozy/services/sharing.service';
 
 const clientService = new CozyClientService();
 const logService = new ElectronLogService();
@@ -108,6 +109,7 @@ const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const userService = new UserService(tokenService, storageService, cryptoService);
+const sharingService = new SharingService(apiService, clientService, cryptoService, i18nService, platformUtilsService, userService);
 const settingsService = new SettingsService(userService, storageService);
 export let searchService: SearchService = null;
 const fileUploadService = new FileUploadService(logService, apiService);
@@ -199,6 +201,7 @@ export function initFactory(): Function {
         VaultInstalledGuardService,
         VaultUninstalledGuardService,
         { provide: CozyClientService, useValue: clientService },
+        { provide: SharingService, useValue: sharingService },
         { provide: AuditServiceAbstraction, useValue: auditService },
         { provide: AuthServiceAbstraction, useValue: authService },
         { provide: CipherServiceAbstraction, useValue: cipherService },
