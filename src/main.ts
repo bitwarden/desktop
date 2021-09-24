@@ -20,6 +20,8 @@ import { UpdaterMain } from 'jslib-electron/updater.main';
 import { WindowMain } from 'jslib-electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
 
+app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
+
 export class Main {
     logService: ElectronLogService;
     i18nService: I18nService;
