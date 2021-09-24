@@ -37,9 +37,9 @@ interface File {
 }
 
 interface ConfirmationMethods {
-    getRecipientsToBeConfirmed: (organizationId: string) => User[];
-    confirmRecipient: (organizationId: string) => Promise<void>;
-    rejectRecipient: (organizationId: string) => Promise<void>;
+    getRecipientsToBeConfirmed: () => User[];
+    confirmRecipient: (user: User) => Promise<void>;
+    rejectRecipient: (user: User) => Promise<void>;
 }
 
 interface OnSharedEventArgs {
