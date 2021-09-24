@@ -72,6 +72,7 @@ interface User {
 })
 export class SharingComponent extends AngularWrapperComponent {
     @Input() collectionId: string = null;
+    private organizationId: string = null;
 
     constructor(
         clientService: CozyClientService,
@@ -117,6 +118,8 @@ export class SharingComponent extends AngularWrapperComponent {
 
         const currentCollection = collections.find(collection => collection.id === this.collectionId);
 
+        this.organizationId = currentCollection.organizationId;
+
         const reactWrapperProps = await this.getReactWrapperProps();
 
         return {
@@ -147,8 +150,8 @@ export class SharingComponent extends AngularWrapperComponent {
     /* Confirmation Methods */
     /************************/
 
-    protected async loadOrganizationUsersToBeConfirmed(organizationId: string) {
-        return await this.sharingService.loadOrganizationUsersToBeConfirmed(organizationId);
+    protected async loadOrganizationUsersToBeConfirmed() {
+        return await this.sharingService.loadOrganizationUsersToBeConfirmed(this.organizationId);
     }
 
     protected async confirmUser(user: User) {
