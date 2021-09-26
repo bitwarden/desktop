@@ -10,13 +10,13 @@ import { OrganizationUserStatusType } from 'jslib/enums/organizationUserStatusTy
 import { OrganizationUserType } from 'jslib/enums/organizationUserType';
 
 import { OrganizationUserConfirmRequest } from 'jslib/models/request/organizationUserConfirmRequest';
+import { OrganizationUserUserDetailsResponse } from 'jslib/models/response/organizationUserResponse';
 
 import { Utils } from 'jslib/misc/utils';
 
 import { CozyClientService } from '../services/cozy-client.service';
 
-
-interface User {
+export interface User {
     name: string;
     id: string;
     email: string;
@@ -37,24 +37,7 @@ export class SharingService {
     ) {}
 
     async loadOrganizationUsersToBeConfirmed(organizationId: string) {
-        const organizationUsers = await this.apiService.getOrganizationUsers(organizationId);
-
-        const currentUserId = await this.userService.getUserId();
-
-        const isOwner = organizationUsers.data.find(user => {
-            return user.type === OrganizationUserType.Owner
-                && user.id === currentUserId;
-        });
-
-        if (!isOwner) {
-            return [];
-        }
-
-        const invitedUsers = organizationUsers.data.filter(user => {
-            return user.type === OrganizationUserType.User
-                && user.status === OrganizationUserStatusType.Accepted
-                && user.id !== currentUserId;
-        });
+        const invitedUsers = await this.loadAcceptedUsersForOrganization(organizationId);
 
         const finalUsers: User[] = [];
         for (const user of invitedUsers) {
@@ -75,16 +58,54 @@ export class SharingService {
         return finalUsers;
     }
 
-    async confirmUser(user: User) {
-        const organizations = await this.userService.getAllOrganizations();
+    async loadAllUsersToBeConfirmed(): Promise<User[]> {
+        const organizationsWithoutCozy = await this.getSharedOrganizations();
 
-        const organizationsWithoutCozy = organizations.filter(organization => organization.name !== 'Cozy');
+        const users: OrganizationUserUserDetailsResponse[] = [];
+        for (const organization of organizationsWithoutCozy) {
+            const organizationUsers = await this.apiService.getOrganizationUsers(organization.id);
+
+            users.push(...organizationUsers.data);
+        }
+
+        const uniqueUsers = users.filter((value, index, self) => {
+            return self.findIndex(element => element.id === value.id) === index;
+        });
+
+        const currentUserId = await this.userService.getUserId();
+        const uniqueUsersToBeConfirmed = uniqueUsers.filter(user => {
+            return user.type === OrganizationUserType.User
+                && user.status === OrganizationUserStatusType.Accepted
+                && user.id !== currentUserId;
+        });
+
+        const finalUsers: User[] = [];
+        for (const user of uniqueUsersToBeConfirmed) {
+            const publicKey = (await this.apiService.getUserPublicKey(user.id)).publicKey;
+
+            const fingerprint = await this.cryptoService.getFingerprint(user.id, Utils.fromB64ToArray(publicKey).buffer);
+
+            finalUsers.push({
+                name: user.name,
+                id: user.id,
+                email: user.email,
+                publicKey: publicKey,
+                fingerprint: fingerprint,
+                fingerprintPhrase: fingerprint.join('-'),
+            });
+        }
+
+        return finalUsers;
+    }
+
+    async confirmUser(user: User) {
+        const organizationsWithoutCozy = await this.getSharedOrganizations();
 
         for (const organization of organizationsWithoutCozy) {
             const organizationUsers = await this.apiService.getOrganizationUsers(organization.id);
 
             const userInOrganization = organizationUsers.data
-                .filter(organizationUser => organizationUser.status === OrganizationUserStatusType.Accepted)
+                .filter(organizationUser => organizationUser.status === OrganizationUserStatusType.Invited || organizationUser.status === OrganizationUserStatusType.Accepted)
                 .map(organizationUser => organizationUser.id)
                 .includes(user.id);
 
@@ -112,5 +133,36 @@ export class SharingService {
             this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('unexpectedError'));
         }
+    }
+
+    protected async getSharedOrganizations() {
+        const organizations = await this.userService.getAllOrganizations();
+
+        const organizationsWithoutCozy = organizations.filter(organization => organization.name !== 'Cozy');
+
+        return organizationsWithoutCozy;
+    }
+
+    protected async loadAcceptedUsersForOrganization(organizationId: string) {
+        const organizationUsers = await this.apiService.getOrganizationUsers(organizationId);
+
+        const currentUserId = await this.userService.getUserId();
+
+        const isOwner = organizationUsers.data.find(user => {
+            return user.type === OrganizationUserType.Owner
+                && user.id === currentUserId;
+        });
+
+        if (!isOwner) {
+            return [];
+        }
+
+        const invitedUsers = organizationUsers.data.filter(user => {
+            return user.type === OrganizationUserType.User
+                && user.status === OrganizationUserStatusType.Accepted
+                && user.id !== currentUserId;
+        });
+
+        return invitedUsers;
     }
 }
