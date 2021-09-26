@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 // @ts-ignore
-import { Sprite as IconSprite } from 'cozy-ui/transpiled/react/Icon';
+import Sprite from 'cozy-ui/transpiled/react/Icon/Sprite';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AngularWrapperComponent } from '../angular-wrapper.component';
@@ -16,6 +16,6 @@ export class IconSpriteComponent extends AngularWrapperComponent {
     /**********/
 
     protected renderReact() {
-        ReactDOM.render(React.createElement(IconSprite), this.getRootDomNode());
+        ReactDOM.render(React.createElement(Sprite), this.getRootDomNode());
     }
 }
