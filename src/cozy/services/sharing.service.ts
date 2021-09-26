@@ -169,7 +169,9 @@ export class SharingService {
     protected async getSharedOrganizations() {
         const organizations = await this.userService.getAllOrganizations();
 
-        const organizationsWithoutCozy = organizations.filter(organization => organization.name !== 'Cozy');
+        const ownedOrganization = organizations.filter(organization => organization.isOwner);
+
+        const organizationsWithoutCozy = ownedOrganization.filter(organization => organization.name !== 'Cozy');
 
         return organizationsWithoutCozy;
     }
