@@ -48,6 +48,7 @@ export class ConfirmTrustedUsersComponent extends AngularWrapperComponent {
     showModal = false;
 
     private waitForFirstSync = true;
+    private usersToBeConfirmedCached: User[] = null;
 
     constructor(
         clientService: CozyClientService,
@@ -122,6 +123,12 @@ export class ConfirmTrustedUsersComponent extends AngularWrapperComponent {
     /**********/
 
     protected async renderReact() {
+        this.usersToBeConfirmedCached = await this.sharingService.loadAllUsersToBeConfirmed();
+
+        if (this.usersToBeConfirmedCached.length === 0) {
+            return;
+        }
+
         ReactDOM.render(
             React.createElement(ConfirmTrustedUsers, await this.getProps()),
             this.getRootDomNode()
@@ -133,6 +140,13 @@ export class ConfirmTrustedUsersComponent extends AngularWrapperComponent {
     /************************/
 
     protected async loadUsersToBeConfirmed() {
+        if (this.usersToBeConfirmedCached) {
+            const result = this.usersToBeConfirmedCached;
+            this.usersToBeConfirmedCached = null;
+
+            return result;
+        }
+
         return await this.sharingService.loadAllUsersToBeConfirmed();
     }
 
