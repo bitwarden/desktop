@@ -19,9 +19,9 @@
                     <span class="sr-only">{{field.value}}</span>
                 </div>
                 <div *ngIf="field.type === fieldType.Linked" class="box-content-row-flex">
-                    <div class="icon icon-small" aria-hidden="true" title="Linked value">
+                    <div class="icon icon-small" aria-hidden="true" appA11yTitle="{{'linkedValue' | i18n}}">
                         <i class="fa fa-link"></i>
-                        <span class="sr-only">Linked value</span>
+                        <span class="sr-only">{{'linkedValue' | i18n}}</span>
                     </div>
                     <span>{{cipher.linkedFieldI18nKey(field.value) | i18n}}</span>
                 </div>

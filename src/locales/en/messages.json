@@ -338,6 +338,10 @@
     "message": "Linked",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Remove"
   },
