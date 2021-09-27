@@ -8,6 +8,7 @@ import { SendService } from 'jslib/abstractions/send.service';
 import { SettingsService } from 'jslib/abstractions/settings.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { TokenService } from 'jslib/abstractions/token.service';
+import { CollectionDetailsResponse } from 'jslib/models/response/collectionResponse';
 import { SyncCipherNotification } from 'jslib/models/response/notificationResponse';
 import { ProfileOrganizationResponse } from 'jslib/models/response/profileOrganizationResponse';
 import { SyncService as SyncServiceBase } from 'jslib/services/sync.service';
@@ -187,13 +188,13 @@ export class SyncService extends SyncServiceBase {
     protected async syncUpsertCollections(organizationId: string, isEdit: boolean) {
         const syncCollections = await this.localApiService.getCollections(organizationId);
 
-        await this.localCollectionService.upsert(syncCollections.data.map(col => {
+        await this.localCollectionService.upsert(syncCollections.data.map((col: CollectionDetailsResponse) => {
             return {
                 externalId: col.externalId,
                 id: col.id,
                 name: col.name,
                 organizationId: col.organizationId,
-                readOnly: false, // TODO: this should be set later
+                readOnly: col.readOnly,
             };
         }));
     }

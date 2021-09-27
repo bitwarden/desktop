@@ -23,7 +23,6 @@ import { LockGuardService } from 'jslib/angular/services/lock-guard.service';
 import { UnauthGuardService } from 'jslib/angular/services/unauth-guard.service';
 import { ValidationService } from 'jslib/angular/services/validation.service';
 
-import { ApiService } from 'jslib/services/api.service';
 import { AppIdService } from 'jslib/services/appId.service';
 import { AuditService } from 'jslib/services/audit.service';
 import { AuthService } from 'jslib/services/auth.service';
@@ -46,6 +45,7 @@ import { TokenService } from 'jslib/services/token.service';
 import { TotpService } from 'jslib/services/totp.service';
 import { VaultTimeoutService } from 'jslib/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib/services/webCryptoFunction.service';
+import { ApiService } from '../services/api.service';
 import { CipherService } from '../services/cipher.service';
 import { CryptoService } from '../services/crypto.service';
 import { NotificationsService } from '../services/notifications.service';
