@@ -20,6 +20,7 @@ export class CiphersComponent extends BaseCiphersComponent {
     @ViewChild('menu') menu: ElementRef;
 
     isReadOnly = false;
+    isCozyConnectors = false;
 
     constructor(searchService: SearchService, protected platformUtilsService: PlatformUtilsService,
         protected i18nService: I18nService, protected cipherService: CipherService,

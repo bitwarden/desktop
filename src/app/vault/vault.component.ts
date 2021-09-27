@@ -595,6 +595,10 @@ export class VaultComponent implements OnInit, OnDestroy {
 
         const collection = await this.collectionService.get(collectionId);
         this.ciphersComponent.isReadOnly = collection.readOnly;
+
+        const decryptedCollection = (await this.collectionService.decryptMany([collection]))[0];
+        this.ciphersComponent.isCozyConnectors = decryptedCollection.name === 'Cozy Connectors';
+
         this.collectionId = collectionId;
         this.updateCollectionProperties();
         this.go();
@@ -702,6 +706,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             this[prop] = false;
         });
         this.ciphersComponent.isReadOnly = false;
+        this.ciphersComponent.isCozyConnectors = false;
     }
 
     private go(queryParams: any = null) {
