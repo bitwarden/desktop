@@ -8,7 +8,8 @@ import ReactWrapper, { reactWrapperProps } from '../react-wrapper';
 const Sharing = ({ 
     file,
     reactWrapperProps,
-    confirmationMethods
+    confirmationMethods,
+    onShared
 }) => {
   const [showShareModal, setShowShareModal] = useState(false)
 
@@ -19,7 +20,7 @@ const Sharing = ({
 
   return (
     <ReactWrapper reactWrapperProps={reactWrapperProps}>
-      <SharingProvider doctype="com.bitwarden.organizations" documentType="Organizations" previewPath="">
+      <SharingProvider doctype="com.bitwarden.organizations" documentType="Organizations" previewPath="" onShared={onShared}>
         {showShareModal && (
           <ShareModal
           document={file}

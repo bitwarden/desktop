@@ -14,6 +14,8 @@ import { OrganizationUserUserDetailsResponse } from 'jslib/models/response/organ
 
 import { Utils } from 'jslib/misc/utils';
 
+import { Q } from 'cozy-client';
+
 import { CozyClientService } from '../services/cozy-client.service';
 
 export interface User {
@@ -23,6 +25,17 @@ export interface User {
     publicKey: string;
     fingerprint: string[];
     fingerprintPhrase: string;
+}
+
+// interface from cozy-sharing
+interface SharinRecipientEmail {
+    address: string;
+    primary: boolean;
+}
+
+// interface from cozy-sharing
+interface SharinRecipient {
+    email: SharinRecipientEmail[];
 }
 
 @Injectable({ providedIn: 'root' })
@@ -98,6 +111,24 @@ export class SharingService {
         return finalUsers;
     }
 
+    async autoConfirmTrustedUsers(organizationId: string, recipientsToConfirm: SharinRecipient[]) {
+        const trustedUsers = await this.loadTrustedUsers();
+
+        const recipientsToConfirmEmails = recipientsToConfirm
+            .map(recipient => recipient.email.find(email => email.primary === true)?.address);
+
+        const trustedUsersToConfirm = trustedUsers.filter(user => recipientsToConfirmEmails.includes(user.email));
+
+        for (const trustedUserToConfirm of trustedUsersToConfirm) {
+            const orgKey = await this.cryptoService.getOrgKey(organizationId);
+            const key = await this.cryptoService.rsaEncrypt(orgKey.key, Utils.fromB64ToArray(trustedUserToConfirm.publicKey).buffer);
+            const request = new OrganizationUserConfirmRequest();
+            request.key = key.encryptedString;
+
+            await this.apiService.postOrganizationUserConfirm(organizationId, trustedUserToConfirm.id, request);
+        }
+    }
+
     async confirmUser(user: User) {
         const organizationsWithoutCozy = await this.getSharedOrganizations();
 
@@ -141,6 +172,33 @@ export class SharingService {
         const organizationsWithoutCozy = organizations.filter(organization => organization.name !== 'Cozy');
 
         return organizationsWithoutCozy;
+    }
+
+    protected async loadTrustedUsers() {
+        const queryDefinition = Q('com.bitwarden.contacts')
+            .select(['email', 'public_key', 'confirmed'])
+            .where({confirmed: true})
+            .indexFields(['confirmed']);
+
+        const { data } = await this.clientService.GetClient().query(queryDefinition);
+
+        const trustedUsers: User[] = [];
+        for (const user of data) {
+            const publicKey = user.public_key;
+
+            const fingerprint = await this.cryptoService.getFingerprint(user.id, Utils.fromB64ToArray(publicKey).buffer);
+
+            trustedUsers.push({
+                name: user.email,
+                id: user.id,
+                email: user.email,
+                publicKey: publicKey,
+                fingerprint: fingerprint,
+                fingerprintPhrase: fingerprint.join('-'),
+            });
+        }
+
+        return trustedUsers;
     }
 
     protected async loadAcceptedUsersForOrganization(organizationId: string) {

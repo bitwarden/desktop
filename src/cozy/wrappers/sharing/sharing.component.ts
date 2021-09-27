@@ -42,9 +42,18 @@ interface ConfirmationMethods {
     rejectRecipient: (organizationId: string) => Promise<void>;
 }
 
+interface OnSharedEventArgs {
+    document: File;
+    recipients: any[];
+    readOnlyRecipients: any[];
+}
+
+type OnSharedEvent = (args: OnSharedEventArgs) => Promise<void>;
+
 interface SharingProps extends AngularWrapperProps {
     file: File;
     confirmationMethods: ConfirmationMethods;
+    onShared: OnSharedEvent;
 }
 
 interface User {
@@ -119,6 +128,7 @@ export class SharingComponent extends AngularWrapperComponent {
                 _id: currentCollection.organizationId,
             },
             confirmationMethods: this.getTwoStepsConfirmationMethods(),
+            onShared: this.onShared.bind(this),
         };
     }
 
@@ -159,5 +169,20 @@ export class SharingComponent extends AngularWrapperComponent {
             confirmRecipient: confirmUser,
             rejectRecipient: rejectUser,
         };
+    }
+
+    /*********************/
+    /* Sharing Listeners */
+    /*********************/
+
+    protected async onShared({
+        document,
+        recipients,
+        readOnlyRecipients,
+    }: OnSharedEventArgs) {
+        const recipientsToConfirm = [...recipients, ...readOnlyRecipients];
+        const organizationId = document.id;
+
+        await this.sharingService.autoConfirmTrustedUsers(organizationId, recipientsToConfirm);
     }
 }
