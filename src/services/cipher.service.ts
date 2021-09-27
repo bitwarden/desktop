@@ -43,7 +43,7 @@ export class CipherService extends CipherServiceBase {
         }
 
         const orgKeys = await this.localCryptoService.getOrgKeys();
-        const orgIds = [...orgKeys.keys()];
+        const orgIds = orgKeys ? [...orgKeys.keys()] : [];
 
         const promises: any[] = [];
         const ciphers = (await this.getAll())
