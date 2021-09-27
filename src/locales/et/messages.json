@@ -45,7 +45,7 @@
     "message": "Jaga"
   },
   "moveToOrganization": {
-    "message": "Teisalda organisatsioonile"
+    "message": "Teisalda organisatsiooni"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ teisaldati $ORGNAME$",

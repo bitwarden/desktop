@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Pilihlah sebuah organisasi yang Anda ingin memindahkan item ini. Memindahkan berarti memberikan kepemilikan kepada organisasi tersebut. Anda tidak akan lagi menjadi pemilik item ini."
   },
   "attachments": {
     "message": "Lampiran"
@@ -606,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Gunakan kunci yang mendukung WebAUthn untuk mengakses akun anda."
   },
   "emailTitle": {
     "message": "Email"
@@ -1308,10 +1308,10 @@
     "message": "Verifikasi untuk Bitwarden."
   },
   "noAutoPromptWindowsHello": {
-    "message": "Do not prompt for Windows Hello on launch."
+    "message": "Jangan meminta Windows Hello waktu baru dinyalakan."
   },
   "noAutoPromptTouchId": {
-    "message": "Do not prompt for Touch ID on launch."
+    "message": "Jangan meminta Touch ID waktu baru dinyalakan."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Kunci dengan kata sandi utama saat komputer dihidupkan ulang"
@@ -1671,27 +1671,27 @@
     "message": "Penghapusan menunggu keputusan"
   },
   "webAuthnAuthenticate": {
-    "message": "Authenticate WebAuthn"
+    "message": "Autentikasi dengan WebAuthn"
   },
   "hideEmail": {
     "message": "Sembunyikan alamat surel saya dari penerima."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organization policies are affecting your Send options."
+    "message": "Satu atau lebih kebijakan organisasi mempengaruhi pengaturan feature Send anda."
   },
   "emailVerificationRequired": {
     "message": "Verifikasi Email Diperlukan"
   },
   "emailVerificationRequiredDesc": {
-    "message": "You must verify your email to use this feature."
+    "message": "Anda harus mengkonfirmasi email anda untuk menggunakan fitur ini."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Master password ditanyakan kembali"
   },
   "passwordConfirmation": {
-    "message": "Master password confirmation"
+    "message": "Konfirmasi sandi utama"
   },
   "passwordConfirmationDesc": {
-    "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+    "message": "Aksi ini terproteksi. Untuk melanjutkan, masukkan kembali sandi utama Anda untuk verifikasi identitas."
   }
 }

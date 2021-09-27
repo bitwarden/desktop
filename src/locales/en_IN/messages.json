@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organisation that you wish to move this item to. Moving to an organisation transfers ownership of the item to that organistaion. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Choose an organisation that you wish to move this item to. Moving to an organisation transfers ownership of the item to that organisation. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Attachments"
@@ -350,7 +350,7 @@
     "message": "Delete attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Are you sure you want to delete this item?"
+    "message": "Do you really want to send to the bin?"
   },
   "deletedItem": {
     "message": "Sent item to bin"
@@ -866,10 +866,10 @@
     "message": "When minimising the window, show an icon in the system tray instead."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimise to menu bar"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "When minimising the window, show an icon in the menu bar instead."
   },
   "enableCloseToTray": {
     "message": "Close to tray icon"
@@ -911,7 +911,7 @@
     "message": "Always show in the Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Show the Bitwarden icon in the Dock even when minimised to the menu bar."
   },
   "confirmTrayTitle": {
     "message": "Confirm disable tray"
@@ -1305,7 +1305,7 @@
     "message": "Unlock with Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "unlock your vault"
   },
   "noAutoPromptWindowsHello": {
     "message": "Do not prompt for Windows Hello on launch."
@@ -1470,7 +1470,7 @@
     "message": "By checking this box you agree to the following:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "Terms of service and privacy policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Enable browser integration"
@@ -1503,7 +1503,7 @@
     "message": "Verify browser connection"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint shown in the browser extension."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
@@ -1512,13 +1512,13 @@
     "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available Collections."
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organization policy is affecting your ownership options."
+    "message": "An organisation policy is affecting your ownership options."
   },
   "allSends": {
     "message": "All Sends",
@@ -1674,10 +1674,10 @@
     "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recepients."
+    "message": "Hide my email address from recipients."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organistaion policies are affecting your Send options."
+    "message": "One or more organisation policies are affecting your Send options."
   },
   "emailVerificationRequired": {
     "message": "Email Verification Required"
