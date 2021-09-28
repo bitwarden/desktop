@@ -4,6 +4,7 @@
 
 * Show users confirmation dialog after opening vault ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
 * Automatically confirm a trusted user after initializing a sharing ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
+* Add support for ReadOnly shared ciphers and folders ([PR #53](https://github.com/cozy/cozy-pass-web/pull/53))
 
 ## 🐛 Bug Fixes
 
