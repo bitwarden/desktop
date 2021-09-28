@@ -1,3 +1,17 @@
+# 2.0.3
+
+## ✨ Features
+
+* Show users confirmation dialog after opening vault ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
+* Automatically confirm a trusted user after initializing a sharing ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
+
+## 🐛 Bug Fixes
+
+
+## 🔧 Tech
+
+* Move sharing methods to a dedicated service ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
+
 # 2.0.2
 
 ## ✨ Features
