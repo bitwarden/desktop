@@ -10,6 +10,7 @@
 ## 🐛 Bug Fixes
 
 * Hide `Sare` button from `Cozy Connectors` folder ([PR #55](https://github.com/cozy/cozy-pass-web/pull/55))
+* Fix loading issue on first sync ([PR #56](https://github.com/cozy/cozy-pass-web/pull/56))
 
 ## 🔧 Tech
 
