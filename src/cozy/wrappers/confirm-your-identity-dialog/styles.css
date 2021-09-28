@@ -1,0 +1,8 @@
+.ConfirmYourIdentityModal__fingerprint {
+  padding: 16px;
+  margin: 24px 0;
+  text-align: center;
+}
+.ConfirmYourIdentityModal__fingerprint p {
+  color: var(--secondaryColor);
+}

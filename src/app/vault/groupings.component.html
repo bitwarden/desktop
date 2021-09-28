@@ -95,7 +95,7 @@
             </div>
             <ul>
                 <ng-template #recursiveCollections let-collections>
-                    <li *ngFor="let c of collections" [ngClass]="{active: c.node.id === selectedCollectionId}" class="navbar-entry">
+                    <li *ngFor="let c of collections" [ngClass]="{active: c.node.id === selectedCollectionId, orgNoKey: isOrgWithNoKey(c.node)}" class="navbar-entry">
                         <a href="#" appStopClick appBlurClick (click)="selectCollection(c.node)">
                             <i *ngIf="c.children.length" class="fa-fw fa" title="{{'toggleCollapse' | i18n}}" aria-hidden="true"
                                 [ngClass]="{'fa-caret-right': isCollapsed(c.node), 'fa-caret-down': !isCollapsed(c.node)}"
@@ -158,6 +158,7 @@
             </li>
         </ul>
     </div>
+    <app-confirm-your-identity-dialog></app-confirm-your-identity-dialog>
     <app-button-extension></app-button-extension>
     <!-- <div class="footer">
         <app-nav class="nav"></app-nav>

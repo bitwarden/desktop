@@ -5,18 +5,22 @@ import { CipherService } from 'jslib/abstractions/cipher.service';
 import { CollectionService } from 'jslib/abstractions/collection.service';
 import { FolderService } from 'jslib/abstractions/folder.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
-import { UserService } from 'jslib/abstractions/user.service';
+import { UserService } from '../../services/user.service';
 
 import { GroupingsComponent as BaseGroupingsComponent } from 'jslib/angular/components/groupings.component';
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 import { CollectionView } from 'jslib/models/view/collectionView';
+
+import { ServiceUtils } from 'jslib/misc/serviceUtils';
+
+const NestingDelimiter = '/';
 
 @Component({
     selector: 'app-vault-groupings',
     templateUrl: 'groupings.component.html',
 })
 export class GroupingsComponent extends BaseGroupingsComponent {
-
+    @Output() onOrganizationWithoutKeyClicked = new EventEmitter<CollectionView>();
     @Output() onImportClicked = new EventEmitter<void>();
     importSelected = false;
     CAN_SHARE_ORGANIZATION = CAN_SHARE_ORGANIZATION;
@@ -25,9 +29,9 @@ export class GroupingsComponent extends BaseGroupingsComponent {
     private prevSelection: any = new Object();
 
     constructor(collectionService: CollectionService, folderService: FolderService,
-        storageService: StorageService, userService: UserService,
+        storageService: StorageService, private localUserService: UserService,
         private broadcasterService: BroadcasterService, private cipherService: CipherService) {
-        super(collectionService, folderService, storageService, userService);
+        super(collectionService, folderService, storageService, localUserService);
     }
 
     async load(setLoaded = true) {
@@ -85,5 +89,47 @@ export class GroupingsComponent extends BaseGroupingsComponent {
             command: 'deleteOrganization',
             organizationId: collection.organizationId,
         });
+    }
+
+    async loadCollections(organizationId?: string) {
+        await super.loadCollections(organizationId);
+
+        const organizationWithouKey = await this.localUserService.getOrganizationsWithoutKey();
+
+        organizationWithouKey.forEach(organization => {
+            const collectionCopy = new CollectionView();
+            collectionCopy.id = organization.id;
+            collectionCopy.organizationId = organization.id;
+            const parts = organization.name != null ? organization.name.replace(/^\/+|\/+$/g, '').split(NestingDelimiter) : [];
+
+            ServiceUtils.nestedTraverse(
+                this.nestedCollections,
+                0,
+                parts,
+                collectionCopy,
+                null,
+                NestingDelimiter
+            );
+        });
+    }
+
+    selectCollection(collection: CollectionView) {
+        if (this.isOrgWithNoKey(collection)) {
+            this.showConfirmIdentityForOrganization(collection.organizationId);
+        } else {
+            super.selectCollection(collection);
+        }
+    }
+
+    showConfirmIdentityForOrganization(organizationId: string) {
+        this.broadcasterService.send({
+            command: 'showConfirmYourIdentityDialog',
+            organizationId: organizationId,
+        });
+    }
+
+    protected isOrgWithNoKey(collection: CollectionView) {
+        // in loadCollections() we set collection.id = collection.organization.id for organizations with no key
+        return collection.id === collection.organizationId;
     }
 }

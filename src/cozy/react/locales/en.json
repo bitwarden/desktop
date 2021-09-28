@@ -159,5 +159,12 @@
         "safari": "Install on Safari"
       }
     }
+  },
+
+  "ConfirmYourIdentityModal": {
+    "title": "Verify your identity",
+    "instruction": "You cannot access this folder's ciphers yet. To finalize the sharing and access your shared ciphers, contact %{ownerName} via the means of communication of your choice (call, text message, instant messaging app...) and give them your security code:",
+    "instruction2": "Your security code will allow %{ownerName} to confirm your identity and then you will be able to access your shared ciphers.",
+    "confirm": "OK"
   }
 }

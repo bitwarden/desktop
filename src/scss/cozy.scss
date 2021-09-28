@@ -81,6 +81,10 @@ app-vault-groupings {
             fill: var(--secondaryTextColor);
         }
     }
+
+    .orgNoKey {
+        opacity: 0.2;
+    }
 }
 
 app-vault-ciphers {

@@ -108,7 +108,7 @@ const tokenService = new TokenService(storageService);
 const appIdService = new AppIdService(storageService);
 const apiService = new ApiService(tokenService, platformUtilsService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }));
-const userService = new UserService(tokenService, storageService, cryptoService);
+const userService = new UserService(tokenService, storageService, cryptoService, apiService);
 const sharingService = new SharingService(apiService, clientService, cryptoService, i18nService, platformUtilsService, userService);
 const settingsService = new SettingsService(userService, storageService);
 export let searchService: SearchService = null;
@@ -220,6 +220,7 @@ export function initFactory(): Function {
         { provide: SyncServiceAbstraction, useValue: syncService },
         { provide: SyncService, useValue: syncService },
         { provide: UserServiceAbstraction, useValue: userService },
+        { provide: UserService, useValue: userService },
         { provide: MessagingServiceAbstraction, useValue: messagingService },
         { provide: BroadcasterService, useValue: broadcasterService },
         { provide: SettingsServiceAbstraction, useValue: settingsService },

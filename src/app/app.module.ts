@@ -63,6 +63,7 @@ import { ViewComponent } from './vault/view.component';
 
 import { ButtonExtensionComponent } from '../cozy/wrappers/button-extension/button-extension.component';
 import { ConfirmTrustedUsersComponent } from '../cozy/wrappers/confirm-trusted-users/confirm-trusted-users.component';
+import { ConfirmYourIdentityComponent } from '../cozy/wrappers/confirm-your-identity-dialog/confirm-your-identity-dialog.component';
 import { CozyIconComponent } from '../cozy/wrappers/cozy-icon/cozy-icon.component';
 import { IconSpriteComponent } from '../cozy/wrappers/icon-sprite/icon-sprite.component';
 import { ImportPageComponent } from '../cozy/wrappers/import-page/import-page.component';
@@ -231,6 +232,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         IfFlagDirective,
         SharingComponent,
         ConfirmTrustedUsersComponent,
+        ConfirmYourIdentityComponent,
     ],
     entryComponents: [
         AttachmentsComponent,

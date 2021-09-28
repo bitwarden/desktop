@@ -158,5 +158,12 @@
         "safari": "Installer sur Safari"
       }
     }
+  },
+
+  "ConfirmYourIdentityModal": {
+    "title": "Vérification de votre identité",
+    "instruction": "Les mots de passe de ce dossier ne vous sont pas encore accessibles. Pour finaliser le partage et accéder aux mots de passe partagés, veuillez transmettre par le moyen de votre choix (Appel, SMS, messagerie instantanée, ...) votre code de sécurité à %{ownerName} :",
+    "instruction2": "Ce code de sécurité permettra à %{ownerName} de valider votre identité et ainsi d'accéder aux éléments partagés.",
+    "confirm": "J'ai compris"
   }
 }
