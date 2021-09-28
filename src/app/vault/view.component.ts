@@ -10,6 +10,7 @@ import {
 import { ApiService } from 'jslib/abstractions/api.service';
 import { AuditService } from 'jslib/abstractions/audit.service';
 import { CipherService } from 'jslib/abstractions/cipher.service';
+import { CollectionService } from 'jslib/abstractions/collection.service';
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { EventService } from 'jslib/abstractions/event.service';
 import { I18nService } from 'jslib/abstractions/i18n.service';
@@ -36,13 +37,16 @@ const BroadcasterSubscriptionId = 'ViewComponent';
 export class ViewComponent extends BaseViewComponent implements OnChanges {
     @Output() onViewCipherPasswordHistory = new EventEmitter<CipherView>();
 
+    isReadOnly = false;
+
     constructor(cipherService: CipherService, totpService: TotpService,
         tokenService: TokenService, i18nService: I18nService,
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
         userService: UserService, eventService: EventService, apiService: ApiService,
-        private messagingService: MessagingService, passwordRepromptService: PasswordRepromptService) {
+        private messagingService: MessagingService, passwordRepromptService: PasswordRepromptService,
+        private collectionService: CollectionService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
             auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService,
             apiService, passwordRepromptService);
@@ -68,6 +72,23 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
 
     async ngOnChanges() {
         await super.load();
+
+        if (this.cipher.collectionIds?.length > 0) {
+            let readOnly = true;
+
+            // in Bitwarden's protocol a cipher is writable if part of at least one writable collection
+            for (const collectionId of this.cipher.collectionIds) {
+                const collection = await this.collectionService.get(collectionId);
+                if (!collection.readOnly) {
+                    readOnly = false;
+                    break;
+                }
+            }
+
+            this.isReadOnly = readOnly;
+        } else {
+            this.isReadOnly = false;
+        }
     }
 
     viewHistory() {
