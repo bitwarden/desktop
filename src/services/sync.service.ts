@@ -101,6 +101,17 @@ export class SyncService extends SyncServiceBase {
 
         this.localSyncStarted();
         try {
+            // After initializing a sharing, there is no garanty that organizations
+            // are synced before ciphers on stack side
+            // So we may receive a cipher from that organization before the organization being
+            // accessible on the stack
+            //
+            // So we wait a few seconds to ensure both events have been handled by the stack
+            //
+            // This await 3s may be removed later when we can fully trust
+            // NotificationsService.handleOrganizationCreate() and NotificationsService.handleOrganizationUpdate()
+            await new Promise(res => setTimeout(res, 3000));
+
             await this.upsertOrganization(notification.organizationId, isEdit);
 
             return super.syncUpsertCipher(notification, isEdit);
