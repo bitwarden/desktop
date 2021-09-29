@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 import { DeviceType } from 'jslib-common/enums/deviceType';
+import { ThemeType } from 'jslib-common/enums/themeType';
 
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -134,9 +135,9 @@ export class SettingsComponent implements OnInit {
 
         this.themeOptions = [
             { name: i18nService.t('default'), value: null },
-            { name: i18nService.t('light'), value: 'light' },
-            { name: i18nService.t('dark'), value: 'dark' },
-            { name: 'Nord', value: 'nord' },
+            { name: i18nService.t('light'), value: ThemeType.Light },
+            { name: i18nService.t('dark'), value: ThemeType.Dark },
+            { name: 'Nord', value: ThemeType.Nord },
         ];
 
         this.clearClipboardOptions = [
