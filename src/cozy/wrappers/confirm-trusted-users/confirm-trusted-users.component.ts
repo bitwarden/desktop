@@ -96,7 +96,7 @@ export class ConfirmTrustedUsersComponent extends AngularWrapperComponent {
                         this.waitForFirstSync = false;
 
                         this.showModal = true;
-                        this.renderReact();
+                        this.firstRenderReact();
                     }
                     break;
             }
@@ -122,13 +122,17 @@ export class ConfirmTrustedUsersComponent extends AngularWrapperComponent {
     /* Render */
     /**********/
 
-    protected async renderReact() {
+    protected async firstRenderReact() {
         this.usersToBeConfirmedCached = await this.sharingService.loadAllUsersToBeConfirmed();
 
         if (this.usersToBeConfirmedCached.length === 0) {
             return;
         }
 
+        this.renderReact();
+    }
+
+    protected async renderReact() {
         ReactDOM.render(
             React.createElement(ConfirmTrustedUsers, await this.getProps()),
             this.getRootDomNode()
