@@ -46,7 +46,7 @@ export class UserService extends UserServiceBase {
 
         const oldOrganizations = await this.getAllOrganizations();
 
-        const newOrganizations = oldOrganizations.filter(organization => organization.id === organizationId);
+        const newOrganizations = oldOrganizations.filter(organization => organization.id !== organizationId);
 
         const organizationsData: { [id: string]: OrganizationData; } = {};
         newOrganizations.forEach(o => {
