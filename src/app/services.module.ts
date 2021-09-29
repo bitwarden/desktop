@@ -161,7 +161,7 @@ export function initFactory(): Function {
         platformUtilsService.onDefaultSystemThemeChange(async sysTheme => {
             const bwTheme = await storageService.get<ThemeType>(ConstantsService.themeKey);
             if (bwTheme == null || bwTheme === ThemeType.System) {
-                htmlEl.classList.remove('theme_' + ThemeType.Light, 'theme_' + ThemeType.Dark)
+                htmlEl.classList.remove('theme_' + ThemeType.Light, 'theme_' + ThemeType.Dark);
                 htmlEl.classList.add('theme_' + sysTheme);
             }
         });
