@@ -151,7 +151,13 @@ export class ConfirmTrustedUsersComponent extends AngularWrapperComponent {
             return result;
         }
 
-        return await this.sharingService.loadAllUsersToBeConfirmed();
+        const usersToBeConfirmed = await this.sharingService.loadAllUsersToBeConfirmed();
+
+        if (usersToBeConfirmed.length === 0 && this.showModal === true) {
+            this.closeModal();
+        }
+
+        return usersToBeConfirmed;
     }
 
     protected async confirmUser(user: User) {
