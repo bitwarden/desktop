@@ -514,6 +514,13 @@ jobs:
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
           if-no-files-found: error
 
+      - name: Upload latest auto-update artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: latest-mac-prerelease.yml
+          path: ./dist/latest-mac.yml
+          if-no-files-found: error
+
       - name: TEST STEP
         shell: bash
         run: |
