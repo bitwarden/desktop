@@ -378,15 +378,6 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "*********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
-
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
