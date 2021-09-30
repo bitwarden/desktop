@@ -24,9 +24,28 @@ jobs:
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
 
+  setup:
+    name: Setup
+    runs-on: ubuntu-20.04
+    outputs:
+      package_version: ${{ steps.retrieve-version.outputs.package_version }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+
+      - name: Get Package Version
+        id: retrieve-version
+        run: |
+          PKG_VERSION=$(jq -r .version src/package.json)
+          echo "::set-output name=package_version::$PKG_VERSION"
+
+
   linux:
     name: Linux Build
     runs-on: ubuntu-20.04
+    needs: setup
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -68,10 +87,6 @@ jobs:
           snap --version
           snapcraft --version || echo 'snapcraft unavailable'
 
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
-
       - name: Install Node dependencies
         run: npm ci
 
@@ -84,42 +99,54 @@ jobs:
       - name: Upload .deb artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          name: bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
+          path: ./dist/bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
+
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "*********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
 
 
   windows:
     name: Windows Build
     runs-on: windows-2019
+    needs: setup
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -160,10 +187,6 @@ jobs:
           npm --version
           choco --version
 
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
-
       - name: Install Node dependencies
         run: npm ci
 
@@ -185,69 +208,82 @@ jobs:
       - name: Rename appx files for store
         shell: pwsh
         run: |
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx"
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx" `
+            -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx" `
+            -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx" `
+            -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx"
 
       - name: Building for Chocolatey
         shell: pwsh
         run: |
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
-          Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
+          Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
-          (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
-          choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
+          (Get-Content $chocoInstall).replace('__version__', "$env:_PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:_PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+          name: Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
+          path: ./dist/Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          name: Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          path: ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           if-no-files-found: error
 
       - name: Upload nupkg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          name: bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
+
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "*********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
+
 
   macos-build:
     name: MacOS Build
     runs-on: macos-10.15
+    needs: setup
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -319,10 +355,6 @@ jobs:
         run: ./.github/scripts/macos/increment-version.ps1
         shell: pwsh
 
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
-
       - name: Install Node dependencies
         run: npm ci
 
@@ -346,10 +378,22 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "*********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
+
+
   macos-package-github:
     name: MacOS Package GitHub Release Assets
     runs-on: macos-10.15
-    needs: macos-build
+    needs: [setup, macos-build]
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
@@ -420,10 +464,6 @@ jobs:
 
       - name: Increment version
         run: ./.github/scripts/macos/increment-version.ps1
-        shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
       - name: NPM install
@@ -465,21 +505,33 @@ jobs:
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
           if-no-files-found: error
+
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "*********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
+
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
     runs-on: macos-10.15
-    needs: macos-build
+    needs: [setup, macos-build]
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
@@ -550,10 +602,6 @@ jobs:
 
       - name: Increment version
         run: ./.github/scripts/macos/increment-version.ps1
-        shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
       - name: NPM install
@@ -597,15 +645,27 @@ jobs:
       - name: Upload .pkg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
-          path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
+          path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           if-no-files-found: error
+
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "*********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
+
 
   macos-package-dev:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
     runs-on: macos-10.15
-    needs: macos-build
+    needs: [setup, macos-build]
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -675,10 +735,6 @@ jobs:
 
       - name: Increment version
         run: ./.github/scripts/macos/increment-version.ps1
-        shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
         shell: pwsh
 
       - name: NPM install
@@ -726,6 +782,15 @@ jobs:
       - name: Upload masdev artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip
-          path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
+          path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
+
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "*********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
