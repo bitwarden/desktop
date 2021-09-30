@@ -62,6 +62,7 @@ jobs:
                       Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
                       bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
                       Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
+                      latest-linux-prerelease.yml,
                       Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
                       Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
                       Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,

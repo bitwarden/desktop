@@ -131,6 +131,13 @@ jobs:
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
+      - name: Upload latest auto-update artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: latest-linux-prerelease.yml
+          path: ./dist/latest-linux.yml
+          if-no-files-found: error
+
       - name: TEST STEP
         shell: bash
         run: |
@@ -385,7 +392,7 @@ jobs:
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+    #if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -523,7 +530,7 @@ jobs:
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+    #if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
