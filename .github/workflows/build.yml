@@ -238,11 +238,32 @@ jobs:
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
+      - name: Upload appx ia32 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
+          if-no-files-found: error
+
       - name: Upload store appx ia32 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
+          if-no-files-found: error
+
+      - name: Upload NSIS ia32 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+          if-no-files-found: error
+
+      - name: Upload appx x64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
@@ -252,11 +273,32 @@ jobs:
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
+      - name: Upload NSIS x64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+          if-no-files-found: error
+
+      - name: Upload appx ARM64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
+          if-no-files-found: error
+
       - name: Upload store appx ARM64 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
+          if-no-files-found: error
+
+      - name: Upload NSIS ARM64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
+          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           if-no-files-found: error
 
       - name: Upload nupkg artifact
@@ -272,30 +314,6 @@ jobs:
           name: latest.yml
           path: ./dist/nsis-web/latest.yml
           if-no-files-found: error
-
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "*********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
-          echo "**********"
-          echo "CHOCOLATEY"
-          ls -alh $GITHUB_WORKSPACE/dist/chocolatey
-          echo "**********"
-          echo "NSIS-WEB"
-          ls -alh $GITHUB_WORKSPACE/dist/nsis-web
-          echo "**********"
-          echo "WIN-ARM64-UNPACKED"
-          ls -alh $GITHUB_WORKSPACE/dist/win-arm64-unpacked
-          echo "**********"
-          echo "WIN-IA32-UNPACKED"
-          ls -alh $GITHUB_WORKSPACE/dist/win-ia32-unpacked
-          echo "**********"
-          echo "WIN-UNPACKED"
-          ls -alh $GITHUB_WORKSPACE/dist/win-unpacked
 
 
   macos-build:
@@ -405,7 +423,6 @@ jobs:
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
-    #if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -527,12 +544,34 @@ jobs:
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
           if-no-files-found: error
 
+      - name: Upload .dmg blockmap artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
+          if-no-files-found: error
+
       - name: Upload latest auto-update artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
           name: latest-mac.yml
           path: ./dist/latest-mac.yml
           if-no-files-found: error
+
+      - name: TEST STEP
+        shell: bash
+        run: |
+          echo "GITHUB_WORKSPACE"
+          ls -alh $GITHUB_WORKSPACE
+          echo "**********"
+          echo "DIST"
+          ls -alh $GITHUB_WORKSPACE/dist
+          echo "**********"
+          echo "GITHUB"
+          ls -alh $GITHUB_WORKSPACE/dist/github
+          echo "**********"
+          echo "MAC"
+          ls -alh $GITHUB_WORKSPACE/dist/mac
 
 
   macos-package-mas:
@@ -541,7 +580,6 @@ jobs:
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
-    #if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -657,18 +695,6 @@ jobs:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           if-no-files-found: error
-
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "**********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
-          echo "**********"
-          echo "MAS UNIVERSAL"
-          ls -alh $GITHUB_WORKSPACE/dist/mas-universal
 
 
   macos-package-dev:
