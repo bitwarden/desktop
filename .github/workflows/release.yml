@@ -69,6 +69,7 @@ jobs:
                       Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
                       Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
                       bitwarden.${{ env.PKG_VERSION }}.nupkg,
+                      latest.yml,
                       Bitwarden-${{ env.PKG_VERSION }}-mac.zip,
                       Bitwarden-${{ env.PKG_VERSION }}.dmg,
                       latest-mac.yml,

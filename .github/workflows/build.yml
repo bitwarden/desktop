@@ -266,6 +266,13 @@ jobs:
           path: ./dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
+      - name: Upload latest auto-update artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: latest.yml
+          path: ./dist/nsis-web/latest.yml
+          if-no-files-found: error
+
       - name: TEST STEP
         shell: bash
         run: |
