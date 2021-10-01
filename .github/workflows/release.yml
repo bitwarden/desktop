@@ -66,15 +66,21 @@ jobs:
                       Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
                       Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
                       Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
+                      Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
+                      bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
                       Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
+                      Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
+                      bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
                       Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
+                      Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
+                      bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
                       bitwarden.${{ env.PKG_VERSION }}.nupkg,
                       latest.yml,
                       Bitwarden-${{ env.PKG_VERSION }}-mac.zip,
                       Bitwarden-${{ env.PKG_VERSION }}.dmg,
+                      Bitwarden-${{ env.PKG_VERSION }}.dmg.blockmap,
                       latest-mac.yml,
                       Bitwarden-${{ env.PKG_VERSION }}-universal.pkg"
-                      #Bitwarden-${{ env.PKG_VERSION }}-masdev-universal.zip
           commit: ${{ github.sha }}
           tag: v${{ env.PKG_VERSION }}
           name: Version ${{ env.PKG_VERSION }}
@@ -83,65 +89,107 @@ jobs:
           draft: true
 
 
-  update-release-assets:
-    name: Update Release Assets
-    if: false
+  snap:
+    name: Deploy Snap
     runs-on: ubuntu-20.04
+    needs: setup
+    env:
+      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        with:
+          ref: rc
+
+      - name: Install Snap
+        uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d  # v1.2.0
+        with:
+          snapcraft_token: ${{ secrets.SNAP_TOKEN }}
+
+      - name: Setup
+        run: mkdir dist
+
+      - name: Download Snap artifact
+        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
+        with:
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: rc
+          artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
+          path: ./dist
+
+      - name: Test
+        run: ls -alht dist
+
+      - name: Deploy to Snap Store
+        run: |
+          snapcraft upload dist/bitwarden_${{ env._PKG_VERSION }}_amd64.snap --release stable
+          snapcraft logout
+
+
+  choco:
+    name: Deploy Choco
+    runs-on: windows-2019
+    needs: setup
+    env:
+      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        with:
+          ref: rc
+
+      - name: Setup Chocolatey
+        run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
+        env:
+          CHOCO_API_KEY: ${{ secrets.CHOCO_API_KEY }}
+
+      - name: Make dist dir
+        shell: pwsh
+        run: New-Item -ItemType directory -Path ./dist
+
+      - name: Download choco artifact
+        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
+        with:
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: rc
+          artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
+          path: ./dist
+
+      - name: Push to Chocolatey
+        shell: pwsh
+        run: |
+          cd dist
+          choco push
+
+
+  macos:
+    name: Deploy MacOS
+    runs-on: macos-10.15
+    needs: setup
+    env:
+      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        with:
+          ref: rc
 
-      - name: Rename publish asset
-        run: |
-          curl \
-              -H "Authorization:token ${{ secrets.GITHUB_TOKEN }}" \
-              -H "Accept:application/vnd.github.v3+json" \
-              https://api.github.com/repos/$GITHUB_REPOSITORY/releases \
-              | jq -r " .[] | select( .tag_name == \"$_TAG_VERSION\")" > release.json
+      - name: Make target directory
+        run: mkdir -p dist/mas-universal
 
-          echo "=====RELEASE====="
-          echo Release:
-          #cat release.json
+      - name: Download Mac artifact
+        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
+        with:
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: rc
+          artifacts: Bitwarden-${{ env._PKG_VERSION }}-universal.pkg
+          path: ./dist/mas-universal
 
-          RELEASE_UPLOAD_URL=$(cat release.json | jq -r ' .upload_url ' | cut -d { -f 1)
-          cat release.json | jq -rc ' .assets[] | select( .name | test("latest.*[yml|json]")) | {name: .name,  url: .url, content_type: .content_type}' > release_assets.jsonl
-
-          echo "=====ASSETS====="
-          echo Release Upload URL: $RELEASE_UPLOAD_URL
-          echo Release Assets:
-          cat release_assets.jsonl
-
-          while read -r asset; do
-              FILE_NAME=$(echo $asset | jq -r '.name')
-              FILE_URL=$(echo $asset | jq -r '.url')
-              FILE_ID=$(echo $asset | jq -r '.id')
-              echo "Asset name: $FILE_NAME"
-              echo "Asset url: $FILE_URL"
-
-              echo "Grabbing asset..."
-              curl \
-                  -L -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                  -H "Accept: application/octet-stream" \
-                  $FILE_URL --output  $FILE_NAME
-
-              NEW_FILE_SIZE=$(wc -c < $FILE_NAME | xargs)
-              echo "New file size: $NEW_FILE_SIZE"
-              echo "New file name: $FILE_NAME"
-              echo "================"
-
-              echo "Deleting remote asset..."
-              curl \
-                  -X DELETE \
-                  -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                  -H "accept: application/vnd.github.v3+json" \
-                  $FILE_URL
-
-              echo "Pushing updated asset..."
-              curl \
-                  -X POST \
-                  -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-                  -H "content-type: text/yaml" \
-                  -H "content-length: $NEW_FILE_SIZE" \
-                  --data-binary @$FILE_NAME \
-                  "$RELEASE_UPLOAD_URL?name=prerelease-$FILE_NAME" --http1.1
-          done < release_assets.jsonl
+      - name: Deploy to App Store
+        run: npm run upload:mas
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
