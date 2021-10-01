@@ -134,7 +134,7 @@ jobs:
       - name: Upload latest auto-update artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: latest-linux-prerelease.yml
+          name: latest-linux.yml
           path: ./dist/latest-linux.yml
           if-no-files-found: error
 
@@ -517,7 +517,7 @@ jobs:
       - name: Upload latest auto-update artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: latest-mac-prerelease.yml
+          name: latest-mac.yml
           path: ./dist/latest-mac.yml
           if-no-files-found: error
 
