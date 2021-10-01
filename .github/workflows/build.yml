@@ -138,15 +138,6 @@ jobs:
           path: ./dist/latest-linux.yml
           if-no-files-found: error
 
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "*********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
-
 
   windows:
     name: Windows Build
@@ -283,6 +274,21 @@ jobs:
           echo "*********"
           echo "DIST"
           ls -alh $GITHUB_WORKSPACE/dist
+          echo "**********"
+          echo "CHOCOLATEY"
+          ls -alh $GITHUB_WORKSPACE/dist/chocolatey
+          echo "**********"
+          echo "NSIS-WEB"
+          ls -alh $GITHUB_WORKSPACE/dist/nsis-web
+          echo "**********"
+          echo "WIN-ARM64-UNPACKED"
+          ls -alh $GITHUB_WORKSPACE/dist/win-arm64-unpacked
+          echo "**********"
+          echo "WIN-IA32-UNPACKED"
+          ls -alh $GITHUB_WORKSPACE/dist/win-ia32-unpacked
+          echo "**********"
+          echo "WIN-UNPACKED"
+          ls -alh $GITHUB_WORKSPACE/dist/win-unpacked
 
 
   macos-build:
@@ -521,15 +527,6 @@ jobs:
           path: ./dist/latest-mac.yml
           if-no-files-found: error
 
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "*********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
-
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
@@ -659,9 +656,12 @@ jobs:
         run: |
           echo "GITHUB_WORKSPACE"
           ls -alh $GITHUB_WORKSPACE
-          echo "*********"
+          echo "**********"
           echo "DIST"
           ls -alh $GITHUB_WORKSPACE/dist
+          echo "**********"
+          echo "MAS UNIVERSAL"
+          ls -alh $GITHUB_WORKSPACE/dist/mas-universal
 
 
   macos-package-dev:
