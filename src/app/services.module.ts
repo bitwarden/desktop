@@ -87,6 +87,7 @@ import { TotpService as TotpServiceAbstraction } from 'jslib-common/abstractions
 import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
+import { ThemeType } from 'jslib-common/enums/themeType';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -154,15 +155,17 @@ export function initFactory(): Function {
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
-        let theme = await storageService.get<string>(ConstantsService.themeKey);
-        if (theme == null) {
-            theme = await platformUtilsService.getDefaultSystemTheme();
-            platformUtilsService.onDefaultSystemThemeChange(sysTheme => {
-                window.document.documentElement.classList.remove('theme_light', 'theme_dark');
-                window.document.documentElement.classList.add('theme_' + sysTheme);
-            });
-        }
+
+        const theme = await platformUtilsService.getEffectiveTheme();
         htmlEl.classList.add('theme_' + theme);
+        platformUtilsService.onDefaultSystemThemeChange(async sysTheme => {
+            const bwTheme = await storageService.get<ThemeType>(ConstantsService.themeKey);
+            if (bwTheme == null || bwTheme === ThemeType.System) {
+                htmlEl.classList.remove('theme_' + ThemeType.Light, 'theme_' + ThemeType.Dark);
+                htmlEl.classList.add('theme_' + sysTheme);
+            }
+        });
+
         stateService.save(ConstantsService.disableFaviconKey,
             await storageService.get<boolean>(ConstantsService.disableFaviconKey));
 
