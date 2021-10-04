@@ -227,7 +227,9 @@ export class VaultComponent implements OnInit, OnDestroy {
                 } else if (params.collectionId) {
                     this.groupingsComponent.selectedCollectionId = params.collectionId;
                     await this.filterCollection(params.collectionId);
-                } else if (params.action !== 'import') {
+                } else if (params.action === 'import') {
+                    this.startImport();
+                } else {
                     this.groupingsComponent.selectedAll = true;
                     await this.ciphersComponent.reload();
                 }
