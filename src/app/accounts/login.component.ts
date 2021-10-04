@@ -8,7 +8,7 @@ import {
     ViewContainerRef,
 } from '@angular/core';
 
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { EnvironmentComponent } from './environment.component';
 
@@ -30,7 +30,15 @@ import { ModalComponent } from 'jslib/angular/components/modal.component';
 import { CozyClientInstanceOption } from '../../cozy/CozyClientTypes';
 import { CozyClientService } from '../../cozy/services/cozy-client.service';
 
+import { ConstantsService } from 'jslib/services/constants.service';
+import { Subscription } from 'rxjs/internal/Subscription';
+
 const BroadcasterSubscriptionId = 'LoginComponent';
+
+const Keys = {
+    rememberedEmail: 'rememberedEmail',
+    rememberEmail: 'rememberEmail',
+};
 
 @Component({
     selector: 'app-login',
@@ -45,15 +53,18 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     baseUrl: string;
     canAuthWithOIDC = false;
     appIconForOIDC = 'images/icons-login.svg';
+    protected queryParamsSub: Subscription = undefined;
+    protected redirectUri: string;
 
     constructor(authService: AuthService, router: Router, i18nService: I18nService,
         syncService: SyncService, private componentFactoryResolver: ComponentFactoryResolver,
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
-        cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone, private clientService: CozyClientService) {
+        cryptoFunctionService: CryptoFunctionService, protected localStorageService: StorageService,
+        private broadcasterService: BroadcasterService, private ngZone: NgZone, private clientService: CozyClientService,
+        protected route: ActivatedRoute) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
-            passwordGenerationService, cryptoFunctionService, storageService);
+            passwordGenerationService, cryptoFunctionService, localStorageService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
@@ -93,6 +104,14 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
                 }
             });
         });
+
+        this.queryParamsSub = this.route.queryParams.subscribe(async qParams => {
+            if (qParams.redirectUri != null) {
+                this.redirectUri = qParams.redirectUri;
+
+                this.successRoute = this.redirectUri;
+            }
+        });
     }
 
     async checkIfClientCanAuthWithOIDC() {
@@ -107,6 +126,8 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+
+        this.queryParamsSub?.unsubscribe();
     }
 
     settings() {
@@ -189,4 +210,56 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         });
     }
 
+    /**
+     * This is an override of base login component
+     * It is needed to handle redirect uri if provided
+     */
+    async submit() {
+        if (this.email == null || this.email === '') {
+            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
+                this.i18nService.t('emailRequired'));
+            return;
+        }
+        if (this.email.indexOf('@') === -1) {
+            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
+                this.i18nService.t('invalidEmail'));
+            return;
+        }
+        if (this.masterPassword == null || this.masterPassword === '') {
+            this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
+                this.i18nService.t('masterPassRequired'));
+            return;
+        }
+
+        try {
+            this.formPromise = this.authService.logIn(this.email, this.masterPassword);
+            const response = await this.formPromise;
+            await this.localStorageService.save(Keys.rememberEmail, this.rememberEmail);
+            if (this.rememberEmail) {
+                await this.localStorageService.save(Keys.rememberedEmail, this.email);
+            } else {
+                await this.localStorageService.remove(Keys.rememberedEmail);
+            }
+            if (response.twoFactor) {
+                if (this.onSuccessfulLoginTwoFactorNavigate != null) {
+                    this.onSuccessfulLoginTwoFactorNavigate();
+                } else {
+                    this.router.navigate([this.twoFactorRoute]);
+                }
+            } else {
+                const disableFavicon = await this.localStorageService.get<boolean>(ConstantsService.disableFaviconKey);
+                await this.stateService.save(ConstantsService.disableFaviconKey, !!disableFavicon);
+                if (this.onSuccessfulLogin != null) {
+                    this.onSuccessfulLogin();
+                }
+                if (this.onSuccessfulLoginNavigate != null) {
+                    this.onSuccessfulLoginNavigate();
+                } else {
+                    // @override by Cozy
+                    this.router.navigateByUrl(this.successRoute);
+                    // end Cozy override
+                }
+            }
+        } catch { }
+    }
 }

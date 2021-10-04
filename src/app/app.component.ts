@@ -169,7 +169,14 @@ export class AppComponent implements OnInit {
                     case 'authBlocked':
                     case 'installed':
                     case 'uninstallBlocked':
-                        this.router.navigate(['login']);
+                        // @override by Cozy
+                        const redirectUri = message.url;
+                        this.router.navigate(['login'], {
+                            queryParams: {
+                                redirectUri: redirectUri,
+                            },
+                        });
+                        // end Cozy override
                         break;
                     case 'installBlocked':
                         this.router.navigate(['installation']);
