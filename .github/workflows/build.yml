@@ -438,7 +438,7 @@ jobs:
           Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;)
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: Install Node dependencies
         run: npm ci
@@ -586,7 +586,7 @@ jobs:
           Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;)
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
         run: npm ci
@@ -790,7 +790,7 @@ jobs:
           Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;)
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
         run: npm ci
@@ -961,7 +961,7 @@ jobs:
           Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;)
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
         run: npm ci
