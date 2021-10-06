@@ -25,7 +25,7 @@
                         *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}"
                         [disabled]="!cipher.viewPassword && !f.newField">
                     <!-- Linked -->
-                    <select id="fieldValue{{i}}" name="Field.Value{{i}}" [(ngModel)]="f.value"
+                    <select id="fieldValue{{i}}" name="Field.Value{{i}}" [(ngModel)]="f.linkedId"
                         *ngIf="f.type === fieldType.Linked && cipher.type !== cipherType.SecureNote">
                         <option *ngFor="let o of linkedFieldOptions" [ngValue]="o.value">{{o.name}}</option>
                     </select>

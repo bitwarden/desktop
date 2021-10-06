@@ -292,9 +292,6 @@
   "country": {
     "message": "Country"
   },
-  "fullAddress": {
-    "message": "Full address"
-  },
   "save": {
     "message": "Save"
   },
