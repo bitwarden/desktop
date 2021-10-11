@@ -29,6 +29,7 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
+      build_number: ${{ steps.increment-version.outputs.build_number }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -38,6 +39,13 @@ jobs:
         run: |
           PKG_VERSION=$(jq -r .version src/package.json)
           echo "::set-output name=package_version::$PKG_VERSION"
+
+      - name: Increment version
+        id: increment-version
+        run: |
+          BUILD_NUMBER=$(500 + $GITHUB_RUN_NUMBER)
+          echo "Setting build number to $BUILD_NUMBER"
+          echo "::set-output name=build_number::$BUILD_NUMBER"
 
 
   linux:
@@ -432,12 +440,11 @@ jobs:
 
       - name: Increment version
         shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $buildNumber = 500 + [int]$env:GITHUB_RUN_NUMBER;
-          Write-Output "Setting build number to $buildNumber";
-          Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: Install Node dependencies
@@ -580,12 +587,11 @@ jobs:
 
       - name: Increment version
         shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $buildNumber = 500 + [int]$env:GITHUB_RUN_NUMBER;
-          Write-Output "Setting build number to $buildNumber";
-          Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
@@ -784,12 +790,11 @@ jobs:
 
       - name: Increment version
         shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $buildNumber = 500 + [int]$env:GITHUB_RUN_NUMBER;
-          Write-Output "Setting build number to $buildNumber";
-          Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
@@ -955,12 +960,11 @@ jobs:
 
       - name: Increment version
         shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $buildNumber = 500 + [int]$env:GITHUB_RUN_NUMBER;
-          Write-Output "Setting build number to $buildNumber";
-          Write-Output "BUILD_NUMBER=$buildNumber" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append;
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$buildNumber";
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
