@@ -658,21 +658,6 @@ jobs:
           path: ./dist/latest-mac.yml
           if-no-files-found: error
 
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "**********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
-          echo "**********"
-          echo "GITHUB"
-          ls -alh $GITHUB_WORKSPACE/dist/github
-          echo "**********"
-          echo "MAC"
-          ls -alh $GITHUB_WORKSPACE/dist/mac
-
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
@@ -1015,12 +1000,3 @@ jobs:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
-
-      - name: TEST STEP
-        shell: bash
-        run: |
-          echo "GITHUB_WORKSPACE"
-          ls -alh $GITHUB_WORKSPACE
-          echo "*********"
-          echo "DIST"
-          ls -alh $GITHUB_WORKSPACE/dist
