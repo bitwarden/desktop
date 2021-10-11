@@ -12,6 +12,8 @@ import {
     Router,
 } from '@angular/router';
 
+import { first } from 'rxjs/operators';
+
 import { ToasterService } from 'angular2-toaster';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
@@ -175,7 +177,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     async load() {
         let loaded = false;
-        const queryParamsSub = this.route.queryParams.subscribe(async params => {
+        this.route.queryParams.pipe(first()).subscribe(async params => {
             if (loaded) {
                 return;
             }
@@ -222,9 +224,6 @@ export class VaultComponent implements OnInit, OnDestroy {
                     this.groupingsComponent.selectedAll = true;
                     await this.ciphersComponent.reload();
                 }
-            }
-            if (queryParamsSub != null) {
-                queryParamsSub.unsubscribe();
             }
         });
     }
