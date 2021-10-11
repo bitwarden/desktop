@@ -43,7 +43,7 @@ jobs:
       - name: Increment version
         id: increment-version
         run: |
-          BUILD_NUMBER=$(500 + $GITHUB_RUN_NUMBER)
+          BUILD_NUMBER=$(expr 500 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
           echo "::set-output name=build_number::$BUILD_NUMBER"
 
