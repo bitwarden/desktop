@@ -221,7 +221,7 @@ jobs:
           Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx" `
             -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx"
 
-      - name: Building for Chocolatey
+      - name: Package for Chocolatey
         shell: pwsh
         run: |
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
