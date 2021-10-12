@@ -103,7 +103,7 @@
                             <app-cozy-icon ref="folder" width="24" height="16"></app-cozy-icon>
                             &nbsp;{{c.node.name}}
                         </a>
-                        <button appBlurClick (click)="deleteCollection(c.node)" appA11yTitle="{{'addFolder' | i18n}}">
+                        <button appBlurClick (click)="deleteCollection(c.node)" appA11yTitle="{{'deleteFolder' | i18n}}">
                             <app-cozy-icon ref="trash" width="20" height="16"></app-cozy-icon>
                         </button>
                         <ul class="fa-ul" *ngIf="c.children.length && !isCollapsed(c.node)">
