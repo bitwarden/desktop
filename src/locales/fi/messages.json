@@ -1284,7 +1284,7 @@
     "message": "Avaa PIN-koodilla"
   },
   "setYourPinCode": {
-    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos laajennuksesta."
+    "message": "Aseta PIN-koodi Bitwardenin avaukselle. PIN-asetukset tyhjentyvät, jos kirjaudut kokonaan ulos sovelluksesta."
   },
   "pinRequired": {
     "message": "PIN-koodi vaaditaan."
