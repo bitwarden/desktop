@@ -110,22 +110,6 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     }
 
     async isViewOpen(): Promise<boolean> {
-        // if (await BrowserApi.isPopupOpen()) {
-        //     return true;
-        // }
-        //
-        // if (this.isSafari()) {
-        //     return false;
-        // }
-        //
-        // const sidebarView = this.sidebarViewName();
-        // const sidebarOpen = sidebarView != null && chrome.extension.getViews({ type: sidebarView }).length > 0;
-        // if (sidebarOpen) {
-        //     return true;
-        // }
-        //
-        // const tabOpen = chrome.extension.getViews({ type: 'tab' }).length > 0;
-        // return tabOpen;
         return Promise.resolve(false);
     }
 
@@ -147,14 +131,6 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
 
     supportsWebAuthn(win: Window): boolean {
         return (typeof(PublicKeyCredential) !== 'undefined');
-    }
-
-    supportsU2f(win: Window): boolean {
-        if (win != null && (win as any).u2f != null) {
-            return true;
-        }
-
-        return this.isChrome() || this.isOpera() || this.isVivaldi();
     }
 
     supportsDuo(): boolean {
@@ -308,44 +284,11 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     }
 
     async supportsBiometric() {
-        if (this.isFirefox()) {
-            return parseInt((await browser.runtime.getBrowserInfo()).version.split('.')[0], 10) >= 87;
-        }
-
-        return true;
-    }
-
-    /* @override by Cozy
-
-    // implementation from browser addon
-    authenticateBiometric() {
-        return this.biometricCallback();
-    }
-
-    // implementation from browser addon
-    authenticateBiometric(): Promise<boolean> {
-        return new Promise((resolve) => {
-            const val = ipcRenderer.sendSync('biometric', {
-                action: 'authenticate',
-            });
-            resolve(val);
-        });
-    }
-    */
-
-    // implementation to fix for webbapp
-    authenticateBiometric() {
         return Promise.resolve(false);
     }
 
-    sidebarViewName(): string {
-        if ((window as any).chrome.sidebarAction && this.isFirefox()) {
-            return 'sidebar';
-        } else if (this.isOpera() && (typeof opr !== 'undefined') && opr.sidebarAction) {
-            return 'sidebar_panel';
-        }
-
-        return null;
+    authenticateBiometric() {
+        return Promise.resolve(false);
     }
 
     supportsSecureStorage(): boolean {
