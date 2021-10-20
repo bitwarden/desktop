@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
@@ -20,9 +21,11 @@ export class AddEditComponent extends BaseAddEditComponent {
     constructor(i18nService: I18nService, platformUtilsService: PlatformUtilsService,
         environmentService: EnvironmentService, datePipe: DatePipe,
         sendService: SendService, userService: UserService,
-        messagingService: MessagingService, policyService: PolicyService) {
+        messagingService: MessagingService, policyService: PolicyService,
+        logService: LogService) {
         super(i18nService, platformUtilsService, environmentService,
-              datePipe, sendService, userService, messagingService, policyService);
+              datePipe, sendService, userService, messagingService, policyService,
+              logService);
     }
 
     async refresh() {

@@ -17,6 +17,7 @@ import { ApiService } from 'jslib-common/abstractions/api.service';
 import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
@@ -39,9 +40,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private modalService: ModalService,
-        stateService: StateService, storageService: StorageService, route: ActivatedRoute) {
+        stateService: StateService, storageService: StorageService, route: ActivatedRoute,
+        logService: LogService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
-            stateService, storageService, route);
+            stateService, storageService, route, logService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

@@ -88,6 +88,7 @@ import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ThemeType } from 'jslib-common/enums/themeType';
+import { ConsoleLogService } from 'jslib-common/services/consoleLog.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
@@ -111,22 +112,23 @@ const settingsService = new SettingsService(userService, storageService);
 export let searchService: SearchService = null;
 const fileUploadService = new FileUploadService(logService, apiService);
 const cipherService = new CipherService(cryptoService, userService, settingsService,
-    apiService, fileUploadService, storageService, i18nService, () => searchService);
+    apiService, fileUploadService, storageService, i18nService, () => searchService,
+    logService);
 const folderService = new FolderService(cryptoService, userService, apiService, storageService,
     i18nService, cipherService);
 const collectionService = new CollectionService(cryptoService, userService, storageService, i18nService);
 searchService = new SearchService(cipherService, logService, i18nService);
 const sendService = new SendService(cryptoService, userService, apiService, fileUploadService, storageService,
     i18nService, cryptoFunctionService);
-const policyService = new PolicyService(userService, storageService);
+const policyService = new PolicyService(userService, storageService, apiService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
     policyService, null, async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
-    sendService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
+    sendService, logService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
-const totpService = new TotpService(storageService, cryptoFunctionService);
+const totpService = new TotpService(storageService, cryptoFunctionService, logService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
     i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService);
@@ -134,7 +136,7 @@ const exportService = new ExportService(folderService, cipherService, apiService
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
     apiService, vaultTimeoutService, environmentService, async () => messagingService.send('logout', { expired: true }), logService);
-const eventService = new EventService(storageService, apiService, userService, cipherService);
+const eventService = new EventService(storageService, apiService, userService, cipherService, logService);
 const systemService = new SystemService(storageService, vaultTimeoutService, messagingService, platformUtilsService,
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,

@@ -11,6 +11,7 @@ import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
@@ -31,9 +32,9 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
         apiService: ApiService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, passwordGenerationService: PasswordGenerationService,
         environmentService: EnvironmentService, private broadcasterService: BroadcasterService,
-        private ngZone: NgZone) {
+        private ngZone: NgZone, logService: LogService) {
         super(authService, router, i18nService, cryptoService, apiService, stateService, platformUtilsService,
-            passwordGenerationService, environmentService);
+            passwordGenerationService, environmentService, logService);
     }
 
     async ngOnInit() {
