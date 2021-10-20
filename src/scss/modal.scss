@@ -173,15 +173,12 @@ $close-text-shadow: 0 1px 0 $white !default;
 }
 
 // Modal background
-.modal-backdrop, .modal-dismiss {
+.modal-backdrop {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-}
-
-.modal-backdrop {
     z-index: $zindex-modal-backdrop;
     background-color: $modal-backdrop-bg;
     // Fade for backdrop
