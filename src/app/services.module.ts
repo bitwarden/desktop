@@ -88,7 +88,6 @@ import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ThemeType } from 'jslib-common/enums/themeType';
-import { ConsoleLogService } from 'jslib-common/services/consoleLog.service';
 
 const logService = new ElectronLogService();
 const i18nService = new I18nService(window.navigator.language, './locales');
