@@ -13,6 +13,7 @@ import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
@@ -41,9 +42,10 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
         storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
         apiService: ApiService, private route: ActivatedRoute,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        logService: LogService) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
-            storageService, vaultTimeoutService, environmentService, stateService, apiService);
+            storageService, vaultTimeoutService, environmentService, stateService, apiService, logService);
     }
 
     async ngOnInit() {

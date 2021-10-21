@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ApiService } from 'jslib-common/abstractions/api.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
@@ -57,8 +58,8 @@ export class UpdateTempPasswordComponent extends BaseUpdateTempPasswordComponent
         passwordGenerationService: PasswordGenerationService, policyService: PolicyService,
         cryptoService: CryptoService, userService: UserService,
         messagingService: MessagingService, apiService: ApiService,
-        syncService: SyncService) {
+        syncService: SyncService, logService: LogService) {
         super(i18nService, platformUtilsService, passwordGenerationService, policyService, cryptoService,
-            userService, messagingService, apiService, syncService);
+            userService, messagingService, apiService, syncService, logService);
     }
 }

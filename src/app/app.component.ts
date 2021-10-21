@@ -7,7 +7,6 @@ import {
 
 import {
     Component,
-    ComponentFactoryResolver,
     NgZone,
     OnInit,
     SecurityContext,
@@ -31,6 +30,7 @@ import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
         private toasterService: ToasterService, private i18nService: I18nService,
         private sanitizer: DomSanitizer, private ngZone: NgZone,
         private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
-        private cryptoService: CryptoService, private componentFactoryResolver: ComponentFactoryResolver,
+        private cryptoService: CryptoService, private logService: LogService,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
@@ -238,7 +238,9 @@ export class AppComponent implements OnInit {
                             if (lastSyncAgo >= SyncInterval) {
                                 await this.syncService.fullSync(false);
                             }
-                        } catch { }
+                        } catch (e) {
+                            this.logService.error(e);
+                        }
                         this.messagingService.send('scheduleNextSync');
                         break;
                     case 'exportVault':
