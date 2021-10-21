@@ -249,7 +249,7 @@ export class NativeMessagingMain {
             await list(key);
             await deleteKey(key);
         } catch {
-            this.logService.error('Unable to delete registry key: ${key}');
+            this.logService.error(`Unable to delete registry key: ${key}`);
         }
     }
 
