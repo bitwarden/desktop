@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organisation that you wish to move this item to. Moving to an organisation transfers ownership of the item to that organisation. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Choose an organisation that you wish to move this item to. Moving to an organisation transfers ownership of the item to that organistaion. You will no longer be the direct owner of this item once it has been moved."
   },
   "attachments": {
     "message": "Attachments"
@@ -350,7 +350,7 @@
     "message": "Delete attachment"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the bin?"
+    "message": "Are you sure you want to delete this item?"
   },
   "deletedItem": {
     "message": "Sent item to bin"
@@ -866,10 +866,10 @@
     "message": "When minimising the window, show an icon in the system tray instead."
   },
   "enableMinToMenuBar": {
-    "message": "Minimise to menu bar"
+    "message": "Minimize to menu bar"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimising the window, show an icon in the menu bar instead."
+    "message": "When minimizing the window, show an icon in the menu bar instead."
   },
   "enableCloseToTray": {
     "message": "Close to tray icon"
@@ -911,7 +911,7 @@
     "message": "Always show in the Dock"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimised to the menu bar."
+    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
   },
   "confirmTrayTitle": {
     "message": "Confirm disable tray"
@@ -1305,7 +1305,7 @@
     "message": "Unlock with Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "unlock your vault"
+    "message": "Verify for Bitwarden."
   },
   "noAutoPromptWindowsHello": {
     "message": "Do not prompt for Windows Hello on launch."
@@ -1470,7 +1470,7 @@
     "message": "By checking this box you agree to the following:"
   },
   "acceptPoliciesError": {
-    "message": "Terms of service and privacy policy have not been acknowledged."
+    "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
     "message": "Enable browser integration"
@@ -1503,7 +1503,7 @@
     "message": "Verify browser connection"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint shown in the browser extension."
+    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrics not enabled"
@@ -1512,13 +1512,13 @@
     "message": "Browser biometrics requires desktop biometrics to be enabled in the settings first."
   },
   "personalOwnershipSubmitError": {
-    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organisation and choose from available Collections."
+    "message": "Due to an Enterprise Policy, you are restricted from saving items to your personal vault. Change the Ownership option to an organization and choose from available Collections."
   },
   "hintEqualsPassword": {
     "message": "Your password hint cannot be the same as your password."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "An organisation policy is affecting your ownership options."
+    "message": "An organization policy is affecting your ownership options."
   },
   "allSends": {
     "message": "All Sends",
@@ -1674,10 +1674,10 @@
     "message": "Authenticate WebAuthn"
   },
   "hideEmail": {
-    "message": "Hide my email address from recipients."
+    "message": "Hide my email address from recepients."
   },
   "sendOptionsPolicyInEffect": {
-    "message": "One or more organisation policies are affecting your Send options."
+    "message": "One or more organistaion policies are affecting your Send options."
   },
   "emailVerificationRequired": {
     "message": "Email Verification Required"
@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "This action is protected. To continue, please re-enter your master password to verify your identity."
+  },
+  "updatedMasterPassword": {
+    "message": "Updated Master Password"
+  },
+  "updateMasterPassword": {
+    "message": "Update Master Password"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
+  "hours": {
+    "message": "Hours"
+  },
+  "minutes": {
+    "message": "Minutes"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Your vault timeout exceeds the restrictions set by your organization."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatic Enrollment"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+  },
+  "vaultExportDisabled": {
+    "message": "Vault Export Disabled"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "One or more organization policies prevents you from exporting your personal vault."
   }
 }

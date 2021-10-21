@@ -24,9 +24,36 @@ jobs:
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
 
 
+  setup:
+    name: Setup
+    runs-on: ubuntu-20.04
+    outputs:
+      package_version: ${{ steps.retrieve-version.outputs.package_version }}
+      build_number: ${{ steps.increment-version.outputs.build_number }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+
+      - name: Get Package Version
+        id: retrieve-version
+        run: |
+          PKG_VERSION=$(jq -r .version src/package.json)
+          echo "::set-output name=package_version::$PKG_VERSION"
+
+      - name: Increment version
+        id: increment-version
+        run: |
+          BUILD_NUMBER=$(expr 500 + $GITHUB_RUN_NUMBER)
+          echo "Setting build number to $BUILD_NUMBER"
+          echo "::set-output name=build_number::$BUILD_NUMBER"
+
+
   linux:
     name: Linux Build
     runs-on: ubuntu-20.04
+    needs: setup
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -68,10 +95,6 @@ jobs:
           snap --version
           snapcraft --version || echo 'snapcraft unavailable'
 
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
-
       - name: Install Node dependencies
         run: npm ci
 
@@ -84,42 +107,52 @@ jobs:
       - name: Upload .deb artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-amd64.deb
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.rpm
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.freebsd
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
-          path: ./dist/bitwarden_${{ env.PACKAGE_VERSION }}_amd64.snap
+          name: bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
+          path: ./dist/bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x86_64.AppImage
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
+          if-no-files-found: error
+
+      - name: Upload latest auto-update artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: latest-linux.yml
+          path: ./dist/latest-linux.yml
           if-no-files-found: error
 
 
   windows:
     name: Windows Build
     runs-on: windows-2019
+    needs: setup
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -160,10 +193,6 @@ jobs:
           npm --version
           choco --version
 
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
-
       - name: Install Node dependencies
         run: npm ci
 
@@ -185,69 +214,122 @@ jobs:
       - name: Rename appx files for store
         shell: pwsh
         run: |
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx"
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx"
-          Copy-Item "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64.appx" `
-            -Destination "./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx" `
+            -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx" `
+            -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx"
+          Copy-Item "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx" `
+            -Destination "./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx"
 
-      - name: Building for Chocolatey
+      - name: Package for Chocolatey
         shell: pwsh
         run: |
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
-          Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
+          Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
-          (Get-Content $chocoInstall).replace('__version__', "$env:PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
-          choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:PACKAGE_VERSION" --out ./dist/chocolatey
+          (Get-Content $chocoInstall).replace('__version__', "$env:_PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
+          choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:_PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/Bitwarden-Portable-${{ env.PACKAGE_VERSION }}.exe
+          name: Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
+          path: ./dist/Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
-          path: ./dist/nsis-web/Bitwarden-Installer-${{ env.PACKAGE_VERSION }}.exe
+          name: Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          path: ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          if-no-files-found: error
+
+      - name: Upload appx ia32 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-ia32-store.appx
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
+          if-no-files-found: error
+
+      - name: Upload NSIS ia32 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+          if-no-files-found: error
+
+      - name: Upload appx x64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-x64-store.appx
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
+          if-no-files-found: error
+
+      - name: Upload NSIS x64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+          if-no-files-found: error
+
+      - name: Upload appx ARM64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-arm64-store.appx
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
+          if-no-files-found: error
+
+      - name: Upload NSIS ARM64 artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
+          path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           if-no-files-found: error
 
       - name: Upload nupkg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
-          path: ./dist/chocolatey/bitwarden.${{ env.PACKAGE_VERSION }}.nupkg
+          name: bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
+          path: ./dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
+
+      - name: Upload latest auto-update artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: latest.yml
+          path: ./dist/nsis-web/latest.yml
+          if-no-files-found: error
+
 
   macos-build:
     name: MacOS Build
     runs-on: macos-10.15
+    needs: setup
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -295,14 +377,35 @@ jobs:
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
-        run: ./.github/scripts/macos/decrypt-secrets.ps1
-        shell: pwsh
+        shell: bash
         env:
           DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/secrets
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden-desktop-key.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden-desktop-key.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/macdev-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/macdev-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
-        run: ./.github/scripts/macos/setup-keychain.ps1
-        shell: pwsh
+        shell: bash
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
@@ -310,18 +413,39 @@ jobs:
           APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
           MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: |
+          security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security set-keychain-settings -lut 1200 build.keychain
+          security import "$HOME/secrets/bitwarden-desktop-key.p12" -k build.keychain -P $DESKTOP_KEY_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-app-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-installer-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-app-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-installer-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/macdev-cert.p12" -k build.keychain -P $MACDEV_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
 
       - name: Set up provisioning profiles
-        run: ./.github/scripts/macos/setup-profiles.ps1
-        shell: pwsh
+        shell: bash
+        run: |
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
-        run: ./.github/scripts/macos/increment-version.ps1
         shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
+        run: |
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: Install Node dependencies
         run: npm ci
@@ -346,11 +470,13 @@ jobs:
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
 
+
   macos-package-github:
     name: MacOS Package GitHub Release Assets
     runs-on: macos-10.15
-    needs: macos-build
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+    needs: [setup, macos-build]
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -398,14 +524,35 @@ jobs:
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
-        run: ./.github/scripts/macos/decrypt-secrets.ps1
-        shell: pwsh
+        shell: bash
         env:
           DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/secrets
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden-desktop-key.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden-desktop-key.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/macdev-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/macdev-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
-        run: ./.github/scripts/macos/setup-keychain.ps1
-        shell: pwsh
+        shell: bash
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
@@ -413,18 +560,39 @@ jobs:
           APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
           MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: |
+          security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security set-keychain-settings -lut 1200 build.keychain
+          security import "$HOME/secrets/bitwarden-desktop-key.p12" -k build.keychain -P $DESKTOP_KEY_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-app-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-installer-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-app-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-installer-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/macdev-cert.p12" -k build.keychain -P $MACDEV_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
 
       - name: Set up provisioning profiles
-        run: ./.github/scripts/macos/setup-profiles.ps1
-        shell: pwsh
+        shell: bash
+        run: |
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
-        run: ./.github/scripts/macos/increment-version.ps1
         shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
+        run: |
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
         run: npm ci
@@ -465,22 +633,38 @@ jobs:
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}-mac.zip
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env.PACKAGE_VERSION }}.dmg
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
           if-no-files-found: error
+
+      - name: Upload .dmg blockmap artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
+          if-no-files-found: error
+
+      - name: Upload latest auto-update artifact
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: latest-mac.yml
+          path: ./dist/latest-mac.yml
+          if-no-files-found: error
+
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
     runs-on: macos-10.15
-    needs: macos-build
-    if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/rc'
+    needs: [setup, macos-build]
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -528,14 +712,35 @@ jobs:
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
-        run: ./.github/scripts/macos/decrypt-secrets.ps1
-        shell: pwsh
+        shell: bash
         env:
           DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/secrets
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden-desktop-key.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden-desktop-key.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/macdev-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/macdev-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
-        run: ./.github/scripts/macos/setup-keychain.ps1
-        shell: pwsh
+        shell: bash
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
@@ -543,18 +748,39 @@ jobs:
           APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
           MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: |
+          security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security set-keychain-settings -lut 1200 build.keychain
+          security import "$HOME/secrets/bitwarden-desktop-key.p12" -k build.keychain -P $DESKTOP_KEY_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-app-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-installer-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-app-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-installer-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/macdev-cert.p12" -k build.keychain -P $MACDEV_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
 
       - name: Set up provisioning profiles
-        run: ./.github/scripts/macos/setup-profiles.ps1
-        shell: pwsh
+        shell: bash
+        run: |
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
-        run: ./.github/scripts/macos/increment-version.ps1
         shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
+        run: |
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
         run: npm ci
@@ -597,15 +823,18 @@ jobs:
       - name: Upload .pkg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
-          path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-universal.pkg
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
+          path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           if-no-files-found: error
+
 
   macos-package-dev:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
     runs-on: macos-10.15
-    needs: macos-build
+    needs: [setup, macos-build]
+    env:
+      _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -653,14 +882,35 @@ jobs:
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
 
       - name: Decrypt secrets
-        run: ./.github/scripts/macos/decrypt-secrets.ps1
-        shell: pwsh
+        shell: bash
         env:
           DECRYPT_FILE_PASSWORD: ${{ secrets.DECRYPT_FILE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/secrets
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden-desktop-key.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden-desktop-key.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/appstore-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/appstore-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-app-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-app-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/devid-installer-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/devid-installer-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/macdev-cert.p12" \
+            "$GITHUB_WORKSPACE/.github/secrets/macdev-cert.p12.gpg"
+          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+            --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
+            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
-        run: ./.github/scripts/macos/setup-keychain.ps1
-        shell: pwsh
+        shell: bash
         env:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           DESKTOP_KEY_PASSWORD: ${{ secrets.DESKTOP_KEY_PASSWORD }}
@@ -668,18 +918,39 @@ jobs:
           APPSTORE_CERT_PASSWORD: ${{ secrets.APPSTORE_CERT_PASSWORD }}
           MACDEV_CERT_PASSWORD: ${{ secrets.MACDEV_CERT_PASSWORD }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: |
+          security create-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p $KEYCHAIN_PASSWORD build.keychain
+          security set-keychain-settings -lut 1200 build.keychain
+          security import "$HOME/secrets/bitwarden-desktop-key.p12" -k build.keychain -P $DESKTOP_KEY_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-app-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/devid-installer-cert.p12" -k build.keychain -P $DEVID_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-app-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/appstore-installer-cert.p12" -k build.keychain -P $APPSTORE_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security import "$HOME/secrets/macdev-cert.p12" -k build.keychain -P $MACDEV_CERT_PASSWORD \
+            -T /usr/bin/codesign -T /usr/bin/security -T /usr/bin/productbuild
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k $KEYCHAIN_PASSWORD build.keychain
 
       - name: Set up provisioning profiles
-        run: ./.github/scripts/macos/setup-profiles.ps1
-        shell: pwsh
+        shell: bash
+        run: |
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
-        run: ./.github/scripts/macos/increment-version.ps1
         shell: pwsh
-
-      - name: Load package version
-        run: ./.github/scripts/load-version.ps1
-        shell: pwsh
+        env:
+          BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
+        run: |
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
+          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
       - name: NPM install
         run: npm ci
@@ -726,6 +997,69 @@ jobs:
       - name: Upload masdev artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip
-          path: ./dist/mas-universal/Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
+          path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
+
+
+  check-failures:
+    name: Check for failures
+    if: always()
+    runs-on: ubuntu-20.04
+    needs:
+      - cloc
+      - setup
+      - linux
+      - windows
+      - macos-build
+      - macos-package-github
+      - macos-package-mas
+    steps:
+      - name: Check if any job failed
+        if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
+        env:
+          CLOC_STATUS: ${{ needs.cloc.result }}
+          SETUP_STATUS: ${{ needs.setup.result }}
+          LINUX_STATUS: ${{ needs.linux.result }}
+          WINDOWS_STATUS: ${{ needs.windows.result }}
+          MACOS_BUILD_STATUS: ${{ needs.macos-build.result }}
+          MACOS_PKG_GITHUB_STATUS: ${{ needs.macos-package-github.result }}
+          MACOS_PKG_MAS_STATUS: ${{ needs.macos-package-mas.result }}
+        run: |
+          if [ "$CLOC_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$SETUP_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$LINUX_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$WINDOWS_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$MACOS_BUILD_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$MACOS_PKG_GITHUB_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$MACOS_PKG_MAS_STATUS" = "failure" ]; then
+              exit 1
+          fi
+
+      - name: Login to Azure - Prod Subscription
+        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        if: failure()
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        if: failure()
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "devops-alerts-slack-webhook-url"
+
+      - name: Notify Slack on failure
+        uses: act10ns/slack@e4e71685b9b239384b0f676a63c32367f59c2522  # v1.2.2
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ steps.retrieve-secrets.outputs.devops-alerts-slack-webhook-url }}
+        with:
+          status: ${{ job.status }}
