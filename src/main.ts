@@ -73,7 +73,7 @@ export class Main {
         storageDefaults[ConstantsService.vaultTimeoutActionKey] = 'lock';
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
-        this.windowMain = new WindowMain(this.storageService, true, undefined, undefined,
+        this.windowMain = new WindowMain(this.storageService, this.logService, true, undefined, undefined,
             arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
         this.messagingMain = new MessagingMain(this, this.storageService);
         this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {

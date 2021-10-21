@@ -10,6 +10,7 @@ import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
@@ -28,9 +29,9 @@ export class SsoComponent extends BaseSsoComponent {
         storageService: StorageService, stateService: StateService,
         platformUtilsService: PlatformUtilsService, apiService: ApiService,
         cryptoFunctionService: CryptoFunctionService, environmentService: EnvironmentService,
-        passwordGenerationService: PasswordGenerationService) {
+        passwordGenerationService: PasswordGenerationService, logService: LogService) {
         super(authService, router, i18nService, route, storageService, stateService, platformUtilsService,
-            apiService, cryptoFunctionService, environmentService, passwordGenerationService);
+            apiService, cryptoFunctionService, environmentService, passwordGenerationService, logService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

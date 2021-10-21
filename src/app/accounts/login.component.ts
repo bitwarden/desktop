@@ -14,6 +14,7 @@ import { AuthService } from 'jslib-common/abstractions/auth.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PasswordGenerationService } from 'jslib-common/abstractions/passwordGeneration.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
@@ -45,9 +46,9 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, storageService: StorageService,
         private broadcasterService: BroadcasterService, private ngZone: NgZone,
-        private messagingService: MessagingService) {
+        private messagingService: MessagingService, logService: LogService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
-            passwordGenerationService, cryptoFunctionService, storageService);
+            passwordGenerationService, cryptoFunctionService, storageService, logService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };
