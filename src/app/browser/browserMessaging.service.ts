@@ -5,9 +5,6 @@ https://github.com/bitwarden/browser/blob/5941a4387dabbeddf8abfc37d91ddee9613a32
 
 ================================================================================================= */
 
-import { BrowserApi } from '../browser/browserApi';
-import { SafariApp } from '../browser/safariApp';
-
 import { MessagingService } from 'jslib/abstractions/messaging.service';
 
 function debounce(fnToDebounce: () => any, delay: number, context: any) {
@@ -33,15 +30,11 @@ export class ElectronRendererMessagingService implements MessagingService {
 
     send(subscriber: string, arg: any = {}) {
         const message = Object.assign({}, { command: subscriber }, arg);
-        if (BrowserApi.isSafariApi) {
-            SafariApp.sendMessageToApp(subscriber, arg);
-            SafariApp.sendMessageToListeners(message, 'BrowserMessagingService', null);
+
+        if (message.command === 'syncCompleted') {
+            this.countSync();
         } else {
-            if (message.command === 'syncCompleted') {
-                this.countSync();
-            } else {
-                this.broadcasterService.send(message);
-            }
+            this.broadcasterService.send(message);
         }
     }
 
