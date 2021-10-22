@@ -333,6 +333,12 @@ app-vault, app-login {
             }
             #param-btn {
                 border: none;
+                height: 100%;
+            }
+            .bottom-menu {
+                div {
+                    line-height: 1.15em;
+                }
             }
             svg {
                 box-sizing: content-box;

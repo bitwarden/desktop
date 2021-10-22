@@ -1423,6 +1423,9 @@
   "permanentlyDeletedItems": {
     "message": "€€€ permanently deleted items"
   },
+  "noItemsToDelete": {
+    "message": "There are no items to delete"
+  },
   "restoreItem": {
     "message": "Restaurar elemento"
   },
@@ -1443,6 +1446,9 @@
   },
   "restoredItems": {
     "message": "€€€ elements restored"
+  },
+  "noItemsToRestore": {
+    "message": "There are no items to restore"
   },
   "permanentlyDelete": {
     "message": "Eliminar de forma permanente"

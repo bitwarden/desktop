@@ -158,6 +158,11 @@
         "firefox": "Install on Firefox",
         "safari": "Install on Safari"
       }
+    },
+    "trash": {
+      "deleteItems": "Move these items to trash",
+      "permanentlyDeleteItems": "Empty trash",
+      "restoreAllItems": "Restore all these items"
     }
   },
 

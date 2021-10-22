@@ -16,9 +16,6 @@ export class CiphersComponent extends BaseCiphersComponent {
     @Output() onDeletedCipher = new EventEmitter();
     @Input() collectionId: string = null;
 
-    isMenuOpened: boolean = false;
-    @ViewChild('menu') menu: ElementRef;
-
     isReadOnly = false;
     isCozyConnectors = false;
 
@@ -29,28 +26,12 @@ export class CiphersComponent extends BaseCiphersComponent {
         this.pageSize = 250;
     }
 
-    openMenu() {
-        if (this.isMenuOpened) {
-            this.isMenuOpened = false;
-            return;
-        }
-        this.isMenuOpened = true;
-        setTimeout( () => {
-            this.menu.nativeElement.firstElementChild.focus();
-        }, 10);
-    }
-
-    onMenuFocusOut(event: any) {
-        let isFocusInMenu = event.relatedTarget && event.relatedTarget.closest('#bottom-menu');
-        isFocusInMenu = isFocusInMenu || event.relatedTarget && event.relatedTarget.closest('#param-btn');
-        if (isFocusInMenu) {
-            return;
-        }
-        this.isMenuOpened = false;
-    }
-
     async deleteCurrentCiphers() {
-        this.isMenuOpened = false;
+        if (this.ciphers.length === 0) {
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('noItemsToDelete'));
+            return false;
+        }
+
         const ciphersNumber = this.ciphers.length.toString();
         const title = this.ciphers.length > 1 ?
             (this.deleted ? 'permanentlyDeleteItemsConfirmation' : 'deleteItemsConfirmation') :
@@ -76,7 +57,11 @@ export class CiphersComponent extends BaseCiphersComponent {
     }
 
     async restoreCurrentCiphers() {
-        this.isMenuOpened = false;
+        if (this.ciphers.length === 0) {
+            this.platformUtilsService.showToast('error', null, this.i18nService.t('noItemsToRestore'));
+            return false;
+        }
+
         const ciphersNumber = this.ciphers.length.toString();
         const title = this.ciphers.length > 1 ? 'restoreItems' : 'restoreItem';
         const confirmed = await this.platformUtilsService.showDialog(

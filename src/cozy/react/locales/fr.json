@@ -157,6 +157,11 @@
         "firefox": "Installer sur Firefox",
         "safari": "Installer sur Safari"
       }
+    },
+    "trash": {
+      "deleteItems": "Mettre à la corbeille ces éléments",
+      "permanentlyDeleteItems": "Vider la corbeille",
+      "restoreAllItems": "Restaurer tous ces éléments"
     }
   },
 
