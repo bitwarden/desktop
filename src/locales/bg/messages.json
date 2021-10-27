@@ -1695,13 +1695,13 @@
     "message": "Това действие е защитено. За да продължите, въведете отново главната си парола, за да потвърдите самоличността си."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Главната парола е променена"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Промяна на главната парола"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Вашата главна парола наскоро е била сменена от администратор в организацията Ви. За да получите достъп до трезора, трябва първо да я промените. Това означава, че ще бъдете отписан(а) от текущата си сесия и ще трябва да се впишете отново. Активните сесии на други устройства може да продължат да бъдат активни още един час."
   },
   "hours": {
     "message": "Hours"
@@ -1710,7 +1710,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Настройките на организацията Ви влияят върху времето за достъп до трезора Ви. Максималното разрешено време за достъп е $HOURS$ час(а) и $MINUTES$ минути",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Времето за достъп до трезора Ви превишава ограничението, определено от организацията Ви."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Автоматично включване"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Тази организация включва автоматично новите си потребители в смяната на пароли. Това означава, че администраторите на организацията ще могат да променят главната Ви парола."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Изнасянето на трезора е изключено"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Една или повече от настройките на организацията Ви не позволяват да изнасяте личния си трезор."
   }
 }

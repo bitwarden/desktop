@@ -1695,22 +1695,22 @@
     "message": "Esta ação está protegida. Para continuar, por favor, reinsira a sua senha mestra para verificar sua identidade."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Senha Mestra Atualizada"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Atualizar Senha Mestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Sua Senha Mestra foi alterada recentemente por um administrador de sua organização. Para acessar o cofre, você precisa atualizá-la agora. O processo desconectará você da sessão atual, exigindo que você inicie a sessão novamente. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Horas"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "As políticas da sua organização estão afetando o tempo limite do seu cofre. O Tempo Limite Máximo permitido do Cofre é $HOURS$ hora(s) e $MINUTES$ minuto(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "O tempo limite do seu cofre excede as restrições definidas por sua organização."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Inscrição Automática"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Esta organização possui uma política empresarial que irá inscrevê-lo automaticamente na redefinição de senha. A inscrição permitirá que os administradores da organização alterem sua senha mestra."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Exportação de Cofre Desabilitada"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
   }
 }
