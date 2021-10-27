@@ -1695,22 +1695,22 @@
     "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "A mesterjelszó frisstésre került."
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Mesterjelszó frissítése"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "A szervezet egyik adminisztrátora nemrég megváltoztatta a mesterjelszót. A széf eléréséhez most frissíteni kell a mesterjelszót. Továbblépéskor kijelentkezés történik a jelenlegi munkamenetből és újra be kell jelentkezni. Ha van aktív munkamenet más eszközön, az még legfeljebb egy óráig aktív maradhat."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Óra"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Perc"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "A széf időkorlátja túllépi a szervezet által beállított korlátozást."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatikus regisztráció"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Ennek a szervezetnek van egy vállalati házirendje, amely automatikusan regisztrál a jelszó alaphelyzetbe állítására. A regisztráció lehetővé teszi a szervezet adminisztrátorainak a mesterjelszó megváltoztatását."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "A széf exportálás nem engedélyezett."
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Egy vagy több szervezeti házirend tiltja a személyes széf exportálását."
   }
 }

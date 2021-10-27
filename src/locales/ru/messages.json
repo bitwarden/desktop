@@ -633,10 +633,10 @@
     "message": "Укажите URL-адрес Bitwarden на вашем сервере."
   },
   "customEnvironment": {
-    "message": "Настройка среды"
+    "message": "Пользовательское окружение"
   },
   "customEnvironmentFooter": {
-    "message": "Для продвинутых пользователей. Можно указать URL-адреса отдельно для каждой службы."
+    "message": "Для опытных пользователей. Можно указать URL отдельно для каждой службы."
   },
   "baseUrl": {
     "message": "URL-адрес сервера"
@@ -789,10 +789,10 @@
     "message": "Двухфакторная аутентификация"
   },
   "vaultTimeout": {
-    "message": "Таймаут хранилища"
+    "message": "Тайм-аут хранилища"
   },
   "vaultTimeoutDesc": {
-    "message": "Выберите таймаут для хранилища и действие, которое необходимо предпринять."
+    "message": "Выберите тайм-аут для хранилища и действие, которое необходимо предпринять."
   },
   "immediately": {
     "message": "Немедленно"
@@ -1363,7 +1363,7 @@
     "message": "На настройки генератора влияют одна или несколько политик организации."
   },
   "vaultTimeoutAction": {
-    "message": "Действие по таймауту хранилища"
+    "message": "Действие по тайм-ауту хранилища"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Заблокированное хранилище потребует повторного ввода мастер-пароля для получения доступа к нему."
@@ -1404,10 +1404,10 @@
     "message": "Удалить окончательно"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "По истечении таймаута будет выполнен выход, что приведет к отмене всех прав доступа к вашему хранилищу и потребует онлайн-аутентификации. Вы уверены, что хотите использовать этот параметр?"
+    "message": "По истечении тайм-аута будет выполнен выход, что приведет к отмене всех прав доступа к вашему хранилищу и потребует онлайн-аутентификации. Вы уверены, что хотите использовать этот параметр?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Подтверждение действия по таймауту"
+    "message": "Подтверждение действия по тайм-ауту"
   },
   "enterpriseSingleSignOn": {
     "message": "Единая корпоративная авторизация (SSO)"
@@ -1634,7 +1634,7 @@
     "message": "1 день"
   },
   "custom": {
-    "message": "Другой"
+    "message": "Пользовательский"
   },
   "deleteSendConfirmation": {
     "message": "Вы действительно хотите удалить эту Send?",
@@ -1695,22 +1695,22 @@
     "message": "Это действие защищено. Для продолжения введите свой мастер-пароль, чтобы подтвердить свою личность."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Мастер-пароль обновлен"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Обновить мастер-пароль"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Мастер-пароль недавно был изменен администратором вашей организации. Чтобы получить доступ к хранилищу, вы должны обновить его сейчас. В результате текущая сессия будет завершена, потребуется повторный вход. Активные сессии на других устройствах могут оставаться активными в течение одного часа."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Час."
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Мин."
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Политики вашей организации влияют на тайм-аут хранилища. Максимально допустимый тайм-аут хранилища составляет $HOURS$ час. и $MINUTES$ мин.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Тайм-аут вашего хранилища превышает ограничения, установленные вашей организацией."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Автоматическая регистрация"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "В этой организации действует корпоративная политика, которая автоматически зарегистрирует вас на сброс пароля. Регистрация позволит администраторам организации изменить ваш мастер-пароль."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Экспорт хранилища отключен"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Экспорт вашего личного хранилища запрещен одной или несколькими политиками организации."
   }
 }

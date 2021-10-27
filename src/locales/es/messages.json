@@ -1695,22 +1695,22 @@
     "message": "Esta acción está protegida. Para continuar, vuelva a introducir su contraseña maestra para verificar su identidad."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Contraseña maestra actualizada"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Actualizar contraseña maestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Su contraseña maestra ha sido cambiada recientemente por un administrador de su organización. Para acceder a la caja fuerte, debe actualizarla ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante una hora."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Horas"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minutos"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Las políticas de tu organización están afectando el tiempo de espera de tu caja fuerte. El máximo permitido de espera es de $HOURS$ hora(s) y de $MINUTES$ minuto(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "El tiempo de espera de tu caja fuerte excede las restricciones establecidas por tu organización."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Inscripción automática"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Esta organización tiene una política empresarial que lo inscribirá automáticamente en el restablecimiento de contraseña. La inscripción permitirá a los administradores de la organización cambiar su contraseña maestra."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Exportación de caja fuerte desactivada"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Una o más políticas de organización le impiden exportar su caja fuerte personal."
   }
 }

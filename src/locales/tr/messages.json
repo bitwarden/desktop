@@ -1695,19 +1695,19 @@
     "message": "Bu işleme devam etmek için lütfen ana parolanızı yeniden girin."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Ana parola güncellendi"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Ana parolayı güncelle"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ana parolanız kuruluşunuzdaki bir yönetici tarafından yakın zamanda değiştirildi. Kasanıza erişmek için parolanızı güncellemelisiniz. Devam ettiğinizde oturumunuz kapanacak ve yeniden oturum açmanız gerekecektir. Diğer cihazlardaki aktif oturumlar bir saate kadar aktif kalabilir."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Saat"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Dakika"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
@@ -1732,7 +1732,7 @@
     "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Kasayı dışa aktarma devre dışı"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
