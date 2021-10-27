@@ -1,20 +1,39 @@
+# 2.0.4
+
+## ✨ Features
+
+
+## 🐛 Bug Fixes
+
+* Fix `clipboard` functionnalities on Safari ([PR #64](https://github.com/cozy/cozy-pass-web/pull/64))
+* Fix `delete` menu on Safari ([PR #65](https://github.com/cozy/cozy-pass-web/pull/65))
+* Set correct text on `delete folder` buttons ([PR #63](https://github.com/cozy/cozy-pass-web/pull/63))
+
+## 🔧 Tech
+
+* Clean Safari specific code ([PR #64](https://github.com/cozy/cozy-pass-web/pull/64))
+
 # 2.0.3
 
 ## ✨ Features
 
-* Show users confirmation dialog after opening vault ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
+* Show users confirmation dialog after opening vault ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51), [PR #57](https://github.com/cozy/cozy-pass-web/pull/57), [PR #61](https://github.com/cozy/cozy-pass-web/pull/61))
 * Automatically confirm a trusted user after initializing a sharing ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
 * Add support for ReadOnly shared ciphers and folders ([PR #53](https://github.com/cozy/cozy-pass-web/pull/53))
 * Display shared folders that need to be confirmed before being accessible in the navbar ([PR #54](https://github.com/cozy/cozy-pass-web/pull/54))
+* Handle redirect URI on login page ([PR #62](https://github.com/cozy/cozy-pass-web/pull/62))
 
 ## 🐛 Bug Fixes
 
 * Hide `Sare` button from `Cozy Connectors` folder ([PR #55](https://github.com/cozy/cozy-pass-web/pull/55))
 * Fix loading issue on first sync ([PR #56](https://github.com/cozy/cozy-pass-web/pull/56))
+* Fix folder synchronization timing ([PR #58](https://github.com/cozy/cozy-pass-web/pull/58))
+* Fix deletion of folders ([PR #60](https://github.com/cozy/cozy-pass-web/pull/60))
 
 ## 🔧 Tech
 
 * Move sharing methods to a dedicated service ([PR #51](https://github.com/cozy/cozy-pass-web/pull/51))
+* Clean code related to moving ciphers between and out of shared folders ([PR #59](https://github.com/cozy/cozy-pass-web/pull/59))
 
 # 2.0.2
 
@@ -34,6 +53,7 @@
 ## 🔧 Tech
 
 # 2.0.1
+
 ## ✨ Features
 
 * Implement shared folders ([PR #32](https://github.com/cozy/cozy-pass-web/pull/32))
