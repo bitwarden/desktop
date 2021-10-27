@@ -1695,22 +1695,22 @@
     "message": "この操作は保護されています。続行するには、確認のためにマスターパスワードを再入力してください。"
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "マスターパスワードを更新しました"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "マスターパスワードを更新しました"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "マスターパスワードは最近組織の管理者によって変更されました。保管庫にアクセスするには、今すぐ更新する必要があります。 続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続けることがあります。"
   },
   "hours": {
-    "message": "Hours"
+    "message": "時間"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "分"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "あなたの組織ポリシーは保管庫のタイムアウトに影響を与えています。最大保管庫のタイムアウト時間は $HOURS$ 時間 $MINUTES$ 分です。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "保管庫のタイムアウトが組織によって設定された制限を超えています。"
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "自動登録"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "この組織には自動的にパスワードリセットに登録するポリシーがあります。登録すると、組織の管理者はマスターパスワードを変更できます。"
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "保管庫のエクスポートは無効です"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "1 つまたは複数の組織ポリシーにより、個人の保管庫をエクスポートできません。"
   }
 }
