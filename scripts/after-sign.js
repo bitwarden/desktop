@@ -9,9 +9,11 @@ async function run(context) {
     console.log('## After sign');
     // console.log(context);
 
+    const macPlatformNames = ['darwin', 'mas'];
+
     const appName = context.packager.appInfo.productFilename;
     const appPath = `${context.appOutDir}/${appName}.app`;
-    const macBuild = context.electronPlatformName === 'darwin';
+    const macBuild = macPlatformNames.includes(context.electronPlatformName);
 
     if (macBuild) {
         // Copy Safari plugin to work-around https://github.com/electron-userland/electron-builder/issues/5552
