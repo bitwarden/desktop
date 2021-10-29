@@ -16,7 +16,6 @@ async function run(context) {
     const copyPlugIn = ['darwin', 'mas'].includes(context.electronPlatformName);
 
     if (copyPlugIn) {
-        console.log(context.packager.platformSpecificBuildOptions);
         // Copy Safari plugin to work-around https://github.com/electron-userland/electron-builder/issues/5552
         const plugIn = path.join(__dirname, '../PlugIns');
         if (fse.existsSync(plugIn)) {
@@ -26,6 +25,11 @@ async function run(context) {
             // Resign to sign safari extension
             if (context.electronPlatformName === 'mas') {
                 const masBuildOptions = deepAssign({}, context.packager.platformSpecificBuildOptions, context.packager.config.mas);
+                if (context.targets.some(e => e.name === 'mas-dev')) {
+                    deepAssign(masBuildOptions, {
+                        type: 'development',
+                    });
+                }
                 if (context.packager.packagerOptions.prepackaged == null) {
                     await context.packager.sign(appPath, context.appOutDir, masBuildOptions, context.arch);
                 }
@@ -35,7 +39,7 @@ async function run(context) {
         }
     }
 
-    if (copyPlugIn) {
+    if (macBuild) {
         console.log('### Notarizing ' + appPath);
         const appleId = process.env.APPLE_ID_USERNAME || process.env.APPLEID;
         const appleIdPassword = process.env.APPLE_ID_PASSWORD || `@keychain:AC_PASSWORD`;
