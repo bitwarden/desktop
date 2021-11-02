@@ -30,6 +30,7 @@ jobs:
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
       build_number: ${{ steps.increment-version.outputs.build_number }}
+      safari_ref: ${{ steps.safari-ref.outputs.safari_ref }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -40,12 +41,26 @@ jobs:
           PKG_VERSION=$(jq -r .version src/package.json)
           echo "::set-output name=package_version::$PKG_VERSION"
 
-      - name: Increment version
+      - name: Increment Version
         id: increment-version
         run: |
           BUILD_NUMBER=$(expr 500 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
           echo "::set-output name=build_number::$BUILD_NUMBER"
+
+      - name: Get Safari Branch Ref
+        id: safari-ref
+        run: |
+          SAFARI_REF=master
+
+          if [ "$GITHUB_REF" = "hotfix" ]; then
+              SAFARI_REF=hotfix
+          elif [ "$GITHUB_REF" = "rc" ]; then
+              SAFARI_REF=rc
+          fi
+
+          echo "Setting Safari Extension ref to $SAFARI_REF"
+          echo "::set-output name=safari_ref::$SAFARI_REF"
 
 
   linux:
@@ -227,7 +242,7 @@ jobs:
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
           Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
           (Get-Content $chocoInstall).replace('__version__', "$env:_PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:_PACKAGE_VERSION" --out ./dist/chocolatey
@@ -465,6 +480,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         shell: pwsh
@@ -612,7 +628,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
-          ref: ${{ github.ref }}
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -800,7 +816,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
-          ref: ${{ github.ref }}
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -968,6 +984,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
