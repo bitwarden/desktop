@@ -71,6 +71,9 @@ export class MessagingMain {
                 this.main.nativeMessagingMain.removeManifests();
                 this.main.nativeMessagingMain.stop();
                 break;
+            case 'toggleMasterPassOptions':
+                this.main.menuMain.toggleMasterPassOptions(message.enabled);
+                break;
             default:
                 break;
         }

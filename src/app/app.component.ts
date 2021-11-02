@@ -168,6 +168,7 @@ export class AppComponent implements OnInit {
                     case 'syncStarted':
                         break;
                     case 'syncCompleted':
+                        await this.toggleMasterPassOptions();
                         break;
                     case 'openSettings':
                         await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
@@ -332,6 +333,11 @@ export class AppComponent implements OnInit {
             isAuthenticated: await this.userService.isAuthenticated(),
             isLocked: await this.vaultTimeoutService.isLocked(),
         });
+    }
+
+    private async toggleMasterPassOptions() {
+        this.messagingService.send('toggleMasterPassOptions',
+            { enabled: !await this.userService.getUsesCryptoAgent() });
     }
 
     private async logOut(expired: boolean) {

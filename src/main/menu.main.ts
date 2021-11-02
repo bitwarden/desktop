@@ -94,6 +94,10 @@ export class MenuMain extends BaseMenu {
         }
     }
 
+    toggleMasterPassOptions(enabled: boolean) {
+        this.changeMasterPass.enabled = enabled;
+    }
+
     private initApplicationMenu() {
         const accountSubmenu: MenuItemConstructorOptions[] = [
             {
