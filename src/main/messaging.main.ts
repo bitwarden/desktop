@@ -32,8 +32,7 @@ export class MessagingMain {
                 this.scheduleNextSync();
                 break;
             case 'updateAppMenu':
-                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked,
-                    message.usesCryptoAgent);
+                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
                 this.updateTrayMenu(message.isAuthenticated, message.isLocked);
                 break;
             case 'minimizeOnCopy':

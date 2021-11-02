@@ -1,7 +1,9 @@
 import {
     app,
+    BrowserWindow,
     clipboard,
     dialog,
+    ipcMain,
     Menu,
     MenuItem,
     MenuItemConstructorOptions,
@@ -73,10 +75,10 @@ export class MenuMain extends BaseMenu {
             this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault, this.copyUsername, this.copyPassword];
-        this.updateApplicationMenuState(false, true, false);
+        this.updateApplicationMenuState(false, true);
     }
 
-    updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean, usesCryptoAgent: boolean) {
+    updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean) {
         this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
             if (mi != null) {
                 mi.enabled = isAuthenticated && !isLocked;
@@ -89,10 +91,6 @@ export class MenuMain extends BaseMenu {
 
         if (this.logOut != null) {
             this.logOut.enabled = isAuthenticated;
-        }
-
-        if (this.changeMasterPass != null) {
-            this.changeMasterPass.enabled = !usesCryptoAgent;
         }
     }
 
