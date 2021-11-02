@@ -331,6 +331,7 @@ export class AppComponent implements OnInit {
         this.messagingService.send('updateAppMenu', {
             isAuthenticated: await this.userService.isAuthenticated(),
             isLocked: await this.vaultTimeoutService.isLocked(),
+            usesCryptoAgent: await this.userService.getUsesCryptoAgent(),
         });
     }
 
