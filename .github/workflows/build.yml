@@ -341,7 +341,7 @@ jobs:
 
   macos-build:
     name: MacOS Build
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -489,7 +489,7 @@ jobs:
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -649,22 +649,22 @@ jobs:
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           if-no-files-found: error
 
       - name: Upload .dmg blockmap artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
@@ -677,7 +677,7 @@ jobs:
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -833,8 +833,6 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-          SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
-          SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload .pkg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
@@ -847,7 +845,7 @@ jobs:
   macos-package-dev:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -1003,8 +1001,6 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-          SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
-          SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Zip masdev asset
         working-directory: ./dist/mas-dev-universal
