@@ -142,7 +142,7 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
-const userVerificationService = new UserVerificationService(cryptoService, i18nService, platformUtilsService, apiService)
+const userVerificationService = new UserVerificationService(cryptoService, i18nService, platformUtilsService, apiService);
 
 containerService.attachToGlobal(window);
 

@@ -13,11 +13,11 @@ import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
+import { UserVerificationService } from 'jslib-common/abstractions/userVerification.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { ExportComponent as BaseExportComponent } from 'jslib-angular/components/export.component';
-import { UserVerificationService } from 'jslib-common/abstractions/userVerification.service';
 
 const BroadcasterSubscriptionId = 'ExportComponent';
 
