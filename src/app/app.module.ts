@@ -32,6 +32,7 @@ import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.compo
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
+import { VerifyMasterPasswordComponent } from 'jslib-angular/components/verify-master-password.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
@@ -181,6 +182,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     declarations: [
         A11yTitleDirective,
         AddEditComponent,
+        AddEditCustomFieldsComponent,
         ApiActionDirective,
         AppComponent,
         AttachmentsComponent,
@@ -206,14 +208,16 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
+        PasswordRepromptComponent,
         PremiumComponent,
         RegisterComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
         SendAddEditComponent,
-        SendEffluxDatesComponent,
         SendComponent,
+        SendEffluxDatesComponent,
         SetPasswordComponent,
+        SetPinComponent,
         SettingsComponent,
         ShareComponent,
         SsoComponent,
@@ -224,11 +228,9 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorOptionsComponent,
         UpdateTempPasswordComponent,
         VaultComponent,
-        ViewComponent,
-        PasswordRepromptComponent,
-        SetPinComponent,
         VaultTimeoutInputComponent,
-        AddEditCustomFieldsComponent,
+        VerifyMasterPasswordComponent,
+        ViewComponent,
         ViewCustomFieldsComponent,
     ],
     providers: [DatePipe],

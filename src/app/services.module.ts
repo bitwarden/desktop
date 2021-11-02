@@ -48,6 +48,7 @@ import { SystemService } from 'jslib-common/services/system.service';
 import { TokenService } from 'jslib-common/services/token.service';
 import { TotpService } from 'jslib-common/services/totp.service';
 import { UserService } from 'jslib-common/services/user.service';
+import { UserVerificationService } from 'jslib-common/services/userVerification.service';
 import { VaultTimeoutService } from 'jslib-common/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib-common/services/webCryptoFunction.service';
 
@@ -85,6 +86,7 @@ import { SystemService as SystemServiceAbstraction } from 'jslib-common/abstract
 import { TokenService as TokenServiceAbstraction } from 'jslib-common/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib-common/abstractions/totp.service';
 import { UserService as UserServiceAbstraction } from 'jslib-common/abstractions/user.service';
+import { UserVerificationService as UserVerificationServiceAbstraction } from 'jslib-common/abstractions/userVerification.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ThemeType } from 'jslib-common/enums/themeType';
@@ -130,7 +132,7 @@ const passwordGenerationService = new PasswordGenerationService(cryptoService, s
 const totpService = new TotpService(storageService, cryptoFunctionService, logService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
-    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService);
+    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService, cryptoFunctionService);
 const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
@@ -140,6 +142,7 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
+const userVerificationService = new UserVerificationService(cryptoService, i18nService, platformUtilsService, apiService)
 
 containerService.attachToGlobal(window);
 
@@ -229,6 +232,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: UserVerificationServiceAbstraction, useValue: userVerificationService },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         {
             provide: APP_INITIALIZER,

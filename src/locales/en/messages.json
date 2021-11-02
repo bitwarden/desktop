@@ -536,6 +536,9 @@
   "verificationCodeRequired": {
     "message": "Verification code is required."
   },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
+  },
   "continue": {
     "message": "Continue"
   },
