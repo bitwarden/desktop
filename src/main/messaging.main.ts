@@ -30,8 +30,8 @@ export class MessagingMain {
                 this.scheduleNextSync();
                 break;
             case 'updateAppMenu':
-                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
-                this.updateTrayMenu(message.isAuthenticated, message.isLocked);
+                this.main.menuMain.updateApplicationMenuState(message.accounts, message.activeUserId);
+                this.updateTrayMenu(message.accounts ? message.accounts[message.activeUserId] : null);
                 break;
             case 'minimizeOnCopy':
                 this.stateService.getMinimizeOnCopyToClipboard().then(
@@ -90,13 +90,13 @@ export class MessagingMain {
         }, SyncInterval);
     }
 
-    private updateTrayMenu(isAuthenticated: boolean, isLocked: boolean) {
+    private updateTrayMenu(activeAccount: { isAuthenticated: boolean, isLocked: boolean }) {
         if (this.main.trayMain == null || this.main.trayMain.contextMenu == null) {
             return;
         }
         const lockNowTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById('lockNow');
-        if (lockNowTrayMenuItem != null) {
-            lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
+        if (lockNowTrayMenuItem != null && activeAccount != null) {
+            lockNowTrayMenuItem.enabled = activeAccount.isAuthenticated && !activeAccount.isLocked;
         }
         this.main.trayMain.updateContextMenu();
     }

@@ -71,10 +71,17 @@ export class MenuMain extends BaseMenu {
             this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault, this.copyUsername, this.copyPassword];
-        this.updateApplicationMenuState(false, true);
+        this.updateApplicationMenuState();
     }
 
-    updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean) {
+    updateApplicationMenuState(accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean }}, activeUserId?: string) {
+        const isAuthenticated = accounts != null ?
+            accounts[activeUserId]?.isAuthenticated ?? false :
+            false;
+        const isLocked = accounts != null ?
+            accounts[activeUserId]?.isLocked ?? true :
+            true;
+
         this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
             if (mi != null) {
                 mi.enabled = isAuthenticated && !isLocked;

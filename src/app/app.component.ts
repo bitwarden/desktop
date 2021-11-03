@@ -45,6 +45,7 @@ import { TokenService } from 'jslib-common/abstractions/token.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { CipherType } from 'jslib-common/enums/cipherType';
+import { StorageLocation } from 'jslib-common/enums/storageLocation';
 
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
@@ -326,10 +327,29 @@ export class AppComponent implements OnInit {
     }
 
     private async updateAppMenu() {
-        this.messagingService.send('updateAppMenu', {
-            isAuthenticated: await this.stateService.getIsAuthenticated(),
-            isLocked: await this.vaultTimeoutService.isLocked(),
-        });
+        try {
+            const stateAccounts = this.stateService.accounts?.getValue();
+            if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
+                this.messagingService.send('updateAppMenu', { accounts: null, activeUserId: null });
+                return;
+            }
+
+            const accounts: { [userId: string]: any } = {};
+            for (const i in stateAccounts) {
+                if (i != null) {
+                    const userId = stateAccounts[i].userId;
+                    accounts[userId] = {
+                        isAuthenticated: await this.stateService.getIsAuthenticated({
+                            userId: userId, storageLocation: StorageLocation.Memory,
+                        }),
+                        isLocked: await this.vaultTimeoutService.isLocked(userId),
+                    };
+                }
+            }
+            this.messagingService.send('updateAppMenu', { accounts: accounts, activeUserId: await this.stateService.getUserId() });
+        } catch (e) {
+            this.logService.debug(e);
+        }
     }
 
     private async logOut(expired: boolean) {
