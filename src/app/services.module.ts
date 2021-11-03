@@ -127,7 +127,7 @@ const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService
     policyService, null, async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
-    sendService, logService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
+    sendService, logService, tokenService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
 const totpService = new TotpService(storageService, cryptoFunctionService, logService);
 const containerService = new ContainerService(cryptoService);
@@ -142,7 +142,6 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
-const userVerificationService = new UserVerificationService(cryptoService, i18nService, platformUtilsService, apiService);
 
 containerService.attachToGlobal(window);
 
@@ -232,7 +231,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
-        { provide: UserVerificationServiceAbstraction, useValue: userVerificationService },
+        { provide: UserVerificationServiceAbstraction, useClass: UserVerificationService },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         {
             provide: APP_INITIALIZER,
