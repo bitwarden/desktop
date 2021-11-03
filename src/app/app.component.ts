@@ -113,7 +113,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
             setTimeout(async () => {
-                await this.updateAppMenu();
+                await this.updateAppMenu('auth');
             }, 1000);
 
             window.onmousemove = () => this.recordActivity();
@@ -130,7 +130,7 @@ export class AppComponent implements OnInit {
                     case 'loggedIn':
                     case 'unlocked':
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu();
+                        this.updateAppMenu('auth');
                         this.systemService.cancelProcessReload();
                         break;
                     case 'loggedOut':
@@ -138,7 +138,7 @@ export class AppComponent implements OnInit {
                             this.modal.close();
                         }
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu();
+                        this.updateAppMenu('auth');
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
@@ -158,7 +158,7 @@ export class AppComponent implements OnInit {
                         this.stateService.purge();
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu();
+                        this.updateAppMenu('auth');
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
@@ -168,7 +168,7 @@ export class AppComponent implements OnInit {
                     case 'syncStarted':
                         break;
                     case 'syncCompleted':
-                        await this.toggleMasterPassOptions();
+                        await this.updateAppMenu('sync');
                         break;
                     case 'openSettings':
                         await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
@@ -328,16 +328,20 @@ export class AppComponent implements OnInit {
         });
     }
 
-    private async updateAppMenu() {
-        this.messagingService.send('updateAppMenu', {
-            isAuthenticated: await this.userService.isAuthenticated(),
-            isLocked: await this.vaultTimeoutService.isLocked(),
-        });
-    }
+    private async updateAppMenu(type: 'auth' | 'sync') {
+        let data: any;
+        if (type === 'sync') {
+            data = {
+                enableChangeMasterPass: !await this.userService.getUsesCryptoAgent(),
+            };
+        } else {
+            data = {
+                isAuthenticated: await this.userService.isAuthenticated(),
+                isLocked: await this.vaultTimeoutService.isLocked(),
+            };
+        }
 
-    private async toggleMasterPassOptions() {
-        this.messagingService.send('toggleMasterPassOptions',
-            { enabled: !await this.userService.getUsesCryptoAgent() });
+        this.messagingService.send('updateAppMenu', data);
     }
 
     private async logOut(expired: boolean) {

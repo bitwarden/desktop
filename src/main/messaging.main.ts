@@ -32,7 +32,8 @@ export class MessagingMain {
                 this.scheduleNextSync();
                 break;
             case 'updateAppMenu':
-                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked);
+                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked,
+                    message.enableChangeMasterPass);
                 this.updateTrayMenu(message.isAuthenticated, message.isLocked);
                 break;
             case 'minimizeOnCopy':
@@ -70,9 +71,6 @@ export class MessagingMain {
             case 'disableBrowserIntegration':
                 this.main.nativeMessagingMain.removeManifests();
                 this.main.nativeMessagingMain.stop();
-                break;
-            case 'toggleMasterPassOptions':
-                this.main.menuMain.toggleMasterPassOptions(message.enabled);
                 break;
             default:
                 break;
