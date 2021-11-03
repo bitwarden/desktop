@@ -10,12 +10,13 @@ import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { ExportService } from 'jslib-common/abstractions/export.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { PolicyService } from 'jslib-common/abstractions/policy.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { ExportComponent as BaseExportComponent } from 'jslib-angular/components/export.component';
-import { PolicyService } from 'jslib-common/abstractions/policy.service';
 
 const BroadcasterSubscriptionId = 'ExportComponent';
 
@@ -27,8 +28,10 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
     constructor(cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
         eventService: EventService, policyService: PolicyService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone) {
-        super(cryptoService, i18nService, platformUtilsService, exportService, eventService, policyService, window);
+        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        logService: LogService) {
+        super(cryptoService, i18nService, platformUtilsService, exportService, eventService,
+            policyService, window, logService);
     }
 
     async ngOnInit() {

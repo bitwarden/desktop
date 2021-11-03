@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Šī darbība ir aizsargāta. Lai turpinātu, ir jāievada galvenā parole, lai apstiprinātu identitāti."
+  },
+  "updatedMasterPassword": {
+    "message": "Galvenā parole atjaunināta"
+  },
+  "updateMasterPassword": {
+    "message": "Atjaunināt galveno paroli"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Apvienības pārvaldnieks nesen nomainīja galveno paroli. Lai piekļūtu glabātavai, tā ir jāatjaunina. Turpinot tiks izbeigta pašreizējā sesija un tiks pieprasīta atkārtota pierakstīšanās. Esošās sesijas citās iekārtās var turpināt darboties līdz vienai stundai."
+  },
+  "hours": {
+    "message": "Stundas"
+  },
+  "minutes": {
+    "message": "Minūtes"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Apvienības nosacījumi ietekmē glabātavas noildzi. Lielākā atļautā glabātavas noildze ir $HOURS$ stunda(s) un $MINUTES$ minūte(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Glabātavas noildze pāŗsniedz apvienības uzstādītos ierobežojumus."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automātiska ievietošana sarakstā"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Šajā apvienībā ir uzņēmuma nosacījums, kas automātiski ievieto lietotājus paroles atiestatīšanas sarakstā. Tas ļauj apvienības pārvaldniekiem mainīt lietotāju galveno paroli."
+  },
+  "vaultExportDisabled": {
+    "message": "Glabātavas izdošana ir atspējota"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Viens vai vairāki apvienības nosacījumi neļauj izdot privātās glabātavas saturu."
   }
 }

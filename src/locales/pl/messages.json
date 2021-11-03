@@ -1416,7 +1416,7 @@
     "message": "Ustaw hasło główne"
   },
   "ssoCompleteRegistration": {
-    "message": "Aby zakończyć logowanie jednokrotne SSO, ustaw hasło główne, aby uzyskać dostęp do sejfu."
+    "message": "W celu zakończenia jednokrotnego logowania SSO, ustaw hasło główne, aby uzyskać dostęp do sejfu."
   },
   "newMasterPass": {
     "message": "Nowe hasło główne"
@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Ta operacja jest chroniona. Aby kontynuować, wpisz ponownie hasło główne."
+  },
+  "updatedMasterPassword": {
+    "message": "Hasło główne zostało zaktualizowane"
+  },
+  "updateMasterPassword": {
+    "message": "Zaktualizuj hasło główne"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Hasło główne zostało zmienione przez administratora Twojej organizacji. Musisz je zaktualizować, aby uzyskać dostęp do sejfu. Ta czynność spowoduje wylogowanie z bieżącej sesji, przez co konieczne będzie ponowne zalogowanie się. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie godzinę."
+  },
+  "hours": {
+    "message": "Godziny"
+  },
+  "minutes": {
+    "message": "Minuty"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Zasady organizacji mają wpływ czas blokowania sejfu. Maksymalny dozwolony czas wynosi $HOURS$ godz. i $MINUTES$ min.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Czas blokowania sejfu przekracza limit określony przez organizację."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatyczne rejestrowanie użytkowników do resetowania hasła"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Ta organizacja posługuje się zasadą, która automatycznie rejestruje użytkowników do resetowania hasła. Rejestracja umożliwia administratorom organizacji zmianę Twojego hasła głównego."
+  },
+  "vaultExportDisabled": {
+    "message": "Eksportowanie sejfu zostało wyłączone"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."
   }
 }

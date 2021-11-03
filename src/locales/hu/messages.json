@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
+  },
+  "updatedMasterPassword": {
+    "message": "A mesterjelszó frisstésre került."
+  },
+  "updateMasterPassword": {
+    "message": "Mesterjelszó frissítése"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "A szervezet egyik adminisztrátora nemrég megváltoztatta a mesterjelszót. A széf eléréséhez most frissíteni kell a mesterjelszót. Továbblépéskor kijelentkezés történik a jelenlegi munkamenetből és újra be kell jelentkezni. Ha van aktív munkamenet más eszközön, az még legfeljebb egy óráig aktív maradhat."
+  },
+  "hours": {
+    "message": "Óra"
+  },
+  "minutes": {
+    "message": "Perc"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "A széf időkorlátja túllépi a szervezet által beállított korlátozást."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatikus regisztráció"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Ennek a szervezetnek van egy vállalati házirendje, amely automatikusan regisztrál a jelszó alaphelyzetbe állítására. A regisztráció lehetővé teszi a szervezet adminisztrátorainak a mesterjelszó megváltoztatását."
+  },
+  "vaultExportDisabled": {
+    "message": "A széf exportálás nem engedélyezett."
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Egy vagy több szervezeti házirend tiltja a személyes széf exportálását."
   }
 }

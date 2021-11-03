@@ -45,10 +45,10 @@
     "message": "Paylaş"
   },
   "moveToOrganization": {
-    "message": "Təşkilata köçür"
+    "message": "Təşkilata daşı"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ $ORGNAME$ şirkətinə köçürüldü",
+    "message": "$ITEMNAME$ $ORGNAME$ şirkətinə daşındı",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Bu elementi köçürmək istədiyiniz təşkilatı seçin. Bir təşkilata köçürmək, elementin sahibliyini də həmin təşkilata köçürəcək. Köçürdükdən sonra bu elementə birbaşa sahibliyiniz olmayacaq."
+    "message": "Bu elementi daşımaq istədiyiniz təşkilatı seçin. Bir təşkilata daşımaq, elementin sahibliyini də həmin təşkilata daşıyacaq. Daşıdıqdan sonra bu elementə birbaşa sahibliyiniz olmayacaq."
   },
   "attachments": {
     "message": "Qoşmalar"
@@ -92,7 +92,7 @@
     "message": "İstifadəçi adı"
   },
   "password": {
-    "message": "Şifrə"
+    "message": "Parol"
   },
   "passphrase": {
     "message": "Uzun ifadə"
@@ -254,7 +254,7 @@
     "message": "Digər"
   },
   "generatePassword": {
-    "message": "Şifrə yarat"
+    "message": "Parol yarat"
   },
   "type": {
     "message": "Növ"
@@ -356,7 +356,7 @@
     "message": "Element tullantı qutusuna göndərildi"
   },
   "overwritePasswordConfirmation": {
-    "message": "Hazırkı şifrənin üzərinə yazmaq istədiyinizə əminsiniz?"
+    "message": "Hazırkı parolun üzərinə yazmaq istədiyinizə əminsiniz?"
   },
   "noneFolder": {
     "message": "Qovluq yoxdur",
@@ -369,10 +369,10 @@
     "message": "Qovluğa düzəliş et"
   },
   "regeneratePassword": {
-    "message": "Şifrəni yenidən yarat"
+    "message": "Parolu yenidən yarat"
   },
   "copyPassword": {
-    "message": "Şifrəni kopyala"
+    "message": "Parolu kopyala"
   },
   "copyUri": {
     "message": "URI-ni kopyala"
@@ -474,31 +474,31 @@
     "message": "Göndər"
   },
   "masterPass": {
-    "message": "Ana şifrə"
+    "message": "Ana parol"
   },
   "masterPassDesc": {
-    "message": "Ana şifrə, anbarınıza müraciət etmək üçün istifadə edəcəyiniz şifrədir. Ana şifrəni yadda saxlamaq çox vacibdir. Unutsanız, şifrəni bərpa etməyin heç bir yolu yoxdur."
+    "message": "Ana parol, anbarınıza müraciət etmək üçün istifadə edəcəyiniz paroldur. Ana parolu yadda saxlamaq çox vacibdir. Unutsanız, parolu bərpa etməyin heç bir yolu yoxdur."
   },
   "masterPassHintDesc": {
-    "message": "Ana şifrə məsləhəti, unutduğunuz şifrənizi xatırlamağınıza kömək edir."
+    "message": "Ana parol məsləhəti, unutduğunuz parolunuzu xatırlamağınıza kömək edir."
   },
   "reTypeMasterPass": {
-    "message": "Ana şifrəni yenidən yaz"
+    "message": "Ana parolu yenidən yaz"
   },
   "masterPassHint": {
-    "message": "Ana şifrə məsləhəti (ixtiyari)"
+    "message": "Ana parol məsləhəti (ixtiyari)"
   },
   "settings": {
     "message": "Tənzimləmələr"
   },
   "passwordHint": {
-    "message": "Şifrə məsləhəti"
+    "message": "Parol məsləhəti"
   },
   "enterEmailToGetHint": {
-    "message": "Ana şifrə məsləhətini alacağınız hesabınızın e-poçt ünvanını daxil edin."
+    "message": "Ana parol məsləhətini alacağınız hesabınızın e-poçt ünvanını daxil edin."
   },
   "getMasterPasswordHint": {
-    "message": "Ana şifrə üçün məsləhət alın"
+    "message": "Ana parol üçün məsləhət alın"
   },
   "emailRequired": {
     "message": "E-poçt ünvanı lazımdır."
@@ -507,19 +507,19 @@
     "message": "Etibarsız e-poçt ünvanı."
   },
   "masterPassRequired": {
-    "message": "Ana şifrə lazımdır."
+    "message": "Ana parol lazımdır."
   },
   "masterPassLength": {
-    "message": "Ana şifrə ən azı 8 simvol uzunluğunda olmalıdır."
+    "message": "Ana parol ən azı 8 simvol uzunluğunda olmalıdır."
   },
   "masterPassDoesntMatch": {
-    "message": "Ana şifrə təsdiqləməsi uyğun gəlmir."
+    "message": "Ana parol təsdiqləməsi uyğun gəlmir."
   },
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
   },
   "masterPassSent": {
-    "message": "Ana şifrə məsləhətini ehtiva edən bir e-poçt göndərdik."
+    "message": "Ana parol məsləhətini ehtiva edən bir e-poçt göndərdik."
   },
   "unexpectedError": {
     "message": "Gözlənilməz bir səhv baş verdi."
@@ -669,7 +669,7 @@
     "message": "Xeyr"
   },
   "overwritePassword": {
-    "message": "Şifrənin üzərinə yaz"
+    "message": "Parolun üzərinə yaz"
   },
   "learnMore": {
     "message": "Daha ətraflı"
@@ -711,7 +711,7 @@
     "message": "İndi kilidlə"
   },
   "passwordGenerator": {
-    "message": "Şifrə yaradıcı"
+    "message": "Parol yaradıcı"
   },
   "emailUs": {
     "message": "Bizə məktub yazın"
@@ -732,10 +732,10 @@
     "message": "Anbarı eyniləşdir"
   },
   "changeMasterPass": {
-    "message": "Ana şifrəni dəyişdir"
+    "message": "Ana parolu dəyişdir"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Ana şifrənizi bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
+    "message": "Ana parolunuzu bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
   },
   "fingerprintPhrase": {
     "message": "Barmaq izi ifadəsi",
@@ -761,7 +761,7 @@
     "message": "Uğursuz eyniləşdirmə"
   },
   "yourVaultIsLocked": {
-    "message": "Anbarınız kilidlənib. Davam etmək üçün ana şifrənizi təsdiqləyin."
+    "message": "Anbarınız kilidlənib. Davam etmək üçün ana parolunuzu təsdiqləyin."
   },
   "unlock": {
     "message": "Kilidi aç"
@@ -780,7 +780,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Etibarsız ana şifrə"
+    "message": "Etibarsız ana parol"
   },
   "twoStepLoginConfirmation": {
     "message": "İki mərhələli giriş, təhlükəsizlik açarı, kimlik təsdiqləyici tətbiq, SMS, telefon zəngi və ya e-poçt kimi digər cihazlarla girişinizi təsdiqləməyinizi tələb edərək hesabınızı daha da təhlükəsiz edir. İki mərhələli giriş, bitwarden.com veb anbarında fəallaşdırıla bilər. Veb saytı indi ziyarət etmək istəyirsiniz?"
@@ -1024,7 +1024,7 @@
     "message": "YubiKey, FIDO U2F və Duo kimi iki mərhələli giriş seçimləri."
   },
   "premiumSignUpReports": {
-    "message": "Anbarınızın təhlükəsiyini təmin etmək üçün şifrə gigiyenası, hesab sağlamlığı və verilənlərin pozulması hesabatları."
+    "message": "Anbarınızın təhlükəsiyini təmin etmək üçün parol gigiyenası, hesab sağlamlığı və verilənlərin pozulması hesabatları."
   },
   "premiumSignUpTotp": {
     "message": "Anbarınızdakı hesablar üçün TOTP təsdiqləmə kodu (2FA) yaradıcısı."
@@ -1060,14 +1060,14 @@
     "message": "Təzələmə tamamlandı"
   },
   "passwordHistory": {
-    "message": "Şifrə tarixçəsi"
+    "message": "Parol tarixçəsi"
   },
   "clear": {
     "message": "Təmizlə",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "Siyahılanacaq heç bir şifrə yoxdur."
+    "message": "Siyahılanacaq heç bir parol yoxdur."
   },
   "undo": {
     "message": "Geri al"
@@ -1150,10 +1150,10 @@
     "message": "Pəncərə"
   },
   "checkPassword": {
-    "message": "Şifrənizin oğurlanıb oğurlanmadığını yoxlayın."
+    "message": "Parolunuzun oğurlanıb oğurlanmadığını yoxlayın."
   },
   "passwordExposed": {
-    "message": "Bu şifrə, məlumat pozuntularında $VALUE$ dəfə üzə çıxıb. Dəyişdirməyi məsləhət görürük.",
+    "message": "Bu parol, məlumat pozuntularında $VALUE$ dəfə üzə çıxıb. Dəyişdirməyi məsləhət görürük.",
     "placeholders": {
       "value": {
         "content": "$1",
@@ -1162,7 +1162,7 @@
     }
   },
   "passwordSafe": {
-    "message": "Bu şifrə, məlumat pozuntularında qeydə alınmayıb. Rahatlıqla istifadə edə bilərsiniz."
+    "message": "Bu parol, məlumat pozuntularında qeydə alınmayıb. Rahatlıqla istifadə edə bilərsiniz."
   },
   "baseDomain": {
     "message": "Baza domeni"
@@ -1218,7 +1218,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Şifrə yeniləndi",
+    "message": "Parol yeniləndi",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1241,10 +1241,10 @@
     "message": "Bu ixrac faylı, hesabınızın şifrələmə açarını istifadə edərək verilənlərinizi şifrələyir. Hesabınızın şifrələmə açarını döndərsəniz, bu ixrac faylının şifrəsini aça bilməyəcəyiniz üçün yenidən ixrac etməli olacaqsınız."
   },
   "encExportAccountWarningDesc": {
-    "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrəli bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
+    "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrələnmiş bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
   },
   "exportMasterPassword": {
-    "message": "Anbar verilənlərinizi ixrac etmək üçün ana şifrənizi daxil edin."
+    "message": "Anbar verilənlərinizi ixrac etmək üçün ana parolunuzu daxil edin."
   },
   "noOrganizationsList": {
     "message": "Heç bir təşkilata aid deyilsiniz. Təşkilatlar, elementlərinizi digər istifadəçilərlə təhlükəsiz şəkildə paylaşmağınızı təmin edir."
@@ -1271,10 +1271,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Zəif ana şifrə"
+    "message": "Zəif ana parol"
   },
   "weakMasterPasswordDesc": {
-    "message": "Seçdiyiniz ana şifrə zəifdir. Bitwarden hesabınızı daha yaxşı qorumaq üçün güclü bir ana şifrə (və ya uzun ifadə) istifadə etməlisiniz. Bu ana şifrəni istifadə etmək istədiyinizə əminsiniz?"
+    "message": "Seçdiyiniz ana parol zəifdir. Bitwarden hesabınızı daha yaxşı qorumaq üçün güclü bir ana parol (və ya uzun ifadə) istifadə etməlisiniz. Bu ana parol istifadə etmək istədiyinizə əminsiniz?"
   },
   "pin": {
     "message": "PIN",
@@ -1314,7 +1314,7 @@
     "message": "Açılışda Touch ID üçün soruşma."
   },
   "lockWithMasterPassOnRestart": {
-    "message": "Yenidən başladılanda ana şifrə ilə kilidlə"
+    "message": "Yenidən başladılanda ana parol ilə kilidlə"
   },
   "preferences": {
     "message": "Tercihlər"
@@ -1366,7 +1366,7 @@
     "message": "Anbara müraciət vaxtının bitmə əməliyyatı"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "Kilidli bir anbar, təkrar müraciət etmək üçün ana şifrənizi yenidən yazmağınızı tələb edir."
+    "message": "Kilidli bir anbar, təkrar müraciət etmək üçün ana parolunuzu yenidən yazmağınızı tələb edir."
   },
   "vaultTimeoutActionLogOutDesc": {
     "message": "Çıxış edilmiş bir anbar, təkrar müraciət etmək üçün yenidən kimlik təsdiqləmə tələb edir."
@@ -1413,19 +1413,19 @@
     "message": "Müəssisə üçün tək daxil olma"
   },
   "setMasterPassword": {
-    "message": "Ana şifrəni tənzimlə"
+    "message": "Ana parolu tənzimlə"
   },
   "ssoCompleteRegistration": {
-    "message": "SSO ilə giriş prosesini tamamlamaq üçün zəhmət olmasa anbarınıza müraciət etmək və onu qorumaq üçün bir ana şifrə tənzimləyin."
+    "message": "SSO ilə giriş prosesini tamamlamaq üçün zəhmət olmasa anbarınıza müraciət etmək və onu qorumaq üçün bir ana parol tənzimləyin."
   },
   "newMasterPass": {
-    "message": "Yeni ana şifrə"
+    "message": "Yeni ana parol"
   },
   "confirmNewMasterPass": {
-    "message": "Yeni ana şifrəni təsdiqlə"
+    "message": "Yeni ana parolu təsdiqlə"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Bir və ya daha çox təşkilat siyasəti, aşağıdakı tələbləri qarşılamaq üçün ana şifrənizi tələb edir:"
+    "message": "Bir və ya daha çox təşkilat siyasəti, aşağıdakı tələbləri qarşılamaq üçün ana parolunuzu tələb edir:"
   },
   "policyInEffectMinComplexity": {
     "message": "Minimum mürəkkəblik xalı: $SCORE$",
@@ -1464,7 +1464,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Yeni ana şifrəniz siyasət tələblərini qarşılamır."
+    "message": "Yeni ana parolunuz siyasət tələblərini qarşılamır."
   },
   "acceptPolicies": {
     "message": "Bu qutunu işarələyərək aşağıdakılarla razılaşırsınız:"
@@ -1515,7 +1515,7 @@
     "message": "Müəssisə Siyasətinə görə, elementləri şəxsi anbarınızda saxlamağınız məhdudlaşdırılıb. Sahiblik seçimini təşkilat olaraq dəyişdirin və mövcud kolleksiyalar arasından seçim edin."
   },
   "hintEqualsPassword": {
-    "message": "Şifrə məsləhəti, şifrənizlə eyni ola bilməz."
+    "message": "Parol məsləhəti, parolunuzla eyni ola bilməz."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Bir təşkilat siyasəti, sahiblik seçimlərinizə təsir edir."
@@ -1573,7 +1573,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "İstəyinizə görə istifadəçilərdən bu \"Send\"ə müraciət edərkən şifrə tələb edə bilərsiniz.",
+    "message": "İstəyinizə görə istifadəçilərdən bu \"Send\"ə müraciət edərkən parol tələb edə bilərsiniz.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -1605,7 +1605,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "Yeni şifrə"
+    "message": "Yeni parol"
   },
   "whatTypeOfSend": {
     "message": "\"Send\"in növü nədir?",
@@ -1686,12 +1686,55 @@
     "message": "Bu özəlliyi istifadə etmək üçün e-poçtunuzu təsdiqləməlisiniz."
   },
   "passwordPrompt": {
-    "message": "Ana şifrəni yenidə istə"
+    "message": "Ana parolu təkrar soruş"
   },
   "passwordConfirmation": {
     "message": "Ana şifrə təsdiqi"
   },
   "passwordConfirmationDesc": {
-    "message": "Bu əməliyyat qorumalıdır, davam etmək üçün zəhmət olmasa kimliyinizi təsdiqləmək üçün ana şifrənizi təkrar daxil edin."
+    "message": "Bu əməliyyat qorumalıdır, davam etmək üçün zəhmət olmasa kimliyinizi təsdiqləmək üçün ana parolunuzu təkrar daxil edin."
+  },
+  "updatedMasterPassword": {
+    "message": "Yenilənmiş ana parol"
+  },
+  "updateMasterPassword": {
+    "message": "Ana parolu yenilə"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Ana parolunuz təzəlikcə təşkilatınızdakı bir administrator tərəfindən dəyişdirildi. Anbara müraciət üçün indi yeniləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
+  },
+  "hours": {
+    "message": "Saat"
+  },
+  "minutes": {
+    "message": "Dəqiqə"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Təşkilatınızın siyasətləri, anbarınızın vaxt bitişinə təsir edir. Anbar vaxt bitişi üçün icazə verilən maksimum vaxt $HOURS$ saat $MINUTES$ dəqiqədir",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Anbar vaxt bitişi, təşkilatınız tərəfindən tənzimlənən məhdudiyyətləri aşır."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Avtomatik qeydiyyat"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Bu təşkilat, sizi \"parol sıfırlama\"da avtomatik olaraq qeydiyyata alan müəssisə siyasətinə sahibdir. Qeydiyyat, təşkilat administratorlarına ana parolunuzu dəyişdirmə icazəsi verəcək."
+  },
+  "vaultExportDisabled": {
+    "message": "Anbar ixracı sıradan çıxarıldı"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Bir və ya daha çox təşkilat siyasəti, fərdi anbarınızı ixrac etməyinizin qarşısını alır."
   }
 }

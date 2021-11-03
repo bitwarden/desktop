@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Ova radnja je zaštićena. Za nastavak i potvrdu identiteta, unesi svoju glavnu lozinku."
+  },
+  "updatedMasterPassword": {
+    "message": "Glavna lozinka ažurirana"
+  },
+  "updateMasterPassword": {
+    "message": "Ažuriraj glavnu lozinku"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Tvoju glavnu lozinku je nedavno promijenio administrator tvoje organizacije. Za pristup trezoru, potrebno je ažurirati glavnu lozinku, što će te odjaviti iz trenutne sesije, te ćeš se morati ponovno prijaviti. Aktivne sesije na drugim uređajima mogu ostati aktivne još sat vremena."
+  },
+  "hours": {
+    "message": "sat(i)"
+  },
+  "minutes": {
+    "message": "minuta"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Pravilo tvoje organizacije utječe na istek trezora. Najveće dozvoljeno vrijeme isteka je $HOURS$:$MINUTES$ h.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Vrijeme isteka premašuje ograničenje koju je postavila tvoja organizacija."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatsko učlanjenje"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Pravilo ove organizacija automatski će te učlaniti u ponovno postavljanje lozinke. Učlanjenje će omogućiti administratorima organizacije promjenu tvoje glavne lozinke."
+  },
+  "vaultExportDisabled": {
+    "message": "Izvoz trezora onemogućen"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Jedno ili više pravila organizacija onemogućuje izvoz osobnog trezora. "
   }
 }

@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Táto akcia je chránená. Ak chcete pokračovať, znova zadajte hlavné heslo a overte svoju totožnosť."
+  },
+  "updatedMasterPassword": {
+    "message": "Hlavné heslo aktualizované"
+  },
+  "updateMasterPassword": {
+    "message": "Aktualizovať hlavné heslo"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Vaše hlavné heslo nedávno zmenil správca vo vašej organizácii. Ak chcete získať prístup k trezoru, musíte ho teraz aktualizovať. Pokračovaním sa odhlásite z aktuálnej relácie a budete sa musieť znova prihlásiť. Aktívne relácie na iných zariadeniach môžu zostať aktívne až jednu hodinu."
+  },
+  "hours": {
+    "message": "Hodiny"
+  },
+  "minutes": {
+    "message": "Minúty"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Zásady vašej organizácie ovplyvňujú časový limit trezoru. Maximálny povolený časový limit trezoru je $HOURS$ h a $MINUTES$ m",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Časový limit vášho trezora prekračuje obmedzenia nastavené vašou organizáciou."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatická registrácia"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Táto organizácia má podnikovú politiku, ktorá vás automaticky zaregistruje na obnovenie hesla. Registrácia umožní správcom organizácie zmeniť vaše hlavné heslo."
+  },
+  "vaultExportDisabled": {
+    "message": "Export trezoru je zakázaný"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Jedna alebo viacero zásad organizácie vám bráni exportovať váš osobný trezor."
   }
 }

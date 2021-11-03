@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Hierdie aksie is beskerm. Voer u hoofwagwoord in om u identiteit te bevestig om voort te gaan."
+  },
+  "updatedMasterPassword": {
+    "message": "Hoofwagwoord bygewerk"
+  },
+  "updateMasterPassword": {
+    "message": "Werk hoofwagwoord by"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "U hoofwagwoord is onlangs deur ’n administrateur in u organisasie verander. Om toegang tot u kluis te verkry moet u dit nóú bywerk. Deur voort te gaan word u uit u huidige sessie geteken, waarna u weer sal moet aanteken. Aktiewe sessies op ander toestelle kan vir tot ’n uur steeds aktief bly."
+  },
+  "hours": {
+    "message": "Uur"
+  },
+  "minutes": {
+    "message": "Minute"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "U organisasiebeleide beïnvloed u kluisuitelling. Maksimum toegelate kluisuittelling is $HOURS$ uur en $MINUTES$ minuut(e)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "U kluisuittelling oorskry die beperkinge wat deur u organisasie daargestel is."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Outomatiese inskrywing"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Hierdie organisasie het ’n ondernemingsbeleid wat u outomaties inskryf in die terugstel van u wagwoord. Inskrywing stel organisasiebeheerders in staat om u hoofwagwoord te wysig."
+  },
+  "vaultExportDisabled": {
+    "message": "Kluisuitstuur gedeaktiveer"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Een of meer organisasiebeleide verhoed u om u persoonlike kluis uit te stuur."
   }
 }

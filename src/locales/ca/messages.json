@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Aquesta acció està protegida. Per continuar, torneu a introduir la contrasenya principal per verificar la vostra identitat."
+  },
+  "updatedMasterPassword": {
+    "message": "Contrasenya mestra actualitzada"
+  },
+  "updateMasterPassword": {
+    "message": "Actualitza contrasenya mestra"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Un administrador de l'organització ha canviat recentment la contrasenya principal. Per accedir a la caixa forta, heu d'actualitzar-la ara. Si continueu, es tancarà la sessió actual i heu de tornar a iniciar-la. És possible que les sessions obertes en altres dispositius continuen actives fins a una hora."
+  },
+  "hours": {
+    "message": "Hores"
+  },
+  "minutes": {
+    "message": "Minuts"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Les polítiques de l'organització afecten el temps d'espera de la caixa forta. El temps d'espera màxim permès d'aquesta és de $HOURS$ hores i $MINUTES$ minuts",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "El temps d'espera de la caixa forta supera les restriccions establertes per la vostra organització."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscripció automàtica"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Aquesta organització té una política empresarial que us inscriurà automàticament al restabliment de la contrasenya. La inscripció permetrà als administradors de l’organització canviar la vostra contrasenya mestra."
+  },
+  "vaultExportDisabled": {
+    "message": "L'exportació de la caixa forta està desactivada"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
   }
 }

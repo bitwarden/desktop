@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Questa azione è protetta. Per continuare, inserisci nuovamente la tua password principale per verificare la tua identità."
+  },
+  "updatedMasterPassword": {
+    "message": "Password principale aggiornata"
+  },
+  "updateMasterPassword": {
+    "message": "Aggiorna password principale"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "La tua password principale è stata recentemente modificata da un amministratore nella tua organizzazione. Per accedere alla cassaforte, aggiorna ora la password. Procedendo sarai disconnesso dalla sessione attuale e ti sarà richiesto di effettuare nuovamente l'accesso. Le sessioni attive su altri dispositivi potrebbero continuare a rimanere attive per un massimo di un'ora."
+  },
+  "hours": {
+    "message": "Ore"
+  },
+  "minutes": {
+    "message": "Minuti"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Le policy dell'organizzazione stanno influenzando il timeout della tua cassaforte. Il tempo massimo consentito è di $HOURS$ ore e $MINUTES$ minuti",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Il timeout della tua cassaforte supera i limiti impostati dalla tua organizzazione."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Iscrizione automatica"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Questa organizzazione ha una policy aziendale che ti iscriverà automaticamente al ripristino della password. Ciò permetterà agli amministratori dell'organizzazione di cambiare la tua password principale."
+  },
+  "vaultExportDisabled": {
+    "message": "Esportazione cassaforte disabilitata"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Una o più policy dell'organizzazione ti impediscono di esportare la tua cassaforte personale."
   }
 }

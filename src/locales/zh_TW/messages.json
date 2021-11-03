@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "此操作受到保護。若要繼續，請重新輸入您的主密碼以驗證您的身份。"
+  },
+  "updatedMasterPassword": {
+    "message": "已更新主密碼"
+  },
+  "updateMasterPassword": {
+    "message": "更新主密碼"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "您的主密碼最近被您的組織管理者更改過。要存取密碼庫，您必須現在更新主密碼。繼續操作會登出目前的登入階段，要求您重新登入。其他裝置上使用中的登入階段可能持續最長一個小時。"
+  },
+  "hours": {
+    "message": "小時"
+  },
+  "minutes": {
+    "message": "分鐘"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "您的組織策略正在影響您的密碼庫逾時時長。密碼庫逾時時長最多可以設定到 $HOURS$ 小時，$MINUTES$ 分鐘。",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "您的密碼庫逾時時長超過組織限制。"
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "自動註冊"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "此組織擁有一個可以爲你自動注冊密碼重置的企業策略。注冊后將允許組織管理員變更您的主密碼。"
+  },
+  "vaultExportDisabled": {
+    "message": "密碼庫匯出已停用"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "一或多個組織策略不允許您輸出個人密碼庫。"
   }
 }

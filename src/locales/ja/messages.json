@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "この操作は保護されています。続行するには、確認のためにマスターパスワードを再入力してください。"
+  },
+  "updatedMasterPassword": {
+    "message": "マスターパスワードを更新しました"
+  },
+  "updateMasterPassword": {
+    "message": "マスターパスワードを更新しました"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "マスターパスワードは最近組織の管理者によって変更されました。保管庫にアクセスするには、今すぐ更新する必要があります。 続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続けることがあります。"
+  },
+  "hours": {
+    "message": "時間"
+  },
+  "minutes": {
+    "message": "分"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "あなたの組織ポリシーは保管庫のタイムアウトに影響を与えています。最大保管庫のタイムアウト時間は $HOURS$ 時間 $MINUTES$ 分です。",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "保管庫のタイムアウトが組織によって設定された制限を超えています。"
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "自動登録"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "この組織には自動的にパスワードリセットに登録するポリシーがあります。登録すると、組織の管理者はマスターパスワードを変更できます。"
+  },
+  "vaultExportDisabled": {
+    "message": "保管庫のエクスポートは無効です"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "1 つまたは複数の組織ポリシーにより、個人の保管庫をエクスポートできません。"
   }
 }

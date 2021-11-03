@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "See tegevus on kaitstud. Jätkamiseks sisesta oma ülemparool."
+  },
+  "updatedMasterPassword": {
+    "message": "Uuendas ülemparooli"
+  },
+  "updateMasterPassword": {
+    "message": "Ülemparooli uuendamine"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Organisatsiooni administraator muutis hiljuti sinu ülemparooli. Hoidlale ligi pääsemiseks pead seda nüüd uuendama. Jätkates logitakse sind käimasolevast sessioonist välja, misjärel nõutakse uuesti sisselogimist. Teistes seadmetes olevad aktiivsed sessioonid jäävad aktiivseks kuni üheks tunniks."
+  },
+  "hours": {
+    "message": "Tundi"
+  },
+  "minutes": {
+    "message": "Minutit"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Organisatsiooni poliitikad mõjutavad sinu hoidla ajalõppu. Maksimaalne lubatud hoidla ajalõpp on $HOURS$ tund(i) ja $MINUTES$ minut(it)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Valitud hoidla ajalõpp ei ole organisatsiooni poolt määratud reeglitega kooskõlas."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automaatne liitumine"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Selle organisatsiooni poliitika kohaselt liidetakse sind automaatselt ülemparooli lähtestamise funktsiooniga. Liitumisel saavad organisatsiooni administraatorid sinu ülemparooli muuta."
+  },
+  "vaultExportDisabled": {
+    "message": "Hoidla eksportimine on väljalülitatud"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Üks või enam organisatsiooni poliitikat ei võimalda sul oma personaalset hoidlat eksportida."
   }
 }

@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "פעולה זו מוגנת. כדי להמשיך, הזן מחדש את הסיסמה הראשית שלך כדי לאמת את זהותך."
+  },
+  "updatedMasterPassword": {
+    "message": "סיסמה ראשית עודכנה"
+  },
+  "updateMasterPassword": {
+    "message": "עדכון סיסמה ראשית"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "הסיסמה הראשית שלך שונתה לאחרונה על ידי מנהל הארגון שלך. כדי לגשת לכספת, עליך לעדכן אותה כעת. בהמשך תנותק מההפעלה הנוכחית שלך ותידרש להיכנס שוב. הפעלות אחרות הפתוחות במכשירים שונים ימשיכו להיות פעילים עד משך שעה אחת."
+  },
+  "hours": {
+    "message": "שעות"
+  },
+  "minutes": {
+    "message": "דקות"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "מדיניות הארגון שלך משפיעה על הזמן הקצוב לכספת שלך. פסק הזמן המרבי המותר לכספת הוא $HOURS$ שע(ה/ות) ו $MINUTES$ דק(ה/ות)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "הזמן הקצוב לכספת שלך חורג מהמגבלות שנקבעו על ידי הארגון שלך."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "רישום אוטומטי"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "לארגון זה יש מדיניות ארגונית שרושמת אותך אוטומטית לאיפוס סיסמה. הרישום יאפשר למנהלי הארגון לשנות את סיסמת האב שלך."
+  },
+  "vaultExportDisabled": {
+    "message": "ייצוא מהכספת מושבת"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך."
   }
 }

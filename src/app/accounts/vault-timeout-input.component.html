@@ -5,7 +5,7 @@
 <div [formGroup]="form">
     <div class="form-group">
         <label for="vaultTimeout">{{'vaultTimeout' | i18n}}</label>
-        <select id="vaultTimeout" name="VaultTimeout" formControlName="vaultTimeout" class="form-control">
+        <select id="vaultTimeout" name="VaultTimeout" formControlName="vaultTimeout" class="form-control" appAutofocus>
             <option *ngFor="let o of vaultTimeouts" [ngValue]="o.value">{{o.name}}</option>
         </select>
         <small class="form-text text-muted">{{'vaultTimeoutDesc' | i18n}}</small>

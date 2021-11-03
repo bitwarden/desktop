@@ -1,4 +1,4 @@
-<div class="modal fade" tabindex="-1" role="dialog" aria-modal="true" cdkTrapFocus cdkTrapFocusAutoCapture>
+<div class="modal fade" role="dialog" aria-modal="true">
     <div class="modal-dialog modal-dialog-scrollable set-pin-modal" role="document">
         <form class="modal-content" #form (ngSubmit)="submit()">
             <div class="modal-body">
@@ -11,7 +11,7 @@
                             <div class="row-main">
                                 <label for="pin">{{'pin' | i18n}}</label>
                                 <input id="pin" type="{{showPin ? 'text' : 'password'}}" name="Pin" class="monospaced"
-                                    [(ngModel)]="pin" required appInputVerbatim cdkFocusInitial>
+                                    [(ngModel)]="pin" required appInputVerbatim appAutofocus>
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick

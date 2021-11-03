@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Deze actie is beveiligd. Voer je hoofdwachtwoord opnieuw in om je identiteit vast te stellen en door te gaan."
+  },
+  "updatedMasterPassword": {
+    "message": "Hoofdwachtwoord bijgewerkt"
+  },
+  "updateMasterPassword": {
+    "message": "Hoofdwachtwoord bijgewerken"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Je hoofdwachtwoord is onlangs veranderd door een beheerder in jouw organisatie. Om toegang te krijgen tot de kluis, moet je deze nu bijwerken. Doorgaan zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief."
+  },
+  "hours": {
+    "message": "Uren"
+  },
+  "minutes": {
+    "message": "Minuten"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Het beleid van je organisatie heeft invloed op de time-out van je kluis. De maximaal toegestane Kluis Time-out is $HOURS$ uur en $MINUTES$ minuten",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Je kluis time-out is hoger dan het maximum van jouw organisatie."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatische inschrijving"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Deze organisatie heeft een ondernemingsbeleid dat je automatisch inschrijft bij het resetten van je wachtwoord. Inschrijving stelt organisatiebeheerders in staat om je hoofdwachtwoord te wijzigen."
+  },
+  "vaultExportDisabled": {
+    "message": "Kluis exporteren uitgeschakeld"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Organisatiebeleid voorkomt dat je je persoonlijke kluis exporteert."
   }
 }

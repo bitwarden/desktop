@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Esta ação está protegida. Para continuar, por favor, reinsira a sua senha mestra para verificar sua identidade."
+  },
+  "updatedMasterPassword": {
+    "message": "Senha Mestra Atualizada"
+  },
+  "updateMasterPassword": {
+    "message": "Atualizar Senha Mestra"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Sua Senha Mestra foi alterada recentemente por um administrador de sua organização. Para acessar o cofre, você precisa atualizá-la agora. O processo desconectará você da sessão atual, exigindo que você inicie a sessão novamente. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
+  },
+  "hours": {
+    "message": "Horas"
+  },
+  "minutes": {
+    "message": "Minutos"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "As políticas da sua organização estão afetando o tempo limite do seu cofre. O Tempo Limite Máximo permitido do Cofre é $HOURS$ hora(s) e $MINUTES$ minuto(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "O tempo limite do seu cofre excede as restrições definidas por sua organização."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscrição Automática"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Esta organização possui uma política empresarial que irá inscrevê-lo automaticamente na redefinição de senha. A inscrição permitirá que os administradores da organização alterem sua senha mestra."
+  },
+  "vaultExportDisabled": {
+    "message": "Exportação de Cofre Desabilitada"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
   }
 }

@@ -1693,5 +1693,48 @@
   },
   "passwordConfirmationDesc": {
     "message": "Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu bestätigen."
+  },
+  "updatedMasterPassword": {
+    "message": "Master-Passwort aktualisiert"
+  },
+  "updateMasterPassword": {
+    "message": "Master-Passwort aktualisieren"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn Du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
+  },
+  "hours": {
+    "message": "Stunden"
+  },
+  "minutes": {
+    "message": "Minuten"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Deine Unternehmensrichtlinien beeinflussen dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout ist $HOURS$ Stunde(n) und $MINUTES$ Minute(n)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegten Beschränkungen."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatische Registrierung"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch für die Passwort Zurücksetzung registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
+  },
+  "vaultExportDisabled": {
+    "message": "Tresor-Export deaktiviert"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Eine oder mehrere Unternehmensrichtlinien verhindern es, dass du deinen persönlichen Tresor exportieren kannst."
   }
 }
