@@ -148,13 +148,12 @@ export class AppComponent implements OnInit {
                         this.logOut(!!message.expired);
                         break;
                     case 'lockVault':
-                        await this.vaultTimeoutService.lock(true);
+                        await this.vaultTimeoutService.lock(true, message.userId);
                         break;
                     case 'locked':
                         if (this.modal != null) {
                             this.modal.close();
                         }
-                        await this.stateService.purge();
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
                         this.updateAppMenu();
@@ -331,24 +330,25 @@ export class AppComponent implements OnInit {
             const stateAccounts = this.stateService.accounts?.getValue();
             if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
                 this.messagingService.send('updateAppMenu', { accounts: null, activeUserId: null });
-                return;
-            }
-
-            const accounts: { [userId: string]: any } = {};
-            for (const i in stateAccounts) {
-                if (i != null) {
-                    const userId = stateAccounts[i].userId;
-                    accounts[userId] = {
-                        isAuthenticated: await this.stateService.getIsAuthenticated({
-                            userId: userId, storageLocation: StorageLocation.Memory,
-                        }),
-                        isLocked: await this.vaultTimeoutService.isLocked(userId),
-                    };
+            } else {
+                const accounts: { [userId: string]: any } = {};
+                for (const i in stateAccounts) {
+                    if (i != null) {
+                        const userId = stateAccounts[i].userId;
+                        accounts[userId] = {
+                            isAuthenticated: await this.stateService.getIsAuthenticated({
+                                userId: userId, storageLocation: StorageLocation.Memory,
+                            }),
+                            isLocked: await this.vaultTimeoutService.isLocked(userId),
+                            email: stateAccounts[i].email,
+                            userId: stateAccounts[i].userId,
+                        };
+                    }
                 }
+                this.messagingService.send('updateAppMenu', { accounts: accounts, activeUserId: await this.stateService.getUserId() });
             }
-            this.messagingService.send('updateAppMenu', { accounts: accounts, activeUserId: await this.stateService.getUserId() });
         } catch (e) {
-            this.logService.debug(e);
+            this.logService.error(e);
         }
     }
 

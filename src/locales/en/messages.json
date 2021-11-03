@@ -707,8 +707,8 @@
   "loading": {
     "message": "Loading..."
   },
-  "lockNow": {
-    "message": "Lock Now"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Password Generator"

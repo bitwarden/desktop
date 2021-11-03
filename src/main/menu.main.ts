@@ -68,33 +68,58 @@ export class MenuMain extends BaseMenu {
 
         this.unlockedRequiredMenuItems = [
             this.addNewLogin, this.addNewItem, this.addNewFolder,
-            this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
+            this.syncVault, this.exportVault, this.settings, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault, this.copyUsername, this.copyPassword];
         this.updateApplicationMenuState();
     }
 
-    updateApplicationMenuState(accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean }}, activeUserId?: string) {
-        const isAuthenticated = accounts != null ?
-            accounts[activeUserId]?.isAuthenticated ?? false :
-            false;
-        const isLocked = accounts != null ?
-            accounts[activeUserId]?.isLocked ?? true :
-            true;
-
-        this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
-            if (mi != null) {
-                mi.enabled = isAuthenticated && !isLocked;
-            }
-        });
-
+    updateApplicationMenuState(accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string }}, activeUserId?: string) {
+        this.updateAuthBasedMenuState(accounts, activeUserId);
         if (this.menu != null) {
             Menu.setApplicationMenu(this.menu);
         }
+    }
 
-        if (this.logOut != null) {
-            this.logOut.enabled = isAuthenticated;
+    private updateAuthBasedMenuState(accounts?: {[userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string}}, activeUserId?: string) {
+        accounts == null ?
+            this.lockAuthBasedMenuItems() :
+            this.tryUnlockAuthBasedMenuItems(accounts, activeUserId);
+    }
+
+    private lockAuthBasedMenuItems() {
+        this.logOut.enabled = false;
+        this.lockNow.enabled = false;
+        this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
+            if (mi != null) {
+                mi.enabled = false;
+            }
+        });
+    }
+
+    private tryUnlockAuthBasedMenuItems(accounts: {[userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string},}, activeUserId: string) {
+        this.tryUnlockActiveAccountAuthBasedMenuItems(accounts[activeUserId]);
+
+        this.lockNow.enabled = true;
+        for (const i in accounts) {
+            if (this.lockNow.submenu.getMenuItemById(`lockNow_${accounts[i].userId}`) == null) {
+                const options: MenuItemConstructorOptions = {
+                    label: accounts[i].email,
+                    id: `lockNow_${accounts[i].userId}`,
+                    click: () => this.main.messagingService.send('lockVault', { userId: accounts[i].userId }),
+                };
+                this.lockNow.submenu.insert(0, new MenuItem(options));
+            }
         }
+    }
+
+    private tryUnlockActiveAccountAuthBasedMenuItems(activeAccount: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string}) {
+        this.logOut.enabled = activeAccount.isAuthenticated;
+        this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
+            if (mi != null) {
+                mi.enabled = activeAccount.isAuthenticated && !activeAccount.isLocked;
+            }
+        });
     }
 
     private initApplicationMenu() {
@@ -139,25 +164,6 @@ export class MenuMain extends BaseMenu {
                 label: this.main.i18nService.t('fingerprintPhrase'),
                 id: 'fingerprintPhrase',
                 click: () => this.main.messagingService.send('showFingerprintPhrase'),
-            },
-            { type: 'separator' },
-            {
-                label: this.i18nService.t('logOut'),
-                id: 'logOut',
-                click: async () => {
-                    const result = await dialog.showMessageBox(this.windowMain.win, {
-                        title: this.i18nService.t('logOut'),
-                        message: this.i18nService.t('logOut'),
-                        detail: this.i18nService.t('logOutConfirmation'),
-                        buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
-                        cancelId: 1,
-                        defaultId: 0,
-                        noLink: true,
-                    });
-                    if (result.response === 0) {
-                        this.main.messagingService.send('logout');
-                    }
-                },
             },
         ];
 
@@ -413,10 +419,30 @@ export class MenuMain extends BaseMenu {
                 accelerator: 'CmdOrCtrl+,',
             },
             {
-                label: this.main.i18nService.t('lockNow'),
+                label: this.main.i18nService.t('lockVault'),
                 id: 'lockNow',
-                click: () => this.main.messagingService.send('lockVault'),
                 accelerator: 'CmdOrCtrl+L',
+                submenu: [
+                    // List of vaults
+                ],
+            },
+            {
+                label: this.i18nService.t('logOut'),
+                id: 'logOut',
+                click: async () => {
+                    const result = await dialog.showMessageBox(this.windowMain.win, {
+                        title: this.i18nService.t('logOut'),
+                        message: this.i18nService.t('logOut'),
+                        detail: this.i18nService.t('logOutConfirmation'),
+                        buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
+                        cancelId: 1,
+                        defaultId: 0,
+                        noLink: true,
+                    });
+                    if (result.response === 0) {
+                        this.main.messagingService.send('logout');
+                    }
+                },
             },
         ];
 
