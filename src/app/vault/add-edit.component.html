@@ -281,7 +281,8 @@
                     </div>
                 </div>
             </div>
-            <app-vault-add-edit-custom-fields [cipher]="cipher" [editMode]="editMode"></app-vault-add-edit-custom-fields>
+            <app-vault-add-edit-custom-fields [cipher]="cipher" [thisCipherType]="cipher.type" [editMode]="editMode">
+            </app-vault-add-edit-custom-fields>
             <div class="box" *ngIf="allowOwnershipOptions()">
                 <div class="box-header">
                     {{'ownership' | i18n}}

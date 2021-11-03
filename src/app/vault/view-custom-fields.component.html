@@ -18,6 +18,13 @@
                     <i class="fa fa-square-o" *ngIf="field.value !== 'true'" aria-hidden="true"></i>
                     <span class="sr-only">{{field.value}}</span>
                 </div>
+                <div *ngIf="field.type === fieldType.Linked" class="box-content-row-flex">
+                    <div class="icon icon-small">
+                        <i class="fa fa-link" aria-hidden="true" appA11yTitle="{{'linkedValue' | i18n}}"></i>
+                        <span class="sr-only">{{'linkedValue' | i18n}}</span>
+                    </div>
+                    <span>{{cipher.linkedFieldI18nKey(field.linkedId) | i18n}}</span>
+                </div>
             </div>
             <div class="action-buttons">
                 <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
@@ -27,7 +34,8 @@
                         [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
                 </a>
                 <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
-                    *ngIf="field.value && field.type !== fieldType.Boolean && !(field.type === fieldType.Hidden && !cipher.viewPassword)"
+                    *ngIf="field.value && field.type !== fieldType.Boolean && field.type !== fieldType.Linked &&
+                    !(field.type === fieldType.Hidden && !cipher.viewPassword)"
                     (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')"
                     role="button">
                     <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
