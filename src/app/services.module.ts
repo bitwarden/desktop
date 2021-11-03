@@ -130,7 +130,7 @@ const passwordGenerationService = new PasswordGenerationService(cryptoService, s
 const totpService = new TotpService(storageService, cryptoFunctionService, logService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
-    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService);
+    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService, cryptoFunctionService);
 const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
