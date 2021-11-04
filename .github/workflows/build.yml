@@ -1015,6 +1015,45 @@ jobs:
           if-no-files-found: error
 
 
+  crowdin-push:
+    name: Crowdin Push
+    if: github.ref == 'refs/heads/master'
+    needs:
+      - linux
+      - windows
+      - macos-package-github
+      - macos-package-mas
+    runs-on: ubuntu-20.04
+    env:
+      _CROWDIN_PROJECT_ID: "299360"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+
+      - name: Login to Azure
+        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "crowdin-api-token"
+
+      - name: Upload Sources
+        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea  # v1.3.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
+        with:
+          config: crowdin.yml
+          crowdin_branch_name: master
+          upload_sources: true
+          upload_translations: false
+
+
   check-failures:
     name: Check for failures
     if: always()
@@ -1027,6 +1066,7 @@ jobs:
       - macos-build
       - macos-package-github
       - macos-package-mas
+      - crowdin-push
     steps:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
@@ -1038,6 +1078,7 @@ jobs:
           MACOS_BUILD_STATUS: ${{ needs.macos-build.result }}
           MACOS_PKG_GITHUB_STATUS: ${{ needs.macos-package-github.result }}
           MACOS_PKG_MAS_STATUS: ${{ needs.macos-package-mas.result }}
+          CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
@@ -1052,6 +1093,8 @@ jobs:
           elif [ "$MACOS_PKG_GITHUB_STATUS" = "failure" ]; then
               exit 1
           elif [ "$MACOS_PKG_MAS_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
               exit 1
           fi
 
