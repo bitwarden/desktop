@@ -36,6 +36,7 @@ import { EventService } from 'jslib-common/services/event.service';
 import { ExportService } from 'jslib-common/services/export.service';
 import { FileUploadService } from 'jslib-common/services/fileUpload.service';
 import { FolderService } from 'jslib-common/services/folder.service';
+import { KeyConnectorService } from 'jslib-common/services/keyConnector.service';
 import { NotificationsService } from 'jslib-common/services/notifications.service';
 import { PasswordGenerationService } from 'jslib-common/services/passwordGeneration.service';
 import { PolicyService } from 'jslib-common/services/policy.service';
@@ -67,6 +68,7 @@ import { ExportService as ExportServiceAbstraction } from 'jslib-common/abstract
 import { FileUploadService as FileUploadServiceAbstraction }  from 'jslib-common/abstractions/fileUpload.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib-common/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService as KeyConnectorServiceAbstraction } from 'jslib-common/abstractions/keyConnector.service';
 import { LogService as LogServiceAbstraction } from 'jslib-common/abstractions/log.service';
 import { MessagingService as MessagingServiceAbstraction } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib-common/abstractions/notifications.service';
@@ -122,17 +124,21 @@ searchService = new SearchService(cipherService, logService, i18nService);
 const sendService = new SendService(cryptoService, userService, apiService, fileUploadService, storageService,
     i18nService, cryptoFunctionService);
 const policyService = new PolicyService(userService, storageService, apiService);
+const keyConnectorService = new KeyConnectorService(storageService, userService, cryptoService, apiService,
+    environmentService, logService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
-    policyService, null, async () => messagingService.send('logout', { expired: false }));
+    policyService, keyConnectorService, async () => messagingService.send('logout', { expired: false }));
 const syncService = new SyncService(userService, apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, storageService, messagingService, policyService,
-    sendService, logService, tokenService, async (expired: boolean) => messagingService.send('logout', { expired: expired }));
+    sendService, logService, tokenService, keyConnectorService,
+    async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, storageService, policyService);
 const totpService = new TotpService(storageService, cryptoFunctionService, logService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, userService, tokenService, appIdService,
-    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService, cryptoFunctionService);
+    i18nService, platformUtilsService, messagingService, vaultTimeoutService, logService, cryptoFunctionService,
+    environmentService, keyConnectorService);
 const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(userService, syncService, appIdService,
@@ -231,6 +237,7 @@ export function initFactory(): Function {
         { provide: CryptoFunctionServiceAbstraction, useValue: cryptoFunctionService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
+        { provide: KeyConnectorServiceAbstraction, useValue: keyConnectorService },
         { provide: UserVerificationServiceAbstraction, useClass: UserVerificationService },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         {

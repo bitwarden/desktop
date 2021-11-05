@@ -30,6 +30,7 @@ import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService } from 'jslib-common/abstractions/keyConnector.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
@@ -108,7 +109,8 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService, private modalService: ModalService) { }
+        private policyService: PolicyService, private modalService: ModalService,
+        private keyConnectorService: KeyConnectorService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
@@ -332,7 +334,7 @@ export class AppComponent implements OnInit {
         let data: any;
         if (type === 'sync') {
             data = {
-                enableChangeMasterPass: !await this.userService.getUsesCryptoAgent(),
+                enableChangeMasterPass: !await this.keyConnectorService.getUsesKeyConnector(),
             };
         } else {
             data = {
