@@ -76,9 +76,9 @@ jobs:
                       Bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
                       bitwarden.${{ env.PKG_VERSION }}.nupkg,
                       latest.yml,
-                      Bitwarden-${{ env.PKG_VERSION }}-mac.zip,
-                      Bitwarden-${{ env.PKG_VERSION }}.dmg,
-                      Bitwarden-${{ env.PKG_VERSION }}.dmg.blockmap,
+                      Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
+                      Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
+                      Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
                       latest-mac.yml,
                       Bitwarden-${{ env.PKG_VERSION }}-universal.pkg"
           commit: ${{ github.sha }}
