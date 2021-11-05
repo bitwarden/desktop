@@ -7,8 +7,9 @@ import {
   } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { SyncService } from 'jslib-common/abstractions/sync.service';
+import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { Account } from 'jslib-common/models/domain/account';
 
@@ -29,15 +30,14 @@ import { Account } from 'jslib-common/models/domain/account';
 })
 export class AccountSwitcherComponent implements OnInit {
     isOpen: boolean = false;
+    accounts: { [userId: string]: Account };
     activeAccountEmail: string;
 
-    get accounts(): Record<string, Account> {
-        return this.stateService.accounts.getValue();
-    }
-
-    constructor(private stateService: StateService, private syncService: SyncService) {}
+    constructor(private stateService: StateService, private vaultTimeoutService: VaultTimeoutService,
+        private messagingService: MessagingService) {}
 
     async ngOnInit(): Promise<void> {
+        this.stateService.accounts.subscribe(accounts => this.accounts = accounts);
         this.activeAccountEmail = await this.stateService.getEmail();
     }
 
@@ -47,6 +47,12 @@ export class AccountSwitcherComponent implements OnInit {
 
     async switch(userId: string) {
         await this.stateService.setActiveUser(userId);
-        await this.syncService.fullSync(true);
+        const locked = await this.vaultTimeoutService.isLocked(userId);
+        if (locked) {
+            this.messagingService.send('locked');
+        } else {
+            this.messagingService.send('unlocked');
+            this.messagingService.send('syncVault');
+        }
     }
 }
