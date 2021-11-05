@@ -97,7 +97,7 @@ export class MenuMain extends BaseMenu {
         });
     }
 
-    private tryUnlockAuthBasedMenuItems(accounts: {[userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string},}, activeUserId: string) {
+    private tryUnlockAuthBasedMenuItems(accounts: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string} }, activeUserId: string) {
         this.tryUnlockActiveAccountAuthBasedMenuItems(accounts[activeUserId]);
 
         this.lockNow.enabled = true;

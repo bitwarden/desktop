@@ -38,7 +38,7 @@ export class AccountSwitcherComponent implements OnInit {
 
     async ngOnInit(): Promise<void> {
         this.stateService.accounts.subscribe(async accounts => {
-            this.accounts = accounts
+            this.accounts = accounts;
             this.activeAccountEmail = await this.stateService.getEmail();
         });
     }
