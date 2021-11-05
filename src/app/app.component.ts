@@ -272,6 +272,9 @@ export class AppComponent implements OnInit {
                             await this.openPasswordGenerator();
                         }
                         break;
+                    case 'convertAccountToKeyConnector':
+                        this.router.navigate(['/remove-password']);
+                        break;
                 }
             });
         });

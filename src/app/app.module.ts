@@ -22,6 +22,7 @@ import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
+import { RemovePasswordComponent } from './accounts/remove-password.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { SsoComponent } from './accounts/sso.component';
@@ -211,6 +212,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordRepromptComponent,
         PremiumComponent,
         RegisterComponent,
+        RemovePasswordComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
         SendAddEditComponent,
