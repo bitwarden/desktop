@@ -370,7 +370,7 @@ export class AppComponent implements OnInit {
 
         await this.stateService.setBiometricLocked(true);
 
-        if (userId == await this.stateService.getUserId()) {
+        if (userId === await this.stateService.getUserId()) {
             this.searchService.clearIndex();
             this.authService.logOut(async () => {
                 if (expired) {
