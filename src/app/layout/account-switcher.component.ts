@@ -37,8 +37,10 @@ export class AccountSwitcherComponent implements OnInit {
         private messagingService: MessagingService) {}
 
     async ngOnInit(): Promise<void> {
-        this.stateService.accounts.subscribe(accounts => this.accounts = accounts);
-        this.activeAccountEmail = await this.stateService.getEmail();
+        this.stateService.accounts.subscribe(async accounts => {
+            this.accounts = accounts
+            this.activeAccountEmail = await this.stateService.getEmail();
+        });
     }
 
     toggle() {

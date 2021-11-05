@@ -1,5 +1,5 @@
 <a class="account-switcher" (click)="toggle()" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-    <app-avatar [data]="activeAccountEmail" size="25" [circle]="true" [fontSize]="14" *ngIf="activeAccountEmail != null"></app-avatar>
+    <app-avatar [data]="activeAccountEmail" size="25" [circle]="true" [fontSize]="14" [dynamic]="true" *ngIf="activeAccountEmail != null"></app-avatar>
     <span>{{activeAccountEmail}}</span>
     <i class="fa" aria-hidden="true" [ngClass]="{'fa-chevron-down': !isOpen, 'fa-chevron-up': isOpen}"></i>
 </a>
