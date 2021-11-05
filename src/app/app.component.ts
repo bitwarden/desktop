@@ -145,7 +145,7 @@ export class AppComponent implements OnInit {
                         this.router.navigate(['login']);
                         break;
                     case 'logout':
-                        this.logOut(!!message.expired);
+                        this.logOut(!!message.expired, message.userId);
                         break;
                     case 'lockVault':
                         await this.vaultTimeoutService.lock(true, message.userId);
@@ -352,34 +352,34 @@ export class AppComponent implements OnInit {
         }
     }
 
-    private async logOut(expired: boolean) {
-        await this.eventService.uploadEvents();
-        const userId = await this.stateService.getUserId();
-
+    private async logOut(expired: boolean, userId?: string) {
         await Promise.all([
-            this.eventService.clearEvents(),
-            this.syncService.setLastSync(new Date(0)),
-            this.tokenService.clearToken(),
-            this.cryptoService.clearKeys(),
+            this.eventService.uploadEvents(userId),
+            this.syncService.setLastSync(new Date(0), userId),
+            this.tokenService.clearToken(userId),
+            this.cryptoService.clearKeys(userId),
             this.settingsService.clear(userId),
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
             this.collectionService.clear(userId),
-            this.passwordGenerationService.clear(),
-            this.vaultTimeoutService.clear(),
+            this.passwordGenerationService.clear(userId),
+            this.vaultTimeoutService.clear(userId),
             this.policyService.clear(userId),
-            await this.stateService.purge(),
+            this.stateService.purge({ userId: userId }),
         ]);
 
         await this.stateService.setBiometricLocked(true);
-        this.searchService.clearIndex();
-        this.authService.logOut(async () => {
-            if (expired) {
-                this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
-                    this.i18nService.t('loginExpired'));
-            }
-            this.router.navigate(['login']);
-        });
+
+        if (userId == await this.stateService.getUserId()) {
+            this.searchService.clearIndex();
+            this.authService.logOut(async () => {
+                if (expired) {
+                    this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
+                        this.i18nService.t('loginExpired'));
+                }
+                this.router.navigate(['login']);
+            });
+        }
     }
 
     private async recordActivity() {

@@ -125,7 +125,7 @@ const providerService: ProviderServiceAbstraction = new ProviderService(stateSer
 const policyService = new PolicyService(stateService, organizationService, apiService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, messagingService, searchService, tokenService, policyService, stateService, null,
-    async () => messagingService.send('logout', { expired: false }));
+    async (userId?: string) => messagingService.send('logout', { userId: userId, expired: false }));
 const syncService = new SyncService(apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, messagingService, policyService, sendService, logService,
     async (expired: boolean) => messagingService.send('logout', { expired: expired }), stateService, organizationService, providerService);
