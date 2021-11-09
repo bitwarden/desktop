@@ -30,6 +30,7 @@ import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { FolderService } from 'jslib-common/abstractions/folder.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService } from 'jslib-common/abstractions/keyConnector.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService } from 'jslib-common/abstractions/notifications.service';
@@ -108,12 +109,13 @@ export class AppComponent implements OnInit {
         private searchService: SearchService, private notificationsService: NotificationsService,
         private platformUtilsService: PlatformUtilsService, private systemService: SystemService,
         private stateService: StateService, private eventService: EventService,
-        private policyService: PolicyService, private modalService: ModalService) { }
+        private policyService: PolicyService, private modalService: ModalService,
+        private keyConnectorService: KeyConnectorService) { }
 
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
             setTimeout(async () => {
-                await this.updateAppMenu();
+                await this.updateAppMenu('auth');
             }, 1000);
 
             window.onmousemove = () => this.recordActivity();
@@ -130,7 +132,7 @@ export class AppComponent implements OnInit {
                     case 'loggedIn':
                     case 'unlocked':
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu();
+                        this.updateAppMenu('auth');
                         this.systemService.cancelProcessReload();
                         break;
                     case 'loggedOut':
@@ -138,7 +140,7 @@ export class AppComponent implements OnInit {
                             this.modal.close();
                         }
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu();
+                        this.updateAppMenu('auth');
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
@@ -158,7 +160,7 @@ export class AppComponent implements OnInit {
                         this.stateService.purge();
                         this.router.navigate(['lock']);
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu();
+                        this.updateAppMenu('auth');
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
@@ -168,6 +170,7 @@ export class AppComponent implements OnInit {
                     case 'syncStarted':
                         break;
                     case 'syncCompleted':
+                        await this.updateAppMenu('sync');
                         break;
                     case 'openSettings':
                         await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
@@ -269,6 +272,10 @@ export class AppComponent implements OnInit {
                             await this.openPasswordGenerator();
                         }
                         break;
+                    case 'convertAccountToKeyConnector':
+                        this.keyConnectorService.setConvertAccountRequired(true);
+                        this.router.navigate(['/remove-password']);
+                        break;
                 }
             });
         });
@@ -327,11 +334,20 @@ export class AppComponent implements OnInit {
         });
     }
 
-    private async updateAppMenu() {
-        this.messagingService.send('updateAppMenu', {
-            isAuthenticated: await this.userService.isAuthenticated(),
-            isLocked: await this.vaultTimeoutService.isLocked(),
-        });
+    private async updateAppMenu(type: 'auth' | 'sync') {
+        let data: any;
+        if (type === 'sync') {
+            data = {
+                enableChangeMasterPass: !await this.keyConnectorService.getUsesKeyConnector(),
+            };
+        } else {
+            data = {
+                isAuthenticated: await this.userService.isAuthenticated(),
+                isLocked: await this.vaultTimeoutService.isLocked(),
+            };
+        }
+
+        this.messagingService.send('updateAppMenu', data);
     }
 
     private async logOut(expired: boolean) {
@@ -352,6 +368,7 @@ export class AppComponent implements OnInit {
             this.vaultTimeoutService.clear(),
             this.stateService.purge(),
             this.policyService.clear(userId),
+            this.keyConnectorService.clear(),
         ]);
 
         this.vaultTimeoutService.biometricLocked = true;

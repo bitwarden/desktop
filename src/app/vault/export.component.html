@@ -1,6 +1,6 @@
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="exportTitle">
     <div class="modal-dialog" role="document">
-        <form class="modal-content" #form (ngSubmit)="submit()">
+        <form class="modal-content" #form (ngSubmit)="submit()" [formGroup]="exportForm">
             <div class="modal-body">
                 <app-callout type="warning" title="{{'vaultExportDisabled' | i18n}}" *ngIf="disabledByPolicy">
                     {{'personalVaultExportPolicyInEffect' | i18n}}
@@ -12,25 +12,14 @@
                     <div class="box-content">
                         <div class="box-content-row" appBoxRow>
                             <label for="format">{{'fileFormat' | i18n}}</label>
-                            <select id="format" name="Format" [(ngModel)]="format" [disabled]="disabledByPolicy">
-                                <option value="json">.json</option>
-                                <option value="csv">.csv</option>
-                                <option value="encrypted_json">.json (Encrypted)</option>
+                            <select class="form-control" id="format" name="Format" formControlName="format">
+                                <option *ngFor="let f of formatOptions" [value]="f.value">{{f.name}}</option>
                             </select>
                         </div>
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
-                                <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                                <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
-                                    name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword" required
-                                    appAutofocus [disabled]="disabledByPolicy">
-                            </div>
-                            <div class="action-buttons">
-                                <a class="row-btn" href="#" appStopClick appBlurClick role="button"
-                                    appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
-                                    <i class="fa fa-lg" aria-hidden="true"
-                                        [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                                </a>
+                                <app-verify-master-password ngDefaultControl formControlName="secret" name="secret">
+                                </app-verify-master-password>
                             </div>
                         </div>
                     </div>

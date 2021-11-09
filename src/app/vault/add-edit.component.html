@@ -249,7 +249,7 @@
                         <label for="favorite">{{'favorite' | i18n}}</label>
                         <input id="favorite" type="checkbox" name="Favorite" [(ngModel)]="cipher.favorite">
                     </div>
-                    <div class="box-content-row box-content-row-checkbox" appBoxRow>
+                    <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="canUseReprompt">
                         <label for="passwordPrompt">{{'passwordPrompt' | i18n}}
                             <a href="#" appA11yTitle="{{'learnMore' | i18n}}" (click)="openHelpReprompt()">
                                 <i class="fa fa-question-circle-o" aria-hidden="true"></i>
