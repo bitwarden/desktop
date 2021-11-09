@@ -125,7 +125,7 @@ const sendService = new SendService(cryptoService, userService, apiService, file
     i18nService, cryptoFunctionService);
 const policyService = new PolicyService(userService, storageService, apiService);
 const keyConnectorService = new KeyConnectorService(storageService, userService, cryptoService, apiService,
-    environmentService, logService);
+    environmentService, tokenService, logService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
     policyService, keyConnectorService, null, async () => messagingService.send('logout', { expired: false }));

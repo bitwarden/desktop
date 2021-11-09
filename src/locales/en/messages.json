@@ -541,6 +541,9 @@
   "noItemsInList": {
     "message": "There are no items to list."
   },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
+  },
   "verificationCode": {
     "message": "Verification Code"
   },

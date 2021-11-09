@@ -273,6 +273,7 @@ export class AppComponent implements OnInit {
                         }
                         break;
                     case 'convertAccountToKeyConnector':
+                        this.keyConnectorService.setConvertAccountRequired(true);
                         this.router.navigate(['/remove-password']);
                         break;
                 }
@@ -367,6 +368,7 @@ export class AppComponent implements OnInit {
             this.vaultTimeoutService.clear(),
             this.stateService.purge(),
             this.policyService.clear(userId),
+            this.keyConnectorService.clear(),
         ]);
 
         this.vaultTimeoutService.biometricLocked = true;
