@@ -71,11 +71,14 @@ export class MenuMain extends BaseMenu {
             this.syncVault, this.exportVault, this.settings, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault, this.copyUsername, this.copyPassword];
-        this.updateApplicationMenuState();
+        this.updateApplicationMenuState(true);
     }
 
-    updateApplicationMenuState(accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string }}, activeUserId?: string) {
+    updateApplicationMenuState(enableChangeMasterPass: boolean, accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string }}, activeUserId?: string) {
         this.updateAuthBasedMenuState(accounts, activeUserId);
+        if (enableChangeMasterPass != null && this.changeMasterPass != null) {
+            this.changeMasterPass.enabled = enableChangeMasterPass;
+        }
         if (this.menu != null) {
             Menu.setApplicationMenu(this.menu);
         }

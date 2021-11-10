@@ -1695,22 +1695,22 @@
     "message": "Ця дія захищена. Щоб продовжити, повторно введіть головний пароль."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Головний пароль оновлено"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Оновити головний пароль"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваш головний пароль нещодавно був змінений адміністратором організації. Щоб отримати доступ до сховища, ви повинні оновити його зараз. Продовживши, ви вийдете з поточного сеансу, після чого необхідно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Годин"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Хвилин"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Політики вашої організації впливають на час очікування сховища. Максимальний дозволений час очікування сховища $HOURS$ годин, $MINUTES$ хвилин",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Час очікування сховища перевищує обмеження, встановлені вашою організацією."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Автоматичне розгортання"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Ця організація має корпоративну політику, яка автоматично розгортає вас на скидання пароля. Розгортання дозволятиме адміністраторам організації змінювати ваш головний пароль."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Експорт сховища вимкнено"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
   }
 }

@@ -1,6 +1,6 @@
 ﻿@import "variables.scss";
 
-#login-page, #lock-page, #sso-page, #set-password-page {
+#login-page, #lock-page, #sso-page, #set-password-page, #remove-password-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +23,7 @@
     }
 }
 
-#register-page, #hint-page, #two-factor-page, #update-temp-password-page {
+#register-page, #hint-page, #two-factor-page, #update-temp-password-page, #remove-password-page {
     padding-top: 20px;
 
     .content {
@@ -157,7 +157,7 @@
     }
 }
 
-#set-password-page {
+#set-password-page, #remove-password-page {
     .content {
         width: 500px;
 
@@ -208,5 +208,11 @@
 #register-page, #update-temp-password-page {
     .content {
         width: 400px;
+    }
+}
+
+#remove-password-page {
+    .content > p {
+        margin-bottom: 20px;
     }
 }

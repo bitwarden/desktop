@@ -21,6 +21,7 @@ import { LockComponent } from './accounts/lock.component';
 import { LoginComponent } from './accounts/login.component';
 import { PremiumComponent } from './accounts/premium.component';
 import { RegisterComponent } from './accounts/register.component';
+import { RemovePasswordComponent } from './accounts/remove-password.component';
 import { SetPasswordComponent } from './accounts/set-password.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { SsoComponent } from './accounts/sso.component';
@@ -32,6 +33,7 @@ import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.compo
 import { AvatarComponent } from 'jslib-angular/components/avatar.component';
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
+import { VerifyMasterPasswordComponent } from 'jslib-angular/components/verify-master-password.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
@@ -185,6 +187,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
     declarations: [
         A11yTitleDirective,
         AddEditComponent,
+        AddEditCustomFieldsComponent,
         ApiActionDirective,
         AppComponent,
         AttachmentsComponent,
@@ -210,14 +213,17 @@ registerLocaleData(localeZhTw, 'zh-TW');
         PasswordGeneratorComponent,
         PasswordGeneratorHistoryComponent,
         PasswordHistoryComponent,
+        PasswordRepromptComponent,
         PremiumComponent,
         RegisterComponent,
+        RemovePasswordComponent,
         SearchCiphersPipe,
         SelectCopyDirective,
         SendAddEditComponent,
-        SendEffluxDatesComponent,
         SendComponent,
+        SendEffluxDatesComponent,
         SetPasswordComponent,
+        SetPinComponent,
         SettingsComponent,
         ShareComponent,
         SsoComponent,
@@ -228,11 +234,9 @@ registerLocaleData(localeZhTw, 'zh-TW');
         TwoFactorOptionsComponent,
         UpdateTempPasswordComponent,
         VaultComponent,
-        ViewComponent,
-        PasswordRepromptComponent,
-        SetPinComponent,
         VaultTimeoutInputComponent,
-        AddEditCustomFieldsComponent,
+        VerifyMasterPasswordComponent,
+        ViewComponent,
         ViewCustomFieldsComponent,
         HeaderComponent,
         AccountSwitcherComponent,

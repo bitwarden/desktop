@@ -36,6 +36,7 @@ import { EventService } from 'jslib-common/services/event.service';
 import { ExportService } from 'jslib-common/services/export.service';
 import { FileUploadService } from 'jslib-common/services/fileUpload.service';
 import { FolderService } from 'jslib-common/services/folder.service';
+import { KeyConnectorService } from 'jslib-common/services/keyConnector.service';
 import { NotificationsService } from 'jslib-common/services/notifications.service';
 import { OrganizationService } from 'jslib-common/services/organization.service';
 import { PasswordGenerationService } from 'jslib-common/services/passwordGeneration.service';
@@ -49,6 +50,7 @@ import { SyncService } from 'jslib-common/services/sync.service';
 import { SystemService } from 'jslib-common/services/system.service';
 import { TokenService } from 'jslib-common/services/token.service';
 import { TotpService } from 'jslib-common/services/totp.service';
+import { UserVerificationService } from 'jslib-common/services/userVerification.service';
 import { VaultTimeoutService } from 'jslib-common/services/vaultTimeout.service';
 import { WebCryptoFunctionService } from 'jslib-common/services/webCryptoFunction.service';
 
@@ -67,6 +69,7 @@ import { ExportService as ExportServiceAbstraction } from 'jslib-common/abstract
 import { FileUploadService as FileUploadServiceAbstraction }  from 'jslib-common/abstractions/fileUpload.service';
 import { FolderService as FolderServiceAbstraction } from 'jslib-common/abstractions/folder.service';
 import { I18nService as I18nServiceAbstraction } from 'jslib-common/abstractions/i18n.service';
+import { KeyConnectorService as KeyConnectorServiceAbstraction } from 'jslib-common/abstractions/keyConnector.service';
 import { LogService as LogServiceAbstraction } from 'jslib-common/abstractions/log.service';
 import { MessagingService as MessagingServiceAbstraction } from 'jslib-common/abstractions/messaging.service';
 import { NotificationsService as NotificationsServiceAbstraction } from 'jslib-common/abstractions/notifications.service';
@@ -87,6 +90,7 @@ import { SyncService as SyncServiceAbstraction } from 'jslib-common/abstractions
 import { SystemService as SystemServiceAbstraction } from 'jslib-common/abstractions/system.service';
 import { TokenService as TokenServiceAbstraction } from 'jslib-common/abstractions/token.service';
 import { TotpService as TotpServiceAbstraction } from 'jslib-common/abstractions/totp.service';
+import { UserVerificationService as UserVerificationServiceAbstraction } from 'jslib-common/abstractions/userVerification.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ThemeType } from 'jslib-common/enums/themeType';
@@ -123,17 +127,22 @@ const sendService = new SendService(cryptoService, apiService, fileUploadService
 const organizationService = new OrganizationService(stateService);
 const providerService: ProviderServiceAbstraction = new ProviderService(stateService);
 const policyService = new PolicyService(stateService, organizationService, apiService);
+const keyConnectorService = new KeyConnectorService(stateService, cryptoService, apiService,
+    environmentService, tokenService, logService, organizationService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
-    cryptoService, platformUtilsService, messagingService, searchService, tokenService, policyService, stateService, null,
+    cryptoService, platformUtilsService, messagingService, searchService, tokenService, policyService, keyConnectorService,
+    stateService, null,
     async (userId?: string) => messagingService.send('logout', { userId: userId, expired: false }));
 const syncService = new SyncService(apiService, settingsService,
     folderService, cipherService, cryptoService, collectionService, messagingService, policyService, sendService, logService,
-    async (expired: boolean) => messagingService.send('logout', { expired: expired }), stateService, organizationService, providerService);
+    keyConnectorService, stateService, organizationService, providerService,
+    async (expired: boolean) => messagingService.send('logout', { expired: expired }));
 const passwordGenerationService = new PasswordGenerationService(cryptoService, policyService, stateService);
 const totpService = new TotpService(cryptoFunctionService, logService, stateService);
 const containerService = new ContainerService(cryptoService);
 const authService = new AuthService(cryptoService, apiService, tokenService, appIdService, i18nService,
-    platformUtilsService, messagingService, vaultTimeoutService, logService, cryptoFunctionService, stateService);
+    platformUtilsService, messagingService, vaultTimeoutService, logService, cryptoFunctionService,
+    keyConnectorService, environmentService, stateService);
 const exportService = new ExportService(folderService, cipherService, apiService, cryptoService);
 const auditService = new AuditService(cryptoFunctionService, apiService);
 const notificationsService = new NotificationsService(syncService, appIdService,
@@ -211,6 +220,7 @@ export function initFactory(): Function {
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
         { provide: FolderServiceAbstraction, useValue: folderService },
         { provide: I18nServiceAbstraction, useValue: i18nService },
+        { provide: KeyConnectorServiceAbstraction, useValue: keyConnectorService },
         { provide: LogServiceAbstraction, useValue: logService },
         { provide: MessagingServiceAbstraction, useValue: messagingService },
         { provide: NativeMessagingService, useValue: nativeMessagingService },
@@ -229,6 +239,7 @@ export function initFactory(): Function {
         { provide: SystemServiceAbstraction, useValue: systemService },
         { provide: TokenServiceAbstraction, useValue: tokenService },
         { provide: TotpServiceAbstraction, useValue: totpService },
+        { provide: UserVerificationServiceAbstraction, useClass: UserVerificationService },
         { provide: VaultTimeoutServiceAbstraction, useValue: vaultTimeoutService },
         {
             provide: APP_INITIALIZER,

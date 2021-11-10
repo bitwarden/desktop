@@ -1695,22 +1695,22 @@
     "message": "See tegevus on kaitstud. Jätkamiseks sisesta oma ülemparool."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Uuendas ülemparooli"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Ülemparooli uuendamine"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Organisatsiooni administraator muutis hiljuti sinu ülemparooli. Hoidlale ligi pääsemiseks pead seda nüüd uuendama. Jätkates logitakse sind käimasolevast sessioonist välja, misjärel nõutakse uuesti sisselogimist. Teistes seadmetes olevad aktiivsed sessioonid jäävad aktiivseks kuni üheks tunniks."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Tundi"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minutit"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Organisatsiooni poliitikad mõjutavad sinu hoidla ajalõppu. Maksimaalne lubatud hoidla ajalõpp on $HOURS$ tund(i) ja $MINUTES$ minut(it)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Valitud hoidla ajalõpp ei ole organisatsiooni poolt määratud reeglitega kooskõlas."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automaatne liitumine"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Selle organisatsiooni poliitika kohaselt liidetakse sind automaatselt ülemparooli lähtestamise funktsiooniga. Liitumisel saavad organisatsiooni administraatorid sinu ülemparooli muuta."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Hoidla eksportimine on väljalülitatud"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Üks või enam organisatsiooni poliitikat ei võimalda sul oma personaalset hoidlat eksportida."
   }
 }

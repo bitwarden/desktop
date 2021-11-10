@@ -10,20 +10,19 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
+      branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/rc" ]]; then
+          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix" ]]; then
             echo "==================================="
-            echo "[!] Can only release from rc branch"
+            echo "[!] Can only release from the 'rc' or 'hotfix' branches"
             echo "==================================="
             exit 1
           fi
 
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: rc
 
       - name: Get Package Version
         id: retrieve-version
@@ -45,12 +44,18 @@ jobs:
             exit 1
           fi
 
+      - name: Get branch name
+        id: branch
+        run: |
+          BRANCH_NAME=$(basename ${{ github.ref }})
+          echo "::set-output name=branch-name::$BRANCH_NAME"
+
       - name: Download all artifacts
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
         with:
           workflow: build.yml
           workflow_conclusion: success
-          branch: rc
+          branch: ${{ steps.branch.outputs.branch-name }}
 
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
@@ -67,18 +72,18 @@ jobs:
                       Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
                       Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
                       Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
-                      bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
+                      Bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
                       Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
                       Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
-                      bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
+                      Bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
                       Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
                       Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
-                      bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
+                      Bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
                       bitwarden.${{ env.PKG_VERSION }}.nupkg,
                       latest.yml,
-                      Bitwarden-${{ env.PKG_VERSION }}-mac.zip,
-                      Bitwarden-${{ env.PKG_VERSION }}.dmg,
-                      Bitwarden-${{ env.PKG_VERSION }}.dmg.blockmap,
+                      Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
+                      Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
+                      Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
                       latest-mac.yml,
                       Bitwarden-${{ env.PKG_VERSION }}-universal.pkg"
           commit: ${{ github.sha }}
@@ -98,8 +103,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: rc
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d  # v1.2.0
@@ -114,7 +117,7 @@ jobs:
         with:
           workflow: build.yml
           workflow_conclusion: success
-          branch: rc
+          branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: ./dist
 
@@ -136,8 +139,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: rc
 
       - name: Setup Chocolatey
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
@@ -153,7 +154,7 @@ jobs:
         with:
           workflow: build.yml
           workflow_conclusion: success
-          branch: rc
+          branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
           path: ./dist
 
@@ -162,34 +163,3 @@ jobs:
         run: |
           cd dist
           choco push
-
-
-  macos:
-    name: Deploy MacOS
-    runs-on: macos-10.15
-    needs: setup
-    env:
-      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: rc
-
-      - name: Make target directory
-        run: mkdir -p dist/mas-universal
-
-      - name: Download Mac artifact
-        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
-        with:
-          workflow: build.yml
-          workflow_conclusion: success
-          branch: rc
-          artifacts: Bitwarden-${{ env._PKG_VERSION }}-universal.pkg
-          path: ./dist/mas-universal
-
-      - name: Deploy to App Store
-        run: npm run upload:mas
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}

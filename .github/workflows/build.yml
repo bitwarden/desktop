@@ -30,6 +30,9 @@ jobs:
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
       build_number: ${{ steps.increment-version.outputs.build_number }}
+      safari_ref: ${{ steps.safari-ref.outputs.safari_ref }}
+      rc_branch_exists: ${{ steps.branch-check.outputs.rc_branch_exists }}
+      hotfix_branch_exists: ${{ steps.branch-check.outputs.hotfix_branch_exists }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -40,12 +43,41 @@ jobs:
           PKG_VERSION=$(jq -r .version src/package.json)
           echo "::set-output name=package_version::$PKG_VERSION"
 
-      - name: Increment version
+      - name: Increment Version
         id: increment-version
         run: |
           BUILD_NUMBER=$(expr 500 + $GITHUB_RUN_NUMBER)
           echo "Setting build number to $BUILD_NUMBER"
           echo "::set-output name=build_number::$BUILD_NUMBER"
+
+      - name: Get Safari Branch Ref
+        id: safari-ref
+        run: |
+          SAFARI_REF=master
+
+          if [ "$GITHUB_REF" = "hotfix" ]; then
+              SAFARI_REF=hotfix
+          elif [ "$GITHUB_REF" = "rc" ]; then
+              SAFARI_REF=rc
+          fi
+
+          echo "Setting Safari Extension ref to $SAFARI_REF"
+          echo "::set-output name=safari_ref::$SAFARI_REF"
+
+      - name: Check if special branches exist
+        id: branch-check
+        run: |
+          if [[ $(git ls-remote --heads origin rc) ]]; then
+            echo "::set-output name=rc_branch_exists::1"
+          else
+            echo "::set-output name=rc_branch_exists::0"
+          fi
+
+          if [[ $(git ls-remote --heads origin hotfix) ]]; then
+            echo "::set-output name=hotfix_branch_exists::1"
+          else
+            echo "::set-output name=hotfix_branch_exists::0"
+          fi
 
 
   linux:
@@ -200,9 +232,6 @@ jobs:
         run: npm run lint
 
       - name: Build & Sign (dev)
-        run: |
-          npm run build
-          npm run pack:win
         env:
           ELECTRON_BUILDER_SIGN: 1
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
@@ -210,6 +239,9 @@ jobs:
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+        run: |
+          npm run build
+          npm run pack:win
 
       - name: Rename appx files for store
         shell: pwsh
@@ -227,7 +259,7 @@ jobs:
           Copy-Item -Path ./stores/chocolatey -Destination ./dist/chocolatey -Recurse
           Copy-Item -Path ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe -Destination ./dist/chocolatey
 
-          $checksum = checksum -t sha256 ./dist/chocoloatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
           (Get-Content $chocoInstall).replace('__version__', "$env:_PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:_PACKAGE_VERSION" --out ./dist/chocolatey
@@ -326,7 +358,7 @@ jobs:
 
   macos-build:
     name: MacOS Build
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -465,6 +497,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         shell: pwsh
@@ -473,7 +506,7 @@ jobs:
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -612,7 +645,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
-          ref: ${{ github.ref }}
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -624,31 +657,31 @@ jobs:
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dist)
-        run: |
-          npm run pack:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: |
+          npm run pack:mac
 
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-mac.zip
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           if-no-files-found: error
 
       - name: Upload .dmg blockmap artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}.dmg.blockmap
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
@@ -661,7 +694,7 @@ jobs:
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -800,7 +833,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
-          ref: ${{ github.ref }}
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -817,8 +850,6 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-          SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
-          SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Upload .pkg artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
@@ -827,11 +858,23 @@ jobs:
           path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           if-no-files-found: error
 
+      - name: Deploy to TestFlight
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        if: |
+            (github.ref == 'refs/heads/master'
+              && needs.setup.outputs.rc_branch_exists == 0
+              && needs.setup.outputs.hotfix_branch_exists == 0)
+            || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
+            || github.ref == 'refs/heads/hotfix'
+        run: npm run upload:mas
+
 
   macos-package-dev:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
-    runs-on: macos-10.15
+    runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -970,6 +1013,7 @@ jobs:
         with:
           repository: 'bitwarden/browser'
           path: 'dist-safari/browser'
+          ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
@@ -986,8 +1030,6 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-          SDKROOT: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
-          SDK_DIR: /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk/
 
       - name: Zip masdev asset
         working-directory: ./dist/mas-dev-universal
@@ -1002,6 +1044,45 @@ jobs:
           if-no-files-found: error
 
 
+  crowdin-push:
+    name: Crowdin Push
+    if: github.ref == 'refs/heads/master'
+    needs:
+      - linux
+      - windows
+      - macos-package-github
+      - macos-package-mas
+    runs-on: ubuntu-20.04
+    env:
+      _CROWDIN_PROJECT_ID: "299360"
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+
+      - name: Login to Azure
+        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "crowdin-api-token"
+
+      - name: Upload Sources
+        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea  # v1.3.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
+        with:
+          config: crowdin.yml
+          crowdin_branch_name: master
+          upload_sources: true
+          upload_translations: false
+
+
   check-failures:
     name: Check for failures
     if: always()
@@ -1014,6 +1095,7 @@ jobs:
       - macos-build
       - macos-package-github
       - macos-package-mas
+      - crowdin-push
     steps:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
@@ -1025,6 +1107,7 @@ jobs:
           MACOS_BUILD_STATUS: ${{ needs.macos-build.result }}
           MACOS_PKG_GITHUB_STATUS: ${{ needs.macos-package-github.result }}
           MACOS_PKG_MAS_STATUS: ${{ needs.macos-package-mas.result }}
+          CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
@@ -1039,6 +1122,8 @@ jobs:
           elif [ "$MACOS_PKG_GITHUB_STATUS" = "failure" ]; then
               exit 1
           elif [ "$MACOS_PKG_MAS_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
               exit 1
           fi
 

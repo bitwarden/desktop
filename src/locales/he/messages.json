@@ -1695,22 +1695,22 @@
     "message": "פעולה זו מוגנת. כדי להמשיך, הזן מחדש את הסיסמה הראשית שלך כדי לאמת את זהותך."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "סיסמה ראשית עודכנה"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "עדכון סיסמה ראשית"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "הסיסמה הראשית שלך שונתה לאחרונה על ידי מנהל הארגון שלך. כדי לגשת לכספת, עליך לעדכן אותה כעת. בהמשך תנותק מההפעלה הנוכחית שלך ותידרש להיכנס שוב. הפעלות אחרות הפתוחות במכשירים שונים ימשיכו להיות פעילים עד משך שעה אחת."
   },
   "hours": {
-    "message": "Hours"
+    "message": "שעות"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "דקות"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "מדיניות הארגון שלך משפיעה על הזמן הקצוב לכספת שלך. פסק הזמן המרבי המותר לכספת הוא $HOURS$ שע(ה/ות) ו $MINUTES$ דק(ה/ות)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "הזמן הקצוב לכספת שלך חורג מהמגבלות שנקבעו על ידי הארגון שלך."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "רישום אוטומטי"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "לארגון זה יש מדיניות ארגונית שרושמת אותך אוטומטית לאיפוס סיסמה. הרישום יאפשר למנהלי הארגון לשנות את סיסמת האב שלך."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "ייצוא מהכספת מושבת"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך."
   }
 }

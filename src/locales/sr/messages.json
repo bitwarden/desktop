@@ -45,7 +45,7 @@
     "message": "Подели"
   },
   "moveToOrganization": {
-    "message": "Прмести у организацију"
+    "message": "Премести у организацију"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ премештен у $ORGNAME$",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Изаберите организацију коју желите да преместите овај предмет. Прелазак на организацију преноси власништво над ставком у ту организацију. Више нећете бити директни власник ове ставке након што је премештена."
+    "message": "Изаберите организацију у коју желите да преместите овај предмет. Прелазак на организацију преноси власништво над ставком у ту организацију. Више нећете бити директни власник ове ставке након што је премештена."
   },
   "attachments": {
     "message": "Прилози"
@@ -95,7 +95,7 @@
     "message": "Лозинка"
   },
   "passphrase": {
-    "message": "Фраза лозинка"
+    "message": "Скривена фраза"
   },
   "editItem": {
     "message": "Уреди ставку"
@@ -123,16 +123,16 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Минимизирај приликом копирања у остави"
+    "message": "Минимизирај приликом копирања у привремену меморију"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Минимизирај приликом копирања ставке у остави."
+    "message": "Минимизирај при копиранју података ставке у привремену меморију."
   },
   "toggleVisibility": {
-    "message": "Пребаци видљивост"
+    "message": "Промени видљивост"
   },
   "toggleCollapse": {
-    "message": "Пребаци проширење",
+    "message": "Промени проширење",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -178,7 +178,7 @@
     "message": "Потребан Премијум"
   },
   "premiumRequiredDesc": {
-    "message": "Премијум је потребно за употребу ове способности."
+    "message": "Премиум чланарина је неопходна како бисте користили ову опцију."
   },
   "errorOccurred": {
     "message": "Појавила се грешка."
@@ -230,13 +230,13 @@
     "message": "Наслов"
   },
   "mr": {
-    "message": "Г."
+    "message": "Господин"
   },
   "mrs": {
-    "message": "Гђц."
+    "message": "Госпођица"
   },
   "ms": {
-    "message": "Гђа."
+    "message": "Госпођа"
   },
   "dr": {
     "message": "Др"
@@ -350,13 +350,13 @@
     "message": "Избриши прилог"
   },
   "deleteItemConfirmation": {
-    "message": "Сигурно избрисати ову ставку?"
+    "message": "Сигурно послати ставку у отпад?"
   },
   "deletedItem": {
     "message": "Ставка послата у Отпад"
   },
   "overwritePasswordConfirmation": {
-    "message": "Сигурно преписати тренутну лозинку?"
+    "message": "Сигурно променити тренутну лозинку?"
   },
   "noneFolder": {
     "message": "Без фасцикле",
@@ -413,7 +413,7 @@
     "message": "Претражи колекцију"
   },
   "searchFolder": {
-    "message": "Претражи фасцикли"
+    "message": "Претражи фасциклу"
   },
   "searchFavorites": {
     "message": "Претражи омиљене"
@@ -426,7 +426,7 @@
     "message": "Додај нови прилог"
   },
   "deletedAttachment": {
-    "message": "Избрисани прилози"
+    "message": "Прилог избрисан"
   },
   "deleteAttachmentConfirmation": {
     "message": "Сигурно обрисати овај прилог?"
@@ -444,7 +444,7 @@
     "message": "Максимална величина је 500МБ."
   },
   "updateKey": {
-    "message": "Не можете да користите ову способност док не промените Ваш кључ за шифровање."
+    "message": "Не можете да користите ову опцију док не промените Ваш кључ за шифровање."
   },
   "options": {
     "message": "Опције"
@@ -480,10 +480,10 @@
     "message": "Главна Лозинка је лозинка коју користите за приступ Вашем сефу. Врло је важно да је не заборавите. Не постоји начин да повратите лозинку у случају да је заборавите."
   },
   "masterPassHintDesc": {
-    "message": "Савет Главне Лозинке може да Вам помогне да се је потсетите ако је заборавите."
+    "message": "Савет Главне Лозинке може да Вам помогне да се подсетите ако је заборавите."
   },
   "reTypeMasterPass": {
-    "message": "Поновити Главну Лозинку"
+    "message": "Поновите Главну Лозинку"
   },
   "masterPassHint": {
     "message": "Савет Главне Лозинке (опционо)"
@@ -492,7 +492,7 @@
     "message": "Подешавања"
   },
   "passwordHint": {
-    "message": "Помоћ за лозинку"
+    "message": "Савет главне лозинке"
   },
   "enterEmailToGetHint": {
     "message": "Унесите Ваш имејл да би добили савет за Вашу Главну Лозинку."
@@ -516,7 +516,7 @@
     "message": "Потврђена Главна Лозинка се не подудара."
   },
   "newAccountCreated": {
-    "message": "Ваш налог је креиран! Сада се можте пријавити."
+    "message": "Ваш налог је креиран! Сада се можете пријавити."
   },
   "masterPassSent": {
     "message": "Послали смо Вам поруку са саветом главне лозинке."
@@ -528,7 +528,7 @@
     "message": "Инфо о ставци"
   },
   "noItemsInList": {
-    "message": "Нама ставке у листи."
+    "message": "Нема ставке која се може приказати."
   },
   "verificationCode": {
     "message": "Верификациони код"
@@ -592,7 +592,7 @@
     "message": "YubiKey OTP сигурносни кључ"
   },
   "yubiKeyDesc": {
-    "message": "Користите YubiKey за приступ налогу. Ради са YubiKey 4, 4 Nano, 4C, и NEO уређаје."
+    "message": "Користите YubiKey за приступ налогу. Ради са YubiKey 4, 4 Nano, 4C, и NEO уређајима."
   },
   "duoDesc": {
     "message": "Провери са Duo Security користећи Duo Mobile апликацију, СМС, телефонски позив, или U2F кључ.",
@@ -606,7 +606,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Користите било који WebAuthn сигурносни кључ за присту налога."
+    "message": "Користите било који WebAuthn сигурносни кључ за присту налогу."
   },
   "emailTitle": {
     "message": "Имејл"
@@ -630,7 +630,7 @@
     "message": "Самостално окружење"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Наведите основни УРЛ вашег локалног инсталиране Bitwarden инсталације."
+    "message": "Наведите основни УРЛ ваше локалне Bitwarden инсталације."
   },
   "customEnvironment": {
     "message": "Прилагођено окружење"
@@ -651,7 +651,7 @@
     "message": "УРЛ сервера идентитета"
   },
   "notificationsUrl": {
-    "message": "УРЛ сервера нотификације"
+    "message": "УРЛ сервера обавештења"
   },
   "iconsUrl": {
     "message": "УРЛ сервера иконице"
@@ -669,7 +669,7 @@
     "message": "Не"
   },
   "overwritePassword": {
-    "message": "Препиши лозинку"
+    "message": "Промени лозинку"
   },
   "learnMore": {
     "message": "Сазнај више"
@@ -714,19 +714,19 @@
     "message": "Генератор Лозинке"
   },
   "emailUs": {
-    "message": "Послати нам поруку"
+    "message": "Пошалјите нам ЕМаил"
   },
   "visitOurWebsite": {
-    "message": "Посетити наш веб-сајт"
+    "message": "Посетите наш веб-сајт"
   },
   "fileBugReport": {
-    "message": "Поднети извештај о грешци"
+    "message": "Пријавите грешку"
   },
   "blog": {
     "message": "Блог"
   },
   "followUs": {
-    "message": "Пратити нас"
+    "message": "Пратите нас"
   },
   "syncVault": {
     "message": "Синхронизуј сеф"
@@ -761,7 +761,7 @@
     "message": "Синхронизација није успела"
   },
   "yourVaultIsLocked": {
-    "message": "Сеф је блокиран. Унесите главну лозинку за наставак."
+    "message": "Сеф је заклјучан. Унесите главну лозинку за наставак."
   },
   "unlock": {
     "message": "Откључај"
@@ -783,7 +783,7 @@
     "message": "Погрешна главна лозинка"
   },
   "twoStepLoginConfirmation": {
-    "message": "Пријава у два корака чини ваш рачун сигурнијим захтевом да верификујете своје податке помоћу другог уређаја, као што су безбедносни кључ, апликација, СМС-а, телефонски позив или имејл. Пријављивање у два корака може се омогућити на веб сефу. Да ли желите да посетите веб страницу сада?"
+    "message": "Пријава у два корака чини ваш налог сигурнијим захтевом да верификујете своје податке помоћу другог уређаја, као што су безбедносни кључ, апликација, СМС-а, телефонски позив или имејл. Пријављивање у два корака може се омогућити на веб сефу. Да ли желите да посетите веб страницу сада?"
   },
   "twoStepLogin": {
     "message": "Дво-коракна лозинка"
@@ -792,7 +792,7 @@
     "message": "Тајмаут сефа"
   },
   "vaultTimeoutDesc": {
-    "message": "Изаберите када ће сеф истећи и да изврши одабрану радњу."
+    "message": "Изаберите када ће сеф истећи и извршити одабрану радњу."
   },
   "immediately": {
     "message": "Одмах"
@@ -831,10 +831,10 @@
     "message": "На мировање система"
   },
   "onSleep": {
-    "message": "На успавање система"
+    "message": "Након спаванја система"
   },
   "onLocked": {
-    "message": "На блокирање система"
+    "message": "На закључавање система"
   },
   "onRestart": {
     "message": "На поновно покретање"
@@ -846,54 +846,54 @@
     "message": "Сигурност"
   },
   "clearClipboard": {
-    "message": "Обриши оставу",
+    "message": "Обриши привремену меморију",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Аутоматски обришите копиране вредности из оставе.",
+    "message": "Аутоматски обришите копиране вредности из привремене меморије.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Угаси иконице сајта"
+    "message": "Онемогући иконице сајта"
   },
   "disableFaviconDesc": {
-    "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаву у сефу."
+    "message": "Иконе веб сајта пружају препознатљиву слику поред сваке пријаве у сефу."
   },
   "enableMinToTray": {
-    "message": "Умањи у систем траку"
+    "message": "Минимизирај као иконицу у системској траци"
   },
   "enableMinToTrayDesc": {
-    "message": "Када минимизујете прозор, уместо тога покажите икону у системској палети."
+    "message": "Када минимизујете прозор, уместо тога покажите икону у системској траци."
   },
   "enableMinToMenuBar": {
     "message": "Смањи на траку менија"
   },
   "enableMinToMenuBarDesc": {
-    "message": "Када минимизујете прозор, покажи икону у мени траци."
+    "message": "Када минимизујете прозор, покажи икону у траци менија."
   },
   "enableCloseToTray": {
-    "message": "Затвори у системску иконицу"
+    "message": "Затваранје оставлја иконицу у системској траци"
   },
   "enableCloseToTrayDesc": {
-    "message": "Када затворите прозор, уместо тога покажите икону у системској палети."
+    "message": "Када затворите прозор, уместо тога покажите икону у системској траци."
   },
   "enableCloseToMenuBar": {
     "message": "Затвори у траку менија"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "Када затворите прозор, покажите икону у траки менија."
+    "message": "Када затворите прозор, покажите икону у траци менија."
   },
   "enableTray": {
-    "message": "Омогући икону система"
+    "message": "Омогући иконицу у системској траци"
   },
   "enableTrayDesc": {
     "message": "Увек прикажи иконицу на системској траци."
   },
   "startToTray": {
-    "message": "Покрени као иконицу"
+    "message": "Покрени као иконицу у системској траци"
   },
   "startToTrayDesc": {
-    "message": "Када се апликација први пут покрене, прикажи је само као икону."
+    "message": "Када се апликација први пут покрене, прикажи је само као икону у системској траци."
   },
   "startToMenuBar": {
     "message": "Покрени у траци менија"
@@ -902,10 +902,10 @@
     "message": "Када се апликација први пут покрене, прикажи само икону у траци менија."
   },
   "openAtLogin": {
-    "message": "Ауто покрени на пријављивање"
+    "message": "Аутоматски покрени након пријављивања"
   },
   "openAtLoginDesc": {
-    "message": "Покрени Bitwarden Desktop апликацију на пријављивање."
+    "message": "Покрени Bitwarden Desktop апликацију аутоматски након пријављивања."
   },
   "alwaysShowDock": {
     "message": "Увек покажи у Dock"
@@ -914,10 +914,10 @@
     "message": "Покажи Bitwarden иконицу у Dock чак и када је умањен на траци менија."
   },
   "confirmTrayTitle": {
-    "message": "Потврди онемогућавање треја"
+    "message": "Потврди онемогућавање траке"
   },
   "confirmTrayDesc": {
-    "message": "Онемогућавање ове поставке онемогућиће се и сва остала подешавања у вези са трејом."
+    "message": "Ако онемогућите ово подешавање сва остала подешавања везана за системску траку ће такође бити онемогућена."
   },
   "language": {
     "message": "Језик"
@@ -944,7 +944,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Проверити верзију програма"
+    "message": "Провери доступна ажурирања"
   },
   "version": {
     "message": "Верзија $VERSION_NUM$",
@@ -971,7 +971,7 @@
     "message": "Ажурирање је доступно"
   },
   "updateAvailableDesc": {
-    "message": "Пронађено је ажурирање. Да ли желите да је преузмете сада?"
+    "message": "Пронађено је ажурирање. Да ли желите да га преузмете сада?"
   },
   "restart": {
     "message": "Поново покрени"
@@ -1006,7 +1006,7 @@
     "message": "Управљање чланством"
   },
   "premiumManageAlert": {
-    "message": "Можете менаџирати Вашу претплату на bitwarden.com. Да ли желите да посетите веб сајт сада?"
+    "message": "Можете управљати вашим чланством на bitwarden.com. Да ли желите да посетите веб сајт сада?"
   },
   "premiumRefresh": {
     "message": "Освежите чланство"
@@ -1067,7 +1067,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "Нама лозинке у листи."
+    "message": "Нема лозинки за приказивање."
   },
   "undo": {
     "message": "Опозови"
@@ -1080,7 +1080,7 @@
     "description": "Cut to clipboard"
   },
   "paste": {
-    "message": "Залепи",
+    "message": "Налепи",
     "description": "Paste from clipboard"
   },
   "selectAll": {
@@ -1190,7 +1190,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
-    "message": "Пребацити опције"
+    "message": "Промена опција"
   },
   "organization": {
     "message": "Организација",
@@ -1207,7 +1207,7 @@
     "description": "Text for a button that toggles the visibility of the window. Shows the window when it is hidden or hides the window if it is currently open."
   },
   "hideToTray": {
-    "message": "Сакриј у систему"
+    "message": "Сакриј у системску траку"
   },
   "alwaysOnTop": {
     "message": "Увек на врху",
@@ -1293,25 +1293,25 @@
     "message": "Погрешан ПИН код."
   },
   "yourVaultIsLockedPinCode": {
-    "message": "Сеф је блокиран. Проверити ПИН код за наставак."
+    "message": "Сеф је закључан. Потврдите ПИН код за наставак."
   },
   "unlockWithWindowsHello": {
     "message": "Откључај са Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Деблокира сеф."
+    "message": "Потврди за Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Откључај са Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Деблокира сеф."
+    "message": "Откључај свој сеф"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Не тражи Windows Hello на покретање."
+    "message": "Не тражи Windows Hello након покретања."
   },
   "noAutoPromptTouchId": {
-    "message": "Не тражи Touch ID на покретање."
+    "message": "Не тражи Touch ID након покретања."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Закључајте са главном лозинком при поновном покретању"
@@ -1323,7 +1323,7 @@
     "message": "Омогући икону траке менија"
   },
   "enableMenuBarDesc": {
-    "message": "Увек покажи икону у траку менија."
+    "message": "Увек покажи икону у траци менија."
   },
   "hideToMenuBar": {
     "message": "Сакриј у траку менија"
@@ -1389,7 +1389,7 @@
     "message": "Да ли сте сигурни да желите да трајно избришете ову ставку?"
   },
   "permanentlyDeletedItem": {
-    "message": "Трајно избрисати ставку"
+    "message": "Трајно избрисана ставка"
   },
   "restoreItem": {
     "message": "Врати ставку"
@@ -1407,7 +1407,7 @@
     "message": "Одјава ће уклонити сваки приступ вашем сефу и захтева мрежну потврду идентитета након истека тајмаута. Да ли сте сигурни да желите да користите ову поставку?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
-    "message": "Потврда акције тајмаута"
+    "message": "Потврда акције истека времена"
   },
   "enterpriseSingleSignOn": {
     "message": "Enterprise Једна Пријава"
@@ -1425,7 +1425,7 @@
     "message": "Потрдити нову Главну Лозинку"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Једна или више смерница организације захтевају да ваша главна лозинка да би испуњавали следеће захтеве:"
+    "message": "Једна или више полиса организације захтевају да ваша главна лозинка испуни следеће захтеве:"
   },
   "policyInEffectMinComplexity": {
     "message": "Оцена минималне сложености од $SCORE$",
@@ -1446,16 +1446,16 @@
     }
   },
   "policyInEffectUppercase": {
-    "message": "Садржи један или више великих слова"
+    "message": "Садржи једно или више великих слова"
   },
   "policyInEffectLowercase": {
-    "message": "Садржи један или више малих слова"
+    "message": "Садржи једно или више малих слова"
   },
   "policyInEffectNumbers": {
-    "message": "Садрже један или више бројева"
+    "message": "Садржи један или више бројева"
   },
   "policyInEffectSpecial": {
-    "message": "Садрже један или више бројева ових специјалних слова $CHARS$",
+    "message": "Садржи један или више ових специјалних знакова $CHARS$",
     "placeholders": {
       "chars": {
         "content": "$1",
@@ -1464,13 +1464,13 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "Ваша нова главна лозинка не испуњава захтеве смерница."
+    "message": "Ваша нова главна лозинка не испуњава захтеве полисе."
   },
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"
   },
   "acceptPoliciesError": {
-    "message": "Услови услуге и Политика приватности нису признати."
+    "message": "Услови услуге и Политика приватности нису прихваћени."
   },
   "enableBrowserIntegration": {
     "message": "Укључи интеграцију са претраживачем"
@@ -1515,10 +1515,10 @@
     "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."
   },
   "hintEqualsPassword": {
-    "message": "Ваша помоћ за лозинку не може да буде иста као лозинка."
+    "message": "Ваш савет за лозинку не може да буде исти као лозинка."
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "Политика организације утичу на ваше могућности власништва."
+    "message": "Политика организације утиче на ваше могућности власништва."
   },
   "allSends": {
     "message": "Сва слања",
@@ -1589,7 +1589,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "На притуп „Send“-а, сакриј текст по дефаулту",
+    "message": "Када се приступа слању, подразумевано сакриј текст",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1641,11 +1641,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Копирај везу слања у бележницу",
+    "message": "Копирај везу слања у привремену меморију",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Копирај везу да би поделио слање на бележницу након снимања."
+    "message": "Копирај линк за дељење слања у привремену меморију након чувања."
   },
   "sendDisabled": {
     "message": "Слање онемогућено",
@@ -1695,22 +1695,22 @@
     "message": "Ова акција је заштићена. Да бисте наставили, поново унесите своју главну лозинку да бисте проверили идентитет."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Главна лозинка ажурирана"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Ажурирај главну лозинку"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ваша главна лозинка је недавно промењена од стране администратора организације. Како  бисте приступили сефу, морате да је ажурирате. Ако наставите бићете одјављени из ваше тренутне сесије, што ће захтевати да се поново пријавите. Активне сесије на другим уређајима ће можда наставити да раде до сат времена."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Сата"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Минута"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Полиса ваше организације утиче на време истека сефа. Максимално дозвољено време истека је $HOURS$ сат(и) и $MINUTES$ minut(а)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1723,18 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Време истека вашег сефа је премашило дозвољена ограничења од стране ваше организације."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Аутоматска пријава"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Ова организација има полису која ће вас аутоматски пријавити за ресетовање лозинке. Пријава ће дозволити администраторима ваше организације да промене главну лозинку."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Извоз сефа онемогућен"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Једна или више полиса ваше организације вас спречава да извезете ваш сеф."
   }
 }
