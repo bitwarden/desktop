@@ -159,7 +159,7 @@ export function initFactory(): Function {
     return async () => {
         await environmentService.setUrlsFromStorage();
         syncService.fullSync(true);
-        vaultTimeoutService.init(true);
+        await vaultTimeoutService.init(true);
         const locale = await stateService.getLocale();
         await i18nService.init(locale);
         eventService.init(true);

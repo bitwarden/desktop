@@ -105,7 +105,7 @@
 
 .account-switcher-dropdown {
     @include themify($themes) {
-        background-color: themed('headerBorderColor');
+        background-color: themed('accountSwitcherBackgroundColor');
     }
     margin-right: 5px;
     margin-top: 1px; // Fix for border-bottom in header
@@ -154,7 +154,7 @@
             }
 
             &.active {
-                font-weight: 600;
+                background-color: #ececec;
             }
         }
     }

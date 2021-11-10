@@ -7,7 +7,7 @@
 <ng-template cdkConnectedOverlay [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="isOpen" cdkConnectedOverlayMinWidth="250px">
     <div class="account-switcher-dropdown" [@transformPanel]="'open'">
         <div class="accounts">
-            <a *ngFor="let a of accounts | keyvalue" class="account" [ngClass]="{'active': a.status == 'active'}"
+            <a *ngFor="let a of accounts | keyvalue" class="account" [ngClass]="{'active': a.value.authenticationStatus == 'active'}"
                 href="#" appStopClick (click)="switch(a.value.userId)">
                 <span class="email">{{a.value.email}}</span>
                 <span class="server">{{a.value.serverUrl}}</span>

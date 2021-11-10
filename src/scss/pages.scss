@@ -8,12 +8,12 @@
 
     @media (min-height: 500px) {
         height: calc(100% + 50px);
-        margin-top: -50px;
+        padding-bottom: 50px;
     }
 
     @media (min-height: 800px) {
         height: calc(100% + 300px);
-        margin-top: -300px;
+        padding-bottom: 300px;
     }
 
     img {

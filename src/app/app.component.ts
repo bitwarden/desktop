@@ -114,7 +114,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
             setTimeout(async () => {
-                await this.updateAppMenu('auth');
+                await this.updateAppMenu();
             }, 1000);
 
             window.onmousemove = () => this.recordActivity();
@@ -131,7 +131,7 @@ export class AppComponent implements OnInit {
                     case 'loggedIn':
                     case 'unlocked':
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu('auth');
+                        this.updateAppMenu();
                         this.systemService.cancelProcessReload();
                         break;
                     case 'loggedOut':
@@ -139,7 +139,7 @@ export class AppComponent implements OnInit {
                             this.modal.close();
                         }
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu('auth');
+                        this.updateAppMenu();
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
@@ -152,14 +152,23 @@ export class AppComponent implements OnInit {
                     case 'lockVault':
                         await this.vaultTimeoutService.lock(true, message.userId);
                         break;
+                    case 'lockAllVaults':
+                        for (const userId in this.stateService.accounts.getValue()) {
+                            if (userId != null) {
+                                await this.vaultTimeoutService.lock(true, userId);
+                            }
+                        }
+                        break;
                     case 'locked':
                         if (this.modal != null) {
                             this.modal.close();
                         }
-                        this.router.navigate(['lock']);
+                        this.updateAppMenu();
+                        if (message.userId === null || message.userId === await this.stateService.getUserId()) {
+                            this.router.navigate(['lock']);
+                        }
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu('auth');
-                        this.systemService.startProcessReload();
+                        // this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
                     case 'reloadProcess':
@@ -168,7 +177,7 @@ export class AppComponent implements OnInit {
                     case 'syncStarted':
                         break;
                     case 'syncCompleted':
-                        await this.updateAppMenu('sync');
+                        await this.updateAppMenu();
                         break;
                     case 'openSettings':
                         await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
@@ -332,39 +341,35 @@ export class AppComponent implements OnInit {
         });
     }
 
-    private async updateAppMenu(type: 'auth' | 'sync') {
+    private async updateAppMenu() {
         let data: any;
-        if (type === 'sync') {
+        const stateAccounts = this.stateService.accounts?.getValue();
+        if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
             data = {
+                accounts: null,
+                activeUserId: null,
+                enableChangeMasterPass: false,
+            }
+        } else {
+            const accounts: { [userId: string]: any } = {};
+            for (const i in stateAccounts) {
+                if (i != null) {
+                    const userId = stateAccounts[i].userId;
+                    accounts[userId] = {
+                        isAuthenticated: await this.stateService.getIsAuthenticated({
+                            userId: userId,
+                        }),
+                        isLocked: await this.vaultTimeoutService.isLocked(userId),
+                        email: stateAccounts[i].email,
+                        userId: stateAccounts[i].userId,
+                    };
+                }
+            }
+            data = {
+                accounts: accounts,
+                activeUserId: await this.stateService.getUserId(),
                 enableChangeMasterPass: !await this.keyConnectorService.getUsesKeyConnector(),
             };
-        } else {
-            const stateAccounts = this.stateService.accounts?.getValue();
-            if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
-                data = {
-                    accounts: null,
-                    activeUserId: null,
-                }
-            } else {
-                const accounts: { [userId: string]: any } = {};
-                for (const i in stateAccounts) {
-                    if (i != null) {
-                        const userId = stateAccounts[i].userId;
-                        accounts[userId] = {
-                            isAuthenticated: await this.stateService.getIsAuthenticated({
-                                userId: userId, storageLocation: StorageLocation.Memory,
-                            }),
-                            isLocked: await this.vaultTimeoutService.isLocked(userId),
-                            email: stateAccounts[i].email,
-                            userId: stateAccounts[i].userId,
-                        };
-                    }
-                }
-                data = {
-                    accounts: accounts,
-                    activeUserId: await this.stateService.getUserId(),
-                };
-            }
         }
 
         this.messagingService.send('updateAppMenu', data);

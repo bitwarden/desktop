@@ -51,7 +51,7 @@ export class AccountSwitcherComponent implements OnInit {
         await this.stateService.setActiveUser(userId);
         const locked = await this.vaultTimeoutService.isLocked(userId);
         if (locked) {
-            this.messagingService.send('locked');
+            this.messagingService.send('locked', { userId: userId });
         } else {
             this.messagingService.send('unlocked');
             this.messagingService.send('syncVault');
