@@ -1,8 +1,8 @@
 import {
     Component,
-    NgZone,
     OnInit,
 } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 import * as os from 'os';
 
@@ -13,6 +13,7 @@ import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
+import { UserVerificationService } from 'jslib-common/abstractions/userVerification.service';
 
 import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
@@ -28,32 +29,14 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
     constructor(cryptoService: CryptoService, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, exportService: ExportService,
         eventService: EventService, policyService: PolicyService,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone,
-        logService: LogService) {
+        userVerificationService: UserVerificationService, fb: FormBuilder,
+        private broadcasterService: BroadcasterService, logService: LogService) {
         super(cryptoService, i18nService, platformUtilsService, exportService, eventService,
-            policyService, window, logService);
-    }
-
-    async ngOnInit() {
-        super.ngOnInit();
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
-            this.ngZone.run(() => {
-                switch (message.command) {
-                    case 'windowHidden':
-                        this.onWindowHidden();
-                        break;
-                    default:
-                }
-            });
-        });
+            policyService, window, logService, userVerificationService, fb);
     }
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-    }
-
-    onWindowHidden() {
-        this.showPassword = false;
     }
 
     async warningDialog() {

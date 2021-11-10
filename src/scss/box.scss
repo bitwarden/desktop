@@ -409,4 +409,21 @@
             background-color: $brand-primary;
         }
     }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 34px;
+        height: 100%;
+        margin-left: -5px;
+
+        @include themify($themes) {
+            color: themed('mutedColor');
+        }
+
+        &.icon-small {
+            min-width: 25px;
+        }
+    }
 }

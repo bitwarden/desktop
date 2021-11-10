@@ -10,20 +10,19 @@ jobs:
     runs-on: ubuntu-20.04
     outputs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
+      branch-name: ${{ steps.branch.outputs.branch-name }}
     steps:
       - name: Branch check
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/release" ]]; then
+          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix" ]]; then
             echo "==================================="
-            echo "[!] Can only release from the 'release' branch"
+            echo "[!] Can only release from the 'rc' or 'hotfix' branches"
             echo "==================================="
             exit 1
           fi
 
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: release
 
       - name: Get Package Version
         id: retrieve-version
@@ -45,12 +44,18 @@ jobs:
             exit 1
           fi
 
+      - name: Get branch name
+        id: branch
+        run: |
+          BRANCH_NAME=$(basename ${{ github.ref }})
+          echo "::set-output name=branch-name::$BRANCH_NAME"
+
       - name: Download all artifacts
         uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
         with:
           workflow: build.yml
           workflow_conclusion: success
-          branch: release
+          branch: ${{ steps.branch.outputs.branch-name }}
 
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
@@ -98,8 +103,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: release
 
       - name: Install Snap
         uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d  # v1.2.0
@@ -114,7 +117,7 @@ jobs:
         with:
           workflow: build.yml
           workflow_conclusion: success
-          branch: release
+          branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: ./dist
 
@@ -136,8 +139,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: release
 
       - name: Setup Chocolatey
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/
@@ -153,7 +154,7 @@ jobs:
         with:
           workflow: build.yml
           workflow_conclusion: success
-          branch: release
+          branch: ${{ needs.setup.outputs.branch-name }}
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
           path: ./dist
 
@@ -162,34 +163,3 @@ jobs:
         run: |
           cd dist
           choco push
-
-
-  macos:
-    name: Deploy MacOS
-    runs-on: macos-10.15
-    needs: setup
-    env:
-      _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
-        with:
-          ref: release
-
-      - name: Make target directory
-        run: mkdir -p dist/mas-universal
-
-      - name: Download Mac artifact
-        uses: bitwarden/gh-actions/download-artifacts@23433be15ed6fd046ce12b6889c5184a8d9c8783
-        with:
-          workflow: build.yml
-          workflow_conclusion: success
-          branch: release
-          artifacts: Bitwarden-${{ env._PKG_VERSION }}-universal.pkg
-          path: ./dist/mas-universal
-
-      - name: Deploy to App Store
-        run: npm run upload:mas
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
