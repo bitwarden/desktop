@@ -349,7 +349,7 @@ export class AppComponent implements OnInit {
                 accounts: null,
                 activeUserId: null,
                 enableChangeMasterPass: false,
-            }
+            };
         } else {
             const accounts: { [userId: string]: any } = {};
             for (const i in stateAccounts) {

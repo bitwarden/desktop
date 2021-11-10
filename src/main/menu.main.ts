@@ -105,35 +105,37 @@ export class MenuMain extends BaseMenu {
 
         this.lockNow.enabled = true;
         this.logOut.enabled = true;
-        for (const i in accounts) {
-            if (this.lockNow.submenu.getMenuItemById(`lockNow_${accounts[i].userId}`) == null) {
-                const options: MenuItemConstructorOptions = {
-                    label: accounts[i].email,
-                    id: `lockNow_${accounts[i].userId}`,
-                    click: () => this.main.messagingService.send('lockVault', { userId: accounts[i].userId }),
-                };
-                this.lockNow.submenu.insert(0, new MenuItem(options));
-            }
-            if (this.logOut.submenu.getMenuItemById(`logOut_${accounts[i].userId}`) == null) {
-                const options: MenuItemConstructorOptions = {
-                    label: accounts[i].email,
-                    id: `logOut_${accounts[i].userId}`,
-                    click: async () => {
-                        const result = await dialog.showMessageBox(this.windowMain.win, {
-                            title: this.i18nService.t('logOut'),
-                            message: this.i18nService.t('logOut'),
-                            detail: this.i18nService.t('logOutConfirmation'),
-                            buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
-                            cancelId: 1,
-                            defaultId: 0,
-                            noLink: true,
-                        });
-                        if (result.response === 0) {
-                            this.main.messagingService.send('logout', { userId: accounts[i].userId });
-                        }
-                    },
-                };
-                this.logOut.submenu.insert(0, new MenuItem(options));
+        for (const userId in accounts) {
+            if (userId != null) {
+                if (this.lockNow.submenu.getMenuItemById(`lockNow_${accounts[userId].userId}`) == null) {
+                    const options: MenuItemConstructorOptions = {
+                        label: accounts[userId].email,
+                        id: `lockNow_${accounts[userId].userId}`,
+                        click: () => this.main.messagingService.send('lockVault', { userId: accounts[userId].userId }),
+                    };
+                    this.lockNow.submenu.insert(0, new MenuItem(options));
+                }
+                if (this.logOut.submenu.getMenuItemById(`logOut_${accounts[userId].userId}`) == null) {
+                    const options: MenuItemConstructorOptions = {
+                        label: accounts[userId].email,
+                        id: `logOut_${accounts[userId].userId}`,
+                        click: async () => {
+                            const result = await dialog.showMessageBox(this.windowMain.win, {
+                                title: this.i18nService.t('logOut'),
+                                message: this.i18nService.t('logOut'),
+                                detail: this.i18nService.t('logOutConfirmation'),
+                                buttons: [this.i18nService.t('logOut'), this.i18nService.t('cancel')],
+                                cancelId: 1,
+                                defaultId: 0,
+                                noLink: true,
+                            });
+                            if (result.response === 0) {
+                                this.main.messagingService.send('logout', { userId: accounts[userId].userId });
+                            }
+                        },
+                    };
+                    this.logOut.submenu.insert(0, new MenuItem(options));
+                }
             }
         }
     }
