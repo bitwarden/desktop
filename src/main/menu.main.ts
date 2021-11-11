@@ -75,10 +75,10 @@ export class MenuMain extends BaseMenu {
             this.syncVault, this.exportVault, this.settings, this.lockNow, this.twoStepLogin, this.fingerprintPhrase,
             this.changeMasterPass, this.premiumMembership, this.passwordGenerator, this.passwordHistory,
             this.searchVault, this.copyUsername, this.copyPassword];
-        this.updateApplicationMenuState(false, true, true);
+        this.updateApplicationMenuState(false, true, false);
     }
 
-    updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean, enableChangeMasterPass: boolean) {
+    updateApplicationMenuState(isAuthenticated: boolean, isLocked: boolean, hideChangeMasterPass: boolean) {
         if (isAuthenticated != null && isLocked != null) {
             this.unlockedRequiredMenuItems.forEach((mi: MenuItem) => {
                 if (mi != null) {
@@ -91,8 +91,8 @@ export class MenuMain extends BaseMenu {
             }
         }
 
-        if (enableChangeMasterPass != null && this.changeMasterPass != null) {
-            this.changeMasterPass.enabled = enableChangeMasterPass;
+        if (this.changeMasterPass != null) {
+            this.changeMasterPass.visible = !(hideChangeMasterPass ?? false);
         }
 
         if (this.menu != null) {
