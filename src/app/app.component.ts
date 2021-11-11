@@ -338,7 +338,7 @@ export class AppComponent implements OnInit {
         let data: any;
         if (type === 'sync') {
             data = {
-                enableChangeMasterPass: !await this.keyConnectorService.getUsesKeyConnector(),
+                hideChangeMasterPass: await this.keyConnectorService.getUsesKeyConnector(),
             };
         } else {
             data = {

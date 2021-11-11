@@ -33,7 +33,7 @@ export class MessagingMain {
                 break;
             case 'updateAppMenu':
                 this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked,
-                    message.enableChangeMasterPass);
+                    message.hideChangeMasterPass);
                 this.updateTrayMenu(message.isAuthenticated, message.isLocked);
                 break;
             case 'minimizeOnCopy':
