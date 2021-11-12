@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Презиме"
   },
+  "fullName": {
+    "message": "Пуно име"
+  },
   "address1": {
     "message": "Адреса 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Булове"
+  },
+  "cfTypeLinked": {
+    "message": "Повезано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Вредност повезана",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Уклони"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Нема ставке која се може приказати."
   },
+  "requestVerificationCode": {
+    "message": "Захтевај једнократну лозинку"
+  },
   "verificationCode": {
     "message": "Верификациони код"
   },
   "verificationCodeRequired": {
     "message": "Верификациони код је обавезан."
+  },
+  "invalidVerificationCode": {
+    "message": "Неисправан верификациони код"
   },
   "continue": {
     "message": "Настави"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Једна или више полиса ваше организације вас спречава да извезете ваш сеф."
+  },
+  "removeMasterPassword": {
+    "message": "Уклони главну лозинку"
+  },
+  "removedMasterPassword": {
+    "message": "Главна лозинка уклоњена."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ користи SSO уз сопствени сервер за кључеве. Главна лозинка за пријаву више није неопходна за чланове ове организације.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Напусти организацију"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Да ли Сте сигурни да желите да напустите ову организацију?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Немогуће повезати се са добављачем кључева, покушајте поново касније."
   }
 }

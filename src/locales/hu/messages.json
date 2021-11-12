@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Családnév"
   },
+  "fullName": {
+    "message": "Teljes név"
+  },
   "address1": {
     "message": "Postai cím 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Logikai"
+  },
+  "cfTypeLinked": {
+    "message": "Csatolva",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Csatolt érték",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Eltávolítás"
@@ -441,7 +452,7 @@
     "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
-    "message": "Max. fájl méret 500 MB."
+    "message": "Maximális fájl méret 500 MB."
   },
   "updateKey": {
     "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Nincsenek megjeleníthető elemek."
   },
+  "requestVerificationCode": {
+    "message": "Egyszeri jelszó kérése"
+  },
   "verificationCode": {
     "message": "Ellenőrző kód"
   },
   "verificationCodeRequired": {
     "message": "Az ellenőrző kód kötelező."
+  },
+  "invalidVerificationCode": {
+    "message": "Érvénytelen ellenőrző kód"
   },
   "continue": {
     "message": "Folytatás"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Egy vagy több szervezeti házirend tiltja a személyes széf exportálását."
+  },
+  "removeMasterPassword": {
+    "message": "Mesterjelszó eltávolítása"
+  },
+  "removedMasterPassword": {
+    "message": "A mesterjelszó eltávolításra került."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ jelenleg saját tárolású aláíráskulcsú SSO szervert használ. A mesterjelszó a továbbiakban nem szükséges a szervezeti tagsági bejelentkezéshez.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Szervezet elhagyása"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Biztosan kilépünk ebből a szervezetből?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nem érhető el a kulcskapcsoló. Próbáljuk újra később."
   }
 }
