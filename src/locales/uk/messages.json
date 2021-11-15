@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Прізвище"
   },
+  "fullName": {
+    "message": "Повне ім'я"
+  },
   "address1": {
     "message": "Адреса 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Логічне значення"
+  },
+  "cfTypeLinked": {
+    "message": "Пов'язано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Пов'язане значення",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Видалити"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Немає записів."
   },
+  "requestVerificationCode": {
+    "message": "Запитувати одноразовий пароль"
+  },
   "verificationCode": {
     "message": "Код підтвердження"
   },
   "verificationCodeRequired": {
     "message": "Потрібний код підтвердження."
+  },
+  "invalidVerificationCode": {
+    "message": "Недійсний код підтвердження"
   },
   "continue": {
     "message": "Продовжити"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
+  },
+  "removeMasterPassword": {
+    "message": "Вилучити головний пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Головний пароль вилучено."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ використовує SSO з власним сервером ключів. Головний пароль для учасників цієї організації більше не вимагається.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинути організацію"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ви справді хочете покинути цю організацію?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."
   }
 }
