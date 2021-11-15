@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Priezvisko"
   },
+  "fullName": {
+    "message": "Celé meno"
+  },
   "address1": {
     "message": "Adresa 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Áno/Nie"
+  },
+  "cfTypeLinked": {
+    "message": "Prepojené",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Prepojená hodnota",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Odstrániť"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Neexistujú žiadne položky na zobrazenie."
   },
+  "requestVerificationCode": {
+    "message": "Vyžiadať jednorazové heslo"
+  },
   "verificationCode": {
     "message": "Overovací kód"
   },
   "verificationCodeRequired": {
     "message": "Overovací kód je povinný."
+  },
+  "invalidVerificationCode": {
+    "message": "Neplatný verifikačný kód"
   },
   "continue": {
     "message": "Pokračovať"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Jedna alebo viacero zásad organizácie vám bráni exportovať váš osobný trezor."
+  },
+  "removeMasterPassword": {
+    "message": "Odstrániť hlavné heslo"
+  },
+  "removedMasterPassword": {
+    "message": "Hlavné heslo bolo odstránené."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ používa SSO s vlastným kľúčovým serverom. Na prihlásenie členov tejto organizácie už nie je potrebné hlavné heslo.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opustiť organizáciu"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ste si istý, že chcete opustiť túto organizáciu?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nie je možné kontaktovať kľúčový konektor, skúste to znova neskôr."
   }
 }

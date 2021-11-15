@@ -268,6 +268,9 @@
   "lastName": {
     "message": "নামের শেষাংশ"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "ঠিকানা ১"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "বুলিয়ান"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "সরান"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "তালিকার জন্য কোনও বস্তু নেই।"
   },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
+  },
   "verificationCode": {
     "message": "যাচাইকরণ কোড"
   },
   "verificationCodeRequired": {
     "message": "যাচাইকরণ কোড প্রয়োজন।"
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "অবিরত"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
   }
 }

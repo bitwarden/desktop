@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "filters": {
     "message": "Filtri"
@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Cognome"
   },
+  "fullName": {
+    "message": "Nome completo"
+  },
   "address1": {
     "message": "Indirizzo 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booleano"
+  },
+  "cfTypeLinked": {
+    "message": "Collegato",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valore collegato",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Rimuovi"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Non ci sono elementi da elencare."
   },
+  "requestVerificationCode": {
+    "message": "Richiedi OTP"
+  },
   "verificationCode": {
     "message": "Codice di verifica"
   },
   "verificationCodeRequired": {
     "message": "Il codice di verifica è obbligatorio."
+  },
+  "invalidVerificationCode": {
+    "message": "Codice di verifica non valido"
   },
   "continue": {
     "message": "Continua"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Una o più policy dell'organizzazione ti impediscono di esportare la tua cassaforte personale."
+  },
+  "removeMasterPassword": {
+    "message": "Rimuovi la password principale"
+  },
+  "removedMasterPassword": {
+    "message": "Password principale rimossa."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ sta usando SSO con un server \"self-hosted\". Non è più richiesta una password principale per accedere per i membri di questa organizzazione.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lascia l'organizzazione"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sei sicuro di voler lasciare questa organizzazione?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Impossibile raggiungere il key connector, riprova più tardi."
   }
 }

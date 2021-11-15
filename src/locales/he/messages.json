@@ -268,6 +268,9 @@
   "lastName": {
     "message": "שם משפחה"
   },
+  "fullName": {
+    "message": "שם מלא"
+  },
   "address1": {
     "message": "כתובת 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "אמת או שקר"
+  },
+  "cfTypeLinked": {
+    "message": "מקושר",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "ערך מקושר",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "הסר"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "אין פריטים להצגה ברשימה."
   },
+  "requestVerificationCode": {
+    "message": "בקשת סיסמה חד־פעמית"
+  },
   "verificationCode": {
     "message": "קוד אימות"
   },
   "verificationCodeRequired": {
     "message": "נדרש קוד אימות."
+  },
+  "invalidVerificationCode": {
+    "message": "קוד אימות שגוי"
   },
   "continue": {
     "message": "המשך"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך."
+  },
+  "removeMasterPassword": {
+    "message": "הסרת סיסמה ראשית"
+  },
+  "removedMasterPassword": {
+    "message": "הסיסמה הראשית הוסרה."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ משתמשים ב־SSO עם שרת מפתחות באירוח עצמי. סיסמה ראשית לא נחוצה יותר לטובת כניסה לחברי הארגון.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "לעזוב את הארגון"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "לעזוב את הארגון?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "לא ניתן להגיע למחבר המפתח, נא לנסות שוב."
   }
 }

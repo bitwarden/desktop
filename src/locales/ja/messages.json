@@ -268,6 +268,9 @@
   "lastName": {
     "message": "姓"
   },
+  "fullName": {
+    "message": "フルネーム"
+  },
   "address1": {
     "message": "住所1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "真偽値"
+  },
+  "cfTypeLinked": {
+    "message": "リンク済",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "リンクされた値",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "削除"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "表示するアイテムがありません"
   },
+  "requestVerificationCode": {
+    "message": "ワンタイムパスワードを要求する"
+  },
   "verificationCode": {
     "message": "認証コード"
   },
   "verificationCodeRequired": {
     "message": "認証コードは必須項目です。"
+  },
+  "invalidVerificationCode": {
+    "message": "認証コードが間違っています"
   },
   "continue": {
     "message": "続行"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "1 つまたは複数の組織ポリシーにより、個人の保管庫をエクスポートできません。"
+  },
+  "removeMasterPassword": {
+    "message": "マスターパスワードを削除する"
+  },
+  "removedMasterPassword": {
+    "message": "マスターパスワードを削除しました。"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ は自己ホストの鍵サーバで SSO を使用しています。この組織のメンバーのログインにマスターパスワードは必要ありません。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "組織から脱退する"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "本当にこの組織から脱退しますか？"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "キーコネクターに到達できません。後でもう一度お試しください。"
   }
 }

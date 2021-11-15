@@ -268,6 +268,9 @@
   "lastName": {
     "message": "نام خانوادگی"
   },
+  "fullName": {
+    "message": "نام کامل"
+  },
   "address1": {
     "message": "نشانی ۱"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "بولی"
+  },
+  "cfTypeLinked": {
+    "message": "لینک شده",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "ارزش لینک شده",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "حذف"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "هیچ موردی برای نمایش وجود ندارد."
   },
+  "requestVerificationCode": {
+    "message": "Request one-time password"
+  },
   "verificationCode": {
     "message": "کد تایید"
   },
   "verificationCodeRequired": {
     "message": "کد تایید مورد نیاز است."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "ادامه"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
   }
 }
