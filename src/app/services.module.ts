@@ -125,7 +125,7 @@ const sendService = new SendService(cryptoService, userService, apiService, file
     i18nService, cryptoFunctionService);
 const policyService = new PolicyService(userService, storageService, apiService);
 const keyConnectorService = new KeyConnectorService(storageService, userService, cryptoService, apiService,
-    environmentService, tokenService, logService);
+    tokenService, logService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, storageService, messagingService, searchService, userService, tokenService,
     policyService, keyConnectorService, null, async () => messagingService.send('logout', { expired: false }));
@@ -148,6 +148,7 @@ const systemService = new SystemService(storageService, vaultTimeoutService, mes
     null);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, userService, messagingService, vaultTimeoutService, storageService);
+const userVerificationService = new UserVerificationService(cryptoService, i18nService, apiService);
 
 containerService.attachToGlobal(window);
 
@@ -238,7 +239,7 @@ export function initFactory(): Function {
         { provide: NativeMessagingService, useValue: nativeMessagingService },
         { provide: FileUploadServiceAbstraction, useValue: fileUploadService },
         { provide: KeyConnectorServiceAbstraction, useValue: keyConnectorService },
-        { provide: UserVerificationServiceAbstraction, useClass: UserVerificationService },
+        { provide: UserVerificationServiceAbstraction, useValue: userVerificationService },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         {
             provide: APP_INITIALIZER,
