@@ -74,10 +74,10 @@ export class MenuMain extends BaseMenu {
         this.updateApplicationMenuState(true);
     }
 
-    updateApplicationMenuState(enableChangeMasterPass: boolean, accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string }}, activeUserId?: string) {
+    updateApplicationMenuState(hideChangeMasterPass: boolean, accounts?: { [userId: string]: { isAuthenticated: boolean, isLocked: boolean, userId: string, email: string }}, activeUserId?: string) {
         this.updateAuthBasedMenuState(accounts, activeUserId);
-        if (enableChangeMasterPass != null && this.changeMasterPass != null) {
-            this.changeMasterPass.enabled = enableChangeMasterPass;
+        if (hideChangeMasterPass) {
+            this.changeMasterPass.visible = !(hideChangeMasterPass ?? false);
         }
         if (this.menu != null) {
             Menu.setApplicationMenu(this.menu);

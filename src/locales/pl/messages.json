@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Nazwisko"
   },
+  "fullName": {
+    "message": "Imię i nazwisko"
+  },
   "address1": {
     "message": "Adres 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Wartość logiczna"
+  },
+  "cfTypeLinked": {
+    "message": "Powiązane pole",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Powiązana wartość",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Usuń"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Brak elementów."
   },
+  "requestVerificationCode": {
+    "message": "Poproś o jednorazowe hasło"
+  },
   "verificationCode": {
     "message": "Kod weryfikacyjny"
   },
   "verificationCodeRequired": {
     "message": "Kod weryfikacyjny jest wymagany."
+  },
+  "invalidVerificationCode": {
+    "message": "Kod weryfikacyjny jest nieprawidłowy"
   },
   "continue": {
     "message": "Kontynuuj"
@@ -1308,10 +1325,10 @@
     "message": "odblokuj sejf"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Nie pytaj o autoryzację Windows Hello podczas uruchamiania."
+    "message": "Zapamiętaj autoryzację Windows Hello."
   },
   "noAutoPromptTouchId": {
-    "message": "Nie pytaj o autoryzację Touch ID podczas uruchamiania."
+    "message": "Zapamiętaj autoryzację Touch ID."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
@@ -1634,7 +1651,7 @@
     "message": "1 dzień"
   },
   "custom": {
-    "message": "Niestandardowa"
+    "message": "Niestandardowe"
   },
   "deleteSendConfirmation": {
     "message": "Czy na pewno chcesz usunąć tę wysyłkę?",
@@ -1686,7 +1703,7 @@
     "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
   },
   "passwordPrompt": {
-    "message": "Powtórz hasło główne"
+    "message": "Potwierdź hasłem głównym"
   },
   "passwordConfirmation": {
     "message": "Potwierdź hasło główne"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."
+  },
+  "removeMasterPassword": {
+    "message": "Usuń hasło główne"
+  },
+  "removedMasterPassword": {
+    "message": "Hasło główne zostało usunięte."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "Organizacja $ORGANIZATION$ używa jednokrotnego logowania SSO z własnym serwerem kluczy. Użytkownicy nie muszą logować się za pomocą hasła głównego.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opuść organizację"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Czy na pewno chcesz opuścić tę organizację?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nie można nawiązać połączenia z serwerem Key Connector. Spróbuj ponownie później."
   }
 }

@@ -1778,6 +1778,9 @@
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
   },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."
   },

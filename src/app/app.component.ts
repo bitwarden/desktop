@@ -348,7 +348,7 @@ export class AppComponent implements OnInit {
             data = {
                 accounts: null,
                 activeUserId: null,
-                enableChangeMasterPass: false,
+                hideChangeMasterPass: true,
             };
         } else {
             const accounts: { [userId: string]: any } = {};
@@ -369,6 +369,7 @@ export class AppComponent implements OnInit {
                 accounts: accounts,
                 activeUserId: await this.stateService.getUserId(),
                 enableChangeMasterPass: !await this.keyConnectorService.getUsesKeyConnector(),
+                hideChangeMasterPass: await this.keyConnectorService.getUsesKeyConnector(),
             };
         }
 

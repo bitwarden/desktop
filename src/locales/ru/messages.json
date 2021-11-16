@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Фамилия"
   },
+  "fullName": {
+    "message": "Полное имя"
+  },
   "address1": {
     "message": "Строка адреса 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Логическое"
+  },
+  "cfTypeLinked": {
+    "message": "Связано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Связанное значение",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Удалить"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Нет элементов для отображения."
   },
+  "requestVerificationCode": {
+    "message": "Запросить одноразовый пароль"
+  },
   "verificationCode": {
     "message": "Код подтверждения"
   },
   "verificationCodeRequired": {
     "message": "Необходим код подтверждения."
+  },
+  "invalidVerificationCode": {
+    "message": "Неверный код подтверждения"
   },
   "continue": {
     "message": "Продолжить"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Экспорт вашего личного хранилища запрещен одной или несколькими политиками организации."
+  },
+  "removeMasterPassword": {
+    "message": "Удалить мастер-пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Мастер-пароль удален."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ использует SSO с собственным сервером ключей. Для авторизации членам этой организации больше не требуется мастер-пароль.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинуть организацию"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Вы действительно хотите покинуть эту организацию?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Не удается подключиться к соединителю ключей, повторите попытку позже."
   }
 }

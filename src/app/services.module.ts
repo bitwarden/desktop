@@ -152,6 +152,7 @@ const systemService = new SystemService(messagingService, platformUtilsService,
     null, stateService);
 const nativeMessagingService = new NativeMessagingService(cryptoFunctionService, cryptoService, platformUtilsService,
     logService, i18nService, messagingService, vaultTimeoutService, stateService);
+const userVerificationService = new UserVerificationService(cryptoService, i18nService, apiService);
 
 containerService.attachToGlobal(window);
 
@@ -240,7 +241,7 @@ export function initFactory(): Function {
         { provide: SystemServiceAbstraction, useValue: systemService },
         { provide: TokenServiceAbstraction, useValue: tokenService },
         { provide: TotpServiceAbstraction, useValue: totpService },
-        { provide: UserVerificationServiceAbstraction, useClass: UserVerificationService },
+        { provide: UserVerificationServiceAbstraction, useValue: userVerificationService },
         { provide: VaultTimeoutServiceAbstraction, useValue: vaultTimeoutService },
         {
             provide: APP_INITIALIZER,

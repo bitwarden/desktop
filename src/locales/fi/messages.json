@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Sukunimi"
   },
+  "fullName": {
+    "message": "Koko nimi"
+  },
   "address1": {
     "message": "Osoite 1"
   },
@@ -328,6 +331,14 @@
   "cfTypeBoolean": {
     "message": "Totuusarvo"
   },
+  "cfTypeLinked": {
+    "message": "Linkitetty",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linkitetty arvo",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Poista"
   },
@@ -335,10 +346,10 @@
     "message": "Nimi vaaditaan."
   },
   "addedItem": {
-    "message": "Lisättiin kohde"
+    "message": "Kohde lisätty"
   },
   "editedItem": {
-    "message": "Muokattiin kohdetta"
+    "message": "Kohdetta muokattu"
   },
   "deleteItem": {
     "message": "Poista kohde"
@@ -353,7 +364,7 @@
     "message": "Haluatko varmasti siirtää roskakoriin?"
   },
   "deletedItem": {
-    "message": "Siirrettiin kohde roskakoriin"
+    "message": "Kohde siirretty roskakoriin"
   },
   "overwritePasswordConfirmation": {
     "message": "Haluatko varmasti korvata nykyisen salasanan?"
@@ -426,13 +437,13 @@
     "message": "Lisää uusi tiedostoliite"
   },
   "deletedAttachment": {
-    "message": "Poistettiin tiedostoliite"
+    "message": "Tiedostoliite poistettu"
   },
   "deleteAttachmentConfirmation": {
     "message": "Haluatko varmasti poistaa liitteen?"
   },
   "attachmentSaved": {
-    "message": "Tiedostoliite tallennettiin."
+    "message": "Tiedostoliite tallennettu."
   },
   "file": {
     "message": "Tiedosto"
@@ -450,16 +461,16 @@
     "message": "Lisäasetukset"
   },
   "editedFolder": {
-    "message": "Muokattiin kansiota"
+    "message": "Kansiota muokattu"
   },
   "addedFolder": {
-    "message": "Lisättiin kansio"
+    "message": "Kansio lisätty"
   },
   "deleteFolderConfirmation": {
     "message": "Haluatko varmasti poistaa kansion?"
   },
   "deletedFolder": {
-    "message": "Poistettiin kansio"
+    "message": "Kansio poistettu"
   },
   "loginOrCreateNewAccount": {
     "message": "Kirjaudu sisään tai luo uusi tili päästäksesi salattuun holviisi."
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Ei näytettäviä kohteita."
   },
+  "requestVerificationCode": {
+    "message": "Pyydä kertakäyttöinen salasana"
+  },
   "verificationCode": {
     "message": "Todennuskoodi"
   },
   "verificationCodeRequired": {
     "message": "Todennuskoodi vaaditaan."
+  },
+  "invalidVerificationCode": {
+    "message": "Virheellinen vahvistuskoodi"
   },
   "continue": {
     "message": "Jatka"
@@ -576,7 +593,7 @@
     "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin ja jos laitteessa on painike, paina sitä."
   },
   "recoveryCodeDesc": {
-    "message": "Etkö pysty käyttämään kaksivaiheisen kirjautumisen todennusmenetelmiäsi? Poista kaikki menetelmät käytöstä tililtäsi palautuskoodillasi."
+    "message": "Etkö pysty käyttämään kaksivaiheisen kirjautumisen todentajiasi? Poista kaikki tilisi todentajat käytöstä palautuskoodillasi."
   },
   "recoveryCodeTitle": {
     "message": "Palautuskoodi"
@@ -618,10 +635,10 @@
     "message": "Kirjautuminen ei ole käytettävissä"
   },
   "noTwoStepProviders": {
-    "message": "Tilillä on käytössä kaksivaiheinen kirjautuminen, mutta tämä alusta ei tue käytettävissä olevia todennusmenetelmiä."
+    "message": "Tilillä on käytössä kaksivaiheinen kirjautuminen, mutta tämä laite ei tue käytettävissä olevia todentajia."
   },
   "noTwoStepProviders2": {
-    "message": "Lisää muita todennusmenetelmiä, joita tuetaan laajemmin eri alustoilla (kuten todennussovellus)."
+    "message": "Lisää muita todentajia, joita tuetaan laajemmin eri laitteilla (kuten todennussovellus)."
   },
   "twoStepOptions": {
     "message": "Kaksivaiheisen kirjautumisen asetukset"
@@ -746,7 +763,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Mene verkkoholviin"
+    "message": "Siirry verkkoholviin"
   },
   "getMobileApp": {
     "message": "Hanki mobiilisovellus"
@@ -971,7 +988,7 @@
     "message": "Päivitys on saatavilla"
   },
   "updateAvailableDesc": {
-    "message": "Päivitys löydettiin. Haluatko ladata sen nyt?"
+    "message": "Päivitys löydetty. Haluatko ladata sen nyt?"
   },
   "restart": {
     "message": "Käynnistä uudelleen"
@@ -1134,7 +1151,7 @@
     "message": "Sulje Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ kopioitiin",
+    "message": "$VALUE$ kopioitu",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1218,7 +1235,7 @@
     "description": "ex. Date this item was updated"
   },
   "datePasswordUpdated": {
-    "message": "Salasana päivitettiin",
+    "message": "Salasana päivitetty",
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
@@ -1389,7 +1406,7 @@
     "message": "Haluatko varmasti poistaa kohteen pysyvästi?"
   },
   "permanentlyDeletedItem": {
-    "message": "Poistettiin kohde pysyvästi"
+    "message": "Kohde poistettu pysyvästi"
   },
   "restoreItem": {
     "message": "Palauta kohde"
@@ -1398,7 +1415,7 @@
     "message": "Haluatko varmasti palauttaa kohteen?"
   },
   "restoredItem": {
-    "message": "Palautettiin kohde"
+    "message": "Kohde palautettu"
   },
   "permanentlyDelete": {
     "message": "Poista pysyvästi"
@@ -1593,15 +1610,15 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Luotiin Send",
+    "message": "Send luotu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Muokattiin Sendiä",
+    "message": "Sendiä muokattu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Poistettiin Send",
+    "message": "Send poistettu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1612,7 +1629,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Luotiin Send",
+    "message": "Send luotu",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Yksi tai useampi organisaation käytäntö estää henkilökohtaisen holvisi viennin."
+  },
+  "removeMasterPassword": {
+    "message": "Poista pääsalasana"
+  },
+  "removedMasterPassword": {
+    "message": "Pääsalasana on poistettu."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ käyttää kertakirjautumista (SSO) oman avainpalvelimensa kanssa. Organisaation jäsenet eivät enää tarvitse pääsalasanaa kirjautumiseen.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Poistu organisaatiosta"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Haluatko varmasti poistua tästä organisaatiosta?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Avainyhdistäjää ei tavoiteta. Yritä myöhemmin uudelleen."
   }
 }

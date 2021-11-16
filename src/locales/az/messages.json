@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Soyad"
   },
+  "fullName": {
+    "message": "Tam ad"
+  },
   "address1": {
     "message": "Ünvan 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Əlaqə yaradıldı",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Əlaqəli dəyər",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Çıxart"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Siyahılanacaq heç bir element yoxdur."
   },
+  "requestVerificationCode": {
+    "message": "Tək istifadəlik parol tələb et"
+  },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
   },
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
+  },
+  "invalidVerificationCode": {
+    "message": "Etibarsız təsdiqləmə kodu"
   },
   "continue": {
     "message": "Davam"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Bir və ya daha çox təşkilat siyasəti, fərdi anbarınızı ixrac etməyinizin qarşısını alır."
+  },
+  "removeMasterPassword": {
+    "message": "Ana parolu sil"
+  },
+  "removedMasterPassword": {
+    "message": "Ana parol silindi."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$, öz-özünə sahiblik edən açar serveri ilə SSO istifadə edir. Bu təşkilatın üzvlərinin giriş etməsi üçün artıq ana parol tələb edilməyəcək.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Təşkilatı tərk et"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bu təşkilatı tərk etmək istədiyinizə əminsiniz?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Açar bağlayıcı əlçatan deyil, daha sonra yenidən sınayın."
   }
 }

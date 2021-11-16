@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Sobrenome"
   },
+  "fullName": {
+    "message": "Nome Completo"
+  },
   "address1": {
     "message": "Endereço 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booleano"
+  },
+  "cfTypeLinked": {
+    "message": "Vinculado",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valor vinculado",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Remover"
@@ -530,11 +541,17 @@
   "noItemsInList": {
     "message": "Não há itens para listar."
   },
+  "requestVerificationCode": {
+    "message": "Solicitar senha de uso único"
+  },
   "verificationCode": {
     "message": "Código de Verificação"
   },
   "verificationCodeRequired": {
     "message": "Requer o código de verificação."
+  },
+  "invalidVerificationCode": {
+    "message": "Código de verificação inválido"
   },
   "continue": {
     "message": "Continuar"
@@ -1736,5 +1753,29 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
+  },
+  "removeMasterPassword": {
+    "message": "Remover Senha Mestra"
+  },
+  "removedMasterPassword": {
+    "message": "Senha mestra removida."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ está usando SSO com um servidor de chaves auto-hospedado. Não é mais necessária uma senha mestra para os membros desta organização entrarem.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Sair da Organização"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Você tem certeza que deseja sair desta organização?"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Não foi possível acessar o conector de chave, tente novamente mais tarde."
   }
 }

@@ -30,7 +30,7 @@ export class MessagingMain {
                 this.scheduleNextSync();
                 break;
             case 'updateAppMenu':
-                this.main.menuMain.updateApplicationMenuState(message.enableChangeMasterPass, message.accounts, message.activeUserId);
+                this.main.menuMain.updateApplicationMenuState(message.hideChangeMasterPass, message.accounts, message.activeUserId);
                 this.updateTrayMenu(message.accounts ? message.accounts[message.activeUserId] : null);
                 break;
             case 'minimizeOnCopy':
