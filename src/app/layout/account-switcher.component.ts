@@ -6,6 +6,7 @@ import {
     trigger,
   } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
@@ -34,7 +35,7 @@ export class AccountSwitcherComponent implements OnInit {
     activeAccountEmail: string;
 
     constructor(private stateService: StateService, private vaultTimeoutService: VaultTimeoutService,
-        private messagingService: MessagingService) {}
+        private messagingService: MessagingService, private router: Router) {}
 
     async ngOnInit(): Promise<void> {
         this.stateService.accounts.subscribe(async accounts => {
@@ -55,6 +56,7 @@ export class AccountSwitcherComponent implements OnInit {
         } else {
             this.messagingService.send('unlocked');
             this.messagingService.send('syncVault');
+            this.router.navigate(['vault']);
         }
     }
 }
