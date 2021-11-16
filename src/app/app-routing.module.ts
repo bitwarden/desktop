@@ -6,8 +6,7 @@ import {
 
 import { AuthGuardService } from 'jslib-angular/services/auth-guard.service';
 import { LockGuardService } from 'jslib-angular/services/lock-guard.service';
-
-import { LoginGuardService } from 'src/services/loginGuard.service';
+import { LoginGuardService } from '../services/loginGuard.service';
 
 import { HintComponent } from './accounts/hint.component';
 import { LockComponent } from './accounts/lock.component';
