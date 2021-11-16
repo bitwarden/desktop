@@ -128,7 +128,7 @@ const organizationService = new OrganizationService(stateService);
 const providerService: ProviderServiceAbstraction = new ProviderService(stateService);
 const policyService = new PolicyService(stateService, organizationService, apiService);
 const keyConnectorService = new KeyConnectorService(stateService, cryptoService, apiService,
-    environmentService, tokenService, logService, organizationService);
+    tokenService, logService, organizationService);
 const vaultTimeoutService = new VaultTimeoutService(cipherService, folderService, collectionService,
     cryptoService, platformUtilsService, messagingService, searchService, tokenService, policyService, keyConnectorService,
     stateService, null,
