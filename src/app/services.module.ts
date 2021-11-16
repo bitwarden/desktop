@@ -157,6 +157,7 @@ containerService.attachToGlobal(window);
 
 export function initFactory(): Function {
     return async () => {
+        await stateService.init();
         await environmentService.setUrlsFromStorage();
         syncService.fullSync(true);
         await vaultTimeoutService.init(true);
