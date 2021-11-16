@@ -388,7 +388,6 @@ export class AppComponent implements OnInit {
             this.passwordGenerationService.clear(userId),
             this.vaultTimeoutService.clear(userId),
             this.policyService.clear(userId),
-            this.stateService.purge({ userId: userId }),
             this.keyConnectorService.clear(),
         ]);
 
@@ -404,6 +403,8 @@ export class AppComponent implements OnInit {
                 this.router.navigate(['login']);
             });
         }
+
+        await this.stateService.clean({ userId: userId });
     }
 
     private async recordActivity() {
