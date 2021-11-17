@@ -33,7 +33,7 @@ import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.compo
 
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
-import { VerifyMasterPasswordComponent } from 'jslib-angular/components/verify-master-password.component';
+import { VerifyMasterPasswordComponent } from './components/verify-master-password.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
