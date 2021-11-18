@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox" *ngIf="showMasterPassOnRestart">
                     <label for="masterPasswordOnRestart">
                         <input type="checkbox" id="masterPasswordOnRestart" name="MasterPasswordOnRestart"
                             [(ngModel)]="masterPassOnRestart">
