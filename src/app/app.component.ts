@@ -354,14 +354,14 @@ export class AppComponent implements OnInit {
             const accounts: { [userId: string]: any } = {};
             for (const i in stateAccounts) {
                 if (i != null) {
-                    const userId = stateAccounts[i].userId;
+                    const userId = stateAccounts[i].profile.userId;
                     accounts[userId] = {
                         isAuthenticated: await this.stateService.getIsAuthenticated({
                             userId: userId,
                         }),
                         isLocked: await this.vaultTimeoutService.isLocked(userId),
-                        email: stateAccounts[i].email,
-                        userId: stateAccounts[i].userId,
+                        email: stateAccounts[i].profile.email,
+                        userId: stateAccounts[i].profile.userId,
                     };
                 }
             }
