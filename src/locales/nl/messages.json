@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Er zijn geen items om weer te geven."
   },
-  "requestVerificationCode": {
-    "message": "Eenmalig wachtwoord aanvragen"
+  "sendVerificationCode": {
+    "message": "Stuur een verificatiecode naar je e-mail"
+  },
+  "sendCode": {
+    "message": "Code versturen"
+  },
+  "codeSent": {
+    "message": "Code verstuurd"
   },
   "verificationCode": {
     "message": "Verificatiecode"
+  },
+  "confirmIdentity": {
+    "message": "Bevestig je identiteit om door te gaan."
   },
   "verificationCodeRequired": {
     "message": "Verificatiecode vereist."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Encryptiesleutels zijn uniek voor elk Bitwarden-gebruikersaccount, je kun kunt een versleutelde niet in een ander account importeren."
   },
-  "exportMasterPassword": {
-    "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
-  },
   "noOrganizationsList": {
     "message": "Je behoort niet tot een organisatie. Via organisaties deel je je items veilig met andere gebruikers."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Weet je zeker dat je deze organisatie wilt verlaten?"
+  },
+  "leftOrganization": {
+    "message": "Je hebt de organisatie verlaten."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Kan de sleutelconnector niet bereiken, probeer het later opnieuw."

@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "No hay elementos que listar."
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Código de verificación"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "Código de verificación requerido."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Las claves de encriptación de las cuentas son únicas para cada cuenta de usuario de Bitwarden, por lo que no se puede importar una exportación encriptada a una cuenta diferente."
   },
-  "exportMasterPassword": {
-    "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
-  },
   "noOrganizationsList": {
     "message": "No perteneces a ninguna organización. Las organizaciones te permiten compartir elementos con otros usuarios de forma segura."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."

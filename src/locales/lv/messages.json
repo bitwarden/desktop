@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Nav vienumu, ko parādīt."
   },
-  "requestVerificationCode": {
-    "message": "Pieprasīt vienreiz izmantojamo paroli"
+  "sendVerificationCode": {
+    "message": "Sūtīt apstiprinājuma kodu uz e-pastu"
+  },
+  "sendCode": {
+    "message": "Nosūtīt kodu"
+  },
+  "codeSent": {
+    "message": "Kods nosūtīts"
   },
   "verificationCode": {
     "message": "Apstiprinājuma kods"
+  },
+  "confirmIdentity": {
+    "message": "Apstiprināt identitāti, lai turpinātu."
   },
   "verificationCodeRequired": {
     "message": "Ir nepieciešams apstiprinājuma kods."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Katram Bitwarden kontam ir neatkārtojamas šifrēšanas atslēgas, tādēļ nav iespējams ievietot šifrētu izguvi citā kontā."
   },
-  "exportMasterPassword": {
-    "message": "Ievadīt galveno paroli, lai izgūtu glabātavas saturu."
-  },
   "noOrganizationsList": {
     "message": "Tu neesi iekļauts nevienā apvienībā. Apvienības sniedz iespēju droši kopīgot vienumus ar citiem lietotājiem."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Vai tiešām pamest šo apvienību?"
+  },
+  "leftOrganization": {
+    "message": "Apvienība ir pamesta."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nav iespējams sasniegt Key Connector, tāpēc vēlāk jāmēģina atkal."

@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Puuduvad kirjed, mida kuvada."
   },
-  "requestVerificationCode": {
-    "message": "Küsi ühekordset parooli"
+  "sendVerificationCode": {
+    "message": "Saada kinnituskood oma e-postile"
+  },
+  "sendCode": {
+    "message": "Saada kood"
+  },
+  "codeSent": {
+    "message": "Kood on saadetud"
   },
   "verificationCode": {
     "message": "Kinnituskood"
+  },
+  "confirmIdentity": {
+    "message": "Jätkamiseks kinnita oma identiteet."
   },
   "verificationCodeRequired": {
     "message": "Nõutav on kinnituskood."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Iga Bitwardeni kasutaja krüpteerimisvõti on unikaalne. Eksporditud andmeid ei saa importida teise Bitwardeni kasutajakontosse."
   },
-  "exportMasterPassword": {
-    "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
-  },
   "noOrganizationsList": {
     "message": "Sa ei kuulu ühessegi organisatsiooni. Organisatsioonid võimaldavad sul kirjeid turvaliselt teiste kasutajatega jagada."
   },
@@ -1761,7 +1767,7 @@
     "message": "Ülemparool on eemaldatud."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ kasutab SSO-d koos enda majutatud võtmeserveriga. Selle organisatsiooni liikmed ei pea sisselogimisel enam ülemparooli kasutama.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Kas oled kindel, et soovid sellest organisatsioonist lahkuda?"
+  },
+  "leftOrganization": {
+    "message": "Oled organisatsioonist lahkunud."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Ühenduse loomine ebaõnnestus. Proovi hiljem uuesti."

@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Siyahılanacaq heç bir element yoxdur."
   },
-  "requestVerificationCode": {
-    "message": "Tək istifadəlik parol tələb et"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrələnmiş bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
   },
-  "exportMasterPassword": {
-    "message": "Anbar verilənlərinizi ixrac etmək üçün ana parolunuzu daxil edin."
-  },
   "noOrganizationsList": {
     "message": "Heç bir təşkilata aid deyilsiniz. Təşkilatlar, elementlərinizi digər istifadəçilərlə təhlükəsiz şəkildə paylaşmağınızı təmin edir."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Bu təşkilatı tərk etmək istədiyinizə əminsiniz?"
+  },
+  "leftOrganization": {
+    "message": "Təşkilatı tərk etdiniz."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Açar bağlayıcı əlçatan deyil, daha sonra yenidən sınayın."

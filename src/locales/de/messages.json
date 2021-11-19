@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Keine Einträge vorhanden."
   },
-  "requestVerificationCode": {
-    "message": "Einmalpasswort anfordern"
+  "sendVerificationCode": {
+    "message": "Einen Bestätigungscode an deine E-Mail senden"
+  },
+  "sendCode": {
+    "message": "Code senden"
+  },
+  "codeSent": {
+    "message": "Code gesendet"
   },
   "verificationCode": {
     "message": "Verifizierungscode"
+  },
+  "confirmIdentity": {
+    "message": "Bestätige deine Identität, um fortzufahren."
   },
   "verificationCodeRequired": {
     "message": "Verifizierungscode wird benötigt."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden-Benutzerkonto einzigartig, deshalb kannst du keinen verschlüsselten Export in ein anderes Konto importieren."
   },
-  "exportMasterPassword": {
-    "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
-  },
   "noOrganizationsList": {
     "message": "Du bist kein Mitglied einer Organisation. Organisationen erlauben es dir Passwörter sicher mit anderen Nutzern zu teilen."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Bist du sicher, dass du diese Organisation verlassen möchtest?"
+  },
+  "leftOrganization": {
+    "message": "Du hast die Organisation verlassen."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Der Key Connector konnte nicht erreicht werden. Versuche es später erneut."

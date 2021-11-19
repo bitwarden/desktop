@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "表示するアイテムがありません"
   },
-  "requestVerificationCode": {
-    "message": "ワンタイムパスワードを要求する"
+  "sendVerificationCode": {
+    "message": "確認コードをメールに送信"
+  },
+  "sendCode": {
+    "message": "コードを送信"
+  },
+  "codeSent": {
+    "message": "確認コードを送信しました。"
   },
   "verificationCode": {
     "message": "認証コード"
+  },
+  "confirmIdentity": {
+    "message": "続行するには本人確認を行ってください。"
   },
   "verificationCodeRequired": {
     "message": "認証コードは必須項目です。"
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "アカウント暗号化キーは各 Bitwarden ユーザーアカウントに固有であるため、暗号化されたエクスポートを別のアカウントにインポートすることはできません。"
   },
-  "exportMasterPassword": {
-    "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
-  },
   "noOrganizationsList": {
     "message": "あなたはどの組織にも属していません。組織では他のユーザーとアイテムを安全に共有できます。"
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "本当にこの組織から脱退しますか？"
+  },
+  "leftOrganization": {
+    "message": "組織から脱退しました。"
   },
   "ssoKeyConnectorUnavailable": {
     "message": "キーコネクターに到達できません。後でもう一度お試しください。"

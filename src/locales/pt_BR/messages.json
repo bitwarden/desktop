@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Não há itens para listar."
   },
-  "requestVerificationCode": {
-    "message": "Solicitar senha de uso único"
+  "sendVerificationCode": {
+    "message": "Enviar um código de verificação para o seu e-mail"
+  },
+  "sendCode": {
+    "message": "Enviar Código"
+  },
+  "codeSent": {
+    "message": "Código Enviado"
   },
   "verificationCode": {
     "message": "Código de Verificação"
+  },
+  "confirmIdentity": {
+    "message": "Confirme a sua identidade para continuar."
   },
   "verificationCodeRequired": {
     "message": "Requer o código de verificação."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Chaves de criptografia da conta são únicas para cada conta de usuário do Bitwarden, então você não pode importar uma exportação criptografada para uma conta diferente."
   },
-  "exportMasterPassword": {
-    "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
-  },
   "noOrganizationsList": {
     "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe compartilhar itens em segurança com outros usuários."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Você tem certeza que deseja sair desta organização?"
+  },
+  "leftOrganization": {
+    "message": "Você saiu da organização."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Não foi possível acessar o conector de chave, tente novamente mais tarde."

@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "তালিকার জন্য কোনও বস্তু নেই।"
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "যাচাইকরণ কোড"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "যাচাইকরণ কোড প্রয়োজন।"
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
-  "exportMasterPassword": {
-    "message": "আপনার ভল্ট তথ্য রফতানি করতে আপনার মূল পাসওয়ার্ডটি দিন।"
-  },
   "noOrganizationsList": {
     "message": "আপনি কোনও সংস্থার অন্তর্ভুক্ত নন। সংগঠনগুলি আপনাকে নিরাপদে অন্য ব্যবহারকারীর সাথে বস্তুসমূহ ভাগ করে নেওয়ার অনুমতি দেয়।"
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."

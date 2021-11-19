@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Нема ставке која се може приказати."
   },
-  "requestVerificationCode": {
-    "message": "Захтевај једнократну лозинку"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Верификациони код"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "Верификациони код је обавезан."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Кључеви за шифровање налога су јединствени за сваки Bitwarden кориснички налог, тако да не можете да увезете шифровани извоз на други налог."
   },
-  "exportMasterPassword": {
-    "message": "Унети главну лозинку за извоз сефа."
-  },
   "noOrganizationsList": {
     "message": "Не припадате ниједној организацији. Организације вам омогућавају да безбедно делите ставке са другим корисницима."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Да ли Сте сигурни да желите да напустите ову организацију?"
+  },
+  "leftOrganization": {
+    "message": "Напустили сте организацију."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Немогуће повезати се са добављачем кључева, покушајте поново касније."

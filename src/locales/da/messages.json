@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Der er ingen elementer at vise."
   },
-  "requestVerificationCode": {
-    "message": "Anmod om engangsadgangskode"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Bekræftelseskode"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "Bekræftelseskode er påkrævet."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Kontokrypteringsnøgler er unikke for hver Bitwarden-brugerkonto, så du kan ikke importere en krypteret eksport til en anden konto."
   },
-  "exportMasterPassword": {
-    "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
-  },
   "noOrganizationsList": {
     "message": "Du tilhører ikke nogen organisationer. Organisationer giver dig mulighed for at dele elementer med andre brugere på en sikker måde."
   },
@@ -1755,13 +1761,13 @@
     "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
   },
   "removeMasterPassword": {
-    "message": "Fjern Hovedadgangskode"
+    "message": "Fjern hovedadgangskode"
   },
   "removedMasterPassword": {
     "message": "Hovedadgangskode fjernet."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. Indlogning for organisationsmedlemmer kræver ikke længere en hovedadgangskode.",
+    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. En hovedadgangskode er ikke længere påkrævet for at logge ind for medlemmer af denne organisation.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1775,7 +1781,10 @@
   "leaveOrganizationConfirmation": {
     "message": "Er du sikker på, at du vil forlade denne organisation?"
   },
+  "leftOrganization": {
+    "message": "Du har forladt organisationen."
+  },
   "ssoKeyConnectorUnavailable": {
-    "message": "Kan ikke kontakte Key Connector, forsøg igen senere."
+    "message": "Kan ikke kontakte key connector, forsøg igen senere."
   }
 }

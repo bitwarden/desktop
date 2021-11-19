@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Немає записів."
   },
-  "requestVerificationCode": {
-    "message": "Запитувати одноразовий пароль"
+  "sendVerificationCode": {
+    "message": "Надіслати код підтвердження е-поштою"
+  },
+  "sendCode": {
+    "message": "Надіслати код"
+  },
+  "codeSent": {
+    "message": "Код надіслано"
   },
   "verificationCode": {
     "message": "Код підтвердження"
+  },
+  "confirmIdentity": {
+    "message": "Підтвердьте свої облікові дані для продовження."
   },
   "verificationCodeRequired": {
     "message": "Потрібний код підтвердження."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ключі шифрування унікальні для кожного облікового запису користувача Bitwarden, тому ви не можете імпортувати зашифрований експорт до іншого облікового запису."
   },
-  "exportMasterPassword": {
-    "message": "Введіть головний пароль, щоб експортувати дані сховища."
-  },
   "noOrganizationsList": {
     "message": "Ви не входите до жодної організації. Організації дозволяють безпечно обмінюватися елементами з іншими користувачами."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Ви справді хочете покинути цю організацію?"
+  },
+  "leftOrganization": {
+    "message": "Ви покинули організацію."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."

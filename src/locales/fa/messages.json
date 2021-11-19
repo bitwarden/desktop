@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "هیچ موردی برای نمایش وجود ندارد."
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "ارسال کد"
+  },
+  "codeSent": {
+    "message": "کد ارسال شد"
   },
   "verificationCode": {
     "message": "کد تایید"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "کد تایید مورد نیاز است."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "کلیدهای رمزگذاری حساب برای هر حساب کاربری Bitwarden منحصر به فرد است ، بنابراین نمی توانید صادرات رمزگذاری شده را به حساب دیگری وارد کنید."
   },
-  "exportMasterPassword": {
-    "message": "کلمه عبور اصلی خود را برای خروجی گرفتن از گاوصندوقتان وارد کنید."
-  },
   "noOrganizationsList": {
     "message": "شما به هیچ سازمانی تعلق ندارید. سازمان‌ها به شما اجازه می‌دهند تا داده‌های خود را را با کاربران دیگر به صورت امن به اشتراک بگذارید."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."
