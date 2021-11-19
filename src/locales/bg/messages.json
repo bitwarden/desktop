@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Няма елементи за показване."
   },
-  "requestVerificationCode": {
-    "message": "Заявка за еднократна парола"
+  "sendVerificationCode": {
+    "message": "Изпращане на код за потвърждаване до Вашата ел. поща"
+  },
+  "sendCode": {
+    "message": "Изпращане на кода"
+  },
+  "codeSent": {
+    "message": "Кодът е изпратен"
   },
   "verificationCode": {
     "message": "Код за потвърждаване"
+  },
+  "confirmIdentity": {
+    "message": "Потвърдете самоличността си, за да продължите."
   },
   "verificationCodeRequired": {
     "message": "Кодът за потвърждение е задължителен."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ключовете за шифриране са уникални за всеки потребител, затова не може да внесете шифрирани данни от един потребител в регистрацията на друг."
   },
-  "exportMasterPassword": {
-    "message": "Въведете главната парола, за да изнесете данните."
-  },
   "noOrganizationsList": {
     "message": "Не сте член на никоя организация. Организациите позволяват да споделяте записи с други потребители по защитен начин."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Наистина ли искате да напуснете тази организация?"
+  },
+  "leftOrganization": {
+    "message": "Напуснахте организацията."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Конекторът за ключове е недостъпен. Опитайте отново по-късно."

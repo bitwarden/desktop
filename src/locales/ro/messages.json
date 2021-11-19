@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Niciun articol de afișat."
   },
-  "requestVerificationCode": {
-    "message": "Solicitare de parolă unică"
+  "sendVerificationCode": {
+    "message": "Trimite un cod de verificare la adresa dvs. de e-mail"
+  },
+  "sendCode": {
+    "message": "Trimitere cod"
+  },
+  "codeSent": {
+    "message": "Cod trimis"
   },
   "verificationCode": {
     "message": "Cod de verificare"
+  },
+  "confirmIdentity": {
+    "message": "Confirmați-vă identitatea pentru a continua."
   },
   "verificationCodeRequired": {
     "message": "Este necesar codul de verificare."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Cheile de criptare a contului sunt unice fiecărui cont de utilizator Bitwarden, astfel încât nu puteți importa un export criptat într-un cont diferit."
   },
-  "exportMasterPassword": {
-    "message": "Introduceți parola principală pentru a exporta datele din seif."
-  },
   "noOrganizationsList": {
     "message": "Nu aparțineți niciunei organizații. Organizațiile vă permit să partajați în siguranță articole cu alți utilizatori."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Sigur doriți să părăsiți această organizație?"
+  },
+  "leftOrganization": {
+    "message": "Ați părăsit organizația."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nu se poate accesa conectorul cheii, vă rugăm să încercați din nou mai târziu."

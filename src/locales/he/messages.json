@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "אין פריטים להצגה ברשימה."
   },
-  "requestVerificationCode": {
-    "message": "בקשת סיסמה חד־פעמית"
+  "sendVerificationCode": {
+    "message": "שליחת קוד אימות לדוא״ל שלך"
+  },
+  "sendCode": {
+    "message": "שליחת קוד"
+  },
+  "codeSent": {
+    "message": "קוד נשלח"
   },
   "verificationCode": {
     "message": "קוד אימות"
+  },
+  "confirmIdentity": {
+    "message": "יש לאשר את זהותך כדי להמשיך."
   },
   "verificationCodeRequired": {
     "message": "נדרש קוד אימות."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "מפתחות הצפנת חשבון ייחודיים לכל חשבון משתמש של Bitwarden, כך שלא ניתן לייבא ייצוא מוצפן לחשבון אחר."
   },
-  "exportMasterPassword": {
-    "message": "הזן את הסיסמה הראשית שלך עבור יצוא המידע מהכספת."
-  },
   "noOrganizationsList": {
     "message": "אינך משויך לארגון. ניתן לשתף באופן מאובטח פריטים רק עם משתמשים אחרים בתוך ארגון."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "לעזוב את הארגון?"
+  },
+  "leftOrganization": {
+    "message": "עזבת את הארגון."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "לא ניתן להגיע למחבר המפתח, נא לנסות שוב."

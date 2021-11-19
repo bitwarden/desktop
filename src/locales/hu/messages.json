@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Nincsenek megjeleníthető elemek."
   },
-  "requestVerificationCode": {
-    "message": "Egyszeri jelszó kérése"
+  "sendVerificationCode": {
+    "message": "Ellenőrző kód elküldése a saját email címre"
+  },
+  "sendCode": {
+    "message": "Kód küldése"
+  },
+  "codeSent": {
+    "message": "A kód elküldésre került."
   },
   "verificationCode": {
     "message": "Ellenőrző kód"
+  },
+  "confirmIdentity": {
+    "message": "A folytatáshoz meg kell erősíteni a személyazonosságot."
   },
   "verificationCodeRequired": {
     "message": "Az ellenőrző kód kötelező."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "A fiók titkosítási kulcsai minden Bitwarden felhasználói fiókhoz egyediek, ezért nem importálhatunk titkosított exportálást egy másik fiókba."
   },
-  "exportMasterPassword": {
-    "message": "A mesterjelszó megadása a széfadatok exportálásához."
-  },
   "noOrganizationsList": {
     "message": "Még nem tartozunk egyik szervezethez sem. A szervezetek lehetővé teszik az elemek megosztását más felhasználókkal."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Biztosan kilépünk ebből a szervezetből?"
+  },
+  "leftOrganization": {
+    "message": "Megtörtént a kilépés a szervezetből."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nem érhető el a kulcskapcsoló. Próbáljuk újra később."
