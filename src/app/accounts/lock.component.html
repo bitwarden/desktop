@@ -30,7 +30,8 @@
         </div>
         <div class="buttons with-rows">
             <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
-                <button type="button" class="btn block" [ngClass]="{'primary font-weight-bold': hideInput}" appBlurClick (click)="unlockBiometric()">
+                <button type="button" class="btn block" [ngClass]="{'primary font-weight-bold': hideInput}"
+                    appBlurClick (click)="unlockBiometric()">
                     {{biometricText | i18n}}
                 </button>
             </div>
