@@ -29,33 +29,19 @@
             </div>
         </div>
         <div class="buttons with-rows">
-            <ng-container *ngIf="!hideInput">
-                <div class="buttons-row">
-                    <button type="submit" class="btn primary block" appBlurClick>
-                        <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
-                    </button>
-                    <button type="button" class="btn block" appBlurClick (click)="logOut()">
-                        {{'logOut' | i18n}}
-                    </button>
-                </div>
-                <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
-                    <button type="button" class="btn block" appBlurClick (click)="unlockBiometric()">
-                        {{biometricText | i18n}}
-                    </button>
-                </div>
-            </ng-container>
-            <ng-container *ngIf="hideInput">
-                <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
-                    <button type="button" class="btn primary block" appBlurClick (click)="unlockBiometric()">
-                        <b>{{biometricText | i18n}}</b>
-                    </button>
-                </div>
-                <div class="buttons-row">
-                    <button type="button" class="btn block" appBlurClick (click)="logOut()">
-                        {{'logOut' | i18n}}
-                    </button>
-                </div>
-            </ng-container>
+            <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
+                <button type="button" class="btn block" [ngClass]="{'primary font-weight-bold': hideInput}" appBlurClick (click)="unlockBiometric()">
+                    {{biometricText | i18n}}
+                </button>
+            </div>
+            <div class="buttons-row">
+                <button type="submit" class="btn primary block" appBlurClick *ngIf="!hideInput">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
+                </button>
+                <button type="button" class="btn block" appBlurClick (click)="logOut()">
+                    {{'logOut' | i18n}}
+                </button>
+            </div>
         </div>
     </div>
 </form>
