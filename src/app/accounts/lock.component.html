@@ -1,10 +1,10 @@
 <form id="lock-page" (ngSubmit)="submit()">
     <div class="content">
         <p aria-hidden="true"><i class="fa fa-lock fa-4x text-muted"></i></p>
-        <p>{{(pinLock ? 'yourVaultIsLockedPinCode' : 'yourVaultIsLocked') | i18n}}</p>
+        <p>{{'yourVaultIsLocked' | i18n}}</p>
         <div class="box last">
             <div class="box-content">
-                <div class="box-content-row box-content-row-flex" appBoxRow>
+                <div class="box-content-row box-content-row-flex" appBoxRow *ngIf="!hideInput">
                     <div class="row-main" *ngIf="pinLock">
                         <label for="pin">{{'pin' | i18n}}</label>
                         <input id="pin" type="{{showPassword ? 'text' : 'password'}}" name="PIN" class="monospaced"
@@ -29,17 +29,18 @@
             </div>
         </div>
         <div class="buttons with-rows">
+            <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
+                <button type="button" class="btn block" [ngClass]="{'primary font-weight-bold': hideInput}"
+                    appBlurClick (click)="unlockBiometric()">
+                    {{biometricText | i18n}}
+                </button>
+            </div>
             <div class="buttons-row">
-                <button type="submit" class="btn primary block" appBlurClick>
+                <button type="submit" class="btn primary block" appBlurClick *ngIf="!hideInput">
                     <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
                 </button>
                 <button type="button" class="btn block" appBlurClick (click)="logOut()">
                     {{'logOut' | i18n}}
-                </button>
-            </div>
-            <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
-                <button type="button" class="btn block" appBlurClick (click)="unlockBiometric()">
-                    {{biometricText | i18n}}
                 </button>
             </div>
         </div>
