@@ -41,6 +41,7 @@ import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directiv
 import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
 import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
+import { InputVerbatimDirective } from 'jslib-angular/directives/input-verbatim.directive';
 import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
 import { StopClickDirective } from 'jslib-angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib-angular/directives/stop-prop.directive';
@@ -203,6 +204,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         HintComponent,
         I18nPipe,
         IconComponent,
+        InputVerbatimDirective,
         LockComponent,
         LoginComponent,
         NavComponent,

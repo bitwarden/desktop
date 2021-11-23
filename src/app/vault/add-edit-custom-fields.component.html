@@ -15,15 +15,15 @@
                 <label for="fieldValue{{i}}" class="sr-only">{{'value' | i18n}}</label>
                 <div class="row-main">
                     <input id="fieldName{{i}}" type="text" name="Field.Name{{i}}" [(ngModel)]="f.name"
-                        class="row-label" placeholder="{{'name' | i18n}}">
+                        class="row-label" placeholder="{{'name' | i18n}}" appInputVerbatim>
                     <!-- Text -->
                     <input id="fieldValue{{i}}" type="text" name="Field.Value{{i}}" [(ngModel)]="f.value"
-                        *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}">
+                        *ngIf="f.type === fieldType.Text" placeholder="{{'value' | i18n}}" appInputVerbatim>
                     <!-- Password -->
                     <input id="fieldValue{{i}}" type="{{f.showValue ? 'text' : 'password'}}"
                         name="Field.Value{{i}}" [(ngModel)]="f.value" class="monospaced"
                         *ngIf="f.type === fieldType.Hidden" placeholder="{{'value' | i18n}}"
-                        [disabled]="!cipher.viewPassword && !f.newField">
+                        [disabled]="!cipher.viewPassword && !f.newField" appInputVerbatim>
                     <!-- Linked -->
                     <select id="fieldValue{{i}}" name="Field.Value{{i}}" [(ngModel)]="f.linkedId"
                         *ngIf="f.type === fieldType.Linked && cipher.linkedFieldOptions != null">
