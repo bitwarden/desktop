@@ -1,1 +1,0 @@
-Please see https://github.com/cozy/cozy-stack/blob/master/docs/CONTRIBUTING.md
