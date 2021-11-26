@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { EnvironmentComponent } from './environment.component';
 
 import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CryptoFunctionService } from 'jslib-common/abstractions/cryptoFunction.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -22,7 +23,6 @@ import { StateService } from 'jslib-common/abstractions/state.service';
 import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 import { ModalService } from 'jslib-angular/services/modal.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib-angular/components/login.component';

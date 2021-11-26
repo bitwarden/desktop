@@ -22,7 +22,7 @@ import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib-angular/components/lock.component';
 

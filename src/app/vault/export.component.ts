@@ -6,6 +6,7 @@ import { FormBuilder } from '@angular/forms';
 
 import * as os from 'os';
 
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { ExportService } from 'jslib-common/abstractions/export.service';
@@ -14,8 +15,6 @@ import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { UserVerificationService } from 'jslib-common/abstractions/userVerification.service';
-
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { ExportComponent as BaseExportComponent } from 'jslib-angular/components/export.component';
 
