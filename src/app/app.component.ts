@@ -21,9 +21,8 @@ import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 
-import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
-
 import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
