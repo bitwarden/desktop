@@ -55,6 +55,7 @@ import { PasswordGeneratorComponent } from './vault/password-generator.component
 import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
 
 import { ModalService } from 'jslib-angular/services/modal.service';
+import { MenuUpdateRequest } from 'src/main/menu.updater';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -147,7 +148,7 @@ export class AppComponent implements OnInit {
                         this.router.navigate(['login']);
                         break;
                     case 'logout':
-                        this.logOut(!!message.expired, message.userId);
+                        await this.logOut(!!message.expired, message.userId);
                         break;
                     case 'lockVault':
                         await this.vaultTimeoutService.lock(true, message.userId);
@@ -342,13 +343,13 @@ export class AppComponent implements OnInit {
     }
 
     private async updateAppMenu() {
-        let data: any;
+        let updateRequest: MenuUpdateRequest;
         const stateAccounts = this.stateService.accounts?.getValue();
         if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
-            data = {
+            updateRequest = {
                 accounts: null,
                 activeUserId: null,
-                hideChangeMasterPass: true,
+                hideChangeMasterPassword: true,
             };
         } else {
             const accounts: { [userId: string]: any } = {};
@@ -365,15 +366,14 @@ export class AppComponent implements OnInit {
                     };
                 }
             }
-            data = {
+            updateRequest = {
                 accounts: accounts,
                 activeUserId: await this.stateService.getUserId(),
-                enableChangeMasterPass: !await this.keyConnectorService.getUsesKeyConnector(),
-                hideChangeMasterPass: await this.keyConnectorService.getUsesKeyConnector(),
+                hideChangeMasterPassword: await this.keyConnectorService.getUsesKeyConnector(),
             };
         }
 
-        this.messagingService.send('updateAppMenu', data);
+        this.messagingService.send('updateAppMenu', { updateRequest: updateRequest });
     }
 
     private async logOut(expired: boolean, userId?: string) {
@@ -392,7 +392,11 @@ export class AppComponent implements OnInit {
             this.keyConnectorService.clear(),
         ]);
 
-        await this.stateService.setBiometricLocked(true);
+        await this.stateService.clean({ userId: userId });
+
+        await this.stateService.setBiometricLocked(true, { userId: userId });
+
+        await this.updateAppMenu();
 
         if (userId === await this.stateService.getUserId()) {
             this.searchService.clearIndex();
@@ -404,8 +408,6 @@ export class AppComponent implements OnInit {
                 this.router.navigate(['login']);
             });
         }
-
-        await this.stateService.clean({ userId: userId });
     }
 
     private async recordActivity() {
