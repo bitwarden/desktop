@@ -63,14 +63,10 @@ jobs:
           PKG_VERSION: ${{ steps.retrieve-version.outputs.package_version }}
         with:
           artifacts: "Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
-                      Bitwarden-${{ env.PKG_VERSION }}-arm64.deb,
                       Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
-                      Bitwarden-${{ env.PKG_VERSION }}-aarch64.rpm,
                       Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
-                      Bitwarden-${{ env.PKG_VERSION }}-arm64.freebsd,
                       bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
                       Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
-                      Bitwarden-${{ env.PKG_VERSION }}-arm64.AppImage,
                       latest-linux.yml,
                       Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
                       Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,

@@ -269,7 +269,7 @@
     "message": "Soyadı"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Adı soyadı"
   },
   "address1": {
     "message": "Adres 1"
@@ -332,11 +332,11 @@
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Bağlantılı",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Bağlı değer",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -541,17 +541,26 @@
   "noItemsInList": {
     "message": "Görüntülenecek öğe yok."
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "E-posta adresime doğrulama kodu gönder"
+  },
+  "sendCode": {
+    "message": "Kod gönder"
+  },
+  "codeSent": {
+    "message": "Kod gönderildi"
   },
   "verificationCode": {
     "message": "Doğrulama Kodu"
+  },
+  "confirmIdentity": {
+    "message": "Devam etmek için kimliğinizi doğrulayın."
   },
   "verificationCodeRequired": {
     "message": "Doğrulama kodu gereklidir."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Geçersiz doğrulama kodu"
   },
   "continue": {
     "message": "Devam Et"
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Hesap şifreleme anahtarları her Bitwarden kullanıcı hesabı için farklıdır. Dolayısıyla şifrelenmiş bir dışa aktarmayı başka bir hesapta içe aktaramazsınız."
   },
-  "exportMasterPassword": {
-    "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
-  },
   "noOrganizationsList": {
     "message": "Herhangi bir kuruluşa dahil değilsiniz. Kuruluşlar, kayıtlarınızı diğer kullanıcılarla güvenli bir şekilde paylaşmanıza olanak verir."
   },
@@ -1727,7 +1733,7 @@
     "message": "Dakika"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Kuruluş ilkeleriniz kasa zaman aşımınızı etkiliyor. İzin verilen maksimum kasa zaman aşımı $HOURS$ saat $MINUTES$ dakikadır",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1740,28 +1746,28 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Kasa zaman aşımınız, kuruluşunuz tarafından belirlenen kısıtlamaları aşıyor."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Otomatik Eklenme"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Bu kuruluşun sizi otomatik olarak parola sıfırlamaya ekleyen bir ilkesi bulunmakta. Bu ilkeye eklenmek, kuruluş yöneticilerinin ana parolanızı değiştirebilmesini sağlar."
   },
   "vaultExportDisabled": {
     "message": "Kasayı dışa aktarma devre dışı"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Bir veya daha fazla kuruluş ilkesi, kişisel kasanızı dışa aktarmanızı engelliyor."
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Ana parolayı kaldır"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Ana parola kaldırıldı."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ kendi barındırdığı bir anahtar sunucusuyla SSO kullanıyor. Bu kuruluşun üyelerinin artık ana parola kullanması gerekmiyor.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1770,12 +1776,15 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Kuruluştan ayrıl"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Bu kuruluştan ayrılmak istediğinizden emin misiniz?"
+  },
+  "leftOrganization": {
+    "message": "Kuruluştan ayrıldınız."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "Anahtar bağlayıcısına ulaşılamıyor, daha sonra yeniden deneyin."
   }
 }

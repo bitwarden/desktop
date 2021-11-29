@@ -16,15 +16,11 @@
                                 <option *ngFor="let f of formatOptions" [value]="f.value">{{f.name}}</option>
                             </select>
                         </div>
-                        <div class="box-content-row box-content-row-flex" appBoxRow>
-                            <div class="row-main">
-                                <app-verify-master-password ngDefaultControl formControlName="secret" name="secret">
-                                </app-verify-master-password>
-                            </div>
-                        </div>
+                        <app-verify-master-password ngDefaultControl formControlName="secret" name="secret">
+                        </app-verify-master-password>
                     </div>
                     <div class="box-footer">
-                        <p>{{'exportMasterPassword' | i18n}}</p>
+                        <p>{{'confirmIdentity' | i18n}}</p>
                     </div>
                 </div>
             </div>

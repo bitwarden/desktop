@@ -44,10 +44,10 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
         platformUtilsService: PlatformUtilsService, stateService: StateService,
         environmentService: EnvironmentService, passwordGenerationService: PasswordGenerationService,
         cryptoFunctionService: CryptoFunctionService, private broadcasterService: BroadcasterService,
-        private ngZone: NgZone, private messagingService: MessagingService,
+        ngZone: NgZone, private messagingService: MessagingService,
         logService: LogService) {
         super(authService, router, platformUtilsService, i18nService, stateService, environmentService,
-            passwordGenerationService, cryptoFunctionService, logService);
+            passwordGenerationService, cryptoFunctionService, logService, ngZone);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

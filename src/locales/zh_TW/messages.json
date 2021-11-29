@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "沒有可顯示的項目。"
   },
-  "requestVerificationCode": {
-    "message": "請求一次性密碼"
+  "sendVerificationCode": {
+    "message": "傳送驗證碼到您的信箱"
+  },
+  "sendCode": {
+    "message": "傳送驗證碼"
+  },
+  "codeSent": {
+    "message": "已送出驗證碼"
   },
   "verificationCode": {
     "message": "驗證碼"
+  },
+  "confirmIdentity": {
+    "message": "請先確認身分後再繼續。"
   },
   "verificationCodeRequired": {
     "message": "必須填入驗證碼。"
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "每個 Bitwarden 使用者帳戶的帳戶加密金鑰都不同，因此無法將加密過的匯出檔案匯入到不同帳戶中。"
   },
-  "exportMasterPassword": {
-    "message": "輸入您的主密碼以匯出密碼庫資料。"
-  },
   "noOrganizationsList": {
     "message": "您沒有加入任何組織。組織允許您與其他使用者安全地共享項目。"
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "您確定要離開這個組織嗎？"
+  },
+  "leftOrganization": {
+    "message": "您已離開此組織。"
   },
   "ssoKeyConnectorUnavailable": {
     "message": "無法連線到 Key Connector。請稍後再試。"

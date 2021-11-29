@@ -10,7 +10,7 @@
             <div class="box-content">
                 <div class="box-content-row" appBoxRow>
                     <label for="code">{{'verificationCode' | i18n}}</label>
-                    <input id="code" type="text" name="Code" [(ngModel)]="token" required appAutofocus>
+                    <input id="code" type="text" name="Code" [(ngModel)]="token" required appAutofocus appInputVerbatim>
                 </div>
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
                     <label for="remember">{{'rememberMe' | i18n}}</label>
@@ -25,7 +25,8 @@
                 <div class="box-content">
                     <div class="box-content-row" appBoxRow>
                         <label for="code" class="sr-only">{{'verificationCode' | i18n}}</label>
-                        <input id="code" type="password" name="Code" [(ngModel)]="token" required appAutofocus>
+                        <input id="code" type="password" name="Code" [(ngModel)]="token" required appAutofocus
+                            appInputVerbatim>
                     </div>
                     <div class="box-content-row box-content-row-checkbox" appBoxRow>
                         <label for="remember">{{'rememberMe' | i18n}}</label>

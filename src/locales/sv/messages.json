@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Det finns inga objekt att visa."
   },
-  "requestVerificationCode": {
-    "message": "Request one-time password"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
   },
   "verificationCode": {
     "message": "Verifieringskod"
+  },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
   },
   "verificationCodeRequired": {
     "message": "Verifieringskod krävs."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Kypteringsnycklar är unika för varje Bitwarden-konto, så du kan inte importera en krypterad export till ett annat konto."
   },
-  "exportMasterPassword": {
-    "message": "Ange ditt huvudlösenord för att exportera ditt valv."
-  },
   "noOrganizationsList": {
     "message": "Du tillhör inte några organisationer. Organisationer möjliggör säker delning av objekt med andra användare."
   },
@@ -1770,10 +1776,13 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Lämna organisation"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Är du säker på att du vill lämna denna organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har lämnat organisationen."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."

@@ -33,7 +33,6 @@ import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.compo
 import { AvatarComponent } from 'jslib-angular/components/avatar.component';
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
-import { VerifyMasterPasswordComponent } from 'jslib-angular/components/verify-master-password.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
@@ -42,6 +41,7 @@ import { BlurClickDirective } from 'jslib-angular/directives/blur-click.directiv
 import { BoxRowDirective } from 'jslib-angular/directives/box-row.directive';
 import { CipherListVirtualScroll } from 'jslib-angular/directives/cipherListVirtualScroll.directive';
 import { FallbackSrcDirective } from 'jslib-angular/directives/fallback-src.directive';
+import { InputVerbatimDirective } from 'jslib-angular/directives/input-verbatim.directive';
 import { SelectCopyDirective } from 'jslib-angular/directives/select-copy.directive';
 import { StopClickDirective } from 'jslib-angular/directives/stop-click.directive';
 import { StopPropDirective } from 'jslib-angular/directives/stop-prop.directive';
@@ -78,6 +78,7 @@ import { SearchComponent } from './layout/search/search.component';
 
 import { PasswordRepromptComponent } from './components/password-reprompt.component';
 import { SetPinComponent } from './components/set-pin.component';
+import { VerifyMasterPasswordComponent } from './components/verify-master-password.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeAf from '@angular/common/locales/af';
@@ -207,6 +208,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         HintComponent,
         I18nPipe,
         IconComponent,
+        InputVerbatimDirective,
         LockComponent,
         LoginComponent,
         NavComponent,

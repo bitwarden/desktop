@@ -90,7 +90,8 @@
                         <div class="box-content-row box-content-row-flex" appBoxRow>
                             <div class="row-main">
                                 <label for="password">{{(hasPassword ? 'newPassword' : 'password') | i18n}}</label>
-                                <input id="password" name="password" type="{{showPassword ? 'text' : 'password'}}" [(ngModel)]="password" [readOnly]="disableSend">
+                                <input id="password" name="password" type="{{showPassword ? 'text' : 'password'}}" 
+                                    [(ngModel)]="password" [readOnly]="disableSend" appInputVerbatim>
                             </div>
                             <div class="action-buttons">
                                 <a class="row-btn" href="#" appStopClick appBlurClick role="button"

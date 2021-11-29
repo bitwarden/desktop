@@ -541,11 +541,20 @@
   "noItemsInList": {
     "message": "Brak elementów."
   },
-  "requestVerificationCode": {
-    "message": "Poproś o jednorazowe hasło"
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Wyślij kod"
+  },
+  "codeSent": {
+    "message": "Kod został wysłany"
   },
   "verificationCode": {
     "message": "Kod weryfikacyjny"
+  },
+  "confirmIdentity": {
+    "message": "Potwierdź swoją tożsamość, aby kontynuować."
   },
   "verificationCodeRequired": {
     "message": "Kod weryfikacyjny jest wymagany."
@@ -1260,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Klucze szyfrowania konta są unikalne dla każdego użytkownika Bitwarden, więc nie możesz zaimportować zaszyfrowanego pliku eksportu na inne konto."
   },
-  "exportMasterPassword": {
-    "message": "Wpisz hasło główne, aby wyeksportować dane z sejfu."
-  },
   "noOrganizationsList": {
     "message": "Nie należysz do żadnej organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
   },
@@ -1774,6 +1780,9 @@
   },
   "leaveOrganizationConfirmation": {
     "message": "Czy na pewno chcesz opuścić tę organizację?"
+  },
+  "leftOrganization": {
+    "message": "Nie należysz już do tej organizacji."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nie można nawiązać połączenia z serwerem Key Connector. Spróbuj ponownie później."

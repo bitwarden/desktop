@@ -143,13 +143,6 @@ jobs:
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
-      - name: Upload ARM64 .deb artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
-        with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.deb
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.deb
-          if-no-files-found: error
-
       - name: Upload .rpm artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
@@ -157,25 +150,11 @@ jobs:
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
-      - name: Upload ARM64 .rpm artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
-        with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-aarch64.rpm
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-aarch64.rpm
-          if-no-files-found: error
-
       - name: Upload .freebsd artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
-          if-no-files-found: error
-
-      - name: Upload ARM64 .freebsd artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
-        with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.freebsd
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
@@ -190,13 +169,6 @@ jobs:
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
-          if-no-files-found: error
-
-      - name: Upload ARM64 .AppImage artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
-        with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.AppImage
-          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.AppImage
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
