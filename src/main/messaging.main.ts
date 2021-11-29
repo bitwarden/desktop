@@ -5,6 +5,7 @@ import * as path from 'path';
 import { Main } from '../main';
 
 import { StateService } from 'jslib-common/abstractions/state.service';
+import { MenuUpdateRequest } from './menu.updater';
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
@@ -30,8 +31,8 @@ export class MessagingMain {
                 this.scheduleNextSync();
                 break;
             case 'updateAppMenu':
-                this.main.menuMain.updateApplicationMenuState(message.hideChangeMasterPass, message.accounts, message.activeUserId);
-                this.updateTrayMenu(message.accounts ? message.accounts[message.activeUserId] : null);
+                this.main.menuMain.updateApplicationMenuState(message.updateRequest);
+                this.updateTrayMenu(message.updateRequest);
                 break;
             case 'minimizeOnCopy':
                 this.stateService.getMinimizeOnCopyToClipboard().then(
@@ -90,11 +91,12 @@ export class MessagingMain {
         }, SyncInterval);
     }
 
-    private updateTrayMenu(activeAccount: { isAuthenticated: boolean, isLocked: boolean }) {
-        if (this.main.trayMain == null || this.main.trayMain.contextMenu == null) {
+    private updateTrayMenu(updateRequest: MenuUpdateRequest) {
+        if (this.main.trayMain == null || this.main.trayMain.contextMenu == null || updateRequest?.activeUserId == null) {
             return;
         }
         const lockNowTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById('lockNow');
+        const activeAccount = updateRequest.accounts[updateRequest.activeUserId];
         if (lockNowTrayMenuItem != null && activeAccount != null) {
             lockNowTrayMenuItem.enabled = activeAccount.isAuthenticated && !activeAccount.isLocked;
         }
