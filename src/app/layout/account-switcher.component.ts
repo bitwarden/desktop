@@ -47,8 +47,12 @@ export class AccountSwitcherComponent implements OnInit {
             this.accounts = accounts;
 
             for (const userId in this.accounts) {
+                if (userId == null) {
+                    continue;
+                }
+
                 if (userId === await this.stateService.getUserId()) {
-                    this.accounts[userId].profile.authenticationStatus = AuthenticationStatus.Active; 
+                    this.accounts[userId].profile.authenticationStatus = AuthenticationStatus.Active;
                     continue;
                 }
 

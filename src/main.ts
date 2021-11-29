@@ -84,7 +84,7 @@ export class Main {
         this.windowMain = new WindowMain(this.stateService, this.logService, true, undefined, undefined,
             arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
         this.messagingMain = new MessagingMain(this, this.stateService);
-        this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', 
+        this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop',
         null, null, null, 'bitwarden');
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);

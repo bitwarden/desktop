@@ -1,7 +1,7 @@
 export class MenuUpdateRequest {
     hideChangeMasterPassword: boolean;
     activeUserId: string;
-    accounts: { [userId: string]: MenuAccount }
+    accounts: { [userId: string]: MenuAccount };
 }
 
 export class MenuAccount {

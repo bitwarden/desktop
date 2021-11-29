@@ -1,22 +1,18 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 
-import { IMenubarMenu } from "./menubar";
+import { IMenubarMenu } from './menubar';
 
 import { MenuItemConstructorOptions } from 'electron';
 
 export class ViewMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _messagingService: MessagingService;
-    private readonly _isAuthenticated: boolean;
-
     readonly id: 'viewMenu';
 
     get label(): string {
         return this.localize('view');
     }
 
-    get items(): Array<MenuItemConstructorOptions> {
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.searchVault,
             this.separator,
@@ -33,6 +29,10 @@ export class ViewMenu implements IMenubarMenu {
             this.toggleDevTools,
         ];
     }
+
+    private readonly _i18nService: I18nService;
+    private readonly _messagingService: MessagingService;
+    private readonly _isAuthenticated: boolean;
 
     constructor(
         i18nService: I18nService,

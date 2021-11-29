@@ -1,5 +1,5 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { IMenubarMenu } from "./menubar";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { IMenubarMenu } from './menubar';
 
 import { shell } from 'electron';
 
@@ -8,16 +8,13 @@ import { isMacAppStore, isWindowsStore } from 'jslib-electron/utils';
 import { MenuItemConstructorOptions } from 'electron';
 
 export class HelpMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _webVaultUrl: string;
-
     readonly id: string = 'help';
 
     get label(): string {
         return this.localize('help');
     }
 
-    get items(): Array<MenuItemConstructorOptions> {
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.emailUs,
             this.visitOurWebsite,
@@ -32,6 +29,9 @@ export class HelpMenu implements IMenubarMenu {
             this.getBrowserExtension,
         ];
     }
+
+    private readonly _i18nService: I18nService;
+    private readonly _webVaultUrl: string;
 
     constructor(
         i18nService: I18nService,
@@ -74,7 +74,7 @@ export class HelpMenu implements IMenubarMenu {
         };
     }
 
-    private get legalSubmenu(): Array<MenuItemConstructorOptions> {
+    private get legalSubmenu(): MenuItemConstructorOptions[] {
         return [
             {
                 id: 'termsOfService',
@@ -101,7 +101,7 @@ export class HelpMenu implements IMenubarMenu {
         };
     }
 
-    private get followUsSubmenu(): Array<MenuItemConstructorOptions> {
+    private get followUsSubmenu(): MenuItemConstructorOptions[] {
         return [
             {
                 id: 'blog',
@@ -143,7 +143,7 @@ export class HelpMenu implements IMenubarMenu {
         };
     }
 
-    private get getMobileAppSubmenu(): Array<MenuItemConstructorOptions> {
+    private get getMobileAppSubmenu(): MenuItemConstructorOptions[] {
         return [
             {
                 id: 'iOS',
@@ -173,7 +173,7 @@ export class HelpMenu implements IMenubarMenu {
         };
     }
 
-    private get getBrowserExtensionSubmenu(): Array<MenuItemConstructorOptions> {
+    private get getBrowserExtensionSubmenu(): MenuItemConstructorOptions[] {
         return [
             {
                 id: 'chrome',

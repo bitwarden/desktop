@@ -1,24 +1,20 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 
-import { isMacAppStore } from "jslib-electron/utils";
+import { isMacAppStore } from 'jslib-electron/utils';
 
-import { IMenubarMenu } from "./menubar";
+import { IMenubarMenu } from './menubar';
 
 import { MenuItemConstructorOptions } from 'electron';
 
 export class FileMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _messagingService: MessagingService;
-    private readonly _isAuthenticated: boolean;
-
     readonly id: string = 'fileMenu';
 
     get label(): string {
         return this.localize('file');
     }
 
-    get items(): Array<MenuItemConstructorOptions> {
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.addNewLogin,
             this.addNewItem,
@@ -30,6 +26,10 @@ export class FileMenu implements IMenubarMenu {
         ];
     }
 
+    private readonly _i18nService: I18nService;
+    private readonly _messagingService: MessagingService;
+    private readonly _isAuthenticated: boolean;
+
     constructor(
         i18nService: I18nService,
         messagingService: MessagingService,
@@ -37,7 +37,7 @@ export class FileMenu implements IMenubarMenu {
     ) {
         this._i18nService = i18nService;
         this._messagingService = messagingService;
-        this._isAuthenticated = isAuthenticated
+        this._isAuthenticated = isAuthenticated;
     }
 
     private get addNewLogin(): MenuItemConstructorOptions {
@@ -58,7 +58,7 @@ export class FileMenu implements IMenubarMenu {
         };
     }
 
-    private get addNewItemSubmenu(): Array<MenuItemConstructorOptions> {
+    private get addNewItemSubmenu(): MenuItemConstructorOptions[] {
          return [
             {
                 id: 'typeLogin',
@@ -84,7 +84,7 @@ export class FileMenu implements IMenubarMenu {
                 click: () => this.sendMessage('newSecureNote'),
                 accelerator: 'CmdOrCtrl+Shift+S',
             },
-        ]
+        ];
     }
 
     private get addNewFolder(): MenuItemConstructorOptions {

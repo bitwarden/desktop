@@ -4,6 +4,7 @@ import { BitwardenMenu } from './menu.bitwarden';
 import { EditMenu } from './menu.edit';
 import { FileMenu } from './menu.file';
 import { HelpMenu } from './menu.help';
+import { MenuUpdateRequest } from './menu.updater';
 import { ViewMenu } from './menu.view';
 import { WindowMenu } from './menu.window';
 
@@ -11,9 +12,10 @@ import {
     Menu,
     MenuItemConstructorOptions,
 } from 'electron';
-import { MenuUpdateRequest } from './menu.updater';
+
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+
 import { UpdaterMain } from 'jslib-electron/updater.main';
 import { WindowMain } from 'jslib-electron/window.main';
 
@@ -21,14 +23,14 @@ export interface IMenubarMenu {
     id: string;
     label: string;
     visible?: boolean; // Assumes true if null
-    items: Array<MenuItemConstructorOptions>;
+    items: MenuItemConstructorOptions[];
 }
 
 export class Menubar {
-    private readonly items: Array<IMenubarMenu>;
+    private readonly items: IMenubarMenu[];
 
     get menu(): Menu {
-        const template: Array<MenuItemConstructorOptions> = [];
+        const template: MenuItemConstructorOptions[] = [];
         if (this.items != null) {
             this.items.forEach((item: IMenubarMenu) => {
                 if (item != null) {
@@ -37,9 +39,9 @@ export class Menubar {
                         label: item.label,
                         submenu: item.items,
                         visible: item.visible ?? true,
-                    })
+                    });
                 }
-            })
+            });
         }
         return Menu.buildFromTemplate(template);
     }
@@ -98,6 +100,6 @@ export class Menubar {
                 i18nService,
                 webVaultUrl,
             ),
-        ]
+        ];
     }
 }

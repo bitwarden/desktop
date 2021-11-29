@@ -1,33 +1,27 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 
 import { isMacAppStore, isWindowsStore } from 'jslib-electron/utils';
 
-import { 
+import {
     IMenubarMenu,
-} from "./menubar";
+} from './menubar';
 
 import {
     BrowserWindow,
     dialog,
-    shell,
     MenuItemConstructorOptions,
+    shell,
 } from 'electron';
 
 export class AccountMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _messagingService: MessagingService;
-    private readonly _webVaultUrl: string;
-    private readonly _window: BrowserWindow;
-    private readonly _isAuthenticated: boolean;
-
     readonly id: string = 'accountMenu';
 
-    get label(): string { 
+    get label(): string {
         return this.localize('account');
     }
 
-    get items(): Array<MenuItemConstructorOptions> {
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.premiumMembership,
             this.changeMasterPassword,
@@ -35,6 +29,12 @@ export class AccountMenu implements IMenubarMenu {
             this.fingerprintPhrase,
         ];
     }
+
+    private readonly _i18nService: I18nService;
+    private readonly _messagingService: MessagingService;
+    private readonly _webVaultUrl: string;
+    private readonly _window: BrowserWindow;
+    private readonly _isAuthenticated: boolean;
 
     constructor(
         i18nService: I18nService,
@@ -57,7 +57,7 @@ export class AccountMenu implements IMenubarMenu {
             id: 'premiumMembership',
             visible: !isWindowsStore() && !isMacAppStore(),
             enabled: this._isAuthenticated,
-        }
+        };
     }
 
     private get changeMasterPassword(): MenuItemConstructorOptions {
@@ -79,7 +79,7 @@ export class AccountMenu implements IMenubarMenu {
                 }
             },
             enabled: this._isAuthenticated,
-        }
+        };
     }
 
     private get twoStepLogin(): MenuItemConstructorOptions {
@@ -101,7 +101,7 @@ export class AccountMenu implements IMenubarMenu {
                 }
             },
             enabled: this._isAuthenticated,
-        }
+        };
     }
 
     private get fingerprintPhrase(): MenuItemConstructorOptions {
@@ -110,7 +110,7 @@ export class AccountMenu implements IMenubarMenu {
             id: 'fingerprintPhrase',
             click: () => this.sendMessage('showFingerprintPhrase'),
             enabled: this._isAuthenticated,
-        }
+        };
     }
 
     private localize(s: string) {

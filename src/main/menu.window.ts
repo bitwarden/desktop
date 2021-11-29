@@ -1,25 +1,21 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 
-import { isMacAppStore } from "jslib-electron/utils";
-import { WindowMain } from "jslib-electron/window.main";
+import { isMacAppStore } from 'jslib-electron/utils';
+import { WindowMain } from 'jslib-electron/window.main';
 
-import { IMenubarMenu } from "./menubar";
+import { IMenubarMenu } from './menubar';
 
 import { MenuItemConstructorOptions } from 'electron';
 
 export class WindowMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _messagingService: MessagingService;
-    private readonly _window: WindowMain;
-
     readonly id: string;
 
     get label(): string {
         return this.localize('window');
     }
 
-    get items(): Array<MenuItemConstructorOptions> {
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.minimize,
             this.hideToMenu,
@@ -30,6 +26,10 @@ export class WindowMenu implements IMenubarMenu {
             this.close,
         ];
     }
+
+    private readonly _i18nService: I18nService;
+    private readonly _messagingService: MessagingService;
+    private readonly _window: WindowMain;
 
     constructor(
         i18nService: I18nService,

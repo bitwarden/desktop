@@ -1,4 +1,4 @@
-import { IMenubarMenu } from "./menubar";
+import { IMenubarMenu } from './menubar';
 
 import {
     BrowserWindow,
@@ -7,34 +7,34 @@ import {
     MenuItemConstructorOptions,
 } from 'electron';
 
-import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
 
-import { UpdaterMain } from "jslib-electron/updater.main";
-import { isMac, isSnapStore, isWindowsStore } from "jslib-electron/utils";
+import { UpdaterMain } from 'jslib-electron/updater.main';
+import { isMac, isSnapStore, isWindowsStore } from 'jslib-electron/utils';
 
 export class AboutMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _updater: UpdaterMain;
-    private readonly _window: BrowserWindow;
-    private readonly _version: string;
-
     readonly id: string = 'about';
 
     get visible(): boolean {
         return !isMac();
-    } 
+    }
 
     get label(): string {
         return this.localize('about');
     }
 
-    get items(): Array<MenuItemConstructorOptions> { 
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.separator,
             this.checkForUpdates,
             this.aboutBitwarden,
         ];
     }
+
+    private readonly _i18nService: I18nService;
+    private readonly _updater: UpdaterMain;
+    private readonly _window: BrowserWindow;
+    private readonly _version: string;
 
     constructor(
         i18nService: I18nService,
@@ -58,7 +58,7 @@ export class AboutMenu implements IMenubarMenu {
             label: this.localize('checkForUpdates'),
             visible: !isWindowsStore() && !isSnapStore(),
             click: () => this.checkForUpdate(),
-        }
+        };
     }
 
     private get aboutBitwarden(): MenuItemConstructorOptions {
@@ -83,7 +83,7 @@ export class AboutMenu implements IMenubarMenu {
                     clipboard.writeText(aboutInformation);
                 }
             },
-        }
+        };
     }
 
     private localize(s: string, p?: string) {
@@ -92,5 +92,5 @@ export class AboutMenu implements IMenubarMenu {
 
     private async checkForUpdate() {
         this._updater.checkForUpdate(true);
-    } 
+    }
 }

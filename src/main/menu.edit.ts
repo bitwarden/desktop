@@ -1,22 +1,18 @@
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { I18nService } from 'jslib-common/abstractions/i18n.service';
+import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 
-import { IMenubarMenu } from "./menubar";
+import { IMenubarMenu } from './menubar';
 
 import { MenuItemConstructorOptions } from 'electron';
 
 export class EditMenu implements IMenubarMenu {
-    private readonly _i18nService: I18nService;
-    private readonly _messagingService: MessagingService;
-    private readonly _isAuthenticated: boolean;
-
     readonly id: string = 'editMenu';
 
     get label(): string {
         return this.localize('edit');
     }
 
-    get items(): Array<MenuItemConstructorOptions> {
+    get items(): MenuItemConstructorOptions[] {
         return [
             this.undo,
             this.redo,
@@ -33,16 +29,20 @@ export class EditMenu implements IMenubarMenu {
         ];
     }
 
+    private readonly _i18nService: I18nService;
+    private readonly _messagingService: MessagingService;
+    private readonly _isAuthenticated: boolean;
+
     constructor(
         i18nService: I18nService,
         messagingService: MessagingService,
         isAuthenticated: boolean,
-    ) { 
+    ) {
         this._i18nService = i18nService;
         this._messagingService = messagingService;
         this._isAuthenticated = isAuthenticated;
     }
-    
+
     private get undo(): MenuItemConstructorOptions {
         return {
             id: 'undo',
