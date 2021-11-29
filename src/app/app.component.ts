@@ -392,7 +392,11 @@ export class AppComponent implements OnInit {
             this.keyConnectorService.clear(),
         ]);
 
-        await this.stateService.setBiometricLocked(true);
+        await this.stateService.clean({ userId: userId });
+
+        await this.stateService.setBiometricLocked(true, { userId: userId });
+
+        await this.updateAppMenu();
 
         if (userId === await this.stateService.getUserId()) {
             this.searchService.clearIndex();
@@ -404,8 +408,6 @@ export class AppComponent implements OnInit {
                 this.router.navigate(['login']);
             });
         }
-
-        await this.stateService.clean({ userId: userId });
     }
 
     private async recordActivity() {
