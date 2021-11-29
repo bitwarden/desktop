@@ -234,7 +234,7 @@ export class SettingsComponent implements OnInit {
             await this.stateService.setNoAutoPromptBiometrics(null);
             this.noAutoPromptBiometrics = false;
         }
-        this.stateService.setBiometricLocked(false);
+        await this.stateService.setBiometricLocked(false);
         await this.cryptoService.toggleKey();
     }
 

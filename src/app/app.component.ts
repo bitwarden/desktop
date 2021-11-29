@@ -147,7 +147,7 @@ export class AppComponent implements OnInit {
                         this.router.navigate(['login']);
                         break;
                     case 'logout':
-                        this.logOut(!!message.expired, message.userId);
+                        await this.logOut(!!message.expired, message.userId);
                         break;
                     case 'lockVault':
                         await this.vaultTimeoutService.lock(true, message.userId);
