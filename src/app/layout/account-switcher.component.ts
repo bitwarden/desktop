@@ -34,6 +34,10 @@ export class AccountSwitcherComponent implements OnInit {
     accounts: { [userId: string]: Account };
     activeAccountEmail: string;
 
+    get showSwitcher() {
+        return this.accounts != null && Object.keys(this.accounts).length > 0;
+    }
+
     constructor(private stateService: StateService, private vaultTimeoutService: VaultTimeoutService,
         private messagingService: MessagingService, private router: Router) {}
 
