@@ -9,7 +9,7 @@ on:
         required: true
 
 jobs:
-  bump_props_version:
+  bump_version:
     name: "Create version_bump_${{ github.event.inputs.version_number }} branch"
     runs-on: ubuntu-20.04
     steps:
