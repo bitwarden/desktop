@@ -81,7 +81,7 @@
     user-select: none;
 
     @include themify($themes) {
-        color: themed('headerInputColor'); // TODO: Change to headerTextColor?
+        color: themed('accountSwitcherTextColor');
     }
 
     img {
@@ -98,7 +98,7 @@
     &:hover {
         @include themify($themes) {
             background-color: themed('headerBorderColor');
-            color: themed('headerInputColor'); // TODO: Change to headerTextColor?
+            color: themed('accountSwitcherTextColor');
         }
     }
 }

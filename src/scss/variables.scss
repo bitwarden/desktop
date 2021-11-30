@@ -89,6 +89,7 @@ $themes: (
         calloutBorderColor: $border-color-dark,
         calloutBackgroundColor: $background-color,
         acccountSwitcherBackgroundColor: $background-color,
+        accountSwitcherTextColor: #ffffff,
     ),
     dark: (
         textColor: #ffffff,
@@ -140,6 +141,7 @@ $themes: (
         calloutBorderColor: #2f2f2f,
         calloutBackgroundColor: #363636,
         accountSwitcherBackgroundColor: #2f2f2f,
+        accountSwitcherTextColor: #ffffff,
     ),
     nord: (
         textColor: $nord5,
@@ -191,6 +193,7 @@ $themes: (
         calloutBorderColor: $nord1,
         calloutBackgroundColor: $nord2,
         accountSwitcherBackgroundColor: $nord0,
+        accountSwitcherTextColor: $nord5,
     ),
 );
 
