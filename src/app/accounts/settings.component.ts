@@ -150,7 +150,7 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-        this.vaultTimeout.setValue(await this.stateService.getVaultTimeout() ?? 1);
+        this.vaultTimeout.setValue(await this.stateService.getVaultTimeout() ?? 15);
         this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction() ?? 'lock';
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
@@ -163,7 +163,7 @@ export class SettingsComponent implements OnInit {
         this.startToTray = await this.stateService.getEnableStartToTray() ?? false;
         this.locale = await this.stateService.getLocale() ?? 'en';
         this.theme = await this.stateService.getTheme() ?? null;
-        this.clearClipboard = await this.stateService.getClearClipboard() ?? 0;
+        this.clearClipboard = await this.stateService.getClearClipboard() ?? null;
         this.minimizeOnCopyToClipboard = await this.stateService.getMinimizeOnCopyToClipboard() ?? false;
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
         this.biometric = await this.vaultTimeoutService.isBiometricLockSet() ?? false;
