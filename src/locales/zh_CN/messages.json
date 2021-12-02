@@ -268,6 +268,9 @@
   "lastName": {
     "message": "姓"
   },
+  "fullName": {
+    "message": "全名"
+  },
   "address1": {
     "message": "地址 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "布尔值"
+  },
+  "cfTypeLinked": {
+    "message": "已链接",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "链接的值",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "移除"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "没有可列出的项目。"
   },
+  "sendVerificationCode": {
+    "message": "发送验证码到您的电子邮箱"
+  },
+  "sendCode": {
+    "message": "发送验证码"
+  },
+  "codeSent": {
+    "message": "验证码已发送"
+  },
   "verificationCode": {
     "message": "验证码"
   },
+  "confirmIdentity": {
+    "message": "确认后继续。"
+  },
   "verificationCodeRequired": {
     "message": "必须填写验证码。"
+  },
+  "invalidVerificationCode": {
+    "message": "无效的验证码"
   },
   "continue": {
     "message": "继续"
@@ -761,7 +787,7 @@
     "message": "同步失败"
   },
   "yourVaultIsLocked": {
-    "message": "您的密码库已锁定，请验证您的主密码以继续。"
+    "message": "您的密码库已锁定。请先验证您的身份。"
   },
   "unlock": {
     "message": "解锁​​​​"
@@ -789,7 +815,7 @@
     "message": "两步登录"
   },
   "vaultTimeout": {
-    "message": "密码库超时"
+    "message": "密码库超时时间"
   },
   "vaultTimeoutDesc": {
     "message": "选择您的密码库何时超时并执行所选的动作。"
@@ -932,11 +958,11 @@
     "message": "更改本应用程序的颜色主题。"
   },
   "dark": {
-    "message": "暗",
+    "message": "深色",
     "description": "Dark color"
   },
   "light": {
-    "message": "亮",
+    "message": "浅色",
     "description": "Light color"
   },
   "copy": {
@@ -1042,7 +1068,7 @@
     "message": "您可以在 bitwarden.com 网页版密码库购买高级会员。现在要访问吗？"
   },
   "premiumCurrentMember": {
-    "message": "您是高级会员！"
+    "message": "您目前是高级会员！"
   },
   "premiumCurrentMemberThanks": {
     "message": "感谢您支持 Bitwarden。"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "账户加密密钥对每个 Bitwarden 用户账户都是唯一的，所以您不能将加密的导出导入到另一个账户。"
   },
-  "exportMasterPassword": {
-    "message": "输入主密码来导出你的密码库。"
-  },
   "noOrganizationsList": {
     "message": "您没有加入任何组织。同一组织的用户可以安全地与其他用户共享项目。"
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "无效 PIN 码。"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "您的密码库已锁定。请验证您的 PIN 码以继续。"
   },
   "unlockWithWindowsHello": {
     "message": "使用 Windows Hello 解锁"
@@ -1404,13 +1424,13 @@
     "message": "永久删除"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "超时后注销将解除对密码库的所有访问权限，并需要进行在线验证。确定使用此设置吗？"
+    "message": "超时后注销将解除对密码库的所有访问权限，并需要进行在线身份验证。确定使用此设置吗？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "超时动作确认"
   },
   "enterpriseSingleSignOn": {
-    "message": "企业单点登录（SSO）"
+    "message": "企业单点登录"
   },
   "setMasterPassword": {
     "message": "设置主密码"
@@ -1695,22 +1715,22 @@
     "message": "此操作受到保护。若要继续，请重新输入您的主密码以验证您的身份。"
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "已更新主密码"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "更新主密码"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "您的主密码最近被您组织的管理员更改过。要访问密码库，您必须立即更新它。继续操作将使您退出当前会话，要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
   },
   "hours": {
-    "message": "Hours"
+    "message": "小时"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "分钟"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "您的组织策略正在影响您的密码库超时时间。最大允许的密码库超时时间是 $HOURS$ 小时 $MINUTES$ 分钟。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1743,45 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "您的密码库超时时间超出了组织设置的限制。"
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "自动注册"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "此组织有一个企业策略，将自动为你注册密码重置。注册后将允许组织管理员更改您的主密码。"
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "密码库导出已禁用"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "一个或多个组织策略阻止您导出个人密码库。"
+  },
+  "removeMasterPassword": {
+    "message": "移除主密码"
+  },
+  "removedMasterPassword": {
+    "message": "主密码已移除。"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ 使用自托管密钥服务器 SSO。这个组织的成员登录时将不再需要主密码。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "离开组织"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "您确定要离开这个组织吗？"
+  },
+  "leftOrganization": {
+    "message": "您已经离开该组织。"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "无法连接到密钥连接器，请稍后再试。"
   }
 }
