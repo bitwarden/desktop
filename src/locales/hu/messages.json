@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "A pinkód érvénytelen."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "A széf zárolásra került. A folytatáshoz meg kel adni a pinkódot."
-  },
   "unlockWithWindowsHello": {
     "message": "Feloldás Windows Hello segítségével"
   },
