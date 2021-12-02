@@ -542,19 +542,19 @@
     "message": "Нема ставке која се може приказати."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Пошаљите верификациони код на вашу е-пошту"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Пошаљи код"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Код послан"
   },
   "verificationCode": {
     "message": "Верификациони код"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Потврдите свој идентитет да би наставили."
   },
   "verificationCodeRequired": {
     "message": "Верификациони код је обавезан."
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Погрешан ПИН код."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Сеф је закључан. Потврдите ПИН код за наставак."
   },
   "unlockWithWindowsHello": {
     "message": "Откључај са Windows Hello"
