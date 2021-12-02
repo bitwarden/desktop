@@ -269,7 +269,7 @@
     "message": "Van"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Volle naam"
   },
   "address1": {
     "message": "Adres 1"
@@ -332,11 +332,11 @@
     "message": "Booleaans"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Gekoppel",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Gekoppelde waarde",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -542,25 +542,25 @@
     "message": "Daar is geen items om te lys nie."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Stuur ’n bevestigingskode na u e-pos"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Verstuur kode"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kode verstuur"
   },
   "verificationCode": {
     "message": "Bevestigingskode"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Bevestig u identiteit om voort te gaan."
   },
   "verificationCodeRequired": {
     "message": "Bevestigingskode word vereis."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Ongeldige bevestigingskode"
   },
   "continue": {
     "message": "Gaan Voort"
@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Ongeldige PIN-kode."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "U kluis is gesluit. Verifieer u PIN-kode om voort te gaan."
-  },
   "unlockWithWindowsHello": {
     "message": "Ontgrendel met Windows Hello"
   },
@@ -1761,13 +1758,13 @@
     "message": "Een of meer organisasiebeleide verhoed u om u persoonlike kluis uit te stuur."
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Verwyder hoofwagwoord"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Hoofwagwoord is verwyder."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ gebruik SSO met ’n sleutelbediener op ’n eie gasheer. ’n Hoofwagwoord word nie meer vereis vir aantekening vir lede van hierdie organisasie nie.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1776,15 +1773,15 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Verlaat organisasie"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Is u seker u wil hierdie organisasie verlaat?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "U het die organisasie verlaat."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "Kan nie die sleutelkoppelstuk bereik nie, probeer later weer."
   }
 }
