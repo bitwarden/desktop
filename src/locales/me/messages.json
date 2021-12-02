@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Nevažeći PIN kod."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Vaš trezor je zaključan. Potvrdite svoj PIN kod da biste nastavili."
-  },
   "unlockWithWindowsHello": {
     "message": "Otključaj sa Windows Hello"
   },
