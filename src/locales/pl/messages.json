@@ -542,7 +542,7 @@
     "message": "Brak elementów."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Wyślij kod weryfikacyjny na adres e-mail"
   },
   "sendCode": {
     "message": "Wyślij kod"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Kod PIN jest nieprawidłowy."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Sejf jest zablokowany. Wpisz kod PIN, aby kontynuować."
   },
   "unlockWithWindowsHello": {
     "message": "Odblokuj za pomocą Windows Hello"
