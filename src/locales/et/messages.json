@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Vale PIN kood."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
-  },
   "unlockWithWindowsHello": {
     "message": "Lukusta lahti Windows Helloga"
   },
