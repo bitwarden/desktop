@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Last name"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "Address 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Remove"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "There are no items to list."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Verification code"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Verification code is required."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Continue"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
-  "exportMasterPassword": {
-    "message": "Enter your master password to export your vault data."
-  },
   "noOrganizationsList": {
     "message": "You do not belong to any organisations. Organisations allow you to share items securely with other users."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Invalid PIN code."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
   },
   "unlockWithWindowsHello": {
     "message": "Unlock with Windows Hello"
@@ -1701,7 +1721,7 @@
     "message": "Update Master Password"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your Master Password was recently changed by an administrator in your organisation. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "hours": {
     "message": "Hours"
@@ -1710,7 +1730,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Your organisation policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1743,45 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Your vault timeout exceeds the restrictions set by your organisation."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatic Enrollment"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "This organisation has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organisation administrators to change your master password."
   },
   "vaultExportDisabled": {
     "message": "Vault Export Disabled"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "One or more organisation policies prevents you from exporting your personal vault."
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organisation.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organisation"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organisation?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organisation."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
   }
 }
