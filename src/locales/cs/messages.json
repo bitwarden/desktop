@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Neplatný PIN kód."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat PIN."
-  },
   "unlockWithWindowsHello": {
     "message": "Odemknout pomocí Windows Hello"
   },
