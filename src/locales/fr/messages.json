@@ -787,7 +787,7 @@
     "message": "Échec de la synchronisation"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Code PIN invalide."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
   },
   "unlockWithWindowsHello": {
     "message": "Déverrouiller avec Windows Hello"
