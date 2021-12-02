@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "অবৈধ পিন কোড।"
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "আপনার ভল্ট লক করা আছে। চালিয়ে যেতে আপনার পিন কোড যাচাই করান।"
-  },
   "unlockWithWindowsHello": {
     "message": "Unlock with Windows Hello"
   },
