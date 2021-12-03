@@ -79,7 +79,7 @@ export class Main {
         // TODO: this state service will have access to on disk storage, but not in memory storage.
         // If we could get this to work using the stateService singleton that the rest of the app uses we could save
         // ourselves from some hacks, like having to manually update the app menu vs. the menu subscribing to events.
-        this.stateService = new StateService(this.storageService, null, this.logService);
+        this.stateService = new StateService(this.storageService, null, this.logService, null);
 
         this.windowMain = new WindowMain(this.stateService, this.logService, true, undefined, undefined,
             arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));

@@ -47,6 +47,7 @@ import { SearchService } from 'jslib-common/services/search.service';
 import { SendService } from 'jslib-common/services/send.service';
 import { SettingsService } from 'jslib-common/services/settings.service';
 import { StateService } from 'jslib-common/services/state.service';
+import { StateMigrationService } from 'jslib-common/services/stateMigration.service';
 import { SyncService } from 'jslib-common/services/sync.service';
 import { SystemService } from 'jslib-common/services/system.service';
 import { TokenService } from 'jslib-common/services/token.service';
@@ -103,7 +104,7 @@ const messagingService = new ElectronRendererMessagingService(broadcasterService
 const storageService: StorageServiceAbstraction = new ElectronRendererStorageService();
 const secureStorageService: StorageServiceAbstraction = new ElectronRendererSecureStorageService();
 const stateService = new StateService(storageService, secureStorageService,
-    logService);
+    logService, new StateMigrationService(storageService, secureStorageService));
 const platformUtilsService = new ElectronPlatformUtilsService(i18nService, messagingService, true, stateService);
 const cryptoFunctionService: CryptoFunctionServiceAbstraction = new WebCryptoFunctionService(window,
     platformUtilsService);
