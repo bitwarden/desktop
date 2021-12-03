@@ -42,11 +42,11 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
         storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
         apiService: ApiService, private route: ActivatedRoute,
-        private broadcasterService: BroadcasterService, private ngZone: NgZone,
+        private broadcasterService: BroadcasterService, ngZone: NgZone,
         logService: LogService, keyConnectorService: KeyConnectorService) {
         super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
             storageService, vaultTimeoutService, environmentService, stateService, apiService, logService,
-            keyConnectorService);
+            keyConnectorService, ngZone);
     }
 
     async ngOnInit() {
