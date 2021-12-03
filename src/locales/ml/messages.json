@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "അസാധുവായ പിൻ കോഡ്."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "നിങ്ങളുടെ വാൾട് പൂട്ടിയിരിക്കുന്നു. തുടരാൻ പിൻ കോഡ് സ്ഥിരീകരിക്കുക."
-  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello ഉപയോഗിച്ച് അൺലോക്കുചെയ്യുക"
   },

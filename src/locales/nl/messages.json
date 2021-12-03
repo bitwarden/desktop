@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Ongeldige PIN-code."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
-  },
   "unlockWithWindowsHello": {
     "message": "Ontgrendelen met Windows Hello"
   },

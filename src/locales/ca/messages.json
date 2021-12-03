@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "El codi PIN no és vàlid."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
-  },
   "unlockWithWindowsHello": {
     "message": "Desbloqueja amb Windows Hello"
   },

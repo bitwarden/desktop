@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Mã PIN không hợp lệ."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
-  },
   "unlockWithWindowsHello": {
     "message": "Mở khóa với Windows Hello"
   },

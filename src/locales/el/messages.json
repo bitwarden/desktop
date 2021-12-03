@@ -269,7 +269,7 @@
     "message": "Επώνυμο"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Ονοματεπώνυμο"
   },
   "address1": {
     "message": "Διεύθυνση 1"
@@ -332,11 +332,11 @@
     "message": "Δυαδικό"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Συνδεδεμένο",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Συνδεδεμένη τιμή",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -542,25 +542,25 @@
     "message": "Δεν υπάρχουν στοιχεία στη λίστα."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Στείλτε έναν κωδικό επαλήθευσης στο email σας"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Αποστολή Κωδικού"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Ο Κωδικός Στάλθηκε"
   },
   "verificationCode": {
     "message": "Κωδικός Επαλήθευσης"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Επιβεβαιώστε την ταυτότητα σας για να συνεχίσετε."
   },
   "verificationCodeRequired": {
     "message": "Απαιτείται ο κωδικός επαλήθευσης."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Μη έγκυρος κωδικός επαλήθευσης"
   },
   "continue": {
     "message": "Συνέχεια"
@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Μη έγκυρος κωδικός PIN."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κωδικό PIN για να συνεχίσετε."
-  },
   "unlockWithWindowsHello": {
     "message": "Ξεκλειδώστε με το Windows Hello"
   },
@@ -1761,13 +1758,13 @@
     "message": "Μία ή περισσότερες οργανωτικές πολιτικές σας αποτρέπει από την εξαγωγή του προσωπικού vault."
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Αφαίρεση Κύριου Κωδικού Πρόσβασης"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Ο κύριος κωδικός αφαιρέθηκε."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ χρησιμοποιεί SSO με έναν αυτοεξυπηρετητή κλειδιών. Ένας κύριος κωδικός πρόσβασης δεν απαιτείται πλέον για να συνδεθείτε για τα μέλη αυτού του οργανισμού.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1776,15 +1773,15 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Αποχώρηση από τον οργανισμό"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Είστε βέβαιοι ότι θέλετε να φύγετε από αυτόν τον οργανισμό;"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Έχετε φύγει από τον οργανισμό."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "Δεν είναι δυνατή η πρόσβαση στον σύνδεσμο κλειδιού, προσπαθήστε ξανά αργότερα."
   }
 }

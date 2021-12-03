@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Kode PIN tidak valid."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan."
-  },
   "unlockWithWindowsHello": {
     "message": "Buka dengan Windows Hello"
   },

@@ -542,19 +542,19 @@
     "message": "Der er ingen elementer at vise."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Send en bekræftelseskode til din e-mail"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Send kode"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kode sendt"
   },
   "verificationCode": {
     "message": "Bekræftelseskode"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Bekræft din identitet for at fortsætte."
   },
   "verificationCodeRequired": {
     "message": "Bekræftelseskode er påkrævet."
@@ -787,7 +787,7 @@
     "message": "Synkronisering mislykkedes"
   },
   "yourVaultIsLocked": {
-    "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
+    "message": "Din boks er låst. Bekræft din identitet for at fortsætte."
   },
   "unlock": {
     "message": "Lås op"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ugyldig pinkode."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Din boks er låst. Bekræft din pinkode for at fortsætte."
   },
   "unlockWithWindowsHello": {
     "message": "Lås op med Windows Hello"
