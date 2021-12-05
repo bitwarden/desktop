@@ -7,6 +7,10 @@ import { SearchService } from 'jslib/abstractions/search.service';
 
 import { CiphersComponent as BaseCiphersComponent } from 'jslib/angular/components/ciphers.component';
 
+import { CipherView } from 'jslib/models/view/cipherView';
+
+import { UserService } from '../../services/user.service';
+
 @Component({
     selector: 'app-vault-ciphers',
     templateUrl: 'ciphers.component.html',
@@ -21,6 +25,7 @@ export class CiphersComponent extends BaseCiphersComponent {
 
     constructor(searchService: SearchService, protected platformUtilsService: PlatformUtilsService,
         protected i18nService: I18nService, protected cipherService: CipherService,
+        protected userService: UserService
     ) {
         super(searchService);
         this.pageSize = 250;
@@ -81,6 +86,31 @@ export class CiphersComponent extends BaseCiphersComponent {
 
         return true;
     }
+
+    // Cozy customization, differentiate shared Ciphers from ciphers in "Cozy Connectors" organization
+    // /*
+    async load(filter: (cipher: CipherView) => boolean = null, deleted: boolean = false) {
+        this.deleted = deleted || false;
+        await this.applyFilter(filter);
+
+        for (const cipherView of this.ciphers) {
+            // Here we cast cipherView as `any` because overriding original CipherView class from JSLib would be a bit complex
+            (cipherView as any).isKonnector = await this.isKonnector(cipherView);
+        }
+
+        this.loaded = true;
+    }
+
+    protected async isKonnector(cipher: CipherView) {
+        const konnectorsOrg = await this.userService.getKonnectorsOrganization();
+
+        if (cipher.organizationId === konnectorsOrg.organizationId) {
+            return true;
+        }
+
+        return false;
+    }
+    // */
 
     protected deleteCiphers() {
         const ids = this.ciphers.map(cipher => cipher.id);

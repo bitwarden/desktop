@@ -1,3 +1,5 @@
+import { Q } from 'cozy-client';
+
 import { CryptoService } from 'jslib/abstractions/crypto.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { TokenService } from 'jslib/abstractions/token.service';
@@ -9,14 +11,31 @@ import { ProfileOrganizationResponse } from 'jslib/models/response/profileOrgani
 import { ApiService } from 'jslib/services/api.service';
 import { UserService as UserServiceBase } from 'jslib/services/user.service';
 
+import { CozyClientService } from '../cozy/services/cozy-client.service';
+
 const Keys = {
     organizationsPrefix: 'organizations_',
 };
 
+// Cozy customization, store "Cozy Connectors" organization and collection from user settings
+// /*
+interface KonnectorsOrg {
+    organizationId: string;
+    collectionId: string;
+}
+// */
+
 export class UserService extends UserServiceBase {
     private localStorageService: StorageService;
 
-    constructor(tokenService: TokenService, storageService: StorageService, private cryptoService: CryptoService, private apiService: ApiService) {
+    // Cozy customization, store "Cozy Connectors" organization and collection from user settings
+    // /*
+    private konnectorsOrg: KonnectorsOrg = null;
+    // */
+
+    constructor(tokenService: TokenService, storageService: StorageService, private cryptoService: CryptoService, private apiService: ApiService,
+        protected clientService: CozyClientService
+    ) {
         super(tokenService, storageService);
 
         this.localStorageService = storageService;
@@ -77,4 +96,25 @@ export class UserService extends UserServiceBase {
 
         return owner;
     }
+
+    // Cozy customization, get "Cozy Connectors" organization and collection from user settings
+    // /*
+    async getKonnectorsOrganization(): Promise<KonnectorsOrg> {
+        if (this.konnectorsOrg) {
+            return this.konnectorsOrg;
+        }
+
+        const settings = await this.clientService.GetClient().stackClient.fetchJSON(
+            'GET',
+            '/data/io.cozy.settings/io.cozy.settings.bitwarden'
+        );
+
+        this.konnectorsOrg = {
+            organizationId: settings.organization_id,
+            collectionId: settings.collection_id,
+        };
+
+        return this.konnectorsOrg;
+    }
+    // */
 }

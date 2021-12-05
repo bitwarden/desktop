@@ -50,6 +50,9 @@
   "shared": {
     "message": "Partagé"
   },
+  "sharedWithKonnector": {
+    "message": "Partagé avec un Connecteur Cozy"
+  },
   "share": {
     "message": "Partager"
   },
