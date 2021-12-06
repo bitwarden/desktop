@@ -16,8 +16,6 @@ import { first } from 'rxjs/operators';
 
 import { ToasterService } from 'angular2-toaster';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
-
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
@@ -39,6 +37,7 @@ import { FolderView } from 'jslib-common/models/view/folderView';
 import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
 
 import { ModalService } from 'jslib-angular/services/modal.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
@@ -47,6 +46,7 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
+
 import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
 const BroadcasterSubscriptionId = 'VaultComponent';

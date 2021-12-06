@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { ipcRenderer } from 'electron';
 import Swal from 'sweetalert2';
 
@@ -18,6 +19,7 @@ import { ElectronConstants } from 'jslib-electron/electronConstants';
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = 'sha1';
 
+@Injectable()
 export class NativeMessagingService {
     private sharedSecrets = new Map<string, SymmetricCryptoKey>();
 

@@ -10,6 +10,7 @@ import {
 } from '@angular/router';
 
 import { ApiService } from 'jslib-common/abstractions/api.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
@@ -18,8 +19,6 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { UserService } from 'jslib-common/abstractions/user.service';
-
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 const BroadcasterSubscriptionId = 'SetPasswordComponent';
 
