@@ -179,6 +179,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         BitwardenToastModule.forRoot({
             maxOpened: 5,
             autoDismiss: true,
+            closeButton: true,
         }),
         ScrollingModule,
         A11yModule,

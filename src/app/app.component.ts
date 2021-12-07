@@ -79,10 +79,6 @@ export class AppComponent implements OnInit {
     @ViewChild('appPasswordGenerator', { read: ViewContainerRef, static: true })
         passwordGeneratorModalRef: ViewContainerRef;
 
-    toasterConfig: Partial<IndividualConfig> = {
-        closeButton: true,
-    };
-
     private lastActivity: number = null;
     private modal: ModalRef = null;
     private idleTimer: number = null;
@@ -423,7 +419,7 @@ export class AppComponent implements OnInit {
     private showToast(msg: any) {
         let message = '';
 
-        const options = Object.assign({}, this.toasterConfig);
+        const options: Partial<IndividualConfig> = {};
 
         if (typeof (msg.text) === 'string') {
             message = msg.text;
