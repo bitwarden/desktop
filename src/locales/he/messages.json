@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "קוד PIN לא תקין."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך."
-  },
   "unlockWithWindowsHello": {
     "message": "שחרור נעילה עם Windows Hello"
   },

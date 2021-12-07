@@ -548,7 +548,7 @@
     "message": "傳送驗證碼"
   },
   "codeSent": {
-    "message": "已送出驗證碼"
+    "message": "驗證碼已送出"
   },
   "verificationCode": {
     "message": "驗證碼"
@@ -787,7 +787,7 @@
     "message": "同步失敗"
   },
   "yourVaultIsLocked": {
-    "message": "密碼庫已鎖定。驗證主密碼以繼續。"
+    "message": "您的密碼庫已上鎖。請驗證身份後繼續。"
   },
   "unlock": {
     "message": "解鎖"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "無效的 PIN 碼。"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "密碼庫已鎖定。驗證 PIN 碼以繼續。"
   },
   "unlockWithWindowsHello": {
     "message": "使用 Windows Hello 解鎖"

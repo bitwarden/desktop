@@ -542,19 +542,19 @@
     "message": "Siyahılanacaq heç bir element yoxdur."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "E-poçtunuza bir təsdiqləmə kodu göndərin"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Kod göndər"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kod göndərildi"
   },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Davam etmək üçün kimliyinizi təsdiqləyin."
   },
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Etibarsız PIN kod."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Anbarınız kilidlənib. Davam etmək üçün PIN kodunuzu təsdiqləyin."
   },
   "unlockWithWindowsHello": {
     "message": "Windows Hello ilə kilidi aç"

@@ -787,7 +787,7 @@
     "message": "Synkroniseringen misslyckades"
   },
   "yourVaultIsLocked": {
-    "message": "Valvet är låst. Bekräfta ditt huvudlösenord för att fortsätta."
+    "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Valvet är låst. Bekräfta din PIN-kod för att fortsätta."
   },
   "unlockWithWindowsHello": {
     "message": "Lås upp med Windows Hello"

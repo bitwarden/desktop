@@ -787,7 +787,7 @@
     "message": "Sincronizare eșuată"
   },
   "yourVaultIsLocked": {
-    "message": "Seiful dvs. este blocat. Verificați parola principală pentru a continua."
+    "message": "Seiful dvs. este blocat. Verificați-vă identitatea pentru a continua."
   },
   "unlock": {
     "message": "Deblocare"
@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Cod PIN invalid."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Seiful dvs. este blocat. Verificați codul PIN pentru a continua."
-  },
   "unlockWithWindowsHello": {
     "message": "Deblocare cu Windows Hello"
   },
@@ -1785,6 +1782,6 @@
     "message": "Ați părăsit organizația."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Nu se poate accesa conectorul cheii, vă rugăm să încercați din nou mai târziu."
+    "message": "Nu se poate accesa Conectorul Cheie, vă rugăm să încercați din nou mai târziu."
   }
 }

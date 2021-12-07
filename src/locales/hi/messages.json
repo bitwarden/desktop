@@ -787,7 +787,7 @@
     "message": "Syncing failed"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+    "message": "Your vault is locked. Verify your identity to continue."
   },
   "unlock": {
     "message": "Unlock"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Invalid PIN code."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Your vault is locked. Verify your PIN code to continue."
   },
   "unlockWithWindowsHello": {
     "message": "Unlock with Windows Hello"

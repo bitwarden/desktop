@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Codice PIN non valido."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
-  },
   "unlockWithWindowsHello": {
     "message": "Sblocca con Windows Hello"
   },

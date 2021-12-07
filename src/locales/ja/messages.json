@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "PIN コードが間違っています。"
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "保管庫がロックされています。PIN コードで確認してください。"
-  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello でロック解除"
   },

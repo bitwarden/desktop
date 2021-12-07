@@ -269,7 +269,7 @@
     "message": "성"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "전체 이름"
   },
   "address1": {
     "message": "주소 1"
@@ -332,11 +332,11 @@
     "message": "참 / 거짓"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "연결됨",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "연결된 값",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -542,25 +542,25 @@
     "message": "항목이 없습니다."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "이메일로 인증 코드 보내기"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "코드 전송"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "코드 전송됨"
   },
   "verificationCode": {
     "message": "인증 코드"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "계속하려면 암호를 확인하세요."
   },
   "verificationCodeRequired": {
     "message": "인증 코드는 반드시 입력해야 합니다."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "유효하지 않은 확인 코드"
   },
   "continue": {
     "message": "계속"
@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "잘못된 PIN 코드입니다."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
-  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello를 사용하여 잠금 해제"
   },
@@ -1761,13 +1758,13 @@
     "message": "하나 이상의 조직 정책이 개인 보관함을 내보내는 것을 제한하고 있습니다."
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "마스터 비밀번호 제거"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "마스터 비밀번호가 제거되었습니다."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ 조직은 자체 호스팅 키 서버로 SSO를 사용하고 있습니다 이 조직의 멤버들은 로그인할 때에 마스터 비밀번호를 필요로 하지 않습니다.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1776,15 +1773,15 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "조직 나가기"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "정말 이 조직을 떠나시겠습니까?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "조직을 떠났습니다."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "키 제공자와 통신할 수 없습니다. 다시 시도해보세요."
   }
 }

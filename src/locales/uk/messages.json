@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Неправильний PIN-код."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
-  },
   "unlockWithWindowsHello": {
     "message": "Розблокувати з Windows Hello"
   },

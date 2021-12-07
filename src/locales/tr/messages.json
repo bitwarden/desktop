@@ -787,7 +787,7 @@
     "message": "Eşitleme başarısız oldu"
   },
   "yourVaultIsLocked": {
-    "message": "Kasa dairesi kilitli. Devam etmek için Ana Şifrenizi doğrulayın."
+    "message": "Kasanız kilitli. Devam etmek için Ana Şifrenizi doğrulayın."
   },
   "unlock": {
     "message": "Kilidi Aç"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Geçersiz PIN kodu."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kasanız kilitli. Devam etmek için PIN kodunuzu doğrulayın."
   },
   "unlockWithWindowsHello": {
     "message": "Kilidi Windows Hello ile aç"
