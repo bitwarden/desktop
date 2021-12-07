@@ -16,3 +16,5 @@ yarn-error.log
 *.env
 PlugIns/safari.appex/
 PlugIns/safari-legacy.appex/
+
+bin

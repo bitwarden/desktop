@@ -248,11 +248,15 @@
     <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}" *ngIf="!cipher.isDeleted">
         <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
     </button>
-    <button appBlurClick class="primary" (click)="restore()" appA11yTitle="{{'restore' | i18n}}" 
+    <button appBlurClick class="primary" (click)="autoType()" appA11yTitle="{{'autotype' | i18n}}"
+        *ngIf="!cipher.isDeleted && autoTypeAvailable()">
+        <i class="fa fa-keyboard-o fa-fw fa-lg" aria-hidden="true"></i>
+    </button>
+    <button appBlurClick class="primary" (click)="restore()" appA11yTitle="{{'restore' | i18n}}"
         *ngIf="cipher.isDeleted">
         <i class="fa fa-undo fa-fw fa-lg" aria-hidden="true"></i>
     </button>
-    <button appBlurClick class="primary" *ngIf="!cipher?.organizationId && !cipher.isDeleted" (click)="clone()" 
+    <button appBlurClick class="primary" *ngIf="!cipher?.organizationId && !cipher.isDeleted" (click)="clone()"
         appA11yTitle="{{'clone' | i18n}}">
         <i class="fa fa-files-o fa-fw fa-lg" aria-hidden="true"></i>
     </button>

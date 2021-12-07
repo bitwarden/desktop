@@ -307,6 +307,9 @@
   "edit": {
     "message": "Edit"
   },
+  "autotype": {
+    "message": "Autotype"
+  },
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
   },
