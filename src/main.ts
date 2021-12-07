@@ -131,7 +131,14 @@ export class Main {
                 this.nativeMessagingMain.listen();
             }
 
-            if (!app.isDefaultProtocolClient('bitwarden')) {
+            app.removeAsDefaultProtocolClient('bitwarden');
+            if (process.env.NODE_ENV === 'development' && process.platform === 'win32') {
+                // Fix development build on Windows requirering a different protocol client
+                app.setAsDefaultProtocolClient('bitwarden', process.execPath, [
+                    process.argv[1],
+                    path.resolve(process.argv[2]),
+                ]);
+            } else {
                 app.setAsDefaultProtocolClient('bitwarden');
             }
 
