@@ -14,8 +14,6 @@ import {
 
 import { first } from 'rxjs/operators';
 
-import { ToasterService } from 'angular2-toaster';
-
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
@@ -86,7 +84,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private i18nService: I18nService, private modalService: ModalService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService,
-        private toasterService: ToasterService, private messagingService: MessagingService,
+        private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
         private totpService: TotpService, private userService: UserService,
         private passwordRepromptService: PasswordRepromptService) { }
@@ -651,7 +649,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             }
 
             this.platformUtilsService.copyToClipboard(value);
-            this.toasterService.popAsync('info', null,
+            this.platformUtilsService.showToast('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
             if (this.action === 'view') {
                 this.messagingService.send('minimizeOnCopy');

@@ -285,7 +285,7 @@
     "@bitwarden/jslib-angular": "file:jslib/angular",
     "@bitwarden/jslib-common": "file:jslib/common",
     "@bitwarden/jslib-electron": "file:jslib/electron",
-    "angular2-toaster": "^11.0.1",
+    "ngx-toastr": "^13.2.1",
     "node-ipc": "^9.1.4",
     "nord": "^0.2.1",
     "regedit": "^3.0.3",
