@@ -264,7 +264,7 @@
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
-    "node-loader": "^1.0.3",
+    "node-loader": "^2.0.0",
     "rimraf": "^3.0.2",
     "sass": "^1.32.11",
     "sass-loader": "^12.4.0",
