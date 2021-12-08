@@ -30,7 +30,7 @@ jobs:
         uses: bitwarden/gh-actions/version-bump@0c263b3963211ccaf5804313c3b3a0bcc52d4b19
         with:
           version: ${{ github.event.inputs.version_number }}
-          file_path: ".src/package.json"
+          file_path: "./src/package.json"
 
       - name: Commit files
         run: |
