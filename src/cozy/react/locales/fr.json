@@ -152,9 +152,11 @@
   "Vault": {
     "extension": {
       "cta": {
+        "android": "Installer l'application Cozy Pass",
         "chrome": "Installer sur Chrome",
         "edge-chromium": "Installer sur Edge",
         "firefox": "Installer sur Firefox",
+        "ios": "Installer l'application Cozy Pass",
         "safari": "Installer sur Safari"
       }
     },

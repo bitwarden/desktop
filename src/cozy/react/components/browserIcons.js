@@ -6,6 +6,8 @@ import BrowserEdgeChromiumIcon from 'cozy-ui/transpiled/react/Icons/BrowserEdgeC
 import StoreChromeIcon from 'cozy/react/assets/store_chrome.svg'
 import StoreSafariIcon from 'cozy/react/assets/store_safari.svg'
 import StoreFirefoxIcon from 'cozy/react/assets/store_firefox.svg'
+import StoreIosIcon from 'cozy/react/assets/store_ios.svg'
+import StoreAndroidIcon from 'cozy/react/assets/store_android.svg'
 
 const browserIcons = {
   safari: BrowserSafariIcon,
@@ -18,7 +20,9 @@ export const extensionStoresIcons = {
   chrome: StoreChromeIcon,
   safari: StoreSafariIcon,
   firefox: StoreFirefoxIcon,
-  'edge-chromium': StoreChromeIcon
+  'edge-chromium': StoreChromeIcon,
+  ios: StoreIosIcon,
+  android: StoreAndroidIcon
 }
 
 export default browserIcons
