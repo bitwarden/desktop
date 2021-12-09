@@ -22,6 +22,8 @@ import { StateService } from 'jslib/abstractions/state.service';
 import { StorageService } from 'jslib/abstractions/storage.service';
 import { SyncService } from 'jslib/abstractions/sync.service';
 
+import { AuthResult } from 'jslib/models/domain/authResult';
+
 import { BroadcasterService } from 'jslib/angular/services/broadcaster.service';
 
 import { LoginComponent as BaseLoginComponent } from 'jslib/angular/components/login.component';
@@ -48,11 +50,17 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     @ViewChild('environment', { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
     @ViewChild('masterPwdContainer') masterPwdContainer: ElementRef ;
 
+    localFormPromise: Promise<void | AuthResult>;
+
     showingModal = false;
     isInCozyApp: boolean = false;
     baseUrl: string;
     canAuthWithOIDC = false;
     appIconForOIDC = 'images/icons-login.svg';
+    // Cozy customization, display error message on form
+    // /*
+    errorMsg = '';
+    // */
     protected queryParamsSub: Subscription = undefined;
     protected redirectUri: string;
 
@@ -215,25 +223,65 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
      * It is needed to handle redirect uri if provided
      */
     async submit() {
+        // Cozy customization, display error message on form
+        // /*
+        this.errorMsg = '';
+        // */
+
         if (this.email == null || this.email === '') {
+            // Cozy customization, display error message on form
+            /*
             this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('emailRequired'));
+            /*/
+            this.errorMsg = this.i18nService.t('emailRequired');
+            // */
             return;
         }
         if (this.email.indexOf('@') === -1) {
+            // Cozy customization, display error message on form
+            /*
             this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('invalidEmail'));
+            /*/
+            this.errorMsg = this.i18nService.t('invalidEmail');
+            // */
             return;
         }
         if (this.masterPassword == null || this.masterPassword === '') {
+            // Cozy customization, display error message on form
+            /*
             this.platformUtilsService.showToast('error', this.i18nService.t('errorOccurred'),
                 this.i18nService.t('masterPassRequired'));
+            /*/
+            this.errorMsg = this.i18nService.t('masterPassRequired');
+            // */
             return;
         }
 
         try {
+            // Cozy customization, display error message on form
+            /*
             this.formPromise = this.authService.logIn(this.email, this.masterPassword);
             const response = await this.formPromise;
+            /*/
+            this.localFormPromise = this.authService.logIn(this.email, this.masterPassword)
+                .catch(e => {
+                    if (e.statusCode === 401) {
+                        this.errorMsg = this.i18nService.t('invalidMasterPassword');
+                        return;
+                    } else {
+                        // unexpected messages are still displayed in toast as we cant control their length
+                        throw e;
+                    }
+                });
+            const response = await this.localFormPromise;
+
+            if (!response) {
+                return;
+            }
+            // */
+
             await this.localStorageService.save(Keys.rememberEmail, this.rememberEmail);
             if (this.rememberEmail) {
                 await this.localStorageService.save(Keys.rememberedEmail, this.email);

@@ -1,5 +1,5 @@
-<form id="login-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise" attr.aria-hidden="{{showingModal}}">
-    <div class="content">
+<form id="login-page" #form (ngSubmit)="submit()" [appApiAction]="localFormPromise" attr.aria-hidden="{{showingModal}}">
+    <div class="content CozyTheme--inverted">
         <img class="logo-image" alt="Bitwarden">
         <p class="lead">{{'loginOrCreateNewAccount' | i18n}}</p>
         <div class="box last">
@@ -8,6 +8,7 @@
                 <img *ngIf="canAuthWithOIDC" width="96" height="64" class="u-mb-half" [src]="appIconForOIDC" />
                 <h1>{{(canAuthWithOIDC ? 'authentification-oidc' : 'authentification') | i18n}}</h1>
                 <p>{{'confirmYourIdentity' | i18n}}</p>
+                <p class="u-error" *ngIf="errorMsg !== ''">{{errorMsg}}</p>
                 <div class="box-content-row" appBoxRow *ngIf="!isInCozyApp">
                     <label for="email">email address (required only when executed outside a Cozy app "me@fqdn.mycozy.cloud")</label>
                     <input id="email" type="text" name="Email" [(ngModel)]="email" required>

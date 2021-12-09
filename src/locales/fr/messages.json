@@ -539,7 +539,7 @@
     "message": "Adresse e-mail invalide."
   },
   "masterPassRequired": {
-    "message": "Le mot de passe maître est requis."
+    "message": "Le mot de passe est requis"
   },
   "masterPassLength": {
     "message": "Le mot de passe maître doit au moins contenir 8 caractères."
@@ -812,7 +812,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Mot de passe maître invalide"
+    "message": "Mot de passe incorrect"
   },
   "twoStepLoginConfirmation": {
     "message": "L'identification en deux étapes sécurise davantage votre compte en vous demandant à chaque connexion de saisir un code de sécurité obtenu depuis un autre appareil, via une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique, ou un e-mail. L'identification en deux étapes peut être activée depuis le coffre web sur bitwarden.com. Voulez-vous vous visiter le site web maintenant ?"

@@ -539,7 +539,7 @@
     "message": "Invalid email address."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Password is required"
   },
   "masterPassLength": {
     "message": "Master password must be at least 8 characters long."
@@ -812,7 +812,7 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Invalid password"
   },
   "twoStepLoginConfirmation": {
     "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
