@@ -32,7 +32,7 @@ import { Account } from 'jslib-common/models/domain/account';
 })
 export class AccountSwitcherComponent implements OnInit {
     isOpen: boolean = false;
-    accounts: { [userId: string]: Account };
+    accounts: { [userId: string]: Account } = {};
     activeAccountEmail: string;
 
     get showSwitcher() {
@@ -44,23 +44,17 @@ export class AccountSwitcherComponent implements OnInit {
 
     async ngOnInit(): Promise<void> {
         this.stateService.accounts.subscribe(async accounts => {
-            this.accounts = accounts;
-
-            for (const userId in this.accounts) {
-                if (userId == null) {
-                    continue;
-                }
-
+            for (const userId in accounts) {
                 if (userId === await this.stateService.getUserId()) {
-                    this.accounts[userId].profile.authenticationStatus = AuthenticationStatus.Active;
-                    continue;
+                    accounts[userId].profile.authenticationStatus = AuthenticationStatus.Active;
+                } else {
+                    accounts[userId].profile.authenticationStatus = await this.vaultTimeoutService.isLocked(userId) ?
+                        AuthenticationStatus.Locked :
+                        AuthenticationStatus.Unlocked;
                 }
-
-                this.accounts[userId].profile.authenticationStatus = await this.vaultTimeoutService.isLocked(userId) ?
-                    AuthenticationStatus.Locked :
-                    AuthenticationStatus.Unlocked;
             }
 
+            this.accounts = accounts;
             this.activeAccountEmail = await this.stateService.getEmail();
         });
     }

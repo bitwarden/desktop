@@ -66,24 +66,24 @@ export class Menubar {
             new FileMenu(
                 i18nService,
                 messagingService,
-                updateRequest?.accounts[updateRequest?.activeUserId].isLocked,
+                updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true,
             ),
             new EditMenu(
                 i18nService,
                 messagingService,
-                updateRequest?.accounts[updateRequest?.activeUserId].isLocked,
+                updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true,
             ),
             new ViewMenu(
                 i18nService,
                 messagingService,
-                updateRequest?.accounts[updateRequest?.activeUserId].isLocked,
+                updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true,
             ),
             new AccountMenu(
                 i18nService,
                 messagingService,
                 webVaultUrl,
                 windowMain.win,
-                updateRequest?.accounts[updateRequest?.activeUserId].isLocked,
+                updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true,
             ),
             new WindowMenu(
                 i18nService,

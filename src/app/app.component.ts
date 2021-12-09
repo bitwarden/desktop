@@ -165,7 +165,7 @@ export class AppComponent implements OnInit {
                             this.modal.close();
                         }
                         this.updateAppMenu();
-                        if (message.userId === null || message.userId === await this.stateService.getUserId()) {
+                        if (message.userId == null || message.userId === await this.stateService.getUserId()) {
                             this.router.navigate(['lock']);
                         }
                         this.notificationsService.updateConnection();
@@ -354,7 +354,7 @@ export class AppComponent implements OnInit {
         } else {
             const accounts: { [userId: string]: any } = {};
             for (const i in stateAccounts) {
-                if (i != null) {
+                if (i != null && stateAccounts[i]?.profile?.userId != null) {
                     const userId = stateAccounts[i].profile.userId;
                     accounts[userId] = {
                         isAuthenticated: await this.stateService.getIsAuthenticated({
@@ -401,11 +401,24 @@ export class AppComponent implements OnInit {
                     this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
                         this.i18nService.t('loginExpired'));
                 }
-                this.router.navigate(['login']);
             });
         }
 
         await this.stateService.clean({ userId: userId });
+
+        if (this.stateService.activeAccount.getValue() == null) {
+            this.router.navigate(['login']);
+        } else {
+            const locked = await this.vaultTimeoutService.isLocked();
+            if (locked) {
+                this.messagingService.send('locked');
+            } else {
+                this.messagingService.send('unlocked');
+                this.messagingService.send('syncVault');
+                this.router.navigate(['vault']);
+            }
+        }
+
         await this.updateAppMenu();
     }
 

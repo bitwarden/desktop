@@ -10,7 +10,7 @@
             <a *ngFor="let a of accounts | keyvalue" class="account" [ngClass]="{'active': a.value.profile.authenticationStatus == 'active'}"
                 href="#" appStopClick (click)="switch(a.key)">
                 <span class="email">{{a.value.profile.email}}</span>
-                <span class="server">{{a.value.settings.serverUrl}}</span>
+                <span class="server">{{a.value.settings.environmentUrls.server}}</span>
                 <span class="status">{{a.value.profile.authenticationStatus}}</span>
             </a>
         </div>
