@@ -90,7 +90,7 @@ const common = {
             cozy: path.join(__dirname, 'src/cozy')
         },
         symlinks: false,
-        modules: [path.resolve('node_modules')],
+        modules: ['node_modules'],
     },
     output: {
         filename: '[name].js',
