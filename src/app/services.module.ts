@@ -125,7 +125,7 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
             deps: [
                 I18nServiceAbstraction,
                 MessagingServiceAbstraction,
-                StorageServiceAbstraction,
+                StateServiceAbstraction,
             ],
         },
         {
