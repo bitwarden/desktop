@@ -1,3 +1,5 @@
+import 'zone.js/dist/zone';
+
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -7,7 +9,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToasterModule } from 'angular2-toaster';
 import 'zone.js/dist/zone';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +34,7 @@ import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.compo
 import { AvatarComponent } from 'jslib-angular/components/avatar.component';
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
+import { BitwardenToastModule } from 'jslib-angular/components/toastr.component';
 
 import { A11yTitleDirective } from 'jslib-angular/directives/a11y-title.directive';
 import { ApiActionDirective } from 'jslib-angular/directives/api-action.directive';
@@ -180,7 +182,11 @@ registerLocaleData(localeZhTw, 'zh-TW');
         FormsModule,
         ReactiveFormsModule,
         ServicesModule,
-        ToasterModule.forRoot(),
+        BitwardenToastModule.forRoot({
+            maxOpened: 5,
+            autoDismiss: true,
+            closeButton: true,
+        }),
         ScrollingModule,
         A11yModule,
         OverlayModule,

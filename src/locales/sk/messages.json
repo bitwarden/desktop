@@ -787,7 +787,7 @@
     "message": "Synchronizácia zlyhala"
   },
   "yourVaultIsLocked": {
-    "message": "Váš trezor je uzamknutý. Overte sa hlavným heslom, ak chcete pokračovať."
+    "message": "Váš trezor je uzamknutý. Ak chcete pokračovať, overte svoju identitu."
   },
   "unlock": {
     "message": "Odomknúť"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Neplatný PIN kód."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamknutý. Overte sa PIN kódom, ak chcete pokračovať."
   },
   "unlockWithWindowsHello": {
     "message": "Odomknúť pomocou Windows Hello"

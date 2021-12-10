@@ -1,43 +1,41 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
-@import "~angular2-toaster/toaster";
+@import '~ngx-toastr/toastr';
 @import "~sweetalert2/src/sweetalert2.scss";
 
 @import "variables.scss";
 
 .toast-container {
     .toast-close-button {
-        margin-right: 4px;
         font-size: 18px;
+        margin-right: 4px;
     }
 
-    .toast {
-        opacity: 1 !important;
+    .ngx-toastr {
+        align-items: center;
         background-image: none !important;
         border-radius: $border-radius;
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
         display: flex;
-        align-items: center;
+        padding: 15px;
+
+        .toast-close-button {
+            position: absolute;
+            right: 5px;
+            top: 0;
+        }
 
         &:hover {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
         }
 
-        &:before {
+        .icon i::before {
+            float: left;
+            font-style: normal;
             font-family: FontAwesome;
             font-size: 25px;
             line-height: 20px;
-            float: left;
-            color: #ffffff;
-            margin: auto 0 auto 15px;
-        }
-
-        .toast-content {
-            padding: 15px;
-        }
-
-        .toaster-icon {
-            display: none;
+            padding-right: 15px;
         }
 
         .toast-message {
@@ -51,49 +49,41 @@ $fa-font-path: "~font-awesome/fonts";
         }
 
         &.toast-danger, &.toast-error {
-            background-image: none !important;
-
             @include themify($themes) {
                 background-color: themed('dangerColor');
             }
 
-            &:before {
+            .icon i::before {
                 content: "\f0e7";
             }
         }
 
         &.toast-warning {
-            background-image: none !important;
-
             @include themify($themes) {
                 background-color: themed('warningColor');
             }
 
-            &:before {
+            .icon i::before {
                 content: "\f071";
             }
         }
 
         &.toast-info {
-            background-image: none !important;
-
             @include themify($themes) {
                 background-color: themed('infoColor');
             }
 
-            &:before {
+            .icon i:before {
                 content: "\f05a";
             }
         }
 
         &.toast-success {
-            background-image: none !important;
-
             @include themify($themes) {
                 background-color: themed('successColor');
             }
 
-            &:before {
+            .icon i:before {
                 content: "\f00C";
             }
         }

@@ -336,7 +336,7 @@
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Verknüpfter Inhalt",
+    "message": "Verknüpfter Wert",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -787,7 +787,7 @@
     "message": "Synchronisierung fehlgeschlagen"
   },
   "yourVaultIsLocked": {
-    "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort, um fortzufahren."
+    "message": "Ihr Tresor ist gesperrt. Überprüfen Sie Ihr Master-Passwort, um fortzufahren."
   },
   "unlock": {
     "message": "Entsperren"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ungültiger PIN-Code."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "unlockWithWindowsHello": {
     "message": "Mit Windows Hello entsperren"

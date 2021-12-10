@@ -6,6 +6,7 @@ import {
     ViewChild,
 } from '@angular/core';
 
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
@@ -16,7 +17,6 @@ import { SendService } from 'jslib-common/abstractions/send.service';
 
 import { SendComponent as BaseSendComponent } from 'jslib-angular/components/send/send.component';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
 import { SendView } from 'jslib-common/models/view/sendView';

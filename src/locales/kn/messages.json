@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "ಅಮಾನ್ಯ ಪಿನ್ ಕೋಡ್."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಲಾಕ್ ಆಗಿದೆ. ಮುಂದುವರೆಯಲು ನಿಮ್ಮ ಪಿನ್ ಕೋಡ್ ಪರಿಶೀಲಿಸಿ."
-  },
   "unlockWithWindowsHello": {
     "message": "ವಿಂಡೋಸ್ ಹಲೋನೊಂದಿಗೆ ಅನ್ಲಾಕ್ ಮಾಡಿ"
   },

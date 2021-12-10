@@ -787,7 +787,7 @@
     "message": "Synkronisering mislyktes"
   },
   "yourVaultIsLocked": {
-    "message": "Hvelvet ditt er låst. Kontroller superpassordet ditt for å fortsette."
+    "message": "Hvelvet ditt er låst. Bekreft hovedpassordet ditt for å fortsette."
   },
   "unlock": {
     "message": "Lås opp"
@@ -1314,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ugyldig PIN-kode."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hvelvet ditt er låst. Bekreft PIN-koden din for å fortsette."
   },
   "unlockWithWindowsHello": {
     "message": "Lås opp med Windows Hello"

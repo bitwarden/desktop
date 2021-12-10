@@ -1,11 +1,4 @@
 import {
-    BodyOutputType,
-    Toast,
-    ToasterConfig,
-    ToasterService,
-} from 'angular2-toaster';
-
-import {
     Component,
     NgZone,
     OnInit,
@@ -16,14 +9,17 @@ import {
 } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import {
+    IndividualConfig,
+    ToastrService,
+} from 'ngx-toastr';
 
 import { PremiumComponent } from './accounts/premium.component';
 import { SettingsComponent } from './accounts/settings.component';
 import { PasswordGeneratorHistoryComponent } from './vault/password-generator-history.component';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
-
 import { AuthService } from 'jslib-common/abstractions/auth.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
@@ -65,7 +61,6 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
     selector: 'app-root',
     styles: [],
     template: `
-        <toaster-container [toasterconfig]="toasterConfig" aria-live="polite"></toaster-container>
         <ng-template #settings></ng-template>
         <ng-template #premium></ng-template>
         <ng-template #passwordHistory></ng-template>
@@ -85,25 +80,19 @@ export class AppComponent implements OnInit {
     @ViewChild('appPasswordGenerator', { read: ViewContainerRef, static: true })
         passwordGeneratorModalRef: ViewContainerRef;
 
-    toasterConfig: ToasterConfig = new ToasterConfig({
-        showCloseButton: true,
-        mouseoverTimerStop: true,
-        animation: 'flyRight',
-        limit: 5,
-    });
-
     private lastActivity: number = null;
     private modal: ModalRef = null;
     private idleTimer: number = null;
     private isIdle = false;
 
-    constructor(private broadcasterService: BroadcasterService, private tokenService: TokenService,
-        private folderService: FolderService, private settingsService: SettingsService,
-        private syncService: SyncService, private passwordGenerationService: PasswordGenerationService,
-        private cipherService: CipherService, private authService: AuthService,
-        private router: Router, private toasterService: ToasterService,
-        private i18nService: I18nService, private sanitizer: DomSanitizer,
-        private ngZone: NgZone, private vaultTimeoutService: VaultTimeoutService,
+    constructor(private broadcasterService: BroadcasterService,
+        private tokenService: TokenService, private folderService: FolderService,
+        private settingsService: SettingsService, private syncService: SyncService,
+        private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
+        private authService: AuthService, private router: Router,
+        private toastrService: ToastrService, private i18nService: I18nService,
+        private sanitizer: DomSanitizer, private ngZone: NgZone,
+        private vaultTimeoutService: VaultTimeoutService,
         private cryptoService: CryptoService, private logService: LogService,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
@@ -233,9 +222,9 @@ export class AppComponent implements OnInit {
                     case 'syncVault':
                         try {
                             await this.syncService.fullSync(true, true);
-                            this.toasterService.popAsync('success', null, this.i18nService.t('syncingComplete'));
+                            this.platformUtilsService.showToast('success', null, this.i18nService.t('syncingComplete'));
                         } catch {
-                            this.toasterService.popAsync('error', null, this.i18nService.t('syncingFailed'));
+                            this.platformUtilsService.showToast('error', null, this.i18nService.t('syncingFailed'));
                         }
                         break;
                     case 'checkSyncVault':
@@ -398,7 +387,7 @@ export class AppComponent implements OnInit {
             this.searchService.clearIndex();
             this.authService.logOut(async () => {
                 if (expired) {
-                    this.toasterService.popAsync('warning', this.i18nService.t('loggedOut'),
+                    this.platformUtilsService.showToast('warning', this.i18nService.t('loggedOut'),
                         this.i18nService.t('loginExpired'));
                 }
             });
@@ -469,30 +458,29 @@ export class AppComponent implements OnInit {
     }
 
     private showToast(msg: any) {
-        const toast: Toast = {
-            type: msg.type,
-            title: msg.title,
-        };
+        let message = '';
+
+        const options: Partial<IndividualConfig> = {};
+
         if (typeof (msg.text) === 'string') {
-            toast.body = msg.text;
+            message = msg.text;
         } else if (msg.text.length === 1) {
-            toast.body = msg.text[0];
+            message = msg.text[0];
         } else {
-            let message = '';
             msg.text.forEach((t: string) =>
                 message += ('<p>' + this.sanitizer.sanitize(SecurityContext.HTML, t) + '</p>'));
-            toast.body = message;
-            toast.bodyOutputType = BodyOutputType.TrustedHtml;
+            options.enableHtml = true;
         }
         if (msg.options != null) {
             if (msg.options.trustedHtml === true) {
-                toast.bodyOutputType = BodyOutputType.TrustedHtml;
+                options.enableHtml = true;
             }
             if (msg.options.timeout != null && msg.options.timeout > 0) {
-                toast.timeout = msg.options.timeout;
+                options.timeOut = msg.options.timeout;
             }
         }
-        this.toasterService.popAsync(toast);
+
+        this.toastrService.show(message, msg.title, options, 'toast-' + msg.type);
     }
 
     private routeToVault(action: string, cipherType: CipherType) {

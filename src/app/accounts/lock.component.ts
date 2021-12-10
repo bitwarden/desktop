@@ -10,6 +10,7 @@ import {
 import { ipcRenderer } from 'electron';
 
 import { ApiService } from 'jslib-common/abstractions/api.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CryptoService } from 'jslib-common/abstractions/crypto.service';
 import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
@@ -19,8 +20,6 @@ import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
-
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib-angular/components/lock.component';
 

@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Неправилен ПИН."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Трезорът е заключен. Въведете своя ПИН, за да продължите."
-  },
   "unlockWithWindowsHello": {
     "message": "Отключване с Windows Hello"
   },

@@ -1315,9 +1315,6 @@
   "invalidPin": {
     "message": "Nederīgs PIN kods."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tava glabātava ir slēgta. Ievadi savu PIN kodu, lai turpinātu!"
-  },
   "unlockWithWindowsHello": {
     "message": "Atslēgt ar Windows Hello"
   },

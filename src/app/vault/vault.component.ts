@@ -14,8 +14,6 @@ import {
 
 import { first } from 'rxjs/operators';
 
-import { ToasterService } from 'angular2-toaster';
-
 import { SearchBarService } from '../layout/search/search-bar.service';
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
@@ -37,9 +35,9 @@ import { FolderView } from 'jslib-common/models/view/folderView';
 
 import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
 
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 import { ModalService } from 'jslib-angular/services/modal.service';
 
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
@@ -48,7 +46,6 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
-
 
 import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
@@ -89,7 +86,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         private i18nService: I18nService, private modalService: ModalService,
         private broadcasterService: BroadcasterService, private changeDetectorRef: ChangeDetectorRef,
         private ngZone: NgZone, private syncService: SyncService,
-        private toasterService: ToasterService, private messagingService: MessagingService,
+        private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
         private totpService: TotpService, private passwordRepromptService: PasswordRepromptService,
         private stateService: StateService, private searchBarService: SearchBarService) { }
@@ -658,7 +655,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             }
 
             this.platformUtilsService.copyToClipboard(value);
-            this.toasterService.popAsync('info', null,
+            this.platformUtilsService.showToast('info', null,
                 this.i18nService.t('valueCopied', this.i18nService.t(labelI18nKey)));
             if (this.action === 'view') {
                 this.messagingService.send('minimizeOnCopy');

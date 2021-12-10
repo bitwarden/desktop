@@ -8,6 +8,7 @@ import {
 import { NgForm } from '@angular/forms';
 
 import { AuditService } from 'jslib-common/abstractions/audit.service';
+import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { CipherService } from 'jslib-common/abstractions/cipher.service';
 import { CollectionService } from 'jslib-common/abstractions/collection.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
@@ -20,8 +21,6 @@ import { PasswordRepromptService } from 'jslib-common/abstractions/passwordRepro
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-
-import { BroadcasterService } from 'jslib-angular/services/broadcaster.service';
 
 import { AddEditComponent as BaseAddEditComponent } from 'jslib-angular/components/add-edit.component';
 
