@@ -93,7 +93,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -107,7 +107,7 @@ jobs:
 
       - name: Update NPM
         run: |
-          npm install -g npm@7
+          npm install -g npm@8
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -192,7 +192,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -207,7 +207,7 @@ jobs:
 
       - name: Update NPM
         run: |
-          npm install -g npm@7
+          npm install -g npm@8
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -369,7 +369,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -383,7 +383,7 @@ jobs:
 
       - name: Update NPM
         run: |
-          npm install -g npm@7
+          npm install -g npm@8
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -517,7 +517,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -531,7 +531,7 @@ jobs:
 
       - name: Update NPM
         run: |
-          npm install -g npm@7
+          npm install -g npm@8
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -705,7 +705,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -719,7 +719,7 @@ jobs:
 
       - name: Update NPM
         run: |
-          npm install -g npm@7
+          npm install -g npm@8
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -885,7 +885,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -899,7 +899,7 @@ jobs:
 
       - name: Update NPM
         run: |
-          npm install -g npm@7
+          npm install -g npm@8
           npm install -g node-gyp
           node-gyp install $(node -v)
 
