@@ -249,7 +249,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^12.2.13",
     "@ngtools/webpack": "^12.2.13",
-    "@types/node": "^14.14.43",
+    "@types/node": "^16.11.12",
     "@types/node-ipc": "^9.1.4",
     "clean-webpack-plugin": "^4.0.0",
     "concurrently": "^6.0.2",
@@ -300,7 +300,7 @@
     "sweetalert2": "^10.16.6"
   },
   "engines": {
-    "node": "~14",
-    "npm": "~7"
+    "node": "~16",
+    "npm": "~8"
   }
 }
