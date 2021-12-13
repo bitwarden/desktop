@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import {
-    CanActivate,
-    Router,
-} from '@angular/router';
+import { CanActivate } from '@angular/router';
 
 
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
-import { StateService } from 'jslib-common/abstractions/state.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 
 @Injectable()
 export class LoginGuardService implements CanActivate {

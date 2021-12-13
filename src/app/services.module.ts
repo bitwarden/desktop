@@ -43,6 +43,7 @@ import { SystemService as SystemServiceAbstraction } from 'jslib-common/abstract
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ThemeType } from 'jslib-common/enums/themeType';
+import { LoginGuardService } from '../services/loginGuard.service';
 
 export function initFactory(window: Window, environmentService: EnvironmentServiceAbstraction,
     syncService: SyncServiceAbstraction, vaultTimeoutService: VaultTimeoutService,
@@ -144,7 +145,6 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
             provide: CryptoServiceAbstraction,
             useClass: ElectronCryptoService,
             deps: [
-                'SECURE_STORAGE',
                 CryptoFunctionServiceAbstraction,
                 PlatformUtilsServiceAbstraction,
                 LogServiceAbstraction,
@@ -164,6 +164,15 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         NativeMessagingService,
         SearchBarService,
+        {
+            provide: LoginGuardService,
+            useClass: LoginGuardService,
+            deps: [
+                StateServiceAbstraction,
+                PlatformUtilsServiceAbstraction,
+                I18nServiceAbstraction,
+            ],
+        },
     ],
 })
 export class ServicesModule {
