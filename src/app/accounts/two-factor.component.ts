@@ -20,7 +20,6 @@ import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { LogService } from 'jslib-common/abstractions/log.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 
 import { ModalService } from 'jslib-angular/services/modal.service';
@@ -40,10 +39,10 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         i18nService: I18nService, apiService: ApiService,
         platformUtilsService: PlatformUtilsService, syncService: SyncService,
         environmentService: EnvironmentService, private modalService: ModalService,
-        stateService: StateService, storageService: StorageService, route: ActivatedRoute,
+        stateService: StateService, route: ActivatedRoute,
         logService: LogService) {
         super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
-            stateService, storageService, route, logService);
+            stateService, route, logService);
         super.onSuccessfulLogin = () => {
             return syncService.fullSync(true);
         };

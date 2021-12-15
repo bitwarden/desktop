@@ -14,6 +14,7 @@ import {
 
 import { first } from 'rxjs/operators';
 
+import { SearchBarService } from '../layout/search/search-bar.service';
 import { AddEditComponent } from './add-edit.component';
 import { AttachmentsComponent } from './attachments.component';
 import { CiphersComponent } from './ciphers.component';
@@ -35,15 +36,16 @@ import { FolderView } from 'jslib-common/models/view/folderView';
 import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
 
 import { ModalService } from 'jslib-angular/services/modal.service';
+
 import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
 import { EventService } from 'jslib-common/abstractions/event.service';
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
@@ -86,11 +88,11 @@ export class VaultComponent implements OnInit, OnDestroy {
         private ngZone: NgZone, private syncService: SyncService,
         private messagingService: MessagingService,
         private platformUtilsService: PlatformUtilsService, private eventService: EventService,
-        private totpService: TotpService, private userService: UserService,
-        private passwordRepromptService: PasswordRepromptService) { }
+        private totpService: TotpService, private passwordRepromptService: PasswordRepromptService,
+        private stateService: StateService, private searchBarService: SearchBarService) { }
 
     async ngOnInit() {
-        this.userHasPremiumAccess = await this.userService.canAccessPremium();
+        this.userHasPremiumAccess = await this.stateService.getCanAccessPremium();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 let detectChanges = true;
@@ -166,9 +168,13 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.load();
         }
         document.body.classList.remove('layout_frontend');
+
+        this.searchBarService.setEnabled(true);
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchVault'));
     }
 
     ngOnDestroy() {
+        this.searchBarService.setEnabled(false);
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
         document.body.classList.add('layout_frontend');
     }
@@ -494,14 +500,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async clearGroupingFilters() {
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchVault');
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchVault'));
         await this.ciphersComponent.reload();
         this.clearFilters();
         this.go();
     }
 
     async filterFavorites() {
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFavorites');
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchFavorites'));
         await this.ciphersComponent.reload(c => c.favorite);
         this.clearFilters();
         this.favorites = true;
@@ -509,7 +515,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterDeleted() {
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchTrash');
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchTrash'));
         this.ciphersComponent.deleted = true;
         await this.ciphersComponent.reload(null, true);
         this.clearFilters();
@@ -518,7 +524,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterCipherType(type: CipherType) {
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchType');
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchType'));
         await this.ciphersComponent.reload(c => c.type === type);
         this.clearFilters();
         this.type = type;
@@ -527,7 +533,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     async filterFolder(folderId: string) {
         folderId = folderId === 'none' ? null : folderId;
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchFolder');
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchFolder'));
         await this.ciphersComponent.reload(c => c.folderId === folderId);
         this.clearFilters();
         this.folderId = folderId == null ? 'none' : folderId;
@@ -535,7 +541,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     async filterCollection(collectionId: string) {
-        this.ciphersComponent.searchPlaceholder = this.i18nService.t('searchCollection');
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchCollection'));
         await this.ciphersComponent.reload(c => c.collectionIds != null &&
             c.collectionIds.indexOf(collectionId) > -1);
         this.clearFilters();

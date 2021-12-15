@@ -19,13 +19,9 @@ import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { LockComponent as BaseLockComponent } from 'jslib-angular/components/lock.component';
-
-import { ConstantsService } from 'jslib-common/services/constants.service';
 
 const BroadcasterSubscriptionId = 'LockComponent';
 
@@ -38,20 +34,19 @@ export class LockComponent extends BaseLockComponent implements OnDestroy {
 
     constructor(router: Router, i18nService: I18nService,
         platformUtilsService: PlatformUtilsService, messagingService: MessagingService,
-        userService: UserService, cryptoService: CryptoService,
-        storageService: StorageService, vaultTimeoutService: VaultTimeoutService,
+        cryptoService: CryptoService, vaultTimeoutService: VaultTimeoutService,
         environmentService: EnvironmentService, stateService: StateService,
         apiService: ApiService, private route: ActivatedRoute,
         private broadcasterService: BroadcasterService, ngZone: NgZone,
         logService: LogService, keyConnectorService: KeyConnectorService) {
-        super(router, i18nService, platformUtilsService, messagingService, userService, cryptoService,
-            storageService, vaultTimeoutService, environmentService, stateService, apiService, logService,
+        super(router, i18nService, platformUtilsService, messagingService, cryptoService,
+            vaultTimeoutService, environmentService, stateService, apiService, logService,
             keyConnectorService, ngZone);
     }
 
     async ngOnInit() {
         await super.ngOnInit();
-        const autoPromptBiometric = !await this.storageService.get<boolean>(ConstantsService.disableAutoBiometricsPromptKey);
+        const autoPromptBiometric = !await this.stateService.getNoAutoPromptBiometrics();
 
         this.route.queryParams.subscribe(params => {
             if (this.supportsBiometric && params.promptBiometric && autoPromptBiometric) {

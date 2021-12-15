@@ -14,7 +14,6 @@ import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.se
 import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SearchService } from 'jslib-common/abstractions/search.service';
 import { SendService } from 'jslib-common/abstractions/send.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { SendComponent as BaseSendComponent } from 'jslib-angular/components/send/send.component';
 
@@ -22,6 +21,7 @@ import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
 
 import { SendView } from 'jslib-common/models/view/sendView';
 
+import { SearchBarService } from '../layout/search/search-bar.service';
 import { AddEditComponent } from './add-edit.component';
 
 enum Action {
@@ -46,13 +46,20 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
         platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
         private broadcasterService: BroadcasterService, ngZone: NgZone,
         searchService: SearchService, policyService: PolicyService,
-        userService: UserService, logService: LogService) {
+        private searchBarService: SearchBarService, logService: LogService) {
         super(sendService, i18nService, platformUtilsService,
               environmentService, ngZone, searchService,
-              policyService, userService, logService);
+              policyService, logService);
+        this.searchBarService.searchText.subscribe(searchText => {
+            this.searchText = searchText;
+            this.searchTextChanged();
+        });
     }
 
     async ngOnInit() {
+        this.searchBarService.setEnabled(true);
+        this.searchBarService.setPlaceholderText(this.i18nService.t('searchSends'));
+
         super.ngOnInit();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
@@ -68,6 +75,7 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
 
     ngOnDestroy() {
         this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+        this.searchBarService.setEnabled(false);
     }
 
     addSend() {
