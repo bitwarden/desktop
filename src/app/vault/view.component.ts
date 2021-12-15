@@ -18,9 +18,9 @@ import { LogService } from 'jslib-common/abstractions/log.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { PasswordRepromptService } from 'jslib-common/abstractions/passwordReprompt.service';
 import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
+import { StateService } from 'jslib-common/abstractions/state.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
 import { TotpService } from 'jslib-common/abstractions/totp.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 
 import { ViewComponent as BaseViewComponent } from 'jslib-angular/components/view.component';
 
@@ -40,12 +40,12 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
         cryptoService: CryptoService, platformUtilsService: PlatformUtilsService,
         auditService: AuditService, broadcasterService: BroadcasterService,
         ngZone: NgZone, changeDetectorRef: ChangeDetectorRef,
-        userService: UserService, eventService: EventService, apiService: ApiService,
+        eventService: EventService, apiService: ApiService,
         private messagingService: MessagingService, passwordRepromptService: PasswordRepromptService,
-        logService: LogService) {
+        logService: LogService, stateService: StateService) {
         super(cipherService, totpService, tokenService, i18nService, cryptoService, platformUtilsService,
-            auditService, window, broadcasterService, ngZone, changeDetectorRef, userService, eventService,
-            apiService, passwordRepromptService, logService);
+            auditService, window, broadcasterService, ngZone, changeDetectorRef, eventService,
+            apiService, passwordRepromptService, logService, stateService);
     }
     ngOnInit() {
         super.ngOnInit();

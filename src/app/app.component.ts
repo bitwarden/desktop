@@ -36,22 +36,21 @@ import { PolicyService } from 'jslib-common/abstractions/policy.service';
 import { SearchService } from 'jslib-common/abstractions/search.service';
 import { SettingsService } from 'jslib-common/abstractions/settings.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
-import { StorageService } from 'jslib-common/abstractions/storage.service';
 import { SyncService } from 'jslib-common/abstractions/sync.service';
 import { SystemService } from 'jslib-common/abstractions/system.service';
 import { TokenService } from 'jslib-common/abstractions/token.service';
-import { UserService } from 'jslib-common/abstractions/user.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
-
-import { ConstantsService } from 'jslib-common/services/constants.service';
 
 import { CipherType } from 'jslib-common/enums/cipherType';
 
-import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
-import { ModalService } from 'jslib-angular/services/modal.service';
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
 import { PasswordGeneratorComponent } from './vault/password-generator.component';
+
+import { ModalRef } from 'jslib-angular/components/modal/modal.ref';
+
+import { ModalService } from 'jslib-angular/services/modal.service';
+import { MenuUpdateRequest } from 'src/main/menu.updater';
 
 const BroadcasterSubscriptionId = 'AppComponent';
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -67,7 +66,8 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
         <ng-template #appFolderAddEdit></ng-template>
         <ng-template #exportVault></ng-template>
         <ng-template #appPasswordGenerator></ng-template>
-        <router-outlet></router-outlet>`,
+        <app-header></app-header>
+        <div id="container"><router-outlet></router-outlet></div>`,
 })
 export class AppComponent implements OnInit {
     @ViewChild('settings', { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
@@ -84,14 +84,14 @@ export class AppComponent implements OnInit {
     private idleTimer: number = null;
     private isIdle = false;
 
-    constructor(private broadcasterService: BroadcasterService, private userService: UserService,
+    constructor(private broadcasterService: BroadcasterService,
         private tokenService: TokenService, private folderService: FolderService,
         private settingsService: SettingsService, private syncService: SyncService,
         private passwordGenerationService: PasswordGenerationService, private cipherService: CipherService,
         private authService: AuthService, private router: Router,
         private toastrService: ToastrService, private i18nService: I18nService,
         private sanitizer: DomSanitizer, private ngZone: NgZone,
-        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService,
+        private vaultTimeoutService: VaultTimeoutService,
         private cryptoService: CryptoService, private logService: LogService,
         private messagingService: MessagingService, private collectionService: CollectionService,
         private searchService: SearchService, private notificationsService: NotificationsService,
@@ -103,7 +103,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.ngZone.runOutsideAngular(() => {
             setTimeout(async () => {
-                await this.updateAppMenu('auth');
+                await this.updateAppMenu();
             }, 1000);
 
             window.onmousemove = () => this.recordActivity();
@@ -120,7 +120,7 @@ export class AppComponent implements OnInit {
                     case 'loggedIn':
                     case 'unlocked':
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu('auth');
+                        this.updateAppMenu();
                         this.systemService.cancelProcessReload();
                         break;
                     case 'loggedOut':
@@ -128,7 +128,7 @@ export class AppComponent implements OnInit {
                             this.modal.close();
                         }
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu('auth');
+                        this.updateAppMenu();
                         this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
                         break;
@@ -136,21 +136,29 @@ export class AppComponent implements OnInit {
                         this.router.navigate(['login']);
                         break;
                     case 'logout':
-                        this.logOut(!!message.expired);
+                        await this.logOut(!!message.expired, message.userId);
                         break;
                     case 'lockVault':
-                        await this.vaultTimeoutService.lock(true);
+                        await this.vaultTimeoutService.lock(true, message.userId);
+                        break;
+                    case 'lockAllVaults':
+                        for (const userId in this.stateService.accounts.getValue()) {
+                            if (userId != null) {
+                                await this.vaultTimeoutService.lock(true, userId);
+                            }
+                        }
                         break;
                     case 'locked':
                         if (this.modal != null) {
                             this.modal.close();
                         }
-                        this.stateService.purge();
-                        this.router.navigate(['lock']);
+                        this.updateAppMenu();
+                        if (message.userId == null || message.userId === await this.stateService.getUserId()) {
+                            this.router.navigate(['lock']);
+                        }
                         this.notificationsService.updateConnection();
-                        this.updateAppMenu('auth');
-                        this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
+                        this.systemService.startProcessReload();
                         break;
                     case 'reloadProcess':
                         window.location.reload(true);
@@ -158,7 +166,7 @@ export class AppComponent implements OnInit {
                     case 'syncStarted':
                         break;
                     case 'syncCompleted':
-                        await this.updateAppMenu('sync');
+                        await this.updateAppMenu();
                         break;
                     case 'openSettings':
                         await this.openModal<SettingsComponent>(SettingsComponent, this.settingsRef);
@@ -168,7 +176,7 @@ export class AppComponent implements OnInit {
                         break;
                     case 'showFingerprintPhrase':
                         const fingerprint = await this.cryptoService.getFingerprint(
-                            await this.userService.getUserId());
+                            await this.stateService.getUserId());
                         const result = await this.platformUtilsService.showDialog(
                             this.i18nService.t('yourAccountsFingerprint') + ':\n' + fingerprint.join('-'),
                             this.i18nService.t('fingerprintPhrase'), this.i18nService.t('learnMore'),
@@ -322,52 +330,84 @@ export class AppComponent implements OnInit {
         });
     }
 
-    private async updateAppMenu(type: 'auth' | 'sync') {
-        let data: any;
-        if (type === 'sync') {
-            data = {
-                hideChangeMasterPass: await this.keyConnectorService.getUsesKeyConnector(),
+    private async updateAppMenu() {
+        let updateRequest: MenuUpdateRequest;
+        const stateAccounts = this.stateService.accounts?.getValue();
+        if (stateAccounts == null || Object.keys(stateAccounts).length < 1) {
+            updateRequest = {
+                accounts: null,
+                activeUserId: null,
+                hideChangeMasterPassword: true,
             };
         } else {
-            data = {
-                isAuthenticated: await this.userService.isAuthenticated(),
-                isLocked: await this.vaultTimeoutService.isLocked(),
+            const accounts: { [userId: string]: any } = {};
+            for (const i in stateAccounts) {
+                if (i != null && stateAccounts[i]?.profile?.userId != null) {
+                    const userId = stateAccounts[i].profile.userId;
+                    accounts[userId] = {
+                        isAuthenticated: await this.stateService.getIsAuthenticated({
+                            userId: userId,
+                        }),
+                        isLocked: await this.vaultTimeoutService.isLocked(userId),
+                        email: stateAccounts[i].profile.email,
+                        userId: stateAccounts[i].profile.userId,
+                    };
+                }
+            }
+            updateRequest = {
+                accounts: accounts,
+                activeUserId: await this.stateService.getUserId(),
+                hideChangeMasterPassword: await this.keyConnectorService.getUsesKeyConnector(),
             };
         }
 
-        this.messagingService.send('updateAppMenu', data);
+        this.messagingService.send('updateAppMenu', { updateRequest: updateRequest });
     }
 
-    private async logOut(expired: boolean) {
-        await this.eventService.uploadEvents();
-        const userId = await this.userService.getUserId();
-
+    private async logOut(expired: boolean, userId?: string) {
         await Promise.all([
-            this.eventService.clearEvents(),
-            this.syncService.setLastSync(new Date(0)),
-            this.tokenService.clearToken(),
-            this.cryptoService.clearKeys(),
-            this.userService.clear(),
+            this.eventService.uploadEvents(userId),
+            this.syncService.setLastSync(new Date(0), userId),
+            this.tokenService.clearToken(userId),
+            this.cryptoService.clearKeys(userId),
             this.settingsService.clear(userId),
             this.cipherService.clear(userId),
             this.folderService.clear(userId),
             this.collectionService.clear(userId),
-            this.passwordGenerationService.clear(),
-            this.vaultTimeoutService.clear(),
-            this.stateService.purge(),
+            this.passwordGenerationService.clear(userId),
+            this.vaultTimeoutService.clear(userId),
             this.policyService.clear(userId),
             this.keyConnectorService.clear(),
         ]);
 
-        this.vaultTimeoutService.biometricLocked = true;
-        this.searchService.clearIndex();
-        this.authService.logOut(async () => {
-            if (expired) {
-                this.platformUtilsService.showToast('warning', this.i18nService.t('loggedOut'),
-                    this.i18nService.t('loginExpired'));
-            }
+        await this.stateService.setBiometricLocked(true, { userId: userId });
+
+        if (userId == null || userId === await this.stateService.getUserId()) {
+            this.searchService.clearIndex();
+            this.authService.logOut(async () => {
+                if (expired) {
+                    this.platformUtilsService.showToast('warning', this.i18nService.t('loggedOut'),
+                        this.i18nService.t('loginExpired'));
+                }
+            });
+        }
+
+        await this.stateService.clean({ userId: userId });
+
+        if (this.stateService.activeAccount.getValue() == null) {
             this.router.navigate(['login']);
-        });
+        } else {
+            const locked = await this.vaultTimeoutService.isLocked();
+            if (locked) {
+                this.messagingService.send('locked');
+            } else {
+                this.messagingService.send('unlocked');
+                this.messagingService.send('syncVault');
+                this.router.navigate(['vault']);
+            }
+        }
+
+        await this.updateAppMenu();
     }
 
     private async recordActivity() {
@@ -377,7 +417,7 @@ export class AppComponent implements OnInit {
         }
 
         this.lastActivity = now;
-        this.storageService.save(ConstantsService.lastActiveKey, now);
+        await this.stateService.setLastActive(now);
 
         // Idle states
         if (this.isIdle) {

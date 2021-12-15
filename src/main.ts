@@ -7,24 +7,27 @@ import { MenuMain } from './main/menu.main';
 import { MessagingMain } from './main/messaging.main';
 import { PowerMonitorMain } from './main/powerMonitor.main';
 
-import { ConstantsService } from 'jslib-common/services/constants.service';
-
 import { BiometricMain } from 'jslib-common/abstractions/biometric.main';
-import { ElectronConstants } from 'jslib-electron/electronConstants';
+
 import { KeytarStorageListener } from 'jslib-electron/keytarStorageListener';
+
 import { ElectronLogService } from 'jslib-electron/services/electronLog.service';
 import { ElectronMainMessagingService } from 'jslib-electron/services/electronMainMessaging.service';
 import { ElectronStorageService } from 'jslib-electron/services/electronStorage.service';
+
 import { TrayMain } from 'jslib-electron/tray.main';
 import { UpdaterMain } from 'jslib-electron/updater.main';
 import { WindowMain } from 'jslib-electron/window.main';
 import { NativeMessagingMain } from './main/nativeMessaging.main';
+
+import { StateService } from 'jslib-common/services/state.service';
 
 export class Main {
     logService: ElectronLogService;
     i18nService: I18nService;
     storageService: ElectronStorageService;
     messagingService: ElectronMainMessagingService;
+    stateService: StateService;
     keytarStorageListener: KeytarStorageListener;
 
     windowMain: WindowMain;
@@ -69,23 +72,23 @@ export class Main {
 
         const storageDefaults: any = {};
         // Default vault timeout to "on restart", and action to "lock"
-        storageDefaults[ConstantsService.vaultTimeoutKey] = -1;
-        storageDefaults[ConstantsService.vaultTimeoutActionKey] = 'lock';
+        storageDefaults['global.vaultTimeout'] = -1;
+        storageDefaults['global.vaultTimeoutAction'] = 'lock';
         this.storageService = new ElectronStorageService(app.getPath('userData'), storageDefaults);
 
-        this.windowMain = new WindowMain(this.storageService, this.logService, true, undefined, undefined,
+        // TODO: this state service will have access to on disk storage, but not in memory storage.
+        // If we could get this to work using the stateService singleton that the rest of the app uses we could save
+        // ourselves from some hacks, like having to manually update the app menu vs. the menu subscribing to events.
+        this.stateService = new StateService(this.storageService, null, this.logService, null);
+
+        this.windowMain = new WindowMain(this.stateService, this.logService, true, undefined, undefined,
             arg => this.processDeepLink(arg), win => this.trayMain.setupWindowListeners(win));
-        this.messagingMain = new MessagingMain(this, this.storageService);
-        this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop', () => {
-            this.menuMain.updateMenuItem.enabled = false;
-        }, () => {
-            this.menuMain.updateMenuItem.enabled = true;
-        }, () => {
-            this.menuMain.updateMenuItem.label = this.i18nService.t('restartToUpdate');
-        }, 'bitwarden');
+        this.messagingMain = new MessagingMain(this, this.stateService);
+        this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, 'desktop',
+        null, null, null, 'bitwarden');
         this.menuMain = new MenuMain(this);
         this.powerMonitorMain = new PowerMonitorMain(this);
-        this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.storageService);
+        this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.stateService);
 
         this.messagingService = new ElectronMainMessagingService(this.windowMain, message => {
             this.messagingMain.onMessage(message);
@@ -94,10 +97,10 @@ export class Main {
 
         if (process.platform === 'win32') {
             const BiometricWindowsMain = require('jslib-electron/biometric.windows.main').default;
-            this.biometricMain = new BiometricWindowsMain(this.storageService, this.i18nService, this.windowMain);
+            this.biometricMain = new BiometricWindowsMain(this.i18nService, this.windowMain, this.stateService, this.logService);
         } else if (process.platform === 'darwin') {
             const BiometricDarwinMain = require('jslib-electron/biometric.darwin.main').default;
-            this.biometricMain = new BiometricDarwinMain(this.storageService, this.i18nService);
+            this.biometricMain = new BiometricDarwinMain(this.i18nService, this.stateService);
         }
 
         this.keytarStorageListener = new KeytarStorageListener('Bitwarden', this.biometricMain);
@@ -108,7 +111,7 @@ export class Main {
     bootstrap() {
         this.keytarStorageListener.init();
         this.windowMain.init().then(async () => {
-            const locale = await this.storageService.get<string>(ConstantsService.localeKey);
+            const locale = await this.stateService.getLocale();
             await this.i18nService.init(locale != null ? locale : app.getLocale());
             this.messagingMain.init();
             this.menuMain.init();
@@ -118,7 +121,7 @@ export class Main {
                 id: 'lockNow',
                 click: () => this.messagingService.send('lockVault'),
             }]);
-            if (await this.storageService.get<boolean>(ElectronConstants.enableStartToTrayKey)) {
+            if (await this.stateService.getEnableStartToTray()) {
                 this.trayMain.hideToTray();
             }
             this.powerMonitorMain.init();
@@ -127,7 +130,7 @@ export class Main {
                 await this.biometricMain.init();
             }
 
-            if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegration)) {
+            if (await this.stateService.getEnableBrowserIntegration()) {
                 this.nativeMessagingMain.listen();
             }
 

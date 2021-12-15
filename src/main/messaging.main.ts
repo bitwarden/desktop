@@ -4,24 +4,24 @@ import * as path from 'path';
 
 import { Main } from '../main';
 
-import { ElectronConstants } from 'jslib-electron/electronConstants';
+import { StateService } from 'jslib-common/abstractions/state.service';
 
-import { StorageService } from 'jslib-common/abstractions/storage.service';
+import { MenuUpdateRequest } from './menu.updater';
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 
 export class MessagingMain {
     private syncTimeout: NodeJS.Timer;
 
-    constructor(private main: Main, private storageService: StorageService) { }
+    constructor(private main: Main, private stateService: StateService) { }
 
     init() {
         this.scheduleNextSync();
         if (process.platform === 'linux') {
-            this.storageService.save(ElectronConstants.openAtLogin, fs.existsSync(this.linuxStartupFile()));
+            this.stateService.setOpenAtLogin(fs.existsSync(this.linuxStartupFile()));
         } else {
             const loginSettings = app.getLoginItemSettings();
-            this.storageService.save(ElectronConstants.openAtLogin, loginSettings.openAtLogin);
+            this.stateService.setOpenAtLogin(loginSettings.openAtLogin);
         }
         ipcMain.on('messagingService', async (event: any, message: any) => this.onMessage(message));
     }
@@ -32,12 +32,11 @@ export class MessagingMain {
                 this.scheduleNextSync();
                 break;
             case 'updateAppMenu':
-                this.main.menuMain.updateApplicationMenuState(message.isAuthenticated, message.isLocked,
-                    message.hideChangeMasterPass);
-                this.updateTrayMenu(message.isAuthenticated, message.isLocked);
+                this.main.menuMain.updateApplicationMenuState(message.updateRequest);
+                this.updateTrayMenu(message.updateRequest);
                 break;
             case 'minimizeOnCopy':
-                this.storageService.get<boolean>(ElectronConstants.minimizeOnCopyToClipboardKey).then(
+                this.stateService.getMinimizeOnCopyToClipboard().then(
                     shouldMinimize => {
                         if (shouldMinimize && this.main.windowMain.win !== null) {
                             this.main.windowMain.win.minimize();
@@ -93,13 +92,14 @@ export class MessagingMain {
         }, SyncInterval);
     }
 
-    private updateTrayMenu(isAuthenticated: boolean, isLocked: boolean) {
-        if (this.main.trayMain == null || this.main.trayMain.contextMenu == null) {
+    private updateTrayMenu(updateRequest: MenuUpdateRequest) {
+        if (this.main.trayMain == null || this.main.trayMain.contextMenu == null || updateRequest?.activeUserId == null) {
             return;
         }
         const lockNowTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById('lockNow');
-        if (lockNowTrayMenuItem != null) {
-            lockNowTrayMenuItem.enabled = isAuthenticated && !isLocked;
+        const activeAccount = updateRequest.accounts[updateRequest.activeUserId];
+        if (lockNowTrayMenuItem != null && activeAccount != null) {
+            lockNowTrayMenuItem.enabled = activeAccount.isAuthenticated && !activeAccount.isLocked;
         }
         this.main.trayMain.updateContextMenu();
     }

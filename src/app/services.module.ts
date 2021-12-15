@@ -10,13 +10,14 @@ import { ElectronRendererSecureStorageService } from 'jslib-electron/services/el
 import { ElectronRendererStorageService } from 'jslib-electron/services/electronRendererStorage.service';
 
 import { I18nService } from '../services/i18n.service';
+import { LoginGuardService } from '../services/loginGuard.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
 import { PasswordRepromptService } from '../services/passwordReprompt.service';
+import { SearchBarService } from './layout/search/search-bar.service';
 
 import { JslibServicesModule } from 'jslib-angular/services/jslib-services.module';
 
 import { AuthService } from 'jslib-common/services/auth.service';
-import { ConstantsService } from 'jslib-common/services/constants.service';
 import { ContainerService } from 'jslib-common/services/container.service';
 import { EventService } from 'jslib-common/services/event.service';
 import { SystemService } from 'jslib-common/services/system.service';
@@ -46,16 +47,17 @@ import { ThemeType } from 'jslib-common/enums/themeType';
 
 export function initFactory(window: Window, environmentService: EnvironmentServiceAbstraction,
     syncService: SyncServiceAbstraction, vaultTimeoutService: VaultTimeoutService,
-    storageService: StorageServiceAbstraction, i18nService: I18nService, eventService: EventService,
+    i18nService: I18nService, eventService: EventService,
     authService: AuthService, notificationsService: NotificationsServiceAbstraction,
     platformUtilsService: PlatformUtilsServiceAbstraction, stateService: StateServiceAbstraction,
     cryptoService: CryptoServiceAbstraction): Function {
 
     return async () => {
+        await stateService.init();
         await environmentService.setUrlsFromStorage();
         syncService.fullSync(true);
-        vaultTimeoutService.init(true);
-        const locale = await storageService.get<string>(ConstantsService.localeKey);
+        await vaultTimeoutService.init(true);
+        const locale = await stateService.getLocale();
         await i18nService.init(locale);
         eventService.init(true);
         authService.init();
@@ -63,22 +65,18 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
         const htmlEl = window.document.documentElement;
         htmlEl.classList.add('os_' + platformUtilsService.getDeviceString());
         htmlEl.classList.add('locale_' + i18nService.translationLocale);
-
         const theme = await platformUtilsService.getEffectiveTheme();
         htmlEl.classList.add('theme_' + theme);
         platformUtilsService.onDefaultSystemThemeChange(async sysTheme => {
-            const bwTheme = await storageService.get<ThemeType>(ConstantsService.themeKey);
+            const bwTheme = await stateService.getTheme();
             if (bwTheme == null || bwTheme === ThemeType.System) {
                 htmlEl.classList.remove('theme_' + ThemeType.Light, 'theme_' + ThemeType.Dark);
                 htmlEl.classList.add('theme_' + sysTheme);
             }
         });
 
-        stateService.save(ConstantsService.disableFaviconKey,
-            await storageService.get<boolean>(ConstantsService.disableFaviconKey));
-
         let installAction = null;
-        const installedVersion = await storageService.get<string>(ConstantsService.installedVersionKey);
+        const installedVersion = await stateService.getInstalledVersion();
         const currentVersion = await platformUtilsService.getApplicationVersion();
         if (installedVersion == null) {
             installAction = 'install';
@@ -87,7 +85,7 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
         }
 
         if (installAction != null) {
-            await storageService.save(ConstantsService.installedVersionKey, currentVersion);
+            await stateService.setInstalledVersion(currentVersion);
         }
 
         const containerService = new ContainerService(cryptoService);
@@ -109,7 +107,6 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
                 EnvironmentServiceAbstraction,
                 SyncServiceAbstraction,
                 VaultTimeoutServiceAbstraction,
-                StorageServiceAbstraction,
                 I18nServiceAbstraction,
                 EventServiceAbstraction,
                 AuthServiceAbstraction,
@@ -124,12 +121,12 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
         {
             provide: PlatformUtilsServiceAbstraction,
             useFactory: (i18nService: I18nServiceAbstraction, messagingService: MessagingServiceAbstraction,
-                storageService: StorageServiceAbstraction) => new ElectronPlatformUtilsService(i18nService,
-                    messagingService, true, storageService),
+                stateService: StateServiceAbstraction) => new ElectronPlatformUtilsService(i18nService,
+                    messagingService, true, stateService),
             deps: [
                 I18nServiceAbstraction,
                 MessagingServiceAbstraction,
-                StorageServiceAbstraction,
+                StateServiceAbstraction,
             ],
         },
         {
@@ -148,25 +145,34 @@ export function initFactory(window: Window, environmentService: EnvironmentServi
             provide: CryptoServiceAbstraction,
             useClass: ElectronCryptoService,
             deps: [
-                StorageServiceAbstraction,
-                'SECURE_STORAGE',
                 CryptoFunctionServiceAbstraction,
                 PlatformUtilsServiceAbstraction,
                 LogServiceAbstraction,
+                StateServiceAbstraction,
             ],
         },
         {
             provide: SystemServiceAbstraction,
             useClass: SystemService,
             deps: [
-                StorageServiceAbstraction,
                 VaultTimeoutServiceAbstraction,
                 MessagingServiceAbstraction,
                 PlatformUtilsServiceAbstraction,
+                StateServiceAbstraction,
             ],
         },
         { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
         NativeMessagingService,
+        SearchBarService,
+        {
+            provide: LoginGuardService,
+            useClass: LoginGuardService,
+            deps: [
+                StateServiceAbstraction,
+                PlatformUtilsServiceAbstraction,
+                I18nServiceAbstraction,
+            ],
+        },
     ],
 })
 export class ServicesModule {

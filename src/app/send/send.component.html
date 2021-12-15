@@ -31,13 +31,6 @@
         </div>
     </div>
     <div id="items" class="items">
-        <div class="header header-search">
-            <div class="search">
-                <input type="search" placeholder="{{'searchSends' | i18n}}" id="search"
-                    [(ngModel)]="searchText" (input)="searchTextChanged()" autocomplete="off" appAutofocus>
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
-        </div>
         <div class="content">
             <div class="list" *ngIf="filteredSends.length">
                 <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s.id)"

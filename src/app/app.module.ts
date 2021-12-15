@@ -1,16 +1,18 @@
 import 'zone.js/dist/zone';
 
-import { AppRoutingModule } from './app-routing.module';
-import { ServicesModule } from './services.module';
-
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import 'zone.js/dist/zone';
+
+import { AppRoutingModule } from './app-routing.module';
+import { ServicesModule } from './services.module';
 
 import { AppComponent } from './app.component';
 
@@ -29,6 +31,7 @@ import { TwoFactorComponent } from './accounts/two-factor.component';
 import { UpdateTempPasswordComponent } from './accounts/update-temp-password.component';
 import { VaultTimeoutInputComponent } from './accounts/vault-timeout-input.component';
 
+import { AvatarComponent } from 'jslib-angular/components/avatar.component';
 import { CalloutComponent } from 'jslib-angular/components/callout.component';
 import { IconComponent } from 'jslib-angular/components/icon.component';
 import { BitwardenToastModule } from 'jslib-angular/components/toastr.component';
@@ -70,7 +73,10 @@ import { AddEditComponent as SendAddEditComponent } from './send/add-edit.compon
 import { EffluxDatesComponent as SendEffluxDatesComponent } from './send/efflux-dates.component';
 import { SendComponent } from './send/send.component';
 
+import { AccountSwitcherComponent } from './layout/account-switcher.component';
+import { HeaderComponent } from './layout/header.component';
 import { NavComponent } from './layout/nav.component';
+import { SearchComponent } from './layout/search/search.component';
 
 import { PasswordRepromptComponent } from './components/password-reprompt.component';
 import { SetPinComponent } from './components/set-pin.component';
@@ -183,6 +189,7 @@ registerLocaleData(localeZhTw, 'zh-TW');
         }),
         ScrollingModule,
         A11yModule,
+        OverlayModule,
     ],
     declarations: [
         A11yTitleDirective,
@@ -239,6 +246,10 @@ registerLocaleData(localeZhTw, 'zh-TW');
         VerifyMasterPasswordComponent,
         ViewComponent,
         ViewCustomFieldsComponent,
+        HeaderComponent,
+        AccountSwitcherComponent,
+        AvatarComponent,
+        SearchComponent,
     ],
     providers: [DatePipe],
     bootstrap: [AppComponent],

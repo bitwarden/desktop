@@ -1,7 +1,5 @@
 import { powerMonitor } from 'electron';
 
-import { ConstantsService } from 'jslib-common/services/constants.service';
-
 import { isSnapStore } from 'jslib-electron/utils';
 
 import { Main } from '../main';
@@ -60,8 +58,8 @@ export class PowerMonitorMain {
     }
 
     private async getVaultTimeoutOptions(): Promise<[number, string]> {
-        const timeout = await this.main.storageService.get<number>(ConstantsService.vaultTimeoutKey);
-        const action = await this.main.storageService.get<string>(ConstantsService.vaultTimeoutActionKey);
+        const timeout = await this.main.stateService.getVaultTimeout();
+        const action = await this.main.stateService.getVaultTimeoutAction();
         return [timeout, action];
     }
 }

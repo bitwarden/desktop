@@ -3,7 +3,6 @@ import { DatePipe } from '@angular/common';
 import {
     Component,
     OnChanges,
-    SimpleChanges,
 } from '@angular/core';
 
 import { ControlContainer, NgForm } from '@angular/forms';
