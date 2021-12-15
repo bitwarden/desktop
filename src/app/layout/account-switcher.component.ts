@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';
 import { StateService } from 'jslib-common/abstractions/state.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+
 import { AuthenticationStatus } from 'jslib-common/enums/authenticationStatus';
 
 import { Account } from 'jslib-common/models/domain/account';
