@@ -150,29 +150,29 @@ export class SettingsComponent implements OnInit {
 
     async ngOnInit() {
         this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-        this.vaultTimeout.setValue(await this.stateService.getVaultTimeout() ?? 15);
-        this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction() ?? 'lock';
+        this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
+        this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
         const pinSet = await this.vaultTimeoutService.isPinLockSet();
         this.pin = pinSet[0] || pinSet[1];
-        this.disableFavicons = await this.stateService.getDisableFavicon() ?? false;
-        this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration() ?? false;
-        this.enableBrowserIntegrationFingerprint = await this.stateService.getEnableBrowserIntegrationFingerprint() ?? false;
-        this.enableMinToTray = await this.stateService.getEnableMinimizeToTray() ?? false;
-        this.enableCloseToTray = await this.stateService.getEnableCloseToTray() ?? false;
-        this.enableTray = await this.stateService.getEnableTray() ?? false;
-        this.startToTray = await this.stateService.getEnableStartToTray() ?? false;
-        this.locale = await this.stateService.getLocale() ?? 'en';
-        this.theme = await this.stateService.getTheme() ?? null;
-        this.clearClipboard = await this.stateService.getClearClipboard() ?? null;
-        this.minimizeOnCopyToClipboard = await this.stateService.getMinimizeOnCopyToClipboard() ?? false;
+        this.disableFavicons = await this.stateService.getDisableFavicon();
+        this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration();
+        this.enableBrowserIntegrationFingerprint = await this.stateService.getEnableBrowserIntegrationFingerprint();
+        this.enableMinToTray = await this.stateService.getEnableMinimizeToTray();
+        this.enableCloseToTray = await this.stateService.getEnableCloseToTray();
+        this.enableTray = await this.stateService.getEnableTray();
+        this.startToTray = await this.stateService.getEnableStartToTray();
+        this.locale = await this.stateService.getLocale();
+        this.theme = await this.stateService.getTheme();
+        this.clearClipboard = await this.stateService.getClearClipboard();
+        this.minimizeOnCopyToClipboard = await this.stateService.getMinimizeOnCopyToClipboard();
         this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-        this.biometric = await this.vaultTimeoutService.isBiometricLockSet() ?? false;
+        this.biometric = await this.vaultTimeoutService.isBiometricLockSet();
         this.biometricText = await this.stateService.getBiometricText();
-        this.noAutoPromptBiometrics = await this.stateService.getNoAutoPromptBiometrics() ?? false;
+        this.noAutoPromptBiometrics = await this.stateService.getNoAutoPromptBiometrics();
         this.noAutoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
-        this.alwaysShowDock = await this.stateService.getAlwaysShowDock() ?? false;
+        this.alwaysShowDock = await this.stateService.getAlwaysShowDock();
         this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
-        this.openAtLogin = await this.stateService.getOpenAtLogin() ?? false;
+        this.openAtLogin = await this.stateService.getOpenAtLogin();
     }
 
     async saveVaultTimeoutOptions() {

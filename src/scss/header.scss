@@ -123,7 +123,7 @@
 
         &:hover {
             @include themify($themes) {
-                background-color: themed('backgroundColorAlt2'); // TODO: Check if this color is acceptable design prototype uses #ececec
+                background-color: themed('backgroundColorAlt2');
             }
         }
     }

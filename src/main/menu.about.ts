@@ -1,5 +1,3 @@
-import { IMenubarMenu } from './menubar';
-
 import {
     BrowserWindow,
     clipboard,
@@ -11,6 +9,8 @@ import { I18nService } from 'jslib-common/abstractions/i18n.service';
 
 import { UpdaterMain } from 'jslib-electron/updater.main';
 import { isMac, isSnapStore, isWindowsStore } from 'jslib-electron/utils';
+
+import { IMenubarMenu } from './menubar';
 
 export class AboutMenu implements IMenubarMenu {
     readonly id: string = 'about';

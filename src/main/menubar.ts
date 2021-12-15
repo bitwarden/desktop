@@ -1,3 +1,8 @@
+import {
+    Menu,
+    MenuItemConstructorOptions,
+} from 'electron';
+
 import { AboutMenu } from './menu.about';
 import { AccountMenu } from './menu.account';
 import { BitwardenMenu } from './menu.bitwarden';
@@ -7,11 +12,6 @@ import { HelpMenu } from './menu.help';
 import { MenuUpdateRequest } from './menu.updater';
 import { ViewMenu } from './menu.view';
 import { WindowMenu } from './menu.window';
-
-import {
-    Menu,
-    MenuItemConstructorOptions,
-} from 'electron';
 
 import { I18nService } from 'jslib-common/abstractions/i18n.service';
 import { MessagingService } from 'jslib-common/abstractions/messaging.service';

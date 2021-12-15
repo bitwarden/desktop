@@ -42,7 +42,6 @@ import { TokenService } from 'jslib-common/abstractions/token.service';
 import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { CipherType } from 'jslib-common/enums/cipherType';
-import { StorageLocation } from 'jslib-common/enums/storageLocation';
 
 import { ExportComponent } from './vault/export.component';
 import { FolderAddEditComponent } from './vault/folder-add-edit.component';
@@ -158,8 +157,8 @@ export class AppComponent implements OnInit {
                             this.router.navigate(['lock']);
                         }
                         this.notificationsService.updateConnection();
-                        // this.systemService.startProcessReload();
                         await this.systemService.clearPendingClipboard();
+                        this.systemService.startProcessReload();
                         break;
                     case 'reloadProcess':
                         window.location.reload(true);

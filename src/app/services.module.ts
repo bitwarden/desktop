@@ -10,6 +10,7 @@ import { ElectronRendererSecureStorageService } from 'jslib-electron/services/el
 import { ElectronRendererStorageService } from 'jslib-electron/services/electronRendererStorage.service';
 
 import { I18nService } from '../services/i18n.service';
+import { LoginGuardService } from '../services/loginGuard.service';
 import { NativeMessagingService } from '../services/nativeMessaging.service';
 import { PasswordRepromptService } from '../services/passwordReprompt.service';
 import { SearchBarService } from './layout/search/search-bar.service';
@@ -43,7 +44,6 @@ import { SystemService as SystemServiceAbstraction } from 'jslib-common/abstract
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from 'jslib-common/abstractions/vaultTimeout.service';
 
 import { ThemeType } from 'jslib-common/enums/themeType';
-import { LoginGuardService } from '../services/loginGuard.service';
 
 export function initFactory(window: Window, environmentService: EnvironmentServiceAbstraction,
     syncService: SyncServiceAbstraction, vaultTimeoutService: VaultTimeoutService,
