@@ -1,6 +1,6 @@
-﻿@import "../../jslib/angular/src/scss/webfonts.css";
-$dark-icon-themes: 'theme-dark', 'theme-nord';
-@import "../../jslib/angular/src/scss/icons.css";
+@import "../../jslib/angular/src/scss/webfonts.css";
+$dark-icon-themes: 'theme_dark', 'theme_nord';
+@import "../../jslib/angular/src/scss/icons.scss";
 
 
 @import "variables.scss";
@@ -15,4 +15,3 @@ $dark-icon-themes: 'theme-dark', 'theme-nord';
 @import "modal.scss";
 @import "plugins.scss";
 @import "environment.scss";
-@import "icons.scss";
