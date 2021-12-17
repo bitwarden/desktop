@@ -733,8 +733,8 @@
   "loading": {
     "message": "Зареждане…"
   },
-  "lockNow": {
-    "message": "Заключване сега"
+  "lockVault": {
+    "message": "Заключване на трезора"
   },
   "passwordGenerator": {
     "message": "Създаване на пароли"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Една или повече от настройките на организацията Ви не позволяват да изнасяте личния си трезор."
   },
+  "addAccount": {
+    "message": "Добавяне на регистрация"
+  },
   "removeMasterPassword": {
     "message": "Премахване на главната парола"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Конекторът за ключове е недостъпен. Опитайте отново по-късно."
+  },
+  "lockAllVaults": {
+    "message": "Заключване на всички трезори"
+  },
+  "accountLimitReached": {
+    "message": "Не може едновременно да са вписани повече от 5 регистрации."
   }
 }

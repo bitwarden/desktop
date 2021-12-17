@@ -269,7 +269,7 @@
     "message": "Apellido"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Nombre"
   },
   "address1": {
     "message": "Dirección 1"
@@ -332,11 +332,11 @@
     "message": "Booleano"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Conectado",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Valor vinculado",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -542,25 +542,25 @@
     "message": "No hay elementos que listar."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Envía un código de verificación a tu correo electrónico"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Enviar código"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Código enviado"
   },
   "verificationCode": {
     "message": "Código de verificación"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Confirma tu identidad para continuar."
   },
   "verificationCodeRequired": {
     "message": "Código de verificación requerido."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Código de verificación incorrecto"
   },
   "continue": {
     "message": "Continuar"
@@ -733,8 +733,8 @@
   "loading": {
     "message": "Cargando..."
   },
-  "lockNow": {
-    "message": "Bloquear"
+  "lockVault": {
+    "message": "Bloquear caja fuerte"
   },
   "passwordGenerator": {
     "message": "Generador de contraseñas"
@@ -1757,14 +1757,17 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Una o más políticas de organización le impiden exportar su caja fuerte personal."
   },
+  "addAccount": {
+    "message": "Añadir cuenta"
+  },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Eliminar contraseña maestra"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Contraseña maestra eliminada."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ está usando SSO con un servidor de claves autoalojado. Los miembros de esta organización ya no necesitarán una contraseña maestra para iniciar sesión.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1773,15 +1776,21 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Abandonar organización"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "¿Estás seguro de que quieres dejar esta organización?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Has abandonado la organización."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "No se puede acceder al conector de clave. Inténtalo de nuevo más tarde."
+  },
+  "lockAllVaults": {
+    "message": "Bloquear todas las cajas fuertes"
+  },
+  "accountLimitReached": {
+    "message": "No se puede iniciar sesión en más de 5 cuentas al mismo tiempo."
   }
 }

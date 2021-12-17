@@ -733,8 +733,8 @@
   "loading": {
     "message": "درحال بارگذاری..."
   },
-  "lockNow": {
-    "message": "الان قفل شود"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "تولید کننده کلمه عبور"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "پاک کردن کلمه عبور اصلی"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "دسترسی به رابط کلید ممکن نیست، بعداً دوباره امتحان کنید."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

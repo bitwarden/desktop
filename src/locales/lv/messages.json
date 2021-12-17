@@ -733,8 +733,8 @@
   "loading": {
     "message": "Notiek ielāde..."
   },
-  "lockNow": {
-    "message": "Aizslēgt"
+  "lockVault": {
+    "message": "Aizslēgt glabātavu"
   },
   "passwordGenerator": {
     "message": "Paroļu veidotājs"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Viens vai vairāki apvienības nosacījumi neļauj izgūt privātās glabātavas saturu."
   },
+  "addAccount": {
+    "message": "Pievienot kontu"
+  },
   "removeMasterPassword": {
     "message": "Noņemt galveno paroli"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nav iespējams sasniegt Key Connector, tāpēc vēlāk jāmēģina atkal."
+  },
+  "lockAllVaults": {
+    "message": "Aizslēgt visas glabātavas"
+  },
+  "accountLimitReached": {
+    "message": "Vienlaicīgi var būt pierakstījušies ne vairāk kā 5 konti."
   }
 }

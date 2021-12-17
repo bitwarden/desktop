@@ -733,8 +733,8 @@
   "loading": {
     "message": "Încărcare..."
   },
-  "lockNow": {
-    "message": "Blocare acum"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Generator de parole"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Una sau mai multe politici ale organizației vă împiedică să exportați seiful personal."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "Eliminare parolă principală"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nu se poate accesa Conectorul Cheie, vă rugăm să încercați din nou mai târziu."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

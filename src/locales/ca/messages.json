@@ -269,7 +269,7 @@
     "message": "Cognoms"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Nom complet"
   },
   "address1": {
     "message": "Adreça 1"
@@ -332,7 +332,7 @@
     "message": "Booleà"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Enllaçat",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
@@ -542,25 +542,25 @@
     "message": "No hi ha cap element a llistar."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Enviar un codi de verificació al correu electrònic"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Enviar codi"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Codi enviat"
   },
   "verificationCode": {
     "message": "Codi de verificació"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Confirmi la seva contrasenya per continuar."
   },
   "verificationCodeRequired": {
     "message": "El codi de verificació és obligatori."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Codi de verificació no vàlid"
   },
   "continue": {
     "message": "Continua"
@@ -733,8 +733,8 @@
   "loading": {
     "message": "S'està carregant..."
   },
-  "lockNow": {
-    "message": "Bloqueja ara"
+  "lockVault": {
+    "message": "Bloquejar caixa forta"
   },
   "passwordGenerator": {
     "message": "Generador de contrasenyes"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
   },
+  "addAccount": {
+    "message": "Afegir compte"
+  },
   "removeMasterPassword": {
     "message": "Remove Master Password"
   },
@@ -1773,15 +1776,21 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Abandonar organització"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Esteu segur que voleu sortir d'aquesta organització?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Heu deixat l'organització."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Bloquejar totes les caixes fortes"
+  },
+  "accountLimitReached": {
+    "message": "No es pot iniciar sessió a més de 5 comptes al mateix temps."
   }
 }

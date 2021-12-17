@@ -473,7 +473,7 @@
     "message": "Cartella eliminata"
   },
   "loginOrCreateNewAccount": {
-    "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte."
+    "message": "Accedi o crea un nuovo account per accedere alla tua cassaforte."
   },
   "createAccount": {
     "message": "Crea account"
@@ -733,8 +733,8 @@
   "loading": {
     "message": "Caricamento in corso..."
   },
-  "lockNow": {
-    "message": "Blocca"
+  "lockVault": {
+    "message": "Blocca la cassaforte"
   },
   "passwordGenerator": {
     "message": "Generatore di password"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Una o più policy dell'organizzazione ti impediscono di esportare la tua cassaforte personale."
   },
+  "addAccount": {
+    "message": "Aggiungi account"
+  },
   "removeMasterPassword": {
     "message": "Rimuovi la password principale"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Impossibile raggiungere il key connector, riprova più tardi."
+  },
+  "lockAllVaults": {
+    "message": "Blocca tutte le casseforti"
+  },
+  "accountLimitReached": {
+    "message": "Non possono essere accedere più di 5 account contemporaneamente."
   }
 }

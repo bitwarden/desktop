@@ -733,8 +733,8 @@
   "loading": {
     "message": "Laai tans…"
   },
-  "lockNow": {
-    "message": "Vergrendel Nou"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Wagwoordgenereerder"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Een of meer organisasiebeleide verhoed u om u persoonlike kluis uit te stuur."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "Verwyder hoofwagwoord"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Kan nie die sleutelkoppelstuk bereik nie, probeer later weer."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

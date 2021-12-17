@@ -733,8 +733,8 @@
   "loading": {
     "message": "불러오는 중..."
   },
-  "lockNow": {
-    "message": "지금 잠그기"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "비밀번호 생성기"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "하나 이상의 조직 정책이 개인 보관함을 내보내는 것을 제한하고 있습니다."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "마스터 비밀번호 제거"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "키 제공자와 통신할 수 없습니다. 다시 시도해보세요."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

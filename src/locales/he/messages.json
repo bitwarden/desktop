@@ -733,8 +733,8 @@
   "loading": {
     "message": "טוען..."
   },
-  "lockNow": {
-    "message": "נעל עכשיו"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "יוצר הסיסמאות"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "הסרת סיסמה ראשית"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "לא ניתן להגיע למחבר המפתח, נא לנסות שוב."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }
