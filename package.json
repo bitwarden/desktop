@@ -258,7 +258,7 @@
     "css-loader": "^6.5.1",
     "electron-builder": "22.11.7",
     "electron-notarize": "^1.1.1",
-    "electron-rebuild": "^3.2.3",
+    "electron-rebuild": "^3.2.5",
     "electron-reload": "^1.5.0",
     "font-awesome": "4.7.0",
     "html-loader": "^3.0.1",
