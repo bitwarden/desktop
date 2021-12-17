@@ -116,8 +116,7 @@ jobs:
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
       - name: Set up Snap
-        run: |
-          sudo snap install snapcraft --classic
+        run: sudo snap install snapcraft --classic
 
       - name: Print environment
         run: |
@@ -214,8 +213,7 @@ jobs:
 
       - name: Set up environment
         shell: pwsh
-        run: |
-          choco install checksum --no-progress
+        run: choco install checksum --no-progress
 
       - name: Print environment
         run: |
@@ -656,8 +654,7 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-        run: |
-          npm run pack:mac
+        run: npm run pack:mac
 
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
@@ -840,8 +837,7 @@ jobs:
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        run: |
-          npm run pack:mac:mas
+        run: npm run pack:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -1019,16 +1015,14 @@ jobs:
         run: ./scripts/safari-build.ps1 -masdev -copyonly
 
       - name: Build dev application for App Store
-        run: |
-          npm run pack:mac:masdev
+        run: npm run pack:mac:masdev
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Zip masdev asset
         working-directory: ./dist/mas-dev-universal
-        run: |
-          zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
+        run: zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
 
       - name: Upload masdev artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
