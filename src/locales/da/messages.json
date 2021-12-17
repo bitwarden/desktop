@@ -733,8 +733,8 @@
   "loading": {
     "message": "Indlæser..."
   },
-  "lockNow": {
-    "message": "Lås nu"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Adgangskodegenerator"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "Fjern hovedadgangskode"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Kan ikke kontakte key connector, forsøg igen senere."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

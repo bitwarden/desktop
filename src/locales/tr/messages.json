@@ -733,8 +733,8 @@
   "loading": {
     "message": "Yükleniyor..."
   },
-  "lockNow": {
-    "message": "Şimdi kilitle"
+  "lockVault": {
+    "message": "Kasayı kilitle"
   },
   "passwordGenerator": {
     "message": "Parola Oluşturucu"
@@ -787,7 +787,7 @@
     "message": "Eşitleme başarısız oldu"
   },
   "yourVaultIsLocked": {
-    "message": "Kasanız kilitli. Devam etmek için Ana Şifrenizi doğrulayın."
+    "message": "Kasanız kilitli. Devam etmek için kimliğinizi doğrulayın."
   },
   "unlock": {
     "message": "Kilidi Aç"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Bir veya daha fazla kuruluş ilkesi, kişisel kasanızı dışa aktarmanızı engelliyor."
   },
+  "addAccount": {
+    "message": "Hesap ekle"
+  },
   "removeMasterPassword": {
     "message": "Ana parolayı kaldır"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Anahtar bağlayıcısına ulaşılamıyor, daha sonra yeniden deneyin."
+  },
+  "lockAllVaults": {
+    "message": "Tüm kasaları kilitle"
+  },
+  "accountLimitReached": {
+    "message": "Aynı anda 5'ten fazla hesapla oturum açamazsınız."
   }
 }

@@ -733,8 +733,8 @@
   "loading": {
     "message": "Завантаження..."
   },
-  "lockNow": {
-    "message": "Заблокувати зараз"
+  "lockVault": {
+    "message": "Заблокувати сховище"
   },
   "passwordGenerator": {
     "message": "Генератор паролів"
@@ -787,7 +787,7 @@
     "message": "Не вдалося синхронізувати"
   },
   "yourVaultIsLocked": {
-    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
+    "message": "Сховище заблоковано. Пройдіть ідентифікацію для продовження."
   },
   "unlock": {
     "message": "Розблокувати"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
   },
+  "addAccount": {
+    "message": "Додати обліковий запис"
+  },
   "removeMasterPassword": {
     "message": "Вилучити головний пароль"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."
+  },
+  "lockAllVaults": {
+    "message": "Заблокувати всі сховища"
+  },
+  "accountLimitReached": {
+    "message": "Можна увійти не більше, ніж у 5 облікових записів одночасно."
   }
 }

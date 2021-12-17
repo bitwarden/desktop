@@ -733,8 +733,8 @@
   "loading": {
     "message": "Учитавање..."
   },
-  "lockNow": {
-    "message": "Закључај одмах"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Генератор Лозинке"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Једна или више полиса ваше организације вас спречава да извезете ваш сеф."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "Уклони главну лозинку"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Немогуће повезати се са добављачем кључева, покушајте поново касније."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

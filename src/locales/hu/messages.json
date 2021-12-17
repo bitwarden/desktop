@@ -733,8 +733,8 @@
   "loading": {
     "message": "A betöltés folyamatban van..."
   },
-  "lockNow": {
-    "message": "Zárolás most"
+  "lockVault": {
+    "message": "Széf lezárása"
   },
   "passwordGenerator": {
     "message": "Jelszó generátor"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Egy vagy több szervezeti házirend tiltja a személyes széf exportálását."
   },
+  "addAccount": {
+    "message": "Fiók hozzáadása"
+  },
   "removeMasterPassword": {
     "message": "Mesterjelszó eltávolítása"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nem érhető el a kulcskapcsoló. Próbáljuk újra később."
+  },
+  "lockAllVaults": {
+    "message": "Összes széf lezárása"
+  },
+  "accountLimitReached": {
+    "message": "Egyszerre legfeljebb 5 fiókba lehet bejelentkezni."
   }
 }

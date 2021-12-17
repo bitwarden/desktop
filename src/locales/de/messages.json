@@ -733,8 +733,8 @@
   "loading": {
     "message": "Lade …"
   },
-  "lockNow": {
-    "message": "Jetzt sperren"
+  "lockVault": {
+    "message": "Tresor sperren"
   },
   "passwordGenerator": {
     "message": "Passwort-Generator"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Eine oder mehrere Unternehmensrichtlinien verhindern es, dass du deinen persönlichen Tresor exportieren kannst."
   },
+  "addAccount": {
+    "message": "Konto hinzufügen"
+  },
   "removeMasterPassword": {
     "message": "Master-Passwort entfernen"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Der Key Connector konnte nicht erreicht werden. Versuche es später erneut."
+  },
+  "lockAllVaults": {
+    "message": "Alle Tresore sperren"
+  },
+  "accountLimitReached": {
+    "message": "Es dürfen nicht mehr als 5 Konten gleichzeitig angemeldet sein."
   }
 }

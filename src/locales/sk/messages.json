@@ -733,8 +733,8 @@
   "loading": {
     "message": "Načítava sa..."
   },
-  "lockNow": {
-    "message": "Uzamknúť teraz"
+  "lockVault": {
+    "message": "Zamknúť trezor"
   },
   "passwordGenerator": {
     "message": "Generátor hesla"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Jedna alebo viacero zásad organizácie vám bráni exportovať váš osobný trezor."
   },
+  "addAccount": {
+    "message": "Pridať účet"
+  },
   "removeMasterPassword": {
     "message": "Odstrániť hlavné heslo"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nie je možné kontaktovať kľúčový konektor, skúste to znova neskôr."
+  },
+  "lockAllVaults": {
+    "message": "Zamknúť všetky trezory"
+  },
+  "accountLimitReached": {
+    "message": "Súčasne nemôže byť prihlásených viac ako 5 účtov."
   }
 }

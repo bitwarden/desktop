@@ -733,8 +733,8 @@
   "loading": {
     "message": "Ladataan…"
   },
-  "lockNow": {
-    "message": "Lukitse nyt"
+  "lockVault": {
+    "message": "Lukitse holvi"
   },
   "passwordGenerator": {
     "message": "Salasanageneraattori"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Yksi tai useampi organisaation käytäntö estää henkilökohtaisen holvisi viennin."
   },
+  "addAccount": {
+    "message": "Lisää tili"
+  },
   "removeMasterPassword": {
     "message": "Poista pääsalasana"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Avainyhdistäjää ei tavoiteta. Yritä myöhemmin uudelleen."
+  },
+  "lockAllVaults": {
+    "message": "Lukitse kaikki holvit"
+  },
+  "accountLimitReached": {
+    "message": "Enintään 5 tiliä voi olla samanaikaisesti kirjautuneena."
   }
 }

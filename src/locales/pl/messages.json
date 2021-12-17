@@ -733,8 +733,8 @@
   "loading": {
     "message": "Ładowanie..."
   },
-  "lockNow": {
-    "message": "Zablokuj"
+  "lockVault": {
+    "message": "Zablokuj sejf"
   },
   "passwordGenerator": {
     "message": "Generator hasła"
@@ -787,7 +787,7 @@
     "message": "Synchronizacja nie powiodła się"
   },
   "yourVaultIsLocked": {
-    "message": "Sejf jest zablokowany. Wpisz hasło główne, aby kontynuować."
+    "message": "Sejf jest zablokowany. Zweryfikuj swoją tożsamość, aby kontynuować."
   },
   "unlock": {
     "message": "Odblokuj"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."
   },
+  "addAccount": {
+    "message": "Dodaj konto"
+  },
   "removeMasterPassword": {
     "message": "Usuń hasło główne"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Nie można nawiązać połączenia z serwerem Key Connector. Spróbuj ponownie później."
+  },
+  "lockAllVaults": {
+    "message": "Zablokuj wszystkie sejfy"
+  },
+  "accountLimitReached": {
+    "message": "Nie możesz zalogować się na więcej niż 5 kont jednocześnie."
   }
 }

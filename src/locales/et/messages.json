@@ -733,8 +733,8 @@
   "loading": {
     "message": "Laadimine..."
   },
-  "lockNow": {
-    "message": "Lukusta paroolihoidla"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Parooli genereerimine"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Üks või enam organisatsiooni poliitikat ei võimalda sul oma personaalset hoidlat eksportida."
   },
+  "addAccount": {
+    "message": "Add Account"
+  },
   "removeMasterPassword": {
     "message": "Eemalda ülemparool"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Ühenduse loomine ebaõnnestus. Proovi hiljem uuesti."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

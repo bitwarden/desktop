@@ -323,16 +323,16 @@
     "message": "透過拖曳來排序"
   },
   "cfTypeText": {
-    "message": "文字"
+    "message": "文字型"
   },
   "cfTypeHidden": {
-    "message": "隱藏"
+    "message": "隱藏型"
   },
   "cfTypeBoolean": {
     "message": "布林值"
   },
   "cfTypeLinked": {
-    "message": "已連結",
+    "message": "連結型",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
@@ -733,8 +733,8 @@
   "loading": {
     "message": "正在載入..."
   },
-  "lockNow": {
-    "message": "立即鎖定"
+  "lockVault": {
+    "message": "鎖定密碼庫"
   },
   "passwordGenerator": {
     "message": "密碼產生器"
@@ -1575,14 +1575,14 @@
     "message": "逾期日期"
   },
   "expirationDateDesc": {
-    "message": "如果設定，對此 Send 的存取將在指定的日期和時間后逾期。",
+    "message": "如果設定此選項，對此 Send 的存取將在指定的日期和時間後逾期。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "最大存取次數"
   },
   "maxAccessCountDesc": {
-    "message": "如果設定，達到最大存取次數后，使用者將無法再次存取此 Send。",
+    "message": "如果設定此選項，當達到最大存取次數時，使用者將無法再次存取此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "一或多個組織策略不允許您輸出個人密碼庫。"
   },
+  "addAccount": {
+    "message": "新增帳號"
+  },
   "removeMasterPassword": {
     "message": "移除主密碼"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "無法連線到 Key Connector。請稍後再試。"
+  },
+  "lockAllVaults": {
+    "message": "鎖定所有密碼庫"
+  },
+  "accountLimitReached": {
+    "message": "不能同時登入五隻帳號。"
   }
 }

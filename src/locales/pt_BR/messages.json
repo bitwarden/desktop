@@ -733,8 +733,8 @@
   "loading": {
     "message": "Carregando..."
   },
-  "lockNow": {
-    "message": "Bloquear Agora"
+  "lockVault": {
+    "message": "Bloquear Cofre"
   },
   "passwordGenerator": {
     "message": "Gerador de Senha"
@@ -1757,6 +1757,9 @@
   "personalVaultExportPolicyInEffect": {
     "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
   },
+  "addAccount": {
+    "message": "Adicionar Conta"
+  },
   "removeMasterPassword": {
     "message": "Remover Senha Mestra"
   },
@@ -1783,5 +1786,11 @@
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Não foi possível acessar o conector de chave, tente novamente mais tarde."
+  },
+  "lockAllVaults": {
+    "message": "Bloquear Todos os Cofres"
+  },
+  "accountLimitReached": {
+    "message": "Não mais do que 5 contas podem estar logadas ao mesmo tempo."
   }
 }
