@@ -27,7 +27,7 @@
     "symlink:win": "rm -rf ./jslib && cmd /c mklink /J .\\jslib ..\\jslib",
     "symlink:mac": "npm run symlink:lin",
     "symlink:lin": "rm -rf ./jslib && ln -s ../jslib ./jslib",
-    "lint": "tslint 'src/**/*.ts'",
+    "lint": "tslint 'src/**/*.ts' && prettier --check .",
     "lint:fix": "tslint 'src/**/*.ts' --fix",
     "build": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main\" \"npm run build:renderer\"",
     "build:dev": "concurrently -n Main,Rend -c yellow,cyan \"npm run build:main:dev\" \"npm run build:renderer:dev\"",
