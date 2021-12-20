@@ -40,6 +40,7 @@ jobs:
           echo "::set-output name=package_version::$PKG_VERSION"
 
       - name: Check to make sure Desktop release version has been bumped
+        if: ${{ github.event.inputs.release_type == 'Initial Release' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -48,8 +49,7 @@ jobs:
           echo "Latest version: $latest_ver"
           ver=${{ steps.retrieve-version.outputs.package_version }}
           echo "Version: $ver"
-          if [ "$latest_ver" = "$ver" ] && \
-          [ "${{ github.event.inputs.release_type }}" == "Initial Release" ]; then
+          if [ "$latest_ver" = "$ver" ]; then
             echo "Version has not been bumped!"
             exit 1
           fi
