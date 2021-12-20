@@ -42,3 +42,23 @@ It will then be possible to run the desktop application as usual using `npm run 
 Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
 Security audits and feedback are welcome. Please open an issue or email us privately if the report is sensitive in nature. You can read our security policy in the [`SECURITY.md`](SECURITY.md) file.
+
+## Prettier
+
+We recently migrated to using Prettier as code formatter. All previous branches will need to updated to avoid large merge conflicts using the following steps:
+
+1. Check out your local Branch
+2. Run `git merge b4df834b16d4f5d4162a926a5a308bdb3ebc718b`
+3. Resolve any merge conflicts, commit.
+4. Run `npm run prettier`
+5. Commit
+6. Run `git merge -Xours 521feae535d83166e620c3c28dfc3e7b0314a00e`
+7. Push
+
+### Git blame
+
+We also recommend that you configure git to ignore the prettier revision using:
+
+```bash
+git config blame.ignoreRevsFile .git-blame-ignore-revs
+```

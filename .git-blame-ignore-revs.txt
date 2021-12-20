@@ -1,0 +1,2 @@
+# Apply Prettier https://github.com/bitwarden/web/pull/1347
+521feae535d83166e620c3c28dfc3e7b0314a00e
