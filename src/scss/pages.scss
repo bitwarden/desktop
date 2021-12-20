@@ -1,6 +1,10 @@
 ﻿@import "variables.scss";
 
-#login-page, #lock-page, #sso-page, #set-password-page, #remove-password-page {
+#login-page,
+#lock-page,
+#sso-page,
+#set-password-page,
+#remove-password-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,7 +27,11 @@
     }
 }
 
-#register-page, #hint-page, #two-factor-page, #update-temp-password-page, #remove-password-page {
+#register-page,
+#hint-page,
+#two-factor-page,
+#update-temp-password-page,
+#remove-password-page {
     padding-top: 20px;
 
     .content {
@@ -39,16 +47,22 @@
     }
 }
 
-#login-page, #register-page, #hint-page, #two-factor-page, #lock-page, #update-temp-password-page {
+#login-page,
+#register-page,
+#hint-page,
+#two-factor-page,
+#lock-page,
+#update-temp-password-page {
     .content {
         width: 300px;
         transition: width 0.25s linear;
 
         p {
-            text-align: center
+            text-align: center;
         }
 
-        p.lead, h1 {
+        p.lead,
+        h1 {
             font-size: $font-size-large;
             text-align: center;
             margin-bottom: 20px;
@@ -64,12 +78,14 @@
         }
 
         .buttons {
-            &:not(.with-rows), .buttons-row {
+            &:not(.with-rows),
+            .buttons-row {
                 display: flex;
                 margin-bottom: 10px;
             }
 
-            &:not(.with-rows), .buttons-row:last-child {
+            &:not(.with-rows),
+            .buttons-row:last-child {
                 margin-bottom: 20px;
             }
 
@@ -102,18 +118,19 @@
             left: 10px;
 
             @include themify($themes) {
-                color: themed('mutedColor');
+                color: themed("mutedColor");
             }
 
             span {
                 visibility: hidden;
             }
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 text-decoration: none;
 
                 @include themify($themes) {
-                    color: themed('primaryColor');
+                    color: themed("primaryColor");
                 }
 
                 span {
@@ -129,18 +146,19 @@
     font-size: 1.2em;
     .environment-urls-settings-icon {
         @include themify($themes) {
-            color: themed('mutedColor');
+            color: themed("mutedColor");
         }
 
         span {
             visibility: hidden;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             text-decoration: none;
 
             @include themify($themes) {
-                color: themed('primaryColor');
+                color: themed("primaryColor");
             }
         }
     }
@@ -157,28 +175,32 @@
     }
 }
 
-#set-password-page, #remove-password-page {
+#set-password-page,
+#remove-password-page {
     .content {
         width: 500px;
 
         p {
-            text-align: center
+            text-align: center;
         }
 
-        p.lead, h1 {
+        p.lead,
+        h1 {
             font-size: $font-size-large;
             text-align: center;
             margin-bottom: 20px;
             font-weight: normal;
         }
-        
+
         .buttons {
-            &:not(.with-rows), .buttons-row {
+            &:not(.with-rows),
+            .buttons-row {
                 display: flex;
                 margin-bottom: 10px;
             }
 
-            &:not(.with-rows), .buttons-row:last-child {
+            &:not(.with-rows),
+            .buttons-row:last-child {
                 margin-bottom: 20px;
             }
 
@@ -205,7 +227,8 @@
     }
 }
 
-#register-page, #update-temp-password-page {
+#register-page,
+#update-temp-password-page {
     .content {
         width: 400px;
     }

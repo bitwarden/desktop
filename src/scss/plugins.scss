@@ -1,6 +1,6 @@
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome.scss";
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
 @import "~sweetalert2/src/sweetalert2.scss";
 
 @import "variables.scss";
@@ -48,9 +48,10 @@ $fa-font-path: "~font-awesome/fonts";
             }
         }
 
-        &.toast-danger, &.toast-error {
+        &.toast-danger,
+        &.toast-error {
             @include themify($themes) {
-                background-color: themed('dangerColor');
+                background-color: themed("dangerColor");
             }
 
             .icon i::before {
@@ -60,7 +61,7 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-warning {
             @include themify($themes) {
-                background-color: themed('warningColor');
+                background-color: themed("warningColor");
             }
 
             .icon i::before {
@@ -70,7 +71,7 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-info {
             @include themify($themes) {
-                background-color: themed('infoColor');
+                background-color: themed("infoColor");
             }
 
             .icon i:before {
@@ -80,7 +81,7 @@ $fa-font-path: "~font-awesome/fonts";
 
         &.toast-success {
             @include themify($themes) {
-                background-color: themed('successColor');
+                background-color: themed("successColor");
             }
 
             .icon i:before {
@@ -98,8 +99,8 @@ $fa-font-path: "~font-awesome/fonts";
     width: 34em;
 
     @include themify($themes) {
-        background-color: themed('backgroundColorAlt');
-        color: themed('textColor');
+        background-color: themed("backgroundColorAlt");
+        color: themed("textColor");
     }
 
     .swal2-icon {
@@ -113,7 +114,7 @@ $fa-font-path: "~font-awesome/fonts";
         margin: 0;
         font-size: $font-size-base;
         @include themify($themes) {
-            color: themed('textColor');
+            color: themed("textColor");
         }
 
         label.checkbox {
@@ -127,7 +128,8 @@ $fa-font-path: "~font-awesome/fonts";
             }
         }
 
-        .swal2-input, .swal2-textarea {
+        .swal2-input,
+        .swal2-textarea {
             border: 1px solid #000000;
             border-radius: $border-radius;
             margin-bottom: 0;
@@ -140,13 +142,13 @@ $fa-font-path: "~font-awesome/fonts";
                 box-shadow: none;
             }
             @include themify($themes) {
-                border-color: themed('inputBorderColor');
-                color: themed('textColor');
-                background-color: themed('inputBackgroundColor');
+                border-color: themed("inputBorderColor");
+                color: themed("textColor");
+                background-color: themed("inputBackgroundColor");
             }
             &::-webkit-input-placeholder {
                 @include themify($themes) {
-                    color: themed('inputPlaceholderColor');
+                    color: themed("inputPlaceholderColor");
                 }
             }
         }
@@ -162,9 +164,9 @@ $fa-font-path: "~font-awesome/fonts";
         padding: 10px 0 15px;
         margin: 0;
         font-size: $font-size-large;
-        
+
         @include themify($themes) {
-            color: themed('textColor');
+            color: themed("textColor");
         }
     }
 
@@ -173,7 +175,7 @@ $fa-font-path: "~font-awesome/fonts";
         font-size: $font-size-base;
 
         @include themify($themes) {
-            color: themed('textColor');
+            color: themed("textColor");
         }
     }
 

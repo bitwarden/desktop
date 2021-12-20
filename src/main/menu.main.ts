@@ -1,16 +1,13 @@
-import {
-    app,
-    Menu,
-} from 'electron';
+import { app, Menu } from "electron";
 
-import { Main } from '../main';
+import { Main } from "../main";
 
-import { BaseMenu } from 'jslib-electron/baseMenu';
+import { BaseMenu } from "jslib-electron/baseMenu";
 
-import { MenuUpdateRequest } from './menu.updater';
-import { Menubar } from './menubar';
+import { MenuUpdateRequest } from "./menu.updater";
+import { Menubar } from "./menubar";
 
-const cloudWebVaultUrl: string = 'https://vault.bitwarden.com';
+const cloudWebVaultUrl: string = "https://vault.bitwarden.com";
 
 export class MenuMain extends BaseMenu {
     constructor(private main: Main) {
@@ -27,15 +24,17 @@ export class MenuMain extends BaseMenu {
     }
 
     private async setMenu(updateRequest?: MenuUpdateRequest) {
-        Menu.setApplicationMenu(new Menubar(
-            this.main.i18nService,
-            this.main.messagingService,
-            this.main.updaterMain,
-            this.windowMain,
-            await this.getWebVaultUrl(),
-            app.getVersion(),
-            updateRequest,
-        ).menu);
+        Menu.setApplicationMenu(
+            new Menubar(
+                this.main.i18nService,
+                this.main.messagingService,
+                this.main.updaterMain,
+                this.windowMain,
+                await this.getWebVaultUrl(),
+                app.getVersion(),
+                updateRequest
+            ).menu
+        );
     }
 
     private async getWebVaultUrl() {
@@ -50,5 +49,4 @@ export class MenuMain extends BaseMenu {
         }
         return webVaultUrl;
     }
-
 }

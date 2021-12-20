@@ -1,6 +1,8 @@
 @import "variables.scss";
 
-.btn, .vault .footer button, .modal-footer button {
+.btn,
+.vault .footer button,
+.modal-footer button {
     border-radius: $border-radius;
     padding: 7px 15px;
     border: 1px solid #000000;
@@ -10,20 +12,20 @@
     cursor: pointer;
 
     @include themify($themes) {
-        background-color: themed('buttonBackgroundColor');
-        border-color: themed('buttonBorderColor');
-        color: themed('buttonColor');
+        background-color: themed("buttonBackgroundColor");
+        border-color: themed("buttonBorderColor");
+        color: themed("buttonColor");
     }
 
     &.primary {
         @include themify($themes) {
-            color: themed('buttonPrimaryColor');
+            color: themed("buttonPrimaryColor");
         }
     }
 
     &.danger {
         @include themify($themes) {
-            color: themed('buttonDangerColor');
+            color: themed("buttonDangerColor");
         }
     }
 
@@ -31,20 +33,20 @@
         cursor: pointer;
 
         @include themify($themes) {
-            background-color: darken(themed('buttonBackgroundColor'), 1.5%);
-            border-color: darken(themed('buttonBorderColor'), 17%);
-            color: darken(themed('buttonColor'), 10%);
+            background-color: darken(themed("buttonBackgroundColor"), 1.5%);
+            border-color: darken(themed("buttonBorderColor"), 17%);
+            color: darken(themed("buttonColor"), 10%);
         }
 
         &.primary {
             @include themify($themes) {
-                color: darken(themed('buttonPrimaryColor'), 6%);
+                color: darken(themed("buttonPrimaryColor"), 6%);
             }
         }
 
         &.danger {
             @include themify($themes) {
-                color: darken(themed('buttonDangerColor'), 6%);
+                color: darken(themed("buttonDangerColor"), 6%);
             }
         }
     }
@@ -54,8 +56,8 @@
         outline: 0;
 
         @include themify($themes) {
-            background-color: darken(themed('buttonBackgroundColor'), 6%);
-            border-color: darken(themed('buttonBorderColor'), 25%);
+            background-color: darken(themed("buttonBackgroundColor"), 6%);
+            border-color: darken(themed("buttonBorderColor"), 25%);
         }
     }
 
@@ -102,7 +104,8 @@
         right: 0;
     }
 
-    &:disabled:not(.manual), &.loading {
+    &:disabled:not(.manual),
+    &.loading {
         .fa-spinner {
             display: flex;
         }

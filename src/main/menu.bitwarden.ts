@@ -1,24 +1,19 @@
-import {
-    BrowserWindow,
-    dialog,
-    MenuItem,
-    MenuItemConstructorOptions,
-} from 'electron';
+import { BrowserWindow, dialog, MenuItem, MenuItemConstructorOptions } from "electron";
 
-import { I18nService } from 'jslib-common/abstractions/i18n.service';
-import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
-import { UpdaterMain } from 'jslib-electron/updater.main';
-import { isMacAppStore, isSnapStore, isWindowsStore } from 'jslib-electron/utils';
+import { UpdaterMain } from "jslib-electron/updater.main";
+import { isMacAppStore, isSnapStore, isWindowsStore } from "jslib-electron/utils";
 
-import { IMenubarMenu } from './menubar';
+import { IMenubarMenu } from "./menubar";
 
-import { MenuAccount } from './menu.updater';
+import { MenuAccount } from "./menu.updater";
 
 // AKA: "FirstMenu" or "MacMenu" - the first menu that shows on all macOs apps
 export class BitwardenMenu implements IMenubarMenu {
-    readonly id: string = 'bitwarden';
-    readonly label: string = 'Bitwarden';
+    readonly id: string = "bitwarden";
+    readonly label: string = "Bitwarden";
 
     get items(): MenuItemConstructorOptions[] {
         return [
@@ -50,7 +45,7 @@ export class BitwardenMenu implements IMenubarMenu {
         messagingService: MessagingService,
         updater: UpdaterMain,
         window: BrowserWindow,
-        accounts: { [userId: string]: MenuAccount },
+        accounts: { [userId: string]: MenuAccount }
     ) {
         this._i18nService = i18nService;
         this._updater = updater;
@@ -65,44 +60,41 @@ export class BitwardenMenu implements IMenubarMenu {
 
     private get aboutBitwarden(): MenuItemConstructorOptions {
         return {
-            id: 'aboutBitwarden',
-            label: this.localize('aboutBitwarden'),
-            role: 'about',
+            id: "aboutBitwarden",
+            label: this.localize("aboutBitwarden"),
+            role: "about",
             visible: isMacAppStore(),
         };
     }
 
     private get checkForUpdates(): MenuItemConstructorOptions {
         return {
-            id: 'checkForUpdates',
-            label: this.localize('checkForUpdates'),
-            click: menuItem => this.checkForUpdate(menuItem),
+            id: "checkForUpdates",
+            label: this.localize("checkForUpdates"),
+            click: (menuItem) => this.checkForUpdate(menuItem),
             visible: !isMacAppStore() && !isWindowsStore() && !isSnapStore(),
         };
     }
 
     private get separator(): MenuItemConstructorOptions {
         return {
-            type: 'separator',
+            type: "separator",
         };
     }
 
     private get settings(): MenuItemConstructorOptions {
         return {
-            id: 'settings',
-            label: this.localize(process.platform === 'darwin' ?
-                'preferences' :
-                'settings'
-            ),
-            click: () => this.sendMessage('openSettings'),
-            accelerator: 'CmdOrCtrl+,',
+            id: "settings",
+            label: this.localize(process.platform === "darwin" ? "preferences" : "settings"),
+            click: () => this.sendMessage("openSettings"),
+            accelerator: "CmdOrCtrl+,",
         };
     }
 
     private get lock(): MenuItemConstructorOptions {
         return {
-            id: 'lock',
-            label: this.localize('lockVault'),
+            id: "lock",
+            label: this.localize("lockVault"),
             submenu: this.lockSubmenu,
             enabled: this.hasAccounts,
         };
@@ -118,7 +110,7 @@ export class BitwardenMenu implements IMenubarMenu {
             value.push({
                 label: this._accounts[userId].email,
                 id: `lockNow_${this._accounts[userId].userId}`,
-                click: () => this.sendMessage('lockVault', { userId: this._accounts[userId].userId }),
+                click: () => this.sendMessage("lockVault", { userId: this._accounts[userId].userId }),
                 enabled: !this._accounts[userId].isLocked,
                 visible: this._accounts[userId].isAuthenticated,
             });
@@ -128,18 +120,18 @@ export class BitwardenMenu implements IMenubarMenu {
 
     private get lockAll(): MenuItemConstructorOptions {
         return {
-            id: 'lockAllNow',
-            label: this.localize('lockAllVaults'),
-            click: () => this.sendMessage('lockAllVaults'),
-            accelerator: 'CmdOrCtrl+L',
+            id: "lockAllNow",
+            label: this.localize("lockAllVaults"),
+            click: () => this.sendMessage("lockAllVaults"),
+            accelerator: "CmdOrCtrl+L",
             enabled: this.hasAccounts,
         };
     }
 
     private get logOut(): MenuItemConstructorOptions {
         return {
-            id: 'logOut',
-            label: this.localize('logOut'),
+            id: "logOut",
+            label: this.localize("logOut"),
             submenu: this.logOutSubmenu,
             enabled: this.hasAccounts,
         };
@@ -157,16 +149,16 @@ export class BitwardenMenu implements IMenubarMenu {
                 id: `logOut_${this._accounts[userId].userId}`,
                 click: async () => {
                     const result = await dialog.showMessageBox(this._window, {
-                        title: this.localize('logOut'),
-                        message: this.localize('logOut'),
-                        detail: this.localize('logOutConfirmation'),
-                        buttons: [this.localize('logOut'), this.localize('cancel')],
+                        title: this.localize("logOut"),
+                        message: this.localize("logOut"),
+                        detail: this.localize("logOutConfirmation"),
+                        buttons: [this.localize("logOut"), this.localize("cancel")],
                         cancelId: 1,
                         defaultId: 0,
                         noLink: true,
                     });
                     if (result.response === 0) {
-                        this.sendMessage('logout', { userId: this._accounts[userId].userId });
+                        this.sendMessage("logout", { userId: this._accounts[userId].userId });
                     }
                 },
                 visible: this._accounts[userId].isAuthenticated,
@@ -177,9 +169,9 @@ export class BitwardenMenu implements IMenubarMenu {
 
     private get services(): MenuItemConstructorOptions {
         return {
-            id: 'services',
-            label: this.localize('services'),
-            role: 'services',
+            id: "services",
+            label: this.localize("services"),
+            role: "services",
             submenu: [],
             visible: isMacAppStore(),
         };
@@ -187,36 +179,36 @@ export class BitwardenMenu implements IMenubarMenu {
 
     private get hideBitwarden(): MenuItemConstructorOptions {
         return {
-            id: 'hideBitwarden',
-            label: this.localize('hideBitwarden'),
-            role: 'hide',
+            id: "hideBitwarden",
+            label: this.localize("hideBitwarden"),
+            role: "hide",
             visible: isMacAppStore(),
         };
     }
 
     private get hideOthers(): MenuItemConstructorOptions {
         return {
-            id: 'hideOthers',
-            label: this.localize('hideOthers'),
-            role: 'hideOthers',
+            id: "hideOthers",
+            label: this.localize("hideOthers"),
+            role: "hideOthers",
             visible: isMacAppStore(),
         };
     }
 
     private get showAll(): MenuItemConstructorOptions {
         return {
-            id: 'showAll',
-            label: this.localize('showAll'),
-            role: 'unhide',
+            id: "showAll",
+            label: this.localize("showAll"),
+            role: "unhide",
             visible: isMacAppStore(),
         };
     }
 
     private get quitBitwarden(): MenuItemConstructorOptions {
         return {
-            id: 'quitBitwarden',
-            label: this.localize('quitBitwarden'),
-            role: 'quit',
+            id: "quitBitwarden",
+            label: this.localize("quitBitwarden"),
+            role: "quit",
             visible: isMacAppStore(),
         };
     }

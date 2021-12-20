@@ -6,67 +6,67 @@ small {
 
 .bg-primary {
     @include themify($themes) {
-        background-color: themed('primaryColor') !important;
+        background-color: themed("primaryColor") !important;
     }
 }
 
 .bg-success {
     @include themify($themes) {
-        background-color: themed('successColor') !important;
+        background-color: themed("successColor") !important;
     }
 }
 
 .bg-danger {
     @include themify($themes) {
-        background-color: themed('dangerColor') !important;
+        background-color: themed("dangerColor") !important;
     }
 }
 
 .bg-info {
     @include themify($themes) {
-        background-color: themed('infoColor') !important;
+        background-color: themed("infoColor") !important;
     }
 }
 
 .bg-warning {
     @include themify($themes) {
-        background-color: themed('warningColor') !important;
+        background-color: themed("warningColor") !important;
     }
 }
 
 .text-primary {
     @include themify($themes) {
-        color: themed('primaryColor') !important;
+        color: themed("primaryColor") !important;
     }
 }
 
 .text-success {
     @include themify($themes) {
-        color: themed('successColor') !important;
+        color: themed("successColor") !important;
     }
 }
 
 .text-danger {
     @include themify($themes) {
-        color: themed('dangerColor') !important;
+        color: themed("dangerColor") !important;
     }
 }
 
 .text-warning {
     @include themify($themes) {
-        color: themed('warningColor') !important;
+        color: themed("warningColor") !important;
     }
 }
 
 .text-muted {
     @include themify($themes) {
-        color: themed('mutedColor') !important;
+        color: themed("mutedColor") !important;
     }
 }
 
 .text-default {
     @include themify($themes) {
-        color: themed('textColor') !important;
+        color: themed("textColor") !important;
     }
 }
 
@@ -140,7 +140,7 @@ p.lead {
             fill: none;
 
             @include themify($themes) {
-                stroke: themed('totpStrokeColor');
+                stroke: themed("totpStrokeColor");
             }
 
             &.inner {
@@ -158,15 +158,16 @@ p.lead {
     }
 
     &.low {
-        .totp-sec, .totp-code {
+        .totp-sec,
+        .totp-code {
             @include themify($themes) {
-                color: themed('dangerColor');
+                color: themed("dangerColor");
             }
         }
 
         .totp-circle {
             @include themify($themes) {
-                stroke: themed('dangerColor');
+                stroke: themed("dangerColor");
             }
         }
     }
@@ -195,18 +196,18 @@ p.lead {
 
 .password-number {
     @include themify($themes) {
-        color: themed('passwordNumberColor');
+        color: themed("passwordNumberColor");
     }
 }
 
 .password-special {
     @include themify($themes) {
-        color: themed('passwordSpecialColor');
+        color: themed("passwordSpecialColor");
     }
 }
 
 #duo-frame {
-    background: url('../images/loading.svg') 0 0 no-repeat;
+    background: url("../images/loading.svg") 0 0 no-repeat;
     height: 330px;
     margin: 0 -150px 15px -150px;
 
@@ -218,7 +219,7 @@ p.lead {
 }
 
 #web-authn-frame {
-    background: url('../images/loading.svg') 0 0 no-repeat;
+    background: url("../images/loading.svg") 0 0 no-repeat;
     height: 250px;
     margin: 0 0 15px 0;
 
@@ -235,7 +236,8 @@ p.lead {
     transition: height 0.25s linear;
 }
 
-form, .form {
+form,
+.form {
     .form-group {
         margin-bottom: 10px;
 
@@ -248,17 +250,20 @@ form, .form {
             margin-bottom: 2px;
         }
 
-        input, select, textarea {
+        input,
+        select,
+        textarea {
             border: 1px solid #000000;
             border-radius: $border-radius;
             display: block;
 
             @include themify($themes) {
-                border-color: themed('inputBorderColor');
+                border-color: themed("inputBorderColor");
             }
         }
 
-        input[type=text], input[type=number] {
+        input[type="text"],
+        input[type="number"] {
             padding: 5px;
             width: 100%;
         }
@@ -306,7 +311,7 @@ form, .form {
         display: block;
 
         @include themify($themes) {
-            color: themed('mutedColor');
+            color: themed("mutedColor");
         }
     }
 }
@@ -321,13 +326,13 @@ app-root > #loading {
     color: $text-muted;
 
     @include themify($themes) {
-        color: themed('mutedColor');
+        color: themed("mutedColor");
     }
 }
 
 .logo-image {
     @include themify($themes) {
-        content: url('../images/logo-' + themed('logoSuffix') + '@2x.png');
+        content: url("../images/logo-" + themed("logoSuffix") + "@2x.png");
     }
 }
 
@@ -346,8 +351,8 @@ app-root > #loading {
     border-left-width: 5px;
     border-radius: 3px;
     @include themify($themes) {
-        border-color: themed('calloutBorderColor');
-        background-color: themed('calloutBackgroundColor');
+        border-color: themed("calloutBorderColor");
+        background-color: themed("calloutBackgroundColor");
     }
 
     .callout-heading {
@@ -361,60 +366,60 @@ app-root > #loading {
 
     &.callout-primary {
         @include themify($themes) {
-            border-left-color: themed('primaryColor');
+            border-left-color: themed("primaryColor");
         }
 
         .callout-heading {
             @include themify($themes) {
-                color: themed('primaryColor');
+                color: themed("primaryColor");
             }
         }
     }
 
     &.callout-info {
         @include themify($themes) {
-            border-left-color: themed('infoColor');
+            border-left-color: themed("infoColor");
         }
 
         .callout-heading {
             @include themify($themes) {
-                color: themed('infoColor');
+                color: themed("infoColor");
             }
         }
     }
 
     &.callout-danger {
         @include themify($themes) {
-            border-left-color: themed('dangerColor');
+            border-left-color: themed("dangerColor");
         }
 
         .callout-heading {
             @include themify($themes) {
-                color: themed('dangerColor');
+                color: themed("dangerColor");
             }
         }
     }
 
     &.callout-success {
         @include themify($themes) {
-            border-left-color: themed('successColor');
+            border-left-color: themed("successColor");
         }
 
         .callout-heading {
             @include themify($themes) {
-                color: themed('successColor');
+                color: themed("successColor");
             }
         }
     }
 
     &.callout-warning {
         @include themify($themes) {
-            border-left-color: themed('warningColor');
+            border-left-color: themed("warningColor");
         }
 
         .callout-heading {
             @include themify($themes) {
-                color: themed('warningColor');
+                color: themed("warningColor");
             }
         }
     }
@@ -437,5 +442,5 @@ app-root > #loading {
 }
 
 .rounded-circle {
-    border-radius:50% !important;
+    border-radius: 50% !important;
 }

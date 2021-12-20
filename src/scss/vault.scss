@@ -15,7 +15,10 @@ app-root {
     height: 100%;
     display: flex;
 
-    > .groupings, > .items, > .details, > .logo {
+    > .groupings,
+    > .items,
+    > .details,
+    > .logo {
         display: flex;
         flex-direction: column;
 
@@ -31,8 +34,8 @@ app-root {
         border-right: 1px solid #000000;
 
         @include themify($themes) {
-            background-color: themed('backgroundColorAlt');
-            border-right-color: themed('borderColor');
+            background-color: themed("backgroundColorAlt");
+            border-right-color: themed("borderColor");
         }
 
         .content {
@@ -50,7 +53,8 @@ app-root {
                 padding-right: 5px;
                 user-select: none;
 
-                > ul, > div > ul {
+                > ul,
+                > div > ul {
                     margin: 0 0 15px 0;
                 }
             }
@@ -63,7 +67,7 @@ app-root {
             margin-bottom: 5px;
 
             @include themify($themes) {
-                color: themed('headingColor');
+                color: themed("headingColor");
             }
         }
 
@@ -75,14 +79,15 @@ app-root {
                 background: none;
                 border: none;
                 @include themify($themes) {
-                    color: themed('headingButtonColor');
+                    color: themed("headingButtonColor");
                 }
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     cursor: pointer;
 
                     @include themify($themes) {
-                        color: themed('headingButtonHoverColor');
+                        color: themed("headingButtonHoverColor");
                     }
                 }
             }
@@ -125,7 +130,7 @@ app-root {
             }
 
             // Level 2
-            ul li { 
+            ul li {
                 > a {
                     padding-left: 23px;
                 }
@@ -140,7 +145,7 @@ app-root {
             }
 
             // Level 3
-            ul ul li { 
+            ul ul li {
                 > a {
                     padding-left: 34px;
                 }
@@ -155,7 +160,7 @@ app-root {
             }
 
             // Level 4
-            ul ul ul li { 
+            ul ul ul li {
                 > a {
                     padding-left: 45px;
                 }
@@ -170,7 +175,7 @@ app-root {
             }
 
             // Level 5
-            ul ul ul ul li { 
+            ul ul ul ul li {
                 > a {
                     padding-left: 56px;
                 }
@@ -185,7 +190,7 @@ app-root {
             }
 
             // Level 6
-            ul ul ul ul ul li { 
+            ul ul ul ul ul li {
                 > a {
                     padding-left: 67px;
                 }
@@ -200,7 +205,7 @@ app-root {
             }
 
             // Level 7
-            ul ul ul ul ul ul li { 
+            ul ul ul ul ul ul li {
                 > a {
                     padding-left: 78px;
                 }
@@ -226,25 +231,27 @@ app-root {
                     align-items: center;
 
                     @include themify($themes) {
-                        color: themed('textColor');
+                        color: themed("textColor");
                     }
 
                     span {
                         visibility: hidden;
                         margin-left: auto;
-                        
+
                         @include themify($themes) {
-                            color: themed('headingButtonColor');
+                            color: themed("headingButtonColor");
                         }
-        
-                        &:hover, &:focus {
+
+                        &:hover,
+                        &:focus {
                             @include themify($themes) {
-                                color: themed('headingButtonHoverColor');
+                                color: themed("headingButtonHoverColor");
                             }
                         }
                     }
 
-                    &:hover, &:focus {
+                    &:hover,
+                    &:focus {
                         span {
                             visibility: visible;
                         }
@@ -258,12 +265,12 @@ app-root {
                     padding-right: 5px;
 
                     @include themify($themes) {
-                        background-color: themed('groupingsActiveColor');
+                        background-color: themed("groupingsActiveColor");
                     }
 
                     ul {
                         @include themify($themes) {
-                            background-color: themed('backgroundColorAlt');
+                            background-color: themed("backgroundColorAlt");
                         }
 
                         margin-left: -15px;
@@ -281,10 +288,10 @@ app-root {
         min-width: 200px;
         max-width: 350px;
         border-right: 1px solid #000000;
-        
+
         @include themify($themes) {
-            background-color: themed('backgroundColor');
-            border-right-color: themed('borderColor');
+            background-color: themed("backgroundColor");
+            border-right-color: themed("borderColor");
         }
 
         .no-items {
@@ -300,7 +307,7 @@ app-root {
                 margin-bottom: 10px;
 
                 @include themify($themes) {
-                    color: themed('disabledIconColor');
+                    color: themed("disabledIconColor");
                 }
             }
         }
@@ -309,9 +316,9 @@ app-root {
     > .details {
         flex: 1;
         min-width: 0;
-        
+
         @include themify($themes) {
-            background-color: themed('backgroundColorAlt2');
+            background-color: themed("backgroundColorAlt2");
         }
 
         .inner-content {
@@ -383,8 +390,8 @@ app-root {
         padding: 0 15px;
 
         @include themify($themes) {
-            background-color: themed('backgroundColorAlt');
-            border-top-color: themed('borderColor');
+            background-color: themed("backgroundColorAlt");
+            border-top-color: themed("borderColor");
         }
 
         button {
@@ -415,7 +422,7 @@ app-root {
 
             &:not(.active) {
                 @include themify($themes) {
-                    background-color: themed('backgroundColorAlt');
+                    background-color: themed("backgroundColorAlt");
                 }
             }
 

@@ -1,15 +1,15 @@
-import { I18nService } from 'jslib-common/abstractions/i18n.service';
-import { MessagingService } from 'jslib-common/abstractions/messaging.service';
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
-import { IMenubarMenu } from './menubar';
+import { IMenubarMenu } from "./menubar";
 
-import { MenuItemConstructorOptions } from 'electron';
+import { MenuItemConstructorOptions } from "electron";
 
 export class ViewMenu implements IMenubarMenu {
-    readonly id: 'viewMenu';
+    readonly id: "viewMenu";
 
     get label(): string {
-        return this.localize('view');
+        return this.localize("view");
     }
 
     get items(): MenuItemConstructorOptions[] {
@@ -34,12 +34,7 @@ export class ViewMenu implements IMenubarMenu {
     private readonly _messagingService: MessagingService;
     private readonly _isAuthenticated: boolean;
 
-    constructor(
-        i18nService: I18nService,
-        messagingService: MessagingService,
-        isAuthenticated: boolean,
-    )
-    {
+    constructor(i18nService: I18nService, messagingService: MessagingService, isAuthenticated: boolean) {
         this._i18nService = i18nService;
         this._messagingService = messagingService;
         this._isAuthenticated = isAuthenticated;
@@ -47,86 +42,86 @@ export class ViewMenu implements IMenubarMenu {
 
     private get searchVault(): MenuItemConstructorOptions {
         return {
-            id: 'searchVault',
-            label: this.localize('searchVault'),
-            click: () => this.sendMessage('focusSearch'),
-            accelerator: 'CmdOrCtrl+F',
+            id: "searchVault",
+            label: this.localize("searchVault"),
+            click: () => this.sendMessage("focusSearch"),
+            accelerator: "CmdOrCtrl+F",
             enabled: this._isAuthenticated,
         };
     }
 
     private get separator(): MenuItemConstructorOptions {
-        return { type: 'separator' };
+        return { type: "separator" };
     }
 
     private get passwordGenerator(): MenuItemConstructorOptions {
         return {
-            id: 'passwordGenerator',
-            label: this.localize('passwordGenerator'),
-            click: () => this.sendMessage('openPasswordGenerator'),
-            accelerator: 'CmdOrCtrl+G',
+            id: "passwordGenerator",
+            label: this.localize("passwordGenerator"),
+            click: () => this.sendMessage("openPasswordGenerator"),
+            accelerator: "CmdOrCtrl+G",
             enabled: this._isAuthenticated,
         };
     }
 
     private get passwordHistory(): MenuItemConstructorOptions {
         return {
-            id: 'passwordHistory',
-            label: this.localize('passwordHistory'),
-            click: () => this.sendMessage('openPasswordHistory'),
+            id: "passwordHistory",
+            label: this.localize("passwordHistory"),
+            click: () => this.sendMessage("openPasswordHistory"),
             enabled: this._isAuthenticated,
         };
     }
 
     private get zoomIn(): MenuItemConstructorOptions {
         return {
-            id: 'zoomIn',
-            label: this.localize('zoomIn'),
-            role: 'zoomIn',
-            accelerator: 'CmdOrCtrl+=',
+            id: "zoomIn",
+            label: this.localize("zoomIn"),
+            role: "zoomIn",
+            accelerator: "CmdOrCtrl+=",
         };
     }
 
     private get zoomOut(): MenuItemConstructorOptions {
         return {
-            id: 'zoomOut',
-            label: this.localize('zoomOut'),
-            role: 'zoomOut',
-            accelerator: 'CmdOrCtrl+-',
+            id: "zoomOut",
+            label: this.localize("zoomOut"),
+            role: "zoomOut",
+            accelerator: "CmdOrCtrl+-",
         };
     }
 
     private get resetZoom(): MenuItemConstructorOptions {
         return {
-            id: 'resetZoom',
-            label: this.localize('resetZoom'),
-            role: 'resetZoom',
-            accelerator: 'CmdOrCtrl+0',
+            id: "resetZoom",
+            label: this.localize("resetZoom"),
+            role: "resetZoom",
+            accelerator: "CmdOrCtrl+0",
         };
     }
 
     private get toggleFullscreen(): MenuItemConstructorOptions {
         return {
-            id: 'toggleFullScreen',
-            label: this.localize('toggleFullScreen'),
-            role: 'togglefullscreen',
+            id: "toggleFullScreen",
+            label: this.localize("toggleFullScreen"),
+            role: "togglefullscreen",
         };
     }
 
     private get reload(): MenuItemConstructorOptions {
         return {
-            id: 'reload',
-            label: this.localize('reload'),
-            role: 'forceReload',
+            id: "reload",
+            label: this.localize("reload"),
+            role: "forceReload",
         };
     }
 
     private get toggleDevTools(): MenuItemConstructorOptions {
         return {
-            id: 'toggleDevTools',
-            label: this.localize('toggleDevTools'),
-            role: 'toggleDevTools',
-            accelerator: 'F12',
+            id: "toggleDevTools",
+            label: this.localize("toggleDevTools"),
+            role: "toggleDevTools",
+            accelerator: "F12",
         };
     }
 

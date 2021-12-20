@@ -7,7 +7,13 @@ $border-radius-lg: $border-radius;
 
 // ref: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
 
-$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px ) !default;
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+) !default;
 
 $zindex-modal-backdrop: 1040 !default;
 $zindex-modal: 1050 !default;
@@ -15,19 +21,19 @@ $zindex-modal: 1050 !default;
 // Padding applied to the modal body
 $modal-inner-padding: 10px !default;
 
-$modal-dialog-margin: .5rem !default;
+$modal-dialog-margin: 0.5rem !default;
 $modal-dialog-margin-y-sm-up: 1.75rem !default;
 
 $modal-title-line-height: $line-height-base !default;
 
 //$modal-content-bg: $background-color-alt !default;
-$modal-content-border-color: rgba($black, .2) !default;
+$modal-content-border-color: rgba($black, 0.2) !default;
 $modal-content-border-width: 1px !default;
 $modal-content-box-shadow-xs: none;
 $modal-content-box-shadow-sm-up: none;
 
 $modal-backdrop-bg: $black !default;
-$modal-backdrop-opacity: .5 !default;
+$modal-backdrop-opacity: 0.5 !default;
 $modal-header-border-color: $border-color-dark !default;
 $modal-footer-border-color: $modal-header-border-color !default;
 $modal-header-border-width: $modal-content-border-width !default;
@@ -38,7 +44,7 @@ $modal-lg: 800px !default;
 $modal-md: 500px !default;
 $modal-sm: 300px !default;
 
-$modal-transition: transform .3s ease-out !default;
+$modal-transition: transform 0.3s ease-out !default;
 
 $close-font-size: $font-size-base * 1.5 !default;
 $close-font-weight: bold !default;
@@ -54,8 +60,7 @@ $close-text-shadow: 0 1px 0 $white !default;
         @media (min-width: $min) {
             @content;
         }
-    }
-    @else {
+    } @else {
         @content;
     }
 }
@@ -95,7 +100,6 @@ $close-text-shadow: 0 1px 0 $white !default;
 // .modal           - container to scroll within
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and stuff
-
 
 // Kill the scroll on the body
 .modal-open {
@@ -168,7 +172,7 @@ $close-text-shadow: 0 1px 0 $white !default;
     outline: 0;
 
     @include themify($themes) {
-        background-color: themed('backgroundColorAlt');
+        background-color: themed("backgroundColorAlt");
     }
 }
 
@@ -203,7 +207,7 @@ $close-text-shadow: 0 1px 0 $white !default;
     //@include border-top-radius($border-radius-lg);
 
     @include themify($themes) {
-        border-bottom-color: themed('borderColor');
+        border-bottom-color: themed("borderColor");
     }
 
     .close {
@@ -249,7 +253,7 @@ $close-text-shadow: 0 1px 0 $white !default;
     border-top: $modal-footer-border-width solid $modal-footer-border-color;
 
     @include themify($themes) {
-        border-top-color: themed('borderColor');
+        border-top-color: themed("borderColor");
     }
 
     // Easily place margin between footer elements
@@ -313,12 +317,13 @@ $close-text-shadow: 0 1px 0 $white !default;
     line-height: 1;
     color: $close-color;
     text-shadow: $close-text-shadow;
-    opacity: .5;
+    opacity: 0.5;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         color: $close-color;
         text-decoration: none;
-        opacity: .75;
+        opacity: 0.75;
     }
     // Opinionated: add "hand" cursor to non-disabled .close elements
     &:not(:disabled):not(.disabled) {

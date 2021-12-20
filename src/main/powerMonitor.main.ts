@@ -1,8 +1,8 @@
-import { powerMonitor } from 'electron';
+import { powerMonitor } from "electron";
 
-import { isSnapStore } from 'jslib-electron/utils';
+import { isSnapStore } from "jslib-electron/utils";
 
-import { Main } from '../main';
+import { Main } from "../main";
 
 // tslint:disable-next-line
 const IdleLockSeconds = 5 * 60; // 5 minutes
@@ -11,28 +11,30 @@ const IdleCheckInterval = 30 * 1000; // 30 seconds
 export class PowerMonitorMain {
     private idle: boolean = false;
 
-    constructor(private main: Main) { }
+    constructor(private main: Main) {}
 
     init() {
         // ref: https://github.com/electron/electron/issues/13767
         if (!isSnapStore()) {
             // System sleep
-            powerMonitor.on('suspend', async () => {
+            powerMonitor.on("suspend", async () => {
                 const options = await this.getVaultTimeoutOptions();
                 if (options[0] === -3) {
-                    options[1] === 'logOut' ? this.main.messagingService.send('logout', { expired: false }) :
-                        this.main.messagingService.send('lockVault');
+                    options[1] === "logOut"
+                        ? this.main.messagingService.send("logout", { expired: false })
+                        : this.main.messagingService.send("lockVault");
                 }
             });
         }
 
-        if (process.platform !== 'linux') {
+        if (process.platform !== "linux") {
             // System locked
-            powerMonitor.on('lock-screen', async () => {
+            powerMonitor.on("lock-screen", async () => {
                 const options = await this.getVaultTimeoutOptions();
                 if (options[0] === -2) {
-                    options[1] === 'logOut' ? this.main.messagingService.send('logout', { expired: false }) :
-                        this.main.messagingService.send('lockVault');
+                    options[1] === "logOut"
+                        ? this.main.messagingService.send("logout", { expired: false })
+                        : this.main.messagingService.send("lockVault");
                 }
             });
         }
@@ -48,8 +50,9 @@ export class PowerMonitorMain {
 
                 const options = await this.getVaultTimeoutOptions();
                 if (options[0] === -4) {
-                    options[1] === 'logOut' ? this.main.messagingService.send('logout', { expired: false }) :
-                        this.main.messagingService.send('lockVault');
+                    options[1] === "logOut"
+                        ? this.main.messagingService.send("logout", { expired: false })
+                        : this.main.messagingService.send("lockVault");
                 }
             }
 

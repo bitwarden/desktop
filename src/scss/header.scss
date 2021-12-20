@@ -10,8 +10,8 @@
     align-items: center;
 
     @include themify($themes) {
-        background-color: themed('headerBackgroundColor');
-        border-bottom-color: themed('headerBorderColor');
+        background-color: themed("headerBackgroundColor");
+        border-bottom-color: themed("headerBorderColor");
     }
 
     app-search {
@@ -36,7 +36,7 @@
             left: 15px;
 
             @include themify($themes) {
-                color: themed('headerInputPlaceholderColor');
+                color: themed("headerInputPlaceholderColor");
             }
         }
 
@@ -48,8 +48,8 @@
             border-radius: $border-radius;
 
             @include themify($themes) {
-                background-color: themed('headerInputBackgroundColor');
-                color: themed('headerInputColor');
+                background-color: themed("headerInputBackgroundColor");
+                color: themed("headerInputColor");
             }
 
             &:focus {
@@ -57,13 +57,13 @@
                 outline: none;
 
                 @include themify($themes) {
-                    background-color: themed('headerInputBackgroundFocusColor');
+                    background-color: themed("headerInputBackgroundFocusColor");
                 }
             }
 
             &::-webkit-input-placeholder {
                 @include themify($themes) {
-                    color: themed('headerInputPlaceholderColor');
+                    color: themed("headerInputPlaceholderColor");
                 }
             }
         }
@@ -81,7 +81,7 @@
     user-select: none;
 
     @include themify($themes) {
-        color: themed('accountSwitcherTextColor');
+        color: themed("accountSwitcherTextColor");
     }
 
     img {
@@ -97,20 +97,20 @@
 
     &:hover {
         @include themify($themes) {
-            background-color: themed('headerBorderColor');
-            color: themed('accountSwitcherTextColor');
+            background-color: themed("headerBorderColor");
+            color: themed("accountSwitcherTextColor");
         }
     }
 }
 
 .account-switcher-dropdown {
     @include themify($themes) {
-        background-color: themed('accountSwitcherBackgroundColor');
+        background-color: themed("accountSwitcherBackgroundColor");
     }
     margin-right: 5px;
     margin-top: 1px; // Fix for border-bottom in header
     width: 100%;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     border-radius: $border-radius;
 
     a {
@@ -118,12 +118,12 @@
         display: block;
 
         @include themify($themes) {
-            color: themed('textColor');
+            color: themed("textColor");
         }
 
         &:hover {
             @include themify($themes) {
-                background-color: themed('backgroundColorAlt2');
+                background-color: themed("backgroundColorAlt2");
             }
         }
     }
@@ -145,7 +145,7 @@
             }
 
             .email {
-                font-size: $font-size-large
+                font-size: $font-size-large;
             }
 
             .status {
@@ -157,7 +157,7 @@
 
     .border {
         @include themify($themes) {
-            background: themed('borderColor');
+            background: themed("borderColor");
         }
         left: 10px;
         width: calc(100% - 20px);

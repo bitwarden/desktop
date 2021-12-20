@@ -6,7 +6,8 @@
     margin: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
@@ -18,16 +19,21 @@ body {
     background-color: $background-color-alt2;
 
     @include themify($themes) {
-        color: themed('textColor');
-        background-color: themed('backgroundColorAlt2');
+        color: themed("textColor");
+        background-color: themed("backgroundColorAlt2");
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $font-family-sans-serif;
-    
+
     @include themify($themes) {
-        color: themed('textColor');
+        color: themed("textColor");
     }
 }
 
@@ -35,7 +41,8 @@ p {
     margin-bottom: 10px;
 }
 
-ul, ol {
+ul,
+ol {
     margin-bottom: 10px;
 }
 
@@ -47,24 +54,30 @@ a {
     text-decoration: none;
 
     @include themify($themes) {
-        color: themed('primaryColor');
+        color: themed("primaryColor");
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         @include themify($themes) {
-            color: darken(themed('primaryColor'), 6%);
+            color: darken(themed("primaryColor"), 6%);
         }
     }
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     @include themify($themes) {
-        color: themed('textColor');
-        background-color: themed('inputBackgroundColor');
+        color: themed("textColor");
+        background-color: themed("inputBackgroundColor");
     }
 }
 
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
     font-size: $font-size-base;
     font-family: $font-family-sans-serif;
     line-height: $line-height-base;
@@ -79,26 +92,29 @@ textarea {
     resize: vertical;
 }
 
-div:not(.modal)::-webkit-scrollbar, .cdk-virtual-scroll-viewport::-webkit-scrollbar {
+div:not(.modal)::-webkit-scrollbar,
+.cdk-virtual-scroll-viewport::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-div:not(.modal)::-webkit-scrollbar-track, .cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
+div:not(.modal)::-webkit-scrollbar-track,
+.cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
     background-color: transparent;
 }
 
-div:not(.modal)::-webkit-scrollbar-thumb, .cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
+div:not(.modal)::-webkit-scrollbar-thumb,
+.cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
     border-radius: 10px;
     margin-right: 1px;
 
     @include themify($themes) {
-        background-color: themed('scrollbarColor');
+        background-color: themed("scrollbarColor");
     }
 
     &:hover {
         @include themify($themes) {
-            background-color: themed('scrollbarHoverColor');
+            background-color: themed("scrollbarHoverColor");
         }
     }
 }

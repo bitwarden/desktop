@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import IPC from './ipc';
+import IPC from "./ipc";
 
 // Mostly based on the example from MDN,
 // https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging
@@ -58,9 +58,7 @@ export default class NativeMessage {
             // We add 4 here because that's the size of the bytes that old the payloadSize
             if (stringData.length >= payloadSize + 4) {
                 // Remove the header
-                const contentWithoutSize = stringData
-                    .slice(4, payloadSize + 4)
-                    .toString();
+                const contentWithoutSize = stringData.slice(4, payloadSize + 4).toString();
 
                 // Reset the read size and the queued chunks
                 flushChunksQueue();
@@ -72,7 +70,7 @@ export default class NativeMessage {
             }
         };
 
-        process.stdin.on('readable', () => {
+        process.stdin.on("readable", () => {
             // A temporary variable holding the nodejs.Buffer of each
             // chunk of data read off stdin
             let chunk = null;
@@ -90,7 +88,7 @@ export default class NativeMessage {
             }
         });
 
-        process.stdin.on('end', () => {
+        process.stdin.on("end", () => {
             process.exit(0);
         });
     }
