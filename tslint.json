@@ -1,17 +1,17 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "align": [ true, "statements", "members" ],
+    "align": [true, "statements", "members"],
     "ban-types": {
       "options": [
-        [ "Object", "Avoid using the `Object` type. Did you mean `object`?" ],
-        [ "Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?" ],
-        [ "Number", "Avoid using the `Number` type. Did you mean `number`?" ],
-        [ "String", "Avoid using the `String` type. Did you mean `string`?" ],
-        [ "Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?" ]
+        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
+        ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+        ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+        ["String", "Avoid using the `String` type. Did you mean `string`?"],
+        ["Symbol", "Avoid using the `Symbol` type. Did you mean `symbol`?"]
       ]
     },
-    "member-access": [ true, "no-public" ],
+    "member-access": [true, "no-public"],
     "member-ordering": [
       true,
       {
@@ -34,11 +34,10 @@
         ]
       }
     ],
-    "no-empty": [ true ],
+    "no-empty": [true],
     "object-literal-sort-keys": false,
-    "object-literal-shorthand": [ true, "never" ],
+    "object-literal-shorthand": [true, "never"],
     "prefer-for-of": false,
-    "quotemark": [ true, "single" ],
     "whitespace": [
       true,
       "check-branch",
@@ -51,7 +50,7 @@
     ],
     "max-classes-per-file": false,
     "ordered-imports": true,
-    "arrow-parens": [ true ],
+    "arrow-parens": [true],
     "trailing-comma": [
       true,
       {

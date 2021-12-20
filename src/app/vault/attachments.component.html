@@ -1,53 +1,76 @@
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="attachmentsTitle">
-    <div class="modal-dialog" role="document">
-        <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
-            <div class="modal-body">
-                <div class="box" *ngIf="cipher && cipher.hasAttachments">
-                    <div class="box-header" id="attachmentsTitle">
-                        {{'attachments' | i18n}}
-                    </div>
-                    <div class="box-content no-hover">
-                        <div class="box-content-row box-content-row-flex" *ngFor="let a of cipher.attachments">
-                            <div class="row-main">
-                                {{a.fileName}}
-                            </div>
-                            <small class="row-sub-label">{{a.sizeName}}</small>
-                            <div class="action-buttons no-pad">
-                                <button class="row-btn btn" type="button" appStopClick appBlurClick
-                                    appA11yTitle="{{'delete' | i18n}}" (click)="delete(a)" #deleteBtn
-                                    [appApiAction]="deletePromises[a.id]" [disabled]="deleteBtn.loading">
-                                    <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading"
-                                        aria-hidden="true"></i>
-                                    <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!deleteBtn.loading"
-                                        aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="box-header">
-                        {{'newAttachment' | i18n}}
-                    </div>
-                    <div class="box-content no-hover">
-                        <div class="box-content-row">
-                            <label for="file">{{'file' | i18n}}</label>
-                            <input type="file" id="file" name="file" required>
-                        </div>
-                    </div>
-                    <div class="box-footer">
-                        {{'maxFileSize' | i18n}}
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}"
-                    [disabled]="form.loading">
-                    <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
-                    <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
+  <div class="modal-dialog" role="document">
+    <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+      <div class="modal-body">
+        <div class="box" *ngIf="cipher && cipher.hasAttachments">
+          <div class="box-header" id="attachmentsTitle">
+            {{ "attachments" | i18n }}
+          </div>
+          <div class="box-content no-hover">
+            <div class="box-content-row box-content-row-flex" *ngFor="let a of cipher.attachments">
+              <div class="row-main">
+                {{ a.fileName }}
+              </div>
+              <small class="row-sub-label">{{ a.sizeName }}</small>
+              <div class="action-buttons no-pad">
+                <button
+                  class="row-btn btn"
+                  type="button"
+                  appStopClick
+                  appBlurClick
+                  appA11yTitle="{{ 'delete' | i18n }}"
+                  (click)="delete(a)"
+                  #deleteBtn
+                  [appApiAction]="deletePromises[a.id]"
+                  [disabled]="deleteBtn.loading"
+                >
+                  <i
+                    class="fa fa-trash-o fa-lg fa-fw"
+                    [hidden]="deleteBtn.loading"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    class="fa fa-spinner fa-spin fa-lg fa-fw"
+                    [hidden]="!deleteBtn.loading"
+                    aria-hidden="true"
+                  ></i>
                 </button>
-                <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
+              </div>
             </div>
-        </form>
-    </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-header">
+            {{ "newAttachment" | i18n }}
+          </div>
+          <div class="box-content no-hover">
+            <div class="box-content-row">
+              <label for="file">{{ "file" | i18n }}</label>
+              <input type="file" id="file" name="file" required />
+            </div>
+          </div>
+          <div class="box-footer">
+            {{ "maxFileSize" | i18n }}
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          appBlurClick
+          type="submit"
+          class="primary"
+          appA11yTitle="{{ 'save' | i18n }}"
+          [disabled]="form.loading"
+        >
+          <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
+          <i
+            class="fa fa-spinner fa-spin fa-lg fa-fw"
+            [hidden]="!form.loading"
+            aria-hidden="true"
+          ></i>
+        </button>
+        <button type="button" data-dismiss="modal">{{ "close" | i18n }}</button>
+      </div>
+    </form>
+  </div>
 </div>

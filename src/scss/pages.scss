@@ -1,218 +1,241 @@
 ﻿@import "variables.scss";
 
-#login-page, #lock-page, #sso-page, #set-password-page, #remove-password-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+#login-page,
+#lock-page,
+#sso-page,
+#set-password-page,
+#remove-password-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 
-    @media (min-height: 500px) {
-        height: calc(100% + 50px);
-        padding-bottom: 50px;
-    }
+  @media (min-height: 500px) {
+    height: calc(100% + 50px);
+    padding-bottom: 50px;
+  }
 
-    @media (min-height: 800px) {
-        height: calc(100% + 300px);
-        padding-bottom: 300px;
-    }
+  @media (min-height: 800px) {
+    height: calc(100% + 300px);
+    padding-bottom: 300px;
+  }
 
-    img {
-        margin: 0 auto 15px;
-        width: 284px;
-        display: block;
-    }
+  img {
+    margin: 0 auto 15px;
+    width: 284px;
+    display: block;
+  }
 }
 
-#register-page, #hint-page, #two-factor-page, #update-temp-password-page, #remove-password-page {
-    padding-top: 20px;
+#register-page,
+#hint-page,
+#two-factor-page,
+#update-temp-password-page,
+#remove-password-page {
+  padding-top: 20px;
 
-    .content {
-        margin: 0 auto;
+  .content {
+    margin: 0 auto;
+  }
+
+  img {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: $border-radius;
+  }
+}
+
+#login-page,
+#register-page,
+#hint-page,
+#two-factor-page,
+#lock-page,
+#update-temp-password-page {
+  .content {
+    width: 300px;
+    transition: width 0.25s linear;
+
+    p {
+      text-align: center;
     }
 
-    img {
+    p.lead,
+    h1 {
+      font-size: $font-size-large;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .box {
+      margin-bottom: 20px;
+
+      &.last {
+        margin-bottom: 15px;
+      }
+    }
+
+    .buttons {
+      &:not(.with-rows),
+      .buttons-row {
+        display: flex;
         margin-bottom: 10px;
-        max-width: 100%;
-        height: auto;
+      }
+
+      &:not(.with-rows),
+      .buttons-row:last-child {
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .sub-options {
+      text-align: center;
+      margin-bottom: 20px;
+
+      a {
         display: block;
-        border-radius: $border-radius;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
-}
 
-#login-page, #register-page, #hint-page, #two-factor-page, #lock-page, #update-temp-password-page {
-    .content {
-        width: 300px;
-        transition: width 0.25s linear;
+    a.settings-icon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
 
-        p {
-            text-align: center
-        }
+      @include themify($themes) {
+        color: themed("mutedColor");
+      }
 
-        p.lead, h1 {
-            font-size: $font-size-large;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
+      span {
+        visibility: hidden;
+      }
 
-        .box {
-            margin-bottom: 20px;
+      &:hover,
+      &:focus {
+        text-decoration: none;
 
-            &.last {
-                margin-bottom: 15px;
-            }
-        }
-
-        .buttons {
-            &:not(.with-rows), .buttons-row {
-                display: flex;
-                margin-bottom: 10px;
-            }
-
-            &:not(.with-rows), .buttons-row:last-child {
-                margin-bottom: 20px;
-            }
-
-            button {
-                margin-right: 10px;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-
-        .sub-options {
-            text-align: center;
-            margin-bottom: 20px;
-
-            a {
-                display: block;
-                margin-bottom: 10px;
-
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-
-        a.settings-icon {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-
-            @include themify($themes) {
-                color: themed('mutedColor');
-            }
-
-            span {
-                visibility: hidden;
-            }
-
-            &:hover, &:focus {
-                text-decoration: none;
-
-                @include themify($themes) {
-                    color: themed('primaryColor');
-                }
-
-                span {
-                    visibility: visible;
-                }
-            }
-        }
-    }
-}
-
-.login-header {
-    padding: 1em;
-    font-size: 1.2em;
-    .environment-urls-settings-icon {
         @include themify($themes) {
-            color: themed('mutedColor');
+          color: themed("primaryColor");
         }
 
         span {
-            visibility: hidden;
+          visibility: visible;
         }
-
-        &:hover, &:focus {
-            text-decoration: none;
-
-            @include themify($themes) {
-                color: themed('primaryColor');
-            }
-        }
+      }
     }
+  }
+}
+
+.login-header {
+  padding: 1em;
+  font-size: 1.2em;
+  .environment-urls-settings-icon {
+    @include themify($themes) {
+      color: themed("mutedColor");
+    }
+
+    span {
+      visibility: hidden;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      @include themify($themes) {
+        color: themed("primaryColor");
+      }
+    }
+  }
 }
 #sso-page {
-    .content {
-        width: 300px;
+  .content {
+    width: 300px;
 
-        .box {
-            margin-top: 30px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
+    .box {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
     }
+  }
 }
 
-#set-password-page, #remove-password-page {
-    .content {
-        width: 500px;
+#set-password-page,
+#remove-password-page {
+  .content {
+    width: 500px;
 
-        p {
-            text-align: center
-        }
-
-        p.lead, h1 {
-            font-size: $font-size-large;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-        
-        .buttons {
-            &:not(.with-rows), .buttons-row {
-                display: flex;
-                margin-bottom: 10px;
-            }
-
-            &:not(.with-rows), .buttons-row:last-child {
-                margin-bottom: 20px;
-            }
-
-            button {
-                margin-right: 10px;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-
-        .box {
-            margin-bottom: 15px;
-
-            &.last {
-                margin-bottom: 20px;
-            }
-        }
-
-        .box-content {
-            margin-bottom: 10px;
-        }
+    p {
+      text-align: center;
     }
+
+    p.lead,
+    h1 {
+      font-size: $font-size-large;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    .buttons {
+      &:not(.with-rows),
+      .buttons-row {
+        display: flex;
+        margin-bottom: 10px;
+      }
+
+      &:not(.with-rows),
+      .buttons-row:last-child {
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .box {
+      margin-bottom: 15px;
+
+      &.last {
+        margin-bottom: 20px;
+      }
+    }
+
+    .box-content {
+      margin-bottom: 10px;
+    }
+  }
 }
 
-#register-page, #update-temp-password-page {
-    .content {
-        width: 400px;
-    }
+#register-page,
+#update-temp-password-page {
+  .content {
+    width: 400px;
+  }
 }
 
 #remove-password-page {
-    .content > p {
-        margin-bottom: 20px;
-    }
+  .content > p {
+    margin-bottom: 20px;
+  }
 }

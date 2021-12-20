@@ -1,48 +1,77 @@
 <form id="lock-page" (ngSubmit)="submit()">
-    <div class="content">
-        <p aria-hidden="true"><i class="fa fa-lock fa-4x text-muted"></i></p>
-        <p>{{'yourVaultIsLocked' | i18n}}</p>
-        <div class="box last">
-            <div class="box-content">
-                <div class="box-content-row box-content-row-flex" appBoxRow *ngIf="!hideInput">
-                    <div class="row-main" *ngIf="pinLock">
-                        <label for="pin">{{'pin' | i18n}}</label>
-                        <input id="pin" type="{{showPassword ? 'text' : 'password'}}" name="PIN" class="monospaced"
-                            [(ngModel)]="pin" required appInputVerbatim>
-                    </div>
-                    <div class="row-main" *ngIf="!pinLock">
-                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                            class="monospaced" [(ngModel)]="masterPassword" required appInputVerbatim>
-                    </div>
-                    <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick role="button"
-                            appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
-                            <i class="fa fa-lg" aria-hidden="true"
-                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="box-footer">
-                {{'loggedInAsOn' | i18n : email : webVaultHostname}}
-            </div>
+  <div class="content">
+    <p aria-hidden="true"><i class="fa fa-lock fa-4x text-muted"></i></p>
+    <p>{{ "yourVaultIsLocked" | i18n }}</p>
+    <div class="box last">
+      <div class="box-content">
+        <div class="box-content-row box-content-row-flex" appBoxRow *ngIf="!hideInput">
+          <div class="row-main" *ngIf="pinLock">
+            <label for="pin">{{ "pin" | i18n }}</label>
+            <input
+              id="pin"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              name="PIN"
+              class="monospaced"
+              [(ngModel)]="pin"
+              required
+              appInputVerbatim
+            />
+          </div>
+          <div class="row-main" *ngIf="!pinLock">
+            <label for="masterPassword">{{ "masterPass" | i18n }}</label>
+            <input
+              id="masterPassword"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              name="MasterPassword"
+              class="monospaced"
+              [(ngModel)]="masterPassword"
+              required
+              appInputVerbatim
+            />
+          </div>
+          <div class="action-buttons">
+            <a
+              class="row-btn"
+              href="#"
+              appStopClick
+              appBlurClick
+              role="button"
+              appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+              (click)="togglePassword()"
+            >
+              <i
+                class="fa fa-lg"
+                aria-hidden="true"
+                [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+              ></i>
+            </a>
+          </div>
         </div>
-        <div class="buttons with-rows">
-            <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
-                <button type="button" class="btn block" [ngClass]="{'primary font-weight-bold': hideInput}"
-                    appBlurClick (click)="unlockBiometric()">
-                    {{biometricText | i18n}}
-                </button>
-            </div>
-            <div class="buttons-row">
-                <button type="submit" class="btn primary block" appBlurClick *ngIf="!hideInput">
-                    <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{'unlock' | i18n}}</b>
-                </button>
-                <button type="button" class="btn block" appBlurClick (click)="logOut()">
-                    {{'logOut' | i18n}}
-                </button>
-            </div>
-        </div>
+      </div>
+      <div class="box-footer">
+        {{ "loggedInAsOn" | i18n: email:webVaultHostname }}
+      </div>
     </div>
+    <div class="buttons with-rows">
+      <div class="buttons-row" *ngIf="supportsBiometric && biometricLock">
+        <button
+          type="button"
+          class="btn block"
+          [ngClass]="{ 'primary font-weight-bold': hideInput }"
+          appBlurClick
+          (click)="unlockBiometric()"
+        >
+          {{ biometricText | i18n }}
+        </button>
+      </div>
+      <div class="buttons-row">
+        <button type="submit" class="btn primary block" appBlurClick *ngIf="!hideInput">
+          <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{ "unlock" | i18n }}</b>
+        </button>
+        <button type="button" class="btn block" appBlurClick (click)="logOut()">
+          {{ "logOut" | i18n }}
+        </button>
+      </div>
+    </div>
+  </div>
 </form>

@@ -22,7 +22,7 @@ jobs:
           fi
 
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Get Package Version
         id: retrieve-version
@@ -58,41 +58,40 @@ jobs:
           branch: ${{ steps.branch.outputs.branch-name }}
 
       - name: Create release
-        uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
+        uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09 # v2.8.5
         env:
           PKG_VERSION: ${{ steps.retrieve-version.outputs.package_version }}
         with:
           artifacts: "Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
-                      Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
-                      Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
-                      bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
-                      Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
-                      latest-linux.yml,
-                      Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
-                      Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
-                      Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
-                      Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
-                      Bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
-                      Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
-                      Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
-                      Bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
-                      Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
-                      Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
-                      Bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
-                      bitwarden.${{ env.PKG_VERSION }}.nupkg,
-                      latest.yml,
-                      Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
-                      Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
-                      Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
-                      latest-mac.yml,
-                      Bitwarden-${{ env.PKG_VERSION }}-universal.pkg"
+            Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
+            Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
+            bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
+            Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
+            latest-linux.yml,
+            Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
+            Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
+            Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
+            Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
+            Bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
+            Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
+            Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
+            Bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
+            Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
+            Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
+            Bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
+            bitwarden.${{ env.PKG_VERSION }}.nupkg,
+            latest.yml,
+            Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
+            Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
+            Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
+            latest-mac.yml,
+            Bitwarden-${{ env.PKG_VERSION }}-universal.pkg"
           commit: ${{ github.sha }}
           tag: v${{ env.PKG_VERSION }}
           name: Version ${{ env.PKG_VERSION }}
           body: "<insert release notes here>"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
-
 
   snap:
     name: Deploy Snap
@@ -102,10 +101,10 @@ jobs:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Install Snap
-        uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d  # v1.2.0
+        uses: samuelmeuli/action-snapcraft@10d7d0a84d9d86098b19f872257df314b0bd8e2d # v1.2.0
         with:
           snapcraft_token: ${{ secrets.SNAP_TOKEN }}
 
@@ -129,7 +128,6 @@ jobs:
           snapcraft upload dist/bitwarden_${{ env._PKG_VERSION }}_amd64.snap --release stable
           snapcraft logout
 
-
   choco:
     name: Deploy Choco
     runs-on: windows-2019
@@ -138,7 +136,7 @@ jobs:
       _PKG_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Setup Chocolatey
         run: choco apikey --key $env:CHOCO_API_KEY --source https://push.chocolatey.org/

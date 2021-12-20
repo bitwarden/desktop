@@ -1,1 +1,1 @@
-declare module 'forcefocus';
+declare module "forcefocus";

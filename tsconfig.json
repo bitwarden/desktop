@@ -10,24 +10,14 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "tldjs": [
-        "jslib/common/src/misc/tldjs.noop"
-      ],
-      "jslib-common/*": [
-        "jslib/common/src/*"
-      ],
-      "jslib-angular/*": [
-        "jslib/angular/src/*"
-      ],
-      "jslib-electron/*": [
-        "jslib/electron/src/*"
-      ]
+      "tldjs": ["jslib/common/src/misc/tldjs.noop"],
+      "jslib-common/*": ["jslib/common/src/*"],
+      "jslib-angular/*": ["jslib/angular/src/*"],
+      "jslib-electron/*": ["jslib/electron/src/*"]
     }
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

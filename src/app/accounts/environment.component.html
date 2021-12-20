@@ -1,66 +1,97 @@
-<div class="modal fade" role="dialog" aria-modal="true" attr.aria-label="{{'settings' | i18n}}">
-    <div class="modal-dialog" role="document">
-        <form class="modal-content" (ngSubmit)="submit()">
-            <div class="modal-body">
-                <div class="box">
-                    <div class="box-header">
-                        {{'selfHostedEnvironment' | i18n}}
-                    </div>
-                    <div class="box-content">
-                        <div class="box-content-row" appBoxRow>
-                            <label for="baseUrl">{{'baseUrl' | i18n}}</label>
-                            <input id="baseUrl" type="text" name="BaseUrl" [(ngModel)]="baseUrl"
-                                placeholder="{{'ex' | i18n}} https://bitwarden.company.com" appInputVerbatim>
-                        </div>
-                    </div>
-                    <div class="box-footer">
-                        {{'selfHostedEnvironmentFooter' | i18n}}
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="box-header">
-                        <button type="button" (click)="toggleCustom()" appA11yTitle="{{'toggleVisibility' | i18n}}">
-                            <i class="fa fa-plus-square-o" [hidden]="showCustom" aria-hidden="true"></i>
-                            <i class="fa fa-minus-square-o" [hidden]="!showCustom" aria-hidden="true"></i>
-                            {{'customEnvironment' | i18n}}
-                        </button>
-                    </div>
-                    <div class="box-content" [hidden]="!showCustom">
-                        <div class="box-content-row" appBoxRow>
-                            <label for="webVaultUrl">{{'webVaultUrl' | i18n}}</label>
-                            <input id="webVaultUrl" type="text" name="WebVaultUrl" [(ngModel)]="webVaultUrl"
-                                appInputVerbatim>
-                        </div>
-                        <div class="box-content-row" appBoxRow>
-                            <label for="apiUrl">{{'apiUrl' | i18n}}</label>
-                            <input id="apiUrl" type="text" name="ApiUrl" [(ngModel)]="apiUrl" appInputVerbatim>
-                        </div>
-                        <div class="box-content-row" appBoxRow>
-                            <label for="identityUrl">{{'identityUrl' | i18n}}</label>
-                            <input id="identityUrl" type="text" name="IdentityUrl" [(ngModel)]="identityUrl"
-                                appInputVerbatim>
-                        </div>
-                        <div class="box-content-row" appBoxRow>
-                            <label for="notificationsUrl">{{'notificationsUrl' | i18n}}</label>
-                            <input id="notificationsUrl" type="text" name="NotificationsUrl"
-                                [(ngModel)]="notificationsUrl" appInputVerbatim>
-                        </div>
-                        <div class="box-content-row" appBoxRow>
-                            <label for="iconsUrl">{{'iconsUrl' | i18n}}</label>
-                            <input id="iconsUrl" type="text" name="IconsUrl" [(ngModel)]="iconsUrl" appInputVerbatim>
-                        </div>
-                    </div>
-                    <div class="box-footer" [hidden]="!showCustom">
-                        {{'customEnvironmentFooter' | i18n}}
-                    </div>
-                </div>
+<div class="modal fade" role="dialog" aria-modal="true" attr.aria-label="{{ 'settings' | i18n }}">
+  <div class="modal-dialog" role="document">
+    <form class="modal-content" (ngSubmit)="submit()">
+      <div class="modal-body">
+        <div class="box">
+          <div class="box-header">
+            {{ "selfHostedEnvironment" | i18n }}
+          </div>
+          <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+              <label for="baseUrl">{{ "baseUrl" | i18n }}</label>
+              <input
+                id="baseUrl"
+                type="text"
+                name="BaseUrl"
+                [(ngModel)]="baseUrl"
+                placeholder="{{ 'ex' | i18n }} https://bitwarden.company.com"
+                appInputVerbatim
+              />
             </div>
-            <div class="modal-footer">
-                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}">
-                    <i class="fa fa-save fa-lg fa-fw" aria-hidden="true"></i>
-                </button>
-                <button type="button" data-dismiss="modal">{{'close' | i18n}}</button>
+          </div>
+          <div class="box-footer">
+            {{ "selfHostedEnvironmentFooter" | i18n }}
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-header">
+            <button
+              type="button"
+              (click)="toggleCustom()"
+              appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+            >
+              <i class="fa fa-plus-square-o" [hidden]="showCustom" aria-hidden="true"></i>
+              <i class="fa fa-minus-square-o" [hidden]="!showCustom" aria-hidden="true"></i>
+              {{ "customEnvironment" | i18n }}
+            </button>
+          </div>
+          <div class="box-content" [hidden]="!showCustom">
+            <div class="box-content-row" appBoxRow>
+              <label for="webVaultUrl">{{ "webVaultUrl" | i18n }}</label>
+              <input
+                id="webVaultUrl"
+                type="text"
+                name="WebVaultUrl"
+                [(ngModel)]="webVaultUrl"
+                appInputVerbatim
+              />
             </div>
-        </form>
-    </div>
+            <div class="box-content-row" appBoxRow>
+              <label for="apiUrl">{{ "apiUrl" | i18n }}</label>
+              <input id="apiUrl" type="text" name="ApiUrl" [(ngModel)]="apiUrl" appInputVerbatim />
+            </div>
+            <div class="box-content-row" appBoxRow>
+              <label for="identityUrl">{{ "identityUrl" | i18n }}</label>
+              <input
+                id="identityUrl"
+                type="text"
+                name="IdentityUrl"
+                [(ngModel)]="identityUrl"
+                appInputVerbatim
+              />
+            </div>
+            <div class="box-content-row" appBoxRow>
+              <label for="notificationsUrl">{{ "notificationsUrl" | i18n }}</label>
+              <input
+                id="notificationsUrl"
+                type="text"
+                name="NotificationsUrl"
+                [(ngModel)]="notificationsUrl"
+                appInputVerbatim
+              />
+            </div>
+            <div class="box-content-row" appBoxRow>
+              <label for="iconsUrl">{{ "iconsUrl" | i18n }}</label>
+              <input
+                id="iconsUrl"
+                type="text"
+                name="IconsUrl"
+                [(ngModel)]="iconsUrl"
+                appInputVerbatim
+              />
+            </div>
+          </div>
+          <div class="box-footer" [hidden]="!showCustom">
+            {{ "customEnvironmentFooter" | i18n }}
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button appBlurClick type="submit" class="primary" appA11yTitle="{{ 'save' | i18n }}">
+          <i class="fa fa-save fa-lg fa-fw" aria-hidden="true"></i>
+        </button>
+        <button type="button" data-dismiss="modal">{{ "close" | i18n }}</button>
+      </div>
+    </form>
+  </div>
 </div>
