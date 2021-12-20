@@ -7,15 +7,15 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { EnvironmentComponent as BaseEnvironmentComponent } from "jslib-angular/components/environment.component";
 
 @Component({
-    selector: "app-environment",
-    templateUrl: "environment.component.html",
+  selector: "app-environment",
+  templateUrl: "environment.component.html",
 })
 export class EnvironmentComponent extends BaseEnvironmentComponent {
-    constructor(
-        platformUtilsService: PlatformUtilsService,
-        environmentService: EnvironmentService,
-        i18nService: I18nService
-    ) {
-        super(platformUtilsService, environmentService, i18nService);
-    }
+  constructor(
+    platformUtilsService: PlatformUtilsService,
+    environmentService: EnvironmentService,
+    i18nService: I18nService
+  ) {
+    super(platformUtilsService, environmentService, i18nService);
+  }
 }

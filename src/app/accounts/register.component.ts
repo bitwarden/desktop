@@ -17,58 +17,58 @@ import { RegisterComponent as BaseRegisterComponent } from "jslib-angular/compon
 const BroadcasterSubscriptionId = "RegisterComponent";
 
 @Component({
-    selector: "app-register",
-    templateUrl: "register.component.html",
+  selector: "app-register",
+  templateUrl: "register.component.html",
 })
 export class RegisterComponent extends BaseRegisterComponent implements OnInit, OnDestroy {
-    constructor(
-        authService: AuthService,
-        router: Router,
-        i18nService: I18nService,
-        cryptoService: CryptoService,
-        apiService: ApiService,
-        stateService: StateService,
-        platformUtilsService: PlatformUtilsService,
-        passwordGenerationService: PasswordGenerationService,
-        environmentService: EnvironmentService,
-        private broadcasterService: BroadcasterService,
-        private ngZone: NgZone,
-        logService: LogService
-    ) {
-        super(
-            authService,
-            router,
-            i18nService,
-            cryptoService,
-            apiService,
-            stateService,
-            platformUtilsService,
-            passwordGenerationService,
-            environmentService,
-            logService
-        );
-    }
+  constructor(
+    authService: AuthService,
+    router: Router,
+    i18nService: I18nService,
+    cryptoService: CryptoService,
+    apiService: ApiService,
+    stateService: StateService,
+    platformUtilsService: PlatformUtilsService,
+    passwordGenerationService: PasswordGenerationService,
+    environmentService: EnvironmentService,
+    private broadcasterService: BroadcasterService,
+    private ngZone: NgZone,
+    logService: LogService
+  ) {
+    super(
+      authService,
+      router,
+      i18nService,
+      cryptoService,
+      apiService,
+      stateService,
+      platformUtilsService,
+      passwordGenerationService,
+      environmentService,
+      logService
+    );
+  }
 
-    async ngOnInit() {
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
-            this.ngZone.run(() => {
-                switch (message.command) {
-                    case "windowHidden":
-                        this.onWindowHidden();
-                        break;
-                    default:
-                }
-            });
-        });
+  async ngOnInit() {
+    this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+      this.ngZone.run(() => {
+        switch (message.command) {
+          case "windowHidden":
+            this.onWindowHidden();
+            break;
+          default:
+        }
+      });
+    });
 
-        super.ngOnInit();
-    }
+    super.ngOnInit();
+  }
 
-    ngOnDestroy() {
-        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-    }
+  ngOnDestroy() {
+    this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+  }
 
-    onWindowHidden() {
-        this.showPassword = false;
-    }
+  onWindowHidden() {
+    this.showPassword = false;
+  }
 }

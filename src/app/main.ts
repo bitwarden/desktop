@@ -9,7 +9,7 @@ require("../scss/styles.scss");
 import { AppModule } from "./app.module";
 
 if (!isDev()) {
-    enableProdMode();
+  enableProdMode();
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule, { preserveWhitespaces: true });

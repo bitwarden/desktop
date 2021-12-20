@@ -23,106 +23,107 @@ import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/l
 const BroadcasterSubscriptionId = "LoginComponent";
 
 @Component({
-    selector: "app-login",
-    templateUrl: "login.component.html",
+  selector: "app-login",
+  templateUrl: "login.component.html",
 })
 export class LoginComponent extends BaseLoginComponent implements OnDestroy {
-    @ViewChild("environment", { read: ViewContainerRef, static: true }) environmentModal: ViewContainerRef;
+  @ViewChild("environment", { read: ViewContainerRef, static: true })
+  environmentModal: ViewContainerRef;
 
-    showingModal = false;
+  showingModal = false;
 
-    private deferFocus: boolean = null;
+  private deferFocus: boolean = null;
 
-    constructor(
-        authService: AuthService,
-        router: Router,
-        i18nService: I18nService,
-        syncService: SyncService,
-        private modalService: ModalService,
-        platformUtilsService: PlatformUtilsService,
-        stateService: StateService,
-        environmentService: EnvironmentService,
-        passwordGenerationService: PasswordGenerationService,
-        cryptoFunctionService: CryptoFunctionService,
-        private broadcasterService: BroadcasterService,
-        ngZone: NgZone,
-        private messagingService: MessagingService,
-        logService: LogService
-    ) {
-        super(
-            authService,
-            router,
-            platformUtilsService,
-            i18nService,
-            stateService,
-            environmentService,
-            passwordGenerationService,
-            cryptoFunctionService,
-            logService,
-            ngZone
-        );
-        super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
-        };
-    }
+  constructor(
+    authService: AuthService,
+    router: Router,
+    i18nService: I18nService,
+    syncService: SyncService,
+    private modalService: ModalService,
+    platformUtilsService: PlatformUtilsService,
+    stateService: StateService,
+    environmentService: EnvironmentService,
+    passwordGenerationService: PasswordGenerationService,
+    cryptoFunctionService: CryptoFunctionService,
+    private broadcasterService: BroadcasterService,
+    ngZone: NgZone,
+    private messagingService: MessagingService,
+    logService: LogService
+  ) {
+    super(
+      authService,
+      router,
+      platformUtilsService,
+      i18nService,
+      stateService,
+      environmentService,
+      passwordGenerationService,
+      cryptoFunctionService,
+      logService,
+      ngZone
+    );
+    super.onSuccessfulLogin = () => {
+      return syncService.fullSync(true);
+    };
+  }
 
-    async ngOnInit() {
-        await super.ngOnInit();
-        this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
-            this.ngZone.run(() => {
-                switch (message.command) {
-                    case "windowHidden":
-                        this.onWindowHidden();
-                        break;
-                    case "windowIsFocused":
-                        if (this.deferFocus === null) {
-                            this.deferFocus = !message.windowIsFocused;
-                            if (!this.deferFocus) {
-                                this.focusInput();
-                            }
-                        } else if (this.deferFocus && message.windowIsFocused) {
-                            this.focusInput();
-                            this.deferFocus = false;
-                        }
-                        break;
-                    default:
-                }
-            });
-        });
-        this.messagingService.send("getWindowIsFocused");
-    }
-
-    ngOnDestroy() {
-        this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-    }
-
-    async settings() {
-        const [modal, childComponent] = await this.modalService.openViewRef(
-            EnvironmentComponent,
-            this.environmentModal
-        );
-
-        modal.onShown.subscribe(() => {
-            this.showingModal = true;
-        });
-        modal.onClosed.subscribe(() => {
-            this.showingModal = false;
-        });
-
-        childComponent.onSaved.subscribe(() => {
-            modal.close();
-        });
-    }
-
-    onWindowHidden() {
-        this.showPassword = false;
-    }
-
-    async submit() {
-        await super.submit();
-        if (this.captchaSiteKey) {
-            const content = document.getElementById("content") as HTMLDivElement;
-            content.setAttribute("style", "width:335px");
+  async ngOnInit() {
+    await super.ngOnInit();
+    this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
+      this.ngZone.run(() => {
+        switch (message.command) {
+          case "windowHidden":
+            this.onWindowHidden();
+            break;
+          case "windowIsFocused":
+            if (this.deferFocus === null) {
+              this.deferFocus = !message.windowIsFocused;
+              if (!this.deferFocus) {
+                this.focusInput();
+              }
+            } else if (this.deferFocus && message.windowIsFocused) {
+              this.focusInput();
+              this.deferFocus = false;
+            }
+            break;
+          default:
         }
+      });
+    });
+    this.messagingService.send("getWindowIsFocused");
+  }
+
+  ngOnDestroy() {
+    this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+  }
+
+  async settings() {
+    const [modal, childComponent] = await this.modalService.openViewRef(
+      EnvironmentComponent,
+      this.environmentModal
+    );
+
+    modal.onShown.subscribe(() => {
+      this.showingModal = true;
+    });
+    modal.onClosed.subscribe(() => {
+      this.showingModal = false;
+    });
+
+    childComponent.onSaved.subscribe(() => {
+      modal.close();
+    });
+  }
+
+  onWindowHidden() {
+    this.showPassword = false;
+  }
+
+  async submit() {
+    await super.submit();
+    if (this.captchaSiteKey) {
+      const content = document.getElementById("content") as HTMLDivElement;
+      content.setAttribute("style", "width:335px");
     }
+  }
 }

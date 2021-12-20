@@ -20,64 +20,65 @@ import { ModalService } from "jslib-angular/services/modal.service";
 import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
 
 @Component({
-    selector: "app-two-factor",
-    templateUrl: "two-factor.component.html",
+  selector: "app-two-factor",
+  templateUrl: "two-factor.component.html",
 })
 export class TwoFactorComponent extends BaseTwoFactorComponent {
-    @ViewChild("twoFactorOptions", { read: ViewContainerRef, static: true }) twoFactorOptionsModal: ViewContainerRef;
+  @ViewChild("twoFactorOptions", { read: ViewContainerRef, static: true })
+  twoFactorOptionsModal: ViewContainerRef;
 
-    showingModal = false;
+  showingModal = false;
 
-    constructor(
-        authService: AuthService,
-        router: Router,
-        i18nService: I18nService,
-        apiService: ApiService,
-        platformUtilsService: PlatformUtilsService,
-        syncService: SyncService,
-        environmentService: EnvironmentService,
-        private modalService: ModalService,
-        stateService: StateService,
-        route: ActivatedRoute,
-        logService: LogService
-    ) {
-        super(
-            authService,
-            router,
-            i18nService,
-            apiService,
-            platformUtilsService,
-            window,
-            environmentService,
-            stateService,
-            route,
-            logService
-        );
-        super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
-        };
-    }
+  constructor(
+    authService: AuthService,
+    router: Router,
+    i18nService: I18nService,
+    apiService: ApiService,
+    platformUtilsService: PlatformUtilsService,
+    syncService: SyncService,
+    environmentService: EnvironmentService,
+    private modalService: ModalService,
+    stateService: StateService,
+    route: ActivatedRoute,
+    logService: LogService
+  ) {
+    super(
+      authService,
+      router,
+      i18nService,
+      apiService,
+      platformUtilsService,
+      window,
+      environmentService,
+      stateService,
+      route,
+      logService
+    );
+    super.onSuccessfulLogin = () => {
+      return syncService.fullSync(true);
+    };
+  }
 
-    async anotherMethod() {
-        const [modal, childComponent] = await this.modalService.openViewRef(
-            TwoFactorOptionsComponent,
-            this.twoFactorOptionsModal
-        );
+  async anotherMethod() {
+    const [modal, childComponent] = await this.modalService.openViewRef(
+      TwoFactorOptionsComponent,
+      this.twoFactorOptionsModal
+    );
 
-        modal.onShown.subscribe(() => {
-            this.showingModal = true;
-        });
-        modal.onClosed.subscribe(() => {
-            this.showingModal = false;
-        });
+    modal.onShown.subscribe(() => {
+      this.showingModal = true;
+    });
+    modal.onClosed.subscribe(() => {
+      this.showingModal = false;
+    });
 
-        childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
-            modal.close();
-            this.selectedProviderType = provider;
-            await this.init();
-        });
-        childComponent.onRecoverSelected.subscribe(() => {
-            modal.close();
-        });
-    }
+    childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
+      modal.close();
+      this.selectedProviderType = provider;
+      await this.init();
+    });
+    childComponent.onRecoverSelected.subscribe(() => {
+      modal.close();
+    });
+  }
 }

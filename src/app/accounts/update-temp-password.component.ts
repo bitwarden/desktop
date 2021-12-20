@@ -14,68 +14,68 @@ import { SyncService } from "jslib-common/abstractions/sync.service";
 import { UpdateTempPasswordComponent as BaseUpdateTempPasswordComponent } from "jslib-angular/components/update-temp-password.component";
 
 interface MasterPasswordScore {
-    Color: string;
-    Text: string;
-    Width: number;
+  Color: string;
+  Text: string;
+  Width: number;
 }
 
 @Component({
-    selector: "app-update-temp-password",
-    templateUrl: "update-temp-password.component.html",
+  selector: "app-update-temp-password",
+  templateUrl: "update-temp-password.component.html",
 })
 export class UpdateTempPasswordComponent extends BaseUpdateTempPasswordComponent {
-    get masterPasswordScoreStyle(): MasterPasswordScore {
-        const scoreWidth = this.masterPasswordScore == null ? 0 : (this.masterPasswordScore + 1) * 20;
-        switch (this.masterPasswordScore) {
-            case 4:
-                return {
-                    Color: "bg-success",
-                    Text: "strong",
-                    Width: scoreWidth,
-                };
-            case 3:
-                return {
-                    Color: "bg-primary",
-                    Text: "good",
-                    Width: scoreWidth,
-                };
-            case 2:
-                return {
-                    Color: "bg-warning",
-                    Text: "weak",
-                    Width: scoreWidth,
-                };
-            default:
-                return {
-                    Color: "bg-danger",
-                    Text: "weak",
-                    Width: scoreWidth,
-                };
-        }
+  get masterPasswordScoreStyle(): MasterPasswordScore {
+    const scoreWidth = this.masterPasswordScore == null ? 0 : (this.masterPasswordScore + 1) * 20;
+    switch (this.masterPasswordScore) {
+      case 4:
+        return {
+          Color: "bg-success",
+          Text: "strong",
+          Width: scoreWidth,
+        };
+      case 3:
+        return {
+          Color: "bg-primary",
+          Text: "good",
+          Width: scoreWidth,
+        };
+      case 2:
+        return {
+          Color: "bg-warning",
+          Text: "weak",
+          Width: scoreWidth,
+        };
+      default:
+        return {
+          Color: "bg-danger",
+          Text: "weak",
+          Width: scoreWidth,
+        };
     }
-    constructor(
-        i18nService: I18nService,
-        platformUtilsService: PlatformUtilsService,
-        passwordGenerationService: PasswordGenerationService,
-        policyService: PolicyService,
-        cryptoService: CryptoService,
-        messagingService: MessagingService,
-        apiService: ApiService,
-        syncService: SyncService,
-        logService: LogService,
-        stateService: StateService
-    ) {
-        super(
-            i18nService,
-            platformUtilsService,
-            passwordGenerationService,
-            policyService,
-            cryptoService,
-            messagingService,
-            apiService,
-            stateService,
-            syncService,
-            logService
-        );
-    }
+  }
+  constructor(
+    i18nService: I18nService,
+    platformUtilsService: PlatformUtilsService,
+    passwordGenerationService: PasswordGenerationService,
+    policyService: PolicyService,
+    cryptoService: CryptoService,
+    messagingService: MessagingService,
+    apiService: ApiService,
+    syncService: SyncService,
+    logService: LogService,
+    stateService: StateService
+  ) {
+    super(
+      i18nService,
+      platformUtilsService,
+      passwordGenerationService,
+      policyService,
+      cryptoService,
+      messagingService,
+      apiService,
+      stateService,
+      syncService,
+      logService
+    );
+  }
 }

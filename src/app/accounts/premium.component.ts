@@ -9,17 +9,17 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { PremiumComponent as BasePremiumComponent } from "jslib-angular/components/premium.component";
 
 @Component({
-    selector: "app-premium",
-    templateUrl: "premium.component.html",
+  selector: "app-premium",
+  templateUrl: "premium.component.html",
 })
 export class PremiumComponent extends BasePremiumComponent {
-    constructor(
-        i18nService: I18nService,
-        platformUtilsService: PlatformUtilsService,
-        apiService: ApiService,
-        logService: LogService,
-        stateService: StateService
-    ) {
-        super(i18nService, platformUtilsService, apiService, logService, stateService);
-    }
+  constructor(
+    i18nService: I18nService,
+    platformUtilsService: PlatformUtilsService,
+    apiService: ApiService,
+    logService: LogService,
+    stateService: StateService
+  ) {
+    super(i18nService, platformUtilsService, apiService, logService, stateService);
+  }
 }

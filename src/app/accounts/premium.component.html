@@ -1,87 +1,91 @@
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="premiumTitle">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="box">
-                    <div class="box-header" id="premiumTitle">
-                        {{ "premiumMembership" | i18n }}
-                    </div>
-                    <div class="box-content box-content-padded">
-                        <div *ngIf="!isPremium">
-                            <p class="text-center lead">{{ "premiumNotCurrentMember" | i18n }}</p>
-                            <p>{{ "premiumSignUpAndGet" | i18n }}</p>
-                            <ul class="fa-ul">
-                                <li>
-                                    <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
-                                    {{ "premiumSignUpStorage" | i18n }}
-                                </li>
-                                <li>
-                                    <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
-                                    {{ "premiumSignUpTwoStep" | i18n }}
-                                </li>
-                                <li>
-                                    <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
-                                    {{ "premiumSignUpReports" | i18n }}
-                                </li>
-                                <li>
-                                    <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
-                                    {{ "premiumSignUpTotp" | i18n }}
-                                </li>
-                                <li>
-                                    <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
-                                    {{ "premiumSignUpSupport" | i18n }}
-                                </li>
-                                <li>
-                                    <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
-                                    {{ "premiumSignUpFuture" | i18n }}
-                                </li>
-                            </ul>
-                            <p class="text-center lead no-margin">
-                                {{ "premiumPrice" | i18n: (price | currency: "$") }}
-                            </p>
-                        </div>
-                        <div *ngIf="isPremium">
-                            <p class="text-center lead">{{ "premiumCurrentMember" | i18n }}</p>
-                            <p class="text-center">{{ "premiumCurrentMemberThanks" | i18n }}</p>
-                        </div>
-                    </div>
-                </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="box">
+          <div class="box-header" id="premiumTitle">
+            {{ "premiumMembership" | i18n }}
+          </div>
+          <div class="box-content box-content-padded">
+            <div *ngIf="!isPremium">
+              <p class="text-center lead">{{ "premiumNotCurrentMember" | i18n }}</p>
+              <p>{{ "premiumSignUpAndGet" | i18n }}</p>
+              <ul class="fa-ul">
+                <li>
+                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  {{ "premiumSignUpStorage" | i18n }}
+                </li>
+                <li>
+                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  {{ "premiumSignUpTwoStep" | i18n }}
+                </li>
+                <li>
+                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  {{ "premiumSignUpReports" | i18n }}
+                </li>
+                <li>
+                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  {{ "premiumSignUpTotp" | i18n }}
+                </li>
+                <li>
+                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  {{ "premiumSignUpSupport" | i18n }}
+                </li>
+                <li>
+                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  {{ "premiumSignUpFuture" | i18n }}
+                </li>
+              </ul>
+              <p class="text-center lead no-margin">
+                {{ "premiumPrice" | i18n: (price | currency: "$") }}
+              </p>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="primary" appBlurClick (click)="manage()" *ngIf="isPremium">
-                    <b>{{ "premiumManage" | i18n }}</b>
-                </button>
-                <button
-                    #purchaseBtn
-                    type="button"
-                    class="primary"
-                    appBlurClick
-                    (click)="purchase()"
-                    *ngIf="!isPremium"
-                    [disabled]="purchaseBtn.loading"
-                >
-                    <b>{{ "premiumPurchase" | i18n }}</b>
-                </button>
-                <button type="button" data-dismiss="modal">{{ "close" | i18n }}</button>
-                <div class="right" *ngIf="!isPremium">
-                    <button
-                        #refreshBtn
-                        type="button"
-                        appBlurClick
-                        (click)="refresh()"
-                        [disabled]="refreshBtn.loading"
-                        appA11yTitle="{{ 'premiumRefresh' | i18n }}"
-                        [appApiAction]="refreshPromise"
-                    >
-                        <i class="fa fa-refresh fa-lg fa-fw" [hidden]="refreshBtn.loading" aria-hidden="true"></i>
-                        <i
-                            class="fa fa-spinner fa-spin fa-lg fa-fw"
-                            [hidden]="!refreshBtn.loading"
-                            aria-hidden="true"
-                        ></i>
-                    </button>
-                </div>
+            <div *ngIf="isPremium">
+              <p class="text-center lead">{{ "premiumCurrentMember" | i18n }}</p>
+              <p class="text-center">{{ "premiumCurrentMemberThanks" | i18n }}</p>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="primary" appBlurClick (click)="manage()" *ngIf="isPremium">
+          <b>{{ "premiumManage" | i18n }}</b>
+        </button>
+        <button
+          #purchaseBtn
+          type="button"
+          class="primary"
+          appBlurClick
+          (click)="purchase()"
+          *ngIf="!isPremium"
+          [disabled]="purchaseBtn.loading"
+        >
+          <b>{{ "premiumPurchase" | i18n }}</b>
+        </button>
+        <button type="button" data-dismiss="modal">{{ "close" | i18n }}</button>
+        <div class="right" *ngIf="!isPremium">
+          <button
+            #refreshBtn
+            type="button"
+            appBlurClick
+            (click)="refresh()"
+            [disabled]="refreshBtn.loading"
+            appA11yTitle="{{ 'premiumRefresh' | i18n }}"
+            [appApiAction]="refreshPromise"
+          >
+            <i
+              class="fa fa-refresh fa-lg fa-fw"
+              [hidden]="refreshBtn.loading"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="fa fa-spinner fa-spin fa-lg fa-fw"
+              [hidden]="!refreshBtn.loading"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

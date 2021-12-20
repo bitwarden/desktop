@@ -43,131 +43,131 @@ import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-com
 import { ThemeType } from "jslib-common/enums/themeType";
 
 export function initFactory(
-    window: Window,
-    environmentService: EnvironmentServiceAbstraction,
-    syncService: SyncServiceAbstraction,
-    vaultTimeoutService: VaultTimeoutService,
-    i18nService: I18nService,
-    eventService: EventService,
-    authService: AuthService,
-    notificationsService: NotificationsServiceAbstraction,
-    platformUtilsService: PlatformUtilsServiceAbstraction,
-    stateService: StateServiceAbstraction,
-    cryptoService: CryptoServiceAbstraction
+  window: Window,
+  environmentService: EnvironmentServiceAbstraction,
+  syncService: SyncServiceAbstraction,
+  vaultTimeoutService: VaultTimeoutService,
+  i18nService: I18nService,
+  eventService: EventService,
+  authService: AuthService,
+  notificationsService: NotificationsServiceAbstraction,
+  platformUtilsService: PlatformUtilsServiceAbstraction,
+  stateService: StateServiceAbstraction,
+  cryptoService: CryptoServiceAbstraction
 ): Function {
-    return async () => {
-        await stateService.init();
-        await environmentService.setUrlsFromStorage();
-        syncService.fullSync(true);
-        await vaultTimeoutService.init(true);
-        const locale = await stateService.getLocale();
-        await i18nService.init(locale);
-        eventService.init(true);
-        authService.init();
-        setTimeout(() => notificationsService.init(), 3000);
-        const htmlEl = window.document.documentElement;
-        htmlEl.classList.add("os_" + platformUtilsService.getDeviceString());
-        htmlEl.classList.add("locale_" + i18nService.translationLocale);
-        const theme = await platformUtilsService.getEffectiveTheme();
-        htmlEl.classList.add("theme_" + theme);
-        platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
-            const bwTheme = await stateService.getTheme();
-            if (bwTheme == null || bwTheme === ThemeType.System) {
-                htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
-                htmlEl.classList.add("theme_" + sysTheme);
-            }
-        });
+  return async () => {
+    await stateService.init();
+    await environmentService.setUrlsFromStorage();
+    syncService.fullSync(true);
+    await vaultTimeoutService.init(true);
+    const locale = await stateService.getLocale();
+    await i18nService.init(locale);
+    eventService.init(true);
+    authService.init();
+    setTimeout(() => notificationsService.init(), 3000);
+    const htmlEl = window.document.documentElement;
+    htmlEl.classList.add("os_" + platformUtilsService.getDeviceString());
+    htmlEl.classList.add("locale_" + i18nService.translationLocale);
+    const theme = await platformUtilsService.getEffectiveTheme();
+    htmlEl.classList.add("theme_" + theme);
+    platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
+      const bwTheme = await stateService.getTheme();
+      if (bwTheme == null || bwTheme === ThemeType.System) {
+        htmlEl.classList.remove("theme_" + ThemeType.Light, "theme_" + ThemeType.Dark);
+        htmlEl.classList.add("theme_" + sysTheme);
+      }
+    });
 
-        let installAction = null;
-        const installedVersion = await stateService.getInstalledVersion();
-        const currentVersion = await platformUtilsService.getApplicationVersion();
-        if (installedVersion == null) {
-            installAction = "install";
-        } else if (installedVersion !== currentVersion) {
-            installAction = "update";
-        }
+    let installAction = null;
+    const installedVersion = await stateService.getInstalledVersion();
+    const currentVersion = await platformUtilsService.getApplicationVersion();
+    if (installedVersion == null) {
+      installAction = "install";
+    } else if (installedVersion !== currentVersion) {
+      installAction = "update";
+    }
 
-        if (installAction != null) {
-            await stateService.setInstalledVersion(currentVersion);
-        }
+    if (installAction != null) {
+      await stateService.setInstalledVersion(currentVersion);
+    }
 
-        const containerService = new ContainerService(cryptoService);
-        containerService.attachToGlobal(window);
-    };
+    const containerService = new ContainerService(cryptoService);
+    containerService.attachToGlobal(window);
+  };
 }
 
 @NgModule({
-    imports: [JslibServicesModule],
-    declarations: [],
-    providers: [
-        {
-            provide: APP_INITIALIZER,
-            useFactory: initFactory,
-            deps: [
-                "WINDOW",
-                EnvironmentServiceAbstraction,
-                SyncServiceAbstraction,
-                VaultTimeoutServiceAbstraction,
-                I18nServiceAbstraction,
-                EventServiceAbstraction,
-                AuthServiceAbstraction,
-                NotificationsServiceAbstraction,
-                PlatformUtilsServiceAbstraction,
-                StateServiceAbstraction,
-                CryptoServiceAbstraction,
-            ],
-            multi: true,
-        },
-        { provide: LogServiceAbstraction, useClass: ElectronLogService, deps: [] },
-        {
-            provide: PlatformUtilsServiceAbstraction,
-            useFactory: (
-                i18nService: I18nServiceAbstraction,
-                messagingService: MessagingServiceAbstraction,
-                stateService: StateServiceAbstraction
-            ) => new ElectronPlatformUtilsService(i18nService, messagingService, true, stateService),
-            deps: [I18nServiceAbstraction, MessagingServiceAbstraction, StateServiceAbstraction],
-        },
-        {
-            provide: I18nServiceAbstraction,
-            useFactory: (window: Window) => new I18nService(window.navigator.language, "./locales"),
-            deps: ["WINDOW"],
-        },
-        {
-            provide: MessagingServiceAbstraction,
-            useClass: ElectronRendererMessagingService,
-            deps: [BroadcasterServiceAbstraction],
-        },
-        { provide: StorageServiceAbstraction, useClass: ElectronRendererStorageService },
-        { provide: "SECURE_STORAGE", useClass: ElectronRendererSecureStorageService },
-        {
-            provide: CryptoServiceAbstraction,
-            useClass: ElectronCryptoService,
-            deps: [
-                CryptoFunctionServiceAbstraction,
-                PlatformUtilsServiceAbstraction,
-                LogServiceAbstraction,
-                StateServiceAbstraction,
-            ],
-        },
-        {
-            provide: SystemServiceAbstraction,
-            useClass: SystemService,
-            deps: [
-                VaultTimeoutServiceAbstraction,
-                MessagingServiceAbstraction,
-                PlatformUtilsServiceAbstraction,
-                StateServiceAbstraction,
-            ],
-        },
-        { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
-        NativeMessagingService,
-        SearchBarService,
-        {
-            provide: LoginGuardService,
-            useClass: LoginGuardService,
-            deps: [StateServiceAbstraction, PlatformUtilsServiceAbstraction, I18nServiceAbstraction],
-        },
-    ],
+  imports: [JslibServicesModule],
+  declarations: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initFactory,
+      deps: [
+        "WINDOW",
+        EnvironmentServiceAbstraction,
+        SyncServiceAbstraction,
+        VaultTimeoutServiceAbstraction,
+        I18nServiceAbstraction,
+        EventServiceAbstraction,
+        AuthServiceAbstraction,
+        NotificationsServiceAbstraction,
+        PlatformUtilsServiceAbstraction,
+        StateServiceAbstraction,
+        CryptoServiceAbstraction,
+      ],
+      multi: true,
+    },
+    { provide: LogServiceAbstraction, useClass: ElectronLogService, deps: [] },
+    {
+      provide: PlatformUtilsServiceAbstraction,
+      useFactory: (
+        i18nService: I18nServiceAbstraction,
+        messagingService: MessagingServiceAbstraction,
+        stateService: StateServiceAbstraction
+      ) => new ElectronPlatformUtilsService(i18nService, messagingService, true, stateService),
+      deps: [I18nServiceAbstraction, MessagingServiceAbstraction, StateServiceAbstraction],
+    },
+    {
+      provide: I18nServiceAbstraction,
+      useFactory: (window: Window) => new I18nService(window.navigator.language, "./locales"),
+      deps: ["WINDOW"],
+    },
+    {
+      provide: MessagingServiceAbstraction,
+      useClass: ElectronRendererMessagingService,
+      deps: [BroadcasterServiceAbstraction],
+    },
+    { provide: StorageServiceAbstraction, useClass: ElectronRendererStorageService },
+    { provide: "SECURE_STORAGE", useClass: ElectronRendererSecureStorageService },
+    {
+      provide: CryptoServiceAbstraction,
+      useClass: ElectronCryptoService,
+      deps: [
+        CryptoFunctionServiceAbstraction,
+        PlatformUtilsServiceAbstraction,
+        LogServiceAbstraction,
+        StateServiceAbstraction,
+      ],
+    },
+    {
+      provide: SystemServiceAbstraction,
+      useClass: SystemService,
+      deps: [
+        VaultTimeoutServiceAbstraction,
+        MessagingServiceAbstraction,
+        PlatformUtilsServiceAbstraction,
+        StateServiceAbstraction,
+      ],
+    },
+    { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
+    NativeMessagingService,
+    SearchBarService,
+    {
+      provide: LoginGuardService,
+      useClass: LoginGuardService,
+      deps: [StateServiceAbstraction, PlatformUtilsServiceAbstraction, I18nServiceAbstraction],
+    },
+  ],
 })
 export class ServicesModule {}

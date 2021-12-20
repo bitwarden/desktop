@@ -14,51 +14,51 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/send/add-edit.component";
 
 @Component({
-    selector: "app-send-add-edit",
-    templateUrl: "add-edit.component.html",
+  selector: "app-send-add-edit",
+  templateUrl: "add-edit.component.html",
 })
 export class AddEditComponent extends BaseAddEditComponent {
-    constructor(
-        i18nService: I18nService,
-        platformUtilsService: PlatformUtilsService,
-        environmentService: EnvironmentService,
-        datePipe: DatePipe,
-        sendService: SendService,
-        stateService: StateService,
-        messagingService: MessagingService,
-        policyService: PolicyService,
-        logService: LogService
-    ) {
-        super(
-            i18nService,
-            platformUtilsService,
-            environmentService,
-            datePipe,
-            sendService,
-            messagingService,
-            policyService,
-            logService,
-            stateService
-        );
-    }
+  constructor(
+    i18nService: I18nService,
+    platformUtilsService: PlatformUtilsService,
+    environmentService: EnvironmentService,
+    datePipe: DatePipe,
+    sendService: SendService,
+    stateService: StateService,
+    messagingService: MessagingService,
+    policyService: PolicyService,
+    logService: LogService
+  ) {
+    super(
+      i18nService,
+      platformUtilsService,
+      environmentService,
+      datePipe,
+      sendService,
+      messagingService,
+      policyService,
+      logService,
+      stateService
+    );
+  }
 
-    async refresh() {
-        this.password = null;
-        const send = await this.loadSend();
-        this.send = await send.decrypt();
-        this.hasPassword = this.send.password != null && this.send.password.trim() !== "";
-    }
+  async refresh() {
+    this.password = null;
+    const send = await this.loadSend();
+    this.send = await send.decrypt();
+    this.hasPassword = this.send.password != null && this.send.password.trim() !== "";
+  }
 
-    cancel() {
-        this.onCancelled.emit(this.send);
-    }
+  cancel() {
+    this.onCancelled.emit(this.send);
+  }
 
-    async copyLinkToClipboard(link: string) {
-        super.copyLinkToClipboard(link);
-        this.platformUtilsService.showToast(
-            "success",
-            null,
-            this.i18nService.t("valueCopied", this.i18nService.t("sendLink"))
-        );
-    }
+  async copyLinkToClipboard(link: string) {
+    super.copyLinkToClipboard(link);
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("valueCopied", this.i18nService.t("sendLink"))
+    );
+  }
 }
