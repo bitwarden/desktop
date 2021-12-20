@@ -128,8 +128,8 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint
+      # - name: Run linter
+      #   run: npm run lint
 
       - name: Build application
         run: npm run dist:lin
@@ -224,8 +224,8 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint
+      # - name: Run linter
+      #   run: npm run lint
 
       - name: Build & Sign (dev)
         env:
@@ -477,8 +477,8 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint
+      # - name: Run linter
+      #   run: npm run lint
 
       - name: Build application (dev)
         run: npm run build
