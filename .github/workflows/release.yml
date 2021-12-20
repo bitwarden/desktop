@@ -3,6 +3,15 @@ name: Release
 
 on:
   workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Release Options'
+        required: true
+        default: 'Initial Release'
+        type: choice
+        options:
+          - Initial Release
+          - Redeploy
 
 jobs:
   setup:
@@ -39,7 +48,8 @@ jobs:
           echo "Latest version: $latest_ver"
           ver=${{ steps.retrieve-version.outputs.package_version }}
           echo "Version: $ver"
-          if [ "$latest_ver" = "$ver" ]; then
+          if [ "$latest_ver" = "$ver" ] && \
+          [ "${{ github.event.inputs.release_type }}" == "Initial Release" ]; then
             echo "Version has not been bumped!"
             exit 1
           fi
