@@ -11,28 +11,28 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { AttachmentsComponent as BaseAttachmentsComponent } from "jslib-angular/components/attachments.component";
 
 @Component({
-    selector: "app-vault-attachments",
-    templateUrl: "attachments.component.html",
+  selector: "app-vault-attachments",
+  templateUrl: "attachments.component.html",
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
-    constructor(
-        cipherService: CipherService,
-        i18nService: I18nService,
-        cryptoService: CryptoService,
-        platformUtilsService: PlatformUtilsService,
-        apiService: ApiService,
-        logService: LogService,
-        stateService: StateService
-    ) {
-        super(
-            cipherService,
-            i18nService,
-            cryptoService,
-            platformUtilsService,
-            apiService,
-            window,
-            logService,
-            stateService
-        );
-    }
+  constructor(
+    cipherService: CipherService,
+    i18nService: I18nService,
+    cryptoService: CryptoService,
+    platformUtilsService: PlatformUtilsService,
+    apiService: ApiService,
+    logService: LogService,
+    stateService: StateService
+  ) {
+    super(
+      cipherService,
+      i18nService,
+      cryptoService,
+      platformUtilsService,
+      apiService,
+      window,
+      logService,
+      stateService
+    );
+  }
 }

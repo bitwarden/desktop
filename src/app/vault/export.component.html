@@ -1,41 +1,45 @@
 <div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="exportTitle">
-    <div class="modal-dialog" role="document">
-        <form class="modal-content" #form (ngSubmit)="submit()" [formGroup]="exportForm">
-            <div class="modal-body">
-                <app-callout type="warning" title="{{ 'vaultExportDisabled' | i18n }}" *ngIf="disabledByPolicy">
-                    {{ "personalVaultExportPolicyInEffect" | i18n }}
-                </app-callout>
-                <div class="box">
-                    <div class="box-header" id="exportTitle">
-                        {{ "exportVault" | i18n }}
-                    </div>
-                    <div class="box-content">
-                        <div class="box-content-row" appBoxRow>
-                            <label for="format">{{ "fileFormat" | i18n }}</label>
-                            <select class="form-control" id="format" name="Format" formControlName="format">
-                                <option *ngFor="let f of formatOptions" [value]="f.value">{{ f.name }}</option>
-                            </select>
-                        </div>
-                        <app-verify-master-password ngDefaultControl formControlName="secret" name="secret">
-                        </app-verify-master-password>
-                    </div>
-                    <div class="box-footer">
-                        <p>{{ "confirmIdentity" | i18n }}</p>
-                    </div>
-                </div>
+  <div class="modal-dialog" role="document">
+    <form class="modal-content" #form (ngSubmit)="submit()" [formGroup]="exportForm">
+      <div class="modal-body">
+        <app-callout
+          type="warning"
+          title="{{ 'vaultExportDisabled' | i18n }}"
+          *ngIf="disabledByPolicy"
+        >
+          {{ "personalVaultExportPolicyInEffect" | i18n }}
+        </app-callout>
+        <div class="box">
+          <div class="box-header" id="exportTitle">
+            {{ "exportVault" | i18n }}
+          </div>
+          <div class="box-content">
+            <div class="box-content-row" appBoxRow>
+              <label for="format">{{ "fileFormat" | i18n }}</label>
+              <select class="form-control" id="format" name="Format" formControlName="format">
+                <option *ngFor="let f of formatOptions" [value]="f.value">{{ f.name }}</option>
+              </select>
             </div>
-            <div class="modal-footer">
-                <button
-                    appBlurClick
-                    type="submit"
-                    class="primary"
-                    appA11yTitle="{{ 'submit' | i18n }}"
-                    [disabled]="disabledByPolicy"
-                >
-                    <i class="fa fa-download fa-lg fa-fw" aria-hidden="true"></i>
-                </button>
-                <button type="button" data-dismiss="modal">{{ "cancel" | i18n }}</button>
-            </div>
-        </form>
-    </div>
+            <app-verify-master-password ngDefaultControl formControlName="secret" name="secret">
+            </app-verify-master-password>
+          </div>
+          <div class="box-footer">
+            <p>{{ "confirmIdentity" | i18n }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          appBlurClick
+          type="submit"
+          class="primary"
+          appA11yTitle="{{ 'submit' | i18n }}"
+          [disabled]="disabledByPolicy"
+        >
+          <i class="fa fa-download fa-lg fa-fw" aria-hidden="true"></i>
+        </button>
+        <button type="button" data-dismiss="modal">{{ "cancel" | i18n }}</button>
+      </div>
+    </form>
+  </div>
 </div>

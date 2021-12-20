@@ -7,11 +7,15 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { PasswordHistoryComponent as BasePasswordHistoryComponent } from "jslib-angular/components/password-history.component";
 
 @Component({
-    selector: "app-password-history",
-    templateUrl: "password-history.component.html",
+  selector: "app-password-history",
+  templateUrl: "password-history.component.html",
 })
 export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
-    constructor(cipherService: CipherService, platformUtilsService: PlatformUtilsService, i18nService: I18nService) {
-        super(cipherService, platformUtilsService, i18nService, window);
-    }
+  constructor(
+    cipherService: CipherService,
+    platformUtilsService: PlatformUtilsService,
+    i18nService: I18nService
+  ) {
+    super(cipherService, platformUtilsService, i18nService, window);
+  }
 }

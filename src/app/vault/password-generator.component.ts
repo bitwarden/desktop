@@ -7,15 +7,15 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { PasswordGeneratorComponent as BasePasswordGeneratorComponent } from "jslib-angular/components/password-generator.component";
 
 @Component({
-    selector: "app-password-generator",
-    templateUrl: "password-generator.component.html",
+  selector: "app-password-generator",
+  templateUrl: "password-generator.component.html",
 })
 export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
-    constructor(
-        passwordGenerationService: PasswordGenerationService,
-        platformUtilsService: PlatformUtilsService,
-        i18nService: I18nService
-    ) {
-        super(passwordGenerationService, platformUtilsService, i18nService, window);
-    }
+  constructor(
+    passwordGenerationService: PasswordGenerationService,
+    platformUtilsService: PlatformUtilsService,
+    i18nService: I18nService
+  ) {
+    super(passwordGenerationService, platformUtilsService, i18nService, window);
+  }
 }

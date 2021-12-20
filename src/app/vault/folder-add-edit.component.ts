@@ -8,16 +8,16 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { FolderAddEditComponent as BaseFolderAddEditComponent } from "jslib-angular/components/folder-add-edit.component";
 
 @Component({
-    selector: "app-folder-add-edit",
-    templateUrl: "folder-add-edit.component.html",
+  selector: "app-folder-add-edit",
+  templateUrl: "folder-add-edit.component.html",
 })
 export class FolderAddEditComponent extends BaseFolderAddEditComponent {
-    constructor(
-        folderService: FolderService,
-        i18nService: I18nService,
-        platformUtilsService: PlatformUtilsService,
-        logService: LogService
-    ) {
-        super(folderService, i18nService, platformUtilsService, logService);
-    }
+  constructor(
+    folderService: FolderService,
+    i18nService: I18nService,
+    platformUtilsService: PlatformUtilsService,
+    logService: LogService
+  ) {
+    super(folderService, i18nService, platformUtilsService, logService);
+  }
 }

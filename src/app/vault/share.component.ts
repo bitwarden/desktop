@@ -10,18 +10,25 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { ShareComponent as BaseShareComponent } from "jslib-angular/components/share.component";
 
 @Component({
-    selector: "app-vault-share",
-    templateUrl: "share.component.html",
+  selector: "app-vault-share",
+  templateUrl: "share.component.html",
 })
 export class ShareComponent extends BaseShareComponent {
-    constructor(
-        cipherService: CipherService,
-        i18nService: I18nService,
-        collectionService: CollectionService,
-        platformUtilsService: PlatformUtilsService,
-        logService: LogService,
-        organizationService: OrganizationService
-    ) {
-        super(collectionService, platformUtilsService, i18nService, cipherService, logService, organizationService);
-    }
+  constructor(
+    cipherService: CipherService,
+    i18nService: I18nService,
+    collectionService: CollectionService,
+    platformUtilsService: PlatformUtilsService,
+    logService: LogService,
+    organizationService: OrganizationService
+  ) {
+    super(
+      collectionService,
+      platformUtilsService,
+      i18nService,
+      cipherService,
+      logService,
+      organizationService
+    );
+  }
 }

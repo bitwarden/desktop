@@ -5,5 +5,5 @@ import { PasswordRepromptComponent } from "../app/components/password-reprompt.c
 
 @Injectable()
 export class PasswordRepromptService extends BasePasswordRepromptService {
-    component = PasswordRepromptComponent;
+  component = PasswordRepromptComponent;
 }

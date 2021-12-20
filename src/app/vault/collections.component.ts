@@ -9,17 +9,17 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { CollectionsComponent as BaseCollectionsComponent } from "jslib-angular/components/collections.component";
 
 @Component({
-    selector: "app-vault-collections",
-    templateUrl: "collections.component.html",
+  selector: "app-vault-collections",
+  templateUrl: "collections.component.html",
 })
 export class CollectionsComponent extends BaseCollectionsComponent {
-    constructor(
-        cipherService: CipherService,
-        i18nService: I18nService,
-        collectionService: CollectionService,
-        platformUtilsService: PlatformUtilsService,
-        logService: LogService
-    ) {
-        super(collectionService, platformUtilsService, i18nService, cipherService, logService);
-    }
+  constructor(
+    cipherService: CipherService,
+    i18nService: I18nService,
+    collectionService: CollectionService,
+    platformUtilsService: PlatformUtilsService,
+    logService: LogService
+  ) {
+    super(collectionService, platformUtilsService, i18nService, cipherService, logService);
+  }
 }

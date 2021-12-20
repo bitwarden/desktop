@@ -1,437 +1,437 @@
 ﻿@import "variables.scss";
 
 app-root {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
 }
 
 #container {
-    height: 100%;
-    min-height: 0;
+  height: 100%;
+  min-height: 0;
 }
 
 .vault {
-    height: 100%;
+  height: 100%;
+  display: flex;
+
+  > .groupings,
+  > .items,
+  > .details,
+  > .logo {
     display: flex;
+    flex-direction: column;
 
-    > .groupings,
-    > .items,
-    > .details,
-    > .logo {
-        display: flex;
-        flex-direction: column;
-
-        .inner-content {
-            padding: 10px 15px;
-        }
+    .inner-content {
+      padding: 10px 15px;
     }
-
-    > .groupings {
-        width: 22%;
-        min-width: 175px;
-        max-width: 250px;
-        border-right: 1px solid #000000;
-
-        @include themify($themes) {
-            background-color: themed("backgroundColorAlt");
-            border-right-color: themed("borderColor");
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-
-            .footer {
-                padding: 0;
-            }
-
-            .inner-content {
-                padding-bottom: 0;
-                padding-right: 5px;
-                user-select: none;
-
-                > ul,
-                > div > ul {
-                    margin: 0 0 15px 0;
-                }
-            }
-        }
-
-        h2 {
-            text-transform: uppercase;
-            font-size: $font-size-base;
-            font-weight: normal;
-            margin-bottom: 5px;
-
-            @include themify($themes) {
-                color: themed("headingColor");
-            }
-        }
-
-        .heading {
-            display: flex;
-
-            button {
-                margin-left: auto;
-                background: none;
-                border: none;
-                @include themify($themes) {
-                    color: themed("headingButtonColor");
-                }
-
-                &:hover,
-                &:focus {
-                    cursor: pointer;
-
-                    @include themify($themes) {
-                        color: themed("headingButtonHoverColor");
-                    }
-                }
-            }
-        }
-
-        ul:not(.fa-ul) {
-            li {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
-        }
-
-        ul.fa-ul {
-            li {
-                word-break: break-all;
-
-                .fa-li {
-                    top: 8px;
-                    width: 1.1em;
-                }
-            }
-        }
-
-        // Nested indentions
-        ul.fa-ul {
-            // Level 1
-            li {
-                > a {
-                    padding-left: 12px;
-                }
-
-                .fa-li {
-                    left: -4px;
-                }
-
-                &.active > a .fa-li {
-                    left: 11px;
-                }
-            }
-
-            // Level 2
-            ul li {
-                > a {
-                    padding-left: 23px;
-                }
-
-                .fa-li {
-                    left: 7px;
-                }
-
-                &.active > a .fa-li {
-                    left: 22px;
-                }
-            }
-
-            // Level 3
-            ul ul li {
-                > a {
-                    padding-left: 34px;
-                }
-
-                .fa-li {
-                    left: 18px;
-                }
-
-                &.active > a .fa-li {
-                    left: 33px;
-                }
-            }
-
-            // Level 4
-            ul ul ul li {
-                > a {
-                    padding-left: 45px;
-                }
-
-                .fa-li {
-                    left: 29px;
-                }
-
-                &.active > a .fa-li {
-                    left: 44px;
-                }
-            }
-
-            // Level 5
-            ul ul ul ul li {
-                > a {
-                    padding-left: 56px;
-                }
-
-                .fa-li {
-                    left: 40px;
-                }
-
-                &.active > a .fa-li {
-                    left: 55px;
-                }
-            }
-
-            // Level 6
-            ul ul ul ul ul li {
-                > a {
-                    padding-left: 67px;
-                }
-
-                .fa-li {
-                    left: 51px;
-                }
-
-                &.active > a .fa-li {
-                    left: 66px;
-                }
-            }
-
-            // Level 7
-            ul ul ul ul ul ul li {
-                > a {
-                    padding-left: 78px;
-                }
-
-                .fa-li {
-                    left: 62px;
-                }
-
-                &.active > a .fa-li {
-                    left: 77px;
-                }
-            }
-        }
-
-        ul {
-            padding: 0;
-            margin: 0;
-
-            li {
-                a {
-                    padding: 5px 0;
-                    display: flex;
-                    align-items: center;
-
-                    @include themify($themes) {
-                        color: themed("textColor");
-                    }
-
-                    span {
-                        visibility: hidden;
-                        margin-left: auto;
-
-                        @include themify($themes) {
-                            color: themed("headingButtonColor");
-                        }
-
-                        &:hover,
-                        &:focus {
-                            @include themify($themes) {
-                                color: themed("headingButtonHoverColor");
-                            }
-                        }
-                    }
-
-                    &:hover,
-                    &:focus {
-                        span {
-                            visibility: visible;
-                        }
-                    }
-                }
-
-                &.active {
-                    margin-left: -15px;
-                    margin-right: -5px;
-                    padding-left: 15px;
-                    padding-right: 5px;
-
-                    @include themify($themes) {
-                        background-color: themed("groupingsActiveColor");
-                    }
-
-                    ul {
-                        @include themify($themes) {
-                            background-color: themed("backgroundColorAlt");
-                        }
-
-                        margin-left: -15px;
-                        margin-right: -5px;
-                        padding-left: 15px;
-                        padding-right: 5px;
-                    }
-                }
-            }
-        }
-    }
-
-    > .items {
-        width: 28%;
-        min-width: 200px;
-        max-width: 350px;
-        border-right: 1px solid #000000;
-
-        @include themify($themes) {
-            background-color: themed("backgroundColor");
-            border-right-color: themed("borderColor");
-        }
-
-        .no-items {
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10px;
-
-            .fa {
-                margin-bottom: 10px;
-
-                @include themify($themes) {
-                    color: themed("disabledIconColor");
-                }
-            }
-        }
-    }
-
-    > .details {
-        flex: 1;
-        min-width: 0;
-
-        @include themify($themes) {
-            background-color: themed("backgroundColorAlt2");
-        }
-
-        .inner-content {
-            min-width: 400px;
-        }
-
-        .box {
-            max-width: 550px;
-            margin: 30px auto 0 auto;
-
-            &:first-child {
-                margin-top: 10px;
-            }
-
-            &:last-child {
-                margin-bottom: 30px;
-            }
-        }
-
-        > form {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-    }
-
-    > .logo {
-        flex: 1;
-        min-width: 0;
-
-        .content {
-            overflow-y: hidden;
-            overflow-x: auto;
-        }
-
-        .inner-content {
-            min-width: 320px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        img {
-            width: 284px;
-            opacity: 0.3;
-            transition: all 1s ease-in-out;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
+  }
+
+  > .groupings {
+    width: 22%;
+    min-width: 175px;
+    max-width: 250px;
+    border-right: 1px solid #000000;
+
+    @include themify($themes) {
+      background-color: themed("backgroundColorAlt");
+      border-right-color: themed("borderColor");
     }
 
     .content {
-        flex: 1 1 auto;
-        position: relative;
-        overflow: auto;
-        height: 100%;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+
+      .footer {
+        padding: 0;
+      }
+
+      .inner-content {
+        padding-bottom: 0;
+        padding-right: 5px;
+        user-select: none;
+
+        > ul,
+        > div > ul {
+          margin: 0 0 15px 0;
+        }
+      }
     }
 
-    .footer {
-        height: 55px;
-        flex: 0 0 auto;
-        border-top: 1px solid #000000;
-        display: flex;
-        align-items: center;
-        padding: 0 15px;
+    h2 {
+      text-transform: uppercase;
+      font-size: $font-size-base;
+      font-weight: normal;
+      margin-bottom: 5px;
+
+      @include themify($themes) {
+        color: themed("headingColor");
+      }
+    }
+
+    .heading {
+      display: flex;
+
+      button {
+        margin-left: auto;
+        background: none;
+        border: none;
+        @include themify($themes) {
+          color: themed("headingButtonColor");
+        }
+
+        &:hover,
+        &:focus {
+          cursor: pointer;
+
+          @include themify($themes) {
+            color: themed("headingButtonHoverColor");
+          }
+        }
+      }
+    }
+
+    ul:not(.fa-ul) {
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+    }
+
+    ul.fa-ul {
+      li {
+        word-break: break-all;
+
+        .fa-li {
+          top: 8px;
+          width: 1.1em;
+        }
+      }
+    }
+
+    // Nested indentions
+    ul.fa-ul {
+      // Level 1
+      li {
+        > a {
+          padding-left: 12px;
+        }
+
+        .fa-li {
+          left: -4px;
+        }
+
+        &.active > a .fa-li {
+          left: 11px;
+        }
+      }
+
+      // Level 2
+      ul li {
+        > a {
+          padding-left: 23px;
+        }
+
+        .fa-li {
+          left: 7px;
+        }
+
+        &.active > a .fa-li {
+          left: 22px;
+        }
+      }
+
+      // Level 3
+      ul ul li {
+        > a {
+          padding-left: 34px;
+        }
+
+        .fa-li {
+          left: 18px;
+        }
+
+        &.active > a .fa-li {
+          left: 33px;
+        }
+      }
+
+      // Level 4
+      ul ul ul li {
+        > a {
+          padding-left: 45px;
+        }
+
+        .fa-li {
+          left: 29px;
+        }
+
+        &.active > a .fa-li {
+          left: 44px;
+        }
+      }
+
+      // Level 5
+      ul ul ul ul li {
+        > a {
+          padding-left: 56px;
+        }
+
+        .fa-li {
+          left: 40px;
+        }
+
+        &.active > a .fa-li {
+          left: 55px;
+        }
+      }
+
+      // Level 6
+      ul ul ul ul ul li {
+        > a {
+          padding-left: 67px;
+        }
+
+        .fa-li {
+          left: 51px;
+        }
+
+        &.active > a .fa-li {
+          left: 66px;
+        }
+      }
+
+      // Level 7
+      ul ul ul ul ul ul li {
+        > a {
+          padding-left: 78px;
+        }
+
+        .fa-li {
+          left: 62px;
+        }
+
+        &.active > a .fa-li {
+          left: 77px;
+        }
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        a {
+          padding: 5px 0;
+          display: flex;
+          align-items: center;
+
+          @include themify($themes) {
+            color: themed("textColor");
+          }
+
+          span {
+            visibility: hidden;
+            margin-left: auto;
+
+            @include themify($themes) {
+              color: themed("headingButtonColor");
+            }
+
+            &:hover,
+            &:focus {
+              @include themify($themes) {
+                color: themed("headingButtonHoverColor");
+              }
+            }
+          }
+
+          &:hover,
+          &:focus {
+            span {
+              visibility: visible;
+            }
+          }
+        }
+
+        &.active {
+          margin-left: -15px;
+          margin-right: -5px;
+          padding-left: 15px;
+          padding-right: 5px;
+
+          @include themify($themes) {
+            background-color: themed("groupingsActiveColor");
+          }
+
+          ul {
+            @include themify($themes) {
+              background-color: themed("backgroundColorAlt");
+            }
+
+            margin-left: -15px;
+            margin-right: -5px;
+            padding-left: 15px;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  > .items {
+    width: 28%;
+    min-width: 200px;
+    max-width: 350px;
+    border-right: 1px solid #000000;
+
+    @include themify($themes) {
+      background-color: themed("backgroundColor");
+      border-right-color: themed("borderColor");
+    }
+
+    .no-items {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 10px;
+
+      .fa {
+        margin-bottom: 10px;
 
         @include themify($themes) {
-            background-color: themed("backgroundColorAlt");
-            border-top-color: themed("borderColor");
+          color: themed("disabledIconColor");
         }
+      }
+    }
+  }
 
-        button {
-            margin-right: 10px;
+  > .details {
+    flex: 1;
+    min-width: 0;
 
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
-        .right {
-            margin-left: auto;
-            display: flex;
-        }
+    @include themify($themes) {
+      background-color: themed("backgroundColorAlt2");
     }
 
-    .nav {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        .btn {
-            width: 100%;
-            font-size: $font-size-base * 0.8;
-            flex: 1;
-            border: 0;
-            border-radius: 0;
-            padding-bottom: 4px;
-
-            &:not(.active) {
-                @include themify($themes) {
-                    background-color: themed("backgroundColorAlt");
-                }
-            }
-
-            i {
-                font-size: $font-size-base * 1.5;
-                display: block;
-                margin-bottom: 2px;
-                text-align: center;
-            }
-        }
+    .inner-content {
+      min-width: 400px;
     }
+
+    .box {
+      max-width: 550px;
+      margin: 30px auto 0 auto;
+
+      &:first-child {
+        margin-top: 10px;
+      }
+
+      &:last-child {
+        margin-bottom: 30px;
+      }
+    }
+
+    > form {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  > .logo {
+    flex: 1;
+    min-width: 0;
+
+    .content {
+      overflow-y: hidden;
+      overflow-x: auto;
+    }
+
+    .inner-content {
+      min-width: 320px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 284px;
+      opacity: 0.3;
+      transition: all 1s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .content {
+    flex: 1 1 auto;
+    position: relative;
+    overflow: auto;
+    height: 100%;
+  }
+
+  .footer {
+    height: 55px;
+    flex: 0 0 auto;
+    border-top: 1px solid #000000;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+    @include themify($themes) {
+      background-color: themed("backgroundColorAlt");
+      border-top-color: themed("borderColor");
+    }
+
+    button {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .right {
+      margin-left: auto;
+      display: flex;
+    }
+  }
+
+  .nav {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    .btn {
+      width: 100%;
+      font-size: $font-size-base * 0.8;
+      flex: 1;
+      border: 0;
+      border-radius: 0;
+      padding-bottom: 4px;
+
+      &:not(.active) {
+        @include themify($themes) {
+          background-color: themed("backgroundColorAlt");
+        }
+      }
+
+      i {
+        font-size: $font-size-base * 1.5;
+        display: block;
+        margin-bottom: 2px;
+        text-align: center;
+      }
+    }
+  }
 }

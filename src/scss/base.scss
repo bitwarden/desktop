@@ -1,27 +1,27 @@
 @import "variables.scss";
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
 body {
-    height: 100%;
-    font-family: $font-family-sans-serif;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
+  height: 100%;
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 }
 
 body {
-    color: $text-color;
-    background-color: $background-color-alt2;
+  color: $text-color;
+  background-color: $background-color-alt2;
 
-    @include themify($themes) {
-        color: themed("textColor");
-        background-color: themed("backgroundColorAlt2");
-    }
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("backgroundColorAlt2");
+  }
 }
 
 h1,
@@ -30,103 +30,103 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-family-sans-serif;
+  font-family: $font-family-sans-serif;
 
-    @include themify($themes) {
-        color: themed("textColor");
-    }
+  @include themify($themes) {
+    color: themed("textColor");
+  }
 }
 
 p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ul,
 ol {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 img {
-    border: none;
+  border: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 
+  @include themify($themes) {
+    color: themed("primaryColor");
+  }
+
+  &:hover,
+  &:focus {
     @include themify($themes) {
-        color: themed("primaryColor");
+      color: darken(themed("primaryColor"), 6%);
     }
-
-    &:hover,
-    &:focus {
-        @include themify($themes) {
-            color: darken(themed("primaryColor"), 6%);
-        }
-    }
+  }
 }
 
 input,
 select,
 textarea {
-    @include themify($themes) {
-        color: themed("textColor");
-        background-color: themed("inputBackgroundColor");
-    }
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("inputBackgroundColor");
+  }
 }
 
 input,
 select,
 textarea,
 button {
-    font-size: $font-size-base;
-    font-family: $font-family-sans-serif;
-    line-height: $line-height-base;
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  line-height: $line-height-base;
 }
 
 button {
-    white-space: nowrap;
-    cursor: pointer;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 div:not(.modal)::-webkit-scrollbar,
 .cdk-virtual-scroll-viewport::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 }
 
 div:not(.modal)::-webkit-scrollbar-track,
 .cdk-virtual-scroll-viewport::-webkit-scrollbar-track {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 div:not(.modal)::-webkit-scrollbar-thumb,
 .cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    margin-right: 1px;
+  border-radius: 10px;
+  margin-right: 1px;
 
+  @include themify($themes) {
+    background-color: themed("scrollbarColor");
+  }
+
+  &:hover {
     @include themify($themes) {
-        background-color: themed("scrollbarColor");
+      background-color: themed("scrollbarHoverColor");
     }
-
-    &:hover {
-        @include themify($themes) {
-            background-color: themed("scrollbarHoverColor");
-        }
-    }
+  }
 }
 
 // cdk-virtual-scroll
 .cdk-virtual-scroll-viewport {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .cdk-virtual-scroll-content-wrapper {
-    width: 100%;
+  width: 100%;
 }

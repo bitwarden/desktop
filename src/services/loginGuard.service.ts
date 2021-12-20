@@ -9,20 +9,20 @@ const maxAllowedAccounts = 5;
 
 @Injectable()
 export class LoginGuardService implements CanActivate {
-    protected homepage = "vault";
-    constructor(
-        private stateService: StateService,
-        private platformUtilsService: PlatformUtilsService,
-        private i18nService: I18nService
-    ) {}
+  protected homepage = "vault";
+  constructor(
+    private stateService: StateService,
+    private platformUtilsService: PlatformUtilsService,
+    private i18nService: I18nService
+  ) {}
 
-    async canActivate() {
-        const accounts = this.stateService.accounts.getValue();
-        if (accounts != null && Object.keys(accounts).length >= maxAllowedAccounts) {
-            this.platformUtilsService.showToast("error", null, this.i18nService.t("accountLimitReached"));
-            return false;
-        }
-
-        return true;
+  async canActivate() {
+    const accounts = this.stateService.accounts.getValue();
+    if (accounts != null && Object.keys(accounts).length >= maxAllowedAccounts) {
+      this.platformUtilsService.showToast("error", null, this.i18nService.t("accountLimitReached"));
+      return false;
     }
+
+    return true;
+  }
 }
