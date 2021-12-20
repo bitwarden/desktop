@@ -1,32 +1,29 @@
-import {
-    Component,
-    OnInit,
-} from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { debounceTime } from 'rxjs/operators';
+import { Component, OnInit } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { debounceTime } from "rxjs/operators";
 
-import { DeviceType } from 'jslib-common/enums/deviceType';
-import { ThemeType } from 'jslib-common/enums/themeType';
+import { DeviceType } from "jslib-common/enums/deviceType";
+import { ThemeType } from "jslib-common/enums/themeType";
 
-import { CryptoService } from 'jslib-common/abstractions/crypto.service';
-import { I18nService } from 'jslib-common/abstractions/i18n.service';
-import { MessagingService } from 'jslib-common/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
-import { StateService } from 'jslib-common/abstractions/state.service';
-import { VaultTimeoutService } from 'jslib-common/abstractions/vaultTimeout.service';
+import { CryptoService } from "jslib-common/abstractions/crypto.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
+import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
-import { ModalService } from 'jslib-angular/services/modal.service';
+import { ModalService } from "jslib-angular/services/modal.service";
 
-import { SetPinComponent } from '../components/set-pin.component';
+import { SetPinComponent } from "../components/set-pin.component";
 
-import { Utils } from 'jslib-common/misc/utils';
-import { isWindowsStore } from 'jslib-electron/utils';
+import { Utils } from "jslib-common/misc/utils";
+import { isWindowsStore } from "jslib-electron/utils";
 
-import { StorageLocation } from 'jslib-common/enums/storageLocation';
+import { StorageLocation } from "jslib-common/enums/storageLocation";
 
 @Component({
-    selector: 'app-settings',
-    templateUrl: 'settings.component.html',
+    selector: "app-settings",
+    templateUrl: "settings.component.html",
 })
 export class SettingsComponent implements OnInit {
     vaultTimeoutAction: string;
@@ -68,50 +65,55 @@ export class SettingsComponent implements OnInit {
 
     vaultTimeout: FormControl = new FormControl(null);
 
-    constructor(private i18nService: I18nService, private platformUtilsService: PlatformUtilsService,
-        private vaultTimeoutService: VaultTimeoutService, private stateService: StateService,
-        private messagingService: MessagingService, private cryptoService: CryptoService,
-        private modalService: ModalService) {
+    constructor(
+        private i18nService: I18nService,
+        private platformUtilsService: PlatformUtilsService,
+        private vaultTimeoutService: VaultTimeoutService,
+        private stateService: StateService,
+        private messagingService: MessagingService,
+        private cryptoService: CryptoService,
+        private modalService: ModalService
+    ) {
         const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
         // Workaround to avoid ghosting trays https://github.com/electron/electron/issues/17622
         this.requireEnableTray = this.platformUtilsService.getDevice() === DeviceType.LinuxDesktop;
 
-        const trayKey = isMac ? 'enableMenuBar' : 'enableTray';
+        const trayKey = isMac ? "enableMenuBar" : "enableTray";
         this.enableTrayText = this.i18nService.t(trayKey);
-        this.enableTrayDescText = this.i18nService.t(trayKey + 'Desc');
+        this.enableTrayDescText = this.i18nService.t(trayKey + "Desc");
 
-        const minToTrayKey = isMac ? 'enableMinToMenuBar' : 'enableMinToTray';
+        const minToTrayKey = isMac ? "enableMinToMenuBar" : "enableMinToTray";
         this.enableMinToTrayText = this.i18nService.t(minToTrayKey);
-        this.enableMinToTrayDescText = this.i18nService.t(minToTrayKey + 'Desc');
+        this.enableMinToTrayDescText = this.i18nService.t(minToTrayKey + "Desc");
 
-        const closeToTrayKey = isMac ? 'enableCloseToMenuBar' : 'enableCloseToTray';
+        const closeToTrayKey = isMac ? "enableCloseToMenuBar" : "enableCloseToTray";
         this.enableCloseToTrayText = this.i18nService.t(closeToTrayKey);
-        this.enableCloseToTrayDescText = this.i18nService.t(closeToTrayKey + 'Desc');
+        this.enableCloseToTrayDescText = this.i18nService.t(closeToTrayKey + "Desc");
 
-        const startToTrayKey = isMac ? 'startToMenuBar' : 'startToTray';
+        const startToTrayKey = isMac ? "startToMenuBar" : "startToTray";
         this.startToTrayText = this.i18nService.t(startToTrayKey);
-        this.startToTrayDescText = this.i18nService.t(startToTrayKey + 'Desc');
+        this.startToTrayDescText = this.i18nService.t(startToTrayKey + "Desc");
 
         this.vaultTimeouts = [
             // { name: i18nService.t('immediately'), value: 0 },
-            { name: i18nService.t('oneMinute'), value: 1 },
-            { name: i18nService.t('fiveMinutes'), value: 5 },
-            { name: i18nService.t('fifteenMinutes'), value: 15 },
-            { name: i18nService.t('thirtyMinutes'), value: 30 },
-            { name: i18nService.t('oneHour'), value: 60 },
-            { name: i18nService.t('fourHours'), value: 240 },
-            { name: i18nService.t('onIdle'), value: -4 },
-            { name: i18nService.t('onSleep'), value: -3 },
+            { name: i18nService.t("oneMinute"), value: 1 },
+            { name: i18nService.t("fiveMinutes"), value: 5 },
+            { name: i18nService.t("fifteenMinutes"), value: 15 },
+            { name: i18nService.t("thirtyMinutes"), value: 30 },
+            { name: i18nService.t("oneHour"), value: 60 },
+            { name: i18nService.t("fourHours"), value: 240 },
+            { name: i18nService.t("onIdle"), value: -4 },
+            { name: i18nService.t("onSleep"), value: -3 },
         ];
 
         if (this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop) {
-            this.vaultTimeouts.push({ name: i18nService.t('onLocked'), value: -2 });
+            this.vaultTimeouts.push({ name: i18nService.t("onLocked"), value: -2 });
         }
 
         this.vaultTimeouts = this.vaultTimeouts.concat([
-            { name: i18nService.t('onRestart'), value: -1 },
-            { name: i18nService.t('never'), value: null },
+            { name: i18nService.t("onRestart"), value: -1 },
+            { name: i18nService.t("never"), value: null },
         ]);
 
         this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
@@ -119,32 +121,32 @@ export class SettingsComponent implements OnInit {
         });
 
         const localeOptions: any[] = [];
-        i18nService.supportedTranslationLocales.forEach(locale => {
+        i18nService.supportedTranslationLocales.forEach((locale) => {
             let name = locale;
             if (i18nService.localeNames.has(locale)) {
-                name += (' - ' + i18nService.localeNames.get(locale));
+                name += " - " + i18nService.localeNames.get(locale);
             }
             localeOptions.push({ name: name, value: locale });
         });
-        localeOptions.sort(Utils.getSortFunction(i18nService, 'name'));
-        localeOptions.splice(0, 0, { name: i18nService.t('default'), value: null });
+        localeOptions.sort(Utils.getSortFunction(i18nService, "name"));
+        localeOptions.splice(0, 0, { name: i18nService.t("default"), value: null });
         this.localeOptions = localeOptions;
 
         this.themeOptions = [
-            { name: i18nService.t('default'), value: null },
-            { name: i18nService.t('light'), value: ThemeType.Light },
-            { name: i18nService.t('dark'), value: ThemeType.Dark },
-            { name: 'Nord', value: ThemeType.Nord },
+            { name: i18nService.t("default"), value: null },
+            { name: i18nService.t("light"), value: ThemeType.Light },
+            { name: i18nService.t("dark"), value: ThemeType.Dark },
+            { name: "Nord", value: ThemeType.Nord },
         ];
 
         this.clearClipboardOptions = [
-            { name: i18nService.t('never'), value: null },
-            { name: i18nService.t('tenSeconds'), value: 10 },
-            { name: i18nService.t('twentySeconds'), value: 20 },
-            { name: i18nService.t('thirtySeconds'), value: 30 },
-            { name: i18nService.t('oneMinute'), value: 60 },
-            { name: i18nService.t('twoMinutes'), value: 120 },
-            { name: i18nService.t('fiveMinutes'), value: 300 },
+            { name: i18nService.t("never"), value: null },
+            { name: i18nService.t("tenSeconds"), value: 10 },
+            { name: i18nService.t("twentySeconds"), value: 20 },
+            { name: i18nService.t("thirtySeconds"), value: 30 },
+            { name: i18nService.t("oneMinute"), value: 60 },
+            { name: i18nService.t("twoMinutes"), value: 120 },
+            { name: i18nService.t("fiveMinutes"), value: 300 },
         ];
     }
 
@@ -176,13 +178,16 @@ export class SettingsComponent implements OnInit {
     }
 
     async saveVaultTimeoutOptions() {
-        if (this.vaultTimeoutAction === 'logOut') {
+        if (this.vaultTimeoutAction === "logOut") {
             const confirmed = await this.platformUtilsService.showDialog(
-                this.i18nService.t('vaultTimeoutLogOutConfirmation'),
-                this.i18nService.t('vaultTimeoutLogOutConfirmationTitle'),
-                this.i18nService.t('yes'), this.i18nService.t('cancel'), 'warning');
+                this.i18nService.t("vaultTimeoutLogOutConfirmation"),
+                this.i18nService.t("vaultTimeoutLogOutConfirmationTitle"),
+                this.i18nService.t("yes"),
+                this.i18nService.t("cancel"),
+                "warning"
+            );
             if (!confirmed) {
-                this.vaultTimeoutAction = 'lock';
+                this.vaultTimeoutAction = "lock";
                 return;
             }
         }
@@ -193,7 +198,7 @@ export class SettingsComponent implements OnInit {
         }
 
         if (!this.vaultTimeout.valid) {
-            this.platformUtilsService.showToast('error', null, this.i18nService.t('vaultTimeoutTooLarge'));
+            this.platformUtilsService.showToast("error", null, this.i18nService.t("vaultTimeoutTooLarge"));
             return;
         }
 
@@ -253,7 +258,7 @@ export class SettingsComponent implements OnInit {
     async saveFavicons() {
         await this.stateService.setDisableFavicon(this.disableFavicons);
         await this.stateService.setDisableFavicon(this.disableFavicons, { storageLocation: StorageLocation.Disk });
-        this.messagingService.send('refreshCiphers');
+        this.messagingService.send("refreshCiphers");
     }
 
     async saveMinToTray() {
@@ -272,8 +277,12 @@ export class SettingsComponent implements OnInit {
     async saveTray() {
         if (this.requireEnableTray && !this.enableTray && (this.startToTray || this.enableCloseToTray)) {
             const confirm = await this.platformUtilsService.showDialog(
-                this.i18nService.t('confirmTrayDesc'), this.i18nService.t('confirmTrayTitle'),
-                this.i18nService.t('yes'), this.i18nService.t('no'), 'warning');
+                this.i18nService.t("confirmTrayDesc"),
+                this.i18nService.t("confirmTrayTitle"),
+                this.i18nService.t("yes"),
+                this.i18nService.t("no"),
+                "warning"
+            );
 
             if (confirm) {
                 this.startToTray = false;
@@ -288,7 +297,7 @@ export class SettingsComponent implements OnInit {
         }
 
         await this.stateService.setEnableTray(this.enableTray);
-        this.messagingService.send(this.enableTray ? 'showTray' : 'removeTray');
+        this.messagingService.send(this.enableTray ? "showTray" : "removeTray");
     }
 
     async saveStartToTray() {
@@ -323,30 +332,38 @@ export class SettingsComponent implements OnInit {
 
     async saveOpenAtLogin() {
         this.stateService.setOpenAtLogin(this.openAtLogin);
-        this.messagingService.send(this.openAtLogin ? 'addOpenAtLogin' : 'removeOpenAtLogin');
+        this.messagingService.send(this.openAtLogin ? "addOpenAtLogin" : "removeOpenAtLogin");
     }
 
     async saveBrowserIntegration() {
-        if (process.platform === 'darwin' && !this.platformUtilsService.isMacAppStore()) {
+        if (process.platform === "darwin" && !this.platformUtilsService.isMacAppStore()) {
             await this.platformUtilsService.showDialog(
-                this.i18nService.t('browserIntegrationMasOnlyDesc'),
-                this.i18nService.t('browserIntegrationMasOnlyTitle'),
-                this.i18nService.t('ok'), null, 'warning');
+                this.i18nService.t("browserIntegrationMasOnlyDesc"),
+                this.i18nService.t("browserIntegrationMasOnlyTitle"),
+                this.i18nService.t("ok"),
+                null,
+                "warning"
+            );
 
             this.enableBrowserIntegration = false;
             return;
         } else if (isWindowsStore()) {
             await this.platformUtilsService.showDialog(
-                this.i18nService.t('browserIntegrationWindowsStoreDesc'),
-                this.i18nService.t('browserIntegrationWindowsStoreTitle'),
-                this.i18nService.t('ok'), null, 'warning');
+                this.i18nService.t("browserIntegrationWindowsStoreDesc"),
+                this.i18nService.t("browserIntegrationWindowsStoreTitle"),
+                this.i18nService.t("ok"),
+                null,
+                "warning"
+            );
 
             this.enableBrowserIntegration = false;
             return;
         }
 
         await this.stateService.setEnableBrowserIntegration(this.enableBrowserIntegration);
-        this.messagingService.send(this.enableBrowserIntegration ? 'enableBrowserIntegration' : 'disableBrowserIntegration');
+        this.messagingService.send(
+            this.enableBrowserIntegration ? "enableBrowserIntegration" : "disableBrowserIntegration"
+        );
 
         if (!this.enableBrowserIntegration) {
             this.enableBrowserIntegrationFingerprint = false;

@@ -1,4 +1,4 @@
-import { NativeMessagingProxy } from './proxy/native-messaging-proxy';
+import { NativeMessagingProxy } from "./proxy/native-messaging-proxy";
 
 // We need to import the other dependencies using `require` since `import` will
 // generate `Error: Cannot find module 'electron'`. The cause of this error is
@@ -6,18 +6,18 @@ import { NativeMessagingProxy } from './proxy/native-messaging-proxy';
 // which removes the electron module. This flag is needed for stdin/out to work
 // properly on Windows.
 
-if (process.argv.some(arg => arg.indexOf('chrome-extension://') !== -1 || arg.indexOf('{') !== -1)) {
-    if (process.platform === 'darwin') {
+if (process.argv.some((arg) => arg.indexOf("chrome-extension://") !== -1 || arg.indexOf("{") !== -1)) {
+    if (process.platform === "darwin") {
         // tslint:disable-next-line
-        const app = require('electron').app;
+        const app = require("electron").app;
 
-        app.on('ready', () => {
+        app.on("ready", () => {
             app.dock.hide();
         });
     }
 
-    process.stdout.on('error', e => {
-        if (e.code === 'EPIPE') {
+    process.stdout.on("error", (e) => {
+        if (e.code === "EPIPE") {
             process.exit(0);
         }
     });
@@ -26,7 +26,7 @@ if (process.argv.some(arg => arg.indexOf('chrome-extension://') !== -1 || arg.in
     proxy.run();
 } else {
     // tslint:disable-next-line
-    const Main = require('./main').Main;
+    const Main = require("./main").Main;
 
     const main = new Main();
     main.bootstrap();

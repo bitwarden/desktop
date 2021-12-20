@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 export type SearchBarState = {
     enabled: boolean;
@@ -8,12 +8,11 @@ export type SearchBarState = {
 
 @Injectable()
 export class SearchBarService {
-
     searchText = new BehaviorSubject<string>(null);
 
     private _state = {
         enabled: false,
-        placeholderText: '',
+        placeholderText: "",
     };
 
     // tslint:disable-next-line:member-ordering

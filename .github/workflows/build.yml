@@ -4,8 +4,8 @@ name: Build
 on:
   push:
     branches-ignore:
-      - 'l10n_master'
-      - 'gh-pages'
+      - "l10n_master"
+      - "gh-pages"
 
 jobs:
   cloc:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up cloc
         run: |
@@ -22,7 +22,6 @@ jobs:
 
       - name: Print lines of code
         run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
-
 
   setup:
     name: Setup
@@ -35,7 +34,7 @@ jobs:
       hotfix_branch_exists: ${{ steps.branch-check.outputs.hotfix_branch_exists }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Get Package Version
         id: retrieve-version
@@ -79,7 +78,6 @@ jobs:
             echo "::set-output name=hotfix_branch_exists::0"
           fi
 
-
   linux:
     name: Linux Build
     runs-on: ubuntu-20.04
@@ -88,18 +86,18 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache npm
         id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '~/.npm'
+          path: "~/.npm"
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -128,54 +126,53 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint
+      # - name: Run linter
+      #   run: npm run lint
 
       - name: Build application
         run: npm run dist:lin
 
       - name: Upload .deb artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           path: ./dist/bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: latest-linux.yml
           path: ./dist/latest-linux.yml
           if-no-files-found: error
-
 
   windows:
     name: Windows Build
@@ -185,18 +182,18 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache npm
         id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '%AppData%/npm-cache'
+          path: "%AppData%/npm-cache"
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -261,96 +258,95 @@ jobs:
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:_PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           path: ./dist/Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           path: ./dist/nsis-web/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload appx ia32 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ia32 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx x64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS x64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx ARM64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ARM64 artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           path: ./dist/nsis-web/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           if-no-files-found: error
 
       - name: Upload nupkg artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           path: ./dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: latest.yml
           path: ./dist/nsis-web/latest.yml
           if-no-files-found: error
-
 
   macos-build:
     name: MacOS Build
@@ -360,18 +356,18 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache npm
         id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '~/.npm'
+          path: "~/.npm"
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -391,14 +387,14 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Cache Safari
         id: safari-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -488,16 +484,15 @@ jobs:
         run: New-Item ./dist-safari -ItemType Directory -ea 0
 
       - name: Checkout browser extension
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
         with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          repository: "bitwarden/browser"
+          path: "dist-safari/browser"
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         shell: pwsh
         run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
-
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
@@ -507,18 +502,18 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache npm
         id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '~/.npm'
+          path: "~/.npm"
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -538,14 +533,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -635,10 +630,10 @@ jobs:
 
       - name: Checkout browser extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
         with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          repository: "bitwarden/browser"
+          path: "dist-safari/browser"
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
@@ -657,33 +652,32 @@ jobs:
         run: npm run pack:mac
 
       - name: Upload .zip artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal-mac.zip
           if-no-files-found: error
 
       - name: Upload .dmg artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg
           if-no-files-found: error
 
       - name: Upload .dmg blockmap artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: latest-mac.yml
           path: ./dist/latest-mac.yml
           if-no-files-found: error
-
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
@@ -693,18 +687,18 @@ jobs:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache npm
         id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '~/.npm'
+          path: "~/.npm"
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -724,14 +718,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -821,10 +815,10 @@ jobs:
 
       - name: Checkout browser extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
         with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          repository: "bitwarden/browser"
+          path: "dist-safari/browser"
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
@@ -843,7 +837,7 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Upload .pkg artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
@@ -854,35 +848,34 @@ jobs:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
         if: |
-            (github.ref == 'refs/heads/master'
-              && needs.setup.outputs.rc_branch_exists == 0
-              && needs.setup.outputs.hotfix_branch_exists == 0)
-            || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
-            || github.ref == 'refs/heads/hotfix'
+          (github.ref == 'refs/heads/master'
+            && needs.setup.outputs.rc_branch_exists == 0
+            && needs.setup.outputs.hotfix_branch_exists == 0)
+          || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
+          || github.ref == 'refs/heads/hotfix'
         run: npm run upload:mas
-
 
   macos-package-dev:
     name: MacOS Package Dev Release Asset
-    if: false  # We need to look into how code signing works for dev
+    if: false # We need to look into how code signing works for dev
     runs-on: macos-11
     needs: [setup, macos-build]
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Set up Node
-        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
+        uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea # v2.1.5
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Cache npm
         id: npm-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
-          path: '~/.npm'
+          path: "~/.npm"
           key: ${{ runner.os }}-${{ github.run_id }}-npm-${{ hashFiles('**/package-lock.json') }}
 
       - name: Set Node options
@@ -902,14 +895,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353  # v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353 # v2.1.6
         with:
           path: dist-safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -999,10 +992,10 @@ jobs:
 
       - name: Checkout browser extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
         with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          repository: "bitwarden/browser"
+          path: "dist-safari/browser"
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
@@ -1025,12 +1018,11 @@ jobs:
         run: zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
 
       - name: Upload masdev artifact
-        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700 # v2.2.3
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
-
 
   crowdin-push:
     name: Crowdin Push
@@ -1045,7 +1037,7 @@ jobs:
       _CROWDIN_PROJECT_ID: "299360"
     steps:
       - name: Checkout repo
-        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
+        uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
 
       - name: Login to Azure
         uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
@@ -1060,7 +1052,7 @@ jobs:
           secrets: "crowdin-api-token"
 
       - name: Upload Sources
-        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea  # v1.3.2
+        uses: crowdin/github-action@e39093fd75daae7859c68eded4b43d42ec78d8ea # v1.3.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CROWDIN_API_TOKEN: ${{ steps.retrieve-secrets.outputs.crowdin-api-token }}
@@ -1069,7 +1061,6 @@ jobs:
           crowdin_branch_name: master
           upload_sources: true
           upload_translations: false
-
 
   check-failures:
     name: Check for failures
@@ -1130,7 +1121,7 @@ jobs:
           secrets: "devops-alerts-slack-webhook-url"
 
       - name: Notify Slack on failure
-        uses: act10ns/slack@e4e71685b9b239384b0f676a63c32367f59c2522  # v1.2.2
+        uses: act10ns/slack@e4e71685b9b239384b0f676a63c32367f59c2522 # v1.2.2
         if: failure()
         env:
           SLACK_WEBHOOK_URL: ${{ steps.retrieve-secrets.outputs.devops-alerts-slack-webhook-url }}

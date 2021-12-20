@@ -1,16 +1,11 @@
-import { Component } from '@angular/core';
-import {
-    NG_VALIDATORS,
-    NG_VALUE_ACCESSOR,
-} from '@angular/forms';
+import { Component } from "@angular/core";
+import { NG_VALIDATORS, NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import {
-    VaultTimeoutInputComponent as VaultTimeoutInputComponentBase
-} from 'jslib-angular/components/settings/vault-timeout-input.component';
+import { VaultTimeoutInputComponent as VaultTimeoutInputComponentBase } from "jslib-angular/components/settings/vault-timeout-input.component";
 
 @Component({
-    selector: 'app-vault-timeout-input',
-    templateUrl: 'vault-timeout-input.component.html',
+    selector: "app-vault-timeout-input",
+    templateUrl: "vault-timeout-input.component.html",
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
@@ -24,5 +19,4 @@ import {
         },
     ],
 })
-export class VaultTimeoutInputComponent extends VaultTimeoutInputComponentBase {
-}
+export class VaultTimeoutInputComponent extends VaultTimeoutInputComponentBase {}

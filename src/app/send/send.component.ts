@@ -1,40 +1,34 @@
-import {
-    Component,
-    NgZone,
-    OnDestroy,
-    OnInit,
-    ViewChild,
-} from '@angular/core';
+import { Component, NgZone, OnDestroy, OnInit, ViewChild } from "@angular/core";
 
-import { BroadcasterService } from 'jslib-common/abstractions/broadcaster.service';
-import { EnvironmentService } from 'jslib-common/abstractions/environment.service';
-import { I18nService } from 'jslib-common/abstractions/i18n.service';
-import { LogService } from 'jslib-common/abstractions/log.service';
-import { PlatformUtilsService } from 'jslib-common/abstractions/platformUtils.service';
-import { PolicyService } from 'jslib-common/abstractions/policy.service';
-import { SearchService } from 'jslib-common/abstractions/search.service';
-import { SendService } from 'jslib-common/abstractions/send.service';
+import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
+import { EnvironmentService } from "jslib-common/abstractions/environment.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { PolicyService } from "jslib-common/abstractions/policy.service";
+import { SearchService } from "jslib-common/abstractions/search.service";
+import { SendService } from "jslib-common/abstractions/send.service";
 
-import { SendComponent as BaseSendComponent } from 'jslib-angular/components/send/send.component';
+import { SendComponent as BaseSendComponent } from "jslib-angular/components/send/send.component";
 
-import { invokeMenu, RendererMenuItem } from 'jslib-electron/utils';
+import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
 
-import { SendView } from 'jslib-common/models/view/sendView';
+import { SendView } from "jslib-common/models/view/sendView";
 
-import { SearchBarService } from '../layout/search/search-bar.service';
-import { AddEditComponent } from './add-edit.component';
+import { SearchBarService } from "../layout/search/search-bar.service";
+import { AddEditComponent } from "./add-edit.component";
 
 enum Action {
-    None = '',
-    Add = 'add',
-    Edit = 'edit',
+    None = "",
+    Add = "add",
+    Edit = "edit",
 }
 
-const BroadcasterSubscriptionId = 'SendComponent';
+const BroadcasterSubscriptionId = "SendComponent";
 
 @Component({
-    selector: 'app-send',
-    templateUrl: 'send.component.html',
+    selector: "app-send",
+    templateUrl: "send.component.html",
 })
 export class SendComponent extends BaseSendComponent implements OnInit, OnDestroy {
     @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
@@ -42,15 +36,29 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
     sendId: string;
     action: Action = Action.None;
 
-    constructor(sendService: SendService, i18nService: I18nService,
-        platformUtilsService: PlatformUtilsService, environmentService: EnvironmentService,
-        private broadcasterService: BroadcasterService, ngZone: NgZone,
-        searchService: SearchService, policyService: PolicyService,
-        private searchBarService: SearchBarService, logService: LogService) {
-        super(sendService, i18nService, platformUtilsService,
-              environmentService, ngZone, searchService,
-              policyService, logService);
-        this.searchBarService.searchText.subscribe(searchText => {
+    constructor(
+        sendService: SendService,
+        i18nService: I18nService,
+        platformUtilsService: PlatformUtilsService,
+        environmentService: EnvironmentService,
+        private broadcasterService: BroadcasterService,
+        ngZone: NgZone,
+        searchService: SearchService,
+        policyService: PolicyService,
+        private searchBarService: SearchBarService,
+        logService: LogService
+    ) {
+        super(
+            sendService,
+            i18nService,
+            platformUtilsService,
+            environmentService,
+            ngZone,
+            searchService,
+            policyService,
+            logService
+        );
+        this.searchBarService.searchText.subscribe((searchText) => {
             this.searchText = searchText;
             this.searchTextChanged();
         });
@@ -58,13 +66,13 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
 
     async ngOnInit() {
         this.searchBarService.setEnabled(true);
-        this.searchBarService.setPlaceholderText(this.i18nService.t('searchSends'));
+        this.searchBarService.setPlaceholderText(this.i18nService.t("searchSends"));
 
         super.ngOnInit();
         this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
             this.ngZone.run(async () => {
                 switch (message.command) {
-                    case 'syncCompleted':
+                    case "syncCompleted":
                         await this.load();
                         break;
                 }
@@ -116,17 +124,17 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
     }
 
     get selectedSendType() {
-        return this.sends.find(s => s.id === this.sendId)?.type;
+        return this.sends.find((s) => s.id === this.sendId)?.type;
     }
 
     viewSendMenu(send: SendView) {
         const menu: RendererMenuItem[] = [];
         menu.push({
-            label: this.i18nService.t('copyLink'),
+            label: this.i18nService.t("copyLink"),
             click: () => this.copy(send),
         });
         menu.push({
-            label: this.i18nService.t('delete'),
+            label: this.i18nService.t("delete"),
             click: async () => {
                 await this.delete(send);
                 await this.deletedSend(send);
