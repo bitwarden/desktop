@@ -14,7 +14,6 @@ import { SearchBarService } from "./layout/search/search-bar.service";
 
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
 
-import { AuthService } from "jslib-common/services/auth.service";
 import { ContainerService } from "jslib-common/services/container.service";
 import { EventService } from "jslib-common/services/event.service";
 import { SystemService } from "jslib-common/services/system.service";
@@ -22,7 +21,6 @@ import { VaultTimeoutService } from "jslib-common/services/vaultTimeout.service"
 
 import { ElectronCryptoService } from "jslib-electron/services/electronCrypto.service";
 
-import { AuthService as AuthServiceAbstraction } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "jslib-common/abstractions/cryptoFunction.service";
@@ -38,6 +36,7 @@ import { StateService as StateServiceAbstraction } from "jslib-common/abstractio
 import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions/sync.service";
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
+import { TwoFactorService as TwoFactorServiceAbstraction } from 'jslib-common/abstractions/twoFactor.service';
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { ThemeType } from "jslib-common/enums/themeType";
@@ -49,7 +48,7 @@ export function initFactory(
   vaultTimeoutService: VaultTimeoutService,
   i18nService: I18nService,
   eventService: EventService,
-  authService: AuthService,
+  twoFactorService: TwoFactorServiceAbstraction,
   notificationsService: NotificationsServiceAbstraction,
   platformUtilsService: PlatformUtilsServiceAbstraction,
   stateService: StateServiceAbstraction,
@@ -63,7 +62,7 @@ export function initFactory(
     const locale = await stateService.getLocale();
     await i18nService.init(locale);
     eventService.init(true);
-    authService.init();
+    twoFactorService.init();
     setTimeout(() => notificationsService.init(), 3000);
     const htmlEl = window.document.documentElement;
     htmlEl.classList.add("os_" + platformUtilsService.getDeviceString());
@@ -110,7 +109,7 @@ export function initFactory(
         VaultTimeoutServiceAbstraction,
         I18nServiceAbstraction,
         EventServiceAbstraction,
-        AuthServiceAbstraction,
+        TwoFactorServiceAbstraction,
         NotificationsServiceAbstraction,
         PlatformUtilsServiceAbstraction,
         StateServiceAbstraction,
