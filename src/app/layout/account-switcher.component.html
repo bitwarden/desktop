@@ -1,0 +1,50 @@
+<a
+  class="account-switcher"
+  (click)="toggle()"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  [hidden]="!showSwitcher"
+>
+  <app-avatar
+    [data]="activeAccountEmail"
+    size="25"
+    [circle]="true"
+    [fontSize]="14"
+    [dynamic]="true"
+    *ngIf="activeAccountEmail != null"
+  ></app-avatar>
+  <span>{{ activeAccountEmail }}</span>
+  <i
+    class="fa"
+    aria-hidden="true"
+    [ngClass]="{ 'fa-chevron-down': !isOpen, 'fa-chevron-up': isOpen }"
+  ></i>
+</a>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  cdkConnectedOverlayMinWidth="250px"
+>
+  <div class="account-switcher-dropdown" [@transformPanel]="'open'">
+    <div class="accounts">
+      <a
+        *ngFor="let a of accounts | keyvalue"
+        class="account"
+        [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
+        href="#"
+        appStopClick
+        (click)="switch(a.key)"
+      >
+        <span class="email">{{ a.value.profile.email }}</span>
+        <span class="server">{{ a.value.settings.environmentUrls.server }}</span>
+        <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+      </a>
+    </div>
+    <div class="border"></div>
+    <a class="add" routerLink="/login" (click)="toggle()">
+      <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
+    </a>
+  </div>
+</ng-template>

@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Nume"
   },
+  "fullName": {
+    "message": "Numele complet"
+  },
   "address1": {
     "message": "Adresă 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Valoare logică"
+  },
+  "cfTypeLinked": {
+    "message": "Conectat",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valoarea conectată",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Ștergere"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Niciun articol de afișat."
   },
+  "sendVerificationCode": {
+    "message": "Trimite un cod de verificare la adresa dvs. de e-mail"
+  },
+  "sendCode": {
+    "message": "Trimitere cod"
+  },
+  "codeSent": {
+    "message": "Cod trimis"
+  },
   "verificationCode": {
     "message": "Cod de verificare"
   },
+  "confirmIdentity": {
+    "message": "Confirmați-vă identitatea pentru a continua."
+  },
   "verificationCodeRequired": {
     "message": "Este necesar codul de verificare."
+  },
+  "invalidVerificationCode": {
+    "message": "Cod de verificare nevalid"
   },
   "continue": {
     "message": "Continuare"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Încărcare..."
   },
-  "lockNow": {
-    "message": "Blocare acum"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Generator de parole"
@@ -761,7 +787,7 @@
     "message": "Sincronizare eșuată"
   },
   "yourVaultIsLocked": {
-    "message": "Seiful dvs. este blocat. Verificați parola principală pentru a continua."
+    "message": "Seiful dvs. este blocat. Verificați-vă identitatea pentru a continua."
   },
   "unlock": {
     "message": "Deblocare"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Cheile de criptare a contului sunt unice fiecărui cont de utilizator Bitwarden, astfel încât nu puteți importa un export criptat într-un cont diferit."
   },
-  "exportMasterPassword": {
-    "message": "Introduceți parola principală pentru a exporta datele din seif."
-  },
   "noOrganizationsList": {
     "message": "Nu aparțineți niciunei organizații. Organizațiile vă permit să partajați în siguranță articole cu alți utilizatori."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Cod PIN invalid."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Seiful dvs. este blocat. Verificați codul PIN pentru a continua."
   },
   "unlockWithWindowsHello": {
     "message": "Deblocare cu Windows Hello"
@@ -1562,7 +1582,7 @@
     "message": "Număr maxim de accesări"
   },
   "maxAccessCountDesc": {
-    "message": "Dacă este setată, utilizatorii nu vor mai putea accesa acest Send după atingerea numărului maxim de accesării.",
+    "message": "Dacă este configurat, utilizatorii nu vor mai putea accesa acest Send când a fost atins numărul maxim de accesări.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1695,22 +1715,22 @@
     "message": "Această acțiune este protejată. Pentru a continua, vă rugăm să reintroduceți parola principală pentru a vă verifica identitatea."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Parolă principală actualizată"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Actualizare parolă principală"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Parola dvs. principală a fost modificată recent de unul din administratorii organizației dvs. Pentru a accesa seiful, trebuie să o actualizați acum. Procedura vă va deconecta de la sesiunea curentă, necesitând să vă reconectați. Sesiunile active de pe alte dispozitive pot continua să rămână active timp de până la o oră."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Ore"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minute"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Politicile organizației dvs vă afectează expirarea seifului. Timpul maxim permis de expirare a seifului este $HOURS$ oră (ore) și $MINUTES$ minut(e)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1743,54 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Timpul de expirare a seifului depășește restricțiile stabilite de organizația dvs."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Înregistrare automată"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Această organizație are o politică de întreprindere care vă va înregistra automat la resetarea parolei. Înregistrarea va permite administratorilor organizației să vă modifice parola principală."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Export de seif dezactivat"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Una sau mai multe politici ale organizației vă împiedică să exportați seiful personal."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Eliminare parolă principală"
+  },
+  "removedMasterPassword": {
+    "message": "Parolă principală eliminată."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ folosește SSO cu un server de chei auto-găzduit. Membrii acestei organizații nu mai au nevoie de o parolă principală pentru autentificare.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Părăsire organizație"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sigur doriți să părăsiți această organizație?"
+  },
+  "leftOrganization": {
+    "message": "Ați părăsit organizația."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nu se poate accesa Conectorul Cheie, vă rugăm să încercați din nou mai târziu."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

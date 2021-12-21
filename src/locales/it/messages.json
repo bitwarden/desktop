@@ -1,6 +1,6 @@
 {
   "bitwarden": {
-    "message": "bitwarden"
+    "message": "Bitwarden"
   },
   "filters": {
     "message": "Filtri"
@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Cognome"
   },
+  "fullName": {
+    "message": "Nome completo"
+  },
   "address1": {
     "message": "Indirizzo 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booleano"
+  },
+  "cfTypeLinked": {
+    "message": "Collegato",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valore collegato",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Rimuovi"
@@ -462,7 +473,7 @@
     "message": "Cartella eliminata"
   },
   "loginOrCreateNewAccount": {
-    "message": "Fai il log in o crea un nuovo account per accedere alla tua cassaforte."
+    "message": "Accedi o crea un nuovo account per accedere alla tua cassaforte."
   },
   "createAccount": {
     "message": "Crea account"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Non ci sono elementi da elencare."
   },
+  "sendVerificationCode": {
+    "message": "Invia un codice di verifica alla tua email"
+  },
+  "sendCode": {
+    "message": "Invia codice"
+  },
+  "codeSent": {
+    "message": "Codice inviato"
+  },
   "verificationCode": {
     "message": "Codice di verifica"
   },
+  "confirmIdentity": {
+    "message": "Conferma la tua identità per continuare."
+  },
   "verificationCodeRequired": {
     "message": "Il codice di verifica è obbligatorio."
+  },
+  "invalidVerificationCode": {
+    "message": "Codice di verifica non valido"
   },
   "continue": {
     "message": "Continua"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Caricamento in corso..."
   },
-  "lockNow": {
-    "message": "Blocca"
+  "lockVault": {
+    "message": "Blocca la cassaforte"
   },
   "passwordGenerator": {
     "message": "Generatore di password"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Le chiavi di cifratura dell'account sono uniche per ogni account utente Bitwarden, quindi non è possibile importare un'esportazione cifrata in un account diverso."
   },
-  "exportMasterPassword": {
-    "message": "Inserisci la tua password principale per esportare i dati nella tua cassaforte."
-  },
   "noOrganizationsList": {
     "message": "Non appartieni ad alcuna organizzazione. Le organizzazioni ti consentono di condividere oggetti in modo sicuro con altri utenti."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Codice PIN non valido."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "La tua cassaforte è bloccata. Inserisci il tuo codice PIN per continuare."
   },
   "unlockWithWindowsHello": {
     "message": "Sblocca con Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Una o più policy dell'organizzazione ti impediscono di esportare la tua cassaforte personale."
+  },
+  "addAccount": {
+    "message": "Aggiungi account"
+  },
+  "removeMasterPassword": {
+    "message": "Rimuovi la password principale"
+  },
+  "removedMasterPassword": {
+    "message": "Password principale rimossa."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ sta usando SSO con un server \"self-hosted\". Non è più richiesta una password principale per accedere per i membri di questa organizzazione.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lascia l'organizzazione"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sei sicuro di voler lasciare questa organizzazione?"
+  },
+  "leftOrganization": {
+    "message": "Hai lasciato l'organizzazione."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Impossibile raggiungere il key connector, riprova più tardi."
+  },
+  "lockAllVaults": {
+    "message": "Blocca tutte le casseforti"
+  },
+  "accountLimitReached": {
+    "message": "Non possono essere accedere più di 5 account contemporaneamente."
   }
 }

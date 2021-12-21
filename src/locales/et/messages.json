@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Perekonnanimi"
   },
+  "fullName": {
+    "message": "Täisnimi"
+  },
   "address1": {
     "message": "Aadress 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Ühenduses",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Ühendatud väärtus",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Eemalda"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Puuduvad kirjed, mida kuvada."
   },
+  "sendVerificationCode": {
+    "message": "Saada kinnituskood oma e-postile"
+  },
+  "sendCode": {
+    "message": "Saada kood"
+  },
+  "codeSent": {
+    "message": "Kood on saadetud"
+  },
   "verificationCode": {
     "message": "Kinnituskood"
   },
+  "confirmIdentity": {
+    "message": "Jätkamiseks kinnita oma identiteet."
+  },
   "verificationCodeRequired": {
     "message": "Nõutav on kinnituskood."
+  },
+  "invalidVerificationCode": {
+    "message": "Vale kinnituskood"
   },
   "continue": {
     "message": "Jätka"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Laadimine..."
   },
-  "lockNow": {
-    "message": "Lukusta paroolihoidla"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Parooli genereerimine"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Iga Bitwardeni kasutaja krüpteerimisvõti on unikaalne. Eksporditud andmeid ei saa importida teise Bitwardeni kasutajakontosse."
   },
-  "exportMasterPassword": {
-    "message": "Hoidlas olevate andmete eksportimiseks on vajalik ülemparooli sisestamine."
-  },
   "noOrganizationsList": {
     "message": "Sa ei kuulu ühessegi organisatsiooni. Organisatsioonid võimaldavad sul kirjeid turvaliselt teiste kasutajatega jagada."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Vale PIN kood."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hoidla on lukus. Jätkamiseks sisesta PIN kood."
   },
   "unlockWithWindowsHello": {
     "message": "Lukusta lahti Windows Helloga"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Üks või enam organisatsiooni poliitikat ei võimalda sul oma personaalset hoidlat eksportida."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Eemalda ülemparool"
+  },
+  "removedMasterPassword": {
+    "message": "Ülemparool on eemaldatud."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ kasutab SSO-d koos enda majutatud võtmeserveriga. Selle organisatsiooni liikmed ei pea sisselogimisel enam ülemparooli kasutama.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lahku organisatsioonist"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Kas oled kindel, et soovid sellest organisatsioonist lahkuda?"
+  },
+  "leftOrganization": {
+    "message": "Oled organisatsioonist lahkunud."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Ühenduse loomine ebaõnnestus. Proovi hiljem uuesti."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

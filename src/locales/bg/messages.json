@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Фамилно име"
   },
+  "fullName": {
+    "message": "Пълно име"
+  },
   "address1": {
     "message": "Адрес 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Булево"
+  },
+  "cfTypeLinked": {
+    "message": "Свързано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Свързана стойност",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Премахване"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Няма елементи за показване."
   },
+  "sendVerificationCode": {
+    "message": "Изпращане на код за потвърждаване до Вашата ел. поща"
+  },
+  "sendCode": {
+    "message": "Изпращане на кода"
+  },
+  "codeSent": {
+    "message": "Кодът е изпратен"
+  },
   "verificationCode": {
     "message": "Код за потвърждаване"
   },
+  "confirmIdentity": {
+    "message": "Потвърдете самоличността си, за да продължите."
+  },
   "verificationCodeRequired": {
     "message": "Кодът за потвърждение е задължителен."
+  },
+  "invalidVerificationCode": {
+    "message": "Грешен код за потвърждаване"
   },
   "continue": {
     "message": "Продължаване"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Зареждане…"
   },
-  "lockNow": {
-    "message": "Заключване сега"
+  "lockVault": {
+    "message": "Заключване на трезора"
   },
   "passwordGenerator": {
     "message": "Създаване на пароли"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ключовете за шифриране са уникални за всеки потребител, затова не може да внесете шифрирани данни от един потребител в регистрацията на друг."
   },
-  "exportMasterPassword": {
-    "message": "Въведете главната парола, за да изнесете данните."
-  },
   "noOrganizationsList": {
     "message": "Не сте член на никоя организация. Организациите позволяват да споделяте записи с други потребители по защитен начин."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Неправилен ПИН."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Трезорът е заключен. Въведете своя ПИН, за да продължите."
   },
   "unlockWithWindowsHello": {
     "message": "Отключване с Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Една или повече от настройките на организацията Ви не позволяват да изнасяте личния си трезор."
+  },
+  "addAccount": {
+    "message": "Добавяне на регистрация"
+  },
+  "removeMasterPassword": {
+    "message": "Премахване на главната парола"
+  },
+  "removedMasterPassword": {
+    "message": "Главната парола е премахната."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ използва еднократно удостоверяване със собствен сървър за ключове. Членовете на тази организация вече нямат нужда от главна парола за вписване.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Напускане на организацията"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Наистина ли искате да напуснете тази организация?"
+  },
+  "leftOrganization": {
+    "message": "Напуснахте организацията."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Конекторът за ключове е недостъпен. Опитайте отново по-късно."
+  },
+  "lockAllVaults": {
+    "message": "Заключване на всички трезори"
+  },
+  "accountLimitReached": {
+    "message": "Не може едновременно да са вписани повече от 5 регистрации."
   }
 }

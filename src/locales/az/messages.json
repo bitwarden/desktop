@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Soyad"
   },
+  "fullName": {
+    "message": "Tam ad"
+  },
   "address1": {
     "message": "Ünvan 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Əlaqə yaradıldı",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Əlaqəli dəyər",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Çıxart"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Siyahılanacaq heç bir element yoxdur."
   },
+  "sendVerificationCode": {
+    "message": "E-poçtunuza bir təsdiqləmə kodu göndərin"
+  },
+  "sendCode": {
+    "message": "Kod göndər"
+  },
+  "codeSent": {
+    "message": "Kod göndərildi"
+  },
   "verificationCode": {
     "message": "Təsdiqləmə kodu"
   },
+  "confirmIdentity": {
+    "message": "Davam etmək üçün kimliyinizi təsdiqləyin."
+  },
   "verificationCodeRequired": {
     "message": "Təsdiq kodu lazımdır."
+  },
+  "invalidVerificationCode": {
+    "message": "Etibarsız təsdiqləmə kodu"
   },
   "continue": {
     "message": "Davam"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Yüklənir..."
   },
-  "lockNow": {
-    "message": "İndi kilidlə"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Parol yaradıcı"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Hesab şifrələmə açarları, hər Bitwarden istifadəçi hesabı üçün unikaldır, buna görə də şifrələnmiş bir ixracı, fərqli bir hesaba idxal edə bilməzsiniz."
   },
-  "exportMasterPassword": {
-    "message": "Anbar verilənlərinizi ixrac etmək üçün ana parolunuzu daxil edin."
-  },
   "noOrganizationsList": {
     "message": "Heç bir təşkilata aid deyilsiniz. Təşkilatlar, elementlərinizi digər istifadəçilərlə təhlükəsiz şəkildə paylaşmağınızı təmin edir."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Etibarsız PIN kod."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Anbarınız kilidlənib. Davam etmək üçün PIN kodunuzu təsdiqləyin."
   },
   "unlockWithWindowsHello": {
     "message": "Windows Hello ilə kilidi aç"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Bir və ya daha çox təşkilat siyasəti, fərdi anbarınızı ixrac etməyinizin qarşısını alır."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Ana parolu sil"
+  },
+  "removedMasterPassword": {
+    "message": "Ana parol silindi."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$, öz-özünə sahiblik edən açar serveri ilə SSO istifadə edir. Bu təşkilatın üzvlərinin giriş etməsi üçün artıq ana parol tələb edilməyəcək.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Təşkilatı tərk et"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bu təşkilatı tərk etmək istədiyinizə əminsiniz?"
+  },
+  "leftOrganization": {
+    "message": "Təşkilatı tərk etdiniz."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Açar bağlayıcı əlçatan deyil, daha sonra yenidən sınayın."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

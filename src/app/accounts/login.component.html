@@ -1,56 +1,96 @@
-<form id="login-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise" attr.aria-hidden="{{showingModal}}">
-    <div id="content" class="content">
-        <img class="logo-image" alt="Bitwarden">
-        <p class="lead">{{'loginOrCreateNewAccount' | i18n}}</p>
-        <div class="box last">
-            <div class="box-content">
-                <div class="box-content-row" appBoxRow>
-                    <label for="email">{{'emailAddress' | i18n}}</label>
-                    <input id="email" type="text" name="Email" [(ngModel)]="email" required>
-                </div>
-                <div class="box-content-row box-content-row-flex" appBoxRow>
-                    <div class="row-main">
-                        <label for="masterPassword">{{'masterPass' | i18n}}</label>
-                        <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}" name="MasterPassword"
-                            class="monospaced" [(ngModel)]="masterPassword" required>
-                    </div>
-                    <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick role="button"
-                            appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword()">
-                            <i class="fa fa-lg" aria-hidden="true"
-                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box-content-row" [hidden]="!showCaptcha()">
-                    <iframe id="hcaptcha_iframe" height="80"></iframe>
-                </div>
-            </div>
+<div class="login-header">
+  <a
+    href="#"
+    appStopClick
+    (click)="settings()"
+    class="environment-urls-settings-icon"
+    attr.aria-label="{{ 'settings' | i18n }}"
+  >
+    {{ "settings" | i18n }}
+    <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
+  </a>
+</div>
+<form
+  id="login-page"
+  #form
+  (ngSubmit)="submit()"
+  [appApiAction]="formPromise"
+  attr.aria-hidden="{{ showingModal }}"
+>
+  <div id="content" class="content">
+    <img class="logo-image" alt="Bitwarden" />
+    <p class="lead">{{ "loginOrCreateNewAccount" | i18n }}</p>
+    <div class="box last">
+      <div class="box-content">
+        <div class="box-content-row" appBoxRow>
+          <label for="email">{{ "emailAddress" | i18n }}</label>
+          <input
+            id="email"
+            type="text"
+            name="Email"
+            [(ngModel)]="email"
+            required
+            appInputVerbatim="false"
+          />
         </div>
-        
-        <div class="buttons with-rows">
-            <div class="buttons-row">
-                <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
-                    <b [hidden]="form.loading"><i class="fa fa-sign-in" aria-hidden="true"></i> {{'logIn' | i18n}}</b>
-                    <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
-                </button>
-                <a routerLink="/register" class="btn block">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'createAccount' | i18n}}
-                </a>
-            </div>
-            <div class="buttons-row">
-                <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
-                    <i class="fa fa-bank" aria-hidden="true"></i> {{'enterpriseSingleSignOn' | i18n}}
-                </a>
-            </div>
+        <div class="box-content-row box-content-row-flex" appBoxRow>
+          <div class="row-main">
+            <label for="masterPassword">{{ "masterPass" | i18n }}</label>
+            <input
+              id="masterPassword"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              name="MasterPassword"
+              class="monospaced"
+              [(ngModel)]="masterPassword"
+              required
+              appInputVerbatim
+            />
+          </div>
+          <div class="action-buttons">
+            <a
+              class="row-btn"
+              href="#"
+              appStopClick
+              appBlurClick
+              role="button"
+              appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+              (click)="togglePassword()"
+            >
+              <i
+                class="fa fa-lg"
+                aria-hidden="true"
+                [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+              ></i>
+            </a>
+          </div>
         </div>
-        <div class="sub-options">
-            <a routerLink="/hint">{{'getMasterPasswordHint' | i18n}}</a>
+        <div class="box-content-row" [hidden]="!showCaptcha()">
+          <iframe id="hcaptcha_iframe" height="80"></iframe>
         </div>
-        <a href="#" appStopClick (click)="settings()" class="settings-icon" attr.aria-label="{{'settings' | i18n}}">
-            <i class="fa fa-cog fa-lg" aria-hidden="true"></i><span
-                aria-hidden="true">&nbsp;{{'settings' | i18n}}</span>
-        </a>
+      </div>
     </div>
+
+    <div class="buttons with-rows">
+      <div class="buttons-row">
+        <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
+          <b [hidden]="form.loading"
+            ><i class="fa fa-sign-in" aria-hidden="true"></i> {{ "logIn" | i18n }}</b
+          >
+          <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+        </button>
+        <a routerLink="/register" class="btn block">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{ "createAccount" | i18n }}
+        </a>
+      </div>
+      <div class="buttons-row">
+        <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
+          <i class="fa fa-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
+        </a>
+      </div>
+    </div>
+    <div class="sub-options">
+      <a routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
+    </div>
+  </div>
 </form>
 <ng-template #environment></ng-template>

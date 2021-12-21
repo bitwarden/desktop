@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Soyadı"
   },
+  "fullName": {
+    "message": "Adı soyadı"
+  },
   "address1": {
     "message": "Adres 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Bağlantılı",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Bağlı değer",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Kaldır"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Görüntülenecek öğe yok."
   },
+  "sendVerificationCode": {
+    "message": "E-posta adresime doğrulama kodu gönder"
+  },
+  "sendCode": {
+    "message": "Kod gönder"
+  },
+  "codeSent": {
+    "message": "Kod gönderildi"
+  },
   "verificationCode": {
     "message": "Doğrulama Kodu"
   },
+  "confirmIdentity": {
+    "message": "Devam etmek için kimliğinizi doğrulayın."
+  },
   "verificationCodeRequired": {
     "message": "Doğrulama kodu gereklidir."
+  },
+  "invalidVerificationCode": {
+    "message": "Geçersiz doğrulama kodu"
   },
   "continue": {
     "message": "Devam Et"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Yükleniyor..."
   },
-  "lockNow": {
-    "message": "Şimdi kilitle"
+  "lockVault": {
+    "message": "Kasayı kilitle"
   },
   "passwordGenerator": {
     "message": "Parola Oluşturucu"
@@ -761,7 +787,7 @@
     "message": "Eşitleme başarısız oldu"
   },
   "yourVaultIsLocked": {
-    "message": "Kasa dairesi kilitli. Devam etmek için Ana Şifrenizi doğrulayın."
+    "message": "Kasanız kilitli. Devam etmek için kimliğinizi doğrulayın."
   },
   "unlock": {
     "message": "Kilidi Aç"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Hesap şifreleme anahtarları her Bitwarden kullanıcı hesabı için farklıdır. Dolayısıyla şifrelenmiş bir dışa aktarmayı başka bir hesapta içe aktaramazsınız."
   },
-  "exportMasterPassword": {
-    "message": "Kasadaki verilerinizi dışa aktarmak için ana parolanızı girin."
-  },
   "noOrganizationsList": {
     "message": "Herhangi bir kuruluşa dahil değilsiniz. Kuruluşlar, kayıtlarınızı diğer kullanıcılarla güvenli bir şekilde paylaşmanıza olanak verir."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Geçersiz PIN kodu."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kasanız kilitli. Devam etmek için PIN kodunuzu doğrulayın."
   },
   "unlockWithWindowsHello": {
     "message": "Kilidi Windows Hello ile aç"
@@ -1710,7 +1730,7 @@
     "message": "Dakika"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Kuruluş ilkeleriniz kasa zaman aşımınızı etkiliyor. İzin verilen maksimum kasa zaman aşımı $HOURS$ saat $MINUTES$ dakikadır",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1743,54 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Kasa zaman aşımınız, kuruluşunuz tarafından belirlenen kısıtlamaları aşıyor."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Otomatik Eklenme"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Bu kuruluşun sizi otomatik olarak parola sıfırlamaya ekleyen bir ilkesi bulunmakta. Bu ilkeye eklenmek, kuruluş yöneticilerinin ana parolanızı değiştirebilmesini sağlar."
   },
   "vaultExportDisabled": {
     "message": "Kasayı dışa aktarma devre dışı"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Bir veya daha fazla kuruluş ilkesi, kişisel kasanızı dışa aktarmanızı engelliyor."
+  },
+  "addAccount": {
+    "message": "Hesap ekle"
+  },
+  "removeMasterPassword": {
+    "message": "Ana parolayı kaldır"
+  },
+  "removedMasterPassword": {
+    "message": "Ana parola kaldırıldı."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ kendi barındırdığı bir anahtar sunucusuyla SSO kullanıyor. Bu kuruluşun üyelerinin artık ana parola kullanması gerekmiyor.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Kuruluştan ayrıl"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bu kuruluştan ayrılmak istediğinizden emin misiniz?"
+  },
+  "leftOrganization": {
+    "message": "Kuruluştan ayrıldınız."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Anahtar bağlayıcısına ulaşılamıyor, daha sonra yeniden deneyin."
+  },
+  "lockAllVaults": {
+    "message": "Tüm kasaları kilitle"
+  },
+  "accountLimitReached": {
+    "message": "Aynı anda 5'ten fazla hesapla oturum açamazsınız."
   }
 }

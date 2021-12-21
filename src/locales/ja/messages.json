@@ -268,6 +268,9 @@
   "lastName": {
     "message": "姓"
   },
+  "fullName": {
+    "message": "フルネーム"
+  },
   "address1": {
     "message": "住所1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "真偽値"
+  },
+  "cfTypeLinked": {
+    "message": "リンク済",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "リンクされた値",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "削除"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "表示するアイテムがありません"
   },
+  "sendVerificationCode": {
+    "message": "確認コードをメールに送信"
+  },
+  "sendCode": {
+    "message": "コードを送信"
+  },
+  "codeSent": {
+    "message": "確認コードを送信しました。"
+  },
   "verificationCode": {
     "message": "認証コード"
   },
+  "confirmIdentity": {
+    "message": "続行するには本人確認を行ってください。"
+  },
   "verificationCodeRequired": {
     "message": "認証コードは必須項目です。"
+  },
+  "invalidVerificationCode": {
+    "message": "認証コードが間違っています"
   },
   "continue": {
     "message": "続行"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "読み込み中…"
   },
-  "lockNow": {
-    "message": "今すぐロック"
+  "lockVault": {
+    "message": "保管庫をロック"
   },
   "passwordGenerator": {
     "message": "パスワード生成ツール"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "アカウント暗号化キーは各 Bitwarden ユーザーアカウントに固有であるため、暗号化されたエクスポートを別のアカウントにインポートすることはできません。"
   },
-  "exportMasterPassword": {
-    "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
-  },
   "noOrganizationsList": {
     "message": "あなたはどの組織にも属していません。組織では他のユーザーとアイテムを安全に共有できます。"
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "PIN コードが間違っています。"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "保管庫がロックされています。PIN コードで確認してください。"
   },
   "unlockWithWindowsHello": {
     "message": "Windows Hello でロック解除"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "1 つまたは複数の組織ポリシーにより、個人の保管庫をエクスポートできません。"
+  },
+  "addAccount": {
+    "message": "アカウントを追加"
+  },
+  "removeMasterPassword": {
+    "message": "マスターパスワードを削除する"
+  },
+  "removedMasterPassword": {
+    "message": "マスターパスワードを削除しました。"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ は自己ホストの鍵サーバで SSO を使用しています。この組織のメンバーのログインにマスターパスワードは必要ありません。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "組織から脱退する"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "本当にこの組織から脱退しますか？"
+  },
+  "leftOrganization": {
+    "message": "組織から脱退しました。"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "キーコネクターに到達できません。後でもう一度お試しください。"
+  },
+  "lockAllVaults": {
+    "message": "すべての保管庫をロック"
+  },
+  "accountLimitReached": {
+    "message": "5つ以上のアカウントに同時にログインすることはできません。"
   }
 }

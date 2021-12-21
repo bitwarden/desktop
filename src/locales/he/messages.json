@@ -268,6 +268,9 @@
   "lastName": {
     "message": "שם משפחה"
   },
+  "fullName": {
+    "message": "שם מלא"
+  },
   "address1": {
     "message": "כתובת 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "אמת או שקר"
+  },
+  "cfTypeLinked": {
+    "message": "מקושר",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "ערך מקושר",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "הסר"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "אין פריטים להצגה ברשימה."
   },
+  "sendVerificationCode": {
+    "message": "שליחת קוד אימות לדוא״ל שלך"
+  },
+  "sendCode": {
+    "message": "שליחת קוד"
+  },
+  "codeSent": {
+    "message": "קוד נשלח"
+  },
   "verificationCode": {
     "message": "קוד אימות"
   },
+  "confirmIdentity": {
+    "message": "יש לאשר את זהותך כדי להמשיך."
+  },
   "verificationCodeRequired": {
     "message": "נדרש קוד אימות."
+  },
+  "invalidVerificationCode": {
+    "message": "קוד אימות שגוי"
   },
   "continue": {
     "message": "המשך"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "טוען..."
   },
-  "lockNow": {
-    "message": "נעל עכשיו"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "יוצר הסיסמאות"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "מפתחות הצפנת חשבון ייחודיים לכל חשבון משתמש של Bitwarden, כך שלא ניתן לייבא ייצוא מוצפן לחשבון אחר."
   },
-  "exportMasterPassword": {
-    "message": "הזן את הסיסמה הראשית שלך עבור יצוא המידע מהכספת."
-  },
   "noOrganizationsList": {
     "message": "אינך משויך לארגון. ניתן לשתף באופן מאובטח פריטים רק עם משתמשים אחרים בתוך ארגון."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "קוד PIN לא תקין."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "הכספת שלך נעולה. הזן את קוד הPIN שלך כדי להמשיך."
   },
   "unlockWithWindowsHello": {
     "message": "שחרור נעילה עם Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "הסרת סיסמה ראשית"
+  },
+  "removedMasterPassword": {
+    "message": "הסיסמה הראשית הוסרה."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ משתמשים ב־SSO עם שרת מפתחות באירוח עצמי. סיסמה ראשית לא נחוצה יותר לטובת כניסה לחברי הארגון.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "לעזוב את הארגון"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "לעזוב את הארגון?"
+  },
+  "leftOrganization": {
+    "message": "עזבת את הארגון."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "לא ניתן להגיע למחבר המפתח, נא לנסות שוב."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Příjmení"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "Adresa 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Ano/Ne"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Smazat"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Žádné položky k zobrazení."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Ověřovací kód"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Ověřovací kód je povinný."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Pokračovat"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Načítání..."
   },
-  "lockNow": {
-    "message": "Zamknout nyní"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Generátor hesla"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Šifrovací klíče účtů jsou jedinečné pro každý Bitwarden uživatelský účet, takže nelze importovat šifrovaný export do jiného účtu."
   },
-  "exportMasterPassword": {
-    "message": "Zadejte své hlavní heslo pro export dat."
-  },
   "noOrganizationsList": {
     "message": "Nepatříte do žádné organizace. Organizace umožňují bezpečné sdílení položek s ostatními uživateli."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Neplatný PIN kód."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamčen. Pro pokračování musíte zadat PIN."
   },
   "unlockWithWindowsHello": {
     "message": "Odemknout pomocí Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

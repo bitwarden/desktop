@@ -1,46 +1,61 @@
-<div class="header header-search">
-    <div class="search">
-        <input type="search" placeholder="{{searchPlaceholder || ('searchVault' | i18n)}}" id="search"
-            [(ngModel)]="searchText" (input)="search(200)" autocomplete="off" appAutofocus>
-        <i class="fa fa-search" aria-hidden="true"></i>
-    </div>
-</div>
 <div class="content">
-    <cdk-virtual-scroll-viewport itemSize="42" minBufferPx="400" maxBufferPx="600" *ngIf="ciphers.length">
-        <div class="list">
-            <a *cdkVirtualFor="let c of ciphers; trackBy: trackByFn" appStopClick (click)="selectCipher(c)"
-                (contextmenu)="rightClickCipher(c)" href="#" title="{{'viewItem' | i18n}}"
-                [ngClass]="{'active': c.id === activeCipherId}" class="flex-list-item virtual-scroll-item">
-                <app-vault-icon [cipher]="c"></app-vault-icon>
-                <div class="flex-cipher-list-item">
-                    <span class="text">
-                        {{c.name}}
-                        <ng-container *ngIf="c.organizationId">
-                            <i class="fa fa-cube text-muted" title="{{'shared' | i18n}}" aria-hidden="true"></i>
-                            <span class="sr-only">{{'shared' | i18n}}</span>
-                        </ng-container>
-                        <ng-container *ngIf="c.hasAttachments">
-                            <i class="fa fa-paperclip text-muted" title="{{'attachments' | i18n}}" aria-hidden="true"></i>
-                            <span class="sr-only">{{'attachments' | i18n}}</span>
-                        </ng-container>
-                    </span>
-                    <span *ngIf="c.subTitle" class="detail">{{c.subTitle}}</span>
-                </div>
-            </a>
+  <cdk-virtual-scroll-viewport
+    itemSize="42"
+    minBufferPx="400"
+    maxBufferPx="600"
+    *ngIf="ciphers.length"
+  >
+    <div class="list">
+      <a
+        *cdkVirtualFor="let c of ciphers; trackBy: trackByFn"
+        appStopClick
+        (click)="selectCipher(c)"
+        (contextmenu)="rightClickCipher(c)"
+        href="#"
+        title="{{ 'viewItem' | i18n }}"
+        [ngClass]="{ active: c.id === activeCipherId }"
+        class="flex-list-item virtual-scroll-item"
+      >
+        <app-vault-icon [cipher]="c"></app-vault-icon>
+        <div class="flex-cipher-list-item">
+          <span class="text">
+            {{ c.name }}
+            <ng-container *ngIf="c.organizationId">
+              <i class="fa fa-cube text-muted" title="{{ 'shared' | i18n }}" aria-hidden="true"></i>
+              <span class="sr-only">{{ "shared" | i18n }}</span>
+            </ng-container>
+            <ng-container *ngIf="c.hasAttachments">
+              <i
+                class="fa fa-paperclip text-muted"
+                title="{{ 'attachments' | i18n }}"
+                aria-hidden="true"
+              ></i>
+              <span class="sr-only">{{ "attachments" | i18n }}</span>
+            </ng-container>
+          </span>
+          <span *ngIf="c.subTitle" class="detail">{{ c.subTitle }}</span>
         </div>
-    </cdk-virtual-scroll-viewport>
-    <div class="no-items" *ngIf="!ciphers.length">
-        <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
-        <ng-container *ngIf="loaded">
-            <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
-            <p>{{'noItemsInList' | i18n}}</p>
-            <button (click)="addCipher()" class="btn block primary link">{{'addItem' | i18n}}</button>
-        </ng-container>
+      </a>
     </div>
+  </cdk-virtual-scroll-viewport>
+  <div class="no-items" *ngIf="!ciphers.length">
+    <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+    <ng-container *ngIf="loaded">
+      <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+      <p>{{ "noItemsInList" | i18n }}</p>
+      <button (click)="addCipher()" class="btn block primary link">{{ "addItem" | i18n }}</button>
+    </ng-container>
+  </div>
 </div>
 <div class="footer">
-    <button appBlurClick (click)="addCipher()" (contextmenu)="addCipherOptions()" 
-        class="block primary" appA11yTitle="{{'addItem' | i18n}}" [disabled]="deleted">
-        <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
-    </button>
+  <button
+    appBlurClick
+    (click)="addCipher()"
+    (contextmenu)="addCipherOptions()"
+    class="block primary"
+    appA11yTitle="{{ 'addItem' | i18n }}"
+    [disabled]="deleted"
+  >
+    <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+  </button>
 </div>

@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Прізвище"
   },
+  "fullName": {
+    "message": "Повне ім'я"
+  },
   "address1": {
     "message": "Адреса 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Логічне значення"
+  },
+  "cfTypeLinked": {
+    "message": "Пов'язано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Пов'язане значення",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Видалити"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Немає записів."
   },
+  "sendVerificationCode": {
+    "message": "Надіслати код підтвердження е-поштою"
+  },
+  "sendCode": {
+    "message": "Надіслати код"
+  },
+  "codeSent": {
+    "message": "Код надіслано"
+  },
   "verificationCode": {
     "message": "Код підтвердження"
   },
+  "confirmIdentity": {
+    "message": "Підтвердьте свої облікові дані для продовження."
+  },
   "verificationCodeRequired": {
     "message": "Потрібний код підтвердження."
+  },
+  "invalidVerificationCode": {
+    "message": "Недійсний код підтвердження"
   },
   "continue": {
     "message": "Продовжити"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Завантаження..."
   },
-  "lockNow": {
-    "message": "Заблокувати зараз"
+  "lockVault": {
+    "message": "Заблокувати сховище"
   },
   "passwordGenerator": {
     "message": "Генератор паролів"
@@ -761,7 +787,7 @@
     "message": "Не вдалося синхронізувати"
   },
   "yourVaultIsLocked": {
-    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
+    "message": "Сховище заблоковано. Пройдіть ідентифікацію для продовження."
   },
   "unlock": {
     "message": "Розблокувати"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ключі шифрування унікальні для кожного облікового запису користувача Bitwarden, тому ви не можете імпортувати зашифрований експорт до іншого облікового запису."
   },
-  "exportMasterPassword": {
-    "message": "Введіть головний пароль, щоб експортувати дані сховища."
-  },
   "noOrganizationsList": {
     "message": "Ви не входите до жодної організації. Організації дозволяють безпечно обмінюватися елементами з іншими користувачами."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Неправильний PIN-код."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
   },
   "unlockWithWindowsHello": {
     "message": "Розблокувати з Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
+  },
+  "addAccount": {
+    "message": "Додати обліковий запис"
+  },
+  "removeMasterPassword": {
+    "message": "Вилучити головний пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Головний пароль вилучено."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ використовує SSO з власним сервером ключів. Головний пароль для учасників цієї організації більше не вимагається.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинути організацію"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ви справді хочете покинути цю організацію?"
+  },
+  "leftOrganization": {
+    "message": "Ви покинули організацію."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."
+  },
+  "lockAllVaults": {
+    "message": "Заблокувати всі сховища"
+  },
+  "accountLimitReached": {
+    "message": "Можна увійти не більше, ніж у 5 облікових записів одночасно."
   }
 }

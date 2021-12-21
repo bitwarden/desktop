@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Uzvārds"
   },
+  "fullName": {
+    "message": "Pilnais vārds"
+  },
   "address1": {
     "message": "Adrese 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Patiesuma vērtība"
+  },
+  "cfTypeLinked": {
+    "message": "Saistīts",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Saistīta vērtība",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Noņemt"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Nav vienumu, ko parādīt."
   },
+  "sendVerificationCode": {
+    "message": "Sūtīt apstiprinājuma kodu uz e-pastu"
+  },
+  "sendCode": {
+    "message": "Nosūtīt kodu"
+  },
+  "codeSent": {
+    "message": "Kods nosūtīts"
+  },
   "verificationCode": {
     "message": "Apstiprinājuma kods"
   },
+  "confirmIdentity": {
+    "message": "Apstiprināt identitāti, lai turpinātu."
+  },
   "verificationCodeRequired": {
     "message": "Ir nepieciešams apstiprinājuma kods."
+  },
+  "invalidVerificationCode": {
+    "message": "Nederīgs apstiprinājuma kods"
   },
   "continue": {
     "message": "Turpināt"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Notiek ielāde..."
   },
-  "lockNow": {
-    "message": "Aizslēgt"
+  "lockVault": {
+    "message": "Aizslēgt glabātavu"
   },
   "passwordGenerator": {
     "message": "Paroļu veidotājs"
@@ -1222,7 +1248,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Izdot glabātavas saturu"
+    "message": "Izgūt glabātavas saturu"
   },
   "fileFormat": {
     "message": "Datnes veids"
@@ -1232,19 +1258,16 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Apstiprināt glabātavas satura izdošanu"
+    "message": "Apstiprināt glabātavas satura izgūšanu"
   },
   "exportWarningDesc": {
-    "message": "Šī datu izdošana satur glabātavas datus nešifrētā veidā. Izdoto datni nevajadzētu glabāt vai sūtīt nedrošos veidos (piemēram, e-pastā). Izdzēst to uzreiz pēc izmantošanas."
+    "message": "Šī izguve satur glabātavas datus nešifrētā veidā. Izdoto datni nevajadzētu glabāt vai sūtīt nedrošos veidos (piemēram, e-pastā). Izdzēst to uzreiz pēc izmantošanas."
   },
   "encExportKeyWarningDesc": {
-    "message": "Šī izvade šifrē datus ar konta šifrēšanas atslēgu. Ja tā jebkad tiks mainīta, izvadi vajadzētu veikt vēlreiz, jo vairs nebūs iespējams atšifrēt šo datni."
+    "message": "Šī izguve šifrē datus ar konta šifrēšanas atslēgu. Ja tā jebkad tiks mainīta, izvadi vajadzētu veikt vēlreiz, jo vairs nebūs iespējams atšifrēt šo datni."
   },
   "encExportAccountWarningDesc": {
-    "message": "Katram kontam ir neatkārtojamas šifrēšanas atslēgas, tādēļ nav iespējams ievietot šifrētas izdošanas datnes saturu citā kontā."
-  },
-  "exportMasterPassword": {
-    "message": "Ievadīt galveno paroli, lai izdotu glabātavas saturu."
+    "message": "Katram Bitwarden kontam ir neatkārtojamas šifrēšanas atslēgas, tādēļ nav iespējams ievietot šifrētu izguvi citā kontā."
   },
   "noOrganizationsList": {
     "message": "Tu neesi iekļauts nevienā apvienībā. Apvienības sniedz iespēju droši kopīgot vienumus ar citiem lietotājiem."
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Nederīgs PIN kods."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tava glabātava ir slēgta. Ievadi savu PIN kodu, lai turpinātu!"
   },
   "unlockWithWindowsHello": {
     "message": "Atslēgt ar Windows Hello"
@@ -1732,9 +1752,45 @@
     "message": "Šajā apvienībā ir uzņēmuma nosacījums, kas automātiski ievieto lietotājus paroles atiestatīšanas sarakstā. Tas ļauj apvienības pārvaldniekiem mainīt lietotāju galveno paroli."
   },
   "vaultExportDisabled": {
-    "message": "Glabātavas izdošana ir atspējota"
+    "message": "Glabātavas izgūšana ir atspējota"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "Viens vai vairāki apvienības nosacījumi neļauj izdot privātās glabātavas saturu."
+    "message": "Viens vai vairāki apvienības nosacījumi neļauj izgūt privātās glabātavas saturu."
+  },
+  "addAccount": {
+    "message": "Pievienot kontu"
+  },
+  "removeMasterPassword": {
+    "message": "Noņemt galveno paroli"
+  },
+  "removedMasterPassword": {
+    "message": "Galvenā parole tika noņemta."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ izmanto vienoto pieteikšanos ar pašizvietotu atslēgu serveri. Tās dalībniekiem vairs nav nepieciešama galvenā parole, lai pieslēgtos.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Pamest apvienību"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Vai tiešām pamest šo apvienību?"
+  },
+  "leftOrganization": {
+    "message": "Apvienība ir pamesta."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nav iespējams sasniegt Key Connector, tāpēc vēlāk jāmēģina atkal."
+  },
+  "lockAllVaults": {
+    "message": "Aizslēgt visas glabātavas"
+  },
+  "accountLimitReached": {
+    "message": "Vienlaicīgi var būt pierakstījušies ne vairāk kā 5 konti."
   }
 }

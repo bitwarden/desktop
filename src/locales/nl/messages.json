@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Achternaam"
   },
+  "fullName": {
+    "message": "Volledige naam"
+  },
   "address1": {
     "message": "Adres 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Gekoppeld",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Gekoppelde waarde",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Verwijderen"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Er zijn geen items om weer te geven."
   },
+  "sendVerificationCode": {
+    "message": "Stuur een verificatiecode naar je e-mail"
+  },
+  "sendCode": {
+    "message": "Code versturen"
+  },
+  "codeSent": {
+    "message": "Code verstuurd"
+  },
   "verificationCode": {
     "message": "Verificatiecode"
   },
+  "confirmIdentity": {
+    "message": "Bevestig je identiteit om door te gaan."
+  },
   "verificationCodeRequired": {
     "message": "Verificatiecode vereist."
+  },
+  "invalidVerificationCode": {
+    "message": "Ongeldige verificatiecode"
   },
   "continue": {
     "message": "Doorgaan"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Laden..."
   },
-  "lockNow": {
-    "message": "Nu vergrendelen"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Wachtwoordgenerator"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Encryptiesleutels zijn uniek voor elk Bitwarden-gebruikersaccount, je kun kunt een versleutelde niet in een ander account importeren."
   },
-  "exportMasterPassword": {
-    "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
-  },
   "noOrganizationsList": {
     "message": "Je behoort niet tot een organisatie. Via organisaties deel je je items veilig met andere gebruikers."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ongeldige PIN-code."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
   },
   "unlockWithWindowsHello": {
     "message": "Ontgrendelen met Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Organisatiebeleid voorkomt dat je je persoonlijke kluis exporteert."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Hoofdwachtwoord verwijderen"
+  },
+  "removedMasterPassword": {
+    "message": "Hoofdwachtwoord verwijderd."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ gebruikt SSO met een zelf gehoste sleutelserver. Leden van deze organisatie kunnen inloggen zonder hoofdwachtwoord.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Organisatie verlaten"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Weet je zeker dat je deze organisatie wilt verlaten?"
+  },
+  "leftOrganization": {
+    "message": "Je hebt de organisatie verlaten."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Kan de sleutelconnector niet bereiken, probeer het later opnieuw."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

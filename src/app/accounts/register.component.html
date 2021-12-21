@@ -1,92 +1,150 @@
 <form id="register-page" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
-    <div class="content">
-        <h1>{{'createAccount' | i18n}}</h1>
-        <div class="box">
-            <div class="box-content">
-                <div class="box-content-row" appBoxRow>
-                    <label for="email">{{'emailAddress' | i18n}}</label>
-                    <input id="email" type="text" name="Email" [(ngModel)]="email" required
-                        [appAutofocus]="email === ''">
-                </div>
-                <div class="box-content-row" appBoxRow>
-                    <div class="box-content-row-flex">
-                        <div class="row-main">
-                            <label for="masterPassword">
-                                {{'masterPass' | i18n}}
-                                <strong class="sub-label text-{{masterPasswordScoreColor}}"
-                                    *ngIf="masterPasswordScoreText">
-                                    {{masterPasswordScoreText}}
-                                </strong>
-                            </label>
-                            <input id="masterPassword" type="{{showPassword ? 'text' : 'password'}}"
-                                name="MasterPassword" class="monospaced" [(ngModel)]="masterPassword" required
-                                [appAutofocus]="email !== ''" (input)="updatePasswordStrength()">
-                        </div>
-                        <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appBlurClick role="button"
-                                appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(false)">
-                                <i class="fa fa-lg" aria-hidden="true"
-                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-{{masterPasswordScoreColor}}" role="progressbar" aria-valuenow="0"
-                            aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: (masterPasswordScoreWidth + '%')}"
-                            attr.aria-valuenow="{{masterPasswordScoreWidth}}"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="box-footer">
-                {{'masterPassDesc' | i18n}}
-            </div>
+  <div class="content">
+    <h1>{{ "createAccount" | i18n }}</h1>
+    <div class="box">
+      <div class="box-content">
+        <div class="box-content-row" appBoxRow>
+          <label for="email">{{ "emailAddress" | i18n }}</label>
+          <input
+            id="email"
+            type="text"
+            name="Email"
+            [(ngModel)]="email"
+            required
+            [appAutofocus]="email === ''"
+            appInputVerbatim
+          />
         </div>
-        <div class="box">
-            <div class="box-content">
-                <div class="box-content-row box-content-row-flex" appBoxRow>
-                    <div class="row-main">
-                        <label for="masterPasswordRetype">{{'reTypeMasterPass' | i18n}}</label>
-                        <input id="masterPasswordRetype" type="{{showPassword ? 'text' : 'password'}}"
-                            name="MasterPasswordRetype" class="monospaced" [(ngModel)]="confirmMasterPassword" required>
-                    </div>
-                    <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appBlurClick role="button"
-                            appA11yTitle="{{'toggleVisibility' | i18n}}" (click)="togglePassword(true)">
-                            <i class="fa fa-lg" aria-hidden="true"
-                                [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="box-content-row" appBoxRow>
-                    <label for="hint">{{'masterPassHint' | i18n}}</label>
-                    <input id="hint" type="text" name="Hint" [(ngModel)]="hint">
-                </div>
-                <div class="box-content-row" [hidden]="!showCaptcha()">
-                    <iframe id="hcaptcha_iframe" height="80"></iframe>
-                </div>
+        <div class="box-content-row" appBoxRow>
+          <div class="box-content-row-flex">
+            <div class="row-main">
+              <label for="masterPassword">
+                {{ "masterPass" | i18n }}
+                <strong
+                  class="sub-label text-{{ masterPasswordScoreColor }}"
+                  *ngIf="masterPasswordScoreText"
+                >
+                  {{ masterPasswordScoreText }}
+                </strong>
+              </label>
+              <input
+                id="masterPassword"
+                type="{{ showPassword ? 'text' : 'password' }}"
+                name="MasterPassword"
+                class="monospaced"
+                [(ngModel)]="masterPassword"
+                required
+                [appAutofocus]="email !== ''"
+                (input)="updatePasswordStrength()"
+                appInputVerbatim
+              />
             </div>
-            <div class="box-footer">
-                {{'masterPassHintDesc' | i18n}}
+            <div class="action-buttons">
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appBlurClick
+                role="button"
+                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                (click)="togglePassword(false)"
+              >
+                <i
+                  class="fa fa-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                ></i>
+              </a>
             </div>
+          </div>
+          <div class="progress">
+            <div
+              class="progress-bar bg-{{ masterPasswordScoreColor }}"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [ngStyle]="{ width: masterPasswordScoreWidth + '%' }"
+              attr.aria-valuenow="{{ masterPasswordScoreWidth }}"
+            ></div>
+          </div>
         </div>
-        <div class="box last" *ngIf="showTerms">
-            <div class="box-footer checkbox">
-                <input type="checkbox" id="acceptPolicies" [(ngModel)]="acceptPolicies" name="AcceptPolicies">
-                <label for="acceptPolicies">
-                    {{'acceptPolicies' | i18n}}<br>
-                    <a href="https://bitwarden.com/terms/" target="_blank"
-                        rel="noopener">{{'termsOfService' | i18n}}</a>,
-                    <a href="https://bitwarden.com/privacy/" target="_blank"
-                        rel="noopener">{{'privacyPolicy' | i18n}}</a>
-                </label>
-            </div>
-        </div>
-        <div class="buttons">
-            <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
-                <b [hidden]="form.loading">{{'submit' | i18n}}</b>
-                <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
-            </button>
-            <a routerLink="/login" class="btn block">{{'cancel' | i18n}}</a>
-        </div>
+      </div>
+      <div class="box-footer">
+        {{ "masterPassDesc" | i18n }}
+      </div>
     </div>
+    <div class="box">
+      <div class="box-content">
+        <div class="box-content-row box-content-row-flex" appBoxRow>
+          <div class="row-main">
+            <label for="masterPasswordRetype">{{ "reTypeMasterPass" | i18n }}</label>
+            <input
+              id="masterPasswordRetype"
+              type="{{ showPassword ? 'text' : 'password' }}"
+              name="MasterPasswordRetype"
+              class="monospaced"
+              [(ngModel)]="confirmMasterPassword"
+              required
+              appInputVerbatim
+            />
+          </div>
+          <div class="action-buttons">
+            <a
+              class="row-btn"
+              href="#"
+              appStopClick
+              appBlurClick
+              role="button"
+              appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+              (click)="togglePassword(true)"
+            >
+              <i
+                class="fa fa-lg"
+                aria-hidden="true"
+                [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="box-content-row" appBoxRow>
+          <label for="hint">{{ "masterPassHint" | i18n }}</label>
+          <input id="hint" type="text" name="Hint" [(ngModel)]="hint" />
+        </div>
+        <div class="box-content-row" [hidden]="!showCaptcha()">
+          <iframe id="hcaptcha_iframe" height="80"></iframe>
+        </div>
+      </div>
+      <div class="box-footer">
+        {{ "masterPassHintDesc" | i18n }}
+      </div>
+    </div>
+    <div class="box last" *ngIf="showTerms">
+      <div class="box-footer checkbox">
+        <input
+          type="checkbox"
+          id="acceptPolicies"
+          [(ngModel)]="acceptPolicies"
+          name="AcceptPolicies"
+        />
+        <label for="acceptPolicies">
+          {{ "acceptPolicies" | i18n }}<br />
+          <a href="https://bitwarden.com/terms/" target="_blank" rel="noopener">{{
+            "termsOfService" | i18n
+          }}</a
+          >,
+          <a href="https://bitwarden.com/privacy/" target="_blank" rel="noopener">{{
+            "privacyPolicy" | i18n
+          }}</a>
+        </label>
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
+        <b [hidden]="form.loading">{{ "submit" | i18n }}</b>
+        <i class="fa fa-spinner fa-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+      </button>
+      <a routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
+    </div>
+  </div>
 </form>

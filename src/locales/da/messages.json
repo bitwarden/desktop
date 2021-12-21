@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Efternavn"
   },
+  "fullName": {
+    "message": "Fulde navn"
+  },
   "address1": {
     "message": "Adresse 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolsk"
+  },
+  "cfTypeLinked": {
+    "message": "Forbundet",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Forbundet værdi",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Fjern"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Der er ingen elementer at vise."
   },
+  "sendVerificationCode": {
+    "message": "Send en bekræftelseskode til din e-mail"
+  },
+  "sendCode": {
+    "message": "Send kode"
+  },
+  "codeSent": {
+    "message": "Kode sendt"
+  },
   "verificationCode": {
     "message": "Bekræftelseskode"
   },
+  "confirmIdentity": {
+    "message": "Bekræft din identitet for at fortsætte."
+  },
   "verificationCodeRequired": {
     "message": "Bekræftelseskode er påkrævet."
+  },
+  "invalidVerificationCode": {
+    "message": "Ugyldig bekræftelseskode"
   },
   "continue": {
     "message": "Fortsæt"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Indlæser..."
   },
-  "lockNow": {
-    "message": "Lås nu"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Adgangskodegenerator"
@@ -761,7 +787,7 @@
     "message": "Synkronisering mislykkedes"
   },
   "yourVaultIsLocked": {
-    "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
+    "message": "Din boks er låst. Bekræft din identitet for at fortsætte."
   },
   "unlock": {
     "message": "Lås op"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Kontokrypteringsnøgler er unikke for hver Bitwarden-brugerkonto, så du kan ikke importere en krypteret eksport til en anden konto."
   },
-  "exportMasterPassword": {
-    "message": "Indtast din hovedadgangskode for at eksportere dine data fra boksen."
-  },
   "noOrganizationsList": {
     "message": "Du tilhører ikke nogen organisationer. Organisationer giver dig mulighed for at dele elementer med andre brugere på en sikker måde."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ugyldig pinkode."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Din boks er låst. Bekræft din pinkode for at fortsætte."
   },
   "unlockWithWindowsHello": {
     "message": "Lås op med Windows Hello"
@@ -1701,7 +1721,7 @@
     "message": "Opdatér hovedadgangskode"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Dit hovedadgangskode blev for nylig ændret af en administrator i din organisation. For at få adgang til boksen skal du opdatere din hovedadgangskode nu. Hvis du fortsætter, logges du ud af din nuværende session, hvilket kræver, at du logger ind igen. Aktive sessioner på andre enheder kan fortsætte med at være aktive i op til én time."
   },
   "hours": {
     "message": "Timer"
@@ -1710,7 +1730,7 @@
     "message": "Minutter"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Din organisations politikker påvirker din boks-timeout. Maksimalt tilladt boks-timeout er $HOURS$ time(r) og $MINUTES$ minut(ter)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1723,18 +1743,54 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Din boks-timeout overskrider de begrænsninger, der er fastsat af din organisation."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Auto-indrullering"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Denne organisation har en virksomhedspolitik, der automatisk tilmelder dig til nulstilling af adgangskode. Tilmelding giver organisationsadministratorer mulighed for at skifte din hovedadgangskode."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Bokseksport deaktiveret"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Fjern hovedadgangskode"
+  },
+  "removedMasterPassword": {
+    "message": "Hovedadgangskode fjernet."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ bruger SSO med en selv-hostet nøgleserver. En hovedadgangskode er ikke længere påkrævet for at logge ind for medlemmer af denne organisation.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Forlad organisation"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Er du sikker på, at du vil forlade denne organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har forladt organisationen."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Kan ikke kontakte key connector, forsøg igen senere."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

@@ -268,6 +268,9 @@
   "lastName": {
     "message": "নামের শেষাংশ"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "ঠিকানা ১"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "বুলিয়ান"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "সরান"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "তালিকার জন্য কোনও বস্তু নেই।"
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "যাচাইকরণ কোড"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "যাচাইকরণ কোড প্রয়োজন।"
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "অবিরত"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "লোড হচ্ছে..."
   },
-  "lockNow": {
-    "message": "এখনই লক করুন"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "পাসওয়ার্ড উৎপাদক"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
-  "exportMasterPassword": {
-    "message": "আপনার ভল্ট তথ্য রফতানি করতে আপনার মূল পাসওয়ার্ডটি দিন।"
-  },
   "noOrganizationsList": {
     "message": "আপনি কোনও সংস্থার অন্তর্ভুক্ত নন। সংগঠনগুলি আপনাকে নিরাপদে অন্য ব্যবহারকারীর সাথে বস্তুসমূহ ভাগ করে নেওয়ার অনুমতি দেয়।"
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "অবৈধ পিন কোড।"
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "আপনার ভল্ট লক করা আছে। চালিয়ে যেতে আপনার পিন কোড যাচাই করান।"
   },
   "unlockWithWindowsHello": {
     "message": "Unlock with Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

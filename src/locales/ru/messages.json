@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Фамилия"
   },
+  "fullName": {
+    "message": "Полное имя"
+  },
   "address1": {
     "message": "Строка адреса 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Логическое"
+  },
+  "cfTypeLinked": {
+    "message": "Связано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Связанное значение",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Удалить"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Нет элементов для отображения."
   },
+  "sendVerificationCode": {
+    "message": "Отправить код подтверждения на ваш email"
+  },
+  "sendCode": {
+    "message": "Отправить код"
+  },
+  "codeSent": {
+    "message": "Код отправлен"
+  },
   "verificationCode": {
     "message": "Код подтверждения"
   },
+  "confirmIdentity": {
+    "message": "Подтвердите вашу личность, чтобы продолжить."
+  },
   "verificationCodeRequired": {
     "message": "Необходим код подтверждения."
+  },
+  "invalidVerificationCode": {
+    "message": "Неверный код подтверждения"
   },
   "continue": {
     "message": "Продолжить"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Загрузка..."
   },
-  "lockNow": {
-    "message": "Заблокировать сейчас"
+  "lockVault": {
+    "message": "Заблокировать хранилище"
   },
   "passwordGenerator": {
     "message": "Генератор паролей"
@@ -761,7 +787,7 @@
     "message": "Ошибка синхронизации"
   },
   "yourVaultIsLocked": {
-    "message": "Ваше хранилище заблокировано. Для продолжения введите мастер-пароль."
+    "message": "Ваше xранилище заблокировано. Подтвердите вашу личность для продолжения."
   },
   "unlock": {
     "message": "Разблокировать"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ключи шифрования уникальны для каждой учетной записи Bitwarden, поэтому нельзя импортировать зашифрованное хранилище в другой аккаунт."
   },
-  "exportMasterPassword": {
-    "message": "Для экспорта данных из хранилища введите мастер-пароль."
-  },
   "noOrganizationsList": {
     "message": "Вы не являетесь членом какой-либо организации. Организации позволяют безопасно обмениваться элементами с другими пользователями."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Неверный PIN-код."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваше хранилище заблокировано. Для продолжения введите PIN-код."
   },
   "unlockWithWindowsHello": {
     "message": "Разблокировать с Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Экспорт вашего личного хранилища запрещен одной или несколькими политиками организации."
+  },
+  "addAccount": {
+    "message": "Добавить аккаунт"
+  },
+  "removeMasterPassword": {
+    "message": "Удалить мастер-пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Мастер-пароль удален."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ использует SSO с собственным сервером ключей. Для авторизации членам этой организации больше не требуется мастер-пароль.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинуть организацию"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Вы действительно хотите покинуть эту организацию?"
+  },
+  "leftOrganization": {
+    "message": "Вы покинули организацию."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Не удается подключиться к соединителю ключей, повторите попытку позже."
+  },
+  "lockAllVaults": {
+    "message": "Заблокировать все хранилища"
+  },
+  "accountLimitReached": {
+    "message": "Одновременно могут быть авторизованы не более 5 аккаунтов."
   }
 }

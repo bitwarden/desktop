@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Прозвішча"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "Радок адрасу 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Лагічнае"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Выдаліць"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Няма элементаў для паказу."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Код праверкі"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Патрабуецца код праверкі."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Працягнуць"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Загрузка..."
   },
-  "lockNow": {
-    "message": "Заблакіраваць"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Генератар пароляў"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
-  "exportMasterPassword": {
-    "message": "Увядзіце ваш асноўны пароль для экспарту даных са сховішча."
-  },
   "noOrganizationsList": {
     "message": "Вы не з'яўляецеся членам якой-небудзь арганізацыі. Арганізацыі дазваляюць бяспечна абменьвацца элементамі з іншымі карыстальнікамі."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Памылковы PIN-код."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваша сховішча заблакіравана. Каб працягнуць, увядзіце PIN-код."
   },
   "unlockWithWindowsHello": {
     "message": "Разблакіраваць з Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

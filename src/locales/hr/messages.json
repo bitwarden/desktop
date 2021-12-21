@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Prezime"
   },
+  "fullName": {
+    "message": "Ime i prezime"
+  },
   "address1": {
     "message": "Adresa 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Povezano",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Povezana vrijednost",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Ukloni"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Nema stavki za prikaz."
   },
+  "sendVerificationCode": {
+    "message": "Slanje verifikacijskog kôda e-poštom"
+  },
+  "sendCode": {
+    "message": "Pošalji kôd"
+  },
+  "codeSent": {
+    "message": "Kôd poslan"
+  },
   "verificationCode": {
     "message": "Kôd za provjeru"
   },
+  "confirmIdentity": {
+    "message": "Potvrdite lozinku za nastavak."
+  },
   "verificationCodeRequired": {
     "message": "Potvrdni kôd je obavezan."
+  },
+  "invalidVerificationCode": {
+    "message": "Nevažeći kôd za provjeru"
   },
   "continue": {
     "message": "Nastavi"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Učitavanje..."
   },
-  "lockNow": {
-    "message": "Zaključaj sada"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Generator lozinki"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ključ za šifriranje jedinstven je za svakog Bitwarden korisnika, kako bi se šifrirani izvoz mogao uvesti u drugi korisnički račun."
   },
-  "exportMasterPassword": {
-    "message": "Unesi glavnu lozinku za izvoz podataka iz trezora."
-  },
   "noOrganizationsList": {
     "message": "Ne pripadaš niti jednoj organizaciji. Organizacije omogućuju sigurno dijeljenje stavki s drugim korisnicima."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Nerispravan PIN."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tvoj trezor je zaključan. Potvrdi PIN-om za nastavak."
   },
   "unlockWithWindowsHello": {
     "message": "Otključaj koristeći Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Jedno ili više pravila organizacija onemogućuje izvoz osobnog trezora. "
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Ukloni glavnu lozinku"
+  },
+  "removedMasterPassword": {
+    "message": "Glavna lozinka uklonjena."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ koristi jedinstvenu prijavu SSO s vlastitim poslužiteljem. Članovima organizacije glavna lozinka više nije potrebna.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Napusti organizaciju"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sigurno želiš napustiti ovu organizaciju?"
+  },
+  "leftOrganization": {
+    "message": "Organizacija napuštena."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nije moguće spajanje s konektorom za ključ, pokušaj kasnije."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

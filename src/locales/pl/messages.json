@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Nazwisko"
   },
+  "fullName": {
+    "message": "Imię i nazwisko"
+  },
   "address1": {
     "message": "Adres 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Wartość logiczna"
+  },
+  "cfTypeLinked": {
+    "message": "Powiązane pole",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Powiązana wartość",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Usuń"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Brak elementów."
   },
+  "sendVerificationCode": {
+    "message": "Wyślij kod weryfikacyjny na adres e-mail"
+  },
+  "sendCode": {
+    "message": "Wyślij kod"
+  },
+  "codeSent": {
+    "message": "Kod został wysłany"
+  },
   "verificationCode": {
     "message": "Kod weryfikacyjny"
   },
+  "confirmIdentity": {
+    "message": "Potwierdź swoją tożsamość, aby kontynuować."
+  },
   "verificationCodeRequired": {
     "message": "Kod weryfikacyjny jest wymagany."
+  },
+  "invalidVerificationCode": {
+    "message": "Kod weryfikacyjny jest nieprawidłowy"
   },
   "continue": {
     "message": "Kontynuuj"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Ładowanie..."
   },
-  "lockNow": {
-    "message": "Zablokuj"
+  "lockVault": {
+    "message": "Zablokuj sejf"
   },
   "passwordGenerator": {
     "message": "Generator hasła"
@@ -761,7 +787,7 @@
     "message": "Synchronizacja nie powiodła się"
   },
   "yourVaultIsLocked": {
-    "message": "Sejf jest zablokowany. Wpisz hasło główne, aby kontynuować."
+    "message": "Sejf jest zablokowany. Zweryfikuj swoją tożsamość, aby kontynuować."
   },
   "unlock": {
     "message": "Odblokuj"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Klucze szyfrowania konta są unikalne dla każdego użytkownika Bitwarden, więc nie możesz zaimportować zaszyfrowanego pliku eksportu na inne konto."
   },
-  "exportMasterPassword": {
-    "message": "Wpisz hasło główne, aby wyeksportować dane z sejfu."
-  },
   "noOrganizationsList": {
     "message": "Nie należysz do żadnej organizacji. Organizacje pozwalają na bezpieczne udostępnianie elementów innym użytkownikom."
   },
@@ -1292,9 +1315,6 @@
   "invalidPin": {
     "message": "Kod PIN jest nieprawidłowy."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Sejf jest zablokowany. Wpisz kod PIN, aby kontynuować."
-  },
   "unlockWithWindowsHello": {
     "message": "Odblokuj za pomocą Windows Hello"
   },
@@ -1308,10 +1328,10 @@
     "message": "odblokuj sejf"
   },
   "noAutoPromptWindowsHello": {
-    "message": "Nie pytaj o autoryzację Windows Hello podczas uruchamiania."
+    "message": "Zapamiętaj autoryzację Windows Hello."
   },
   "noAutoPromptTouchId": {
-    "message": "Nie pytaj o autoryzację Touch ID podczas uruchamiania."
+    "message": "Zapamiętaj autoryzację Touch ID."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Zablokuj hasłem głównym po uruchomieniu ponownym"
@@ -1634,7 +1654,7 @@
     "message": "1 dzień"
   },
   "custom": {
-    "message": "Niestandardowa"
+    "message": "Niestandardowe"
   },
   "deleteSendConfirmation": {
     "message": "Czy na pewno chcesz usunąć tę wysyłkę?",
@@ -1686,7 +1706,7 @@
     "message": "Musisz zweryfikować adres e-mail, aby używać tej funkcji."
   },
   "passwordPrompt": {
-    "message": "Powtórz hasło główne"
+    "message": "Potwierdź hasłem głównym"
   },
   "passwordConfirmation": {
     "message": "Potwierdź hasło główne"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Co najmniej jedna zasada organizacji uniemożliwia wyeksportowanie Twojego sejfu."
+  },
+  "addAccount": {
+    "message": "Dodaj konto"
+  },
+  "removeMasterPassword": {
+    "message": "Usuń hasło główne"
+  },
+  "removedMasterPassword": {
+    "message": "Hasło główne zostało usunięte."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "Organizacja $ORGANIZATION$ używa jednokrotnego logowania SSO z własnym serwerem kluczy. Użytkownicy nie muszą logować się za pomocą hasła głównego.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opuść organizację"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Czy na pewno chcesz opuścić tę organizację?"
+  },
+  "leftOrganization": {
+    "message": "Nie należysz już do tej organizacji."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nie można nawiązać połączenia z serwerem Key Connector. Spróbuj ponownie później."
+  },
+  "lockAllVaults": {
+    "message": "Zablokuj wszystkie sejfy"
+  },
+  "accountLimitReached": {
+    "message": "Nie możesz zalogować się na więcej niż 5 kont jednocześnie."
   }
 }

@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Cognoms"
   },
+  "fullName": {
+    "message": "Nom complet"
+  },
   "address1": {
     "message": "Adreça 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booleà"
+  },
+  "cfTypeLinked": {
+    "message": "Enllaçat",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Suprimeix"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "No hi ha cap element a llistar."
   },
+  "sendVerificationCode": {
+    "message": "Enviar un codi de verificació al correu electrònic"
+  },
+  "sendCode": {
+    "message": "Enviar codi"
+  },
+  "codeSent": {
+    "message": "Codi enviat"
+  },
   "verificationCode": {
     "message": "Codi de verificació"
   },
+  "confirmIdentity": {
+    "message": "Confirmi la seva contrasenya per continuar."
+  },
   "verificationCodeRequired": {
     "message": "El codi de verificació és obligatori."
+  },
+  "invalidVerificationCode": {
+    "message": "Codi de verificació no vàlid"
   },
   "continue": {
     "message": "Continua"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "S'està carregant..."
   },
-  "lockNow": {
-    "message": "Bloqueja ara"
+  "lockVault": {
+    "message": "Bloquejar caixa forta"
   },
   "passwordGenerator": {
     "message": "Generador de contrasenyes"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Les claus de xifratge són exclusives de cada compte d'usuari Bitwarden, de manera que no podeu importar una exportació xifrada a un compte diferent."
   },
-  "exportMasterPassword": {
-    "message": "Introduïu la contrasenya mestra per exportar les dades de la caixa forta."
-  },
   "noOrganizationsList": {
     "message": "No pertanyeu a cap organització. Les organitzacions permeten compartir elements amb seguretat amb altres usuaris."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "El codi PIN no és vàlid."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
   },
   "unlockWithWindowsHello": {
     "message": "Desbloqueja amb Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
+  },
+  "addAccount": {
+    "message": "Afegir compte"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Abandonar organització"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Esteu segur que voleu sortir d'aquesta organització?"
+  },
+  "leftOrganization": {
+    "message": "Heu deixat l'organització."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Bloquejar totes les caixes fortes"
+  },
+  "accountLimitReached": {
+    "message": "No es pot iniciar sessió a més de 5 comptes al mateix temps."
   }
 }

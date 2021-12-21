@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Nama Belakang"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "Alamat 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Hapus"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Tidak ada item yang dapat dicantumkan."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Kode Verifikasi"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Kode verifikasi diperlukan."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Lanjutkan"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Memuat..."
   },
-  "lockNow": {
-    "message": "Kunci Sekarang"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Pembuat Kata Sandi"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Kunci enkripsi akun unik untuk setiap akun pengguna Bitwarden, jadi Anda tidak dapat mengimpor ekspor terenkripsi ke akun lain."
   },
-  "exportMasterPassword": {
-    "message": "Masukkan kata sandi utama untuk ekspor data brankas anda."
-  },
   "noOrganizationsList": {
     "message": "Anda tidak berada dalam organisasi apapun. Organisasi memungkinkan Anda dengan aman berbagi item dengan pengguna lainnya."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Kode PIN tidak valid."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Brankas Anda terkunci. Verifikasi kode PIN Anda untuk melanjutkan."
   },
   "unlockWithWindowsHello": {
     "message": "Buka dengan Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

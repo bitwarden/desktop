@@ -268,6 +268,9 @@
   "lastName": {
     "message": "نام خانوادگی"
   },
+  "fullName": {
+    "message": "نام کامل"
+  },
   "address1": {
     "message": "نشانی ۱"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "بولی"
+  },
+  "cfTypeLinked": {
+    "message": "لینک شده",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "ارزش لینک شده",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "حذف"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "هیچ موردی برای نمایش وجود ندارد."
   },
+  "sendVerificationCode": {
+    "message": "ارسال یک کد تأیید به ایمیل شما"
+  },
+  "sendCode": {
+    "message": "ارسال کد"
+  },
+  "codeSent": {
+    "message": "کد ارسال شد"
+  },
   "verificationCode": {
     "message": "کد تایید"
   },
+  "confirmIdentity": {
+    "message": "برای ادامه هویت خود را تأیید کنید."
+  },
   "verificationCodeRequired": {
     "message": "کد تایید مورد نیاز است."
+  },
+  "invalidVerificationCode": {
+    "message": "کد تایید نامعتبر"
   },
   "continue": {
     "message": "ادامه"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "درحال بارگذاری..."
   },
-  "lockNow": {
-    "message": "الان قفل شود"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "تولید کننده کلمه عبور"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "کلیدهای رمزگذاری حساب برای هر حساب کاربری Bitwarden منحصر به فرد است ، بنابراین نمی توانید صادرات رمزگذاری شده را به حساب دیگری وارد کنید."
   },
-  "exportMasterPassword": {
-    "message": "کلمه عبور اصلی خود را برای خروجی گرفتن از گاوصندوقتان وارد کنید."
-  },
   "noOrganizationsList": {
     "message": "شما به هیچ سازمانی تعلق ندارید. سازمان‌ها به شما اجازه می‌دهند تا داده‌های خود را را با کاربران دیگر به صورت امن به اشتراک بگذارید."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "کد پین غیر معتبر است."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
   },
   "unlockWithWindowsHello": {
     "message": "باز کردن با Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "پاک کردن کلمه عبور اصلی"
+  },
+  "removedMasterPassword": {
+    "message": "کلمه عبور اصلی پاک شد."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ در حال استفاده از SSO با یک سرور کلید خود میزبان است. برای ورود اعضای این سازمان دیگر نیازی به کلمه عبور اصلی نیست.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "ترک سازمان"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "آيا مطمئن هستيد که می خواهيد سازمان های انتخاب شده را ترک کنيد؟"
+  },
+  "leftOrganization": {
+    "message": "شما از سازمان ها خارج شده اید."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "دسترسی به رابط کلید ممکن نیست، بعداً دوباره امتحان کنید."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

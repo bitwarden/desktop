@@ -268,6 +268,9 @@
   "lastName": {
     "message": "성"
   },
+  "fullName": {
+    "message": "전체 이름"
+  },
   "address1": {
     "message": "주소 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "참 / 거짓"
+  },
+  "cfTypeLinked": {
+    "message": "연결됨",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "연결된 값",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "제거"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "항목이 없습니다."
   },
+  "sendVerificationCode": {
+    "message": "이메일로 인증 코드 보내기"
+  },
+  "sendCode": {
+    "message": "코드 전송"
+  },
+  "codeSent": {
+    "message": "코드 전송됨"
+  },
   "verificationCode": {
     "message": "인증 코드"
   },
+  "confirmIdentity": {
+    "message": "계속하려면 암호를 확인하세요."
+  },
   "verificationCodeRequired": {
     "message": "인증 코드는 반드시 입력해야 합니다."
+  },
+  "invalidVerificationCode": {
+    "message": "유효하지 않은 확인 코드"
   },
   "continue": {
     "message": "계속"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "불러오는 중..."
   },
-  "lockNow": {
-    "message": "지금 잠그기"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "비밀번호 생성기"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
   },
-  "exportMasterPassword": {
-    "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
-  },
   "noOrganizationsList": {
     "message": "속해 있는 조직이 없습니다. 조직에 속하면 다른 사용자들과 항목을 안전하게 공유할 수 있습니다."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "잘못된 PIN 코드입니다."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
   },
   "unlockWithWindowsHello": {
     "message": "Windows Hello를 사용하여 잠금 해제"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "하나 이상의 조직 정책이 개인 보관함을 내보내는 것을 제한하고 있습니다."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "마스터 비밀번호 제거"
+  },
+  "removedMasterPassword": {
+    "message": "마스터 비밀번호가 제거되었습니다."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ 조직은 자체 호스팅 키 서버로 SSO를 사용하고 있습니다 이 조직의 멤버들은 로그인할 때에 마스터 비밀번호를 필요로 하지 않습니다.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "조직 나가기"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "정말 이 조직을 떠나시겠습니까?"
+  },
+  "leftOrganization": {
+    "message": "조직을 떠났습니다."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "키 제공자와 통신할 수 없습니다. 다시 시도해보세요."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

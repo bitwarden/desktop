@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Họ"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "Địa chỉ 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Đúng/Sai"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Xoá"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Không có mục nào để liệt kê."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Mã xác nhận"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Yêu cầu mã xác nhận."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Tiếp tục"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Đang tải..."
   },
-  "lockNow": {
-    "message": "Khóa ngay"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Tạo mật khẩu"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
-  "exportMasterPassword": {
-    "message": "Nhập mật khẩu chính để trích xuất kho của bạn."
-  },
   "noOrganizationsList": {
     "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Mã PIN không hợp lệ."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Kho của bạn đã bị khóa. Xác minh mã PIN của bạn để mở."
   },
   "unlockWithWindowsHello": {
     "message": "Mở khóa với Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

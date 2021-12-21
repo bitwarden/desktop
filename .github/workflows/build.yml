@@ -31,6 +31,8 @@ jobs:
       package_version: ${{ steps.retrieve-version.outputs.package_version }}
       build_number: ${{ steps.increment-version.outputs.build_number }}
       safari_ref: ${{ steps.safari-ref.outputs.safari_ref }}
+      rc_branch_exists: ${{ steps.branch-check.outputs.rc_branch_exists }}
+      hotfix_branch_exists: ${{ steps.branch-check.outputs.hotfix_branch_exists }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f  # v2.3.4
@@ -62,6 +64,21 @@ jobs:
           echo "Setting Safari Extension ref to $SAFARI_REF"
           echo "::set-output name=safari_ref::$SAFARI_REF"
 
+      - name: Check if special branches exist
+        id: branch-check
+        run: |
+          if [[ $(git ls-remote --heads origin rc) ]]; then
+            echo "::set-output name=rc_branch_exists::1"
+          else
+            echo "::set-output name=rc_branch_exists::0"
+          fi
+
+          if [[ $(git ls-remote --heads origin hotfix) ]]; then
+            echo "::set-output name=hotfix_branch_exists::1"
+          else
+            echo "::set-output name=hotfix_branch_exists::0"
+          fi
+
 
   linux:
     name: Linux Build
@@ -76,7 +93,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -88,9 +105,8 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Update NPM
+      - name: Install node-gyp
         run: |
-          npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -100,8 +116,7 @@ jobs:
           sudo apt-get -y install pkg-config libxss-dev libsecret-1-dev rpm
 
       - name: Set up Snap
-        run: |
-          sudo snap install snapcraft --classic
+        run: sudo snap install snapcraft --classic
 
       - name: Print environment
         run: |
@@ -175,7 +190,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -188,9 +203,8 @@ jobs:
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
         shell: pwsh
 
-      - name: Update NPM
+      - name: Install node-gyp
         run: |
-          npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -199,8 +213,7 @@ jobs:
 
       - name: Set up environment
         shell: pwsh
-        run: |
-          choco install checksum --no-progress
+        run: choco install checksum --no-progress
 
       - name: Print environment
         run: |
@@ -215,9 +228,6 @@ jobs:
         run: npm run lint
 
       - name: Build & Sign (dev)
-        run: |
-          npm run build
-          npm run pack:win
         env:
           ELECTRON_BUILDER_SIGN: 1
           SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
@@ -225,6 +235,9 @@ jobs:
           SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
           SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
           SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+        run: |
+          npm run build
+          npm run pack:win
 
       - name: Rename appx files for store
         shell: pwsh
@@ -352,7 +365,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -364,9 +377,8 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Update NPM
+      - name: Install node-gyp
         run: |
-          npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -500,7 +512,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -512,9 +524,8 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Update NPM
+      - name: Install node-gyp
         run: |
-          npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -640,11 +651,10 @@ jobs:
         run: ./scripts/safari-build.ps1 -copyonly
 
       - name: Build application (dist)
-        run: |
-          npm run pack:mac
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        run: npm run pack:mac
 
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
@@ -688,7 +698,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -700,9 +710,8 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Update NPM
+      - name: Install node-gyp
         run: |
-          npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -828,8 +837,7 @@ jobs:
         run: ./scripts/safari-build.ps1 -mas -copyonly
 
       - name: Build application for App Store
-        run: |
-          npm run pack:mac:mas
+        run: npm run pack:mac:mas
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -840,6 +848,18 @@ jobs:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           path: ./dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.pkg
           if-no-files-found: error
+
+      - name: Deploy to TestFlight
+        env:
+          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+        if: |
+            (github.ref == 'refs/heads/master'
+              && needs.setup.outputs.rc_branch_exists == 0
+              && needs.setup.outputs.hotfix_branch_exists == 0)
+            || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
+            || github.ref == 'refs/heads/hotfix'
+        run: npm run upload:mas
 
 
   macos-package-dev:
@@ -856,7 +876,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@46071b5c7a2e0c34e49c3cb8a0e792e86e18d5ea  # v2.1.5
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache npm
         id: npm-cache
@@ -868,9 +888,8 @@ jobs:
       - name: Set Node options
         run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
-      - name: Update NPM
+      - name: Install node-gyp
         run: |
-          npm install -g npm@7
           npm install -g node-gyp
           node-gyp install $(node -v)
 
@@ -996,16 +1015,14 @@ jobs:
         run: ./scripts/safari-build.ps1 -masdev -copyonly
 
       - name: Build dev application for App Store
-        run: |
-          npm run pack:mac:masdev
+        run: npm run pack:mac:masdev
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Zip masdev asset
         working-directory: ./dist/mas-dev-universal
-        run: |
-          zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
+        run: zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
 
       - name: Upload masdev artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3

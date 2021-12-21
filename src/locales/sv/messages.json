@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Efternamn"
   },
+  "fullName": {
+    "message": "Full Name"
+  },
   "address1": {
     "message": "Adress 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booleskt värde"
+  },
+  "cfTypeLinked": {
+    "message": "Linked",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Linked value",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Ta bort"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Det finns inga objekt att visa."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Verifieringskod"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Verifieringskod krävs."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Fortsätt"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Laddar..."
   },
-  "lockNow": {
-    "message": "Lås nu"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Lösenordsgenerator"
@@ -761,7 +787,7 @@
     "message": "Synkroniseringen misslyckades"
   },
   "yourVaultIsLocked": {
-    "message": "Valvet är låst. Bekräfta ditt huvudlösenord för att fortsätta."
+    "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Kypteringsnycklar är unika för varje Bitwarden-konto, så du kan inte importera en krypterad export till ett annat konto."
   },
-  "exportMasterPassword": {
-    "message": "Ange ditt huvudlösenord för att exportera ditt valv."
-  },
   "noOrganizationsList": {
     "message": "Du tillhör inte några organisationer. Organisationer möjliggör säker delning av objekt med andra användare."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Valvet är låst. Bekräfta din PIN-kod för att fortsätta."
   },
   "unlockWithWindowsHello": {
     "message": "Lås upp med Windows Hello"
@@ -1535,7 +1555,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Redigera försändelse",
+    "message": "Redigera Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
@@ -1608,11 +1628,11 @@
     "message": "Nytt lösenord"
   },
   "whatTypeOfSend": {
-    "message": "Vilken typ av försändelse är det här?",
+    "message": "Vilken typ av Send är detta?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Skapa försändelse",
+    "message": "Skapa Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
@@ -1637,7 +1657,7 @@
     "message": "Anpassad"
   },
   "deleteSendConfirmation": {
-    "message": "Är du säker på att du vill radera denna försändelse?",
+    "message": "Är du säker på att du vill radera denna Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Lämna organisation"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Är du säker på att du vill lämna denna organisation?"
+  },
+  "leftOrganization": {
+    "message": "Du har lämnat organisationen."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

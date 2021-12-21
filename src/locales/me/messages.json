@@ -45,7 +45,7 @@
     "message": "Podijeli"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Prebaci u Organizaciju"
   },
   "movedItemToOrg": {
     "message": "$ITEMNAME$ moved to $ORGNAME$",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Izaberite organizaciju u koju želite da premjestite ovu stavku. Prelazak u organizaciju prenosi vlasništvo nad stavkom na tu organizaciju. Nećete više biti direktan vlasnik ove stavke kada bude premještena."
   },
   "attachments": {
     "message": "Prilog"
@@ -123,7 +123,7 @@
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimizirajte prilikom kopiranja u međuspremnik"
   },
   "minimizeOnCopyToClipboardDesc": {
     "message": "Minimize when copying an item's data to the clipboard."
@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Prezime"
   },
+  "fullName": {
+    "message": "Puno ime"
+  },
   "address1": {
     "message": "Adresa 1"
   },
@@ -328,6 +331,14 @@
   "cfTypeBoolean": {
     "message": "Binarna promjenljiva"
   },
+  "cfTypeLinked": {
+    "message": "Povezan",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Povezana vrijednost",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Ukloni"
   },
@@ -378,7 +389,7 @@
     "message": "Kopiraj link"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Iskopiraj Verifikacioni Kod (TOTP)"
   },
   "length": {
     "message": "Dužina"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Nema stavki u listi."
   },
+  "sendVerificationCode": {
+    "message": "Send a verification code to your email"
+  },
+  "sendCode": {
+    "message": "Send Code"
+  },
+  "codeSent": {
+    "message": "Code Sent"
+  },
   "verificationCode": {
     "message": "Verifikacioni kod (TOTP)"
   },
+  "confirmIdentity": {
+    "message": "Confirm your identity to continue."
+  },
   "verificationCodeRequired": {
     "message": "Potreban je verifikacioni kod."
+  },
+  "invalidVerificationCode": {
+    "message": "Invalid verification code"
   },
   "continue": {
     "message": "Nastavi"
@@ -606,7 +632,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Koristite bilo koji bezbjedonosni ključ za koji je omogućen WebAuthn da biste pristupili svom nalogu."
   },
   "emailTitle": {
     "message": "Email"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Učitavanje..."
   },
-  "lockNow": {
-    "message": "Zaključaj sada"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Generator lozinki"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
-  "exportMasterPassword": {
-    "message": "Unesite glavnu lozinku za izvoz podataka iz trezora."
-  },
   "noOrganizationsList": {
     "message": "Ne pripadate nijednoj organizaciji. Organizacije vam omogućavaju da bezbjedno dijelite stavke sa drugim korisnicima."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Nevažeći PIN kod."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Vaš trezor je zaključan. Potvrdite svoj PIN kod da biste nastavili."
   },
   "unlockWithWindowsHello": {
     "message": "Otključaj sa Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "One or more organization policies prevents you from exporting your personal vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Remove Master Password"
+  },
+  "removedMasterPassword": {
+    "message": "Master password removed."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Leave Organization"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Are you sure you want to leave this organization?"
+  },
+  "leftOrganization": {
+    "message": "You have left the organization."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Unable to reach the key connector, try again later."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

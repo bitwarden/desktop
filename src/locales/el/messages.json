@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Επώνυμο"
   },
+  "fullName": {
+    "message": "Ονοματεπώνυμο"
+  },
   "address1": {
     "message": "Διεύθυνση 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Δυαδικό"
+  },
+  "cfTypeLinked": {
+    "message": "Συνδεδεμένο",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Συνδεδεμένη τιμή",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Αφαίρεση"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Δεν υπάρχουν στοιχεία στη λίστα."
   },
+  "sendVerificationCode": {
+    "message": "Στείλτε έναν κωδικό επαλήθευσης στο email σας"
+  },
+  "sendCode": {
+    "message": "Αποστολή Κωδικού"
+  },
+  "codeSent": {
+    "message": "Ο Κωδικός Στάλθηκε"
+  },
   "verificationCode": {
     "message": "Κωδικός Επαλήθευσης"
   },
+  "confirmIdentity": {
+    "message": "Επιβεβαιώστε την ταυτότητα σας για να συνεχίσετε."
+  },
   "verificationCodeRequired": {
     "message": "Απαιτείται ο κωδικός επαλήθευσης."
+  },
+  "invalidVerificationCode": {
+    "message": "Μη έγκυρος κωδικός επαλήθευσης"
   },
   "continue": {
     "message": "Συνέχεια"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Φόρτωση..."
   },
-  "lockNow": {
-    "message": "Κλείδωμα τώρα"
+  "lockVault": {
+    "message": "Lock Vault"
   },
   "passwordGenerator": {
     "message": "Γεννήτρια Κωδικού"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Τα κλειδιά κρυπτογράφησης λογαριασμού είναι μοναδικά για κάθε λογαριασμό χρήστη Bitwarden, οπότε δεν μπορείτε να εισάγετε μια κρυπτογραφημένη εξαγωγή σε διαφορετικό λογαριασμό."
   },
-  "exportMasterPassword": {
-    "message": "Πληκτρολογήστε τον κύριο κωδικό για εξαγωγή δεδομένων vault."
-  },
   "noOrganizationsList": {
     "message": "Δεν συμμετέχετε σε κάποιον οργανισμό. Οι οργανισμοί επιτρέπουν την ασφαλή κοινοποίηση στοιχείων με άλλους χρήστες."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Μη έγκυρος κωδικός PIN."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Το vault σας είναι κλειδωμένο. Επαληθεύστε τον κωδικό PIN για να συνεχίσετε."
   },
   "unlockWithWindowsHello": {
     "message": "Ξεκλειδώστε με το Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Μία ή περισσότερες οργανωτικές πολιτικές σας αποτρέπει από την εξαγωγή του προσωπικού vault."
+  },
+  "addAccount": {
+    "message": "Add Account"
+  },
+  "removeMasterPassword": {
+    "message": "Αφαίρεση Κύριου Κωδικού Πρόσβασης"
+  },
+  "removedMasterPassword": {
+    "message": "Ο κύριος κωδικός αφαιρέθηκε."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ χρησιμοποιεί SSO με έναν αυτοεξυπηρετητή κλειδιών. Ένας κύριος κωδικός πρόσβασης δεν απαιτείται πλέον για να συνδεθείτε για τα μέλη αυτού του οργανισμού.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Αποχώρηση από τον οργανισμό"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Είστε βέβαιοι ότι θέλετε να φύγετε από αυτόν τον οργανισμό;"
+  },
+  "leftOrganization": {
+    "message": "Έχετε φύγει από τον οργανισμό."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Δεν είναι δυνατή η πρόσβαση στον σύνδεσμο κλειδιού, προσπαθήστε ξανά αργότερα."
+  },
+  "lockAllVaults": {
+    "message": "Lock All Vaults"
+  },
+  "accountLimitReached": {
+    "message": "No more than 5 accounts may be logged in at the same time."
   }
 }

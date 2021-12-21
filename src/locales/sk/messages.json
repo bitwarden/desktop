@@ -268,6 +268,9 @@
   "lastName": {
     "message": "Priezvisko"
   },
+  "fullName": {
+    "message": "Celé meno"
+  },
   "address1": {
     "message": "Adresa 1"
   },
@@ -327,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Áno/Nie"
+  },
+  "cfTypeLinked": {
+    "message": "Prepojené",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Prepojená hodnota",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Odstrániť"
@@ -530,11 +541,26 @@
   "noItemsInList": {
     "message": "Neexistujú žiadne položky na zobrazenie."
   },
+  "sendVerificationCode": {
+    "message": "Poslať overovací kód na váš e-mail"
+  },
+  "sendCode": {
+    "message": "Odoslať kód"
+  },
+  "codeSent": {
+    "message": "Kód bol odoslaný"
+  },
   "verificationCode": {
     "message": "Overovací kód"
   },
+  "confirmIdentity": {
+    "message": "Ak chcete pokračovať, potvrďte svoju identitu."
+  },
   "verificationCodeRequired": {
     "message": "Overovací kód je povinný."
+  },
+  "invalidVerificationCode": {
+    "message": "Neplatný verifikačný kód"
   },
   "continue": {
     "message": "Pokračovať"
@@ -707,8 +733,8 @@
   "loading": {
     "message": "Načítava sa..."
   },
-  "lockNow": {
-    "message": "Uzamknúť teraz"
+  "lockVault": {
+    "message": "Zamknúť trezor"
   },
   "passwordGenerator": {
     "message": "Generátor hesla"
@@ -761,7 +787,7 @@
     "message": "Synchronizácia zlyhala"
   },
   "yourVaultIsLocked": {
-    "message": "Váš trezor je uzamknutý. Overte sa hlavným heslom, ak chcete pokračovať."
+    "message": "Váš trezor je uzamknutý. Ak chcete pokračovať, overte svoju identitu."
   },
   "unlock": {
     "message": "Odomknúť"
@@ -1243,9 +1269,6 @@
   "encExportAccountWarningDesc": {
     "message": "Šifrovacie kľúče účtu sú jedinečné pre každý používateľský účet Bitwarden, takže nemôžete importovať šifrovaný export do iného účtu."
   },
-  "exportMasterPassword": {
-    "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
-  },
   "noOrganizationsList": {
     "message": "Nie ste členom žiadnej organizácie. Organizácie umožňujú bezpečne zdieľať položky s ostatnými používateľmi."
   },
@@ -1291,9 +1314,6 @@
   },
   "invalidPin": {
     "message": "Neplatný PIN kód."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamknutý. Overte sa PIN kódom, ak chcete pokračovať."
   },
   "unlockWithWindowsHello": {
     "message": "Odomknúť pomocou Windows Hello"
@@ -1736,5 +1756,41 @@
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Jedna alebo viacero zásad organizácie vám bráni exportovať váš osobný trezor."
+  },
+  "addAccount": {
+    "message": "Pridať účet"
+  },
+  "removeMasterPassword": {
+    "message": "Odstrániť hlavné heslo"
+  },
+  "removedMasterPassword": {
+    "message": "Hlavné heslo bolo odstránené."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ používa SSO s vlastným kľúčovým serverom. Na prihlásenie členov tejto organizácie už nie je potrebné hlavné heslo.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opustiť organizáciu"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ste si istý, že chcete opustiť túto organizáciu?"
+  },
+  "leftOrganization": {
+    "message": "Opustili ste organizáciu."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nie je možné kontaktovať kľúčový konektor, skúste to znova neskôr."
+  },
+  "lockAllVaults": {
+    "message": "Zamknúť všetky trezory"
+  },
+  "accountLimitReached": {
+    "message": "Súčasne nemôže byť prihlásených viac ako 5 účtov."
   }
 }

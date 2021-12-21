@@ -1,433 +1,446 @@
 @import "variables.scss";
 
 small {
-    font-size: $font-size-small;
+  font-size: $font-size-small;
 }
 
 .bg-primary {
-    @include themify($themes) {
-        background-color: themed('primaryColor') !important;
-    }
+  @include themify($themes) {
+    background-color: themed("primaryColor") !important;
+  }
 }
 
 .bg-success {
-    @include themify($themes) {
-        background-color: themed('successColor') !important;
-    }
+  @include themify($themes) {
+    background-color: themed("successColor") !important;
+  }
 }
 
 .bg-danger {
-    @include themify($themes) {
-        background-color: themed('dangerColor') !important;
-    }
+  @include themify($themes) {
+    background-color: themed("dangerColor") !important;
+  }
 }
 
 .bg-info {
-    @include themify($themes) {
-        background-color: themed('infoColor') !important;
-    }
+  @include themify($themes) {
+    background-color: themed("infoColor") !important;
+  }
 }
 
 .bg-warning {
-    @include themify($themes) {
-        background-color: themed('warningColor') !important;
-    }
+  @include themify($themes) {
+    background-color: themed("warningColor") !important;
+  }
 }
 
 .text-primary {
-    @include themify($themes) {
-        color: themed('primaryColor') !important;
-    }
+  @include themify($themes) {
+    color: themed("primaryColor") !important;
+  }
 }
 
 .text-success {
-    @include themify($themes) {
-        color: themed('successColor') !important;
-    }
+  @include themify($themes) {
+    color: themed("successColor") !important;
+  }
 }
 
 .text-danger {
-    @include themify($themes) {
-        color: themed('dangerColor') !important;
-    }
+  @include themify($themes) {
+    color: themed("dangerColor") !important;
+  }
 }
 
 .text-warning {
-    @include themify($themes) {
-        color: themed('warningColor') !important;
-    }
+  @include themify($themes) {
+    color: themed("warningColor") !important;
+  }
 }
 
 .text-muted {
-    @include themify($themes) {
-        color: themed('mutedColor') !important;
-    }
+  @include themify($themes) {
+    color: themed("mutedColor") !important;
+  }
 }
 
 .text-default {
-    @include themify($themes) {
-        color: themed('textColor') !important;
-    }
+  @include themify($themes) {
+    color: themed("textColor") !important;
+  }
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .no-margin {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .font-weight-semibold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 p.lead {
-    font-size: $font-size-large;
-    margin-bottom: 20px;
-    font-weight: normal;
+  font-size: $font-size-large;
+  margin-bottom: 20px;
+  font-weight: normal;
 }
 
 .monospaced {
-    font-family: $font-family-monospace;
+  font-family: $font-family-monospace;
 }
 
 .show-whitespace {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
+}
+
+.font-weight-bold {
+  font-weight: bold;
 }
 
 .sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    border: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
 }
 
 .totp {
+  .totp-code {
+    font-family: $font-family-monospace;
+    font-size: 1.1em;
+  }
+
+  .totp-countdown {
+    margin: 3px 3px 0 0;
+    display: block;
+    user-select: none;
+
+    .totp-sec {
+      font-size: 0.85em;
+      position: absolute;
+      line-height: 32px;
+      width: 32px;
+      text-align: center;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+      transform: rotate(-90deg);
+    }
+
+    .totp-circle {
+      fill: none;
+
+      @include themify($themes) {
+        stroke: themed("totpStrokeColor");
+      }
+
+      &.inner {
+        stroke-width: 3;
+        stroke-dasharray: 78.6;
+        stroke-dashoffset: 0;
+      }
+
+      &.outer {
+        stroke-width: 2;
+        stroke-dasharray: 88;
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+
+  &.low {
+    .totp-sec,
     .totp-code {
-        font-family: $font-family-monospace;
-        font-size: 1.1em;
+      @include themify($themes) {
+        color: themed("dangerColor");
+      }
     }
 
-    .totp-countdown {
-        margin: 3px 3px 0 0;
-        display: block;
-        user-select: none;
-
-        .totp-sec {
-            font-size: 0.85em;
-            position: absolute;
-            line-height: 32px;
-            width: 32px;
-            text-align: center;
-        }
-
-        svg {
-            width: 32px;
-            height: 32px;
-            transform: rotate(-90deg);
-        }
-
-        .totp-circle {
-            fill: none;
-
-            @include themify($themes) {
-                stroke: themed('totpStrokeColor');
-            }
-
-            &.inner {
-                stroke-width: 3;
-                stroke-dasharray: 78.6;
-                stroke-dashoffset: 0;
-            }
-
-            &.outer {
-                stroke-width: 2;
-                stroke-dasharray: 88;
-                stroke-dashoffset: 0;
-            }
-        }
+    .totp-circle {
+      @include themify($themes) {
+        stroke: themed("dangerColor");
+      }
     }
-
-    &.low {
-        .totp-sec, .totp-code {
-            @include themify($themes) {
-                color: themed('dangerColor');
-            }
-        }
-
-        .totp-circle {
-            @include themify($themes) {
-                stroke: themed('dangerColor');
-            }
-        }
-    }
+  }
 }
 
 .password-block {
-    font-size: $font-size-large;
-    font-family: $font-family-monospace;
-    min-height: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  font-size: $font-size-large;
+  font-family: $font-family-monospace;
+  min-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
-    .modal-body & {
-        margin-top: 10px;
-    }
+  .modal-body & {
+    margin-top: 10px;
+  }
 }
 
 .password-wrapper {
-    word-break: break-all;
-    white-space: pre-wrap;
-    min-width: 0;
+  word-break: break-all;
+  white-space: pre-wrap;
+  min-width: 0;
 }
 
 .password-number {
-    @include themify($themes) {
-        color: themed('passwordNumberColor');
-    }
+  @include themify($themes) {
+    color: themed("passwordNumberColor");
+  }
 }
 
 .password-special {
-    @include themify($themes) {
-        color: themed('passwordSpecialColor');
-    }
+  @include themify($themes) {
+    color: themed("passwordSpecialColor");
+  }
 }
 
 #duo-frame {
-    background: url('../images/loading.svg') 0 0 no-repeat;
-    height: 330px;
-    margin: 0 -150px 15px -150px;
+  background: url("../images/loading.svg") 0 0 no-repeat;
+  height: 330px;
+  margin: 0 -150px 15px -150px;
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 }
 
 #web-authn-frame {
-    background: url('../images/loading.svg') 0 0 no-repeat;
-    height: 250px;
-    margin: 0 0 15px 0;
+  background: url("../images/loading.svg") 0 0 no-repeat;
+  height: 250px;
+  margin: 0 0 15px 0;
 
-    iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 }
 
 #hcaptcha_iframe {
-    width: 100%;
-    border: none;
-    transition: height 0.25s linear;
+  width: 100%;
+  border: none;
+  transition: height 0.25s linear;
 }
 
-form, .form {
-    .form-group {
-        margin-bottom: 10px;
+form,
+.form {
+  .form-group {
+    margin-bottom: 10px;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        label {
-            display: inline-block;
-            margin-bottom: 2px;
-        }
-
-        input, select, textarea {
-            border: 1px solid #000000;
-            border-radius: $border-radius;
-            display: block;
-
-            @include themify($themes) {
-                border-color: themed('inputBorderColor');
-            }
-        }
-
-        input[type=text], input[type=number] {
-            padding: 5px;
-            width: 100%;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    .checkbox {
-        position: relative;
-        display: block;
-        padding-left: 18px;
-
-        label {
-            margin-bottom: 0;
-        }
-
-        input[type="checkbox"] {
-            position: absolute;
-            margin-top: 4px;
-            margin-left: -18px;
-        }
+    label {
+      display: inline-block;
+      margin-bottom: 2px;
     }
 
-    .radio {
-        position: relative;
-        display: block;
-        padding-left: 18px;
-        margin-top: 4px;
+    input,
+    select,
+    textarea {
+      border: 1px solid #000000;
+      border-radius: $border-radius;
+      display: block;
 
-        &.radio-mt-2 {
-            margin-top: 2px;
-        }
-
-        label {
-            margin-bottom: 0;
-        }
-
-        input[type="radio"] {
-            position: absolute;
-            margin-top: 4px;
-            margin-left: -18px;
-        }
+      @include themify($themes) {
+        border-color: themed("inputBorderColor");
+      }
     }
 
-    .help-block {
-        margin-top: 3px;
-        display: block;
-
-        @include themify($themes) {
-            color: themed('mutedColor');
-        }
+    input[type="text"],
+    input[type="number"] {
+      padding: 5px;
+      width: 100%;
     }
+  }
+
+  .checkbox {
+    position: relative;
+    display: block;
+    padding-left: 18px;
+
+    label {
+      margin-bottom: 0;
+    }
+
+    input[type="checkbox"] {
+      position: absolute;
+      margin-top: 4px;
+      margin-left: -18px;
+    }
+  }
+
+  .radio {
+    position: relative;
+    display: block;
+    padding-left: 18px;
+    margin-top: 4px;
+
+    &.radio-mt-2 {
+      margin-top: 2px;
+    }
+
+    label {
+      margin-bottom: 0;
+    }
+
+    input[type="radio"] {
+      position: absolute;
+      margin-top: 4px;
+      margin-left: -18px;
+    }
+  }
+
+  .help-block {
+    margin-top: 3px;
+    display: block;
+
+    @include themify($themes) {
+      color: themed("mutedColor");
+    }
+  }
 }
 
 app-root > #loading {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    color: $text-muted;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: $text-muted;
 
-    @include themify($themes) {
-        color: themed('mutedColor');
-    }
+  @include themify($themes) {
+    color: themed("mutedColor");
+  }
 }
 
 .logo-image {
-    @include themify($themes) {
-        content: url('../images/logo-' + themed('logoSuffix') + '@2x.png');
-    }
+  @include themify($themes) {
+    content: url("../images/logo-" + themed("logoSuffix") + "@2x.png");
+  }
 }
 
 [hidden] {
-    display: none !important;
+  display: none !important;
 }
 
 .draggable {
-    cursor: move;
+  cursor: move;
 }
 
 .callout {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #000000;
-    border-left-width: 5px;
-    border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #000000;
+  border-left-width: 5px;
+  border-radius: 3px;
+  @include themify($themes) {
+    border-color: themed("calloutBorderColor");
+    background-color: themed("calloutBackgroundColor");
+  }
+
+  .callout-heading {
+    margin-top: 0;
+  }
+
+  h3.callout-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &.callout-primary {
     @include themify($themes) {
-        border-color: themed('calloutBorderColor');
-        background-color: themed('calloutBackgroundColor');
+      border-left-color: themed("primaryColor");
     }
 
     .callout-heading {
-        margin-top: 0;
+      @include themify($themes) {
+        color: themed("primaryColor");
+      }
+    }
+  }
+
+  &.callout-info {
+    @include themify($themes) {
+      border-left-color: themed("infoColor");
     }
 
-    h3.callout-heading {
-        font-weight: bold;
-        text-transform: uppercase;
+    .callout-heading {
+      @include themify($themes) {
+        color: themed("infoColor");
+      }
+    }
+  }
+
+  &.callout-danger {
+    @include themify($themes) {
+      border-left-color: themed("dangerColor");
     }
 
-    &.callout-primary {
-        @include themify($themes) {
-            border-left-color: themed('primaryColor');
-        }
+    .callout-heading {
+      @include themify($themes) {
+        color: themed("dangerColor");
+      }
+    }
+  }
 
-        .callout-heading {
-            @include themify($themes) {
-                color: themed('primaryColor');
-            }
-        }
+  &.callout-success {
+    @include themify($themes) {
+      border-left-color: themed("successColor");
     }
 
-    &.callout-info {
-        @include themify($themes) {
-            border-left-color: themed('infoColor');
-        }
+    .callout-heading {
+      @include themify($themes) {
+        color: themed("successColor");
+      }
+    }
+  }
 
-        .callout-heading {
-            @include themify($themes) {
-                color: themed('infoColor');
-            }
-        }
+  &.callout-warning {
+    @include themify($themes) {
+      border-left-color: themed("warningColor");
     }
 
-    &.callout-danger {
-        @include themify($themes) {
-            border-left-color: themed('dangerColor');
-        }
-
-        .callout-heading {
-            @include themify($themes) {
-                color: themed('dangerColor');
-            }
-        }
+    .callout-heading {
+      @include themify($themes) {
+        color: themed("warningColor");
+      }
     }
+  }
 
-    &.callout-success {
-        @include themify($themes) {
-            border-left-color: themed('successColor');
-        }
-
-        .callout-heading {
-            @include themify($themes) {
-                color: themed('successColor');
-            }
-        }
-    }
-
-    &.callout-warning {
-        @include themify($themes) {
-            border-left-color: themed('warningColor');
-        }
-
-        .callout-heading {
-            @include themify($themes) {
-                color: themed('warningColor');
-            }
-        }
-    }
-
-    ul {
-        padding-left: 40px;
-        margin: 0;
-    }
+  ul {
+    padding-left: 40px;
+    margin: 0;
+  }
 }
 
 .password-reprompt {
-    text-align: left;
-    margin-top: 15px;
+  text-align: left;
+  margin-top: 15px;
 }
 
 .set-pin-modal {
-    .box {
-        margin-bottom: 15px;
-    }
+  .box {
+    margin-bottom: 15px;
+  }
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
 }
