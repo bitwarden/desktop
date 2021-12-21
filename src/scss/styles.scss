@@ -1,6 +1,4 @@
 @import "../../jslib/angular/src/scss/webfonts.css";
-$dark-icon-themes: 'theme_dark', 'theme_nord';
-@import "../../jslib/angular/src/scss/icons.scss";
 @import "~@angular/cdk/overlay-prebuilt.css";
 @import "variables.scss";
 @import "base.scss";
@@ -15,3 +13,5 @@ $dark-icon-themes: 'theme_dark', 'theme_nord';
 @import "plugins.scss";
 @import "environment.scss";
 @import "header.scss";
+
+@import "../../jslib/angular/src/scss/icons.scss";
