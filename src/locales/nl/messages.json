@@ -734,7 +734,7 @@
     "message": "Laden..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Kluis vergrendelen"
   },
   "passwordGenerator": {
     "message": "Wachtwoordgenerator"
@@ -1758,7 +1758,7 @@
     "message": "Organisatiebeleid voorkomt dat je je persoonlijke kluis exporteert."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Account toevoegen"
   },
   "removeMasterPassword": {
     "message": "Hoofdwachtwoord verwijderen"
@@ -1788,9 +1788,9 @@
     "message": "Kan de sleutelconnector niet bereiken, probeer het later opnieuw."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Alle kluizen vergrendelen"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Er mogen niet meer dan 5 accounts tegelijkertijd ingelogd zijn."
   }
 }

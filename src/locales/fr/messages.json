@@ -269,7 +269,7 @@
     "message": "Nom"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Nom et prénom"
   },
   "address1": {
     "message": "Adresse 1"
@@ -332,11 +332,11 @@
     "message": "Booléen"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Lié",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Valeur liée",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -542,25 +542,25 @@
     "message": "Aucun élément à afficher."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Envoyer un code de vérification à votre adresse courriel"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Envoyer le code"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Code envoyé"
   },
   "verificationCode": {
     "message": "Code de vérification"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Confirmez votre identité pour continuer."
   },
   "verificationCodeRequired": {
     "message": "Le code de vérification est requis."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Code de vérification invalide"
   },
   "continue": {
     "message": "Continuer"
@@ -734,7 +734,7 @@
     "message": "Chargement ..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Verrouiller le coffre"
   },
   "passwordGenerator": {
     "message": "Générateur de mot de passe"
@@ -1715,22 +1715,22 @@
     "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Mot de Passe Maître mis à jour"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Mettre à jour le mot de passe maître"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour pouvoir accéder au coffre-fort, vous devez mettre à jour votre mot de passe maître maintenant. Poursuivre vous déconnectera de votre session actuelle, vous obligeant à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Heures"
   },
   "minutes": {
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre-fort. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",

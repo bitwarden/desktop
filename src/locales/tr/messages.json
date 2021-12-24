@@ -15,7 +15,7 @@
     "message": "Türler"
   },
   "typeLogin": {
-    "message": "Oturum aç"
+    "message": "Hesap"
   },
   "typeCard": {
     "message": "Kart"
@@ -434,7 +434,7 @@
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Yeni bir ek ekle"
+    "message": "Yeni dosya ekle"
   },
   "deletedAttachment": {
     "message": "Ek silindi"
@@ -494,7 +494,7 @@
     "message": "Bir ana parola ipucu, unutmanız durumunda parolanızı hatırlamanıza yardımcı olabilir."
   },
   "reTypeMasterPass": {
-    "message": "Ana Parolayı Tekrar Yazın"
+    "message": "Ana parolayı tekrar yazın"
   },
   "masterPassHint": {
     "message": "Ana Parola İpucu (isteğe bağlı)"
@@ -506,7 +506,7 @@
     "message": "Parola İpucu"
   },
   "enterEmailToGetHint": {
-    "message": "Ana parola ipucunuzu almak istediğiniz e-posta adresinizi girin."
+    "message": "Ana parola ipucunu almak için hesabınızın e-posta adresini girin."
   },
   "getMasterPasswordHint": {
     "message": "Ana parola ipucunu al"
@@ -536,10 +536,10 @@
     "message": "Beklenmedik bir hata oluştu."
   },
   "itemInformation": {
-    "message": "Öğe Bilgisi"
+    "message": "Kayıt bilgileri"
   },
   "noItemsInList": {
-    "message": "Görüntülenecek öğe yok."
+    "message": "Görüntülenecek kayıt yok."
   },
   "sendVerificationCode": {
     "message": "E-posta adresime doğrulama kodu gönder"
@@ -593,7 +593,7 @@
     "message": "Doğrulama kodunu yeniden e-postala"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Başka bir iki adımlı giriş yöntemini kullan"
+    "message": "Başka bir iki aşamalı giriş yöntemini kullan"
   },
   "insertYubiKey": {
     "message": "YubiKey'i bilgisayarınızın USB portuna takın, ardından düğmesine dokunun."
@@ -602,7 +602,7 @@
     "message": "Güvenlik anahtarınızı bilgisayarınızın USB portuna takın. Bir düğmesi varsa dokunun."
   },
   "recoveryCodeDesc": {
-    "message": "İki adımlı doğrulama sağlayıcılarınızın hepsine erişiminizi mi kaybettiniz? Hesabınızdaki tüm iki faktörlü sağlayıcıları devre dışı bırakmak için kurtarma kodunuzu kullanın."
+    "message": "İki aşamalı doğrulama sağlayıcılarınıza ulaşamıyor musunuz? Kurtarma kodunuzu kullanarak hesabınızdaki tüm iki aşamalı giriş sağlayıcılarını devre dışı bırakabilirsiniz."
   },
   "recoveryCodeTitle": {
     "message": "Kurtarma kodu"
@@ -644,13 +644,13 @@
     "message": "Giriş yapılamıyor"
   },
   "noTwoStepProviders": {
-    "message": "Bu hesapta iki adımlı giriş özelliği etkin, ancak yapılandırılmış iki adımlı giriş sağlayıcılarının hiçbiri bu cihaz tarafından desteklenmiyor."
+    "message": "Bu hesapta iki aşamalı giriş etkin ama yapılandırdığınız iki aşamalı giriş sağlayıcılarının hiçbiri bu cihazı desteklemiyor."
   },
   "noTwoStepProviders2": {
     "message": "Lütfen daha iyi aygıtları (örneğin, bir kimlik doğrulayıcı app) arasında desteklenen ek sağlayıcıları ekleyin."
   },
   "twoStepOptions": {
-    "message": "İki adımlı oturum açma seçenekleri"
+    "message": "İki aşamalı giriş seçenekleri"
   },
   "selfHostedEnvironment": {
     "message": "Şirket içinde barındırılan ortam"
@@ -698,7 +698,7 @@
     "message": "Parolanın üzerine yaz"
   },
   "learnMore": {
-    "message": "Daha fazla bilgi edinin"
+    "message": "Daha fazla bilgi al"
   },
   "featureUnavailable": {
     "message": "Özellik mevcut değil"
@@ -713,16 +713,16 @@
     "message": "Çıkmak istediğinize emin misiniz?"
   },
   "logOut": {
-    "message": "Çıkış Yap"
+    "message": "Çıkış yap"
   },
   "addNewLogin": {
-    "message": "Yeni bir oturum ekle"
+    "message": "Yeni hesap ekle"
   },
   "addNewItem": {
-    "message": "Yeni Öge Ekle"
+    "message": "Yeni kayıt ekle"
   },
   "addNewFolder": {
-    "message": "Yeni Klasör Ekle"
+    "message": "Yeni klasör ekle"
   },
   "view": {
     "message": "Görüntüle"
@@ -737,16 +737,16 @@
     "message": "Kasayı kilitle"
   },
   "passwordGenerator": {
-    "message": "Parola Oluşturucu"
+    "message": "Parola oluşturucu"
   },
   "emailUs": {
-    "message": "Bize E-posta Gönderin"
+    "message": "Bize e-posta gönderin"
   },
   "visitOurWebsite": {
     "message": "Web sitemizi ziyaret edin"
   },
   "fileBugReport": {
-    "message": "Bir Hata Raporlayın"
+    "message": "Hata bildirin"
   },
   "blog": {
     "message": "Blog"
@@ -755,10 +755,10 @@
     "message": "Bizi takip edin"
   },
   "syncVault": {
-    "message": "Kasayı Senkronize Et"
+    "message": "Kasayı eşitle"
   },
   "changeMasterPass": {
-    "message": "Ana Parolayı Değiştir"
+    "message": "Ana parolayı değiştir"
   },
   "changeMasterPasswordConfirmation": {
     "message": "Ana parolanızı bitwarden.com web kasası üzerinden değiştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
@@ -772,16 +772,16 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Web Kasasına Git"
+    "message": "Web kasasına git"
   },
   "getMobileApp": {
-    "message": "Mobil Uygulamayı Edin"
+    "message": "Mobil uygulamayı indir"
   },
   "getBrowserExtension": {
-    "message": "Tarayıcı Uzantısını Edin"
+    "message": "Tarayıcı uzantısını indir"
   },
   "syncingComplete": {
-    "message": "Eşleme tamamlandı"
+    "message": "Eşitleme tamamlandı"
   },
   "syncingFailed": {
     "message": "Eşitleme başarısız oldu"
@@ -790,7 +790,7 @@
     "message": "Kasanız kilitli. Devam etmek için kimliğinizi doğrulayın."
   },
   "unlock": {
-    "message": "Kilidi Aç"
+    "message": "Kilidi aç"
   },
   "loggedInAsOn": {
     "message": "$HOSTNAME$ üzerinde $EMAIL$ adresiyle oturum açtınız.",
@@ -809,7 +809,7 @@
     "message": "Geçersiz ana parola"
   },
   "twoStepLoginConfirmation": {
-    "message": "İki adımlı oturum açma, oturum açma işleminizi bir güvenlik anahtarı, kimlik doğrulayıcı uygulama, SMS, telefon görüşmesi veya e-posta gibi başka bir cihazla doğrulamanızı isteyerek hesabınızı daha güvenli hale getirir. İki adımlı oturum açma işlemini bitwarden.com web kasası üzerinden etkinleştirebilirsiniz. Siteyi şimdi ziyaret etmek ister misiniz?"
+    "message": "İki aşamalı giriş, hesabınıza girererken işlemi bir güvenlik anahtarı, şifrematik uygulaması, SMS, telefon araması veya e-posta gibi ek bir yöntemle doğrulamanızı isteyerek hesabınızın güvenliğini artırır. İki aşamalı giriş özelliğini bitwarden.com web kasası üzerinden etkinleştirebilirsiniz. Şimdi siteye gitmek ister misiniz?"
   },
   "twoStepLogin": {
     "message": "İki aşamalı giriş"
@@ -949,7 +949,7 @@
     "message": "Dil"
   },
   "languageDesc": {
-    "message": "Uygulama tarafından kullanılan dili değiştirin. Yeniden başlatma gerekli."
+    "message": "Uygulama dilini değiştirin. Yeniden başlatma gerekir."
   },
   "theme": {
     "message": "Tema"
@@ -985,7 +985,7 @@
     "message": "Güncellemek için yeniden başlat"
   },
   "restartToUpdateDesc": {
-    "message": "Versiyon $VERSION_NUM$ yüklenmeye hazır. Bitwarden yüklemeyi tamamlamak için yeniden başlatmanız gerekir. Yeniden başlatmak ve şimdi güncelleştirmek istiyor musunuz?",
+    "message": "$VERSION_NUM$ sürümü yüklenmeye hazır. Yüklemeyi tamamlamak için uygulamayı yeniden başlatmanız gerekir. Uygulamayı yeniden başlatmak ve güncellemeyi yapmak istiyor musunuz?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -1006,7 +1006,7 @@
     "message": "Sonra"
   },
   "noUpdatesAvailable": {
-    "message": "Şuan da herhangi bir güncelleştirme yok. En son sürümü kullanıyorsunuz."
+    "message": "Şu anda yüklenebilecek bir güncelleme yok. Son sürümü kullanıyorsunuz."
   },
   "updateError": {
     "message": "Güncelleme Hatası"
@@ -1047,7 +1047,7 @@
     "message": "Dosya ekleri için 1 GB şifrelenmiş depolama."
   },
   "premiumSignUpTwoStep": {
-    "message": "YubiKey, FIDO U2F ve Duo gibi ek iki adımlı giriş seçenekleri."
+    "message": "YubiKey, FIDO U2F ve Duo gibi iki aşamalı giriş seçenekleri."
   },
   "premiumSignUpReports": {
     "message": "Kasanızı güvende tutmak için parola hijyeni, hesap sağlığı ve veri ihlali raporları."
@@ -1125,7 +1125,7 @@
     "message": "Tam ekranı aç/kapat"
   },
   "reload": {
-    "message": "Yeniden yükle"
+    "message": "Yenile"
   },
   "toggleDevTools": {
     "message": "Geliştirici araçlarını aç/kapat"
@@ -1279,7 +1279,7 @@
     "message": "Sahip"
   },
   "whoOwnsThisItem": {
-    "message": "Bu öğenin sahibi kim?"
+    "message": "Bu kaydın sahibi kim?"
   },
   "strong": {
     "message": "Güçlü",
@@ -1304,7 +1304,7 @@
     "description": "PIN code. Ex. The short code (often numeric) that you use to unlock a device."
   },
   "unlockWithPin": {
-    "message": "PIN kodu ile kilidi aç"
+    "message": "Kilidi PIN koduyla aç"
   },
   "setYourPinCode": {
     "message": "Bitwarden'ı açarken kullanacağınız PIN kodunu belirleyin. Uygulamadan tamamen çıkış yaparsanız PIN ayarlarınız sıfırlanacaktır."
@@ -1380,10 +1380,10 @@
     "message": "Klonla"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Bir ya da daha fazla organizasyon ilkesi oluşturucu ayarlarınızı etkiliyor."
+    "message": "Bir ya da daha fazla kuruluş ilkesi oluşturucu ayarlarınızı etkiliyor."
   },
   "vaultTimeoutAction": {
-    "message": "Kasa Zaman Aşımı Eylemi"
+    "message": "Kasa zaman aşımı eylemi"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Kilitli bir kasaya tekrar erişebilmeniz için ana şifrenizi tekrar girmeniz gerekir."
@@ -1396,7 +1396,7 @@
     "description": "Verb form: to make secure or inaccesible by"
   },
   "trash": {
-    "message": "Çöp Kutusu",
+    "message": "Çöp kutusu",
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
@@ -1706,7 +1706,7 @@
     "message": "Bu özelliği kullanmak için e-postanızı doğrulamalısınız."
   },
   "passwordPrompt": {
-    "message": "Ana parola yeniden isteği"
+    "message": "Ana parolayı yeniden iste"
   },
   "passwordConfirmation": {
     "message": "Ana parola onayı"
@@ -1746,7 +1746,7 @@
     "message": "Kasa zaman aşımınız, kuruluşunuz tarafından belirlenen kısıtlamaları aşıyor."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Otomatik Eklenme"
+    "message": "Otomatik eklenme"
   },
   "resetPasswordAutoEnrollInviteWarning": {
     "message": "Bu kuruluşun sizi otomatik olarak parola sıfırlamaya ekleyen bir ilkesi bulunmakta. Bu ilkeye eklenmek, kuruluş yöneticilerinin ana parolanızı değiştirebilmesini sağlar."
