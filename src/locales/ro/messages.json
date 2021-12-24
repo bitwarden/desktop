@@ -734,7 +734,7 @@
     "message": "Încărcare..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Blocare seif"
   },
   "passwordGenerator": {
     "message": "Generator de parole"
@@ -1758,7 +1758,7 @@
     "message": "Una sau mai multe politici ale organizației vă împiedică să exportați seiful personal."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Adăugare cont"
   },
   "removeMasterPassword": {
     "message": "Eliminare parolă principală"
@@ -1788,9 +1788,9 @@
     "message": "Nu se poate accesa Conectorul Cheie, vă rugăm să încercați din nou mai târziu."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Blocare toate seifurile"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Nu pot fi conectate mai mult de 5 conturi în același timp."
   }
 }

@@ -734,7 +734,7 @@
     "message": "Laadimine..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Lukusta hoidla"
   },
   "passwordGenerator": {
     "message": "Parooli genereerimine"
@@ -1758,7 +1758,7 @@
     "message": "Üks või enam organisatsiooni poliitikat ei võimalda sul oma personaalset hoidlat eksportida."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Lisa konto"
   },
   "removeMasterPassword": {
     "message": "Eemalda ülemparool"
@@ -1788,9 +1788,9 @@
     "message": "Ühenduse loomine ebaõnnestus. Proovi hiljem uuesti."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Lukusta kõik hoidlad"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Korraga ei tohi olla sisse logitud rohkem kui 5 kontot."
   }
 }
