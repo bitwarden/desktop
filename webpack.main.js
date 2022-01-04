@@ -76,7 +76,11 @@ const main = {
       ],
     }),
   ],
-  externals: [nodeExternals()],
+  externals: [
+    nodeExternals({
+      allowlist: ["rxjs"],
+    }),
+  ],
 };
 
 module.exports = merge(common, NODE_ENV === "development" ? dev : prod, main);
