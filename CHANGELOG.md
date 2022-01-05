@@ -1,3 +1,17 @@
+# 2.0.5
+
+## ✨ Features
+
+* Ciphers are now flagged with a dedicated icons when they are part of a shared folder of when they are linked to a Cozy Connector ([PR #69](https://github.com/cozy/cozy-pass-web/pull/69))
+* It is now possible to write notes in ciphers ([PR #75](https://github.com/cozy/cozy-pass-web/pull/75))
+* Login errors are now displayed in the login form ([PR #70](https://github.com/cozy/cozy-pass-web/pull/70))
+
+## 🐛 Bug Fixes
+
+* Fix `download client` button when displayed from a mobile web browser ([PR #72](https://github.com/cozy/cozy-pass-web/pull/72))
+
+## 🔧 Tech
+
 # 2.0.4
 
 ## ✨ Features
