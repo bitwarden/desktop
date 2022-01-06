@@ -11,6 +11,5 @@
     "type": "git",
     "url": "https://github.com/bitwarden/desktop"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
