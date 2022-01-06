@@ -16,7 +16,7 @@ export class BitwardenMenu implements IMenubarMenu {
   readonly label: string = "Bitwarden";
 
   get items(): MenuItemConstructorOptions[] {
-    let items = [this.aboutBitwarden, this.checkForUpdates];
+    const items = [this.aboutBitwarden, this.checkForUpdates];
     if (this.aboutBitwarden.visible === true || this.checkForUpdates.visible === true) {
       items.push(this.separator);
     }
