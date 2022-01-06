@@ -12,16 +12,5 @@
     "url": "https://github.com/bitwarden/desktop"
   },
   "dependencies": {
-    "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
-    "big-integer": "1.6.48",
-    "browser-hrtime": "^1.1.8",
-    "electron-log": "4.4.1",
-    "electron-store": "8.0.1",
-    "electron-updater": "4.6.1",
-    "forcefocus": "^1.1.0",
-    "keytar": "7.6.0",
-    "node-ipc": "^9.1.4",
-    "regedit": "^3.0.3",
-    "zxcvbn": "4.4.2"
   }
 }

@@ -46,7 +46,7 @@
     "pack:mac:mas": "npm run clean:dist && electron-builder --mac mas --universal -p never",
     "pack:mac:masdev": "npm run clean:dist && electron-builder --mac mas-dev --universal -p never",
     "pack:win": "npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p never -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
-    "pack:win:ci": "npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p never",
+    "pack:win:ci": "npm run clean:dist && electron-builder --win --x64 -p never",
     "dist:dir": "npm run build && npm run pack:dir",
     "dist:lin": "npm run build && npm run pack:lin",
     "dist:mac": "npm run build && npm run pack:mac",
@@ -121,8 +121,6 @@
     "win": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "target": [
-        "portable",
-        "nsis-web",
         "appx"
       ],
       "sign": "./sign.js",
@@ -138,6 +136,9 @@
           "from": "resources/native-messaging.bat",
           "to": "native-messaging.bat"
         }
+      ],
+      "asarUnpack": [
+        "*.node"
       ]
     },
     "linux": {
