@@ -188,10 +188,7 @@
     "mas": {
       "entitlements": "resources/entitlements.mas.plist",
       "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
-      "hardenedRuntime": false,
-      "asarUnpack": [
-        "node_modules/keytar"
-      ]
+      "hardenedRuntime": false
     },
     "nsisWeb": {
       "oneClick": false,
