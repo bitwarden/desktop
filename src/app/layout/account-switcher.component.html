@@ -34,8 +34,7 @@
         class="account"
         [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
         href="#"
-        appStopClick
-        (click)="switch(a.key)"
+        (mousedown)="switch(a.key)"
       >
         <span class="email">{{ a.value.profile.email }}</span>
         <span class="server">{{ a.value.serverUrl }}</span>
