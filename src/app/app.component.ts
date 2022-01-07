@@ -84,11 +84,12 @@ export class AppComponent implements OnInit {
   @ViewChild("appPasswordGenerator", { read: ViewContainerRef, static: true })
   passwordGeneratorModalRef: ViewContainerRef;
 
+  loading = false;
+
   private lastActivity: number = null;
   private modal: ModalRef = null;
   private idleTimer: number = null;
   private isIdle = false;
-  loading = false;
 
   constructor(
     private broadcasterService: BroadcasterService,
