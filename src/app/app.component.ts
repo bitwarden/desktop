@@ -56,14 +56,21 @@ const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 @Component({
   selector: "app-root",
   styles: [],
-  template: ` <ng-template #settings></ng-template>
+  template: `
+    <ng-template #settings></ng-template>
     <ng-template #premium></ng-template>
     <ng-template #passwordHistory></ng-template>
     <ng-template #appFolderAddEdit></ng-template>
     <ng-template #exportVault></ng-template>
     <ng-template #appPasswordGenerator></ng-template>
     <app-header></app-header>
-    <div id="container"><router-outlet></router-outlet></div>`,
+    <div id="container">
+      <div class="loading" *ngIf="loading">
+        <i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i>
+      </div>
+      <router-outlet *ngIf="!loading"></router-outlet>
+    </div>
+  `,
 })
 export class AppComponent implements OnInit {
   @ViewChild("settings", { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
@@ -81,6 +88,7 @@ export class AppComponent implements OnInit {
   private modal: ModalRef = null;
   private idleTimer: number = null;
   private isIdle = false;
+  loading = false;
 
   constructor(
     private broadcasterService: BroadcasterService,
@@ -310,6 +318,21 @@ export class AppComponent implements OnInit {
             await this.keyConnectorService.setConvertAccountRequired(true);
             this.router.navigate(["/remove-password"]);
             break;
+          case "switchAccount":
+            if (message.userId != null) {
+              await this.stateService.setActiveUser(message.userId);
+            }
+            const locked = await this.vaultTimeoutService.isLocked(message.userId);
+            if (locked) {
+              this.messagingService.send("locked", { userId: message.userId });
+            } else {
+              this.messagingService.send("unlocked");
+              this.loading = true;
+              await this.syncService.fullSync(true);
+              this.loading = false;
+              this.router.navigate(["vault"]);
+            }
+            break;
         }
       });
     });
@@ -447,14 +470,7 @@ export class AppComponent implements OnInit {
     if (this.stateService.activeAccount.getValue() == null) {
       this.router.navigate(["login"]);
     } else {
-      const locked = await this.vaultTimeoutService.isLocked();
-      if (locked) {
-        this.messagingService.send("locked");
-      } else {
-        this.messagingService.send("unlocked");
-        this.messagingService.send("syncVault");
-        this.router.navigate(["vault"]);
-      }
+      this.messagingService.send("switchAccount");
     }
 
     await this.updateAppMenu();

@@ -62,8 +62,7 @@ export class AccountSwitcherComponent implements OnInit {
   constructor(
     private stateService: StateService,
     private vaultTimeoutService: VaultTimeoutService,
-    private messagingService: MessagingService,
-    private router: Router
+    private messagingService: MessagingService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -90,16 +89,8 @@ export class AccountSwitcherComponent implements OnInit {
   }
 
   async switch(userId: string) {
-    console.log('beep');
-    await this.stateService.setActiveUser(userId);
-    const locked = await this.vaultTimeoutService.isLocked(userId);
-    if (locked) {
-      this.messagingService.send("locked", { userId: userId });
-    } else {
-      this.messagingService.send("unlocked");
-      this.messagingService.send("syncVault");
-      this.router.navigate(["vault"]);
-    }
+    this.messagingService.send("switchAccount", { userId: userId });
+    this.toggle();
   }
 
   private async createSwitcherAccounts(baseAccounts: {
