@@ -170,16 +170,16 @@ export class AppComponent implements OnInit {
             if (this.modal != null) {
               this.modal.close();
             }
-            this.updateAppMenu();
             if (
               message.userId == null ||
               message.userId === (await this.stateService.getUserId())
             ) {
-              this.router.navigate(["lock"]);
+              await this.router.navigate(["lock"]);
             }
             this.notificationsService.updateConnection();
-            await this.systemService.clearPendingClipboard();
+            await this.updateAppMenu();
             this.systemService.startProcessReload();
+            await this.systemService.clearPendingClipboard();
             break;
           case "reloadProcess":
             window.location.reload(true);
