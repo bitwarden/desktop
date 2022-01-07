@@ -126,10 +126,8 @@ export class AppComponent implements OnInit {
         await this.updateAppMenu();
       }, 1000);
 
-      window.onmousemove = () => this.recordActivity();
-      window.onmousedown = () => this.recordActivity();
       window.ontouchstart = () => this.recordActivity();
-      window.onclick = () => this.recordActivity();
+      window.onmousedown = () => this.recordActivity();
       window.onscroll = () => this.recordActivity();
       window.onkeypress = () => this.recordActivity();
     });
