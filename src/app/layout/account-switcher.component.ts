@@ -96,8 +96,11 @@ export class AccountSwitcherComponent implements OnInit {
   private async createSwitcherAccounts(baseAccounts: {
     [userId: string]: Account;
   }): Promise<{ [userId: string]: SwitcherAccount }> {
-    let switcherAccounts: { [userId: string]: SwitcherAccount } = {};
+    const switcherAccounts: { [userId: string]: SwitcherAccount } = {};
     for (const userId in baseAccounts) {
+      if (userId == null) {
+        continue;
+      }
       // environmentUrls are stored on disk and must be retrieved seperatly from the in memory state offered from subscribing to accounts
       baseAccounts[userId].settings.environmentUrls = await this.stateService.getEnvironmentUrls({
         userId: userId,
