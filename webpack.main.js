@@ -75,6 +75,9 @@ const main = {
       ],
     }),
   ],
+  externals: {
+    "electron-reload": "commonjs2 electron-reload",
+  },
 };
 
 module.exports = merge(common, NODE_ENV === "development" ? dev : prod, main);
