@@ -16,22 +16,33 @@ export class BitwardenMenu implements IMenubarMenu {
   readonly label: string = "Bitwarden";
 
   get items(): MenuItemConstructorOptions[] {
-    return [
-      this.aboutBitwarden,
-      this.checkForUpdates,
-      this.separator,
-      this.settings,
-      this.lock,
-      this.lockAll,
-      this.logOut,
-      this.services,
-      this.separator,
-      this.hideBitwarden,
-      this.hideOthers,
-      this.showAll,
-      this.separator,
-      this.quitBitwarden,
-    ];
+    const items = [this.aboutBitwarden, this.checkForUpdates];
+    if (this.aboutBitwarden.visible === true || this.checkForUpdates.visible === true) {
+      items.push(this.separator);
+    }
+    items.push(this.settings);
+    items.push(this.lock);
+    items.push(this.lockAll);
+    items.push(this.logOut);
+    items.push(this.services);
+
+    if (
+      this.hideBitwarden.visible === true ||
+      this.hideOthers.visible === true ||
+      this.showAll.visible === true
+    ) {
+      items.push(this.separator);
+    }
+
+    items.push(this.hideBitwarden);
+    items.push(this.hideOthers);
+    items.push(this.showAll);
+
+    if (this.quitBitwarden.visible === true) {
+      items.push(this.separator);
+    }
+    items.push(this.quitBitwarden);
+    return items;
   }
 
   private readonly _i18nService: I18nService;

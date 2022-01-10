@@ -16,6 +16,10 @@ export class WindowMenu implements IMenubarMenu {
   }
 
   get items(): MenuItemConstructorOptions[] {
+    if (!isMacAppStore()) {
+      return [this.hideToMenu, this.alwaysOnTop];
+    }
+
     return [
       this.minimize,
       this.hideToMenu,
