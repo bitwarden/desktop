@@ -72,6 +72,9 @@
       "app": "build"
     },
     "afterSign": "scripts/after-sign.js",
+    "asarUnpack": [
+      "*.node"
+    ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
@@ -116,9 +119,6 @@
       "target": [
         "dmg",
         "zip"
-      ],
-      "asarUnpack": [
-        "*.node"
       ]
     },
     "win": {
@@ -141,9 +141,6 @@
           "from": "resources/native-messaging.bat",
           "to": "native-messaging.bat"
         }
-      ],
-      "asarUnpack": [
-        "*.node"
       ]
     },
     "linux": {
@@ -160,10 +157,7 @@
         "Name": "Bitwarden",
         "Type": "Application",
         "GenericName": "Password Manager"
-      },
-      "asarUnpack": [
-        "*.node"
-      ]
+      }
     },
     "dmg": {
       "icon": "dmg.icns",
