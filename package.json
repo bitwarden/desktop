@@ -296,6 +296,7 @@
     "@bitwarden/jslib-angular": "file:jslib/angular",
     "@bitwarden/jslib-common": "file:jslib/common",
     "@bitwarden/jslib-electron": "file:jslib/electron",
+    "@bitwarden/desktop-native": "file:desktop_native",
     "ngx-toastr": "14.1.4",
     "node-ipc": "^9.1.4",
     "nord": "^0.2.1",

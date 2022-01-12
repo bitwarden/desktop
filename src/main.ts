@@ -22,6 +22,9 @@ import { NativeMessagingMain } from "./main/nativeMessaging.main";
 
 import { StateService } from "jslib-common/services/state.service";
 
+const test = require("@bitwarden/desktop-native");
+console.log(test.hello());
+
 export class Main {
   logService: ElectronLogService;
   i18nService: I18nService;
