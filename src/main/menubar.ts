@@ -52,6 +52,15 @@ export class Menubar {
     appVersion: string,
     updateRequest?: MenuUpdateRequest
   ) {
+    let isLocked = true;
+    if (
+      updateRequest != null &&
+      updateRequest.accounts != null &&
+      updateRequest.activeUserId != null
+    ) {
+      isLocked = updateRequest.accounts[updateRequest.activeUserId]?.isLocked ?? true;
+    }
+
     this.items = [
       new BitwardenMenu(
         i18nService,
@@ -60,28 +69,10 @@ export class Menubar {
         windowMain.win,
         updateRequest?.accounts
       ),
-      new FileMenu(
-        i18nService,
-        messagingService,
-        updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true
-      ),
-      new EditMenu(
-        i18nService,
-        messagingService,
-        updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true
-      ),
-      new ViewMenu(
-        i18nService,
-        messagingService,
-        updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true
-      ),
-      new AccountMenu(
-        i18nService,
-        messagingService,
-        webVaultUrl,
-        windowMain.win,
-        updateRequest?.accounts[updateRequest?.activeUserId]?.isLocked ?? true
-      ),
+      new FileMenu(i18nService, messagingService, isLocked),
+      new EditMenu(i18nService, messagingService, isLocked),
+      new ViewMenu(i18nService, messagingService, isLocked),
+      new AccountMenu(i18nService, messagingService, webVaultUrl, windowMain.win, isLocked),
       new WindowMenu(i18nService, messagingService, windowMain),
       new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain),
       new HelpMenu(i18nService, webVaultUrl),
