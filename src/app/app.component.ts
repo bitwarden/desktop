@@ -434,6 +434,10 @@ export class AppComponent implements OnInit {
   }
 
   private async logOut(expired: boolean, userId?: string) {
+    if (!userId) {
+      userId = await this.stateService.getUserId();
+    }
+
     await Promise.all([
       this.eventService.uploadEvents(userId),
       this.syncService.setLastSync(new Date(0), userId),
