@@ -11,6 +11,7 @@ import { LoginGuardService } from "../services/loginGuard.service";
 import { NativeMessagingService } from "../services/nativeMessaging.service";
 import { PasswordRepromptService } from "../services/passwordReprompt.service";
 import { SearchBarService } from "./layout/search/search-bar.service";
+import { StateService } from "../services/state.service";
 
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
 
@@ -35,6 +36,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from "jslib-c
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "jslib-common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "jslib-common/abstractions/platformUtils.service";
 import { StateService as StateServiceAbstraction } from "jslib-common/abstractions/state.service";
+import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib-common/abstractions/stateMigration.service";
 import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions/sync.service";
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
@@ -167,6 +169,16 @@ export function initFactory(
       provide: LoginGuardService,
       useClass: LoginGuardService,
       deps: [StateServiceAbstraction, PlatformUtilsServiceAbstraction, I18nServiceAbstraction],
+    },
+    {
+      provide: StateServiceAbstraction,
+      useClass: StateService,
+      deps: [
+        StorageServiceAbstraction,
+        "SECURE_STORAGE",
+        LogServiceAbstraction,
+        StateMigrationServiceAbstraction,
+      ],
     },
   ],
 })
