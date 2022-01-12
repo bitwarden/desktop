@@ -74,8 +74,11 @@ export class Menubar {
       new ViewMenu(i18nService, messagingService, isLocked),
       new AccountMenu(i18nService, messagingService, webVaultUrl, windowMain.win, isLocked),
       new WindowMenu(i18nService, messagingService, windowMain),
-      new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain),
-      new HelpMenu(i18nService, webVaultUrl),
+      new HelpMenu(
+        i18nService,
+        webVaultUrl,
+        new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain)
+      ),
     ];
   }
 }
