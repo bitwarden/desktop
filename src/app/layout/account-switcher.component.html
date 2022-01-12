@@ -24,6 +24,9 @@
 <ng-template
   cdkConnectedOverlay
   [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+  (backdropClick)="toggle()"
   [cdkConnectedOverlayOpen]="isOpen"
   cdkConnectedOverlayMinWidth="250px"
 >
