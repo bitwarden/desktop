@@ -10,8 +10,9 @@ import { I18nService } from "../services/i18n.service";
 import { LoginGuardService } from "../services/loginGuard.service";
 import { NativeMessagingService } from "../services/nativeMessaging.service";
 import { PasswordRepromptService } from "../services/passwordReprompt.service";
-import { SearchBarService } from "./layout/search/search-bar.service";
 import { StateService } from "../services/state.service";
+
+import { SearchBarService } from "./layout/search/search-bar.service";
 
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
 
