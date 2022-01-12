@@ -2,7 +2,6 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const nodeExternals = require("webpack-node-externals");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV == null ? "development" : process.env.NODE_ENV;
@@ -76,11 +75,9 @@ const main = {
       ],
     }),
   ],
-  externals: [
-    nodeExternals({
-      allowlist: ["rxjs"],
-    }),
-  ],
+  externals: {
+    "electron-reload": "commonjs2 electron-reload",
+  },
 };
 
 module.exports = merge(common, NODE_ENV === "development" ? dev : prod, main);
