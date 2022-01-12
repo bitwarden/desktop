@@ -11,13 +11,11 @@
   height: 100%;
 
   @media (min-height: 500px) {
-    height: calc(100% + 50px);
-    padding-bottom: 50px;
+    height: calc(100%);
   }
 
   @media (min-height: 800px) {
-    height: calc(100% + 300px);
-    padding-bottom: 300px;
+    height: calc(100%);
   }
 
   img {

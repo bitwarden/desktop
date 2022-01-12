@@ -10,6 +10,21 @@ import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 
 import { Account } from "jslib-common/models/domain/account";
 
+export class SwitcherAccount extends Account {
+  get serverUrl() {
+    return this.removeWebProtocolFromString(
+      this.settings?.environmentUrls?.base ??
+        this.settings?.environmentUrls.api ??
+        "https://bitwarden.com"
+    );
+  }
+
+  private removeWebProtocolFromString(urlString: string) {
+    const regex = /http(s)?(:)?(\/\/)?|(\/\/)?(www\.)?/g;
+    return urlString.replace(regex, "");
+  }
+}
+
 @Component({
   selector: "app-account-switcher",
   templateUrl: "account-switcher.component.html",
@@ -36,8 +51,9 @@ import { Account } from "jslib-common/models/domain/account";
 })
 export class AccountSwitcherComponent implements OnInit {
   isOpen: boolean = false;
-  accounts: { [userId: string]: Account } = {};
+  accounts: { [userId: string]: SwitcherAccount } = {};
   activeAccountEmail: string;
+  serverUrl: string;
 
   get showSwitcher() {
     return this.accounts != null && Object.keys(this.accounts).length > 0;
@@ -46,8 +62,7 @@ export class AccountSwitcherComponent implements OnInit {
   constructor(
     private stateService: StateService,
     private vaultTimeoutService: VaultTimeoutService,
-    private messagingService: MessagingService,
-    private router: Router
+    private messagingService: MessagingService
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -64,7 +79,7 @@ export class AccountSwitcherComponent implements OnInit {
         }
       }
 
-      this.accounts = accounts;
+      this.accounts = await this.createSwitcherAccounts(accounts);
       this.activeAccountEmail = await this.stateService.getEmail();
     });
   }
@@ -74,14 +89,24 @@ export class AccountSwitcherComponent implements OnInit {
   }
 
   async switch(userId: string) {
-    await this.stateService.setActiveUser(userId);
-    const locked = await this.vaultTimeoutService.isLocked(userId);
-    if (locked) {
-      this.messagingService.send("locked", { userId: userId });
-    } else {
-      this.messagingService.send("unlocked");
-      this.messagingService.send("syncVault");
-      this.router.navigate(["vault"]);
+    this.messagingService.send("switchAccount", { userId: userId });
+    this.toggle();
+  }
+
+  private async createSwitcherAccounts(baseAccounts: {
+    [userId: string]: Account;
+  }): Promise<{ [userId: string]: SwitcherAccount }> {
+    const switcherAccounts: { [userId: string]: SwitcherAccount } = {};
+    for (const userId in baseAccounts) {
+      if (userId == null) {
+        continue;
+      }
+      // environmentUrls are stored on disk and must be retrieved seperatly from the in memory state offered from subscribing to accounts
+      baseAccounts[userId].settings.environmentUrls = await this.stateService.getEnvironmentUrls({
+        userId: userId,
+      });
+      switcherAccounts[userId] = new SwitcherAccount(baseAccounts[userId]);
     }
+    return switcherAccounts;
   }
 }
