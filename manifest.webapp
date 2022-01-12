@@ -94,5 +94,10 @@
       "type": "io.cozy.sharings",
       "verbs": ["GET", "POST"]
     }
+  },
+  "mobile": {
+    "schema": "cozypass://",
+    "id_playstore": "io.cozy.pass",
+    "id_appstore": "cozy-pass/id1502262449"
   }
 }
