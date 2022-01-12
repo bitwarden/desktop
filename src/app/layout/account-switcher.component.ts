@@ -89,8 +89,12 @@ export class AccountSwitcherComponent implements OnInit {
   }
 
   async switch(userId: string) {
-    this.messagingService.send("switchAccount", { userId: userId });
     this.toggle();
+
+    if (userId === (await this.stateService.getUserId())) {
+      return;
+    }
+    this.messagingService.send("switchAccount", { userId: userId });
   }
 
   private async createSwitcherAccounts(baseAccounts: {
