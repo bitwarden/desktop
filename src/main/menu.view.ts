@@ -32,16 +32,12 @@ export class ViewMenu implements IMenubarMenu {
 
   private readonly _i18nService: I18nService;
   private readonly _messagingService: MessagingService;
-  private readonly _isAuthenticated: boolean;
+  private readonly _isLocked: boolean;
 
-  constructor(
-    i18nService: I18nService,
-    messagingService: MessagingService,
-    isAuthenticated: boolean
-  ) {
+  constructor(i18nService: I18nService, messagingService: MessagingService, isLocked: boolean) {
     this._i18nService = i18nService;
     this._messagingService = messagingService;
-    this._isAuthenticated = isAuthenticated;
+    this._isLocked = isLocked;
   }
 
   private get searchVault(): MenuItemConstructorOptions {
@@ -50,7 +46,7 @@ export class ViewMenu implements IMenubarMenu {
       label: this.localize("searchVault"),
       click: () => this.sendMessage("focusSearch"),
       accelerator: "CmdOrCtrl+F",
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -64,7 +60,7 @@ export class ViewMenu implements IMenubarMenu {
       label: this.localize("passwordGenerator"),
       click: () => this.sendMessage("openPasswordGenerator"),
       accelerator: "CmdOrCtrl+G",
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -73,7 +69,7 @@ export class ViewMenu implements IMenubarMenu {
       id: "passwordHistory",
       label: this.localize("passwordHistory"),
       click: () => this.sendMessage("openPasswordHistory"),
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 

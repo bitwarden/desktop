@@ -28,16 +28,12 @@ export class FileMenu implements IMenubarMenu {
 
   private readonly _i18nService: I18nService;
   private readonly _messagingService: MessagingService;
-  private readonly _isAuthenticated: boolean;
+  private readonly _isLocked: boolean;
 
-  constructor(
-    i18nService: I18nService,
-    messagingService: MessagingService,
-    isAuthenticated: boolean
-  ) {
+  constructor(i18nService: I18nService, messagingService: MessagingService, isLocked: boolean) {
     this._i18nService = i18nService;
     this._messagingService = messagingService;
-    this._isAuthenticated = isAuthenticated;
+    this._isLocked = isLocked;
   }
 
   private get addNewLogin(): MenuItemConstructorOptions {
@@ -46,6 +42,7 @@ export class FileMenu implements IMenubarMenu {
       click: () => this.sendMessage("newLogin"),
       accelerator: "CmdOrCtrl+N",
       id: "addNewLogin",
+      enabled: !this._isLocked,
     };
   }
 
@@ -54,7 +51,7 @@ export class FileMenu implements IMenubarMenu {
       label: this.localize("addNewItem"),
       id: "addNewItem",
       submenu: this.addNewItemSubmenu,
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -92,6 +89,7 @@ export class FileMenu implements IMenubarMenu {
       id: "addNewFolder",
       label: this.localize("addNewFolder"),
       click: () => this.sendMessage("newFolder"),
+      enabled: !this._isLocked,
     };
   }
 
@@ -104,6 +102,7 @@ export class FileMenu implements IMenubarMenu {
       id: "syncVault",
       label: this.localize("syncVault"),
       click: () => this.sendMessage("syncVault"),
+      enabled: !this._isLocked,
     };
   }
 
@@ -112,6 +111,7 @@ export class FileMenu implements IMenubarMenu {
       id: "exportVault",
       label: this.localize("exportVault"),
       click: () => this.sendMessage("exportVault"),
+      enabled: !this._isLocked,
     };
   }
 

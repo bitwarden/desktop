@@ -27,20 +27,20 @@ export class AccountMenu implements IMenubarMenu {
   private readonly _messagingService: MessagingService;
   private readonly _webVaultUrl: string;
   private readonly _window: BrowserWindow;
-  private readonly _isAuthenticated: boolean;
+  private readonly _isLocked: boolean;
 
   constructor(
     i18nService: I18nService,
     messagingService: MessagingService,
     webVaultUrl: string,
     window: BrowserWindow,
-    isAuthenticated: boolean
+    isLocked: boolean
   ) {
     this._i18nService = i18nService;
     this._messagingService = messagingService;
     this._webVaultUrl = webVaultUrl;
     this._window = window;
-    this._isAuthenticated = isAuthenticated;
+    this._isLocked = isLocked;
   }
 
   private get premiumMembership(): MenuItemConstructorOptions {
@@ -49,7 +49,7 @@ export class AccountMenu implements IMenubarMenu {
       click: () => this.sendMessage("openPremium"),
       id: "premiumMembership",
       visible: !isWindowsStore() && !isMacAppStore(),
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -71,7 +71,7 @@ export class AccountMenu implements IMenubarMenu {
           shell.openExternal(this._webVaultUrl);
         }
       },
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -93,7 +93,7 @@ export class AccountMenu implements IMenubarMenu {
           shell.openExternal(this._webVaultUrl);
         }
       },
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -102,7 +102,7 @@ export class AccountMenu implements IMenubarMenu {
       label: this.localize("fingerprintPhrase"),
       id: "fingerprintPhrase",
       click: () => this.sendMessage("showFingerprintPhrase"),
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 

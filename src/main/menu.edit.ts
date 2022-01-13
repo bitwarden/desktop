@@ -31,16 +31,12 @@ export class EditMenu implements IMenubarMenu {
 
   private readonly _i18nService: I18nService;
   private readonly _messagingService: MessagingService;
-  private readonly _isAuthenticated: boolean;
+  private readonly _isLocked: boolean;
 
-  constructor(
-    i18nService: I18nService,
-    messagingService: MessagingService,
-    isAuthenticated: boolean
-  ) {
+  constructor(i18nService: I18nService, messagingService: MessagingService, isLocked: boolean) {
     this._i18nService = i18nService;
     this._messagingService = messagingService;
-    this._isAuthenticated = isAuthenticated;
+    this._isLocked = isLocked;
   }
 
   private get undo(): MenuItemConstructorOptions {
@@ -101,7 +97,7 @@ export class EditMenu implements IMenubarMenu {
       id: "copyUsername",
       click: () => this.sendMessage("copyUsername"),
       accelerator: "CmdOrCtrl+U",
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -111,7 +107,7 @@ export class EditMenu implements IMenubarMenu {
       id: "copyPassword",
       click: () => this.sendMessage("copyPassword"),
       accelerator: "CmdOrCtrl+P",
-      enabled: this._isAuthenticated,
+      enabled: !this._isLocked,
     };
   }
 
@@ -121,6 +117,7 @@ export class EditMenu implements IMenubarMenu {
       id: "copyTotp",
       click: () => this.sendMessage("copyTotp"),
       accelerator: "CmdOrCtrl+T",
+      enabled: !this._isLocked,
     };
   }
 
