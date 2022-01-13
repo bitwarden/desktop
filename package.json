@@ -73,7 +73,7 @@
     },
     "afterSign": "scripts/after-sign.js",
     "asarUnpack": [
-      "*.node"
+      "**/*.node"
     ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
