@@ -1035,7 +1035,7 @@
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Osvežite članstvo"
   },
   "premiumNotCurrentMember": {
     "message": "You are not currently a premium member."
