@@ -65,6 +65,10 @@ export class SettingsComponent implements OnInit {
 
   vaultTimeout: FormControl = new FormControl(null);
 
+  showSecurity: boolean = true;
+  showAccountPreferences: boolean = true;
+  showAppPreferences: boolean = true;
+
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
