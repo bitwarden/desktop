@@ -65,8 +65,13 @@
       </a>
     </div>
     <div class="border"></div>
-    <a class="add" routerLink="/login" (click)="toggle()">
-      <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
-    </a>
+    <ng-container *ngIf="numberOfAccounts < 5">
+      <a class="add" routerLink="/login" (click)="toggle()">
+        <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
+      </a>
+    </ng-container>
+    <ng-container *ngIf="numberOfAccounts == 5">
+      <a class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </a>
+    </ng-container>
   </div>
 </ng-template>

@@ -56,7 +56,19 @@ export class AccountSwitcherComponent implements OnInit {
   serverUrl: string;
 
   get showSwitcher() {
-    return this.accounts != null && Object.keys(this.accounts).length > 0;
+    if (this.activeAccountEmail != null) {
+      return true;
+    }
+
+    return this.numberOfAccounts > 0;
+  }
+
+  get numberOfAccounts() {
+    if (this.accounts == null) {
+      this.isOpen = false;
+      return 0;
+    }
+    return Object.keys(this.accounts).length;
   }
 
   constructor(
