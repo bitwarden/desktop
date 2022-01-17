@@ -1,5 +1,5 @@
 {
-  "name": "bitwarden",
+  "name": "@bitwarden/desktop",
   "productName": "Bitwarden",
   "description": "A secure and free password manager for all of your devices.",
   "version": "0.0.0",
