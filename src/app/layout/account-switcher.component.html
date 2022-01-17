@@ -49,7 +49,9 @@
         ></app-avatar>
         <div class="accountInfo">
           <span class="email">{{ a.value.profile.email }}</span>
-          <span class="server">{{ a.value.serverUrl }}</span>
+          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
+            a.value.serverUrl
+          }}</span>
           <span class="status">{{ a.value.profile.authenticationStatus }}</span>
         </div>
         <i
