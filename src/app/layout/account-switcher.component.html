@@ -39,9 +39,27 @@
         href="#"
         (mousedown)="switch(a.key)"
       >
-        <span class="email">{{ a.value.profile.email }}</span>
-        <span class="server">{{ a.value.serverUrl }}</span>
-        <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+        <app-avatar
+          [data]="a.value.profile.email"
+          size="25"
+          [circle]="true"
+          [fontSize]="14"
+          [dynamic]="true"
+          *ngIf="a.value.profile.email != null"
+        ></app-avatar>
+        <div class="accountInfo">
+          <span class="email">{{ a.value.profile.email }}</span>
+          <span class="server">{{ a.value.serverUrl }}</span>
+          <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+        </div>
+        <i
+          class="fa fa-unlock fa-2x text-muted"
+          *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
+        ></i>
+        <i
+          class="fa fa-lock fa-2x text-muted"
+          *ngIf="a.value.profile.authenticationStatus == 'locked'"
+        ></i>
       </a>
     </div>
     <div class="border"></div>

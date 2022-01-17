@@ -130,28 +130,33 @@
   }
 
   .accounts {
-    padding: 4px 0;
+    padding: 7px 0;
 
     .account {
       display: grid;
-      grid-column-gap: 5px;
-      grid-template:
-        [row1-start] "email  status" [row1-end]
-        [row2-start] "server server" [row2-end]
-        / 1fr auto;
-      align-items: baseline;
+      grid-template-columns: 24px auto 24px;
+      grid-column-gap: 11px;
+      align-items: center;
+      justify-items: left;
 
-      .server {
-        font-size: $font-size-small;
-      }
+      .accountInfo {
+        display: grid;
 
-      .email {
-        font-size: $font-size-large;
-      }
+        .email {
+          font-size: $font-size-base;
+          max-width: 168px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
-      .status {
-        font-style: italic;
-        grid-area: status;
+        .server {
+          font-size: $font-size-small;
+        }
+
+        .status {
+          font-size: $font-size-small;
+          font-style: italic;
+        }
       }
     }
   }
