@@ -14,11 +14,7 @@
     *ngIf="activeAccountEmail != null"
   ></app-avatar>
   <span>{{ activeAccountEmail }}</span>
-  <i
-    class="fa"
-    aria-hidden="true"
-    [ngClass]="{ 'fa-chevron-down': !isOpen, 'fa-chevron-up': isOpen }"
-  ></i>
+  <i aria-hidden="true" [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"></i>
 </a>
 
 <ng-template
@@ -46,7 +42,7 @@
     </div>
     <div class="border"></div>
     <a class="add" routerLink="/login" (click)="toggle()">
-      <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
+      <i class="bwi-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
     </a>
   </div>
 </ng-template>

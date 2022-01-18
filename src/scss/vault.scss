@@ -93,7 +93,7 @@ app-root {
       }
     }
 
-    ul:not(.fa-ul) {
+    ul:not(.bwi-ul) {
       li {
         margin: 0;
         padding: 0;
@@ -101,11 +101,11 @@ app-root {
       }
     }
 
-    ul.fa-ul {
+    ul.bwi-ul {
       li {
         word-break: break-all;
 
-        .fa-li {
+        .bwi-li {
           top: 8px;
           width: 1.1em;
         }
@@ -113,18 +113,18 @@ app-root {
     }
 
     // Nested indentions
-    ul.fa-ul {
+    ul.bwi-ul {
       // Level 1
       li {
         > a {
           padding-left: 12px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: -4px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 11px;
         }
       }
@@ -135,11 +135,11 @@ app-root {
           padding-left: 23px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: 7px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 22px;
         }
       }
@@ -150,11 +150,11 @@ app-root {
           padding-left: 34px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: 18px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 33px;
         }
       }
@@ -165,11 +165,11 @@ app-root {
           padding-left: 45px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: 29px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 44px;
         }
       }
@@ -180,11 +180,11 @@ app-root {
           padding-left: 56px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: 40px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 55px;
         }
       }
@@ -195,11 +195,11 @@ app-root {
           padding-left: 67px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: 51px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 66px;
         }
       }
@@ -210,11 +210,11 @@ app-root {
           padding-left: 78px;
         }
 
-        .fa-li {
+        .bwi-li {
           left: 62px;
         }
 
-        &.active > a .fa-li {
+        &.active > a .bwi-li {
           left: 77px;
         }
       }
@@ -303,7 +303,8 @@ app-root {
       text-align: center;
       padding: 0 10px;
 
-      .fa {
+      [class^="bwi-"],
+      [class*=" bwi-"] {
         margin-bottom: 10px;
 
         @include themify($themes) {

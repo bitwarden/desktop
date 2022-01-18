@@ -30,8 +30,8 @@
               (click)="toggleCustom()"
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
             >
-              <i class="fa fa-plus-square-o" [hidden]="showCustom" aria-hidden="true"></i>
-              <i class="fa fa-minus-square-o" [hidden]="!showCustom" aria-hidden="true"></i>
+              <i class="bwi-plus-square" [hidden]="showCustom" aria-hidden="true"></i>
+              <i class="bwi-minus-square" [hidden]="!showCustom" aria-hidden="true"></i>
               {{ "customEnvironment" | i18n }}
             </button>
           </div>
@@ -88,7 +88,7 @@
       </div>
       <div class="modal-footer">
         <button appBlurClick type="submit" class="primary" appA11yTitle="{{ 'save' | i18n }}">
-          <i class="fa fa-save fa-lg fa-fw" aria-hidden="true"></i>
+          <i class="bwi-save bwi-lg bwi-fw" aria-hidden="true"></i>
         </button>
         <button type="button" data-dismiss="modal">{{ "close" | i18n }}</button>
       </div>

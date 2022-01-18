@@ -7,7 +7,7 @@
         <ul>
           <li [ngClass]="{ active: selectedAll }">
             <a href="#" appStopClick appBlurClick (click)="selectAll()">
-              <i class="fa fa-fw fa-th" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
+              <i class="bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
             </a>
           </li>
         </ul>
@@ -15,14 +15,14 @@
         <ul>
           <li [ngClass]="{ active: selectedType === sendType.Text }">
             <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
-              <i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>&nbsp;{{
+              <i class="bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeText" | i18n
               }}
             </a>
           </li>
           <li [ngClass]="{ active: selectedType === sendType.File }">
             <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
-              <i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;{{ "sendTypeFile" | i18n }}
+              <i class="bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{ "sendTypeFile" | i18n }}
             </a>
           </li>
         </ul>
@@ -45,7 +45,7 @@
           class="flex-list-item"
         >
           <div class="item-icon" aria-hidden="true">
-            <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-text-o' : 'fa-file-o'"></i>
+            <i class="bwi-fw bwi-lg" [ngClass]="s.type == 0 ? 'bwi-file-text' : 'bwi-file'"></i>
           </div>
           <div class="item-content">
             <div class="item-title">
@@ -53,7 +53,7 @@
               <span class="title-badges">
                 <ng-container *ngIf="s.disabled">
                   <i
-                    class="fa fa-warning"
+                    class="bwi-exclamation-triangle"
                     appStopProp
                     title="{{ 'disabled' | i18n }}"
                     aria-hidden="true"
@@ -62,7 +62,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.password">
                   <i
-                    class="fa fa-key"
+                    class="bwi-key"
                     appStopProp
                     title="{{ 'password' | i18n }}"
                     aria-hidden="true"
@@ -71,7 +71,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.maxAccessCountReached">
                   <i
-                    class="fa fa-ban"
+                    class="bwi-ban"
                     appStopProp
                     title="{{ 'maxAccessCountReached' | i18n }}"
                     aria-hidden="true"
@@ -80,7 +80,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.expired">
                   <i
-                    class="fa fa-clock-o"
+                    class="bwi-clock"
                     appStopProp
                     title="{{ 'expired' | i18n }}"
                     aria-hidden="true"
@@ -89,7 +89,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.pendingDelete">
                   <i
-                    class="fa fa-trash"
+                    class="bwi-trash"
                     appStopProp
                     title="{{ 'pendingDeletion' | i18n }}"
                     aria-hidden="true"
@@ -103,9 +103,9 @@
         </a>
       </div>
       <div class="no-items" *ngIf="!filteredSends.length">
-        <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
+        <i class="bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
         <ng-container *ngIf="loaded">
-          <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+          <i class="bwi-frown bwi-4x" aria-hidden="true"></i>
           <p>{{ "noItemsInList" | i18n }}</p>
         </ng-container>
       </div>
@@ -117,7 +117,7 @@
         class="block primary"
         appA11yTitle="{{ 'addItem' | i18n }}"
       >
-        <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+        <i class="bwi-plus bwi-lg" aria-hidden="true"></i>
       </button>
     </div>
   </div>

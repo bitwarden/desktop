@@ -222,7 +222,8 @@ $close-text-shadow: 0 1px 0 $white !default;
     display: flex;
     align-items: center;
 
-    .fa {
+    [class^="bwi-"],
+    [class*=" bwi-"] {
       margin-right: 5px;
     }
   }

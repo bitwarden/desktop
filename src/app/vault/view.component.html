@@ -30,7 +30,7 @@
                 (click)="copy(cipher.login.username, 'username', 'Username')"
                 role="button"
               >
-                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -64,12 +64,12 @@
                 [disabled]="checkPasswordBtn.loading"
               >
                 <i
-                  class="fa fa-lg fa-check-circle"
+                  class="bwi-lg bwi-check-circle"
                   [hidden]="checkPasswordBtn.loading"
                   aria-hidden="true"
                 ></i>
                 <i
-                  class="fa fa-lg fa-spinner fa-spin"
+                  class="bwi-lg bwi-spinner bwi-spin"
                   [hidden]="!checkPasswordBtn.loading"
                   aria-hidden="true"
                 ></i>
@@ -83,9 +83,9 @@
                 role="button"
               >
                 <i
-                  class="fa fa-lg"
+                  class="bwi-lg"
                   aria-hidden="true"
-                  [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                  [ngClass]="{ 'bwi-eye-2': !showPassword, 'bwi-eye-slash-2': showPassword }"
                 ></i>
               </a>
               <a
@@ -96,7 +96,7 @@
                 (click)="copy(cipher.login.password, 'password', 'Password')"
                 role="button"
               >
-                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -138,7 +138,7 @@
                 (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')"
                 role="button"
               >
-                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -165,9 +165,9 @@
                 role="button"
               >
                 <i
-                  class="fa fa-lg"
+                  class="bwi-lg"
                   aria-hidden="true"
-                  [ngClass]="{ 'fa-eye': !showCardNumber, 'fa-eye-slash': showCardNumber }"
+                  [ngClass]="{ 'bwi-eye-2': !showCardNumber, 'bwi-eye-slash-2': showCardNumber }"
                 ></i>
               </a>
               <a
@@ -178,7 +178,7 @@
                 (click)="copy(cipher.card.number, 'number', 'Card Number')"
                 role="button"
               >
-                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -206,9 +206,9 @@
                 role="button"
               >
                 <i
-                  class="fa fa-lg"
+                  class="bwi-lg"
                   aria-hidden="true"
-                  [ngClass]="{ 'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode }"
+                  [ngClass]="{ 'bwi-eye-2': !showCardCode, 'bwi-eye-slash-2': showCardCode }"
                 ></i>
               </a>
               <a
@@ -219,7 +219,7 @@
                 (click)="copy(cipher.card.code, 'securityCode', 'Security Code')"
                 role="button"
               >
-                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -295,7 +295,7 @@
               (click)="launch(u)"
               role="button"
             >
-              <i class="fa fa-lg fa-share-square-o" aria-hidden="true"></i>
+              <i class="bwi-lg bwi-share-square" aria-hidden="true"></i>
             </a>
             <a
               class="row-btn"
@@ -305,7 +305,7 @@
               (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')"
               role="button"
             >
-              <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
+              <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -342,12 +342,12 @@
           <span class="row-main">{{ attachment.fileName }}</span>
           <small class="row-sub-label">{{ attachment.sizeName }}</small>
           <i
-            class="fa fa-download fa-fw row-sub-icon"
+            class="bwi-download bwi-fw row-sub-icon"
             *ngIf="!attachment.downloading"
             aria-hidden="true"
           ></i>
           <i
-            class="fa fa-spinner fa-fw fa-spin row-sub-icon"
+            class="bwi-spinner bwi-fw bwi-spin row-sub-icon"
             *ngIf="attachment.downloading"
             aria-hidden="true"
           ></i>
@@ -388,7 +388,7 @@
     appA11yTitle="{{ 'edit' | i18n }}"
     *ngIf="!cipher.isDeleted"
   >
-    <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
+    <i class="bwi-pencil bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <button
     appBlurClick
@@ -397,7 +397,7 @@
     appA11yTitle="{{ 'restore' | i18n }}"
     *ngIf="cipher.isDeleted"
   >
-    <i class="fa fa-undo fa-fw fa-lg" aria-hidden="true"></i>
+    <i class="bwi-undo bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <button
     appBlurClick
@@ -406,7 +406,7 @@
     (click)="clone()"
     appA11yTitle="{{ 'clone' | i18n }}"
   >
-    <i class="fa fa-files-o fa-fw fa-lg" aria-hidden="true"></i>
+    <i class="bwi-files bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <div class="right">
     <button
@@ -416,7 +416,7 @@
       class="danger"
       appA11yTitle="{{ (cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n }}"
     >
-      <i class="fa fa-trash-o fa-lg fa-fw" aria-hidden="true"></i>
+      <i class="bwi-trash bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
 </div>
