@@ -226,6 +226,7 @@
       "artifactName": "${productName}-${version}-${arch}.${ext}"
     },
     "snap": {
+      "artifactName": "${productName}_${version}_${arch}.${ext}",
       "autoStart": true,
       "confinement": "strict",
       "plugs": [
