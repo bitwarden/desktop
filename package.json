@@ -1,6 +1,5 @@
 {
-  "name": "bitwarden",
-  "productName": "Bitwarden",
+  "name": "@bitwarden/desktop",
   "description": "A secure and free password manager for all of your devices.",
   "version": "0.0.0",
   "keywords": [
@@ -63,6 +62,10 @@
     "prepare": "husky install"
   },
   "build": {
+    "extraMetadata": {
+      "name": "bitwarden"
+    },
+    "productName": "Bitwarden",
     "appId": "com.bitwarden.desktop",
     "buildDependenciesFromSource": true,
     "copyright": "Copyright © 2015-2022 Bitwarden Inc.",
