@@ -57,11 +57,7 @@ export class AccountSwitcherComponent implements OnInit {
   serverUrl: string;
 
   get showSwitcher() {
-    if (!Utils.isNullOrWhitespace(this.activeAccountEmail)) {
-      return true;
-    }
-
-    return false;
+    return !Utils.isNullOrWhitespace(this.activeAccountEmail);
   }
 
   constructor(
@@ -104,11 +100,7 @@ export class AccountSwitcherComponent implements OnInit {
   }): Promise<{ [userId: string]: SwitcherAccount }> {
     const switcherAccounts: { [userId: string]: SwitcherAccount } = {};
     for (const userId in baseAccounts) {
-      if (userId == null) {
-        continue;
-      }
-
-      if (userId === (await this.stateService.getUserId())) {
+      if (userId == null || userId === (await this.stateService.getUserId())) {
         continue;
       }
 
