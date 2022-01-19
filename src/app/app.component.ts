@@ -131,10 +131,12 @@ export class AppComponent implements OnInit {
         await this.updateAppMenu();
       }, 1000);
 
-      window.ontouchstart = () => this.recordActivity(activeUserId);
-      window.onmousedown = () => this.recordActivity(activeUserId);
-      window.onscroll = () => this.recordActivity(activeUserId);
-      window.onkeypress = () => this.recordActivity(activeUserId);
+      if (activeUserId != null) {
+          window.ontouchstart = () => this.recordActivity(activeUserId);
+          window.onmousedown = () => this.recordActivity(activeUserId);
+          window.onscroll = () => this.recordActivity(activeUserId);
+          window.onkeypress = () => this.recordActivity(activeUserId);
+      }
     });
 
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
