@@ -105,7 +105,7 @@
       <div class="no-items" *ngIf="!filteredSends.length">
         <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
         <ng-container *ngIf="loaded">
-          <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+          <img class="no-items-image" />
           <p>{{ "noItemsInList" | i18n }}</p>
         </ng-container>
       </div>
