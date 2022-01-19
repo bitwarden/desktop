@@ -132,10 +132,10 @@ export class AppComponent implements OnInit {
       }, 1000);
 
       if (activeUserId != null) {
-          window.ontouchstart = () => this.recordActivity(activeUserId);
-          window.onmousedown = () => this.recordActivity(activeUserId);
-          window.onscroll = () => this.recordActivity(activeUserId);
-          window.onkeypress = () => this.recordActivity(activeUserId);
+        window.ontouchstart = () => this.recordActivity(activeUserId);
+        window.onmousedown = () => this.recordActivity(activeUserId);
+        window.onscroll = () => this.recordActivity(activeUserId);
+        window.onkeypress = () => this.recordActivity(activeUserId);
       }
     });
 
