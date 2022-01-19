@@ -122,15 +122,21 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    let activeUserId: string = null;
+    this.stateService.activeAccount.subscribe((userId) => {
+      activeUserId = userId;
+    });
     this.ngZone.runOutsideAngular(() => {
       setTimeout(async () => {
         await this.updateAppMenu();
       }, 1000);
 
-      window.ontouchstart = () => this.recordActivity();
-      window.onmousedown = () => this.recordActivity();
-      window.onscroll = () => this.recordActivity();
-      window.onkeypress = () => this.recordActivity();
+      if (activeUserId != null) {
+        window.ontouchstart = () => this.recordActivity(activeUserId);
+        window.onmousedown = () => this.recordActivity(activeUserId);
+        window.onscroll = () => this.recordActivity(activeUserId);
+        window.onkeypress = () => this.recordActivity(activeUserId);
+      }
     });
 
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
@@ -155,7 +161,9 @@ export class AppComponent implements OnInit {
             this.router.navigate(["login"]);
             break;
           case "logout":
+            this.loading = true;
             await this.logOut(!!message.expired, message.userId);
+            this.loading = false;
             break;
           case "lockVault":
             await this.vaultTimeoutService.lock(true, message.userId);
@@ -479,14 +487,14 @@ export class AppComponent implements OnInit {
     await this.updateAppMenu();
   }
 
-  private async recordActivity() {
+  private async recordActivity(userId: string) {
     const now = new Date().getTime();
     if (this.lastActivity != null && now - this.lastActivity < 250) {
       return;
     }
 
     this.lastActivity = now;
-    await this.stateService.setLastActive(now);
+    await this.stateService.setLastActive(now, { userId: userId });
 
     // Idle states
     if (this.isIdle) {
