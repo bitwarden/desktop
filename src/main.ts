@@ -22,6 +22,8 @@ import { NativeMessagingMain } from "./main/nativeMessaging.main";
 
 import { StateService } from "jslib-common/services/state.service";
 
+import { Account, AccountFactory } from "jslib-common/models/domain/account";
+
 export class Main {
   logService: ElectronLogService;
   i18nService: I18nService;
@@ -79,7 +81,13 @@ export class Main {
     // TODO: this state service will have access to on disk storage, but not in memory storage.
     // If we could get this to work using the stateService singleton that the rest of the app uses we could save
     // ourselves from some hacks, like having to manually update the app menu vs. the menu subscribing to events.
-    this.stateService = new StateService(this.storageService, null, this.logService, null);
+    this.stateService = new StateService(
+      this.storageService,
+      null,
+      this.logService,
+      null,
+      new AccountFactory(Account)
+    );
 
     this.windowMain = new WindowMain(
       this.stateService,

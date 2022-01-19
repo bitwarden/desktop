@@ -7,6 +7,7 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
+import { Utils } from "jslib-common/misc/utils";
 
 import { Account } from "jslib-common/models/domain/account";
 
@@ -56,7 +57,15 @@ export class AccountSwitcherComponent implements OnInit {
   serverUrl: string;
 
   get showSwitcher() {
-    return this.accounts != null && Object.keys(this.accounts).length > 0;
+    return !Utils.isNullOrWhitespace(this.activeAccountEmail);
+  }
+
+  get numberOfAccounts() {
+    if (this.accounts == null) {
+      this.isOpen = false;
+      return 0;
+    }
+    return Object.keys(this.accounts).length;
   }
 
   constructor(
@@ -91,9 +100,6 @@ export class AccountSwitcherComponent implements OnInit {
   async switch(userId: string) {
     this.toggle();
 
-    if (userId === (await this.stateService.getUserId())) {
-      return;
-    }
     this.messagingService.send("switchAccount", { userId: userId });
   }
 
@@ -102,9 +108,10 @@ export class AccountSwitcherComponent implements OnInit {
   }): Promise<{ [userId: string]: SwitcherAccount }> {
     const switcherAccounts: { [userId: string]: SwitcherAccount } = {};
     for (const userId in baseAccounts) {
-      if (userId == null) {
+      if (userId == null || userId === (await this.stateService.getUserId())) {
         continue;
       }
+
       // environmentUrls are stored on disk and must be retrieved seperatly from the in memory state offered from subscribing to accounts
       baseAccounts[userId].settings.environmentUrls = await this.stateService.getEnvironmentUrls({
         userId: userId,
