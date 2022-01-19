@@ -39,14 +39,39 @@
         href="#"
         (mousedown)="switch(a.key)"
       >
-        <span class="email">{{ a.value.profile.email }}</span>
-        <span class="server">{{ a.value.serverUrl }}</span>
-        <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+        <app-avatar
+          [data]="a.value.profile.email"
+          size="25"
+          [circle]="true"
+          [fontSize]="14"
+          [dynamic]="true"
+          *ngIf="a.value.profile.email != null"
+        ></app-avatar>
+        <div class="accountInfo">
+          <span class="email">{{ a.value.profile.email }}</span>
+          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
+            a.value.serverUrl
+          }}</span>
+          <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+        </div>
+        <i
+          class="fa fa-unlock fa-2x text-muted"
+          *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
+        ></i>
+        <i
+          class="fa fa-lock fa-2x text-muted"
+          *ngIf="a.value.profile.authenticationStatus == 'locked'"
+        ></i>
       </a>
     </div>
     <div class="border"></div>
-    <a class="add" routerLink="/login" (click)="toggle()">
-      <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
-    </a>
+    <ng-container *ngIf="numberOfAccounts < 5">
+      <a class="add" routerLink="/login" (click)="toggle()">
+        <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
+      </a>
+    </ng-container>
+    <ng-container *ngIf="numberOfAccounts == 5">
+      <a class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </a>
+    </ng-container>
   </div>
 </ng-template>

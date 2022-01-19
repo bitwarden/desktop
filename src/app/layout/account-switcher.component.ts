@@ -60,6 +60,14 @@ export class AccountSwitcherComponent implements OnInit {
     return !Utils.isNullOrWhitespace(this.activeAccountEmail);
   }
 
+  get numberOfAccounts() {
+    if (this.accounts == null) {
+      this.isOpen = false;
+      return 0;
+    }
+    return Object.keys(this.accounts).length;
+  }
+
   constructor(
     private stateService: StateService,
     private vaultTimeoutService: VaultTimeoutService,
