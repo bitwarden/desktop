@@ -1791,10 +1791,10 @@
     "message": "No more than 5 accounts may be logged in at the same time."
   },
   "accountPreferences": {
-    "message": "Account Preferences"
+    "message": "Preferences"
   },
   "appPreferences": {
-    "message": "App Preferences"
+    "message": "App Settings (All Accounts)"
   },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
