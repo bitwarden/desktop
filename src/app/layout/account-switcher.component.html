@@ -28,6 +28,7 @@
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
   (backdropClick)="toggle()"
   [cdkConnectedOverlayOpen]="showSwitcher && isOpen"
+  [cdkConnectedOverlayPositions]="overlayPostition"
   cdkConnectedOverlayMinWidth="250px"
 >
   <div class="account-switcher-dropdown" [@transformPanel]="'open'">
