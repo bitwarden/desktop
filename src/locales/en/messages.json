@@ -1795,5 +1795,8 @@
   },
   "appPreferences": {
     "message": "App Preferences"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

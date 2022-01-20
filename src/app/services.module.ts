@@ -45,6 +45,10 @@ import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-com
 
 import { ThemeType } from "jslib-common/enums/themeType";
 
+import { Account } from "../models/account";
+
+import { AccountFactory } from "jslib-common/models/domain/account";
+
 export function initFactory(
   window: Window,
   environmentService: EnvironmentServiceAbstraction,
@@ -173,7 +177,19 @@ export function initFactory(
     },
     {
       provide: StateServiceAbstraction,
-      useClass: StateService,
+      useFactory: (
+        storageService: StorageServiceAbstraction,
+        secureStorageService: StorageServiceAbstraction,
+        logService: LogServiceAbstraction,
+        stateMigrationService: StateMigrationServiceAbstraction
+      ) =>
+        new StateService(
+          storageService,
+          secureStorageService,
+          logService,
+          stateMigrationService,
+          new AccountFactory(Account)
+        ),
       deps: [
         StorageServiceAbstraction,
         "SECURE_STORAGE",
