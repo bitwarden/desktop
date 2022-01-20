@@ -1,14 +1,4 @@
-﻿html.os_windows {
-  body {
-    border-top: 1px solid #dddddd;
-  }
-
-  &.theme_dark body {
-    border-top-color: #000000;
-  }
-}
-
-html.os_macos {
+﻿html.os_macos {
   body.layout_frontend {
     -webkit-app-region: drag;
 
