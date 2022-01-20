@@ -2,26 +2,31 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body form">
-        <ng-container *ngIf="currentUserId != null">
+        <ng-container *ngIf="currentUserEmail != null">
           <div class="box">
-            <h2>
-              <button
-                type="button"
-                class="box-header-expandable"
-                (click)="showSecurity = !showSecurity"
-                [attr.aria-expanded]="showSecurity"
-              >
-                {{ "security" | i18n }}
-                <i
-                  *ngIf="!showSecurity"
-                  class="fa fa-chevron-down fa-sm icon"
-                  aria-hidden="true"
-                ></i>
-                <i *ngIf="showSecurity" class="fa fa-chevron-up fa-sm icon" aria-hidden="true"></i>
-              </button>
-            </h2>
-            <ng-container *ngIf="showSecurity">
-              <div class="box-content box-content-padded">
+            <label class="settingsTitle">{{ "settingsTitle" | i18n: currentUserEmail }} </label>
+            <div class="box-content box-content-padded">
+              <h2>
+                <button
+                  type="button"
+                  class="box-header-expandable"
+                  (click)="showSecurity = !showSecurity"
+                  [attr.aria-expanded]="showSecurity"
+                >
+                  {{ "security" | i18n }}
+                  <i
+                    *ngIf="!showSecurity"
+                    class="fa fa-chevron-down fa-sm icon"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    *ngIf="showSecurity"
+                    class="fa fa-chevron-up fa-sm icon"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+              </h2>
+              <ng-container *ngIf="showSecurity">
                 <app-vault-timeout-input
                   [vaultTimeouts]="vaultTimeouts"
                   [formControl]="vaultTimeout"
@@ -101,32 +106,32 @@
                     </label>
                   </div>
                 </div>
-              </div>
-            </ng-container>
+              </ng-container>
+            </div>
           </div>
           <div class="box">
-            <h2>
-              <button
-                type="button"
-                class="box-header-expandable"
-                (click)="showAccountPreferences = !showAccountPreferences"
-                [attr.aria-expanded]="showAccountPreferences"
-              >
-                {{ "accountPreferences" | i18n }}
-                <i
-                  *ngIf="!showAccountPreferences"
-                  class="fa fa-chevron-down fa-sm icon"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  *ngIf="showAccountPreferences"
-                  class="fa fa-chevron-up fa-sm icon"
-                  aria-hidden="true"
-                ></i>
-              </button>
-            </h2>
-            <ng-container *ngIf="showAccountPreferences">
-              <div class="box-content box-content-padded">
+            <div class="box-content box-content-padded">
+              <h2>
+                <button
+                  type="button"
+                  class="box-header-expandable"
+                  (click)="showAccountPreferences = !showAccountPreferences"
+                  [attr.aria-expanded]="showAccountPreferences"
+                >
+                  {{ "accountPreferences" | i18n }}
+                  <i
+                    *ngIf="!showAccountPreferences"
+                    class="fa fa-chevron-down fa-sm icon"
+                    aria-hidden="true"
+                  ></i>
+                  <i
+                    *ngIf="showAccountPreferences"
+                    class="fa fa-chevron-up fa-sm icon"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+              </h2>
+              <ng-container *ngIf="showAccountPreferences">
                 <div class="form-group">
                   <label for="clearClipboard">{{ "clearClipboard" | i18n }}</label>
                   <select
@@ -204,33 +209,33 @@
                     "enableBrowserIntegrationFingerprintDesc" | i18n
                   }}</small>
                 </div>
-              </div>
-            </ng-container>
+              </ng-container>
+            </div>
           </div>
         </ng-container>
         <div class="box">
-          <h2>
-            <button
-              type="button"
-              class="box-header-expandable"
-              (click)="showAppPreferences = !showAppPreferences"
-              [attr.aria-expanded]="showAppPreferences"
-            >
-              {{ "appPreferences" | i18n }}
-              <i
-                *ngIf="!showAppPreferences"
-                class="fa fa-chevron-down fa-sm icon"
-                aria-hidden="true"
-              ></i>
-              <i
-                *ngIf="showAppPreferences"
-                class="fa fa-chevron-up fa-sm icon"
-                aria-hidden="true"
-              ></i>
-            </button>
-          </h2>
-          <ng-container *ngIf="showAppPreferences">
-            <div class="box-content box-content-padded">
+          <div class="box-content box-content-padded">
+            <h2>
+              <button
+                type="button"
+                class="box-header-expandable"
+                (click)="showAppPreferences = !showAppPreferences"
+                [attr.aria-expanded]="showAppPreferences"
+              >
+                {{ "appPreferences" | i18n }}
+                <i
+                  *ngIf="!showAppPreferences"
+                  class="fa fa-chevron-down fa-sm icon"
+                  aria-hidden="true"
+                ></i>
+                <i
+                  *ngIf="showAppPreferences"
+                  class="fa fa-chevron-up fa-sm icon"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </h2>
+            <ng-container *ngIf="showAppPreferences">
               <div class="form-group">
                 <div class="checkbox">
                   <label for="enableTray">
@@ -335,8 +340,8 @@
                 </select>
                 <small class="help-block">{{ "languageDesc" | i18n }}</small>
               </div>
-            </div>
-          </ng-container>
+            </ng-container>
+          </div>
         </div>
       </div>
       <div class="modal-footer">

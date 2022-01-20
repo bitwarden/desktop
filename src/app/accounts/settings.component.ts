@@ -69,7 +69,7 @@ export class SettingsComponent implements OnInit {
   showAccountPreferences: boolean = true;
   showAppPreferences: boolean = true;
 
-  currentUserId: string;
+  currentUserEmail: string;
 
   constructor(
     private i18nService: I18nService,
@@ -171,10 +171,10 @@ export class SettingsComponent implements OnInit {
     this.locale = await this.stateService.getLocale();
     this.theme = await this.stateService.getTheme();
 
-    this.currentUserId = await this.stateService.getUserId();
-    if (this.currentUserId == null) {
+    if ((await this.stateService.getUserId()) == null) {
       return;
     }
+    this.currentUserEmail = await this.stateService.getEmail();
 
     // Security
     this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());

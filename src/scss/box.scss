@@ -4,6 +4,15 @@
   position: relative;
   width: 100%;
 
+  .settingsTitle {
+    margin: 0 10px 5px 10px;
+    display: flex;
+
+    @include themify($themes) {
+      color: themed("headingColor");
+    }
+  }
+
   .box-header {
     margin: 0 10px 5px 10px;
     text-transform: uppercase;
@@ -35,7 +44,7 @@
 
   .box-header-expandable {
     border: none;
-    padding: 5px 10px;
+    padding: 5px 0px;
     text-transform: uppercase;
     display: flex;
     width: 100%;
@@ -43,6 +52,7 @@
 
     @include themify($themes) {
       color: themed("headingColor");
+      background-color: themed("boxBackgroundColor");
     }
 
     &:hover,
