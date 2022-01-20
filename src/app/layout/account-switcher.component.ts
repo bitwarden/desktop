@@ -1,6 +1,6 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
+import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { StateService } from "jslib-common/abstractions/state.service";
@@ -55,6 +55,14 @@ export class AccountSwitcherComponent implements OnInit {
   accounts: { [userId: string]: SwitcherAccount } = {};
   activeAccountEmail: string;
   serverUrl: string;
+  overlayPostition: ConnectedPosition[] = [
+    {
+      originX: "end",
+      originY: "bottom",
+      overlayX: "end",
+      overlayY: "top",
+    },
+  ];
 
   get showSwitcher() {
     return !Utils.isNullOrWhitespace(this.activeAccountEmail);
