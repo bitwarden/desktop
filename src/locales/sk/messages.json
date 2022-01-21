@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Súčasne nemôže byť prihlásených viac ako 5 účtov."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Dosiahnutý limit účtu. Odhláste sa z účtu a pridajte ďalší."
   }
 }

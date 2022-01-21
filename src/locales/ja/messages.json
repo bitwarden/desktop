@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "5つ以上のアカウントに同時にログインすることはできません。"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "アカウントの制限に達しました。別のアカウントを追加するにはアカウントからログアウトしてください。"
   }
 }

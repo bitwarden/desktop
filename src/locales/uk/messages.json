@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Можна увійти не більше, ніж у 5 облікових записів одночасно."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

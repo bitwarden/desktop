@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Er mogen niet meer dan 5 accounts tegelijkertijd ingelogd zijn."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limiet van het aantal accounts bereikt. Log een account uit voor het toevoegen van een andere."
   }
 }

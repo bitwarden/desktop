@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Der må ikke være logget på mere end 5 konti på samme tid."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

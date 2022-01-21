@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Egyszerre legfeljebb 5 fiókba lehet bejelentkezni."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "A fiók korlát elérésre került. Kijelentkezés egy fiókból másik hozzáadásához."
   }
 }

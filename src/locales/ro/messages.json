@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Nu pot fi conectate mai mult de 5 conturi în același timp."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limita contului a fost atinsă. Ieșiți dintr-un cont pentru a adăuga un altul."
   }
 }
