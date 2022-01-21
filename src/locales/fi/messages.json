@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Enintään 5 tiliä voi olla samanaikaisesti kirjautuneena."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Tilien enimmäismäärä on saavutettu. Kirjaa jokin niistä ulos lisätäksesi tilin."
   }
 }

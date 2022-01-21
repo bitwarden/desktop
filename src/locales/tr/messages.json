@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Aynı anda 5'ten fazla hesapla oturum açamazsınız."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Hesap sınırına ulaştınız. Yeni hesap eklemek için hesaplardan birinden çıkış yapın."
   }
 }
