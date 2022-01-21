@@ -102,6 +102,7 @@ export class FileMenu implements IMenubarMenu {
       id: "syncVault",
       label: this.localize("syncVault"),
       click: () => this.sendMessage("syncVault"),
+      accelerator: "CmdOrCtrl+R",
       enabled: !this._isLocked,
     };
   }
