@@ -65,7 +65,7 @@
         ></i>
       </a>
     </div>
-    <div class="border" *ngIf="numberOfAccounts < 4 && numberOfAccounts > 0"></div>
+    <div class="border" *ngIf="numberOfAccounts > 0"></div>
     <ng-container *ngIf="numberOfAccounts < 4">
       <a class="add" routerLink="/login" (click)="toggle()">
         <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
