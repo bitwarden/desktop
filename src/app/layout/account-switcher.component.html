@@ -32,7 +32,7 @@
   cdkConnectedOverlayMinWidth="250px"
 >
   <div class="account-switcher-dropdown" [@transformPanel]="'open'">
-    <div class="accounts">
+    <div class="accounts" *ngIf="numberOfAccounts > 0">
       <a
         *ngFor="let a of accounts | keyvalue"
         class="account"
@@ -65,7 +65,7 @@
         ></i>
       </a>
     </div>
-    <div class="border"></div>
+    <div class="border" *ngIf="numberOfAccounts > 0"></div>
     <ng-container *ngIf="numberOfAccounts < 4">
       <a class="add" routerLink="/login" (click)="toggle()">
         <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
