@@ -32,41 +32,39 @@
   cdkConnectedOverlayMinWidth="250px"
 >
   <div class="account-switcher-dropdown" [@transformPanel]="'open'">
-    <ng-container *ngIf="numberOfAccounts > 0">
-      <div class="accounts">
-        <a
-          *ngFor="let a of accounts | keyvalue"
-          class="account"
-          [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
-          href="#"
-          (mousedown)="switch(a.key)"
-        >
-          <app-avatar
-            [data]="a.value.profile.email"
-            size="25"
-            [circle]="true"
-            [fontSize]="14"
-            [dynamic]="true"
-            *ngIf="a.value.profile.email != null"
-          ></app-avatar>
-          <div class="accountInfo">
-            <span class="email">{{ a.value.profile.email }}</span>
-            <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
-              a.value.serverUrl
-            }}</span>
-            <span class="status">{{ a.value.profile.authenticationStatus }}</span>
-          </div>
-          <i
-            class="fa fa-unlock fa-2x text-muted"
-            *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
-          ></i>
-          <i
-            class="fa fa-lock fa-2x text-muted"
-            *ngIf="a.value.profile.authenticationStatus == 'locked'"
-          ></i>
-        </a>
-      </div>
-    </ng-container>
+    <div class="accounts" *ngIf="numberOfAccounts > 0">
+      <a
+        *ngFor="let a of accounts | keyvalue"
+        class="account"
+        [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
+        href="#"
+        (mousedown)="switch(a.key)"
+      >
+        <app-avatar
+          [data]="a.value.profile.email"
+          size="25"
+          [circle]="true"
+          [fontSize]="14"
+          [dynamic]="true"
+          *ngIf="a.value.profile.email != null"
+        ></app-avatar>
+        <div class="accountInfo">
+          <span class="email">{{ a.value.profile.email }}</span>
+          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
+            a.value.serverUrl
+          }}</span>
+          <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+        </div>
+        <i
+          class="fa fa-unlock fa-2x text-muted"
+          *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
+        ></i>
+        <i
+          class="fa fa-lock fa-2x text-muted"
+          *ngIf="a.value.profile.authenticationStatus == 'locked'"
+        ></i>
+      </a>
+    </div>
     <div class="border" *ngIf="numberOfAccounts < 4 && numberOfAccounts > 0"></div>
     <ng-container *ngIf="numberOfAccounts < 4">
       <a class="add" routerLink="/login" (click)="toggle()">
