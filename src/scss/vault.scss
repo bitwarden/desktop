@@ -305,7 +305,7 @@ app-root {
 
       .no-items-image {
         @include themify($themes) {
-          content: url("../images/search-desktop" + themed("imageSuffix"));
+          content: url("../images/search-desktop" + themed("svgSuffix"));
         }
       }
 

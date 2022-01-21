@@ -92,7 +92,7 @@ $themes: (
     calloutBackgroundColor: $background-color,
     accountSwitcherBackgroundColor: $background-color,
     accountSwitcherTextColor: #ffffff,
-    imageSuffix: "-light.svg",
+    svgSuffix: "-light.svg",
   ),
   dark: (
     textColor: #ffffff,
@@ -145,7 +145,7 @@ $themes: (
     calloutBackgroundColor: #363636,
     accountSwitcherBackgroundColor: #2f2f2f,
     accountSwitcherTextColor: #ffffff,
-    imageSuffix: "-dark.svg",
+    svgSuffix: "-dark.svg",
   ),
   nord: (
     textColor: $nord5,
@@ -198,7 +198,7 @@ $themes: (
     calloutBackgroundColor: $nord2,
     accountSwitcherBackgroundColor: $nord0,
     accountSwitcherTextColor: $nord5,
-    imageSuffix: "-dark.svg",
+    svgSuffix: "-dark.svg",
   ),
 );
 
