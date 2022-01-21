@@ -322,7 +322,6 @@ export class AppComponent implements OnInit {
             }
             break;
           case "convertAccountToKeyConnector":
-            await this.keyConnectorService.setConvertAccountRequired(true);
             this.router.navigate(["/remove-password"]);
             break;
           case "switchAccount":
