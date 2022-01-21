@@ -159,13 +159,12 @@ export function initFactory(
     },
     {
       provide: SystemServiceAbstraction,
-      useClass: SystemService,
-      deps: [
-        VaultTimeoutServiceAbstraction,
-        MessagingServiceAbstraction,
-        PlatformUtilsServiceAbstraction,
-        StateServiceAbstraction,
-      ],
+      useFactory: (
+        messagingService: MessagingServiceAbstraction,
+        platformUtilsService: PlatformUtilsServiceAbstraction,
+        stateService: StateServiceAbstraction
+      ) => new SystemService(messagingService, platformUtilsService, null, stateService),
+      deps: [MessagingServiceAbstraction, PlatformUtilsServiceAbstraction, StateServiceAbstraction],
     },
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     NativeMessagingService,
