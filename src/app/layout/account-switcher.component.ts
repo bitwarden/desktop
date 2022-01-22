@@ -65,7 +65,9 @@ export class AccountSwitcherComponent implements OnInit {
   ];
 
   get showSwitcher() {
-    return !Utils.isNullOrWhitespace(this.activeAccountEmail);
+    const userIsInAVault = !Utils.isNullOrWhitespace(this.activeAccountEmail);
+    const userIsAddingAnAdditionalAccount = Object.keys(this.accounts).length > 0;
+    return userIsInAVault || userIsAddingAnAdditionalAccount;
   }
 
   get numberOfAccounts() {
@@ -109,6 +111,11 @@ export class AccountSwitcherComponent implements OnInit {
     this.toggle();
 
     this.messagingService.send("switchAccount", { userId: userId });
+  }
+
+  addAccount() {
+    this.toggle();
+    this.stateService.setActiveUser(null);
   }
 
   private async createSwitcherAccounts(baseAccounts: {
