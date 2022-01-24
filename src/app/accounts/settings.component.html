@@ -293,39 +293,39 @@
                 </div>
                 <small class="help-block">{{ "alwaysShowDockDesc" | i18n }}</small>
               </div>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label for="enableBrowserIntegration">
-                      <input
-                        id="enableBrowserIntegration"
-                        type="checkbox"
-                        name="EnableBrowserIntegration"
-                        [(ngModel)]="enableBrowserIntegration"
-                        (change)="saveBrowserIntegration()"
-                      />
-                      {{ "enableBrowserIntegration" | i18n }}
-                    </label>
-                  </div>
-                  <small class="help-block">{{ "enableBrowserIntegrationDesc" | i18n }}</small>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label for="enableBrowserIntegration">
+                    <input
+                      id="enableBrowserIntegration"
+                      type="checkbox"
+                      name="EnableBrowserIntegration"
+                      [(ngModel)]="enableBrowserIntegration"
+                      (change)="saveBrowserIntegration()"
+                    />
+                    {{ "enableBrowserIntegration" | i18n }}
+                  </label>
                 </div>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label for="enableBrowserIntegrationFingerprint">
-                      <input
-                        id="enableBrowserIntegrationFingerprint"
-                        type="checkbox"
-                        name="EnableBrowserIntegrationFingerprint"
-                        [(ngModel)]="enableBrowserIntegrationFingerprint"
-                        (change)="saveBrowserIntegrationFingerprint()"
-                        [disabled]="!enableBrowserIntegration"
-                      />
-                      {{ "enableBrowserIntegrationFingerprint" | i18n }}
-                    </label>
-                  </div>
-                  <small class="help-block">{{
-                    "enableBrowserIntegrationFingerprintDesc" | i18n
-                  }}</small>
+                <small class="help-block">{{ "enableBrowserIntegrationDesc" | i18n }}</small>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label for="enableBrowserIntegrationFingerprint">
+                    <input
+                      id="enableBrowserIntegrationFingerprint"
+                      type="checkbox"
+                      name="EnableBrowserIntegrationFingerprint"
+                      [(ngModel)]="enableBrowserIntegrationFingerprint"
+                      (change)="saveBrowserIntegrationFingerprint()"
+                      [disabled]="!enableBrowserIntegration"
+                    />
+                    {{ "enableBrowserIntegrationFingerprint" | i18n }}
+                  </label>
                 </div>
+                <small class="help-block">{{
+                  "enableBrowserIntegrationFingerprintDesc" | i18n
+                }}</small>
+              </div>
               <div class="form-group">
                 <label for="theme">{{ "theme" | i18n }}</label>
                 <select id="theme" name="Theme" [(ngModel)]="theme" (change)="saveTheme()">
