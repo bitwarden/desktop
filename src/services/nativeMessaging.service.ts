@@ -35,7 +35,7 @@ export class NativeMessagingService {
     private stateService: StateService
   ) {}
 
-  public init() {
+  init() {
     ipcRenderer.on("nativeMessaging", async (_event: any, message: any) => {
       this.messageHandler(message);
     });
