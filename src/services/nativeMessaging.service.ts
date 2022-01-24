@@ -33,7 +33,9 @@ export class NativeMessagingService {
     private messagingService: MessagingService,
     private vaultTimeoutService: VaultTimeoutService,
     private stateService: StateService
-  ) {
+  ) {}
+
+  public init() {
     ipcRenderer.on("nativeMessaging", async (_event: any, message: any) => {
       this.messageHandler(message);
     });

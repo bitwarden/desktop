@@ -60,9 +60,11 @@ export function initFactory(
   notificationsService: NotificationsServiceAbstraction,
   platformUtilsService: PlatformUtilsServiceAbstraction,
   stateService: StateServiceAbstraction,
-  cryptoService: CryptoServiceAbstraction
+  cryptoService: CryptoServiceAbstraction,
+  nativeMessagingService: NativeMessagingService
 ): Function {
   return async () => {
+    nativeMessagingService.init();
     await stateService.init();
     await environmentService.setUrlsFromStorage();
     syncService.fullSync(true);
@@ -122,6 +124,7 @@ export function initFactory(
         PlatformUtilsServiceAbstraction,
         StateServiceAbstraction,
         CryptoServiceAbstraction,
+        NativeMessagingService,
       ],
       multi: true,
     },
