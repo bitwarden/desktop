@@ -176,7 +176,9 @@
   }
 
   .accountLimitReached {
+    display: block;
     margin: 4px 0;
+    padding: 5px 10px;
     font-size: $font-size-small;
   }
 }

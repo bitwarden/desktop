@@ -5,15 +5,20 @@
   #trigger="cdkOverlayOrigin"
   [hidden]="!showSwitcher"
 >
-  <app-avatar
-    [data]="activeAccountEmail"
-    size="25"
-    [circle]="true"
-    [fontSize]="14"
-    [dynamic]="true"
-    *ngIf="activeAccountEmail != null"
-  ></app-avatar>
-  <span>{{ activeAccountEmail }}</span>
+  <ng-container *ngIf="activeAccountEmail != null; else noActiveAccount">
+    <app-avatar
+      [data]="activeAccountEmail"
+      size="25"
+      [circle]="true"
+      [fontSize]="14"
+      [dynamic]="true"
+      *ngIf="activeAccountEmail != null"
+    ></app-avatar>
+    <span>{{ activeAccountEmail }}</span>
+  </ng-container>
+  <ng-template #noActiveAccount>
+    <span>{{ "switchAccount" | i18n }}</span>
+  </ng-template>
   <i
     class="fa"
     aria-hidden="true"
@@ -65,14 +70,16 @@
         ></i>
       </a>
     </div>
-    <div class="border" *ngIf="numberOfAccounts > 0"></div>
-    <ng-container *ngIf="numberOfAccounts < 4">
-      <a class="add" routerLink="/login" (click)="toggle()">
-        <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
-      </a>
-    </ng-container>
-    <ng-container *ngIf="numberOfAccounts == 4">
-      <a class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </a>
+    <ng-container *ngIf="activeAccountEmail != null">
+      <div class="border" *ngIf="numberOfAccounts > 0"></div>
+      <ng-container *ngIf="numberOfAccounts < 4">
+        <a class="add" routerLink="/login" (click)="addAccount()">
+          <i class="fa fa-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
+        </a>
+      </ng-container>
+      <ng-container *ngIf="numberOfAccounts == 4">
+        <span class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </span>
+      </ng-container>
     </ng-container>
   </div>
 </ng-template>

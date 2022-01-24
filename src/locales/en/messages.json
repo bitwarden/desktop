@@ -1807,5 +1807,8 @@
         "example": "jdoe@example.com"
       }
     }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
   }
 }
