@@ -154,8 +154,8 @@ export class AppComponent implements OnInit {
             }
             this.notificationsService.updateConnection();
             this.updateAppMenu();
-            this.systemService.startProcessReload();
             await this.systemService.clearPendingClipboard();
+            await this.reloadProcess();
             break;
           case "authBlocked":
             this.router.navigate(["login"]);
@@ -187,8 +187,8 @@ export class AppComponent implements OnInit {
             }
             this.notificationsService.updateConnection();
             await this.updateAppMenu();
-            this.systemService.startProcessReload();
             await this.systemService.clearPendingClipboard();
+            await this.reloadProcess();
             break;
           case "reloadProcess":
             window.location.reload(true);
@@ -570,5 +570,17 @@ export class AppComponent implements OnInit {
         replaceUrl: true,
       });
     }
+  }
+
+  private async reloadProcess(): Promise<void> {
+    const accounts = Object.keys(this.stateService.accounts.getValue());
+    if (accounts.length > 0) {
+      for (const userId in accounts) {
+        if (!(await this.vaultTimeoutService.isLocked(accounts[userId]))) {
+          return;
+        }
+      }
+    }
+    await this.systemService.startProcessReload();
   }
 }
