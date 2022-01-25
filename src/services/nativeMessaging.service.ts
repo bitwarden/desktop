@@ -13,10 +13,10 @@ import { StateService } from "jslib-common/abstractions/state.service";
 
 import { Utils } from "jslib-common/misc/utils";
 
+import { EncString } from "jslib-common/models/domain/encString";
 import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
 
 import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
-import { EncString } from "jslib-common/models/domain/encString";
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";
@@ -24,11 +24,9 @@ const EncryptionAlgorithm = "sha1";
 type Message = {
   command: string;
 
-  // Filled in by this service
   userId?: string;
   timestamp?: number;
 
-  // Used for sharing secret
   publicKey?: string;
 };
 
