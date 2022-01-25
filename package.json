@@ -189,7 +189,7 @@
     },
     "nsisWeb": {
       "oneClick": false,
-      "perMachine": true,
+      "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "artifactName": "${productName}-Installer-${version}.${ext}",
       "uninstallDisplayName": "${productName}",
