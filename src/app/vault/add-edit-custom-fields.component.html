@@ -17,7 +17,7 @@
           appA11yTitle="{{ 'remove' | i18n }}"
           role="button"
         >
-          <i class="bwi-minus-circle bwi-lg" aria-hidden="true"></i>
+          <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
         </a>
         <label for="fieldName{{ i }}" class="sr-only">{{ "name" | i18n }}</label>
         <label for="fieldValue{{ i }}" class="sr-only">{{ "value" | i18n }}</label>
@@ -88,21 +88,21 @@
             (click)="toggleFieldValue(f)"
           >
             <i
-              class="bwi-lg"
+              class="bwi bwi-lg"
               aria-hidden="true"
               [ngClass]="{ 'bwi-eye-2': !f.showValue, 'bwi-eye-slash-2': f.showValue }"
             ></i>
           </a>
         </div>
         <div class="drag-handle" appA11yTitle="{{ 'dragToSort' | i18n }}" cdkDragHandle>
-          <i class="bwi-bars" aria-hidden="true"></i>
+          <i class="bwi bwi-bars" aria-hidden="true"></i>
         </div>
       </div>
     </div>
     <!-- Add new custom field -->
     <div class="box-content-row" appBoxRow>
       <a href="#" appStopClick (click)="addField()" role="button">
-        <i class="bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
+        <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
         {{ "newCustomField" | i18n }}
       </a>
       <label for="addFieldType" class="sr-only">{{ "type" | i18n }}</label>

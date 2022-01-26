@@ -103,7 +103,7 @@
             (click)="toggleOptions()"
           >
             <i
-              class="bwi-lg"
+              class="bwi bwi-lg"
               aria-hidden="true"
               [ngClass]="{ 'bwi-angle-down': !showOptions, 'bwi-chevron-up': showOptions }"
             ></i>
@@ -168,7 +168,7 @@
                   [disabled]="disableSend"
                 >
                   <i
-                    class="bwi-lg"
+                    class="bwi bwi-lg"
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye-2': !showPassword, 'bwi-eye-slash-2': showPassword }"
                   ></i>
@@ -260,8 +260,8 @@
       [disabled]="form.loading"
       *ngIf="!disableSend"
     >
-      <i class="bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-      <span><i class="bwi-save-changes bwi-lg bwi-fw" aria-hidden="true"></i></span>
+      <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
+      <span><i class="bwi bwi-save-changes bwi-lg bwi-fw" aria-hidden="true"></i></span>
     </button>
     <button appBlurClick type="button" (click)="cancel()" [disabled]="form.loading">
       {{ "cancel" | i18n }}
@@ -274,7 +274,7 @@
         appA11yTitle="{{ 'copySendLinkToClipboard' | i18n }}"
         *ngIf="editMode"
       >
-        <i class="bwi-clone bwi-lg bwi-fw" aria-hidden="true"></i>
+        <i class="bwi bwi-clone bwi-lg bwi-fw" aria-hidden="true"></i>
       </button>
       <button
         #deleteBtn
@@ -285,9 +285,9 @@
         appA11yTitle="{{ 'delete' | i18n }}"
         *ngIf="editMode"
       >
-        <i class="bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+        <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
         <i
-          class="bwi-spinner bwi-spin bwi-lg bwi-fw"
+          class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
           [hidden]="!deleteBtn.loading"
           aria-hidden="true"
         ></i>

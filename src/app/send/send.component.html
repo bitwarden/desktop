@@ -6,7 +6,7 @@
         <ul>
           <li [ngClass]="{ active: selectedAll }">
             <a href="#" appStopClick appBlurClick (click)="selectAll()">
-              <i class="bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
+              <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
             </a>
           </li>
         </ul>
@@ -14,14 +14,16 @@
         <ul>
           <li [ngClass]="{ active: selectedType === sendType.Text }">
             <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
-              <i class="bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
+              <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeText" | i18n
               }}
             </a>
           </li>
           <li [ngClass]="{ active: selectedType === sendType.File }">
             <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
-              <i class="bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{ "sendTypeFile" | i18n }}
+              <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
+                "sendTypeFile" | i18n
+              }}
             </a>
           </li>
         </ul>
@@ -44,7 +46,7 @@
           class="flex-list-item"
         >
           <div class="item-icon" aria-hidden="true">
-            <i class="bwi-fw bwi-lg" [ngClass]="s.type == 0 ? 'bwi-file-text' : 'bwi-file'"></i>
+            <i class="bwi bwi-fw bwi-lg" [ngClass]="s.type == 0 ? 'bwi-file-text' : 'bwi-file'"></i>
           </div>
           <div class="item-content">
             <div class="item-title">
@@ -52,7 +54,7 @@
               <span class="title-badges">
                 <ng-container *ngIf="s.disabled">
                   <i
-                    class="bwi-exclamation-triangle"
+                    class="bwi bwi-exclamation-triangle"
                     appStopProp
                     title="{{ 'disabled' | i18n }}"
                     aria-hidden="true"
@@ -61,7 +63,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.password">
                   <i
-                    class="bwi-key"
+                    class="bwi bwi-key"
                     appStopProp
                     title="{{ 'password' | i18n }}"
                     aria-hidden="true"
@@ -70,7 +72,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.maxAccessCountReached">
                   <i
-                    class="bwi-ban"
+                    class="bwi bwi-ban"
                     appStopProp
                     title="{{ 'maxAccessCountReached' | i18n }}"
                     aria-hidden="true"
@@ -79,7 +81,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.expired">
                   <i
-                    class="bwi-clock"
+                    class="bwi bwi-clock"
                     appStopProp
                     title="{{ 'expired' | i18n }}"
                     aria-hidden="true"
@@ -88,7 +90,7 @@
                 </ng-container>
                 <ng-container *ngIf="s.pendingDelete">
                   <i
-                    class="bwi-trash"
+                    class="bwi bwi-trash"
                     appStopProp
                     title="{{ 'pendingDeletion' | i18n }}"
                     aria-hidden="true"
@@ -102,7 +104,7 @@
         </a>
       </div>
       <div class="no-items" *ngIf="!filteredSends.length">
-        <i class="bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
+        <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
         <ng-container *ngIf="loaded">
           <img class="no-items-image" aria-hidden="true" />
           <p>{{ "noItemsInList" | i18n }}</p>
@@ -116,7 +118,7 @@
         class="block primary"
         appA11yTitle="{{ 'addItem' | i18n }}"
       >
-        <i class="bwi-plus bwi-lg" aria-hidden="true"></i>
+        <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
       </button>
     </div>
   </div>

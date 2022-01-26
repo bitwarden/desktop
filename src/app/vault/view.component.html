@@ -30,7 +30,7 @@
                 (click)="copy(cipher.login.username, 'username', 'Username')"
                 role="button"
               >
-                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -64,12 +64,12 @@
                 [disabled]="checkPasswordBtn.loading"
               >
                 <i
-                  class="bwi-lg bwi-check-circle"
+                  class="bwi bwi-lg bwi-check-circle"
                   [hidden]="checkPasswordBtn.loading"
                   aria-hidden="true"
                 ></i>
                 <i
-                  class="bwi-lg bwi-spinner bwi-spin"
+                  class="bwi bwi-lg bwi-spinner bwi-spin"
                   [hidden]="!checkPasswordBtn.loading"
                   aria-hidden="true"
                 ></i>
@@ -83,7 +83,7 @@
                 role="button"
               >
                 <i
-                  class="bwi-lg"
+                  class="bwi bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye-2': !showPassword, 'bwi-eye-slash-2': showPassword }"
                 ></i>
@@ -96,7 +96,7 @@
                 (click)="copy(cipher.login.password, 'password', 'Password')"
                 role="button"
               >
-                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -138,7 +138,7 @@
                 (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')"
                 role="button"
               >
-                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -165,7 +165,7 @@
                 role="button"
               >
                 <i
-                  class="bwi-lg"
+                  class="bwi bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye-2': !showCardNumber, 'bwi-eye-slash-2': showCardNumber }"
                 ></i>
@@ -178,7 +178,7 @@
                 (click)="copy(cipher.card.number, 'number', 'Card Number')"
                 role="button"
               >
-                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -206,7 +206,7 @@
                 role="button"
               >
                 <i
-                  class="bwi-lg"
+                  class="bwi bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye-2': !showCardCode, 'bwi-eye-slash-2': showCardCode }"
                 ></i>
@@ -219,7 +219,7 @@
                 (click)="copy(cipher.card.code, 'securityCode', 'Security Code')"
                 role="button"
               >
-                <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -295,7 +295,7 @@
               (click)="launch(u)"
               role="button"
             >
-              <i class="bwi-lg bwi-share-square" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-share-square" aria-hidden="true"></i>
             </a>
             <a
               class="row-btn"
@@ -305,7 +305,7 @@
               (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')"
               role="button"
             >
-              <i class="bwi-lg bwi-clone" aria-hidden="true"></i>
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -342,12 +342,12 @@
           <span class="row-main">{{ attachment.fileName }}</span>
           <small class="row-sub-label">{{ attachment.sizeName }}</small>
           <i
-            class="bwi-download bwi-fw row-sub-icon"
+            class="bwi bwi-download bwi-fw row-sub-icon"
             *ngIf="!attachment.downloading"
             aria-hidden="true"
           ></i>
           <i
-            class="bwi-spinner bwi-fw bwi-spin row-sub-icon"
+            class="bwi bwi-spinner bwi-fw bwi-spin row-sub-icon"
             *ngIf="attachment.downloading"
             aria-hidden="true"
           ></i>
@@ -388,7 +388,7 @@
     appA11yTitle="{{ 'edit' | i18n }}"
     *ngIf="!cipher.isDeleted"
   >
-    <i class="bwi-pencil bwi-fw bwi-lg" aria-hidden="true"></i>
+    <i class="bwi bwi-pencil bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <button
     appBlurClick
@@ -397,7 +397,7 @@
     appA11yTitle="{{ 'restore' | i18n }}"
     *ngIf="cipher.isDeleted"
   >
-    <i class="bwi-undo bwi-fw bwi-lg" aria-hidden="true"></i>
+    <i class="bwi bwi-undo bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <button
     appBlurClick
@@ -406,7 +406,7 @@
     (click)="clone()"
     appA11yTitle="{{ 'clone' | i18n }}"
   >
-    <i class="bwi-files bwi-fw bwi-lg" aria-hidden="true"></i>
+    <i class="bwi bwi-files bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <div class="right">
     <button
@@ -416,7 +416,7 @@
       class="danger"
       appA11yTitle="{{ (cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n }}"
     >
-      <i class="bwi-trash bwi-lg bwi-fw" aria-hidden="true"></i>
+      <i class="bwi bwi-trash bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
 </div>

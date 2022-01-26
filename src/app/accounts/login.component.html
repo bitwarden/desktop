@@ -7,7 +7,7 @@
     attr.aria-label="{{ 'settings' | i18n }}"
   >
     {{ "settings" | i18n }}
-    <i class="bwi-cog bwi-lg" aria-hidden="true"></i>
+    <i class="bwi bwi-cog bwi-lg" aria-hidden="true"></i>
   </a>
 </div>
 <form
@@ -57,7 +57,7 @@
               (click)="togglePassword()"
             >
               <i
-                class="bwi-lg"
+                class="bwi bwi-lg"
                 aria-hidden="true"
                 [ngClass]="{ 'bwi-eye-2': !showPassword, 'bwi-eye-slash': showPassword }"
               ></i>
@@ -74,17 +74,17 @@
       <div class="buttons-row">
         <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
           <b [hidden]="form.loading"
-            ><i class="bwi-sign-in" aria-hidden="true"></i> {{ "logIn" | i18n }}</b
+            ><i class="bwi bwi-sign-in" aria-hidden="true"></i> {{ "logIn" | i18n }}</b
           >
-          <i class="bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
+          <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
         </button>
         <a routerLink="/register" class="btn block">
-          <i class="bwi-pencil-square" aria-hidden="true"></i> {{ "createAccount" | i18n }}
+          <i class="bwi bwi-pencil-square" aria-hidden="true"></i> {{ "createAccount" | i18n }}
         </a>
       </div>
       <div class="buttons-row">
         <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
-          <i class="bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
+          <i class="bwi bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
         </a>
       </div>
     </div>

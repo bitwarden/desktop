@@ -30,8 +30,7 @@
     text-align: left;
     position: relative;
 
-    [class^="bwi-"],
-    [class*=" bwi-"] {
+    .bwi {
       position: absolute;
       top: 7px;
       left: 15px;

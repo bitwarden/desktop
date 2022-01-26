@@ -309,8 +309,7 @@ app-root {
         }
       }
 
-      [class^="bwi-"],
-      [class*=" bwi-"] {
+      .bwi {
         margin-bottom: 10px;
 
         @include themify($themes) {

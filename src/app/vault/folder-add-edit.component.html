@@ -28,9 +28,13 @@
           appA11yTitle="{{ 'save' | i18n }}"
           [disabled]="form.loading"
         >
-          <i class="bwi-save-changes bwi-lg bwi-fw" [hidden]="form.loading" aria-hidden="true"></i>
           <i
-            class="bwi-spinner bwi-spin bwi-lg bwi-fw"
+            class="bwi bwi-save-changes bwi-lg bwi-fw"
+            [hidden]="form.loading"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
             [hidden]="!form.loading"
             aria-hidden="true"
           ></i>
@@ -48,9 +52,13 @@
             [disabled]="deleteBtn.loading"
             [appApiAction]="deletePromise"
           >
-            <i class="bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
             <i
-              class="bwi-spinner bwi-spin bwi-lg bwi-fw"
+              class="bwi bwi-trash bwi-lg bwi-fw"
+              [hidden]="deleteBtn.loading"
+              aria-hidden="true"
+            ></i>
+            <i
+              class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
               [hidden]="!deleteBtn.loading"
               aria-hidden="true"
             ></i>

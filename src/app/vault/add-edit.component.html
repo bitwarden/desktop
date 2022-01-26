@@ -62,12 +62,12 @@
                   [disabled]="checkPasswordBtn.loading"
                 >
                   <i
-                    class="bwi-lg bwi-check-circle"
+                    class="bwi bwi-lg bwi-check-circle"
                     [hidden]="checkPasswordBtn.loading"
                     aria-hidden="true"
                   ></i>
                   <i
-                    class="bwi-lg bwi-spinner bwi-spin"
+                    class="bwi bwi-lg bwi-spinner bwi-spin"
                     [hidden]="!checkPasswordBtn.loading"
                     aria-hidden="true"
                   ></i>
@@ -82,7 +82,7 @@
                   (click)="togglePassword()"
                 >
                   <i
-                    class="bwi-lg"
+                    class="bwi bwi-lg"
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye-2': !showPassword, 'bwi-eye-slash-2': showPassword }"
                   ></i>
@@ -96,7 +96,7 @@
                   appA11yTitle="{{ 'generatePassword' | i18n }}"
                   (click)="generatePassword()"
                 >
-                  <i class="bwi-lg bwi-generate" aria-hidden="true"></i>
+                  <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
@@ -147,7 +147,7 @@
                   (click)="toggleCardNumber()"
                 >
                   <i
-                    class="bwi-lg"
+                    class="bwi bwi-lg"
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye-2': !showCardNumber, 'bwi-eye-slash-2': showCardNumber }"
                   ></i>
@@ -201,7 +201,7 @@
                   (click)="toggleCardCode()"
                 >
                   <i
-                    class="bwi-lg"
+                    class="bwi bwi-lg"
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye-2': !showCardCode, 'bwi-eye-slash-2': showCardCode }"
                   ></i>
@@ -389,7 +389,7 @@
               *ngFor="let u of cipher.login.uris; let i = index; trackBy: trackByFunction"
             >
               <a href="#" appStopClick (click)="removeUri(u)" appA11yTitle="{{ 'remove' | i18n }}">
-                <i class="bwi-minus-circle bwi-lg" aria-hidden="true" role="button"></i>
+                <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true" role="button"></i>
               </a>
               <div class="row-main">
                 <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
@@ -426,7 +426,7 @@
                   appA11yTitle="{{ 'toggleOptions' | i18n }}"
                   (click)="toggleUriOptions(u)"
                 >
-                  <i class="bwi-lg bwi-cog-f" aria-hidden="true"></i>
+                  <i class="bwi bwi-lg bwi-cog-f" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
@@ -439,7 +439,8 @@
             class="box-content-row"
             role="button"
           >
-            <i class="bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i> {{ "newUri" | i18n }}
+            <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
+            {{ "newUri" | i18n }}
           </a>
         </div>
       </div>
@@ -459,7 +460,7 @@
             <label for="passwordPrompt"
               >{{ "passwordPrompt" | i18n }}
               <a href="#" appA11yTitle="{{ 'learnMore' | i18n }}" (click)="openHelpReprompt()">
-                <i class="bwi-question-circle" aria-hidden="true"></i>
+                <i class="bwi bwi-question-circle" aria-hidden="true"></i>
               </a>
             </label>
             <input
@@ -480,7 +481,7 @@
             role="button"
           >
             <div class="row-main">{{ "attachments" | i18n }}</div>
-            <i class="bwi-angle-right row-sub-icon" aria-hidden="true"></i>
+            <i class="bwi bwi-angle-right row-sub-icon" aria-hidden="true"></i>
           </a>
           <a
             class="box-content-row box-content-row-flex text-default"
@@ -492,7 +493,7 @@
             role="button"
           >
             <div class="row-main">{{ "collections" | i18n }}</div>
-            <i class="bwi-angle-right row-sub-icon" aria-hidden="true"></i>
+            <i class="bwi bwi-angle-right row-sub-icon" aria-hidden="true"></i>
           </a>
         </div>
       </div>
@@ -564,8 +565,12 @@
       appA11yTitle="{{ 'save' | i18n }}"
       [disabled]="form.loading"
     >
-      <i class="bwi-save-changes bwi-lg bwi-fw" [hidden]="form.loading" aria-hidden="true"></i>
-      <i class="bwi-spinner bwi-spin bwi-lg bwi-fw" [hidden]="!form.loading" aria-hidden="true"></i>
+      <i class="bwi bwi-save-changes bwi-lg bwi-fw" [hidden]="form.loading" aria-hidden="true"></i>
+      <i
+        class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
+        [hidden]="!form.loading"
+        aria-hidden="true"
+      ></i>
     </button>
     <button appBlurClick type="button" (click)="cancel()">
       {{ "cancel" | i18n }}
@@ -578,7 +583,7 @@
         appA11yTitle="{{ 'moveToOrganization' | i18n }}"
         *ngIf="editMode && cipher && !cipher.organizationId && !cloneMode"
       >
-        <i class="bwi-arrow-circle-right bwi-lg bwi-fw" aria-hidden="true"></i>
+        <i class="bwi bwi-arrow-circle-right bwi-lg bwi-fw" aria-hidden="true"></i>
       </button>
       <button
         #deleteBtn
@@ -591,9 +596,9 @@
         [disabled]="deleteBtn.loading"
         [appApiAction]="deletePromise"
       >
-        <i class="bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+        <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
         <i
-          class="bwi-spinner bwi-spin bwi-lg bwi-fw"
+          class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
           [hidden]="!deleteBtn.loading"
           aria-hidden="true"
         ></i>

@@ -22,7 +22,7 @@
             {{ c.name }}
             <ng-container *ngIf="c.organizationId">
               <i
-                class="bwi-collection text-muted"
+                class="bwi bwi-collection text-muted"
                 title="{{ 'shared' | i18n }}"
                 aria-hidden="true"
               ></i>
@@ -30,7 +30,7 @@
             </ng-container>
             <ng-container *ngIf="c.hasAttachments">
               <i
-                class="bwi-paperclip text-muted"
+                class="bwi bwi-paperclip text-muted"
                 title="{{ 'attachments' | i18n }}"
                 aria-hidden="true"
               ></i>
@@ -43,7 +43,7 @@
     </div>
   </cdk-virtual-scroll-viewport>
   <div class="no-items" *ngIf="!ciphers.length">
-    <i class="bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
+    <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
     <ng-container *ngIf="loaded">
       <img class="no-items-image" aria-hidden="true" />
       <p>{{ "noItemsInList" | i18n }}</p>
@@ -60,6 +60,6 @@
     appA11yTitle="{{ 'addItem' | i18n }}"
     [disabled]="deleted"
   >
-    <i class="bwi-plus bwi-lg" aria-hidden="true"></i>
+    <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
   </button>
 </div>
