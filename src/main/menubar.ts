@@ -67,7 +67,8 @@ export class Menubar {
         messagingService,
         updaterMain,
         windowMain.win,
-        updateRequest?.accounts
+        updateRequest?.accounts,
+        isLocked
       ),
       new FileMenu(i18nService, messagingService, isLocked),
       new EditMenu(i18nService, messagingService, isLocked),
