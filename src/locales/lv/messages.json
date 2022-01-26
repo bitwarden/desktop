@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Vienlaicīgi var būt pierakstījušies ne vairāk kā 5 konti."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Sasniegti konta ierobežojumi. Izrakstīties, lai pievienotu citu."
   }
 }

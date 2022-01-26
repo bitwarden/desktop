@@ -32,6 +32,8 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
   showingModal = false;
 
+  protected alwaysRememberEmail: boolean = true;
+
   private deferFocus: boolean = null;
 
   constructor(

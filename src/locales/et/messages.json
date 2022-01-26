@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Korraga ei tohi olla sisse logitud rohkem kui 5 kontot."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Kontode limiit on saavutatud. Teise konto lisamiseks pead esmalt välja logima."
   }
 }

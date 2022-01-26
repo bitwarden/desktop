@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "No se puede iniciar sesión en más de 5 cuentas al mismo tiempo."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

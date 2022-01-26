@@ -45,7 +45,7 @@
   <div class="no-items" *ngIf="!ciphers.length">
     <i class="bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
     <ng-container *ngIf="loaded">
-      <i class="bwi-frown bwi-4x" aria-hidden="true"></i>
+      <img class="no-items-image" aria-hidden="true" />
       <p>{{ "noItemsInList" | i18n }}</p>
       <button (click)="addCipher()" class="btn block primary link">{{ "addItem" | i18n }}</button>
     </ng-container>

@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Nie możesz zalogować się na więcej niż 5 kont jednocześnie."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limit konta został osiągnięty. Wyloguj się z konta, aby dodać inne."
   }
 }

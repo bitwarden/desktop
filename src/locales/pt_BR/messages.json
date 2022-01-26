@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Não mais do que 5 contas podem estar logadas ao mesmo tempo."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

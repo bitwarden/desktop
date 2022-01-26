@@ -1,12 +1,13 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
+import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
 
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
+import { Utils } from "jslib-common/misc/utils";
 
 import { Account } from "jslib-common/models/domain/account";
 
@@ -54,9 +55,27 @@ export class AccountSwitcherComponent implements OnInit {
   accounts: { [userId: string]: SwitcherAccount } = {};
   activeAccountEmail: string;
   serverUrl: string;
+  overlayPostition: ConnectedPosition[] = [
+    {
+      originX: "end",
+      originY: "bottom",
+      overlayX: "end",
+      overlayY: "top",
+    },
+  ];
 
   get showSwitcher() {
-    return this.accounts != null && Object.keys(this.accounts).length > 0;
+    const userIsInAVault = !Utils.isNullOrWhitespace(this.activeAccountEmail);
+    const userIsAddingAnAdditionalAccount = Object.keys(this.accounts).length > 0;
+    return userIsInAVault || userIsAddingAnAdditionalAccount;
+  }
+
+  get numberOfAccounts() {
+    if (this.accounts == null) {
+      this.isOpen = false;
+      return 0;
+    }
+    return Object.keys(this.accounts).length;
   }
 
   constructor(
@@ -91,10 +110,12 @@ export class AccountSwitcherComponent implements OnInit {
   async switch(userId: string) {
     this.toggle();
 
-    if (userId === (await this.stateService.getUserId())) {
-      return;
-    }
     this.messagingService.send("switchAccount", { userId: userId });
+  }
+
+  async addAccount() {
+    this.toggle();
+    await this.stateService.setActiveUser(null);
   }
 
   private async createSwitcherAccounts(baseAccounts: {
@@ -102,9 +123,10 @@ export class AccountSwitcherComponent implements OnInit {
   }): Promise<{ [userId: string]: SwitcherAccount }> {
     const switcherAccounts: { [userId: string]: SwitcherAccount } = {};
     for (const userId in baseAccounts) {
-      if (userId == null) {
+      if (userId == null || userId === (await this.stateService.getUserId())) {
         continue;
       }
+
       // environmentUrls are stored on disk and must be retrieved seperatly from the in memory state offered from subscribing to accounts
       baseAccounts[userId].settings.environmentUrls = await this.stateService.getEnvironmentUrls({
         userId: userId,
