@@ -2,7 +2,6 @@ const path = require("path");
 const { merge } = require("webpack-merge");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const nodeExternals = require("webpack-node-externals");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const NODE_ENV = process.env.NODE_ENV == null ? "development" : process.env.NODE_ENV;
@@ -76,7 +75,13 @@ const main = {
       ],
     }),
   ],
-  externals: [nodeExternals()],
+  externals: {
+    "electron-reload": "commonjs2 electron-reload",
+    "@nodert-win10-rs4/windows.security.credentials.ui":
+      "commonjs2 @nodert-win10-rs4/windows.security.credentials.ui",
+    forcefocus: "commonjs2 forcefocus",
+    keytar: "commonjs2 keytar",
+  },
 };
 
 module.exports = merge(common, NODE_ENV === "development" ? dev : prod, main);

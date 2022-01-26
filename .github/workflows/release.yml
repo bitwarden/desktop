@@ -67,6 +67,9 @@ jobs:
           workflow_conclusion: success
           branch: ${{ steps.branch.outputs.branch-name }}
 
+      - name: Rename .pkg to .pkg.archive
+        run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
+
       - name: Create release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
         env:
@@ -95,7 +98,7 @@ jobs:
             Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
             Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
             latest-mac.yml,
-            Bitwarden-${{ env.PKG_VERSION }}-universal.pkg"
+            Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive"
           commit: ${{ github.sha }}
           tag: v${{ env.PKG_VERSION }}
           name: Version ${{ env.PKG_VERSION }}

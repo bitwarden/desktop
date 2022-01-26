@@ -1,6 +1,5 @@
 <div id="sends" class="vault">
   <div class="groupings">
-    <div class="mac-bar"></div>
     <div class="content">
       <div class="inner-content">
         <h2 class="sr-only">{{ "filters" | i18n }}</h2>
@@ -105,7 +104,7 @@
       <div class="no-items" *ngIf="!filteredSends.length">
         <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
         <ng-container *ngIf="loaded">
-          <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
+          <img class="no-items-image" aria-hidden="true" />
           <p>{{ "noItemsInList" | i18n }}</p>
         </ng-container>
       </div>

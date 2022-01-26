@@ -1,5 +1,7 @@
 ﻿@import "~nord/src/sass/nord.scss";
 
+$dark-icon-themes: "theme_dark", "theme_nord";
+
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-size-base: 14px;
@@ -88,8 +90,9 @@ $themes: (
     passwordSpecialColor: #c40800,
     calloutBorderColor: $border-color-dark,
     calloutBackgroundColor: $background-color,
-    acccountSwitcherBackgroundColor: $background-color,
+    accountSwitcherBackgroundColor: $background-color,
     accountSwitcherTextColor: #ffffff,
+    svgSuffix: "-light.svg",
   ),
   dark: (
     textColor: #ffffff,
@@ -142,6 +145,7 @@ $themes: (
     calloutBackgroundColor: #363636,
     accountSwitcherBackgroundColor: #2f2f2f,
     accountSwitcherTextColor: #ffffff,
+    svgSuffix: "-dark.svg",
   ),
   nord: (
     textColor: $nord5,
@@ -194,6 +198,7 @@ $themes: (
     calloutBackgroundColor: $nord2,
     accountSwitcherBackgroundColor: $nord0,
     accountSwitcherTextColor: $nord5,
+    svgSuffix: "-dark.svg",
   ),
 );
 

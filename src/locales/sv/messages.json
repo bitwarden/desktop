@@ -545,7 +545,7 @@
     "message": "Send a verification code to your email"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Skicka kod"
   },
   "codeSent": {
     "message": "Code Sent"
@@ -554,7 +554,7 @@
     "message": "Verifieringskod"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Bekräfta din identitet för att fortsätta."
   },
   "verificationCodeRequired": {
     "message": "Verifieringskod krävs."
@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

@@ -734,7 +734,7 @@
     "message": "Indlæser..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Lås boks"
   },
   "passwordGenerator": {
     "message": "Adgangskodegenerator"
@@ -1758,7 +1758,7 @@
     "message": "En eller flere organisationspolitikker forhindrer dig i at eksportere din personlige boks."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Tilføj konto"
   },
   "removeMasterPassword": {
     "message": "Fjern hovedadgangskode"
@@ -1788,9 +1788,12 @@
     "message": "Kan ikke kontakte key connector, forsøg igen senere."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Lås alle bokse"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Der må ikke være logget på mere end 5 konti på samme tid."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

@@ -316,7 +316,8 @@ form,
   }
 }
 
-app-root > #loading {
+app-root > #loading,
+.loading {
   display: flex;
   text-align: center;
   justify-content: center;

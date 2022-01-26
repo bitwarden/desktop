@@ -10,12 +10,8 @@ import { IMenubarMenu } from "./menubar";
 export class AboutMenu implements IMenubarMenu {
   readonly id: string = "about";
 
-  get visible(): boolean {
-    return !isMac();
-  }
-
   get label(): string {
-    return this.localize("about");
+    return "";
   }
 
   get items(): MenuItemConstructorOptions[] {

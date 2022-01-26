@@ -10,6 +10,8 @@ import { I18nService } from "../services/i18n.service";
 import { LoginGuardService } from "../services/loginGuard.service";
 import { NativeMessagingService } from "../services/nativeMessaging.service";
 import { PasswordRepromptService } from "../services/passwordReprompt.service";
+import { StateService } from "../services/state.service";
+
 import { SearchBarService } from "./layout/search/search-bar.service";
 
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
@@ -33,6 +35,7 @@ import { NotificationsService as NotificationsServiceAbstraction } from "jslib-c
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "jslib-common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "jslib-common/abstractions/platformUtils.service";
 import { StateService as StateServiceAbstraction } from "jslib-common/abstractions/state.service";
+import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib-common/abstractions/stateMigration.service";
 import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions/sync.service";
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
@@ -40,6 +43,10 @@ import { TwoFactorService as TwoFactorServiceAbstraction } from 'jslib-common/ab
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { ThemeType } from "jslib-common/enums/themeType";
+
+import { Account } from "../models/account";
+
+import { AccountFactory } from "jslib-common/models/domain/account";
 
 export function initFactory(
   window: Window,
@@ -52,9 +59,11 @@ export function initFactory(
   notificationsService: NotificationsServiceAbstraction,
   platformUtilsService: PlatformUtilsServiceAbstraction,
   stateService: StateServiceAbstraction,
-  cryptoService: CryptoServiceAbstraction
+  cryptoService: CryptoServiceAbstraction,
+  nativeMessagingService: NativeMessagingService
 ): Function {
   return async () => {
+    nativeMessagingService.init();
     await stateService.init();
     await environmentService.setUrlsFromStorage();
     syncService.fullSync(true);
@@ -114,6 +123,7 @@ export function initFactory(
         PlatformUtilsServiceAbstraction,
         StateServiceAbstraction,
         CryptoServiceAbstraction,
+        NativeMessagingService,
       ],
       multi: true,
     },
@@ -151,13 +161,12 @@ export function initFactory(
     },
     {
       provide: SystemServiceAbstraction,
-      useClass: SystemService,
-      deps: [
-        VaultTimeoutServiceAbstraction,
-        MessagingServiceAbstraction,
-        PlatformUtilsServiceAbstraction,
-        StateServiceAbstraction,
-      ],
+      useFactory: (
+        messagingService: MessagingServiceAbstraction,
+        platformUtilsService: PlatformUtilsServiceAbstraction,
+        stateService: StateServiceAbstraction
+      ) => new SystemService(messagingService, platformUtilsService, null, stateService),
+      deps: [MessagingServiceAbstraction, PlatformUtilsServiceAbstraction, StateServiceAbstraction],
     },
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     NativeMessagingService,
@@ -166,6 +175,28 @@ export function initFactory(
       provide: LoginGuardService,
       useClass: LoginGuardService,
       deps: [StateServiceAbstraction, PlatformUtilsServiceAbstraction, I18nServiceAbstraction],
+    },
+    {
+      provide: StateServiceAbstraction,
+      useFactory: (
+        storageService: StorageServiceAbstraction,
+        secureStorageService: StorageServiceAbstraction,
+        logService: LogServiceAbstraction,
+        stateMigrationService: StateMigrationServiceAbstraction
+      ) =>
+        new StateService(
+          storageService,
+          secureStorageService,
+          logService,
+          stateMigrationService,
+          new AccountFactory(Account)
+        ),
+      deps: [
+        StorageServiceAbstraction,
+        "SECURE_STORAGE",
+        LogServiceAbstraction,
+        StateMigrationServiceAbstraction,
+      ],
     },
   ],
 })

@@ -734,7 +734,7 @@
     "message": "Yüklənir..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Anbarı kilidlə"
   },
   "passwordGenerator": {
     "message": "Parol yaradıcı"
@@ -1758,7 +1758,7 @@
     "message": "Bir və ya daha çox təşkilat siyasəti, fərdi anbarınızı ixrac etməyinizin qarşısını alır."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Hesab əlavə et"
   },
   "removeMasterPassword": {
     "message": "Ana parolu sil"
@@ -1788,9 +1788,12 @@
     "message": "Açar bağlayıcı əlçatan deyil, daha sonra yenidən sınayın."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Bütün anbarları kilidlə"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Eyni vaxtda 5-dən çox hesaba giriş edilə bilməz."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Hesab limiti keçildi. Başqa bir hesab əlavə etmək üçün bir hesabdan çıxış edin."
   }
 }

@@ -1,6 +1,5 @@
 {
-  "name": "bitwarden",
-  "productName": "Bitwarden",
+  "name": "@bitwarden/desktop",
   "description": "A secure and free password manager for all of your devices.",
   "version": "0.0.0",
   "keywords": [
@@ -63,15 +62,22 @@
     "prepare": "husky install"
   },
   "build": {
+    "extraMetadata": {
+      "name": "bitwarden"
+    },
+    "productName": "Bitwarden",
     "appId": "com.bitwarden.desktop",
     "buildDependenciesFromSource": true,
-    "copyright": "Copyright © 2015-2021 Bitwarden Inc.",
+    "copyright": "Copyright © 2015-2022 Bitwarden Inc.",
     "directories": {
       "buildResources": "resources",
       "output": "dist",
       "app": "build"
     },
     "afterSign": "scripts/after-sign.js",
+    "asarUnpack": [
+      "**/*.node"
+    ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
@@ -179,10 +185,7 @@
     "mas": {
       "entitlements": "resources/entitlements.mas.plist",
       "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
-      "hardenedRuntime": false,
-      "asarUnpack": [
-        "node_modules/keytar"
-      ]
+      "hardenedRuntime": false
     },
     "nsisWeb": {
       "oneClick": false,
@@ -281,8 +284,7 @@
     "typescript": "4.3.5",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
-    "webpack-merge": "^5.8.0",
-    "webpack-node-externals": "^3.0.0"
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "@angular/animations": "^12.2.13",
@@ -309,6 +311,6 @@
     "npm": "~8"
   },
   "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
+    "*": "prettier --ignore-unknown --write"
   }
 }

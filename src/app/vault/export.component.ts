@@ -30,7 +30,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
     eventService: EventService,
     policyService: PolicyService,
     userVerificationService: UserVerificationService,
-    fb: FormBuilder,
+    formBuilder: FormBuilder,
     private broadcasterService: BroadcasterService,
     logService: LogService
   ) {
@@ -44,7 +44,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
       window,
       logService,
       userVerificationService,
-      fb
+      formBuilder
     );
   }
 

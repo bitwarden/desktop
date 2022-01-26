@@ -734,7 +734,7 @@
     "message": "Учитавање..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Закључај сеф"
   },
   "passwordGenerator": {
     "message": "Генератор Лозинке"
@@ -1758,7 +1758,7 @@
     "message": "Једна или више полиса ваше организације вас спречава да извезете ваш сеф."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Додај налог"
   },
   "removeMasterPassword": {
     "message": "Уклони главну лозинку"
@@ -1788,9 +1788,12 @@
     "message": "Немогуће повезати се са добављачем кључева, покушајте поново касније."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Закључај сефове"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Истовремено се не може пријавити више од 5 налога."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Граница налога достигнута. Одјавите се од једног налога да би додали други."
   }
 }

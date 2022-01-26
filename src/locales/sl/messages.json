@@ -1035,7 +1035,7 @@
     "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Osvežite članstvo"
   },
   "premiumNotCurrentMember": {
     "message": "You are not currently a premium member."
@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

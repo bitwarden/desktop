@@ -734,7 +734,7 @@
     "message": "درحال بارگذاری..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "قفل کردن گاوصندوق"
   },
   "passwordGenerator": {
     "message": "تولید کننده کلمه عبور"
@@ -1758,7 +1758,7 @@
     "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "افزودن حساب کاربری"
   },
   "removeMasterPassword": {
     "message": "پاک کردن کلمه عبور اصلی"
@@ -1788,9 +1788,12 @@
     "message": "دسترسی به رابط کلید ممکن نیست، بعداً دوباره امتحان کنید."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "قفل کردن تمام گاوصندوق ها"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "بیش از 5 حساب را نمی توان همزمان وارد کرد."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "محدودیت حساب تکمیل شد. برای افزودن حساب دیگر، از یک حساب خارج شوید."
   }
 }

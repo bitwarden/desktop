@@ -336,7 +336,7 @@
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Valor enllaçat",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -542,10 +542,10 @@
     "message": "No hi ha cap element a llistar."
   },
   "sendVerificationCode": {
-    "message": "Enviar un codi de verificació al correu electrònic"
+    "message": "Envia un codi de verificació al correu electrònic"
   },
   "sendCode": {
-    "message": "Enviar codi"
+    "message": "Envia codi"
   },
   "codeSent": {
     "message": "Codi enviat"
@@ -554,7 +554,7 @@
     "message": "Codi de verificació"
   },
   "confirmIdentity": {
-    "message": "Confirmi la seva contrasenya per continuar."
+    "message": "Confirmeu la vostra contrasenya per continuar."
   },
   "verificationCodeRequired": {
     "message": "El codi de verificació és obligatori."
@@ -734,7 +734,7 @@
     "message": "S'està carregant..."
   },
   "lockVault": {
-    "message": "Bloquejar caixa forta"
+    "message": "Bloqueja caixa forta"
   },
   "passwordGenerator": {
     "message": "Generador de contrasenyes"
@@ -1758,16 +1758,16 @@
     "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
   },
   "addAccount": {
-    "message": "Afegir compte"
+    "message": "Afig compte"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Suprimiu la contrasenya mestra"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "S'ha suprimit la contrasenya mestra."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ està utilitzant SSO amb un servidor autoallotjat de claus. Ja no es requereix una contrasenya mestra d'inici de sessió per als membres d'aquesta organització.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1776,21 +1776,24 @@
     }
   },
   "leaveOrganization": {
-    "message": "Abandonar organització"
+    "message": "Abandona l'organització"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Esteu segur que voleu sortir d'aquesta organització?"
+    "message": "Esteu segur que voleu eixir d'aquesta organització?"
   },
   "leftOrganization": {
     "message": "Heu deixat l'organització."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "No es pot arribar al connector de claus, torneu-ho a provar més tard."
   },
   "lockAllVaults": {
-    "message": "Bloquejar totes les caixes fortes"
+    "message": "Bloqueja totes les caixes fortes"
   },
   "accountLimitReached": {
     "message": "No es pot iniciar sessió a més de 5 comptes al mateix temps."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
   }
 }

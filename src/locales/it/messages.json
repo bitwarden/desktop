@@ -1792,5 +1792,8 @@
   },
   "accountLimitReached": {
     "message": "Non possono essere accedere più di 5 account contemporaneamente."
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limite di account raggiunto. Disconnetti un account per aggiungerne un altro."
   }
 }

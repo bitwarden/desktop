@@ -1791,6 +1791,9 @@
     "message": "鎖定所有密碼庫"
   },
   "accountLimitReached": {
-    "message": "不能同時登入五隻帳號。"
+    "message": "最多只能同時登入 5 隻帳號。"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "已達帳戶數量上限。登出一個帳號後再加入其他的帳號。"
   }
 }
