@@ -64,7 +64,7 @@ export class NativeMessagingService {
       const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
 
       // Valudate the UserId to ensure we are logged into the same account.
-      const userIds = Object.keys(await firstValueFrom(this.stateService.accounts));
+      const userIds = Object.keys(this.stateService.accounts.getValue());
       if (!userIds.includes(rawMessage.userId)) {
         ipcRenderer.send("nativeMessagingReply", { command: "wrongUserId", appId: appId });
         return;
