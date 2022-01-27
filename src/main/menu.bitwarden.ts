@@ -50,19 +50,22 @@ export class BitwardenMenu implements IMenubarMenu {
   private readonly _messagingService: MessagingService;
   private readonly _accounts: { [userId: string]: MenuAccount };
   private readonly _window: BrowserWindow;
+  private readonly _isLocked: boolean;
 
   constructor(
     i18nService: I18nService,
     messagingService: MessagingService,
     updater: UpdaterMain,
     window: BrowserWindow,
-    accounts: { [userId: string]: MenuAccount }
+    accounts: { [userId: string]: MenuAccount },
+    isLocked: boolean
   ) {
     this._i18nService = i18nService;
     this._updater = updater;
     this._messagingService = messagingService;
     this._window = window;
     this._accounts = accounts;
+    this._isLocked = isLocked;
   }
 
   private get hasAccounts(): boolean {
@@ -99,6 +102,7 @@ export class BitwardenMenu implements IMenubarMenu {
       label: this.localize(process.platform === "darwin" ? "preferences" : "settings"),
       click: () => this.sendMessage("openSettings"),
       accelerator: "CmdOrCtrl+,",
+      enabled: !this._isLocked,
     };
   }
 
