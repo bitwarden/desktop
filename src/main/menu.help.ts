@@ -74,7 +74,7 @@ export class HelpMenu implements IMenubarMenu {
     return {
       id: "legal",
       label: this.localize("legal"),
-      visible: !isMacAppStore(),
+      visible: isMacAppStore(),
       submenu: this.legalSubmenu,
     };
   }
