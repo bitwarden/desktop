@@ -1,5 +1,3 @@
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome.scss";
 @import "~ngx-toastr/toastr";
 @import "~sweetalert2/src/sweetalert2.scss";
 
@@ -32,7 +30,7 @@ $fa-font-path: "~font-awesome/fonts";
     .icon i::before {
       float: left;
       font-style: normal;
-      font-family: FontAwesome;
+      font-family: $icomoon-font-family;
       font-size: 25px;
       line-height: 20px;
       padding-right: 15px;
@@ -55,7 +53,7 @@ $fa-font-path: "~font-awesome/fonts";
       }
 
       .icon i::before {
-        content: "\f0e7";
+        content: map_get($icons, "error");
       }
     }
 
@@ -65,7 +63,7 @@ $fa-font-path: "~font-awesome/fonts";
       }
 
       .icon i::before {
-        content: "\f071";
+        content: map_get($icons, "exclamation-triangle");
       }
     }
 
@@ -75,7 +73,7 @@ $fa-font-path: "~font-awesome/fonts";
       }
 
       .icon i:before {
-        content: "\f05a";
+        content: map_get($icons, "info-circle");
       }
     }
 
@@ -85,7 +83,7 @@ $fa-font-path: "~font-awesome/fonts";
       }
 
       .icon i:before {
-        content: "\f00C";
+        content: map_get($icons, "check");
       }
     }
   }

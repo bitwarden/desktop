@@ -61,9 +61,13 @@
           [disabled]="form.loading || !canSave"
           *ngIf="organizations && organizations.length"
         >
-          <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
           <i
-            class="fa fa-spinner fa-spin fa-lg fa-fw"
+            class="bwi bwi-save-changes bwi-lg bwi-fw"
+            [hidden]="form.loading"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
             [hidden]="!form.loading"
             aria-hidden="true"
           ></i>
