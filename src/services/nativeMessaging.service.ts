@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { ipcRenderer } from "electron";
+import { firstValueFrom } from "rxjs";
 import Swal from "sweetalert2";
 
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
@@ -9,16 +10,30 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { Utils } from "jslib-common/misc/utils";
 
+import { EncString } from "jslib-common/models/domain/encString";
 import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
 
 import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";
+
+type Message = {
+  command: string;
+
+  userId?: string;
+  timestamp?: number;
+
+  publicKey?: string;
+};
+
+type OuterMessage = {
+  message: Message | EncString;
+  appId: string;
+};
 
 @Injectable()
 export class NativeMessagingService {
@@ -31,7 +46,6 @@ export class NativeMessagingService {
     private logService: LogService,
     private i18nService: I18nService,
     private messagingService: MessagingService,
-    private vaultTimeoutService: VaultTimeoutService,
     private stateService: StateService
   ) {}
 
@@ -41,16 +55,17 @@ export class NativeMessagingService {
     });
   }
 
-  private async messageHandler(msg: any) {
+  private async messageHandler(msg: OuterMessage) {
     const appId = msg.appId;
     const rawMessage = msg.message;
 
     // Request to setup secure encryption
-    if (rawMessage.command === "setupEncryption") {
+    if ("command" in rawMessage && rawMessage.command === "setupEncryption") {
       const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
 
       // Valudate the UserId to ensure we are logged into the same account.
-      if (rawMessage.userId !== (await this.stateService.getUserId())) {
+      const userIds = Object.keys(this.stateService.accounts.getValue());
+      if (!userIds.includes(rawMessage.userId)) {
         ipcRenderer.send("nativeMessagingReply", { command: "wrongUserId", appId: appId });
         return;
       }
@@ -87,8 +102,13 @@ export class NativeMessagingService {
       return;
     }
 
-    const message = JSON.parse(
-      await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecrets.get(appId))
+    if (this.sharedSecrets.get(appId) == null) {
+      ipcRenderer.send("nativeMessagingReply", { command: "invalidateEncryption", appId: appId });
+      return;
+    }
+
+    const message: Message = JSON.parse(
+      await this.cryptoService.decryptToUtf8(rawMessage as EncString, this.sharedSecrets.get(appId))
     );
 
     // Shared secret is invalidated, force re-authentication
@@ -108,7 +128,7 @@ export class NativeMessagingService {
           return this.send({ command: "biometricUnlock", response: "not supported" }, appId);
         }
 
-        if (!(await this.vaultTimeoutService.isBiometricLockSet())) {
+        if (!(await this.stateService.getBiometricUnlock({ userId: message.userId }))) {
           this.send({ command: "biometricUnlock", response: "not enabled" }, appId);
 
           return await Swal.fire({
@@ -120,11 +140,16 @@ export class NativeMessagingService {
           });
         }
 
-        const keyB64 = (await this.cryptoService.getKeyFromStorage(KeySuffixOptions.Biometric))
-          .keyB64;
+        const key = await this.cryptoService.getKeyFromStorage(
+          KeySuffixOptions.Biometric,
+          message.userId
+        );
 
-        if (keyB64 != null) {
-          this.send({ command: "biometricUnlock", response: "unlocked", keyB64: keyB64 }, appId);
+        if (key != null) {
+          this.send(
+            { command: "biometricUnlock", response: "unlocked", keyB64: key.keyB64 },
+            appId
+          );
         } else {
           this.send({ command: "biometricUnlock", response: "canceled" }, appId);
         }
