@@ -10,29 +10,29 @@
             <div *ngIf="!isPremium">
               <p class="text-center lead">{{ "premiumNotCurrentMember" | i18n }}</p>
               <p>{{ "premiumSignUpAndGet" | i18n }}</p>
-              <ul class="fa-ul">
+              <ul class="bwi-ul">
                 <li>
-                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
                   {{ "premiumSignUpStorage" | i18n }}
                 </li>
                 <li>
-                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
                   {{ "premiumSignUpTwoStep" | i18n }}
                 </li>
                 <li>
-                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
                   {{ "premiumSignUpReports" | i18n }}
                 </li>
                 <li>
-                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
                   {{ "premiumSignUpTotp" | i18n }}
                 </li>
                 <li>
-                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
                   {{ "premiumSignUpSupport" | i18n }}
                 </li>
                 <li>
-                  <i class="fa-li fa fa-check text-success" aria-hidden="true"></i>
+                  <i class="bwi bwi-li bwi-check text-success" aria-hidden="true"></i>
                   {{ "premiumSignUpFuture" | i18n }}
                 </li>
               </ul>
@@ -74,12 +74,12 @@
             [appApiAction]="refreshPromise"
           >
             <i
-              class="fa fa-refresh fa-lg fa-fw"
+              class="bwi bwi-refresh bwi-lg bwi-fw"
               [hidden]="refreshBtn.loading"
               aria-hidden="true"
             ></i>
             <i
-              class="fa fa-spinner fa-spin fa-lg fa-fw"
+              class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
               [hidden]="!refreshBtn.loading"
               aria-hidden="true"
             ></i>

@@ -1,6 +1,6 @@
 <form id="lock-page" (ngSubmit)="submit()">
   <div class="content">
-    <p aria-hidden="true"><i class="fa fa-lock fa-4x text-muted"></i></p>
+    <p aria-hidden="true"><i class="bwi bwi-lock bwi-4x text-muted"></i></p>
     <p>{{ "yourVaultIsLocked" | i18n }}</p>
     <div class="box last">
       <div class="box-content">
@@ -40,9 +40,9 @@
               (click)="togglePassword()"
             >
               <i
-                class="fa fa-lg"
+                class="bwi bwi-lg"
                 aria-hidden="true"
-                [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
               ></i>
             </a>
           </div>
@@ -66,7 +66,7 @@
       </div>
       <div class="buttons-row">
         <button type="submit" class="btn primary block" appBlurClick *ngIf="!hideInput">
-          <i class="fa fa-unlock-alt" aria-hidden="true"></i> <b>{{ "unlock" | i18n }}</b>
+          <i class="bwi bwi-unlock" aria-hidden="true"></i> <b>{{ "unlock" | i18n }}</b>
         </button>
         <button type="button" class="btn block" appBlurClick (click)="logOut()">
           {{ "logOut" | i18n }}
