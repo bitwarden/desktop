@@ -40,7 +40,7 @@ export class SettingsComponent implements OnInit {
   locale: string;
   vaultTimeouts: any[];
   localeOptions: any[];
-  theme: string;
+  theme: ThemeType;
   themeOptions: any[];
   clearClipboard: number;
   clearClipboardOptions: any[];
