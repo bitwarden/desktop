@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez pas à jour votre clé de chiffrement."
   },
-  "options": {
-    "message": "Options"
-  },
   "editedFolder": {
     "message": "Dossier modifié"
   },
@@ -542,7 +539,7 @@
     "message": "Aucun élément à afficher."
   },
   "sendVerificationCode": {
-    "message": "Envoyer un code de vérification à votre adresse courriel"
+    "message": "Envoyer un code de vérification à votre adresse email"
   },
   "sendCode": {
     "message": "Envoyer le code"
@@ -787,7 +784,7 @@
     "message": "Échec de la synchronisation"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre identité pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -1715,7 +1712,7 @@
     "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
   },
   "updatedMasterPassword": {
-    "message": "Mot de Passe Maître mis à jour"
+    "message": "Mot de passe maître mis à jour"
   },
   "updateMasterPassword": {
     "message": "Mettre à jour le mot de passe maître"
@@ -1730,7 +1727,7 @@
     "message": "Minutes"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre-fort. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
+    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1743,31 +1740,31 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Inscription automatique"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Cette organisation a une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Export du coffre désactivé"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Ajouter un compte"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Supprimer le mot de passe maître"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Mot de passe maître supprimé."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1776,24 +1773,42 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Quitter l'organisation"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Êtes-vous sûr de vouloir quitter cette organisation ?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Vous avez quitté l'organisation."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "Impossible de contacter Key Connector, réessayez plus tard."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Verrouiller tous les coffres"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Vous ne pouvez pas connecter plus de 5 comptes en même temps."
+  },
+  "accountPreferences": {
+    "message": "Préférences"
+  },
+  "appPreferences": {
+    "message": "Paramètres de l'application (tous les comptes)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Limite de comptes atteinte. Déconnectez-vous d'un compte pour en ajouter un nouveau."
+  },
+  "settingsTitle": {
+    "message": "Paramètres de l'application pour $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Changer de compte"
   }
 }

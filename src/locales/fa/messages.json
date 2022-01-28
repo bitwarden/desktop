@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمی‌توانید از این قابلیت استفاده کنید."
   },
-  "options": {
-    "message": "گزینه‌ها"
-  },
   "editedFolder": {
     "message": "پوشه ویرایش شد"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "بیش از 5 حساب را نمی توان همزمان وارد کرد."
   },
+  "accountPreferences": {
+    "message": "تنظیمات"
+  },
+  "appPreferences": {
+    "message": "تنظیمات اپ (تمام حسابها)"
+  },
   "accountSwitcherLimitReached": {
     "message": "محدودیت حساب تکمیل شد. برای افزودن حساب دیگر، از یک حساب خارج شوید."
+  },
+  "settingsTitle": {
+    "message": "تنظیمات اپ برای $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "تعویض حساب کاربری"
   }
 }

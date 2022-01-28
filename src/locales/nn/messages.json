@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
   },
-  "options": {
-    "message": "Options"
-  },
   "editedFolder": {
     "message": "Edited folder"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
   },
+  "accountPreferences": {
+    "message": "Preferences"
+  },
+  "appPreferences": {
+    "message": "App Settings (All Accounts)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
+  },
+  "settingsTitle": {
+    "message": "App settings for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
   }
 }
