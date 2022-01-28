@@ -1,13 +1,17 @@
+import { BrowserWindow, MenuItemConstructorOptions } from "electron";
+
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
-import { isMacAppStore } from "jslib-electron/utils";
-
 import { IMenubarMenu } from "./menubar";
 
-import { MenuItemConstructorOptions } from "electron";
+import { FirstMenu } from "./menu.first";
+import { MenuAccount } from "./menu.updater";
 
-export class FileMenu implements IMenubarMenu {
+import { UpdaterMain } from "jslib-electron/updater.main";
+import { isMac, isMacAppStore } from "jslib-electron/utils";
+
+export class FileMenu extends FirstMenu implements IMenubarMenu {
   readonly id: string = "fileMenu";
 
   get label(): string {
@@ -15,25 +19,42 @@ export class FileMenu implements IMenubarMenu {
   }
 
   get items(): MenuItemConstructorOptions[] {
-    return [
+    let items = [
       this.addNewLogin,
       this.addNewItem,
       this.addNewFolder,
       this.separator,
       this.syncVault,
       this.exportVault,
-      this.quitBitwarden,
     ];
+
+    if (!isMac()) {
+      items = [
+        ...items,
+        ...[
+          this.separator,
+          this.settings,
+          this.lock,
+          this.lockAll,
+          this.logOut,
+          this.separator,
+          this.quitBitwarden,
+        ],
+      ];
+    }
+
+    return items;
   }
 
-  private readonly _i18nService: I18nService;
-  private readonly _messagingService: MessagingService;
-  private readonly _isLocked: boolean;
-
-  constructor(i18nService: I18nService, messagingService: MessagingService, isLocked: boolean) {
-    this._i18nService = i18nService;
-    this._messagingService = messagingService;
-    this._isLocked = isLocked;
+  constructor(
+    i18nService: I18nService,
+    messagingService: MessagingService,
+    updater: UpdaterMain,
+    window: BrowserWindow,
+    accounts: { [userId: string]: MenuAccount },
+    isLocked: boolean
+  ) {
+    super(i18nService, messagingService, updater, window, accounts, isLocked);
   }
 
   private get addNewLogin(): MenuItemConstructorOptions {
@@ -93,10 +114,6 @@ export class FileMenu implements IMenubarMenu {
     };
   }
 
-  private get separator(): MenuItemConstructorOptions {
-    return { type: "separator" };
-  }
-
   private get syncVault(): MenuItemConstructorOptions {
     return {
       id: "syncVault",
@@ -122,13 +139,5 @@ export class FileMenu implements IMenubarMenu {
       visible: !isMacAppStore(),
       role: "quit",
     };
-  }
-
-  private localize(s: string) {
-    return this._i18nService.t(s);
-  }
-
-  private sendMessage(message: string) {
-    this._messagingService.send(message);
   }
 }
