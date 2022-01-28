@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Du kannst diese Funktion nicht nutzen, bevor du deinen Verschlüsselungsschlüssel aktualisiert hast."
   },
-  "options": {
-    "message": "Optionen"
-  },
   "editedFolder": {
     "message": "Ordner bearbeitet"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Es dürfen nicht mehr als 5 Konten gleichzeitig angemeldet sein."
   },
+  "accountPreferences": {
+    "message": "Einstellungen"
+  },
+  "appPreferences": {
+    "message": "App-Einstellungen (Alle Konten)"
+  },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Kontolimit erreicht. Abmelden von einem Konto, um ein anderes hinzuzufügen."
+  },
+  "settingsTitle": {
+    "message": "App-Einstellungen für $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Konto wechseln"
   }
 }

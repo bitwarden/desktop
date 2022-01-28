@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Seda funktsiooni ei saa enne krüpteerimise võtme uuendamist kasutada."
   },
-  "options": {
-    "message": "Valikud"
-  },
   "editedFolder": {
     "message": "Kaust on muudetud"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Korraga ei tohi olla sisse logitud rohkem kui 5 kontot."
   },
+  "accountPreferences": {
+    "message": "Eelistused"
+  },
+  "appPreferences": {
+    "message": "Rakenduse seaded (kõik kontod)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Kontode limiit on saavutatud. Teise konto lisamiseks pead esmalt välja logima."
+  },
+  "settingsTitle": {
+    "message": "Rakenduse seaded e-postile $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Vaheta kontot"
   }
 }

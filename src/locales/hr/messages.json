@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Ne možeš koristiti ovu značajku prije nego ažuriraš ključ za šifriranje."
   },
-  "options": {
-    "message": "Opcije"
-  },
   "editedFolder": {
     "message": "Uređena mapa"
   },
@@ -734,7 +731,7 @@
     "message": "Učitavanje..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Zaključaj trezor"
   },
   "passwordGenerator": {
     "message": "Generator lozinki"
@@ -1758,7 +1755,7 @@
     "message": "Jedno ili više pravila organizacija onemogućuje izvoz osobnog trezora. "
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Dodaj račun"
   },
   "removeMasterPassword": {
     "message": "Ukloni glavnu lozinku"
@@ -1788,12 +1785,30 @@
     "message": "Nije moguće spajanje s konektorom za ključ, pokušaj kasnije."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Zaključaj sve trezore"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "U isto vrijeme ne smije biti prijavljeno više od 5 računa."
+  },
+  "accountPreferences": {
+    "message": "Postavke"
+  },
+  "appPreferences": {
+    "message": "Postavke aplikacije (svi računi)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Dosegnuto je ograničenje računa. Odjavite se s računa da dodate drugi."
+  },
+  "settingsTitle": {
+    "message": "Postavke aplikacije za $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Promijeni račun"
   }
 }

@@ -45,10 +45,10 @@
     "message": "Del"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Flytt til organisasjon"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ flyttet til $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Velg en organisasjon som du ønsker å flyttet elementet til. Ved å flytte til en organisasjon, overfører du eierskapet til elementet til den organisasjonen. Du vil ikke lenger være den direkte eieren av elementet etter at den har blitt flyttet."
   },
   "attachments": {
     "message": "Vedlegg"
@@ -269,7 +269,7 @@
     "message": "Etternavn"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Fullt navn"
   },
   "address1": {
     "message": "Adresse 1"
@@ -332,11 +332,11 @@
     "message": "Boolsk verdi"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Tilknyttet",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Tilknyttet verdi",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -389,7 +389,7 @@
     "message": "Kopier URIen"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Kopier verifiseringskode (TOTP)"
   },
   "length": {
     "message": "Lengde"
@@ -456,9 +456,6 @@
   },
   "updateKey": {
     "message": "Du kan ikke bruke denne funksjonen før du oppdaterer krypteringsnøkkelen din."
-  },
-  "options": {
-    "message": "Alternativer"
   },
   "editedFolder": {
     "message": "Redigerte mappen"
@@ -542,25 +539,25 @@
     "message": "Det er ingen gjenstander å liste opp."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Send en verifiseringskode til e-posten din"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Send kode"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kode sendt"
   },
   "verificationCode": {
     "message": "Verifiseringskode"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Bekreft identiteten din for å fortsette."
   },
   "verificationCodeRequired": {
     "message": "En verifiseringskode er påkrevd."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Ugyldig verifiseringskode"
   },
   "continue": {
     "message": "Fortsett"
@@ -632,7 +629,7 @@
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Bruk en hvilken som helst WebAuthn-aktivert sikkerhetsnøkkel for å få tilgang til kontoen din."
   },
   "emailTitle": {
     "message": "E-post"
@@ -734,7 +731,7 @@
     "message": "Laster inn..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Lås hvelv"
   },
   "passwordGenerator": {
     "message": "Passordgenerator"
@@ -895,7 +892,7 @@
     "message": "Minimer til menylinjen"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Når du minimerer vinduet, vil et ikon vises i oppgavelinjen i stedet."
   },
   "enableCloseToTray": {
     "message": "Lukk til oppgavelinjen"
@@ -1545,24 +1542,24 @@
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Fil"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "searchSends": {
     "message": "Search Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Rediger Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
     "message": "Mitt hvelv"
   },
   "text": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "deletionDate": {
     "message": "Deletion Date"
@@ -1572,7 +1569,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Utløpsdato"
   },
   "expirationDateDesc": {
     "message": "If set, access to this Send will expire on the specified date and time.",
@@ -1685,7 +1682,7 @@
     "message": "Max access count reached"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Utløpt"
   },
   "pendingDeletion": {
     "message": "Pending deletion"
@@ -1724,10 +1721,10 @@
     "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "hours": {
-    "message": "Hours"
+    "message": "Timer"
   },
   "minutes": {
-    "message": "Minutes"
+    "message": "Minutter"
   },
   "vaultTimeoutPolicyInEffect": {
     "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
@@ -1758,7 +1755,7 @@
     "message": "One or more organization policies prevents you from exporting your personal vault."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Legg til konto"
   },
   "removeMasterPassword": {
     "message": "Remove Master Password"
@@ -1776,24 +1773,42 @@
     }
   },
   "leaveOrganization": {
-    "message": "Leave Organization"
+    "message": "Forlat organisasjon"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Are you sure you want to leave this organization?"
+    "message": "Er du sikker på at du vil forlate organisasjonen?"
   },
   "leftOrganization": {
-    "message": "You have left the organization."
+    "message": "Du forlot organisasjonen."
   },
   "ssoKeyConnectorUnavailable": {
     "message": "Unable to reach the key connector, try again later."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Lås alle hvelv"
   },
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
   },
+  "accountPreferences": {
+    "message": "Preferanser"
+  },
+  "appPreferences": {
+    "message": "Appinnstillinger (alle kontoer)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
+  },
+  "settingsTitle": {
+    "message": "Appinnstillinger for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Bytt konto"
   }
 }
