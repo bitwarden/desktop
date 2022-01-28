@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Δεν μπορείτε να χρησιμοποιήσετε αυτήν τη λειτουργία μέχρι να ενημερώσετε το κλειδί κρυπτογράφησης."
   },
-  "options": {
-    "message": "Επιλογές"
-  },
   "editedFolder": {
     "message": "Επεξεργασμένος φάκελος"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Δεν μπορούν να συνδεθούν περισσότεροι από 5 λογαριασμοί ταυτόχρονα."
   },
+  "accountPreferences": {
+    "message": "Προτιμήσεις"
+  },
+  "appPreferences": {
+    "message": "Ρυθμίσεις Εφαρμογής (Όλοι Οι Λογαριασμοί)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Συμπληρώθηκε το όριο λογαριασμού. Αποσυνδεθείτε από έναν λογαριασμό για να προσθέσετε έναν άλλο."
+  },
+  "settingsTitle": {
+    "message": "Ρυθμίσεις εφαρμογής για $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
   }
 }

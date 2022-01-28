@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Você não pode usar este recurso até você atualizar sua chave de criptografia."
   },
-  "options": {
-    "message": "Opções"
-  },
   "editedFolder": {
     "message": "Pasta editada"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Não mais do que 5 contas podem estar logadas ao mesmo tempo."
   },
+  "accountPreferences": {
+    "message": "Preferences"
+  },
+  "appPreferences": {
+    "message": "App Settings (All Accounts)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
+  },
+  "settingsTitle": {
+    "message": "App settings for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
   }
 }

@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Nie możesz używać tej funkcji, dopóki nie zaktualizujesz klucza szyfrowania."
   },
-  "options": {
-    "message": "Opcje"
-  },
   "editedFolder": {
     "message": "Folder został zaktualizowany"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Nie możesz zalogować się na więcej niż 5 kont jednocześnie."
   },
+  "accountPreferences": {
+    "message": "Ustawienia"
+  },
+  "appPreferences": {
+    "message": "Ustawienia aplikacji (wszystkie konta)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Limit konta został osiągnięty. Wyloguj się z konta, aby dodać inne."
+  },
+  "settingsTitle": {
+    "message": "Ustawienia aplikacji (konto $EMAIL$)",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Przełącz konto"
   }
 }

@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Šo iespēju nevar izmantot, kamēr nav atjaunināta šifrēšanas atslēga."
   },
-  "options": {
-    "message": "Iespējas"
-  },
   "editedFolder": {
     "message": "Mape labota"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Vienlaicīgi var būt pierakstījušies ne vairāk kā 5 konti."
   },
+  "accountPreferences": {
+    "message": "Uzstādījumi"
+  },
+  "appPreferences": {
+    "message": "Lietotnes iestatījumi (visi konti)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Sasniegti konta ierobežojumi. Izrakstīties, lai pievienotu citu."
+  },
+  "settingsTitle": {
+    "message": "Lietotnes iestatījumi kontam $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Pārslēgties starp kontiem"
   }
 }

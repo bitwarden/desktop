@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Et voi käyttää tätä toimintoa ennen kuin päivität salausavaimesi."
   },
-  "options": {
-    "message": "Lisäasetukset"
-  },
   "editedFolder": {
     "message": "Kansiota muokattu"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Enintään 5 tiliä voi olla samanaikaisesti kirjautuneena."
   },
+  "accountPreferences": {
+    "message": "Asetukset"
+  },
+  "appPreferences": {
+    "message": "Sovellusasetukset (kaikki tilit)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Tilien enimmäismäärä on saavutettu. Kirjaa jokin niistä ulos lisätäksesi tilin."
+  },
+  "settingsTitle": {
+    "message": "Sovellusasetukset tunnukselle $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Vaihda tiliä"
   }
 }

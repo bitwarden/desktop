@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Te funkcije ne morete koristiti, dokler dokler ne posodobite vašega ključa za šifriranje."
   },
-  "options": {
-    "message": "Možnosti"
-  },
   "editedFolder": {
     "message": "Mapa je bila urejena"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "No more than 5 accounts may be logged in at the same time."
   },
+  "accountPreferences": {
+    "message": "Preferences"
+  },
+  "appPreferences": {
+    "message": "App Settings (All Accounts)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."
+  },
+  "settingsTitle": {
+    "message": "App settings for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
   }
 }
