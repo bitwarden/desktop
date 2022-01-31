@@ -103,9 +103,9 @@
             (click)="toggleOptions()"
           >
             <i
-              class="fa fa-lg"
+              class="bwi bwi-lg"
               aria-hidden="true"
-              [ngClass]="{ 'fa-chevron-down': !showOptions, 'fa-chevron-up': showOptions }"
+              [ngClass]="{ 'bwi-angle-down': !showOptions, 'bwi-chevron-up': showOptions }"
             ></i>
           </a>
         </div>
@@ -168,9 +168,9 @@
                   [disabled]="disableSend"
                 >
                   <i
-                    class="fa fa-lg"
+                    class="bwi bwi-lg"
                     aria-hidden="true"
-                    [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+                    [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                   ></i>
                 </a>
               </div>
@@ -260,8 +260,8 @@
       [disabled]="form.loading"
       *ngIf="!disableSend"
     >
-      <i class="fa fa-spinner fa-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-      <span><i class="fa fa-save fa-lg fa-fw" aria-hidden="true"></i></span>
+      <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
+      <span><i class="bwi bwi-save-changes bwi-lg bwi-fw" aria-hidden="true"></i></span>
     </button>
     <button appBlurClick type="button" (click)="cancel()" [disabled]="form.loading">
       {{ "cancel" | i18n }}
@@ -274,7 +274,7 @@
         appA11yTitle="{{ 'copySendLinkToClipboard' | i18n }}"
         *ngIf="editMode"
       >
-        <i class="fa fa-copy fa-lg fa-fw" aria-hidden="true"></i>
+        <i class="bwi bwi-clone bwi-lg bwi-fw" aria-hidden="true"></i>
       </button>
       <button
         #deleteBtn
@@ -285,9 +285,9 @@
         appA11yTitle="{{ 'delete' | i18n }}"
         *ngIf="editMode"
       >
-        <i class="fa fa-trash-o fa-lg fa-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
+        <i class="bwi bwi-trash bwi-lg bwi-fw" [hidden]="deleteBtn.loading" aria-hidden="true"></i>
         <i
-          class="fa fa-spinner fa-spin fa-lg fa-fw"
+          class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
           [hidden]="!deleteBtn.loading"
           aria-hidden="true"
         ></i>

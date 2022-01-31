@@ -9,12 +9,12 @@ export class NavComponent {
   items: any[] = [
     {
       link: "/vault",
-      icon: "fa-lock",
+      icon: "bwi-lock-f",
       label: this.i18nService.translate("myVault"),
     },
     {
       link: "/send",
-      icon: "fa-paper-plane",
+      icon: "bwi-send-f",
       label: "Send",
     },
   ];

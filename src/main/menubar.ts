@@ -14,6 +14,7 @@ import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
 import { UpdaterMain } from "jslib-electron/updater.main";
+import { isMac } from "jslib-electron/utils";
 import { WindowMain } from "jslib-electron/window.main";
 
 export interface IMenubarMenu {
@@ -62,14 +63,14 @@ export class Menubar {
     }
 
     this.items = [
-      new BitwardenMenu(
+      new FileMenu(
         i18nService,
         messagingService,
         updaterMain,
         windowMain.win,
-        updateRequest?.accounts
+        updateRequest?.accounts,
+        isLocked
       ),
-      new FileMenu(i18nService, messagingService, isLocked),
       new EditMenu(i18nService, messagingService, isLocked),
       new ViewMenu(i18nService, messagingService, isLocked),
       new AccountMenu(i18nService, messagingService, webVaultUrl, windowMain.win, isLocked),
@@ -80,5 +81,21 @@ export class Menubar {
         new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain)
       ),
     ];
+
+    if (isMac()) {
+      this.items = [
+        ...[
+          new BitwardenMenu(
+            i18nService,
+            messagingService,
+            updaterMain,
+            windowMain.win,
+            updateRequest?.accounts,
+            isLocked
+          ),
+        ],
+        ...this.items,
+      ];
+    }
   }
 }

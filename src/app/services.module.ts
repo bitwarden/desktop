@@ -46,7 +46,9 @@ import { ThemeType } from "jslib-common/enums/themeType";
 
 import { Account } from "../models/account";
 
-import { AccountFactory } from "jslib-common/models/domain/account";
+import { GlobalState } from "jslib-common/models/domain/globalState";
+
+import { StateFactory } from "jslib-common/factories/stateFactory";
 
 export function initFactory(
   window: Window,
@@ -189,7 +191,7 @@ export function initFactory(
           secureStorageService,
           logService,
           stateMigrationService,
-          new AccountFactory(Account)
+          new StateFactory(GlobalState, Account)
         ),
       deps: [
         StorageServiceAbstraction,

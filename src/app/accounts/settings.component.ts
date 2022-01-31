@@ -40,7 +40,7 @@ export class SettingsComponent implements OnInit {
   locale: string;
   vaultTimeouts: any[];
   localeOptions: any[];
-  theme: string;
+  theme: ThemeType;
   themeOptions: any[];
   clearClipboard: number;
   clearClipboardOptions: any[];
@@ -122,10 +122,6 @@ export class SettingsComponent implements OnInit {
       { name: i18nService.t("never"), value: null },
     ]);
 
-    this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
-      this.saveVaultTimeoutOptions();
-    });
-
     const localeOptions: any[] = [];
     i18nService.supportedTranslationLocales.forEach((locale) => {
       let name = locale;
@@ -139,7 +135,7 @@ export class SettingsComponent implements OnInit {
     this.localeOptions = localeOptions;
 
     this.themeOptions = [
-      { name: i18nService.t("default"), value: null },
+      { name: i18nService.t("default"), value: ThemeType.System },
       { name: i18nService.t("light"), value: ThemeType.Light },
       { name: i18nService.t("dark"), value: ThemeType.Dark },
       { name: "Nord", value: ThemeType.Nord },
@@ -179,6 +175,10 @@ export class SettingsComponent implements OnInit {
     // Security
     this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
     this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
+    this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
+      this.saveVaultTimeoutOptions();
+    });
+
     const pinSet = await this.vaultTimeoutService.isPinLockSet();
     this.pin = pinSet[0] || pinSet[1];
 

@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Non puoi utilizzare questa funzione finché non aggiorni la tua chiave."
   },
-  "options": {
-    "message": "Opzioni"
-  },
   "editedFolder": {
     "message": "Cartella modificata"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Non possono essere accedere più di 5 account contemporaneamente."
   },
+  "accountPreferences": {
+    "message": "Preferenze"
+  },
+  "appPreferences": {
+    "message": "Impostazioni applicazione (tutti gli account)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Limite di account raggiunto. Disconnetti un account per aggiungerne un altro."
+  },
+  "settingsTitle": {
+    "message": "Impostazioni applicazione per $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Cambia account"
   }
 }

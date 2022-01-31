@@ -45,10 +45,10 @@
     "message": "שתף"
   },
   "moveToOrganization": {
-    "message": "העבר לארגון"
+    "message": "העברה לארגון"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ הועבר ל- $ORGNAME$",
+    "message": "$ITEMNAME$ הועבר ל־$ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "לא ניתן להשתמש ביכולת זו עד שתעדכן את מפתח ההצפנה שלך."
   },
-  "options": {
-    "message": "אפשרויות"
-  },
   "editedFolder": {
     "message": "תיקיה שנערכה"
   },
@@ -734,7 +731,7 @@
     "message": "טוען..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "נעילת כספת"
   },
   "passwordGenerator": {
     "message": "יוצר הסיסמאות"
@@ -1758,7 +1755,7 @@
     "message": "מדיניות אחת או יותר של הארגון שלך מונעות ממך לייצא את הכספת האישית שלך."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "הוספת חשבון"
   },
   "removeMasterPassword": {
     "message": "הסרת סיסמה ראשית"
@@ -1788,12 +1785,30 @@
     "message": "לא ניתן להגיע למחבר המפתח, נא לנסות שוב."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "נעילת כל הכספות"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "אפשר להיכנס לעד 5 חשבונות בו־זמנית."
+  },
+  "accountPreferences": {
+    "message": "העדפות"
+  },
+  "appPreferences": {
+    "message": "הגדרות היישום (כל החשבונות)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "הגעת למגבלת החשבונות. יש לצאת מחשבון כדי להוסיף אחד נוסף."
+  },
+  "settingsTitle": {
+    "message": "הגדרות היישום עבור $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "החלף חשבון"
   }
 }

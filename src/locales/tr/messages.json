@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Şifreleme anahtarınızı güncelleştirene kadar bu özelliği kullanamazsınız."
   },
-  "options": {
-    "message": "Seçenekler"
-  },
   "editedFolder": {
     "message": "Klasör Düzenlendi"
   },
@@ -1793,7 +1790,25 @@
   "accountLimitReached": {
     "message": "Aynı anda 5'ten fazla hesapla oturum açamazsınız."
   },
+  "accountPreferences": {
+    "message": "Tercihler"
+  },
+  "appPreferences": {
+    "message": "Uygulama ayarları (tüm hesaplar)"
+  },
   "accountSwitcherLimitReached": {
     "message": "Hesap sınırına ulaştınız. Yeni hesap eklemek için hesaplardan birinden çıkış yapın."
+  },
+  "settingsTitle": {
+    "message": "$EMAIL$ uygulama ayarları",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Hesabı değiştir"
   }
 }
