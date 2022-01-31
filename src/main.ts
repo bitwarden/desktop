@@ -22,7 +22,11 @@ import { NativeMessagingMain } from "./main/nativeMessaging.main";
 
 import { StateService } from "jslib-common/services/state.service";
 
-import { Account, AccountFactory } from "jslib-common/models/domain/account";
+import { Account } from "./models/account";
+
+import { GlobalState } from "jslib-common/models/domain/globalState";
+
+import { StateFactory } from "jslib-common/factories/stateFactory";
 
 export class Main {
   logService: ElectronLogService;
@@ -86,7 +90,7 @@ export class Main {
       null,
       this.logService,
       null,
-      new AccountFactory(Account)
+      new StateFactory(GlobalState, Account)
     );
 
     this.windowMain = new WindowMain(
