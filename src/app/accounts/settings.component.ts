@@ -135,7 +135,7 @@ export class SettingsComponent implements OnInit {
     this.localeOptions = localeOptions;
 
     this.themeOptions = [
-      { name: i18nService.t("default"), value: null },
+      { name: i18nService.t("default"), value: ThemeType.System },
       { name: i18nService.t("light"), value: ThemeType.Light },
       { name: i18nService.t("dark"), value: ThemeType.Dark },
       { name: "Nord", value: ThemeType.Nord },
