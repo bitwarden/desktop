@@ -40,8 +40,6 @@ import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.serv
 
 import { CipherType } from "jslib-common/enums/cipherType";
 
-import { VaultTimeoutPreset } from "../enums/vaultTimeoutPreset";
-
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
 import { PasswordGeneratorComponent } from "./vault/password-generator.component";
@@ -54,6 +52,12 @@ import { MenuUpdateRequest } from "src/main/menu.updater";
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
+
+const systemTimeoutOptions = {
+  onLock: -2,
+  onSuspend: -3,
+  onIdle: -4,
+};
 
 @Component({
   selector: "app-root",
@@ -342,11 +346,11 @@ export class AppComponent implements OnInit {
             }
             break;
           case "systemSuspended":
-            await this.checkForSystemTimeout(VaultTimeoutPreset.OnSystemSuspended);
+            await this.checkForSystemTimeout(systemTimeoutOptions.onSuspend);
           case "systemLocked":
-            await this.checkForSystemTimeout(VaultTimeoutPreset.OnSystemLock);
+            await this.checkForSystemTimeout(systemTimeoutOptions.onLock);
           case "systemIdle":
-            await this.checkForSystemTimeout(VaultTimeoutPreset.OnSystemIdle);
+            await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
         }
       });
     });
@@ -592,7 +596,7 @@ export class AppComponent implements OnInit {
     await this.systemService.startProcessReload();
   }
 
-  private async checkForSystemTimeout(timeout: VaultTimeoutPreset): Promise<void> {
+  private async checkForSystemTimeout(timeout: number): Promise<void> {
     for (const userId in this.stateService.accounts.getValue()) {
       if (userId == null) {
         continue;
