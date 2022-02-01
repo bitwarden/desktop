@@ -39,7 +39,7 @@ import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib
 import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
 import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions/sync.service";
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
-import { TwoFactorService as TwoFactorServiceAbstraction } from 'jslib-common/abstractions/twoFactor.service';
+import { TwoFactorService as TwoFactorServiceAbstraction } from "jslib-common/abstractions/twoFactor.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-common/abstractions/vaultTimeout.service";
 
 import { ThemeType } from "jslib-common/enums/themeType";

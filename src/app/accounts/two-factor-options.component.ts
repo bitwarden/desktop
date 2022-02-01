@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { TwoFactorService } from 'jslib-common/abstractions/twoFactor.service';
+import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
 
 import { TwoFactorOptionsComponent as BaseTwoFactorOptionsComponent } from "jslib-angular/components/two-factor-options.component";
 
