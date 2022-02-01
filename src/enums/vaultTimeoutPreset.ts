@@ -4,7 +4,7 @@ export enum VaultTimeoutPreset {
   FifteenMinutes = 15,
   ThirtyMinutes = 30,
   OneHour = 60,
-  FourHours = 340,
+  FourHours = 240,
 
   OnRestart = -1,
   OnSystemLock = -2,
