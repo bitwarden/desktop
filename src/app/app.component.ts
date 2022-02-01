@@ -339,6 +339,45 @@ export class AppComponent implements OnInit {
               this.router.navigate(["vault"]);
             }
             break;
+          case "systemSuspended":
+            for (const userId in this.stateService.accounts.getValue()) {
+              if (userId == null) {
+                continue;
+              }
+              const options = await this.getVaultTimeoutOptions(userId);
+              if (options[0] === -3) {
+                options[1] === "logOut"
+                  ? this.messagingService.send("logout", { expired: false, userId: userId })
+                  : this.messagingService.send("lockVault", { userId: userId });
+              }
+            }
+            break;
+          case "systemLocked":
+            for (const userId in this.stateService.accounts.getValue()) {
+              if (userId == null) {
+                continue;
+              }
+              const options = await this.getVaultTimeoutOptions(userId);
+              if (options[0] === -2) {
+                options[1] === "logOut"
+                  ? this.messagingService.send("logout", { expired: false, userId: userId })
+                  : this.messagingService.send("lockVault", { userId: userId });
+              }
+            }
+            break;
+          case "systemIdel":
+            for (const userId in this.stateService.accounts.getValue()) {
+              if (userId == null) {
+                continue;
+              }
+              const options = await this.getVaultTimeoutOptions(userId);
+              if (options[0] === -4) {
+                options[1] === "logOut"
+                  ? this.messagingService.send("logout", { expired: false, userId: userId })
+                  : this.messagingService.send("lockVault", { userId: userId });
+              }
+            }
+            break;
         }
       });
     });
@@ -582,5 +621,11 @@ export class AppComponent implements OnInit {
       }
     }
     await this.systemService.startProcessReload();
+  }
+
+  private async getVaultTimeoutOptions(userId: string): Promise<[number, string]> {
+    const timeout = await this.stateService.getVaultTimeout({ userId: userId });
+    const action = await this.stateService.getVaultTimeoutAction({ userId: userId });
+    return [timeout, action];
   }
 }
