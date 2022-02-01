@@ -53,6 +53,12 @@ const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 
+const systemTimeoutOptions = {
+  onLock: -2,
+  onSuspend: -3,
+  onIdle: -4,
+};
+
 @Component({
   selector: "app-root",
   styles: [],
@@ -339,6 +345,12 @@ export class AppComponent implements OnInit {
               this.router.navigate(["vault"]);
             }
             break;
+          case "systemSuspended":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onSuspend);
+          case "systemLocked":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onLock);
+          case "systemIdle":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
         }
       });
     });
@@ -582,5 +594,25 @@ export class AppComponent implements OnInit {
       }
     }
     await this.systemService.startProcessReload();
+  }
+
+  private async checkForSystemTimeout(timeout: number): Promise<void> {
+    for (const userId in this.stateService.accounts.getValue()) {
+      if (userId == null) {
+        continue;
+      }
+      const options = await this.getVaultTimeoutOptions(userId);
+      if (options[0] === timeout) {
+        options[1] === "logOut"
+          ? this.logOut(false, userId)
+          : await this.vaultTimeoutService.lock(true, userId);
+      }
+    }
+  }
+
+  private async getVaultTimeoutOptions(userId: string): Promise<[number, string]> {
+    const timeout = await this.stateService.getVaultTimeout({ userId: userId });
+    const action = await this.stateService.getVaultTimeoutAction({ userId: userId });
+    return [timeout, action];
   }
 }
