@@ -40,6 +40,8 @@ import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.serv
 
 import { CipherType } from "jslib-common/enums/cipherType";
 
+import { VaultTimeoutPreset } from "../enums/vaultTimeoutPreset";
+
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
 import { PasswordGeneratorComponent } from "./vault/password-generator.component";
@@ -340,44 +342,11 @@ export class AppComponent implements OnInit {
             }
             break;
           case "systemSuspended":
-            for (const userId in this.stateService.accounts.getValue()) {
-              if (userId == null) {
-                continue;
-              }
-              const options = await this.getVaultTimeoutOptions(userId);
-              if (options[0] === -3) {
-                options[1] === "logOut"
-                  ? this.messagingService.send("logout", { expired: false, userId: userId })
-                  : this.messagingService.send("lockVault", { userId: userId });
-              }
-            }
-            break;
+            await this.checkForSystemTimeout(VaultTimeoutPreset.OnSystemSuspended);
           case "systemLocked":
-            for (const userId in this.stateService.accounts.getValue()) {
-              if (userId == null) {
-                continue;
-              }
-              const options = await this.getVaultTimeoutOptions(userId);
-              if (options[0] === -2) {
-                options[1] === "logOut"
-                  ? this.messagingService.send("logout", { expired: false, userId: userId })
-                  : this.messagingService.send("lockVault", { userId: userId });
-              }
-            }
-            break;
-          case "systemIdel":
-            for (const userId in this.stateService.accounts.getValue()) {
-              if (userId == null) {
-                continue;
-              }
-              const options = await this.getVaultTimeoutOptions(userId);
-              if (options[0] === -4) {
-                options[1] === "logOut"
-                  ? this.messagingService.send("logout", { expired: false, userId: userId })
-                  : this.messagingService.send("lockVault", { userId: userId });
-              }
-            }
-            break;
+            await this.checkForSystemTimeout(VaultTimeoutPreset.OnSystemLock);
+          case "systemIdle":
+            await this.checkForSystemTimeout(VaultTimeoutPreset.OnSystemIdle);
         }
       });
     });
@@ -621,6 +590,20 @@ export class AppComponent implements OnInit {
       }
     }
     await this.systemService.startProcessReload();
+  }
+
+  private async checkForSystemTimeout(timeout: VaultTimeoutPreset): Promise<void> {
+    for (const userId in this.stateService.accounts.getValue()) {
+      if (userId == null) {
+        continue;
+      }
+      const options = await this.getVaultTimeoutOptions(userId);
+      if (options[0] === timeout) {
+        options[1] === "logOut"
+          ? this.logOut(false, userId)
+          : await this.vaultTimeoutService.lock(true, userId);
+      }
+    }
   }
 
   private async getVaultTimeoutOptions(userId: string): Promise<[number, string]> {
