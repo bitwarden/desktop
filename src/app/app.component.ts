@@ -96,6 +96,7 @@ export class AppComponent implements OnInit {
   private modal: ModalRef = null;
   private idleTimer: number = null;
   private isIdle = false;
+  private activeUserId: string = null;
 
   constructor(
     private broadcasterService: BroadcasterService,
@@ -128,21 +129,18 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let activeUserId: string = null;
     this.stateService.activeAccount.subscribe((userId) => {
-      activeUserId = userId;
+      this.activeUserId = userId;
     });
     this.ngZone.runOutsideAngular(() => {
       setTimeout(async () => {
         await this.updateAppMenu();
       }, 1000);
 
-      if (activeUserId != null) {
-        window.ontouchstart = () => this.recordActivity(activeUserId);
-        window.onmousedown = () => this.recordActivity(activeUserId);
-        window.onscroll = () => this.recordActivity(activeUserId);
-        window.onkeypress = () => this.recordActivity(activeUserId);
-      }
+      window.ontouchstart = () => this.recordActivity();
+      window.onmousedown = () => this.recordActivity();
+      window.onscroll = () => this.recordActivity();
+      window.onkeypress = () => this.recordActivity();
     });
 
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
@@ -498,14 +496,18 @@ export class AppComponent implements OnInit {
     await this.updateAppMenu();
   }
 
-  private async recordActivity(userId: string) {
+  private async recordActivity() {
+    if (this.activeUserId == null) {
+      return;
+    }
+
     const now = new Date().getTime();
     if (this.lastActivity != null && now - this.lastActivity < 250) {
       return;
     }
 
     this.lastActivity = now;
-    await this.stateService.setLastActive(now, { userId: userId });
+    await this.stateService.setLastActive(now, { userId: this.activeUserId });
 
     // Idle states
     if (this.isIdle) {
