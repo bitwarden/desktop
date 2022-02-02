@@ -14,6 +14,6 @@
   "dependencies": {
     "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
     "forcefocus": "^1.1.0",
-    "keytar": "7.7.0"
+    "keytar": "7.8.0"
   }
 }
