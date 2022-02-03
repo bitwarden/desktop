@@ -107,14 +107,18 @@ export class AccountSwitcherComponent implements OnInit {
     this.isOpen = !this.isOpen;
   }
 
+  close() {
+    this.isOpen = false;
+  }
+
   async switch(userId: string) {
-    this.toggle();
+    this.close();
 
     this.messagingService.send("switchAccount", { userId: userId });
   }
 
   async addAccount() {
-    this.toggle();
+    this.close();
     await this.stateService.setActiveUser(null);
   }
 
