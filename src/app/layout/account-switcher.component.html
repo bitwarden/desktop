@@ -47,6 +47,8 @@
         class="account"
         [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
         (click)="switch(a.key)"
+        appA11yTitle="{{ 'loggedInAsOn' | i18n: a.value.profile.email:a.value.serverUrl }}"
+        attr.aria-label="{{ 'switchAccount' | i18n }}"
       >
         <app-avatar
           [data]="a.value.profile.email"
@@ -55,20 +57,23 @@
           [fontSize]="14"
           [dynamic]="true"
           *ngIf="a.value.profile.email != null"
+          aria-hidden="true"
         ></app-avatar>
         <div class="accountInfo">
-          <span class="email">{{ a.value.profile.email }}</span>
-          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
+          <span class="email" aria-hidden="true">{{ a.value.profile.email }}</span>
+          <span class="server" aria-hidden="true" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
             a.value.serverUrl
           }}</span>
-          <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+          <span class="status" aria-hidden="true">{{ a.value.profile.authenticationStatus }}</span>
         </div>
         <i
           class="bwi bwi-unlock bwi-2x text-muted"
+          aria-hidden="true"
           *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
         ></i>
         <i
           class="bwi bwi-lock bwi-2x text-muted"
+          aria-hidden="true"
           *ngIf="a.value.profile.authenticationStatus == 'locked'"
         ></i>
       </button>
