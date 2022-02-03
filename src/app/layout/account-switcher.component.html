@@ -4,6 +4,9 @@
   cdkOverlayOrigin
   #trigger="cdkOverlayOrigin"
   [hidden]="!showSwitcher"
+  aria-haspopup="menu"
+  aria-expanded="isOpen"
+  aria-controls="cdk-overlay-container"
 >
   <ng-container *ngIf="activeAccountEmail != null; else noActiveAccount">
     <app-avatar
@@ -13,6 +16,7 @@
       [fontSize]="14"
       [dynamic]="true"
       *ngIf="activeAccountEmail != null"
+      aria-hidden="true"
     ></app-avatar>
     <span>{{ activeAccountEmail }}</span>
   </ng-container>
