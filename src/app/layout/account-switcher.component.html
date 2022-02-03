@@ -41,7 +41,12 @@
   [cdkConnectedOverlayPositions]="overlayPostition"
   cdkConnectedOverlayMinWidth="250px"
 >
-  <div class="account-switcher-dropdown" [@transformPanel]="'open'" cdkTrapFocus cdkTrapFocusAutoCapture>
+  <div
+    class="account-switcher-dropdown"
+    [@transformPanel]="'open'"
+    cdkTrapFocus
+    cdkTrapFocusAutoCapture
+  >
     <div class="accounts" *ngIf="numberOfAccounts > 0">
       <button
         *ngFor="let a of accounts | keyvalue"
