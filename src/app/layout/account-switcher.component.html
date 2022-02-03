@@ -1,4 +1,4 @@
-<a
+<button
   class="account-switcher"
   (click)="toggle()"
   cdkOverlayOrigin
@@ -24,7 +24,7 @@
     aria-hidden="true"
     [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
   ></i>
-</a>
+</button>
 
 <ng-template
   cdkConnectedOverlay
@@ -38,12 +38,11 @@
 >
   <div class="account-switcher-dropdown" [@transformPanel]="'open'">
     <div class="accounts" *ngIf="numberOfAccounts > 0">
-      <a
+      <button
         *ngFor="let a of accounts | keyvalue"
         class="account"
         [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
-        href="#"
-        (mousedown)="switch(a.key)"
+        (click)="switch(a.key)"
       >
         <app-avatar
           [data]="a.value.profile.email"
@@ -68,14 +67,14 @@
           class="bwi bwi-lock bwi-2x text-muted"
           *ngIf="a.value.profile.authenticationStatus == 'locked'"
         ></i>
-      </a>
+      </button>
     </div>
     <ng-container *ngIf="activeAccountEmail != null">
       <div class="border" *ngIf="numberOfAccounts > 0"></div>
       <ng-container *ngIf="numberOfAccounts < 4">
-        <a class="add" routerLink="/login" (click)="addAccount()">
+        <button class="add" routerLink="/login" (click)="addAccount()">
           <i class="bwi bwi-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
-        </a>
+        </button>
       </ng-container>
       <ng-container *ngIf="numberOfAccounts == 4">
         <span class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </span>
