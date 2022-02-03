@@ -6,7 +6,10 @@ import { StateService as StateServiceAbstraction } from "jslib-common/abstractio
 
 import { GlobalState } from "jslib-common/models/domain/globalState";
 
-export class StateService extends BaseStateService<GlobalState, Account> implements StateServiceAbstraction {
+export class StateService
+  extends BaseStateService<GlobalState, Account>
+  implements StateServiceAbstraction
+{
   async addAccount(account: Account) {
     // Apply desktop overides to default account values
     account = new Account(account);
