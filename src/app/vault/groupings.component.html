@@ -9,7 +9,7 @@
       </li>
       <li [ngClass]="{ active: selectedFavorites }">
         <a href="#" appStopClick appBlurClick (click)="selectFavorites()">
-          <i class="bwi bwi-fw bwi-star-f" aria-hidden="true"></i>&nbsp;{{ "favorites" | i18n }}
+          <i class="bwi bwi-fw bwi-star" aria-hidden="true"></i>&nbsp;{{ "favorites" | i18n }}
         </a>
       </li>
       <li [ngClass]="{ active: selectedTrash }">
@@ -64,8 +64,8 @@
                 title="{{ 'toggleCollapse' | i18n }}"
                 aria-hidden="true"
                 [ngClass]="{
-                  'bwi-caret-right': isCollapsed(f.node),
-                  'bwi-caret-down': !isCollapsed(f.node)
+                  'bwi-angle-right': isCollapsed(f.node),
+                  'bwi-angle-down': !isCollapsed(f.node)
                 }"
                 (click)="collapse(f.node)"
                 appStopProp
@@ -114,8 +114,8 @@
                   title="{{ 'toggleCollapse' | i18n }}"
                   aria-hidden="true"
                   [ngClass]="{
-                    'bwi-caret-right': isCollapsed(c.node),
-                    'bwi-caret-down': !isCollapsed(c.node)
+                    'bwi-angle-right': isCollapsed(c.node),
+                    'bwi-angle-down': !isCollapsed(c.node)
                   }"
                   (click)="collapse(c.node)"
                   appStopProp
