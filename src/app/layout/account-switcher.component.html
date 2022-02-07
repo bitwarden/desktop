@@ -1,9 +1,12 @@
-<a
+<button
   class="account-switcher"
   (click)="toggle()"
   cdkOverlayOrigin
   #trigger="cdkOverlayOrigin"
   [hidden]="!showSwitcher"
+  aria-haspopup="menu"
+  aria-expanded="isOpen"
+  aria-controls="cdk-overlay-container"
 >
   <ng-container *ngIf="activeAccountEmail != null; else noActiveAccount">
     <app-avatar
@@ -13,6 +16,7 @@
       [fontSize]="14"
       [dynamic]="true"
       *ngIf="activeAccountEmail != null"
+      aria-hidden="true"
     ></app-avatar>
     <span>{{ activeAccountEmail }}</span>
   </ng-container>
@@ -24,26 +28,33 @@
     aria-hidden="true"
     [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
   ></i>
-</a>
+</button>
 
 <ng-template
   cdkConnectedOverlay
   [cdkConnectedOverlayOrigin]="trigger"
   [cdkConnectedOverlayHasBackdrop]="true"
   [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
-  (backdropClick)="toggle()"
+  (backdropClick)="close()"
+  (detach)="close()"
   [cdkConnectedOverlayOpen]="showSwitcher && isOpen"
   [cdkConnectedOverlayPositions]="overlayPostition"
   cdkConnectedOverlayMinWidth="250px"
 >
-  <div class="account-switcher-dropdown" [@transformPanel]="'open'">
+  <div
+    class="account-switcher-dropdown"
+    [@transformPanel]="'open'"
+    cdkTrapFocus
+    cdkTrapFocusAutoCapture
+  >
     <div class="accounts" *ngIf="numberOfAccounts > 0">
-      <a
+      <button
         *ngFor="let a of accounts | keyvalue"
         class="account"
         [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
-        href="#"
-        (mousedown)="switch(a.key)"
+        (click)="switch(a.key)"
+        appA11yTitle="{{ 'loggedInAsOn' | i18n: a.value.profile.email:a.value.serverUrl }}"
+        attr.aria-label="{{ 'switchAccount' | i18n }}"
       >
         <app-avatar
           [data]="a.value.profile.email"
@@ -52,30 +63,33 @@
           [fontSize]="14"
           [dynamic]="true"
           *ngIf="a.value.profile.email != null"
+          aria-hidden="true"
         ></app-avatar>
         <div class="accountInfo">
-          <span class="email">{{ a.value.profile.email }}</span>
-          <span class="server" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
+          <span class="email" aria-hidden="true">{{ a.value.profile.email }}</span>
+          <span class="server" aria-hidden="true" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
             a.value.serverUrl
           }}</span>
-          <span class="status">{{ a.value.profile.authenticationStatus }}</span>
+          <span class="status" aria-hidden="true">{{ a.value.profile.authenticationStatus }}</span>
         </div>
         <i
           class="bwi bwi-unlock bwi-2x text-muted"
+          aria-hidden="true"
           *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
         ></i>
         <i
           class="bwi bwi-lock bwi-2x text-muted"
+          aria-hidden="true"
           *ngIf="a.value.profile.authenticationStatus == 'locked'"
         ></i>
-      </a>
+      </button>
     </div>
     <ng-container *ngIf="activeAccountEmail != null">
       <div class="border" *ngIf="numberOfAccounts > 0"></div>
       <ng-container *ngIf="numberOfAccounts < 4">
-        <a class="add" routerLink="/login" (click)="addAccount()">
+        <button class="add" routerLink="/login" (click)="addAccount()">
           <i class="bwi bwi-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
-        </a>
+        </button>
       </ng-container>
       <ng-container *ngIf="numberOfAccounts == 4">
         <span class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </span>

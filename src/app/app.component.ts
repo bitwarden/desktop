@@ -53,6 +53,12 @@ const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 
+const systemTimeoutOptions = {
+  onLock: -2,
+  onSuspend: -3,
+  onIdle: -4,
+};
+
 @Component({
   selector: "app-root",
   styles: [],
@@ -90,6 +96,7 @@ export class AppComponent implements OnInit {
   private modal: ModalRef = null;
   private idleTimer: number = null;
   private isIdle = false;
+  private activeUserId: string = null;
 
   constructor(
     private broadcasterService: BroadcasterService,
@@ -122,21 +129,18 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    let activeUserId: string = null;
     this.stateService.activeAccount.subscribe((userId) => {
-      activeUserId = userId;
+      this.activeUserId = userId;
     });
     this.ngZone.runOutsideAngular(() => {
       setTimeout(async () => {
         await this.updateAppMenu();
       }, 1000);
 
-      if (activeUserId != null) {
-        window.ontouchstart = () => this.recordActivity(activeUserId);
-        window.onmousedown = () => this.recordActivity(activeUserId);
-        window.onscroll = () => this.recordActivity(activeUserId);
-        window.onkeypress = () => this.recordActivity(activeUserId);
-      }
+      window.ontouchstart = () => this.recordActivity();
+      window.onmousedown = () => this.recordActivity();
+      window.onscroll = () => this.recordActivity();
+      window.onkeypress = () => this.recordActivity();
     });
 
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
@@ -339,6 +343,12 @@ export class AppComponent implements OnInit {
               this.router.navigate(["vault"]);
             }
             break;
+          case "systemSuspended":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onSuspend);
+          case "systemLocked":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onLock);
+          case "systemIdle":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
         }
       });
     });
@@ -486,14 +496,18 @@ export class AppComponent implements OnInit {
     await this.updateAppMenu();
   }
 
-  private async recordActivity(userId: string) {
+  private async recordActivity() {
+    if (this.activeUserId == null) {
+      return;
+    }
+
     const now = new Date().getTime();
     if (this.lastActivity != null && now - this.lastActivity < 250) {
       return;
     }
 
     this.lastActivity = now;
-    await this.stateService.setLastActive(now, { userId: userId });
+    await this.stateService.setLastActive(now, { userId: this.activeUserId });
 
     // Idle states
     if (this.isIdle) {
@@ -582,5 +596,25 @@ export class AppComponent implements OnInit {
       }
     }
     await this.systemService.startProcessReload();
+  }
+
+  private async checkForSystemTimeout(timeout: number): Promise<void> {
+    for (const userId in this.stateService.accounts.getValue()) {
+      if (userId == null) {
+        continue;
+      }
+      const options = await this.getVaultTimeoutOptions(userId);
+      if (options[0] === timeout) {
+        options[1] === "logOut"
+          ? this.logOut(false, userId)
+          : await this.vaultTimeoutService.lock(true, userId);
+      }
+    }
+  }
+
+  private async getVaultTimeoutOptions(userId: string): Promise<[number, string]> {
+    const timeout = await this.stateService.getVaultTimeout({ userId: userId });
+    const action = await this.stateService.getVaultTimeoutAction({ userId: userId });
+    return [timeout, action];
   }
 }

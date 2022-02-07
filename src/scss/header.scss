@@ -80,6 +80,10 @@
   height: 100%;
   user-select: none;
 
+  border: none;
+  background: transparent;
+  width: auto;
+
   @include themify($themes) {
     color: themed("accountSwitcherTextColor");
   }
@@ -114,9 +118,11 @@
     0 1px 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: $border-radius;
 
-  a {
+  button {
+    border: none;
+    background: transparent;
+    width: 100%;
     padding: 5px 10px;
-    display: block;
 
     @include themify($themes) {
       color: themed("textColor");
@@ -141,6 +147,7 @@
 
       .accountInfo {
         display: grid;
+        text-align: left;
 
         .email {
           font-size: $font-size-base;
@@ -173,6 +180,7 @@
 
   .add {
     margin: 4px 0;
+    text-align: left;
   }
 
   .accountLimitReached {
