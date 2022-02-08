@@ -55,9 +55,9 @@ jobs:
         run: |
           SAFARI_REF=master
 
-          if [ "$GITHUB_REF" = "hotfix" ]; then
+          if [[ "$GITHUB_REF" == "refs/heads/hotfix" ]]; then
               SAFARI_REF=hotfix
-          elif [ "$GITHUB_REF" = "rc" ]; then
+          elif [[ "$GITHUB_REF" == "refs/heads/rc" ]]; then
               SAFARI_REF=rc
           fi
 
