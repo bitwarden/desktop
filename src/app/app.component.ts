@@ -453,7 +453,6 @@ export class AppComponent implements OnInit {
     await Promise.all([
       this.eventService.uploadEvents(userBeingLoggedOut),
       this.syncService.setLastSync(new Date(0), userBeingLoggedOut),
-      this.tokenService.clearToken(userBeingLoggedOut),
       this.cryptoService.clearKeys(userBeingLoggedOut),
       this.settingsService.clear(userBeingLoggedOut),
       this.cipherService.clear(userBeingLoggedOut),
