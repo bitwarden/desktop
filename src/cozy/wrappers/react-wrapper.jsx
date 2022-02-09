@@ -12,6 +12,7 @@ import { BitwardenSettingsContext } from "../react/bitwarden-settings";
 import { HashRouter } from "react-router-dom";
 
 import MuiCozyTheme from 'cozy-ui/transpiled/react/MuiCozyTheme'
+import { WebviewIntentProvider } from 'cozy-intent'
 
 const bitwardenDataProps = PropTypes.shape({
   extension_installed: PropTypes.bool.isRequired
@@ -61,26 +62,28 @@ const ReactWrapper = ({
   const appLocale = client.getInstanceOptions().locale ?? 'en';
 
   return (
-    <StylesProvider generateClassName={generateClassName}>
-      <I18n
-        lang={appLocale}
-        dictRequire={(appLocale) =>
-          require(`../react/locales/${appLocale}.json`)
-        }
-      >
-        <CozyProvider client={client}>
-          <VaultProvider instance={client.getStackClient().uri} vaultData={vaultData}>
-            <BitwardenSettingsContext.Provider value={bitwardenData}>
-              <BreakpointsProvider>
-                <MuiCozyTheme>
-                  <HashRouter>{props.children}</HashRouter>
-                </MuiCozyTheme>
-              </BreakpointsProvider>
-            </BitwardenSettingsContext.Provider>
-          </VaultProvider>
-        </CozyProvider>
-      </I18n>
-    </StylesProvider>
+    <WebviewIntentProvider>
+      <StylesProvider generateClassName={generateClassName}>
+        <I18n
+          lang={appLocale}
+          dictRequire={(appLocale) =>
+            require(`../react/locales/${appLocale}.json`)
+          }
+        >
+          <CozyProvider client={client}>
+            <VaultProvider instance={client.getStackClient().uri} vaultData={vaultData}>
+              <BitwardenSettingsContext.Provider value={bitwardenData}>
+                <BreakpointsProvider>
+                  <MuiCozyTheme>
+                    <HashRouter>{props.children}</HashRouter>
+                  </MuiCozyTheme>
+                </BreakpointsProvider>
+              </BitwardenSettingsContext.Provider>
+            </VaultProvider>
+          </CozyProvider>
+        </I18n>
+      </StylesProvider>
+    </WebviewIntentProvider>
   );
 };
 

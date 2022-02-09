@@ -12,6 +12,7 @@ import {
   StylesProvider,
   createGenerateClassName
 } from '@material-ui/core/styles'
+import { WebviewIntentProvider } from 'cozy-intent'
 
 /*
 With MUI V4, it is possible to generate deterministic class names.
@@ -29,18 +30,20 @@ let appLocale
 const renderApp = function(client) {
   const App = require('components/App').default
   render(
-    <StylesProvider generateClassName={generateClassName}>
-      <I18n
-        lang={appLocale}
-        dictRequire={appLocale => require(`locales/${appLocale}`)}
-      >
-        <CozyProvider client={client}>
-          <VaultProvider instance={client.getStackClient().uri}>
-            <App />
-          </VaultProvider>
-        </CozyProvider>
-      </I18n>
-    </StylesProvider>,
+    <WebviewIntentProvider>
+      <StylesProvider generateClassName={generateClassName}>
+        <I18n
+          lang={appLocale}
+          dictRequire={appLocale => require(`locales/${appLocale}`)}
+        >
+          <CozyProvider client={client}>
+            <VaultProvider instance={client.getStackClient().uri}>
+              <App />
+            </VaultProvider>
+          </CozyProvider>
+        </I18n>
+      </StylesProvider>
+    </WebviewIntentProvider>,
     document.querySelector('[role=application]')
   )
 }
