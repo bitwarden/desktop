@@ -165,7 +165,7 @@ export class AppComponent implements OnInit {
             this.router.navigate(["login"]);
             break;
           case "logout":
-            this.loading = true;
+            this.loading = message.userId == null || message.userId === this.activeUserId;
             await this.logOut(!!message.expired, message.userId);
             this.loading = false;
             break;
@@ -451,28 +451,25 @@ export class AppComponent implements OnInit {
   }
 
   private async logOut(expired: boolean, userId?: string) {
-    if (!userId) {
-      userId = await this.stateService.getUserId();
-    }
-
+    const userBeingLoggedOut = await this.stateService.getUserId({ userId: userId });
     await Promise.all([
-      this.eventService.uploadEvents(userId),
-      this.syncService.setLastSync(new Date(0), userId),
-      this.tokenService.clearToken(userId),
-      this.cryptoService.clearKeys(userId),
-      this.settingsService.clear(userId),
-      this.cipherService.clear(userId),
-      this.folderService.clear(userId),
-      this.collectionService.clear(userId),
-      this.passwordGenerationService.clear(userId),
-      this.vaultTimeoutService.clear(userId),
-      this.policyService.clear(userId),
+      this.eventService.uploadEvents(userBeingLoggedOut),
+      this.syncService.setLastSync(new Date(0), userBeingLoggedOut),
+      this.tokenService.clearToken(userBeingLoggedOut),
+      this.cryptoService.clearKeys(userBeingLoggedOut),
+      this.settingsService.clear(userBeingLoggedOut),
+      this.cipherService.clear(userBeingLoggedOut),
+      this.folderService.clear(userBeingLoggedOut),
+      this.collectionService.clear(userBeingLoggedOut),
+      this.passwordGenerationService.clear(userBeingLoggedOut),
+      this.vaultTimeoutService.clear(userBeingLoggedOut),
+      this.policyService.clear(userBeingLoggedOut),
       this.keyConnectorService.clear(),
     ]);
 
-    await this.stateService.setBiometricLocked(true, { userId: userId });
+    await this.stateService.setBiometricLocked(true, { userId: userBeingLoggedOut });
 
-    if (userId == null || userId === (await this.stateService.getUserId())) {
+    if (userBeingLoggedOut === this.activeUserId) {
       this.searchService.clearIndex();
       this.authService.logOut(async () => {
         if (expired) {
@@ -485,11 +482,12 @@ export class AppComponent implements OnInit {
       });
     }
 
-    await this.stateService.clean({ userId: userId });
+    const preLogoutActiveUserId = this.activeUserId;
+    await this.stateService.clean({ userId: userBeingLoggedOut });
 
-    if (this.stateService.activeAccount.getValue() == null) {
+    if (this.activeUserId == null) {
       this.router.navigate(["login"]);
-    } else {
+    } else if (preLogoutActiveUserId !== this.activeUserId) {
       this.messagingService.send("switchAccount");
     }
 

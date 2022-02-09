@@ -50,6 +50,7 @@ import { Account } from "../models/account";
 import { GlobalState } from "jslib-common/models/domain/globalState";
 
 import { StateFactory } from "jslib-common/factories/stateFactory";
+import { StateMigrationService } from "jslib-common/services/stateMigration.service";
 
 export function initFactory(
   window: Window,
@@ -200,6 +201,19 @@ export function initFactory(
         LogServiceAbstraction,
         StateMigrationServiceAbstraction,
       ],
+    },
+    {
+      provide: StateMigrationServiceAbstraction,
+      useFactory: (
+        storageService: StorageServiceAbstraction,
+        secureStorageService: StorageServiceAbstraction
+      ) =>
+        new StateMigrationService(
+          storageService,
+          secureStorageService,
+          new StateFactory(GlobalState, Account)
+        ),
+      deps: [StorageServiceAbstraction, "SECURE_STORAGE"],
     },
   ],
 })
