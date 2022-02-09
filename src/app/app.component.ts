@@ -219,9 +219,7 @@ export class AppComponent implements OnInit {
               this.i18nService.t("close")
             );
             if (result) {
-              this.platformUtilsService.launchUri(
-                "https://help.bitwarden.com/article/fingerprint-phrase/"
-              );
+              this.platformUtilsService.launchUri("https://bitwarden.com/help/fingerprint-phrase/");
             }
             break;
           case "openPasswordHistory":
@@ -263,7 +261,7 @@ export class AppComponent implements OnInit {
             );
             if (emailVerificationConfirmed) {
               this.platformUtilsService.launchUri(
-                "https://bitwarden.com/help/article/create-bitwarden-account/"
+                "https://bitwarden.com/help/create-bitwarden-account/"
               );
             }
             break;

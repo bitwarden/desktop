@@ -119,7 +119,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
 
   openHelpReprompt() {
     this.platformUtilsService.launchUri(
-      "https://bitwarden.com/help/article/managing-items/#protect-individual-items"
+      "https://bitwarden.com/help/managing-items/#protect-individual-items"
     );
   }
 }
