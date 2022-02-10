@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { ipcRenderer } from "electron";
-import { firstValueFrom } from "rxjs";
 import Swal from "sweetalert2";
 
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
