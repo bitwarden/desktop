@@ -68,6 +68,8 @@ jobs:
           branch: ${{ steps.branch.outputs.branch-name }}
 
       - name: Rename .pkg to .pkg.archive
+        env:
+          PKG_VERSION: ${{ needs.setup.outputs.package_version }}
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Create release
