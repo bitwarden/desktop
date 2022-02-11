@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Canvia de compte"
+  },
+  "options": {
+    "message": "Options"
   }
 }

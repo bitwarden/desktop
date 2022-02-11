@@ -269,7 +269,7 @@
     "message": "Efternamn"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Fullständigt namn"
   },
   "address1": {
     "message": "Adress 1"
@@ -452,7 +452,7 @@
     "message": "Välj en fil."
   },
   "maxFileSize": {
-    "message": "Filen får vara maximalt 500 MB."
+    "message": "Maximal filstorlek är 500 MB."
   },
   "updateKey": {
     "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
@@ -557,7 +557,7 @@
     "message": "Verifieringskod krävs."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Ogiltig verifieringskod"
   },
   "continue": {
     "message": "Fortsätt"
@@ -784,7 +784,7 @@
     "message": "Synkroniseringen misslyckades"
   },
   "yourVaultIsLocked": {
-    "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
+    "message": "Ditt valv är låst. Bekräfta din identitet för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
@@ -1322,7 +1322,7 @@
     "message": "Lås upp med Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "lås upp valvet"
+    "message": "unlock your vault"
   },
   "noAutoPromptWindowsHello": {
     "message": "Fråga inte efter Windows Hello vid uppstart."
@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Switch Account"
+  },
+  "options": {
+    "message": "Alternativ"
   }
 }

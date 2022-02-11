@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "アカウント切替"
+  },
+  "options": {
+    "message": "オプション"
   }
 }

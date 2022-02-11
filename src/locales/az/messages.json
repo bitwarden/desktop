@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Hesabı dəyişdir"
+  },
+  "options": {
+    "message": "Seçimlər"
   }
 }

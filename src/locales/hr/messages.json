@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Promijeni račun"
+  },
+  "options": {
+    "message": "Options"
   }
 }
