@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Fiók váltása"
+  },
+  "options": {
+    "message": "Opciók"
   }
 }

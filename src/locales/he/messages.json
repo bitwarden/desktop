@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "החלף חשבון"
+  },
+  "options": {
+    "message": "אפשרויות"
   }
 }

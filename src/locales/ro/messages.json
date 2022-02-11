@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Schimbați contul"
+  },
+  "options": {
+    "message": "Opțiuni"
   }
 }

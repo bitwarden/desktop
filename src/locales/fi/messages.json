@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Vaihda tiliä"
+  },
+  "options": {
+    "message": "Lisäasetukset"
   }
 }

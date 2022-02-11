@@ -1157,7 +1157,7 @@
     "message": "Esci da Bitwarden"
   },
   "valueCopied": {
-    "message": "$VALUE$ copiato",
+    "message": "$VALUE$ copiata",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Cambia account"
+  },
+  "options": {
+    "message": "Opzioni"
   }
 }

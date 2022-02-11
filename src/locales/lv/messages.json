@@ -1810,5 +1810,8 @@
   },
   "switchAccount": {
     "message": "Pārslēgties starp kontiem"
+  },
+  "options": {
+    "message": "Iespējas"
   }
 }
