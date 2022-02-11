@@ -582,9 +582,9 @@ export class AppComponent implements OnInit {
   }
 
   private async reloadProcess(): Promise<void> {
-    const accounts = Object.keys(this.stateService.accounts.getValue());
-    if (accounts.length > 0) {
-      for (const userId of accounts) {
+    const accounts = this.stateService.accounts.getValue()
+    if (accounts != null && Object.keys(accounts).length > 0) {
+      for (const userId of Object.keys(accounts)) {
         if (!(await this.vaultTimeoutService.isLocked(userId))) {
           return;
         }
