@@ -1,17 +1,4 @@
 <div id="vault" class="vault" attr.aria-hidden="{{ showingModal }}">
-  <app-vault-groupings
-    id="groupings"
-    class="groupings"
-    (onAllClicked)="clearGroupingFilters()"
-    (onFavoritesClicked)="filterFavorites()"
-    (onCipherTypeClicked)="filterCipherType($event)"
-    (onFolderClicked)="filterFolder($event.id)"
-    (onAddFolder)="addFolder()"
-    (onEditFolder)="editFolder($event.id)"
-    (onCollectionClicked)="filterCollection($event.id)"
-    (onTrashClicked)="filterDeleted()"
-  >
-  </app-vault-groupings>
   <app-vault-ciphers
     id="items"
     class="items"
@@ -64,6 +51,19 @@
       </div>
     </div>
   </div>
+  <app-vault-groupings
+    id="groupings"
+    class="groupings"
+    (onAllClicked)="clearGroupingFilters()"
+    (onFavoritesClicked)="filterFavorites()"
+    (onCipherTypeClicked)="filterCipherType($event)"
+    (onFolderClicked)="filterFolder($event.id)"
+    (onAddFolder)="addFolder()"
+    (onEditFolder)="editFolder($event.id)"
+    (onCollectionClicked)="filterCollection($event.id)"
+    (onTrashClicked)="filterDeleted()"
+  >
+  </app-vault-groupings>
 </div>
 <ng-template #passwordGenerator></ng-template>
 <ng-template #attachments></ng-template>
