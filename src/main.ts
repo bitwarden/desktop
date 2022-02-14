@@ -153,9 +153,9 @@ export class Main {
         this.menuMain.init();
         await this.trayMain.init("Bitwarden", [
           {
-            label: this.i18nService.t("lockNow"),
+            label: this.i18nService.t("lockVault"),
             enabled: false,
-            id: "lockNow",
+            id: "lockVault",
             click: () => this.messagingService.send("lockVault"),
           },
         ]);

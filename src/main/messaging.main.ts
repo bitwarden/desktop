@@ -99,10 +99,10 @@ export class MessagingMain {
     ) {
       return;
     }
-    const lockNowTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById("lockNow");
+    const lockVaultTrayMenuItem = this.main.trayMain.contextMenu.getMenuItemById("lockVault");
     const activeAccount = updateRequest.accounts[updateRequest.activeUserId];
-    if (lockNowTrayMenuItem != null && activeAccount != null) {
-      lockNowTrayMenuItem.enabled = activeAccount.isAuthenticated && !activeAccount.isLocked;
+    if (lockVaultTrayMenuItem != null && activeAccount != null) {
+      lockVaultTrayMenuItem.enabled = activeAccount.isAuthenticated && !activeAccount.isLocked;
     }
     this.main.trayMain.updateContextMenu();
   }
