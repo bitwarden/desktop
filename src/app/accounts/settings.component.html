@@ -2,184 +2,184 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body form">
-        <ng-container *ngIf="currentUserEmail != null">
-          <div class="box">
-            <label class="settingsTitle">{{ "settingsTitle" | i18n: currentUserEmail }} </label>
-            <div class="box-content box-content-padded">
-              <h2>
-                <button
-                  type="button"
-                  class="box-header-expandable"
-                  (click)="showSecurity = !showSecurity"
-                  [attr.aria-expanded]="showSecurity"
-                >
-                  {{ "security" | i18n }}
-                  <i
-                    *ngIf="!showSecurity"
-                    class="bwi bwi-angle-down bwi-sm icon"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    *ngIf="showSecurity"
-                    class="bwi bwi-chevron-up bwi-sm icon"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </h2>
-              <ng-container *ngIf="showSecurity">
-                <app-vault-timeout-input
-                  [vaultTimeouts]="vaultTimeouts"
-                  [formControl]="vaultTimeout"
-                  ngDefaultControl
-                ></app-vault-timeout-input>
-                <div class="form-group">
-                  <label>{{ "vaultTimeoutAction" | i18n }}</label>
-                  <div class="radio radio-mt-2">
-                    <label for="vaultTimeoutActionLock">
-                      <input
-                        type="radio"
-                        name="VaultTimeoutAction"
-                        id="vaultTimeoutActionLock"
-                        value="lock"
-                        [(ngModel)]="vaultTimeoutAction"
-                        (change)="saveVaultTimeoutOptions()"
-                      />
-                      {{ "lock" | i18n }}
-                    </label>
-                  </div>
-                  <small class="help-block">{{ "vaultTimeoutActionLockDesc" | i18n }}</small>
-                  <div class="radio">
-                    <label for="vaultTimeoutActionLogOut">
-                      <input
-                        type="radio"
-                        name="VaultTimeoutAction"
-                        id="vaultTimeoutActionLogOut"
-                        value="logOut"
-                        [(ngModel)]="vaultTimeoutAction"
-                        (change)="saveVaultTimeoutOptions()"
-                      />
-                      {{ "logOut" | i18n }}
-                    </label>
-                  </div>
-                  <small class="help-block">{{ "vaultTimeoutActionLogOutDesc" | i18n }}</small>
+        <div class="box">
+          <label class="settingsTitle">{{ "settingsTitle" | i18n: currentUserEmail }} </label>
+          <div class="box-content box-content-padded">
+            <h2>
+              <button
+                id="app-settings"
+                type="button"
+                class="box-header-expandable"
+                (click)="showSecurity = !showSecurity"
+                [attr.aria-expanded]="showSecurity"
+                appAutofocus
+              >
+                {{ "security" | i18n }}
+                <i
+                  *ngIf="!showSecurity"
+                  class="bwi bwi-angle-down bwi-sm icon"
+                  aria-hidden="true"
+                ></i>
+                <i
+                  *ngIf="showSecurity"
+                  class="bwi bwi-chevron-up bwi-sm icon"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </h2>
+            <ng-container *ngIf="showSecurity">
+              <app-vault-timeout-input
+                [vaultTimeouts]="vaultTimeouts"
+                [formControl]="vaultTimeout"
+                ngDefaultControl
+              ></app-vault-timeout-input>
+              <div class="form-group">
+                <label>{{ "vaultTimeoutAction" | i18n }}</label>
+                <div class="radio radio-mt-2">
+                  <label for="vaultTimeoutActionLock">
+                    <input
+                      type="radio"
+                      name="VaultTimeoutAction"
+                      id="vaultTimeoutActionLock"
+                      value="lock"
+                      [(ngModel)]="vaultTimeoutAction"
+                      (change)="saveVaultTimeoutOptions()"
+                    />
+                    {{ "lock" | i18n }}
+                  </label>
                 </div>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label for="pin">
-                      <input
-                        id="pin"
-                        type="checkbox"
-                        name="PIN"
-                        [(ngModel)]="pin"
-                        (change)="updatePin()"
-                      />
-                      {{ "unlockWithPin" | i18n }}
-                    </label>
-                  </div>
+                <small class="help-block">{{ "vaultTimeoutActionLockDesc" | i18n }}</small>
+                <div class="radio">
+                  <label for="vaultTimeoutActionLogOut">
+                    <input
+                      type="radio"
+                      name="VaultTimeoutAction"
+                      id="vaultTimeoutActionLogOut"
+                      value="logOut"
+                      [(ngModel)]="vaultTimeoutAction"
+                      (change)="saveVaultTimeoutOptions()"
+                    />
+                    {{ "logOut" | i18n }}
+                  </label>
                 </div>
-                <div class="form-group" *ngIf="supportsBiometric">
-                  <div class="checkbox">
-                    <label for="biometric">
-                      <input
-                        id="biometric"
-                        type="checkbox"
-                        name="biometric"
-                        [checked]="biometric"
-                        (change)="updateBiometric()"
-                      />
-                      {{ biometricText | i18n }}
-                    </label>
-                  </div>
+                <small class="help-block">{{ "vaultTimeoutActionLogOutDesc" | i18n }}</small>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label for="pin">
+                    <input
+                      id="pin"
+                      type="checkbox"
+                      name="PIN"
+                      [(ngModel)]="pin"
+                      (change)="updatePin()"
+                    />
+                    {{ "unlockWithPin" | i18n }}
+                  </label>
                 </div>
-                <div class="form-group" *ngIf="supportsBiometric">
-                  <div class="checkbox">
-                    <label for="noAutoPromptBiometrics">
-                      <input
-                        id="noAutoPromptBiometrics"
-                        type="checkbox"
-                        name="noAutoPromptBiometrics"
-                        [(ngModel)]="noAutoPromptBiometrics"
-                        [disabled]="!biometric"
-                        (change)="updateNoAutoPromptBiometrics()"
-                      />
-                      {{ noAutoPromptBiometricsText | i18n }}
-                    </label>
-                  </div>
+              </div>
+              <div class="form-group" *ngIf="supportsBiometric">
+                <div class="checkbox">
+                  <label for="biometric">
+                    <input
+                      id="biometric"
+                      type="checkbox"
+                      name="biometric"
+                      [checked]="biometric"
+                      (change)="updateBiometric()"
+                    />
+                    {{ biometricText | i18n }}
+                  </label>
                 </div>
-              </ng-container>
-            </div>
+              </div>
+              <div class="form-group" *ngIf="supportsBiometric">
+                <div class="checkbox">
+                  <label for="noAutoPromptBiometrics">
+                    <input
+                      id="noAutoPromptBiometrics"
+                      type="checkbox"
+                      name="noAutoPromptBiometrics"
+                      [(ngModel)]="noAutoPromptBiometrics"
+                      [disabled]="!biometric"
+                      (change)="updateNoAutoPromptBiometrics()"
+                    />
+                    {{ noAutoPromptBiometricsText | i18n }}
+                  </label>
+                </div>
+              </div>
+            </ng-container>
           </div>
-          <div class="box">
-            <div class="box-content box-content-padded">
-              <h2>
-                <button
-                  type="button"
-                  class="box-header-expandable"
-                  (click)="showAccountPreferences = !showAccountPreferences"
-                  [attr.aria-expanded]="showAccountPreferences"
+        </div>
+        <div class="box">
+          <div class="box-content box-content-padded">
+            <h2>
+              <button
+                type="button"
+                class="box-header-expandable"
+                (click)="showAccountPreferences = !showAccountPreferences"
+                [attr.aria-expanded]="showAccountPreferences"
+              >
+                {{ "accountPreferences" | i18n }}
+                <i
+                  *ngIf="!showAccountPreferences"
+                  class="bwi bwi-angle-down bwi-sm icon"
+                  aria-hidden="true"
+                ></i>
+                <i
+                  *ngIf="showAccountPreferences"
+                  class="bwi bwi-chevron-up bwi-sm icon"
+                  aria-hidden="true"
+                ></i>
+              </button>
+            </h2>
+            <ng-container *ngIf="showAccountPreferences">
+              <div class="form-group">
+                <label for="clearClipboard">{{ "clearClipboard" | i18n }}</label>
+                <select
+                  id="clearClipboard"
+                  name="ClearClipboard"
+                  [(ngModel)]="clearClipboard"
+                  (change)="saveClearClipboard()"
                 >
-                  {{ "accountPreferences" | i18n }}
-                  <i
-                    *ngIf="!showAccountPreferences"
-                    class="bwi bwi-angle-down bwi-sm icon"
-                    aria-hidden="true"
-                  ></i>
-                  <i
-                    *ngIf="showAccountPreferences"
-                    class="bwi bwi-chevron-up bwi-sm icon"
-                    aria-hidden="true"
-                  ></i>
-                </button>
-              </h2>
-              <ng-container *ngIf="showAccountPreferences">
-                <div class="form-group">
-                  <label for="clearClipboard">{{ "clearClipboard" | i18n }}</label>
-                  <select
-                    id="clearClipboard"
-                    name="ClearClipboard"
-                    [(ngModel)]="clearClipboard"
-                    (change)="saveClearClipboard()"
-                  >
-                    <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">
-                      {{ o.name }}
-                    </option>
-                  </select>
-                  <small class="help-block">{{ "clearClipboardDesc" | i18n }}</small>
+                  <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">
+                    {{ o.name }}
+                  </option>
+                </select>
+                <small class="help-block">{{ "clearClipboardDesc" | i18n }}</small>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label for="minimizeOnCopyToClipboard">
+                    <input
+                      id="minimizeOnCopyToClipboard"
+                      type="checkbox"
+                      name="MinimizeOnCopyToClipboard"
+                      [(ngModel)]="minimizeOnCopyToClipboard"
+                      (change)="saveMinOnCopyToClipboard()"
+                    />
+                    {{ "minimizeOnCopyToClipboard" | i18n }}
+                  </label>
                 </div>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label for="minimizeOnCopyToClipboard">
-                      <input
-                        id="minimizeOnCopyToClipboard"
-                        type="checkbox"
-                        name="MinimizeOnCopyToClipboard"
-                        [(ngModel)]="minimizeOnCopyToClipboard"
-                        (change)="saveMinOnCopyToClipboard()"
-                      />
-                      {{ "minimizeOnCopyToClipboard" | i18n }}
-                    </label>
-                  </div>
-                  <small class="help-block">{{ "minimizeOnCopyToClipboardDesc" | i18n }}</small>
+                <small class="help-block">{{ "minimizeOnCopyToClipboardDesc" | i18n }}</small>
+              </div>
+              <div class="form-group">
+                <div class="checkbox">
+                  <label for="disableFavicons">
+                    <input
+                      id="disableFavicons"
+                      type="checkbox"
+                      name="DisableFavicons"
+                      [(ngModel)]="disableFavicons"
+                      (change)="saveFavicons()"
+                    />
+                    {{ "disableFavicon" | i18n }}
+                  </label>
                 </div>
-                <div class="form-group">
-                  <div class="checkbox">
-                    <label for="disableFavicons">
-                      <input
-                        id="disableFavicons"
-                        type="checkbox"
-                        name="DisableFavicons"
-                        [(ngModel)]="disableFavicons"
-                        (change)="saveFavicons()"
-                      />
-                      {{ "disableFavicon" | i18n }}
-                    </label>
-                  </div>
-                  <small class="help-block">{{ "disableFaviconDesc" | i18n }}</small>
-                </div>
-              </ng-container>
-            </div>
+                <small class="help-block">{{ "disableFaviconDesc" | i18n }}</small>
+              </div>
+            </ng-container>
           </div>
-        </ng-container>
+        </div>
         <div class="box">
           <div class="box-content box-content-padded">
             <h2>
