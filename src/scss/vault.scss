@@ -27,7 +27,20 @@ app-root {
     }
   }
 
+  > .items {
+    order: 2;
+  }
+
+  > .details {
+    order: 3;
+  }
+
+  > .logo {
+    order: 4;
+  }
+
   > .groupings {
+    order: 1;
     width: 22%;
     min-width: 175px;
     max-width: 250px;
