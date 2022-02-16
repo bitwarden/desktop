@@ -21,6 +21,7 @@
   },
   "license": "GPL-3.0",
   "scripts": {
+    "build": "yarn build:browser:prod",
     "start": "npm run build:browser:watch",
     "sub:init": "git submodule update --init --recursive",
     "sub:update": "git submodule update --remote",
