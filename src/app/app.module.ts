@@ -33,6 +33,7 @@ import { VaultTimeoutInputComponent } from "./accounts/vault-timeout-input.compo
 
 import { AvatarComponent } from "jslib-angular/components/avatar.component";
 import { CalloutComponent } from "jslib-angular/components/callout.component";
+import { ExportScopeCalloutComponent } from "jslib-angular/components/export-scope-callout.component";
 import { IconComponent } from "jslib-angular/components/icon.component";
 import { BitwardenToastModule } from "jslib-angular/components/toastr.component";
 
@@ -208,6 +209,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     ColorPasswordPipe,
     EnvironmentComponent,
     ExportComponent,
+    ExportScopeCalloutComponent,
     FallbackSrcDirective,
     FolderAddEditComponent,
     GroupingsComponent,
