@@ -1791,16 +1791,16 @@
     "message": "Não mais do que 5 contas podem estar logadas ao mesmo tempo."
   },
   "accountPreferences": {
-    "message": "Preferences"
+    "message": "Preferências"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "Configurações do Aplicativo (Todas as Contas)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Limite de Contas atingido. Saia de uma conta para adicionar outra."
   },
   "settingsTitle": {
-    "message": "App settings for $EMAIL$",
+    "message": "Configurações do Aplicativo para $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1809,9 +1809,9 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "Trocar de Conta"
   },
   "options": {
-    "message": "Options"
+    "message": "Opções"
   }
 }
