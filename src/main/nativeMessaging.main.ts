@@ -1,11 +1,12 @@
 import { existsSync, promises as fs } from "fs";
 import { Socket } from "net";
-import * as ipc from "node-ipc";
 import { homedir, userInfo } from "os";
 import * as path from "path";
 import * as util from "util";
 
 import { ipcMain } from "electron";
+import * as ipc from "node-ipc";
+
 import { LogService } from "jslib-common/abstractions/log.service";
 import { WindowMain } from "jslib-electron/window.main";
 

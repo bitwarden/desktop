@@ -2,6 +2,7 @@ import { Component, NgZone, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ipcRenderer } from "electron";
 
+import { LockComponent as BaseLockComponent } from "jslib-angular/components/lock.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
@@ -13,8 +14,6 @@ import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
-import { LockComponent as BaseLockComponent } from "jslib-angular/components/lock.component";
 
 const BroadcasterSubscriptionId = "LockComponent";
 

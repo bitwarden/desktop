@@ -7,6 +7,7 @@ import {
   Output,
 } from "@angular/core";
 
+import { ViewComponent as BaseViewComponent } from "jslib-angular/components/view.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AuditService } from "jslib-common/abstractions/audit.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
@@ -21,9 +22,6 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { StateService } from "jslib-common/abstractions/state.service";
 import { TokenService } from "jslib-common/abstractions/token.service";
 import { TotpService } from "jslib-common/abstractions/totp.service";
-
-import { ViewComponent as BaseViewComponent } from "jslib-angular/components/view.component";
-
 import { CipherView } from "jslib-common/models/view/cipherView";
 
 const BroadcasterSubscriptionId = "ViewComponent";

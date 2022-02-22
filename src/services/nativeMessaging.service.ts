@@ -9,13 +9,10 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
+import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
 import { Utils } from "jslib-common/misc/utils";
-
 import { EncString } from "jslib-common/models/domain/encString";
 import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
-
-import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
 
 const MessageValidTimeout = 10 * 1000;
 const EncryptionAlgorithm = "sha1";

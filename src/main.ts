@@ -1,32 +1,25 @@
-import { app } from "electron";
 import * as path from "path";
 
-import { I18nService } from "./services/i18n.service";
-
-import { MenuMain } from "./main/menu.main";
-import { MessagingMain } from "./main/messaging.main";
-import { PowerMonitorMain } from "./main/powerMonitor.main";
+import { app } from "electron";
 
 import { BiometricMain } from "jslib-common/abstractions/biometric.main";
-
+import { StateFactory } from "jslib-common/factories/stateFactory";
+import { GlobalState } from "jslib-common/models/domain/globalState";
+import { StateService } from "jslib-common/services/state.service";
 import { KeytarStorageListener } from "jslib-electron/keytarStorageListener";
-
 import { ElectronLogService } from "jslib-electron/services/electronLog.service";
 import { ElectronMainMessagingService } from "jslib-electron/services/electronMainMessaging.service";
 import { ElectronStorageService } from "jslib-electron/services/electronStorage.service";
-
 import { TrayMain } from "jslib-electron/tray.main";
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { WindowMain } from "jslib-electron/window.main";
+
+import { MenuMain } from "./main/menu.main";
+import { MessagingMain } from "./main/messaging.main";
 import { NativeMessagingMain } from "./main/nativeMessaging.main";
-
-import { StateService } from "jslib-common/services/state.service";
-
+import { PowerMonitorMain } from "./main/powerMonitor.main";
 import { Account } from "./models/account";
-
-import { GlobalState } from "jslib-common/models/domain/globalState";
-
-import { StateFactory } from "jslib-common/factories/stateFactory";
+import { I18nService } from "./services/i18n.service";
 
 export class Main {
   logService: ElectronLogService;

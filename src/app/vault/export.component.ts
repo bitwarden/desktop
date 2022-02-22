@@ -1,8 +1,9 @@
+import * as os from "os";
+
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
-import * as os from "os";
-
+import { ExportComponent as BaseExportComponent } from "jslib-angular/components/export.component";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { EventService } from "jslib-common/abstractions/event.service";
@@ -12,8 +13,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { UserVerificationService } from "jslib-common/abstractions/userVerification.service";
-
-import { ExportComponent as BaseExportComponent } from "jslib-angular/components/export.component";
 
 const BroadcasterSubscriptionId = "ExportComponent";
 

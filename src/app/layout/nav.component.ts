@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 
 @Component({

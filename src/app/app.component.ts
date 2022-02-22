@@ -11,10 +11,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
 
-import { PremiumComponent } from "./accounts/premium.component";
-import { SettingsComponent } from "./accounts/settings.component";
-import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
-
+import { ModalRef } from "jslib-angular/components/modal/modal.ref";
+import { ModalService } from "jslib-angular/services/modal.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
@@ -37,17 +35,16 @@ import { SyncService } from "jslib-common/abstractions/sync.service";
 import { SystemService } from "jslib-common/abstractions/system.service";
 import { TokenService } from "jslib-common/abstractions/token.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
 import { CipherType } from "jslib-common/enums/cipherType";
 
+import { MenuUpdateRequest } from "src/main/menu.updater";
+
+import { PremiumComponent } from "./accounts/premium.component";
+import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
+import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 import { PasswordGeneratorComponent } from "./vault/password-generator.component";
-
-import { ModalRef } from "jslib-angular/components/modal/modal.ref";
-
-import { ModalService } from "jslib-angular/services/modal.service";
-import { MenuUpdateRequest } from "src/main/menu.updater";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes

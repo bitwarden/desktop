@@ -1,7 +1,6 @@
 import { BrowserWindow, clipboard, dialog, MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
-
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { isSnapStore, isWindowsStore } from "jslib-electron/utils";
 

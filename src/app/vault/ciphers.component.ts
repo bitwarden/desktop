@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 
 import { CiphersComponent as BaseCiphersComponent } from "jslib-angular/components/ciphers.component";
 import { SearchService } from "jslib-common/abstractions/search.service";
-
 import { CipherView } from "jslib-common/models/view/cipherView";
 
 import { SearchBarService } from "../layout/search/search-bar.service";

@@ -1,10 +1,9 @@
 import { Component } from "@angular/core";
 
+import { PasswordGeneratorHistoryComponent as BasePasswordGeneratorHistoryComponent } from "jslib-angular/components/password-generator-history.component";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-
-import { PasswordGeneratorHistoryComponent as BasePasswordGeneratorHistoryComponent } from "jslib-angular/components/password-generator-history.component";
 
 @Component({
   selector: "app-password-generator-history",

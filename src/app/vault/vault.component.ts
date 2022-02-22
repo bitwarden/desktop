@@ -8,10 +8,28 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
 import { first } from "rxjs/operators";
 
+import { ModalRef } from "jslib-angular/components/modal/modal.ref";
+import { ModalService } from "jslib-angular/services/modal.service";
+import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
+import { EventService } from "jslib-common/abstractions/event.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
+import { SyncService } from "jslib-common/abstractions/sync.service";
+import { TotpService } from "jslib-common/abstractions/totp.service";
+import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
+import { CipherType } from "jslib-common/enums/cipherType";
+import { EventType } from "jslib-common/enums/eventType";
+import { CipherView } from "jslib-common/models/view/cipherView";
+import { FolderView } from "jslib-common/models/view/folderView";
+import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
+
 import { SearchBarService } from "../layout/search/search-bar.service";
+
 import { AddEditComponent } from "./add-edit.component";
 import { AttachmentsComponent } from "./attachments.component";
 import { CiphersComponent } from "./ciphers.component";
@@ -22,29 +40,6 @@ import { PasswordGeneratorComponent } from "./password-generator.component";
 import { PasswordHistoryComponent } from "./password-history.component";
 import { ShareComponent } from "./share.component";
 import { ViewComponent } from "./view.component";
-
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { EventType } from "jslib-common/enums/eventType";
-
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { FolderView } from "jslib-common/models/view/folderView";
-
-import { ModalRef } from "jslib-angular/components/modal/modal.ref";
-
-import { ModalService } from "jslib-angular/services/modal.service";
-
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { EventService } from "jslib-common/abstractions/event.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { TotpService } from "jslib-common/abstractions/totp.service";
-
-import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
 
 const BroadcasterSubscriptionId = "VaultComponent";
 
@@ -71,7 +66,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   action: string;
   cipherId: string = null;
-  favorites: boolean = false;
+  favorites = false;
   type: CipherType = null;
   folderId: string = null;
   collectionId: string = null;

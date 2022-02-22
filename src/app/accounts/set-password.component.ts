@@ -1,7 +1,7 @@
 import { Component, NgZone, OnDestroy } from "@angular/core";
-
 import { ActivatedRoute, Router } from "@angular/router";
 
+import { SetPasswordComponent as BaseSetPasswordComponent } from "jslib-angular/components/set-password.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
@@ -14,8 +14,6 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 
 const BroadcasterSubscriptionId = "SetPasswordComponent";
-
-import { SetPasswordComponent as BaseSetPasswordComponent } from "jslib-angular/components/set-password.component";
 
 @Component({
   selector: "app-set-password",
