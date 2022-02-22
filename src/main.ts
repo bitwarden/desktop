@@ -62,7 +62,7 @@ export class Main {
     const watch = args.some((val) => val === "--watch");
 
     if (watch) {
-      // tslint:disable-next-line
+      // eslint-disable-next-line
       require("electron-reload")(__dirname, {});
     }
 
@@ -114,6 +114,7 @@ export class Main {
     });
 
     if (process.platform === "win32") {
+      // eslint-disable-next-line
       const BiometricWindowsMain = require("jslib-electron/biometric.windows.main").default;
       this.biometricMain = new BiometricWindowsMain(
         this.i18nService,
@@ -122,6 +123,7 @@ export class Main {
         this.logService
       );
     } else if (process.platform === "darwin") {
+      // eslint-disable-next-line
       const BiometricDarwinMain = require("jslib-electron/biometric.darwin.main").default;
       this.biometricMain = new BiometricDarwinMain(this.i18nService, this.stateService);
     }
@@ -191,7 +193,7 @@ export class Main {
         });
       },
       (e: any) => {
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         console.error(e);
       }
     );

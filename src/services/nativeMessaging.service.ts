@@ -119,7 +119,7 @@ export class NativeMessagingService {
     }
 
     switch (message.command) {
-      case "biometricUnlock":
+      case "biometricUnlock": {
         if (!this.platformUtilService.supportsBiometric()) {
           return this.send({ command: "biometricUnlock", response: "not supported" }, appId);
         }
@@ -151,8 +151,10 @@ export class NativeMessagingService {
         }
 
         break;
+      }
       default:
         this.logService.error("NativeMessage, got unknown command.");
+        break;
     }
   }
 

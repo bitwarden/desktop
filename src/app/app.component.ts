@@ -205,7 +205,7 @@ export class AppComponent implements OnInit {
           case "openPremium":
             await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
             break;
-          case "showFingerprintPhrase":
+          case "showFingerprintPhrase": {
             const fingerprint = await this.cryptoService.getFingerprint(
               await this.stateService.getUserId()
             );
@@ -219,6 +219,7 @@ export class AppComponent implements OnInit {
               this.platformUtilsService.launchUri("https://bitwarden.com/help/fingerprint-phrase/");
             }
             break;
+          }
           case "openPasswordHistory":
             await this.openModal<PasswordGeneratorHistoryComponent>(
               PasswordGeneratorHistoryComponent,
@@ -238,7 +239,7 @@ export class AppComponent implements OnInit {
               queryParams: { code: message.code, state: message.state },
             });
             break;
-          case "premiumRequired":
+          case "premiumRequired": {
             const premiumConfirmed = await this.platformUtilsService.showDialog(
               this.i18nService.t("premiumRequiredDesc"),
               this.i18nService.t("premiumRequired"),
@@ -249,7 +250,8 @@ export class AppComponent implements OnInit {
               await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
             }
             break;
-          case "emailVerificationRequired":
+          }
+          case "emailVerificationRequired": {
             const emailVerificationConfirmed = await this.platformUtilsService.showDialog(
               this.i18nService.t("emailVerificationRequiredDesc"),
               this.i18nService.t("emailVerificationRequired"),
@@ -262,6 +264,7 @@ export class AppComponent implements OnInit {
               );
             }
             break;
+          }
           case "syncVault":
             try {
               await this.syncService.fullSync(true, true);
@@ -323,7 +326,7 @@ export class AppComponent implements OnInit {
           case "convertAccountToKeyConnector":
             this.router.navigate(["/remove-password"]);
             break;
-          case "switchAccount":
+          case "switchAccount": {
             if (message.userId != null) {
               await this.stateService.setActiveUser(message.userId);
             }
@@ -338,12 +341,16 @@ export class AppComponent implements OnInit {
               this.router.navigate(["vault"]);
             }
             break;
+          }
           case "systemSuspended":
             await this.checkForSystemTimeout(systemTimeoutOptions.onSuspend);
+            break;
           case "systemLocked":
             await this.checkForSystemTimeout(systemTimeoutOptions.onLock);
+            break;
           case "systemIdle":
             await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
+            break;
         }
       });
     });

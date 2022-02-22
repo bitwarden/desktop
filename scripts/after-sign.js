@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires, no-console */
 require("dotenv").config();
 const path = require("path");
 

@@ -57,6 +57,7 @@ export class MessagingMain {
         break;
       case "removeOpenAtLogin":
         this.removeOpenAtLogin();
+        break;
       case "setFocus":
         this.setFocus();
         break;

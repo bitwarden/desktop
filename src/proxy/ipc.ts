@@ -1,4 +1,4 @@
-/* tslint:disable:no-console */
+/* eslint-disable no-console */
 import { homedir } from "os";
 
 import * as ipc from "node-ipc";

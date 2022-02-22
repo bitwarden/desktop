@@ -135,7 +135,7 @@ export class VaultComponent implements OnInit, OnDestroy {
           case "modalClosed":
             this.showingModal = false;
             break;
-          case "copyUsername":
+          case "copyUsername": {
             const uComponent =
               this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
             const uCipher = uComponent != null ? uComponent.cipher : null;
@@ -149,7 +149,8 @@ export class VaultComponent implements OnInit, OnDestroy {
               this.copyValue(uCipher, uCipher.login.username, "username", "Username");
             }
             break;
-          case "copyPassword":
+          }
+          case "copyPassword": {
             const pComponent =
               this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
             const pCipher = pComponent != null ? pComponent.cipher : null;
@@ -164,7 +165,8 @@ export class VaultComponent implements OnInit, OnDestroy {
               this.copyValue(pCipher, pCipher.login.password, "password", "Password");
             }
             break;
-          case "copyTotp":
+          }
+          case "copyTotp": {
             const tComponent =
               this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
             const tCipher = tComponent != null ? tComponent.cipher : null;
@@ -179,6 +181,8 @@ export class VaultComponent implements OnInit, OnDestroy {
               const value = await this.totpService.getCode(tCipher.login.totp);
               this.copyValue(tCipher, value, "verificationCodeTotp", "TOTP");
             }
+            break;
+          }
           default:
             detectChanges = false;
             break;
@@ -730,7 +734,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     });
   }
 
-  private functionWithChangeDetection(func: Function) {
+  private functionWithChangeDetection(func: () => void) {
     this.ngZone.run(() => {
       func();
       this.changeDetectorRef.detectChanges();

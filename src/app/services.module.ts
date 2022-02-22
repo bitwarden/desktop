@@ -56,7 +56,7 @@ export function initFactory(
   stateService: StateServiceAbstraction,
   cryptoService: CryptoServiceAbstraction,
   nativeMessagingService: NativeMessagingService
-): Function {
+): () => Promise<void> {
   return async () => {
     nativeMessagingService.init();
     await stateService.init();

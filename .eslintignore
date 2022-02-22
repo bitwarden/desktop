@@ -3,5 +3,6 @@ build
 jslib
 webpack.main.js
 webpack.renderer.js
+src/scripts/duo.js
 
 **/node_modules

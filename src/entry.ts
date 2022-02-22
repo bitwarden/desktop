@@ -10,7 +10,7 @@ if (
   process.argv.some((arg) => arg.indexOf("chrome-extension://") !== -1 || arg.indexOf("{") !== -1)
 ) {
   if (process.platform === "darwin") {
-    // tslint:disable-next-line
+    // eslint-disable-next-line
     const app = require("electron").app;
 
     app.on("ready", () => {
@@ -27,7 +27,7 @@ if (
   const proxy = new NativeMessagingProxy();
   proxy.run();
 } else {
-  // tslint:disable-next-line
+  // eslint-disable-next-line
   const Main = require("./main").Main;
 
   const main = new Main();
