@@ -37,6 +37,10 @@ needs to be added to the `allowed_extensions` section of the manifest. These IDs
 
 It will then be possible to run the desktop application as usual using `npm run electron` and communicate with the browser.
 
+# We're Hiring!
+
+Interested in contributing in a big way? Consider joining our team! We're hiring for many positions. Please take a look at our [Careers page](https://bitwarden.com/careers/) to see what opportunities are currently open as well as what it's like to work at Bitwarden.
+
 # Contribute
 
 Code contributions are welcome! Please commit any pull requests against the `master` branch. Learn more about how to contribute by reading the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
