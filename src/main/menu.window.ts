@@ -16,7 +16,7 @@ export class WindowMenu implements IMenubarMenu {
   }
 
   get items(): MenuItemConstructorOptions[] {
-    var items = [this.minimize, this.hideToMenu, this.alwaysOnTop];
+    const items = [this.minimize, this.hideToMenu, this.alwaysOnTop];
 
     if (isMac()) {
       items.push(this.zoom, this.separator, this.bringAllToFront);
