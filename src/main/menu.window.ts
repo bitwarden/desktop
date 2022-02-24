@@ -18,10 +18,10 @@ export class WindowMenu implements IMenubarMenu {
     const items = [this.minimize, this.hideToMenu, this.alwaysOnTop];
 
     if (isMac()) {
-      items.concat([this.zoom, this.separator, this.bringAllToFront]);
+      items.push(this.zoom, this.separator, this.bringAllToFront);
     }
 
-    items.concat([this.separator, this.close]);
+    items.push(this.separator, this.close);
     return items;
   }
 
