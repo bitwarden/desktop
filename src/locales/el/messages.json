@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Δεν μπορείτε να χρησιμοποιήσετε αυτήν τη λειτουργία μέχρι να ενημερώσετε το κλειδί κρυπτογράφησης."
   },
-  "options": {
-    "message": "Επιλογές"
-  },
   "editedFolder": {
     "message": "Επεξεργασμένος φάκελος"
   },
@@ -734,7 +731,7 @@
     "message": "Φόρτωση..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Κλείδωμα Vault"
   },
   "passwordGenerator": {
     "message": "Γεννήτρια Κωδικού"
@@ -1758,7 +1755,7 @@
     "message": "Μία ή περισσότερες οργανωτικές πολιτικές σας αποτρέπει από την εξαγωγή του προσωπικού vault."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Προσθήκη Λογαριασμού"
   },
   "removeMasterPassword": {
     "message": "Αφαίρεση Κύριου Κωδικού Πρόσβασης"
@@ -1788,9 +1785,33 @@
     "message": "Δεν είναι δυνατή η πρόσβαση στον σύνδεσμο κλειδιού, προσπαθήστε ξανά αργότερα."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Κλείδωμα Όλων Των Vault"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Δεν μπορούν να συνδεθούν περισσότεροι από 5 λογαριασμοί ταυτόχρονα."
+  },
+  "accountPreferences": {
+    "message": "Προτιμήσεις"
+  },
+  "appPreferences": {
+    "message": "Ρυθμίσεις Εφαρμογής (Όλοι Οι Λογαριασμοί)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Συμπληρώθηκε το όριο λογαριασμού. Αποσυνδεθείτε από έναν λογαριασμό για να προσθέσετε έναν άλλο."
+  },
+  "settingsTitle": {
+    "message": "Ρυθμίσεις εφαρμογής για $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
+  },
+  "options": {
+    "message": "Options"
   }
 }

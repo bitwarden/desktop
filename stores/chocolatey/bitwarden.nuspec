@@ -12,7 +12,7 @@
     <iconUrl>https://cdn.rawgit.com/bitwarden/desktop/51dd1341/resources/icon.png</iconUrl>
     <copyright>Copyright © 2015-2022 Bitwarden Inc.</copyright>
     <projectSourceUrl>https://github.com/bitwarden/desktop/</projectSourceUrl>
-    <docsUrl>https://help.bitwarden.com/</docsUrl>
+    <docsUrl>https://bitwarden.com/help/</docsUrl>
     <bugTrackerUrl>https://github.com/bitwarden/desktop/issues</bugTrackerUrl>
     <releaseNotes>https://github.com/bitwarden/desktop/releases</releaseNotes>
     <licenseUrl>https://github.com/bitwarden/desktop/blob/master/LICENSE.txt</licenseUrl>

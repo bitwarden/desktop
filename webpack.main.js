@@ -77,6 +77,10 @@ const main = {
   ],
   externals: {
     "electron-reload": "commonjs2 electron-reload",
+    "@nodert-win10-rs4/windows.security.credentials.ui":
+      "commonjs2 @nodert-win10-rs4/windows.security.credentials.ui",
+    forcefocus: "commonjs2 forcefocus",
+    keytar: "commonjs2 keytar",
   },
 };
 

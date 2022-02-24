@@ -22,8 +22,11 @@ import { NativeMessagingMain } from "./main/nativeMessaging.main";
 
 import { StateService } from "jslib-common/services/state.service";
 
-const test = require("@bitwarden/desktop-native");
-console.log(test.hello());
+import { Account } from "./models/account";
+
+import { GlobalState } from "jslib-common/models/domain/globalState";
+
+import { StateFactory } from "jslib-common/factories/stateFactory";
 
 export class Main {
   logService: ElectronLogService;
@@ -82,7 +85,13 @@ export class Main {
     // TODO: this state service will have access to on disk storage, but not in memory storage.
     // If we could get this to work using the stateService singleton that the rest of the app uses we could save
     // ourselves from some hacks, like having to manually update the app menu vs. the menu subscribing to events.
-    this.stateService = new StateService(this.storageService, null, this.logService, null);
+    this.stateService = new StateService(
+      this.storageService,
+      null,
+      this.logService,
+      null,
+      new StateFactory(GlobalState, Account)
+    );
 
     this.windowMain = new WindowMain(
       this.stateService,
@@ -144,9 +153,9 @@ export class Main {
         this.menuMain.init();
         await this.trayMain.init("Bitwarden", [
           {
-            label: this.i18nService.t("lockNow"),
+            label: this.i18nService.t("lockVault"),
             enabled: false,
-            id: "lockNow",
+            id: "lockVault",
             click: () => this.messagingService.send("lockVault"),
           },
         ]);

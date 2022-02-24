@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
   },
-  "options": {
-    "message": "Opciók"
-  },
   "editedFolder": {
     "message": "A mappa szerkesztésre került."
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Egyszerre legfeljebb 5 fiókba lehet bejelentkezni."
+  },
+  "accountPreferences": {
+    "message": "Előbeállítások"
+  },
+  "appPreferences": {
+    "message": "Alkalmazás beállítások (összes fiók)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "A fiók korlát elérésre került. Kijelentkezés egy fiókból másik hozzáadásához."
+  },
+  "settingsTitle": {
+    "message": "Alkalmezás beállítások $EMAIL$ címhez",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Fiók váltása"
+  },
+  "options": {
+    "message": "Opciók"
   }
 }

@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Du kan ikke bruge denne funktion, før du opdaterer din krypteringsnøgle."
   },
-  "options": {
-    "message": "Indstillinger"
-  },
   "editedFolder": {
     "message": "Redigerede mappe"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Der må ikke være logget på mere end 5 konti på samme tid."
+  },
+  "accountPreferences": {
+    "message": "Indstillinger"
+  },
+  "appPreferences": {
+    "message": "Appindstillinger (alle konti)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Kontogrænsen er nået. Log ud af en konto for at tilføje en anden."
+  },
+  "settingsTitle": {
+    "message": "Appindstillinger for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Skift konto"
+  },
+  "options": {
+    "message": "Indstillinger"
   }
 }

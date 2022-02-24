@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Túto funkciu je možné použiť, až keď si aktualizujete svoj šifrovací kľúč."
   },
-  "options": {
-    "message": "Možnosti"
-  },
   "editedFolder": {
     "message": "Priečinok upravený"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Súčasne nemôže byť prihlásených viac ako 5 účtov."
+  },
+  "accountPreferences": {
+    "message": "Predvoľby"
+  },
+  "appPreferences": {
+    "message": "Nastavenia aplikácie (Všetky účty)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Dosiahnutý limit počtu účtov. Odhláste sa z účtu aby ste mohli pridať ďalší."
+  },
+  "settingsTitle": {
+    "message": "Nastavenia aplikácie pre $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Prepnúť účet"
+  },
+  "options": {
+    "message": "Možnosti"
   }
 }

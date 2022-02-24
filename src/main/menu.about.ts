@@ -3,19 +3,15 @@ import { BrowserWindow, clipboard, dialog, MenuItemConstructorOptions } from "el
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 
 import { UpdaterMain } from "jslib-electron/updater.main";
-import { isMac, isSnapStore, isWindowsStore } from "jslib-electron/utils";
+import { isSnapStore, isWindowsStore } from "jslib-electron/utils";
 
 import { IMenubarMenu } from "./menubar";
 
 export class AboutMenu implements IMenubarMenu {
   readonly id: string = "about";
 
-  get visible(): boolean {
-    return !isMac();
-  }
-
   get label(): string {
-    return this.localize("about");
+    return "";
   }
 
   get items(): MenuItemConstructorOptions[] {

@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Не можете да користите ову опцију док не промените Ваш кључ за шифровање."
   },
-  "options": {
-    "message": "Опције"
-  },
   "editedFolder": {
     "message": "Фасцикла измењена"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Истовремено се не може пријавити више од 5 налога."
+  },
+  "accountPreferences": {
+    "message": "Подешавања"
+  },
+  "appPreferences": {
+    "message": "App Settings (All Accounts)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Граница налога достигнута. Одјавите се од једног налога да би додали други."
+  },
+  "settingsTitle": {
+    "message": "App settings for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
+  },
+  "options": {
+    "message": "Options"
   }
 }

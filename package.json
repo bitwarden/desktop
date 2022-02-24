@@ -1,6 +1,5 @@
 {
-  "name": "bitwarden",
-  "productName": "Bitwarden",
+  "name": "@bitwarden/desktop",
   "description": "A secure and free password manager for all of your devices.",
   "version": "0.0.0",
   "keywords": [
@@ -63,6 +62,10 @@
     "prepare": "husky install"
   },
   "build": {
+    "extraMetadata": {
+      "name": "bitwarden"
+    },
+    "productName": "Bitwarden",
     "appId": "com.bitwarden.desktop",
     "buildDependenciesFromSource": true,
     "copyright": "Copyright © 2015-2022 Bitwarden Inc.",
@@ -73,11 +76,12 @@
     },
     "afterSign": "scripts/after-sign.js",
     "asarUnpack": [
-      "*.node"
+      "**/*.node"
     ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
+      "minimumSystemVersion": "10.14",
       "darkModeSupport": true,
       "gatekeeperAssess": false,
       "hardenedRuntime": true,
@@ -262,7 +266,6 @@
     "electron-notarize": "^1.1.1",
     "electron-rebuild": "^3.2.5",
     "electron-reload": "^1.5.0",
-    "font-awesome": "4.7.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
@@ -309,6 +312,6 @@
     "npm": "~8"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
+    "./!(jslib)**": "prettier --ignore-unknown --write"
   }
 }

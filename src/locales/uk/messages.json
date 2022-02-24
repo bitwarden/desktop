@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
   },
-  "options": {
-    "message": "Налаштування"
-  },
   "editedFolder": {
     "message": "Тека відредагована"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Можна увійти не більше, ніж у 5 облікових записів одночасно."
+  },
+  "accountPreferences": {
+    "message": "Налаштування"
+  },
+  "appPreferences": {
+    "message": "Налаштування програми (Усі облікові записи)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Досягнуто обмеження облікового запису. Вийдіть, щоб додати інший обліковий запис."
+  },
+  "settingsTitle": {
+    "message": "Налаштування програми для $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Перемкнути обліковий запис"
+  },
+  "options": {
+    "message": "Налаштування"
   }
 }

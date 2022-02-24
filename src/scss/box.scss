@@ -4,6 +4,15 @@
   position: relative;
   width: 100%;
 
+  .settingsTitle {
+    margin: 0 10px 5px 10px;
+    display: flex;
+
+    @include themify($themes) {
+      color: themed("headingColor");
+    }
+  }
+
   .box-header {
     margin: 0 10px 5px 10px;
     text-transform: uppercase;
@@ -27,6 +36,38 @@
       background-color: transparent;
       margin-left: 4px;
       font-size: $font-size-small;
+      @include themify($themes) {
+        color: themed("headingColor");
+      }
+    }
+  }
+
+  .box-header-expandable {
+    border: none;
+    padding: 5px 0px;
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include themify($themes) {
+      color: themed("headingColor");
+      background-color: themed("boxBackgroundColor");
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      @include themify($themes) {
+        background-color: themed("boxBackgroundHoverColor");
+      }
+    }
+
+    .icon {
+      display: flex;
+      align-items: flex-end;
+      margin-left: 5px;
+
       @include themify($themes) {
         color: themed("headingColor");
       }

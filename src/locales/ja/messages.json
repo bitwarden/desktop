@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "暗号キーを更新するまでこの機能は使用できません。"
   },
-  "options": {
-    "message": "オプション"
-  },
   "editedFolder": {
     "message": "フォルダーを編集しました"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "5つ以上のアカウントに同時にログインすることはできません。"
+  },
+  "accountPreferences": {
+    "message": "設定"
+  },
+  "appPreferences": {
+    "message": "アプリ設定 (すべてのアカウント)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "アカウントの制限に達しました。別のアカウントを追加するにはアカウントからログアウトしてください。"
+  },
+  "settingsTitle": {
+    "message": "$EMAIL$ のアプリ設定",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "アカウント切替"
+  },
+  "options": {
+    "message": "オプション"
   }
 }

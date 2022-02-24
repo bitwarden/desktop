@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمی‌توانید از این قابلیت استفاده کنید."
   },
-  "options": {
-    "message": "گزینه‌ها"
-  },
   "editedFolder": {
     "message": "پوشه ویرایش شد"
   },
@@ -734,7 +731,7 @@
     "message": "درحال بارگذاری..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "قفل کردن گاوصندوق"
   },
   "passwordGenerator": {
     "message": "تولید کننده کلمه عبور"
@@ -1758,7 +1755,7 @@
     "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "افزودن حساب کاربری"
   },
   "removeMasterPassword": {
     "message": "پاک کردن کلمه عبور اصلی"
@@ -1788,9 +1785,33 @@
     "message": "دسترسی به رابط کلید ممکن نیست، بعداً دوباره امتحان کنید."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "قفل کردن تمام گاوصندوق ها"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "بیش از 5 حساب را نمی توان همزمان وارد کرد."
+  },
+  "accountPreferences": {
+    "message": "تنظیمات"
+  },
+  "appPreferences": {
+    "message": "تنظیمات اپ (تمام حسابها)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "محدودیت حساب تکمیل شد. برای افزودن حساب دیگر، از یک حساب خارج شوید."
+  },
+  "settingsTitle": {
+    "message": "تنظیمات اپ برای $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "تعویض حساب کاربری"
+  },
+  "options": {
+    "message": "گزینه‌ها"
   }
 }

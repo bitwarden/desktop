@@ -30,7 +30,7 @@
     text-align: left;
     position: relative;
 
-    .fa {
+    .bwi {
       position: absolute;
       top: 7px;
       left: 15px;
@@ -80,6 +80,10 @@
   height: 100%;
   user-select: none;
 
+  border: none;
+  background: transparent;
+  width: auto;
+
   @include themify($themes) {
     color: themed("accountSwitcherTextColor");
   }
@@ -114,9 +118,11 @@
     0 1px 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: $border-radius;
 
-  a {
+  button {
+    border: none;
+    background: transparent;
+    width: 100%;
     padding: 5px 10px;
-    display: block;
 
     @include themify($themes) {
       color: themed("textColor");
@@ -130,28 +136,34 @@
   }
 
   .accounts {
-    padding: 4px 0;
+    padding: 7px 0;
 
     .account {
       display: grid;
-      grid-column-gap: 5px;
-      grid-template:
-        [row1-start] "email  status" [row1-end]
-        [row2-start] "server server" [row2-end]
-        / 1fr auto;
-      align-items: baseline;
+      grid-template-columns: 24px auto 24px;
+      grid-column-gap: 11px;
+      align-items: center;
+      justify-items: left;
 
-      .server {
-        font-size: $font-size-small;
-      }
+      .accountInfo {
+        display: grid;
+        text-align: left;
 
-      .email {
-        font-size: $font-size-large;
-      }
+        .email {
+          font-size: $font-size-base;
+          max-width: 168px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
-      .status {
-        font-style: italic;
-        grid-area: status;
+        .server {
+          font-size: $font-size-small;
+        }
+
+        .status {
+          font-size: $font-size-small;
+          font-style: italic;
+        }
       }
     }
   }
@@ -168,5 +180,13 @@
 
   .add {
     margin: 4px 0;
+    text-align: left;
+  }
+
+  .accountLimitReached {
+    display: block;
+    margin: 4px 0;
+    padding: 5px 10px;
+    font-size: $font-size-small;
   }
 }

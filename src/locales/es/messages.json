@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "No puedes usar esta característica hasta que actualices tu clave de cifrado."
   },
-  "options": {
-    "message": "Opciones"
-  },
   "editedFolder": {
     "message": "Carpeta editada"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "No se puede iniciar sesión en más de 5 cuentas al mismo tiempo."
+  },
+  "accountPreferences": {
+    "message": "Preferences"
+  },
+  "appPreferences": {
+    "message": "App Settings (All Accounts)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
+  },
+  "settingsTitle": {
+    "message": "App settings for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch Account"
+  },
+  "options": {
+    "message": "Options"
   }
 }

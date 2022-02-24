@@ -244,9 +244,15 @@ export class NativeMessagingMain {
     return this.exePath;
   }
 
-  private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
+  private getRegeditInstance() {
     const regedit = require("regedit");
-    regedit.setExternalVBSLocation("resources/regedit/vbs");
+    regedit.setExternalVBSLocation(path.join(path.dirname(this.exePath), "resources/regedit/vbs"));
+
+    return regedit;
+  }
+
+  private async createWindowsRegistry(check: string, location: string, jsonFile: string) {
+    const regedit = this.getRegeditInstance();
 
     const list = util.promisify(regedit.list);
     const createKey = util.promisify(regedit.createKey);
@@ -281,7 +287,7 @@ export class NativeMessagingMain {
   }
 
   private async deleteWindowsRegistry(key: string) {
-    const regedit = require("regedit");
+    const regedit = this.getRegeditInstance();
 
     const list = util.promisify(regedit.list);
     const deleteKey = util.promisify(regedit.deleteKey);

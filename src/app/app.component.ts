@@ -53,17 +53,30 @@ const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
 const SyncInterval = 6 * 60 * 60 * 1000; // 6 hours
 
+const systemTimeoutOptions = {
+  onLock: -2,
+  onSuspend: -3,
+  onIdle: -4,
+};
+
 @Component({
   selector: "app-root",
   styles: [],
-  template: ` <ng-template #settings></ng-template>
+  template: `
+    <ng-template #settings></ng-template>
     <ng-template #premium></ng-template>
     <ng-template #passwordHistory></ng-template>
     <ng-template #appFolderAddEdit></ng-template>
     <ng-template #exportVault></ng-template>
     <ng-template #appPasswordGenerator></ng-template>
     <app-header></app-header>
-    <div id="container"><router-outlet></router-outlet></div>`,
+    <div id="container">
+      <div class="loading" *ngIf="loading">
+        <i class="bwi bwi-spinner bwi-spin bwi-3x" aria-hidden="true"></i>
+      </div>
+      <router-outlet *ngIf="!loading"></router-outlet>
+    </div>
+  `,
 })
 export class AppComponent implements OnInit {
   @ViewChild("settings", { read: ViewContainerRef, static: true }) settingsRef: ViewContainerRef;
@@ -77,10 +90,13 @@ export class AppComponent implements OnInit {
   @ViewChild("appPasswordGenerator", { read: ViewContainerRef, static: true })
   passwordGeneratorModalRef: ViewContainerRef;
 
+  loading = false;
+
   private lastActivity: number = null;
   private modal: ModalRef = null;
   private idleTimer: number = null;
   private isIdle = false;
+  private activeUserId: string = null;
 
   constructor(
     private broadcasterService: BroadcasterService,
@@ -113,15 +129,16 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.stateService.activeAccount.subscribe((userId) => {
+      this.activeUserId = userId;
+    });
     this.ngZone.runOutsideAngular(() => {
       setTimeout(async () => {
         await this.updateAppMenu();
       }, 1000);
 
-      window.onmousemove = () => this.recordActivity();
-      window.onmousedown = () => this.recordActivity();
       window.ontouchstart = () => this.recordActivity();
-      window.onclick = () => this.recordActivity();
+      window.onmousedown = () => this.recordActivity();
       window.onscroll = () => this.recordActivity();
       window.onkeypress = () => this.recordActivity();
     });
@@ -141,14 +158,16 @@ export class AppComponent implements OnInit {
             }
             this.notificationsService.updateConnection();
             this.updateAppMenu();
-            this.systemService.startProcessReload();
             await this.systemService.clearPendingClipboard();
+            await this.reloadProcess();
             break;
           case "authBlocked":
             this.router.navigate(["login"]);
             break;
           case "logout":
+            this.loading = message.userId == null || message.userId === this.activeUserId;
             await this.logOut(!!message.expired, message.userId);
+            this.loading = false;
             break;
           case "lockVault":
             await this.vaultTimeoutService.lock(true, message.userId);
@@ -164,16 +183,16 @@ export class AppComponent implements OnInit {
             if (this.modal != null) {
               this.modal.close();
             }
-            this.updateAppMenu();
             if (
               message.userId == null ||
               message.userId === (await this.stateService.getUserId())
             ) {
-              this.router.navigate(["lock"]);
+              await this.router.navigate(["lock"]);
             }
             this.notificationsService.updateConnection();
+            await this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
-            this.systemService.startProcessReload();
+            await this.reloadProcess();
             break;
           case "reloadProcess":
             window.location.reload(true);
@@ -200,9 +219,7 @@ export class AppComponent implements OnInit {
               this.i18nService.t("close")
             );
             if (result) {
-              this.platformUtilsService.launchUri(
-                "https://help.bitwarden.com/article/fingerprint-phrase/"
-              );
+              this.platformUtilsService.launchUri("https://bitwarden.com/help/fingerprint-phrase/");
             }
             break;
           case "openPasswordHistory":
@@ -244,7 +261,7 @@ export class AppComponent implements OnInit {
             );
             if (emailVerificationConfirmed) {
               this.platformUtilsService.launchUri(
-                "https://bitwarden.com/help/article/create-bitwarden-account/"
+                "https://bitwarden.com/help/create-bitwarden-account/"
               );
             }
             break;
@@ -307,9 +324,29 @@ export class AppComponent implements OnInit {
             }
             break;
           case "convertAccountToKeyConnector":
-            await this.keyConnectorService.setConvertAccountRequired(true);
             this.router.navigate(["/remove-password"]);
             break;
+          case "switchAccount":
+            if (message.userId != null) {
+              await this.stateService.setActiveUser(message.userId);
+            }
+            const locked = await this.vaultTimeoutService.isLocked(message.userId);
+            if (locked) {
+              this.messagingService.send("locked", { userId: message.userId });
+            } else {
+              this.messagingService.send("unlocked");
+              this.loading = true;
+              await this.syncService.fullSync(true);
+              this.loading = false;
+              this.router.navigate(["vault"]);
+            }
+            break;
+          case "systemSuspended":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onSuspend);
+          case "systemLocked":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onLock);
+          case "systemIdle":
+            await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
         }
       });
     });
@@ -412,24 +449,24 @@ export class AppComponent implements OnInit {
   }
 
   private async logOut(expired: boolean, userId?: string) {
+    const userBeingLoggedOut = await this.stateService.getUserId({ userId: userId });
     await Promise.all([
-      this.eventService.uploadEvents(userId),
-      this.syncService.setLastSync(new Date(0), userId),
-      this.tokenService.clearToken(userId),
-      this.cryptoService.clearKeys(userId),
-      this.settingsService.clear(userId),
-      this.cipherService.clear(userId),
-      this.folderService.clear(userId),
-      this.collectionService.clear(userId),
-      this.passwordGenerationService.clear(userId),
-      this.vaultTimeoutService.clear(userId),
-      this.policyService.clear(userId),
+      this.eventService.uploadEvents(userBeingLoggedOut),
+      this.syncService.setLastSync(new Date(0), userBeingLoggedOut),
+      this.cryptoService.clearKeys(userBeingLoggedOut),
+      this.settingsService.clear(userBeingLoggedOut),
+      this.cipherService.clear(userBeingLoggedOut),
+      this.folderService.clear(userBeingLoggedOut),
+      this.collectionService.clear(userBeingLoggedOut),
+      this.passwordGenerationService.clear(userBeingLoggedOut),
+      this.vaultTimeoutService.clear(userBeingLoggedOut),
+      this.policyService.clear(userBeingLoggedOut),
       this.keyConnectorService.clear(),
     ]);
 
-    await this.stateService.setBiometricLocked(true, { userId: userId });
+    await this.stateService.setBiometricLocked(true, { userId: userBeingLoggedOut });
 
-    if (userId == null || userId === (await this.stateService.getUserId())) {
+    if (userBeingLoggedOut === this.activeUserId) {
       this.searchService.clearIndex();
       this.authService.logOut(async () => {
         if (expired) {
@@ -442,32 +479,30 @@ export class AppComponent implements OnInit {
       });
     }
 
-    await this.stateService.clean({ userId: userId });
+    const preLogoutActiveUserId = this.activeUserId;
+    await this.stateService.clean({ userId: userBeingLoggedOut });
 
-    if (this.stateService.activeAccount.getValue() == null) {
+    if (this.activeUserId == null) {
       this.router.navigate(["login"]);
-    } else {
-      const locked = await this.vaultTimeoutService.isLocked();
-      if (locked) {
-        this.messagingService.send("locked");
-      } else {
-        this.messagingService.send("unlocked");
-        this.messagingService.send("syncVault");
-        this.router.navigate(["vault"]);
-      }
+    } else if (preLogoutActiveUserId !== this.activeUserId) {
+      this.messagingService.send("switchAccount");
     }
 
     await this.updateAppMenu();
   }
 
   private async recordActivity() {
+    if (this.activeUserId == null) {
+      return;
+    }
+
     const now = new Date().getTime();
     if (this.lastActivity != null && now - this.lastActivity < 250) {
       return;
     }
 
     this.lastActivity = now;
-    await this.stateService.setLastActive(now);
+    await this.stateService.setLastActive(now, { userId: this.activeUserId });
 
     // Idle states
     if (this.isIdle) {
@@ -544,5 +579,40 @@ export class AppComponent implements OnInit {
         replaceUrl: true,
       });
     }
+  }
+
+  private async reloadProcess(): Promise<void> {
+    const accounts = this.stateService.accounts.getValue();
+    if (accounts != null) {
+      const keys = Object.keys(accounts);
+      if (keys.length > 0) {
+        for (const userId of keys) {
+          if (!(await this.vaultTimeoutService.isLocked(userId))) {
+            return;
+          }
+        }
+      }
+    }
+    await this.systemService.startProcessReload();
+  }
+
+  private async checkForSystemTimeout(timeout: number): Promise<void> {
+    for (const userId in this.stateService.accounts.getValue()) {
+      if (userId == null) {
+        continue;
+      }
+      const options = await this.getVaultTimeoutOptions(userId);
+      if (options[0] === timeout) {
+        options[1] === "logOut"
+          ? this.logOut(false, userId)
+          : await this.vaultTimeoutService.lock(true, userId);
+      }
+    }
+  }
+
+  private async getVaultTimeoutOptions(userId: string): Promise<[number, string]> {
+    const timeout = await this.stateService.getVaultTimeout({ userId: userId });
+    const action = await this.stateService.getVaultTimeoutAction({ userId: userId });
+    return [timeout, action];
   }
 }

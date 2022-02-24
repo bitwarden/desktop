@@ -1,7 +1,7 @@
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
-import { isMacAppStore } from "jslib-electron/utils";
+import { isMac } from "jslib-electron/utils";
 import { WindowMain } from "jslib-electron/window.main";
 
 import { IMenubarMenu } from "./menubar";
@@ -16,19 +16,14 @@ export class WindowMenu implements IMenubarMenu {
   }
 
   get items(): MenuItemConstructorOptions[] {
-    if (!isMacAppStore()) {
-      return [this.hideToMenu, this.alwaysOnTop];
+    const items = [this.minimize, this.hideToMenu, this.alwaysOnTop];
+
+    if (isMac()) {
+      items.push(this.zoom, this.separator, this.bringAllToFront);
     }
 
-    return [
-      this.minimize,
-      this.hideToMenu,
-      this.alwaysOnTop,
-      this.zoom,
-      this.separator,
-      this.bringAllToFront,
-      this.close,
-    ];
+    items.push(this.separator, this.close);
+    return items;
   }
 
   private readonly _i18nService: I18nService;
@@ -50,14 +45,13 @@ export class WindowMenu implements IMenubarMenu {
       id: "minimize",
       label: this.localize("minimize"),
       role: "minimize",
-      visible: isMacAppStore(),
     };
   }
 
   private get hideToMenu(): MenuItemConstructorOptions {
     return {
       id: "hideToMenu",
-      label: this.localize(isMacAppStore() ? "hideToMenuBar" : "hideToTray"),
+      label: this.localize(isMac() ? "hideToMenuBar" : "hideToTray"),
       click: () => this.sendMessage("hideToTray"),
       accelerator: "CmdOrCtrl+Shift+M",
     };
@@ -79,7 +73,6 @@ export class WindowMenu implements IMenubarMenu {
       id: "zoom",
       label: this.localize("zoom"),
       role: "zoom",
-      visible: isMacAppStore(),
     };
   }
 
@@ -92,7 +85,6 @@ export class WindowMenu implements IMenubarMenu {
       id: "bringAllToFront",
       label: this.localize("bringAllToFront"),
       role: "front",
-      visible: isMacAppStore(),
     };
   }
 
@@ -101,7 +93,6 @@ export class WindowMenu implements IMenubarMenu {
       id: "close",
       label: this.localize("close"),
       role: "close",
-      visible: isMacAppStore(),
     };
   }
 

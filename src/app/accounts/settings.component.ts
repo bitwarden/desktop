@@ -40,7 +40,7 @@ export class SettingsComponent implements OnInit {
   locale: string;
   vaultTimeouts: any[];
   localeOptions: any[];
-  theme: string;
+  theme: ThemeType;
   themeOptions: any[];
   clearClipboard: number;
   clearClipboardOptions: any[];
@@ -64,6 +64,12 @@ export class SettingsComponent implements OnInit {
   startToTrayDescText: string;
 
   vaultTimeout: FormControl = new FormControl(null);
+
+  showSecurity: boolean = true;
+  showAccountPreferences: boolean = true;
+  showAppPreferences: boolean = true;
+
+  currentUserEmail: string;
 
   constructor(
     private i18nService: I18nService,
@@ -116,10 +122,6 @@ export class SettingsComponent implements OnInit {
       { name: i18nService.t("never"), value: null },
     ]);
 
-    this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
-      this.saveVaultTimeoutOptions();
-    });
-
     const localeOptions: any[] = [];
     i18nService.supportedTranslationLocales.forEach((locale) => {
       let name = locale;
@@ -133,7 +135,7 @@ export class SettingsComponent implements OnInit {
     this.localeOptions = localeOptions;
 
     this.themeOptions = [
-      { name: i18nService.t("default"), value: null },
+      { name: i18nService.t("default"), value: ThemeType.System },
       { name: i18nService.t("light"), value: ThemeType.Light },
       { name: i18nService.t("dark"), value: ThemeType.Dark },
       { name: "Nord", value: ThemeType.Nord },
@@ -151,21 +153,40 @@ export class SettingsComponent implements OnInit {
   }
 
   async ngOnInit() {
+    // App preferences
     this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
-    this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
-    this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
-    const pinSet = await this.vaultTimeoutService.isPinLockSet();
-    this.pin = pinSet[0] || pinSet[1];
-    this.disableFavicons = await this.stateService.getDisableFavicon();
-    this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration();
-    this.enableBrowserIntegrationFingerprint =
-      await this.stateService.getEnableBrowserIntegrationFingerprint();
     this.enableMinToTray = await this.stateService.getEnableMinimizeToTray();
     this.enableCloseToTray = await this.stateService.getEnableCloseToTray();
     this.enableTray = await this.stateService.getEnableTray();
     this.startToTray = await this.stateService.getEnableStartToTray();
+
+    this.alwaysShowDock = await this.stateService.getAlwaysShowDock();
+    this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
+    this.openAtLogin = await this.stateService.getOpenAtLogin();
+
     this.locale = await this.stateService.getLocale();
     this.theme = await this.stateService.getTheme();
+
+    if ((await this.stateService.getUserId()) == null) {
+      return;
+    }
+    this.currentUserEmail = await this.stateService.getEmail();
+
+    // Security
+    this.vaultTimeout.setValue(await this.stateService.getVaultTimeout());
+    this.vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
+    this.vaultTimeout.valueChanges.pipe(debounceTime(500)).subscribe(() => {
+      this.saveVaultTimeoutOptions();
+    });
+
+    const pinSet = await this.vaultTimeoutService.isPinLockSet();
+    this.pin = pinSet[0] || pinSet[1];
+
+    // Account preferences
+    this.disableFavicons = await this.stateService.getDisableFavicon();
+    this.enableBrowserIntegration = await this.stateService.getEnableBrowserIntegration();
+    this.enableBrowserIntegrationFingerprint =
+      await this.stateService.getEnableBrowserIntegrationFingerprint();
     this.clearClipboard = await this.stateService.getClearClipboard();
     this.minimizeOnCopyToClipboard = await this.stateService.getMinimizeOnCopyToClipboard();
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
@@ -173,9 +194,6 @@ export class SettingsComponent implements OnInit {
     this.biometricText = await this.stateService.getBiometricText();
     this.noAutoPromptBiometrics = await this.stateService.getNoAutoPromptBiometrics();
     this.noAutoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
-    this.alwaysShowDock = await this.stateService.getAlwaysShowDock();
-    this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
-    this.openAtLogin = await this.stateService.getOpenAtLogin();
   }
 
   async saveVaultTimeoutOptions() {

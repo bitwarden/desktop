@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "更新加密金鑰前不能使用此功能。"
   },
-  "options": {
-    "message": "選項"
-  },
   "editedFolder": {
     "message": "資料夾已編輯"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "最多只能同時登入 5 隻帳號。"
+  },
+  "accountPreferences": {
+    "message": "偏好設定"
+  },
+  "appPreferences": {
+    "message": "應用程式設定（所有帳戶）"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "已達帳戶數量上限。登出一個帳戶後再加入其他的帳戶。"
+  },
+  "settingsTitle": {
+    "message": "$EMAIL$ 的應用程式設定",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "切換帳戶"
+  },
+  "options": {
+    "message": "選項"
   }
 }

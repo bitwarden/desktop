@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Nu puteți utiliza această caracteristică înainte de a actualiza cheia de criptare."
   },
-  "options": {
-    "message": "Opțiuni"
-  },
   "editedFolder": {
     "message": "Dosar editat"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Nu pot fi conectate mai mult de 5 conturi în același timp."
+  },
+  "accountPreferences": {
+    "message": "Preferințe"
+  },
+  "appPreferences": {
+    "message": "Setări aplicație (toate conturile)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limita contului a fost atinsă. Ieșiți dintr-un cont pentru a adăuga un altul."
+  },
+  "settingsTitle": {
+    "message": "Setările aplicației pentru $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Schimbați contul"
+  },
+  "options": {
+    "message": "Opțiuni"
   }
 }

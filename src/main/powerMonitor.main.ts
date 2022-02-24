@@ -17,30 +17,20 @@ export class PowerMonitorMain {
     // ref: https://github.com/electron/electron/issues/13767
     if (!isSnapStore()) {
       // System sleep
-      powerMonitor.on("suspend", async () => {
-        const options = await this.getVaultTimeoutOptions();
-        if (options[0] === -3) {
-          options[1] === "logOut"
-            ? this.main.messagingService.send("logout", { expired: false })
-            : this.main.messagingService.send("lockVault");
-        }
+      powerMonitor.on("suspend", () => {
+        this.main.messagingService.send("systemSuspended");
       });
     }
 
     if (process.platform !== "linux") {
       // System locked
-      powerMonitor.on("lock-screen", async () => {
-        const options = await this.getVaultTimeoutOptions();
-        if (options[0] === -2) {
-          options[1] === "logOut"
-            ? this.main.messagingService.send("logout", { expired: false })
-            : this.main.messagingService.send("lockVault");
-        }
+      powerMonitor.on("lock-screen", () => {
+        this.main.messagingService.send("systemLocked");
       });
     }
 
     // System idle
-    global.setInterval(async () => {
+    global.setInterval(() => {
       const idleSeconds: number = powerMonitor.getSystemIdleTime();
       const idle = idleSeconds >= IdleLockSeconds;
       if (idle) {
@@ -48,21 +38,10 @@ export class PowerMonitorMain {
           return;
         }
 
-        const options = await this.getVaultTimeoutOptions();
-        if (options[0] === -4) {
-          options[1] === "logOut"
-            ? this.main.messagingService.send("logout", { expired: false })
-            : this.main.messagingService.send("lockVault");
-        }
+        this.main.messagingService.send("systemIdle");
       }
 
       this.idle = idle;
     }, IdleCheckInterval);
-  }
-
-  private async getVaultTimeoutOptions(): Promise<[number, string]> {
-    const timeout = await this.main.stateService.getVaultTimeout();
-    const action = await this.main.stateService.getVaultTimeoutAction();
-    return [timeout, action];
   }
 }

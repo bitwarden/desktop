@@ -269,7 +269,7 @@
     "message": "Efternamn"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Fullständigt namn"
   },
   "address1": {
     "message": "Adress 1"
@@ -332,11 +332,11 @@
     "message": "Booleskt värde"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Länkad",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Länkat värde",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
@@ -452,13 +452,10 @@
     "message": "Välj en fil."
   },
   "maxFileSize": {
-    "message": "Filen får vara maximalt 500 MB."
+    "message": "Maximal filstorlek är 500 MB."
   },
   "updateKey": {
     "message": "Du kan inte använda denna funktion förrän du uppdaterar din krypteringsnyckel."
-  },
-  "options": {
-    "message": "Alternativ"
   },
   "editedFolder": {
     "message": "Redigerade mapp"
@@ -542,25 +539,25 @@
     "message": "Det finns inga objekt att visa."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Skicka en verifieringskod till din e-postadress"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Skicka kod"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kod har skickats"
   },
   "verificationCode": {
     "message": "Verifieringskod"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Bekräfta din identitet för att fortsätta."
   },
   "verificationCodeRequired": {
     "message": "Verifieringskod krävs."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Ogiltig verifieringskod"
   },
   "continue": {
     "message": "Fortsätt"
@@ -734,7 +731,7 @@
     "message": "Laddar..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Lås valv"
   },
   "passwordGenerator": {
     "message": "Lösenordsgenerator"
@@ -787,7 +784,7 @@
     "message": "Synkroniseringen misslyckades"
   },
   "yourVaultIsLocked": {
-    "message": "Ditt valv är låst. Verifiera din identitet för att fortsätta."
+    "message": "Ditt valv är låst. Bekräfta din identitet för att fortsätta."
   },
   "unlock": {
     "message": "Lås upp"
@@ -1325,7 +1322,7 @@
     "message": "Lås upp med Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "lås upp valvet"
+    "message": "lås upp ditt valv"
   },
   "noAutoPromptWindowsHello": {
     "message": "Fråga inte efter Windows Hello vid uppstart."
@@ -1715,13 +1712,13 @@
     "message": "Denna åtgärd är skyddad. För att fortsätta, vänligen verifiera din identitet genom att ange ditt huvudlösenord."
   },
   "updatedMasterPassword": {
-    "message": "Updated Master Password"
+    "message": "Huvudlösenord uppdaterades"
   },
   "updateMasterPassword": {
-    "message": "Update Master Password"
+    "message": "Uppdatera huvudlösenord"
   },
   "updateMasterPasswordWarning": {
-    "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ditt huvudlösenord ändrades nyligen av en administratör i din organisation. För att få tillgång till valvet måste du uppdatera det nu. Om du fortsätter kommer du att loggas ut från din nuvarande session, vilket kräver att du loggar in igen. Aktiva sessioner på andra enheter kan komma att vara aktiva i upp till en timme."
   },
   "hours": {
     "message": "Timmar"
@@ -1730,7 +1727,7 @@
     "message": "Minuter"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed Vault Timeout is $HOURS$ hour(s) and $MINUTES$ minute(s)",
+    "message": "Dina organisationsprinciper påverkar ditt valvs tid för timeout. Maximal tillåten tid innan timeout är $HOURS$ timme(ar) och $MINUTES$ minut(er)",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1743,31 +1740,31 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "Your vault timeout exceeds the restrictions set by your organization."
+    "message": "Ditt valvs tid för timeout överskrider de begränsningar som fastställts av din organisation."
   },
   "resetPasswordPolicyAutoEnroll": {
-    "message": "Automatic Enrollment"
+    "message": "Automatiskt deltagande"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "This organization has an enterprise policy that will automatically enroll you in password reset. Enrollment will allow organization administrators to change your master password."
+    "message": "Denna organisation har en företagspolicy som automatiskt registrerar dig för lösenordsåterställning. Deltagandet gör det möjligt för organisationsadministratörer att ändra ditt huvudlösenord."
   },
   "vaultExportDisabled": {
-    "message": "Vault Export Disabled"
+    "message": "Valvexport inaktiverad"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "One or more organization policies prevents you from exporting your personal vault."
+    "message": "En eller flera organisationsprinciper hindrar dig från att exportera ditt personliga valv."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "Lägg till konto"
   },
   "removeMasterPassword": {
-    "message": "Remove Master Password"
+    "message": "Ta bort huvudlösenord"
   },
   "removedMasterPassword": {
-    "message": "Master password removed."
+    "message": "Huvudlösenord togs bort."
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ is using SSO with a self-hosted key server. A master password is no longer required to log in for members of this organization.",
+    "message": "$ORGANIZATION$ använder SSO med en egen nyckelserver. Ett huvudlösenord krävs inte längre för att logga in för medlemmar i denna organisation.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -1785,12 +1782,36 @@
     "message": "Du har lämnat organisationen."
   },
   "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+    "message": "Kunde inte nå key connector, försök igen senare."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "Lås alla valv"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "Inte mer än 5 konton får vara inloggade samtidigt."
+  },
+  "accountPreferences": {
+    "message": "Inställningar"
+  },
+  "appPreferences": {
+    "message": "Appinställningar (alla konton)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Kontogränsen har nåtts. Logga ut från ett konto för att lägga till ett annat."
+  },
+  "settingsTitle": {
+    "message": "Appinställningar för $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Byt konto"
+  },
+  "options": {
+    "message": "Alternativ"
   }
 }

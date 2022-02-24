@@ -11,13 +11,11 @@
   height: 100%;
 
   @media (min-height: 500px) {
-    height: calc(100% + 50px);
-    padding-bottom: 50px;
+    height: calc(100%);
   }
 
   @media (min-height: 800px) {
-    height: calc(100% + 300px);
-    padding-bottom: 300px;
+    height: calc(100%);
   }
 
   img {
@@ -141,28 +139,6 @@
   }
 }
 
-.login-header {
-  padding: 1em;
-  font-size: 1.2em;
-  .environment-urls-settings-icon {
-    @include themify($themes) {
-      color: themed("mutedColor");
-    }
-
-    span {
-      visibility: hidden;
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-
-      @include themify($themes) {
-        color: themed("primaryColor");
-      }
-    }
-  }
-}
 #sso-page {
   .content {
     width: 300px;
@@ -237,5 +213,33 @@
 #remove-password-page {
   .content > p {
     margin-bottom: 20px;
+  }
+}
+
+#login-page {
+  flex-direction: column;
+
+  .login-header {
+    align-self: flex-start;
+    padding: 1em;
+    font-size: 1.2em;
+    .environment-urls-settings-icon {
+      @include themify($themes) {
+        color: themed("mutedColor");
+      }
+
+      span {
+        visibility: hidden;
+      }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+
+        @include themify($themes) {
+          color: themed("primaryColor");
+        }
+      }
+    }
   }
 }

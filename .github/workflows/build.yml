@@ -55,9 +55,9 @@ jobs:
         run: |
           SAFARI_REF=master
 
-          if [ "$GITHUB_REF" = "hotfix" ]; then
+          if [[ "$GITHUB_REF" == "refs/heads/hotfix" ]]; then
               SAFARI_REF=hotfix
-          elif [ "$GITHUB_REF" = "rc" ]; then
+          elif [[ "$GITHUB_REF" == "refs/heads/rc" ]]; then
               SAFARI_REF=rc
           fi
 
@@ -221,6 +221,22 @@ jobs:
           npm --version
           choco --version
 
+      - name: Login to Azure
+        uses: Azure/login@77f1b2e3fb80c0e8645114159d17008b8a2e475a
+        with:
+          creds: ${{ secrets.AZURE_PROD_KV_CREDENTIALS }}
+
+      - name: Retrieve secrets
+        id: retrieve-secrets
+        uses: Azure/get-keyvault-secrets@80ccd3fafe5662407cc2e55f202ee34bfff8c403
+        with:
+          keyvault: "bitwarden-prod-kv"
+          secrets: "code-signing-vault-url,
+                    code-signing-client-id,
+                    code-signing-tenant-id,
+                    code-signing-client-secret,
+                    code-signing-cert-name"
+
       - name: Install Node dependencies
         run: npm ci
 
@@ -230,11 +246,11 @@ jobs:
       - name: Build & Sign (dev)
         env:
           ELECTRON_BUILDER_SIGN: 1
-          SIGNING_VAULT_URL: ${{ secrets.SIGNING_VAULT_URL }}
-          SIGNING_CLIENT_ID: ${{ secrets.SIGNING_CLIENT_ID }}
-          SIGNING_TENANT_ID: ${{ secrets.SIGNING_TENANT_ID }}
-          SIGNING_CLIENT_SECRET: ${{ secrets.SIGNING_CLIENT_SECRET }}
-          SIGNING_CERT_NAME: ${{ secrets.SIGNING_CERT_NAME }}
+          SIGNING_VAULT_URL: ${{ steps.retrieve-secrets.outputs.code-signing-vault-url }}
+          SIGNING_CLIENT_ID: ${{ steps.retrieve-secrets.outputs.code-signing-client-id }}
+          SIGNING_TENANT_ID: ${{ steps.retrieve-secrets.outputs.code-signing-tenant-id }}
+          SIGNING_CLIENT_SECRET: ${{ steps.retrieve-secrets.outputs.code-signing-client-secret }}
+          SIGNING_CERT_NAME: ${{ steps.retrieve-secrets.outputs.code-signing-cert-name }}
         run: |
           npm run build
           npm run pack:win

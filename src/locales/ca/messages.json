@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "No podeu utilitzar aquesta característica fins que no actualitzeu la vostra clau de xifratge."
   },
-  "options": {
-    "message": "Opcions"
-  },
   "editedFolder": {
     "message": "Carpeta editada"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "No es pot iniciar sessió a més de 5 comptes al mateix temps."
+  },
+  "accountPreferences": {
+    "message": "Preferències"
+  },
+  "appPreferences": {
+    "message": "Configuració de l'aplicació (tots els comptes)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "S'ha arribat al límit del compte. Tanqueu la sessió d'un compte per afegir-ne un altre."
+  },
+  "settingsTitle": {
+    "message": "Configuració de l'aplicació per a $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Canvia de compte"
+  },
+  "options": {
+    "message": "Opcions"
   }
 }

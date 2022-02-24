@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Şifrələmə açarınızı yeniləyənə qədər bu özəlliyi istifadə edə bilməzsiniz."
   },
-  "options": {
-    "message": "Seçimlər"
-  },
   "editedFolder": {
     "message": "Qovluğa düzəliş edildi"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Eyni vaxtda 5-dən çox hesaba giriş edilə bilməz."
+  },
+  "accountPreferences": {
+    "message": "Tercihlər"
+  },
+  "appPreferences": {
+    "message": "Tətbiq tənzimləmələri (Bütün hesablar)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Hesab limiti keçildi. Başqa bir hesab əlavə etmək üçün bir hesabdan çıxış edin."
+  },
+  "settingsTitle": {
+    "message": "$EMAIL$ üçün tətbiq tənzimləmələri",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Hesabı dəyişdir"
+  },
+  "options": {
+    "message": "Seçimlər"
   }
 }

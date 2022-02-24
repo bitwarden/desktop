@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
   },
-  "options": {
-    "message": "Opties"
-  },
   "editedFolder": {
     "message": "Map is bewerkt"
   },
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Er mogen niet meer dan 5 accounts tegelijkertijd ingelogd zijn."
+  },
+  "accountPreferences": {
+    "message": "Voorkeuren"
+  },
+  "appPreferences": {
+    "message": "App-instellingen (alle accounts)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limiet van het aantal accounts bereikt. Log een account uit voor het toevoegen van een andere."
+  },
+  "settingsTitle": {
+    "message": "App-instellingen voor $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Account wisselen"
+  },
+  "options": {
+    "message": "Opties"
   }
 }

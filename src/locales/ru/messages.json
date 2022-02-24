@@ -457,9 +457,6 @@
   "updateKey": {
     "message": "Вы не можете использовать эту функцию, пока не обновите свой ключ шифрования."
   },
-  "options": {
-    "message": "Опции"
-  },
   "editedFolder": {
     "message": "Папка отредактирована"
   },
@@ -787,7 +784,7 @@
     "message": "Ошибка синхронизации"
   },
   "yourVaultIsLocked": {
-    "message": "Ваше xранилище заблокировано. Подтвердите вашу личность для продолжения."
+    "message": "Ваше xранилище заблокировано. Подтвердите свою личность для продолжения."
   },
   "unlock": {
     "message": "Разблокировать"
@@ -1792,5 +1789,29 @@
   },
   "accountLimitReached": {
     "message": "Одновременно могут быть авторизованы не более 5 аккаунтов."
+  },
+  "accountPreferences": {
+    "message": "Настройки"
+  },
+  "appPreferences": {
+    "message": "Настройки приложения (все аккаунты)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Достигнут лимит учетной записи. Выйдите, чтобы добавить другую."
+  },
+  "settingsTitle": {
+    "message": "Настройки приложения для $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Сменить аккаунт"
+  },
+  "options": {
+    "message": "Опции"
   }
 }

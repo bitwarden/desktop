@@ -6,6 +6,7 @@ import { shell } from "electron";
 import { isMacAppStore, isWindowsStore } from "jslib-electron/utils";
 
 import { MenuItemConstructorOptions } from "electron";
+import { AboutMenu } from "./menu.about";
 
 export class HelpMenu implements IMenubarMenu {
   readonly id: string = "help";
@@ -15,7 +16,7 @@ export class HelpMenu implements IMenubarMenu {
   }
 
   get items(): MenuItemConstructorOptions[] {
-    return [
+    const items = [
       this.emailUs,
       this.visitOurWebsite,
       this.fileBugReport,
@@ -28,14 +29,21 @@ export class HelpMenu implements IMenubarMenu {
       this.getMobileApp,
       this.getBrowserExtension,
     ];
+
+    if (this._aboutMenu != null) {
+      items.push(...this._aboutMenu.items);
+    }
+    return items;
   }
 
   private readonly _i18nService: I18nService;
   private readonly _webVaultUrl: string;
+  private readonly _aboutMenu: AboutMenu;
 
-  constructor(i18nService: I18nService, webVaultUrl: string) {
+  constructor(i18nService: I18nService, webVaultUrl: string, aboutMenu: AboutMenu) {
     this._i18nService = i18nService;
     this._webVaultUrl = webVaultUrl;
+    this._aboutMenu = aboutMenu;
   }
 
   private get emailUs(): MenuItemConstructorOptions {
@@ -66,7 +74,7 @@ export class HelpMenu implements IMenubarMenu {
     return {
       id: "legal",
       label: this.localize("legal"),
-      visible: !isMacAppStore(),
+      visible: isMacAppStore(),
       submenu: this.legalSubmenu,
     };
   }
