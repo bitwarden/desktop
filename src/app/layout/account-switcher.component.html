@@ -5,8 +5,8 @@
   #trigger="cdkOverlayOrigin"
   [hidden]="!showSwitcher"
   aria-haspopup="menu"
-  aria-expanded="isOpen"
   aria-controls="cdk-overlay-container"
+  [attr.aria-expanded]="isOpen"
 >
   <ng-container *ngIf="activeAccountEmail != null; else noActiveAccount">
     <app-avatar
@@ -46,6 +46,8 @@
     [@transformPanel]="'open'"
     cdkTrapFocus
     cdkTrapFocusAutoCapture
+    role="dialog"
+    aria-modal="true"
   >
     <div class="accounts" *ngIf="numberOfAccounts > 0">
       <button
