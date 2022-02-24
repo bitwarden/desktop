@@ -1,13 +1,10 @@
 import { DatePipe } from "@angular/common";
-
 import { Component, OnChanges } from "@angular/core";
-
 import { ControlContainer, NgForm } from "@angular/forms";
 
+import { EffluxDatesComponent as BaseEffluxDatesComponent } from "jslib-angular/components/send/efflux-dates.component";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-
-import { EffluxDatesComponent as BaseEffluxDatesComponent } from "jslib-angular/components/send/efflux-dates.component";
 
 @Component({
   selector: "app-send-efflux-dates",

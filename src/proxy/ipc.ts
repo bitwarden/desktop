@@ -1,6 +1,7 @@
-/* tslint:disable:no-console */
-import * as ipc from "node-ipc";
+/* eslint-disable no-console */
 import { homedir } from "os";
+
+import * as ipc from "node-ipc";
 
 ipc.config.id = "proxy";
 ipc.config.retry = 1500;

@@ -1,13 +1,13 @@
 import { app, Menu } from "electron";
 
-import { Main } from "../main";
-
 import { BaseMenu } from "jslib-electron/baseMenu";
+
+import { Main } from "../main";
 
 import { MenuUpdateRequest } from "./menu.updater";
 import { Menubar } from "./menubar";
 
-const cloudWebVaultUrl: string = "https://vault.bitwarden.com";
+const cloudWebVaultUrl = "https://vault.bitwarden.com";
 
 export class MenuMain extends BaseMenu {
   constructor(private main: Main) {

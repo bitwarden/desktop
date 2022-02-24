@@ -1,6 +1,7 @@
 import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
+import { RegisterComponent as BaseRegisterComponent } from "jslib-angular/components/register.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
@@ -11,8 +12,6 @@ import { LogService } from "jslib-common/abstractions/log.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
-import { RegisterComponent as BaseRegisterComponent } from "jslib-angular/components/register.component";
 
 const BroadcasterSubscriptionId = "RegisterComponent";
 

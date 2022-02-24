@@ -2,14 +2,12 @@ import { BrowserWindow, MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
-
-import { IMenubarMenu } from "./menubar";
+import { UpdaterMain } from "jslib-electron/updater.main";
+import { isMac, isMacAppStore } from "jslib-electron/utils";
 
 import { FirstMenu } from "./menu.first";
 import { MenuAccount } from "./menu.updater";
-
-import { UpdaterMain } from "jslib-electron/updater.main";
-import { isMac, isMacAppStore } from "jslib-electron/utils";
+import { IMenubarMenu } from "./menubar";
 
 export class FileMenu extends FirstMenu implements IMenubarMenu {
   readonly id: string = "fileMenu";

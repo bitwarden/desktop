@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires, no-console */
 require("dotenv").config();
 const path = require("path");
-const fse = require("fs-extra");
-const { notarize } = require("electron-notarize");
+
 const { deepAssign } = require("builder-util");
+const { notarize } = require("electron-notarize");
+const fse = require("fs-extra");
 
 exports.default = run;
 

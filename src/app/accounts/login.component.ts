@@ -1,9 +1,8 @@
 import { Component, NgZone, OnDestroy, ViewChild, ViewContainerRef } from "@angular/core";
-
 import { Router } from "@angular/router";
 
-import { EnvironmentComponent } from "./environment.component";
-
+import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/login.component";
+import { ModalService } from "jslib-angular/services/modal.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
@@ -16,9 +15,7 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
 
-import { ModalService } from "jslib-angular/services/modal.service";
-
-import { LoginComponent as BaseLoginComponent } from "jslib-angular/components/login.component";
+import { EnvironmentComponent } from "./environment.component";
 
 const BroadcasterSubscriptionId = "LoginComponent";
 
@@ -32,7 +29,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
 
   showingModal = false;
 
-  protected alwaysRememberEmail: boolean = true;
+  protected alwaysRememberEmail = true;
 
   private deferFocus: boolean = null;
 

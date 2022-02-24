@@ -5,10 +5,8 @@ import { Component, OnInit } from "@angular/core";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
 import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 import { Utils } from "jslib-common/misc/utils";
-
 import { Account } from "jslib-common/models/domain/account";
 
 export class SwitcherAccount extends Account {
@@ -51,7 +49,7 @@ export class SwitcherAccount extends Account {
   ],
 })
 export class AccountSwitcherComponent implements OnInit {
-  isOpen: boolean = false;
+  isOpen = false;
   accounts: { [userId: string]: SwitcherAccount } = {};
   activeAccountEmail: string;
   serverUrl: string;

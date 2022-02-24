@@ -1,4 +1,4 @@
-/* tslint:disable:no-console */
+/* eslint-disable no-console */
 import IPC from "./ipc";
 
 // Mostly based on the example from MDN,

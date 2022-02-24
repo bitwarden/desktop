@@ -1,6 +1,7 @@
 import { Component, NgZone, OnChanges, OnDestroy, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
+import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/add-edit.component";
 import { AuditService } from "jslib-common/abstractions/audit.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
@@ -15,8 +16,6 @@ import { PasswordRepromptService } from "jslib-common/abstractions/passwordRepro
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
-import { AddEditComponent as BaseAddEditComponent } from "jslib-angular/components/add-edit.component";
 
 const BroadcasterSubscriptionId = "AddEditComponent";
 

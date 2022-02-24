@@ -1,32 +1,25 @@
-import { app } from "electron";
 import * as path from "path";
 
-import { I18nService } from "./services/i18n.service";
-
-import { MenuMain } from "./main/menu.main";
-import { MessagingMain } from "./main/messaging.main";
-import { PowerMonitorMain } from "./main/powerMonitor.main";
+import { app } from "electron";
 
 import { BiometricMain } from "jslib-common/abstractions/biometric.main";
-
+import { StateFactory } from "jslib-common/factories/stateFactory";
+import { GlobalState } from "jslib-common/models/domain/globalState";
+import { StateService } from "jslib-common/services/state.service";
 import { KeytarStorageListener } from "jslib-electron/keytarStorageListener";
-
 import { ElectronLogService } from "jslib-electron/services/electronLog.service";
 import { ElectronMainMessagingService } from "jslib-electron/services/electronMainMessaging.service";
 import { ElectronStorageService } from "jslib-electron/services/electronStorage.service";
-
 import { TrayMain } from "jslib-electron/tray.main";
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { WindowMain } from "jslib-electron/window.main";
+
+import { MenuMain } from "./main/menu.main";
+import { MessagingMain } from "./main/messaging.main";
 import { NativeMessagingMain } from "./main/nativeMessaging.main";
-
-import { StateService } from "jslib-common/services/state.service";
-
+import { PowerMonitorMain } from "./main/powerMonitor.main";
 import { Account } from "./models/account";
-
-import { GlobalState } from "jslib-common/models/domain/globalState";
-
-import { StateFactory } from "jslib-common/factories/stateFactory";
+import { I18nService } from "./services/i18n.service";
 
 export class Main {
   logService: ElectronLogService;
@@ -69,7 +62,7 @@ export class Main {
     const watch = args.some((val) => val === "--watch");
 
     if (watch) {
-      // tslint:disable-next-line
+      // eslint-disable-next-line
       require("electron-reload")(__dirname, {});
     }
 
@@ -121,6 +114,7 @@ export class Main {
     });
 
     if (process.platform === "win32") {
+      // eslint-disable-next-line
       const BiometricWindowsMain = require("jslib-electron/biometric.windows.main").default;
       this.biometricMain = new BiometricWindowsMain(
         this.i18nService,
@@ -129,6 +123,7 @@ export class Main {
         this.logService
       );
     } else if (process.platform === "darwin") {
+      // eslint-disable-next-line
       const BiometricDarwinMain = require("jslib-electron/biometric.darwin.main").default;
       this.biometricMain = new BiometricDarwinMain(this.i18nService, this.stateService);
     }
@@ -198,7 +193,7 @@ export class Main {
         });
       },
       (e: any) => {
-        // tslint:disable-next-line
+        // eslint-disable-next-line
         console.error(e);
       }
     );

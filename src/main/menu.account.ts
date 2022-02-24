@@ -2,7 +2,6 @@ import { BrowserWindow, dialog, MenuItemConstructorOptions, shell } from "electr
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
-
 import { isMacAppStore, isWindowsStore } from "jslib-electron/utils";
 
 import { IMenubarMenu } from "./menubar";

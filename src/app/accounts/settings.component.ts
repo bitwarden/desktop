@@ -2,24 +2,20 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 import { debounceTime } from "rxjs/operators";
 
-import { DeviceType } from "jslib-common/enums/deviceType";
-import { ThemeType } from "jslib-common/enums/themeType";
-
+import { ModalService } from "jslib-angular/services/modal.service";
 import { CryptoService } from "jslib-common/abstractions/crypto.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
-import { ModalService } from "jslib-angular/services/modal.service";
-
-import { SetPinComponent } from "../components/set-pin.component";
-
+import { DeviceType } from "jslib-common/enums/deviceType";
+import { StorageLocation } from "jslib-common/enums/storageLocation";
+import { ThemeType } from "jslib-common/enums/themeType";
 import { Utils } from "jslib-common/misc/utils";
 import { isWindowsStore } from "jslib-electron/utils";
 
-import { StorageLocation } from "jslib-common/enums/storageLocation";
+import { SetPinComponent } from "../components/set-pin.component";
 
 @Component({
   selector: "app-settings",
@@ -28,15 +24,15 @@ import { StorageLocation } from "jslib-common/enums/storageLocation";
 export class SettingsComponent implements OnInit {
   vaultTimeoutAction: string;
   pin: boolean = null;
-  disableFavicons: boolean = false;
-  enableBrowserIntegration: boolean = false;
-  enableBrowserIntegrationFingerprint: boolean = false;
-  enableMinToTray: boolean = false;
-  enableCloseToTray: boolean = false;
-  enableTray: boolean = false;
-  showMinToTray: boolean = false;
-  startToTray: boolean = false;
-  minimizeOnCopyToClipboard: boolean = false;
+  disableFavicons = false;
+  enableBrowserIntegration = false;
+  enableBrowserIntegrationFingerprint = false;
+  enableMinToTray = false;
+  enableCloseToTray = false;
+  enableTray = false;
+  showMinToTray = false;
+  startToTray = false;
+  minimizeOnCopyToClipboard = false;
   locale: string;
   vaultTimeouts: any[];
   localeOptions: any[];
@@ -50,9 +46,9 @@ export class SettingsComponent implements OnInit {
   noAutoPromptBiometrics: boolean;
   noAutoPromptBiometricsText: string;
   alwaysShowDock: boolean;
-  showAlwaysShowDock: boolean = false;
+  showAlwaysShowDock = false;
   openAtLogin: boolean;
-  requireEnableTray: boolean = false;
+  requireEnableTray = false;
 
   enableTrayText: string;
   enableTrayDescText: string;
@@ -65,9 +61,9 @@ export class SettingsComponent implements OnInit {
 
   vaultTimeout: FormControl = new FormControl(null);
 
-  showSecurity: boolean = true;
-  showAccountPreferences: boolean = true;
-  showAppPreferences: boolean = true;
+  showSecurity = true;
+  showAccountPreferences = true;
+  showAppPreferences = true;
 
   currentUserEmail: string;
 
