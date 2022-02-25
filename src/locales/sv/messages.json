@@ -752,7 +752,7 @@
     "message": "Följ oss"
   },
   "syncVault": {
-    "message": "Synkronisera valvet"
+    "message": "Synkronisera valv"
   },
   "changeMasterPass": {
     "message": "Ändra huvudlösenord"
@@ -1538,7 +1538,7 @@
     "message": "En organisationspolicy påverkar dina ägarskapsalternativ."
   },
   "allSends": {
-    "message": "Alla försändelser",
+    "message": "All Sends",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
@@ -1548,7 +1548,7 @@
     "message": "Text"
   },
   "searchSends": {
-    "message": "Sök försändelser",
+    "message": "Search Sends",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -1565,60 +1565,60 @@
     "message": "Raderingsdatum"
   },
   "deletionDateDesc": {
-    "message": "Skicka kommer att raderas permanent på angivet datum och tid.",
+    "message": "The Send will be permanently deleted on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Utgångsdatum"
   },
   "expirationDateDesc": {
-    "message": "Om angivet kommer åtkomst till denna försändelse upphöra på angivet datum och tid.",
+    "message": "If set, access to this Send will expire on the specified date and time.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Maximalt antal åtkomster"
   },
   "maxAccessCountDesc": {
-    "message": "Om angivet kommer användare inte längre komma åt denna försändelse när det maximala antalet åtkomster har uppnåtts.",
+    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Nuvarande antal åtkomster"
   },
   "disableSend": {
-    "message": "Inaktivera denna försändelse så att ingen kan komma åt den.",
+    "message": "Disable this Send so that no one can access it.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Kräv ett lösenord från användare innan de kommer åt denna försändelse.",
+    "message": "Optionally require a password for users to access this Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Egna anteckningar om denna försändelse.",
+    "message": "Private notes about this Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Försändelselänk",
+    "message": "Send link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Försändelselänk",
+    "message": "Send Link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "Dölj texten som standard när försändelsen öppnas",
+    "message": "When accessing the Send, hide the text by default",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Skapade försändelse",
+    "message": "Created Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Redigerade försändelse",
+    "message": "Edited Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Raderade försändelse",
+    "message": "Deleted Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1658,18 +1658,18 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Kopiera försändelselänk till urklipp",
+    "message": "Copy Send link to clipboard",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Kopiera länken för att dela den här försändelsen när den har sparats."
+    "message": "Copy the link to share this Send to my clipboard upon save."
   },
   "sendDisabled": {
-    "message": "Försändelse inaktiverad",
+    "message": "Send disabled",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "På grund av en företagspolicy kan du bara radera befintliga försändelser.",
+    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Alternativ"
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
   }
 }
