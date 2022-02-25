@@ -16,8 +16,16 @@ fn supports_biometric(mut cx: FunctionContext) -> JsResult<JsPromise> {
 }
 
 fn verify(mut cx: FunctionContext) -> JsResult<JsPromise> {
+    let message = cx.argument::<JsString>(0)?.value(&mut cx);
+    let window_handle = cx.argument::<JsNumber>(1)?.value(&mut cx) as isize;
+
     let promise = cx
-        .task(move || biometric::verify())
+        .task(move || {
+            Runtime::new()
+                .unwrap()
+                .block_on(biometric::verify(&message, window_handle))
+                .unwrap()
+        })
         .promise(|mut cx, n| Ok(cx.boolean(n)));
 
     Ok(promise)

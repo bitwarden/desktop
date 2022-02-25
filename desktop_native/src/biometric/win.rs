@@ -1,10 +1,8 @@
-use windows::Security::Credentials::UI::*;
-use windows::Win32::System::WinRT::IUserConsentVerifierInterop;
-use windows::Win32::Foundation::HWND;
-use windows::{core::*, Win32::System::Com::*};
+use windows::core::*;
 use windows::Foundation::IAsyncOperation;
-use tokio::runtime::Runtime;
-
+use windows::Security::Credentials::UI::*;
+use windows::Win32::Foundation::HWND;
+use windows::Win32::System::WinRT::IUserConsentVerifierInterop;
 
 pub async fn available() -> bool {
     let event = UserConsentVerifier::CheckAvailabilityAsync();
@@ -18,37 +16,38 @@ pub async fn available() -> bool {
         Ok(t) => match t {
             UserConsentVerifierAvailability::Available => true,
             UserConsentVerifierAvailability::DeviceBusy => true,
-            _ => false
-        }
+            _ => false,
+        },
     }
 }
 
-pub fn verify() -> bool {
-    Runtime::new().unwrap().block_on(available());
-    println!("HI");
-    let message = HSTRING::from("hello world");
+pub async fn verify(
+    message: &str,
+    window_handle: isize,
+) -> std::result::Result<bool, Box<dyn std::error::Error + Send + Sync>> {
+    let interop: IUserConsentVerifierInterop =
+        match factory::<UserConsentVerifier, IUserConsentVerifierInterop>() {
+            Ok(i) => i,
+            Err(e) => return Err(e.into()),
+        };
 
-    unsafe { CoInitializeEx(std::ptr::null(), COINIT_MULTITHREADED).unwrap() };
+    let window = HWND(window_handle);
 
-    let hw: HWND = HWND::default();
-    let verifier: IUserConsentVerifierInterop = unsafe { CoCreateInstance(&IUserConsentVerifierInterop::IID, None, CLSCTX_ALL).unwrap() };
-    let test: Result<IAsyncOperation<UserConsentVerificationResult>> = unsafe { verifier.RequestVerificationForWindowAsync(hw, message) };
-    println!("{:?}", test);
-    /*
-    let result = match event {
-        Err(_) => return false,
-        Ok(t) => t.await,
+    let operation: Result<IAsyncOperation<UserConsentVerificationResult>> =
+        unsafe { interop.RequestVerificationForWindowAsync(window, message) };
+
+    let result = match operation {
+        Ok(r) => r.await,
+        Err(e) => return Err(e.into()),
     };
 
     match result {
-        Err(_) => false,
+        Err(e) => return Err(e.into()),
         Ok(t) => match t {
-            UserConsentVerificationResult::Verified => true,
-            _ => false
-        }
+            UserConsentVerificationResult::Verified => Ok(true),
+            _ => Ok(false),
+        },
     }
-    */
-    false
 }
 
 #[cfg(test)]
@@ -62,7 +61,6 @@ mod tests {
     #[test]
     fn verify() {
         // TODO Mock!
-        assert_eq!(true, super::verify())
+        //assert_eq!(true, super::verify("test", 0))
     }
 }
-

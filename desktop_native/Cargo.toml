@@ -21,10 +21,9 @@ features = ["napi-6", "promise-api", "task-api"]
 [target.'cfg(windows)'.dependencies.windows]
 version = "0.32.0"
 features = [
+    "alloc",
     "Foundation",
     "Security_Credentials_UI",
     "Win32_Foundation",
-    "Win32_Security_Cryptography_UI",
-    "Win32_System_Com",
-    "Win32_System_WinRT"
+    "Win32_System_WinRT",
 ]
