@@ -1,54 +1,54 @@
 {
   "bitwarden": {
-    "message": "බිට්වාඩන්"
+    "message": "Bitwarden"
   },
   "filters": {
-    "message": "පෙරහන්"
+    "message": "Filteri"
   },
   "allItems": {
-    "message": "All Items"
+    "message": "Sve spremljene lozinke"
   },
   "favorites": {
-    "message": "ප්‍රියතමයන්"
+    "message": "Omiljene stavke"
   },
   "types": {
-    "message": "වර්ග"
+    "message": "Vrste"
   },
   "typeLogin": {
-    "message": "පිවිසෙන්න"
+    "message": "Prijava"
   },
   "typeCard": {
-    "message": "පත"
+    "message": "Kartica"
   },
   "typeIdentity": {
-    "message": "අනන්‍යතාව"
+    "message": "Identitet"
   },
   "typeSecureNote": {
-    "message": "ආරක්ෂිත සටහන"
+    "message": "Sigurna bilješka"
   },
   "folders": {
-    "message": "බහාලුම්"
+    "message": "Folderi"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Kolekcije lozinki"
   },
   "searchVault": {
-    "message": "Search Vault"
+    "message": "Pretraživanje trezora"
   },
   "addItem": {
-    "message": "Add Item"
+    "message": "Dodaj stavku"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Podijeljeno"
   },
   "share": {
-    "message": "බෙදාගන්න"
+    "message": "Podijeli"
   },
   "moveToOrganization": {
-    "message": "Move to Organization"
+    "message": "Premjesti u organizaciju"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ premješteno u $ORGNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,16 +61,16 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "Odaberi organizaciju u koju želiš premjestiti ovu stavku. Premještanje prenosi vlasništvo stavke na organizaciju. Nakon premještanja više nećeš biti direktni vlasnik ove stavke."
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Prilozi"
   },
   "viewItem": {
-    "message": "View Item"
+    "message": "Prikaz stavke"
   },
   "name": {
-    "message": "නම"
+    "message": "Naziv"
   },
   "uri": {
     "message": "URI"
@@ -86,93 +86,93 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Novi URI"
   },
   "username": {
-    "message": "පරිශීලක නාමය"
+    "message": "Korisničko ime"
   },
   "password": {
-    "message": "මුර පදය"
+    "message": "Lozinka"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Fraza/izrazna lozinka"
   },
   "editItem": {
-    "message": "Edit Item"
+    "message": "Uredi stavku"
   },
   "emailAddress": {
-    "message": "වි-තැපැල් ලිපිනය"
+    "message": "E-Mail adresa"
   },
   "verificationCodeTotp": {
-    "message": "Verification Code (TOTP)"
+    "message": "Verifikacioni kod (TOTP)"
   },
   "website": {
-    "message": "වියමන අඩවිය"
+    "message": "Web stranica"
   },
   "notes": {
-    "message": "සටහන්"
+    "message": "Bilješke"
   },
   "customFields": {
-    "message": "Custom Fields"
+    "message": "Prilagođena polja"
   },
   "launch": {
-    "message": "දියත් කරන්න"
+    "message": "Pokreni"
   },
   "copyValue": {
-    "message": "අගය පිටපත් කරන්න",
+    "message": "Kopiraj vrijednost",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "Minimiziraj pri kopiranju u privremenu memoriju"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize when copying an item's data to the clipboard."
+    "message": "Minimiziraj pri kopiranju stavke u privremenu memoriju."
   },
   "toggleVisibility": {
-    "message": "Toggle Visibility"
+    "message": "Prikaži/Sakrij"
   },
   "toggleCollapse": {
-    "message": "Toggle Collapse",
+    "message": "Sažmi/Proširi",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder Name"
+    "message": "Ime vlasnika kartice"
   },
   "number": {
-    "message": "අංකය"
+    "message": "Broj"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Vrsta kartice"
   },
   "expiration": {
-    "message": "කල් ඉකුත් වීම"
+    "message": "Datum isteka"
   },
   "securityCode": {
-    "message": "ආරක්ෂිත කේතය"
+    "message": "Sigurnosni kod"
   },
   "identityName": {
-    "message": "Identity Name"
+    "message": "Ime identiteta"
   },
   "company": {
-    "message": "සමාගම"
+    "message": "Kompanija"
   },
   "ssn": {
-    "message": "Social Security Number"
+    "message": "Broj socijalnog osiguranja / Jmbg"
   },
   "passportNumber": {
-    "message": "Passport Number"
+    "message": "Broj pasoša"
   },
   "licenseNumber": {
-    "message": "License Number"
+    "message": "Broj vozačke dozvole"
   },
   "email": {
-    "message": "වි-තැපෑල"
+    "message": "E Mail"
   },
   "phone": {
-    "message": "දුරකථනය"
+    "message": "Phone"
   },
   "address": {
-    "message": "ලිපිනය"
+    "message": "Address"
   },
   "premiumRequired": {
     "message": "Premium Required"
@@ -184,43 +184,43 @@
     "message": "An error has occurred."
   },
   "error": {
-    "message": "දෝෂය"
+    "message": "Error"
   },
   "january": {
-    "message": "දුරුතු"
+    "message": "January"
   },
   "february": {
-    "message": "නවම්"
+    "message": "February"
   },
   "march": {
-    "message": "මැදින්"
+    "message": "March"
   },
   "april": {
-    "message": "බක්"
+    "message": "April"
   },
   "may": {
-    "message": "වෙසක්"
+    "message": "May"
   },
   "june": {
-    "message": "පොසොන්"
+    "message": "June"
   },
   "july": {
-    "message": "ඇසළ"
+    "message": "July"
   },
   "august": {
-    "message": "නිකිණි"
+    "message": "August"
   },
   "september": {
-    "message": "බිනර"
+    "message": "September"
   },
   "october": {
-    "message": "වප්"
+    "message": "October"
   },
   "november": {
-    "message": "ඉල්"
+    "message": "November"
   },
   "december": {
-    "message": "උඳුවප්"
+    "message": "December"
   },
   "ex": {
     "message": "ex.",
@@ -290,125 +290,125 @@
     "message": "Zip / Postal Code"
   },
   "country": {
-    "message": "රට"
+    "message": "Country"
   },
   "save": {
-    "message": "සුරකින්න"
+    "message": "Save"
   },
   "cancel": {
-    "message": "අවලංගු කරන්න"
+    "message": "Cancel"
   },
   "delete": {
     "message": "Delete"
   },
   "favorite": {
-    "message": "ප්‍රියතමය"
+    "message": "Favorite"
   },
   "edit": {
-    "message": "සංස්කරණය"
+    "message": "Edit"
   },
   "authenticatorKeyTotp": {
     "message": "Authenticator Key (TOTP)"
   },
   "folder": {
-    "message": "බහාලුම"
+    "message": "Folder"
   },
   "newCustomField": {
     "message": "New Custom Field"
   },
   "value": {
-    "message": "අගය"
+    "message": "Value"
   },
   "dragToSort": {
-    "message": "Drag to sort"
+    "message": "Prevucite za sortiranje"
   },
   "cfTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "cfTypeHidden": {
-    "message": "Hidden"
+    "message": "Sakriveno"
   },
   "cfTypeBoolean": {
     "message": "Boolean"
   },
   "cfTypeLinked": {
-    "message": "Linked",
+    "message": "Povezano sa",
     "description": "This describes a field that is 'linked' (related) to another field."
   },
   "linkedValue": {
-    "message": "Linked value",
+    "message": "Povezana vrijednost",
     "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
-    "message": "ඉවත් කරන්න"
+    "message": "Ukloni"
   },
   "nameRequired": {
-    "message": "Name is required."
+    "message": "Ime je obavezno."
   },
   "addedItem": {
-    "message": "Added item"
+    "message": "Stavka dodana"
   },
   "editedItem": {
-    "message": "Edited item"
+    "message": "Stavka izmijenjena"
   },
   "deleteItem": {
-    "message": "Delete Item"
+    "message": "Izbriši stavku"
   },
   "deleteFolder": {
-    "message": "Delete Folder"
+    "message": "Izbriši foldere"
   },
   "deleteAttachment": {
-    "message": "Delete Attachment"
+    "message": "Izbriši priložene fajlove"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "Želite li zaista obrisati?"
   },
   "deletedItem": {
-    "message": "Sent item to trash"
+    "message": "Stavka obrisana"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "Da li ste sigurni da želite da zamijenite trenutnu lozinku?"
   },
   "noneFolder": {
-    "message": "බහාලුමක් නැත",
+    "message": "Nema foldera",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "බහාලුම එකතු කරන්න"
+    "message": "Dodaj folder"
   },
   "editFolder": {
-    "message": "බහාලුම සංස්කරණය කරන්න"
+    "message": "Uredite folder"
   },
   "regeneratePassword": {
-    "message": "Regenerate Password"
+    "message": "Ponovno generiraj lozinku"
   },
   "copyPassword": {
-    "message": "මුරපදය පිටපත් කරන්න"
+    "message": "Kopirajte lozinku"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "Kopiraj URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Kopira Verifikacioni kod (TOTP)"
   },
   "length": {
-    "message": "Length"
+    "message": "Dužina"
   },
   "numWords": {
-    "message": "Number of Words"
+    "message": "Broj riječi"
   },
   "wordSeparator": {
-    "message": "Word Separator"
+    "message": "Odvajač riječi"
   },
   "capitalize": {
-    "message": "Capitalize",
+    "message": "Prva slova velika",
     "description": "Make the first letter of a work uppercase."
   },
   "includeNumber": {
-    "message": "Include Number"
+    "message": "Uključi broj"
   },
   "close": {
-    "message": "වසන්න"
+    "message": "Zatvori"
   },
   "minNumbers": {
     "message": "Minimum Numbers"
@@ -424,10 +424,10 @@
     "message": "Search Collection"
   },
   "searchFolder": {
-    "message": "බහාලුම සොයන්න"
+    "message": "Search Folder"
   },
   "searchFavorites": {
-    "message": "ප්‍රියතමයන් සොයන්න"
+    "message": "Search Favorites"
   },
   "searchType": {
     "message": "Search Type",
@@ -497,7 +497,7 @@
     "message": "Master Password Hint (optional)"
   },
   "settings": {
-    "message": "සැකසුම්"
+    "message": "Settings"
   },
   "passwordHint": {
     "message": "Password Hint"
@@ -512,7 +512,7 @@
     "message": "Email address is required."
   },
   "invalidEmail": {
-    "message": "වලංගු නොවන වි-තැපැල් ලිපිනයකි."
+    "message": "Invalid email address."
   },
   "masterPassRequired": {
     "message": "Master password is required."
@@ -560,7 +560,7 @@
     "message": "Invalid verification code"
   },
   "continue": {
-    "message": "ඉදිරියට"
+    "message": "Continue"
   },
   "enterVerificationCodeApp": {
     "message": "Enter the 6 digit verification code from your authenticator app."
@@ -602,7 +602,7 @@
     "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
   },
   "recoveryCodeTitle": {
-    "message": "ප්‍රතිසාධන කේතය"
+    "message": "Recovery Code"
   },
   "authenticatorAppTitle": {
     "message": "Authenticator App"
@@ -632,7 +632,7 @@
     "message": "Use any WebAuthn enabled security key to access your account."
   },
   "emailTitle": {
-    "message": "වි-තැපෑල"
+    "message": "Email"
   },
   "emailDesc": {
     "message": "Verification codes will be emailed to you."
@@ -683,13 +683,13 @@
     "message": "The environment URLs have been saved."
   },
   "ok": {
-    "message": "හරි"
+    "message": "Ok"
   },
   "yes": {
-    "message": "ඔව්"
+    "message": "Yes"
   },
   "no": {
-    "message": "නැහැ"
+    "message": "No"
   },
   "overwritePassword": {
     "message": "Overwrite Password"
@@ -710,7 +710,7 @@
     "message": "Are you sure you want to log out?"
   },
   "logOut": {
-    "message": "නික්මෙන්න"
+    "message": "Log Out"
   },
   "addNewLogin": {
     "message": "Add New Login"
@@ -719,16 +719,16 @@
     "message": "Add New Item"
   },
   "addNewFolder": {
-    "message": "නව බහාලුමක් එකතු කරන්න"
+    "message": "Add New Folder"
   },
   "view": {
     "message": "View"
   },
   "account": {
-    "message": "ගිණුම"
+    "message": "Account"
   },
   "loading": {
-    "message": "පූරණය වෙමින්..."
+    "message": "Loading..."
   },
   "lockVault": {
     "message": "Lock Vault"
@@ -787,7 +787,7 @@
     "message": "Your vault is locked. Verify your identity to continue."
   },
   "unlock": {
-    "message": "අනවහිර"
+    "message": "Unlock"
   },
   "loggedInAsOn": {
     "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
@@ -821,25 +821,25 @@
     "message": "Immediately"
   },
   "tenSeconds": {
-    "message": "තත්පර 10"
+    "message": "10 seconds"
   },
   "twentySeconds": {
-    "message": "තත්පර 20"
+    "message": "20 seconds"
   },
   "thirtySeconds": {
-    "message": "තත්පර 30"
+    "message": "30 seconds"
   },
   "oneMinute": {
-    "message": "විනාඩි 1"
+    "message": "1 minute"
   },
   "twoMinutes": {
-    "message": "විනාඩි 2"
+    "message": "2 minutes"
   },
   "fiveMinutes": {
-    "message": "විනාඩි 5"
+    "message": "5 minutes"
   },
   "fifteenMinutes": {
-    "message": "විනාඩි 15"
+    "message": "15 minutes"
   },
   "thirtyMinutes": {
     "message": "30 minutes"
@@ -943,13 +943,13 @@
     "message": "Disabling this setting will also disable all other tray related settings."
   },
   "language": {
-    "message": "භාෂාව"
+    "message": "Language"
   },
   "languageDesc": {
     "message": "Change the language used by the application. Restart is required."
   },
   "theme": {
-    "message": "තේමාව"
+    "message": "Theme"
   },
   "themeDesc": {
     "message": "Change the application's color theme."
@@ -963,7 +963,7 @@
     "description": "Light color"
   },
   "copy": {
-    "message": "පිටපත්",
+    "message": "Copy",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
@@ -1000,7 +1000,7 @@
     "message": "Restart"
   },
   "later": {
-    "message": "පසුව"
+    "message": "Later"
   },
   "noUpdatesAvailable": {
     "message": "No updates are currently available. You are using the latest version."

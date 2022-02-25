@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Valikud"
+  },
+  "sessionTimeout": {
+    "message": "Sessioon on aegunud. Palun mine tagasi ja proovi uuesti sisse logida."
   }
 }

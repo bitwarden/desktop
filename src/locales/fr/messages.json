@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Options"
+  },
+  "sessionTimeout": {
+    "message": "Votre session a expiré. Veuillez revenir en arrière et essayer de vous connecter à nouveau."
   }
 }

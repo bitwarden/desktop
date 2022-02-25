@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Opțiuni"
+  },
+  "sessionTimeout": {
+    "message": "Sesiunea dvs. a expirat. Vă rugăm reveniți și încercați să vă autentificați din nou."
   }
 }

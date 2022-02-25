@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Valinnat"
+  },
+  "sessionTimeout": {
+    "message": "Istuntosi on aikakatkaistu. Palaa takaisin ja yritä kirjautua uudelleen."
   }
 }
