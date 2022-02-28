@@ -15,8 +15,8 @@ export class HelpMenu implements IMenubarMenu {
 
   get items(): MenuItemConstructorOptions[] {
     const items = [
-      this.emailUs,
-      this.visitOurWebsite,
+      this.getHelp,
+      this.contactUs,
       this.fileBugReport,
       this.legal,
       this.separator,
@@ -44,19 +44,19 @@ export class HelpMenu implements IMenubarMenu {
     this._aboutMenu = aboutMenu;
   }
 
-  private get emailUs(): MenuItemConstructorOptions {
+  private get contactUs(): MenuItemConstructorOptions {
     return {
-      id: "emailUs",
-      label: this.localize("emailUs"),
-      click: () => shell.openExternal("mailTo:hello@bitwarden.com"),
+      id: "contactUs",
+      label: this.localize("contactUs"),
+      click: () => shell.openExternal("https://bitwarden.com/contact"),
     };
   }
 
-  private get visitOurWebsite(): MenuItemConstructorOptions {
+  private get getHelp(): MenuItemConstructorOptions {
     return {
-      id: "visitOurWebsite",
-      label: this.localize("visitOurWebsite"),
-      click: () => shell.openExternal("https://bitwarden.com/contact"),
+      id: "getHelp",
+      label: this.localize("getHelp"),
+      click: () => shell.openExternal("https://bitwarden.com/help"),
     };
   }
 
