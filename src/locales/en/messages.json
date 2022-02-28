@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Password Generator"
   },
-  "emailUs": {
-    "message": "Email Us"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "Visit Our Website"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "File a Bug Report"
