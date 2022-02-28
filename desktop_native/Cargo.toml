@@ -12,6 +12,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 tokio = { version = "1.17.0", features = ["full"] }
+anyhow = "1.0"
 
 [dependencies.neon]
 version = "0.10.0-alpha.3"
@@ -27,3 +28,8 @@ features = [
     "Win32_Foundation",
     "Win32_System_WinRT",
 ]
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-foundation = "0.9.3"
+security-framework = "2.6.1"
+security-framework-sys = "2.6.1"

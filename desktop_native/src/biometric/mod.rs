@@ -5,10 +5,10 @@ use unix as imp;
 #[cfg(windows)]
 use win as imp;
 
-#[cfg(any(target_os = "redox", unix))]
+#[cfg(target_os = "macos")]
+mod mac;
+#[cfg(not(any(target_os = "macos", windows)))]
 mod unix;
-#[cfg(not(any(target_os = "redox", unix, windows)))]
-mod unknown;
 #[cfg(windows)]
 mod win;
 
