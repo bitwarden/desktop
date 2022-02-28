@@ -1,8 +1,10 @@
-use neon::prelude::*;
-use tokio::runtime::Runtime;
+#[macro_use]
+extern crate napi_derive;
 
 mod biometric;
+mod password;
 
+/*
 fn supports_biometric(mut cx: FunctionContext) -> JsResult<JsPromise> {
     let promise = cx
         .task(move || Runtime::new().unwrap().block_on(biometric::available()))
@@ -32,4 +34,52 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
     cx.export_function("verify", verify)?;
     cx.export_function("supportsBiometric", supports_biometric)?;
     Ok(())
+}
+
+*/
+
+#[napi]
+mod passwords {
+    /// Fetch the stored password from the keychain.
+    #[napi]
+    pub async fn get_password(service: String, account: String) -> napi::Result<String> {
+        super::password::get_password(service.as_str(), account.as_str()).await;
+        return Ok(String::from("123"));
+    }
+
+    /// Save the password to the keychain. Adds an entry if none exists otherwise updates the existing entry.
+    #[napi]
+    pub async fn set_password(service: String, account: String, password: String) {}
+
+    /// Delete the stored password from the keychain.
+    #[napi]
+    pub async fn delete_password(service: String, account: String) {}
+}
+
+#[napi]
+mod biometrics {
+    /// Verify user presence.
+    #[napi]
+    pub async fn prompt(message: String) {}
+
+    /// Enable biometric for the specific account, stores the encrypted password in keychain on macOS,
+    /// gnome keyring on Unix, and returns an encrypted string on Windows.
+    #[napi]
+    pub async fn enable(
+        account: String,
+        password: String,
+        message: String,
+    ) -> napi::Result<String> {
+        Ok(String::from(""))
+    }
+
+    #[napi]
+    /// Remove the stored biometric key for the specified account.
+    pub async fn disable(account: String) {}
+
+    /// Decrypt the secured password after verifying the user presense using biometric.
+    #[napi]
+    pub async fn decrypt(account: String, encrypted_password: String) -> napi::Result<String> {
+        Ok(String::from(""))
+    }
 }

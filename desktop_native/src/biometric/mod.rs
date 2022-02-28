@@ -1,16 +1,7 @@
-#[cfg(target_os = "macos")]
-use mac as imp;
-#[cfg(not(any(target_os = "macos", windows)))]
-use unix as imp;
-#[cfg(windows)]
-use win as imp;
-
-#[cfg(target_os = "macos")]
-mod mac;
-#[cfg(not(any(target_os = "macos", windows)))]
-mod unix;
-#[cfg(windows)]
-mod win;
+#[cfg_attr(target_os = "linux", path = "unix.rs")]
+#[cfg_attr(target_os = "windows", path = "windows.rs")]
+#[cfg_attr(target_os = "macos", path = "mac/mod.rs")]
+mod imp;
 
 pub async fn available() -> bool {
     imp::available().await
