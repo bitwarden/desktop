@@ -191,7 +191,7 @@
     "nsisWeb": {
       "oneClick": false,
       "perMachine": true,
-      "allowToChangeInstallationDirectory": true,
+      "allowToChangeInstallationDirectory": false,
       "artifactName": "${productName}-Installer-${version}.${ext}",
       "uninstallDisplayName": "${productName}",
       "deleteAppDataOnUninstall": true
