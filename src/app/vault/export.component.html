@@ -9,6 +9,7 @@
         >
           {{ "personalVaultExportPolicyInEffect" | i18n }}
         </app-callout>
+        <app-export-scope-callout *ngIf="!disabledByPolicy"></app-export-scope-callout>
         <div class="box">
           <div class="box-header" id="exportTitle">
             {{ "exportVault" | i18n }}
