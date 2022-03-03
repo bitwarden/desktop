@@ -15,9 +15,13 @@ tokio = { version = "1.17.0", features = ["full"] }
 anyhow = "1.0"
 napi = { version = "2", features=["async"] }
 napi-derive = "2"
+scopeguard = "1.1.0"
 
 [build-dependencies]
 napi-build = "1"
+
+[target.'cfg(windows)'.dependencies]
+widestring = "0.5.1"
 
 [target.'cfg(windows)'.dependencies.windows]
 version = "0.32.0"
@@ -25,7 +29,9 @@ features = [
     "alloc",
     "Foundation",
     "Security_Credentials_UI",
+    "Storage_Streams",
     "Win32_Foundation",
+    "Win32_Security_Credentials",
     "Win32_System_WinRT",
 ]
 

@@ -76,9 +76,11 @@ dependencies = [
  "napi",
  "napi-build",
  "napi-derive",
+ "scopeguard",
  "security-framework",
  "security-framework-sys",
  "tokio",
+ "widestring",
  "windows 0.32.0",
 ]
 
@@ -400,6 +402,12 @@ name = "unicode-xid"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
+
+[[package]]
+name = "widestring"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17882f045410753661207383517a6f62ec3dbeb6a4ed2acce01f0728238d1983"
 
 [[package]]
 name = "winapi"

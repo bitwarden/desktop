@@ -1,6 +1,6 @@
 #[cfg_attr(target_os = "linux", path = "unix.rs")]
 #[cfg_attr(target_os = "windows", path = "windows.rs")]
-#[cfg_attr(target_os = "macos", path = "mac/mod.rs")]
+#[cfg_attr(target_os = "macos", path = "macos/mod.rs")]
 mod imp;
 
 pub async fn available() -> bool {

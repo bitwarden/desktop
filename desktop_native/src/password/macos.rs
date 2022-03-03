@@ -10,13 +10,11 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
 }
 
 pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
-    set_generic_password(&service, &account, password.as_bytes())
-        .map_err(anyhow::Error::msg)
+    set_generic_password(&service, &account, password.as_bytes()).map_err(anyhow::Error::msg)
 }
 
 pub async fn delete_password(service: &str, account: &str) -> Result<()> {
-    delete_generic_password(&service, &account)
-        .map_err(anyhow::Error::msg)
+    delete_generic_password(&service, &account).map_err(anyhow::Error::msg)
 }
 
 #[cfg(test)]
@@ -25,8 +23,17 @@ mod tests {
 
     #[tokio::test]
     async fn test() {
-        set_password("BitwardenTest", "BitwardenTest", "Random").await.unwrap();
-        assert_eq!("Random", get_password("BitwardenTest", "BitwardenTest").await.unwrap());
-        delete_password("BitwardenTest", "BitwardenTest").await.unwrap();
+        set_password("BitwardenTest", "BitwardenTest", "Random")
+            .await
+            .unwrap();
+        assert_eq!(
+            "Random",
+            get_password("BitwardenTest", "BitwardenTest")
+                .await
+                .unwrap()
+        );
+        delete_password("BitwardenTest", "BitwardenTest")
+            .await
+            .unwrap();
     }
 }
