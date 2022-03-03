@@ -1,5 +1,11 @@
 import { Menu, MenuItemConstructorOptions } from "electron";
 
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { UpdaterMain } from "jslib-electron/updater.main";
+import { isMac } from "jslib-electron/utils";
+import { WindowMain } from "jslib-electron/window.main";
+
 import { AboutMenu } from "./menu.about";
 import { AccountMenu } from "./menu.account";
 import { BitwardenMenu } from "./menu.bitwarden";
@@ -9,13 +15,6 @@ import { HelpMenu } from "./menu.help";
 import { MenuUpdateRequest } from "./menu.updater";
 import { ViewMenu } from "./menu.view";
 import { WindowMenu } from "./menu.window";
-
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-
-import { UpdaterMain } from "jslib-electron/updater.main";
-import { isMac } from "jslib-electron/utils";
-import { WindowMain } from "jslib-electron/window.main";
 
 export interface IMenubarMenu {
   id: string;

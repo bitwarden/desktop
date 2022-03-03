@@ -1,11 +1,12 @@
 import { existsSync, promises as fs } from "fs";
 import { Socket } from "net";
-import * as ipc from "node-ipc";
 import { homedir, userInfo } from "os";
 import * as path from "path";
 import * as util from "util";
 
 import { ipcMain } from "electron";
+import * as ipc from "node-ipc";
+
 import { LogService } from "jslib-common/abstractions/log.service";
 import { WindowMain } from "jslib-electron/window.main";
 
@@ -98,7 +99,7 @@ export class NativeMessagingMain {
     };
 
     switch (process.platform) {
-      case "win32":
+      case "win32": {
         const destination = path.join(this.userPath, "browsers");
         this.writeManifest(path.join(destination, "firefox.json"), firefoxJson);
         this.writeManifest(path.join(destination, "chrome.json"), chromeJson);
@@ -114,7 +115,8 @@ export class NativeMessagingMain {
           path.join(destination, "chrome.json")
         );
         break;
-      case "darwin":
+      }
+      case "darwin": {
         const nmhs = this.getDarwinNMHS();
         for (const [key, value] of Object.entries(nmhs)) {
           if (existsSync(value)) {
@@ -133,6 +135,7 @@ export class NativeMessagingMain {
           }
         }
         break;
+      }
       case "linux":
         if (existsSync(`${this.homedir()}/.mozilla/`)) {
           this.writeManifest(
@@ -172,15 +175,16 @@ export class NativeMessagingMain {
           "HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden"
         );
         break;
-      case "darwin":
+      case "darwin": {
         const nmhs = this.getDarwinNMHS();
-        for (const [_, value] of Object.entries(nmhs)) {
+        for (const [, value] of Object.entries(nmhs)) {
           const p = path.join(value, "NativeMessagingHosts", "com.8bit.bitwarden.json");
           if (existsSync(p)) {
             fs.unlink(p);
           }
         }
         break;
+      }
       case "linux":
         if (
           existsSync(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`)
@@ -214,6 +218,7 @@ export class NativeMessagingMain {
   }
 
   private getDarwinNMHS() {
+    /* eslint-disable no-useless-escape */
     return {
       Firefox: `${this.homedir()}/Library/Application\ Support/Mozilla/`,
       Chrome: `${this.homedir()}/Library/Application\ Support/Google/Chrome/`,
@@ -227,6 +232,7 @@ export class NativeMessagingMain {
       "Microsoft Edge Canary": `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Canary/`,
       Vivaldi: `${this.homedir()}/Library/Application\ Support/Vivaldi/`,
     };
+    /* eslint-enable no-useless-escape */
   }
 
   private async writeManifest(destination: string, manifest: object) {
@@ -245,6 +251,7 @@ export class NativeMessagingMain {
   }
 
   private getRegeditInstance() {
+    // eslint-disable-next-line
     const regedit = require("regedit");
     regedit.setExternalVBSLocation(path.join(path.dirname(this.exePath), "resources/regedit/vbs"));
 

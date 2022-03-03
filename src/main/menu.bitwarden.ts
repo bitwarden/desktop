@@ -2,14 +2,12 @@ import { BrowserWindow, MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
-
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { isMac } from "jslib-electron/utils";
 
-import { IMenubarMenu } from "./menubar";
-
 import { FirstMenu } from "./menu.first";
 import { MenuAccount } from "./menu.updater";
+import { IMenubarMenu } from "./menubar";
 
 // AKA: "FirstMenu" or "MacMenu" - the first menu that shows on all macOs apps
 export class BitwardenMenu extends FirstMenu implements IMenubarMenu {

@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Možnosti"
+  },
+  "sessionTimeout": {
+    "message": "Vaša relácia vypršala. Vráťte sa späť a skúste sa prihlásiť znova."
   }
 }

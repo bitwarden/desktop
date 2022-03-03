@@ -11,10 +11,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { IndividualConfig, ToastrService } from "ngx-toastr";
 
-import { PremiumComponent } from "./accounts/premium.component";
-import { SettingsComponent } from "./accounts/settings.component";
-import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
-
+import { ModalRef } from "jslib-angular/components/modal/modal.ref";
+import { ModalService } from "jslib-angular/services/modal.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { CipherService } from "jslib-common/abstractions/cipher.service";
@@ -37,17 +35,16 @@ import { SyncService } from "jslib-common/abstractions/sync.service";
 import { SystemService } from "jslib-common/abstractions/system.service";
 import { TokenService } from "jslib-common/abstractions/token.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
-
 import { CipherType } from "jslib-common/enums/cipherType";
 
+import { MenuUpdateRequest } from "src/main/menu.updater";
+
+import { PremiumComponent } from "./accounts/premium.component";
+import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
+import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 import { PasswordGeneratorComponent } from "./vault/password-generator.component";
-
-import { ModalRef } from "jslib-angular/components/modal/modal.ref";
-
-import { ModalService } from "jslib-angular/services/modal.service";
-import { MenuUpdateRequest } from "src/main/menu.updater";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -208,7 +205,7 @@ export class AppComponent implements OnInit {
           case "openPremium":
             await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
             break;
-          case "showFingerprintPhrase":
+          case "showFingerprintPhrase": {
             const fingerprint = await this.cryptoService.getFingerprint(
               await this.stateService.getUserId()
             );
@@ -222,6 +219,7 @@ export class AppComponent implements OnInit {
               this.platformUtilsService.launchUri("https://bitwarden.com/help/fingerprint-phrase/");
             }
             break;
+          }
           case "openPasswordHistory":
             await this.openModal<PasswordGeneratorHistoryComponent>(
               PasswordGeneratorHistoryComponent,
@@ -241,7 +239,7 @@ export class AppComponent implements OnInit {
               queryParams: { code: message.code, state: message.state },
             });
             break;
-          case "premiumRequired":
+          case "premiumRequired": {
             const premiumConfirmed = await this.platformUtilsService.showDialog(
               this.i18nService.t("premiumRequiredDesc"),
               this.i18nService.t("premiumRequired"),
@@ -252,7 +250,8 @@ export class AppComponent implements OnInit {
               await this.openModal<PremiumComponent>(PremiumComponent, this.premiumRef);
             }
             break;
-          case "emailVerificationRequired":
+          }
+          case "emailVerificationRequired": {
             const emailVerificationConfirmed = await this.platformUtilsService.showDialog(
               this.i18nService.t("emailVerificationRequiredDesc"),
               this.i18nService.t("emailVerificationRequired"),
@@ -265,6 +264,7 @@ export class AppComponent implements OnInit {
               );
             }
             break;
+          }
           case "syncVault":
             try {
               await this.syncService.fullSync(true, true);
@@ -326,7 +326,7 @@ export class AppComponent implements OnInit {
           case "convertAccountToKeyConnector":
             this.router.navigate(["/remove-password"]);
             break;
-          case "switchAccount":
+          case "switchAccount": {
             if (message.userId != null) {
               await this.stateService.setActiveUser(message.userId);
             }
@@ -341,12 +341,16 @@ export class AppComponent implements OnInit {
               this.router.navigate(["vault"]);
             }
             break;
+          }
           case "systemSuspended":
             await this.checkForSystemTimeout(systemTimeoutOptions.onSuspend);
+            break;
           case "systemLocked":
             await this.checkForSystemTimeout(systemTimeoutOptions.onLock);
+            break;
           case "systemIdle":
             await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
+            break;
         }
       });
     });

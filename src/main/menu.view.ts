@@ -1,9 +1,9 @@
+import { MenuItemConstructorOptions } from "electron";
+
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
 import { IMenubarMenu } from "./menubar";
-
-import { MenuItemConstructorOptions } from "electron";
 
 export class ViewMenu implements IMenubarMenu {
   readonly id: "viewMenu";

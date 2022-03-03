@@ -1,12 +1,11 @@
+import { MenuItemConstructorOptions } from "electron";
+
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
-
 import { isMac } from "jslib-electron/utils";
 import { WindowMain } from "jslib-electron/window.main";
 
 import { IMenubarMenu } from "./menubar";
-
-import { MenuItemConstructorOptions } from "electron";
 
 export class WindowMenu implements IMenubarMenu {
   readonly id: string;

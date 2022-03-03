@@ -9,7 +9,7 @@ const IdleLockSeconds = 5 * 60; // 5 minutes
 const IdleCheckInterval = 30 * 1000; // 30 seconds
 
 export class PowerMonitorMain {
-  private idle: boolean = false;
+  private idle = false;
 
   constructor(private main: Main) {}
 

@@ -2,7 +2,6 @@ import { BrowserWindow, dialog, MenuItem, MenuItemConstructorOptions } from "ele
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
-
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { isMacAppStore, isSnapStore, isWindowsStore } from "jslib-electron/utils";
 

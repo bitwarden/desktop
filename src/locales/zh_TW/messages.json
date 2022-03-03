@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "選項"
+  },
+  "sessionTimeout": {
+    "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
   }
 }

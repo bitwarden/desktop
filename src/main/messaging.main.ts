@@ -1,10 +1,11 @@
-import { app, ipcMain } from "electron";
 import * as fs from "fs";
 import * as path from "path";
 
-import { Main } from "../main";
+import { app, ipcMain } from "electron";
 
 import { StateService } from "jslib-common/abstractions/state.service";
+
+import { Main } from "../main";
 
 import { MenuUpdateRequest } from "./menu.updater";
 
@@ -56,6 +57,7 @@ export class MessagingMain {
         break;
       case "removeOpenAtLogin":
         this.removeOpenAtLogin();
+        break;
       case "setFocus":
         this.setFocus();
         break;

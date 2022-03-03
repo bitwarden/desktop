@@ -3,6 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuardService } from "jslib-angular/services/auth-guard.service";
 import { LockGuardService } from "jslib-angular/services/lock-guard.service";
+
 import { LoginGuardService } from "../services/loginGuard.service";
 
 import { HintComponent } from "./accounts/hint.component";
@@ -14,9 +15,7 @@ import { SetPasswordComponent } from "./accounts/set-password.component";
 import { SsoComponent } from "./accounts/sso.component";
 import { TwoFactorComponent } from "./accounts/two-factor.component";
 import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.component";
-
 import { SendComponent } from "./send/send.component";
-
 import { VaultComponent } from "./vault/vault.component";
 
 const routes: Routes = [

@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Opcje"
+  },
+  "sessionTimeout": {
+    "message": "Twoja sesja wygasła. Zaloguj się ponownie."
   }
 }

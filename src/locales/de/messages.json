@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Optionen"
+  },
+  "sessionTimeout": {
+    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
   }
 }

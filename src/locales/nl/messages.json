@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Opties"
+  },
+  "sessionTimeout": {
+    "message": "Je sessie is verlopen. Ga terug en probeer opnieuw in te loggen."
   }
 }

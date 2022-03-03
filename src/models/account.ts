@@ -4,7 +4,7 @@ import {
 } from "jslib-common/models/domain/account";
 
 export class AccountSettings extends BaseAccountSettings {
-  vaultTimeout: number = -1; // On Restart
+  vaultTimeout = -1; // On Restart
 }
 
 export class Account extends BaseAccount {

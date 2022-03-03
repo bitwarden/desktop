@@ -8,10 +8,28 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-
 import { first } from "rxjs/operators";
 
+import { ModalRef } from "jslib-angular/components/modal/modal.ref";
+import { ModalService } from "jslib-angular/services/modal.service";
+import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
+import { EventService } from "jslib-common/abstractions/event.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
+import { SyncService } from "jslib-common/abstractions/sync.service";
+import { TotpService } from "jslib-common/abstractions/totp.service";
+import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
+import { CipherType } from "jslib-common/enums/cipherType";
+import { EventType } from "jslib-common/enums/eventType";
+import { CipherView } from "jslib-common/models/view/cipherView";
+import { FolderView } from "jslib-common/models/view/folderView";
+import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
+
 import { SearchBarService } from "../layout/search/search-bar.service";
+
 import { AddEditComponent } from "./add-edit.component";
 import { AttachmentsComponent } from "./attachments.component";
 import { CiphersComponent } from "./ciphers.component";
@@ -22,29 +40,6 @@ import { PasswordGeneratorComponent } from "./password-generator.component";
 import { PasswordHistoryComponent } from "./password-history.component";
 import { ShareComponent } from "./share.component";
 import { ViewComponent } from "./view.component";
-
-import { CipherRepromptType } from "jslib-common/enums/cipherRepromptType";
-import { CipherType } from "jslib-common/enums/cipherType";
-import { EventType } from "jslib-common/enums/eventType";
-
-import { CipherView } from "jslib-common/models/view/cipherView";
-import { FolderView } from "jslib-common/models/view/folderView";
-
-import { ModalRef } from "jslib-angular/components/modal/modal.ref";
-
-import { ModalService } from "jslib-angular/services/modal.service";
-
-import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
-import { EventService } from "jslib-common/abstractions/event.service";
-import { I18nService } from "jslib-common/abstractions/i18n.service";
-import { MessagingService } from "jslib-common/abstractions/messaging.service";
-import { PasswordRepromptService } from "jslib-common/abstractions/passwordReprompt.service";
-import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
-import { StateService } from "jslib-common/abstractions/state.service";
-import { SyncService } from "jslib-common/abstractions/sync.service";
-import { TotpService } from "jslib-common/abstractions/totp.service";
-
-import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
 
 const BroadcasterSubscriptionId = "VaultComponent";
 
@@ -71,7 +66,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   action: string;
   cipherId: string = null;
-  favorites: boolean = false;
+  favorites = false;
   type: CipherType = null;
   folderId: string = null;
   collectionId: string = null;
@@ -140,7 +135,7 @@ export class VaultComponent implements OnInit, OnDestroy {
           case "modalClosed":
             this.showingModal = false;
             break;
-          case "copyUsername":
+          case "copyUsername": {
             const uComponent =
               this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
             const uCipher = uComponent != null ? uComponent.cipher : null;
@@ -154,7 +149,8 @@ export class VaultComponent implements OnInit, OnDestroy {
               this.copyValue(uCipher, uCipher.login.username, "username", "Username");
             }
             break;
-          case "copyPassword":
+          }
+          case "copyPassword": {
             const pComponent =
               this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
             const pCipher = pComponent != null ? pComponent.cipher : null;
@@ -169,7 +165,8 @@ export class VaultComponent implements OnInit, OnDestroy {
               this.copyValue(pCipher, pCipher.login.password, "password", "Password");
             }
             break;
-          case "copyTotp":
+          }
+          case "copyTotp": {
             const tComponent =
               this.addEditComponent == null ? this.viewComponent : this.addEditComponent;
             const tCipher = tComponent != null ? tComponent.cipher : null;
@@ -184,6 +181,8 @@ export class VaultComponent implements OnInit, OnDestroy {
               const value = await this.totpService.getCode(tCipher.login.totp);
               this.copyValue(tCipher, value, "verificationCodeTotp", "TOTP");
             }
+            break;
+          }
           default:
             detectChanges = false;
             break;
@@ -735,7 +734,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     });
   }
 
-  private functionWithChangeDetection(func: Function) {
+  private functionWithChangeDetection(func: () => void) {
     this.ngZone.run(() => {
       func();
       this.changeDetectorRef.detectChanges();

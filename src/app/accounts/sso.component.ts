@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
-
 import { ActivatedRoute, Router } from "@angular/router";
 
+import { SsoComponent as BaseSsoComponent } from "jslib-angular/components/sso.component";
 import { ApiService } from "jslib-common/abstractions/api.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
@@ -12,8 +12,6 @@ import { PasswordGenerationService } from "jslib-common/abstractions/passwordGen
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
 import { SyncService } from "jslib-common/abstractions/sync.service";
-
-import { SsoComponent as BaseSsoComponent } from "jslib-angular/components/sso.component";
 
 @Component({
   selector: "app-sso",

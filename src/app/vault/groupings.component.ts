@@ -1,10 +1,9 @@
 import { Component } from "@angular/core";
 
+import { GroupingsComponent as BaseGroupingsComponent } from "jslib-angular/components/groupings.component";
 import { CollectionService } from "jslib-common/abstractions/collection.service";
 import { FolderService } from "jslib-common/abstractions/folder.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-
-import { GroupingsComponent as BaseGroupingsComponent } from "jslib-angular/components/groupings.component";
 
 @Component({
   selector: "app-vault-groupings",

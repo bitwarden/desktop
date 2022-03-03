@@ -1,28 +1,6 @@
 import { APP_INITIALIZER, NgModule } from "@angular/core";
 
-import { ElectronLogService } from "jslib-electron/services/electronLog.service";
-import { ElectronPlatformUtilsService } from "jslib-electron/services/electronPlatformUtils.service";
-import { ElectronRendererMessagingService } from "jslib-electron/services/electronRendererMessaging.service";
-import { ElectronRendererSecureStorageService } from "jslib-electron/services/electronRendererSecureStorage.service";
-import { ElectronRendererStorageService } from "jslib-electron/services/electronRendererStorage.service";
-
-import { I18nService } from "../services/i18n.service";
-import { LoginGuardService } from "../services/loginGuard.service";
-import { NativeMessagingService } from "../services/nativeMessaging.service";
-import { PasswordRepromptService } from "../services/passwordReprompt.service";
-import { StateService } from "../services/state.service";
-
-import { SearchBarService } from "./layout/search/search-bar.service";
-
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
-
-import { ContainerService } from "jslib-common/services/container.service";
-import { EventService } from "jslib-common/services/event.service";
-import { SystemService } from "jslib-common/services/system.service";
-import { VaultTimeoutService } from "jslib-common/services/vaultTimeout.service";
-
-import { ElectronCryptoService } from "jslib-electron/services/electronCrypto.service";
-
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "jslib-common/abstractions/cryptoFunction.service";
@@ -41,15 +19,29 @@ import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "jslib-common/abstractions/twoFactor.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-common/abstractions/vaultTimeout.service";
-
 import { ThemeType } from "jslib-common/enums/themeType";
+import { StateFactory } from "jslib-common/factories/stateFactory";
+import { GlobalState } from "jslib-common/models/domain/globalState";
+import { ContainerService } from "jslib-common/services/container.service";
+import { EventService } from "jslib-common/services/event.service";
+import { StateMigrationService } from "jslib-common/services/stateMigration.service";
+import { SystemService } from "jslib-common/services/system.service";
+import { VaultTimeoutService } from "jslib-common/services/vaultTimeout.service";
+import { ElectronCryptoService } from "jslib-electron/services/electronCrypto.service";
+import { ElectronLogService } from "jslib-electron/services/electronLog.service";
+import { ElectronPlatformUtilsService } from "jslib-electron/services/electronPlatformUtils.service";
+import { ElectronRendererMessagingService } from "jslib-electron/services/electronRendererMessaging.service";
+import { ElectronRendererSecureStorageService } from "jslib-electron/services/electronRendererSecureStorage.service";
+import { ElectronRendererStorageService } from "jslib-electron/services/electronRendererStorage.service";
 
 import { Account } from "../models/account";
+import { I18nService } from "../services/i18n.service";
+import { LoginGuardService } from "../services/loginGuard.service";
+import { NativeMessagingService } from "../services/nativeMessaging.service";
+import { PasswordRepromptService } from "../services/passwordReprompt.service";
+import { StateService } from "../services/state.service";
 
-import { GlobalState } from "jslib-common/models/domain/globalState";
-
-import { StateFactory } from "jslib-common/factories/stateFactory";
-import { StateMigrationService } from "jslib-common/services/stateMigration.service";
+import { SearchBarService } from "./layout/search/search-bar.service";
 
 export function initFactory(
   window: Window,
@@ -64,7 +56,7 @@ export function initFactory(
   stateService: StateServiceAbstraction,
   cryptoService: CryptoServiceAbstraction,
   nativeMessagingService: NativeMessagingService
-): Function {
+): () => Promise<void> {
   return async () => {
     nativeMessagingService.init();
     await stateService.init();

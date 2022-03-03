@@ -1813,5 +1813,8 @@
   },
   "options": {
     "message": "Opzioni"
+  },
+  "sessionTimeout": {
+    "message": "La tua sessione è scaduta. Torna indietro e riprova ad accedere."
   }
 }

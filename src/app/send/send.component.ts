@@ -1,5 +1,6 @@
 import { Component, NgZone, OnDestroy, OnInit, ViewChild } from "@angular/core";
 
+import { SendComponent as BaseSendComponent } from "jslib-angular/components/send/send.component";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
@@ -8,14 +9,11 @@ import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.se
 import { PolicyService } from "jslib-common/abstractions/policy.service";
 import { SearchService } from "jslib-common/abstractions/search.service";
 import { SendService } from "jslib-common/abstractions/send.service";
-
-import { SendComponent as BaseSendComponent } from "jslib-angular/components/send/send.component";
-
+import { SendView } from "jslib-common/models/view/sendView";
 import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
 
-import { SendView } from "jslib-common/models/view/sendView";
-
 import { SearchBarService } from "../layout/search/search-bar.service";
+
 import { AddEditComponent } from "./add-edit.component";
 
 enum Action {
