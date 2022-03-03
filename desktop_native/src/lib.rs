@@ -38,6 +38,10 @@ fn main(mut cx: ModuleContext) -> NeonResult<()> {
 
 */
 
+fn main() {
+    println!("HI");
+}
+
 #[allow(dead_code)]
 #[napi]
 mod passwords {
@@ -50,7 +54,7 @@ mod passwords {
     }
 
     /// Save the password to the keychain. Adds an entry if none exists otherwise updates the existing entry.
-    #[napi]
+    //#[napi]
     pub async fn set_password(
         service: String,
         account: String,
