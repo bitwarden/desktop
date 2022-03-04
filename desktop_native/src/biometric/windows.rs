@@ -1,26 +1,47 @@
-use windows::core::*;
-use windows::Foundation::IAsyncOperation;
-use windows::Security::Credentials::UI::*;
+use windows::{
+    core::*,
+    Foundation::IAsyncOperation,
+    Security::Credentials::{UI::*, *},
+    Storage::Streams::{DataWriter, IBuffer},
+    Win32::{
+        Foundation::HWND,
+        System::WinRT::{IBufferByteAccess, IUserConsentVerifierInterop},
+    },
+};
 //use windows::Win32::Foundation::HWND;
 //use windows::Win32::System::WinRT::IUserConsentVerifierInterop;
-use anyhow::anyhow;
-use windows::Security::Credentials::*;
-use windows::Storage::Streams::{DataWriter, IBuffer};
-use windows::Win32::System::WinRT::IBufferByteAccess;
+use anyhow::{anyhow, Result};
 
-pub async fn available() -> bool {
-    let event = UserConsentVerifier::CheckAvailabilityAsync();
-    let result = match event {
-        Err(_) => return false,
-        Ok(t) => t.await,
+pub async fn supported() -> Result<bool> {
+    let result = UserConsentVerifier::CheckAvailabilityAsync()?.await?;
+
+    Ok(match result {
+        UserConsentVerifierAvailability::Available => true,
+        UserConsentVerifierAvailability::DeviceBusy => true,
+        _ => false,
+    })
+}
+
+pub async fn prompt(message: &str, window_handle: Option<isize>) -> Result<bool> {
+    let interop: IUserConsentVerifierInterop =
+        match factory::<UserConsentVerifier, IUserConsentVerifierInterop>() {
+            Ok(i) => i,
+            Err(e) => return Err(e.into()),
+        };
+
+    let window = match window_handle {
+        Some(h) => HWND(h),
+        None => HWND::default(),
     };
 
-    match result {
-        Err(_) => false,
+    let operation: IAsyncOperation<UserConsentVerificationResult> =
+        unsafe { interop.RequestVerificationForWindowAsync(window, message) }?;
+
+    match operation.get() {
+        Err(e) => return Err(e.into()),
         Ok(t) => match t {
-            UserConsentVerifierAvailability::Available => true,
-            UserConsentVerifierAvailability::DeviceBusy => true,
-            _ => false,
+            UserConsentVerificationResult::Verified => Ok(true),
+            _ => Ok(false),
         },
     }
 }
@@ -125,14 +146,14 @@ pub async fn verify(
 #[cfg(test)]
 mod tests {
     #[tokio::test]
-    async fn available() {
+    async fn supported() {
         // TODO Mock!
-        // assert_eq!(true, super::available().await)
+        assert_eq!(true, super::supported().await.unwrap())
     }
 
     #[tokio::test]
-    async fn verify() {
+    async fn prompt() {
         // TODO Mock!
-        //assert_eq!(true, super::verify("test", 0).await.unwrap())
+        assert_eq!(true, super::prompt("test", Some(0)).await.unwrap())
     }
 }

@@ -9,6 +9,10 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
         .and_then(|r| String::from_utf8(r).map_err(anyhow::Error::msg))
 }
 
+pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
+    get_password(service, account)
+}
+
 pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
     set_generic_password(&service, &account, password.as_bytes()).map_err(anyhow::Error::msg)
 }

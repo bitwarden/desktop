@@ -16,6 +16,10 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
     }
 }
 
+pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
+    get_password(service, account)
+}
+
 pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
     password_store_sync(
         Some(&get_schema()),

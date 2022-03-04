@@ -1,5 +1,5 @@
 use anyhow::{anyhow, Result};
-use widestring::U16CString;
+use widestring::{U16CString, U16String};
 use windows::Win32::{
     Foundation::{GetLastError, FILETIME, PWSTR},
     Security::Credentials::{
@@ -33,16 +33,6 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
         return Err(anyhow!(unsafe { GetLastError() }.0.to_string()));
     }
 
-    // Keytar compatible
-    let password = unsafe {
-        std::str::from_utf8_unchecked(std::slice::from_raw_parts(
-            (*credential).CredentialBlob,
-            (*credential).CredentialBlobSize as usize,
-        ))
-    };
-
-    /*
-    // Fetches credentials set the regular way
     let password = unsafe {
         U16String::from_ptr(
             (*credential).CredentialBlob as *const u16,
@@ -50,7 +40,41 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
         )
         .to_string_lossy()
     };
-    */
+
+    Ok(String::from(password))
+}
+
+// Remove this after sufficient releases
+pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
+    let target_name = U16CString::from_str(target_name(service, account))?;
+
+    let mut credential: *mut CREDENTIALW = std::ptr::null_mut();
+    let credential_ptr = &mut credential;
+
+    let result = unsafe {
+        CredReadW(
+            PWSTR(target_name.as_ptr()),
+            CRED_TYPE_GENERIC.0,
+            CRED_FLAGS_NONE,
+            credential_ptr,
+        )
+    };
+
+    scopeguard::defer!({
+        unsafe { CredFree(credential as *mut _) };
+    });
+
+    if !result.as_bool() {
+        return Err(anyhow!(unsafe { GetLastError() }.0.to_string()));
+    }
+
+    // Keytar compatible
+    let password = unsafe {
+        std::str::from_utf8_unchecked(std::slice::from_raw_parts(
+            (*credential).CredentialBlob,
+            (*credential).CredentialBlobSize as usize,
+        ))
+    };
 
     Ok(String::from(password))
 }
@@ -64,14 +88,11 @@ pub async fn set_password(service: &str, account: &str, password: &str) -> Resul
     };
 
     // Keytar compatible
-    let credential = std::ffi::CString::new(password)?;
-    let credential_len = password.len() as u32;
+    // let credential = std::ffi::CString::new(password)?;
+    // let credential_len = password.len() as u32;
 
-    /*
-    // Written data would be readable from more common sources
     let credential = U16CString::from_str(password)?;
     let credential_len = password.len() as u32 * 2;
-    */
 
     let credential = CREDENTIALW {
         Flags: CRED_FLAGS(CRED_FLAGS_NONE),

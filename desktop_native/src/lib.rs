@@ -15,6 +15,14 @@ mod passwords {
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
+    /// Fetch the stored password from the keychain.
+    #[napi]
+    pub async fn get_password_keytar(service: String, account: String) -> napi::Result<String> {
+        super::password::get_password_keytar(service.as_str(), account.as_str())
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
     /// Save the password to the keychain. Adds an entry if none exists otherwise updates the existing entry.
     #[napi]
     pub async fn set_password(
@@ -39,10 +47,20 @@ mod passwords {
 #[allow(dead_code)]
 #[napi]
 mod biometrics {
+    /// Check if biometric is supported and can be used.
+    #[napi]
+    pub async fn supported() -> napi::Result<bool> {
+        super::biometric::supported()
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
     /// Verify user presence.
     #[napi]
-    pub async fn prompt(message: String) {
-        println!("{}", message);
+    pub async fn prompt(message: String, window_handle: Option<u32>) -> napi::Result<bool> {
+        super::biometric::prompt(message.as_str(), window_handle.map(|i| i as isize))
+            .await
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     /// Enable biometric for the specific account, stores the encrypted password in keychain on macOS,
