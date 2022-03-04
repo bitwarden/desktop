@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Generator de parole"
   },
-  "emailUs": {
+  "contactUs": {
     "message": "Contactați-ne"
   },
-  "visitOurWebsite": {
-    "message": "Vizitați-ne saitul web"
+  "getHelp": {
+    "message": "Obținere ajutor"
   },
   "fileBugReport": {
     "message": "Înregistrare raport de erori"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Sesiunea dvs. a expirat. Vă rugăm reveniți și încercați să vă autentificați din nou."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportarea seifului personal"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Numai elementele personale din seif asociate cu $EMAIL$ vor fi exportate. Elementele seifului organizației nu vor fi incluse.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

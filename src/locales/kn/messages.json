@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "ಪಾಸ್ವರ್ಡ್ ಜನರೇಟರ್"
   },
-  "emailUs": {
-    "message": "ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ ಅನ್ನು ಭೇಟಿಮಾಡಿ"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "ದೋಷ ವರದಿಯನ್ನು ಫೈಲ್ ಮಾಡಿ"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

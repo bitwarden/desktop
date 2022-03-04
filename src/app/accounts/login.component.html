@@ -65,12 +65,15 @@
               </a>
             </div>
           </div>
-          <div class="box-content-row" [hidden]="!showCaptcha()">
+        </div>
+      </div>
+      <div class="box last" [hidden]="!showCaptcha()">
+        <div class="box-content">
+          <div class="box-content-row">
             <iframe id="hcaptcha_iframe" height="80"></iframe>
           </div>
         </div>
       </div>
-
       <div class="buttons with-rows">
         <div class="buttons-row">
           <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>

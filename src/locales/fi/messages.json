@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Salasanageneraattori"
   },
-  "emailUs": {
-    "message": "Lähetä meille sähköpostia"
+  "contactUs": {
+    "message": "Ota yhteyttä"
   },
-  "visitOurWebsite": {
-    "message": "Käy sivustollamme"
+  "getHelp": {
+    "message": "Hanki apua"
   },
   "fileBugReport": {
     "message": "Jätä virheilmoitus"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Istuntosi on aikakatkaistu. Palaa takaisin ja yritä kirjautua uudelleen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Henkilökohtaisen holvin vienti"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Vain tunnukseen $EMAIL$ liitetyt henkilökohtaiset holvin kohteet viedään. Organisaation kohteet eivät sisälly tähän.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

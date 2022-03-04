@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "יוצר הסיסמאות"
   },
-  "emailUs": {
-    "message": "שלח לנו אימייל"
+  "contactUs": {
+    "message": "יצירת קשר אתנו"
   },
-  "visitOurWebsite": {
-    "message": "בקרו באתר שלנו"
+  "getHelp": {
+    "message": "קבלת עזרה"
   },
   "fileBugReport": {
     "message": "דווח על באג"
@@ -1815,6 +1815,18 @@
     "message": "אפשרויות"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "זמן ההפעלה שלך תם. נא לחזור ולנסות להיכנס שוב."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Parol yaradıcı"
   },
-  "emailUs": {
-    "message": "Bizə məktub yazın"
+  "contactUs": {
+    "message": "Bizimlə əlaqə"
   },
-  "visitOurWebsite": {
-    "message": "Veb saytımızı ziyarət edin"
+  "getHelp": {
+    "message": "Kömək alın"
   },
   "fileBugReport": {
     "message": "Xəta hesabatı göndərin"
@@ -1815,6 +1815,18 @@
     "message": "Seçimlər"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Seansınızın vaxtı bitdi. Zəhmət olmasa geri qayıdıb yenidən giriş etməyə cəhd edin."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Şəxsi anbarın ixracı"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Yalnız $EMAIL$ ilə əlaqəli şəxsi anbar elementləri ixrac ediləcək. Təşkilat anbar elementləri daxil edilmir.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

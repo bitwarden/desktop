@@ -80,4 +80,12 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       modal.close();
     });
   }
+
+  async submit() {
+    await super.submit();
+    if (this.captchaSiteKey) {
+      const content = document.getElementById("content") as HTMLDivElement;
+      content.setAttribute("style", "width:335px");
+    }
+  }
 }

@@ -169,155 +169,155 @@
     "message": "E Mail"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Telefon"
   },
   "address": {
-    "message": "Address"
+    "message": "Adresa"
   },
   "premiumRequired": {
-    "message": "Premium Required"
+    "message": "Potrebno premium članstvo"
   },
   "premiumRequiredDesc": {
-    "message": "A premium membership is required to use this feature."
+    "message": "Za korištenje ove funkcije potrebno je premium članstvo."
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "Došlo je do greške."
   },
   "error": {
-    "message": "Error"
+    "message": "Greška"
   },
   "january": {
-    "message": "January"
+    "message": "Januar"
   },
   "february": {
-    "message": "February"
+    "message": "Februar"
   },
   "march": {
-    "message": "March"
+    "message": "Mart"
   },
   "april": {
     "message": "April"
   },
   "may": {
-    "message": "May"
+    "message": "Maj"
   },
   "june": {
-    "message": "June"
+    "message": "Juni"
   },
   "july": {
-    "message": "July"
+    "message": "Juli"
   },
   "august": {
     "message": "August"
   },
   "september": {
-    "message": "September"
+    "message": "Septembar"
   },
   "october": {
-    "message": "October"
+    "message": "Oktobar"
   },
   "november": {
-    "message": "November"
+    "message": "Novembar"
   },
   "december": {
-    "message": "December"
+    "message": "Decembar"
   },
   "ex": {
-    "message": "ex.",
+    "message": "npr.",
     "description": "Short abbreviation for 'example'."
   },
   "title": {
-    "message": "Title"
+    "message": "Naslov"
   },
   "mr": {
-    "message": "Mr"
+    "message": "G-din"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "G-đa"
   },
   "ms": {
-    "message": "Ms"
+    "message": "G-đica"
   },
   "dr": {
-    "message": "Dr"
+    "message": "dr."
   },
   "expirationMonth": {
-    "message": "Expiration Month"
+    "message": "Mjesec isteka"
   },
   "expirationYear": {
-    "message": "Expiration Year"
+    "message": "Godina isteka"
   },
   "select": {
-    "message": "Select"
+    "message": "Odaberi"
   },
   "other": {
-    "message": "Other"
+    "message": "Ostalo"
   },
   "generatePassword": {
-    "message": "Generate Password"
+    "message": "Generiraj lozinku"
   },
   "type": {
-    "message": "Type"
+    "message": "Vrsta"
   },
   "firstName": {
-    "message": "First Name"
+    "message": "Ime"
   },
   "middleName": {
-    "message": "Middle Name"
+    "message": "Srednje ime"
   },
   "lastName": {
-    "message": "Last Name"
+    "message": "Prezime"
   },
   "fullName": {
-    "message": "Full Name"
+    "message": "Ime i prezime"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Adresa 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Adresa 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Adresa 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Grad"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Država / Pokrajina"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal Code"
+    "message": "Poštanski broj"
   },
   "country": {
-    "message": "Country"
+    "message": "Država"
   },
   "save": {
-    "message": "Save"
+    "message": "Spremi"
   },
   "cancel": {
-    "message": "Cancel"
+    "message": "Otkaži"
   },
   "delete": {
-    "message": "Delete"
+    "message": "Izbriši"
   },
   "favorite": {
-    "message": "Favorite"
+    "message": "Omiljene stavke"
   },
   "edit": {
-    "message": "Edit"
+    "message": "Uredi"
   },
   "authenticatorKeyTotp": {
-    "message": "Authenticator Key (TOTP)"
+    "message": "Ključ autentifikatora (TOTP)"
   },
   "folder": {
     "message": "Folder"
   },
   "newCustomField": {
-    "message": "New Custom Field"
+    "message": "Novo prilagođeno polje"
   },
   "value": {
-    "message": "Value"
+    "message": "Vrijednost"
   },
   "dragToSort": {
     "message": "Prevucite za sortiranje"
@@ -411,48 +411,48 @@
     "message": "Zatvori"
   },
   "minNumbers": {
-    "message": "Minimum Numbers"
+    "message": "Minimalno brojeva"
   },
   "minSpecial": {
-    "message": "Minimum Special",
+    "message": "Minimalno posebnih znakova",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid Ambiguous Characters"
+    "message": "Izbjegavaj dvosmislene znakove"
   },
   "searchCollection": {
-    "message": "Search Collection"
+    "message": "Pretraži kolekciju"
   },
   "searchFolder": {
-    "message": "Search Folder"
+    "message": "Pretraži folder"
   },
   "searchFavorites": {
-    "message": "Search Favorites"
+    "message": "Pretraživanje favorita"
   },
   "searchType": {
-    "message": "Search Type",
+    "message": "Tip pretrage",
     "description": "Search item type"
   },
   "newAttachment": {
-    "message": "Add New Attachment"
+    "message": "Priloži novu datoteku"
   },
   "deletedAttachment": {
-    "message": "Deleted attachment"
+    "message": "Izbrisani priloženi fajl/ovi"
   },
   "deleteAttachmentConfirmation": {
-    "message": "Are you sure you want to delete this attachment?"
+    "message": "Da li ste sigurni da želite obrisati priloženu datoteku?"
   },
   "attachmentSaved": {
-    "message": "The attachment has been saved."
+    "message": "Priložena datoteka je spremljena."
   },
   "file": {
-    "message": "File"
+    "message": "Datoteka"
   },
   "selectFile": {
-    "message": "Select a file."
+    "message": "Odaberite datoteku."
   },
   "maxFileSize": {
-    "message": "Maximum file size is 500 MB."
+    "message": "Maksimalna veličina datoteke je 500 MB."
   },
   "updateKey": {
     "message": "You cannot use this feature until you update your encryption key."
@@ -563,10 +563,10 @@
     "message": "Continue"
   },
   "enterVerificationCodeApp": {
-    "message": "Enter the 6 digit verification code from your authenticator app."
+    "message": "Unesite 6-ocifreni verifikacioni kod iz Vaše aplikacije za potvrdu autentičnosti."
   },
   "enterVerificationCodeEmail": {
-    "message": "Enter the 6 digit verification code that was emailed to $EMAIL$.",
+    "message": "Unesite 6-ocifreni verifikacioni kod koji je E-Mailom poslan na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -575,7 +575,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "Verification email sent to $EMAIL$.",
+    "message": "Verifikacijski E-Mail poslan je na $EMAIL$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -584,130 +584,130 @@
     }
   },
   "rememberMe": {
-    "message": "Remember me"
+    "message": "Zapamti me"
   },
   "sendVerificationCodeEmailAgain": {
-    "message": "Send verification code email again"
+    "message": "Ponovo pošaljite E-Mail sa verifikacionim kodom"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Use another two-step login method"
+    "message": "Koristite drugi način prijavljivanja u dva koraka"
   },
   "insertYubiKey": {
-    "message": "Insert your YubiKey into your computer's USB port, then touch its button."
+    "message": "Ubaci svoj YubiKey u USB slot računara, a zatim dodirni njegovu tipku."
   },
   "insertU2f": {
-    "message": "Insert your security key into your computer's USB port. If it has a button, touch it."
+    "message": "Ubaci svoj sigurnosni ključ u USB slot kompjutera. Ako ima tipku, dodirni je."
   },
   "recoveryCodeDesc": {
-    "message": "Lost access to all of your two-factor providers? Use your recovery code to disable all two-factor providers from your account."
+    "message": "Izgubljen je pristup uređaju za dvostruku autentifikaciju? Koristi svoj kôd za oporavak za onemogućavanje svih pružatelja usluga dvostruke autentifikacije na tvom računu."
   },
   "recoveryCodeTitle": {
-    "message": "Recovery Code"
+    "message": "Kod za oporavak"
   },
   "authenticatorAppTitle": {
-    "message": "Authenticator App"
+    "message": "Aplikacija za autentifikaciju"
   },
   "authenticatorAppDesc": {
-    "message": "Use an authenticator app (such as Authy or Google Authenticator) to generate time-based verification codes.",
+    "message": "Koristi aplikaciju za autentifikaciju (npr. Authy ili Google Authentifikator) za generiranje kontrolnih kodova.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
-    "message": "YubiKey OTP Security Key"
+    "message": "YubiKey OTP sigurnosni ključ"
   },
   "yubiKeyDesc": {
-    "message": "Use a YubiKey to access your account. Works with YubiKey 4, 4 Nano, 4C, and NEO devices."
+    "message": "Koristi YubiKey za pristup svom računu. Radi s YubiKey 4, 4 Nano, 4C i NEO uređajima."
   },
   "duoDesc": {
-    "message": "Verify with Duo Security using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Potvrdi sa Duo Security pomoću aplikacije Duo Mobile, SMS-om, telefonskim pozivom ili U2F sigurnosnim ključem.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Verify with Duo Security for your organization using the Duo Mobile app, SMS, phone call, or U2F security key.",
+    "message": "Potvrdi sa Duo Security za svoju organizaciju pomoću aplikacije Duo Mobile, SMS-om, telefonskim pozivom ili U2F sigurnosnim ključem.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Use any WebAuthn enabled security key to access your account."
+    "message": "Koristi bilo koji WebAuthn omogućeni sigurnosni ključ za pristup svojem računu."
   },
   "emailTitle": {
-    "message": "Email"
+    "message": "E-Mail "
   },
   "emailDesc": {
-    "message": "Verification codes will be emailed to you."
+    "message": "Verifikacijski kodovi će biti poslani E-Mailom."
   },
   "loginUnavailable": {
-    "message": "Login Unavailable"
+    "message": "Prijava nije moguća"
   },
   "noTwoStepProviders": {
-    "message": "This account has two-step login enabled, however, none of the configured two-step providers are supported by this device."
+    "message": "Ovaj račun ima omogućenu prijavu u dva koraka, međutim, niti jedan od konfiguriranih pružatelja prijave u dva koraka ne podržava ovaj uređaj."
   },
   "noTwoStepProviders2": {
-    "message": "Please add additional providers that are better supported across devices (such as an authenticator app)."
+    "message": "Dodaj dodatne pružatelje koji su bolje podržani na uređajima (npr. aplikacija Autentifikator)."
   },
   "twoStepOptions": {
-    "message": "Two-step Login Options"
+    "message": "Opcije prijave u dva koraka"
   },
   "selfHostedEnvironment": {
-    "message": "Self-hosted Environment"
+    "message": "Vlastito hosting okruženje"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation."
+    "message": "Navedite osnovni URL vaše lokalne Bitwarden instalacije."
   },
   "customEnvironment": {
-    "message": "Custom Environment"
+    "message": "Prilagođeno okruženje"
   },
   "customEnvironmentFooter": {
-    "message": "For advanced users. You can specify the base URL of each service independently."
+    "message": "Za napredne korisnike. Samostalno možeš odrediti osnovni URL svake usluge."
   },
   "baseUrl": {
-    "message": "Server URL"
+    "message": "URL servera"
   },
   "apiUrl": {
-    "message": "API Server URL"
+    "message": "URL API servera"
   },
   "webVaultUrl": {
-    "message": "Web Vault Server URL"
+    "message": "URL servera web trezora"
   },
   "identityUrl": {
-    "message": "Identity Server URL"
+    "message": "URL identitet servera"
   },
   "notificationsUrl": {
-    "message": "Notifications Server URL"
+    "message": "URL servera obavijesti"
   },
   "iconsUrl": {
-    "message": "Icons Server URL"
+    "message": "URL adresa servera ikona"
   },
   "environmentSaved": {
-    "message": "The environment URLs have been saved."
+    "message": "URL adrese okruženja su spremljene."
   },
   "ok": {
-    "message": "Ok"
+    "message": "Uredu"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Da"
   },
   "no": {
-    "message": "No"
+    "message": "Ne"
   },
   "overwritePassword": {
-    "message": "Overwrite Password"
+    "message": "Prebriši lozinku"
   },
   "learnMore": {
-    "message": "Learn more"
+    "message": "Saznajte više"
   },
   "featureUnavailable": {
-    "message": "Feature Unavailable"
+    "message": "Funkcija nije dostupna"
   },
   "loggedOut": {
-    "message": "Logged out"
+    "message": "Odjavljen"
   },
   "loginExpired": {
-    "message": "Your login session has expired."
+    "message": "Sesija je istekla."
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Da li ste sigurni da želite da se odjavite?"
   },
   "logOut": {
     "message": "Log Out"
@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Password Generator"
   },
-  "emailUs": {
-    "message": "Email Us"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "Visit Our Website"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "File a Bug Report"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

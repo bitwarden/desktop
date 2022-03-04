@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Password generator"
   },
-  "emailUs": {
-    "message": "Email us"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "Visit our website"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "File a bug report"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organisation vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

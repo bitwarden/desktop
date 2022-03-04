@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Generador de contraseñas"
   },
-  "emailUs": {
-    "message": "Envíanos un correo"
+  "contactUs": {
+    "message": "Contáctenos"
   },
-  "visitOurWebsite": {
-    "message": "Visita nuestro sitio web"
+  "getHelp": {
+    "message": "Obtener ayuda"
   },
   "fileBugReport": {
     "message": "Reportar un fallo"
@@ -1791,16 +1791,16 @@
     "message": "No se puede iniciar sesión en más de 5 cuentas al mismo tiempo."
   },
   "accountPreferences": {
-    "message": "Preferences"
+    "message": "Preferencias"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "Ajustes de la aplicación (todas las cuentas)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Límite de cuentas alcanzado. Cierre sesión de una cuenta para añadir otra."
   },
   "settingsTitle": {
-    "message": "App settings for $EMAIL$",
+    "message": "Ajustes de la aplicación para $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1809,12 +1809,24 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "Cambiar cuenta"
   },
   "options": {
-    "message": "Options"
+    "message": "Opciones"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportando bóveda personal"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Solo se exportarán los elementos de la bóveda personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

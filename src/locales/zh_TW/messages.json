@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "密碼產生器"
   },
-  "emailUs": {
-    "message": "傳送電子郵件給我們"
+  "contactUs": {
+    "message": "聯絡我們"
   },
-  "visitOurWebsite": {
-    "message": "瀏覽我們的網站"
+  "getHelp": {
+    "message": "尋求協助"
   },
   "fileBugReport": {
     "message": "Bug 回報"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "您的登入階段已逾時，請返回並嘗試重新登入。"
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "匯出個人密碼庫"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "只會匯出關聯到 $EMAIL$ 的個人密碼庫。組織密碼庫的項目不包含在內。",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }
