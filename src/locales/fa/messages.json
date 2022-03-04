@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "تولید کننده کلمه عبور"
   },
-  "emailUs": {
-    "message": "به ما رایانامه بفرستید"
+  "contactUs": {
+    "message": "تماس با ما"
   },
-  "visitOurWebsite": {
-    "message": "از وب‌سایت ما دیدن کنید"
+  "getHelp": {
+    "message": "کمک گرفتن"
   },
   "fileBugReport": {
     "message": "گزارش یک مشکل"
@@ -1815,6 +1815,18 @@
     "message": "گزینه‌ها"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "زمان نشست شما به پایان رسید. لطفاً برگردید و دوباره وارد سیستم شوید."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "パスワード生成ツール"
   },
-  "emailUs": {
-    "message": "メールでのお問い合わせ"
+  "contactUs": {
+    "message": "お問い合わせ"
   },
-  "visitOurWebsite": {
-    "message": "ウェブサイトを開く"
+  "getHelp": {
+    "message": "ヘルプ"
   },
   "fileBugReport": {
     "message": "バグレポートを送信"
@@ -1815,6 +1815,18 @@
     "message": "オプション"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "セッションがタイムアウトしました。もう一度ログインしてください。"
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "個人保管庫のエクスポート"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "$EMAIL$ に関連付けられた個人用保管庫アイテムのみがエクスポートされます。組織用保管庫アイテムは含まれません。",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

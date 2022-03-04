@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Parooli genereerimine"
   },
-  "emailUs": {
-    "message": "Kirjuta meile"
+  "contactUs": {
+    "message": "Võta ühendust"
   },
-  "visitOurWebsite": {
-    "message": "Külasta meie kodulehte"
+  "getHelp": {
+    "message": "Klienditugi"
   },
   "fileBugReport": {
     "message": "Esita tarkvaraviga"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Sessioon on aegunud. Palun mine tagasi ja proovi uuesti sisse logida."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Personaalse hoidla eksportimine"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Ainult personaalsed $EMAIL$ alla kuuluvad kirjed eksportidakse. Organisatsiooni kirjeid ei ekspordita.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

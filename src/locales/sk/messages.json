@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Generátor hesla"
   },
-  "emailUs": {
-    "message": "Napíšte nám"
+  "contactUs": {
+    "message": "Kontaktujte nás"
   },
-  "visitOurWebsite": {
-    "message": "Navštívte našu stránku"
+  "getHelp": {
+    "message": "Získať pomoc"
   },
   "fileBugReport": {
     "message": "Nahlásiť chybu"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Vaša relácia vypršala. Vráťte sa späť a skúste sa prihlásiť znova."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportovanie osobného trezora"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Exportované budú iba položy osobného trezora spojené s $EMAIL$. Položky trezora organizácie nebudú zahrnuté.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Generatore di password"
   },
-  "emailUs": {
-    "message": "Inviaci un'email"
+  "contactUs": {
+    "message": "Contattaci"
   },
-  "visitOurWebsite": {
-    "message": "Visita il nostro sito"
+  "getHelp": {
+    "message": "Ottieni aiuto"
   },
   "fileBugReport": {
     "message": "Segnala un bug"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "La tua sessione è scaduta. Torna indietro e riprova ad accedere."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Esportazione cassaforte personale"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Saranno esportati solo gli oggetti della cassaforte personale associati a $EMAIL$. Gli oggetti della cassaforte dell'organizzazione non saranno inclusi.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }
