@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Passwort-Generator"
   },
-  "emailUs": {
-    "message": "Kontaktiere uns"
+  "contactUs": {
+    "message": "Kontakt"
   },
-  "visitOurWebsite": {
-    "message": "Unsere Website besuchen"
+  "getHelp": {
+    "message": "Hilfe erhalten"
   },
   "fileBugReport": {
     "message": "Einen Fehler melden"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Persönlichen Tresor exportieren"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

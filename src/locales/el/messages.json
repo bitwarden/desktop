@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Γεννήτρια Κωδικού"
   },
-  "emailUs": {
-    "message": "Στείλτε μας email"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "Επισκεφθείτε την ιστοσελίδα μας"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "Υποβολή Αναφοράς Σφάλματος"
@@ -1809,12 +1809,24 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "Εναλλαγή λογαριασμού"
   },
   "options": {
-    "message": "Options"
+    "message": "Ρυθμίσεις"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Έχει λήξει το χρονικό όριο. Παρακαλώ επιστρέψτε και προσπαθήστε να συνδεθείτε ξανά."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

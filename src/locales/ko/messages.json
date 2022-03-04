@@ -731,16 +731,16 @@
     "message": "불러오는 중..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "보관함 잠그기"
   },
   "passwordGenerator": {
     "message": "비밀번호 생성기"
   },
-  "emailUs": {
-    "message": "이메일 보내기"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "웹 사이트 방문"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "버그 보고서 첨부"
@@ -1755,7 +1755,7 @@
     "message": "하나 이상의 조직 정책이 개인 보관함을 내보내는 것을 제한하고 있습니다."
   },
   "addAccount": {
-    "message": "Add Account"
+    "message": "계정 추가"
   },
   "removeMasterPassword": {
     "message": "마스터 비밀번호 제거"
@@ -1785,22 +1785,22 @@
     "message": "키 제공자와 통신할 수 없습니다. 다시 시도해보세요."
   },
   "lockAllVaults": {
-    "message": "Lock All Vaults"
+    "message": "모든 보관함 잠그기"
   },
   "accountLimitReached": {
-    "message": "No more than 5 accounts may be logged in at the same time."
+    "message": "5개 이상의 계정은 동시에 로그인할 수 없습니다."
   },
   "accountPreferences": {
-    "message": "Preferences"
+    "message": "설정"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "앱 설정 (모든 계정)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "계정 개수 제한에 도달했습니다. 추가로 로그인하려면 다른 계정을 로그아웃 해주세요."
   },
   "settingsTitle": {
-    "message": "App settings for $EMAIL$",
+    "message": "$EMAIL$의 앱 설정",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1809,12 +1809,24 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "계정 전환"
   },
   "options": {
-    "message": "Options"
+    "message": "선택"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "세션 시간이 초과되었습니다. 다시 로그인해주세요."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Създаване на пароли"
   },
-  "emailUs": {
-    "message": "Пишете ни"
+  "contactUs": {
+    "message": "Свържете се с нас"
   },
-  "visitOurWebsite": {
-    "message": "Посетете нашия сайт"
+  "getHelp": {
+    "message": "Помощ"
   },
   "fileBugReport": {
     "message": "Съобщаване за грешка"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Сесията Ви изтече. Моля, върнете се назад и се опитайте да влезете отново."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Изнасяне на личния трезор"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Ще бъдат изнесени само записите от личния трезор свързан с $EMAIL$. Записите в трезора на организацията няма да бъдат включени.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

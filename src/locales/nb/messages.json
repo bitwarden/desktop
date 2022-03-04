@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Passordgenerator"
   },
-  "emailUs": {
-    "message": "Send oss en e-post"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "Besøk nettsidene våre"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "Legg inn en feilrapport"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

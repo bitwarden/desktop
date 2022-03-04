@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "പാസ്സ്‌വേഡ് സൃഷ്ടാവ്"
   },
-  "emailUs": {
-    "message": "ഞങ്ങളെ ഇമെയിൽ ചെയ്യുക"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "ഞങ്ങളുടെ വെബ്സൈറ്റ് സന്ദർശിക്കുക"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "ബഗ്ഗ്‌ റിപ്പോർട്ട് ഫയൽ ചെയ്യുക"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Generator hasła"
   },
-  "emailUs": {
-    "message": "Napisz do nas"
+  "contactUs": {
+    "message": "Skontaktuj się z nami"
   },
-  "visitOurWebsite": {
-    "message": "Odwiedź naszą stronę"
+  "getHelp": {
+    "message": "Uzyskaj pomoc"
   },
   "fileBugReport": {
     "message": "Zgłoś błąd"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Twoja sesja wygasła. Zaloguj się ponownie."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Eksportowanie osobistego sejfu"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Tylko osobiste elementy sejfu powiązane z adresem $EMAIL$ zostaną wyeksportowane. Elementy sejfu należące do organizacji nie będą uwzględnione.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

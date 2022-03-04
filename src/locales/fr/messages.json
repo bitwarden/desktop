@@ -736,11 +736,11 @@
   "passwordGenerator": {
     "message": "Générateur de mot de passe"
   },
-  "emailUs": {
+  "contactUs": {
     "message": "Nous contacter"
   },
-  "visitOurWebsite": {
-    "message": "Visitez notre site web"
+  "getHelp": {
+    "message": "Obtenir de l'aide"
   },
   "fileBugReport": {
     "message": "Envoyer un rapport de bug"
@@ -1816,5 +1816,17 @@
   },
   "sessionTimeout": {
     "message": "Votre session a expiré. Veuillez revenir en arrière et essayer de vous connecter à nouveau."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Export du coffre personnel"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Seuls les éléments du coffre personnel associé à l'adresse e-mail $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }
