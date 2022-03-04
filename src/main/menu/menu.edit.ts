@@ -3,7 +3,7 @@ import { MenuItemConstructorOptions } from "electron";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 
-import { IMenubarMenu } from "./menubar";
+import { IMenubarMenu } from "../menubar";
 
 export class EditMenu implements IMenubarMenu {
   readonly id: string = "editMenu";

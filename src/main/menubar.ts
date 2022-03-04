@@ -6,15 +6,15 @@ import { UpdaterMain } from "jslib-electron/updater.main";
 import { isMac } from "jslib-electron/utils";
 import { WindowMain } from "jslib-electron/window.main";
 
-import { AboutMenu } from "./menu.about";
-import { AccountMenu } from "./menu.account";
-import { BitwardenMenu } from "./menu.bitwarden";
-import { EditMenu } from "./menu.edit";
-import { FileMenu } from "./menu.file";
-import { HelpMenu } from "./menu.help";
-import { MenuUpdateRequest } from "./menu.updater";
-import { ViewMenu } from "./menu.view";
-import { WindowMenu } from "./menu.window";
+import { AboutMenu } from "./menu/menu.about";
+import { AccountMenu } from "./menu/menu.account";
+import { BitwardenMenu } from "./menu/menu.bitwarden";
+import { EditMenu } from "./menu/menu.edit";
+import { FileMenu } from "./menu/menu.file";
+import { HelpMenu } from "./menu/menu.help";
+import { MenuUpdateRequest } from "./menu/menu.updater";
+import { ViewMenu } from "./menu/menu.view";
+import { WindowMenu } from "./menu/menu.window";
 
 export interface IMenubarMenu {
   id: string;

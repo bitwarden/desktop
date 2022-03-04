@@ -3,8 +3,9 @@ import { shell, MenuItemConstructorOptions } from "electron";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { isMacAppStore, isWindowsStore } from "jslib-electron/utils";
 
+import { IMenubarMenu } from "../menubar";
+
 import { AboutMenu } from "./menu.about";
-import { IMenubarMenu } from "./menubar";
 
 export class HelpMenu implements IMenubarMenu {
   readonly id: string = "help";

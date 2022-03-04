@@ -1,7 +1,6 @@
 #[macro_use]
 extern crate napi_derive;
 
-mod biometric;
 mod password;
 
 #[allow(dead_code)]
