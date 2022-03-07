@@ -7,8 +7,7 @@ pub async fn get_password(service: &str, account: &str) -> Result<String> {
         Some(&get_schema()),
         build_attributes(service, account),
         gio::Cancellable::NONE,
-    )
-    .map_err(anyhow::Error::msg)?;
+    )?;
 
     match res {
         Some(s) => Ok(String::from(s)),
@@ -21,24 +20,24 @@ pub async fn get_password_keytar(service: &str, account: &str) -> Result<String>
 }
 
 pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
-    password_store_sync(
+    let result = password_store_sync(
         Some(&get_schema()),
         build_attributes(service, account),
         Some(&libsecret::COLLECTION_DEFAULT),
         &format!("{}/{}", service, account),
         password,
         gio::Cancellable::NONE,
-    )
-    .map_err(anyhow::Error::msg)
+    )?;
+    Ok(result)
 }
 
 pub async fn delete_password(service: &str, account: &str) -> Result<()> {
-    password_clear_sync(
+    let result = password_clear_sync(
         Some(&get_schema()),
         build_attributes(service, account),
         gio::Cancellable::NONE,
-    )
-    .map_err(anyhow::Error::msg)
+    )?;
+    Ok(result)
 }
 
 fn get_schema() -> Schema {
