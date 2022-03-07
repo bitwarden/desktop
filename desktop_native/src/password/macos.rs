@@ -4,7 +4,7 @@ use security_framework::passwords::{
 };
 
 pub async fn get_password(service: &str, account: &str) -> Result<String> {
-    let result = get_generic_password(&service, &account)?;
+    let result = String::from_utf8(get_generic_password(&service, &account)?)?;
     Ok(result)
 }
 
@@ -18,7 +18,7 @@ pub async fn set_password(service: &str, account: &str, password: &str) -> Resul
 }
 
 pub async fn delete_password(service: &str, account: &str) -> Result<()> {
-    let result = delete_generic_password(&service, &account);
+    let result = delete_generic_password(&service, &account)?;
     Ok(result)
 }
 
