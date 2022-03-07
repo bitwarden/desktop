@@ -4,9 +4,8 @@ use security_framework::passwords::{
 };
 
 pub async fn get_password(service: &str, account: &str) -> Result<String> {
-    get_generic_password(&service, &account)
-        .map_err(anyhow::Error::msg)
-        .and_then(|r| String::from_utf8(r).map_err(anyhow::Error::msg))
+    let result = get_generic_password(&service, &account)?;
+    Ok(result)
 }
 
 pub async fn get_password_keytar(service: &str, account: &str) -> Result<String> {
@@ -14,11 +13,13 @@ pub async fn get_password_keytar(service: &str, account: &str) -> Result<String>
 }
 
 pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
-    set_generic_password(&service, &account, password.as_bytes()).map_err(anyhow::Error::msg)
+    let result = set_generic_password(&service, &account, password.as_bytes())?;
+    Ok(result)
 }
 
 pub async fn delete_password(service: &str, account: &str) -> Result<()> {
-    delete_generic_password(&service, &account).map_err(anyhow::Error::msg)
+    let result = delete_generic_password(&service, &account);
+    Ok(result)
 }
 
 #[cfg(test)]
