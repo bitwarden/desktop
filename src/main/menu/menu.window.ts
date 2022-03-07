@@ -5,7 +5,7 @@ import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { isMac } from "jslib-electron/utils";
 import { WindowMain } from "jslib-electron/window.main";
 
-import { IMenubarMenu } from "../menubar";
+import { IMenubarMenu } from "./menubar";
 
 export class WindowMenu implements IMenubarMenu {
   readonly id: string;

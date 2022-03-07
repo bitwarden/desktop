@@ -5,10 +5,9 @@ import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { isMac, isMacAppStore } from "jslib-electron/utils";
 
-import { IMenubarMenu } from "../menubar";
-
 import { FirstMenu } from "./menu.first";
 import { MenuAccount } from "./menu.updater";
+import { IMenubarMenu } from "./menubar";
 
 export class FileMenu extends FirstMenu implements IMenubarMenu {
   readonly id: string = "fileMenu";

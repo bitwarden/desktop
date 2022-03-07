@@ -4,7 +4,7 @@ import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { isMacAppStore, isWindowsStore } from "jslib-electron/utils";
 
-import { IMenubarMenu } from "../menubar";
+import { IMenubarMenu } from "./menubar";
 
 export class AccountMenu implements IMenubarMenu {
   readonly id: string = "accountMenu";

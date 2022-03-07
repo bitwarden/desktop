@@ -3,21 +3,20 @@ extern crate napi_derive;
 
 mod password;
 
-#[allow(dead_code)]
 #[napi]
-mod passwords {
+pub mod passwords {
     /// Fetch the stored password from the keychain.
     #[napi]
     pub async fn get_password(service: String, account: String) -> napi::Result<String> {
-        super::password::get_password(service.as_str(), account.as_str())
+        super::password::get_password(&service, &account)
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
-    /// Fetch the stored password from the keychain.
+    /// Fetch the stored password from the keychain that was stored with Keytar.
     #[napi]
     pub async fn get_password_keytar(service: String, account: String) -> napi::Result<String> {
-        super::password::get_password_keytar(service.as_str(), account.as_str())
+        super::password::get_password_keytar(&service, &account)
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
@@ -29,7 +28,7 @@ mod passwords {
         account: String,
         password: String,
     ) -> napi::Result<()> {
-        super::password::set_password(service.as_str(), account.as_str(), password.as_str())
+        super::password::set_password(&service, &account, &password)
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
@@ -37,7 +36,7 @@ mod passwords {
     /// Delete the stored password from the keychain.
     #[napi]
     pub async fn delete_password(service: String, account: String) -> napi::Result<()> {
-        super::password::delete_password(service.as_str(), account.as_str())
+        super::password::delete_password(&service, &account)
             .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }

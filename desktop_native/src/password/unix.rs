@@ -2,7 +2,7 @@ use anyhow::{anyhow, Result};
 use libsecret::{password_clear_sync, password_lookup_sync, password_store_sync, Schema};
 use std::collections::HashMap;
 
-pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
+pub async fn get_password(service: &str, account: &str) -> Result<String> {
     let res = password_lookup_sync(
         Some(&get_schema()),
         build_attributes(service, account),
@@ -16,7 +16,7 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
     }
 }
 
-pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
+pub async fn get_password_keytar(service: &str, account: &str) -> Result<String> {
     get_password(service, account)
 }
 
@@ -25,7 +25,7 @@ pub async fn set_password(service: &str, account: &str, password: &str) -> Resul
         Some(&get_schema()),
         build_attributes(service, account),
         Some(&libsecret::COLLECTION_DEFAULT),
-        format!("{}/{}", service, account).as_str(),
+        &format!("{}/{}", service, account),
         password,
         gio::Cancellable::NONE,
     )

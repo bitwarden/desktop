@@ -3,13 +3,13 @@ use security_framework::passwords::{
     delete_generic_password, get_generic_password, set_generic_password,
 };
 
-pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
+pub async fn get_password(service: &str, account: &str) -> Result<String> {
     get_generic_password(&service, &account)
         .map_err(anyhow::Error::msg)
         .and_then(|r| String::from_utf8(r).map_err(anyhow::Error::msg))
 }
 
-pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
+pub async fn get_password_keytar(service: &str, account: &str) -> Result<String> {
     get_password(service, account)
 }
 
