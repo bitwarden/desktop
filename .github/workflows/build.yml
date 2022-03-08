@@ -673,7 +673,7 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-        run: npm run pack:mac && npm run pack:mac:arm64
+        run: npm run pack:mac:full
 
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3

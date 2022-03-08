@@ -40,6 +40,7 @@
     "clean:l10n": "git push origin --delete l10n_master",
     "pack:dir": "npm run clean:dist && electron-builder --dir -p never",
     "pack:lin": "npm run clean:dist && electron-builder --linux --x64 -p never",
+    "pack:mac:full": "npm run clean:dist && electron-builder --mac --universal -p never && electron-builder --mac --arm64 -p never",
     "pack:mac": "npm run clean:dist && electron-builder --mac --universal -p never",
     "pack:mac:arm64": "npm run clean:dist && electron-builder --mac --arm64 -p never",
     "pack:mac:mas": "npm run clean:dist && electron-builder --mac mas --universal -p never",
