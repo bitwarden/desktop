@@ -673,7 +673,7 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-        run: npm run pack:mac
+        run: npm run pack:mac && npm run pack:mac:arm64
 
       - name: Upload .zip artifact
         uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
@@ -694,6 +694,27 @@ jobs:
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
           path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-universal.dmg.blockmap
+          if-no-files-found: error
+
+      - name: Upload .zip artifact (arm64)
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-mac.zip
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-mac.zip
+          if-no-files-found: error
+
+      - name: Upload .dmg artifact (arm64)
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.dmg
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.dmg
+          if-no-files-found: error
+
+      - name: Upload .dmg blockmap artifact (arm64)
+        uses: actions/upload-artifact@ee69f02b3dfdecd58bb31b4d133da38ba6fe3700  # v2.2.3
+        with:
+          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.dmg.blockmap
+          path: ./dist/Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.dmg.blockmap
           if-no-files-found: error
 
       - name: Upload latest auto-update artifact
