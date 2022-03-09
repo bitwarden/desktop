@@ -57,8 +57,8 @@ jobs:
         run: |
           SAFARI_REF=master
 
-          if [[ "$GITHUB_REF" == "refs/heads/hotfix" ]]; then
-              SAFARI_REF=hotfix
+          if [[ "$GITHUB_REF" == "refs/heads/hotfix-rc" ]]; then
+              SAFARI_REF=hotfix-rc
           elif [[ "$GITHUB_REF" == "refs/heads/rc" ]]; then
               SAFARI_REF=rc
           fi
@@ -75,7 +75,7 @@ jobs:
             echo "::set-output name=rc_branch_exists::0"
           fi
 
-          if [[ $(git ls-remote --heads origin hotfix) ]]; then
+          if [[ $(git ls-remote --heads origin hotfix-rc) ]]; then
             echo "::set-output name=hotfix_branch_exists::1"
           else
             echo "::set-output name=hotfix_branch_exists::0"
@@ -877,7 +877,7 @@ jobs:
               && needs.setup.outputs.rc_branch_exists == 0
               && needs.setup.outputs.hotfix_branch_exists == 0)
             || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
-            || github.ref == 'refs/heads/hotfix'
+            || github.ref == 'refs/heads/hotfix-rc'
         run: npm run upload:mas
 
 
