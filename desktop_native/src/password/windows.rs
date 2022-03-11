@@ -10,7 +10,7 @@ use windows::Win32::{
 
 const CRED_FLAGS_NONE: u32 = 0;
 
-pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
+pub fn get_password<'a>(service: &str, account: &str) -> Result<String> {
     let target_name = U16CString::from_str(target_name(service, account))?;
 
     let mut credential: *mut CREDENTIALW = std::ptr::null_mut();
@@ -45,7 +45,7 @@ pub async fn get_password<'a>(service: &str, account: &str) -> Result<String> {
 }
 
 // Remove this after sufficient releases
-pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
+pub fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
     let target_name = U16CString::from_str(target_name(service, account))?;
 
     let mut credential: *mut CREDENTIALW = std::ptr::null_mut();
@@ -79,7 +79,7 @@ pub async fn get_password_keytar<'a>(service: &str, account: &str) -> Result<Str
     Ok(String::from(password))
 }
 
-pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
+pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
     let target_name = U16CString::from_str(target_name(service, account))?;
     let user_name = U16CString::from_str(account)?;
     let last_written = FILETIME {
@@ -117,7 +117,7 @@ pub async fn set_password(service: &str, account: &str, password: &str) -> Resul
     Ok(())
 }
 
-pub async fn delete_password(service: &str, account: &str) -> Result<()> {
+pub fn delete_password(service: &str, account: &str) -> Result<()> {
     let target_name = U16CString::from_str(target_name(service, account))?;
 
     unsafe {
@@ -140,19 +140,14 @@ fn target_name(service: &str, account: &str) -> String {
 mod tests {
     use super::*;
 
-    #[tokio::test]
-    async fn test() {
-        set_password("BitwardenTest", "BitwardenTest", "Random")
-            .await
-            .unwrap();
+    #[test]
+    fn test() {
+        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest"););
+        set_password("BitwardenTest", "BitwardenTest", "Random").unwrap();
         assert_eq!(
             "Random",
-            get_password("BitwardenTest", "BitwardenTest")
-                .await
-                .unwrap()
+            get_password("BitwardenTest", "BitwardenTest").unwrap()
         );
-        delete_password("BitwardenTest", "BitwardenTest")
-            .await
-            .unwrap();
+        delete_password("BitwardenTest", "BitwardenTest").unwrap();
     }
 }

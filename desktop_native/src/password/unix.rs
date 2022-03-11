@@ -2,7 +2,7 @@ use anyhow::{anyhow, Result};
 use libsecret::{password_clear_sync, password_lookup_sync, password_store_sync, Schema};
 use std::collections::HashMap;
 
-pub async fn get_password(service: &str, account: &str) -> Result<String> {
+pub fn get_password(service: &str, account: &str) -> Result<String> {
     let res = password_lookup_sync(
         Some(&get_schema()),
         build_attributes(service, account),
@@ -15,11 +15,11 @@ pub async fn get_password(service: &str, account: &str) -> Result<String> {
     }
 }
 
-pub async fn get_password_keytar(service: &str, account: &str) -> Result<String> {
-    get_password(service, account).await
+pub fn get_password_keytar(service: &str, account: &str) -> Result<String> {
+    get_password(service, account)
 }
 
-pub async fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
+pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> {
     let result = password_store_sync(
         Some(&get_schema()),
         build_attributes(service, account),
@@ -31,7 +31,7 @@ pub async fn set_password(service: &str, account: &str, password: &str) -> Resul
     Ok(result)
 }
 
-pub async fn delete_password(service: &str, account: &str) -> Result<()> {
+pub fn delete_password(service: &str, account: &str) -> Result<()> {
     let result = password_clear_sync(
         Some(&get_schema()),
         build_attributes(service, account),
@@ -64,19 +64,14 @@ fn build_attributes<'a>(service: &'a str, account: &'a str) -> HashMap<&'a str, 
 mod tests {
     use super::*;
 
-    #[tokio::test]
-    async fn test() {
-        set_password("BitwardenTest", "BitwardenTest", "Random")
-            .await
-            .unwrap();
+    #[test]
+    fn test() {
+        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest"););
+        set_password("BitwardenTest", "BitwardenTest", "Random").unwrap();
         assert_eq!(
             "Random",
-            get_password("BitwardenTest", "BitwardenTest")
-                .await
-                .unwrap()
+            get_password("BitwardenTest", "BitwardenTest").unwrap()
         );
-        delete_password("BitwardenTest", "BitwardenTest")
-            .await
-            .unwrap();
+        delete_password("BitwardenTest", "BitwardenTest").unwrap();
     }
 }

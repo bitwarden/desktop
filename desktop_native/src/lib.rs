@@ -9,7 +9,6 @@ pub mod passwords {
     #[napi]
     pub async fn get_password(service: String, account: String) -> napi::Result<String> {
         super::password::get_password(&service, &account)
-            .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -17,7 +16,6 @@ pub mod passwords {
     #[napi]
     pub async fn get_password_keytar(service: String, account: String) -> napi::Result<String> {
         super::password::get_password_keytar(&service, &account)
-            .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -29,7 +27,6 @@ pub mod passwords {
         password: String,
     ) -> napi::Result<()> {
         super::password::set_password(&service, &account, &password)
-            .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -37,7 +34,6 @@ pub mod passwords {
     #[napi]
     pub async fn delete_password(service: String, account: String) -> napi::Result<()> {
         super::password::delete_password(&service, &account)
-            .await
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
