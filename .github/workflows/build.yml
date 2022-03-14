@@ -532,7 +532,10 @@ jobs:
   macos-package-github:
     name: MacOS Package GitHub Release Assets
     runs-on: macos-11
-    needs: [setup, macos-build]
+    needs:
+      - setup
+      - macos-build
+      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -718,7 +721,10 @@ jobs:
   macos-package-mas:
     name: MacOS Package Prod Release Asset
     runs-on: macos-11
-    needs: [setup, macos-build]
+    needs:
+      - setup
+      - macos-build
+      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -896,7 +902,10 @@ jobs:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
     runs-on: macos-11
-    needs: [setup, macos-build]
+    needs:
+      - setup
+      - macos-build
+      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -1108,6 +1117,7 @@ jobs:
     needs:
       - cloc
       - setup
+      - lint
       - linux
       - windows
       - macos-build
@@ -1120,6 +1130,7 @@ jobs:
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
+          LINT_STATUS: ${{ needs.lint.result }}
           LINUX_STATUS: ${{ needs.linux.result }}
           WINDOWS_STATUS: ${{ needs.windows.result }}
           MACOS_BUILD_STATUS: ${{ needs.macos-build.result }}
@@ -1130,6 +1141,8 @@ jobs:
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$LINT_STATUS" = "failure" ]; then
               exit 1
           elif [ "$LINUX_STATUS" = "failure" ]; then
               exit 1
