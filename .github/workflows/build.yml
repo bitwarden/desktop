@@ -95,7 +95,9 @@ jobs:
         uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
         with:
           path: '~/.npm'
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - name: Install Node dependencies
         run: npm ci
