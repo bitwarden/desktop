@@ -514,8 +514,10 @@ jobs:
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+        run: |
+          npm install
+          npm run dist:safari
+        working-directory: dist-safari/browser
 
 
   macos-package-github:
@@ -660,12 +662,15 @@ jobs:
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+        run: |
+          npm install
+          npm run dist:safari
+        working-directory: dist-safari/browser
 
       - name: Load Safari extension for .dmg
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -copyonly
+        run: |
+          mkdir PlugIns
+          cp -r dist-safari/browser/dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application (dist)
         env:
@@ -844,12 +849,15 @@ jobs:
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+        run: |
+          npm install
+          npm run dist:safari
+        working-directory: dist-safari/browser
 
       - name: Load Safari extension for App Store
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -mas -copyonly
+        run: |
+          mkdir PlugIns
+          cp -r dist-safari/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application for App Store
         run: npm run pack:mac:mas
@@ -1020,12 +1028,15 @@ jobs:
 
       - name: Build Safari extension
         if: steps.safari-cache.outputs.cache-hit != 'true'
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -skipcheckout -skipoutcopy
+        run: |
+          npm install
+          npm run dist:safari
+        working-directory: dist-safari/browser
 
       - name: Load Safari extension for App Store
-        shell: pwsh
-        run: ./scripts/safari-build.ps1 -masdev -copyonly
+        run: |
+          mkdir PlugIns
+          cp -r dist-safari/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build dev application for App Store
         run: npm run pack:mac:masdev
