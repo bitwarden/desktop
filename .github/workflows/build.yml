@@ -83,6 +83,28 @@ jobs:
             echo "::set-output name=hotfix_branch_exists::0"
           fi
 
+  lint:
+    name: Lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
+
+      - name: Cache npm
+        id: npm-cache
+        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed
+        with:
+          path: '~/.npm'
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
 
   linux:
     name: Linux Build
@@ -131,9 +153,6 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
-
-      - name: Run linter
-        run: npm run lint
 
       - name: Build application
         run: npm run dist:lin
@@ -243,9 +262,6 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
-
-      - name: Run linter
-        run: npm run lint
 
       - name: Build & Sign (dev)
         env:
@@ -498,9 +514,6 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint
-
       - name: Build application (dev)
         run: npm run build
 
@@ -523,7 +536,10 @@ jobs:
   macos-package-github:
     name: MacOS Package GitHub Release Assets
     runs-on: macos-11
-    needs: [setup, macos-build]
+    needs:
+      - setup
+      - macos-build
+      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -709,7 +725,10 @@ jobs:
   macos-package-mas:
     name: MacOS Package Prod Release Asset
     runs-on: macos-11
-    needs: [setup, macos-build]
+    needs:
+      - setup
+      - macos-build
+      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -887,7 +906,10 @@ jobs:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
     runs-on: macos-11
-    needs: [setup, macos-build]
+    needs:
+      - setup
+      - macos-build
+      - lint
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
     steps:
@@ -1099,6 +1121,7 @@ jobs:
     needs:
       - cloc
       - setup
+      - lint
       - linux
       - windows
       - macos-build
@@ -1111,6 +1134,7 @@ jobs:
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
+          LINT_STATUS: ${{ needs.lint.result }}
           LINUX_STATUS: ${{ needs.linux.result }}
           WINDOWS_STATUS: ${{ needs.windows.result }}
           MACOS_BUILD_STATUS: ${{ needs.macos-build.result }}
@@ -1121,6 +1145,8 @@ jobs:
           if [ "$CLOC_STATUS" = "failure" ]; then
               exit 1
           elif [ "$SETUP_STATUS" = "failure" ]; then
+              exit 1
+          elif [ "$LINT_STATUS" = "failure" ]; then
               exit 1
           elif [ "$LINUX_STATUS" = "failure" ]; then
               exit 1
