@@ -108,7 +108,8 @@ jobs:
 
   linux:
     name: Linux Build
-    runs-on: ubuntu-20.04
+    # Moving down a version for testing
+    runs-on: ubuntu-18.04
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
