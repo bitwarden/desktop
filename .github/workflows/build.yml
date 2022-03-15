@@ -671,9 +671,6 @@ jobs:
         run: |
           mkdir PlugIns
           cp -r dist-safari/browser/dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
-          ls -alh dist-safari/browser/dist/Safari/dmg/build/Release/safari.appex
-          ls -alh PlugIns
-          ls -alh PlugIns/safari.appex
 
       - name: Build application (dist)
         env:
@@ -860,7 +857,7 @@ jobs:
       - name: Load Safari extension for App Store
         run: |
           mkdir PlugIns
-          cp dist-safari/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
+          cp -r dist-safari/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application for App Store
         run: npm run pack:mac:mas
@@ -1039,7 +1036,7 @@ jobs:
       - name: Load Safari extension for App Store
         run: |
           mkdir PlugIns
-          cp dist-safari/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
+          cp -r dist-safari/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build dev application for App Store
         run: npm run pack:mac:masdev
