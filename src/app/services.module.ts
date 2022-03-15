@@ -184,8 +184,7 @@ export function initFactory(
           secureStorageService,
           logService,
           stateMigrationService,
-          new StateFactory(GlobalState, Account),
-          false // Do not use disk caching because this will get out of sync with the main process service
+          new StateFactory(GlobalState, Account)
         ),
       deps: [
         StorageServiceAbstraction,
