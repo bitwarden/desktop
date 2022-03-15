@@ -284,7 +284,7 @@ jobs:
 
           $checksum = checksum -t sha256 ./dist/chocolatey/Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           $chocoInstall = "./dist/chocolatey/tools/chocolateyinstall.ps1"
-          (Get-Content $chocoInstall).replace('__version__', "$env:_PACKAGE_VERSION").replace('__checksum__', $checksum) `| Set-Content $chocoInstall
+          (Get-Content $chocoInstall).replace('__version__', "$env:_PACKAGE_VERSION").replace('__checksum__', $checksum) | Set-Content $chocoInstall
           choco pack ./dist/chocolatey/bitwarden.nuspec --version "$env:_PACKAGE_VERSION" --out ./dist/chocolatey
 
       - name: Upload portable exe artifact
