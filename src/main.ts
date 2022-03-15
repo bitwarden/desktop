@@ -83,7 +83,8 @@ export class Main {
       null,
       this.logService,
       null,
-      new StateFactory(GlobalState, Account)
+      new StateFactory(GlobalState, Account),
+      false // Do not use disk caching because this will get out of sync with the renderer service
     );
 
     this.windowMain = new WindowMain(
