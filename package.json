@@ -116,6 +116,7 @@
     "cozy-doctypes": "^1.82.2",
     "cozy-flags": "^2.7.2",
     "cozy-harvest-lib": "^6.7.3",
+    "cozy-intent": "^1.13.2",
     "cozy-keys-lib": "^3.9.1",
     "cozy-realtime": "^3.13.0",
     "cozy-sharing": "3.12.1",
