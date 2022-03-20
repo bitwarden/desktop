@@ -39,6 +39,7 @@ import { CipherType } from "jslib-common/enums/cipherType";
 
 import { MenuUpdateRequest } from "src/main/menu.updater";
 
+import { BugReportComponent } from "./accounts/bug-report.component";
 import { PremiumComponent } from "./accounts/premium.component";
 import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./vault/export.component";
@@ -86,6 +87,7 @@ export class AppComponent implements OnInit {
   folderAddEditModalRef: ViewContainerRef;
   @ViewChild("appPasswordGenerator", { read: ViewContainerRef, static: true })
   passwordGeneratorModalRef: ViewContainerRef;
+  @ViewChild("bugReport", { read: ViewContainerRef, static: true }) bugReportRef: ViewContainerRef;
 
   loading = false;
 
@@ -350,6 +352,9 @@ export class AppComponent implements OnInit {
             break;
           case "systemIdle":
             await this.checkForSystemTimeout(systemTimeoutOptions.onIdle);
+            break;
+          case "openBugReport":
+            await this.openModal<BugReportComponent>(BugReportComponent, this.bugReportRef);
             break;
         }
       });

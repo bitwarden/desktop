@@ -1,6 +1,7 @@
 import { shell, MenuItemConstructorOptions } from "electron";
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { isMacAppStore, isWindowsStore } from "jslib-electron/utils";
 
 import { AboutMenu } from "./menu.about";
@@ -35,11 +36,18 @@ export class HelpMenu implements IMenubarMenu {
   }
 
   private readonly _i18nService: I18nService;
+  private readonly _messagingService;
   private readonly _webVaultUrl: string;
   private readonly _aboutMenu: AboutMenu;
 
-  constructor(i18nService: I18nService, webVaultUrl: string, aboutMenu: AboutMenu) {
+  constructor(
+    i18nService: I18nService,
+    messagingService: MessagingService,
+    webVaultUrl: string,
+    aboutMenu: AboutMenu
+  ) {
     this._i18nService = i18nService;
+    this._messagingService = messagingService;
     this._webVaultUrl = webVaultUrl;
     this._aboutMenu = aboutMenu;
   }
@@ -64,7 +72,7 @@ export class HelpMenu implements IMenubarMenu {
     return {
       id: "fileBugReport",
       label: this.localize("fileBugReport"),
-      click: () => shell.openExternal("https://github.com/bitwarden/desktop/issues"),
+      click: () => this._messagingService.send("openBugReport"),
     };
   }
 

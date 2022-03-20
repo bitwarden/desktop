@@ -76,6 +76,7 @@ export class Menubar {
       new WindowMenu(i18nService, messagingService, windowMain),
       new HelpMenu(
         i18nService,
+        messagingService,
         webVaultUrl,
         new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain)
       ),
