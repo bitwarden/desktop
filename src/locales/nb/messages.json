@@ -737,10 +737,10 @@
     "message": "Passordgenerator"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Kontakt oss"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Få hjelp"
   },
   "fileBugReport": {
     "message": "Legg inn en feilrapport"
@@ -1812,13 +1812,13 @@
     "message": "Bytt konto"
   },
   "options": {
-    "message": "Options"
+    "message": "Alternativer"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Økten ble tidsavbrutt. Vennligst gå tilbake og prøv å logge inn på nytt."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Eksporter personlig hvelv"
   },
   "exportingPersonalVaultDescription": {
     "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",

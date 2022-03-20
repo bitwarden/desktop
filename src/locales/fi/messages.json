@@ -1594,7 +1594,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Yksityiset muistiinpanot tästä Sendistä.",
+    "message": "Yksityisiä merkintöjä tästä Sendistä.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
