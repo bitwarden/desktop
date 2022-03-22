@@ -81,7 +81,6 @@
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
-      "minimumSystemVersion": "10.14",
       "darkModeSupport": true,
       "gatekeeperAssess": false,
       "hardenedRuntime": true,
@@ -186,7 +185,8 @@
     "mas": {
       "entitlements": "resources/entitlements.mas.plist",
       "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
-      "hardenedRuntime": false
+      "hardenedRuntime": false,
+      "minimumSystemVersion": "10.14"
     },
     "nsisWeb": {
       "oneClick": false,
