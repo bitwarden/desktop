@@ -4,6 +4,9 @@ const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { AngularWebpackPlugin } = require("@ngtools/webpack");
+const TerserPlugin = require("terser-webpack-plugin");
+
+const NODE_ENV = process.env.NODE_ENV == null ? "development" : process.env.NODE_ENV;
 
 const common = {
   module: {
@@ -39,7 +42,7 @@ const common = {
 
 const renderer = {
   mode: "production",
-  devtool: false,
+  devtool: "source-map",
   target: "electron-renderer",
   node: {
     __dirname: false,
@@ -48,7 +51,19 @@ const renderer = {
     "app/main": "./src/app/main.ts",
   },
   optimization: {
-    minimize: false,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          // Replicate Angular CLI behaviour
+          compress: {
+            global_defs: {
+              ngDevMode: false,
+              ngI18nClosureMode: false,
+            },
+          },
+        },
+      }),
+    ],
     splitChunks: {
       cacheGroups: {
         commons: {
