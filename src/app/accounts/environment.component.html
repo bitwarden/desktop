@@ -28,7 +28,8 @@
             <button
               type="button"
               (click)="toggleCustom()"
-              appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+              appA11yTitle="{{ 'customEnvironment' | i18n }}"
+              [attr.aria-expanded]="showCustom"
             >
               <i class="bwi bwi-plus-square" [hidden]="showCustom" aria-hidden="true"></i>
               <i class="bwi bwi-minus-square" [hidden]="!showCustom" aria-hidden="true"></i>
