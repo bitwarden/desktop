@@ -40,7 +40,7 @@ export class FirstMenu {
       id: "checkForUpdates",
       label: this.localize("checkForUpdates"),
       click: (menuItem) => this.checkForUpdate(menuItem),
-      visible: !isMacAppStore() && !isWindowsStore() && !isSnapStore(),
+      visible: isMacAppStore() == undefined && !isWindowsStore() && !isSnapStore(),
     };
   }
 
