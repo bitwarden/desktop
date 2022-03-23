@@ -3,44 +3,86 @@
     <h2 class="sr-only">{{ "filters" | i18n }}</h2>
     <ul>
       <li [ngClass]="{ active: selectedAll }">
-        <a href="#" appStopClick appBlurClick (click)="selectAll()">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedAll }"
+          appStopClick
+          appBlurClick
+          (click)="selectAll()"
+        >
           <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allItems" | i18n }}
-        </a>
+        </button>
       </li>
       <li [ngClass]="{ active: selectedFavorites }">
-        <a href="#" appStopClick appBlurClick (click)="selectFavorites()">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedFavorites }"
+          appStopClick
+          appBlurClick
+          (click)="selectFavorites()"
+        >
           <i class="bwi bwi-fw bwi-star" aria-hidden="true"></i>&nbsp;{{ "favorites" | i18n }}
-        </a>
+        </button>
       </li>
       <li [ngClass]="{ active: selectedTrash }">
-        <a href="#" appStopClick appBlurClick (click)="selectTrash()">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedTrash }"
+          appStopClick
+          appBlurClick
+          (click)="selectTrash()"
+        >
           <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>&nbsp;{{ "trash" | i18n }}
-        </a>
+        </button>
       </li>
     </ul>
     <h2>{{ "types" | i18n }}</h2>
     <ul>
       <li [ngClass]="{ active: selectedType === cipherType.Login }">
-        <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Login)">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedType === cipherType.Login }"
+          appStopClick
+          appBlurClick
+          (click)="selectType(cipherType.Login)"
+        >
           <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>&nbsp;{{ "typeLogin" | i18n }}
-        </a>
+        </button>
       </li>
       <li [ngClass]="{ active: selectedType === cipherType.Card }">
-        <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Card)">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedType === cipherType.Card }"
+          appStopClick
+          appBlurClick
+          (click)="selectType(cipherType.Card)"
+        >
           <i class="bwi bwi-fw bwi-credit-card" aria-hidden="true"></i>&nbsp;{{ "typeCard" | i18n }}
-        </a>
+        </button>
       </li>
       <li [ngClass]="{ active: selectedType === cipherType.Identity }">
-        <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.Identity)">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedType === cipherType.Identity }"
+          appStopClick
+          appBlurClick
+          (click)="selectType(cipherType.Identity)"
+        >
           <i class="bwi bwi-fw bwi-id-card" aria-hidden="true"></i>&nbsp;{{ "typeIdentity" | i18n }}
-        </a>
+        </button>
       </li>
       <li [ngClass]="{ active: selectedType === cipherType.SecureNote }">
-        <a href="#" appStopClick appBlurClick (click)="selectType(cipherType.SecureNote)">
+        <button
+          type="button"
+          [attr.aria-pressed]="{ true: selectedType === cipherType.SecureNote }"
+          appStopClick
+          appBlurClick
+          (click)="selectType(cipherType.SecureNote)"
+        >
           <i class="bwi bwi-fw bwi-sticky-note" aria-hidden="true"></i>&nbsp;{{
             "typeSecureNote" | i18n
           }}
-        </a>
+        </button>
       </li>
     </ul>
     <p *ngIf="!loaded" class="text-muted">{{ "loading" | i18n }}</p>
@@ -57,7 +99,13 @@
             *ngFor="let f of folders"
             [ngClass]="{ active: selectedFolder && f.node.id === selectedFolderId }"
           >
-            <a href="#" appStopClick appBlurClick (click)="selectFolder(f.node)">
+            <button
+              type="button"
+              [attr.aria-pressed]="{ true: selectedFolder && f.node.id === selectedFolderId }"
+              appStopClick
+              appBlurClick
+              (click)="selectFolder(f.node)"
+            >
               <i
                 *ngIf="f.children.length"
                 class="bwi bwi-fw"
@@ -86,7 +134,7 @@
               >
                 <i class="bwi bwi-pencil bwi-fw" aria-hidden="true"></i>
               </span>
-            </a>
+            </button>
             <ul class="bwi-ul" *ngIf="f.children.length && !isCollapsed(f.node)">
               <ng-container
                 *ngTemplateOutlet="recursiveFolders; context: { $implicit: f.children }"
@@ -107,7 +155,14 @@
               *ngFor="let c of collections"
               [ngClass]="{ active: c.node.id === selectedCollectionId }"
             >
-              <a href="#" appStopClick appBlurClick (click)="selectCollection(c.node)">
+              <button
+                *ngIf="c.children.length == 0"
+                type="button"
+                [attr.aria-pressed]="{ true: c.node.id === selectedCollectionId }"
+                appStopClick
+                appBlurClick
+                (click)="selectCollection(c.node)"
+              >
                 <i
                   *ngIf="c.children.length"
                   class="bwi bwi-fw"
@@ -126,7 +181,7 @@
                   aria-hidden="true"
                 ></i>
                 &nbsp;{{ c.node.name }}
-              </a>
+              </button>
               <ul class="bwi-ul" *ngIf="c.children.length && !isCollapsed(c.node)">
                 <ng-container
                   *ngTemplateOutlet="recursiveCollections; context: { $implicit: c.children }"

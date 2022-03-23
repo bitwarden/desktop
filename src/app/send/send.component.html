@@ -5,26 +5,26 @@
         <h2 class="sr-only">{{ "filters" | i18n }}</h2>
         <ul>
           <li [ngClass]="{ active: selectedAll }">
-            <a href="#" appStopClick appBlurClick (click)="selectAll()">
+            <button type="button" appStopClick appBlurClick (click)="selectAll()">
               <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
-            </a>
+            </button>
           </li>
         </ul>
         <h2>{{ "types" | i18n }}</h2>
         <ul>
           <li [ngClass]="{ active: selectedType === sendType.Text }">
-            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
+            <button type="button" appStopClick appBlurClick (click)="selectType(sendType.Text)">
               <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeText" | i18n
               }}
-            </a>
+            </button>
           </li>
           <li [ngClass]="{ active: selectedType === sendType.File }">
-            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
+            <button type="button" appStopClick appBlurClick (click)="selectType(sendType.File)">
               <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeFile" | i18n
               }}
-            </a>
+            </button>
           </li>
         </ul>
       </div>

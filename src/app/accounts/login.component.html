@@ -82,18 +82,22 @@
             >
             <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
           </button>
-          <a routerLink="/register" class="btn block">
+          <a role="button" tabindex="0" routerLink="/register" class="btn block">
             <i class="bwi bwi-pencil-square" aria-hidden="true"></i> {{ "createAccount" | i18n }}
           </a>
         </div>
         <div class="buttons-row">
-          <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
+          <a
+            role="button"
+            (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')"
+            class="btn block"
+          >
             <i class="bwi bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
           </a>
         </div>
       </div>
       <div class="sub-options">
-        <a routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
+        <a role="button" tabindex="0" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
       </div>
     </div>
   </form>

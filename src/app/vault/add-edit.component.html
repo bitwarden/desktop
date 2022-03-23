@@ -388,9 +388,14 @@
               appBoxRow
               *ngFor="let u of cipher.login.uris; let i = index; trackBy: trackByFunction"
             >
-              <a href="#" appStopClick (click)="removeUri(u)" appA11yTitle="{{ 'remove' | i18n }}">
+              <button
+                type="button"
+                appStopClick
+                (click)="removeUri(u)"
+                appA11yTitle="{{ 'remove' | i18n }}"
+              >
                 <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true" role="button"></i>
-              </a>
+              </button>
               <div class="row-main">
                 <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
                 <input
@@ -459,9 +464,13 @@
           <div class="box-content-row box-content-row-checkbox" appBoxRow *ngIf="canUseReprompt">
             <label for="passwordPrompt"
               >{{ "passwordPrompt" | i18n }}
-              <a href="#" appA11yTitle="{{ 'learnMore' | i18n }}" (click)="openHelpReprompt()">
+              <button
+                type="button"
+                appA11yTitle="{{ 'learnMore' | i18n }}"
+                (click)="openHelpReprompt()"
+              >
                 <i class="bwi bwi-question-circle" aria-hidden="true"></i>
-              </a>
+              </button>
             </label>
             <input
               id="passwordPrompt"

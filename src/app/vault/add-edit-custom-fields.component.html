@@ -101,10 +101,10 @@
     </div>
     <!-- Add new custom field -->
     <div class="box-content-row" appBoxRow>
-      <a href="#" appStopClick (click)="addField()" role="button">
+      <button type="button" appStopClick (click)="addField()">
         <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
         {{ "newCustomField" | i18n }}
-      </a>
+      </button>
       <label for="addFieldType" class="sr-only">{{ "type" | i18n }}</label>
       <select id="addFieldType" name="AddFieldType" [(ngModel)]="addFieldType" class="field-type">
         <option *ngFor="let o of addFieldTypeOptions" [ngValue]="o.value">{{ o.name }}</option>

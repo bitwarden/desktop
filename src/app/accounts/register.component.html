@@ -144,7 +144,7 @@
         <b [hidden]="form.loading">{{ "submit" | i18n }}</b>
         <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
-      <a routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
+      <a role="button" tabindex="0" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
     </div>
   </div>
 </form>

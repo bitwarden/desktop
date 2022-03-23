@@ -18,10 +18,10 @@
               <span class="text">{{ p.name }}</span>
               <span class="detail">{{ p.description }}</span>
             </a>
-            <a href="#" appStopClick class="box-content-row" (click)="recover()">
+            <button type="button" appStopClick class="box-content-row" (click)="recover()">
               <span class="text">{{ "recoveryCodeTitle" | i18n }}</span>
               <span class="detail">{{ "recoveryCodeDesc" | i18n }}</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
