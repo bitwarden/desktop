@@ -28,6 +28,7 @@
                   appStopClick
                   appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                  [attr.aria-pressed]="showPin"
                   (click)="toggleVisibility()"
                 >
                   <i
