@@ -42,7 +42,7 @@ export class AboutMenu implements IMenubarMenu {
     return {
       id: "checkForUpdates",
       label: this.localize("checkForUpdates"),
-      visible: !isWindowsStore() && !isSnapStore() && isMacAppStore() == undefined,
+      visible: !isWindowsStore() && !isSnapStore() && !isMacAppStore(),
       click: () => this.checkForUpdate(),
     };
   }
