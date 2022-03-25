@@ -455,112 +455,112 @@
     "message": "Maksimalna veličina datoteke je 500 MB."
   },
   "updateKey": {
-    "message": "You cannot use this feature until you update your encryption key."
+    "message": "Ovu funkciju ne možete koristiti dok ne ažurirate ključ za šifrovanje."
   },
   "editedFolder": {
-    "message": "Edited folder"
+    "message": "Uređen folder"
   },
   "addedFolder": {
-    "message": "Added folder"
+    "message": "Folder dodan"
   },
   "deleteFolderConfirmation": {
-    "message": "Are you sure you want to delete this folder?"
+    "message": "Sigurno želiš izbrisati ovaj Folder?"
   },
   "deletedFolder": {
-    "message": "Deleted folder"
+    "message": "Folder izbrisan"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Prijavite se ili napravite novi račun da biste pristupili svom sigurnom trezoru."
   },
   "createAccount": {
-    "message": "Create Account"
+    "message": "Napravi račun"
   },
   "logIn": {
-    "message": "Log In"
+    "message": "Prijavite se"
   },
   "submit": {
-    "message": "Submit"
+    "message": "Potvrdi"
   },
   "masterPass": {
-    "message": "Master Password"
+    "message": "Master/glavna šifra"
   },
   "masterPassDesc": {
-    "message": "The master password is the password you use to access your vault. It is very important that you do not forget your master password. There is no way to recover the password in the event that you forget it."
+    "message": "Glavna lozinka je lozinka koju koristite za pristup Vašem trezoru. Veoma je važno da ne zaboravite glavnu lozinku. Ne postoji način da povratite lozinku u slučaju da je zaboravite."
   },
   "masterPassHintDesc": {
-    "message": "A master password hint can help you remember your password if you forget it."
+    "message": "Nagoveštaj glavne lozinke može Vam pomoći da zapamtite lozinku ako je zaboravite."
   },
   "reTypeMasterPass": {
-    "message": "Re-type Master Password"
+    "message": "Ponovo unesite glavnu lozinku"
   },
   "masterPassHint": {
-    "message": "Master Password Hint (optional)"
+    "message": "Nagovještaj za glavnu lozinku (opcionalno)"
   },
   "settings": {
-    "message": "Settings"
+    "message": "Postavke"
   },
   "passwordHint": {
-    "message": "Password Hint"
+    "message": "Nagovještaj lozinke"
   },
   "enterEmailToGetHint": {
-    "message": "Enter your account email address to receive your master password hint."
+    "message": "Unesite E-Mail adresu Vašeg računa da biste dobili nagovještaj o mogućoj glavnoj lozinki."
   },
   "getMasterPasswordHint": {
-    "message": "Get master password hint"
+    "message": "Dobijte nagovještaj glavne lozinke"
   },
   "emailRequired": {
-    "message": "Email address is required."
+    "message": "Potrebna je email adresa."
   },
   "invalidEmail": {
-    "message": "Invalid email address."
+    "message": "Neispravna email adresa."
   },
   "masterPassRequired": {
-    "message": "Master password is required."
+    "message": "Potrebna je glavna lozinka."
   },
   "masterPassLength": {
-    "message": "Master password must be at least 8 characters long."
+    "message": "Glavna lozinka mora imati najmanje 8 znakova."
   },
   "masterPassDoesntMatch": {
-    "message": "Master password confirmation does not match."
+    "message": "Potvrda glavne lozinke se ne podudara."
   },
   "newAccountCreated": {
-    "message": "Your new account has been created! You may now log in."
+    "message": "Tvoj novi račun je kreiran! Sada se možeš prijaviti."
   },
   "masterPassSent": {
-    "message": "We've sent you an email with your master password hint."
+    "message": "Poslali smo vam e-mail sa podsjetnikom za glavnu lozinku."
   },
   "unexpectedError": {
-    "message": "An unexpected error has occurred."
+    "message": "Neočekivana greška se dogodila."
   },
   "itemInformation": {
-    "message": "Item Information"
+    "message": "Informacije o stavki"
   },
   "noItemsInList": {
-    "message": "There are no items to list."
+    "message": "Nema podataka za prikazati."
   },
   "sendVerificationCode": {
-    "message": "Send a verification code to your email"
+    "message": "Pošalji verifikacijski kod na E-Mail"
   },
   "sendCode": {
-    "message": "Send Code"
+    "message": "Pošalji kod"
   },
   "codeSent": {
-    "message": "Code Sent"
+    "message": "Kod poslan"
   },
   "verificationCode": {
-    "message": "Verification Code"
+    "message": "Verifikacioni kod"
   },
   "confirmIdentity": {
-    "message": "Confirm your identity to continue."
+    "message": "Potvrdite lozinku za nastavak."
   },
   "verificationCodeRequired": {
-    "message": "Verification code is required."
+    "message": "Verifikacijski kod je neophodan."
   },
   "invalidVerificationCode": {
-    "message": "Invalid verification code"
+    "message": "Neispravan verifikacijski kod"
   },
   "continue": {
-    "message": "Continue"
+    "message": "Nastavi"
   },
   "enterVerificationCodeApp": {
     "message": "Unesite 6-ocifreni verifikacioni kod iz Vaše aplikacije za potvrdu autentičnosti."
@@ -710,87 +710,87 @@
     "message": "Da li ste sigurni da želite da se odjavite?"
   },
   "logOut": {
-    "message": "Log Out"
+    "message": "Odjavi se"
   },
   "addNewLogin": {
-    "message": "Add New Login"
+    "message": "Dodaj novu prijavu"
   },
   "addNewItem": {
-    "message": "Add New Item"
+    "message": "Dodaj novu stavku"
   },
   "addNewFolder": {
-    "message": "Add New Folder"
+    "message": "Dodajte novi folder"
   },
   "view": {
-    "message": "View"
+    "message": "Prikaz"
   },
   "account": {
-    "message": "Account"
+    "message": "Račun"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Učitavanje..."
   },
   "lockVault": {
-    "message": "Lock Vault"
+    "message": "Zaključaj trezor"
   },
   "passwordGenerator": {
-    "message": "Password Generator"
+    "message": "Generator lozinki"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Kontaktirajte nas"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Potraži pomoć"
   },
   "fileBugReport": {
-    "message": "File a Bug Report"
+    "message": "Podnesite izvještaj o greški"
   },
   "blog": {
     "message": "Blog"
   },
   "followUs": {
-    "message": "Follow Us"
+    "message": "Pratite nas"
   },
   "syncVault": {
-    "message": "Sync Vault"
+    "message": "Sinhronizujte trezor sada"
   },
   "changeMasterPass": {
-    "message": "Change Master Password"
+    "message": "Promijenite glavnu lozinku"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "You can change your master password on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Možete da promjenite svoju glavnu lozinku na bitwarden.com web trezoru. Da li želite da posjetite web stranicu sada?"
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Jedinstvena fraza",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Your account's fingerprint phrase",
+    "message": "Jedinstvena fraza tvog računa",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Idi na web trezor"
   },
   "getMobileApp": {
-    "message": "Get Mobile App"
+    "message": "Preuzmi mobilnu aplikaciju"
   },
   "getBrowserExtension": {
-    "message": "Get Browser Extension"
+    "message": "Preuzmi proširenje za preglednik"
   },
   "syncingComplete": {
-    "message": "Syncing complete"
+    "message": "Sinhronizacija je završena"
   },
   "syncingFailed": {
-    "message": "Syncing failed"
+    "message": "Sinhronizacija nije uspjela"
   },
   "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your identity to continue."
+    "message": "Vaš trezor je zaključan. Potvrdite glavnu lozinku da nastavite."
   },
   "unlock": {
-    "message": "Unlock"
+    "message": "Otključaj"
   },
   "loggedInAsOn": {
-    "message": "Logged in as $EMAIL$ on $HOSTNAME$.",
+    "message": "Prijavljen kao $EMAIL$ na $HOSTNAME$.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -803,81 +803,81 @@
     }
   },
   "invalidMasterPassword": {
-    "message": "Invalid master password"
+    "message": "Neispravna glavna lozinka"
   },
   "twoStepLoginConfirmation": {
-    "message": "Two-step login makes your account more secure by requiring you to verify your login with another device such as a security key, authenticator app, SMS, phone call, or email. Two-step login can be enabled on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Prijava u dva koraka čini Vaš račun sigurnijim tako što zahtjeva da verifikujete svoje podatke pomoću drugog uređaja, kao što su sigurnosni ključ, aplikacija za autentifikaciju, SMS, telefonski poziv ili E-Mail. Prijavljivanje u dva koraka može se omogućiti na bitwarden.com web trezoru. Da li želite da posjetite web stranicu sada?"
   },
   "twoStepLogin": {
-    "message": "Two-step Login"
+    "message": "Prijava u dva koraka"
   },
   "vaultTimeout": {
-    "message": "Vault Timeout"
+    "message": "Vremensko ograničenje trezora"
   },
   "vaultTimeoutDesc": {
-    "message": "Choose when your vault will timeout and perform the selected action."
+    "message": "Odaberi kada će za koliko vremena će isteći aktivnost trezora i biti izvršena odabrana radnja."
   },
   "immediately": {
-    "message": "Immediately"
+    "message": "Odmah"
   },
   "tenSeconds": {
-    "message": "10 seconds"
+    "message": "10 sekundi"
   },
   "twentySeconds": {
-    "message": "20 seconds"
+    "message": "20 sekundi"
   },
   "thirtySeconds": {
-    "message": "30 seconds"
+    "message": "30 sekundi"
   },
   "oneMinute": {
-    "message": "1 minute"
+    "message": "1 minuta"
   },
   "twoMinutes": {
-    "message": "2 minutes"
+    "message": "2 minute"
   },
   "fiveMinutes": {
-    "message": "5 minutes"
+    "message": "5 minuta"
   },
   "fifteenMinutes": {
-    "message": "15 minutes"
+    "message": "15 minuta"
   },
   "thirtyMinutes": {
-    "message": "30 minutes"
+    "message": "30 minuta"
   },
   "oneHour": {
-    "message": "1 hour"
+    "message": "1 sat"
   },
   "fourHours": {
-    "message": "4 hours"
+    "message": "4 sata"
   },
   "onIdle": {
-    "message": "On System Idle"
+    "message": "Na sistemskoj pripravnosti"
   },
   "onSleep": {
-    "message": "On System Sleep"
+    "message": "Na sistemskom mirovanju"
   },
   "onLocked": {
-    "message": "On System Lock"
+    "message": "Na sistemskom zaključavanju"
   },
   "onRestart": {
-    "message": "On Restart"
+    "message": "Kod ponovnog pokretanja"
   },
   "never": {
-    "message": "Never"
+    "message": "Nikad"
   },
   "security": {
-    "message": "Security"
+    "message": "Sigurnost"
   },
   "clearClipboard": {
-    "message": "Clear Clipboard",
+    "message": "Očisti međumemoriju",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "clearClipboardDesc": {
-    "message": "Automatically clear copied values from your clipboard.",
+    "message": "Automatski očistiti kopirane vrijednosti iz vaše međumemorije.",
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "disableFavicon": {
-    "message": "Disable Website Icons"
+    "message": "Onemogućite ikone web lokacije"
   },
   "disableFaviconDesc": {
     "message": "Website Icons provide a recognizable image next to each login item in your vault."
@@ -916,61 +916,61 @@
     "message": "Start To Tray Icon"
   },
   "startToTrayDesc": {
-    "message": "When the application is first started, only show an icon in the system tray."
+    "message": "Kada se aplikacija prvi put pokrene, prikaži samo ikonu u sistemskoj traci."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Pokreni u traci menija"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Kada se aplikacija prvi put pokrene, prikaži samo ikonu u sistemskoj traci."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Automatsko pokretanje prilikom prijavljivanja"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Automatski pokreni Bitwarden desktop aplikaciju kod prijave."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Uvijek prikaži u Dock-u"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Prikaži Bitwareden ikonu u Docku čak i kada je minimiziran u traku s izbornicima."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Potvrdi onemogućavanje trake"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Ako onemogućite ovo podešavanje sva ostala podešavanja vezana za sistemsku traku će također biti onemogućena."
   },
   "language": {
-    "message": "Language"
+    "message": "Jezik"
   },
   "languageDesc": {
-    "message": "Change the language used by the application. Restart is required."
+    "message": "Promijeni jezik aplikacije. Potrebno je ponovno pokretanje."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Tema"
   },
   "themeDesc": {
-    "message": "Change the application's color theme."
+    "message": "Promjeni boju teme u aplikaciji."
   },
   "dark": {
-    "message": "Dark",
+    "message": "Tamno",
     "description": "Dark color"
   },
   "light": {
-    "message": "Light",
+    "message": "Svijetlo",
     "description": "Light color"
   },
   "copy": {
-    "message": "Copy",
+    "message": "Kopiraj",
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Provjeri ima li ažuriranja"
   },
   "version": {
-    "message": "Version $VERSION_NUM$",
+    "message": "Verzija $VERSION_NUM$",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -979,10 +979,10 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Ponovo pokreni za ažuriranje"
   },
   "restartToUpdateDesc": {
-    "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",
+    "message": "Verzija $VERSION_NUM$ je spremna za instalaciju. Moraš ponovno pokrenuti Bitwarden za dovršetak instalacije. Želiš li ponovo pokrenuti i ažurirati?",
     "placeholders": {
       "version_num": {
         "content": "$1",
@@ -991,87 +991,87 @@
     }
   },
   "updateAvailable": {
-    "message": "Update Available"
+    "message": "Dostupna su ažuriranja"
   },
   "updateAvailableDesc": {
-    "message": "An update was found. Do you want to download it now?"
+    "message": "Pronađeno je ažuriranje. Želiš li ga sada preuzeti?"
   },
   "restart": {
-    "message": "Restart"
+    "message": "Ponovno pokreni"
   },
   "later": {
-    "message": "Later"
+    "message": "Kasnije"
   },
   "noUpdatesAvailable": {
-    "message": "No updates are currently available. You are using the latest version."
+    "message": "Trenutno nema ažuriranja. Već koristiš najnoviju verziju."
   },
   "updateError": {
-    "message": "Update Error"
+    "message": "Greška pri ažuriranju"
   },
   "unknown": {
-    "message": "Unknown"
+    "message": "Nepoznato"
   },
   "copyUsername": {
-    "message": "Copy Username"
+    "message": "Kopiraj korisničko ime"
   },
   "copyNumber": {
-    "message": "Copy Number",
+    "message": "Kopiraj broj",
     "description": "Copy credit card number"
   },
   "copySecurityCode": {
-    "message": "Copy Security Code",
+    "message": "Kopirajte sigurnosni kod",
     "description": "Copy credit card security code (CVV)"
   },
   "premiumMembership": {
-    "message": "Premium Membership"
+    "message": "Premium članstvo"
   },
   "premiumManage": {
-    "message": "Manage Membership"
+    "message": "Upravljaj članstvom"
   },
   "premiumManageAlert": {
-    "message": "You can manage your membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Svojim članstvom možeš upravljati na bitwarden.com web trezoru. Želiš li sada posjetiti web stranicu?"
   },
   "premiumRefresh": {
-    "message": "Refresh Membership"
+    "message": "Osvježi status članstva"
   },
   "premiumNotCurrentMember": {
-    "message": "You are not currently a premium member."
+    "message": "Trenutno nisi premium član."
   },
   "premiumSignUpAndGet": {
-    "message": "Sign up for a premium membership and get:"
+    "message": "Prijavi se za premium članstvo, čime dobijaš:"
   },
   "premiumSignUpStorage": {
-    "message": "1 GB encrypted storage for file attachments."
+    "message": "1 GB šifriranog prostora za pohranu podataka."
   },
   "premiumSignUpTwoStep": {
-    "message": "Additional two-step login options such as YubiKey, FIDO U2F, and Duo."
+    "message": "Dodatne mogućnosti za prijavu u dva koraka kao što su YubiKey, FIDO U2F i Duo."
   },
   "premiumSignUpReports": {
-    "message": "Password hygiene, account health, and data breach reports to keep your vault safe."
+    "message": "Higijenu lozinki, zdravlje računa i izvještaje o krađi podataka radi zaštite svojeg trezora."
   },
   "premiumSignUpTotp": {
-    "message": "TOTP verification code (2FA) generator for logins in your vault."
+    "message": "Generator TOTP kontrolnog koda (2FA) za prijave u tvom trezoru."
   },
   "premiumSignUpSupport": {
-    "message": "Priority customer support."
+    "message": "Prioritetnu korisničku podršku."
   },
   "premiumSignUpFuture": {
-    "message": "All future premium features. More coming soon!"
+    "message": "Sve buduće premium značajke. Uskoro više!"
   },
   "premiumPurchase": {
-    "message": "Purchase Premium"
+    "message": "Kupi premium članstvo"
   },
   "premiumPurchaseAlert": {
-    "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+    "message": "Svojim članstvom možeš upravljati na bitwarden.com web trezoru. Želiš li sada posjetiti web stranicu?"
   },
   "premiumCurrentMember": {
-    "message": "You are a premium member!"
+    "message": "Ti si premium član!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Thank you for supporting Bitwarden."
+    "message": "Hvala ti što podupireš Bitwarden."
   },
   "premiumPrice": {
-    "message": "All for just $PRICE$ /year!",
+    "message": "Sve za samo $PRICE$ /godišnje!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1080,13 +1080,13 @@
     }
   },
   "refreshComplete": {
-    "message": "Refresh complete"
+    "message": "Osvježavanje završeno"
   },
   "passwordHistory": {
-    "message": "Password History"
+    "message": "Historija uređivanja lozinke"
   },
   "clear": {
-    "message": "Clear",
+    "message": "Obriši",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
@@ -1267,34 +1267,34 @@
     "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
   },
   "noOrganizationsList": {
-    "message": "You do not belong to any organizations. Organizations allow you to securely share items with other users."
+    "message": "Ne pripadaš niti jednoj organizaciji. Organizacije omogućuju sigurno dijeljenje stavki s drugim korisnicima."
   },
   "noCollectionsInList": {
-    "message": "There are no collections to list."
+    "message": "Nema kolekcija za prikazati."
   },
   "ownership": {
-    "message": "Ownership"
+    "message": "Vlasništvo"
   },
   "whoOwnsThisItem": {
-    "message": "Who owns this item?"
+    "message": "Ko je vlasnik ove stavke?"
   },
   "strong": {
-    "message": "Strong",
+    "message": "Jaka",
     "description": "ex. A strong password. Scale: Weak -> Good -> Strong"
   },
   "good": {
-    "message": "Good",
+    "message": "Dobra",
     "description": "ex. A good password. Scale: Weak -> Good -> Strong"
   },
   "weak": {
-    "message": "Weak",
+    "message": "Slaba",
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Weak Master Password"
+    "message": "Slaba glavna lozinka"
   },
   "weakMasterPasswordDesc": {
-    "message": "The master password you have chosen is weak. You should use a strong master password (or a passphrase) to properly protect your Bitwarden account. Are you sure you want to use this master password?"
+    "message": "Odabrana glavna lozinka je slaba. Trebaš koristiti jaču glavnu lozinku (ili frazu) kako bi tvoj Bitwarden račun bio pravilno zaštićen. Sigurno želiš koristiti ovakvu, slabu glavnu lozinku?"
   },
   "pin": {
     "message": "PIN",

@@ -737,10 +737,10 @@
     "message": "Генератор Лозинке"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Контактирајте нас"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Потражи помоћ"
   },
   "fileBugReport": {
     "message": "Пријавите грешку"
@@ -1794,13 +1794,13 @@
     "message": "Подешавања"
   },
   "appPreferences": {
-    "message": "App Settings (All Accounts)"
+    "message": "Подешавања апликације (Сви налози)"
   },
   "accountSwitcherLimitReached": {
     "message": "Граница налога достигнута. Одјавите се од једног налога да би додали други."
   },
   "settingsTitle": {
-    "message": "App settings for $EMAIL$",
+    "message": "Подешавања апликације за $EMAIL$",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1809,19 +1809,19 @@
     }
   },
   "switchAccount": {
-    "message": "Switch Account"
+    "message": "Промени налог"
   },
   "options": {
-    "message": "Options"
+    "message": "Опције"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Ваша сесија је истекла. Вратите се и покушајте поново да се пријавите."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Извоз личног сефа"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Само предмети личног сефа повезани са $EMAIL$ биће извезени. Ставке организационог сефа неће бити укључене.",
     "placeholders": {
       "email": {
         "content": "$1",

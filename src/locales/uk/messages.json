@@ -737,10 +737,10 @@
     "message": "Генератор паролів"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Зв'язатися з нами"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Отримати допомогу"
   },
   "fileBugReport": {
     "message": "Повідомити про помилку"
@@ -1815,13 +1815,13 @@
     "message": "Налаштування"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Час вашого сеансу завершився. Поверніться назад і спробуйте увійти знову."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Експортування особистого сховища"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Будуть експортовані лише записи особистого сховища, пов'язані з $EMAIL$. Записи сховища організації не буде включено.",
     "placeholders": {
       "email": {
         "content": "$1",
