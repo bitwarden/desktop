@@ -187,7 +187,9 @@
       "entitlements": "resources/entitlements.mas.plist",
       "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
       "hardenedRuntime": false,
-      "minimumSystemVersion": "10.14"
+      "extendInfo": {
+        "LSMinimumSystemVersion": "10.14.0"
+      }
     },
     "nsisWeb": {
       "oneClick": false,
