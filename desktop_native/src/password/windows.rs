@@ -68,7 +68,6 @@ pub fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
         return Err(anyhow!(unsafe { GetLastError() }.0.to_string()));
     }
 
-    // Keytar compatible
     let password = unsafe {
         std::str::from_utf8_unchecked(std::slice::from_raw_parts(
             (*credential).CredentialBlob,
@@ -86,10 +85,6 @@ pub fn set_password(service: &str, account: &str, password: &str) -> Result<()> 
         dwLowDateTime: 0,
         dwHighDateTime: 0,
     };
-
-    // Keytar compatible
-    // let credential = std::ffi::CString::new(password)?;
-    // let credential_len = password.len() as u32;
 
     let credential = U16CString::from_str(password)?;
     let credential_len = password.len() as u32 * 2;
