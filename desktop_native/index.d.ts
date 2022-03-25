@@ -6,7 +6,7 @@
 export namespace passwords {
   /** Fetch the stored password from the keychain. */
   export function getPassword(service: string, account: string): Promise<string>
-  /** Fetch the stored password from the keychain. */
+  /** Fetch the stored password from the keychain that was stored with Keytar. */
   export function getPasswordKeytar(service: string, account: string): Promise<string>
   /** Save the password to the keychain. Adds an entry if none exists otherwise updates the existing entry. */
   export function setPassword(service: string, account: string, password: string): Promise<void>
