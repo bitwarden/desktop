@@ -355,33 +355,7 @@
     margin-left: 5px;
 
     .row-btn {
-      cursor: pointer;
-      padding: 10px 8px;
-      background: none;
-      border: none;
-
-      @include themify($themes) {
-        color: themed("boxRowButtonColor");
-      }
-
-      &:hover,
-      &:focus {
-        @include themify($themes) {
-          color: themed("boxRowButtonHoverColor");
-        }
-      }
-
-      &.disabled {
-        @include themify($themes) {
-          color: themed("disabledIconColor");
-        }
-
-        &:hover {
-          @include themify($themes) {
-            color: themed("disabledIconColor");
-          }
-        }
-      }
+      @extend .icon-btn;
     }
 
     &.no-pad .row-btn {
