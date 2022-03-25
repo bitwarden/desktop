@@ -63,26 +63,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AvatarComponent } from "jslib-angular/components/avatar.component";
-import { CalloutComponent } from "jslib-angular/components/callout.component";
-import { ExportScopeCalloutComponent } from "jslib-angular/components/export-scope-callout.component";
-import { IconComponent } from "jslib-angular/components/icon.component";
-import { BitwardenToastModule } from "jslib-angular/components/toastr.component";
-import { A11yTitleDirective } from "jslib-angular/directives/a11y-title.directive";
-import { ApiActionDirective } from "jslib-angular/directives/api-action.directive";
-import { AutofocusDirective } from "jslib-angular/directives/autofocus.directive";
-import { BlurClickDirective } from "jslib-angular/directives/blur-click.directive";
-import { BoxRowDirective } from "jslib-angular/directives/box-row.directive";
-import { CipherListVirtualScroll } from "jslib-angular/directives/cipherListVirtualScroll.directive";
-import { FallbackSrcDirective } from "jslib-angular/directives/fallback-src.directive";
-import { InputVerbatimDirective } from "jslib-angular/directives/input-verbatim.directive";
-import { SelectCopyDirective } from "jslib-angular/directives/select-copy.directive";
-import { StopClickDirective } from "jslib-angular/directives/stop-click.directive";
-import { StopPropDirective } from "jslib-angular/directives/stop-prop.directive";
-import { TrueFalseValueDirective } from "jslib-angular/directives/true-false-value.directive";
-import { ColorPasswordPipe } from "jslib-angular/pipes/color-password.pipe";
-import { I18nPipe } from "jslib-angular/pipes/i18n.pipe";
-import { SearchCiphersPipe } from "jslib-angular/pipes/search-ciphers.pipe";
+import { JslibModule } from "jslib-angular/jslib.module";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
@@ -183,47 +164,32 @@ registerLocaleData(localeZhTw, "zh-TW");
 
 @NgModule({
   imports: [
+    A11yModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
     DragDropModule,
     FormsModule,
-    ReactiveFormsModule,
-    ServicesModule,
-    BitwardenToastModule.forRoot({
-      maxOpened: 5,
-      autoDismiss: true,
-      closeButton: true,
-    }),
-    ScrollingModule,
-    A11yModule,
+    JslibModule,
     OverlayModule,
+    ReactiveFormsModule,
+    ScrollingModule,
+    ServicesModule,
   ],
   declarations: [
-    A11yTitleDirective,
+    AccountSwitcherComponent,
     AddEditComponent,
     AddEditCustomFieldsComponent,
-    ApiActionDirective,
     AppComponent,
     AttachmentsComponent,
-    AutofocusDirective,
-    BlurClickDirective,
-    BoxRowDirective,
-    CalloutComponent,
-    CipherListVirtualScroll,
     CiphersComponent,
     CollectionsComponent,
-    ColorPasswordPipe,
     EnvironmentComponent,
     ExportComponent,
-    ExportScopeCalloutComponent,
-    FallbackSrcDirective,
     FolderAddEditComponent,
     GroupingsComponent,
+    HeaderComponent,
     HintComponent,
-    I18nPipe,
-    IconComponent,
-    InputVerbatimDirective,
     LockComponent,
     LoginComponent,
     NavComponent,
@@ -234,8 +200,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     PremiumComponent,
     RegisterComponent,
     RemovePasswordComponent,
-    SearchCiphersPipe,
-    SelectCopyDirective,
+    SearchComponent,
     SendAddEditComponent,
     SendComponent,
     SendEffluxDatesComponent,
@@ -244,9 +209,6 @@ registerLocaleData(localeZhTw, "zh-TW");
     SettingsComponent,
     ShareComponent,
     SsoComponent,
-    StopClickDirective,
-    StopPropDirective,
-    TrueFalseValueDirective,
     TwoFactorComponent,
     TwoFactorOptionsComponent,
     UpdateTempPasswordComponent,
@@ -255,10 +217,6 @@ registerLocaleData(localeZhTw, "zh-TW");
     VerifyMasterPasswordComponent,
     ViewComponent,
     ViewCustomFieldsComponent,
-    HeaderComponent,
-    AccountSwitcherComponent,
-    AvatarComponent,
-    SearchComponent,
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

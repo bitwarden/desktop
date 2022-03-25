@@ -104,7 +104,7 @@
     "message": "電子郵件地址"
   },
   "verificationCodeTotp": {
-    "message": "驗證碼 (TOTP)"
+    "message": "驗證碼（TOTP）"
   },
   "website": {
     "message": "網站"
@@ -308,7 +308,7 @@
     "message": "編輯"
   },
   "authenticatorKeyTotp": {
-    "message": "驗證器金鑰 (TOTP)"
+    "message": "驗證器金鑰（TOTP）"
   },
   "folder": {
     "message": "資料夾"
@@ -389,7 +389,7 @@
     "message": "複製 URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "複製驗證碼 (TOTP)"
+    "message": "複製驗證碼（TOTP）"
   },
   "length": {
     "message": "長度"
@@ -536,7 +536,7 @@
     "message": "項目資訊"
   },
   "noItemsInList": {
-    "message": "沒有可顯示的項目。"
+    "message": "沒有可列出的項目。"
   },
   "sendVerificationCode": {
     "message": "傳送驗證碼到您的信箱"
@@ -608,14 +608,14 @@
     "message": "驗證器應用程式"
   },
   "authenticatorAppDesc": {
-    "message": "使用驗證器應用程式 （如 Authy 或 Google Authenticator） 產生基於時間的驗證碼。",
+    "message": "使用驗證器應用程式（如 Authy 或 Google Authenticator）產生基於時間的驗證碼。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
     "message": "YubiKey OTP 安全鑰匙"
   },
   "yubiKeyDesc": {
-    "message": "使用 YubiKey 存取您的帳戶。支援 YubiKey 4、4 Nano、4C、以及 NEO 裝置。"
+    "message": "使用 YubiKey 來存取您的帳戶。支援 YubiKey 4、4 Nano、4C、以及 NEO 裝置。"
   },
   "duoDesc": {
     "message": "使用 Duo Security 的 Duo Mobile 程式、SMS 、致電或 U2F 安全鑰匙進行驗證。",
@@ -1090,7 +1090,7 @@
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
-    "message": "沒有可顯示的密碼。"
+    "message": "沒有可列出的密碼。"
   },
   "undo": {
     "message": "復原"
@@ -1264,13 +1264,13 @@
     "message": "將使用您帳戶的加密金鑰來加密匯出資料，若您更新了帳戶的加密金鑰，請重新匯出，才有辦法解密匯出的檔案。"
   },
   "encExportAccountWarningDesc": {
-    "message": "每個 Bitwarden 使用者帳戶的帳戶加密金鑰都不同，因此無法將加密過的匯出檔案匯入到不同帳戶中。"
+    "message": "每個 Bitwarden 使用者帳戶的帳戶加密金鑰都不相同，因此無法將已加密匯出的檔案匯入至不同帳戶中。"
   },
   "noOrganizationsList": {
-    "message": "您沒有加入任何組織。組織允許您與其他使用者安全地共享項目。"
+    "message": "您沒有加入任何組織。組織允許您與其他使用者安全地共用項目。"
   },
   "noCollectionsInList": {
-    "message": "沒有可顯示的集合。"
+    "message": "沒有可列出的集合。"
   },
   "ownership": {
     "message": "所有權"
@@ -1294,7 +1294,7 @@
     "message": "主密碼強度太弱"
   },
   "weakMasterPasswordDesc": {
-    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼 (或密碼短語) 來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
+    "message": "您設定的主密碼很脆弱。您應該使用高強度的密碼（或密碼短語）來正確保護您的 bitwarden 帳戶。仍要使用這組主密碼嗎？"
   },
   "pin": {
     "message": "PIN 碼",
@@ -1606,7 +1606,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "存取此 Send 時，預設將隱藏文本",
+    "message": "存取此 Send 時，預設隱藏文字内容",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
@@ -1685,7 +1685,7 @@
     "message": "已逾期"
   },
   "pendingDeletion": {
-    "message": "等待刪除中"
+    "message": "等待刪除"
   },
   "webAuthnAuthenticate": {
     "message": "驗證 WebAuthn"
@@ -1755,7 +1755,7 @@
     "message": "一或多個組織策略不允許您輸出個人密碼庫。"
   },
   "addAccount": {
-    "message": "新增帳號"
+    "message": "新增帳戶"
   },
   "removeMasterPassword": {
     "message": "移除主密碼"
@@ -1788,7 +1788,7 @@
     "message": "鎖定所有密碼庫"
   },
   "accountLimitReached": {
-    "message": "最多只能同時登入 5 隻帳號。"
+    "message": "最多只能同時登入 5 隻帳戶。"
   },
   "accountPreferences": {
     "message": "偏好設定"
@@ -1821,7 +1821,7 @@
     "message": "匯出個人密碼庫"
   },
   "exportingPersonalVaultDescription": {
-    "message": "只會匯出關聯到 $EMAIL$ 的個人密碼庫。組織密碼庫的項目不包含在內。",
+    "message": "只會匯出與 $EMAIL$ 關聯的個人密碼庫。組織密碼庫的項目不包含在內。",
     "placeholders": {
       "email": {
         "content": "$1",

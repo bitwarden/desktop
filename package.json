@@ -57,6 +57,7 @@
     "publish:mac": "npm run build && npm run clean:dist && electron-builder --mac -p always",
     "publish:mac:mas": "npm run dist:mac:mas && npm run upload:mas",
     "publish:win": "npm run build && npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p always -c.win.certificateSubjectName=\"8bit Solutions LLC\"",
+    "publish:win:dev": "npm run build && npm run clean:dist && electron-builder --win --x64 --arm64 --ia32 -p always",
     "upload:mas": "xcrun altool --upload-app --type osx --file \"$(find ./dist/mas-universal/Bitwarden*.pkg)\" --username $APPLE_ID_USERNAME --password $APPLE_ID_PASSWORD",
     "prettier": "prettier --write .",
     "prepare": "husky install"
@@ -81,7 +82,6 @@
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
-      "minimumSystemVersion": "10.14",
       "darkModeSupport": true,
       "gatekeeperAssess": false,
       "hardenedRuntime": true,
@@ -186,7 +186,8 @@
     "mas": {
       "entitlements": "resources/entitlements.mas.plist",
       "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
-      "hardenedRuntime": false
+      "hardenedRuntime": false,
+      "minimumSystemVersion": "10.14"
     },
     "nsisWeb": {
       "oneClick": false,

@@ -979,7 +979,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Käynnistä uudelleen päivittääksesi"
+    "message": "Käynnistä Bitwarden uudelleen päivittääksesi"
   },
   "restartToUpdateDesc": {
     "message": "Versio $VERSION_NUM$ on valmis asennettavaksi. Sovellus tulee käynnistää uudelleen, jotta asennus voidaan suorittaa loppuun. Haluatko käynnistää sovelluksen uudelleen ja päivittää nyt?",
@@ -997,7 +997,7 @@
     "message": "Päivitys löydetty. Haluatko ladata sen nyt?"
   },
   "restart": {
-    "message": "Käynnistä uudelleen"
+    "message": "Käynnistä sovellus uudelleen"
   },
   "later": {
     "message": "Myöhemmin"
@@ -1594,7 +1594,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Yksityiset muistiinpanot tästä Sendistä.",
+    "message": "Yksityisiä merkintöjä tästä Sendistä.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
