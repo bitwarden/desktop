@@ -1,6 +1,7 @@
 @import "variables.scss";
 
-small {
+small,
+.small {
   font-size: $font-size-small;
 }
 
@@ -173,25 +174,44 @@ p.lead {
   }
 }
 
-.password-block {
+.modal-title {
+  margin: 0 10px 5px 10px;
+  text-transform: uppercase;
+  display: flex;
+
+  @include themify($themes) {
+    color: themed("headingColor");
+  }
+}
+
+.generated-block {
   font-size: $font-size-large;
   font-family: $font-family-monospace;
   min-height: 50px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  text-align: center;
 
   .modal-body & {
-    margin-top: 10px;
+    margin: 10px;
   }
-}
 
-.password-wrapper {
-  word-break: break-all;
-  white-space: pre-wrap;
-  min-width: 0;
+  .generated-wrapper {
+    word-break: break-all;
+    white-space: pre-wrap;
+    min-width: 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .action-buttons {
+    display: flex;
+    align-self: center;
+
+    button {
+      margin-left: 10px;
+    }
+  }
 }
 
 .password-number {

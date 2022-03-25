@@ -37,7 +37,8 @@
     (onCancelled)="cancelledAddEdit($event)"
     (onShareCipher)="shareCipher($event)"
     (onEditCollections)="cipherCollections($event)"
-    (onGeneratePassword)="openPasswordGenerator(true)"
+    (onGeneratePassword)="openGenerator(true, true)"
+    (onGenerateUsername)="openGenerator(true, false)"
   >
   </app-vault-add-edit>
   <div

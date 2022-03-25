@@ -4,15 +4,6 @@
   position: relative;
   width: 100%;
 
-  .settingsTitle {
-    margin: 0 10px 5px 10px;
-    display: flex;
-
-    @include themify($themes) {
-      color: themed("headingColor");
-    }
-  }
-
   .box-header {
     margin: 0 10px 5px 10px;
     text-transform: uppercase;
@@ -302,7 +293,7 @@
   &.box-content-row-slider {
     input[type="range"] {
       height: 10px;
-      width: 110px !important;
+      width: 220px !important;
     }
 
     input[type="number"] {
@@ -483,6 +474,38 @@
 
     &.icon-small {
       min-width: 25px;
+    }
+  }
+
+  .radio-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+
+    input {
+      flex-grow: 0;
+    }
+
+    label {
+      margin: 0 0 0 5px;
+      flex-grow: 1;
+      font-size: $font-size-base;
+      display: block;
+      width: 100%;
+
+      @include themify($themes) {
+        color: themed("textColor");
+      }
+    }
+
+    &.align-start {
+      align-items: start;
+      margin-top: 10px;
+
+      label {
+        margin-top: -4px;
+      }
     }
   }
 }
