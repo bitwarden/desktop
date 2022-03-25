@@ -1794,7 +1794,7 @@
     "message": "Einstellungen"
   },
   "appPreferences": {
-    "message": "Tətbiq tənzimləmələri (Bütün hesablar)"
+    "message": "App-Einstellungen (Alle Konten)"
   },
   "accountSwitcherLimitReached": {
     "message": "Kontolimit erreicht. Abmelden von einem Konto, um ein anderes hinzuzufügen."
