@@ -5,7 +5,7 @@
       <li [ngClass]="{ active: selectedAll }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedAll }"
+          [attr.aria-pressed]="selectedAll"
           appStopClick
           appBlurClick
           (click)="selectAll()"
@@ -16,7 +16,7 @@
       <li [ngClass]="{ active: selectedFavorites }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedFavorites }"
+          [attr.aria-pressed]="selectedFavorites"
           appStopClick
           appBlurClick
           (click)="selectFavorites()"
@@ -27,7 +27,7 @@
       <li [ngClass]="{ active: selectedTrash }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedTrash }"
+          [attr.aria-pressed]="selectedTrash"
           appStopClick
           appBlurClick
           (click)="selectTrash()"
@@ -41,7 +41,7 @@
       <li [ngClass]="{ active: selectedType === cipherType.Login }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedType === cipherType.Login }"
+          [attr.aria-pressed]="selectedType === cipherType.Login"
           appStopClick
           appBlurClick
           (click)="selectType(cipherType.Login)"
@@ -52,7 +52,7 @@
       <li [ngClass]="{ active: selectedType === cipherType.Card }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedType === cipherType.Card }"
+          [attr.aria-pressed]="selectedType === cipherType.Card"
           appStopClick
           appBlurClick
           (click)="selectType(cipherType.Card)"
@@ -63,7 +63,7 @@
       <li [ngClass]="{ active: selectedType === cipherType.Identity }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedType === cipherType.Identity }"
+          [attr.aria-pressed]="selectedType === cipherType.Identity"
           appStopClick
           appBlurClick
           (click)="selectType(cipherType.Identity)"
@@ -74,7 +74,7 @@
       <li [ngClass]="{ active: selectedType === cipherType.SecureNote }">
         <button
           type="button"
-          [attr.aria-pressed]="{ true: selectedType === cipherType.SecureNote }"
+          [attr.aria-pressed]="selectedType === cipherType.SecureNote"
           appStopClick
           appBlurClick
           (click)="selectType(cipherType.SecureNote)"
@@ -101,7 +101,7 @@
           >
             <button
               type="button"
-              [attr.aria-pressed]="{ true: selectedFolder && f.node.id === selectedFolderId }"
+              [attr.aria-pressed]="selectedFolder && f.node.id === selectedFolderId"
               appStopClick
               appBlurClick
               (click)="selectFolder(f.node)"
@@ -158,7 +158,7 @@
               <button
                 *ngIf="c.children.length == 0"
                 type="button"
-                [attr.aria-pressed]="{ true: c.node.id === selectedCollectionId }"
+                [attr.aria-pressed]="c.node.id === selectedCollectionId"
                 appStopClick
                 appBlurClick
                 (click)="selectCollection(c.node)"
