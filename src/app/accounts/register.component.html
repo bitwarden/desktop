@@ -40,12 +40,11 @@
               />
             </div>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appBlurClick
-                role="button"
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 (click)="togglePassword(false)"
               >
@@ -54,7 +53,7 @@
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 ></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="progress">
@@ -90,12 +89,11 @@
             />
           </div>
           <div class="action-buttons">
-            <a
+            <button
+              type="button"
               class="row-btn"
-              href="#"
               appStopClick
               appBlurClick
-              role="button"
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               (click)="togglePassword(true)"
             >
@@ -104,7 +102,7 @@
                 aria-hidden="true"
                 [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
               ></i>
-            </a>
+            </button>
           </div>
         </div>
         <div class="box-content-row" appBoxRow>

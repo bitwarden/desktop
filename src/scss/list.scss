@@ -1,6 +1,7 @@
 ﻿@import "variables.scss";
 
-.list > a {
+.list > a,
+.list > button {
   display: block;
   padding: 3px 10px;
   text-decoration: none;
@@ -105,9 +106,11 @@
   }
 }
 
-.list > a.flex-list-item {
+.list > a.flex-list-item,
+.list > button.flex-list-item {
   display: flex;
   align-items: center;
+  width: 100%;
 
   .item-icon {
     margin-left: -5px;
@@ -135,12 +138,12 @@
   }
 
   .flex-cipher-list-item {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    > * {
+      text-align: left;
+    }
   }
 }

@@ -130,16 +130,15 @@
       <button type="button" appStopClick (click)="anotherMethod()">
         {{ "useAnotherTwoStepMethod" | i18n }}
       </button>
-      <a
-        href="#"
+      <button
+        type="button"
         appStopClick
         (click)="sendEmail(true)"
         [appApiAction]="emailPromise"
-        role="button"
         *ngIf="selectedProviderType === providerType.Email"
       >
         {{ "sendVerificationCodeEmailAgain" | i18n }}
-      </a>
+      </button>
     </div>
   </div>
 </form>

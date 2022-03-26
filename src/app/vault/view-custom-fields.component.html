@@ -35,24 +35,23 @@
         </div>
       </div>
       <div class="action-buttons">
-        <a
+        <button
+          type="button"
           class="row-btn"
-          href="#"
           appStopClick
           appA11yTitle="{{ 'toggleVisibility' | i18n }}"
           *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
           (click)="toggleFieldValue(field)"
-          role="button"
         >
           <i
             class="bwi bwi-lg"
             aria-hidden="true"
             [ngClass]="{ 'bwi-eye': !field.showValue, 'bwi-eye-slash': field.showValue }"
           ></i>
-        </a>
-        <a
+        </button>
+        <button
+          type="button"
           class="row-btn"
-          href="#"
           appStopClick
           appA11yTitle="{{ 'copyValue' | i18n }}"
           *ngIf="
@@ -64,10 +63,9 @@
           (click)="
             copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')
           "
-          role="button"
         >
           <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-        </a>
+        </button>
       </div>
     </div>
   </div>

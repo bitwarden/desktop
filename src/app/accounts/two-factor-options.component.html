@@ -7,8 +7,8 @@
             {{ "twoStepOptions" | i18n }}
           </div>
           <div class="box-content">
-            <a
-              href="#"
+            <button
+              type="button"
               appStopClick
               *ngFor="let p of providers"
               class="box-content-row"
@@ -17,7 +17,7 @@
               <img [src]="'images/two-factor/' + p.type + '.png'" alt="" class="img-right" />
               <span class="text">{{ p.name }}</span>
               <span class="detail">{{ p.description }}</span>
-            </a>
+            </button>
             <button type="button" appStopClick class="box-content-row" (click)="recover()">
               <span class="text">{{ "recoveryCodeTitle" | i18n }}</span>
               <span class="detail">{{ "recoveryCodeDesc" | i18n }}</span>

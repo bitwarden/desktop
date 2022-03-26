@@ -50,7 +50,8 @@ img {
   border: none;
 }
 
-a {
+a,
+button {
   text-decoration: none;
 
   @include themify($themes) {
@@ -84,6 +85,9 @@ button {
 }
 
 button {
+  border: none;
+  background: transparent;
+  color: inherit;
   white-space: nowrap;
   cursor: pointer;
 }

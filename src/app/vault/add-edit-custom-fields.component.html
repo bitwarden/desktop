@@ -10,15 +10,14 @@
         *ngFor="let f of cipher.fields; let i = index; trackBy: trackByFunction"
         [ngClass]="{ 'box-content-row-checkbox': f.type === fieldType.Boolean }"
       >
-        <a
-          href="#"
+        <button
+          type="button"
           appStopClick
           (click)="removeField(f)"
           appA11yTitle="{{ 'remove' | i18n }}"
-          role="button"
         >
           <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
-        </a>
+        </button>
         <label for="fieldName{{ i }}" class="sr-only">{{ "name" | i18n }}</label>
         <label for="fieldValue{{ i }}" class="sr-only">{{ "value" | i18n }}</label>
         <div class="row-main">
@@ -78,12 +77,11 @@
           class="action-buttons"
           *ngIf="f.type === fieldType.Hidden && (cipher.viewPassword || f.newField)"
         >
-          <a
+          <button
+            type="button"
             class="row-btn"
-            href="#"
             appStopClick
             appBlurClick
-            role="button"
             appA11yTitle="{{ 'toggleVisibility' | i18n }}"
             (click)="toggleFieldValue(f)"
           >
@@ -92,7 +90,7 @@
               aria-hidden="true"
               [ngClass]="{ 'bwi-eye': !f.showValue, 'bwi-eye-slash': f.showValue }"
             ></i>
-          </a>
+          </button>
         </div>
         <div class="drag-handle" appA11yTitle="{{ 'dragToSort' | i18n }}" cdkDragHandle>
           <i class="bwi bwi-hamburger" aria-hidden="true"></i>

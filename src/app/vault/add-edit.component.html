@@ -72,12 +72,11 @@
                     aria-hidden="true"
                   ></i>
                 </button>
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   (click)="togglePassword()"
                 >
@@ -86,18 +85,17 @@
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                   ></i>
-                </a>
-                <a
+                </button>
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'generatePassword' | i18n }}"
                   (click)="generatePassword()"
                 >
                   <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
-                </a>
+                </button>
               </div>
             </div>
             <div class="box-content-row" appBoxRow>
@@ -137,12 +135,11 @@
                 />
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   (click)="toggleCardNumber()"
                 >
@@ -151,7 +148,7 @@
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye': !showCardNumber, 'bwi-eye-slash': showCardNumber }"
                   ></i>
-                </a>
+                </button>
               </div>
             </div>
             <div class="box-content-row" appBoxRow>
@@ -191,12 +188,11 @@
                 />
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   (click)="toggleCardCode()"
                 >
@@ -205,7 +201,7 @@
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye': !showCardCode, 'bwi-eye-slash': showCardCode }"
                   ></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -394,7 +390,7 @@
                 (click)="removeUri(u)"
                 appA11yTitle="{{ 'remove' | i18n }}"
               >
-                <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true" role="button"></i>
+                <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
               </button>
               <div class="row-main">
                 <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
@@ -422,31 +418,29 @@
                 </select>
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'toggleOptions' | i18n }}"
                   (click)="toggleUriOptions(u)"
                 >
                   <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
-                </a>
+                </button>
               </div>
             </div>
           </ng-container>
-          <a
-            href="#"
+          <button
+            type="button"
             appStopClick
             appBlurClick
             (click)="addUri()"
             class="box-content-row"
-            role="button"
           >
             <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
             {{ "newUri" | i18n }}
-          </a>
+          </button>
         </div>
       </div>
       <div class="box">
@@ -480,30 +474,28 @@
               (change)="repromptChanged()"
             />
           </div>
-          <a
+          <button
+            type="button"
             class="box-content-row box-content-row-flex text-default"
-            href="#"
             appStopClick
             appBlurClick
             (click)="attachments()"
             *ngIf="editMode && !cloneMode"
-            role="button"
           >
             <div class="row-main">{{ "attachments" | i18n }}</div>
             <i class="bwi bwi-angle-right row-sub-icon" aria-hidden="true"></i>
-          </a>
-          <a
+          </button>
+          <button
+            type="button"
             class="box-content-row box-content-row-flex text-default"
-            href="#"
             appStopClick
             appBlurClick
             (click)="editCollections()"
             *ngIf="editMode && !cloneMode && cipher.organizationId"
-            role="button"
           >
             <div class="row-main">{{ "collections" | i18n }}</div>
             <i class="bwi bwi-angle-right row-sub-icon" aria-hidden="true"></i>
-          </a>
+          </button>
         </div>
       </div>
       <div class="box">

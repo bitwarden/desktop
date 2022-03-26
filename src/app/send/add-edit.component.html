@@ -94,20 +94,13 @@
       <div class="box">
         <div class="box-header">
           {{ "options" | i18n }}
-          <a
-            class="toggle"
-            href="#"
-            appStopClick
-            appBlurClick
-            role="button"
-            (click)="toggleOptions()"
-          >
+          <button type="button" class="toggle" appStopClick appBlurClick (click)="toggleOptions()">
             <i
               class="bwi bwi-lg"
               aria-hidden="true"
               [ngClass]="{ 'bwi-angle-down': !showOptions, 'bwi-chevron-up': showOptions }"
             ></i>
-          </a>
+          </button>
         </div>
       </div>
       <div [hidden]="!showOptions">
@@ -157,12 +150,11 @@
                 />
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   (click)="togglePasswordVisible()"
                   [disabled]="disableSend"
@@ -172,7 +164,7 @@
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                   ></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>
