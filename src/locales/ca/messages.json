@@ -44,14 +44,24 @@
   "share": {
     "message": "Comparteix"
   },
-  "shareItem": {
-    "message": "Comparteix element"
+  "moveToOrganization": {
+    "message": "Desplaça a l'organització"
   },
-  "sharedItem": {
-    "message": "Element compartit"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ desplaçat a $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Trieu una organització amb la qual vulgueu compartir aquest element. En compartir transferiu la propietat de l'element a l'organització. Ja no sereu el propietari directe d'aquest element una vegada que s'haja compartit."
+  "moveToOrgDesc": {
+    "message": "Trieu una organització a la qual vulgueu desplaçar aquest element. El trasllat a una organització transfereix la propietat de l'element a aquesta organització. Ja no sereu el propietari directe d'aquest element una vegada s'haja mogut."
   },
   "attachments": {
     "message": "Adjunts"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Cognoms"
   },
+  "fullName": {
+    "message": "Nom complet"
+  },
   "address1": {
     "message": "Adreça 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booleà"
+  },
+  "cfTypeLinked": {
+    "message": "Enllaçat",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valor enllaçat",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Suprimeix"
@@ -431,13 +452,10 @@
     "message": "Seleccioneu un fitxer."
   },
   "maxFileSize": {
-    "message": "La mida màxima del fitxer és de 100 MB."
+    "message": "La mida màxima del fitxer és de 500 MB."
   },
   "updateKey": {
     "message": "No podeu utilitzar aquesta característica fins que no actualitzeu la vostra clau de xifratge."
-  },
-  "options": {
-    "message": "Opcions"
   },
   "editedFolder": {
     "message": "Carpeta editada"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "No hi ha cap element a llistar."
   },
+  "sendVerificationCode": {
+    "message": "Envia un codi de verificació al correu electrònic"
+  },
+  "sendCode": {
+    "message": "Envia codi"
+  },
+  "codeSent": {
+    "message": "Codi enviat"
+  },
   "verificationCode": {
     "message": "Codi de verificació"
   },
+  "confirmIdentity": {
+    "message": "Confirmeu la vostra contrasenya per continuar."
+  },
   "verificationCodeRequired": {
     "message": "El codi de verificació és obligatori."
+  },
+  "invalidVerificationCode": {
+    "message": "Codi de verificació no vàlid"
   },
   "continue": {
     "message": "Continua"
@@ -592,11 +625,11 @@
     "message": "Verifiqueu amb Duo Security per a la vostra organització mitjançant l'aplicació Duo Mobile, SMS, trucada telefònica o clau de seguretat U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilitzeu qualsevol clau de seguretat habilitada per FIDO U2F per accedir al vostre compte."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Clau de seguretat FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilitzeu qualsevol clau de seguretat habilitada per WebAuthn per accedir al vostre compte."
   },
   "emailTitle": {
     "message": "Correu electrònic"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "S'està carregant..."
   },
-  "lockNow": {
-    "message": "Bloqueja ara"
+  "lockVault": {
+    "message": "Bloqueja caixa forta"
   },
   "passwordGenerator": {
     "message": "Generador de contrasenyes"
   },
-  "emailUs": {
-    "message": "Envia'ns un correu electrònic"
+  "contactUs": {
+    "message": "Contacta'ns"
   },
-  "visitOurWebsite": {
-    "message": "Visiteu el nostre lloc web"
+  "getHelp": {
+    "message": "Obteniu ajuda"
   },
   "fileBugReport": {
     "message": "Presenta un informe d'error"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Les claus de xifratge són exclusives de cada compte d'usuari Bitwarden, de manera que no podeu importar una exportació xifrada a un compte diferent."
   },
-  "exportMasterPassword": {
-    "message": "Introduïu la contrasenya mestra per exportar les dades de la caixa forta."
-  },
   "noOrganizationsList": {
     "message": "No pertanyeu a cap organització. Les organitzacions permeten compartir elements amb seguretat amb altres usuaris."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "El codi PIN no és vàlid."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "La caixa forta està bloquejada. Verifiqueu El codi PIN per continuar."
-  },
   "unlockWithWindowsHello": {
     "message": "Desbloqueja amb Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "desbloqueja la teva caixa forta"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "No demaneu que Windows Hello en iniciar."
+  },
+  "noAutoPromptTouchId": {
+    "message": "No sol·liciteu Touch ID en iniciar."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloqueja amb la contrasenya mestra en reiniciar"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Pendent de supressió"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autenticar WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Amagueu la meua adreça de correu electrònic als destinataris."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Una o més polítiques d'organització afecten les vostres opcions del Send."
+  },
+  "emailVerificationRequired": {
+    "message": "Es requereix verificació per correu electrònic"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Heu de verificar el vostre correu electrònic per utilitzar aquesta característica."
+  },
+  "passwordPrompt": {
+    "message": "Sol·licitud de la contrasenya mestra"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmació de la contrasenya mestra"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Aquesta acció està protegida. Per continuar, torneu a introduir la contrasenya principal per verificar la vostra identitat."
+  },
+  "updatedMasterPassword": {
+    "message": "Contrasenya mestra actualitzada"
+  },
+  "updateMasterPassword": {
+    "message": "Actualitza contrasenya mestra"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Un administrador de l'organització ha canviat recentment la contrasenya principal. Per accedir a la caixa forta, heu d'actualitzar-la ara. Si continueu, es tancarà la sessió actual i heu de tornar a iniciar-la. És possible que les sessions obertes en altres dispositius continuen actives fins a una hora."
+  },
+  "hours": {
+    "message": "Hores"
+  },
+  "minutes": {
+    "message": "Minuts"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Les polítiques de l'organització afecten el temps d'espera de la caixa forta. El temps d'espera màxim permès d'aquesta és de $HOURS$ hores i $MINUTES$ minuts",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "El temps d'espera de la caixa forta supera les restriccions establertes per la vostra organització."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscripció automàtica"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Aquesta organització té una política empresarial que us inscriurà automàticament al restabliment de la contrasenya. La inscripció permetrà als administradors de l’organització canviar la vostra contrasenya mestra."
+  },
+  "vaultExportDisabled": {
+    "message": "L'exportació de la caixa forta està desactivada"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Una o més polítiques d'organització us impedeixen exportar la vostra caixa forta."
+  },
+  "addAccount": {
+    "message": "Afig compte"
+  },
+  "removeMasterPassword": {
+    "message": "Suprimiu la contrasenya mestra"
+  },
+  "removedMasterPassword": {
+    "message": "S'ha suprimit la contrasenya mestra."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ està utilitzant SSO amb un servidor autoallotjat de claus. Ja no es requereix una contrasenya mestra d'inici de sessió per als membres d'aquesta organització.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Abandona l'organització"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Esteu segur que voleu eixir d'aquesta organització?"
+  },
+  "leftOrganization": {
+    "message": "Heu deixat l'organització."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "No es pot arribar al connector de claus, torneu-ho a provar més tard."
+  },
+  "lockAllVaults": {
+    "message": "Bloqueja totes les caixes fortes"
+  },
+  "accountLimitReached": {
+    "message": "No es pot iniciar sessió a més de 5 comptes al mateix temps."
+  },
+  "accountPreferences": {
+    "message": "Preferències"
+  },
+  "appPreferences": {
+    "message": "Configuració de l'aplicació (tots els comptes)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "S'ha arribat al límit del compte. Tanqueu la sessió d'un compte per afegir-ne un altre."
+  },
+  "settingsTitle": {
+    "message": "Configuració de l'aplicació per a $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Canvia de compte"
+  },
+  "options": {
+    "message": "Opcions"
+  },
+  "sessionTimeout": {
+    "message": "La sessió ha expirat. Torneu arrere i proveu d'iniciar sessió de nou."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "S'està exportant la caixa forta personal"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Només s'exportaran els elements personals de la caixa forta associats a $EMAIL$. Els elements de la caixa forta de l'organització no s'inclouran.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

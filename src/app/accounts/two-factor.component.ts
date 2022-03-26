@@ -1,73 +1,91 @@
-import {
-    Component,
-    ComponentFactoryResolver,
-    ViewChild,
-    ViewContainerRef,
-} from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 
-import {
-    ActivatedRoute,
-    Router,
-} from '@angular/router';
+import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
+import { ModalService } from "jslib-angular/services/modal.service";
+import { ApiService } from "jslib-common/abstractions/api.service";
+import { AuthService } from "jslib-common/abstractions/auth.service";
+import { EnvironmentService } from "jslib-common/abstractions/environment.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
+import { SyncService } from "jslib-common/abstractions/sync.service";
+import { TwoFactorService } from "jslib-common/abstractions/twoFactor.service";
+import { TwoFactorProviderType } from "jslib-common/enums/twoFactorProviderType";
 
-import { TwoFactorOptionsComponent } from './two-factor-options.component';
-
-import { TwoFactorProviderType } from 'jslib/enums/twoFactorProviderType';
-
-import { ApiService } from 'jslib/abstractions/api.service';
-import { AuthService } from 'jslib/abstractions/auth.service';
-import { EnvironmentService } from 'jslib/abstractions/environment.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { StateService } from 'jslib/abstractions/state.service';
-import { StorageService } from 'jslib/abstractions/storage.service';
-import { SyncService } from 'jslib/abstractions/sync.service';
-
-import { ModalComponent } from 'jslib/angular/components/modal.component';
-import { TwoFactorComponent as BaseTwoFactorComponent } from 'jslib/angular/components/two-factor.component';
+import { TwoFactorOptionsComponent } from "./two-factor-options.component";
 
 @Component({
-    selector: 'app-two-factor',
-    templateUrl: 'two-factor.component.html',
+  selector: "app-two-factor",
+  templateUrl: "two-factor.component.html",
 })
 export class TwoFactorComponent extends BaseTwoFactorComponent {
-    @ViewChild('twoFactorOptions', { read: ViewContainerRef, static: true }) twoFactorOptionsModal: ViewContainerRef;
+  @ViewChild("twoFactorOptions", { read: ViewContainerRef, static: true })
+  twoFactorOptionsModal: ViewContainerRef;
 
-    showingModal = false;
+  showingModal = false;
 
-    constructor(authService: AuthService, router: Router,
-        i18nService: I18nService, apiService: ApiService,
-        platformUtilsService: PlatformUtilsService, syncService: SyncService,
-        environmentService: EnvironmentService, private componentFactoryResolver: ComponentFactoryResolver,
-        stateService: StateService, storageService: StorageService, route: ActivatedRoute) {
-        super(authService, router, i18nService, apiService, platformUtilsService, window, environmentService,
-            stateService, storageService, route);
-        super.onSuccessfulLogin = () => {
-            return syncService.fullSync(true);
-        };
+  constructor(
+    authService: AuthService,
+    router: Router,
+    i18nService: I18nService,
+    apiService: ApiService,
+    platformUtilsService: PlatformUtilsService,
+    syncService: SyncService,
+    environmentService: EnvironmentService,
+    private modalService: ModalService,
+    stateService: StateService,
+    route: ActivatedRoute,
+    logService: LogService,
+    twoFactorService: TwoFactorService
+  ) {
+    super(
+      authService,
+      router,
+      i18nService,
+      apiService,
+      platformUtilsService,
+      window,
+      environmentService,
+      stateService,
+      route,
+      logService,
+      twoFactorService
+    );
+    super.onSuccessfulLogin = () => {
+      return syncService.fullSync(true);
+    };
+  }
+
+  async anotherMethod() {
+    const [modal, childComponent] = await this.modalService.openViewRef(
+      TwoFactorOptionsComponent,
+      this.twoFactorOptionsModal
+    );
+
+    modal.onShown.subscribe(() => {
+      this.showingModal = true;
+    });
+    modal.onClosed.subscribe(() => {
+      this.showingModal = false;
+    });
+
+    childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
+      modal.close();
+      this.selectedProviderType = provider;
+      await this.init();
+    });
+    childComponent.onRecoverSelected.subscribe(() => {
+      modal.close();
+    });
+  }
+
+  async submit() {
+    await super.submit();
+    if (this.captchaSiteKey) {
+      const content = document.getElementById("content") as HTMLDivElement;
+      content.setAttribute("style", "width:335px");
     }
-
-    anotherMethod() {
-        const factory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        const modal = this.twoFactorOptionsModal.createComponent(factory).instance;
-        modal.onShown.subscribe(() => {
-            this.showingModal = true;
-        });
-        modal.onClosed.subscribe(() => {
-            this.showingModal = false;
-            modal.onShown.unsubscribe();
-            modal.onClosed.unsubscribe();
-        });
-
-        const childComponent = modal.show<TwoFactorOptionsComponent>(TwoFactorOptionsComponent,
-            this.twoFactorOptionsModal);
-        childComponent.onProviderSelected.subscribe(async (provider: TwoFactorProviderType) => {
-            modal.close();
-            this.selectedProviderType = provider;
-            await this.init();
-        });
-        childComponent.onRecoverSelected.subscribe(() => {
-            modal.close();
-        });
-    }
+  }
 }

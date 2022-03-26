@@ -44,14 +44,24 @@
   "share": {
     "message": "共有"
   },
-  "shareItem": {
-    "message": "アイテムを共有する"
+  "moveToOrganization": {
+    "message": "組織に移動"
   },
-  "sharedItem": {
-    "message": "共有しました"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ を $ORGNAME$ に移動しました",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "このアイテムを共有する組織を選択してください。共有するとアイテムの所有権は組織に移行し、あなたはもはやこのアイテムの直接の所有者ではなくなります。"
+  "moveToOrgDesc": {
+    "message": "このアイテムを移動する組織を選択してください。組織に移動すると、アイテムの所有権がその組織に移行します。 このアイテムが移動された後、あなたはこのアイテムの直接の所有者にはなりません。"
   },
   "attachments": {
     "message": "添付ファイル"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "姓"
   },
+  "fullName": {
+    "message": "フルネーム"
+  },
   "address1": {
     "message": "住所1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "真偽値"
+  },
+  "cfTypeLinked": {
+    "message": "リンク済",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "リンクされた値",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "削除"
@@ -431,13 +452,10 @@
     "message": "ファイルを選択してください。"
   },
   "maxFileSize": {
-    "message": "最大ファイルサイズは100MBです。"
+    "message": "最大ファイルサイズは500MBです。"
   },
   "updateKey": {
     "message": "暗号キーを更新するまでこの機能は使用できません。"
-  },
-  "options": {
-    "message": "オプション"
   },
   "editedFolder": {
     "message": "フォルダーを編集しました"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "表示するアイテムがありません"
   },
+  "sendVerificationCode": {
+    "message": "確認コードをメールに送信"
+  },
+  "sendCode": {
+    "message": "コードを送信"
+  },
+  "codeSent": {
+    "message": "確認コードを送信しました。"
+  },
   "verificationCode": {
     "message": "認証コード"
   },
+  "confirmIdentity": {
+    "message": "続行するには本人確認を行ってください。"
+  },
   "verificationCodeRequired": {
     "message": "認証コードは必須項目です。"
+  },
+  "invalidVerificationCode": {
+    "message": "認証コードが間違っています"
   },
   "continue": {
     "message": "続行"
@@ -592,11 +625,11 @@
     "message": "組織の Duo Security を Duo Mobile アプリや SMS、電話、U2F セキュリティーキーを使用して認証します。",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "FIDO U2F が有効なセキュリティキーを使ってアカウントにアクセスできます。"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F セキュリティキー"
+  "webAuthnDesc": {
+    "message": "アカウントにアクセスするには、WebAuthn 対応のセキュリティキーを使用してください。"
   },
   "emailTitle": {
     "message": "メールアドレス"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "読み込み中…"
   },
-  "lockNow": {
-    "message": "今すぐロック"
+  "lockVault": {
+    "message": "保管庫をロック"
   },
   "passwordGenerator": {
     "message": "パスワード生成ツール"
   },
-  "emailUs": {
-    "message": "メールでのお問い合わせ"
+  "contactUs": {
+    "message": "お問い合わせ"
   },
-  "visitOurWebsite": {
-    "message": "ウェブサイトを開く"
+  "getHelp": {
+    "message": "ヘルプ"
   },
   "fileBugReport": {
     "message": "バグレポートを送信"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "アカウント暗号化キーは各 Bitwarden ユーザーアカウントに固有であるため、暗号化されたエクスポートを別のアカウントにインポートすることはできません。"
   },
-  "exportMasterPassword": {
-    "message": "保管庫のデータをエクスポートするにはマスターパスワードを入力してください。"
-  },
   "noOrganizationsList": {
     "message": "あなたはどの組織にも属していません。組織では他のユーザーとアイテムを安全に共有できます。"
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "PIN コードが間違っています。"
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "保管庫がロックされています。PIN コードで確認してください。"
-  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello でロック解除"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Bitwarden の認証を行います。"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "起動時に Windows Hello のプロンプトを表示しない"
+  },
+  "noAutoPromptTouchId": {
+    "message": "起動時に Touch ID を要求しない"
   },
   "lockWithMasterPassOnRestart": {
     "message": "再起動時にマスターパスワードでロック"
@@ -1553,7 +1586,7 @@
     "message": "現在のアクセス数"
   },
   "disableSend": {
-    "message": "誰もアクセスできないように、この Send を無効にします。",
+    "message": "誰もアクセスできないように、この Send を無効にする",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "削除の保留中"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAuthn の認証"
+  },
+  "hideEmail": {
+    "message": "メールアドレスを受信者に表示しない"
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "一つ以上の組織ポリシーが Send の設定に影響しています。"
+  },
+  "emailVerificationRequired": {
+    "message": "メールアドレスの確認が必要です"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "この機能を使用するにはメールアドレスを確認する必要があります。"
+  },
+  "passwordPrompt": {
+    "message": "マスターパスワードの再要求"
+  },
+  "passwordConfirmation": {
+    "message": "マスターパスワードの確認"
+  },
+  "passwordConfirmationDesc": {
+    "message": "この操作は保護されています。続行するには、確認のためにマスターパスワードを再入力してください。"
+  },
+  "updatedMasterPassword": {
+    "message": "マスターパスワードを更新しました"
+  },
+  "updateMasterPassword": {
+    "message": "マスターパスワードを更新しました"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "マスターパスワードは最近組織の管理者によって変更されました。保管庫にアクセスするには、今すぐ更新する必要があります。 続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイスでのアクティブなセッションは、最大1時間アクティブになり続けることがあります。"
+  },
+  "hours": {
+    "message": "時間"
+  },
+  "minutes": {
+    "message": "分"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "あなたの組織ポリシーは保管庫のタイムアウトに影響を与えています。最大保管庫のタイムアウト時間は $HOURS$ 時間 $MINUTES$ 分です。",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "保管庫のタイムアウトが組織によって設定された制限を超えています。"
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "自動登録"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "この組織には自動的にパスワードリセットに登録するポリシーがあります。登録すると、組織の管理者はマスターパスワードを変更できます。"
+  },
+  "vaultExportDisabled": {
+    "message": "保管庫のエクスポートは無効です"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "1 つまたは複数の組織ポリシーにより、個人の保管庫をエクスポートできません。"
+  },
+  "addAccount": {
+    "message": "アカウントを追加"
+  },
+  "removeMasterPassword": {
+    "message": "マスターパスワードを削除する"
+  },
+  "removedMasterPassword": {
+    "message": "マスターパスワードを削除しました。"
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ は自己ホストの鍵サーバで SSO を使用しています。この組織のメンバーのログインにマスターパスワードは必要ありません。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "組織から脱退する"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "本当にこの組織から脱退しますか？"
+  },
+  "leftOrganization": {
+    "message": "組織から脱退しました。"
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "キーコネクターに到達できません。後でもう一度お試しください。"
+  },
+  "lockAllVaults": {
+    "message": "すべての保管庫をロック"
+  },
+  "accountLimitReached": {
+    "message": "5つ以上のアカウントに同時にログインすることはできません。"
+  },
+  "accountPreferences": {
+    "message": "設定"
+  },
+  "appPreferences": {
+    "message": "アプリ設定 (すべてのアカウント)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "アカウントの制限に達しました。別のアカウントを追加するにはアカウントからログアウトしてください。"
+  },
+  "settingsTitle": {
+    "message": "$EMAIL$ のアプリ設定",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "アカウント切替"
+  },
+  "options": {
+    "message": "オプション"
+  },
+  "sessionTimeout": {
+    "message": "セッションがタイムアウトしました。もう一度ログインしてください。"
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "個人保管庫のエクスポート"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "$EMAIL$ に関連付けられた個人用保管庫アイテムのみがエクスポートされます。組織用保管庫アイテムは含まれません。",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

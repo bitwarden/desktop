@@ -44,14 +44,24 @@
   "share": {
     "message": "اشتراک‌گذاری"
   },
-  "shareItem": {
-    "message": "اشتراک‌گذاری مورد"
+  "moveToOrganization": {
+    "message": "انتقال به سازمان"
   },
-  "sharedItem": {
-    "message": "مورد اشتراک‌گذاری شد"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ منتقل شد به $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "تشکیلاتی که می‌خواهید این مورد را با آن به اشتراک بگذارید انتخاب کنید. پس از اشتراک‌گذاری مالکیت موارد به آن تشکیلات انتقال می‌یابد. پس از اشتراک‌گذاری این مورد شما دیگر نمی‌توانید صاحب اصلی آن باشید."
+  "moveToOrgDesc": {
+    "message": "سازمانی را انتخاب کنید که می خواهید این مورد را به آن منتقل کنید. انتقال به یک سازمان، مالکیت مورد را به آن سازمان منتقل می کند. پس از انتقال این مورد، دیگر مالک مستقیم آن نخواهید بود."
   },
   "attachments": {
     "message": "پیوست‌ها"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "نام خانوادگی"
   },
+  "fullName": {
+    "message": "نام کامل"
+  },
   "address1": {
     "message": "نشانی ۱"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "بولی"
+  },
+  "cfTypeLinked": {
+    "message": "لینک شده",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "ارزش لینک شده",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "حذف"
@@ -436,9 +457,6 @@
   "updateKey": {
     "message": "تا زمانی که کد رمزنگاری را بروز نکنید نمی‌توانید از این قابلیت استفاده کنید."
   },
-  "options": {
-    "message": "گزینه‌ها"
-  },
   "editedFolder": {
     "message": "پوشه ویرایش شد"
   },
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "هیچ موردی برای نمایش وجود ندارد."
   },
+  "sendVerificationCode": {
+    "message": "ارسال یک کد تأیید به ایمیل شما"
+  },
+  "sendCode": {
+    "message": "ارسال کد"
+  },
+  "codeSent": {
+    "message": "کد ارسال شد"
+  },
   "verificationCode": {
     "message": "کد تایید"
   },
+  "confirmIdentity": {
+    "message": "برای ادامه هویت خود را تأیید کنید."
+  },
   "verificationCodeRequired": {
     "message": "کد تایید مورد نیاز است."
+  },
+  "invalidVerificationCode": {
+    "message": "کد تایید نامعتبر"
   },
   "continue": {
     "message": "ادامه"
@@ -592,11 +625,11 @@
     "message": "از Duo Security با استفاده از برنامه تلفن همراه، پیامک، تماس تلفنی یا کلید امنیتی U2F برای تایید سازمان خود استفاده کنید.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "از هر کلید امنیتی با FIDO U2F فعال استفاده کنید تا به حساب کاربریتان دسترسی یابید."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "کلید امنیتی FIDO U2F"
+  "webAuthnDesc": {
+    "message": "برای دسترسی به حساب خود از هر کلید امنیتی فعال شده WebAuthn استفاده کنید."
   },
   "emailTitle": {
     "message": "رایانامه"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "درحال بارگذاری..."
   },
-  "lockNow": {
-    "message": "الان قفل شود"
+  "lockVault": {
+    "message": "قفل کردن گاوصندوق"
   },
   "passwordGenerator": {
     "message": "تولید کننده کلمه عبور"
   },
-  "emailUs": {
-    "message": "به ما رایانامه بفرستید"
+  "contactUs": {
+    "message": "تماس با ما"
   },
-  "visitOurWebsite": {
-    "message": "از وب‌سایت ما دیدن کنید"
+  "getHelp": {
+    "message": "کمک گرفتن"
   },
   "fileBugReport": {
     "message": "گزارش یک مشکل"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "کلیدهای رمزگذاری حساب برای هر حساب کاربری Bitwarden منحصر به فرد است ، بنابراین نمی توانید صادرات رمزگذاری شده را به حساب دیگری وارد کنید."
   },
-  "exportMasterPassword": {
-    "message": "کلمه عبور اصلی خود را برای خروجی گرفتن از گاوصندوقتان وارد کنید."
-  },
   "noOrganizationsList": {
     "message": "شما به هیچ سازمانی تعلق ندارید. سازمان‌ها به شما اجازه می‌دهند تا داده‌های خود را را با کاربران دیگر به صورت امن به اشتراک بگذارید."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "کد پین غیر معتبر است."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "گاوصندوق شما قفل شده است. برای ادامه کد پین خود را تایید کنید."
-  },
   "unlockWithWindowsHello": {
     "message": "باز کردن با Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "تایید برای Bitwarden."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "در هنگام راه اندازی ، درخواست Windows Hello نکنید."
+  },
+  "noAutoPromptTouchId": {
+    "message": "در هنگام راه اندازی ، درخواست Touch ID نکنید."
   },
   "lockWithMasterPassOnRestart": {
     "message": "در زمان شروع مجدد، با کلمه عبور اصلی قفل کن"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "در انتظار حذف"
+  },
+  "webAuthnAuthenticate": {
+    "message": "تأیید اعتبار در WebAuthn"
+  },
+  "hideEmail": {
+    "message": "آدرس ایمیلم را از گیرندگان مخفی کن."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "یک یا چند سیاست سازمان بر گزینه های ارسال شما تأثیر می گذارد."
+  },
+  "emailVerificationRequired": {
+    "message": "تایید ایمیل لازم است"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "برای استفاده از این ویژگی باید ایمیل خود را تأیید کنید."
+  },
+  "passwordPrompt": {
+    "message": "کلمه عبور اصلی دوباره تولید می شود"
+  },
+  "passwordConfirmation": {
+    "message": "تأیید کلمه عبور اصلی"
+  },
+  "passwordConfirmationDesc": {
+    "message": "این عمل محافظت می شود. برای ادامه، لطفاً کلمه ورود اصلی خود را دوباره وارد کنید تا هویتان را تأیید کنید."
+  },
+  "updatedMasterPassword": {
+    "message": "کلمه عبور اصلی بروز شد"
+  },
+  "updateMasterPassword": {
+    "message": "بروزرسانی کلمه عبور اصلی"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "کلمه عبور اصلی شما اخیراً توسط سرپرست سازمانتان تغییر کرده است. برای دسترسی به گاوصندوق، باید همین حالا کلمه عبور اصلی خود را به روز کنید. در صورت ادامه، شما از نشست فعلی خود خارج می شوید و باید دوباره وارد سیستم شوید. نشست فعال در دستگاه های دیگر ممکن است تا یک ساعت همچنان فعال باقی بمانند."
+  },
+  "hours": {
+    "message": "ساعت"
+  },
+  "minutes": {
+    "message": "دقیقه"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "خط مشی های سازمانتان بر مهلت زمانی گاوصندوق شما تأثیر می گذارد. حداکثر زمان مجاز گاوصندوق $HOURS$ ساعت و $MINUTES$ دقیقه است",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "مهلت زمانی شما بیش از محدودیت های تعیین شده توسط سازمانتان است."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "ثبت نام خودکار"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "این سازمان دارای خط مشی سازمانی ای است که به طور خودکار شما را در بازنشانی کلمه عبور ثبت نام می کند. این ثبت نام به مدیران سازمان اجازه می دهد تا کلمه عبور اصلی شما را تغییر دهند."
+  },
+  "vaultExportDisabled": {
+    "message": "صادرات گاوصندوق غیرفعال شده است"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "یک یا چند خط مشی سازمان از صادرات گاوصندوق شخصی شما جلوگیری می کند."
+  },
+  "addAccount": {
+    "message": "افزودن حساب کاربری"
+  },
+  "removeMasterPassword": {
+    "message": "پاک کردن کلمه عبور اصلی"
+  },
+  "removedMasterPassword": {
+    "message": "کلمه عبور اصلی پاک شد."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ در حال استفاده از SSO با یک سرور کلید خود میزبان است. برای ورود اعضای این سازمان دیگر نیازی به کلمه عبور اصلی نیست.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "ترک سازمان"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "آيا مطمئن هستيد که می خواهيد سازمان های انتخاب شده را ترک کنيد؟"
+  },
+  "leftOrganization": {
+    "message": "شما از سازمان ها خارج شده اید."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "دسترسی به رابط کلید ممکن نیست، بعداً دوباره امتحان کنید."
+  },
+  "lockAllVaults": {
+    "message": "قفل کردن تمام گاوصندوق ها"
+  },
+  "accountLimitReached": {
+    "message": "بیش از 5 حساب را نمی توان همزمان وارد کرد."
+  },
+  "accountPreferences": {
+    "message": "تنظیمات"
+  },
+  "appPreferences": {
+    "message": "تنظیمات اپ (تمام حسابها)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "محدودیت حساب تکمیل شد. برای افزودن حساب دیگر، از یک حساب خارج شوید."
+  },
+  "settingsTitle": {
+    "message": "تنظیمات اپ برای $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "تعویض حساب کاربری"
+  },
+  "options": {
+    "message": "گزینه‌ها"
+  },
+  "sessionTimeout": {
+    "message": "زمان نشست شما به پایان رسید. لطفاً برگردید و دوباره وارد سیستم شوید."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "صادرات گاو‌صندوق شخصی"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "فقط موارد گاو‌صندوق شخصی مرتبط با $EMAIL$ صادر خواهد شد. موارد گاو‌صندوق سازمان شامل نخواهد شد.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

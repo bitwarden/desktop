@@ -1,22 +1,37 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { ApiService } from 'jslib/abstractions/api.service';
-import { CipherService } from 'jslib/abstractions/cipher.service';
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { UserService } from 'jslib/abstractions/user.service';
-
-import { AttachmentsComponent as BaseAttachmentsComponent } from 'jslib/angular/components/attachments.component';
+import { AttachmentsComponent as BaseAttachmentsComponent } from "jslib-angular/components/attachments.component";
+import { ApiService } from "jslib-common/abstractions/api.service";
+import { CipherService } from "jslib-common/abstractions/cipher.service";
+import { CryptoService } from "jslib-common/abstractions/crypto.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
 
 @Component({
-    selector: 'app-vault-attachments',
-    templateUrl: 'attachments.component.html',
+  selector: "app-vault-attachments",
+  templateUrl: "attachments.component.html",
 })
 export class AttachmentsComponent extends BaseAttachmentsComponent {
-    constructor(cipherService: CipherService, i18nService: I18nService,
-        cryptoService: CryptoService, userService: UserService,
-        platformUtilsService: PlatformUtilsService, apiService: ApiService) {
-        super(cipherService, i18nService, cryptoService, userService, platformUtilsService, apiService, window);
-    }
+  constructor(
+    cipherService: CipherService,
+    i18nService: I18nService,
+    cryptoService: CryptoService,
+    platformUtilsService: PlatformUtilsService,
+    apiService: ApiService,
+    logService: LogService,
+    stateService: StateService
+  ) {
+    super(
+      cipherService,
+      i18nService,
+      cryptoService,
+      platformUtilsService,
+      apiService,
+      window,
+      logService,
+      stateService
+    );
+  }
 }

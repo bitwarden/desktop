@@ -44,14 +44,24 @@
   "share": {
     "message": "Teilen"
   },
-  "shareItem": {
-    "message": "Eintrag teilen"
+  "moveToOrganization": {
+    "message": "In Organisation verschieben"
   },
-  "sharedItem": {
-    "message": "Geteilter Eintrag"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ verschoben nach $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Wähle eine Organisation aus, für die du diesen Eintrag freigeben möchtest. Die gemeinsame Nutzung überträgt das Eigentum an dem Eintrag auf diese Organisation. Du bist dann nicht mehr der direkte Besitzer dieses Eintrags, sobald er geteilt wurde."
+  "moveToOrgDesc": {
+    "message": "Wähle eine Organisation aus, in die du diesen Eintrag verschieben möchtest. Das Verschieben in eine Organisation überträgt das Eigentum an diese Organisation. Du bist nicht mehr der direkte Besitzer dieses Eintrags, sobald er verschoben wurde."
   },
   "attachments": {
     "message": "Anhänge"
@@ -122,7 +132,7 @@
     "message": "Sichtbarkeit umschalten"
   },
   "toggleCollapse": {
-    "message": "Schalter ausklappen",
+    "message": "Ein- und ausklappen",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Nachname"
   },
+  "fullName": {
+    "message": "Vollständiger Name"
+  },
   "address1": {
     "message": "Adresse 1"
   },
@@ -318,11 +331,19 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeLinked": {
+    "message": "Verknüpft",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Verknüpfter Wert",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Entfernen"
   },
   "nameRequired": {
-    "message": "Der Name ist erforderlich."
+    "message": "Name ist erforderlich."
   },
   "addedItem": {
     "message": "Eintrag hinzugefügt"
@@ -431,13 +452,10 @@
     "message": "Wähle eine Datei."
   },
   "maxFileSize": {
-    "message": "Die maximale Dateigröße beträgt 100 MB."
+    "message": "Die maximale Dateigröße beträgt 500 MB."
   },
   "updateKey": {
     "message": "Du kannst diese Funktion nicht nutzen, bevor du deinen Verschlüsselungsschlüssel aktualisiert hast."
-  },
-  "options": {
-    "message": "Optionen"
   },
   "editedFolder": {
     "message": "Ordner bearbeitet"
@@ -506,7 +524,7 @@
     "message": "Die Passwortbestätigung stimmt nicht mit dem Passwort überein."
   },
   "newAccountCreated": {
-    "message": "Der Account wurde erstellt! Du kannst dich jetzt anmelden."
+    "message": "Dein neues Konto wurde erstellt! Du kannst dich jetzt anmelden."
   },
   "masterPassSent": {
     "message": "Wir haben dir eine E-Mail mit dem Master-Passwort-Hinweis gesendet."
@@ -518,13 +536,28 @@
     "message": "Eintrags-Information"
   },
   "noItemsInList": {
-    "message": "Keine Einträge zum Anzeigen vorhanden."
+    "message": "Keine Einträge vorhanden."
+  },
+  "sendVerificationCode": {
+    "message": "Einen Bestätigungscode an deine E-Mail senden"
+  },
+  "sendCode": {
+    "message": "Code senden"
+  },
+  "codeSent": {
+    "message": "Code gesendet"
   },
   "verificationCode": {
     "message": "Verifizierungscode"
   },
+  "confirmIdentity": {
+    "message": "Bestätige deine Identität, um fortzufahren."
+  },
   "verificationCodeRequired": {
     "message": "Verifizierungscode wird benötigt."
+  },
+  "invalidVerificationCode": {
+    "message": "Ungültiger Verifizierungscode"
   },
   "continue": {
     "message": "Weiter"
@@ -557,7 +590,7 @@
     "message": "E-Mail mit Bestätigungscode erneut versenden"
   },
   "useAnotherTwoStepMethod": {
-    "message": "Verwende eine andere Zwei-Faktor Login-Methode"
+    "message": "Eine andere Zwei-Faktor-Login-Methode verwenden"
   },
   "insertYubiKey": {
     "message": "Stecke deinen YubiKey in einen USB-Anschluss deines Computers, dann berühre den Button."
@@ -592,11 +625,11 @@
     "message": "Nutze Duo Security, um dich mit der Duo-Mobile-App, SMS, per Anruf oder U2F-Sicherheitsschlüssel bei deiner Organisation zu verifizieren.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Benutze einen FIDO-U2F-kompatiblen Sicherheitsschlüssel, um auf dein Konto zuzugreifen."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO-U2F-Sicherheitsschlüssel"
+  "webAuthnDesc": {
+    "message": "Benutze einen WebAuthn-kompatiblen Sicherheitsschlüssel um auf dein Konto zuzugreifen."
   },
   "emailTitle": {
     "message": "E-Mail"
@@ -662,13 +695,13 @@
     "message": "Passwort ersetzen"
   },
   "learnMore": {
-    "message": "Erfahre mehr"
+    "message": "Mehr erfahren"
   },
   "featureUnavailable": {
     "message": "Funktion nicht verfügbar"
   },
   "loggedOut": {
-    "message": "Ausgeloggt"
+    "message": "Abgemeldet"
   },
   "loginExpired": {
     "message": "Deine Sitzung ist abgelaufen."
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Lade …"
   },
-  "lockNow": {
-    "message": "Jetzt sperren"
+  "lockVault": {
+    "message": "Tresor sperren"
   },
   "passwordGenerator": {
     "message": "Passwort-Generator"
   },
-  "emailUs": {
-    "message": "Kontaktiere uns"
+  "contactUs": {
+    "message": "Kontakt"
   },
-  "visitOurWebsite": {
-    "message": "Unsere Website besuchen"
+  "getHelp": {
+    "message": "Hilfe erhalten"
   },
   "fileBugReport": {
     "message": "Einen Fehler melden"
@@ -751,7 +784,7 @@
     "message": "Synchronisierung fehlgeschlagen"
   },
   "yourVaultIsLocked": {
-    "message": "Dein Tresor ist gesperrt. Überprüfe dein Master-Passwort, um fortzufahren."
+    "message": "Ihr Tresor ist gesperrt. Überprüfen Sie Ihr Master-Passwort, um fortzufahren."
   },
   "unlock": {
     "message": "Entsperren"
@@ -1032,7 +1065,7 @@
     "message": "Du kannst deine Premium-Mitgliedschaft im bitwarden.com Web-Tresor kaufen. Möchtest du die Webseite jetzt besuchen?"
   },
   "premiumCurrentMember": {
-    "message": "Du bist jetzt Premium-Mitglied!"
+    "message": "Du bist ein Premium-Mitglied!"
   },
   "premiumCurrentMemberThanks": {
     "message": "Vielen Dank, dass du Bitwarden unterstützt."
@@ -1053,7 +1086,7 @@
     "message": "Kennwort-Historie"
   },
   "clear": {
-    "message": "Löschen",
+    "message": "Leeren",
     "description": "To clear something out. example: To clear browser history."
   },
   "noPasswordsInList": {
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Die Verschlüsselungscodes eines Kontos sind für jedes Bitwarden-Benutzerkonto einzigartig, deshalb kannst du keinen verschlüsselten Export in ein anderes Konto importieren."
   },
-  "exportMasterPassword": {
-    "message": "Gib das Masterpasswort ein, um deine Tresordaten zu exportieren."
-  },
   "noOrganizationsList": {
     "message": "Du bist kein Mitglied einer Organisation. Organisationen erlauben es dir Passwörter sicher mit anderen Nutzern zu teilen."
   },
@@ -1261,10 +1291,10 @@
     "description": "ex. A weak password. Scale: Weak -> Good -> Strong"
   },
   "weakMasterPassword": {
-    "message": "Schwaches Haupt-Passwort"
+    "message": "Schwaches Master-Passwort"
   },
   "weakMasterPasswordDesc": {
-    "message": "Das Haupt-Passwort, das du gewählt hast ist schwach. Du solltest ein starkes Haupt-Passwort auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Haupt-Passwort verwenden sollen?"
+    "message": "Das Master-Passwort, das du gewählt hast, ist schwach. Du solltest ein starkes Master-Passwort (oder eine Passphrase) auswählen, um dein Bitwarden-Konto richtig zu schützen. Bist du sicher, dass du dieses Master-Passwort verwenden willst?"
   },
   "pin": {
     "message": "PIN",
@@ -1274,16 +1304,13 @@
     "message": "Mit PIN-Code entsperren"
   },
   "setYourPinCode": {
-    "message": "Gebe deinen PIN-Code für das Entsperren von Bitwarden ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmelden."
+    "message": "Gebe deinen PIN-Code für das Entsperren von Bitwarden ein. Deine PIN-Einstellungen werden zurückgesetzt, wenn du dich vollständig von der Anwendung abmeldest."
   },
   "pinRequired": {
     "message": "PIN-Code ist erforderlich."
   },
   "invalidPin": {
     "message": "Ungültiger PIN-Code."
-  },
-  "yourVaultIsLockedPinCode": {
-    "message": "Dein Tresor ist gesperrt. Gebe deinen PIN-Code ein um fortzufahren."
   },
   "unlockWithWindowsHello": {
     "message": "Mit Windows Hello entsperren"
@@ -1295,7 +1322,13 @@
     "message": "Mit Touch ID entsperren"
   },
   "touchIdConsentMessage": {
-    "message": "Ihren Tresor entsperren"
+    "message": "Deinen Tresor entsperren"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Beim Start nicht nach Windows Hello fragen."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Beim Start nicht nach Touch ID fragen."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Beim Neustart mit Master-Passwort sperren"
@@ -1344,7 +1377,7 @@
     "message": "Duplizieren"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen dein Generator-Einstellungen."
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen deine Generator-Einstellungen."
   },
   "vaultTimeoutAction": {
     "message": "Aktion bei Tresor-Timeout"
@@ -1388,7 +1421,7 @@
     "message": "Dauerhaft löschen"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchten?"
+    "message": "Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchtest?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Bestätigung der Timeout-Aktion"
@@ -1403,10 +1436,10 @@
     "message": "Bitte lege ein Masterpasswort für den Schutz deines Tresors fest, um die Anmeldung über SSO abzuschließen."
   },
   "newMasterPass": {
-    "message": "Neues Masterpasswort"
+    "message": "Neues Master-Passwort"
   },
   "confirmNewMasterPass": {
-    "message": "Neues Masterpasswort bestätigen"
+    "message": "Neues Master-Passwort bestätigen"
   },
   "masterPasswordPolicyInEffect": {
     "message": "Eine oder mehrere Organisationsrichtlinien erfordern, dass dein Masterpasswort die folgenden Anforderungen erfüllt:"
@@ -1539,14 +1572,14 @@
     "message": "Ablaufdatum"
   },
   "expirationDateDesc": {
-    "message": "Falls gesetzt, verfällt der Zugriff auf dieses Send am angegebenen Datum zur angegebenen Uhrzeit.",
+    "message": "Wenn aktiviert, verfällt der Zugriff auf dieses Send am angegebenen Datum zur angegebenen Uhrzeit.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
     "message": "Maximale Zugriffsanzahl"
   },
   "maxAccessCountDesc": {
-    "message": "Falls gesetzt, können Benutzer nicht mehr auf dieses Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.",
+    "message": "Falls aktiviert, können Benutzer nicht mehr auf dieses Send zugreifen, sobald die maximale Zugriffsanzahl erreicht ist.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1561,7 +1594,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private Notizen zu diesem Send",
+    "message": "Private Notizen zu diesem Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1569,7 +1602,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send-Link",
+    "message": "Send Link",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1585,7 +1618,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Send gelöscht",
+    "message": "Gelöschtes Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
@@ -1652,6 +1685,148 @@
     "message": "Abgelaufen"
   },
   "pendingDeletion": {
-    "message": "Löschen anstehend"
+    "message": "Ausstehende Löschung"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAuthn authentifizieren"
+  },
+  "hideEmail": {
+    "message": "Meine E-Mail-Adresse vor den Empfängern ausblenden."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Eine oder mehrere Organisationsrichtlinien beeinflussen deine Send Einstellungen."
+  },
+  "emailVerificationRequired": {
+    "message": "E-Mail-Verifizierung erforderlich"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Du musst deine E-Mail verifizieren, um diese Funktion nutzen zu können."
+  },
+  "passwordPrompt": {
+    "message": "Master-Passwort erneut abfragen"
+  },
+  "passwordConfirmation": {
+    "message": "Master-Passwort bestätigen"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Diese Aktion ist geschützt. Um fortzufahren, gib bitte dein Master-Passwort erneut ein, um deine Identität zu bestätigen."
+  },
+  "updatedMasterPassword": {
+    "message": "Master-Passwort aktualisiert"
+  },
+  "updateMasterPassword": {
+    "message": "Master-Passwort aktualisieren"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Dein Master-Passwort wurde kürzlich von einem Administrator deiner Organisation geändert. Um auf den Tresor zuzugreifen, musst du es jetzt aktualisieren. Wenn Du fortfährst, wirst du aus der aktuellen Sitzung abgemeldet und eine erneute Anmeldung ist erforderlich. Aktive Sitzungen auf anderen Geräten können bis zu einer Stunde weiterhin aktiv bleiben."
+  },
+  "hours": {
+    "message": "Stunden"
+  },
+  "minutes": {
+    "message": "Minuten"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Deine Unternehmensrichtlinien beeinflussen dein Tresor-Timeout. Das maximal zulässige Tresor-Timeout ist $HOURS$ Stunde(n) und $MINUTES$ Minute(n)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Dein Tresor-Timeout überschreitet die von deinem Unternehmen festgelegten Beschränkungen."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatische Registrierung"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Diese Organisation hat eine Unternehmensrichtlinie, die dich automatisch für die Passwort Zurücksetzung registriert. Die Registrierung wird es Administratoren der Organisation erlauben, dein Master-Passwort zu ändern."
+  },
+  "vaultExportDisabled": {
+    "message": "Tresor-Export deaktiviert"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Eine oder mehrere Unternehmensrichtlinien verhindern es, dass du deinen persönlichen Tresor exportieren kannst."
+  },
+  "addAccount": {
+    "message": "Konto hinzufügen"
+  },
+  "removeMasterPassword": {
+    "message": "Master-Passwort entfernen"
+  },
+  "removedMasterPassword": {
+    "message": "Master-Passwort entfernt."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ verwendet SSO mit einem selbst gehosteten Schlüsselserver. Ein Master-Passwort ist nicht mehr erforderlich, damit sich Mitglieder dieser Organisation anmelden können.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Organisation verlassen"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Bist du sicher, dass du diese Organisation verlassen möchtest?"
+  },
+  "leftOrganization": {
+    "message": "Du hast die Organisation verlassen."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Der Key Connector konnte nicht erreicht werden. Versuche es später erneut."
+  },
+  "lockAllVaults": {
+    "message": "Alle Tresore sperren"
+  },
+  "accountLimitReached": {
+    "message": "Es dürfen nicht mehr als 5 Konten gleichzeitig angemeldet sein."
+  },
+  "accountPreferences": {
+    "message": "Einstellungen"
+  },
+  "appPreferences": {
+    "message": "App-Einstellungen (Alle Konten)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Kontolimit erreicht. Abmelden von einem Konto, um ein anderes hinzuzufügen."
+  },
+  "settingsTitle": {
+    "message": "App-Einstellungen für $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Switch to Other Account"
+  },
+  "options": {
+    "message": "Optionen"
+  },
+  "sessionTimeout": {
+    "message": "Deine Sitzung ist abgelaufen. Bitte gehe zurück und versuche dich erneut einzuloggen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Persönlichen Tresor exportieren"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Nur die persönlichen Tresoreinträge, die mit $EMAIL$ verbunden sind, werden exportiert. Tresoreinträge der Organisation werden nicht berücksichtigt.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

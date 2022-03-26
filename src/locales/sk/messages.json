@@ -44,14 +44,24 @@
   "share": {
     "message": "Zdieľať"
   },
-  "shareItem": {
-    "message": "Zdieľať položku"
+  "moveToOrganization": {
+    "message": "Presunúť do Organizácie"
   },
-  "sharedItem": {
-    "message": "Položka zdieľaná"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ presunuté do $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Vyberte organizáciu, s ktorou chcete zdieľať túto položku. Zdieľanie presunie vlastníctvo položky na organizáciu. Po zdieľaní už nebudete priamym vlastníkom danej položky."
+  "moveToOrgDesc": {
+    "message": "Vyberte organizáciu, do ktorej chcete presunúť túto položku. Presunom do organizácie sa vlastníctvo položky prenáša na túto organizáciu. Po presunutí už nebudete priamym vlastníkom danej položky."
   },
   "attachments": {
     "message": "Prílohy"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Priezvisko"
   },
+  "fullName": {
+    "message": "Celé meno"
+  },
   "address1": {
     "message": "Adresa 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Áno/Nie"
+  },
+  "cfTypeLinked": {
+    "message": "Prepojené",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Prepojená hodnota",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Odstrániť"
@@ -431,13 +452,10 @@
     "message": "Vybrať súbor."
   },
   "maxFileSize": {
-    "message": "Maximálna veľkosť súboru je 100 MB."
+    "message": "Maximálna veľkosť súboru je 500 MB."
   },
   "updateKey": {
     "message": "Túto funkciu je možné použiť, až keď si aktualizujete svoj šifrovací kľúč."
-  },
-  "options": {
-    "message": "Možnosti"
   },
   "editedFolder": {
     "message": "Priečinok upravený"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Neexistujú žiadne položky na zobrazenie."
   },
+  "sendVerificationCode": {
+    "message": "Poslať overovací kód na váš e-mail"
+  },
+  "sendCode": {
+    "message": "Odoslať kód"
+  },
+  "codeSent": {
+    "message": "Kód bol odoslaný"
+  },
   "verificationCode": {
     "message": "Overovací kód"
   },
+  "confirmIdentity": {
+    "message": "Ak chcete pokračovať, potvrďte svoju identitu."
+  },
   "verificationCodeRequired": {
     "message": "Overovací kód je povinný."
+  },
+  "invalidVerificationCode": {
+    "message": "Neplatný verifikačný kód"
   },
   "continue": {
     "message": "Pokračovať"
@@ -589,14 +622,14 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Overiť s Duo Security vašej organizácie použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
+    "message": "Overiť sa prostredníctvom Duo Security vašej organizácie použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Použiť akýkoľvek FIDO U2F bezpečnostný kľúč pre prístup k vášmu účtu."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F bezpečnostný kľúč"
+  "webAuthnDesc": {
+    "message": "Použiť akýkoľvek WebAuthn bezpečnostný kľúč pre prístup k vášmu účtu."
   },
   "emailTitle": {
     "message": "Email"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Načítava sa..."
   },
-  "lockNow": {
-    "message": "Uzamknúť teraz"
+  "lockVault": {
+    "message": "Zamknúť trezor"
   },
   "passwordGenerator": {
     "message": "Generátor hesla"
   },
-  "emailUs": {
-    "message": "Napíšte nám"
+  "contactUs": {
+    "message": "Kontaktujte nás"
   },
-  "visitOurWebsite": {
-    "message": "Navštívte našu stránku"
+  "getHelp": {
+    "message": "Získať pomoc"
   },
   "fileBugReport": {
     "message": "Nahlásiť chybu"
@@ -751,7 +784,7 @@
     "message": "Synchronizácia zlyhala"
   },
   "yourVaultIsLocked": {
-    "message": "Váš trezor je uzamknutý. Overte sa hlavným heslom ak chcete pokračovať."
+    "message": "Váš trezor je uzamknutý. Ak chcete pokračovať, overte svoju identitu."
   },
   "unlock": {
     "message": "Odomknúť"
@@ -856,10 +889,10 @@
     "message": "Namiesto minimalizácie okna zobraziť ikonu v systémovej lište."
   },
   "enableMinToMenuBar": {
-    "message": "Minimize to menu bar"
+    "message": "Minimalizovať na panel úloh"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Namiesto minimalizácie okna zobraziť ikonu na paneli úloh."
   },
   "enableCloseToTray": {
     "message": "Zatvoriť do systémovej lišty"
@@ -868,10 +901,10 @@
     "message": "Namiesto zatvorenia okna zobraziť ikonu v systémovej lište."
   },
   "enableCloseToMenuBar": {
-    "message": "Close to menu bar"
+    "message": "Zavrieť na panel úloh"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Namiesto zatvorenia okna zobraziť ikonu na paneli úloh."
   },
   "enableTray": {
     "message": "Povoliť ikonu na systémovej lište"
@@ -886,28 +919,28 @@
     "message": "Pri prvom spustení aplikácie zobraziť iba ikonu v systémovej lište."
   },
   "startToMenuBar": {
-    "message": "Start to menu bar"
+    "message": "Spustiť na panel úloh"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Pri prvom spustení aplikácie zobraziť iba ikonu na paneli úloh."
   },
   "openAtLogin": {
-    "message": "Start automatically on login"
+    "message": "Automaticky spustiť po prihlásení"
   },
   "openAtLoginDesc": {
-    "message": "Start the Bitwarden Desktop application automatically on login."
+    "message": "Po prihlásení automaticky spustí aplikáciu Bitwarden Desktop."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Vždy zobraziť v docku"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Zobraziť Bitwarden v Docku aj keď je minimalizovaný na panel úloh."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Potvrdiť vypnutie systémovej lišty"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Vypnutím tohto nastavenia vypnete aj ostatné nastavenia súvisiace so systémovou lištou."
   },
   "language": {
     "message": "Jazyk"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Šifrovacie kľúče účtu sú jedinečné pre každý používateľský účet Bitwarden, takže nemôžete importovať šifrovaný export do iného účtu."
   },
-  "exportMasterPassword": {
-    "message": "Zadajte vaše hlavné heslo pre export údajov trezoru."
-  },
   "noOrganizationsList": {
     "message": "Nie ste členom žiadnej organizácie. Organizácie umožňujú bezpečne zdieľať položky s ostatnými používateľmi."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Neplatný PIN kód."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Váš trezor je uzamknutý. Overte sa PIN kódom, ak chcete pokračovať."
-  },
   "unlockWithWindowsHello": {
     "message": "Odomknúť pomocou Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "odomknúť svoj trezor"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Pri spustení nezobrazovať výzvu na Windows Hello."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Pri spustení nezobrazovať výzvu na Touch ID."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Pri reštarte zamknúť s hlavným heslom"
@@ -1457,37 +1490,37 @@
     "message": "Neboli akceptované Podmienky používania a zásady Ochrany osobných údajov."
   },
   "enableBrowserIntegration": {
-    "message": "Enable browser integration"
+    "message": "Povoliť integráciu v prehliadači"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "Browser integration is used for biometrics in browser."
+    "message": "Integrácia v prehliadači sa používa na biometriu v prehliadači."
   },
   "browserIntegrationMasOnlyTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integrácia v prehliadači nie je podporovaná"
   },
   "browserIntegrationMasOnlyDesc": {
-    "message": "Unfortunately browser integration is only supported in the Mac App Store version for now."
+    "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Mac App Store."
   },
   "browserIntegrationWindowsStoreTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integrácia v prehliadači nie je podporovaná"
   },
   "browserIntegrationWindowsStoreDesc": {
-    "message": "Unfortunately browser integration is currently not supported in the Windows Store version."
+    "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Windows Store."
   },
   "enableBrowserIntegrationFingerprint": {
-    "message": "Require verification for browser integration"
+    "message": "Vyžadovať overenie pre integráciu v prehliadači"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Enable an additional layer of security by requiring fingerprint phrase validation when establishing a link between your desktop and browser. When enabled, this requires user intervention and verification each time a connection is established."
+    "message": "Povoliť dodatočné zabezpečenie tým, že bude potrebné overenie odtlačku pri prepájaní desktopovej aplikácie a prehliadača. Ak je toto nastavenie zapnuté, pri každom pripojení bude od používateľa požadované overenie."
   },
   "approve": {
     "message": "Schváliť"
   },
   "verifyBrowserTitle": {
-    "message": "Verify browser connection"
+    "message": "Overiť pripojenie prehliadača"
   },
   "verifyBrowserDesc": {
-    "message": "Please ensure the shown fingerprint is identical to the fingerprint showed in the browser extension."
+    "message": "Uistite sa, že zobrazený odtlačok prsta je identický s odtlačkom prsta zobrazeným v rozšírení prehliadača."
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometria nie je aktivovaná"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Čakajúce odstránenie"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Overiť cez WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Skryť moju emailovú adresu pred príjemcami."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Jedno alebo viac pravidiel organizácie ovplyvňujú vaše možnosti funkcie Send."
+  },
+  "emailVerificationRequired": {
+    "message": "Vyžaduje sa overenie e-mailu"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Na používanie tejto funkcie musíte overiť svoj e-mail."
+  },
+  "passwordPrompt": {
+    "message": "Znova zadajte hlavné heslo"
+  },
+  "passwordConfirmation": {
+    "message": "Potvrdenie hlavného hesla"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Táto akcia je chránená. Ak chcete pokračovať, znova zadajte hlavné heslo a overte svoju totožnosť."
+  },
+  "updatedMasterPassword": {
+    "message": "Hlavné heslo aktualizované"
+  },
+  "updateMasterPassword": {
+    "message": "Aktualizovať hlavné heslo"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Vaše hlavné heslo nedávno zmenil správca vo vašej organizácii. Ak chcete získať prístup k trezoru, musíte ho teraz aktualizovať. Pokračovaním sa odhlásite z aktuálnej relácie a budete sa musieť znova prihlásiť. Aktívne relácie na iných zariadeniach môžu zostať aktívne až jednu hodinu."
+  },
+  "hours": {
+    "message": "Hodiny"
+  },
+  "minutes": {
+    "message": "Minúty"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Zásady vašej organizácie ovplyvňujú časový limit trezoru. Maximálny povolený časový limit trezoru je $HOURS$ h a $MINUTES$ m",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Časový limit vášho trezora prekračuje obmedzenia nastavené vašou organizáciou."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatická registrácia"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Táto organizácia má podnikovú politiku, ktorá vás automaticky zaregistruje na obnovenie hesla. Registrácia umožní správcom organizácie zmeniť vaše hlavné heslo."
+  },
+  "vaultExportDisabled": {
+    "message": "Export trezoru je zakázaný"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Jedna alebo viacero zásad organizácie vám bráni exportovať váš osobný trezor."
+  },
+  "addAccount": {
+    "message": "Pridať účet"
+  },
+  "removeMasterPassword": {
+    "message": "Odstrániť hlavné heslo"
+  },
+  "removedMasterPassword": {
+    "message": "Hlavné heslo bolo odstránené."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ používa SSO s vlastným kľúčovým serverom. Na prihlásenie členov tejto organizácie už nie je potrebné hlavné heslo.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Opustiť organizáciu"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ste si istý, že chcete opustiť túto organizáciu?"
+  },
+  "leftOrganization": {
+    "message": "Opustili ste organizáciu."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nie je možné kontaktovať kľúčový konektor, skúste to znova neskôr."
+  },
+  "lockAllVaults": {
+    "message": "Zamknúť všetky trezory"
+  },
+  "accountLimitReached": {
+    "message": "Súčasne nemôže byť prihlásených viac ako 5 účtov."
+  },
+  "accountPreferences": {
+    "message": "Predvoľby"
+  },
+  "appPreferences": {
+    "message": "Nastavenia aplikácie (Všetky účty)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Dosiahnutý limit počtu účtov. Odhláste sa z účtu aby ste mohli pridať ďalší."
+  },
+  "settingsTitle": {
+    "message": "Nastavenia aplikácie pre $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Prepnúť účet"
+  },
+  "options": {
+    "message": "Možnosti"
+  },
+  "sessionTimeout": {
+    "message": "Vaša relácia vypršala. Vráťte sa späť a skúste sa prihlásiť znova."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportovanie osobného trezora"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Exportované budú iba položy osobného trezora spojené s $EMAIL$. Položky trezora organizácie nebudú zahrnuté.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -1,133 +1,187 @@
-import { ipcRenderer } from 'electron';
-import Swal from 'sweetalert2';
+import { Injectable } from "@angular/core";
+import { ipcRenderer } from "electron";
+import Swal from "sweetalert2";
 
-import { CryptoService } from 'jslib/abstractions/crypto.service';
-import { CryptoFunctionService } from 'jslib/abstractions/cryptoFunction.service';
-import { I18nService } from 'jslib/abstractions/i18n.service';
-import { LogService } from 'jslib/abstractions/log.service';
-import { MessagingService } from 'jslib/abstractions/messaging.service';
-import { PlatformUtilsService } from 'jslib/abstractions/platformUtils.service';
-import { UserService } from 'jslib/abstractions/user.service';
-import { VaultTimeoutService } from 'jslib/abstractions/vaultTimeout.service';
-
-import { StorageService } from 'jslib/abstractions';
-import { ElectronConstants } from 'jslib/electron/electronConstants';
-import { Utils } from 'jslib/misc/utils';
-import { SymmetricCryptoKey } from 'jslib/models/domain/symmetricCryptoKey';
+import { CryptoService } from "jslib-common/abstractions/crypto.service";
+import { CryptoFunctionService } from "jslib-common/abstractions/cryptoFunction.service";
+import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
+import { MessagingService } from "jslib-common/abstractions/messaging.service";
+import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
+import { StateService } from "jslib-common/abstractions/state.service";
+import { KeySuffixOptions } from "jslib-common/enums/keySuffixOptions";
+import { Utils } from "jslib-common/misc/utils";
+import { EncString } from "jslib-common/models/domain/encString";
+import { SymmetricCryptoKey } from "jslib-common/models/domain/symmetricCryptoKey";
 
 const MessageValidTimeout = 10 * 1000;
-const EncryptionAlgorithm = 'sha1';
+const EncryptionAlgorithm = "sha1";
 
+type Message = {
+  command: string;
+
+  userId?: string;
+  timestamp?: number;
+
+  publicKey?: string;
+};
+
+type OuterMessage = {
+  message: Message | EncString;
+  appId: string;
+};
+
+@Injectable()
 export class NativeMessagingService {
-    private sharedSecrets = new Map<string, SymmetricCryptoKey>();
+  private sharedSecrets = new Map<string, SymmetricCryptoKey>();
 
-    constructor(private cryptoFunctionService: CryptoFunctionService, private cryptoService: CryptoService,
-        private platformUtilService: PlatformUtilsService, private logService: LogService,
-        private i18nService: I18nService, private userService: UserService, private messagingService: MessagingService,
-        private vaultTimeoutService: VaultTimeoutService, private storageService: StorageService) {
-        ipcRenderer.on('nativeMessaging', async (event: any, message: any) => {
-            this.messageHandler(message);
+  constructor(
+    private cryptoFunctionService: CryptoFunctionService,
+    private cryptoService: CryptoService,
+    private platformUtilService: PlatformUtilsService,
+    private logService: LogService,
+    private i18nService: I18nService,
+    private messagingService: MessagingService,
+    private stateService: StateService
+  ) {}
+
+  init() {
+    ipcRenderer.on("nativeMessaging", async (_event: any, message: any) => {
+      this.messageHandler(message);
+    });
+  }
+
+  private async messageHandler(msg: OuterMessage) {
+    const appId = msg.appId;
+    const rawMessage = msg.message;
+
+    // Request to setup secure encryption
+    if ("command" in rawMessage && rawMessage.command === "setupEncryption") {
+      const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
+
+      // Valudate the UserId to ensure we are logged into the same account.
+      const userIds = Object.keys(this.stateService.accounts.getValue());
+      if (!userIds.includes(rawMessage.userId)) {
+        ipcRenderer.send("nativeMessagingReply", { command: "wrongUserId", appId: appId });
+        return;
+      }
+
+      if (await this.stateService.getEnableBrowserIntegrationFingerprint()) {
+        ipcRenderer.send("nativeMessagingReply", { command: "verifyFingerprint", appId: appId });
+
+        const fingerprint = (
+          await this.cryptoService.getFingerprint(
+            await this.stateService.getUserId(),
+            remotePublicKey
+          )
+        ).join(" ");
+
+        this.messagingService.send("setFocus");
+
+        // Await confirmation that fingerprint is correct
+        const submitted = await Swal.fire({
+          titleText: this.i18nService.t("verifyBrowserTitle"),
+          html: `${this.i18nService.t("verifyBrowserDesc")}<br><br><strong>${fingerprint}</strong>`,
+          showCancelButton: true,
+          cancelButtonText: this.i18nService.t("cancel"),
+          showConfirmButton: true,
+          confirmButtonText: this.i18nService.t("approve"),
+          allowOutsideClick: false,
         });
+
+        if (submitted.value !== true) {
+          return;
+        }
+      }
+
+      this.secureCommunication(remotePublicKey, appId);
+      return;
     }
 
-    private async messageHandler(msg: any) {
-        const appId = msg.appId;
-        const rawMessage = msg.message;
-
-        // Request to setup secure encryption
-        if (rawMessage.command === 'setupEncryption') {
-            const remotePublicKey = Utils.fromB64ToArray(rawMessage.publicKey).buffer;
-
-            // Valudate the UserId to ensure we are logged into the same account.
-            if (rawMessage.userId !== await this.userService.getUserId()) {
-                ipcRenderer.send('nativeMessagingReply', {command: 'wrongUserId', appId: appId});
-                return;
-            }
-
-            if (await this.storageService.get<boolean>(ElectronConstants.enableBrowserIntegrationFingerprint)) {
-                ipcRenderer.send('nativeMessagingReply', {command: 'verifyFingerprint', appId: appId});
-
-                const fingerprint = (await this.cryptoService.getFingerprint(await this.userService.getUserId(), remotePublicKey)).join(' ');
-
-                this.messagingService.send('setFocus');
-
-                // Await confirmation that fingerprint is correct
-                const submitted = await Swal.fire({
-                    title: this.i18nService.t('verifyBrowserTitle'),
-                    html: `${this.i18nService.t('verifyBrowserDesc')}<br><br><strong>${fingerprint}</strong>`,
-                    showCancelButton: true,
-                    cancelButtonText: this.i18nService.t('cancel'),
-                    showConfirmButton: true,
-                    confirmButtonText: this.i18nService.t('approve'),
-                    allowOutsideClick: false,
-                });
-
-                if (submitted.value !== true) {
-                    return;
-                }
-            }
-
-            this.secureCommunication(remotePublicKey, appId);
-            return;
-        }
-
-        const message = JSON.parse(await this.cryptoService.decryptToUtf8(rawMessage, this.sharedSecrets.get(appId)));
-
-        // Shared secret is invalidated, force re-authentication
-        if (message == null) {
-            ipcRenderer.send('nativeMessagingReply', {command: 'invalidateEncryption', appId: appId});
-            return;
-        }
-
-        if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
-            this.logService.error('NativeMessage is to old, ignoring.');
-            return;
-        }
-
-        switch (message.command) {
-            case 'biometricUnlock':
-                if (! this.platformUtilService.supportsBiometric()) {
-                    return this.send({command: 'biometricUnlock', response: 'not supported'}, appId);
-                }
-
-                if (! await this.vaultTimeoutService.isBiometricLockSet()) {
-                    this.send({command: 'biometricUnlock', response: 'not enabled'}, appId);
-
-                    return await Swal.fire({
-                        title: this.i18nService.t('biometricsNotEnabledTitle'),
-                        text: this.i18nService.t('biometricsNotEnabledDesc'),
-                        showCancelButton: true,
-                        cancelButtonText: this.i18nService.t('cancel'),
-                        showConfirmButton: false,
-                    });
-                }
-
-                const response = await this.platformUtilService.authenticateBiometric();
-                if (response) {
-                    this.send({command: 'biometricUnlock', response: 'unlocked', keyB64: (await this.cryptoService.getKey()).keyB64}, appId);
-                } else {
-                    this.send({command: 'biometricUnlock', response: 'canceled'}, appId);
-                }
-
-                break;
-            default:
-                this.logService.error('NativeMessage, got unknown command.');
-        }
+    if (this.sharedSecrets.get(appId) == null) {
+      ipcRenderer.send("nativeMessagingReply", { command: "invalidateEncryption", appId: appId });
+      return;
     }
 
-    private async send(message: any, appId: string) {
-        message.timestamp = Date.now();
+    const message: Message = JSON.parse(
+      await this.cryptoService.decryptToUtf8(rawMessage as EncString, this.sharedSecrets.get(appId))
+    );
 
-        const encrypted = await this.cryptoService.encrypt(JSON.stringify(message), this.sharedSecrets.get(appId));
-
-        ipcRenderer.send('nativeMessagingReply', {appId: appId, message: encrypted});
+    // Shared secret is invalidated, force re-authentication
+    if (message == null) {
+      ipcRenderer.send("nativeMessagingReply", { command: "invalidateEncryption", appId: appId });
+      return;
     }
 
-    private async secureCommunication(remotePublicKey: ArrayBuffer, appId: string) {
-        const secret = await this.cryptoFunctionService.randomBytes(64);
-        this.sharedSecrets.set(appId, new SymmetricCryptoKey(secret));
-
-        const encryptedSecret = await this.cryptoFunctionService.rsaEncrypt(secret, remotePublicKey, EncryptionAlgorithm);
-        ipcRenderer.send('nativeMessagingReply', {appId: appId, command: 'setupEncryption', sharedSecret: Utils.fromBufferToB64(encryptedSecret)});
+    if (Math.abs(message.timestamp - Date.now()) > MessageValidTimeout) {
+      this.logService.error("NativeMessage is to old, ignoring.");
+      return;
     }
+
+    switch (message.command) {
+      case "biometricUnlock": {
+        if (!this.platformUtilService.supportsBiometric()) {
+          return this.send({ command: "biometricUnlock", response: "not supported" }, appId);
+        }
+
+        if (!(await this.stateService.getBiometricUnlock({ userId: message.userId }))) {
+          this.send({ command: "biometricUnlock", response: "not enabled" }, appId);
+
+          return await Swal.fire({
+            title: this.i18nService.t("biometricsNotEnabledTitle"),
+            text: this.i18nService.t("biometricsNotEnabledDesc"),
+            showCancelButton: true,
+            cancelButtonText: this.i18nService.t("cancel"),
+            showConfirmButton: false,
+          });
+        }
+
+        const key = await this.cryptoService.getKeyFromStorage(
+          KeySuffixOptions.Biometric,
+          message.userId
+        );
+
+        if (key != null) {
+          this.send(
+            { command: "biometricUnlock", response: "unlocked", keyB64: key.keyB64 },
+            appId
+          );
+        } else {
+          this.send({ command: "biometricUnlock", response: "canceled" }, appId);
+        }
+
+        break;
+      }
+      default:
+        this.logService.error("NativeMessage, got unknown command.");
+        break;
+    }
+  }
+
+  private async send(message: any, appId: string) {
+    message.timestamp = Date.now();
+
+    const encrypted = await this.cryptoService.encrypt(
+      JSON.stringify(message),
+      this.sharedSecrets.get(appId)
+    );
+
+    ipcRenderer.send("nativeMessagingReply", { appId: appId, message: encrypted });
+  }
+
+  private async secureCommunication(remotePublicKey: ArrayBuffer, appId: string) {
+    const secret = await this.cryptoFunctionService.randomBytes(64);
+    this.sharedSecrets.set(appId, new SymmetricCryptoKey(secret));
+
+    const encryptedSecret = await this.cryptoFunctionService.rsaEncrypt(
+      secret,
+      remotePublicKey,
+      EncryptionAlgorithm
+    );
+    ipcRenderer.send("nativeMessagingReply", {
+      appId: appId,
+      command: "setupEncryption",
+      sharedSecret: Utils.fromBufferToB64(encryptedSecret),
+    });
+  }
 }

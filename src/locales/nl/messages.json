@@ -44,14 +44,24 @@
   "share": {
     "message": "Delen"
   },
-  "shareItem": {
-    "message": "Item delen"
+  "moveToOrganization": {
+    "message": "Naar organisatie verplaatsen"
   },
-  "sharedItem": {
-    "message": "Gedeeld item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ verplaatst naar $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Kies een organisatie waarmee je dit item wilt delen. Door het delen draag je het eigendom van dit item over aan de organisatie. Je bent niet langer de directe eigenaar van het item wanneer deze is gedeeld."
+  "moveToOrgDesc": {
+    "message": "Kies een organisatie waarnaar je dit item wilt verplaatsen. Door het verplaatsen krijgt de organisatie de eigendomsrechten van het item. Je bent niet langer de directe eigenaar meer van het item als het is verplaatst."
   },
   "attachments": {
     "message": "Bijlagen"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Achternaam"
   },
+  "fullName": {
+    "message": "Volledige naam"
+  },
   "address1": {
     "message": "Adres 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Boolean"
+  },
+  "cfTypeLinked": {
+    "message": "Gekoppeld",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Gekoppelde waarde",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Verwijderen"
@@ -431,13 +452,10 @@
     "message": "Selecteer een bestand."
   },
   "maxFileSize": {
-    "message": "De maximale bestandsgrootte is 100 MB."
+    "message": "Maximale bestandsgrootte is 500 MB."
   },
   "updateKey": {
     "message": "Je kunt deze functie pas gebruiken als je je encryptiesleutel bijwerkt."
-  },
-  "options": {
-    "message": "Opties"
   },
   "editedFolder": {
     "message": "Map is bewerkt"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Er zijn geen items om weer te geven."
   },
+  "sendVerificationCode": {
+    "message": "Stuur een verificatiecode naar je e-mail"
+  },
+  "sendCode": {
+    "message": "Code versturen"
+  },
+  "codeSent": {
+    "message": "Code verstuurd"
+  },
   "verificationCode": {
     "message": "Verificatiecode"
   },
+  "confirmIdentity": {
+    "message": "Bevestig je identiteit om door te gaan."
+  },
   "verificationCodeRequired": {
     "message": "Verificatiecode vereist."
+  },
+  "invalidVerificationCode": {
+    "message": "Ongeldige verificatiecode"
   },
   "continue": {
     "message": "Doorgaan"
@@ -592,11 +625,11 @@
     "message": "Verificatie met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Gebruik een FIDO U2F-beveiligingssleutel om toegang te krijgen tot je account."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F-beveiligingssleutel"
+  "webAuthnDesc": {
+    "message": "Gebruik een WebAuthn-beveilingssleutel om toegang te krijgen tot je account."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Laden..."
   },
-  "lockNow": {
-    "message": "Nu vergrendelen"
+  "lockVault": {
+    "message": "Kluis vergrendelen"
   },
   "passwordGenerator": {
     "message": "Wachtwoordgenerator"
   },
-  "emailUs": {
-    "message": "Stuur ons een e-mail"
+  "contactUs": {
+    "message": "Contact opnemen"
   },
-  "visitOurWebsite": {
-    "message": "Bezoek onze website"
+  "getHelp": {
+    "message": "Hulp vragen"
   },
   "fileBugReport": {
     "message": "Rapporteer een fout (bug)"
@@ -964,7 +997,7 @@
     "message": "Er is een update gevonden. Wil je deze nu downloaden?"
   },
   "restart": {
-    "message": "Herstarten"
+    "message": "Applicatie herstarten"
   },
   "later": {
     "message": "Later"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Encryptiesleutels zijn uniek voor elk Bitwarden-gebruikersaccount, je kun kunt een versleutelde niet in een ander account importeren."
   },
-  "exportMasterPassword": {
-    "message": "Voer je hoofdwachtwoord in om de kluisgegevens te exporteren."
-  },
   "noOrganizationsList": {
     "message": "Je behoort niet tot een organisatie. Via organisaties deel je je items veilig met andere gebruikers."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Ongeldige PIN-code."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Je kluis is vergrendeld. Voer je PIN-code in om door te gaan."
-  },
   "unlockWithWindowsHello": {
     "message": "Ontgrendelen met Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "ontgrendel je kluis"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Bij het opstarten niet om Windows Hello vragen."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Bij het opstarten niet om Touch ID vragen."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bij herstart vergrendelen met hoofdwachtwoord"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Wordt verwijderd"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authenticeer WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Verberg mijn e-mailadres voor ontvangers."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Een of meer organisatiebeleidseisen heeft invloed op de mogelijkheden van je Send."
+  },
+  "emailVerificationRequired": {
+    "message": "E-mailverificatie vereist"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Je moet je e-mailadres verifiëren om deze functionaliteit te gebruiken."
+  },
+  "passwordPrompt": {
+    "message": "Hoofdwachtwoord opnieuw vragen"
+  },
+  "passwordConfirmation": {
+    "message": "Hoofdwachtwoord bevestigen"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Deze actie is beveiligd. Voer je hoofdwachtwoord opnieuw in om je identiteit vast te stellen en door te gaan."
+  },
+  "updatedMasterPassword": {
+    "message": "Hoofdwachtwoord bijgewerkt"
+  },
+  "updateMasterPassword": {
+    "message": "Hoofdwachtwoord bijgewerken"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Je hoofdwachtwoord is onlangs veranderd door een beheerder in jouw organisatie. Om toegang te krijgen tot de kluis, moet je deze nu bijwerken. Doorgaan zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief."
+  },
+  "hours": {
+    "message": "Uren"
+  },
+  "minutes": {
+    "message": "Minuten"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Het beleid van je organisatie heeft invloed op de time-out van je kluis. De maximaal toegestane Kluis Time-out is $HOURS$ uur en $MINUTES$ minuten",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Je kluis time-out is hoger dan het maximum van jouw organisatie."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatische inschrijving"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Deze organisatie heeft een ondernemingsbeleid dat je automatisch inschrijft bij het resetten van je wachtwoord. Inschrijving stelt organisatiebeheerders in staat om je hoofdwachtwoord te wijzigen."
+  },
+  "vaultExportDisabled": {
+    "message": "Kluis exporteren uitgeschakeld"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Organisatiebeleid voorkomt dat je je persoonlijke kluis exporteert."
+  },
+  "addAccount": {
+    "message": "Account toevoegen"
+  },
+  "removeMasterPassword": {
+    "message": "Hoofdwachtwoord verwijderen"
+  },
+  "removedMasterPassword": {
+    "message": "Hoofdwachtwoord verwijderd."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ gebruikt SSO met een zelf gehoste sleutelserver. Leden van deze organisatie kunnen inloggen zonder hoofdwachtwoord.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Organisatie verlaten"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Weet je zeker dat je deze organisatie wilt verlaten?"
+  },
+  "leftOrganization": {
+    "message": "Je hebt de organisatie verlaten."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Kan de sleutelconnector niet bereiken, probeer het later opnieuw."
+  },
+  "lockAllVaults": {
+    "message": "Alle kluizen vergrendelen"
+  },
+  "accountLimitReached": {
+    "message": "Er mogen niet meer dan 5 accounts tegelijkertijd ingelogd zijn."
+  },
+  "accountPreferences": {
+    "message": "Voorkeuren"
+  },
+  "appPreferences": {
+    "message": "App-instellingen (alle accounts)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limiet van het aantal accounts bereikt. Log een account uit voor het toevoegen van een andere."
+  },
+  "settingsTitle": {
+    "message": "App-instellingen voor $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Account wisselen"
+  },
+  "options": {
+    "message": "Opties"
+  },
+  "sessionTimeout": {
+    "message": "Je sessie is verlopen. Ga terug en probeer opnieuw in te loggen."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Persoonlijke kluis exporteren"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Exporteert alleen de persoonlijke kluis-items gerelateerd aan $EMAIL$. Geen kluis-items van de organisatie.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

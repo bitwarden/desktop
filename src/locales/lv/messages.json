@@ -44,14 +44,24 @@
   "share": {
     "message": "Kopīgot"
   },
-  "shareItem": {
-    "message": "Kopīgot vienumu"
+  "moveToOrganization": {
+    "message": "Pārvietot uz apvienību"
   },
-  "sharedItem": {
-    "message": "Vienums kopīgots"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ pārvietots uz $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Izvēlies apvienību, ar kuru kopīgot šo vienumu. Koplietošana nodod šī vienuma piederību apvienībai. Pēc tā kopīgošanas Tu vairs nebūsi šī vienuma tiešais īpašnieks."
+  "moveToOrgDesc": {
+    "message": "Izvēlies apvienību, uz kuru pārvietot šo vienumu. Pārvietošana nodod šī vienuma piederību apvienībai. Tu vairs nebūsi šī vienuma tiešais īpašnieks pēc tā pārvietošanas."
   },
   "attachments": {
     "message": "Pielikumi"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Uzvārds"
   },
+  "fullName": {
+    "message": "Pilnais vārds"
+  },
   "address1": {
     "message": "Adrese 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Patiesuma vērtība"
+  },
+  "cfTypeLinked": {
+    "message": "Saistīts",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Saistīta vērtība",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Noņemt"
@@ -431,13 +452,10 @@
     "message": "Atlasīt datni."
   },
   "maxFileSize": {
-    "message": "Lielākais pieļaujamais datnes izmērs ir 100 MB."
+    "message": "Lielākais pieļaujamais datnes izmērs ir 500 MB."
   },
   "updateKey": {
     "message": "Šo iespēju nevar izmantot, kamēr nav atjaunināta šifrēšanas atslēga."
-  },
-  "options": {
-    "message": "Iespējas"
   },
   "editedFolder": {
     "message": "Mape labota"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Nav vienumu, ko parādīt."
   },
+  "sendVerificationCode": {
+    "message": "Sūtīt apstiprinājuma kodu uz e-pastu"
+  },
+  "sendCode": {
+    "message": "Nosūtīt kodu"
+  },
+  "codeSent": {
+    "message": "Kods nosūtīts"
+  },
   "verificationCode": {
     "message": "Apstiprinājuma kods"
   },
+  "confirmIdentity": {
+    "message": "Apstiprināt identitāti, lai turpinātu."
+  },
   "verificationCodeRequired": {
     "message": "Ir nepieciešams apstiprinājuma kods."
+  },
+  "invalidVerificationCode": {
+    "message": "Nederīgs apstiprinājuma kods"
   },
   "continue": {
     "message": "Turpināt"
@@ -592,11 +625,11 @@
     "message": "Apstiprini ar Duo Security savā apvienībā, izmantojot Duo Mobile lietotni, īsziņu, tālruņa zvanu vai U2F drošības atslēgu!",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Izmanto jebkuru FIDO U2F atbalstošu drošības atslēgu, lai piekļūtu kontam!"
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F drošības atslēga"
+  "webAuthnDesc": {
+    "message": "Izmantot jebkuru WebAuthn atbalstošu drošības atslēgu, lai piekļūtu kontam."
   },
   "emailTitle": {
     "message": "E-pasts"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Notiek ielāde..."
   },
-  "lockNow": {
-    "message": "Aizslēgt"
+  "lockVault": {
+    "message": "Aizslēgt glabātavu"
   },
   "passwordGenerator": {
     "message": "Paroļu veidotājs"
   },
-  "emailUs": {
-    "message": "Nosūti mums e-pasta ziņu"
+  "contactUs": {
+    "message": "Sazināties ar mums"
   },
-  "visitOurWebsite": {
-    "message": "Apmeklēt mūsu vietni"
+  "getHelp": {
+    "message": "Saņemt palīdzību"
   },
   "fileBugReport": {
     "message": "Iesniegt kļūdas ziņojumu"
@@ -1212,7 +1245,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportVault": {
-    "message": "Izdot glabātavas saturu"
+    "message": "Izgūt glabātavas saturu"
   },
   "fileFormat": {
     "message": "Datnes veids"
@@ -1222,19 +1255,16 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Apstiprināt glabātavas satura izdošanu"
+    "message": "Apstiprināt glabātavas satura izgūšanu"
   },
   "exportWarningDesc": {
-    "message": "Šī datu izdošana satur glabātavas datus nešifrētā veidā. Izdoto datni nevajadzētu glabāt vai sūtīt nedrošos veidos (piemēram, e-pastā). Izdzēst to uzreiz pēc izmantošanas."
+    "message": "Šī izguve satur glabātavas datus nešifrētā veidā. Izdoto datni nevajadzētu glabāt vai sūtīt nedrošos veidos (piemēram, e-pastā). Izdzēst to uzreiz pēc izmantošanas."
   },
   "encExportKeyWarningDesc": {
-    "message": "Šī izvade šifrē datus ar konta šifrēšanas atslēgu. Ja tā jebkad tiks mainīta, izvadi vajadzētu veikt vēlreiz, jo vairs nebūs iespējams atšifrēt šo datni."
+    "message": "Šī izguve šifrē datus ar konta šifrēšanas atslēgu. Ja tā jebkad tiks mainīta, izvadi vajadzētu veikt vēlreiz, jo vairs nebūs iespējams atšifrēt šo datni."
   },
   "encExportAccountWarningDesc": {
-    "message": "Katram kontam ir neatkārtojamas šifrēšanas atslēgas, tādēļ nav iespējams ievietot šifrētas izdošanas datnes saturu citā kontā."
-  },
-  "exportMasterPassword": {
-    "message": "Ievadīt galveno paroli, lai izdotu glabātavas saturu."
+    "message": "Katram Bitwarden kontam ir neatkārtojamas šifrēšanas atslēgas, tādēļ nav iespējams ievietot šifrētu izguvi citā kontā."
   },
   "noOrganizationsList": {
     "message": "Tu neesi iekļauts nevienā apvienībā. Apvienības sniedz iespēju droši kopīgot vienumus ar citiem lietotājiem."
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Nederīgs PIN kods."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tava glabātava ir slēgta. Ievadi savu PIN kodu, lai turpinātu!"
-  },
   "unlockWithWindowsHello": {
     "message": "Atslēgt ar Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "atslēgt glabātavu"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Palaišanas brīdī nevaicāt par Windows Hello."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Palaišanas brīdī nevaicāt par Touch ID."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Aizslēgt ar galveno paroli pēc pārsāknēšanas"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Gaida dzēšanu"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autentificēt WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Slēpt e-pasta adresi no saņēmējiem."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Viens vai vairāki apvienības nosacījumi ietekmē \"Send\" iestatījumus."
+  },
+  "emailVerificationRequired": {
+    "message": "Nepieciešama e-pasta adreses apstiprināšana"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Ir jāapstiprina e-pasta adrese, lai izmantotu šo iespēju."
+  },
+  "passwordPrompt": {
+    "message": "Galvenās paroles pārvaicāšana"
+  },
+  "passwordConfirmation": {
+    "message": "Galvenās paroles apstiprināšana"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Šī darbība ir aizsargāta. Lai turpinātu, ir jāievada galvenā parole, lai apstiprinātu identitāti."
+  },
+  "updatedMasterPassword": {
+    "message": "Galvenā parole atjaunināta"
+  },
+  "updateMasterPassword": {
+    "message": "Atjaunināt galveno paroli"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Apvienības pārvaldnieks nesen nomainīja galveno paroli. Lai piekļūtu glabātavai, tā ir jāatjaunina. Turpinot tiks izbeigta pašreizējā sesija un tiks pieprasīta atkārtota pierakstīšanās. Esošās sesijas citās iekārtās var turpināt darboties līdz vienai stundai."
+  },
+  "hours": {
+    "message": "Stundas"
+  },
+  "minutes": {
+    "message": "Minūtes"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Apvienības nosacījumi ietekmē glabātavas noildzi. Lielākā atļautā glabātavas noildze ir $HOURS$ stunda(s) un $MINUTES$ minūte(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Glabātavas noildze pāŗsniedz apvienības uzstādītos ierobežojumus."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automātiska ievietošana sarakstā"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Šajā apvienībā ir uzņēmuma nosacījums, kas automātiski ievieto lietotājus paroles atiestatīšanas sarakstā. Tas ļauj apvienības pārvaldniekiem mainīt lietotāju galveno paroli."
+  },
+  "vaultExportDisabled": {
+    "message": "Glabātavas izgūšana ir atspējota"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Viens vai vairāki apvienības nosacījumi neļauj izgūt privātās glabātavas saturu."
+  },
+  "addAccount": {
+    "message": "Pievienot kontu"
+  },
+  "removeMasterPassword": {
+    "message": "Noņemt galveno paroli"
+  },
+  "removedMasterPassword": {
+    "message": "Galvenā parole tika noņemta."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ izmanto vienoto pieteikšanos ar pašizvietotu atslēgu serveri. Tās dalībniekiem vairs nav nepieciešama galvenā parole, lai pieslēgtos.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Pamest apvienību"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Vai tiešām pamest šo apvienību?"
+  },
+  "leftOrganization": {
+    "message": "Apvienība ir pamesta."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nav iespējams sasniegt Key Connector, tāpēc vēlāk jāmēģina atkal."
+  },
+  "lockAllVaults": {
+    "message": "Aizslēgt visas glabātavas"
+  },
+  "accountLimitReached": {
+    "message": "Vienlaicīgi var būt pierakstījušies ne vairāk kā 5 konti."
+  },
+  "accountPreferences": {
+    "message": "Uzstādījumi"
+  },
+  "appPreferences": {
+    "message": "Lietotnes iestatījumi (visi konti)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Sasniegti konta ierobežojumi. Izrakstīties, lai pievienotu citu."
+  },
+  "settingsTitle": {
+    "message": "Lietotnes iestatījumi kontam $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Pārslēgties starp kontiem"
+  },
+  "options": {
+    "message": "Iespējas"
+  },
+  "sessionTimeout": {
+    "message": "Sesijai iestājās noildze. Lūgums mēģināt pierakstīties vēlreiz."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Izdod personīgo glabātavu"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Tiks izdoti tikai personīgie glabātavas vienumi, kas ir saistīti ar $EMAIL$. Apvienības glabātavas vienumi netiks iekļauti.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

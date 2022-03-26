@@ -44,14 +44,24 @@
   "share": {
     "message": "Partager"
   },
-  "shareItem": {
-    "message": "Partager l'élément"
+  "moveToOrganization": {
+    "message": "Déplacer vers l'organisation"
   },
-  "sharedItem": {
-    "message": "Élément partagé"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ a été déplacé vers $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Choisissez une organisation avec laquelle vous voulez partager cet élément. Le partage transfère la propriété de l'élément à l'organisation. Vous ne serez plus le propriétaire direct de cet élément après le partage."
+  "moveToOrgDesc": {
+    "message": "Choisissez une organisation vers laquelle vous souhaitez déplacer cet élément. Déplacer un élément vers une organisation transfère la propriété de l'élément à cette organisation. Vous ne serez plus le propriétaire direct de cet élément une fois qu'il aura été déplacé."
   },
   "attachments": {
     "message": "Pièces jointes"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Nom"
   },
+  "fullName": {
+    "message": "Nom et prénom"
+  },
   "address1": {
     "message": "Adresse 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Booléen"
+  },
+  "cfTypeLinked": {
+    "message": "Lié",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valeur liée",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Supprimer"
@@ -431,13 +452,10 @@
     "message": "Sélectionnez un fichier."
   },
   "maxFileSize": {
-    "message": "La taille maximale du fichier est de 100 Mo."
+    "message": "La taille maximale du fichier est de 500 Mo."
   },
   "updateKey": {
     "message": "Vous ne pouvez pas utiliser cette fonctionnalité tant que vous ne mettez pas à jour votre clé de chiffrement."
-  },
-  "options": {
-    "message": "Options"
   },
   "editedFolder": {
     "message": "Dossier modifié"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Aucun élément à afficher."
   },
+  "sendVerificationCode": {
+    "message": "Envoyer un code de vérification à votre adresse email"
+  },
+  "sendCode": {
+    "message": "Envoyer le code"
+  },
+  "codeSent": {
+    "message": "Code envoyé"
+  },
   "verificationCode": {
     "message": "Code de vérification"
   },
+  "confirmIdentity": {
+    "message": "Confirmez votre identité pour continuer."
+  },
   "verificationCodeRequired": {
     "message": "Le code de vérification est requis."
+  },
+  "invalidVerificationCode": {
+    "message": "Code de vérification invalide"
   },
   "continue": {
     "message": "Continuer"
@@ -592,11 +625,11 @@
     "message": "Sécurisez votre organisation avec Duo Security à l'aide de l'application Duo Mobile, l'envoi d'un SMS, un appel vocal ou une clé de sécurité U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utiliser n'importe quelle clé de sécurité FIDO U2F active pour accéder à votre compte."
+  "webAuthnTitle": {
+    "message": "WebAuthn FIDO2"
   },
-  "u2fTitle": {
-    "message": "Clé de sécurité FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilisez n'importe quelle clé de sécurité compatible WebAuthn pour accéder à votre compte."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Chargement ..."
   },
-  "lockNow": {
-    "message": "Verrouiller maintenant"
+  "lockVault": {
+    "message": "Verrouiller le coffre"
   },
   "passwordGenerator": {
     "message": "Générateur de mot de passe"
   },
-  "emailUs": {
+  "contactUs": {
     "message": "Nous contacter"
   },
-  "visitOurWebsite": {
-    "message": "Visitez notre site web"
+  "getHelp": {
+    "message": "Obtenir de l'aide"
   },
   "fileBugReport": {
     "message": "Envoyer un rapport de bug"
@@ -751,7 +784,7 @@
     "message": "Échec de la synchronisation"
   },
   "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Saisissez votre mot de passe maître pour continuer."
+    "message": "Votre coffre est verrouillé. Vérifiez votre identité pour continuer."
   },
   "unlock": {
     "message": "Déverrouiller"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Les clés de chiffrement du compte sont spécifiques à chaque utilisateur Bitwarden. Vous ne pouvez donc pas importer d'export chiffré dans un compte différent."
   },
-  "exportMasterPassword": {
-    "message": "Saisissez votre mot de passe maître pour exporter les données de votre coffre."
-  },
   "noOrganizationsList": {
     "message": "Vous ne faites partie d'aucune organisation. Les organisations vous permettent de partager des éléments de façon sécurisée avec d'autres utilisateurs."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Code PIN invalide."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Votre coffre est verrouillé. Saisissez votre code PIN pour continuer."
-  },
   "unlockWithWindowsHello": {
     "message": "Déverrouiller avec Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "déverouiller votre coffre"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Ne pas proposer Windows Hello au lancement."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Ne pas proposer Touch ID au lancement."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Verrouiller avec le mot de passe maître lors du redémarrage"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "En attente de suppression"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Authentifier WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Cacher mon adresse e-mail aux destinataires."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Une ou plusieurs politiques d'organisation affectent vos options Send."
+  },
+  "emailVerificationRequired": {
+    "message": "Vérification de l'adresse e-mail nécessaire"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Vous devez vérifier votre adresse e-mail pour utiliser cette fonctionnalité."
+  },
+  "passwordPrompt": {
+    "message": "Ressaisie du mot de passe maître"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmation du mot de passe maître"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Cette action est protégée. Pour continuer, veuillez ressaisir votre mot de passe maître pour vérifier votre identité."
+  },
+  "updatedMasterPassword": {
+    "message": "Mot de passe maître mis à jour"
+  },
+  "updateMasterPassword": {
+    "message": "Mettre à jour le mot de passe maître"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Votre mot de passe maître a récemment été modifié par un administrateur de votre organisation. Pour pouvoir accéder au coffre-fort, vous devez mettre à jour votre mot de passe maître maintenant. Poursuivre vous déconnectera de votre session actuelle, vous obligeant à vous reconnecter. Les sessions actives sur d'autres appareils peuvent rester actives jusqu'à une heure."
+  },
+  "hours": {
+    "message": "Heures"
+  },
+  "minutes": {
+    "message": "Minutes"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Les politiques de votre organisation affectent le délai d'expiration de votre coffre. Le délai d'expiration maximal autorisé est de $HOURS$ heure(s) et $MINUTES$ minute(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Le délai d'expiration de votre coffre-fort dépasse les restrictions définies par votre organisation."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscription automatique"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Cette organisation a une politique d'entreprise qui vous inscrira automatiquement à la réinitialisation du mot de passe. L'inscription permettra aux administrateurs de l'organisation de changer votre mot de passe maître."
+  },
+  "vaultExportDisabled": {
+    "message": "Export du coffre désactivé"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Une ou plusieurs politiques d'organisation vous empêchent d'exporter votre coffre personnel."
+  },
+  "addAccount": {
+    "message": "Ajouter un compte"
+  },
+  "removeMasterPassword": {
+    "message": "Supprimer le mot de passe maître"
+  },
+  "removedMasterPassword": {
+    "message": "Mot de passe maître supprimé."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ utilise SSO avec un serveur de clés auto-hébergé. Un mot de passe maître n'est plus nécessaire aux membres de cette organisation pour se connecter.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Quitter l'organisation"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Êtes-vous sûr de vouloir quitter cette organisation ?"
+  },
+  "leftOrganization": {
+    "message": "Vous avez quitté l'organisation."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Impossible de contacter Key Connector, réessayez plus tard."
+  },
+  "lockAllVaults": {
+    "message": "Verrouiller tous les coffres"
+  },
+  "accountLimitReached": {
+    "message": "Vous ne pouvez pas connecter plus de 5 comptes en même temps."
+  },
+  "accountPreferences": {
+    "message": "Préférences"
+  },
+  "appPreferences": {
+    "message": "Paramètres de l'application (tous les comptes)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limite de comptes atteinte. Déconnectez-vous d'un compte pour en ajouter un nouveau."
+  },
+  "settingsTitle": {
+    "message": "Paramètres de l'application pour $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Changer de compte"
+  },
+  "options": {
+    "message": "Options"
+  },
+  "sessionTimeout": {
+    "message": "Votre session a expiré. Veuillez revenir en arrière et essayer de vous connecter à nouveau."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Export du coffre personnel"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Seuls les éléments du coffre personnel associé à l'adresse e-mail $EMAIL$ seront exportés. Les éléments du coffre de l'organisation ne seront pas inclus.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

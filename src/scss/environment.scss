@@ -1,52 +1,55 @@
-﻿html.os_windows {
-    body {
-        border-top: 1px solid #dddddd;
+﻿html.os_macos {
+  body.layout_frontend {
+    -webkit-app-region: drag;
+
+    button,
+    a,
+    i,
+    b,
+    span,
+    input,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    img,
+    select,
+    textarea,
+    label,
+    .box,
+    .modal-backdrop {
+      -webkit-app-region: no-drag;
     }
+  }
 
-    &.theme_dark body {
-        border-top-color: #000000;
-    }
-}
+  #login-page {
+    .content {
+      a.settings-icon {
+        position: absolute;
+        left: unset;
+        right: 20px;
 
-html.os_macos {
-    body.layout_frontend {
-        -webkit-app-region: drag;
-
-        button, a, i, b, span, input, p, h1, h2, h3, h4, h5, h6, img, select,
-        textarea, label, .box, .modal-backdrop {
-            -webkit-app-region: no-drag;
+        span {
+          margin-right: 8px;
+          float: left;
         }
+      }
     }
+  }
 
-    #login-page {
-        .content {
-            a.settings-icon {
-                position: absolute;
-                left: unset;
-                right: 20px;
+  .vault .header-search {
+    -webkit-app-region: drag;
 
-                span {
-                    margin-right: 8px;
-                    float: left;
-                }
-            }
-        }
+    input,
+    i {
+      -webkit-app-region: no-drag;
     }
+  }
 
-    .vault .header-search {
-        -webkit-app-region: drag;
-
-        input, i {
-            -webkit-app-region: no-drag;
-        }
-    }
-
-    .vault .mac-bar {
-        height: 48px;
-        -webkit-app-region: drag;
-    }
-
-    .vault > .groupings > .content > .inner-content {
-        padding-top: 0;
-    }
+  .vault > .groupings > .content > .inner-content {
+    padding-top: 0;
+  }
 }

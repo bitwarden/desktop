@@ -1,8 +1,8 @@
 {
-  "name": "bitwarden",
+  "name": "@bitwarden/desktop",
   "productName": "Bitwarden",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "1.25.1",
+  "version": "1.32.2",
   "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
   "homepage": "https://bitwarden.com",
   "license": "GPL-3.0",
@@ -13,15 +13,7 @@
   },
   "dependencies": {
     "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
-    "big-integer": "1.6.36",
-    "browser-hrtime": "^1.1.8",
-    "electron-log": "4.3.0",
-    "electron-store": "6.0.1",
-    "electron-updater": "4.3.5",
     "forcefocus": "^1.1.0",
-    "keytar": "7.3.0",
-    "node-ipc": "^9.1.1",
-    "regedit": "^3.0.3",
-    "zxcvbn": "4.4.2"
+    "keytar": "7.7.0"
   }
 }

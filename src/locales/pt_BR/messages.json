@@ -44,14 +44,24 @@
   "share": {
     "message": "Compartilhar"
   },
-  "shareItem": {
-    "message": "Compartilhar Item"
+  "moveToOrganization": {
+    "message": "Mover para a Organização"
   },
-  "sharedItem": {
-    "message": "Compartilhar Item"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ movido para $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Escolha uma organização com a qual você deseja compartilhar este item. O compartilhamento transfere a propriedade do item para a organização. Você não será mais o proprietário direto deste item depois que ele for compartilhado."
+  "moveToOrgDesc": {
+    "message": "Escolha uma organização para a qual deseja mover este item. Mudar para uma organização transfere a propriedade do item para essa organização. Você não será mais o proprietário direto deste item depois que ele for movido."
   },
   "attachments": {
     "message": "Anexos"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Sobrenome"
   },
+  "fullName": {
+    "message": "Nome Completo"
+  },
   "address1": {
     "message": "Endereço 1"
   },
@@ -318,6 +331,14 @@
   "cfTypeBoolean": {
     "message": "Booleano"
   },
+  "cfTypeLinked": {
+    "message": "Vinculado",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valor vinculado",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Remover"
   },
@@ -340,7 +361,7 @@
     "message": "Excluir Anexo"
   },
   "deleteItemConfirmation": {
-    "message": "Tem certeza que deseja excluir este item?"
+    "message": "Você realmente deseja enviar para a lixeira?"
   },
   "deletedItem": {
     "message": "Enviar item para lixeira"
@@ -431,13 +452,10 @@
     "message": "Selecione um arquivo."
   },
   "maxFileSize": {
-    "message": "O tamanho máximo do arquivo é de 100 MB."
+    "message": "O tamanho máximo do arquivo é de 500 MB."
   },
   "updateKey": {
     "message": "Você não pode usar este recurso até você atualizar sua chave de criptografia."
-  },
-  "options": {
-    "message": "Opções"
   },
   "editedFolder": {
     "message": "Pasta editada"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Não há itens para listar."
   },
+  "sendVerificationCode": {
+    "message": "Enviar um código de verificação para o seu e-mail"
+  },
+  "sendCode": {
+    "message": "Enviar Código"
+  },
+  "codeSent": {
+    "message": "Código Enviado"
+  },
   "verificationCode": {
     "message": "Código de Verificação"
   },
+  "confirmIdentity": {
+    "message": "Confirme a sua identidade para continuar."
+  },
   "verificationCodeRequired": {
     "message": "Requer o código de verificação."
+  },
+  "invalidVerificationCode": {
+    "message": "Código de verificação inválido"
   },
   "continue": {
     "message": "Continuar"
@@ -592,11 +625,11 @@
     "message": "Verifique com o Duo Security utilizando o aplicativo Duo Mobile, SMS, chamada telefônica, ou chave de segurança U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilize qualquer chave de segurança ativada por FIDO U2F para acessar à sua conta."
+  "webAuthnTitle": {
+    "message": "WebAuthn FIDO2"
   },
-  "u2fTitle": {
-    "message": "Chave de Segurança FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilize qualquer chave de segurança ativada por WebAuthn para acessar a sua conta."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Carregando..."
   },
-  "lockNow": {
-    "message": "Bloquear Agora"
+  "lockVault": {
+    "message": "Bloquear Cofre"
   },
   "passwordGenerator": {
     "message": "Gerador de Senha"
   },
-  "emailUs": {
-    "message": "Envie-nos um E-mail"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "Visitar o Nosso Site"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "Enviar um Relatório de Bug"
@@ -751,7 +784,7 @@
     "message": "A sincronização falhou"
   },
   "yourVaultIsLocked": {
-    "message": "O seu cofre está bloqueado. Verifique a sua senha mestra para continuar."
+    "message": "Seu cofre está trancado. Verifique sua identidade para continuar."
   },
   "unlock": {
     "message": "Desbloquear"
@@ -850,31 +883,31 @@
     "message": "Os ícones de sites fornecem uma imagem reconhecível próxima de cada item de credencial no seu cofre."
   },
   "enableMinToTray": {
-    "message": "Minimizar para ícone de bandeja"
+    "message": "Minimizar para Ícone da Bandeja"
   },
   "enableMinToTrayDesc": {
-    "message": "Ao minimizar a janela, mostre um ícone na bandeja do sistema."
+    "message": "Ao minimizar a janela, mostra um ícone na bandeja do sistema."
   },
   "enableMinToMenuBar": {
-    "message": "Minimizar para a barra de menus"
+    "message": "Minimizar para a barra de menu"
   },
   "enableMinToMenuBarDesc": {
-    "message": "Quando minimizar a janela, mostrar um ícone na barra de menu."
+    "message": "Ao minimizar a janela, mostra um ícone na barra de menus."
   },
   "enableCloseToTray": {
     "message": "Fechar para Ícone da Bandeja"
   },
   "enableCloseToTrayDesc": {
-    "message": "Quando fechar a janela, mostre um ícone na bandeja do sistema."
+    "message": "Ao fechar a janela, mostra um ícone na bandeja do sistema."
   },
   "enableCloseToMenuBar": {
-    "message": "Fechar para barra de menus"
+    "message": "Fechar para barra de menu"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "Quando fechar a janela, mostrar um ícone na barra de menus."
+    "message": "Ao fechar a janela, mostra um ícone na barra de menu."
   },
   "enableTray": {
-    "message": "Habilitar ícone de bandeja"
+    "message": "Ativar Ícone de Bandeja"
   },
   "enableTrayDesc": {
     "message": "Sempre mostrar um ícone na bandeja do sistema."
@@ -886,10 +919,10 @@
     "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na bandeja do sistema."
   },
   "startToMenuBar": {
-    "message": "Iniciar na barra de menus"
+    "message": "Iniciar na barra de menu"
   },
   "startToMenuBarDesc": {
-    "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na barra de menus."
+    "message": "Quando o aplicativo for iniciado, apenas mostrar um ícone na barra de menu."
   },
   "openAtLogin": {
     "message": "Iniciar automaticamente ao iniciar sessão"
@@ -907,7 +940,7 @@
     "message": "Confirmar desativação da bandeja"
   },
   "confirmTrayDesc": {
-    "message": "Desabilitar esta configuração também desativará todas as outras configurações relacionadas à bandeja."
+    "message": "Desativar esta configuração também desativará todas as outras configurações relacionadas à bandeja."
   },
   "language": {
     "message": "Idioma"
@@ -1231,10 +1264,7 @@
     "message": "Esta exportação criptografa seus dados usando a chave de criptografia da sua conta. Se você rotacionar a chave de criptografia da sua conta, você deve exportar novamente, já que você não será capaz de descriptografar este arquivo de exportação."
   },
   "encExportAccountWarningDesc": {
-    "message": "Chaves de criptografia da conta são únicas para cada conta de usuário do Bitwarden, então você não pode importar uma exportação criptografada para uma conta diferente."
-  },
-  "exportMasterPassword": {
-    "message": "Insira a sua senha mestra para exportar os dados do seu cofre."
+    "message": "As chaves de criptografia de conta são únicas para cada conta de usuário do Bitwarden, então você não pode importar uma exportação criptografada para uma conta diferente."
   },
   "noOrganizationsList": {
     "message": "Você não pertence a nenhuma organização. Organizações permitem-lhe compartilhar itens em segurança com outros usuários."
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Código PIN inválido."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "O seu cofre está bloqueado. Verifique o seu PIN para continuar."
-  },
   "unlockWithWindowsHello": {
     "message": "Desbloquear com o Windows Hello"
   },
@@ -1295,7 +1322,13 @@
     "message": "Desbloquear com o Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Verifique para o Bitwarden."
+    "message": "desbloquear o seu cofre"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Não solicite por Windows Hello na inicialização."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Não solicite por Touch ID na inicialização."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com senha mestra ao reiniciar"
@@ -1460,7 +1493,7 @@
     "message": "Ativar integração com o navegador"
   },
   "enableBrowserIntegrationDesc": {
-    "message": "A integração do navegador é usada para dados biométricos no navegador."
+    "message": "A integração do navegador é usada para biometria no navegador."
   },
   "browserIntegrationMasOnlyTitle": {
     "message": "Integração com o navegador não suportada"
@@ -1490,7 +1523,7 @@
     "message": "Por favor, certifique-se que a impressão digital mostrada é idêntica à impressão digital exibida na extensão do navegador."
   },
   "biometricsNotEnabledTitle": {
-    "message": "Biometria não habilitada"
+    "message": "Biometria não ativada"
   },
   "biometricsNotEnabledDesc": {
     "message": "A biometria com o navegador requer que a biometria de desktop seja ativada nas configurações primeiro."
@@ -1499,7 +1532,7 @@
     "message": "Devido a uma Política Empresarial, você está restrito de salvar itens para seu cofre pessoal. Altere a opção de Propriedade para uma organização e escolha entre as Coleções disponíveis."
   },
   "hintEqualsPassword": {
-    "message": "Sua dica de senha senha não pode ser a mesma que a sua senha."
+    "message": "Sua dica de senha não pode ser o mesmo que sua senha."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Uma política de organização está afetando suas opções de propriedade."
@@ -1553,7 +1586,7 @@
     "message": "Contagem Atual de Acessos"
   },
   "disableSend": {
-    "message": "Desabilite este Send para que ninguém possa acessá-lo.",
+    "message": "Desative este Send para que ninguém possa acessá-lo.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
@@ -1561,11 +1594,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Notas privadas sobre esse Send.",
+    "message": "Notas privadas sobre este Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Mandar link",
+    "message": "Link do Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
@@ -1625,18 +1658,18 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copiar link do Send para a Área de transferência",
+    "message": "Copiar link do Send para a área de transferência",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copie o link para compartilhar este Send para minha área de transferência depois de salvar."
+    "message": "Copiar o link para compartilhar este Send para minha área de transferência ao salvar."
   },
   "sendDisabled": {
-    "message": "Envio desabilitado",
+    "message": "Send desativado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Devido a uma política corporativa, você só é capaz de excluir um Send existente.",
+    "message": "Devido a uma política corporativa, você só pode excluir um Send existente.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Exclusão pendente"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autenticar WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Ocultar meu endereço de e-mail dos destinatários."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Uma ou mais políticas da organização estão afetando as suas opções de Send."
+  },
+  "emailVerificationRequired": {
+    "message": "Verificação de E-mail Necessária"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Você precisa verificar o seu e-mail para usar este recurso."
+  },
+  "passwordPrompt": {
+    "message": "Solicitação nova de senha mestra"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmação de senha mestra"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Esta ação está protegida. Para continuar, por favor, reinsira a sua senha mestra para verificar sua identidade."
+  },
+  "updatedMasterPassword": {
+    "message": "Senha Mestra Atualizada"
+  },
+  "updateMasterPassword": {
+    "message": "Atualizar Senha Mestra"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Sua Senha Mestra foi alterada recentemente por um administrador de sua organização. Para acessar o cofre, você precisa atualizá-la agora. O processo desconectará você da sessão atual, exigindo que você inicie a sessão novamente. Sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
+  },
+  "hours": {
+    "message": "Horas"
+  },
+  "minutes": {
+    "message": "Minutos"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "As políticas da sua organização estão afetando o tempo limite do seu cofre. O Tempo Limite Máximo permitido do Cofre é $HOURS$ hora(s) e $MINUTES$ minuto(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "O tempo limite do seu cofre excede as restrições definidas por sua organização."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscrição Automática"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Esta organização possui uma política empresarial que irá inscrevê-lo automaticamente na redefinição de senha. A inscrição permitirá que os administradores da organização alterem sua senha mestra."
+  },
+  "vaultExportDisabled": {
+    "message": "Exportação de Cofre Desativada"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Uma ou mais políticas da organização impdem que você exporte seu cofre pessoal."
+  },
+  "addAccount": {
+    "message": "Adicionar Conta"
+  },
+  "removeMasterPassword": {
+    "message": "Remover Senha Mestra"
+  },
+  "removedMasterPassword": {
+    "message": "Senha mestra removida."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ está usando SSO com um servidor de chaves auto-hospedado. Não é mais necessária uma senha mestra para os membros desta organização entrarem.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Sair da Organização"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Você tem certeza que deseja sair desta organização?"
+  },
+  "leftOrganization": {
+    "message": "Você saiu da organização."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Não foi possível acessar o conector de chave, tente novamente mais tarde."
+  },
+  "lockAllVaults": {
+    "message": "Bloquear Todos os Cofres"
+  },
+  "accountLimitReached": {
+    "message": "Não mais do que 5 contas podem estar logadas ao mesmo tempo."
+  },
+  "accountPreferences": {
+    "message": "Preferências"
+  },
+  "appPreferences": {
+    "message": "Configurações do Aplicativo (Todas as Contas)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limite de Contas atingido. Saia de uma conta para adicionar outra."
+  },
+  "settingsTitle": {
+    "message": "Configurações do Aplicativo para $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Trocar de Conta"
+  },
+  "options": {
+    "message": "Opções"
+  },
+  "sessionTimeout": {
+    "message": "Your session has timed out. Please go back and try logging in again."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

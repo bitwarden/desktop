@@ -1,36 +1,69 @@
-<div id="vault" class="vault" attr.aria-hidden="{{showingModal}}">
-    <app-vault-groupings id="groupings" class="groupings" (onAllClicked)="clearGroupingFilters()" (onFavoritesClicked)="filterFavorites()"
-        (onCipherTypeClicked)="filterCipherType($event)" (onFolderClicked)="filterFolder($event.id)"
-        (onAddFolder)="addFolder()" (onEditFolder)="editFolder($event.id)"
-        (onCollectionClicked)="filterCollection($event.id)" (onTrashClicked)="filterDeleted()">
-    </app-vault-groupings>
-    <app-vault-ciphers id="items" class="items" [activeCipherId]="cipherId" (onCipherClicked)="viewCipher($event)"
-        (onCipherRightClicked)="viewCipherMenu($event)" (onAddCipher)="addCipher($event)"
-        (onAddCipherOptions)="addCipherOptions()">
-    </app-vault-ciphers>
-    <app-vault-view id="details" class="details" *ngIf="cipherId && action === 'view'" [cipherId]="cipherId"
-        (onCloneCipher)="cloneCipher($event)" (onEditCipher)="editCipher($event)" 
-        (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)" (onRestoredCipher)="restoredCipher($event)"
-        (onDeletedCipher)="deletedCipher($event)">
-    </app-vault-view>
-    <app-vault-add-edit id="addEdit" class="details" *ngIf="action === 'add' || action === 'edit' || action === 'clone'"
-        [cloneMode]="action === 'clone'"
-        [folderId]="action === 'add' && folderId !== 'none' ? folderId : null"
-        [organizationId]="action === 'add' ? addOrganizationId : null"
-        [collectionIds]="action === 'add' ? addCollectionIds : null"
-        [type]="action === 'add' ? (addType ? addType : type) : null" [cipherId]="(action === 'edit' || action === 'clone') ? cipherId : null"
-        (onSavedCipher)="savedCipher($event)" (onDeletedCipher)="deletedCipher($event)"
-        (onEditAttachments)="editCipherAttachments($event)" (onCancelled)="cancelledAddEdit($event)"
-        (onShareCipher)="shareCipher($event)" (onEditCollections)="cipherCollections($event)"
-        (onGeneratePassword)="openPasswordGenerator(true)">
-    </app-vault-add-edit>
-    <div id="logo" class="logo" *ngIf="action !== 'add' && action !== 'edit' && action !== 'view' && action !== 'clone'">
-        <div class="content">
-            <div class="inner-content">
-                <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
-            </div>
-        </div>
+<div id="vault" class="vault" attr.aria-hidden="{{ showingModal }}">
+  <app-vault-ciphers
+    id="items"
+    class="items"
+    [activeCipherId]="cipherId"
+    (onCipherClicked)="viewCipher($event)"
+    (onCipherRightClicked)="viewCipherMenu($event)"
+    (onAddCipher)="addCipher($event)"
+    (onAddCipherOptions)="addCipherOptions()"
+  >
+  </app-vault-ciphers>
+  <app-vault-view
+    id="details"
+    class="details"
+    *ngIf="cipherId && action === 'view'"
+    [cipherId]="cipherId"
+    (onCloneCipher)="cloneCipherWithoutPasswordPrompt($event)"
+    (onEditCipher)="editCipherWithoutPasswordPrompt($event)"
+    (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)"
+    (onRestoredCipher)="restoredCipher($event)"
+    (onDeletedCipher)="deletedCipher($event)"
+  >
+  </app-vault-view>
+  <app-vault-add-edit
+    id="addEdit"
+    class="details"
+    *ngIf="action === 'add' || action === 'edit' || action === 'clone'"
+    [cloneMode]="action === 'clone'"
+    [folderId]="action === 'add' && folderId !== 'none' ? folderId : null"
+    [organizationId]="action === 'add' ? addOrganizationId : null"
+    [collectionIds]="action === 'add' ? addCollectionIds : null"
+    [type]="action === 'add' ? (addType ? addType : type) : null"
+    [cipherId]="action === 'edit' || action === 'clone' ? cipherId : null"
+    (onSavedCipher)="savedCipher($event)"
+    (onDeletedCipher)="deletedCipher($event)"
+    (onEditAttachments)="editCipherAttachments($event)"
+    (onCancelled)="cancelledAddEdit($event)"
+    (onShareCipher)="shareCipher($event)"
+    (onEditCollections)="cipherCollections($event)"
+    (onGeneratePassword)="openPasswordGenerator(true)"
+  >
+  </app-vault-add-edit>
+  <div
+    id="logo"
+    class="logo"
+    *ngIf="action !== 'add' && action !== 'edit' && action !== 'view' && action !== 'clone'"
+  >
+    <div class="content">
+      <div class="inner-content">
+        <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
+      </div>
     </div>
+  </div>
+  <app-vault-groupings
+    id="groupings"
+    class="groupings"
+    (onAllClicked)="clearGroupingFilters()"
+    (onFavoritesClicked)="filterFavorites()"
+    (onCipherTypeClicked)="filterCipherType($event)"
+    (onFolderClicked)="filterFolder($event.id)"
+    (onAddFolder)="addFolder()"
+    (onEditFolder)="editFolder($event.id)"
+    (onCollectionClicked)="filterCollection($event.id)"
+    (onTrashClicked)="filterDeleted()"
+  >
+  </app-vault-groupings>
 </div>
 <ng-template #passwordGenerator></ng-template>
 <ng-template #attachments></ng-template>

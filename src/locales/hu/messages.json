@@ -44,14 +44,24 @@
   "share": {
     "message": "Megosztás"
   },
-  "shareItem": {
-    "message": "Elem megosztása"
+  "moveToOrganization": {
+    "message": "Áthelyezés szervezethez"
   },
-  "sharedItem": {
-    "message": "Megosztott elem"
+  "movedItemToOrg": {
+    "message": "Példaérték $itemname$: titkos elem változóhoz\nPéldaérték $itemname$: cégnév változóhoz\nFájl: messages.json",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Szervezet választása az elem megosztásához. Az elemtulajdon átadása a szervezetnek. Innentől nem közvetlen tulajdonosa leszünk az elemnek a megosztás után."
+  "moveToOrgDesc": {
+    "message": "Válasszunk egy szervezetet, ahová áthelyezni szeretnénk ezt az elemet. A szervezetbe áthelyezés átruházza az elem tulajdonjogát az adott szervezetre. Az áthelyezés után többé nem leszünk az elem közvetlen tulajdonosa."
   },
   "attachments": {
     "message": "Mellékletek"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Családnév"
   },
+  "fullName": {
+    "message": "Teljes név"
+  },
   "address1": {
     "message": "Postai cím 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Logikai"
+  },
+  "cfTypeLinked": {
+    "message": "Csatolva",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Csatolt érték",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Eltávolítás"
@@ -431,13 +452,10 @@
     "message": "Válasszunk egy fájlt."
   },
   "maxFileSize": {
-    "message": "Maximális fájl méret 100 MB."
+    "message": "Maximális fájl méret 500 MB."
   },
   "updateKey": {
     "message": "Ez a funkció nem használható a titkosítási kulcs frissítéséig."
-  },
-  "options": {
-    "message": "Opciók"
   },
   "editedFolder": {
     "message": "A mappa szerkesztésre került."
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Nincsenek megjeleníthető elemek."
   },
+  "sendVerificationCode": {
+    "message": "Ellenőrző kód elküldése a saját email címre"
+  },
+  "sendCode": {
+    "message": "Kód küldése"
+  },
+  "codeSent": {
+    "message": "A kód elküldésre került."
+  },
   "verificationCode": {
     "message": "Ellenőrző kód"
   },
+  "confirmIdentity": {
+    "message": "A folytatáshoz meg kell erősíteni a személyazonosságot."
+  },
   "verificationCodeRequired": {
     "message": "Az ellenőrző kód kötelező."
+  },
+  "invalidVerificationCode": {
+    "message": "Érvénytelen ellenőrző kód"
   },
   "continue": {
     "message": "Folytatás"
@@ -592,11 +625,11 @@
     "message": "Ellenőrzés szervezeti Duo Security segítségével a Duo Mobile alkalmazás, SMS, telefonhívás vagy U2F biztonsági kulcs használatával.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Bármilyen FIDO U2F által engedélyezett biztonsági kulcs használata a fiók eléréséhez."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F Biztonsági kulcs"
+  "webAuthnDesc": {
+    "message": "Használjunk bármilyen WebAuthn engedélyezett biztonsági kulcsot a saját fiók eléréséhez."
   },
   "emailTitle": {
     "message": "Email cím"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "A betöltés folyamatban van..."
   },
-  "lockNow": {
-    "message": "Zárolás most"
+  "lockVault": {
+    "message": "Széf lezárása"
   },
   "passwordGenerator": {
     "message": "Jelszó generátor"
   },
-  "emailUs": {
-    "message": "Email küldése a fejlesztőknek"
+  "contactUs": {
+    "message": "Kapcsolatfelvétel"
   },
-  "visitOurWebsite": {
-    "message": "Fejlesztői webhely felkeresése"
+  "getHelp": {
+    "message": "Segítségkérés"
   },
   "fileBugReport": {
     "message": "Hibajelentés"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "A fiók titkosítási kulcsai minden Bitwarden felhasználói fiókhoz egyediek, ezért nem importálhatunk titkosított exportálást egy másik fiókba."
   },
-  "exportMasterPassword": {
-    "message": "A mesterjelszó megadása a széfadatok exportálásához."
-  },
   "noOrganizationsList": {
     "message": "Még nem tartozunk egyik szervezethez sem. A szervezetek lehetővé teszik az elemek megosztását más felhasználókkal."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "A pinkód érvénytelen."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "A széf zárolásra került. A folytatáshoz meg kel adni a pinkódot."
-  },
   "unlockWithWindowsHello": {
     "message": "Feloldás Windows Hello segítségével"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Bitwarden feloldás"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Indításkor ne kérje a Windows Hello alkalmazást."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Indításkor ne kérje a Touch ID alkalmazást."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lezárás mesterjelszóval újraindításkor"
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Függőben lévő törlés"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAutn hitelesítés"
+  },
+  "hideEmail": {
+    "message": "Saját email cím elrejtése a címzettek elől."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Egy vagy több szervezeti szabály érinti a Send opciókat."
+  },
+  "emailVerificationRequired": {
+    "message": "E-mail hitelesítés szükséges"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "A funkció használatához ellenőrizni kell az email címet."
+  },
+  "passwordPrompt": {
+    "message": "Mesterjelszó ismételt megadás"
+  },
+  "passwordConfirmation": {
+    "message": "Mesterjelszó megerősítése"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Ez a művelet védett. A folytatásért ismételten meg kell adni a mesterjelszőt az személyazonosság ellenőrzéséhez."
+  },
+  "updatedMasterPassword": {
+    "message": "A mesterjelszó frisstésre került."
+  },
+  "updateMasterPassword": {
+    "message": "Mesterjelszó frissítése"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "A szervezet egyik adminisztrátora nemrég megváltoztatta a mesterjelszót. A széf eléréséhez most frissíteni kell a mesterjelszót. Továbblépéskor kijelentkezés történik a jelenlegi munkamenetből és újra be kell jelentkezni. Ha van aktív munkamenet más eszközön, az még legfeljebb egy óráig aktív maradhat."
+  },
+  "hours": {
+    "message": "Óra"
+  },
+  "minutes": {
+    "message": "Perc"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "A szervezeti házirendek hatással vannak a széf időkorlátjára. A széf időkorlátja legfeljebb $HOURS$ óra és $MINUTES$ perc lehet.",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "A széf időkorlátja túllépi a szervezet által beállított korlátozást."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatikus regisztráció"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Ennek a szervezetnek van egy vállalati házirendje, amely automatikusan regisztrál a jelszó alaphelyzetbe állítására. A regisztráció lehetővé teszi a szervezet adminisztrátorainak a mesterjelszó megváltoztatását."
+  },
+  "vaultExportDisabled": {
+    "message": "A széf exportálás nem engedélyezett."
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Egy vagy több szervezeti házirend tiltja a személyes széf exportálását."
+  },
+  "addAccount": {
+    "message": "Fiók hozzáadása"
+  },
+  "removeMasterPassword": {
+    "message": "Mesterjelszó eltávolítása"
+  },
+  "removedMasterPassword": {
+    "message": "A mesterjelszó eltávolításra került."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ jelenleg saját tárolású aláíráskulcsú SSO szervert használ. A mesterjelszó a továbbiakban nem szükséges a szervezeti tagsági bejelentkezéshez.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Szervezet elhagyása"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Biztosan kilépünk ebből a szervezetből?"
+  },
+  "leftOrganization": {
+    "message": "Megtörtént a kilépés a szervezetből."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nem érhető el a kulcskapcsoló. Próbáljuk újra később."
+  },
+  "lockAllVaults": {
+    "message": "Összes széf lezárása"
+  },
+  "accountLimitReached": {
+    "message": "Egyszerre legfeljebb 5 fiókba lehet bejelentkezni."
+  },
+  "accountPreferences": {
+    "message": "Előbeállítások"
+  },
+  "appPreferences": {
+    "message": "Alkalmazás beállítások (összes fiók)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "A fiók korlát elérésre került. Kijelentkezés egy fiókból másik hozzáadásához."
+  },
+  "settingsTitle": {
+    "message": "Alkalmezás beállítások $EMAIL$ címhez",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Fiók váltása"
+  },
+  "options": {
+    "message": "Opciók"
+  },
+  "sessionTimeout": {
+    "message": "A munkamenet lejárt. Lépjünk vissza és próbáljunk újra bejelentkezni."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Személyes széf exportálása"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Csak $EMAIL$ email címmel társított személyes széf elemek kerülnek exportálásra. Ebbe nem kerülnek be a szervezeti széf elemek.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

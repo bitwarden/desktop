@@ -1,0 +1,101 @@
+<button
+  class="account-switcher"
+  (click)="toggle()"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  [hidden]="!showSwitcher"
+  aria-haspopup="menu"
+  aria-controls="cdk-overlay-container"
+  [attr.aria-expanded]="isOpen"
+>
+  <ng-container *ngIf="activeAccountEmail != null; else noActiveAccount">
+    <app-avatar
+      [data]="activeAccountEmail"
+      size="25"
+      [circle]="true"
+      [fontSize]="14"
+      [dynamic]="true"
+      *ngIf="activeAccountEmail != null"
+      aria-hidden="true"
+    ></app-avatar>
+    <span>{{ activeAccountEmail }}</span>
+  </ng-container>
+  <ng-template #noActiveAccount>
+    <span>{{ "switchAccount" | i18n }}</span>
+  </ng-template>
+  <i
+    class="bwi"
+    aria-hidden="true"
+    [ngClass]="{ 'bwi-angle-down': !isOpen, 'bwi-chevron-up': isOpen }"
+  ></i>
+</button>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+  (backdropClick)="close()"
+  (detach)="close()"
+  [cdkConnectedOverlayOpen]="showSwitcher && isOpen"
+  [cdkConnectedOverlayPositions]="overlayPostition"
+  cdkConnectedOverlayMinWidth="250px"
+>
+  <div
+    class="account-switcher-dropdown"
+    [@transformPanel]="'open'"
+    cdkTrapFocus
+    cdkTrapFocusAutoCapture
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="accounts" *ngIf="numberOfAccounts > 0">
+      <button
+        *ngFor="let a of accounts | keyvalue"
+        class="account"
+        [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
+        (click)="switch(a.key)"
+        appA11yTitle="{{ 'loggedInAsOn' | i18n: a.value.profile.email:a.value.serverUrl }}"
+        attr.aria-label="{{ 'switchAccount' | i18n }}"
+      >
+        <app-avatar
+          [data]="a.value.profile.email"
+          size="25"
+          [circle]="true"
+          [fontSize]="14"
+          [dynamic]="true"
+          *ngIf="a.value.profile.email != null"
+          aria-hidden="true"
+        ></app-avatar>
+        <div class="accountInfo">
+          <span class="email" aria-hidden="true">{{ a.value.profile.email }}</span>
+          <span class="server" aria-hidden="true" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
+            a.value.serverUrl
+          }}</span>
+          <span class="status" aria-hidden="true">{{ a.value.profile.authenticationStatus }}</span>
+        </div>
+        <i
+          class="bwi bwi-unlock bwi-2x text-muted"
+          aria-hidden="true"
+          *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
+        ></i>
+        <i
+          class="bwi bwi-lock bwi-2x text-muted"
+          aria-hidden="true"
+          *ngIf="a.value.profile.authenticationStatus == 'locked'"
+        ></i>
+      </button>
+    </div>
+    <ng-container *ngIf="activeAccountEmail != null">
+      <div class="border" *ngIf="numberOfAccounts > 0"></div>
+      <ng-container *ngIf="numberOfAccounts < 4">
+        <button class="add" routerLink="/login" (click)="addAccount()">
+          <i class="bwi bwi-plus" aria-hidden="true"></i> {{ "addAccount" | i18n }}
+        </button>
+      </ng-container>
+      <ng-container *ngIf="numberOfAccounts == 4">
+        <span class="accountLimitReached">{{ "accountSwitcherLimitReached" | i18n }} </span>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-template>

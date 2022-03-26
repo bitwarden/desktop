@@ -44,14 +44,24 @@
   "share": {
     "message": "Del"
   },
-  "shareItem": {
-    "message": "Del objekt"
+  "moveToOrganization": {
+    "message": "Flytt til organisasjon"
   },
-  "sharedItem": {
-    "message": "Delte elementet"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ flyttet til $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Velg en organisasjon som du ønsker å dele dette objektet med. Deling overfører objektets eierskap til organisasjonen. Du vil ikke lenger være den direkte eieren av dette objektet når det først har blitt delt."
+  "moveToOrgDesc": {
+    "message": "Velg en organisasjon som du ønsker å flyttet elementet til. Ved å flytte til en organisasjon, overfører du eierskapet til elementet til den organisasjonen. Du vil ikke lenger være den direkte eieren av elementet etter at den har blitt flyttet."
   },
   "attachments": {
     "message": "Vedlegg"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Etternavn"
   },
+  "fullName": {
+    "message": "Fullt navn"
+  },
   "address1": {
     "message": "Adresse 1"
   },
@@ -318,6 +331,14 @@
   "cfTypeBoolean": {
     "message": "Boolsk verdi"
   },
+  "cfTypeLinked": {
+    "message": "Tilknyttet",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Tilknyttet verdi",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Fjern"
   },
@@ -368,7 +389,7 @@
     "message": "Kopier URIen"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Kopier verifiseringskode (TOTP)"
   },
   "length": {
     "message": "Lengde"
@@ -431,13 +452,10 @@
     "message": "Velg en fil."
   },
   "maxFileSize": {
-    "message": "Den maksimale filstørrelsen er 100 MB."
+    "message": "Den maksimale filstørrelsen er 500 MB."
   },
   "updateKey": {
     "message": "Du kan ikke bruke denne funksjonen før du oppdaterer krypteringsnøkkelen din."
-  },
-  "options": {
-    "message": "Alternativer"
   },
   "editedFolder": {
     "message": "Redigerte mappen"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Det er ingen gjenstander å liste opp."
   },
+  "sendVerificationCode": {
+    "message": "Send en verifiseringskode til e-posten din"
+  },
+  "sendCode": {
+    "message": "Send kode"
+  },
+  "codeSent": {
+    "message": "Kode sendt"
+  },
   "verificationCode": {
     "message": "Verifiseringskode"
   },
+  "confirmIdentity": {
+    "message": "Bekreft identiteten din for å fortsette."
+  },
   "verificationCodeRequired": {
     "message": "En verifiseringskode er påkrevd."
+  },
+  "invalidVerificationCode": {
+    "message": "Ugyldig verifiseringskode"
   },
   "continue": {
     "message": "Fortsett"
@@ -592,11 +625,11 @@
     "message": "Verifiser med Duo Security for din organisasjon gjennom Duo Mobile-appen, SMS, telefonsamtale, eller en U2F-sikkerhetsnøkkel.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Bruk enhver FIDO U2F-aktivert sikkerhetsnøkkel til å få tilgang til kontoen din."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F-sikkerhetsnøkkel"
+  "webAuthnDesc": {
+    "message": "Bruk en hvilken som helst WebAuthn-aktivert sikkerhetsnøkkel for å få tilgang til kontoen din."
   },
   "emailTitle": {
     "message": "E-post"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Laster inn..."
   },
-  "lockNow": {
-    "message": "Lås nå"
+  "lockVault": {
+    "message": "Lås hvelv"
   },
   "passwordGenerator": {
     "message": "Passordgenerator"
   },
-  "emailUs": {
-    "message": "Send oss en e-post"
+  "contactUs": {
+    "message": "Kontakt oss"
   },
-  "visitOurWebsite": {
-    "message": "Besøk nettsidene våre"
+  "getHelp": {
+    "message": "Få hjelp"
   },
   "fileBugReport": {
     "message": "Legg inn en feilrapport"
@@ -751,7 +784,7 @@
     "message": "Synkronisering mislyktes"
   },
   "yourVaultIsLocked": {
-    "message": "Hvelvet ditt er låst. Kontroller superpassordet ditt for å fortsette."
+    "message": "Hvelvet ditt er låst. Bekreft hovedpassordet ditt for å fortsette."
   },
   "unlock": {
     "message": "Lås opp"
@@ -859,7 +892,7 @@
     "message": "Minimer til menylinjen"
   },
   "enableMinToMenuBarDesc": {
-    "message": "When minimizing the window, show an icon in the menu bar instead."
+    "message": "Når du minimerer vinduet, vil et ikon vises i oppgavelinjen i stedet."
   },
   "enableCloseToTray": {
     "message": "Lukk til oppgavelinjen"
@@ -871,7 +904,7 @@
     "message": "Lukk til menylinje"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "When closing the window, show an icon in the menu bar instead."
+    "message": "Når du lukker vinduet, vis et ikon i menylinjen i stedet."
   },
   "enableTray": {
     "message": "Skru på oppgavelinjeikon"
@@ -889,7 +922,7 @@
     "message": "Start på menylinjen"
   },
   "startToMenuBarDesc": {
-    "message": "When the application is first started, only show an icon in the menu bar."
+    "message": "Når programmet først startes opp, vis kun et ikon i menylinjen."
   },
   "openAtLogin": {
     "message": "Start automatisk ved innlogging"
@@ -898,16 +931,16 @@
     "message": "Start Bitwardens skrivebordsprogram automatisk ved innlogging."
   },
   "alwaysShowDock": {
-    "message": "Always show in the Dock"
+    "message": "Alltid vis i dokken"
   },
   "alwaysShowDockDesc": {
-    "message": "Show the Bitwarden icon in the Dock even when minimized to the menu bar."
+    "message": "Vis Bitwarden-ikonet i dokken selv når den er minimert til menylinjen."
   },
   "confirmTrayTitle": {
-    "message": "Confirm disable tray"
+    "message": "Bekreft avskruing av skuffen"
   },
   "confirmTrayDesc": {
-    "message": "Disabling this setting will also disable all other tray related settings."
+    "message": "Å skru av denne innstillingen vil også skru av alle andre skufferelaterte innstillinger."
   },
   "language": {
     "message": "Språk"
@@ -1228,13 +1261,10 @@
     "message": "Eksporten inneholder dine hvelvdataer i et ukryptert format. Du burde ikke lagre eller sende den eksporterte filen over usikre tjenester (f.eks. E-post). Slett det umiddelbart etter at du er ferdig med å bruke dem."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Denne eksporten krypterer dataene dine ved hjelp av kontoen din sin krypteringsnøkkel. Hvis du noen gang endrer krypteringsnøkkelen til kontoen din, bør du eksportere dataene igjen, ettersom du da ikke vil kunne dekryptere denne eksportfilen."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
-  },
-  "exportMasterPassword": {
-    "message": "Skriv inn ditt superpassord for å eksportere dine hvelvdataer."
+    "message": "Kontokrypteringsnøkler er unike for hver Bitwarden sin brukerkonto, og du kan ikke importere en kryptert eksport til en annen konto."
   },
   "noOrganizationsList": {
     "message": "Du tilhører ikke noen organisasjoner. Organisasjoner gjør det mulig for deg å sikkert dele objekter med andre brukere."
@@ -1282,20 +1312,23 @@
   "invalidPin": {
     "message": "Ugyldig PIN-kode."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Hvelvet ditt er låst. Bekreft PIN-koden din for å fortsette."
-  },
   "unlockWithWindowsHello": {
     "message": "Lås opp med Windows Hello"
   },
   "windowsHelloConsentMessage": {
-    "message": "Verify for Bitwarden."
+    "message": "Bekreft for Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Lås opp med Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "lås opp hvelvet ditt"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Ikke be om Windows Hello ved oppstart."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Ikke be om Touch ID ved oppstart."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Lås med hovedpassord ved omstart"
@@ -1394,25 +1427,25 @@
     "message": "Bekreftelse av handling ved tidsavbrudd"
   },
   "enterpriseSingleSignOn": {
-    "message": "Enterprise Single Sign-On"
+    "message": "Bedriftsinnlogging (SSO)"
   },
   "setMasterPassword": {
     "message": "Angi hovedpassord"
   },
   "ssoCompleteRegistration": {
-    "message": "In order to complete logging in with SSO, please set a master password to access and protect your vault."
+    "message": "For å fullføre innloggingen med SSO, angi et superpassord for å få tilgang til og beskytte hvelvet ditt."
   },
   "newMasterPass": {
-    "message": "New Master Password"
+    "message": "Nytt hovedpassord"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm New Master Password"
+    "message": "Bekreft nytt hovedpassord"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "One or more organization policies require your master password to meet the following requirements:"
+    "message": "En eller flere av organisasjonens vilkår krever hovedpassordet ditt for å oppfylle følgende krav:"
   },
   "policyInEffectMinComplexity": {
-    "message": "Minimum complexity score of $SCORE$",
+    "message": "Minimumspoengsum for kompleksistet er $SCORE$",
     "placeholders": {
       "score": {
         "content": "$1",
@@ -1421,7 +1454,7 @@
     }
   },
   "policyInEffectMinLength": {
-    "message": "Minimum length of $LENGTH$",
+    "message": "Minimumslengde på $LENGTH$",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -1505,108 +1538,108 @@
     "message": "En bedriftsretningslinje påvirker dine eierskapsinnstillinger."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Alle Send-er",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Fil"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Søk i Send-ene",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Rediger Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Mitt hvelv"
   },
   "text": {
-    "message": "Text"
+    "message": "Tekst"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Dato for sletting"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "Send-en vil bli slettet permanent på den angitte dato og klokkeslett.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Utløpsdato"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Hvis satt, vil tilgang til denne Send gå ut på angitt dato og klokkeslett.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Maksimal antall tilganger"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Hvis satt, vil brukere ikke lenger ha tilgang til dette send når maksimal antall tilgang er nådd.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Antall nåværende tilgang"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Deaktiver denne Send-en, slik at ingen får tilgang til den.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Eventuelt krever et passord for brukere å få tilgang til denne Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Private notater om denne Send-en.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Send lenke",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Send lenke",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Når du åpner Send-en, er teksten skjult som standard",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Opprettet Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Redigerte Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Slettet Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nytt passord"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "Hvilken type Send er dette?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Opprett Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "Teksten du ønsker å sende."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "Filen du vil sende."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ dager",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1648,185 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 dag"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Egendefinert"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "Er du sikker på at du vil slette denne Send?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Kopier Send-lenke til utklippstavlen",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Kopier lenken for å dele denne Send-en til utklippstavlen min ved lagring."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Send er skrudd av",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "På grunn av en virksomhetsregel kan du kun slette en eksisterende Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Kopier lenke"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Deaktivert"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Maksimalt antall tilganger nådd"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Utløpt"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Venter på sletting"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autentiser WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Skjul min e-postadresse fra mottakere."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "En eller flere av organisasjons retningslinjer påvirker generatorinnstillingene dine."
+  },
+  "emailVerificationRequired": {
+    "message": "E-postbekreftelse kreves"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Du må bekrefte E-postadressen din for å bruke denne funksjonen."
+  },
+  "passwordPrompt": {
+    "message": "Forespørsel om hovedpassord på nytt"
+  },
+  "passwordConfirmation": {
+    "message": "Superpassord bekreftelse"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Denne handlingen er beskyttet. For å fortsette, skriv inn hovedpassordet ditt på nytt for å verifisere din identitet."
+  },
+  "updatedMasterPassword": {
+    "message": "Oppdaterte hovedpassordet"
+  },
+  "updateMasterPassword": {
+    "message": "Oppdater hovedpassord"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Hovedpassordet ditt ble nylig endret av en administrator i organisasjonen din. For å få tilgang til hvelvet, må du oppdatere det nå. Hvis du fortsetter, logges du ut av den nåværende økten, og du må logge på igjen. Aktive økter på andre enheter kan fortsette å være aktive i opptil én time."
+  },
+  "hours": {
+    "message": "Timer"
+  },
+  "minutes": {
+    "message": "Minutter"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Organisasjonens retningslinjer påvirker tidsavbruddet for hvelvet ditt. Maksimalt tillatt tidsavbrudd for hvelv er $HOURS$ time(r) og $MINUTES$ minutt(er)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Tidsavbruddet ditt for hvelvet overstiger begrensningene som er satt av organisasjonen din."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Automatisk registrering"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Denne organisasjonen har en bedriftsoppsettsregel som automatisk innrullerer deg i tilbakestilling av passord. Registrering vil tillate organisasjonsadministratorer å endre hovedpassordet ditt."
+  },
+  "vaultExportDisabled": {
+    "message": "Hvelveksportering er skrudd av"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "En eller flere regler i organisasjonsoppsettet forhindrer deg i å eksportere ditt personlige hvelv."
+  },
+  "addAccount": {
+    "message": "Legg til konto"
+  },
+  "removeMasterPassword": {
+    "message": "Fjern hovedpassord"
+  },
+  "removedMasterPassword": {
+    "message": "Hovedpassordet er fjernet."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ bruker SSO med en selvdrevet nøkkelserver. Et hovedpassord er ikke lenger nødvendig for å logge inn for medlemmer av denne organisasjonen.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Forlat organisasjon"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Er du sikker på at du vil forlate organisasjonen?"
+  },
+  "leftOrganization": {
+    "message": "Du forlot organisasjonen."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Kan ikke nå nøkkeltilkobleren. Prøv igjen senere."
+  },
+  "lockAllVaults": {
+    "message": "Lås alle hvelv"
+  },
+  "accountLimitReached": {
+    "message": "Ikke mer enn 5 kontoer kan være logget på samtidig."
+  },
+  "accountPreferences": {
+    "message": "Preferanser"
+  },
+  "appPreferences": {
+    "message": "Appinnstillinger (alle kontoer)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Kontogrense nådd. Logg ut av en konto for å legge til en annen en."
+  },
+  "settingsTitle": {
+    "message": "Appinnstillinger for $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Bytt konto"
+  },
+  "options": {
+    "message": "Alternativer"
+  },
+  "sessionTimeout": {
+    "message": "Økten ble tidsavbrutt. Vennligst gå tilbake og prøv å logge inn på nytt."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Eksporter personlig hvelv"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

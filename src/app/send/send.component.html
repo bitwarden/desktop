@@ -1,105 +1,142 @@
 <div id="sends" class="vault">
-    <div class="groupings">
-        <div class="mac-bar"></div>
-        <div class="content">
-            <div class="inner-content">
-                <h2 class="sr-only">{{'filters' | i18n}}</h2>
-                <ul>
-                    <li [ngClass]="{active: selectedAll}">
-                        <a href="#" appStopClick appBlurClick (click)="selectAll()">
-                            <i class="fa fa-fw fa-th" aria-hidden="true"></i>&nbsp;{{'allSends' | i18n}}
-                        </a>
-                    </li>
-                </ul>
-                <h2>{{'types' | i18n}}</h2>
-                <ul>
-                    <li [ngClass]="{active: selectedType === sendType.Text}">
-                        <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
-                            <i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>&nbsp;{{'sendTypeText' | i18n}}
-                        </a>
-                    </li>
-                    <li [ngClass]="{active: selectedType === sendType.File}">
-                        <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
-                            <i class="fa fa-fw fa-file-o" aria-hidden="true"></i>&nbsp;{{'sendTypeFile' | i18n}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer">
-                <app-nav class="nav"></app-nav>
-            </div>
-        </div>
+  <div class="groupings">
+    <div class="content">
+      <div class="inner-content">
+        <h2 class="sr-only">{{ "filters" | i18n }}</h2>
+        <ul>
+          <li [ngClass]="{ active: selectedAll }">
+            <a href="#" appStopClick appBlurClick (click)="selectAll()">
+              <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
+            </a>
+          </li>
+        </ul>
+        <h2>{{ "types" | i18n }}</h2>
+        <ul>
+          <li [ngClass]="{ active: selectedType === sendType.Text }">
+            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
+              <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
+                "sendTypeText" | i18n
+              }}
+            </a>
+          </li>
+          <li [ngClass]="{ active: selectedType === sendType.File }">
+            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
+              <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
+                "sendTypeFile" | i18n
+              }}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer">
+        <app-nav class="nav"></app-nav>
+      </div>
     </div>
-    <div id="items" class="items">
-        <div class="header header-search">
-            <div class="search">
-                <input type="search" placeholder="{{'searchSends' | i18n}}" id="search"
-                    [(ngModel)]="searchText" (input)="searchTextChanged()" autocomplete="off" appAutofocus>
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="content">
-            <div class="list" *ngIf="filteredSends.length" infiniteScroll [infiniteScrollDistance]="1"
-                [infiniteScrollContainer]="'#items .content'" [fromRoot]="true" (scrolled)="loadMore()">
-                <a *ngFor="let s of filteredSends" appStopClick (click)="selectSend(s.id)"
-                    title="{{'viewItem' | i18n}}" (contextmenu)="viewSendMenu(s)"
-                    [ngClass]="{'active': s.id === sendId}" class="flex-list-item">
-                    <div class="item-icon" aria-hidden="true">
-                        <i class="fa fa-fw fa-lg" [ngClass]="s.type == 0 ? 'fa-file-o' : 'fa-file-text-o'"></i>
-                    </div>
-                    <div class="item-content">
-                        <div class="item-title">
-                            {{s.name}}
-                            <span class="title-badges">
-                                <ng-container *ngIf="s.disabled">
-                                    <i class="fa fa-warning" appStopProp title="{{'disabled' | i18n}}" aria-hidden="true"></i>
-                                    <span class="sr-only">{{'disabled' | i18n}}</span>
-                                </ng-container>
-                                <ng-container *ngIf="s.password">
-                                    <i class="fa fa-key" appStopProp title="{{'password' | i18n}}" aria-hidden="true"></i>
-                                    <span class="sr-only">{{'password' | i18n}}</span>
-                                </ng-container>
-                                <ng-container *ngIf="s.maxAccessCountReached">
-                                    <i class="fa fa-ban" appStopProp title="{{'maxAccessCountReached' | i18n}}"
-                                        aria-hidden="true"></i>
-                                    <span class="sr-only">{{'maxAccessCountReached' | i18n}}</span>
-                                </ng-container>
-                                <ng-container *ngIf="s.expired">
-                                    <i class="fa fa-clock-o" appStopProp title="{{'expired' | i18n}}" aria-hidden="true"></i>
-                                    <span class="sr-only">{{'expired' | i18n}}</span>
-                                </ng-container>
-                                <ng-container *ngIf="s.pendingDelete">
-                                    <i class="fa fa-trash" appStopProp title="{{'pendingDeletion' | i18n}}"
-                                        aria-hidden="true"></i>
-                                    <span class="sr-only">{{'pendingDeletion' | i18n}}</span>
-                                </ng-container>
-                            </span>
-                        </div>
-                        <span class="item-details">{{s.deletionDate | date}}</span>
-                    </div>
-                </a>
-            </div>
-            <div class="no-items" *ngIf="!filteredSends.length">
-                <i class="fa fa-spinner fa-spin fa-3x" *ngIf="!loaded" aria-hidden="true"></i>
-                <ng-container *ngIf="loaded">
-                    <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
-                    <p>{{'noItemsInList' | i18n}}</p>
+  </div>
+  <div id="items" class="items">
+    <div class="content">
+      <div class="list" *ngIf="filteredSends.length">
+        <a
+          *ngFor="let s of filteredSends"
+          appStopClick
+          (click)="selectSend(s.id)"
+          title="{{ 'viewItem' | i18n }}"
+          (contextmenu)="viewSendMenu(s)"
+          [ngClass]="{ active: s.id === sendId }"
+          class="flex-list-item"
+        >
+          <div class="item-icon" aria-hidden="true">
+            <i class="bwi bwi-fw bwi-lg" [ngClass]="s.type == 0 ? 'bwi-file-text' : 'bwi-file'"></i>
+          </div>
+          <div class="item-content">
+            <div class="item-title">
+              {{ s.name }}
+              <span class="title-badges">
+                <ng-container *ngIf="s.disabled">
+                  <i
+                    class="bwi bwi-exclamation-triangle"
+                    appStopProp
+                    title="{{ 'disabled' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "disabled" | i18n }}</span>
                 </ng-container>
+                <ng-container *ngIf="s.password">
+                  <i
+                    class="bwi bwi-key"
+                    appStopProp
+                    title="{{ 'password' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "password" | i18n }}</span>
+                </ng-container>
+                <ng-container *ngIf="s.maxAccessCountReached">
+                  <i
+                    class="bwi bwi-ban"
+                    appStopProp
+                    title="{{ 'maxAccessCountReached' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "maxAccessCountReached" | i18n }}</span>
+                </ng-container>
+                <ng-container *ngIf="s.expired">
+                  <i
+                    class="bwi bwi-clock"
+                    appStopProp
+                    title="{{ 'expired' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "expired" | i18n }}</span>
+                </ng-container>
+                <ng-container *ngIf="s.pendingDelete">
+                  <i
+                    class="bwi bwi-trash"
+                    appStopProp
+                    title="{{ 'pendingDeletion' | i18n }}"
+                    aria-hidden="true"
+                  ></i>
+                  <span class="sr-only">{{ "pendingDeletion" | i18n }}</span>
+                </ng-container>
+              </span>
             </div>
-        </div>
-        <div class="footer">
-            <button appBlurClick (click)="addSend()" class="block primary" appA11yTitle="{{'addItem' | i18n}}">
-                <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
-            </button>
-        </div>
+            <span class="item-details">{{ s.deletionDate | date }}</span>
+          </div>
+        </a>
+      </div>
+      <div class="no-items" *ngIf="!filteredSends.length">
+        <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
+        <ng-container *ngIf="loaded">
+          <img class="no-items-image" aria-hidden="true" />
+          <p>{{ "noItemsInList" | i18n }}</p>
+        </ng-container>
+      </div>
     </div>
-    <app-send-add-edit id="addEdit" class="details" *ngIf="action == 'add' || action == 'edit'" [sendId]="sendId" [type]="selectedSendType" 
-        (onSavedSend)="savedSend($event)" (onCancelled)="cancel($event)" (onDeletedSend)="deletedSend($event)"></app-send-add-edit>
-    <div class="logo" *ngIf="!action">
-        <div class="content">
-            <div class="inner-content">
-                <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
-            </div>
-        </div>
+    <div class="footer">
+      <button
+        appBlurClick
+        (click)="addSend()"
+        class="block primary"
+        appA11yTitle="{{ 'addItem' | i18n }}"
+      >
+        <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
+      </button>
     </div>
+  </div>
+  <app-send-add-edit
+    id="addEdit"
+    class="details"
+    *ngIf="action == 'add' || action == 'edit'"
+    [sendId]="sendId"
+    [type]="selectedSendType"
+    (onSavedSend)="savedSend($event)"
+    (onCancelled)="cancel($event)"
+    (onDeletedSend)="deletedSend($event)"
+  ></app-send-add-edit>
+  <div class="logo" *ngIf="!action">
+    <div class="content">
+      <div class="inner-content">
+        <img class="logo-image" alt="Bitwarden" aria-hidden="true" />
+      </div>
+    </div>
+  </div>
 </div>

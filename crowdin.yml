@@ -1,5 +1,9 @@
+project_id_env: _CROWDIN_PROJECT_ID
+api_token_env: CROWDIN_API_TOKEN
+preserve_hierarchy: true
 files:
   - source: /src/locales/en/messages.json
+    dest: /src/locales/en/%original_file_name%
     translation: /src/locales/%two_letters_code%/%original_file_name%
     update_option: update_as_unapproved
     languages_mapping:

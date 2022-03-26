@@ -1,32 +1,52 @@
-<div class="modal fade" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="collectionsTitle">
-    <div class="modal-dialog" role="document">
-        <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
-            <div class="modal-body">
-                <div class="box">
-                    <div class="box-header" id="collectionsTitle">
-                        {{'collections' | i18n}}
-                    </div>
-                    <div class="box-content" *ngIf="!collections || !collections.length">
-                        {{'noCollectionsInList' | i18n}}
-                    </div>
-                    <div class="box-content" *ngIf="collections && collections.length">
-                        <div class="box-content-row box-content-row-checkbox"
-                            *ngFor="let c of collections; let i = index" appBoxRow>
-                            <label for="collection_{{i}}">{{c.name}}</label>
-                            <input id="collection_{{i}}" type="checkbox" [(ngModel)]="c.checked"
-                                name="Collection[{{i}}].Checked">
-                        </div>
-                    </div>
-                </div>
+<div class="modal fade" role="dialog" aria-modal="true" aria-labelledby="collectionsTitle">
+  <div class="modal-dialog" role="document">
+    <form class="modal-content" #form (ngSubmit)="submit()" [appApiAction]="formPromise">
+      <div class="modal-body">
+        <div class="box">
+          <div class="box-header" id="collectionsTitle">
+            {{ "collections" | i18n }}
+          </div>
+          <div class="box-content" *ngIf="!collections || !collections.length">
+            {{ "noCollectionsInList" | i18n }}
+          </div>
+          <div class="box-content" *ngIf="collections && collections.length">
+            <div
+              class="box-content-row box-content-row-checkbox"
+              *ngFor="let c of collections; let i = index"
+              appBoxRow
+            >
+              <label for="collection_{{ i }}">{{ c.name }}</label>
+              <input
+                id="collection_{{ i }}"
+                type="checkbox"
+                [(ngModel)]="c.checked"
+                name="Collection[{{ i }}].Checked"
+              />
             </div>
-            <div class="modal-footer">
-                <button appBlurClick type="submit" class="primary" appA11yTitle="{{'save' | i18n}}"
-                    [disabled]="form.loading">
-                    <i class="fa fa-save fa-lg fa-fw" [hidden]="form.loading" aria-hidden="true"></i>
-                    <i class="fa fa-spinner fa-spin fa-lg fa-fw" [hidden]="!form.loading" aria-hidden="true"></i>
-                </button>
-                <button type="button" data-dismiss="modal">{{'cancel' | i18n}}</button>
-            </div>
-        </form>
-    </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          appBlurClick
+          type="submit"
+          class="primary"
+          appA11yTitle="{{ 'save' | i18n }}"
+          [disabled]="form.loading"
+        >
+          <i
+            class="bwi bwi-save-changes bwi-lg bwi-fw"
+            [hidden]="form.loading"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="bwi bwi-spinner bwi-spin bwi-lg bwi-fw"
+            [hidden]="!form.loading"
+            aria-hidden="true"
+          ></i>
+        </button>
+        <button type="button" data-dismiss="modal">{{ "cancel" | i18n }}</button>
+      </div>
+    </form>
+  </div>
 </div>

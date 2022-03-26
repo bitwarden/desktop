@@ -44,14 +44,24 @@
   "share": {
     "message": "Partajare"
   },
-  "shareItem": {
-    "message": "Partajare articol"
+  "moveToOrganization": {
+    "message": "Mutare la organizație"
   },
-  "sharedItem": {
-    "message": "Articol partajat"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ mutat la $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Alegeți o organizație cu care doriți să partajați acest articol. Partajarea transferă proprietatea asupra articolului către organizație. Nu veți mai fi proprietarul direct al acestuia după ce a fost partajat."
+  "moveToOrgDesc": {
+    "message": "Alegeți o organizație la care doriți să mutați acest articol. Mutarea într-o organizație, transferă proprietatea asupra articolului către organizația respectivă. Nu veți mai fi proprietarul direct al acestui articol odată ce a fost mutat."
   },
   "attachments": {
     "message": "Atașamente"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Nume"
   },
+  "fullName": {
+    "message": "Numele complet"
+  },
   "address1": {
     "message": "Adresă 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Valoare logică"
+  },
+  "cfTypeLinked": {
+    "message": "Conectat",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valoarea conectată",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Ștergere"
@@ -431,13 +452,10 @@
     "message": "Selectare fișier."
   },
   "maxFileSize": {
-    "message": "Mărimea maximă a fișierului este de 100 MB."
+    "message": "Mărimea maximă a fișierului este de 500 MB."
   },
   "updateKey": {
     "message": "Nu puteți utiliza această caracteristică înainte de a actualiza cheia de criptare."
-  },
-  "options": {
-    "message": "Opțiuni"
   },
   "editedFolder": {
     "message": "Dosar editat"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Niciun articol de afișat."
   },
+  "sendVerificationCode": {
+    "message": "Trimite un cod de verificare la adresa dvs. de e-mail"
+  },
+  "sendCode": {
+    "message": "Trimitere cod"
+  },
+  "codeSent": {
+    "message": "Cod trimis"
+  },
   "verificationCode": {
     "message": "Cod de verificare"
   },
+  "confirmIdentity": {
+    "message": "Confirmați-vă identitatea pentru a continua."
+  },
   "verificationCodeRequired": {
     "message": "Este necesar codul de verificare."
+  },
+  "invalidVerificationCode": {
+    "message": "Cod de verificare nevalid"
   },
   "continue": {
     "message": "Continuare"
@@ -592,11 +625,11 @@
     "message": "Verificați cu Duo Security pentru organizația dvs. utilizând aplicația Duo Mobile, SMS, apel telefonic sau cheia de securitate U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Utilizați orice cheie de securitate activată FIDO U2F pentru a accesa contul dvs."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Cheie de securitate FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilizați orice cheie de securitate activată WebAuthn pentru a vă accesa contul."
   },
   "emailTitle": {
     "message": "E-mail"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Încărcare..."
   },
-  "lockNow": {
-    "message": "Blocare acum"
+  "lockVault": {
+    "message": "Blocare seif"
   },
   "passwordGenerator": {
     "message": "Generator de parole"
   },
-  "emailUs": {
+  "contactUs": {
     "message": "Contactați-ne"
   },
-  "visitOurWebsite": {
-    "message": "Vizitați-ne saitul web"
+  "getHelp": {
+    "message": "Obținere ajutor"
   },
   "fileBugReport": {
     "message": "Înregistrare raport de erori"
@@ -751,7 +784,7 @@
     "message": "Sincronizare eșuată"
   },
   "yourVaultIsLocked": {
-    "message": "Seiful dvs. este blocat. Verificați parola principală pentru a continua."
+    "message": "Seiful dvs. este blocat. Verificați-vă identitatea pentru a continua."
   },
   "unlock": {
     "message": "Deblocare"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Cheile de criptare a contului sunt unice fiecărui cont de utilizator Bitwarden, astfel încât nu puteți importa un export criptat într-un cont diferit."
   },
-  "exportMasterPassword": {
-    "message": "Introduceți parola principală pentru a exporta datele din seif."
-  },
   "noOrganizationsList": {
     "message": "Nu aparțineți niciunei organizații. Organizațiile vă permit să partajați în siguranță articole cu alți utilizatori."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Cod PIN invalid."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Seiful dvs. este blocat. Verificați codul PIN pentru a continua."
-  },
   "unlockWithWindowsHello": {
     "message": "Deblocare cu Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "deblocați-vă seiful"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Nu solicitați Windows Hello la pornire."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Nu solicitați Touch ID la pornire."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Blocare cu parola principală la repornire"
@@ -1546,7 +1579,7 @@
     "message": "Număr maxim de accesări"
   },
   "maxAccessCountDesc": {
-    "message": "Dacă este setată, utilizatorii nu vor mai putea accesa acest Send după atingerea numărului maxim de accesării.",
+    "message": "Dacă este configurat, utilizatorii nu vor mai putea accesa acest Send când a fost atins numărul maxim de accesări.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Ștergere în așteptare"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autentificare WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Ascundeți adresa mea de e-mail de la destinatari."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Una sau mai multe politici organizaționale vă afectează opțiunile Send-ului."
+  },
+  "emailVerificationRequired": {
+    "message": "Este necesară verificarea adresei de e-mail"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Trebuie să vă verificați e-mailul pentru a utiliza această caracteristică."
+  },
+  "passwordPrompt": {
+    "message": "Re-solicitare parolă principală"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmare parolă principală"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Această acțiune este protejată. Pentru a continua, vă rugăm să reintroduceți parola principală pentru a vă verifica identitatea."
+  },
+  "updatedMasterPassword": {
+    "message": "Parolă principală actualizată"
+  },
+  "updateMasterPassword": {
+    "message": "Actualizare parolă principală"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Parola dvs. principală a fost modificată recent de unul din administratorii organizației dvs. Pentru a accesa seiful, trebuie să o actualizați acum. Procedura vă va deconecta de la sesiunea curentă, necesitând să vă reconectați. Sesiunile active de pe alte dispozitive pot continua să rămână active timp de până la o oră."
+  },
+  "hours": {
+    "message": "Ore"
+  },
+  "minutes": {
+    "message": "Minute"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Politicile organizației dvs vă afectează expirarea seifului. Timpul maxim permis de expirare a seifului este $HOURS$ oră (ore) și $MINUTES$ minut(e)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Timpul de expirare a seifului depășește restricțiile stabilite de organizația dvs."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Înregistrare automată"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Această organizație are o politică de întreprindere care vă va înregistra automat la resetarea parolei. Înregistrarea va permite administratorilor organizației să vă modifice parola principală."
+  },
+  "vaultExportDisabled": {
+    "message": "Export de seif dezactivat"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Una sau mai multe politici ale organizației vă împiedică să exportați seiful personal."
+  },
+  "addAccount": {
+    "message": "Adăugare cont"
+  },
+  "removeMasterPassword": {
+    "message": "Eliminare parolă principală"
+  },
+  "removedMasterPassword": {
+    "message": "Parolă principală eliminată."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ folosește SSO cu un server de chei auto-găzduit. Membrii acestei organizații nu mai au nevoie de o parolă principală pentru autentificare.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Părăsire organizație"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Sigur doriți să părăsiți această organizație?"
+  },
+  "leftOrganization": {
+    "message": "Ați părăsit organizația."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Nu se poate accesa Conectorul Cheie, vă rugăm să încercați din nou mai târziu."
+  },
+  "lockAllVaults": {
+    "message": "Blocare toate seifurile"
+  },
+  "accountLimitReached": {
+    "message": "Nu pot fi conectate mai mult de 5 conturi în același timp."
+  },
+  "accountPreferences": {
+    "message": "Preferințe"
+  },
+  "appPreferences": {
+    "message": "Setări aplicație (toate conturile)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Limita contului a fost atinsă. Ieșiți dintr-un cont pentru a adăuga un altul."
+  },
+  "settingsTitle": {
+    "message": "Setările aplicației pentru $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Schimbați contul"
+  },
+  "options": {
+    "message": "Opțiuni"
+  },
+  "sessionTimeout": {
+    "message": "Sesiunea dvs. a expirat. Vă rugăm reveniți și încercați să vă autentificați din nou."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportarea seifului personal"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Numai elementele personale din seif asociate cu $EMAIL$ vor fi exportate. Elementele seifului organizației nu vor fi incluse.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

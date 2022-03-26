@@ -44,14 +44,24 @@
   "share": {
     "message": "Поділитися"
   },
-  "shareItem": {
-    "message": "Поділитися записом"
+  "moveToOrganization": {
+    "message": "Перемістити до організації"
   },
-  "sharedItem": {
-    "message": "Спільний запис"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ переміщено до $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Оберіть організацію, з якою хочете поділитися. Зробивши це, ви передасте доступ до цього запису іншій організації та більше не будете його одноосібним власником."
+  "moveToOrgDesc": {
+    "message": "Виберіть організацію, до якої ви бажаєте перемістити цей запис. При переміщенні до організації власність запису передається тій організації. Ви більше не будете єдиним власником цього запису після переміщення."
   },
   "attachments": {
     "message": "Вкладення"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Прізвище"
   },
+  "fullName": {
+    "message": "Повне ім'я"
+  },
   "address1": {
     "message": "Адреса 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "Логічне значення"
+  },
+  "cfTypeLinked": {
+    "message": "Пов'язано",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Пов'язане значення",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "Видалити"
@@ -431,13 +452,10 @@
     "message": "Оберіть файл."
   },
   "maxFileSize": {
-    "message": "Максимальний розмір файлу 100 Мб."
+    "message": "Максимальний розмір файлу 500 Мб."
   },
   "updateKey": {
     "message": "Ви не можете використовувати цю функцію доки не оновите свій ключ шифрування."
-  },
-  "options": {
-    "message": "Налаштування"
   },
   "editedFolder": {
     "message": "Тека відредагована"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "Немає записів."
   },
+  "sendVerificationCode": {
+    "message": "Надіслати код підтвердження е-поштою"
+  },
+  "sendCode": {
+    "message": "Надіслати код"
+  },
+  "codeSent": {
+    "message": "Код надіслано"
+  },
   "verificationCode": {
     "message": "Код підтвердження"
   },
+  "confirmIdentity": {
+    "message": "Підтвердьте свої облікові дані для продовження."
+  },
   "verificationCodeRequired": {
     "message": "Потрібний код підтвердження."
+  },
+  "invalidVerificationCode": {
+    "message": "Недійсний код підтвердження"
   },
   "continue": {
     "message": "Продовжити"
@@ -592,11 +625,11 @@
     "message": "Авторизуйтесь за допомогою Duo Security для вашої організації з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Використовуйте будь-який ключ безпеки FIDO U2F для доступу до сховища."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Ключ безпеки FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Використовуйте будь-який ключ безпеки WebAuthn для доступу до сховища."
   },
   "emailTitle": {
     "message": "Е-пошта"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Завантаження..."
   },
-  "lockNow": {
-    "message": "Заблокувати зараз"
+  "lockVault": {
+    "message": "Заблокувати сховище"
   },
   "passwordGenerator": {
     "message": "Генератор паролів"
   },
-  "emailUs": {
-    "message": "Напишіть нам"
+  "contactUs": {
+    "message": "Зв'язатися з нами"
   },
-  "visitOurWebsite": {
-    "message": "Відвідайте наш вебсайт"
+  "getHelp": {
+    "message": "Отримати допомогу"
   },
   "fileBugReport": {
     "message": "Повідомити про помилку"
@@ -751,7 +784,7 @@
     "message": "Не вдалося синхронізувати"
   },
   "yourVaultIsLocked": {
-    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
+    "message": "Сховище заблоковано. Пройдіть ідентифікацію для продовження."
   },
   "unlock": {
     "message": "Розблокувати"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "Ключі шифрування унікальні для кожного облікового запису користувача Bitwarden, тому ви не можете імпортувати зашифрований експорт до іншого облікового запису."
   },
-  "exportMasterPassword": {
-    "message": "Введіть головний пароль, щоб експортувати дані сховища."
-  },
   "noOrganizationsList": {
     "message": "Ви не входите до жодної організації. Організації дозволяють безпечно обмінюватися елементами з іншими користувачами."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Неправильний PIN-код."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Ваше сховище заблоковане. Для продовження підтвердьте свій PIN-код."
-  },
   "unlockWithWindowsHello": {
     "message": "Розблокувати з Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "розблокувати сховище"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "Не запитувати Windows Hello під час запуску."
+  },
+  "noAutoPromptTouchId": {
+    "message": "Не запитувати Touch ID під час запуску."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Блокувати головним паролем при перезапуску"
@@ -1344,7 +1377,7 @@
     "message": "Клонувати"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "Політика однієї або декількох організацій впливає на ваші параметри генерування."
+    "message": "На параметри генератора впливають одна чи декілька політик організації."
   },
   "vaultTimeoutAction": {
     "message": "Дія після часу очікування сховища"
@@ -1409,7 +1442,7 @@
     "message": "Підтвердьте новий головний пароль"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "Політика однієї або декількох організацій зобов'язує дотримання таких вимог для головного пароля:"
+    "message": "Одна або декілька політик організації вимагають дотримання таких вимог для головного пароля:"
   },
   "policyInEffectMinComplexity": {
     "message": "Мінімальна оцінка складності $SCORE$",
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "Очікується видалення"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Авторизація WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Приховувати мою адресу електронної пошти від отримувачів."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "На параметри відправлень впливають одна чи декілька політик організації."
+  },
+  "emailVerificationRequired": {
+    "message": "Необхідно підтвердити е-пошту"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Для використання цієї функції необхідно підтвердити електронну пошту."
+  },
+  "passwordPrompt": {
+    "message": "Повторний запит головного пароля"
+  },
+  "passwordConfirmation": {
+    "message": "Підтвердження головного пароля"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Ця дія захищена. Щоб продовжити, повторно введіть головний пароль."
+  },
+  "updatedMasterPassword": {
+    "message": "Головний пароль оновлено"
+  },
+  "updateMasterPassword": {
+    "message": "Оновити головний пароль"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Ваш головний пароль нещодавно був змінений адміністратором організації. Щоб отримати доступ до сховища, ви повинні оновити його зараз. Продовживши, ви вийдете з поточного сеансу, після чого необхідно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
+  },
+  "hours": {
+    "message": "Годин"
+  },
+  "minutes": {
+    "message": "Хвилин"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Політики вашої організації впливають на час очікування сховища. Максимальний дозволений час очікування сховища $HOURS$ годин, $MINUTES$ хвилин",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "Час очікування сховища перевищує обмеження, встановлені вашою організацією."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Автоматичне розгортання"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Ця організація має корпоративну політику, яка автоматично розгортає вас на скидання пароля. Розгортання дозволятиме адміністраторам організації змінювати ваш головний пароль."
+  },
+  "vaultExportDisabled": {
+    "message": "Експорт сховища вимкнено"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Одна чи декілька організаційних політик не дозволяють вам експортувати особисте сховище."
+  },
+  "addAccount": {
+    "message": "Додати обліковий запис"
+  },
+  "removeMasterPassword": {
+    "message": "Вилучити головний пароль"
+  },
+  "removedMasterPassword": {
+    "message": "Головний пароль вилучено."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ використовує SSO з власним сервером ключів. Головний пароль для учасників цієї організації більше не вимагається.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Покинути організацію"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "Ви справді хочете покинути цю організацію?"
+  },
+  "leftOrganization": {
+    "message": "Ви покинули організацію."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "Не вдається отримати доступ до Key Connector. Спробуйте знову пізніше."
+  },
+  "lockAllVaults": {
+    "message": "Заблокувати всі сховища"
+  },
+  "accountLimitReached": {
+    "message": "Можна увійти не більше, ніж у 5 облікових записів одночасно."
+  },
+  "accountPreferences": {
+    "message": "Налаштування"
+  },
+  "appPreferences": {
+    "message": "Налаштування програми (Усі облікові записи)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Досягнуто обмеження облікового запису. Вийдіть, щоб додати інший обліковий запис."
+  },
+  "settingsTitle": {
+    "message": "Налаштування програми для $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Перемкнути обліковий запис"
+  },
+  "options": {
+    "message": "Налаштування"
+  },
+  "sessionTimeout": {
+    "message": "Час вашого сеансу завершився. Поверніться назад і спробуйте увійти знову."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Експортування особистого сховища"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Будуть експортовані лише записи особистого сховища, пов'язані з $EMAIL$. Записи сховища організації не буде включено.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

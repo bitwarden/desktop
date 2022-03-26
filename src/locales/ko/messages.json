@@ -44,14 +44,24 @@
   "share": {
     "message": "공유"
   },
-  "shareItem": {
-    "message": "항목 공유"
+  "moveToOrganization": {
+    "message": "조직으로 이동하기"
   },
-  "sharedItem": {
-    "message": "항목 공유함"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$이(가) $ORGNAME$(으)로 이동됨",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "이 항목을 공유할 조직을 선택하십시오. 항목이 공유되면 소유권이 조직으로 이전됩니다. 일단 공유가 되면, 더는 항목의 직접적인 소유자가 아니게 됩니다."
+  "moveToOrgDesc": {
+    "message": "이 항목을 이동할 조직을 선택하십시오. 항목이 조직으로 이동되면 소유권이 조직으로 이전됩니다. 일단 이동되면, 더는 이동된 항목의 직접적인 소유자가 아니게 됩니다."
   },
   "attachments": {
     "message": "첨부 파일"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "성"
   },
+  "fullName": {
+    "message": "전체 이름"
+  },
   "address1": {
     "message": "주소 1"
   },
@@ -317,6 +330,14 @@
   },
   "cfTypeBoolean": {
     "message": "참 / 거짓"
+  },
+  "cfTypeLinked": {
+    "message": "연결됨",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "연결된 값",
+    "description": "This describes a value that is 'linked' (related) to another value."
   },
   "remove": {
     "message": "제거"
@@ -431,13 +452,10 @@
     "message": "파일을 선택하세요."
   },
   "maxFileSize": {
-    "message": "최대 파일 크기는 100MB입니다."
+    "message": "최대 파일 크기는 500MB입니다."
   },
   "updateKey": {
     "message": "이 기능을 사용하려면 암호화 키를 업데이트해야 합니다."
-  },
-  "options": {
-    "message": "옵션"
   },
   "editedFolder": {
     "message": "폴더 편집함"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "항목이 없습니다."
   },
+  "sendVerificationCode": {
+    "message": "이메일로 인증 코드 보내기"
+  },
+  "sendCode": {
+    "message": "코드 전송"
+  },
+  "codeSent": {
+    "message": "코드 전송됨"
+  },
   "verificationCode": {
     "message": "인증 코드"
   },
+  "confirmIdentity": {
+    "message": "계속하려면 암호를 확인하세요."
+  },
   "verificationCodeRequired": {
     "message": "인증 코드는 반드시 입력해야 합니다."
+  },
+  "invalidVerificationCode": {
+    "message": "유효하지 않은 확인 코드"
   },
   "continue": {
     "message": "계속"
@@ -592,11 +625,11 @@
     "message": "Duo Mobile 앱, SMS, 전화 통화를 사용한 조직용 Duo Security 또는 U2F 보안 키를 사용하여 인증하세요.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "FIDO U2F가 활성화된 보안 키를 사용하여 계정에 접근하세요."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "FIDO U2F 보안 키"
+  "webAuthnDesc": {
+    "message": "WebAuthn이 활성화된 보안 키를 사용하여 계정에 접근하세요."
   },
   "emailTitle": {
     "message": "이메일"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "불러오는 중..."
   },
-  "lockNow": {
-    "message": "지금 잠그기"
+  "lockVault": {
+    "message": "보관함 잠그기"
   },
   "passwordGenerator": {
     "message": "비밀번호 생성기"
   },
-  "emailUs": {
-    "message": "이메일 보내기"
+  "contactUs": {
+    "message": "Contact Us"
   },
-  "visitOurWebsite": {
-    "message": "웹 사이트 방문"
+  "getHelp": {
+    "message": "Get Help"
   },
   "fileBugReport": {
     "message": "버그 보고서 첨부"
@@ -1233,9 +1266,6 @@
   "encExportAccountWarningDesc": {
     "message": "모든 Bitwarden 사용자 계정은 고유한 계정 암호화 키를 가지고 있습니다. 따라서, 다른 계정에서는 암호화된 내보내기를 가져올 수 없습니다."
   },
-  "exportMasterPassword": {
-    "message": "보관함 데이터를 내보내려면 마스터 비밀번호를 입력하세요."
-  },
   "noOrganizationsList": {
     "message": "속해 있는 조직이 없습니다. 조직에 속하면 다른 사용자들과 항목을 안전하게 공유할 수 있습니다."
   },
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "잘못된 PIN 코드입니다."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "보관함이 잠겨 있습니다. PIN 코드를 입력하여 계속하세요."
-  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello를 사용하여 잠금 해제"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "보관함 잠금 해제"
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "시작할 때 Windows Hello 요구하지 않음"
+  },
+  "noAutoPromptTouchId": {
+    "message": "시작할 때 Touch ID 요구하지 않음"
   },
   "lockWithMasterPassOnRestart": {
     "message": "다시 시작 시 마스터 비밀번호로 잠금"
@@ -1565,11 +1598,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "링크 보내기",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "링크 보내기",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
@@ -1653,5 +1686,147 @@
   },
   "pendingDeletion": {
     "message": "삭제 대기 중"
+  },
+  "webAuthnAuthenticate": {
+    "message": "WebAuthn 인증"
+  },
+  "hideEmail": {
+    "message": "받는 사람으로부터 나의 이메일 주소 숨기기"
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "하나 이상의 단체 정책이 Send 설정에 영향을 미치고 있습니다."
+  },
+  "emailVerificationRequired": {
+    "message": "이메일 인증 필요함"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "이 기능을 이용하기 위해서는 이메일을 인증해야 합니다."
+  },
+  "passwordPrompt": {
+    "message": "마스터 비밀번호 재확인"
+  },
+  "passwordConfirmation": {
+    "message": "마스터 비밀번호 확인"
+  },
+  "passwordConfirmationDesc": {
+    "message": "이 작업은 보호되어 있습니다. 계속하려면 마스터 비밀번호를 입력하여 신원을 인증하세요."
+  },
+  "updatedMasterPassword": {
+    "message": "마스터 비밀번호 변경됨"
+  },
+  "updateMasterPassword": {
+    "message": "마스터 비밀번호 변경"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "최근에 조직 관리자가 마스터 비밀번호를 변경했습니다. 보관함에 액세스하려면 지금 업데이트해야 합니다. 계속하면 현재 세션에서 로그아웃되며 다시 로그인해야 합니다. 다른 장치의 활성 세션은 최대 1시간 동안 계속 활성 상태로 유지될 수 있습니다."
+  },
+  "hours": {
+    "message": "시"
+  },
+  "minutes": {
+    "message": "분"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "조직 정책이 보관함 제한 시간에 영향을 미치고 있습니다. 최대 허용 보관함 제한 시간은 $HOURS$시간 $MINUTES$분입니다",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "볼트 제한 시간이 조직에서 설정한 제한을 초과합니다."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "자동 등록"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "이 조직에는 자동으로 비밀번호 재설정에 등록하는 기업 정책이 있습니다. 등록하면 조직 관리자가 마스터 암호를 변경할 수 있습니다."
+  },
+  "vaultExportDisabled": {
+    "message": "보관함 내보내기 비활성화됨"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "하나 이상의 조직 정책이 개인 보관함을 내보내는 것을 제한하고 있습니다."
+  },
+  "addAccount": {
+    "message": "계정 추가"
+  },
+  "removeMasterPassword": {
+    "message": "마스터 비밀번호 제거"
+  },
+  "removedMasterPassword": {
+    "message": "마스터 비밀번호가 제거되었습니다."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ 조직은 자체 호스팅 키 서버로 SSO를 사용하고 있습니다 이 조직의 멤버들은 로그인할 때에 마스터 비밀번호를 필요로 하지 않습니다.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "조직 나가기"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "정말 이 조직을 떠나시겠습니까?"
+  },
+  "leftOrganization": {
+    "message": "조직을 떠났습니다."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "키 제공자와 통신할 수 없습니다. 다시 시도해보세요."
+  },
+  "lockAllVaults": {
+    "message": "모든 보관함 잠그기"
+  },
+  "accountLimitReached": {
+    "message": "5개 이상의 계정은 동시에 로그인할 수 없습니다."
+  },
+  "accountPreferences": {
+    "message": "설정"
+  },
+  "appPreferences": {
+    "message": "앱 설정 (모든 계정)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "계정 개수 제한에 도달했습니다. 추가로 로그인하려면 다른 계정을 로그아웃 해주세요."
+  },
+  "settingsTitle": {
+    "message": "$EMAIL$의 앱 설정",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "계정 전환"
+  },
+  "options": {
+    "message": "선택"
+  },
+  "sessionTimeout": {
+    "message": "세션 시간이 초과되었습니다. 다시 로그인해주세요."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exporting Personal Vault"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

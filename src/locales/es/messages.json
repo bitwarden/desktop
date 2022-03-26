@@ -44,14 +44,24 @@
   "share": {
     "message": "Compartir"
   },
-  "shareItem": {
-    "message": "Compartir elemento"
+  "moveToOrganization": {
+    "message": "Mover a la organización"
   },
-  "sharedItem": {
-    "message": "Elemento compartido"
+  "movedItemToOrg": {
+    "message": "$ITEMNAME$ se desplazó a $ORGNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      },
+      "orgname": {
+        "content": "$2",
+        "example": "Company Name"
+      }
+    }
   },
-  "shareDesc": {
-    "message": "Elige una organización con la que quieras compartir este elemento. Compartir transfiere la propiedad del elemento a la organización. No podrás volver a ser el propietario de este elemento una vez haya sido compartido."
+  "moveToOrgDesc": {
+    "message": "Elige una organización a la que deseas mover este objeto. Moviendo a una organización transfiere la propiedad del objeto a esa organización. Ya no serás el dueño directo de este objeto una vez que haya sido movido."
   },
   "attachments": {
     "message": "Adjuntos"
@@ -258,6 +268,9 @@
   "lastName": {
     "message": "Apellido"
   },
+  "fullName": {
+    "message": "Nombre"
+  },
   "address1": {
     "message": "Dirección 1"
   },
@@ -318,6 +331,14 @@
   "cfTypeBoolean": {
     "message": "Booleano"
   },
+  "cfTypeLinked": {
+    "message": "Conectado",
+    "description": "This describes a field that is 'linked' (related) to another field."
+  },
+  "linkedValue": {
+    "message": "Valor vinculado",
+    "description": "This describes a value that is 'linked' (related) to another value."
+  },
   "remove": {
     "message": "Eliminar"
   },
@@ -368,7 +389,7 @@
     "message": "Copiar URI"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy Verification Code (TOTP)"
+    "message": "Copiar código de verificación (TOTP)"
   },
   "length": {
     "message": "Longitud"
@@ -431,13 +452,10 @@
     "message": "Selecciona un archivo."
   },
   "maxFileSize": {
-    "message": "El tamaño máximo de archivo es de 100MB."
+    "message": "El tamaño máximo de archivo es de 500MB."
   },
   "updateKey": {
     "message": "No puedes usar esta característica hasta que actualices tu clave de cifrado."
-  },
-  "options": {
-    "message": "Opciones"
   },
   "editedFolder": {
     "message": "Carpeta editada"
@@ -520,11 +538,26 @@
   "noItemsInList": {
     "message": "No hay elementos que listar."
   },
+  "sendVerificationCode": {
+    "message": "Envía un código de verificación a tu correo electrónico"
+  },
+  "sendCode": {
+    "message": "Enviar código"
+  },
+  "codeSent": {
+    "message": "Código enviado"
+  },
   "verificationCode": {
     "message": "Código de verificación"
   },
+  "confirmIdentity": {
+    "message": "Confirma tu identidad para continuar."
+  },
   "verificationCodeRequired": {
     "message": "Código de verificación requerido."
+  },
+  "invalidVerificationCode": {
+    "message": "Código de verificación incorrecto"
   },
   "continue": {
     "message": "Continuar"
@@ -592,11 +625,11 @@
     "message": "Verificar con Duo Security para tu organización usando la aplicación Duo Mobile, SMS, llamada telefónica o llave de seguridad U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
-  "u2fDesc": {
-    "message": "Usa cualquier llave de seguridad FIDO U2F habilitada para acceder a tu cuenta."
+  "webAuthnTitle": {
+    "message": "FIDO2 WebAuthn"
   },
-  "u2fTitle": {
-    "message": "Llave de seguridad FIDO U2F"
+  "webAuthnDesc": {
+    "message": "Utilice cualquier clave de seguridad WebAuthn habilitada para acceder a su cuenta."
   },
   "emailTitle": {
     "message": "Correo electrónico"
@@ -697,17 +730,17 @@
   "loading": {
     "message": "Cargando..."
   },
-  "lockNow": {
-    "message": "Bloquear"
+  "lockVault": {
+    "message": "Bloquear caja fuerte"
   },
   "passwordGenerator": {
     "message": "Generador de contraseñas"
   },
-  "emailUs": {
-    "message": "Envíanos un correo"
+  "contactUs": {
+    "message": "Contáctenos"
   },
-  "visitOurWebsite": {
-    "message": "Visita nuestro sitio web"
+  "getHelp": {
+    "message": "Obtener ayuda"
   },
   "fileBugReport": {
     "message": "Reportar un fallo"
@@ -1228,13 +1261,10 @@
     "message": "Esta exportación contiene tus datos de la caja fuerte en un formato no cifrado. No deberías almacenar o enviar el archivo exportado por canales no seguros (como el correo electrónico). Elimínalo inmediatamente cuando termines de utilizarlo."
   },
   "encExportKeyWarningDesc": {
-    "message": "This export encrypts your data using your account's encryption key. If you ever rotate your account's encryption key you should export again since you will not be able to decrypt this export file."
+    "message": "Esta exportación encripta tus datos utilizando la clave de encriptación de tu cuenta. Si alguna vez renueva la clave de cifrado de su cuenta, deberá exportar de nuevo, ya que no podrá descifrar este archivo de exportación."
   },
   "encExportAccountWarningDesc": {
-    "message": "Account encryption keys are unique to each Bitwarden user account, so you can't import an encrypted export into a different account."
-  },
-  "exportMasterPassword": {
-    "message": "Introduce tu contraseña maestra para exportar la información de tu caja fuerte."
+    "message": "Las claves de encriptación de las cuentas son únicas para cada cuenta de usuario de Bitwarden, por lo que no se puede importar una exportación encriptada a una cuenta diferente."
   },
   "noOrganizationsList": {
     "message": "No perteneces a ninguna organización. Las organizaciones te permiten compartir elementos con otros usuarios de forma segura."
@@ -1282,9 +1312,6 @@
   "invalidPin": {
     "message": "Código PIN inválido."
   },
-  "yourVaultIsLockedPinCode": {
-    "message": "Tu caja fuerte está bloqueada. Verifica tu código PIN para continuar."
-  },
   "unlockWithWindowsHello": {
     "message": "Desbloquear con Windows Hello"
   },
@@ -1296,6 +1323,12 @@
   },
   "touchIdConsentMessage": {
     "message": "Verificar para Bitwarden."
+  },
+  "noAutoPromptWindowsHello": {
+    "message": "No solicite Windows Hello al empezar."
+  },
+  "noAutoPromptTouchId": {
+    "message": "No solicite Touch ID al empezar."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear con contraseña maestra al reiniciar"
@@ -1505,108 +1538,108 @@
     "message": "Una política de organización está afectando a sus opciones de propiedad."
   },
   "allSends": {
-    "message": "All Sends",
+    "message": "Todos los Send",
     "description": "'Sends' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTypeFile": {
-    "message": "File"
+    "message": "Archivo"
   },
   "sendTypeText": {
-    "message": "Text"
+    "message": "Texto"
   },
   "searchSends": {
-    "message": "Search Sends",
+    "message": "Búsqueda de Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
-    "message": "Edit Send",
+    "message": "Editar Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "My Vault"
+    "message": "Mi bóveda"
   },
   "text": {
-    "message": "Text"
+    "message": "Texto"
   },
   "deletionDate": {
-    "message": "Deletion Date"
+    "message": "Fecha de eliminación"
   },
   "deletionDateDesc": {
-    "message": "The Send will be permanently deleted on the specified date and time.",
+    "message": "El Send se borrará definitivamente en la fecha y hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
-    "message": "Expiration Date"
+    "message": "Fecha de caducidad"
   },
   "expirationDateDesc": {
-    "message": "If set, access to this Send will expire on the specified date and time.",
+    "message": "Si se establece, el acceso a este Send expirará en la fecha y hora especificadas.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "maxAccessCount": {
-    "message": "Maximum Access Count"
+    "message": "Número máximo de accesos"
   },
   "maxAccessCountDesc": {
-    "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
+    "message": "Si se establece, los usuarios ya no podrán acceder a este Send una vez que se alcance el número máximo de accesos.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "currentAccessCount": {
-    "message": "Current Access Count"
+    "message": "Conteo actual de accesos"
   },
   "disableSend": {
-    "message": "Disable this Send so that no one can access it.",
+    "message": "Desactive este Send para que nadie pueda acceder a él.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "Optionally require a password for users to access this Send.",
+    "message": "Opcionalmente, se requiere una contraseña para que los usuarios accedan a este Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "Private notes about this Send.",
+    "message": "Notas privadas sobre este Send.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
-    "message": "Send link",
+    "message": "Send enlace",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinkLabel": {
-    "message": "Send Link",
+    "message": "Send enlace",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "textHiddenByDefault": {
-    "message": "When accessing the Send, hide the text by default",
+    "message": "Cuando se accede al Envío, se oculta el texto por defecto",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSend": {
-    "message": "Created Send",
+    "message": "Send creado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
-    "message": "Edited Send",
+    "message": "Send editado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "deletedSend": {
-    "message": "Deleted Send",
+    "message": "Send eliminado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "New Password"
+    "message": "Nueva contraseña"
   },
   "whatTypeOfSend": {
-    "message": "What type of Send is this?",
+    "message": "¿Qué tipo de Send es éste?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createSend": {
-    "message": "Create Send",
+    "message": "Crear Send",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendTextDesc": {
-    "message": "The text you want to send."
+    "message": "El texto que quieres enviar."
   },
   "sendFileDesc": {
-    "message": "The file you want to send."
+    "message": "El archivo que quieres enviar."
   },
   "days": {
-    "message": "$DAYS$ days",
+    "message": "$DAYS$ días",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -1615,43 +1648,185 @@
     }
   },
   "oneDay": {
-    "message": "1 day"
+    "message": "1 día"
   },
   "custom": {
-    "message": "Custom"
+    "message": "Personalizado"
   },
   "deleteSendConfirmation": {
-    "message": "Are you sure you want to delete this Send?",
+    "message": "¿Está seguro de que quiere eliminar este envío?",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkToClipboard": {
-    "message": "Copy Send link to clipboard",
+    "message": "Copiar el enlace del Send al portapapeles",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copySendLinkOnSave": {
-    "message": "Copy the link to share this Send to my clipboard upon save."
+    "message": "Copiar el enlace para compartir esto Enviar a mi portapapeles al guardar."
   },
   "sendDisabled": {
-    "message": "Send disabled",
+    "message": "Enviar desactivado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
+    "message": "Debido a una política de la empresa, sólo puede eliminar un Envío existente.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Copiar enlace"
   },
   "disabled": {
-    "message": "Disabled"
+    "message": "Deshabilitado"
   },
   "maxAccessCountReached": {
-    "message": "Max access count reached"
+    "message": "Se ha alcanzado el número máximo de accesos"
   },
   "expired": {
-    "message": "Expired"
+    "message": "Expirado"
   },
   "pendingDeletion": {
-    "message": "Pending deletion"
+    "message": "Pendiente de eliminación"
+  },
+  "webAuthnAuthenticate": {
+    "message": "Autenticar WebAuthn"
+  },
+  "hideEmail": {
+    "message": "Ocultar mi dirección de correo electrónico a los destinatarios."
+  },
+  "sendOptionsPolicyInEffect": {
+    "message": "Una o más políticas de organización están afectando sus opciones del Send."
+  },
+  "emailVerificationRequired": {
+    "message": "Verificación de correo electrónico requerida"
+  },
+  "emailVerificationRequiredDesc": {
+    "message": "Debes verificar tu correo electrónico para usar esta característica."
+  },
+  "passwordPrompt": {
+    "message": "Volver a preguntar contraseña maestra"
+  },
+  "passwordConfirmation": {
+    "message": "Confirmación de contraseña maestra"
+  },
+  "passwordConfirmationDesc": {
+    "message": "Esta acción está protegida. Para continuar, vuelva a introducir su contraseña maestra para verificar su identidad."
+  },
+  "updatedMasterPassword": {
+    "message": "Contraseña maestra actualizada"
+  },
+  "updateMasterPassword": {
+    "message": "Actualizar contraseña maestra"
+  },
+  "updateMasterPasswordWarning": {
+    "message": "Su contraseña maestra ha sido cambiada recientemente por un administrador de su organización. Para acceder a la caja fuerte, debe actualizarla ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante una hora."
+  },
+  "hours": {
+    "message": "Horas"
+  },
+  "minutes": {
+    "message": "Minutos"
+  },
+  "vaultTimeoutPolicyInEffect": {
+    "message": "Las políticas de tu organización están afectando el tiempo de espera de tu caja fuerte. El máximo permitido de espera es de $HOURS$ hora(s) y de $MINUTES$ minuto(s)",
+    "placeholders": {
+      "hours": {
+        "content": "$1",
+        "example": "5"
+      },
+      "minutes": {
+        "content": "$2",
+        "example": "5"
+      }
+    }
+  },
+  "vaultTimeoutTooLarge": {
+    "message": "El tiempo de espera de tu caja fuerte excede las restricciones establecidas por tu organización."
+  },
+  "resetPasswordPolicyAutoEnroll": {
+    "message": "Inscripción automática"
+  },
+  "resetPasswordAutoEnrollInviteWarning": {
+    "message": "Esta organización tiene una política empresarial que lo inscribirá automáticamente en el restablecimiento de contraseña. La inscripción permitirá a los administradores de la organización cambiar su contraseña maestra."
+  },
+  "vaultExportDisabled": {
+    "message": "Exportación de caja fuerte desactivada"
+  },
+  "personalVaultExportPolicyInEffect": {
+    "message": "Una o más políticas de organización le impiden exportar su caja fuerte personal."
+  },
+  "addAccount": {
+    "message": "Añadir cuenta"
+  },
+  "removeMasterPassword": {
+    "message": "Eliminar contraseña maestra"
+  },
+  "removedMasterPassword": {
+    "message": "Contraseña maestra eliminada."
+  },
+  "convertOrganizationEncryptionDesc": {
+    "message": "$ORGANIZATION$ está usando SSO con un servidor de claves autoalojado. Los miembros de esta organización ya no necesitarán una contraseña maestra para iniciar sesión.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "My Org Name"
+      }
+    }
+  },
+  "leaveOrganization": {
+    "message": "Abandonar organización"
+  },
+  "leaveOrganizationConfirmation": {
+    "message": "¿Estás seguro de que quieres dejar esta organización?"
+  },
+  "leftOrganization": {
+    "message": "Has abandonado la organización."
+  },
+  "ssoKeyConnectorUnavailable": {
+    "message": "No se puede acceder al conector de clave. Inténtalo de nuevo más tarde."
+  },
+  "lockAllVaults": {
+    "message": "Bloquear todas las cajas fuertes"
+  },
+  "accountLimitReached": {
+    "message": "No se puede iniciar sesión en más de 5 cuentas al mismo tiempo."
+  },
+  "accountPreferences": {
+    "message": "Preferencias"
+  },
+  "appPreferences": {
+    "message": "Ajustes de la aplicación (todas las cuentas)"
+  },
+  "accountSwitcherLimitReached": {
+    "message": "Límite de cuentas alcanzado. Cierre sesión de una cuenta para añadir otra."
+  },
+  "settingsTitle": {
+    "message": "Ajustes de la aplicación para $EMAIL$",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "jdoe@example.com"
+      }
+    }
+  },
+  "switchAccount": {
+    "message": "Cambiar cuenta"
+  },
+  "options": {
+    "message": "Opciones"
+  },
+  "sessionTimeout": {
+    "message": "Su sesión ha expirado. Por favor, vuelva e intente iniciar sesión de nuevo."
+  },
+  "exportingPersonalVaultTitle": {
+    "message": "Exportando bóveda personal"
+  },
+  "exportingPersonalVaultDescription": {
+    "message": "Solo se exportarán los elementos de la bóveda personal asociados con $EMAIL$. Los elementos de la bóveda de la organización no se incluirán.",
+    "placeholders": {
+      "email": {
+        "content": "$1",
+        "example": "name@example.com"
+      }
+    }
   }
 }

@@ -1,294 +1,422 @@
 <div class="content">
-    <div class="inner-content" *ngIf="cipher">
-        <div class="box">
-            <div class="box-header">
-                {{'itemInformation' | i18n}}
-            </div>
-            <div class="box-content">
-                <div class="box-content-row">
-                    <span class="row-label">{{'name' | i18n}}</span>
-                    {{cipher.name}}
-                </div>
-                <!-- Login -->
-                <div *ngIf="cipher.login">
-                    <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.username">
-                        <div class="row-main">
-                            <span class="row-label draggable" draggable="true"
-                                (dragstart)="setTextDataOnDrag($event, cipher.login.username)">{{'username' | i18n}}</span>
-                            {{cipher.login.username}}
-                        </div>
-                        <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUsername' | i18n}}"
-                                (click)="copy(cipher.login.username, 'username', 'Username')" role="button">
-                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
-                        <div class="row-main">
-                            <span class="row-label draggable" draggable="true"
-                                (dragstart)="setTextDataOnDrag($event, cipher.login.password)">{{'password' | i18n}}</span>
-                            <div [hidden]="showPassword" class="monospaced">
-                                {{cipher.login.maskedPassword}}</div>
-                            <div [hidden]="!showPassword" class="monospaced password-wrapper" appSelectCopy
-                                [innerHTML]="cipher.login.password | colorPassword"></div>
-                        </div>
-                        <div class="action-buttons" *ngIf=cipher.viewPassword>
-                            <button type="button" #checkPasswordBtn class="row-btn btn" appBlurClick
-                                appA11yTitle="{{'checkPassword' | i18n}}" (click)="checkPassword()"
-                                [appApiAction]="checkPasswordPromise" [disabled]="checkPasswordBtn.loading">
-                                <i class="fa fa-lg fa-check-circle" [hidden]="checkPasswordBtn.loading"
-                                    aria-hidden="true"></i>
-                                <i class="fa fa-lg fa-spinner fa-spin" [hidden]="!checkPasswordBtn.loading"
-                                    aria-hidden="true"></i>
-                            </button>
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                                (click)="togglePassword()" role="button">
-                                <i class="fa fa-lg" aria-hidden="true"
-                                    [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
-                            </a>
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyPassword' | i18n}}"
-                                (click)="copy(cipher.login.password, 'password', 'Password')" role="button">
-                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-content-row box-content-row-flex totp" [ngClass]="{'low': totpLow}"
-                        *ngIf="cipher.login.totp && totpCode">
-                        <div class="row-main">
-                            <span class="row-label draggable" draggable="true"
-                                (dragstart)="setTextDataOnDrag($event, totpCode)">{{'verificationCodeTotp' | i18n}}</span>
-                            <span class="totp-code">{{totpCodeFormatted}}</span>
-                        </div>
-                        <span class="totp-countdown">
-                            <span class="totp-sec">{{totpSec}}</span>
-                            <svg>
-                                <g>
-                                    <circle class="totp-circle inner" r="12.6" cy="16" cx="16"
-                                        [ngStyle]="{'stroke-dashoffset.px': totpDash}"></circle>
-                                    <circle class="totp-circle outer" r="14" cy="16" cx="16"></circle>
-                                </g>
-                            </svg>
-                        </span>
-                        <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
-                                (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')" role="button">
-                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card -->
-                <div *ngIf="cipher.card">
-                    <div class="box-content-row" *ngIf="cipher.card.cardholderName">
-                        <span class="row-label">{{'cardholderName' | i18n}}</span>
-                        {{cipher.card.cardholderName}}
-                    </div>
-                    <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
-                        <div class="row-main">
-                            <span class="row-label">{{'number' | i18n}}</span>
-                            {{cipher.card.number}}
-                        </div>
-                        <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyNumber' | i18n}}"
-                                (click)="copy(cipher.card.number, 'number', 'Number')" role="button">
-                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.card.brand">
-                        <span class="row-label">{{'brand' | i18n}}</span>
-                        {{cipher.card.brand}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.card.expiration">
-                        <span class="row-label">{{'expiration' | i18n}}</span>
-                        {{cipher.card.expiration}}
-                    </div>
-                    <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.code">
-                        <div class="row-main">
-                            <span class="row-label">{{'securityCode' | i18n}}</span>
-                            <span [hidden]="showCardCode" class="monospaced">{{cipher.card.maskedCode}}</span>
-                            <span [hidden]="!showCardCode" class="monospaced">{{cipher.card.code}}</span>
-                        </div>
-                        <div class="action-buttons">
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                                (click)="toggleCardCode()" role="button">
-                                <i class="fa fa-lg" aria-hidden="true"
-                                    [ngClass]="{'fa-eye': !showCardCode, 'fa-eye-slash': showCardCode}"></i>
-                            </a>
-                            <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copySecurityCode' | i18n}}"
-                                (click)="copy(cipher.card.code, 'securityCode', 'Security Code')" role="button">
-                                <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Identity -->
-                <div *ngIf="cipher.identity">
-                    <div class="box-content-row" *ngIf="cipher.identity.fullName">
-                        <span class="row-label">{{'identityName' | i18n}}</span>
-                        {{cipher.identity.fullName}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.username">
-                        <span class="row-label">{{'username' | i18n}}</span>
-                        {{cipher.identity.username}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.company">
-                        <span class="row-label">{{'company' | i18n}}</span>
-                        {{cipher.identity.company}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.ssn">
-                        <span class="row-label">{{'ssn' | i18n}}</span>
-                        {{cipher.identity.ssn}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.passportNumber">
-                        <span class="row-label">{{'passportNumber' | i18n}}</span>
-                        {{cipher.identity.passportNumber}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.licenseNumber">
-                        <span class="row-label">{{'licenseNumber' | i18n}}</span>
-                        {{cipher.identity.licenseNumber}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.email">
-                        <span class="row-label">{{'email' | i18n}}</span>
-                        {{cipher.identity.email}}
-                    </div>
-                    <div class="box-content-row" *ngIf="cipher.identity.phone">
-                        <span class="row-label">{{'phone' | i18n}}</span>
-                        {{cipher.identity.phone}}
-                    </div>
-                    <div class="box-content-row"
-                        *ngIf="cipher.identity.address1 || cipher.identity.city || cipher.identity.country">
-                        <span class="row-label">{{'address' | i18n}}</span>
-                        <div *ngIf="cipher.identity.address1">{{cipher.identity.address1}}</div>
-                        <div *ngIf="cipher.identity.address2">{{cipher.identity.address2}}</div>
-                        <div *ngIf="cipher.identity.address3">{{cipher.identity.address3}}</div>
-                        <div *ngIf="cipher.identity.fullAddressPart2">{{cipher.identity.fullAddressPart2}}</div>
-                        <div *ngIf="cipher.identity.country">{{cipher.identity.country}}</div>
-                    </div>
-                </div>
-            </div>
+  <div class="inner-content" *ngIf="cipher">
+    <div class="box">
+      <div class="box-header">
+        {{ "itemInformation" | i18n }}
+      </div>
+      <div class="box-content">
+        <div class="box-content-row">
+          <span class="row-label">{{ "name" | i18n }}</span>
+          {{ cipher.name }}
         </div>
-        <div class="box" *ngIf="cipher.login && cipher.login.hasUris">
-            <div class="box-content">
-                <div class="box-content-row box-content-row-flex" *ngFor="let u of cipher.login.uris; let i = index">
-                    <div class="row-main">
-                        <span class="row-label" *ngIf="!u.isWebsite">{{'uri' | i18n}}</span>
-                        <span class="row-label" *ngIf="u.isWebsite">{{'website' | i18n}}</span>
-                        <span title="{{u.uri}}">{{u.hostOrUri}}</span>
-                    </div>
-                    <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appA11yTitle="{{'launch' | i18n}}" *ngIf="u.canLaunch"
-                            (click)="launch(u)" role="button">
-                            <i class="fa fa-lg fa-share-square-o" aria-hidden="true"></i>
-                        </a>
-                        <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyUri' | i18n}}"
-                            (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')" role="button">
-                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
+        <!-- Login -->
+        <div *ngIf="cipher.login">
+          <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.username">
+            <div class="row-main">
+              <span
+                class="row-label draggable"
+                draggable="true"
+                (dragstart)="setTextDataOnDrag($event, cipher.login.username)"
+                >{{ "username" | i18n }}</span
+              >
+              {{ cipher.login.username }}
             </div>
+            <div class="action-buttons">
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'copyUsername' | i18n }}"
+                (click)="copy(cipher.login.username, 'username', 'Username')"
+                role="button"
+              >
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
+            <div class="row-main">
+              <span
+                class="row-label draggable"
+                draggable="true"
+                (dragstart)="setTextDataOnDrag($event, cipher.login.password)"
+                >{{ "password" | i18n }}</span
+              >
+              <div *ngIf="!showPassword" class="monospaced">
+                {{ cipher.login.maskedPassword }}
+              </div>
+              <div
+                *ngIf="showPassword"
+                class="monospaced password-wrapper"
+                appSelectCopy
+                [innerHTML]="cipher.login.password | colorPassword"
+              ></div>
+            </div>
+            <div class="action-buttons" *ngIf="cipher.viewPassword">
+              <button
+                type="button"
+                #checkPasswordBtn
+                class="row-btn btn"
+                appBlurClick
+                appA11yTitle="{{ 'checkPassword' | i18n }}"
+                (click)="checkPassword()"
+                [appApiAction]="checkPasswordPromise"
+                [disabled]="checkPasswordBtn.loading"
+              >
+                <i
+                  class="bwi bwi-lg bwi-check-circle"
+                  [hidden]="checkPasswordBtn.loading"
+                  aria-hidden="true"
+                ></i>
+                <i
+                  class="bwi bwi-lg bwi-spinner bwi-spin"
+                  [hidden]="!checkPasswordBtn.loading"
+                  aria-hidden="true"
+                ></i>
+              </button>
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                (click)="togglePassword()"
+                role="button"
+              >
+                <i
+                  class="bwi bwi-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
+                ></i>
+              </a>
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'copyPassword' | i18n }}"
+                (click)="copy(cipher.login.password, 'password', 'Password')"
+                role="button"
+              >
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="box-content-row box-content-row-flex totp"
+            [ngClass]="{ low: totpLow }"
+            *ngIf="cipher.login.totp && totpCode"
+          >
+            <div class="row-main">
+              <span
+                class="row-label draggable"
+                draggable="true"
+                (dragstart)="setTextDataOnDrag($event, totpCode)"
+                >{{ "verificationCodeTotp" | i18n }}</span
+              >
+              <span class="totp-code">{{ totpCodeFormatted }}</span>
+            </div>
+            <span class="totp-countdown">
+              <span class="totp-sec">{{ totpSec }}</span>
+              <svg>
+                <g>
+                  <circle
+                    class="totp-circle inner"
+                    r="12.6"
+                    cy="16"
+                    cx="16"
+                    [ngStyle]="{ 'stroke-dashoffset.px': totpDash }"
+                  ></circle>
+                  <circle class="totp-circle outer" r="14" cy="16" cx="16"></circle>
+                </g>
+              </svg>
+            </span>
+            <div class="action-buttons">
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'copyValue' | i18n }}"
+                (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')"
+                role="button"
+              >
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="box" *ngIf="cipher.notes">
-            <div class="box-header">
-                {{'notes' | i18n}}
+        <!-- Card -->
+        <div *ngIf="cipher.card">
+          <div class="box-content-row" *ngIf="cipher.card.cardholderName">
+            <span class="row-label">{{ "cardholderName" | i18n }}</span>
+            {{ cipher.card.cardholderName }}
+          </div>
+          <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
+            <div class="row-main">
+              <span class="row-label">{{ "number" | i18n }}</span>
+              <span *ngIf="!showCardNumber" class="monospaced">{{ cipher.card.maskedNumber }}</span>
+              <span *ngIf="showCardNumber" class="monospaced">{{ cipher.card.number }}</span>
             </div>
-            <div class="box-content">
-                <div class="box-content-row pre-wrap">{{cipher.notes}}</div>
+            <div class="action-buttons">
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                (click)="toggleCardNumber()"
+                role="button"
+              >
+                <i
+                  class="bwi bwi-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'bwi-eye': !showCardNumber, 'bwi-eye-slash': showCardNumber }"
+                ></i>
+              </a>
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'copyNumber' | i18n }}"
+                (click)="copy(cipher.card.number, 'number', 'Card Number')"
+                role="button"
+              >
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+              </a>
             </div>
+          </div>
+          <div class="box-content-row" *ngIf="cipher.card.brand">
+            <span class="row-label">{{ "brand" | i18n }}</span>
+            {{ cipher.card.brand }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.card.expiration">
+            <span class="row-label">{{ "expiration" | i18n }}</span>
+            {{ cipher.card.expiration }}
+          </div>
+          <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.code">
+            <div class="row-main">
+              <span class="row-label">{{ "securityCode" | i18n }}</span>
+              <span *ngIf="!showCardCode" class="monospaced">{{ cipher.card.maskedCode }}</span>
+              <span *ngIf="showCardCode" class="monospaced">{{ cipher.card.code }}</span>
+            </div>
+            <div class="action-buttons">
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                (click)="toggleCardCode()"
+                role="button"
+              >
+                <i
+                  class="bwi bwi-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'bwi-eye': !showCardCode, 'bwi-eye-slash': showCardCode }"
+                ></i>
+              </a>
+              <a
+                class="row-btn"
+                href="#"
+                appStopClick
+                appA11yTitle="{{ 'copySecurityCode' | i18n }}"
+                (click)="copy(cipher.card.code, 'securityCode', 'Security Code')"
+                role="button"
+              >
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="box" *ngIf="cipher.hasFields">
-            <div class="box-header">
-                {{'customFields' | i18n}}
+        <!-- Identity -->
+        <div *ngIf="cipher.identity">
+          <div class="box-content-row" *ngIf="cipher.identity.fullName">
+            <span class="row-label">{{ "identityName" | i18n }}</span>
+            {{ cipher.identity.fullName }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.username">
+            <span class="row-label">{{ "username" | i18n }}</span>
+            {{ cipher.identity.username }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.company">
+            <span class="row-label">{{ "company" | i18n }}</span>
+            {{ cipher.identity.company }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.ssn">
+            <span class="row-label">{{ "ssn" | i18n }}</span>
+            {{ cipher.identity.ssn }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.passportNumber">
+            <span class="row-label">{{ "passportNumber" | i18n }}</span>
+            {{ cipher.identity.passportNumber }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.licenseNumber">
+            <span class="row-label">{{ "licenseNumber" | i18n }}</span>
+            {{ cipher.identity.licenseNumber }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.email">
+            <span class="row-label">{{ "email" | i18n }}</span>
+            {{ cipher.identity.email }}
+          </div>
+          <div class="box-content-row" *ngIf="cipher.identity.phone">
+            <span class="row-label">{{ "phone" | i18n }}</span>
+            {{ cipher.identity.phone }}
+          </div>
+          <div
+            class="box-content-row"
+            *ngIf="cipher.identity.address1 || cipher.identity.city || cipher.identity.country"
+          >
+            <span class="row-label">{{ "address" | i18n }}</span>
+            <div *ngIf="cipher.identity.address1">{{ cipher.identity.address1 }}</div>
+            <div *ngIf="cipher.identity.address2">{{ cipher.identity.address2 }}</div>
+            <div *ngIf="cipher.identity.address3">{{ cipher.identity.address3 }}</div>
+            <div *ngIf="cipher.identity.fullAddressPart2">
+              {{ cipher.identity.fullAddressPart2 }}
             </div>
-            <div class="box-content">
-                <div class="box-content-row box-content-row-flex" *ngFor="let field of cipher.fields">
-                    <div class="row-main">
-                        <span class="row-label">{{field.name}}</span>
-                        <div *ngIf="field.type === fieldType.Text">
-                            {{field.value || '&nbsp;'}}
-                        </div>
-                        <div *ngIf="field.type === fieldType.Hidden">
-                            <span [hidden]="!field.showValue" class="monospaced show-whitespace">{{field.value}}</span>
-                            <span [hidden]="field.showValue" class="monospaced">{{field.maskedValue}}</span>
-                        </div>
-                        <div *ngIf="field.type === fieldType.Boolean">
-                            <i class="fa fa-check-square-o" *ngIf="field.value === 'true'" aria-hidden="true"></i>
-                            <i class="fa fa-square-o" *ngIf="field.value !== 'true'" aria-hidden="true"></i>
-                            <span class="sr-only">{{field.value}}</span>
-                        </div>
-                    </div>
-                    <div class="action-buttons">
-                        <a class="row-btn" href="#" appStopClick appA11yTitle="{{'toggleVisibility' | i18n}}"
-                            *ngIf="field.type === fieldType.Hidden && cipher.viewPassword"
-                            (click)="toggleFieldValue(field)" role="button">
-                            <i class="fa fa-lg" aria-hidden="true"
-                                [ngClass]="{'fa-eye': !field.showValue, 'fa-eye-slash': field.showValue}"></i>
-                        </a>
-                        <a class="row-btn" href="#" appStopClick appA11yTitle="{{'copyValue' | i18n}}"
-                            *ngIf="field.value && field.type !== fieldType.Boolean && !(field.type === fieldType.Hidden && !cipher.viewPassword)"
-                            (click)="copy(field.value, 'value', field.type === fieldType.Hidden ? 'H_Field' : 'Field')"
-                            role="button">
-                            <i class="fa fa-lg fa-clone" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div *ngIf="cipher.identity.country">{{ cipher.identity.country }}</div>
+          </div>
         </div>
-        <div class="box" *ngIf="cipher.hasAttachments && (canAccessPremium || cipher.organizationId)">
-            <div class="box-header">
-                {{'attachments' | i18n}}
-            </div>
-            <div class="box-content">
-                <a class="box-content-row box-content-row-flex text-default"
-                    *ngFor="let attachment of cipher.attachments" href="#" appStopClick appBlurCLick
-                    (click)="downloadAttachment(attachment)">
-                    <span class="row-main">{{attachment.fileName}}</span>
-                    <small class="row-sub-label">{{attachment.sizeName}}</small>
-                    <i class="fa fa-download fa-fw row-sub-icon" *ngIf="!attachment.downloading" aria-hidden="true"></i>
-                    <i class="fa fa-spinner fa-fw fa-spin row-sub-icon" *ngIf="attachment.downloading"
-                        aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-        <div class="box">
-            <div class="box-footer">
-                <div>
-                    <b class="font-weight-semibold">{{'dateUpdated' | i18n}}:</b>
-                    {{cipher.revisionDate | date:'medium'}}
-                </div>
-                <div *ngIf="cipher.passwordRevisionDisplayDate">
-                    <b class="font-weight-semibold">{{'datePasswordUpdated' | i18n}}:</b>
-                    {{cipher.passwordRevisionDisplayDate | date:'medium'}}
-                </div>
-                <div *ngIf="cipher.hasPasswordHistory">
-                    <b class="font-weight-semibold">{{'passwordHistory' | i18n}}:</b>
-                    <a href="#" (click)="viewHistory()" appStopClick role="button"
-                        appA11yTitle="{{'passwordHistory' | i18n}}, {{cipher.passwordHistory.length}}">
-                        <span aria-hidden="true">{{cipher.passwordHistory.length}}</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="box" *ngIf="cipher.login && cipher.login.hasUris">
+      <div class="box-content">
+        <div
+          class="box-content-row box-content-row-flex"
+          *ngFor="let u of cipher.login.uris; let i = index"
+        >
+          <div class="row-main">
+            <span class="row-label" *ngIf="!u.isWebsite">{{ "uri" | i18n }}</span>
+            <span class="row-label" *ngIf="u.isWebsite">{{ "website" | i18n }}</span>
+            <span title="{{ u.uri }}">{{ u.hostOrUri }}</span>
+          </div>
+          <div class="action-buttons">
+            <a
+              class="row-btn"
+              href="#"
+              appStopClick
+              appA11yTitle="{{ 'launch' | i18n }}"
+              *ngIf="u.canLaunch"
+              (click)="launch(u)"
+              role="button"
+            >
+              <i class="bwi bwi-lg bwi-share-square" aria-hidden="true"></i>
+            </a>
+            <a
+              class="row-btn"
+              href="#"
+              appStopClick
+              appA11yTitle="{{ 'copyUri' | i18n }}"
+              (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')"
+              role="button"
+            >
+              <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box" *ngIf="cipher.notes">
+      <div class="box-header">
+        {{ "notes" | i18n }}
+      </div>
+      <div class="box-content">
+        <div class="box-content-row pre-wrap">{{ cipher.notes }}</div>
+      </div>
+    </div>
+    <app-vault-view-custom-fields
+      *ngIf="cipher.hasFields"
+      [cipher]="cipher"
+      [promptPassword]="promptPassword.bind(this)"
+      [copy]="copy.bind(this)"
+    >
+    </app-vault-view-custom-fields>
+    <div class="box" *ngIf="cipher.hasAttachments && (canAccessPremium || cipher.organizationId)">
+      <div class="box-header">
+        {{ "attachments" | i18n }}
+      </div>
+      <div class="box-content">
+        <a
+          class="box-content-row box-content-row-flex text-default"
+          *ngFor="let attachment of cipher.attachments"
+          href="#"
+          appStopClick
+          appBlurCLick
+          (click)="downloadAttachment(attachment)"
+        >
+          <span class="row-main">{{ attachment.fileName }}</span>
+          <small class="row-sub-label">{{ attachment.sizeName }}</small>
+          <i
+            class="bwi bwi-download bwi-fw row-sub-icon"
+            *ngIf="!attachment.downloading"
+            aria-hidden="true"
+          ></i>
+          <i
+            class="bwi bwi-spinner bwi-fw bwi-spin row-sub-icon"
+            *ngIf="attachment.downloading"
+            aria-hidden="true"
+          ></i>
+        </a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="box-footer">
+        <div>
+          <b class="font-weight-semibold">{{ "dateUpdated" | i18n }}:</b>
+          {{ cipher.revisionDate | date: "medium" }}
+        </div>
+        <div *ngIf="cipher.passwordRevisionDisplayDate">
+          <b class="font-weight-semibold">{{ "datePasswordUpdated" | i18n }}:</b>
+          {{ cipher.passwordRevisionDisplayDate | date: "medium" }}
+        </div>
+        <div *ngIf="cipher.hasPasswordHistory">
+          <b class="font-weight-semibold">{{ "passwordHistory" | i18n }}:</b>
+          <a
+            href="#"
+            (click)="viewHistory()"
+            appStopClick
+            role="button"
+            appA11yTitle="{{ 'passwordHistory' | i18n }}, {{ cipher.passwordHistory.length }}"
+          >
+            <span aria-hidden="true">{{ cipher.passwordHistory.length }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="footer" *ngIf="cipher">
-    <button appBlurClick class="primary" (click)="edit()" appA11yTitle="{{'edit' | i18n}}" *ngIf="!cipher.isDeleted">
-        <i class="fa fa-pencil fa-fw fa-lg" aria-hidden="true"></i>
+  <button
+    appBlurClick
+    class="primary"
+    (click)="edit()"
+    appA11yTitle="{{ 'edit' | i18n }}"
+    *ngIf="!cipher.isDeleted"
+  >
+    <i class="bwi bwi-pencil bwi-fw bwi-lg" aria-hidden="true"></i>
+  </button>
+  <button
+    appBlurClick
+    class="primary"
+    (click)="restore()"
+    appA11yTitle="{{ 'restore' | i18n }}"
+    *ngIf="cipher.isDeleted"
+  >
+    <i class="bwi bwi-undo bwi-fw bwi-lg" aria-hidden="true"></i>
+  </button>
+  <button
+    appBlurClick
+    class="primary"
+    *ngIf="!cipher?.organizationId && !cipher.isDeleted"
+    (click)="clone()"
+    appA11yTitle="{{ 'clone' | i18n }}"
+  >
+    <i class="bwi bwi-files bwi-fw bwi-lg" aria-hidden="true"></i>
+  </button>
+  <div class="right">
+    <button
+      appBlurClick
+      type="button"
+      (click)="delete()"
+      class="danger"
+      appA11yTitle="{{ (cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n }}"
+    >
+      <i class="bwi bwi-trash bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
-    <button appBlurClick class="primary" (click)="restore()" appA11yTitle="{{'restore' | i18n}}" 
-        *ngIf="cipher.isDeleted">
-        <i class="fa fa-undo fa-fw fa-lg" aria-hidden="true"></i>
-    </button>
-    <button appBlurClick class="primary" *ngIf="!cipher?.organizationId && !cipher.isDeleted" (click)="clone()" 
-        appA11yTitle="{{'clone' | i18n}}">
-        <i class="fa fa-files-o fa-fw fa-lg" aria-hidden="true"></i>
-    </button>
-    <div class="right">
-        <button appBlurClick type="button" (click)="delete()" class="danger"
-            appA11yTitle="{{(cipher.isDeleted ? 'permanentlyDelete' : 'delete') | i18n}}">
-            <i class="fa fa-trash-o fa-lg fa-fw" aria-hidden="true"></i>
-        </button>
-    </div>
+  </div>
 </div>
