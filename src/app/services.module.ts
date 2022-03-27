@@ -144,7 +144,6 @@ export function initFactory(
     {
       provide: MessagingServiceAbstraction,
       useClass: ElectronRendererMessagingService,
-      deps: [BroadcasterServiceAbstraction],
     },
     { provide: StorageServiceAbstraction, useClass: ElectronRendererStorageService },
     { provide: SECURE_STORAGE, useClass: ElectronRendererSecureStorageService },
