@@ -47,6 +47,7 @@
                 appBlurClick
                 role="button"
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                [attr.aria-pressed]="showPassword"
                 (click)="togglePassword(false)"
               >
                 <i
@@ -97,6 +98,7 @@
               appBlurClick
               role="button"
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+              [attr.aria-pressed]="showPassword"
               (click)="togglePassword(true)"
             >
               <i

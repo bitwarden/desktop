@@ -85,6 +85,7 @@
             appBlurClick
             role="button"
             appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+            [attr.aria-pressed]="f.showValue"
             (click)="toggleFieldValue(f)"
           >
             <i
