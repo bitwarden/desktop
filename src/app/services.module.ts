@@ -9,6 +9,7 @@ import { EventService as EventServiceAbstraction } from "jslib-common/abstractio
 import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions/i18n.service";
 import {
   CLIENT_TYPE,
+  RELOAD_CALLBACK,
   SECURE_STORAGE,
   STATE_FACTORY,
   WINDOW_TOKEN,
@@ -152,13 +153,12 @@ export function initFactory(
       useClass: ElectronCryptoService,
     },
     {
+      provide: RELOAD_CALLBACK,
+      useValue: null,
+    },
+    {
       provide: SystemServiceAbstraction,
-      useFactory: (
-        messagingService: MessagingServiceAbstraction,
-        platformUtilsService: PlatformUtilsServiceAbstraction,
-        stateService: StateServiceAbstraction
-      ) => new SystemService(messagingService, platformUtilsService, null, stateService),
-      deps: [MessagingServiceAbstraction, PlatformUtilsServiceAbstraction, StateServiceAbstraction],
+      useClass: SystemService,
     },
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     NativeMessagingService,
