@@ -7,6 +7,11 @@ import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "jslib
 import { EnvironmentService as EnvironmentServiceAbstraction } from "jslib-common/abstractions/environment.service";
 import { EventService as EventServiceAbstraction } from "jslib-common/abstractions/event.service";
 import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions/i18n.service";
+import {
+  CLIENT_TYPE,
+  SECURE_STORAGE,
+  WINDOW_TOKEN,
+} from "jslib-common/abstractions/injectionTokens";
 import { LogService as LogServiceAbstraction } from "jslib-common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "jslib-common/abstractions/messaging.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "jslib-common/abstractions/notifications.service";
@@ -19,6 +24,7 @@ import { SyncService as SyncServiceAbstraction } from "jslib-common/abstractions
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
 import { TwoFactorService as TwoFactorServiceAbstraction } from "jslib-common/abstractions/twoFactor.service";
 import { VaultTimeoutService as VaultTimeoutServiceAbstraction } from "jslib-common/abstractions/vaultTimeout.service";
+import { ClientType } from "jslib-common/enums/clientType";
 import { ThemeType } from "jslib-common/enums/themeType";
 import { StateFactory } from "jslib-common/factories/stateFactory";
 import { GlobalState } from "jslib-common/models/domain/globalState";
@@ -43,8 +49,6 @@ import { StateService } from "../services/state.service";
 
 import { SearchBarService } from "./layout/search/search-bar.service";
 
-import { CLIENT_TYPE, SECURE_STORAGE, WINDOW_TOKEN } from "jslib-common/abstractions/injectionTokens";
-import { ClientType } from "jslib-common/enums/clientType";
 
 export function initFactory(
   window: Window,
@@ -129,12 +133,7 @@ export function initFactory(
     { provide: CLIENT_TYPE, useValue: ClientType.Desktop },
     {
       provide: PlatformUtilsServiceAbstraction,
-      useFactory: (
-        i18nService: I18nServiceAbstraction,
-        messagingService: MessagingServiceAbstraction,
-        stateService: StateServiceAbstraction
-      ) => new ElectronPlatformUtilsService(i18nService, messagingService, true, stateService),
-      deps: [I18nServiceAbstraction, MessagingServiceAbstraction, StateServiceAbstraction],
+      useClass: ElectronPlatformUtilsService,
     },
     {
       provide: I18nServiceAbstraction,
