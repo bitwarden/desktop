@@ -156,6 +156,7 @@
                   appStopClick
                   appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                  [attr.aria-pressed]="showPassword"
                   (click)="togglePasswordVisible()"
                   [disabled]="disableSend"
                 >

@@ -2,7 +2,7 @@ import { BrowserWindow, clipboard, dialog, MenuItemConstructorOptions } from "el
 
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { UpdaterMain } from "jslib-electron/updater.main";
-import { isSnapStore, isWindowsStore } from "jslib-electron/utils";
+import { isMacAppStore, isSnapStore, isWindowsStore } from "jslib-electron/utils";
 
 import { IMenubarMenu } from "./menubar";
 
@@ -42,7 +42,7 @@ export class AboutMenu implements IMenubarMenu {
     return {
       id: "checkForUpdates",
       label: this.localize("checkForUpdates"),
-      visible: !isWindowsStore() && !isSnapStore(),
+      visible: !isWindowsStore() && !isSnapStore() && !isMacAppStore(),
       click: () => this.checkForUpdate(),
     };
   }

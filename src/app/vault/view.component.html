@@ -78,6 +78,7 @@
                 class="row-btn"
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                [attr.aria-pressed]="showPassword"
                 (click)="togglePassword()"
               >
                 <i
@@ -157,6 +158,7 @@
                 class="row-btn"
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                [attr.aria-pressed]="showCardNumber"
                 (click)="toggleCardNumber()"
               >
                 <i
@@ -196,6 +198,7 @@
                 class="row-btn"
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                [attr.aria-pressed]="showCardCode"
                 (click)="toggleCardCode()"
               >
                 <i
