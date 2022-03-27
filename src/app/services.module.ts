@@ -10,6 +10,7 @@ import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions
 import {
   CLIENT_TYPE,
   SECURE_STORAGE,
+  STATE_FACTORY,
   WINDOW_TOKEN,
 } from "jslib-common/abstractions/injectionTokens";
 import { LogService as LogServiceAbstraction } from "jslib-common/abstractions/log.service";
@@ -167,40 +168,8 @@ export function initFactory(
       useClass: LoginGuardService,
     },
     {
-      provide: StateServiceAbstraction,
-      useFactory: (
-        storageService: StorageServiceAbstraction,
-        secureStorageService: StorageServiceAbstraction,
-        logService: LogServiceAbstraction,
-        stateMigrationService: StateMigrationServiceAbstraction
-      ) =>
-        new StateService(
-          storageService,
-          secureStorageService,
-          logService,
-          stateMigrationService,
-          new StateFactory(GlobalState, Account),
-          true
-        ),
-      deps: [
-        StorageServiceAbstraction,
-        SECURE_STORAGE,
-        LogServiceAbstraction,
-        StateMigrationServiceAbstraction,
-      ],
-    },
-    {
-      provide: StateMigrationServiceAbstraction,
-      useFactory: (
-        storageService: StorageServiceAbstraction,
-        secureStorageService: StorageServiceAbstraction
-      ) =>
-        new StateMigrationService(
-          storageService,
-          secureStorageService,
-          new StateFactory(GlobalState, Account)
-        ),
-      deps: [StorageServiceAbstraction, SECURE_STORAGE],
+      provide: STATE_FACTORY,
+      useFactory: () => new StateFactory(GlobalState, Account),
     },
   ],
 })
