@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from "@angular/core";
+import { APP_INITIALIZER, InjectionToken, NgModule } from "@angular/core";
 
 import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
@@ -42,6 +42,9 @@ import { PasswordRepromptService } from "../services/passwordReprompt.service";
 import { StateService } from "../services/state.service";
 
 import { SearchBarService } from "./layout/search/search-bar.service";
+
+import { CLIENT_TYPE, SECURE_STORAGE, WINDOW_TOKEN } from "jslib-common/abstractions/injectionTokens";
+import { ClientType } from "jslib-common/enums/clientType";
 
 export function initFactory(
   window: Window,
@@ -107,7 +110,7 @@ export function initFactory(
       provide: APP_INITIALIZER,
       useFactory: initFactory,
       deps: [
-        "WINDOW",
+        WINDOW_TOKEN,
         EnvironmentServiceAbstraction,
         SyncServiceAbstraction,
         VaultTimeoutServiceAbstraction,
@@ -123,6 +126,7 @@ export function initFactory(
       multi: true,
     },
     { provide: LogServiceAbstraction, useClass: ElectronLogService, deps: [] },
+    { provide: CLIENT_TYPE, useValue: ClientType.Desktop },
     {
       provide: PlatformUtilsServiceAbstraction,
       useFactory: (
@@ -135,7 +139,7 @@ export function initFactory(
     {
       provide: I18nServiceAbstraction,
       useFactory: (window: Window) => new I18nService(window.navigator.language, "./locales"),
-      deps: ["WINDOW"],
+      deps: [WINDOW_TOKEN],
     },
     {
       provide: MessagingServiceAbstraction,
@@ -143,7 +147,7 @@ export function initFactory(
       deps: [BroadcasterServiceAbstraction],
     },
     { provide: StorageServiceAbstraction, useClass: ElectronRendererStorageService },
-    { provide: "SECURE_STORAGE", useClass: ElectronRendererSecureStorageService },
+    { provide: SECURE_STORAGE, useClass: ElectronRendererSecureStorageService },
     {
       provide: CryptoServiceAbstraction,
       useClass: ElectronCryptoService,
@@ -169,7 +173,6 @@ export function initFactory(
     {
       provide: LoginGuardService,
       useClass: LoginGuardService,
-      deps: [StateServiceAbstraction, PlatformUtilsServiceAbstraction, I18nServiceAbstraction],
     },
     {
       provide: StateServiceAbstraction,
@@ -184,11 +187,12 @@ export function initFactory(
           secureStorageService,
           logService,
           stateMigrationService,
-          new StateFactory(GlobalState, Account)
+          new StateFactory(GlobalState, Account),
+          true
         ),
       deps: [
         StorageServiceAbstraction,
-        "SECURE_STORAGE",
+        SECURE_STORAGE,
         LogServiceAbstraction,
         StateMigrationServiceAbstraction,
       ],
@@ -204,7 +208,7 @@ export function initFactory(
           secureStorageService,
           new StateFactory(GlobalState, Account)
         ),
-      deps: [StorageServiceAbstraction, "SECURE_STORAGE"],
+      deps: [StorageServiceAbstraction, SECURE_STORAGE],
     },
   ],
 })
