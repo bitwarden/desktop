@@ -170,6 +170,10 @@ export function initFactory(
       provide: STATE_FACTORY,
       useFactory: () => new StateFactory(GlobalState, Account),
     },
+    {
+      provide: StateServiceAbstraction,
+      useClass: StateService,
+    },
   ],
 })
 export class ServicesModule {}
