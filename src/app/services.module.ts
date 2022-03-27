@@ -49,7 +49,6 @@ import { StateService } from "../services/state.service";
 
 import { SearchBarService } from "./layout/search/search-bar.service";
 
-
 export function initFactory(
   window: Window,
   environmentService: EnvironmentServiceAbstraction,
@@ -150,12 +149,6 @@ export function initFactory(
     {
       provide: CryptoServiceAbstraction,
       useClass: ElectronCryptoService,
-      deps: [
-        CryptoFunctionServiceAbstraction,
-        PlatformUtilsServiceAbstraction,
-        LogServiceAbstraction,
-        StateServiceAbstraction,
-      ],
     },
     {
       provide: SystemServiceAbstraction,
