@@ -114,9 +114,11 @@
 
 .box-content-row {
   display: block;
+  width: 100%;
   padding: 10px 15px;
   position: relative;
   z-index: 1;
+  text-align: left;
 
   &:before {
     content: "";
