@@ -197,9 +197,6 @@ p.lead {
   }
 
   .generated-wrapper {
-    word-break: break-all;
-    white-space: pre-wrap;
-    min-width: 0;
     text-align: left;
     width: 100%;
   }
@@ -212,6 +209,12 @@ p.lead {
       margin-left: 10px;
     }
   }
+}
+
+.generated-wrapper {
+  word-break: break-all;
+  white-space: pre-wrap;
+  min-width: 0;
 }
 
 .password-number {
