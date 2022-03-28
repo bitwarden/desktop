@@ -94,7 +94,14 @@
       <div class="box">
         <div class="box-header">
           {{ "options" | i18n }}
-          <button type="button" class="toggle" appStopClick appBlurClick (click)="toggleOptions()">
+          <button
+            type="button"
+            class="toggle"
+            appStopClick
+            appBlurClick
+            (click)="toggleOptions()"
+            [attr.aria-expanded]="showOptions"
+          >
             <i
               class="bwi bwi-lg"
               aria-hidden="true"
