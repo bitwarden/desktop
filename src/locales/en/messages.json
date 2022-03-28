@@ -394,6 +394,18 @@
   "length": {
     "message": "Length"
   },
+  "uppercase": {
+    "message": "Uppercase (A-Z)"
+  },
+  "lowercase": {
+    "message": "Lowercase (a-z)"
+  },
+  "numbers": {
+    "message": "Numbers (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Special Characters (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Number of Words"
   },
