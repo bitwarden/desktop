@@ -115,3 +115,57 @@
     }
   }
 }
+
+.icon-btn {
+  cursor: pointer;
+  padding: 10px 8px;
+  background: none;
+  border: none;
+
+  @include themify($themes) {
+    color: themed("boxRowButtonColor");
+  }
+
+  &.primary {
+    @include themify($themes) {
+      color: themed("buttonPrimaryColor");
+    }
+  }
+
+  &.danger {
+    @include themify($themes) {
+      color: themed("buttonDangerColor");
+    }
+  }
+
+  &:hover,
+  &:focus {
+    @include themify($themes) {
+      color: themed("boxRowButtonHoverColor");
+    }
+
+    &.primary {
+      @include themify($themes) {
+        color: darken(themed("buttonPrimaryColor"), 6%);
+      }
+    }
+
+    &.danger {
+      @include themify($themes) {
+        color: darken(themed("buttonDangerColor"), 6%);
+      }
+    }
+  }
+
+  &.disabled {
+    @include themify($themes) {
+      color: themed("disabledIconColor");
+    }
+
+    &:hover {
+      @include themify($themes) {
+        color: themed("disabledIconColor");
+      }
+    }
+  }
+}
