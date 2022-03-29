@@ -94,6 +94,7 @@
                   appBlurClick
                   role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                  [attr.aria-pressed]="showPassword"
                   (click)="togglePassword()"
                 >
                   <i
@@ -159,6 +160,7 @@
                   appBlurClick
                   role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                  [attr.aria-pressed]="showCardNumber"
                   (click)="toggleCardNumber()"
                 >
                   <i
@@ -213,6 +215,7 @@
                   appBlurClick
                   role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                  [attr.aria-pressed]="showCardCode"
                   (click)="toggleCardCode()"
                 >
                   <i

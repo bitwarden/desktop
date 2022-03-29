@@ -25,11 +25,7 @@
         </div>
         <div class="box">
           <div class="box-header">
-            <button
-              type="button"
-              (click)="toggleCustom()"
-              appA11yTitle="{{ 'toggleVisibility' | i18n }}"
-            >
+            <button type="button" (click)="toggleCustom()" [attr.aria-expanded]="showCustom">
               <i class="bwi bwi-plus-square" [hidden]="showCustom" aria-hidden="true"></i>
               <i class="bwi bwi-minus-square" [hidden]="!showCustom" aria-hidden="true"></i>
               {{ "customEnvironment" | i18n }}
