@@ -53,7 +53,6 @@
       <button
         *ngFor="let a of accounts | keyvalue"
         class="account"
-        [ngClass]="{ active: a.value.profile.authenticationStatus == 'active' }"
         (click)="switch(a.key)"
         appA11yTitle="{{ 'loggedInAsOn' | i18n: a.value.profile.email:a.value.serverUrl }}"
         attr.aria-label="{{ 'switchAccount' | i18n }}"
@@ -72,17 +71,17 @@
           <span class="server" aria-hidden="true" *ngIf="a.value.serverUrl != 'bitwarden.com'">{{
             a.value.serverUrl
           }}</span>
-          <span class="status" aria-hidden="true">{{ a.value.profile.authenticationStatus }}</span>
+          <span class="status" aria-hidden="true">{{
+            (a.value.profile.authenticationStatus === authStatus.Unlocked ? "unlocked" : "locked")
+              | i18n
+          }}</span>
         </div>
         <i
-          class="bwi bwi-unlock bwi-2x text-muted"
+          class="bwi bwi-2x text-muted"
+          [ngClass]="
+            a.value.profile.authenticationStatus == authStatus.Unlocked ? 'bwi-unlock' : 'bwi-lock'
+          "
           aria-hidden="true"
-          *ngIf="a.value.profile.authenticationStatus == 'unlocked'"
-        ></i>
-        <i
-          class="bwi bwi-lock bwi-2x text-muted"
-          aria-hidden="true"
-          *ngIf="a.value.profile.authenticationStatus == 'locked'"
         ></i>
       </button>
     </div>

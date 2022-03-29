@@ -1828,5 +1828,11 @@
         "example": "name@example.com"
       }
     }
+  },
+  "locked": {
+    "message": "Locked"
+  },
+  "unlocked": {
+    "message": "Unlocked"
   }
 }
