@@ -81,7 +81,7 @@
                   [value]="o.value"
                   (change)="typeChanged()"
                   [checked]="type === o.value"
-                  [disabled]="showSelect"
+                  [disabled]="comingFromAddEdit"
                 />
                 <label class="unstyled" for="type_{{ o.value }}">
                   {{ o.name }}
@@ -296,7 +296,18 @@
             </div>
             <div class="box-content condensed" [hidden]="!showOptions">
               <div class="box-content-row box-content-row-radio">
-                <label class="radio-header">{{ "usernameType" | i18n }}</label>
+                <label class="radio-header">
+                  {{ "usernameType" | i18n }}
+                  <a
+                    href="#"
+                    appStopClick
+                    appBlurClick
+                    (click)="usernameTypesLearnMore()"
+                    appA11yTitle="{{ 'learnMore' | i18n }}"
+                  >
+                    <i class="bwi bwi-question-circle" aria-hidden="true"></i>
+                  </a>
+                </label>
                 <div
                   class="radio-group align-start text-default"
                   appBoxRow
@@ -371,7 +382,7 @@
                   </label>
                 </div>
               </div>
-              <div class="box-content-row" appBoxRow *ngIf="showWebsiteOption">
+              <div class="box-content-row" appBoxRow *ngIf="usernameWebsite">
                 <label for="subaddress-website">{{ "website" | i18n }}</label>
                 <input
                   id="subaddress-website"
@@ -413,7 +424,7 @@
                   </label>
                 </div>
               </div>
-              <div class="box-content-row" appBoxRow *ngIf="showWebsiteOption">
+              <div class="box-content-row" appBoxRow *ngIf="usernameWebsite">
                 <label for="catchall-website">{{ "website" | i18n }}</label>
                 <input
                   id="catchall-website"
@@ -455,14 +466,14 @@
           type="button"
           class="primary"
           appBlurClick
-          *ngIf="showSelect"
+          *ngIf="comingFromAddEdit"
           (click)="select()"
           appA11yTitle="{{ 'select' | i18n }}"
         >
           <i class="bwi bwi-lg bwi-fw bwi-check" aria-hidden="true"></i>
         </button>
         <button type="button" data-dismiss="modal">
-          {{ (showSelect ? "cancel" : "close") | i18n }}
+          {{ (comingFromAddEdit ? "cancel" : "close") | i18n }}
         </button>
       </div>
     </div>

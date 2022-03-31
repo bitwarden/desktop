@@ -43,8 +43,8 @@ import { PremiumComponent } from "./accounts/premium.component";
 import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
+import { GeneratorComponent } from "./vault/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
-import { PasswordGeneratorComponent } from "./vault/password-generator.component";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -65,7 +65,7 @@ const systemTimeoutOptions = {
     <ng-template #passwordHistory></ng-template>
     <ng-template #appFolderAddEdit></ng-template>
     <ng-template #exportVault></ng-template>
-    <ng-template #appPasswordGenerator></ng-template>
+    <ng-template #appGenerator></ng-template>
     <app-header></app-header>
     <div id="container">
       <div class="loading" *ngIf="loading">
@@ -84,8 +84,8 @@ export class AppComponent implements OnInit {
   exportVaultModalRef: ViewContainerRef;
   @ViewChild("appFolderAddEdit", { read: ViewContainerRef, static: true })
   folderAddEditModalRef: ViewContainerRef;
-  @ViewChild("appPasswordGenerator", { read: ViewContainerRef, static: true })
-  passwordGeneratorModalRef: ViewContainerRef;
+  @ViewChild("appGenerator", { read: ViewContainerRef, static: true })
+  generatorModalRef: ViewContainerRef;
 
   loading = false;
 
@@ -408,9 +408,9 @@ export class AppComponent implements OnInit {
     }
 
     [this.modal] = await this.modalService.openViewRef(
-      PasswordGeneratorComponent,
-      this.passwordGeneratorModalRef,
-      (comp) => (comp.showSelect = false)
+      GeneratorComponent,
+      this.generatorModalRef,
+      (comp) => (comp.comingFromAddEdit = false)
     );
 
     this.modal.onClosed.subscribe(() => {
