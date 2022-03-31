@@ -317,10 +317,10 @@ export class AppComponent implements OnInit {
           case "newFolder":
             await this.addFolder();
             break;
-          case "openPasswordGenerator":
-            // openPasswordGenerator has extended functionality if called in the vault
+          case "openGenerator":
+            // openGenerator has extended functionality if called in the vault
             if (!this.router.url.includes("vault")) {
-              await this.openPasswordGenerator();
+              await this.openGenerator();
             }
             break;
           case "convertAccountToKeyConnector":
@@ -402,14 +402,14 @@ export class AppComponent implements OnInit {
     });
   }
 
-  async openPasswordGenerator() {
+  async openGenerator() {
     if (this.modal != null) {
       this.modal.close();
     }
 
     [this.modal] = await this.modalService.openViewRef(
       PasswordGeneratorComponent,
-      this.folderAddEditModalRef,
+      this.passwordGeneratorModalRef,
       (comp) => (comp.showSelect = false)
     );
 
