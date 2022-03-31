@@ -35,8 +35,8 @@ import { AttachmentsComponent } from "./attachments.component";
 import { CiphersComponent } from "./ciphers.component";
 import { CollectionsComponent } from "./collections.component";
 import { FolderAddEditComponent } from "./folder-add-edit.component";
+import { GeneratorComponent } from "./generator.component";
 import { GroupingsComponent } from "./groupings.component";
-import { PasswordGeneratorComponent } from "./password-generator.component";
 import { PasswordHistoryComponent } from "./password-history.component";
 import { ShareComponent } from "./share.component";
 import { ViewComponent } from "./view.component";
@@ -52,8 +52,8 @@ export class VaultComponent implements OnInit, OnDestroy {
   @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
   @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
   @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
-  @ViewChild("passwordGenerator", { read: ViewContainerRef, static: true })
-  passwordGeneratorModalRef: ViewContainerRef;
+  @ViewChild("generator", { read: ViewContainerRef, static: true })
+  generatorModalRef: ViewContainerRef;
   @ViewChild("attachments", { read: ViewContainerRef, static: true })
   attachmentsModalRef: ViewContainerRef;
   @ViewChild("passwordHistory", { read: ViewContainerRef, static: true })
@@ -599,7 +599,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.go();
   }
 
-  async openGenerator(showSelect: boolean, passwordType = true) {
+  async openGenerator(comingFromAddEdit: boolean, passwordType = true) {
     if (this.modal != null) {
       this.modal.close();
     }
@@ -608,15 +608,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     const loginType = cipher != null && cipher.type === CipherType.Login && cipher.login != null;
 
     const [modal, childComponent] = await this.modalService.openViewRef(
-      PasswordGeneratorComponent,
-      this.passwordGeneratorModalRef,
+      GeneratorComponent,
+      this.generatorModalRef,
       (comp) => {
-        comp.showSelect = showSelect;
-        if (showSelect) {
+        comp.comingFromAddEdit = comingFromAddEdit;
+        if (comingFromAddEdit) {
           comp.type = passwordType ? "password" : "username";
           if (loginType && cipher.login.hasUris && cipher.login.uris[0].hostname != null) {
             comp.usernameWebsite = cipher.login.uris[0].hostname;
-            comp.showWebsiteOption = true;
           }
         }
       }
