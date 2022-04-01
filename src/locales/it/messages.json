@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Sei sicuro di voler sovrascrivere la password corrente?"
   },
+  "overwriteUsername": {
+    "message": "Sovrascrivi nome utente"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Sei sicuro di voler sovrascrivere il nome utente attuale?"
+  },
   "noneFolder": {
     "message": "Nessuna cartella",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Questa password non è stata trovata in dati violati noti. Dovrebbe essere sicura da usare."
   },
   "baseDomain": {
-    "message": "Dominio di base"
+    "message": "Dominio di base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nome dominio",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Host",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generatore"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Cosa vorresti generare?"
+  },
+  "passwordType": {
+    "message": "Tipo di password"
+  },
+  "regenerateUsername": {
+    "message": "Rigenera nome utente"
+  },
+  "generateUsername": {
+    "message": "Genera nome utente"
+  },
+  "usernameType": {
+    "message": "Tipo di nome utente"
+  },
+  "plusAddressedEmail": {
+    "message": "Indirizzo di posta alternativo"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Usa le funzionalità di sub-indirizzamento del tuo fornitore di posta elettronica."
+  },
+  "catchallEmail": {
+    "message": "Email catch-all"
+  },
+  "catchallEmailDesc": {
+    "message": "Usa la casella di posta catch-all di dominio."
+  },
+  "random": {
+    "message": "Casuale"
+  },
+  "randomWord": {
+    "message": "Parola casuale"
+  },
+  "websiteName": {
+    "message": "Nome sito web"
+  },
+  "service": {
+    "message": "Servizio"
   }
 }
