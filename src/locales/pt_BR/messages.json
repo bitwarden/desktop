@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Você tem certeza que deseja substituir a senha atual?"
   },
+  "overwriteUsername": {
+    "message": "Overwrite Username"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Are you sure you want to overwrite the current username?"
+  },
   "noneFolder": {
     "message": "Nenhuma Pasta",
     "description": "This is the folder for uncategorized items"
@@ -737,10 +743,10 @@
     "message": "Gerador de Senha"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Fale Conosco"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Obter Ajuda"
   },
   "fileBugReport": {
     "message": "Enviar um Relatório de Bug"
@@ -1188,7 +1194,12 @@
     "message": "Esta senha não foi encontrada em brechas de dados conhecidas. Deve ser seguro de usar."
   },
   "baseDomain": {
-    "message": "Domínio de base"
+    "message": "Domínio de base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domain Name",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Servidor",
@@ -1815,18 +1826,60 @@
     "message": "Opções"
   },
   "sessionTimeout": {
-    "message": "Your session has timed out. Please go back and try logging in again."
+    "message": "Sua sessão expirou. Por favor, volte e tente iniciar a sessão novamente."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Exportação do Cofre Pessoal"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Apenas os itens pessoais do cofre associados com $EMAIL$ serão exportados. Os itens do cofre da organização não serão incluídos.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generator"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "What would you like to generate?"
+  },
+  "passwordType": {
+    "message": "Password Type"
+  },
+  "regenerateUsername": {
+    "message": "Regenerate Username"
+  },
+  "generateUsername": {
+    "message": "Generate Username"
+  },
+  "usernameType": {
+    "message": "Username Type"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Random"
+  },
+  "randomWord": {
+    "message": "Random Word"
+  },
+  "websiteName": {
+    "message": "Website Name"
+  },
+  "service": {
+    "message": "Service"
   }
 }

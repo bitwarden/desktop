@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Biztosan felülírásra kerüljön a jelenlegi jelszó?"
   },
+  "overwriteUsername": {
+    "message": "Felhasználónév felülírása"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Biztosan felülírásra kerüljön az aktuális felhasználónév?"
+  },
   "noneFolder": {
     "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Ez a jelszó nem található egyetlen ismert adatszivárgásban sem. Biztonságos a használata."
   },
   "baseDomain": {
-    "message": "Alap domain"
+    "message": "Alap domain",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Tartománynév",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Kiszolgáló",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generátor"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Mit szeretnénk generálni?"
+  },
+  "passwordType": {
+    "message": "Jelszótípus"
+  },
+  "regenerateUsername": {
+    "message": "Felhasználónév ismételt geneálása"
+  },
+  "generateUsername": {
+    "message": "Felhasználónév generálása"
+  },
+  "usernameType": {
+    "message": "Felhasználónév típusa"
+  },
+  "plusAddressedEmail": {
+    "message": "További címzési email cím"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Használjuk az email cím szolgáltató alcímzési képességeit."
+  },
+  "catchallEmail": {
+    "message": "Összes email cím begyűjtése"
+  },
+  "catchallEmailDesc": {
+    "message": "Használjuk a tartomány konfigurált összes befogási bejövő postaládát."
+  },
+  "random": {
+    "message": "Véletlen"
+  },
+  "randomWord": {
+    "message": "Véletlenszerű szó"
+  },
+  "websiteName": {
+    "message": "Webhelynév"
+  },
+  "service": {
+    "message": "Szolgáltatás"
   }
 }
