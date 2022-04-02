@@ -406,7 +406,7 @@ app-root {
     border-top: 1px solid #000000;
     display: flex;
     align-items: center;
-    padding: 0 15px;
+    padding: 0;
 
     @include themify($themes) {
       background-color: themed("backgroundColorAlt");
