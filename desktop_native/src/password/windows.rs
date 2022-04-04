@@ -1,7 +1,7 @@
 use anyhow::{anyhow, Result};
 use widestring::{U16CString, U16String};
 use windows::Win32::{
-    Foundation::{GetLastError, FILETIME, PWSTR},
+    Foundation::{GetLastError, ERROR_NOT_FOUND, FILETIME, PWSTR, WIN32_ERROR},
     Security::Credentials::{
         CredDeleteW, CredFree, CredReadW, CredWriteW, CREDENTIALW, CRED_FLAGS,
         CRED_PERSIST_ENTERPRISE, CRED_TYPE_GENERIC,
@@ -30,7 +30,7 @@ pub fn get_password<'a>(service: &str, account: &str) -> Result<String> {
     });
 
     if !result.as_bool() {
-        return Err(anyhow!(unsafe { GetLastError() }.0.to_string()));
+        return Err(anyhow!(convert_error(unsafe { GetLastError() })));
     }
 
     let password = unsafe {
@@ -131,6 +131,14 @@ fn target_name(service: &str, account: &str) -> String {
     format!("{}/{}", service, account)
 }
 
+// Convert the internal WIN32 errors to descriptive messages
+fn convert_error(code: WIN32_ERROR) -> String {
+    match code {
+        ERROR_NOT_FOUND => String::from("Password not found."),
+        _ => code.0.to_string(),
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -154,5 +162,13 @@ mod tests {
             "HelloFromKeytar",
             get_password_keytar("BitwardenTest", "BitwardenTest").unwrap()
         );
+    }
+
+    #[test]
+    fn test_error_no_password() {
+        match get_password("BitwardenTest", "BitwardenTest") {
+            Ok(_) => panic!("Got a result"),
+            Err(e) => assert_eq!("Password not found.", e.to_string()),
+        }
     }
 }
