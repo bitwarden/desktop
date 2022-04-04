@@ -3,7 +3,9 @@
     <div class="modal-content">
       <div class="modal-body form">
         <div class="box">
-          <label class="settingsTitle">{{ "settingsTitle" | i18n: currentUserEmail }} </label>
+          <div class="box-header">
+            {{ "settingsTitle" | i18n: currentUserEmail }}
+          </div>
           <div class="box-content box-content-padded">
             <h2>
               <button

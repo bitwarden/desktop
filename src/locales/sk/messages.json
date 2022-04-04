@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Naozaj chcete prepísať aktuálne heslo?"
   },
+  "overwriteUsername": {
+    "message": "Prepísať používateľské meno"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Naozaj chcete prepísať aktuálne používateľské meno?"
+  },
   "noneFolder": {
     "message": "Žiadny priečinok",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Heslo nebolo nájdene v žiadnom úniku dát. Malo by byť bezpečné."
   },
   "baseDomain": {
-    "message": "Základná doména"
+    "message": "Základná doména",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Názov domény",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Hostiteľ",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generátor"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Čo by ste chceli vygenerovať?"
+  },
+  "passwordType": {
+    "message": "Typ hesla"
+  },
+  "regenerateUsername": {
+    "message": "Vygenerovať nové používateľské meno"
+  },
+  "generateUsername": {
+    "message": "Vygenerovať používateľské meno"
+  },
+  "usernameType": {
+    "message": "Typ používateľského mena"
+  },
+  "plusAddressedEmail": {
+    "message": "E-mail s plusovým aliasom"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Použiť možnosti subadresovania svojho poskytovateľa e-mailu."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Použiť doručenú poštu typu catch-all nastavenú na doméne."
+  },
+  "random": {
+    "message": "Náhodné"
+  },
+  "randomWord": {
+    "message": "Náhodné slovo"
+  },
+  "websiteName": {
+    "message": "Názov stránky"
+  },
+  "service": {
+    "message": "Služba"
   }
 }

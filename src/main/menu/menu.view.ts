@@ -16,7 +16,7 @@ export class ViewMenu implements IMenubarMenu {
     return [
       this.searchVault,
       this.separator,
-      this.passwordGenerator,
+      this.generator,
       this.passwordHistory,
       this.separator,
       this.zoomIn,
@@ -54,11 +54,11 @@ export class ViewMenu implements IMenubarMenu {
     return { type: "separator" };
   }
 
-  private get passwordGenerator(): MenuItemConstructorOptions {
+  private get generator(): MenuItemConstructorOptions {
     return {
-      id: "passwordGenerator",
-      label: this.localize("passwordGenerator"),
-      click: () => this.sendMessage("openPasswordGenerator"),
+      id: "generator",
+      label: this.localize("generator"),
+      click: () => this.sendMessage("openGenerator"),
       accelerator: "CmdOrCtrl+G",
       enabled: !this._isLocked,
     };

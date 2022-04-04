@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "現在のパスワードを上書きしてもよろしいですか?"
   },
+  "overwriteUsername": {
+    "message": "ユーザー名を上書き"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "現在のユーザー名を上書きしてもよろしいですか？"
+  },
   "noneFolder": {
     "message": "フォルダーなし",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "このパスワードは過去に漏洩したデータ内にはないため、安全であると思われます。"
   },
   "baseDomain": {
-    "message": "ベースドメイン"
+    "message": "ベースドメイン",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "ドメイン名",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "ホスト",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "ジェネレーター"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "何を生成しますか？"
+  },
+  "passwordType": {
+    "message": "パスワードの種類"
+  },
+  "regenerateUsername": {
+    "message": "ユーザー名を再生成"
+  },
+  "generateUsername": {
+    "message": "ユーザー名を生成"
+  },
+  "usernameType": {
+    "message": "ユーザー名の種類"
+  },
+  "plusAddressedEmail": {
+    "message": "プラス付きのメールアドレス"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "メールプロバイダのエイリアス機能を使用します。"
+  },
+  "catchallEmail": {
+    "message": "キャッチオールメール"
+  },
+  "catchallEmailDesc": {
+    "message": "ドメインに設定されたキャッチオール受信トレイを使用します。"
+  },
+  "random": {
+    "message": "ランダム"
+  },
+  "randomWord": {
+    "message": "ランダムな単語"
+  },
+  "websiteName": {
+    "message": "ウェブサイト名"
+  },
+  "service": {
+    "message": "サービス"
   }
 }

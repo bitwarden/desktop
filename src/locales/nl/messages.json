@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Weet je zeker dat je het huidige wachtwoord wilt overschrijven?"
   },
+  "overwriteUsername": {
+    "message": "Gebruikersnaam overschrijven"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Weet je zeker dat je de huidige gebruikersnaam wilt overschrijven?"
+  },
   "noneFolder": {
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Dit wachtwoord is niet gevonden in de bekende gegevenslekken. Het kan veilig gebruikt worden."
   },
   "baseDomain": {
-    "message": "Basisdomein"
+    "message": "Basisdomein",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domeinnaam",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Hostnaam",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generator"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Wat wil je genereren?"
+  },
+  "passwordType": {
+    "message": "Type wachtwoord"
+  },
+  "regenerateUsername": {
+    "message": "Gebruikersnaam opnieuw genereren"
+  },
+  "generateUsername": {
+    "message": "Gebruikersnamen genereren"
+  },
+  "usernameType": {
+    "message": "Type gebruikersnaam"
+  },
+  "plusAddressedEmail": {
+    "message": "E-mailadres-met-plus"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Gebruik de subadressen van je e-mailprovider."
+  },
+  "catchallEmail": {
+    "message": "Catch-all e-mail"
+  },
+  "catchallEmailDesc": {
+    "message": "Gebruik de catch-all inbox van je domein."
+  },
+  "random": {
+    "message": "Willekeurig"
+  },
+  "randomWord": {
+    "message": "Willekeurig woord"
+  },
+  "websiteName": {
+    "message": "Websitenaam"
+  },
+  "service": {
+    "message": "Dienst"
   }
 }
