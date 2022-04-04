@@ -66,12 +66,20 @@ mod tests {
 
     #[test]
     fn test() {
-        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest"););
+        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest").unwrap_or({}););
         set_password("BitwardenTest", "BitwardenTest", "Random").unwrap();
         assert_eq!(
             "Random",
             get_password("BitwardenTest", "BitwardenTest").unwrap()
         );
         delete_password("BitwardenTest", "BitwardenTest").unwrap();
+    }
+
+    #[test]
+    fn test_error_no_password() {
+        match get_password("BitwardenTest", "BitwardenTest") {
+            Ok(_) => panic!("Got a result"),
+            Err(e) => assert_eq!("No password found", e.to_string()),
+        }
     }
 }
