@@ -35,6 +35,15 @@ mod tests {
             get_password("BitwardenTest", "BitwardenTest").unwrap()
         );
         delete_password("BitwardenTest", "BitwardenTest").unwrap();
+
+        // Ensure password is deleted
+        match get_password("BitwardenTest", "BitwardenTest") {
+            Ok(_) => panic!("Got a result"),
+            Err(e) => assert_eq!(
+                "The specified item could not be found in the keychain.",
+                e.to_string()
+            ),
+        }
     }
 
     #[test]

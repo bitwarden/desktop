@@ -73,6 +73,12 @@ mod tests {
             get_password("BitwardenTest", "BitwardenTest").unwrap()
         );
         delete_password("BitwardenTest", "BitwardenTest").unwrap();
+
+        // Ensure password is deleted
+        match get_password("BitwardenTest", "BitwardenTest") {
+            Ok(_) => panic!("Got a result"),
+            Err(e) => assert_eq!("No password found", e.to_string()),
+        }
     }
 
     #[test]
