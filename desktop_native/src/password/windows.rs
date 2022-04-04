@@ -145,7 +145,7 @@ mod tests {
 
     #[test]
     fn test() {
-        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest").unwrap_or(()););
+        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest").unwrap_or({}););
         set_password("BitwardenTest", "BitwardenTest", "Random").unwrap();
         assert_eq!(
             "Random",
@@ -156,7 +156,7 @@ mod tests {
 
     #[test]
     fn test_get_password_keytar() {
-        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest").unwrap_or(()););
+        scopeguard::defer!(delete_password("BitwardenTest", "BitwardenTest").unwrap_or({}););
         keytar::set_password("BitwardenTest", "BitwardenTest", "HelloFromKeytar").unwrap();
         assert_eq!(
             "HelloFromKeytar",
