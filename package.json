@@ -80,6 +80,10 @@
     "asarUnpack": [
       "**/*.node"
     ],
+    "files": [
+      "**/*",
+      "!**/node_modules/@bitwarden/desktop-native/**/*"
+    ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
       "category": "public.app-category.productivity",
