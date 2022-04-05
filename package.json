@@ -268,7 +268,7 @@
     "copy-webpack-plugin": "^10.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
-    "electron-builder": "22.11.7",
+    "electron-builder": "22.14.13",
     "electron-notarize": "^1.1.1",
     "electron-rebuild": "^3.2.5",
     "electron-reload": "^1.5.0",
@@ -312,7 +312,8 @@
     "nord": "^0.2.1",
     "regedit": "^3.0.3",
     "rxjs": "^7.4.0",
-    "sweetalert2": "^10.16.6"
+    "sweetalert2": "^10.16.6",
+    "zone.js": "0.11.4"
   },
   "engines": {
     "node": "~16",
