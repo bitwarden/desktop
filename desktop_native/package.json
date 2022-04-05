@@ -1,0 +1,19 @@
+{
+  "name": "desktop_native",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.node",
+  "scripts": {
+    "build": "napi build --release --js true",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
+    "install": "npm run build-release",
+    "test": "cargo test"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@napi-rs/cli": "^2.4.4",
+    "cargo-cp-artifact": "^0.1"
+  }
+}

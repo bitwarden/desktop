@@ -7,7 +7,7 @@ import { StateService } from "jslib-common/abstractions/state.service";
 
 import { Main } from "../main";
 
-import { MenuUpdateRequest } from "./menu.updater";
+import { MenuUpdateRequest } from "./menu/menu.updater";
 
 const SyncInterval = 5 * 60 * 1000; // 5 minutes
 

@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Haluatko varmasti korvata nykyisen salasanan?"
   },
+  "overwriteUsername": {
+    "message": "Korvaa käyttäjätunnus"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Haluatko varmasti korvata nykyisen käyttäjätunnuksen?"
+  },
   "noneFolder": {
     "message": "Ei kansiota",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Salasanaa ei löytynyt tunnetuista tietovuodoista. Sen pitäisi olla turvallinen."
   },
   "baseDomain": {
-    "message": "Pääverkkotunnus"
+    "message": "Pääverkkotunnus",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Verkkotunnus",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Isäntä",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generaattori"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Mitä haluat luoda?"
+  },
+  "passwordType": {
+    "message": "Salasanan tyyppi"
+  },
+  "regenerateUsername": {
+    "message": "Luo uusi käyttäjätunnus"
+  },
+  "generateUsername": {
+    "message": "Luo käyttäjätunnus"
+  },
+  "usernameType": {
+    "message": "Käyttäjätunnuksen tyyppi"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus-osoitteinen sähköposti"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Käytä sähköpostipalvelusi aliosoiteominaisuuksia."
+  },
+  "catchallEmail": {
+    "message": "Catch-all-sähköpostiosoite"
+  },
+  "catchallEmailDesc": {
+    "message": "Käytä verkkotunnuksellesi määritettyä catch-all-postilaatikkoa."
+  },
+  "random": {
+    "message": "Satunnainen"
+  },
+  "randomWord": {
+    "message": "Satunnainen sana"
+  },
+  "websiteName": {
+    "message": "Verkkosivuston nimi"
+  },
+  "service": {
+    "message": "Palvelu"
   }
 }

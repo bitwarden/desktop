@@ -37,14 +37,14 @@ import { TokenService } from "jslib-common/abstractions/token.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 import { CipherType } from "jslib-common/enums/cipherType";
 
-import { MenuUpdateRequest } from "src/main/menu.updater";
+import { MenuUpdateRequest } from "../main/menu/menu.updater";
 
 import { PremiumComponent } from "./accounts/premium.component";
 import { SettingsComponent } from "./accounts/settings.component";
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
+import { GeneratorComponent } from "./vault/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
-import { PasswordGeneratorComponent } from "./vault/password-generator.component";
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
@@ -65,7 +65,7 @@ const systemTimeoutOptions = {
     <ng-template #passwordHistory></ng-template>
     <ng-template #appFolderAddEdit></ng-template>
     <ng-template #exportVault></ng-template>
-    <ng-template #appPasswordGenerator></ng-template>
+    <ng-template #appGenerator></ng-template>
     <app-header></app-header>
     <div id="container">
       <div class="loading" *ngIf="loading">
@@ -84,8 +84,8 @@ export class AppComponent implements OnInit {
   exportVaultModalRef: ViewContainerRef;
   @ViewChild("appFolderAddEdit", { read: ViewContainerRef, static: true })
   folderAddEditModalRef: ViewContainerRef;
-  @ViewChild("appPasswordGenerator", { read: ViewContainerRef, static: true })
-  passwordGeneratorModalRef: ViewContainerRef;
+  @ViewChild("appGenerator", { read: ViewContainerRef, static: true })
+  generatorModalRef: ViewContainerRef;
 
   loading = false;
 
@@ -317,10 +317,10 @@ export class AppComponent implements OnInit {
           case "newFolder":
             await this.addFolder();
             break;
-          case "openPasswordGenerator":
-            // openPasswordGenerator has extended functionality if called in the vault
+          case "openGenerator":
+            // openGenerator has extended functionality if called in the vault
             if (!this.router.url.includes("vault")) {
-              await this.openPasswordGenerator();
+              await this.openGenerator();
             }
             break;
           case "convertAccountToKeyConnector":
@@ -402,15 +402,15 @@ export class AppComponent implements OnInit {
     });
   }
 
-  async openPasswordGenerator() {
+  async openGenerator() {
     if (this.modal != null) {
       this.modal.close();
     }
 
     [this.modal] = await this.modalService.openViewRef(
-      PasswordGeneratorComponent,
-      this.folderAddEditModalRef,
-      (comp) => (comp.showSelect = false)
+      GeneratorComponent,
+      this.generatorModalRef,
+      (comp) => (comp.comingFromAddEdit = false)
     );
 
     this.modal.onClosed.subscribe(() => {

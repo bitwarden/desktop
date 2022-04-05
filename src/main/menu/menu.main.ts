@@ -2,7 +2,7 @@ import { app, Menu } from "electron";
 
 import { BaseMenu } from "jslib-electron/baseMenu";
 
-import { Main } from "../main";
+import { Main } from "../../main";
 
 import { MenuUpdateRequest } from "./menu.updater";
 import { Menubar } from "./menubar";
