@@ -37,7 +37,7 @@ import { TokenService } from "jslib-common/abstractions/token.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 import { CipherType } from "jslib-common/enums/cipherType";
 
-import { MenuUpdateRequest } from "src/main/menu.updater";
+import { MenuUpdateRequest } from "../main/menu/menu.updater";
 
 import { PremiumComponent } from "./accounts/premium.component";
 import { SettingsComponent } from "./accounts/settings.component";
