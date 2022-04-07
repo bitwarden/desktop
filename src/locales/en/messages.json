@@ -1861,7 +1861,7 @@
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email",
-    "description": "Username generator option that appends a random sub-address to the username. For example: addres+subaddress@email.com"
+    "description": "Username generator option that appends a random sub-address to the username. For example: address+subaddress@email.com"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
