@@ -489,8 +489,8 @@ jobs:
       - name: Set up provisioning profiles
         shell: bash
         run: |
-          cp $HOME/secrets/*.provisionprofile \
-            $GITHUB_WORKSPACE/
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
         shell: pwsh
@@ -638,8 +638,8 @@ jobs:
       - name: Set up provisioning profiles
         shell: bash
         run: |
-          cp $HOME/secrets/*.provisionprofile \
-            $GITHUB_WORKSPACE/
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
         shell: pwsh
@@ -830,8 +830,8 @@ jobs:
       - name: Set up provisioning profiles
         shell: bash
         run: |
-          cp $HOME/secrets/*.provisionprofile \
-            $GITHUB_WORKSPACE/
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
         shell: pwsh
@@ -1012,8 +1012,8 @@ jobs:
       - name: Set up provisioning profiles
         shell: bash
         run: |
-          cp $HOME/secrets/*.provisionprofile \
-            $GITHUB_WORKSPACE/
+          cp $HOME/secrets/bitwarden_desktop_appstore.provisionprofile \
+            $GITHUB_WORKSPACE/bitwarden_desktop_appstore.provisionprofile
 
       - name: Increment version
         shell: pwsh
