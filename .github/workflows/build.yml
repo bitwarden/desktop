@@ -452,9 +452,9 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
             --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
             "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
-          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
-            --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
-            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
+          #gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+          #  --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
+          #  "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
         shell: bash
@@ -601,9 +601,9 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
             --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
             "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
-          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
-            --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
-            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
+          #gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+          #  --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
+          #  "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
         shell: bash
@@ -793,9 +793,9 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
             --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
             "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
-          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
-            --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
-            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
+          #gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+          #  --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
+          #  "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
         shell: bash
@@ -977,9 +977,9 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
             --output "$HOME/secrets/bitwarden_desktop_appstore.provisionprofile" \
             "$GITHUB_WORKSPACE/.github/secrets/bitwarden_desktop_appstore.provisionprofile.gpg"
-          gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
-            --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
-            "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
+          #gpg --quiet --batch --yes --decrypt --passphrase="$DECRYPT_FILE_PASSWORD" \
+          #  --output "$HOME/secrets/bitwarden_safari_appstore.provisionprofile" \
+          #  "$GITHUB_WORKSPACE/.github/secrets/bitwarden_safari_appstore.provisionprofile.gpg"
 
       - name: Set up keychain
         shell: bash
