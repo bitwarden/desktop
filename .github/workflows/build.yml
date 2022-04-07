@@ -66,7 +66,7 @@ jobs:
           fi
 
           echo "Setting Safari Extension ref to $SAFARI_REF"
-          echo "::set-output name=safari_ref::b2def1479d3c2e9582bcc8192cd355f420e677b2"
+          echo "::set-output name=safari_ref::$SAFARI_REF"
 
       - name: Check if special branches exist
         id: branch-check
