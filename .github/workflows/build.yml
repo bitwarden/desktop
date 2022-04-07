@@ -891,12 +891,12 @@ jobs:
         env:
           APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
-        if: |
-            (github.ref == 'refs/heads/master'
-              && needs.setup.outputs.rc_branch_exists == 0
-              && needs.setup.outputs.hotfix_branch_exists == 0)
-            || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
-            || github.ref == 'refs/heads/hotfix-rc'
+        #if: |
+        #    (github.ref == 'refs/heads/master'
+        #      && needs.setup.outputs.rc_branch_exists == 0
+        #      && needs.setup.outputs.hotfix_branch_exists == 0)
+        #    || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
+        #    || github.ref == 'refs/heads/hotfix-rc'
         run: npm run upload:mas
 
 
