@@ -1,13 +1,12 @@
 {
-  "name": "desktop_native",
+  "name": "@bitwarden/desktop_native",
   "version": "0.1.0",
   "description": "",
   "main": "index.node",
   "scripts": {
-    "build": "napi build --release --js true",
-    "build-debug": "npm run build --",
-    "build-release": "npm run build -- --release",
-    "install": "npm run build-release",
+    "build": "napi build --platform --release --js true",
+    "build:debug": "napi build --platform",
+    "install": "npm run build",
     "test": "cargo test"
   },
   "author": "",
@@ -15,5 +14,23 @@
   "devDependencies": {
     "@napi-rs/cli": "^2.4.4",
     "cargo-cp-artifact": "^0.1"
+  },
+  "napi": {
+    "name": "desktop_native",
+    "triples": {
+      "defaults": true,
+      "additional": [
+        "x86_64-unknown-linux-musl",
+        "aarch64-unknown-linux-gnu",
+        "i686-pc-windows-msvc",
+        "armv7-unknown-linux-gnueabihf",
+        "aarch64-apple-darwin",
+        "aarch64-linux-android",
+        "x86_64-unknown-freebsd",
+        "aarch64-unknown-linux-musl",
+        "aarch64-pc-windows-msvc",
+        "armv7-linux-androideabi"
+      ]
+    }
   }
 }
