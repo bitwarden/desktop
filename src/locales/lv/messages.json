@@ -370,10 +370,10 @@
     "message": "Vai tiešām pārrakstīt esošo paroli?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Pārrakstīt lietotājvārdu"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Vai tiešām pārrakstīt pašreizējo lietotājvārdu?"
   },
   "noneFolder": {
     "message": "Nav mapes",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domēna vārds",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,45 +1841,45 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "Veidotājs"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Ko ir nepieciešams izveidot?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Paroles veids"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Pārizveidot lietotājvārdu"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Izveidot lietotājvārdu"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Lietotājvārda veids"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "E-pasta adrese ar plusu"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Izmantot e-pasta pakalpojuma nodrošinātāja apakšadresēšanas spējas."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Visu tverošā e-pasta adrese"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Izmantot uzstādīto domēna visu tverošo iesūtni."
   },
   "random": {
-    "message": "Random"
+    "message": "Nejauši"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Nejaušs vārds"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Tīmekļa vietnes nosaukums"
   },
   "service": {
-    "message": "Service"
+    "message": "Pakalpojums"
   }
 }

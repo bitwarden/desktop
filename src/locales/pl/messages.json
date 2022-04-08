@@ -370,7 +370,7 @@
     "message": "Czy na pewno chcesz zastąpić obecne hasło?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Nadpisz nazwę użytkownika"
   },
   "overwriteUsernameConfirmation": {
     "message": "Are you sure you want to overwrite the current username?"
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nazwa domeny",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1844,42 +1844,42 @@
     "message": "Generator"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Co chcesz wygenerować?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Rodzaj hasła"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Wygeneruj ponownie nazwę użytkownika"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Wygeneruj nazwę użytkownika"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Rodzaj nazwy użytkownika"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Adres e-mail z plusem"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Użyj możliwości dodawania aliasów u swojego dostawcy poczty e-mail."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Adres catch-all"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Użyj skonfigurowanej skrzynki catch-all w swojej domenie."
   },
   "random": {
     "message": "Random"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Losowe słowo"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Nazwa witryny"
   },
   "service": {
-    "message": "Service"
+    "message": "Usługa"
   }
 }

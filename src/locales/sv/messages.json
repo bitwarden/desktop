@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domännamn",
     "description": "Domain name. Ex. website.com"
   },
   "host": {

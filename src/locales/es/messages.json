@@ -136,7 +136,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Nombre en la tarjeta"
+    "message": "Nombre del propietario de la tarjeta"
   },
   "number": {
     "message": "Número"
@@ -370,10 +370,10 @@
     "message": "¿Estás seguro de que quieres sobreescribir la contraseña actual?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Reemplazar nombre de usuario"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "¿Esta seguro que desea reemplazar el nombre de usuario?"
   },
   "noneFolder": {
     "message": "Sin carpeta",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Nombre de dominio",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,25 +1841,25 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "Generador"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "¿Qué deseas generar?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Tipo de contraseña"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Regenerar nombre de usuario"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Generar nombre de usuario"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Tipo de nombre de usuario"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Dirección adicional de correo electrónico"
   },
   "plusAddressedEmailDesc": {
     "message": "Use your email provider's sub-addressing capabilities."
@@ -1871,15 +1871,15 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Aleatorio"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Palabra aleatoria"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Nombre del sitio web"
   },
   "service": {
-    "message": "Service"
+    "message": "Servicio"
   }
 }

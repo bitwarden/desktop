@@ -370,10 +370,10 @@
     "message": "Oled kindel, et soovid olemasolevat parooli üle kirjutada?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Kasutajanime ülekirjutamine"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Oled kindel, et soovid praegust kasutajanime üle kirjutada?"
   },
   "noneFolder": {
     "message": "Kaust puudub",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domeeni nimi",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,45 +1841,45 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "Genereerija"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Mida sa soovid genereerida?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Parooli tüüp"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Genereeri kasutajanimi uuesti"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Genereeri kasutajanimi"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Kasutajanime tüüp"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Lisaks e-post"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Kasuta e-posti teenuspakkuja alamadressimise võimalusi."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Kogumisaadress"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Kasuta domeenipõhist kogumisaadressi."
   },
   "random": {
-    "message": "Random"
+    "message": "Juhuslik"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Juhuslik sõna"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Veebilehe nimi"
   },
   "service": {
-    "message": "Service"
+    "message": "Teenus"
   }
 }
