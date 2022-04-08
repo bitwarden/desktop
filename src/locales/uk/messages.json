@@ -370,10 +370,10 @@
     "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Перезаписати ім'я користувача"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Ви дійсно бажаєте перезаписати поточне ім'я користувача?"
   },
   "noneFolder": {
     "message": "Без теки",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Ім'я домену",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,45 +1841,45 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "Генератор"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Що ви бажаєте згенерувати?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Тип пароля"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Повторно генерувати ім'я користувача"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Генерувати ім'я користувача"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Тип імені користувача"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Плюс адреса електронної пошти"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Використовуйте розширені можливості адрес вашого постачальника електронної пошти."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Адреса е-пошти Catch-all"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Використовуйте свою скриньку вхідних Catch-All власного домену."
   },
   "random": {
-    "message": "Random"
+    "message": "Випадково"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Випадкове слово"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Назва вебсайту"
   },
   "service": {
-    "message": "Service"
+    "message": "Послуга"
   }
 }

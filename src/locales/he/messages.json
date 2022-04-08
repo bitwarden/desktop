@@ -370,10 +370,10 @@
     "message": "האם אתה בטוח שברצונך לדרוס את הסיסמה הנוכחית?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "כתוב מחדש את שם המשתמש"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "האם אתה בטוח שברצונך לדרוס את שם המשתמש הנוכחי?"
   },
   "noneFolder": {
     "message": "ללא תיקיה",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "שם דומיין",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1829,10 +1829,10 @@
     "message": "זמן ההפעלה שלך תם. נא לחזור ולנסות להיכנס שוב."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "הכספת האישית מיוצאת"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "רק פריטי הכספת האישית שמשויכת עם $EMAIL$ ייוצאו. פריטי הכספת הארגוניים לא יהיו חלק מהייצוא.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1841,22 +1841,22 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "מחולל"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "מה ברצונך לחולל?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "סוג סיסמה"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "חולל מחדש שם משתמש"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "חולל שם משתמש"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "סוג שם משתמש"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email"
@@ -1871,15 +1871,15 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "אקראי"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "מילה אקראית"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "שם אתר"
   },
   "service": {
-    "message": "Service"
+    "message": "שירות"
   }
 }

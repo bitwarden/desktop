@@ -373,7 +373,7 @@
     "message": "Перезаписать имя пользователя"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Вы уверены, что хотите перезаписать текущее имя пользователя?"
+    "message": "Вы хотите перезаписать текущее имя пользователя?"
   },
   "noneFolder": {
     "message": "Без папки",
@@ -1850,7 +1850,7 @@
     "message": "Тип пароля"
   },
   "regenerateUsername": {
-    "message": "Восстановить имя пользователя"
+    "message": "Пересоздать имя пользователя"
   },
   "generateUsername": {
     "message": "Создать имя пользователя"
@@ -1859,16 +1859,16 @@
     "message": "Тип имени пользователя"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Плюс-адресованные email"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Использовать возможности суб-адресации вашего провайдера электронной почты."
   },
   "catchallEmail": {
-    "message": "Универсальная электронная почта"
+    "message": "Catch-all-адрес электронной почты"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Использовать настроенную в вашем домене почту catch-all."
   },
   "random": {
     "message": "Случайно"
@@ -1880,6 +1880,6 @@
     "message": "Название сайта"
   },
   "service": {
-    "message": "Service"
+    "message": "Служба"
   }
 }

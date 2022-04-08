@@ -373,7 +373,7 @@
     "message": "Overwrite Username"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Tem certeza que deseja substituir o usuário atual?"
   },
   "noneFolder": {
     "message": "Nenhuma Pasta",

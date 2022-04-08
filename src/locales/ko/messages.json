@@ -370,10 +370,10 @@
     "message": "정말 현재 비밀번호를 덮어쓰시겠습니까?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "아이디 덮어쓰기"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "정말 현재 아이디를 덮어쓰시겠습니까?"
   },
   "noneFolder": {
     "message": "폴더 없음",
@@ -743,10 +743,10 @@
     "message": "비밀번호 생성기"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "문의하기"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "도움말"
   },
   "fileBugReport": {
     "message": "버그 보고서 첨부"
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "도메인 이름",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1829,7 +1829,7 @@
     "message": "세션 시간이 초과되었습니다. 다시 로그인해주세요."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "개인 보관함을 내보내는 중"
   },
   "exportingPersonalVaultDescription": {
     "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
@@ -1841,22 +1841,22 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "생성기"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "무엇을 생성하실건가요?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "비밀번호 유형"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "아이디 재생성"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "아이디 생성"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "아이디 유형"
   },
   "plusAddressedEmail": {
     "message": "Plus Addressed Email"
@@ -1871,15 +1871,15 @@
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "무작위"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "무작위 단어"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "웹사이트 이름"
   },
   "service": {
-    "message": "Service"
+    "message": "서비스"
   }
 }

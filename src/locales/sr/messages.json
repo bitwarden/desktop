@@ -370,10 +370,10 @@
     "message": "Сигурно променити тренутну лозинку?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "Препиши име"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Сигурно преписати тренутно име?"
   },
   "noneFolder": {
     "message": "Без фасцикле",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Име домена",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,45 +1841,45 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "Генератор"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Шта желите да генеришете?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Тип лозинке"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "Поново генериши име"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "Генериши име"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "Тип имена"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Плус имејл адресе"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "Користите могућности подадресирања вашег добављача е-поште."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "„Ухвати све“ е-порука"
   },
   "catchallEmailDesc": {
     "message": "Use your domain's configured catch-all inbox."
   },
   "random": {
-    "message": "Random"
+    "message": "Случајно"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Случајна реч"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Име Вашег веб-сајта"
   },
   "service": {
-    "message": "Service"
+    "message": "Сервис"
   }
 }

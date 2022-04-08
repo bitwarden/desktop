@@ -370,10 +370,10 @@
     "message": "Hazırkı parolun üzərinə yazmaq istədiyinizə əminsiniz?"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "İstifadəçi adının üzərinə yaz"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "Hazırkı istifadəçi adının üzərinə yazmaq istədiyinizə əminsiniz?"
   },
   "noneFolder": {
     "message": "Qovluq yoxdur",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "Domen adı",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,45 +1841,45 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "Yaradıcı"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "Nə yaratmaq istəyirsiniz?"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "Parol növü"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "İstifadəçi adını yenidən yarat"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "İstifadəçi adı yarat"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "İstifadəçi adı növü"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "Plyus ünvanlı e-poçt"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "E-poçt təchizatçınızın alt ünvan özəlliklərini istifadə et."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "Catch-all E-poçt"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "Domeninizin konfiqurasiya edilmiş hamısını yaxalama gələn qutusunu istifadə edin."
   },
   "random": {
-    "message": "Random"
+    "message": "Təsadüfi"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "Təsadüfi söz"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "Veb sayt adı"
   },
   "service": {
-    "message": "Service"
+    "message": "Xidmət"
   }
 }

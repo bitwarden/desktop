@@ -370,10 +370,10 @@
     "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
   },
   "overwriteUsername": {
-    "message": "Overwrite Username"
+    "message": "بازنویسی نام کاربری"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "آیا از بازنویسی نام کاربری فعلی مطمئن هستید؟"
   },
   "noneFolder": {
     "message": "بدون پوشه",
@@ -1198,7 +1198,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
-    "message": "Domain Name",
+    "message": "نام دامنه",
     "description": "Domain name. Ex. website.com"
   },
   "host": {
@@ -1841,45 +1841,45 @@
     }
   },
   "generator": {
-    "message": "Generator"
+    "message": "تولید کننده"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "What would you like to generate?"
+    "message": "چه چیزی دوست دارید تولید کنید؟"
   },
   "passwordType": {
-    "message": "Password Type"
+    "message": "نوع گذرواژه"
   },
   "regenerateUsername": {
-    "message": "Regenerate Username"
+    "message": "ایجاد مجدد نام کاربری"
   },
   "generateUsername": {
-    "message": "Generate Username"
+    "message": "ایجاد نام کاربری"
   },
   "usernameType": {
-    "message": "Username Type"
+    "message": "نوع نام کاربری"
   },
   "plusAddressedEmail": {
-    "message": "Plus Addressed Email"
+    "message": "به علاوه ایمیل آدرس داده شده"
   },
   "plusAddressedEmailDesc": {
-    "message": "Use your email provider's sub-addressing capabilities."
+    "message": "از قابلیت های آدرس دهی فرعی ارائه دهنده ایمیل خود استفاده کنید."
   },
   "catchallEmail": {
-    "message": "Catch-all Email"
+    "message": "رایانامه همه‌گیر"
   },
   "catchallEmailDesc": {
-    "message": "Use your domain's configured catch-all inbox."
+    "message": "از صندوق ورودی پیکربندی شده دامنه خود استفاده کنید."
   },
   "random": {
-    "message": "Random"
+    "message": "تصادفی"
   },
   "randomWord": {
-    "message": "Random Word"
+    "message": "کلمه تصادفی"
   },
   "websiteName": {
-    "message": "Website Name"
+    "message": "نام وب سایت"
   },
   "service": {
-    "message": "Service"
+    "message": "خدمت"
   }
 }
