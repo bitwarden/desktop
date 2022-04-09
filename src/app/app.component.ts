@@ -332,7 +332,8 @@ export class AppComponent implements OnInit {
               await this.stateService.setActiveUser(message.userId);
             }
             const locked =
-              (await this.authService.authStatus(message.userId)) === AuthenticationStatus.Locked;
+              (await this.authService.getAuthStatus(message.userId)) ===
+              AuthenticationStatus.Locked;
             if (locked) {
               this.messagingService.send("locked", { userId: message.userId });
             } else {
@@ -438,7 +439,8 @@ export class AppComponent implements OnInit {
             isAuthenticated: await this.stateService.getIsAuthenticated({
               userId: userId,
             }),
-            isLocked: (await this.authService.authStatus(userId)) === AuthenticationStatus.Locked,
+            isLocked:
+              (await this.authService.getAuthStatus(userId)) === AuthenticationStatus.Locked,
             email: stateAccounts[i].profile.email,
             userId: stateAccounts[i].profile.userId,
           };
@@ -593,7 +595,7 @@ export class AppComponent implements OnInit {
       const keys = Object.keys(accounts);
       if (keys.length > 0) {
         for (const userId of keys) {
-          if ((await this.authService.authStatus(userId)) === AuthenticationStatus.Unlocked) {
+          if ((await this.authService.getAuthStatus(userId)) === AuthenticationStatus.Unlocked) {
             return;
           }
         }

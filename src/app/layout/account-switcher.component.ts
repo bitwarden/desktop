@@ -86,7 +86,9 @@ export class AccountSwitcherComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.stateService.accounts.subscribe(async (accounts: { [userId: string]: Account }) => {
       for (const userId in accounts) {
-        accounts[userId].profile.authenticationStatus = await this.authService.authStatus(userId);
+        accounts[userId].profile.authenticationStatus = await this.authService.getAuthStatus(
+          userId
+        );
       }
 
       this.accounts = await this.createSwitcherAccounts(accounts);
