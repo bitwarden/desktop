@@ -35,8 +35,8 @@ import { AttachmentsComponent } from "./attachments.component";
 import { CiphersComponent } from "./ciphers.component";
 import { CollectionsComponent } from "./collections.component";
 import { FolderAddEditComponent } from "./folder-add-edit.component";
+import { GeneratorComponent } from "./generator.component";
 import { GroupingsComponent } from "./groupings.component";
-import { PasswordGeneratorComponent } from "./password-generator.component";
 import { PasswordHistoryComponent } from "./password-history.component";
 import { ShareComponent } from "./share.component";
 import { ViewComponent } from "./view.component";
@@ -52,8 +52,8 @@ export class VaultComponent implements OnInit, OnDestroy {
   @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
   @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
   @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
-  @ViewChild("passwordGenerator", { read: ViewContainerRef, static: true })
-  passwordGeneratorModalRef: ViewContainerRef;
+  @ViewChild("generator", { read: ViewContainerRef, static: true })
+  generatorModalRef: ViewContainerRef;
   @ViewChild("attachments", { read: ViewContainerRef, static: true })
   attachmentsModalRef: ViewContainerRef;
   @ViewChild("passwordHistory", { read: ViewContainerRef, static: true })
@@ -120,8 +120,8 @@ export class VaultComponent implements OnInit, OnDestroy {
             (document.querySelector("#search") as HTMLInputElement).select();
             detectChanges = false;
             break;
-          case "openPasswordGenerator":
-            await this.openPasswordGenerator(false);
+          case "openGenerator":
+            await this.openGenerator(false);
             break;
           case "syncCompleted":
             await this.load();
@@ -599,28 +599,38 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.go();
   }
 
-  async openPasswordGenerator(showSelect: boolean) {
+  async openGenerator(comingFromAddEdit: boolean, passwordType = true) {
     if (this.modal != null) {
       this.modal.close();
     }
 
+    const cipher = this.addEditComponent?.cipher;
+    const loginType = cipher != null && cipher.type === CipherType.Login && cipher.login != null;
+
     const [modal, childComponent] = await this.modalService.openViewRef(
-      PasswordGeneratorComponent,
-      this.passwordGeneratorModalRef,
-      (comp) => (comp.showSelect = showSelect)
+      GeneratorComponent,
+      this.generatorModalRef,
+      (comp) => {
+        comp.comingFromAddEdit = comingFromAddEdit;
+        if (comingFromAddEdit) {
+          comp.type = passwordType ? "password" : "username";
+          if (loginType && cipher.login.hasUris && cipher.login.uris[0].hostname != null) {
+            comp.usernameWebsite = cipher.login.uris[0].hostname;
+          }
+        }
+      }
     );
     this.modal = modal;
 
-    childComponent.onSelected.subscribe((password: string) => {
+    childComponent.onSelected.subscribe((value: string) => {
       this.modal.close();
-      if (
-        this.addEditComponent != null &&
-        this.addEditComponent.cipher != null &&
-        this.addEditComponent.cipher.type === CipherType.Login &&
-        this.addEditComponent.cipher.login != null
-      ) {
+      if (loginType) {
         this.addEditComponent.markPasswordAsDirty();
-        this.addEditComponent.cipher.login.password = password;
+        if (passwordType) {
+          this.addEditComponent.cipher.login.password = value;
+        } else {
+          this.addEditComponent.cipher.login.username = value;
+        }
       }
     });
 

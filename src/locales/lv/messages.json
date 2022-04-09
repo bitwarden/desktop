@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Vai tiešām pārrakstīt esošo paroli?"
   },
+  "overwriteUsername": {
+    "message": "Pārrakstīt lietotājvārdu"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Vai tiešām pārrakstīt pašreizējo lietotājvārdu?"
+  },
   "noneFolder": {
     "message": "Nav mapes",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Šī parole netika atrasta nevienā no zināmajiem datu pārkāpumiem. Tai vajadzētu būt droši izmantojamai."
   },
   "baseDomain": {
-    "message": "Pamata domēns"
+    "message": "Pamata domēns",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domēna vārds",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Saimniekdators",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Veidotājs"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Ko ir nepieciešams izveidot?"
+  },
+  "passwordType": {
+    "message": "Paroles veids"
+  },
+  "regenerateUsername": {
+    "message": "Pārizveidot lietotājvārdu"
+  },
+  "generateUsername": {
+    "message": "Izveidot lietotājvārdu"
+  },
+  "usernameType": {
+    "message": "Lietotājvārda veids"
+  },
+  "plusAddressedEmail": {
+    "message": "E-pasta adrese ar plusu"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Izmantot e-pasta pakalpojuma nodrošinātāja apakšadresēšanas spējas."
+  },
+  "catchallEmail": {
+    "message": "Visu tverošā e-pasta adrese"
+  },
+  "catchallEmailDesc": {
+    "message": "Izmantot uzstādīto domēna visu tverošo iesūtni."
+  },
+  "random": {
+    "message": "Nejauši"
+  },
+  "randomWord": {
+    "message": "Nejaušs vārds"
+  },
+  "websiteName": {
+    "message": "Tīmekļa vietnes nosaukums"
+  },
+  "service": {
+    "message": "Pakalpojums"
   }
 }

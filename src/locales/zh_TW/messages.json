@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "您確定要覆寫目前的密碼嗎？"
   },
+  "overwriteUsername": {
+    "message": "覆寫使用者名稱"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "您確定要覆寫目前的使用者名稱嗎？"
+  },
   "noneFolder": {
     "message": "（未分類）",
     "description": "This is the folder for uncategorized items"
@@ -539,13 +545,13 @@
     "message": "沒有可列出的項目。"
   },
   "sendVerificationCode": {
-    "message": "傳送驗證碼到您的信箱"
+    "message": "傳送驗證碼至您的電子郵件信箱"
   },
   "sendCode": {
     "message": "傳送驗證碼"
   },
   "codeSent": {
-    "message": "驗證碼已送出"
+    "message": "驗證碼已傳送"
   },
   "verificationCode": {
     "message": "驗證碼"
@@ -575,7 +581,7 @@
     }
   },
   "verificationCodeEmailSent": {
-    "message": "驗證碼已傳送至 $EMAIL$。",
+    "message": "已傳送驗證電子郵件至 $EMAIL$。",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -635,7 +641,7 @@
     "message": "電子郵件"
   },
   "emailDesc": {
-    "message": "驗證碼將使用電子郵件傳送給您。"
+    "message": "使用電子郵件傳送驗證碼給您。"
   },
   "loginUnavailable": {
     "message": "登入不可用"
@@ -680,7 +686,7 @@
     "message": "圖示伺服器 URL"
   },
   "environmentSaved": {
-    "message": "環境 URL 已儲存。"
+    "message": "已儲存環境 URL。"
   },
   "ok": {
     "message": "確定"
@@ -784,7 +790,7 @@
     "message": "同步失敗"
   },
   "yourVaultIsLocked": {
-    "message": "您的密碼庫已上鎖。請驗證身份後繼續。"
+    "message": "您的密碼庫已鎖定。請驗證身分以繼續。"
   },
   "unlock": {
     "message": "解鎖"
@@ -812,7 +818,7 @@
     "message": "兩步驟登入"
   },
   "vaultTimeout": {
-    "message": "密碼庫逾時時長"
+    "message": "密碼庫逾時時間"
   },
   "vaultTimeoutDesc": {
     "message": "選擇密碼庫多久之後才會逾時並執行選取動作。"
@@ -1188,7 +1194,12 @@
     "message": "任何已知的外洩密碼資料庫中都沒有此密碼，它目前是安全的。"
   },
   "baseDomain": {
-    "message": "基底網域"
+    "message": "基底網域",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "網域名稱",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "主機",
@@ -1377,16 +1388,16 @@
     "message": "複製"
   },
   "passwordGeneratorPolicyInEffect": {
-    "message": "一個或多個組織原则正影響密碼產生器設定。"
+    "message": "一個或多個組織原則正影響密碼產生器設定。"
   },
   "vaultTimeoutAction": {
     "message": "密碼庫逾時動作"
   },
   "vaultTimeoutActionLockDesc": {
-    "message": "鎖定密碼庫後需要重新輸入主密碼才能再次存取它。"
+    "message": "鎖定密碼庫後需要重新輸入主密碼才能再次存取。"
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "登出密碼庫後需要重新認證才能再次存取它。"
+    "message": "登出密碼庫後需要重新驗證才能再次存取。"
   },
   "lock": {
     "message": "鎖定",
@@ -1421,7 +1432,7 @@
     "message": "永久刪除"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "選擇登出將會在密碼庫逾時後移除對密碼庫的所有存取權限，以及重新認證時需要連線網路。確定要使用此設定嗎？"
+    "message": "選擇登出將會在密碼庫逾時後移除對密碼庫的所有存取權限，若要重新驗證則需連線網路。確定要使用此設定嗎？"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "逾時動作確認"
@@ -1433,7 +1444,7 @@
     "message": "設定主密碼"
   },
   "ssoCompleteRegistration": {
-    "message": "要完成 SSO 登入，請設定一個主密碼以存取和保護您的密碼庫。"
+    "message": "要完成 SSO 登入設定，請設定一組主密碼以存取和保護您的密碼庫。"
   },
   "newMasterPass": {
     "message": "新的主密碼"
@@ -1442,7 +1453,7 @@
     "message": "確認新的主密碼"
   },
   "masterPasswordPolicyInEffect": {
-    "message": "一個或多個組織原则要求您的主密碼須符合下列條件："
+    "message": "一個或多個組織原則要求您的主密碼須符合下列條件："
   },
   "policyInEffectMinComplexity": {
     "message": "最小複雜度為 $SCORE$",
@@ -1481,7 +1492,7 @@
     }
   },
   "masterPasswordPolicyRequirementsNotMet": {
-    "message": "您的新主密碼不符合原则要求。"
+    "message": "新的主密碼不符合原則要求。"
   },
   "acceptPolicies": {
     "message": "選中此選取框，代表您同意下列項目："
@@ -1529,13 +1540,13 @@
     "message": "需先在桌面應用程式的設定中啟用生物特徵辨識，才能使用瀏覽器的生物特徵辨識。"
   },
   "personalOwnershipSubmitError": {
-    "message": "由於某個企業原则，您被限制為儲存項目到您的個人密碼庫。將擁有權變更爲組織，並從可用的集合中選擇。"
+    "message": "由於某個企業原則，您被限制為儲存項目到您的個人密碼庫。將擁有權變更為組織，並從可用的集合中選擇。"
   },
   "hintEqualsPassword": {
     "message": "密碼提示不能與您的密碼相同。"
   },
   "personalOwnershipPolicyInEffect": {
-    "message": "一個組織原则正在影響您的擁有權選項。"
+    "message": "組織原則正在影響您的擁有權選項。"
   },
   "allSends": {
     "message": "所有 Send",
@@ -1556,7 +1567,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "myVault": {
-    "message": "我的密碼庫"
+    "message": "密碼庫"
   },
   "text": {
     "message": "文字"
@@ -1565,7 +1576,7 @@
     "message": "刪除日期"
   },
   "deletionDateDesc": {
-    "message": "此 Send 將在指定的日期和時間被永久删除。",
+    "message": "此 Send 將在指定的日期和時間後被永久刪除。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "expirationDate": {
@@ -1594,7 +1605,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
-    "message": "關於此 Send 的私人注釋。",
+    "message": "關於此 Send 的私人備註。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLink": {
@@ -1622,7 +1633,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "newPassword": {
-    "message": "新的密碼"
+    "message": "新密碼"
   },
   "whatTypeOfSend": {
     "message": "這是什麽類型的 Send？",
@@ -1669,7 +1680,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
-    "message": "由於某個企業原则，您只能刪除已有的 Send。",
+    "message": "由於企業原則限制，您只能刪除現有的 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
@@ -1694,7 +1705,7 @@
     "message": "對收件人隱藏我的電子郵件位址。"
   },
   "sendOptionsPolicyInEffect": {
-    "message": "一個或多個組織原则正影響您的 Send 選項。"
+    "message": "一個或多個組織原則正影響您的 Send 選項。"
   },
   "emailVerificationRequired": {
     "message": "需要驗證電子郵件"
@@ -1727,7 +1738,7 @@
     "message": "分鐘"
   },
   "vaultTimeoutPolicyInEffect": {
-    "message": "您的組織策略正在影響您的密碼庫逾時時長。密碼庫逾時時長最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
+    "message": "您的組織原則正在影響您的密碼庫逾時時間。密碼庫逾時時間最多可以設定到 $HOURS$ 小時 $MINUTES$ 分鐘。",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1740,7 +1751,7 @@
     }
   },
   "vaultTimeoutTooLarge": {
-    "message": "您的密碼庫逾時時長超過組織限制。"
+    "message": "您的密碼庫逾時時間超過組織設定的限制。"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "自動註冊"
@@ -1752,7 +1763,7 @@
     "message": "密碼庫匯出已停用"
   },
   "personalVaultExportPolicyInEffect": {
-    "message": "一或多個組織策略不允許您輸出個人密碼庫。"
+    "message": "一個或多個組織原則禁止您匯出個人密碼庫。"
   },
   "addAccount": {
     "message": "新增帳戶"
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "產生器"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "您想要產生什麼？"
+  },
+  "passwordType": {
+    "message": "密碼類型"
+  },
+  "regenerateUsername": {
+    "message": "重新產生使用者名稱"
+  },
+  "generateUsername": {
+    "message": "產生使用者名稱"
+  },
+  "usernameType": {
+    "message": "使用者名稱類型"
+  },
+  "plusAddressedEmail": {
+    "message": "加號地址電子郵件"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "使用您的電子郵件提供者的子地址功能。"
+  },
+  "catchallEmail": {
+    "message": "Catch-all 電子郵件"
+  },
+  "catchallEmailDesc": {
+    "message": "使用您的網域配置的 Catch-all 收件匣。"
+  },
+  "random": {
+    "message": "隨機"
+  },
+  "randomWord": {
+    "message": "隨機單字"
+  },
+  "websiteName": {
+    "message": "網站名稱"
+  },
+  "service": {
+    "message": "服務"
   }
 }

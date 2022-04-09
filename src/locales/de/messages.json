@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Bist du sicher, dass du das Passwort überschreiben möchtest?"
   },
+  "overwriteUsername": {
+    "message": "Benutzername überschreiben"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Bist du sicher, dass du den aktuellen Benutzernamen überschreiben möchtest?"
+  },
   "noneFolder": {
     "message": "Kein Ordner",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Dieses Kennwort wurde in keinen bekannten Datensätzen gefunden. Es sollte sicher sein."
   },
   "baseDomain": {
-    "message": "Basis-Domäne"
+    "message": "Basis-Domäne",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domain-Name",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Server",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generator"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Was möchtest du generieren?"
+  },
+  "passwordType": {
+    "message": "Passworttyp"
+  },
+  "regenerateUsername": {
+    "message": "Benutzername neu generieren"
+  },
+  "generateUsername": {
+    "message": "Benutzernamen generieren"
+  },
+  "usernameType": {
+    "message": "Benutzernamentyp"
+  },
+  "plusAddressedEmail": {
+    "message": "Mit Plus adressierte E-Mail"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Verwende die Unteradressierungsmöglichkeiten deines E-Mail-Providers."
+  },
+  "catchallEmail": {
+    "message": "Catch-All E-Mail-Adresse"
+  },
+  "catchallEmailDesc": {
+    "message": "Verwende den konfigurierten Catch-All-Posteingang deiner Domain."
+  },
+  "random": {
+    "message": "Zufällig"
+  },
+  "randomWord": {
+    "message": "Zufälliges Wort"
+  },
+  "websiteName": {
+    "message": "Webseiten-Name"
+  },
+  "service": {
+    "message": "Dienst"
   }
 }

@@ -2,6 +2,7 @@
 build
 dist
 dist-safari
+desktop_native
 
 jslib
 
