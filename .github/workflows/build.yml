@@ -230,7 +230,7 @@ jobs:
 
       - name: Rust
         shell: pwsh
-        run: rustup install aarch64-pc-windows-msvc
+        run: rustup target install aarch64-pc-windows-msvc
 
       - name: Print environment
         run: |
@@ -409,10 +409,15 @@ jobs:
           npm install -g node-gyp
           node-gyp install $(node -v)
 
+      - name: Rust
+        shell: pwsh
+        run: rustup target install aarch64-apple-darwin
+
       - name: Print environment
         run: |
           node --version
           npm --version
+          rustup show
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
 
