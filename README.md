@@ -12,7 +12,7 @@ The Bitwarden desktop app is written using Electron and Angular. The application
 
 # Build/Run
 
-**Requirements**
+## Requirements
 
 - [Node.js](https://nodejs.org) v16.13.1 (LTS) or greater
 - NPM v8
@@ -22,14 +22,24 @@ The Bitwarden desktop app is written using Electron and Angular. The application
 - Linux:
   - The following packages `build-essential libsecret-1-dev libglib2.0-dev`
 
-**Run the app**
+## Build native module
+
+The desktop application relies on native code written in rust, which needs to be compiled first.
 
 ```bash
-npm install
+cd desktop_native
+npm ci
+npm run build
+```
+
+## Run the app
+
+```bash
+npm ci
 npm run electron
 ```
 
-**Debug Native Messaging**
+### Debug Native Messaging
 
 Native Messaging (communication with the browser extension) works by having the browser start a lightweight proxy application baked into our desktop binary. To setup an environment which allows
 for easy debugging you will need to build the application for distribution, i.e. `npm run dist:<platform>`, start the dist version and enable desktop integration. This will write some manifests
