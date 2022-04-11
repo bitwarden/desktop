@@ -149,6 +149,19 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
+      - uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native
+          key: ${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build
+
       - name: Build application
         run: npm run dist:lin
 
