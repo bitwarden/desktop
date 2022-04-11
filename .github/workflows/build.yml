@@ -153,7 +153,7 @@ jobs:
         uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
         id: cache
         with:
-          path: desktop_native
+          path: desktop_native/dist
           key: ${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
 
       - name: Build Native Module

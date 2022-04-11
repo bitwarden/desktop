@@ -5,7 +5,7 @@
   "main": "index.node",
   "scripts": {
     "build": "node build.js",
-    "build:debug": "napi build --platform --js true",
+    "build:debug": "napi build dist --platform --js true",
     "build:internal": "napi build dist --platform --release --js true",
     "test": "cargo test"
   },
