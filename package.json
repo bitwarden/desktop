@@ -82,7 +82,9 @@
     ],
     "files": [
       "**/*",
-      "!**/node_modules/@bitwarden/desktop-native/**/*"
+      "!**/node_modules/@bitwarden/desktop-native/**/*",
+      "**/node_modules/@bitwarden/desktop-native/index.js",
+      "**/node_modules/@bitwarden/desktop-native/dist/desktop_native.${platform}-${arch}.node"
     ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
