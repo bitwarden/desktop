@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.node",
   "scripts": {
-    "build": "napi build --platform --release --js true",
+    "build": "node build.js",
     "build:debug": "napi build --platform",
+    "build:internal": "napi build dist --platform --release --js true",
     "install": "npm run build",
     "test": "cargo test"
   },
