@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { readFileSync } = require('fs')
 
 const { platform, arch } = process

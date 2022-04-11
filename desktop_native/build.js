@@ -1,5 +1,6 @@
-const process = require("process");
+/* eslint-disable @typescript-eslint/no-var-requires */
 const child_process = require("child_process");
+const process = require("process");
 
 let targets = [];
 switch (process.platform) {
