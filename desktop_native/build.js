@@ -18,5 +18,5 @@ switch (process.platform) {
 }
 
 targets.forEach(target => {
-    child_process.execSync(`npm run build:internal -- --target ${target}`, {stdio: 'inherit'});
+    child_process.execSync(`npm run build -- --target ${target}`, {stdio: 'inherit'});
 });

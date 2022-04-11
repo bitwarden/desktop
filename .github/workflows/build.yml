@@ -154,14 +154,14 @@ jobs:
         id: cache
         with:
           path: desktop_native/dist
-          key: ${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
 
       - name: Build Native Module
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: './desktop_native'
         run: |
           npm ci
-          npm run build
+          npm run build:cross-platform
 
       - name: Build application
         run: npm run dist:lin
@@ -522,6 +522,20 @@ jobs:
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
+
       - name: Install Node dependencies
         run: npm ci
 
@@ -670,6 +684,20 @@ jobs:
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: NPM install
         run: npm ci
@@ -863,6 +891,20 @@ jobs:
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
 
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
+
       - name: NPM install
         run: npm ci
 
@@ -1041,6 +1083,20 @@ jobs:
           $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
           $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: NPM install
         run: npm ci
