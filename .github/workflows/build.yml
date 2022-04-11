@@ -230,7 +230,9 @@ jobs:
 
       - name: Rust
         shell: pwsh
-        run: rustup target install aarch64-pc-windows-msvc
+        run: |
+          rustup target install i686-pc-windows-msvc
+          rustup target install aarch64-pc-windows-msvc
 
       - name: Print environment
         run: |

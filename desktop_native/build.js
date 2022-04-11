@@ -5,7 +5,7 @@ const process = require("process");
 let targets = [];
 switch (process.platform) {
     case "win32":
-        targets = ["x86_64-pc-windows-msvc", "aarch64-pc-windows-msvc"];
+        targets = ["i686-pc-windows-msvc", "x86_64-pc-windows-msvc", "aarch64-pc-windows-msvc"];
     break;
 
     case "darwin":
