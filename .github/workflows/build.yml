@@ -228,11 +228,16 @@ jobs:
         shell: pwsh
         run: choco install checksum --no-progress
 
+      - name: Rust
+        shell: pwsh
+        run: rustup install aarch64-pc-windows-msvc
+
       - name: Print environment
         run: |
           node --version
           npm --version
           choco --version
+          rustup show
 
       - name: Login to Azure
         uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
