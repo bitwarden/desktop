@@ -13,8 +13,7 @@
   "author": "",
   "license": "GPL-3.0",
   "devDependencies": {
-    "@napi-rs/cli": "^2.4.4",
-    "cargo-cp-artifact": "^0.1"
+    "@napi-rs/cli": "^2.6.2"
   },
   "napi": {
     "name": "desktop_native",
