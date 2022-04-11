@@ -751,7 +751,7 @@ jobs:
         run: |
           npm install -g node-gyp
           node-gyp install $(node -v)
-      
+
       - name: Rust
         shell: pwsh
         run: rustup target install aarch64-apple-darwin
