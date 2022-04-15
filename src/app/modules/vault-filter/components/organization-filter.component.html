@@ -1,0 +1,111 @@
+<ng-container *ngIf="show">
+  <ng-container [ngSwitch]="displayMode">
+    <ng-container *ngSwitchCase="'noOrganizations'">
+      <ul class="filter-options">
+        <li class="filter-option active">
+          <span class="filter-option-buttons">
+            <button class="filter-button">
+              <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
+              &nbsp;{{ "myVault" | i18n }}
+            </button>
+          </span>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-container *ngSwitchCase="'personalOwnershipPolicy'">
+      <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
+        <i
+          class="bwi bwi-fw"
+          title="{{ 'toggleCollapse' | i18n }}"
+          aria-hidden="true"
+          [ngClass]="{
+            'bwi-angle-right': isCollapsed,
+            'bwi-angle-down': !isCollapsed
+          }"
+          (click)="toggleCollapse()"
+          appStopProp
+        ></i>
+        <button class="no-btn" (click)="clearFilter()">
+          <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
+        </button>
+      </div>
+      <ul *ngIf="!isCollapsed" class="filter-options no-margin">
+        <li
+          class="filter-option"
+          *ngFor="let organization of organizations"
+          [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
+        >
+          <span class="filter-buttons">
+            <button
+              class="filter-button"
+              appStopClick
+              appBlurClick
+              (click)="applyOrganizationFilter(organization)"
+            >
+              <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
+              &nbsp;{{ organization.name }}
+            </button>
+          </span>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-container *ngSwitchCase="'singleOrganizationAndPersonalOwnershipPolicies'">
+      <ul class="filter-options">
+        <li class="filter-option active">
+          <span class="filter-buttons">
+            <button class="filter-button">
+              <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
+              &nbsp;{{ organizations[0].name }}
+            </button>
+          </span>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-container *ngSwitchCase="'organizationMember'">
+      <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
+        <i
+          class="bwi bwi-fw"
+          title="{{ 'toggleCollapse' | i18n }}"
+          aria-hidden="true"
+          [ngClass]="{
+            'bwi-angle-right': isCollapsed,
+            'bwi-angle-down': !isCollapsed
+          }"
+          (click)="toggleCollapse()"
+          appStopProp
+        ></i>
+        <button class="no-btn" (click)="clearFilter()">
+          <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
+        </button>
+      </div>
+      <ul *ngIf="!isCollapsed" class="filter-options no-margin">
+        <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">
+          <span class="filter-buttons">
+            <button class="filter-button" (click)="applyMyVaultFilter()">
+              <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
+              &nbsp;{{ "myVault" | i18n }}
+            </button>
+          </span>
+        </li>
+        <li
+          class="filter-option"
+          *ngFor="let organization of organizations"
+          [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
+        >
+          <span class="filter-buttons">
+            <button
+              class="filter-button"
+              appStopClick
+              appBlurClick
+              (click)="applyOrganizationFilter(organization)"
+            >
+              <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
+              &nbsp;{{ organization.name }}
+            </button>
+          </span>
+        </li>
+      </ul>
+    </ng-container>
+  </ng-container>
+  <hr />
+</ng-container>

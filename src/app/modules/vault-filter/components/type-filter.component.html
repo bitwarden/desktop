@@ -1,0 +1,75 @@
+<div class="filter-heading">
+  <button class="no-btn" (click)="toggleCollapse()" appStopProp aria-expanded="!isCollapsed">
+    <i
+      class="bwi bwi-fw"
+      title="{{ 'toggleCollapse' | i18n }}"
+      aria-hidden="true"
+      [ngClass]="{
+        'bwi-angle-right': isCollapsed,
+        'bwi-angle-down': !isCollapsed
+      }"
+    ></i>
+  </button>
+  <h2>&nbsp;{{ typesNode.name | i18n }}</h2>
+</div>
+<ul *ngIf="!isCollapsed" class="filter-options">
+  <li
+    class="filter-option"
+    [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Login }"
+  >
+    <span class="filter-buttons">
+      <button
+        class="filter-button"
+        appStopClick
+        appBlurClick
+        (click)="applyFilter(cipherTypeEnum.Login)"
+      >
+        <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>&nbsp;{{ "typeLogin" | i18n }}
+      </button>
+    </span>
+  </li>
+  <li class="filter-option" [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Card }">
+    <span class="filter-buttons">
+      <button
+        class="filter-button"
+        appStopClick
+        appBlurClick
+        (click)="applyFilter(cipherTypeEnum.Card)"
+      >
+        <i class="bwi bwi-fw bwi-credit-card" aria-hidden="true"></i>&nbsp;{{ "typeCard" | i18n }}
+      </button>
+    </span>
+  </li>
+  <li
+    class="filter-option"
+    [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Identity }"
+  >
+    <span class="filter-buttons">
+      <button
+        class="filter-button"
+        appStopClick
+        appBlurClick
+        (click)="applyFilter(cipherTypeEnum.Identity)"
+      >
+        <i class="bwi bwi-fw bwi-id-card" aria-hidden="true"></i>&nbsp;{{ "typeIdentity" | i18n }}
+      </button>
+    </span>
+  </li>
+  <li
+    class="filter-option"
+    [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.SecureNote }"
+  >
+    <span class="filter-buttons">
+      <button
+        class="filter-button"
+        appStopClick
+        appBlurClick
+        (click)="applyFilter(cipherTypeEnum.SecureNote)"
+      >
+        <i class="bwi bwi-fw bwi-sticky-note" aria-hidden="true"></i>&nbsp;{{
+          "typeSecureNote" | i18n
+        }}
+      </button>
+    </span>
+  </li>
+</ul>

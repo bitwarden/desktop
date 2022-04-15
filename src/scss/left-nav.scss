@@ -1,0 +1,273 @@
+.left-nav {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  min-width: 175px;
+  max-width: 250px;
+  border-right: 1px solid #000000;
+  flex-grow: 1;
+  justify-content: space-between;
+
+  @include themify($themes) {
+    background-color: themed("backgroundColorAlt");
+    border-right-color: themed("borderColor");
+  }
+}
+
+.vault-filters {
+  user-select: none;
+  scrollbar-gutter: stable;
+  padding: 10px 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.filter-heading {
+  display: flex;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-bottom: 5px;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  * {
+    @include themify($themes) {
+      color: themed("headingColor");
+    }
+    font-size: $font-size-base;
+  }
+
+  button {
+    @extend .no-btn;
+  }
+
+  button.add-button {
+    margin-left: auto;
+    margin-right: 5px;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+
+      @include themify($themes) {
+        color: themed("headingButtonHoverColor");
+      }
+    }
+  }
+}
+
+.filter-options {
+  word-break: break-all;
+  padding: 0;
+  list-style: none;
+  margin: 0 0 15px 0;
+  .nested-filter-options {
+    list-style: none;
+    margin-bottom: 0px;
+  }
+}
+
+.filter-option {
+  top: 8px;
+  width: 1.1em;
+
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+
+  &.active {
+    > .filter-buttons {
+      .toggle-button,
+      .filter-button {
+        @include themify($themes) {
+          color: themed("primaryColor");
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.filter-buttons {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    .edit-button {
+      visibility: visible;
+    }
+
+    .toggle-button,
+    .filter-button {
+      @include themify($themes) {
+        color: themed("primaryColor");
+      }
+    }
+  }
+
+  button {
+    @extend .no-btn;
+  }
+
+  .toggle-button {
+  }
+
+  .filter-button {
+  }
+
+  .edit-button {
+    visibility: hidden;
+    margin-left: 2px;
+
+    @include themify($themes) {
+      color: themed("headingButtonColor");
+    }
+
+    &:hover,
+    &:focus {
+      @include themify($themes) {
+        color: themed("headingButtonHoverColor");
+      }
+    }
+  }
+}
+
+.nav {
+  height: 55px;
+  width: 100%;
+  display: flex;
+  .btn {
+    width: 100%;
+    font-size: $font-size-base * 0.8;
+    flex: 1;
+    border: 0;
+    border-radius: 0;
+    padding-bottom: 4px;
+
+    &:not(.active) {
+      @include themify($themes) {
+        background-color: themed("backgroundColorAlt");
+      }
+    }
+
+    i {
+      font-size: $font-size-base * 1.5;
+      display: block;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+  }
+}
+
+// Nested indentions
+ul.filter-options {
+  // Level 1
+  .filter-option {
+    > .filter-buttons {
+      padding-left: 12px;
+    }
+
+    .filter-option {
+      left: -4px;
+    }
+
+    &.active > .filter-buttons .filter-option {
+      left: 11px;
+    }
+  }
+
+  // Level 2
+  .nested-filter-options .filter-option {
+    > .filter-buttons {
+      padding-left: 23px;
+    }
+
+    .filter-option {
+      left: 7px;
+    }
+
+    &.active > span li {
+      left: 22px;
+    }
+  }
+
+  // Level 3
+  ul ul li {
+    > span {
+      padding-left: 34px;
+    }
+
+    li {
+      left: 18px;
+    }
+
+    &.active > span li {
+      left: 33px;
+    }
+  }
+
+  // Level 4
+  ul ul ul li {
+    > span {
+      padding-left: 45px;
+    }
+
+    li {
+      left: 29px;
+    }
+
+    &.active > span li {
+      left: 44px;
+    }
+  }
+
+  // Level 5
+  ul ul ul ul li {
+    > span {
+      padding-left: 56px;
+    }
+
+    li {
+      left: 40px;
+    }
+
+    &.active > span li {
+      left: 55px;
+    }
+  }
+
+  // Level 6
+  ul ul ul ul ul li {
+    > span {
+      padding-left: 67px;
+    }
+
+    li {
+      left: 51px;
+    }
+
+    &.active > span li {
+      left: 66px;
+    }
+  }
+
+  // Level 7
+  ul ul ul ul ul ul li {
+    > span {
+      padding-left: 78px;
+    }
+
+    li {
+      left: 62px;
+    }
+
+    &.active > span li {
+      left: 77px;
+    }
+  }
+}

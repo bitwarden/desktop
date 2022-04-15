@@ -1,0 +1,6 @@
+hr {
+  margin: 1em 0 1em 0;
+  @include themify($themes) {
+    border-color: themed("hrColor");
+  }
+}
