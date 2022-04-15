@@ -10,7 +10,7 @@ Here is how you can get involved:
 - **Write code for a new feature:** Make a new post in the [Github Contributions category](https://community.bitwarden.com/c/github-contributions/) of the Community Forums. Include a description of your proposed contribution, screeshots, and links to any relevant feature requests. This helps get feedback from the community and Bitwarden team members before you start writing code
 - **Report a bug or submit a bugfix:** Use Github issues and pull requests
 - **Write documentation:** Submit a pull request to the [Bitwarden help repository](https://github.com/bitwarden/help)
-- **Help other users:** Go to the [User-to-User Support category](https://community.bitwarden.com/c/support/) on the Community Forums
+- **Help other users:** Go to the [Ask the Bitwarden Community category](https://community.bitwarden.com/c/support/) on the Community Forums
 - **Translate:** See the localization (l10n) section below
 
 ## Contributor Agreement
@@ -31,6 +31,6 @@ We use a translation tool called [Crowdin](https://crowdin.com) to help manage o
 
 If you are interested in helping translate the Bitwarden desktop app into another language (or make a translation correction), please register an account at Crowdin and join our project here: https://crowdin.com/project/bitwarden-desktop
 
-If the language that you are interested in translating is not already listed, create a new account on Crowdin, join the project, and contact the project owner (https://crowdin.com/profile/kspearrin).
+If the language that you are interested in translating is not already listed, create a new account on Crowdin, join the project, and contact the project owner (https://crowdin.com/profile/dwbit).
 
 You can read Crowdin's getting started guide for translators here: https://support.crowdin.com/crowdin-intro/
