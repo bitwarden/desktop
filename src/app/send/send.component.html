@@ -1,25 +1,27 @@
 <div id="sends" class="vault">
-  <div class="groupings">
-    <div class="content">
-      <div class="inner-content">
-        <h2 class="sr-only">{{ "filters" | i18n }}</h2>
-        <ul>
-          <li [ngClass]="{ active: selectedAll }">
+  <div class="left-nav">
+    <div class="vault-filters">
+      <h2 class="sr-only">{{ "filters" | i18n }}</h2>
+      <div class="filter">
+        <ul class="filter-options">
+          <li class="filter-option" [ngClass]="{ active: selectedAll }">
             <a href="#" appStopClick appBlurClick (click)="selectAll()">
               <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
             </a>
           </li>
         </ul>
-        <h2>{{ "types" | i18n }}</h2>
-        <ul>
-          <li [ngClass]="{ active: selectedType === sendType.Text }">
+      </div>
+      <div class="filter">
+        <h2 class="filter-heading">{{ "types" | i18n }}</h2>
+        <ul class="filter-options">
+          <li class="filter-option" [ngClass]="{ active: selectedType === sendType.Text }">
             <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
               <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeText" | i18n
               }}
             </a>
           </li>
-          <li [ngClass]="{ active: selectedType === sendType.File }">
+          <li class="filter-option" [ngClass]="{ active: selectedType === sendType.File }">
             <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
               <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeFile" | i18n
@@ -28,10 +30,8 @@
           </li>
         </ul>
       </div>
-      <div class="footer">
-        <app-nav class="nav"></app-nav>
-      </div>
     </div>
+    <app-nav class="nav"></app-nav>
   </div>
   <div id="items" class="items">
     <div class="content">
