@@ -42,6 +42,7 @@
 
   button {
     @extend .no-btn;
+    text-transform: uppercase;
   }
 
   button.add-button {
