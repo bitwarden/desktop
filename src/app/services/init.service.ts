@@ -1,5 +1,6 @@
-import { Injectable } from "@angular/core";
+import { Inject, Injectable } from "@angular/core";
 
+import { WINDOW } from "jslib-angular/services/jslib-services.module";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
 import { EnvironmentService as EnvironmentServiceAbstraction } from "jslib-common/abstractions/environment.service";
 import { EventService as EventServiceAbstraction } from "jslib-common/abstractions/event.service";
@@ -21,7 +22,7 @@ import { NativeMessagingService } from "../../services/nativeMessaging.service";
 @Injectable()
 export class InitService {
   constructor(
-    private win: Window,
+    @Inject(WINDOW) private win: Window,
     private environmentService: EnvironmentServiceAbstraction,
     private syncService: SyncServiceAbstraction,
     private vaultTimeoutService: VaultTimeoutServiceAbstraction,
@@ -41,9 +42,9 @@ export class InitService {
       await this.stateService.init();
       await this.environmentService.setUrlsFromStorage();
       this.syncService.fullSync(true);
-      ((await this.vaultTimeoutService) as VaultTimeoutService).init(true);
+      (this.vaultTimeoutService as VaultTimeoutService).init(true);
       const locale = await this.stateService.getLocale();
-      ((await this.i18nService) as I18nService).init(locale);
+      await (this.i18nService as I18nService).init(locale);
       (this.eventService as EventService).init(true);
       this.twoFactorService.init();
       setTimeout(() => this.notificationsService.init(), 3000);
