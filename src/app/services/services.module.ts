@@ -44,6 +44,9 @@ import { InitService } from "./init.service";
   declarations: [],
   providers: [
     InitService,
+    NativeMessagingService,
+    SearchBarService,
+    LoginGuardService,
     {
       provide: APP_INITIALIZER,
       useFactory: (initService: InitService) => initService.init(),
@@ -96,9 +99,6 @@ import { InitService } from "./init.service";
       deps: [MessagingServiceAbstraction, PlatformUtilsServiceAbstraction, StateServiceAbstraction],
     },
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
-    NativeMessagingService,
-    SearchBarService,
-    LoginGuardService,
     {
       provide: StateServiceAbstraction,
       useClass: StateService,
