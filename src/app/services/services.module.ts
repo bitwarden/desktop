@@ -4,17 +4,22 @@ import {
   JslibServicesModule,
   SECURE_STORAGE,
   STATE_FACTORY,
+  STATE_SERVICE_USE_CACHE,
   WINDOW,
 } from "jslib-angular/services/jslib-services.module";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "jslib-common/abstractions/cryptoFunction.service";
 import { I18nService as I18nServiceAbstraction } from "jslib-common/abstractions/i18n.service";
-import { LogService as LogServiceAbstraction } from "jslib-common/abstractions/log.service";
+import {
+  LogService,
+  LogService as LogServiceAbstraction,
+} from "jslib-common/abstractions/log.service";
 import { MessagingService as MessagingServiceAbstraction } from "jslib-common/abstractions/messaging.service";
 import { PasswordRepromptService as PasswordRepromptServiceAbstraction } from "jslib-common/abstractions/passwordReprompt.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "jslib-common/abstractions/platformUtils.service";
 import { StateService as StateServiceAbstraction } from "jslib-common/abstractions/state.service";
+import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib-common/abstractions/stateMigration.service";
 import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
 import { StateFactory } from "jslib-common/factories/stateFactory";
@@ -100,6 +105,14 @@ import { InitService } from "./init.service";
     {
       provide: StateServiceAbstraction,
       useClass: StateService,
+      deps: [
+        StorageServiceAbstraction,
+        SECURE_STORAGE,
+        LogService,
+        StateMigrationServiceAbstraction,
+        STATE_FACTORY,
+        STATE_SERVICE_USE_CACHE,
+      ],
     },
   ],
 })
