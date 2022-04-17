@@ -98,21 +98,10 @@ import { InitService } from "./init.service";
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     NativeMessagingService,
     SearchBarService,
-    {
-      provide: LoginGuardService,
-      useClass: LoginGuardService,
-    },
+    LoginGuardService,
     {
       provide: StateServiceAbstraction,
       useClass: StateService,
-      deps: [
-        StorageServiceAbstraction,
-        SECURE_STORAGE,
-        LogServiceAbstraction,
-        StateMigrationServiceAbstraction,
-        STATE_FACTORY,
-        STATE_SERVICE_USE_CACHE,
-      ],
     },
   ],
 })
