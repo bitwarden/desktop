@@ -1,6 +1,12 @@
 import { APP_INITIALIZER, NgModule } from "@angular/core";
 
-import { JslibServicesModule } from "jslib-angular/services/jslib-services.module";
+import {
+  JslibServicesModule,
+  SECURE_STORAGE,
+  STATE_FACTORY,
+  STATE_SERVICE_USE_CACHE,
+  WINDOW,
+} from "jslib-angular/services/jslib-services.module";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "jslib-common/abstractions/cryptoFunction.service";
@@ -107,7 +113,7 @@ export function initFactory(
       provide: APP_INITIALIZER,
       useFactory: initFactory,
       deps: [
-        "WINDOW",
+        WINDOW,
         EnvironmentServiceAbstraction,
         SyncServiceAbstraction,
         VaultTimeoutServiceAbstraction,
@@ -122,6 +128,10 @@ export function initFactory(
       ],
       multi: true,
     },
+    {
+      provide: STATE_FACTORY,
+      useValue: new StateFactory(GlobalState, Account),
+    },
     { provide: LogServiceAbstraction, useClass: ElectronLogService, deps: [] },
     {
       provide: PlatformUtilsServiceAbstraction,
@@ -135,7 +145,7 @@ export function initFactory(
     {
       provide: I18nServiceAbstraction,
       useFactory: (window: Window) => new I18nService(window.navigator.language, "./locales"),
-      deps: ["WINDOW"],
+      deps: [WINDOW],
     },
     {
       provide: MessagingServiceAbstraction,
@@ -143,7 +153,7 @@ export function initFactory(
       deps: [BroadcasterServiceAbstraction],
     },
     { provide: StorageServiceAbstraction, useClass: ElectronRendererStorageService },
-    { provide: "SECURE_STORAGE", useClass: ElectronRendererSecureStorageService },
+    { provide: SECURE_STORAGE, useClass: ElectronRendererSecureStorageService },
     {
       provide: CryptoServiceAbstraction,
       useClass: ElectronCryptoService,
@@ -173,38 +183,15 @@ export function initFactory(
     },
     {
       provide: StateServiceAbstraction,
-      useFactory: (
-        storageService: StorageServiceAbstraction,
-        secureStorageService: StorageServiceAbstraction,
-        logService: LogServiceAbstraction,
-        stateMigrationService: StateMigrationServiceAbstraction
-      ) =>
-        new StateService(
-          storageService,
-          secureStorageService,
-          logService,
-          stateMigrationService,
-          new StateFactory(GlobalState, Account)
-        ),
+      useClass: StateService,
       deps: [
         StorageServiceAbstraction,
-        "SECURE_STORAGE",
+        SECURE_STORAGE,
         LogServiceAbstraction,
         StateMigrationServiceAbstraction,
+        STATE_FACTORY,
+        STATE_SERVICE_USE_CACHE,
       ],
-    },
-    {
-      provide: StateMigrationServiceAbstraction,
-      useFactory: (
-        storageService: StorageServiceAbstraction,
-        secureStorageService: StorageServiceAbstraction
-      ) =>
-        new StateMigrationService(
-          storageService,
-          secureStorageService,
-          new StateFactory(GlobalState, Account)
-        ),
-      deps: [StorageServiceAbstraction, "SECURE_STORAGE"],
     },
   ],
 })
