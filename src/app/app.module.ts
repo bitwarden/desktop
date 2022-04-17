@@ -91,7 +91,7 @@ import { SearchComponent } from "./layout/search/search.component";
 import { AddEditComponent as SendAddEditComponent } from "./send/add-edit.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
 import { SendComponent } from "./send/send.component";
-import { ServicesModule } from "./services.module";
+import { ServicesModule } from "./services/services.module";
 import { AddEditCustomFieldsComponent } from "./vault/add-edit-custom-fields.component";
 import { AddEditComponent } from "./vault/add-edit.component";
 import { AttachmentsComponent } from "./vault/attachments.component";
