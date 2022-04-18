@@ -6,6 +6,7 @@ import {
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
   WINDOW,
+  CLIENT_TYPE,
 } from "jslib-angular/services/jslib-services.module";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
@@ -22,6 +23,7 @@ import { StateService as StateServiceAbstraction } from "jslib-common/abstractio
 import { StateMigrationService as StateMigrationServiceAbstraction } from "jslib-common/abstractions/stateMigration.service";
 import { StorageService as StorageServiceAbstraction } from "jslib-common/abstractions/storage.service";
 import { SystemService as SystemServiceAbstraction } from "jslib-common/abstractions/system.service";
+import { ClientType } from "jslib-common/enums/clientType";
 import { StateFactory } from "jslib-common/factories/stateFactory";
 import { GlobalState } from "jslib-common/models/domain/globalState";
 import { SystemService } from "jslib-common/services/system.service";
@@ -60,15 +62,20 @@ import { InitService } from "./init.service";
       provide: STATE_FACTORY,
       useValue: new StateFactory(GlobalState, Account),
     },
+    {
+      provide: CLIENT_TYPE,
+      useValue: ClientType.Desktop,
+    },
     { provide: LogServiceAbstraction, useClass: ElectronLogService, deps: [] },
     {
       provide: PlatformUtilsServiceAbstraction,
-      useFactory: (
-        i18nService: I18nServiceAbstraction,
-        messagingService: MessagingServiceAbstraction,
-        stateService: StateServiceAbstraction
-      ) => new ElectronPlatformUtilsService(i18nService, messagingService, true, stateService),
-      deps: [I18nServiceAbstraction, MessagingServiceAbstraction, StateServiceAbstraction],
+      useClass: ElectronPlatformUtilsService,
+      deps: [
+        I18nServiceAbstraction,
+        MessagingServiceAbstraction,
+        CLIENT_TYPE,
+        StateServiceAbstraction,
+      ],
     },
     {
       provide: I18nServiceAbstraction,
