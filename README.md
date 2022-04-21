@@ -8,7 +8,6 @@
 
 # Bitwarden Desktop Application
 
-
 [![Platforms](https://imgur.com/SLv9paA.png "Windows, macOS, and Linux")](https://bitwarden.com/download/)
 
 The Bitwarden desktop app is written using Electron and Angular. The application installs on Windows, macOS, and Linux distributions.
