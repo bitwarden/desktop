@@ -64,8 +64,14 @@
         </div>
         <div class="box">
           <div class="box-content condensed">
-            <div class="box-content-row box-content-row-radio">
-              <label class="radio-header">{{ "whatWouldYouLikeToGenerate" | i18n }}</label>
+            <div
+              class="box-content-row box-content-row-radio"
+              role="radiogroup"
+              aria-labelledby="typeHeading"
+            >
+              <label id="typeHeading" class="radio-header">{{
+                "whatWouldYouLikeToGenerate" | i18n
+              }}</label>
               <div
                 class="radio-group text-default"
                 appBoxRow
@@ -76,7 +82,7 @@
                   type="radio"
                   class="radio"
                   [(ngModel)]="type"
-                  name="Type_{{ o.value }}"
+                  name="Type"
                   id="type_{{ o.value }}"
                   [value]="o.value"
                   (change)="typeChanged()"
@@ -105,8 +111,14 @@
               </button>
             </div>
             <div class="box-content condensed" [hidden]="!showOptions">
-              <div class="box-content-row box-content-row-radio">
-                <label class="radio-header">{{ "passwordType" | i18n }}</label>
+              <div
+                class="box-content-row box-content-row-radio"
+                role="radiogroup"
+                aria-labelledby="passwordTypeHeading"
+              >
+                <label id="passwordTypeHeading" class="radio-header">{{
+                  "passwordType" | i18n
+                }}</label>
                 <div
                   class="radio-group text-default"
                   appBoxRow
@@ -117,7 +129,7 @@
                     type="radio"
                     class="radio"
                     [(ngModel)]="passwordOptions.type"
-                    name="PasswordType_{{ o.value }}"
+                    name="PasswordType"
                     id="passwordType_{{ o.value }}"
                     [value]="o.value"
                     (change)="savePasswordOptions()"
@@ -295,8 +307,12 @@
               </button>
             </div>
             <div class="box-content condensed" [hidden]="!showOptions">
-              <div class="box-content-row box-content-row-radio">
-                <label class="radio-header">
+              <div
+                class="box-content-row box-content-row-radio"
+                role="radiogroup"
+                aria-labelledby="usernameTypeHeading"
+              >
+                <label id="usernameTypeHeading" class="radio-header">
                   {{ "usernameType" | i18n }}
                   <a
                     href="#"
@@ -318,7 +334,7 @@
                     type="radio"
                     class="radio"
                     [(ngModel)]="usernameOptions.type"
-                    name="UsernameType_{{ o.value }}"
+                    name="UsernameType"
                     id="usernameType_{{ o.value }}"
                     [value]="o.value"
                     (change)="saveUsernameOptions()"
@@ -334,13 +350,13 @@
           </div>
           <div class="box" *ngIf="usernameOptions.type === 'forwarded'" [hidden]="!showOptions">
             <div class="box-content condensed">
-              <div class="box-content-row">
-                <label class="radio-header">{{ "service" | i18n }}</label>
+              <div class="box-content-row" role="radiogroup" aria-labelledby="forwardTypeHeading">
+                <label id="forwardTypeHeading" class="radio-header">{{ "service" | i18n }}</label>
                 <div class="radio-group text-default" appBoxRow *ngFor="let o of forwardOptions">
                   <input
                     type="radio"
                     [(ngModel)]="usernameOptions.forwardedService"
-                    name="ForwardType_{{ o.value }}"
+                    name="ForwardType"
                     id="forwardtype_{{ o.value }}"
                     [value]="o.value"
                     (change)="saveUsernameOptions()"
@@ -365,13 +381,18 @@
                   (blur)="saveUsernameOptions()"
                 />
               </div>
-              <div class="box-content-row" *ngIf="subaddressOptions.length > 1">
-                <label class="radio-header">{{ "type" | i18n }}</label>
+              <div
+                class="box-content-row"
+                role="radiogroup"
+                aria-labelledby="subaddressTypeHeading"
+                *ngIf="subaddressOptions.length > 1"
+              >
+                <label id="subaddressTypeHeading" class="radio-header">{{ "type" | i18n }}</label>
                 <div class="radio-group text-default" appBoxRow *ngFor="let o of subaddressOptions">
                   <input
                     type="radio"
                     [(ngModel)]="usernameOptions.subaddressType"
-                    name="SubaddressType_{{ o.value }}"
+                    name="SubaddressType"
                     id="subaddresstype_{{ o.value }}"
                     [value]="o.value"
                     (change)="saveUsernameOptions()"
@@ -407,13 +428,18 @@
                   (blur)="saveUsernameOptions()"
                 />
               </div>
-              <div class="box-content-row" *ngIf="catchallOptions.length > 1">
-                <label class="radio-header">{{ "type" | i18n }}</label>
+              <div
+                class="box-content-row"
+                role="radiogroup"
+                aria-labelledby="catchallTypeHeading"
+                *ngIf="catchallOptions.length > 1"
+              >
+                <label id="catchallTypeHeading" class="radio-header">{{ "type" | i18n }}</label>
                 <div class="radio-group text-default" appBoxRow *ngFor="let o of catchallOptions">
                   <input
                     type="radio"
                     [(ngModel)]="usernameOptions.catchallType"
-                    name="CatchallType_{{ o.value }}"
+                    name="CatchallType"
                     id="catchalltype_{{ o.value }}"
                     [value]="o.value"
                     (change)="saveUsernameOptions()"
