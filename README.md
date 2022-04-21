@@ -4,7 +4,7 @@
 
 > **Note! Re-organization in progress**
 >
-> We are currently re-organizing some our the client repositories. During this transition period we might not have time to address any new Pull Requests, and may require that you re-open a new Pull Request afterwards instead.
+> We are currently re-organizing some our repositories. During this transition period we might not have time to address any new Pull Requests, and may require that you re-open a new Pull Request afterwards instead.
 
 # Bitwarden Desktop Application
 
