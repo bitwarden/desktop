@@ -2,7 +2,12 @@
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-desktop/localized.svg)](https://crowdin.com/project/bitwarden-desktop)
 [![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
+> **Note! Re-organization in progress**
+>
+> We are currently re-organizing some our the client repositories. During this transition period we might not have time to address any new Pull Requests, and may require that you re-open a new Pull Request afterwards instead.
+
 # Bitwarden Desktop Application
+
 
 [![Platforms](https://imgur.com/SLv9paA.png "Windows, macOS, and Linux")](https://bitwarden.com/download/)
 
