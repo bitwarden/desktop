@@ -4,5 +4,6 @@ jslib
 webpack.main.js
 webpack.renderer.js
 src/scripts/duo.js
+desktop_native
 
 **/node_modules
