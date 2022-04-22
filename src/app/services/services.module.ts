@@ -4,7 +4,7 @@ import {
   JslibServicesModule,
   SECURE_STORAGE,
   STATE_FACTORY,
-  STATE_SERVICE_USE_CACHE,
+  USE_DISK_CACHE,
   WINDOW,
   CLIENT_TYPE,
 } from "jslib-angular/services/jslib-services.module";
@@ -118,7 +118,7 @@ import { InitService } from "./init.service";
         LogService,
         StateMigrationServiceAbstraction,
         STATE_FACTORY,
-        STATE_SERVICE_USE_CACHE,
+        USE_DISK_CACHE,
       ],
     },
   ],
