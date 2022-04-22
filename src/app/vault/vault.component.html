@@ -37,7 +37,8 @@
     (onCancelled)="cancelledAddEdit($event)"
     (onShareCipher)="shareCipher($event)"
     (onEditCollections)="cipherCollections($event)"
-    (onGeneratePassword)="openPasswordGenerator(true)"
+    (onGeneratePassword)="openGenerator(true, true)"
+    (onGenerateUsername)="openGenerator(true, false)"
   >
   </app-vault-add-edit>
   <div
@@ -65,7 +66,7 @@
   >
   </app-vault-groupings>
 </div>
-<ng-template #passwordGenerator></ng-template>
+<ng-template #generator></ng-template>
 <ng-template #attachments></ng-template>
 <ng-template #collections></ng-template>
 <ng-template #share></ng-template>

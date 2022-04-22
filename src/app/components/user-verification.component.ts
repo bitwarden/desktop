@@ -2,16 +2,16 @@ import { animate, style, transition, trigger } from "@angular/animations";
 import { Component } from "@angular/core";
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import { VerifyMasterPasswordComponent as BaseComponent } from "jslib-angular/components/verify-master-password.component";
+import { UserVerificationComponent as BaseComponent } from "jslib-angular/components/user-verification.component";
 
 @Component({
-  selector: "app-verify-master-password",
-  templateUrl: "verify-master-password.component.html",
+  selector: "app-user-verification",
+  templateUrl: "user-verification.component.html",
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: VerifyMasterPasswordComponent,
+      useExisting: UserVerificationComponent,
     },
   ],
   animations: [
@@ -20,4 +20,4 @@ import { VerifyMasterPasswordComponent as BaseComponent } from "jslib-angular/co
     ]),
   ],
 })
-export class VerifyMasterPasswordComponent extends BaseComponent {}
+export class UserVerificationComponent extends BaseComponent {}

@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Ви дійсно хочете перезаписати поточний пароль?"
   },
+  "overwriteUsername": {
+    "message": "Перезаписати ім'я користувача"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Ви дійсно бажаєте перезаписати поточне ім'я користувача?"
+  },
   "noneFolder": {
     "message": "Без теки",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Цей пароль не було знайдено у жодних відомих витоках даних. Його можна безпечно використовувати."
   },
   "baseDomain": {
-    "message": "Основний домен"
+    "message": "Основний домен",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Ім'я домену",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Вузол",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Генератор"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Що ви бажаєте згенерувати?"
+  },
+  "passwordType": {
+    "message": "Тип пароля"
+  },
+  "regenerateUsername": {
+    "message": "Повторно генерувати ім'я користувача"
+  },
+  "generateUsername": {
+    "message": "Генерувати ім'я користувача"
+  },
+  "usernameType": {
+    "message": "Тип імені користувача"
+  },
+  "plusAddressedEmail": {
+    "message": "Плюс адреса електронної пошти"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Використовуйте розширені можливості адрес вашого постачальника електронної пошти."
+  },
+  "catchallEmail": {
+    "message": "Адреса е-пошти Catch-all"
+  },
+  "catchallEmailDesc": {
+    "message": "Використовуйте свою скриньку вхідних Catch-All власного домену."
+  },
+  "random": {
+    "message": "Випадково"
+  },
+  "randomWord": {
+    "message": "Випадкове слово"
+  },
+  "websiteName": {
+    "message": "Назва вебсайту"
+  },
+  "service": {
+    "message": "Послуга"
   }
 }

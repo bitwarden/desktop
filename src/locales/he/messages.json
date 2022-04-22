@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "האם אתה בטוח שברצונך לדרוס את הסיסמה הנוכחית?"
   },
+  "overwriteUsername": {
+    "message": "כתוב מחדש את שם המשתמש"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "האם אתה בטוח שברצונך לדרוס את שם המשתמש הנוכחי?"
+  },
   "noneFolder": {
     "message": "ללא תיקיה",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "הסיסמה לא נמצאה בפריצות אבטחה ידועות. היא בטוחה לשימוש."
   },
   "baseDomain": {
-    "message": "שם בסיס הדומיין"
+    "message": "שם בסיס הדומיין",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "שם דומיין",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "שרת",
@@ -1818,15 +1829,57 @@
     "message": "זמן ההפעלה שלך תם. נא לחזור ולנסות להיכנס שוב."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "הכספת האישית מיוצאת"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "רק פריטי הכספת האישית שמשויכת עם $EMAIL$ ייוצאו. פריטי הכספת הארגוניים לא יהיו חלק מהייצוא.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "מחולל"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "מה ברצונך לחולל?"
+  },
+  "passwordType": {
+    "message": "סוג סיסמה"
+  },
+  "regenerateUsername": {
+    "message": "חולל מחדש שם משתמש"
+  },
+  "generateUsername": {
+    "message": "חולל שם משתמש"
+  },
+  "usernameType": {
+    "message": "סוג שם משתמש"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "אקראי"
+  },
+  "randomWord": {
+    "message": "מילה אקראית"
+  },
+  "websiteName": {
+    "message": "שם אתר"
+  },
+  "service": {
+    "message": "שירות"
   }
 }

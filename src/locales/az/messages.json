@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Hazırkı parolun üzərinə yazmaq istədiyinizə əminsiniz?"
   },
+  "overwriteUsername": {
+    "message": "İstifadəçi adının üzərinə yaz"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Hazırkı istifadəçi adının üzərinə yazmaq istədiyinizə əminsiniz?"
+  },
   "noneFolder": {
     "message": "Qovluq yoxdur",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Bu parol, məlumat pozuntularında qeydə alınmayıb. Rahatlıqla istifadə edə bilərsiniz."
   },
   "baseDomain": {
-    "message": "Baza domeni"
+    "message": "Baza domeni",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Domen adı",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Host",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Yaradıcı"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Nə yaratmaq istəyirsiniz?"
+  },
+  "passwordType": {
+    "message": "Parol növü"
+  },
+  "regenerateUsername": {
+    "message": "İstifadəçi adını yenidən yarat"
+  },
+  "generateUsername": {
+    "message": "İstifadəçi adı yarat"
+  },
+  "usernameType": {
+    "message": "İstifadəçi adı növü"
+  },
+  "plusAddressedEmail": {
+    "message": "Plyus ünvanlı e-poçt"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "E-poçt təchizatçınızın alt ünvan özəlliklərini istifadə et."
+  },
+  "catchallEmail": {
+    "message": "Catch-all E-poçt"
+  },
+  "catchallEmailDesc": {
+    "message": "Domeninizin konfiqurasiya edilmiş hamısını yaxalama gələn qutusunu istifadə edin."
+  },
+  "random": {
+    "message": "Təsadüfi"
+  },
+  "randomWord": {
+    "message": "Təsadüfi söz"
+  },
+  "websiteName": {
+    "message": "Veb sayt adı"
+  },
+  "service": {
+    "message": "Xidmət"
   }
 }

@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "آیا از بازنویسی بر روی پسورد فعلی مطمئن هستید؟"
   },
+  "overwriteUsername": {
+    "message": "بازنویسی نام کاربری"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "آیا از بازنویسی نام کاربری فعلی مطمئن هستید؟"
+  },
   "noneFolder": {
     "message": "بدون پوشه",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "این کلمه عبور در هیچ رخنه داده‌ای شناخته نشده است. باید برای استفاده امن باشد."
   },
   "baseDomain": {
-    "message": "دامنه پایه"
+    "message": "دامنه پایه",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "نام دامنه",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "میزبان",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "تولید کننده"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "چه چیزی دوست دارید تولید کنید؟"
+  },
+  "passwordType": {
+    "message": "نوع گذرواژه"
+  },
+  "regenerateUsername": {
+    "message": "ایجاد مجدد نام کاربری"
+  },
+  "generateUsername": {
+    "message": "ایجاد نام کاربری"
+  },
+  "usernameType": {
+    "message": "نوع نام کاربری"
+  },
+  "plusAddressedEmail": {
+    "message": "به علاوه ایمیل آدرس داده شده"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "از قابلیت های آدرس دهی فرعی ارائه دهنده ایمیل خود استفاده کنید."
+  },
+  "catchallEmail": {
+    "message": "رایانامه همه‌گیر"
+  },
+  "catchallEmailDesc": {
+    "message": "از صندوق ورودی پیکربندی شده دامنه خود استفاده کنید."
+  },
+  "random": {
+    "message": "تصادفی"
+  },
+  "randomWord": {
+    "message": "کلمه تصادفی"
+  },
+  "websiteName": {
+    "message": "نام وب سایت"
+  },
+  "service": {
+    "message": "خدمت"
   }
 }

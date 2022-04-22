@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Sigur doriți să suprascrieți parola curentă?"
   },
+  "overwriteUsername": {
+    "message": "Suprascrieți numele de utilizator"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Sunteți sigur că doriți să suprascrieți numele de utilizator curent?"
+  },
   "noneFolder": {
     "message": "Fără dosar",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Aceasta parola nu a fost găsită în nicio breșă de date cunoscută. Ar trebui să fie sigură de utilizat."
   },
   "baseDomain": {
-    "message": "Domeniu de bază"
+    "message": "Domeniu de bază",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nume de domeniu",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Gazdă",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generator"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Ce doriți să generați?"
+  },
+  "passwordType": {
+    "message": "Tip de parolă"
+  },
+  "regenerateUsername": {
+    "message": "Regenerare nume de utilizator"
+  },
+  "generateUsername": {
+    "message": "Generare nume de utilizator"
+  },
+  "usernameType": {
+    "message": "Tip de nume de utilizator"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus e-mail adresat"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Utilizați capacitățile de subadresare ale furnizorului dvs. de e-mail."
+  },
+  "catchallEmail": {
+    "message": "E-mail Catch-all"
+  },
+  "catchallEmailDesc": {
+    "message": "Utilizați inbox-ul catch-all configurat pentru domeniul dvs."
+  },
+  "random": {
+    "message": "Aleatoriu"
+  },
+  "randomWord": {
+    "message": "Cuvânt aleatoriu"
+  },
+  "websiteName": {
+    "message": "Numele site-ului web"
+  },
+  "service": {
+    "message": "Serviciu"
   }
 }
