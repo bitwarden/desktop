@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Êtes-vous sûr de vouloir écraser le mot de passe actuel ?"
   },
+  "overwriteUsername": {
+    "message": "Remplacer le nom d'utilisateur"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Êtes-vous sûr(e) de vouloir remplacer le mot de passe actuel ?"
+  },
   "noneFolder": {
     "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Ce mot de passe n'a été trouvé dans aucune fuite de données connue. Il semble sécurisé."
   },
   "baseDomain": {
-    "message": "Domaine de base"
+    "message": "Domaine de base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nom du domaine",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Hôte",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Générateur"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Que souhaitez-vous générer ?"
+  },
+  "passwordType": {
+    "message": "Type de mot de passe"
+  },
+  "regenerateUsername": {
+    "message": "Régénérer le nom d'utilisateur"
+  },
+  "generateUsername": {
+    "message": "Générer le nom d'utilisateur"
+  },
+  "usernameType": {
+    "message": "Type de nom d'utilisateur"
+  },
+  "plusAddressedEmail": {
+    "message": "Plus Addressed Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Utilisez les capacités de sous-adressage de votre fournisseur de courriel."
+  },
+  "catchallEmail": {
+    "message": "Collecteur d'email"
+  },
+  "catchallEmailDesc": {
+    "message": "Utilisez la boîte de réception du collecteur configurée de votre domaine."
+  },
+  "random": {
+    "message": "Aléatoire"
+  },
+  "randomWord": {
+    "message": "Mots aléatoire"
+  },
+  "websiteName": {
+    "message": "Nom du site Web"
+  },
+  "service": {
+    "message": "Service"
   }
 }

@@ -2,11 +2,9 @@ import * as path from "path";
 
 import { app } from "electron";
 
-import { BiometricMain } from "jslib-common/abstractions/biometric.main";
 import { StateFactory } from "jslib-common/factories/stateFactory";
 import { GlobalState } from "jslib-common/models/domain/globalState";
 import { StateService } from "jslib-common/services/state.service";
-import { KeytarStorageListener } from "jslib-electron/keytarStorageListener";
 import { ElectronLogService } from "jslib-electron/services/electronLog.service";
 import { ElectronMainMessagingService } from "jslib-electron/services/electronMainMessaging.service";
 import { ElectronStorageService } from "jslib-electron/services/electronStorage.service";
@@ -14,7 +12,9 @@ import { TrayMain } from "jslib-electron/tray.main";
 import { UpdaterMain } from "jslib-electron/updater.main";
 import { WindowMain } from "jslib-electron/window.main";
 
-import { MenuMain } from "./main/menu.main";
+import { BiometricMain } from "./main/biometric/biometric.main";
+import { DesktopCredentialStorageListener } from "./main/desktopCredentialStorageListener";
+import { MenuMain } from "./main/menu/menu.main";
 import { MessagingMain } from "./main/messaging.main";
 import { NativeMessagingMain } from "./main/nativeMessaging.main";
 import { PowerMonitorMain } from "./main/powerMonitor.main";
@@ -27,7 +27,7 @@ export class Main {
   storageService: ElectronStorageService;
   messagingService: ElectronMainMessagingService;
   stateService: StateService;
-  keytarStorageListener: KeytarStorageListener;
+  desktopCredentialStorageListener: DesktopCredentialStorageListener;
 
   windowMain: WindowMain;
   messagingMain: MessagingMain;
@@ -116,7 +116,7 @@ export class Main {
 
     if (process.platform === "win32") {
       // eslint-disable-next-line
-      const BiometricWindowsMain = require("jslib-electron/biometric.windows.main").default;
+      const BiometricWindowsMain = require("./main/biometric/biometric.windows.main").default;
       this.biometricMain = new BiometricWindowsMain(
         this.i18nService,
         this.windowMain,
@@ -125,11 +125,14 @@ export class Main {
       );
     } else if (process.platform === "darwin") {
       // eslint-disable-next-line
-      const BiometricDarwinMain = require("jslib-electron/biometric.darwin.main").default;
+      const BiometricDarwinMain = require("./main/biometric/biometric.darwin.main").default;
       this.biometricMain = new BiometricDarwinMain(this.i18nService, this.stateService);
     }
 
-    this.keytarStorageListener = new KeytarStorageListener("Bitwarden", this.biometricMain);
+    this.desktopCredentialStorageListener = new DesktopCredentialStorageListener(
+      "Bitwarden",
+      this.biometricMain
+    );
 
     this.nativeMessagingMain = new NativeMessagingMain(
       this.logService,
@@ -140,7 +143,7 @@ export class Main {
   }
 
   bootstrap() {
-    this.keytarStorageListener.init();
+    this.desktopCredentialStorageListener.init();
     this.windowMain.init().then(
       async () => {
         const locale = await this.stateService.getLocale();

@@ -36,6 +36,7 @@
     "build:renderer:dev": "cross-env NODE_ENV=development webpack --config webpack.renderer.js",
     "build:renderer:watch": "cross-env NODE_ENV=development webpack --config webpack.renderer.js --watch",
     "electron": "npm run build:main:dev && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 ./build --watch\" \"npm run build:renderer:watch\"",
+    "electron:ignore": "npm run build:main:dev && concurrently -k -n Main,Rend -c yellow,cyan \"electron --inspect=5858 --ignore-certificate-errors ./build --watch\" \"npm run build:renderer:watch\"",
     "clean:dist": "rimraf ./dist/*",
     "clean:l10n": "git push origin --delete l10n_master",
     "pack:dir": "npm run clean:dist && electron-builder --dir -p never",
@@ -78,6 +79,12 @@
     "afterSign": "scripts/after-sign.js",
     "asarUnpack": [
       "**/*.node"
+    ],
+    "files": [
+      "**/*",
+      "!**/node_modules/@bitwarden/desktop-native/**/*",
+      "**/node_modules/@bitwarden/desktop-native/index.js",
+      "**/node_modules/@bitwarden/desktop-native/dist/desktop_native.${platform}-${arch}*.node"
     ],
     "mac": {
       "electronUpdaterCompatibility": ">=0.0.1",
@@ -303,15 +310,19 @@
     "@angular/platform-browser": "^12.2.13",
     "@angular/platform-browser-dynamic": "^12.2.13",
     "@angular/router": "^12.2.13",
+    "@bitwarden/desktop-native": "file:desktop_native",
     "@bitwarden/jslib-angular": "file:jslib/angular",
     "@bitwarden/jslib-common": "file:jslib/common",
     "@bitwarden/jslib-electron": "file:jslib/electron",
+    "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
+    "forcefocus": "^1.1.0",
     "ngx-toastr": "14.1.4",
     "node-ipc": "^9.1.4",
     "nord": "^0.2.1",
     "regedit": "^3.0.3",
     "rxjs": "^7.4.0",
-    "sweetalert2": "^10.16.6"
+    "sweetalert2": "^10.16.6",
+    "zone.js": "0.11.4"
   },
   "engines": {
     "node": "~16",

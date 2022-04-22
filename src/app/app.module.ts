@@ -83,7 +83,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PasswordRepromptComponent } from "./components/password-reprompt.component";
 import { SetPinComponent } from "./components/set-pin.component";
-import { VerifyMasterPasswordComponent } from "./components/verify-master-password.component";
+import { UserVerificationComponent } from "./components/user-verification.component";
 import { AccountSwitcherComponent } from "./layout/account-switcher.component";
 import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
@@ -99,9 +99,9 @@ import { CiphersComponent } from "./vault/ciphers.component";
 import { CollectionsComponent } from "./vault/collections.component";
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
+import { GeneratorComponent } from "./vault/generator.component";
 import { GroupingsComponent } from "./vault/groupings.component";
 import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
-import { PasswordGeneratorComponent } from "./vault/password-generator.component";
 import { PasswordHistoryComponent } from "./vault/password-history.component";
 import { ShareComponent } from "./vault/share.component";
 import { VaultComponent } from "./vault/vault.component";
@@ -193,7 +193,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     LockComponent,
     LoginComponent,
     NavComponent,
-    PasswordGeneratorComponent,
+    GeneratorComponent,
     PasswordGeneratorHistoryComponent,
     PasswordHistoryComponent,
     PasswordRepromptComponent,
@@ -212,9 +212,9 @@ registerLocaleData(localeZhTw, "zh-TW");
     TwoFactorComponent,
     TwoFactorOptionsComponent,
     UpdateTempPasswordComponent,
+    UserVerificationComponent,
     VaultComponent,
     VaultTimeoutInputComponent,
-    VerifyMasterPasswordComponent,
     ViewComponent,
     ViewCustomFieldsComponent,
   ],

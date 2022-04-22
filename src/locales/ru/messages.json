@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Вы уверены, что хотите переписать текущий пароль?"
   },
+  "overwriteUsername": {
+    "message": "Перезаписать имя пользователя"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Вы хотите перезаписать текущее имя пользователя?"
+  },
   "noneFolder": {
     "message": "Без папки",
     "description": "This is the folder for uncategorized items"
@@ -1188,7 +1194,12 @@
     "message": "Этот пароль не обнаружен в известных базах утечек. Можно продолжать его использовать."
   },
   "baseDomain": {
-    "message": "Основной домен"
+    "message": "Основной домен",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Доменное имя",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Хост",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Генератор"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Что вы хотите сгенерировать?"
+  },
+  "passwordType": {
+    "message": "Тип пароля"
+  },
+  "regenerateUsername": {
+    "message": "Пересоздать имя пользователя"
+  },
+  "generateUsername": {
+    "message": "Создать имя пользователя"
+  },
+  "usernameType": {
+    "message": "Тип имени пользователя"
+  },
+  "plusAddressedEmail": {
+    "message": "Плюс-адресованные email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Использовать возможности суб-адресации вашего провайдера электронной почты."
+  },
+  "catchallEmail": {
+    "message": "Catch-all-адрес электронной почты"
+  },
+  "catchallEmailDesc": {
+    "message": "Использовать настроенную в вашем домене почту catch-all."
+  },
+  "random": {
+    "message": "Случайно"
+  },
+  "randomWord": {
+    "message": "Случайное слово"
+  },
+  "websiteName": {
+    "message": "Название сайта"
+  },
+  "service": {
+    "message": "Служба"
   }
 }

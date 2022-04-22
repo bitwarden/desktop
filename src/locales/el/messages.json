@@ -369,6 +369,12 @@
   "overwritePasswordConfirmation": {
     "message": "Είστε βέβαιοι ότι θέλετε να αντικαταστήσετε τον τρέχον κωδικό πρόσβασης;"
   },
+  "overwriteUsername": {
+    "message": "Αντικατάσταση Username"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "Είστε βέβαιοι ότι θέλετε να αντικαταστήσετε το τρέχον username;"
+  },
   "noneFolder": {
     "message": "Χωρίς Φάκελο",
     "description": "This is the folder for uncategorized items"
@@ -737,10 +743,10 @@
     "message": "Γεννήτρια Κωδικού"
   },
   "contactUs": {
-    "message": "Contact Us"
+    "message": "Επικοινωνία"
   },
   "getHelp": {
-    "message": "Get Help"
+    "message": "Ζητήστε Βοήθεια"
   },
   "fileBugReport": {
     "message": "Υποβολή Αναφοράς Σφάλματος"
@@ -1188,7 +1194,12 @@
     "message": "Αυτός ο κωδικός δεν βρέθηκε σε κάποια γνωστή διαρροή δεδομένων. Θα πρέπει να είναι ασφαλής για χρήση."
   },
   "baseDomain": {
-    "message": "Βασικός τομέας"
+    "message": "Βασικός τομέας",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Όνομα τομέα",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Host",
@@ -1818,15 +1829,57 @@
     "message": "Έχει λήξει το χρονικό όριο. Παρακαλώ επιστρέψτε και προσπαθήστε να συνδεθείτε ξανά."
   },
   "exportingPersonalVaultTitle": {
-    "message": "Exporting Personal Vault"
+    "message": "Εξαγωγή Προσωπικού Vault"
   },
   "exportingPersonalVaultDescription": {
-    "message": "Only the personal vault items associated with $EMAIL$ will be exported. Organization vault items will not be included.",
+    "message": "Θα εξαχθούν μόνο τα προσωπικά αντικείμενα Vault που σχετίζονται με το $EMAIL$. Τα αντικείμενα Vault οργανισμού δεν θα συμπεριληφθούν.",
     "placeholders": {
       "email": {
         "content": "$1",
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Γεννήτρια"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "Τι θα θέλατε να δημιουργήσετε;"
+  },
+  "passwordType": {
+    "message": "Τύπος Κωδικού"
+  },
+  "regenerateUsername": {
+    "message": "Επαναδημιουργία Ονόματος Χρήστη"
+  },
+  "generateUsername": {
+    "message": "Δημιουργία Ονόματος Χρήστη"
+  },
+  "usernameType": {
+    "message": "Τύπος Ονόματος Χρήστη"
+  },
+  "plusAddressedEmail": {
+    "message": "Συν Διεύθυνση Email"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Χρησιμοποιήστε τις δυνατότητες δευτερεύουσας διεύθυνσης του παρόχου email σας."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Χρησιμοποιήστε τα διαμορφωμένα εισερχόμενα catch-all του domain σας."
+  },
+  "random": {
+    "message": "Τυχαίο"
+  },
+  "randomWord": {
+    "message": "Τυχαία Λέξη"
+  },
+  "websiteName": {
+    "message": "Όνομα Ιστοσελίδας"
+  },
+  "service": {
+    "message": "Υπηρεσία"
   }
 }
