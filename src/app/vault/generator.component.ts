@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { PasswordGeneratorComponent as BasePasswordGeneratorComponent } from "jslib-angular/components/password-generator.component";
+import { GeneratorComponent as BaseGeneratorComponent } from "jslib-angular/components/generator.component";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
@@ -9,10 +9,10 @@ import { StateService } from "jslib-common/abstractions/state.service";
 import { UsernameGenerationService } from "jslib-common/abstractions/usernameGeneration.service";
 
 @Component({
-  selector: "app-password-generator",
-  templateUrl: "password-generator.component.html",
+  selector: "app-generator",
+  templateUrl: "generator.component.html",
 })
-export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
+export class GeneratorComponent extends BaseGeneratorComponent {
   constructor(
     passwordGenerationService: PasswordGenerationService,
     usernameGenerationService: UsernameGenerationService,
@@ -30,5 +30,9 @@ export class PasswordGeneratorComponent extends BasePasswordGeneratorComponent {
       route,
       window
     );
+  }
+
+  usernameTypesLearnMore() {
+    this.platformUtilsService.launchUri("https://bitwarden.com/help/generator/#username-types");
   }
 }

@@ -136,7 +136,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Nombre en la tarjeta"
+    "message": "Nombre del propietario de la tarjeta"
   },
   "number": {
     "message": "Número"
@@ -368,6 +368,12 @@
   },
   "overwritePasswordConfirmation": {
     "message": "¿Estás seguro de que quieres sobreescribir la contraseña actual?"
+  },
+  "overwriteUsername": {
+    "message": "Reemplazar nombre de usuario"
+  },
+  "overwriteUsernameConfirmation": {
+    "message": "¿Esta seguro que desea reemplazar el nombre de usuario?"
   },
   "noneFolder": {
     "message": "Sin carpeta",
@@ -1188,7 +1194,12 @@
     "message": "Esta contraseña no fue encontrada en ninguna filtración de datos conocida. Deberías poder utilizarla de forma segura."
   },
   "baseDomain": {
-    "message": "Dominio base"
+    "message": "Dominio base",
+    "description": "Domain name. Ex. website.com"
+  },
+  "domainName": {
+    "message": "Nombre de dominio",
+    "description": "Domain name. Ex. website.com"
   },
   "host": {
     "message": "Servidor",
@@ -1828,5 +1839,47 @@
         "example": "name@example.com"
       }
     }
+  },
+  "generator": {
+    "message": "Generador"
+  },
+  "whatWouldYouLikeToGenerate": {
+    "message": "¿Qué deseas generar?"
+  },
+  "passwordType": {
+    "message": "Tipo de contraseña"
+  },
+  "regenerateUsername": {
+    "message": "Regenerar nombre de usuario"
+  },
+  "generateUsername": {
+    "message": "Generar nombre de usuario"
+  },
+  "usernameType": {
+    "message": "Tipo de nombre de usuario"
+  },
+  "plusAddressedEmail": {
+    "message": "Dirección adicional de correo electrónico"
+  },
+  "plusAddressedEmailDesc": {
+    "message": "Use your email provider's sub-addressing capabilities."
+  },
+  "catchallEmail": {
+    "message": "Catch-all Email"
+  },
+  "catchallEmailDesc": {
+    "message": "Use your domain's configured catch-all inbox."
+  },
+  "random": {
+    "message": "Aleatorio"
+  },
+  "randomWord": {
+    "message": "Palabra aleatoria"
+  },
+  "websiteName": {
+    "message": "Nombre del sitio web"
+  },
+  "service": {
+    "message": "Servicio"
   }
 }

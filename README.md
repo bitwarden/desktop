@@ -2,6 +2,10 @@
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/bitwarden-desktop/localized.svg)](https://crowdin.com/project/bitwarden-desktop)
 [![Join the chat at https://gitter.im/bitwarden/Lobby](https://badges.gitter.im/bitwarden/Lobby.svg)](https://gitter.im/bitwarden/Lobby)
 
+> **Repository Reorganization in Progress**
+>
+> New pull requests created during this transition period may not get addressed —if needed, please create a new PR after reorganization is complete.
+
 # Bitwarden Desktop Application
 
 [![Platforms](https://imgur.com/SLv9paA.png "Windows, macOS, and Linux")](https://bitwarden.com/download/)
@@ -12,20 +16,34 @@ The Bitwarden desktop app is written using Electron and Angular. The application
 
 # Build/Run
 
-**Requirements**
+## Requirements
 
 - [Node.js](https://nodejs.org) v16.13.1 (LTS) or greater
 - NPM v8
-- Windows users: To compile the native node modules used in the app you will need the _Visual C++ toolset_, available through the standard Visual Studio installer. You will also need to install the _Microsoft Build Tools 2015_ and _Windows 10 SDK 17134_ as additional dependencies in the Visual Studio installer.
+- Rust (https://www.rust-lang.org/tools/install)
+- Windows:
+  - To compile the native node modules used in the app you will need the _Visual C++ toolset_, available through the standard Visual Studio installer. You will also need to install the _Microsoft Build Tools 2015_ and _Windows 10 SDK 17134_ as additional dependencies in the Visual Studio installer.
+- Linux:
+  - The following packages `build-essential libsecret-1-dev libglib2.0-dev`
 
-**Run the app**
+## Build native module
+
+The desktop application relies on native code written in rust, which needs to be compiled first.
 
 ```bash
-npm install
+cd desktop_native
+npm ci
+npm run build
+```
+
+## Run the app
+
+```bash
+npm ci
 npm run electron
 ```
 
-**Debug Native Messaging**
+### Debug Native Messaging
 
 Native Messaging (communication with the browser extension) works by having the browser start a lightweight proxy application baked into our desktop binary. To setup an environment which allows
 for easy debugging you will need to build the application for distribution, i.e. `npm run dist:<platform>`, start the dist version and enable desktop integration. This will write some manifests
