@@ -25,9 +25,11 @@ widestring = "0.5.1"
 windows = {version = "0.32.0", features = [
   "alloc",
   "Foundation",
+  "Security_Credentials_UI",
   "Storage_Streams",
   "Win32_Foundation",
   "Win32_Security_Credentials",
+  "Win32_System_WinRT",
 ]}
 
 [target.'cfg(windows)'.dev-dependencies]

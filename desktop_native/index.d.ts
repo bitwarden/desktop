@@ -13,3 +13,7 @@ export namespace passwords {
   /** Delete the stored password from the keychain. */
   export function deletePassword(service: string, account: string): Promise<void>
 }
+export namespace biometrics {
+  export function prompt(hwnd: Buffer, message: string): Promise<boolean>
+  export function available(): Promise<boolean>
+}

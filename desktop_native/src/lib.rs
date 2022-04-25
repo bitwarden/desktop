@@ -1,6 +1,7 @@
 #[macro_use]
 extern crate napi_derive;
 
+mod biometric;
 mod password;
 
 #[napi]
@@ -35,5 +36,23 @@ pub mod passwords {
     pub async fn delete_password(service: String, account: String) -> napi::Result<()> {
         super::password::delete_password(&service, &account)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+}
+
+#[napi]
+pub mod biometrics {
+    // Prompt for biometric confirmation
+    #[napi]
+    pub async fn prompt(
+        hwnd: napi::bindgen_prelude::Buffer,
+        message: String,
+    ) -> napi::Result<bool> {
+        super::biometric::prompt(hwnd.into(), message)
+            .map_err(|e| napi::Error::from_reason(e.to_string()))
+    }
+
+    #[napi]
+    pub async fn available() -> napi::Result<bool> {
+        super::biometric::available().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }

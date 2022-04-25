@@ -10,7 +10,7 @@ export class DesktopCredentialStorageListener {
   constructor(private serviceName: string, private biometricService: BiometricMain) {}
 
   init() {
-    ipcMain.on("keytar", async (event: any, message: any) => {
+    ipcMain.handle("keytar", async (event: any, message: any) => {
       try {
         let serviceName = this.serviceName;
         message.keySuffix = "_" + (message.keySuffix ?? "");
@@ -35,9 +35,9 @@ export class DesktopCredentialStorageListener {
             await passwords.deletePassword(serviceName, message.key);
           }
         }
-        event.returnValue = val;
+        return val;
       } catch {
-        event.returnValue = null;
+        return null;
       }
     });
   }
