@@ -87,6 +87,7 @@
   .nested-filter-options {
     list-style: none;
     margin-bottom: 0px;
+    padding-left: 0.85em;
   }
 }
 
@@ -174,114 +175,6 @@
       display: block;
       margin-bottom: 2px;
       text-align: center;
-    }
-  }
-}
-
-// Nested indentions
-ul.filter-options {
-  // Level 1
-  .filter-option {
-    > .filter-buttons {
-      padding-left: 12px;
-    }
-
-    .filter-option {
-      left: -4px;
-    }
-
-    &.active > .filter-buttons .filter-option {
-      left: 11px;
-    }
-  }
-
-  // Level 2
-  .nested-filter-options .filter-option {
-    > .filter-buttons {
-      padding-left: 23px;
-    }
-
-    .filter-option {
-      left: 7px;
-    }
-
-    &.active > span li {
-      left: 22px;
-    }
-  }
-
-  // Level 3
-  ul ul li {
-    > span {
-      padding-left: 34px;
-    }
-
-    li {
-      left: 18px;
-    }
-
-    &.active > span li {
-      left: 33px;
-    }
-  }
-
-  // Level 4
-  ul ul ul li {
-    > span {
-      padding-left: 45px;
-    }
-
-    li {
-      left: 29px;
-    }
-
-    &.active > span li {
-      left: 44px;
-    }
-  }
-
-  // Level 5
-  ul ul ul ul li {
-    > span {
-      padding-left: 56px;
-    }
-
-    li {
-      left: 40px;
-    }
-
-    &.active > span li {
-      left: 55px;
-    }
-  }
-
-  // Level 6
-  ul ul ul ul ul li {
-    > span {
-      padding-left: 67px;
-    }
-
-    li {
-      left: 51px;
-    }
-
-    &.active > span li {
-      left: 66px;
-    }
-  }
-
-  // Level 7
-  ul ul ul ul ul ul li {
-    > span {
-      padding-left: 78px;
-    }
-
-    li {
-      left: 62px;
-    }
-
-    &.active > span li {
-      left: 77px;
     }
   }
 }
