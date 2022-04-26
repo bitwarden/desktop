@@ -60,13 +60,6 @@
             appA11yTitle="{{ 'editFolder' | i18n }}"
           >
             <i class="bwi bwi-pencil bwi-fw" aria-hidden="true"></i>
-            <span
-              (click)="editFolder(f.node)"
-              role="button"
-              appA11yTitle="{{ 'editFolder' | i18n }}"
-              *ngIf="f.node.id"
-            >
-            </span>
           </button>
         </span>
         <ul class="nested-filter-options" *ngIf="f.children.length && !isCollapsed(f.node)">
