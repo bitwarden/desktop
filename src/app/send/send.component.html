@@ -5,28 +5,50 @@
       <div class="filter">
         <ul class="filter-options">
           <li class="filter-option" [ngClass]="{ active: selectedAll }">
-            <a href="#" appStopClick appBlurClick (click)="selectAll()">
-              <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
-            </a>
+            <span class="filter-buttons">
+              <button
+                class="filter-button"
+                (click)="selectAll()"
+                appA11yTitle="{{ 'applyFilter' | i18n }}"
+              >
+                <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{
+                  "allSends" | i18n
+                }}
+              </button>
+            </span>
           </li>
         </ul>
       </div>
       <div class="filter">
-        <h2 class="filter-heading">{{ "types" | i18n }}</h2>
+        <div class="filter-heading">
+          <h2>{{ "types" | i18n }}</h2>
+        </div>
         <ul class="filter-options">
           <li class="filter-option" [ngClass]="{ active: selectedType === sendType.Text }">
-            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
-              <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
-                "sendTypeText" | i18n
-              }}
-            </a>
+            <span class="filter-buttons">
+              <button
+                class="filter-button"
+                (click)="selectType(sendType.Text)"
+                appA11yTitle="{{ 'applyFilter' | i18n }}"
+              >
+                <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
+                  "sendTypeText" | i18n
+                }}
+              </button>
+            </span>
           </li>
           <li class="filter-option" [ngClass]="{ active: selectedType === sendType.File }">
-            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
-              <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
-                "sendTypeFile" | i18n
-              }}
-            </a>
+            <span class="filter-buttons">
+              <button
+                class="filter-button"
+                (click)="selectType(sendType.File)"
+                appA11yTitle="{{ 'applyFilter' | i18n }}"
+              >
+                <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
+                  "sendTypeFile" | i18n
+                }}
+              </button>
+            </span>
           </li>
         </ul>
       </div>
