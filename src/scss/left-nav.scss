@@ -42,7 +42,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
 
-  * {
+  h2 {
     @include themify($themes) {
       color: themed("headingColor");
     }
@@ -52,24 +52,36 @@
   button {
     @extend .no-btn;
     text-transform: uppercase;
-  }
 
-  button.add-button {
-    margin-left: auto;
-    margin-right: 5px;
+    @include themify($themes) {
+      color: themed("headingButtonColor");
+    }
 
     &:hover,
     &:focus {
-      cursor: pointer;
-
       @include themify($themes) {
         color: themed("headingButtonHoverColor");
       }
     }
   }
 
+  button.add-button {
+    margin-left: auto;
+    margin-right: 5px;
+  }
+
   &.active {
     .filter-button {
+      h2 {
+        @include themify($themes) {
+          color: themed("primaryColor");
+        }
+      }
+    }
+  }
+
+  .filter-button {
+    &:hover {
       h2 {
         @include themify($themes) {
           color: themed("primaryColor");
@@ -83,6 +95,7 @@
   word-break: break-all;
   padding: 0;
   list-style: none;
+  width: 100%;
   margin: 0 0 15px 0;
   .nested-filter-options {
     list-style: none;
@@ -93,7 +106,7 @@
 
 .filter-option {
   top: 8px;
-  width: 1.1em;
+  width: 100%;
 
   @include themify($themes) {
     color: themed("textColor");
@@ -107,6 +120,10 @@
           font-weight: bold;
         }
       }
+
+      .edit-button {
+        visibility: visible;
+      }
     }
   }
 }
@@ -115,13 +132,10 @@
   padding: 5px 0;
   display: flex;
   align-items: center;
+  width: 100%;
 
   &:hover,
   &:focus {
-    .edit-button {
-      visibility: visible;
-    }
-
     .filter-button {
       @include themify($themes) {
         color: themed("primaryColor");
@@ -133,10 +147,8 @@
     @extend .no-btn;
   }
 
-  .edit-button {
-    visibility: hidden;
-    margin-left: 2px;
-
+  .edit-button,
+  .toggle-button {
     @include themify($themes) {
       color: themed("headingButtonColor");
     }
@@ -147,6 +159,12 @@
         color: themed("headingButtonHoverColor");
       }
     }
+  }
+
+  .edit-button {
+    visibility: hidden;
+    margin-left: auto;
+    margin-right: 5px;
   }
 }
 
