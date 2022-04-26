@@ -67,6 +67,16 @@
       }
     }
   }
+
+  &.active {
+    .filter-button {
+      h2 {
+        @include themify($themes) {
+          color: themed("primaryColor");
+        }
+      }
+    }
+  }
 }
 
 .filter-options {
