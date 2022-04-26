@@ -22,7 +22,10 @@ export default class BiometricDarwinMain implements BiometricMain {
   }
 
   supportsBiometric(): Promise<boolean> {
-    return Promise.resolve(systemPreferences.canPromptTouchID());
+    return Promise.resolve(
+      // Issue 1419 - if the biometric unlock is already set allowed this make sure we still support it (clam-shell)
+      systemPreferences.canPromptTouchID() || this.stateService.getBiometricUnlock()
+    );
   }
 
   async authenticateBiometric(): Promise<boolean> {
