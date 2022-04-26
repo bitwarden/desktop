@@ -75,7 +75,6 @@ import { AppComponent } from "./app.component";
 import { PasswordRepromptComponent } from "./components/password-reprompt.component";
 import { SetPinComponent } from "./components/set-pin.component";
 import { VerifyMasterPasswordComponent } from "./components/verify-master-password.component";
-import { LoginGuard } from "./guards/login.guard";
 import { AccountSwitcherComponent } from "./layout/account-switcher.component";
 import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
@@ -198,6 +197,5 @@ registerLocaleData(localeZhTw, "zh-TW");
     ViewCustomFieldsComponent,
   ],
   bootstrap: [AppComponent],
-  providers: [LoginGuard],
 })
 export class AppModule {}
