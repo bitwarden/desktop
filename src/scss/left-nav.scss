@@ -22,6 +22,15 @@
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
+
+  .filter {
+    hr {
+      margin: 1em 0 1em 0;
+      @include themify($themes) {
+        border-color: themed("hrColor");
+      }
+    }
+  }
 }
 
 .filter-heading {
