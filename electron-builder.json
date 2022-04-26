@@ -115,12 +115,8 @@
   "appImage": {
     "artifactName": "${productName}-${version}-${arch}.${ext}"
   },
-  "rpm": {
-    "artifactName": "${productName}-${version}-${arch}.${ext}"
-  },
-  "freebsd": {
-    "artifactName": "${productName}-${version}-${arch}.${ext}"
-  },
+  "rpm": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
+  "freebsd": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
   "snap": {
     "autoStart": true,
     "confinement": "strict",
