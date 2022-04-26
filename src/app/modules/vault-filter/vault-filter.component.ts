@@ -1,8 +1,7 @@
 import { Component } from "@angular/core";
 
 import { VaultFilterComponent as BaseVaultFilterComponent } from "jslib-angular/modules/vault-filter/vault-filter.component";
-
-import { VaultFilterService } from "./vault-filter.service";
+import { VaultFilterService } from "jslib-angular/modules/vault-filter/vault-filter.service";
 
 @Component({
   selector: "app-vault-filter",
