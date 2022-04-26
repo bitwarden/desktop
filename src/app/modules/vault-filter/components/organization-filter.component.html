@@ -1,17 +1,5 @@
 <ng-container *ngIf="show">
   <ng-container [ngSwitch]="displayMode">
-    <ng-container *ngSwitchCase="'noOrganizations'">
-      <ul class="filter-options">
-        <li class="filter-option active">
-          <span class="filter-option-buttons">
-            <button class="filter-button">
-              <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
-              &nbsp;{{ "myVault" | i18n }}
-            </button>
-          </span>
-        </li>
-      </ul>
-    </ng-container>
     <ng-container *ngSwitchCase="'personalOwnershipPolicy'">
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
         <button
@@ -50,18 +38,6 @@
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
-            </button>
-          </span>
-        </li>
-      </ul>
-    </ng-container>
-    <ng-container *ngSwitchCase="'singleOrganizationAndPersonalOwnershipPolicies'">
-      <ul class="filter-options">
-        <li class="filter-option active">
-          <span class="filter-buttons">
-            <button class="filter-button" appA11yTitle="{{ 'applyFilter' | i18n }}">
-              <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
-              &nbsp;{{ organizations[0].name }}
             </button>
           </span>
         </li>
