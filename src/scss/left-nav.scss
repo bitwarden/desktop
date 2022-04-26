@@ -101,7 +101,6 @@
 
   &.active {
     > .filter-buttons {
-      .toggle-button,
       .filter-button {
         @include themify($themes) {
           color: themed("primaryColor");
@@ -123,7 +122,6 @@
       visibility: visible;
     }
 
-    .toggle-button,
     .filter-button {
       @include themify($themes) {
         color: themed("primaryColor");
