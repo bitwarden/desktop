@@ -6,10 +6,10 @@
       appStopProp
       (click)="toggleCollapse(foldersGrouping)"
       aria-expanded="!isCollapsed(foldersGrouping)"
+      appA11yTitle="{{ 'toggleCollapse' | i18n }}"
     >
       <i
         class="bwi bwi-fw"
-        title="{{ 'toggleCollapse' | i18n }}"
         aria-hidden="true"
         [ngClass]="{
           'bwi-angle-right': isCollapsed(foldersGrouping),
@@ -37,20 +37,28 @@
         class="filter-option"
       >
         <span class="filter-buttons">
-          <button class="toggle-button" *ngIf="f.children.length" (click)="toggleCollapse(f.node)">
+          <button
+            class="toggle-button"
+            *ngIf="f.children.length"
+            (click)="toggleCollapse(f.node)"
+            appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+          >
             <i
               class="bwi bwi-fw"
-              title="{{ 'toggleCollapse' | i18n }}"
               aria-hidden="true"
               [ngClass]="{
                 'bwi-angle-right': isCollapsed(f.node),
                 'bwi-angle-down': !isCollapsed(f.node)
               }"
-              (click)="toggleCollapse(f.node)"
-              appStopProp
             ></i>
           </button>
-          <button class="filter-button" appStopClick appBlurClick (click)="applyFilter(f.node)">
+          <button
+            class="filter-button"
+            appStopClick
+            appBlurClick
+            (click)="applyFilter(f.node)"
+            appA11yTitle="{{ 'applyFilter' | i18n }}"
+          >
             <i *ngIf="f.children.length === 0" class="bwi bwi-fw bwi-folder" aria-hidden="true"></i>
             &nbsp;{{ f.node.name }}
           </button>

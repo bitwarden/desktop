@@ -1,8 +1,13 @@
 <div class="filter-heading">
-  <button class="no-btn" (click)="toggleCollapse()" appStopProp aria-expanded="!isCollapsed">
+  <button
+    class="no-btn"
+    (click)="toggleCollapse()"
+    appStopProp
+    aria-expanded="!isCollapsed"
+    appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+  >
     <i
       class="bwi bwi-fw"
-      title="{{ 'toggleCollapse' | i18n }}"
       aria-hidden="true"
       [ngClass]="{
         'bwi-angle-right': isCollapsed,
@@ -23,6 +28,7 @@
         appStopClick
         appBlurClick
         (click)="applyFilter(cipherTypeEnum.Login)"
+        appA11yTitle="{{ 'applyFilter' | i18n }}"
       >
         <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>&nbsp;{{ "typeLogin" | i18n }}
       </button>
@@ -35,6 +41,7 @@
         appStopClick
         appBlurClick
         (click)="applyFilter(cipherTypeEnum.Card)"
+        appA11yTitle="{{ 'applyFilter' | i18n }}"
       >
         <i class="bwi bwi-fw bwi-credit-card" aria-hidden="true"></i>&nbsp;{{ "typeCard" | i18n }}
       </button>
@@ -50,6 +57,7 @@
         appStopClick
         appBlurClick
         (click)="applyFilter(cipherTypeEnum.Identity)"
+        appA11yTitle="{{ 'applyFilter' | i18n }}"
       >
         <i class="bwi bwi-fw bwi-id-card" aria-hidden="true"></i>&nbsp;{{ "typeIdentity" | i18n }}
       </button>
@@ -65,6 +73,7 @@
         appStopClick
         appBlurClick
         (click)="applyFilter(cipherTypeEnum.SecureNote)"
+        appA11yTitle="{{ 'applyFilter' | i18n }}"
       >
         <i class="bwi bwi-fw bwi-sticky-note" aria-hidden="true"></i>&nbsp;{{
           "typeSecureNote" | i18n

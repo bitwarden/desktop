@@ -14,18 +14,25 @@
     </ng-container>
     <ng-container *ngSwitchCase="'personalOwnershipPolicy'">
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
-        <i
-          class="bwi bwi-fw"
-          title="{{ 'toggleCollapse' | i18n }}"
-          aria-hidden="true"
-          [ngClass]="{
-            'bwi-angle-right': isCollapsed,
-            'bwi-angle-down': !isCollapsed
-          }"
+        <button
+          class="toggle-button"
+          appA11yTitle="{{ 'toggleCollapse' | i18n }}"
           (click)="toggleCollapse()"
-          appStopProp
-        ></i>
-        <button class="no-btn" (click)="clearFilter()">
+        >
+          <i
+            class="bwi bwi-fw"
+            aria-hidden="true"
+            [ngClass]="{
+              'bwi-angle-right': isCollapsed,
+              'bwi-angle-down': !isCollapsed
+            }"
+          ></i>
+        </button>
+        <button
+          class="no-btn"
+          (click)="clearFilter()"
+          appA11yTitle="{{ 'filterAllVaults' | i18n }}"
+        >
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
@@ -41,6 +48,7 @@
               appStopClick
               appBlurClick
               (click)="applyOrganizationFilter(organization)"
+              appA11yTitle="{{ 'applyFilter' | i18n }}"
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
@@ -53,7 +61,7 @@
       <ul class="filter-options">
         <li class="filter-option active">
           <span class="filter-buttons">
-            <button class="filter-button">
+            <button class="filter-button" appA11yTitle="{{ 'applyFilter' | i18n }}">
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organizations[0].name }}
             </button>
@@ -63,25 +71,32 @@
     </ng-container>
     <ng-container *ngSwitchCase="'organizationMember'">
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
-        <i
-          class="bwi bwi-fw"
-          title="{{ 'toggleCollapse' | i18n }}"
-          aria-hidden="true"
-          [ngClass]="{
-            'bwi-angle-right': isCollapsed,
-            'bwi-angle-down': !isCollapsed
-          }"
-          (click)="toggleCollapse()"
-          appStopProp
-        ></i>
-        <button class="no-btn" (click)="clearFilter()">
+        <button appA11yTitle="{{ 'toggleCollapse' | i18n }}" (click)="toggleCollapse()">
+          <i
+            class="bwi bwi-fw"
+            aria-hidden="true"
+            [ngClass]="{
+              'bwi-angle-right': isCollapsed,
+              'bwi-angle-down': !isCollapsed
+            }"
+          ></i>
+        </button>
+        <button
+          class="no-btn"
+          (click)="clearFilter()"
+          appA11yTitle="{{ 'filterAllVaults' | i18n }}"
+        >
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
       <ul *ngIf="!isCollapsed" class="filter-options no-margin">
         <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyMyVaultFilter()">
+            <button
+              class="filter-button"
+              (click)="applyMyVaultFilter()"
+              appA11yTitle="{{ 'applyFilter' | i18n }}"
+            >
               <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
               &nbsp;{{ "myVault" | i18n }}
             </button>
@@ -98,6 +113,7 @@
               appStopClick
               appBlurClick
               (click)="applyOrganizationFilter(organization)"
+              appA11yTitle="{{ 'applyFilter' | i18n }}"
             >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}

@@ -3,7 +3,13 @@
   <ul class="filter-options">
     <li class="filter-option" [ngClass]="{ active: activeFilter.status === 'all' }">
       <span class="filter-buttons">
-        <button class="filter-button" appStopClick appBlurClick (click)="applyFilter('all')">
+        <button
+          class="filter-button"
+          appStopClick
+          appBlurClick
+          (click)="applyFilter('all')"
+          appA11yTitle="{{ 'applyFilter' | i18n }}"
+        >
           <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allItems" | i18n }}
         </button>
       </span>
@@ -14,7 +20,13 @@
       [ngClass]="{ active: activeFilter.status === 'favorites' }"
     >
       <span class="filter-buttons">
-        <button class="filter-button" appStopClick appBlurClick (click)="applyFilter('favorites')">
+        <button
+          class="filter-button"
+          appStopClick
+          appBlurClick
+          (click)="applyFilter('favorites')"
+          appA11yTitle="{{ 'applyFilter' | i18n }}"
+        >
           <i class="bwi bwi-fw bwi-star" aria-hidden="true"></i>&nbsp;{{ "favorites" | i18n }}
         </button>
       </span>
@@ -25,7 +37,13 @@
       [ngClass]="{ active: activeFilter.status === 'trash' }"
     >
       <span class="filter-buttons">
-        <button class="filter-button" appStopClick appBlurClick (click)="applyFilter('trash')">
+        <button
+          class="filter-button"
+          appStopClick
+          appBlurClick
+          (click)="applyFilter('trash')"
+          appA11yTitle="{{ 'applyFilter' | i18n }}"
+        >
           <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>&nbsp;{{ "trash" | i18n }}
         </button>
       </span>

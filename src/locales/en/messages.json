@@ -1892,5 +1892,13 @@
   },
   "searchMyVault": {
     "message": "Search My Vault"
+  },
+  "applyFilter": {
+    "message": "Apply Filter",
+    "description": "Applying a filter to a list of vault items"
+  },
+  "filterAllVaults": {
+    "message": "Clear any active organization filter",
+    "description": "Applying a filter to a list of vault items"
   }
 }
