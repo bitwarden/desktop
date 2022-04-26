@@ -3,7 +3,6 @@
     <button
       class="toggle-button"
       [attr.aria-expanded]="!isCollapsed(foldersGrouping)"
-      appStopProp
       (click)="toggleCollapse(foldersGrouping)"
       appA11yTitle="{{ 'toggleCollapse' | i18n }}"
     >
@@ -17,12 +16,7 @@
       ></i>
     </button>
     <h2>&nbsp;{{ foldersGrouping.name | i18n }}</h2>
-    <button
-      class="add-button"
-      appBlurClick
-      (click)="addFolder()"
-      appA11yTitle="{{ 'addFolder' | i18n }}"
-    >
+    <button class="add-button" (click)="addFolder()" appA11yTitle="{{ 'addFolder' | i18n }}">
       <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
@@ -53,8 +47,6 @@
           </button>
           <button
             class="filter-button"
-            appStopClick
-            appBlurClick
             (click)="applyFilter(f.node)"
             appA11yTitle="{{ 'applyFilter' | i18n }}"
           >
@@ -64,15 +56,11 @@
           <button
             class="edit-button"
             *ngIf="f.node.id"
-            appStopClick
-            appBlurClick
             (click)="editFolder(f.node)"
             appA11yTitle="{{ 'editFolder' | i18n }}"
           >
             <i class="bwi bwi-pencil bwi-fw" aria-hidden="true"></i>
             <span
-              appStopProp
-              appStopClick
               (click)="editFolder(f.node)"
               role="button"
               appA11yTitle="{{ 'editFolder' | i18n }}"
