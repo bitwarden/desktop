@@ -3,6 +3,7 @@
     class="no-btn"
     (click)="toggleCollapse()"
     aria-expanded="!isCollapsed"
+    aria-controls="type-filters"
     appA11yTitle="{{ 'toggleCollapse' | i18n }}"
   >
     <i
@@ -16,7 +17,7 @@
   </button>
   <h2>&nbsp;{{ typesNode.name | i18n }}</h2>
 </div>
-<ul *ngIf="!isCollapsed" class="filter-options">
+<ul id="type-filters" *ngIf="!isCollapsed" class="filter-options">
   <li
     class="filter-option"
     [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Login }"

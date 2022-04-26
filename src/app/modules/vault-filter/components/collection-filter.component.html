@@ -3,6 +3,7 @@
     <button
       class="no-btn"
       [attr.aria-expanded]="!isCollapsed(collectionsGrouping)"
+      aria-controls="collection-filters"
       (click)="toggleCollapse(collectionsGrouping)"
       appA11yTitle="{{ 'toggleCollapse' | i18n }}"
     >
@@ -17,7 +18,7 @@
     </button>
     <h2>&nbsp;{{ collectionsGrouping.name | i18n }}</h2>
   </div>
-  <ul *ngIf="!isCollapsed(collectionsGrouping)" class="filter-options">
+  <ul id="collection-filters" *ngIf="!isCollapsed(collectionsGrouping)" class="filter-options">
     <ng-template #recursiveCollections let-collections>
       <li
         class="filter-option"
@@ -29,6 +30,7 @@
             *ngIf="c.children.length"
             class="toggle-button"
             [attr.aria-expanded]="!isCollapsed(c.node)"
+            [attr.aria-controls]="c.node.name + '_children'"
             (click)="toggleCollapse(c.node)"
             appA11yTitle="{{ 'toggleCollapse' | i18n }}"
           >
@@ -54,7 +56,11 @@
             &nbsp;{{ c.node.name }}
           </button>
         </span>
-        <ul class="nested-filter-options" *ngIf="c.children.length && !isCollapsed(c.node)">
+        <ul
+          [id]="c.node.name + '_children'"
+          class="nested-filter-options"
+          *ngIf="c.children.length && !isCollapsed(c.node)"
+        >
           <ng-container
             *ngTemplateOutlet="recursiveCollections; context: { $implicit: c.children }"
           >

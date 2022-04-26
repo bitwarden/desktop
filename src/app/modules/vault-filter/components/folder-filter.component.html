@@ -3,6 +3,7 @@
     <button
       class="toggle-button"
       [attr.aria-expanded]="!isCollapsed(foldersGrouping)"
+      aria-controls="folder-filters"
       (click)="toggleCollapse(foldersGrouping)"
       appA11yTitle="{{ 'toggleCollapse' | i18n }}"
     >
@@ -20,7 +21,7 @@
       <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
-  <ul class="filter-options" *ngIf="!isCollapsed(foldersGrouping)">
+  <ul id="folder-filters" class="filter-options" *ngIf="!isCollapsed(foldersGrouping)">
     <ng-template #recursiveFolders let-folders>
       <li
         *ngFor="let f of folders"
@@ -35,6 +36,8 @@
             *ngIf="f.children.length"
             (click)="toggleCollapse(f.node)"
             appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+            [attr.aria-expanded]="!isCollapsed(f.node)"
+            [attr.aria-controls]="f.node.name + '_children'"
           >
             <i
               class="bwi bwi-fw"
@@ -62,7 +65,11 @@
             <i class="bwi bwi-pencil bwi-fw" aria-hidden="true"></i>
           </button>
         </span>
-        <ul class="nested-filter-options" *ngIf="f.children.length && !isCollapsed(f.node)">
+        <ul
+          [id]="f.node.name + '_children'"
+          class="nested-filter-options"
+          *ngIf="f.children.length && !isCollapsed(f.node)"
+        >
           <ng-container *ngTemplateOutlet="recursiveFolders; context: { $implicit: f.children }">
           </ng-container>
         </ul>

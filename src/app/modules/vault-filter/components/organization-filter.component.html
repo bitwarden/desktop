@@ -6,6 +6,8 @@
           class="toggle-button"
           appA11yTitle="{{ 'toggleCollapse' | i18n }}"
           (click)="toggleCollapse()"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="organization-filters"
         >
           <i
             class="bwi bwi-fw"
@@ -24,7 +26,7 @@
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
-      <ul *ngIf="!isCollapsed" class="filter-options no-margin">
+      <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options no-margin">
         <li
           class="filter-option"
           *ngFor="let organization of organizations"
@@ -45,7 +47,12 @@
     </ng-container>
     <ng-container *ngSwitchCase="'organizationMember'">
       <div class="filter-heading" [ngClass]="{ active: !hasActiveFilter }">
-        <button appA11yTitle="{{ 'toggleCollapse' | i18n }}" (click)="toggleCollapse()">
+        <button
+          appA11yTitle="{{ 'toggleCollapse' | i18n }}"
+          (click)="toggleCollapse()"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="organization-filters"
+        >
           <i
             class="bwi bwi-fw"
             aria-hidden="true"
@@ -63,7 +70,7 @@
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
-      <ul *ngIf="!isCollapsed" class="filter-options no-margin">
+      <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options no-margin">
         <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">
           <span class="filter-buttons">
             <button
