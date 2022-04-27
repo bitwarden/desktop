@@ -7,6 +7,7 @@ import {
   STATE_SERVICE_USE_CACHE,
   WINDOW,
   CLIENT_TYPE,
+  LOCALES_DIRECTORY,
 } from "jslib-angular/services/jslib-services.module";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
@@ -79,8 +80,9 @@ import { InitService } from "./init.service";
     },
     {
       provide: I18nServiceAbstraction,
-      useFactory: (window: Window) => new I18nService(window.navigator.language, "./locales"),
-      deps: [WINDOW],
+      useFactory: (window: Window, localesDirectory: string) =>
+        new I18nService(window.navigator.language, localesDirectory),
+      deps: [WINDOW, LOCALES_DIRECTORY],
     },
     {
       provide: MessagingServiceAbstraction,
