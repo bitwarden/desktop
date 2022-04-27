@@ -51,6 +51,7 @@ export class InitService {
       const htmlEl = this.win.document.documentElement;
       htmlEl.classList.add("os_" + this.platformUtilsService.getDeviceString());
       htmlEl.classList.add("locale_" + this.i18nService.translationLocale);
+
       const theme = await this.platformUtilsService.getEffectiveTheme();
       htmlEl.classList.add("theme_" + theme);
       this.platformUtilsService.onDefaultSystemThemeChange(async (sysTheme) => {
