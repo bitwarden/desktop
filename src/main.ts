@@ -94,8 +94,10 @@ export class Main {
       undefined,
       undefined,
       (arg) => this.processDeepLink(arg),
-      (win) => this.trayMain.setupWindowListeners(win)
+      (win) => this.trayMain.setupWindowListeners(win),
+      this.messagingService
     );
+
     this.messagingMain = new MessagingMain(this, this.stateService);
     this.updaterMain = new UpdaterMain(
       this.i18nService,
