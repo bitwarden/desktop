@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from "@angular/core";
+import { APP_INITIALIZER, InjectionToken, NgModule } from "@angular/core";
 
 import {
   JslibServicesModule,
@@ -45,6 +45,8 @@ import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { InitService } from "./init.service";
 
+const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
+
 @NgModule({
   imports: [JslibServicesModule],
   declarations: [],
@@ -66,6 +68,10 @@ import { InitService } from "./init.service";
     {
       provide: CLIENT_TYPE,
       useValue: ClientType.Desktop,
+    },
+    {
+      provide: RELOAD_CALLBACK,
+      useValue: null,
     },
     { provide: LogServiceAbstraction, useClass: ElectronLogService, deps: [] },
     {
@@ -103,12 +109,13 @@ import { InitService } from "./init.service";
     },
     {
       provide: SystemServiceAbstraction,
-      useFactory: (
-        messagingService: MessagingServiceAbstraction,
-        platformUtilsService: PlatformUtilsServiceAbstraction,
-        stateService: StateServiceAbstraction
-      ) => new SystemService(messagingService, platformUtilsService, null, stateService),
-      deps: [MessagingServiceAbstraction, PlatformUtilsServiceAbstraction, StateServiceAbstraction],
+      useClass: SystemService,
+      deps: [
+        MessagingServiceAbstraction,
+        PlatformUtilsServiceAbstraction,
+        RELOAD_CALLBACK,
+        StateServiceAbstraction,
+      ],
     },
     { provide: PasswordRepromptServiceAbstraction, useClass: PasswordRepromptService },
     {
