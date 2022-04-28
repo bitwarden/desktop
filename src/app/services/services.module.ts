@@ -8,6 +8,7 @@ import {
   WINDOW,
   CLIENT_TYPE,
   LOCALES_DIRECTORY,
+  SYSTEM_LANGUAGE,
 } from "jslib-angular/services/jslib-services.module";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "jslib-common/abstractions/broadcaster.service";
 import { CryptoService as CryptoServiceAbstraction } from "jslib-common/abstractions/crypto.service";
@@ -86,9 +87,8 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     },
     {
       provide: I18nServiceAbstraction,
-      useFactory: (window: Window, localesDirectory: string) =>
-        new I18nService(window.navigator.language, localesDirectory),
-      deps: [WINDOW, LOCALES_DIRECTORY],
+      useClass: I18nService,
+      deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY],
     },
     {
       provide: MessagingServiceAbstraction,
