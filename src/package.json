@@ -12,8 +12,8 @@
     "url": "https://github.com/bitwarden/desktop"
   },
   "dependencies": {
-    "@bitwarden/desktop-native": "file:../desktop_native",
     "@nodert-win10-rs4/windows.security.credentials.ui": "^0.4.4",
-    "forcefocus": "^1.1.0"
+    "forcefocus": "^1.1.0",
+    "keytar": "^7.9.0"
   }
 }
