@@ -18,11 +18,7 @@
             }"
           ></i>
         </button>
-        <button
-          class="filter-button"
-          (click)="clearFilter()"
-          appA11yTitle="{{ 'filterAllVaults' | i18n }}"
-        >
+        <button class="filter-button" (click)="clearFilter()">
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
@@ -33,11 +29,7 @@
           [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
         >
           <span class="filter-buttons">
-            <button
-              class="filter-button"
-              (click)="applyOrganizationFilter(organization)"
-              appA11yTitle="{{ 'applyFilter' | i18n }}"
-            >
+            <button class="filter-button" (click)="applyOrganizationFilter(organization)">
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
             </button>
@@ -62,22 +54,14 @@
             }"
           ></i>
         </button>
-        <button
-          class="filter-button"
-          (click)="clearFilter()"
-          appA11yTitle="{{ 'filterAllVaults' | i18n }}"
-        >
+        <button class="filter-button" (click)="clearFilter()">
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
       <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options no-margin">
         <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">
           <span class="filter-buttons">
-            <button
-              class="filter-button"
-              (click)="applyMyVaultFilter()"
-              appA11yTitle="{{ 'applyFilter' | i18n }}"
-            >
+            <button class="filter-button" (click)="applyMyVaultFilter()">
               <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
               &nbsp;{{ "myVault" | i18n }}
             </button>
@@ -89,11 +73,7 @@
           [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
         >
           <span class="filter-buttons">
-            <button
-              class="filter-button"
-              (click)="applyOrganizationFilter(organization)"
-              appA11yTitle="{{ 'applyFilter' | i18n }}"
-            >
+            <button class="filter-button" (click)="applyOrganizationFilter(organization)">
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
             </button>

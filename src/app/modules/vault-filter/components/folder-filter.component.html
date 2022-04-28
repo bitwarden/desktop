@@ -48,11 +48,7 @@
               }"
             ></i>
           </button>
-          <button
-            class="filter-button"
-            (click)="applyFilter(f.node)"
-            appA11yTitle="{{ 'applyFilter' | i18n }}"
-          >
+          <button class="filter-button" (click)="applyFilter(f.node)">
             <i *ngIf="f.children.length === 0" class="bwi bwi-fw bwi-folder" aria-hidden="true"></i>
             &nbsp;{{ f.node.name }}
           </button>
