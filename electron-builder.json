@@ -16,7 +16,8 @@
   "publish": {
     "provider": "s3",
     "bucket": "public-s3-electron-artifacts",
-    "path": "desktop/v${version}"
+    "path": "desktop/v${version}",
+    "endpoint": "https://artifacts.bitwarden.com/desktop/v${version}"
   },
   "mac": {
     "electronUpdaterCompatibility": ">=0.0.1",
