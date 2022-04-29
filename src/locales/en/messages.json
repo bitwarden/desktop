@@ -400,6 +400,18 @@
   "length": {
     "message": "Length"
   },
+  "uppercase": {
+    "message": "Uppercase (A-Z)"
+  },
+  "lowercase": {
+    "message": "Lowercase (a-z)"
+  },
+  "numbers": {
+    "message": "Numbers (0-9)"
+  },
+  "specialCharacters": {
+    "message": "Special Characters (!@#$%^&*)"
+  },
   "numWords": {
     "message": "Number of Words"
   },
@@ -775,7 +787,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Go To Web Vault"
+    "message": "Go to Web Vault"
   },
   "getMobileApp": {
     "message": "Get Mobile App"
@@ -973,7 +985,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Check For Updates"
+    "message": "Check for Updates…"
   },
   "version": {
     "message": "Version $VERSION_NUM$",
@@ -985,7 +997,7 @@
     }
   },
   "restartToUpdate": {
-    "message": "Restart To Update"
+    "message": "Restart to Update"
   },
   "restartToUpdateDesc": {
     "message": "Version $VERSION_NUM$ is ready to install. You must restart the application to complete the installation. Do you want to restart and update now?",

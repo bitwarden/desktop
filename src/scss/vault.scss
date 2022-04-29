@@ -43,7 +43,7 @@ app-root {
     order: 1;
     width: 22%;
     min-width: 175px;
-    max-width: 250px;
+    max-width: 600px;
     border-right: 1px solid #000000;
 
     @include themify($themes) {

@@ -226,6 +226,7 @@
                     (change)="savePasswordOptions()"
                     [disabled]="enforcedPasswordPolicyOptions?.useUppercase"
                     [(ngModel)]="passwordOptions.uppercase"
+                    attr.aria-label="{{ 'uppercase' | i18n }}"
                   />
                 </div>
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
@@ -236,6 +237,7 @@
                     (change)="savePasswordOptions()"
                     [disabled]="enforcedPasswordPolicyOptions?.useLowercase"
                     [(ngModel)]="passwordOptions.lowercase"
+                    attr.aria-label="{{ 'lowercase' | i18n }}"
                   />
                 </div>
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
@@ -246,6 +248,7 @@
                     (change)="savePasswordOptions()"
                     [disabled]="enforcedPasswordPolicyOptions?.useNumbers"
                     [(ngModel)]="passwordOptions.number"
+                    attr.aria-label="{{ 'numbers' | i18n }}"
                   />
                 </div>
                 <div class="box-content-row box-content-row-checkbox" appBoxRow>
@@ -256,6 +259,7 @@
                     (change)="savePasswordOptions()"
                     [disabled]="enforcedPasswordPolicyOptions?.useSpecial"
                     [(ngModel)]="passwordOptions.special"
+                    attr.aria-label="{{ 'specialCharacters' | i18n }}"
                   />
                 </div>
               </div>
