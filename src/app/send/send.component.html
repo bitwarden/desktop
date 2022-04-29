@@ -36,7 +36,7 @@
   <div id="items" class="items">
     <div class="content">
       <div class="list" *ngIf="filteredSends.length">
-        <a
+        <button
           *ngFor="let s of filteredSends"
           appStopClick
           (click)="selectSend(s.id)"
@@ -45,11 +45,11 @@
           [ngClass]="{ active: s.id === sendId }"
           class="flex-list-item"
         >
-          <div class="item-icon" aria-hidden="true">
+          <span class="item-icon" aria-hidden="true">
             <i class="bwi bwi-fw bwi-lg" [ngClass]="s.type == 0 ? 'bwi-file-text' : 'bwi-file'"></i>
-          </div>
-          <div class="item-content">
-            <div class="item-title">
+          </span>
+          <span class="item-content">
+            <span class="item-title">
               {{ s.name }}
               <span class="title-badges">
                 <ng-container *ngIf="s.disabled">
@@ -98,10 +98,10 @@
                   <span class="sr-only">{{ "pendingDeletion" | i18n }}</span>
                 </ng-container>
               </span>
-            </div>
+            </span>
             <span class="item-details">{{ s.deletionDate | date }}</span>
-          </div>
-        </a>
+          </span>
+        </button>
       </div>
       <div class="no-items" *ngIf="!filteredSends.length">
         <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>
