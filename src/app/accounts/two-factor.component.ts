@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { TwoFactorComponent as BaseTwoFactorComponent } from "jslib-angular/components/two-factor.component";
 import { ModalService } from "jslib-angular/services/modal.service";
 import { ApiService } from "jslib-common/abstractions/api.service";
+import { AppIdService } from "jslib-common/abstractions/appId.service";
 import { AuthService } from "jslib-common/abstractions/auth.service";
 import { EnvironmentService } from "jslib-common/abstractions/environment.service";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
@@ -38,7 +39,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     stateService: StateService,
     route: ActivatedRoute,
     logService: LogService,
-    twoFactorService: TwoFactorService
+    twoFactorService: TwoFactorService,
+    appIdService: AppIdService
   ) {
     super(
       authService,
@@ -51,7 +53,8 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       stateService,
       route,
       logService,
-      twoFactorService
+      twoFactorService,
+      appIdService
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);

@@ -149,6 +149,20 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
+
       - name: Build application
         run: npm run dist:lin
 
@@ -228,11 +242,18 @@ jobs:
         shell: pwsh
         run: choco install checksum --no-progress
 
+      - name: Rust
+        shell: pwsh
+        run: |
+          rustup target install i686-pc-windows-msvc
+          rustup target install aarch64-pc-windows-msvc
+
       - name: Print environment
         run: |
           node --version
           npm --version
           choco --version
+          rustup show
 
       - name: Login to Azure
         uses: Azure/login@1f63701bf3e6892515f1b7ce2d2bf1708b46beaf
@@ -252,6 +273,20 @@ jobs:
 
       - name: Install Node dependencies
         run: npm ci
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: Build & Sign (dev)
         env:
@@ -404,10 +439,15 @@ jobs:
           npm install -g node-gyp
           node-gyp install $(node -v)
 
+      - name: Rust
+        shell: pwsh
+        run: rustup target install aarch64-apple-darwin
+
       - name: Print environment
         run: |
           node --version
           npm --version
+          rustup show
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
 
@@ -492,9 +532,23 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: Install Node dependencies
         run: npm ci
@@ -548,10 +602,15 @@ jobs:
           npm install -g node-gyp
           node-gyp install $(node -v)
 
+      - name: Rust
+        shell: pwsh
+        run: rustup target install aarch64-apple-darwin
+
       - name: Print environment
         run: |
           node --version
           npm --version
+          rustup show
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
 
@@ -636,9 +695,23 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: NPM install
         run: npm ci
@@ -735,10 +808,15 @@ jobs:
           npm install -g node-gyp
           node-gyp install $(node -v)
 
+      - name: Rust
+        shell: pwsh
+        run: rustup target install aarch64-apple-darwin
+
       - name: Print environment
         run: |
           node --version
           npm --version
+          rustup show
           echo "GitHub ref: $GITHUB_REF"
           echo "GitHub event: $GITHUB_EVENT"
 
@@ -823,9 +901,23 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: NPM install
         run: npm ci
@@ -1002,9 +1094,23 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
+
+      - name: Cache Native Module
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        id: cache
+        with:
+          path: desktop_native/dist
+          key: rust-${{ runner.os }}-${{ hashFiles('desktop_native/**/*') }}
+
+      - name: Build Native Module
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: './desktop_native'
+        run: |
+          npm ci
+          npm run build:cross-platform
 
       - name: NPM install
         run: npm ci

@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 
 import { GeneratorComponent as BaseGeneratorComponent } from "jslib-angular/components/generator.component";
 import { I18nService } from "jslib-common/abstractions/i18n.service";
+import { LogService } from "jslib-common/abstractions/log.service";
 import { PasswordGenerationService } from "jslib-common/abstractions/passwordGeneration.service";
 import { PlatformUtilsService } from "jslib-common/abstractions/platformUtils.service";
 import { StateService } from "jslib-common/abstractions/state.service";
@@ -19,7 +20,8 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     stateService: StateService,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
-    route: ActivatedRoute
+    route: ActivatedRoute,
+    logService: LogService
   ) {
     super(
       passwordGenerationService,
@@ -27,6 +29,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       platformUtilsService,
       stateService,
       i18nService,
+      logService,
       route,
       window
     );

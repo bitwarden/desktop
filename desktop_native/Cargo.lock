@@ -343,9 +343,9 @@ checksum = "1bf2e165bb3457c8e098ea76f3e3bc9db55f87aa90d52d0e6be741470916aaa4"
 
 [[package]]
 name = "libsecret"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b8d814edb0cb306ffded3f1bfe72d6689529f95f7313a718331802723a73e5a"
+checksum = "d4af5a2342942fa42d706a424e9f9914287fb8317132750fd73a241140ac38c1"
 dependencies = [
  "bitflags",
  "gio",
