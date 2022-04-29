@@ -93,7 +93,6 @@
       </div>
       <div class="box">
         <div class="box-header">
-          {{ "options" | i18n }}
           <button
             type="button"
             class="toggle"
@@ -102,6 +101,7 @@
             (click)="toggleOptions()"
             [attr.aria-expanded]="showOptions"
           >
+            {{ "options" | i18n }}
             <i
               class="bwi bwi-lg"
               aria-hidden="true"
