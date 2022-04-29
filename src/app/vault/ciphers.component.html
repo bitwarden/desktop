@@ -14,6 +14,7 @@
         (contextmenu)="rightClickCipher(c)"
         title="{{ 'viewItem' | i18n }}"
         [ngClass]="{ active: c.id === activeCipherId }"
+        [attr.aria-pressed]="c.id === activeCipherId"
         class="flex-list-item virtual-scroll-item"
       >
         <app-vault-icon [cipher]="c"></app-vault-icon>

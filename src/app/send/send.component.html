@@ -43,6 +43,7 @@
           title="{{ 'viewItem' | i18n }}"
           (contextmenu)="viewSendMenu(s)"
           [ngClass]="{ active: s.id === sendId }"
+          [attr.aria-pressed]="s.id === sendId"
           class="flex-list-item"
         >
           <span class="item-icon" aria-hidden="true">
