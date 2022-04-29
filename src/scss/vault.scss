@@ -129,7 +129,6 @@ app-root {
     ul.bwi-ul {
       // Level 1
       li {
-        > a,
         > button {
           padding-left: 12px;
         }
@@ -138,7 +137,6 @@ app-root {
           left: -4px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 11px;
         }
@@ -146,7 +144,6 @@ app-root {
 
       // Level 2
       ul li {
-        > a,
         > button {
           padding-left: 23px;
         }
@@ -155,7 +152,6 @@ app-root {
           left: 7px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 22px;
         }
@@ -163,7 +159,6 @@ app-root {
 
       // Level 3
       ul ul li {
-        > a,
         > button {
           padding-left: 34px;
         }
@@ -172,7 +167,6 @@ app-root {
           left: 18px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 33px;
         }
@@ -180,7 +174,6 @@ app-root {
 
       // Level 4
       ul ul ul li {
-        > a,
         > button {
           padding-left: 45px;
         }
@@ -189,7 +182,6 @@ app-root {
           left: 29px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 44px;
         }
@@ -197,7 +189,6 @@ app-root {
 
       // Level 5
       ul ul ul ul li {
-        > a,
         > button {
           padding-left: 56px;
         }
@@ -206,7 +197,6 @@ app-root {
           left: 40px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 55px;
         }
@@ -214,7 +204,6 @@ app-root {
 
       // Level 6
       ul ul ul ul ul li {
-        > a,
         > button {
           padding-left: 67px;
         }
@@ -223,7 +212,6 @@ app-root {
           left: 51px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 66px;
         }
@@ -231,7 +219,6 @@ app-root {
 
       // Level 7
       ul ul ul ul ul ul li {
-        > a,
         > button {
           padding-left: 78px;
         }
@@ -240,7 +227,6 @@ app-root {
           left: 62px;
         }
 
-        &.active > a .bwi-li,
         &.active > button .bwi-li {
           left: 77px;
         }
@@ -252,7 +238,6 @@ app-root {
       margin: 0;
 
       li {
-        a,
         button {
           padding: 5px 0;
           display: flex;

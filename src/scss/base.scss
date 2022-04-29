@@ -50,8 +50,7 @@ img {
   border: none;
 }
 
-a,
-button {
+a {
   text-decoration: none;
 
   @include themify($themes) {

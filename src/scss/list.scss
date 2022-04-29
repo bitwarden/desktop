@@ -1,8 +1,6 @@
 ﻿@import "variables.scss";
 
-.list > a,
 .list > button {
-  display: block;
   padding: 3px 10px;
   text-decoration: none;
   position: relative;
@@ -106,7 +104,6 @@
   }
 }
 
-.list > a.flex-list-item,
 .list > button.flex-list-item {
   display: flex;
   align-items: center;
