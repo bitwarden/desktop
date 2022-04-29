@@ -35,6 +35,7 @@ import { SyncService } from "jslib-common/abstractions/sync.service";
 import { SystemService } from "jslib-common/abstractions/system.service";
 import { TokenService } from "jslib-common/abstractions/token.service";
 import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
+import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 import { CipherType } from "jslib-common/enums/cipherType";
 
 import { MenuUpdateRequest } from "../main/menu/menu.updater";
@@ -330,7 +331,9 @@ export class AppComponent implements OnInit {
             if (message.userId != null) {
               await this.stateService.setActiveUser(message.userId);
             }
-            const locked = await this.vaultTimeoutService.isLocked(message.userId);
+            const locked =
+              (await this.authService.getAuthStatus(message.userId)) ===
+              AuthenticationStatus.Locked;
             if (locked) {
               this.messagingService.send("locked", { userId: message.userId });
             } else {
@@ -436,7 +439,8 @@ export class AppComponent implements OnInit {
             isAuthenticated: await this.stateService.getIsAuthenticated({
               userId: userId,
             }),
-            isLocked: await this.vaultTimeoutService.isLocked(userId),
+            isLocked:
+              (await this.authService.getAuthStatus(userId)) === AuthenticationStatus.Locked,
             email: stateAccounts[i].profile.email,
             userId: stateAccounts[i].profile.userId,
           };
@@ -591,7 +595,7 @@ export class AppComponent implements OnInit {
       const keys = Object.keys(accounts);
       if (keys.length > 0) {
         for (const userId of keys) {
-          if (!(await this.vaultTimeoutService.isLocked(userId))) {
+          if ((await this.authService.getAuthStatus(userId)) === AuthenticationStatus.Unlocked) {
             return;
           }
         }

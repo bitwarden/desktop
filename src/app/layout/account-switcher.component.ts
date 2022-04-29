@@ -2,9 +2,9 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component, OnInit } from "@angular/core";
 
+import { AuthService } from "jslib-common/abstractions/auth.service";
 import { MessagingService } from "jslib-common/abstractions/messaging.service";
 import { StateService } from "jslib-common/abstractions/state.service";
-import { VaultTimeoutService } from "jslib-common/abstractions/vaultTimeout.service";
 import { AuthenticationStatus } from "jslib-common/enums/authenticationStatus";
 import { Utils } from "jslib-common/misc/utils";
 import { Account } from "jslib-common/models/domain/account";
@@ -53,6 +53,7 @@ export class AccountSwitcherComponent implements OnInit {
   accounts: { [userId: string]: SwitcherAccount } = {};
   activeAccountEmail: string;
   serverUrl: string;
+  authStatus = AuthenticationStatus;
   overlayPostition: ConnectedPosition[] = [
     {
       originX: "end",
@@ -78,22 +79,16 @@ export class AccountSwitcherComponent implements OnInit {
 
   constructor(
     private stateService: StateService,
-    private vaultTimeoutService: VaultTimeoutService,
+    private authService: AuthService,
     private messagingService: MessagingService
   ) {}
 
   async ngOnInit(): Promise<void> {
-    this.stateService.accounts.subscribe(async (accounts) => {
+    this.stateService.accounts.subscribe(async (accounts: { [userId: string]: Account }) => {
       for (const userId in accounts) {
-        if (userId === (await this.stateService.getUserId())) {
-          accounts[userId].profile.authenticationStatus = AuthenticationStatus.Active;
-        } else {
-          accounts[userId].profile.authenticationStatus = (await this.vaultTimeoutService.isLocked(
-            userId
-          ))
-            ? AuthenticationStatus.Locked
-            : AuthenticationStatus.Unlocked;
-        }
+        accounts[userId].profile.authenticationStatus = await this.authService.getAuthStatus(
+          userId
+        );
       }
 
       this.accounts = await this.createSwitcherAccounts(accounts);
