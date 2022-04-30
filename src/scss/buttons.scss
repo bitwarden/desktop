@@ -53,7 +53,6 @@
 
   &:focus:not([disabled]) {
     cursor: pointer;
-    outline: 0;
 
     @include themify($themes) {
       background-color: darken(themed("buttonBackgroundColor"), 6%);
