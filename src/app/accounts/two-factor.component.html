@@ -112,7 +112,6 @@
         type="submit"
         class="btn primary block"
         [disabled]="form.loading"
-        appBlurClick
         *ngIf="
           selectedProviderType != null &&
           selectedProviderType !== providerType.Duo &&
@@ -124,7 +123,7 @@
         >
         <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
-      <a role="button" tabindex="0" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
+      <button type="button" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</button>
     </div>
     <div class="sub-options">
       <button type="button" appStopClick (click)="anotherMethod()">

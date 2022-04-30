@@ -39,17 +39,15 @@
                 />
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
-                  appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'generateUsername' | i18n }}"
                   (click)="generateUsername()"
                 >
                   <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
-                </a>
+                </button>
               </div>
             </div>
             <div class="box-content-row box-content-row-flex" appBoxRow>
@@ -70,7 +68,6 @@
                   type="button"
                   #checkPasswordBtn
                   class="row-btn btn"
-                  appBlurClick
                   appA11yTitle="{{ 'checkPassword' | i18n }}"
                   (click)="checkPassword()"
                   [appApiAction]="checkPasswordPromise"
@@ -91,7 +88,6 @@
                   type="button"
                   class="row-btn"
                   appStopClick
-                  appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   [attr.aria-pressed]="showPassword"
                   (click)="togglePassword()"
@@ -106,7 +102,6 @@
                   type="button"
                   class="row-btn"
                   appStopClick
-                  appBlurClick
                   appA11yTitle="{{ 'generatePassword' | i18n }}"
                   (click)="generatePassword()"
                 >
@@ -155,7 +150,6 @@
                   type="button"
                   class="row-btn"
                   appStopClick
-                  appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   [attr.aria-pressed]="showCardNumber"
                   (click)="toggleCardNumber()"
@@ -209,7 +203,6 @@
                   type="button"
                   class="row-btn"
                   appStopClick
-                  appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   [attr.aria-pressed]="showCardCode"
                   (click)="toggleCardCode()"
@@ -440,22 +433,18 @@
                   type="button"
                   class="row-btn"
                   appStopClick
-                  appBlurClick
                   appA11yTitle="{{ 'toggleOptions' | i18n }}"
                   (click)="toggleUriOptions(u)"
+                  [attr.aria-expanded]="
+                    !(u.showOptions === false || (u.showOptions == null && u.match == null))
+                  "
                 >
                   <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
           </ng-container>
-          <button
-            type="button"
-            appStopClick
-            appBlurClick
-            (click)="addUri()"
-            class="box-content-row"
-          >
+          <button type="button" appStopClick (click)="addUri()" class="box-content-row">
             <i class="bwi bwi-plus-circle bwi-fw bwi-lg" aria-hidden="true"></i>
             {{ "newUri" | i18n }}
           </button>
@@ -496,7 +485,6 @@
             type="button"
             class="box-content-row box-content-row-flex text-default"
             appStopClick
-            appBlurClick
             (click)="attachments()"
             *ngIf="editMode && !cloneMode"
           >
@@ -507,7 +495,6 @@
             type="button"
             class="box-content-row box-content-row-flex text-default"
             appStopClick
-            appBlurClick
             (click)="editCollections()"
             *ngIf="editMode && !cloneMode && cipher.organizationId"
           >
@@ -578,7 +565,6 @@
   </div>
   <div class="footer">
     <button
-      appBlurClick
       type="submit"
       class="primary"
       appA11yTitle="{{ 'save' | i18n }}"
@@ -591,12 +577,11 @@
         aria-hidden="true"
       ></i>
     </button>
-    <button appBlurClick type="button" (click)="cancel()">
+    <button type="button" (click)="cancel()">
       {{ "cancel" | i18n }}
     </button>
     <div class="right">
       <button
-        appBlurClick
         type="button"
         (click)="share()"
         appA11yTitle="{{ 'moveToOrganization' | i18n }}"
@@ -606,7 +591,6 @@
       </button>
       <button
         #deleteBtn
-        appBlurClick
         type="button"
         (click)="delete()"
         class="danger"

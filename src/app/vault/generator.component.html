@@ -321,7 +321,6 @@
                   <a
                     href="#"
                     appStopClick
-                    appBlurClick
                     (click)="usernameTypesLearnMore()"
                     appA11yTitle="{{ 'learnMore' | i18n }}"
                   >
@@ -495,7 +494,6 @@
         <button
           type="button"
           class="primary"
-          appBlurClick
           *ngIf="comingFromAddEdit"
           (click)="select()"
           appA11yTitle="{{ 'select' | i18n }}"

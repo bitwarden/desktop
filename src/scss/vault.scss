@@ -414,14 +414,6 @@ app-root {
       border-top-color: themed("borderColor");
     }
 
-    button {
-      margin-right: 10px;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
     .right {
       margin-left: auto;
       display: flex;

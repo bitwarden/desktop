@@ -3,13 +3,7 @@
     <h2 class="sr-only">{{ "filters" | i18n }}</h2>
     <ul>
       <li [ngClass]="{ active: selectedAll }">
-        <button
-          type="button"
-          [attr.aria-pressed]="selectedAll"
-          appStopClick
-          appBlurClick
-          (click)="selectAll()"
-        >
+        <button type="button" [attr.aria-pressed]="selectedAll" appStopClick (click)="selectAll()">
           <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allItems" | i18n }}
         </button>
       </li>
@@ -18,7 +12,6 @@
           type="button"
           [attr.aria-pressed]="selectedFavorites"
           appStopClick
-          appBlurClick
           (click)="selectFavorites()"
         >
           <i class="bwi bwi-fw bwi-star" aria-hidden="true"></i>&nbsp;{{ "favorites" | i18n }}
@@ -29,7 +22,6 @@
           type="button"
           [attr.aria-pressed]="selectedTrash"
           appStopClick
-          appBlurClick
           (click)="selectTrash()"
         >
           <i class="bwi bwi-fw bwi-trash" aria-hidden="true"></i>&nbsp;{{ "trash" | i18n }}
@@ -43,7 +35,6 @@
           type="button"
           [attr.aria-pressed]="selectedType === cipherType.Login"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.Login)"
         >
           <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>&nbsp;{{ "typeLogin" | i18n }}
@@ -54,7 +45,6 @@
           type="button"
           [attr.aria-pressed]="selectedType === cipherType.Card"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.Card)"
         >
           <i class="bwi bwi-fw bwi-credit-card" aria-hidden="true"></i>&nbsp;{{ "typeCard" | i18n }}
@@ -65,7 +55,6 @@
           type="button"
           [attr.aria-pressed]="selectedType === cipherType.Identity"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.Identity)"
         >
           <i class="bwi bwi-fw bwi-id-card" aria-hidden="true"></i>&nbsp;{{ "typeIdentity" | i18n }}
@@ -76,7 +65,6 @@
           type="button"
           [attr.aria-pressed]="selectedType === cipherType.SecureNote"
           appStopClick
-          appBlurClick
           (click)="selectType(cipherType.SecureNote)"
         >
           <i class="bwi bwi-fw bwi-sticky-note" aria-hidden="true"></i>&nbsp;{{
@@ -89,7 +77,7 @@
     <ng-container *ngIf="loaded">
       <div class="heading">
         <h2>{{ "folders" | i18n }}</h2>
-        <button appBlurClick (click)="addFolder()" appA11yTitle="{{ 'addFolder' | i18n }}">
+        <button (click)="addFolder()" appA11yTitle="{{ 'addFolder' | i18n }}">
           <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
         </button>
       </div>
@@ -103,7 +91,6 @@
               type="button"
               [attr.aria-pressed]="selectedFolder && f.node.id === selectedFolderId"
               appStopClick
-              appBlurClick
               (click)="selectFolder(f.node)"
             >
               <i
@@ -160,7 +147,6 @@
                 type="button"
                 [attr.aria-pressed]="c.node.id === selectedCollectionId"
                 appStopClick
-                appBlurClick
                 (click)="selectCollection(c.node)"
               >
                 <i

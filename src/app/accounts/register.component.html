@@ -44,7 +44,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showPassword"
                 (click)="togglePassword(false)"
@@ -94,7 +93,6 @@
               type="button"
               class="row-btn"
               appStopClick
-              appBlurClick
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               [attr.aria-pressed]="showPassword"
               (click)="togglePassword(true)"
@@ -140,11 +138,11 @@
       </div>
     </div>
     <div class="buttons">
-      <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
+      <button type="submit" class="btn primary block" [disabled]="form.loading">
         <b [hidden]="form.loading">{{ "submit" | i18n }}</b>
         <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
-      <a role="button" tabindex="0" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
+      <button type="button" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</button>
     </div>
   </div>
 </form>

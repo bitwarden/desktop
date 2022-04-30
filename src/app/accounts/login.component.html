@@ -52,7 +52,6 @@
                 type="button"
                 class="row-btn"
                 appStopClick
-                appBlurClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showPassword"
                 (click)="togglePassword()"
@@ -76,15 +75,15 @@
       </div>
       <div class="buttons with-rows">
         <div class="buttons-row">
-          <button type="submit" class="btn primary block" [disabled]="form.loading" appBlurClick>
+          <button type="submit" class="btn primary block" [disabled]="form.loading">
             <b [hidden]="form.loading"
               ><i class="bwi bwi-sign-in" aria-hidden="true"></i> {{ "logIn" | i18n }}</b
             >
             <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
           </button>
-          <a role="button" tabindex="0" routerLink="/register" class="btn block">
+          <button type="button" routerLink="/register" class="btn block">
             <i class="bwi bwi-pencil-square" aria-hidden="true"></i> {{ "createAccount" | i18n }}
-          </a>
+          </button>
         </div>
         <div class="buttons-row">
           <button
@@ -97,7 +96,7 @@
         </div>
       </div>
       <div class="sub-options">
-        <a role="button" tabindex="0" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
+        <button type="button" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</button>
       </div>
     </div>
   </form>
