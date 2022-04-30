@@ -105,9 +105,11 @@
 
 .box-content-row {
   display: block;
+  width: 100%;
   padding: 10px 15px;
   position: relative;
   z-index: 1;
+  text-align: left;
 
   &:before {
     content: "";
@@ -232,7 +234,8 @@
       margin-top: 5px;
     }
 
-    > a {
+    > a,
+    > button {
       padding: 8px 8px 8px 4px;
       margin: 0;
 
@@ -366,7 +369,7 @@
 
   &:not(.box-draggable-row) {
     .action-buttons .row-btn:last-child {
-      padding-right: 2px !important;
+      margin-right: -6px !important;
     }
   }
 

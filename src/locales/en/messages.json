@@ -1853,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Locked"
+  },
+  "unlocked": {
+    "message": "Unlocked"
+  },
   "generator": {
     "message": "Generator"
   },

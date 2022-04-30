@@ -30,12 +30,11 @@
             />
           </div>
           <div class="action-buttons">
-            <a
+            <button
+              type="button"
               class="row-btn"
-              href="#"
               appStopClick
               appBlurClick
-              role="button"
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               [attr.aria-pressed]="showPassword"
               (click)="togglePassword()"
@@ -45,7 +44,7 @@
                 aria-hidden="true"
                 [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
               ></i>
-            </a>
+            </button>
           </div>
         </div>
       </div>

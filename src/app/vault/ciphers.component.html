@@ -6,14 +6,15 @@
     *ngIf="ciphers.length"
   >
     <div class="list">
-      <a
+      <button
+        type="button"
         *cdkVirtualFor="let c of ciphers; trackBy: trackByFn"
         appStopClick
         (click)="selectCipher(c)"
         (contextmenu)="rightClickCipher(c)"
-        href="#"
         title="{{ 'viewItem' | i18n }}"
         [ngClass]="{ active: c.id === activeCipherId }"
+        [attr.aria-pressed]="c.id === activeCipherId"
         class="flex-list-item virtual-scroll-item"
       >
         <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -39,7 +40,7 @@
           </span>
           <span *ngIf="c.subTitle" class="detail">{{ c.subTitle }}</span>
         </div>
-      </a>
+      </button>
     </div>
   </cdk-virtual-scroll-viewport>
   <div class="no-items" *ngIf="!ciphers.length">
