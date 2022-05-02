@@ -173,9 +173,6 @@ jobs:
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: ./dist
 
-      - name: Test
-        run: ls -alht dist
-
       - name: Deploy to Snap Store
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         run: |
