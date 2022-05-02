@@ -12,19 +12,20 @@
   @include themify($themes) {
     background-color: themed("headerBackgroundColor");
     border-bottom-color: themed("headerBorderColor");
-  }
 
-  app-search {
-    grid-column-start: 2;
-    width: 100%;
+    app-search {
+      grid-column-start: 2;
+      width: 100%;
 
-    [type="search"]::-webkit-search-cancel-button {
-      -webkit-appearance: none;
-      appearance: none;
-      height: 15px;
-      width: 15px;
-      background-repeat: no-repeat;
-      background-image: url("../images/close-white.png");
+      [type="search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 15px;
+        width: 15px;
+        background-repeat: no-repeat;
+        background-image: url("../images/close-button.svg");
+        filter: brightness(themed("svgButtonBrightness"));
+      }
     }
   }
 
