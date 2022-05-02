@@ -59,7 +59,7 @@ jobs:
       - name: Get branch name
         id: branch
         run: |
-          BRANCH_NAME=$(basename ${{ github.ref }})
+          BRANCH_NAME="artifacts/electron-builder-publisher-config"
           echo "::set-output name=branch-name::$BRANCH_NAME"
 
       - name: Login to Azure
