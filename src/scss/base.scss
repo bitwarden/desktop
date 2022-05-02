@@ -84,6 +84,9 @@ button {
 }
 
 button {
+  border: none;
+  background: transparent;
+  color: inherit;
   white-space: nowrap;
   cursor: pointer;
 }

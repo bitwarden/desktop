@@ -1,10 +1,8 @@
 ﻿@import "variables.scss";
 
-.list > a {
-  display: block;
+.list > button {
   padding: 3px 10px;
   text-decoration: none;
-  position: relative;
   user-select: none;
   z-index: 1;
 
@@ -105,11 +103,14 @@
   }
 }
 
-.list > a.flex-list-item {
+.list > button.flex-list-item {
   display: flex;
   align-items: center;
+  width: 100%;
+  text-align: left;
 
   .item-icon {
+    display: block;
     margin-left: -5px;
     margin-right: 4px;
     @include themify($themes) {
@@ -118,7 +119,9 @@
   }
 
   .item-content {
+    display: block;
     .item-title {
+      display: block;
       .title-badges {
         @include themify($themes) {
           color: themed("mutedColor");
@@ -135,12 +138,12 @@
   }
 
   .flex-cipher-list-item {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    > * {
+      text-align: left;
+    }
   }
 }

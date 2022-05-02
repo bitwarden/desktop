@@ -22,9 +22,9 @@
                 />
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
@@ -36,7 +36,7 @@
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye': !showPin, 'bwi-eye-slash': showPin }"
                   ></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>

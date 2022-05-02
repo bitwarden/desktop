@@ -22,16 +22,15 @@
               {{ cipher.login.username }}
             </div>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'copyUsername' | i18n }}"
                 (click)="copy(cipher.login.username, 'username', 'Username')"
-                role="button"
               >
                 <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="box-content-row box-content-row-flex" *ngIf="cipher.login.password">
@@ -74,31 +73,29 @@
                   aria-hidden="true"
                 ></i>
               </button>
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showPassword"
                 (click)="togglePassword()"
-                role="button"
               >
                 <i
                   class="bwi bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 ></i>
-              </a>
-              <a
+              </button>
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'copyPassword' | i18n }}"
                 (click)="copy(cipher.login.password, 'password', 'Password')"
-                role="button"
               >
                 <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div
@@ -131,16 +128,15 @@
               </svg>
             </span>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'copyValue' | i18n }}"
                 (click)="copy(totpCode, 'verificationCodeTotp', 'TOTP')"
-                role="button"
               >
                 <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -153,35 +149,37 @@
           <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
             <div class="row-main">
               <span class="row-label">{{ "number" | i18n }}</span>
-              <span *ngIf="!showCardNumber" class="monospaced">{{ cipher.card.maskedNumber }}</span>
-              <span *ngIf="showCardNumber" class="monospaced">{{ cipher.card.number }}</span>
+              <span *ngIf="!showCardNumber" class="monospaced">{{
+                cipher.card.maskedNumber | creditCardNumber: cipher.card.brand
+              }}</span>
+              <span *ngIf="showCardNumber" class="monospaced">{{
+                cipher.card.number | creditCardNumber: cipher.card.brand
+              }}</span>
             </div>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showCardNumber"
                 (click)="toggleCardNumber()"
-                role="button"
               >
                 <i
                   class="bwi bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showCardNumber, 'bwi-eye-slash': showCardNumber }"
                 ></i>
-              </a>
-              <a
+              </button>
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'copyNumber' | i18n }}"
                 (click)="copy(cipher.card.number, 'number', 'Card Number')"
-                role="button"
               >
                 <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="box-content-row" *ngIf="cipher.card.brand">
@@ -199,31 +197,29 @@
               <span *ngIf="showCardCode" class="monospaced">{{ cipher.card.code }}</span>
             </div>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showCardCode"
                 (click)="toggleCardCode()"
-                role="button"
               >
                 <i
                   class="bwi bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showCardCode, 'bwi-eye-slash': showCardCode }"
                 ></i>
-              </a>
-              <a
+              </button>
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appA11yTitle="{{ 'copySecurityCode' | i18n }}"
                 (click)="copy(cipher.card.code, 'securityCode', 'Security Code')"
-                role="button"
               >
                 <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -289,27 +285,25 @@
             <span title="{{ u.uri }}">{{ u.hostOrUri }}</span>
           </div>
           <div class="action-buttons">
-            <a
+            <button
+              type="button"
               class="row-btn"
-              href="#"
               appStopClick
               appA11yTitle="{{ 'launch' | i18n }}"
               *ngIf="u.canLaunch"
               (click)="launch(u)"
-              role="button"
             >
               <i class="bwi bwi-lg bwi-share-square" aria-hidden="true"></i>
-            </a>
-            <a
+            </button>
+            <button
+              type="button"
               class="row-btn"
-              href="#"
               appStopClick
               appA11yTitle="{{ 'copyUri' | i18n }}"
               (click)="copy(u.uri, u.isWebsite ? 'website' : 'uri', 'URI')"
-              role="button"
             >
               <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -334,10 +328,10 @@
         {{ "attachments" | i18n }}
       </div>
       <div class="box-content">
-        <a
+        <button
+          type="button"
           class="box-content-row box-content-row-flex text-default"
           *ngFor="let attachment of cipher.attachments"
-          href="#"
           appStopClick
           appBlurCLick
           (click)="downloadAttachment(attachment)"
@@ -354,7 +348,7 @@
             *ngIf="attachment.downloading"
             aria-hidden="true"
           ></i>
-        </a>
+        </button>
       </div>
     </div>
     <div class="box">
@@ -369,15 +363,14 @@
         </div>
         <div *ngIf="cipher.hasPasswordHistory">
           <b class="font-weight-semibold">{{ "passwordHistory" | i18n }}:</b>
-          <a
-            href="#"
+          <button
+            type="button"
             (click)="viewHistory()"
             appStopClick
-            role="button"
             appA11yTitle="{{ 'passwordHistory' | i18n }}, {{ cipher.passwordHistory.length }}"
           >
             <span aria-hidden="true">{{ cipher.passwordHistory.length }}</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

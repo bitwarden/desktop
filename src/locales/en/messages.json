@@ -1853,6 +1853,12 @@
       }
     }
   },
+  "locked": {
+    "message": "Locked"
+  },
+  "unlocked": {
+    "message": "Unlocked"
+  },
   "generator": {
     "message": "Generator"
   },
@@ -1895,5 +1901,21 @@
   },
   "service": {
     "message": "Service"
+  },
+  "forwardedEmail": {
+    "message": "Forwarded Email Alias"
+  },
+  "forwardedEmailDesc": {
+    "message": "Generate an email alias with an external forwarding service."
+  },
+  "hostname": {
+    "message": "Hostname",
+    "description": "Part of a URL."
+  },
+  "apiAccessToken": {
+    "message": "API Access Token"
+  },
+  "apiKey": {
+    "message": "API Key"
   }
 }

@@ -93,21 +93,21 @@
       </div>
       <div class="box">
         <div class="box-header">
-          {{ "options" | i18n }}
-          <a
+          <button
+            type="button"
             class="toggle"
-            href="#"
             appStopClick
             appBlurClick
-            role="button"
             (click)="toggleOptions()"
+            [attr.aria-expanded]="showOptions"
           >
+            {{ "options" | i18n }}
             <i
               class="bwi bwi-lg"
               aria-hidden="true"
               [ngClass]="{ 'bwi-angle-down': !showOptions, 'bwi-chevron-up': showOptions }"
             ></i>
-          </a>
+          </button>
         </div>
       </div>
       <div [hidden]="!showOptions">
@@ -157,12 +157,11 @@
                 />
               </div>
               <div class="action-buttons">
-                <a
+                <button
+                  type="button"
                   class="row-btn"
-                  href="#"
                   appStopClick
                   appBlurClick
-                  role="button"
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   [attr.aria-pressed]="showPassword"
                   (click)="togglePasswordVisible()"
@@ -173,7 +172,7 @@
                     aria-hidden="true"
                     [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                   ></i>
-                </a>
+                </button>
               </div>
             </div>
           </div>

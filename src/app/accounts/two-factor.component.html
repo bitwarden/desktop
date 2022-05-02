@@ -124,22 +124,21 @@
         >
         <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
-      <a routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
+      <a role="button" tabindex="0" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
     </div>
     <div class="sub-options">
-      <a href="#" appStopClick (click)="anotherMethod()" role="button">{{
-        "useAnotherTwoStepMethod" | i18n
-      }}</a>
-      <a
-        href="#"
+      <button type="button" appStopClick (click)="anotherMethod()">
+        {{ "useAnotherTwoStepMethod" | i18n }}
+      </button>
+      <button
+        type="button"
         appStopClick
         (click)="sendEmail(true)"
         [appApiAction]="emailPromise"
-        role="button"
         *ngIf="selectedProviderType === providerType.Email"
       >
         {{ "sendVerificationCodeEmailAgain" | i18n }}
-      </a>
+      </button>
     </div>
   </div>
 </form>
