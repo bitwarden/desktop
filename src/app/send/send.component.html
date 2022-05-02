@@ -5,26 +5,44 @@
         <h2 class="sr-only">{{ "filters" | i18n }}</h2>
         <ul>
           <li [ngClass]="{ active: selectedAll }">
-            <a href="#" appStopClick appBlurClick (click)="selectAll()">
+            <button
+              type="button"
+              appStopClick
+              appBlurClick
+              (click)="selectAll()"
+              [attr.aria-pressed]="selectedAll"
+            >
               <i class="bwi bwi-fw bwi-filter" aria-hidden="true"></i>&nbsp;{{ "allSends" | i18n }}
-            </a>
+            </button>
           </li>
         </ul>
         <h2>{{ "types" | i18n }}</h2>
         <ul>
           <li [ngClass]="{ active: selectedType === sendType.Text }">
-            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.Text)">
+            <button
+              type="button"
+              appStopClick
+              appBlurClick
+              (click)="selectType(sendType.Text)"
+              [attr.aria-pressed]="selectedType === sendType.Text"
+            >
               <i class="bwi bwi-fw bwi-file-text" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeText" | i18n
               }}
-            </a>
+            </button>
           </li>
           <li [ngClass]="{ active: selectedType === sendType.File }">
-            <a href="#" appStopClick appBlurClick (click)="selectType(sendType.File)">
+            <button
+              type="button"
+              appStopClick
+              appBlurClick
+              (click)="selectType(sendType.File)"
+              [attr.aria-pressed]="selectedType === sendType.File"
+            >
               <i class="bwi bwi-fw bwi-file" aria-hidden="true"></i>&nbsp;{{
                 "sendTypeFile" | i18n
               }}
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -36,20 +54,21 @@
   <div id="items" class="items">
     <div class="content">
       <div class="list" *ngIf="filteredSends.length">
-        <a
+        <button
           *ngFor="let s of filteredSends"
           appStopClick
           (click)="selectSend(s.id)"
           title="{{ 'viewItem' | i18n }}"
           (contextmenu)="viewSendMenu(s)"
           [ngClass]="{ active: s.id === sendId }"
+          [attr.aria-pressed]="s.id === sendId"
           class="flex-list-item"
         >
-          <div class="item-icon" aria-hidden="true">
+          <span class="item-icon" aria-hidden="true">
             <i class="bwi bwi-fw bwi-lg" [ngClass]="s.type == 0 ? 'bwi-file-text' : 'bwi-file'"></i>
-          </div>
-          <div class="item-content">
-            <div class="item-title">
+          </span>
+          <span class="item-content">
+            <span class="item-title">
               {{ s.name }}
               <span class="title-badges">
                 <ng-container *ngIf="s.disabled">
@@ -98,10 +117,10 @@
                   <span class="sr-only">{{ "pendingDeletion" | i18n }}</span>
                 </ng-container>
               </span>
-            </div>
+            </span>
             <span class="item-details">{{ s.deletionDate | date }}</span>
-          </div>
-        </a>
+          </span>
+        </button>
       </div>
       <div class="no-items" *ngIf="!filteredSends.length">
         <i class="bwi bwi-spinner bwi-spin bwi-3x" *ngIf="!loaded" aria-hidden="true"></i>

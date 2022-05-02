@@ -7,12 +7,7 @@
   "directories": { "buildResources": "resources", "output": "dist", "app": "build" },
   "afterSign": "scripts/after-sign.js",
   "asarUnpack": ["**/*.node"],
-  "files": [
-    "**/*",
-    "!**/node_modules/@bitwarden/desktop-native/**/*",
-    "**/node_modules/@bitwarden/desktop-native/index.js",
-    "**/node_modules/@bitwarden/desktop-native/desktop_native.${platform}-${arch}*.node"
-  ],
+  "files": ["**/*", "!**/node_modules/@bitwarden/desktop-native/**/*"],
   "mac": {
     "electronUpdaterCompatibility": ">=0.0.1",
     "category": "public.app-category.productivity",

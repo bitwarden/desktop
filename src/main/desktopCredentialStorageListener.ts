@@ -1,5 +1,5 @@
-import { passwords } from "@bitwarden/desktop-native";
 import { ipcMain } from "electron";
+import { deletePassword, getPassword, setPassword } from "keytar";
 
 import { BiometricMain } from "./biometric/biometric.main";
 
@@ -25,14 +25,14 @@ export class DesktopCredentialStorageListener {
         let val: string | boolean = null;
         if (authenticated && message.action && message.key) {
           if (message.action === "getPassword") {
-            val = await this.getPassword(serviceName, message.key);
+            val = await getPassword(serviceName, message.key);
           } else if (message.action === "hasPassword") {
-            const result = await this.getPassword(serviceName, message.key);
+            const result = await getPassword(serviceName, message.key);
             val = result != null;
           } else if (message.action === "setPassword" && message.value) {
-            await passwords.setPassword(serviceName, message.key, message.value);
+            await setPassword(serviceName, message.key, message.value);
           } else if (message.action === "deletePassword") {
-            await passwords.deletePassword(serviceName, message.key);
+            await deletePassword(serviceName, message.key);
           }
         }
         event.returnValue = val;
@@ -40,18 +40,6 @@ export class DesktopCredentialStorageListener {
         event.returnValue = null;
       }
     });
-  }
-
-  // Gracefully handle old keytar values, and if detected updated the entry to the proper format
-  private async getPassword(serviceName: string, key: string) {
-    let val = await passwords.getPassword(serviceName, key);
-    try {
-      JSON.parse(val);
-    } catch (e) {
-      val = await passwords.getPasswordKeytar(serviceName, key);
-      await passwords.setPassword(serviceName, key, val);
-    }
-    return val;
   }
 
   private async authenticateBiometric(): Promise<boolean> {

@@ -40,12 +40,11 @@
               />
             </div>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appBlurClick
-                role="button"
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showPassword"
                 (click)="togglePassword(false)"
@@ -55,7 +54,7 @@
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 ></i>
-              </a>
+              </button>
             </div>
           </div>
           <div class="progress">
@@ -91,12 +90,11 @@
             />
           </div>
           <div class="action-buttons">
-            <a
+            <button
+              type="button"
               class="row-btn"
-              href="#"
               appStopClick
               appBlurClick
-              role="button"
               appA11yTitle="{{ 'toggleVisibility' | i18n }}"
               [attr.aria-pressed]="showPassword"
               (click)="togglePassword(true)"
@@ -106,7 +104,7 @@
                 aria-hidden="true"
                 [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
               ></i>
-            </a>
+            </button>
           </div>
         </div>
         <div class="box-content-row" appBoxRow>
@@ -146,7 +144,7 @@
         <b [hidden]="form.loading">{{ "submit" | i18n }}</b>
         <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
       </button>
-      <a routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
+      <a role="button" tabindex="0" routerLink="/login" class="btn block">{{ "cancel" | i18n }}</a>
     </div>
   </div>
 </form>

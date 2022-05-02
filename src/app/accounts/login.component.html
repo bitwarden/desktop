@@ -1,7 +1,7 @@
 <div id="login-page">
   <div class="login-header">
-    <a
-      href="#"
+    <button
+      type="button"
       appStopClick
       (click)="settings()"
       class="environment-urls-settings-icon"
@@ -9,7 +9,7 @@
     >
       <i class="bwi bwi-cog bwi-lg" aria-hidden="true"></i>
       {{ "settings" | i18n }}
-    </a>
+    </button>
   </div>
   <form
     id="login-page"
@@ -48,12 +48,11 @@
               />
             </div>
             <div class="action-buttons">
-              <a
+              <button
+                type="button"
                 class="row-btn"
-                href="#"
                 appStopClick
                 appBlurClick
-                role="button"
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 [attr.aria-pressed]="showPassword"
                 (click)="togglePassword()"
@@ -63,7 +62,7 @@
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 ></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -83,18 +82,22 @@
             >
             <i class="bwi bwi-spinner bwi-spin" [hidden]="!form.loading" aria-hidden="true"></i>
           </button>
-          <a routerLink="/register" class="btn block">
+          <a role="button" tabindex="0" routerLink="/register" class="btn block">
             <i class="bwi bwi-pencil-square" aria-hidden="true"></i> {{ "createAccount" | i18n }}
           </a>
         </div>
         <div class="buttons-row">
-          <a (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')" class="btn block">
+          <button
+            type="button"
+            (click)="launchSsoBrowser('desktop', 'bitwarden://sso-callback')"
+            class="btn block"
+          >
             <i class="bwi bwi-bank" aria-hidden="true"></i> {{ "enterpriseSingleSignOn" | i18n }}
-          </a>
+          </button>
         </div>
       </div>
       <div class="sub-options">
-        <a routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
+        <a role="button" tabindex="0" routerLink="/hint">{{ "getMasterPasswordHint" | i18n }}</a>
       </div>
     </div>
   </form>
