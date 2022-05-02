@@ -96,7 +96,8 @@ jobs:
         run: |
           aws s3 cp ./artifacts s3://public-s3-electron-artifacts/desktop/ \
           --acl "public-read" \
-          --recursive
+          --recursive \
+          --quiet
 
       - name: Create release
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
