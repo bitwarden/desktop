@@ -59,7 +59,7 @@ jobs:
       - name: Get branch name
         id: branch
         run: |
-          BRANCH_NAME="artifacts/electron-builder-publisher-config"
+          BRANCH_NAME=$(basename ${{ github.ref }})
           echo "::set-output name=branch-name::$BRANCH_NAME"
 
       - name: Login to Azure
@@ -100,11 +100,9 @@ jobs:
           --quiet
 
       - name: Create release
-        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09  # v2.8.5
         env:
           PKG_VERSION: ${{ steps.retrieve-version.outputs.package_version }}
-          ARTIFACT_URL: "https://artifacts.bitwarden.com/desktop"
         with:
           artifacts: "artifacts/Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
             artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
