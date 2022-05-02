@@ -149,8 +149,12 @@
           <div class="box-content-row box-content-row-flex" *ngIf="cipher.card.number">
             <div class="row-main">
               <span class="row-label">{{ "number" | i18n }}</span>
-              <span *ngIf="!showCardNumber" class="monospaced">{{ cipher.card.maskedNumber }}</span>
-              <span *ngIf="showCardNumber" class="monospaced">{{ cipher.card.number }}</span>
+              <span *ngIf="!showCardNumber" class="monospaced">{{
+                cipher.card.maskedNumber | creditCardNumber: cipher.card.brand
+              }}</span>
+              <span *ngIf="showCardNumber" class="monospaced">{{
+                cipher.card.number | creditCardNumber: cipher.card.brand
+              }}</span>
             </div>
             <div class="action-buttons">
               <button
