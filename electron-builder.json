@@ -13,7 +13,8 @@
     "bucket": "public-s3-electron-artifacts",
     "path": "desktop",
     "acl": "public-read",
-    "region": "us-west-2"
+    "region": "us-west-2",
+    "endpoint": "https://artifacts.bitwarden.com/desktop"
   },
   "mac": {
     "electronUpdaterCompatibility": ">=0.0.1",
