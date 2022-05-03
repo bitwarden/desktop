@@ -41,7 +41,7 @@
         </div>
         <div class="generated-block" *ngIf="type === 'username'">
           <div class="generated-wrapper" [innerHTML]="username | colorPassword" appSelectCopy></div>
-          <div class="action-buttons">
+          <div class="action-buttons" #form [appApiAction]="usernameGeneratingPromise">
             <button
               type="button"
               class="icon-btn primary"
@@ -57,8 +57,13 @@
               appStopClick
               appA11yTitle="{{ 'regenerateUsername' | i18n }}"
               (click)="regenerate()"
+              [disabled]="form.loading"
             >
-              <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
+              <i
+                class="bwi bwi-lg bwi-generate"
+                [ngClass]="form.loading ? 'bwi-spin' : ''"
+                aria-hidden="true"
+              ></i>
             </button>
           </div>
         </div>
@@ -370,6 +375,62 @@
                   </label>
                 </div>
               </div>
+              <ng-container *ngIf="usernameOptions.forwardedService === 'simplelogin'">
+                <div class="box-content-row" appBoxRow>
+                  <label for="simplelogin-apikey">{{ "apiKey" | i18n }}</label>
+                  <input
+                    id="simplelogin-apikey"
+                    type="password"
+                    name="SimpleLoginApiKey"
+                    [(ngModel)]="usernameOptions.forwardedSimpleLoginApiKey"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+                <div class="box-content-row" appBoxRow>
+                  <label for="simplelogin-hostname">{{ "hostname" | i18n }}</label>
+                  <input
+                    id="simplelogin-hostname"
+                    type="text"
+                    name="SimpleLoginHostname"
+                    [(ngModel)]="usernameOptions.forwardedSimpleLoginHostname"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+              </ng-container>
+              <ng-container *ngIf="usernameOptions.forwardedService === 'anonaddy'">
+                <div class="box-content-row" appBoxRow>
+                  <label for="anonaddy-accessToken">{{ "apiAccessToken" | i18n }}</label>
+                  <input
+                    id="anonaddy-accessToken"
+                    type="password"
+                    name="AnonAddyAccessToken"
+                    [(ngModel)]="usernameOptions.forwardedAnonAddyApiToken"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+                <div class="box-content-row" appBoxRow>
+                  <label for="anonaddy-domain">{{ "domainName" | i18n }}</label>
+                  <input
+                    id="anonaddy-domain"
+                    type="text"
+                    name="AnonAddyDomain"
+                    [(ngModel)]="usernameOptions.forwardedAnonAddyDomain"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+              </ng-container>
+              <ng-container *ngIf="usernameOptions.forwardedService === 'firefoxrelay'">
+                <div class="box-content-row" appBoxRow>
+                  <label for="firefox-apikey">{{ "apiAccessToken" | i18n }}</label>
+                  <input
+                    id="firefox-apikey"
+                    type="password"
+                    name="FirefoxApiKey"
+                    [(ngModel)]="usernameOptions.forwardedFirefoxApiToken"
+                    (blur)="saveUsernameOptions()"
+                  />
+                </div>
+              </ng-container>
             </div>
           </div>
           <div class="box" *ngIf="usernameOptions.type === 'subaddress'" [hidden]="!showOptions">
