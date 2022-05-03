@@ -1,10 +1,6 @@
 import "zone.js/dist/zone";
 
-import { A11yModule } from "@angular/cdk/a11y";
-import { DragDropModule } from "@angular/cdk/drag-drop";
-import { OverlayModule } from "@angular/cdk/overlay";
-import { ScrollingModule } from "@angular/cdk/scrolling";
-import { DatePipe, registerLocaleData } from "@angular/common";
+import { registerLocaleData } from "@angular/common";
 import localeAf from "@angular/common/locales/af";
 import localeAz from "@angular/common/locales/az";
 import localeBe from "@angular/common/locales/be";
@@ -59,11 +55,6 @@ import localeVi from "@angular/common/locales/vi";
 import localeZhCn from "@angular/common/locales/zh-Hans";
 import localeZhTw from "@angular/common/locales/zh-Hant";
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
-import { JslibModule } from "jslib-angular/jslib.module";
 
 import { EnvironmentComponent } from "./accounts/environment.component";
 import { HintComponent } from "./accounts/hint.component";
@@ -88,10 +79,11 @@ import { AccountSwitcherComponent } from "./layout/account-switcher.component";
 import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
 import { SearchComponent } from "./layout/search/search.component";
+import { SharedModule } from "./modules/shared.module";
+import { VaultFilterModule } from "./modules/vault-filter/vault-filter.module";
 import { AddEditComponent as SendAddEditComponent } from "./send/add-edit.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
 import { SendComponent } from "./send/send.component";
-import { ServicesModule } from "./services.module";
 import { AddEditCustomFieldsComponent } from "./vault/add-edit-custom-fields.component";
 import { AddEditComponent } from "./vault/add-edit.component";
 import { AttachmentsComponent } from "./vault/attachments.component";
@@ -100,7 +92,6 @@ import { CollectionsComponent } from "./vault/collections.component";
 import { ExportComponent } from "./vault/export.component";
 import { FolderAddEditComponent } from "./vault/folder-add-edit.component";
 import { GeneratorComponent } from "./vault/generator.component";
-import { GroupingsComponent } from "./vault/groupings.component";
 import { PasswordGeneratorHistoryComponent } from "./vault/password-generator-history.component";
 import { PasswordHistoryComponent } from "./vault/password-history.component";
 import { ShareComponent } from "./vault/share.component";
@@ -163,19 +154,7 @@ registerLocaleData(localeZhCn, "zh-CN");
 registerLocaleData(localeZhTw, "zh-TW");
 
 @NgModule({
-  imports: [
-    A11yModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    DragDropModule,
-    FormsModule,
-    JslibModule,
-    OverlayModule,
-    ReactiveFormsModule,
-    ScrollingModule,
-    ServicesModule,
-  ],
+  imports: [SharedModule, AppRoutingModule, VaultFilterModule],
   declarations: [
     AccountSwitcherComponent,
     AddEditComponent,
@@ -187,7 +166,6 @@ registerLocaleData(localeZhTw, "zh-TW");
     EnvironmentComponent,
     ExportComponent,
     FolderAddEditComponent,
-    GroupingsComponent,
     HeaderComponent,
     HintComponent,
     LockComponent,
@@ -218,7 +196,6 @@ registerLocaleData(localeZhTw, "zh-TW");
     ViewComponent,
     ViewCustomFieldsComponent,
   ],
-  providers: [DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

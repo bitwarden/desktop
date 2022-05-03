@@ -34,14 +34,13 @@ import { ElectronRendererMessagingService } from "jslib-electron/services/electr
 import { ElectronRendererSecureStorageService } from "jslib-electron/services/electronRendererSecureStorage.service";
 import { ElectronRendererStorageService } from "jslib-electron/services/electronRendererStorage.service";
 
-import { Account } from "../models/account";
-import { I18nService } from "../services/i18n.service";
-import { LoginGuardService } from "../services/loginGuard.service";
-import { NativeMessagingService } from "../services/nativeMessaging.service";
-import { PasswordRepromptService } from "../services/passwordReprompt.service";
-import { StateService } from "../services/state.service";
-
-import { SearchBarService } from "./layout/search/search-bar.service";
+import { Account } from "../../models/account";
+import { I18nService } from "../../services/i18n.service";
+import { NativeMessagingService } from "../../services/nativeMessaging.service";
+import { PasswordRepromptService } from "../../services/passwordReprompt.service";
+import { StateService } from "../../services/state.service";
+import { LoginGuard } from "../guards/login.guard";
+import { SearchBarService } from "../layout/search/search-bar.service";
 
 export function initFactory(
   window: Window,
@@ -167,8 +166,8 @@ export function initFactory(
     NativeMessagingService,
     SearchBarService,
     {
-      provide: LoginGuardService,
-      useClass: LoginGuardService,
+      provide: LoginGuard,
+      useClass: LoginGuard,
       deps: [StateServiceAbstraction, PlatformUtilsServiceAbstraction, I18nServiceAbstraction],
     },
     {

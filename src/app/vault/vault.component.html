@@ -52,19 +52,16 @@
       </div>
     </div>
   </div>
-  <app-vault-groupings
-    id="groupings"
-    class="groupings"
-    (onAllClicked)="clearGroupingFilters()"
-    (onFavoritesClicked)="filterFavorites()"
-    (onCipherTypeClicked)="filterCipherType($event)"
-    (onFolderClicked)="filterFolder($event.id)"
-    (onAddFolder)="addFolder()"
-    (onEditFolder)="editFolder($event.id)"
-    (onCollectionClicked)="filterCollection($event.id)"
-    (onTrashClicked)="filterDeleted()"
-  >
-  </app-vault-groupings>
+  <div class="left-nav">
+    <app-vault-filter
+      class="vault-filters"
+      [activeFilter]="activeFilter"
+      (onFilterChange)="applyVaultFilter($event)"
+      (onAddFolder)="addFolder()"
+      (onEditFolder)="editFolder($event.id)"
+    ></app-vault-filter>
+    <app-nav class="nav"></app-nav>
+  </div>
 </div>
 <ng-template #generator></ng-template>
 <ng-template #attachments></ng-template>

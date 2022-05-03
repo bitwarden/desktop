@@ -1408,7 +1408,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Search Trash"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently Delete Item"
@@ -1883,5 +1883,14 @@
   },
   "service": {
     "message": "Service"
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
   }
 }

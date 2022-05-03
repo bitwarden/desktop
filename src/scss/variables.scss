@@ -93,6 +93,7 @@ $themes: (
     accountSwitcherBackgroundColor: $background-color,
     accountSwitcherTextColor: #ffffff,
     svgSuffix: "-light.svg",
+    hrColor: #eeeeee,
   ),
   dark: (
     textColor: #ffffff,
@@ -146,6 +147,7 @@ $themes: (
     accountSwitcherBackgroundColor: #2f2f2f,
     accountSwitcherTextColor: #ffffff,
     svgSuffix: "-dark.svg",
+    hrColor: #a3a3a3,
   ),
   nord: (
     textColor: $nord5,
@@ -199,6 +201,7 @@ $themes: (
     accountSwitcherBackgroundColor: $nord0,
     accountSwitcherTextColor: $nord5,
     svgSuffix: "-dark.svg",
+    hrColor: $nord4,
   ),
 );
 
