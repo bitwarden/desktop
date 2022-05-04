@@ -150,7 +150,7 @@ jobs:
         run: npm ci
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09   # v3.0.2
         id: cache
         with:
           path: desktop_native/dist
@@ -275,7 +275,7 @@ jobs:
         run: npm ci
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09   # v3.0.2
         id: cache
         with:
           path: desktop_native/dist
@@ -537,7 +537,7 @@ jobs:
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09  # v3.0.2
         id: cache
         with:
           path: desktop_native/dist
@@ -564,14 +564,14 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
         with:
           repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          path: 'dist-safari/bitwarden'
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: dist-safari/bitwarden/apps/browser
 
 
   macos-package-github:
@@ -700,7 +700,7 @@ jobs:
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09   # v3.0.2
         id: cache
         with:
           path: desktop_native/dist
@@ -729,8 +729,8 @@ jobs:
         if: steps.safari-cache.outputs.cache-hit != 'true'
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
         with:
-          repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          repository: 'bitwarden/bitwarden'
+          path: 'dist-safari/bitwarden'
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
@@ -738,12 +738,13 @@ jobs:
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: dist-safari/bitwarden/apps/browser
 
       - name: Load Safari extension for .dmg
+        working-directory: dist-safari/bitwarden/apps/browser
         run: |
           mkdir PlugIns
-          cp -r dist-safari/browser/dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
+          cp -r dist/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application (dist)
         env:
@@ -906,7 +907,7 @@ jobs:
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09   # v3.0.2
         id: cache
         with:
           path: desktop_native/dist
@@ -936,7 +937,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
         with:
           repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          path: 'dist-safari/bitwarden'
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
@@ -944,12 +945,13 @@ jobs:
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: dist-safari/bitwarden/apps/browser
 
       - name: Load Safari extension for App Store
+        working-directory: dist-safari/bitwarden/apps/browser
         run: |
           mkdir PlugIns
-          cp -r dist-safari/browser/dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
+          cp -r dist/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build application for App Store
         run: npm run pack:mac:mas
@@ -1099,7 +1101,7 @@ jobs:
           $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
-        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
+        uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09   # v3.0.2
         id: cache
         with:
           path: desktop_native/dist
@@ -1129,7 +1131,7 @@ jobs:
         uses: actions/checkout@a12a3943b4bdde767164f792f33f40b04645d846
         with:
           repository: 'bitwarden/browser'
-          path: 'dist-safari/browser'
+          path: 'dist-safari/bitwarden'
           ref: ${{ needs.setup.outputs.safari_ref }}
 
       - name: Build Safari extension
@@ -1137,12 +1139,13 @@ jobs:
         run: |
           npm install
           npm run dist:safari
-        working-directory: dist-safari/browser
+        working-directory: dist-safari/bitwarden/apps/browser
 
       - name: Load Safari extension for App Store
+        working-directory: dist-safari/bitwarden/apps/browser
         run: |
           mkdir PlugIns
-          cp -r dist-safari/browser/dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
+          cp -r dist/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
 
       - name: Build dev application for App Store
         run: npm run pack:mac:masdev
