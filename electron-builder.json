@@ -8,6 +8,14 @@
   "afterSign": "scripts/after-sign.js",
   "asarUnpack": ["**/*.node"],
   "files": ["**/*", "!**/node_modules/@bitwarden/desktop-native/**/*"],
+  "publish": {
+    "provider": "s3",
+    "bucket": "public-s3-electron-artifacts",
+    "path": "desktop",
+    "acl": "public-read",
+    "region": "us-west-2",
+    "endpoint": "https://artifacts.bitwarden.com/desktop"
+  },
   "mac": {
     "electronUpdaterCompatibility": ">=0.0.1",
     "category": "public.app-category.productivity",
@@ -102,15 +110,16 @@
     "artifactName": "${productName}-${version}-${arch}.${ext}",
     "depends": ["libnotify4", "libxtst6", "libnss3", "libsecret-1-0", "libxss1"]
   },
-  "appImage": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
+  "appImage": {
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
+  },
   "rpm": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
   "freebsd": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
   "snap": {
     "autoStart": true,
     "confinement": "strict",
     "plugs": ["default", "password-manager-service"],
-    "stagePackages": ["default"],
-    "publish": ["github"]
+    "stagePackages": ["default"]
   },
   "protocols": [{ "name": "Bitwarden", "schemes": ["bitwarden"] }]
 }
