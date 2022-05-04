@@ -10,8 +10,6 @@
   "files": ["**/*", "!**/node_modules/@bitwarden/desktop-native/**/*"],
   "publish": {
     "provider": "s3",
-    "bucket": "public-s3-electron-artifacts",
-    "path": "desktop",
     "acl": "public-read",
     "region": "us-west-2",
     "endpoint": "https://artifacts.bitwarden.com/desktop"
