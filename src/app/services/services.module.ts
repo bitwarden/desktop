@@ -44,7 +44,6 @@ import { StateService } from "../../services/state.service";
 import { LoginGuard } from "../guards/login.guard";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
-
 import { InitService } from "./init.service";
 
 const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
