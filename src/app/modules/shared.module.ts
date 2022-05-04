@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { JslibModule } from "jslib-angular/jslib.module";
 
-import { ServicesModule } from "./services.module";
+import { ServicesModule } from "../services/services.module";
 
 @NgModule({
   imports: [

@@ -532,9 +532,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
         uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
@@ -695,9 +695,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
         uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
@@ -901,9 +901,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
         uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2
@@ -1094,9 +1094,9 @@ jobs:
         env:
           BUILD_NUMBER: ${{ needs.setup.outputs.build_number }}
         run: |
-          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\package.json | ConvertFrom-Json;
-          $package.build | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
-          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\package.json;
+          $package = Get-Content -Raw -Path $env:GITHUB_WORKSPACE\electron-builder.json | ConvertFrom-Json;
+          $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER";
+          $package | ConvertTo-Json -Depth 32 | Set-Content $env:GITHUB_WORKSPACE\electron-builder.json;
 
       - name: Cache Native Module
         uses: actions/cache@48af2dc4a9e8278b89d7fa154b955c30c6aaab09 # v3.0.2

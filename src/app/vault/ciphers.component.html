@@ -10,14 +10,15 @@
       *ngIf="ciphers.length"
     >
       <div class="list">
-        <a
+        <button
+          type="button"
           *cdkVirtualFor="let c of ciphers; trackBy: trackByFn"
           appStopClick
           (click)="selectCipher(c)"
           (contextmenu)="rightClickCipher(c)"
-          href="#"
           title="{{ 'viewItem' | i18n }}"
           [ngClass]="{ active: c.id === activeCipherId }"
+          [attr.aria-pressed]="c.id === activeCipherId"
           class="flex-list-item virtual-scroll-item"
         >
           <app-vault-icon [cipher]="c"></app-vault-icon>
@@ -43,7 +44,7 @@
             </span>
             <span *ngIf="c.subTitle" class="detail">{{ c.subTitle }}</span>
           </div>
-        </a>
+        </button>
       </div>
     </cdk-virtual-scroll-viewport>
     <div class="no-items" *ngIf="!ciphers.length">
@@ -51,17 +52,17 @@
       <p>{{ "noItemsInList" | i18n }}</p>
       <button (click)="addCipher()" class="btn block primary link">{{ "addItem" | i18n }}</button>
     </div>
-  </div>
-  <div class="footer">
-    <button
-      appBlurClick
-      (click)="addCipher()"
-      (contextmenu)="addCipherOptions()"
-      class="block primary"
-      appA11yTitle="{{ 'addItem' | i18n }}"
-      [disabled]="deleted"
-    >
-      <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
-    </button>
+    <div class="footer">
+      <button
+        appBlurClick
+        (click)="addCipher()"
+        (contextmenu)="addCipherOptions()"
+        class="block primary"
+        appA11yTitle="{{ 'addItem' | i18n }}"
+        [disabled]="deleted"
+      >
+        <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
+      </button>
+    </div>
   </div>
 </ng-container>

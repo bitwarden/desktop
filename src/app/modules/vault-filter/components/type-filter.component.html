@@ -23,14 +23,22 @@
     [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Login }"
   >
     <span class="filter-buttons">
-      <button class="filter-button" (click)="applyFilter(cipherTypeEnum.Login)">
+      <button
+        class="filter-button"
+        (click)="applyFilter(cipherTypeEnum.Login)"
+        [attr.aria-pressed]="activeFilter.selectedType === cipherTypeEnum.Login"
+      >
         <i class="bwi bwi-fw bwi-globe" aria-hidden="true"></i>&nbsp;{{ "typeLogin" | i18n }}
       </button>
     </span>
   </li>
   <li class="filter-option" [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Card }">
     <span class="filter-buttons">
-      <button class="filter-button" (click)="applyFilter(cipherTypeEnum.Card)">
+      <button
+        class="filter-button"
+        (click)="applyFilter(cipherTypeEnum.Card)"
+        [attr.aria-pressed]="activeFilter.selectedType === cipherTypeEnum.Card"
+      >
         <i class="bwi bwi-fw bwi-credit-card" aria-hidden="true"></i>&nbsp;{{ "typeCard" | i18n }}
       </button>
     </span>
@@ -40,7 +48,11 @@
     [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.Identity }"
   >
     <span class="filter-buttons">
-      <button class="filter-button" (click)="applyFilter(cipherTypeEnum.Identity)">
+      <button
+        class="filter-button"
+        (click)="applyFilter(cipherTypeEnum.Identity)"
+        [attr.aria-pressed]="activeFilter.selectedType === cipherTypeEnum.Identity"
+      >
         <i class="bwi bwi-fw bwi-id-card" aria-hidden="true"></i>&nbsp;{{ "typeIdentity" | i18n }}
       </button>
     </span>
@@ -50,7 +62,11 @@
     [ngClass]="{ active: activeFilter.cipherType === cipherTypeEnum.SecureNote }"
   >
     <span class="filter-buttons">
-      <button class="filter-button" (click)="applyFilter(cipherTypeEnum.SecureNote)">
+      <button
+        class="filter-button"
+        (click)="applyFilter(cipherTypeEnum.SecureNote)"
+        [attr.aria-pressed]="activeFilter.selectedType === cipherTypeEnum.SecureNote"
+      >
         <i class="bwi bwi-fw bwi-sticky-note" aria-hidden="true"></i>&nbsp;{{
           "typeSecureNote" | i18n
         }}

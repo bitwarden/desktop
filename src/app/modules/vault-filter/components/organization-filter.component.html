@@ -18,7 +18,11 @@
             }"
           ></i>
         </button>
-        <button class="filter-button" (click)="clearFilter()">
+        <button
+          class="filter-button"
+          (click)="clearFilter()"
+          [attr.aria-pressed]="!hasActiveFilter"
+        >
           <h2>&nbsp;{{ organizationGrouping.name | i18n }}</h2>
         </button>
       </div>
@@ -29,7 +33,11 @@
           [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
         >
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyOrganizationFilter(organization)">
+            <button
+              class="filter-button"
+              (click)="applyOrganizationFilter(organization)"
+              [attr.aria-pressed]="activeFilter.myVaultOnly"
+            >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
             </button>
@@ -61,7 +69,11 @@
       <ul id="organization-filters" *ngIf="!isCollapsed" class="filter-options no-margin">
         <li class="filter-option" [ngClass]="{ active: activeFilter.myVaultOnly }">
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyMyVaultFilter()">
+            <button
+              class="filter-button"
+              (click)="applyMyVaultFilter()"
+              [attr.aria-pressed]="activeFilter.myVaultOnly"
+            >
               <i class="bwi bwi-fw bwi-user" aria-hidden="true"></i>
               &nbsp;{{ "myVault" | i18n }}
             </button>
@@ -73,7 +85,11 @@
           [ngClass]="{ active: organization.id === activeFilter.selectedOrganizationId }"
         >
           <span class="filter-buttons">
-            <button class="filter-button" (click)="applyOrganizationFilter(organization)">
+            <button
+              class="filter-button"
+              (click)="applyOrganizationFilter(organization)"
+              [attr.aria-pressed]="activeFilter.selectedOrganizationId === organization.id"
+            >
               <i class="bwi bwi-fw bwi-business" aria-hidden="true"></i>
               &nbsp;{{ organization.name }}
             </button>

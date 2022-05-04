@@ -74,7 +74,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PasswordRepromptComponent } from "./components/password-reprompt.component";
 import { SetPinComponent } from "./components/set-pin.component";
-import { VerifyMasterPasswordComponent } from "./components/verify-master-password.component";
+import { UserVerificationComponent } from "./components/user-verification.component";
 import { AccountSwitcherComponent } from "./layout/account-switcher.component";
 import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
@@ -190,9 +190,9 @@ registerLocaleData(localeZhTw, "zh-TW");
     TwoFactorComponent,
     TwoFactorOptionsComponent,
     UpdateTempPasswordComponent,
+    UserVerificationComponent,
     VaultComponent,
     VaultTimeoutInputComponent,
-    VerifyMasterPasswordComponent,
     ViewComponent,
     ViewCustomFieldsComponent,
   ],
