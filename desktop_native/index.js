@@ -1,32 +1,97 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { readFileSync } = require('fs')
+const { existsSync, readFileSync } = require('fs')
+const { join } = require('path')
 
 const { platform, arch } = process
 
 let nativeBinding = null
-let isMusl = false
+let localFileExisted = false
 let loadError = null
 
+function isMusl() {
+  // For Node 10
+  if (!process.report || typeof process.report.getReport !== 'function') {
+    try {
+      return readFileSync('/usr/bin/ldd', 'utf8').includes('musl')
+    } catch (e) {
+      return true
+    }
+  } else {
+    const { glibcVersionRuntime } = process.report.getReport().header
+    return !glibcVersionRuntime
+  }
+}
+
 switch (platform) {
+  case 'android':
+    switch (arch) {
+      case 'arm64':
+        localFileExisted = existsSync(join(__dirname, 'desktop_native.android-arm64.node'))
+        try {
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.android-arm64.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-android-arm64')
+          }
+        } catch (e) {
+          loadError = e
+        }
+        break
+      case 'arm':
+        localFileExisted = existsSync(join(__dirname, 'desktop_native.android-arm-eabi.node'))
+        try {
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.android-arm-eabi.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-android-arm-eabi')
+          }
+        } catch (e) {
+          loadError = e
+        }
+        break
+      default:
+        throw new Error(`Unsupported architecture on Android ${arch}`)
+    }
+    break
   case 'win32':
     switch (arch) {
       case 'x64':
+        localFileExisted = existsSync(
+          join(__dirname, 'desktop_native.win32-x64-msvc.node')
+        )
         try {
-          nativeBinding = require('./dist/desktop_native.win32-x64-msvc')
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.win32-x64-msvc.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-win32-x64-msvc')
+          }
         } catch (e) {
           loadError = e
         }
         break
       case 'ia32':
+        localFileExisted = existsSync(
+          join(__dirname, 'desktop_native.win32-ia32-msvc.node')
+        )
         try {
-          nativeBinding = require('./dist/desktop_native.win32-ia32-msvc')
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.win32-ia32-msvc.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-win32-ia32-msvc')
+          }
         } catch (e) {
           loadError = e
         }
         break
       case 'arm64':
+        localFileExisted = existsSync(
+          join(__dirname, 'desktop_native.win32-arm64-msvc.node')
+        )
         try {
-          nativeBinding = require('./dist/desktop_native.win32-arm64-msvc')
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.win32-arm64-msvc.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-win32-arm64-msvc')
+          }
         } catch (e) {
           loadError = e
         }
@@ -38,15 +103,27 @@ switch (platform) {
   case 'darwin':
     switch (arch) {
       case 'x64':
+        localFileExisted = existsSync(join(__dirname, 'desktop_native.darwin-x64.node'))
         try {
-          nativeBinding = require('./dist/desktop_native.darwin-x64')
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.darwin-x64.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-darwin-x64')
+          }
         } catch (e) {
           loadError = e
         }
         break
       case 'arm64':
+        localFileExisted = existsSync(
+          join(__dirname, 'desktop_native.darwin-arm64.node')
+        )
         try {
-          nativeBinding = require('./dist/desktop_native.darwin-arm64')
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.darwin-arm64.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-darwin-arm64')
+          }
         } catch (e) {
           loadError = e
         }
@@ -55,43 +132,91 @@ switch (platform) {
         throw new Error(`Unsupported architecture on macOS: ${arch}`)
     }
     break
+  case 'freebsd':
+    if (arch !== 'x64') {
+      throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
+    }
+    localFileExisted = existsSync(join(__dirname, 'desktop_native.freebsd-x64.node'))
+    try {
+      if (localFileExisted) {
+        nativeBinding = require('./desktop_native.freebsd-x64.node')
+      } else {
+        nativeBinding = require('@bitwarden/desktop_native-freebsd-x64')
+      }
+    } catch (e) {
+      loadError = e
+    }
+    break
   case 'linux':
     switch (arch) {
       case 'x64':
-        isMusl = readFileSync('/usr/bin/ldd', 'utf8').includes('musl')
-        if (isMusl) {
+        if (isMusl()) {
+          localFileExisted = existsSync(
+            join(__dirname, 'desktop_native.linux-x64-musl.node')
+          )
           try {
-            nativeBinding = require('./dist/desktop_native.linux-x64-musl')
+            if (localFileExisted) {
+              nativeBinding = require('./desktop_native.linux-x64-musl.node')
+            } else {
+              nativeBinding = require('@bitwarden/desktop_native-linux-x64-musl')
+            }
           } catch (e) {
             loadError = e
           }
         } else {
+          localFileExisted = existsSync(
+            join(__dirname, 'desktop_native.linux-x64-gnu.node')
+          )
           try {
-            nativeBinding = require('./dist/desktop_native.linux-x64-gnu')
+            if (localFileExisted) {
+              nativeBinding = require('./desktop_native.linux-x64-gnu.node')
+            } else {
+              nativeBinding = require('@bitwarden/desktop_native-linux-x64-gnu')
+            }
           } catch (e) {
             loadError = e
           }
         }
         break
       case 'arm64':
-        isMusl = readFileSync('/usr/bin/ldd', 'utf8').includes('musl')
-        if (isMusl) {
+        if (isMusl()) {
+          localFileExisted = existsSync(
+            join(__dirname, 'desktop_native.linux-arm64-musl.node')
+          )
           try {
-            nativeBinding = require('./dist/desktop_native.linux-arm64-musl')
+            if (localFileExisted) {
+              nativeBinding = require('./desktop_native.linux-arm64-musl.node')
+            } else {
+              nativeBinding = require('@bitwarden/desktop_native-linux-arm64-musl')
+            }
           } catch (e) {
             loadError = e
           }
         } else {
+          localFileExisted = existsSync(
+            join(__dirname, 'desktop_native.linux-arm64-gnu.node')
+          )
           try {
-            nativeBinding = require('./dist/desktop_native.linux-arm64-gnu')
+            if (localFileExisted) {
+              nativeBinding = require('./desktop_native.linux-arm64-gnu.node')
+            } else {
+              nativeBinding = require('@bitwarden/desktop_native-linux-arm64-gnu')
+            }
           } catch (e) {
             loadError = e
           }
         }
         break
       case 'arm':
+        localFileExisted = existsSync(
+          join(__dirname, 'desktop_native.linux-arm-gnueabihf.node')
+        )
         try {
-          nativeBinding = require('./dist/desktop_native.linux-arm-gnueabihf')
+          if (localFileExisted) {
+            nativeBinding = require('./desktop_native.linux-arm-gnueabihf.node')
+          } else {
+            nativeBinding = require('@bitwarden/desktop_native-linux-arm-gnueabihf')
+          }
         } catch (e) {
           loadError = e
         }
@@ -111,4 +236,6 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-module.exports.nativeBinding
+const { passwords } = nativeBinding
+
+module.exports.passwords = passwords
