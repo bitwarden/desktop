@@ -363,6 +363,16 @@ app-root {
       flex-direction: column;
       height: 100%;
     }
+
+    .footer {
+      button {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   > .logo {
@@ -412,14 +422,6 @@ app-root {
     @include themify($themes) {
       background-color: themed("backgroundColorAlt");
       border-top-color: themed("borderColor");
-    }
-
-    button {
-      margin-right: 10px;
-
-      &:last-child {
-        margin-right: 0;
-      }
     }
 
     .right {

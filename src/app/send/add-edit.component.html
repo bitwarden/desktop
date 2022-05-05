@@ -97,7 +97,6 @@
             type="button"
             class="toggle"
             appStopClick
-            appBlurClick
             (click)="toggleOptions()"
             [attr.aria-expanded]="showOptions"
           >
@@ -161,7 +160,6 @@
                   type="button"
                   class="row-btn"
                   appStopClick
-                  appBlurClick
                   appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                   [attr.aria-pressed]="showPassword"
                   (click)="togglePasswordVisible()"
@@ -253,7 +251,6 @@
   </div>
   <div class="footer">
     <button
-      appBlurClick
       type="submit"
       class="primary btn-submit"
       appA11yTitle="{{ 'save' | i18n }}"
@@ -263,12 +260,11 @@
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
       <span><i class="bwi bwi-save-changes bwi-lg bwi-fw" aria-hidden="true"></i></span>
     </button>
-    <button appBlurClick type="button" (click)="cancel()" [disabled]="form.loading">
+    <button type="button" (click)="cancel()" [disabled]="form.loading">
       {{ "cancel" | i18n }}
     </button>
     <div class="right">
       <button
-        appBlurClick
         type="button"
         (click)="copyLinkToClipboard(link)"
         appA11yTitle="{{ 'copySendLinkToClipboard' | i18n }}"
@@ -278,7 +274,6 @@
       </button>
       <button
         #deleteBtn
-        appBlurClick
         type="button"
         (click)="delete()"
         class="danger"

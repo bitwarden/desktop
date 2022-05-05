@@ -8,7 +8,6 @@
             <button
               type="button"
               appStopClick
-              appBlurClick
               (click)="selectAll()"
               [attr.aria-pressed]="selectedAll"
             >
@@ -22,7 +21,6 @@
             <button
               type="button"
               appStopClick
-              appBlurClick
               (click)="selectType(sendType.Text)"
               [attr.aria-pressed]="selectedType === sendType.Text"
             >
@@ -35,7 +33,6 @@
             <button
               type="button"
               appStopClick
-              appBlurClick
               (click)="selectType(sendType.File)"
               [attr.aria-pressed]="selectedType === sendType.File"
             >
@@ -131,12 +128,7 @@
       </div>
     </div>
     <div class="footer">
-      <button
-        appBlurClick
-        (click)="addSend()"
-        class="block primary"
-        appA11yTitle="{{ 'addItem' | i18n }}"
-      >
+      <button (click)="addSend()" class="block primary" appA11yTitle="{{ 'addItem' | i18n }}">
         <i class="bwi bwi-plus bwi-lg" aria-hidden="true"></i>
       </button>
     </div>

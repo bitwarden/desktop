@@ -56,7 +56,6 @@
                 type="button"
                 #checkPasswordBtn
                 class="row-btn btn"
-                appBlurClick
                 appA11yTitle="{{ 'checkPassword' | i18n }}"
                 (click)="checkPassword()"
                 [appApiAction]="checkPasswordPromise"
@@ -333,7 +332,6 @@
           class="box-content-row box-content-row-flex text-default"
           *ngFor="let attachment of cipher.attachments"
           appStopClick
-          appBlurCLick
           (click)="downloadAttachment(attachment)"
         >
           <span class="row-main">{{ attachment.fileName }}</span>
@@ -378,7 +376,6 @@
 </div>
 <div class="footer" *ngIf="cipher">
   <button
-    appBlurClick
     class="primary"
     (click)="edit()"
     appA11yTitle="{{ 'edit' | i18n }}"
@@ -387,7 +384,6 @@
     <i class="bwi bwi-pencil bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <button
-    appBlurClick
     class="primary"
     (click)="restore()"
     appA11yTitle="{{ 'restore' | i18n }}"
@@ -396,7 +392,6 @@
     <i class="bwi bwi-undo bwi-fw bwi-lg" aria-hidden="true"></i>
   </button>
   <button
-    appBlurClick
     class="primary"
     *ngIf="!cipher?.organizationId && !cipher.isDeleted"
     (click)="clone()"
@@ -406,7 +401,6 @@
   </button>
   <div class="right">
     <button
-      appBlurClick
       type="button"
       (click)="delete()"
       class="danger"

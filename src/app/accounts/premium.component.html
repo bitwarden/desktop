@@ -48,14 +48,13 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="primary" appBlurClick (click)="manage()" *ngIf="isPremium">
+        <button type="button" class="primary" (click)="manage()" *ngIf="isPremium">
           <b>{{ "premiumManage" | i18n }}</b>
         </button>
         <button
           #purchaseBtn
           type="button"
           class="primary"
-          appBlurClick
           (click)="purchase()"
           *ngIf="!isPremium"
           [disabled]="purchaseBtn.loading"
@@ -67,7 +66,6 @@
           <button
             #refreshBtn
             type="button"
-            appBlurClick
             (click)="refresh()"
             [disabled]="refreshBtn.loading"
             appA11yTitle="{{ 'premiumRefresh' | i18n }}"
