@@ -1,10 +1,16 @@
 {
-  "extraMetadata": { "name": "bitwarden" },
+  "extraMetadata": {
+    "name": "bitwarden"
+  },
   "productName": "Bitwarden",
   "appId": "com.bitwarden.desktop",
   "buildDependenciesFromSource": true,
   "copyright": "Copyright © 2015-2022 Bitwarden Inc.",
-  "directories": { "buildResources": "resources", "output": "dist", "app": "build" },
+  "directories": {
+    "buildResources": "resources",
+    "output": "dist",
+    "app": "build"
+  },
   "afterSign": "scripts/after-sign.js",
   "asarUnpack": ["**/*.node"],
   "files": ["**/*", "!**/node_modules/@bitwarden/desktop-native/**/*"],
@@ -60,29 +66,54 @@
     "target": ["portable", "nsis-web", "appx"],
     "sign": "./sign.js",
     "extraResources": [
-      { "from": "node_modules/regedit/vbs", "to": "regedit/vbs", "filter": ["**/*"] },
-      { "from": "resources/native-messaging.bat", "to": "native-messaging.bat" }
+      {
+        "from": "node_modules/regedit/vbs",
+        "to": "regedit/vbs",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "resources/native-messaging.bat",
+        "to": "native-messaging.bat"
+      }
     ]
   },
   "linux": {
     "category": "Utility",
     "synopsis": "A secure and free password manager for all of your devices.",
     "target": ["deb", "freebsd", "rpm", "AppImage", "snap"],
-    "desktop": { "Name": "Bitwarden", "Type": "Application", "GenericName": "Password Manager" }
+    "desktop": {
+      "Name": "Bitwarden",
+      "Type": "Application",
+      "GenericName": "Password Manager"
+    }
   },
   "dmg": {
     "icon": "dmg.icns",
     "contents": [
-      { "x": 150, "y": 185, "type": "file" },
-      { "x": 390, "y": 180, "type": "link", "path": "/Applications" }
+      {
+        "x": 150,
+        "y": 185,
+        "type": "file"
+      },
+      {
+        "x": 390,
+        "y": 180,
+        "type": "link",
+        "path": "/Applications"
+      }
     ],
-    "window": { "width": 540, "height": 380 }
+    "window": {
+      "width": 540,
+      "height": 380
+    }
   },
   "mas": {
     "entitlements": "resources/entitlements.mas.plist",
     "entitlementsInherit": "resources/entitlements.mas.inherit.plist",
     "hardenedRuntime": false,
-    "extendInfo": { "LSMinimumSystemVersion": "10.14.0" }
+    "extendInfo": {
+      "LSMinimumSystemVersion": "10.14.0"
+    }
   },
   "nsisWeb": {
     "oneClick": false,
@@ -90,9 +121,12 @@
     "allowToChangeInstallationDirectory": false,
     "artifactName": "${productName}-Installer-${version}.${ext}",
     "uninstallDisplayName": "${productName}",
-    "deleteAppDataOnUninstall": true
+    "deleteAppDataOnUninstall": true,
+    "include": "installer.nsh"
   },
-  "portable": { "artifactName": "${productName}-Portable-${version}.${ext}" },
+  "portable": {
+    "artifactName": "${productName}-Portable-${version}.${ext}"
+  },
   "appx": {
     "artifactName": "${productName}-${version}-${arch}.${ext}",
     "backgroundColor": "#175DDC",
@@ -109,13 +143,22 @@
   "appImage": {
     "artifactName": "${productName}-${version}-${arch}.${ext}"
   },
-  "rpm": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
-  "freebsd": { "artifactName": "${productName}-${version}-${arch}.${ext}" },
+  "rpm": {
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
+  },
+  "freebsd": {
+    "artifactName": "${productName}-${version}-${arch}.${ext}"
+  },
   "snap": {
     "autoStart": true,
     "confinement": "strict",
     "plugs": ["default", "password-manager-service"],
     "stagePackages": ["default"]
   },
-  "protocols": [{ "name": "Bitwarden", "schemes": ["bitwarden"] }]
+  "protocols": [
+    {
+      "name": "Bitwarden",
+      "schemes": ["bitwarden"]
+    }
+  ]
 }

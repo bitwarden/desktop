@@ -168,3 +168,15 @@
     }
   }
 }
+
+button.no-btn {
+  @extend a;
+  background: transparent;
+  border: none;
+  @include themify($themes) {
+    color: themed("textColor");
+  }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1420,7 +1420,7 @@
     "description": "Noun: a special folder to hold deleted items"
   },
   "searchTrash": {
-    "message": "Search trash"
+    "message": "Search Trash"
   },
   "permanentlyDeleteItem": {
     "message": "Permanently Delete Item"
@@ -1805,8 +1805,8 @@
   "leftOrganization": {
     "message": "You have left the organization."
   },
-  "ssoKeyConnectorUnavailable": {
-    "message": "Unable to reach the key connector, try again later."
+  "ssoKeyConnectorError": {
+    "message": "Key Connector error: make sure Key Connector is available and working correctly."
   },
   "lockAllVaults": {
     "message": "Lock All Vaults"
@@ -1901,6 +1901,15 @@
   },
   "service": {
     "message": "Service"
+  },
+  "allVaults": {
+    "message": "All Vaults"
+  },
+  "searchOrganization": {
+    "message": "Search Organization"
+  },
+  "searchMyVault": {
+    "message": "Search My Vault"
   },
   "forwardedEmail": {
     "message": "Forwarded Email Alias"

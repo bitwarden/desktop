@@ -1,10 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AuthGuardService } from "jslib-angular/services/auth-guard.service";
-import { LockGuardService } from "jslib-angular/services/lock-guard.service";
-
-import { LoginGuardService } from "../services/loginGuard.service";
+import { AuthGuard } from "jslib-angular/guards/auth.guard";
+import { LockGuard } from "jslib-angular/guards/lock.guard";
 
 import { HintComponent } from "./accounts/hint.component";
 import { LockComponent } from "./accounts/lock.component";
@@ -15,6 +13,7 @@ import { SetPasswordComponent } from "./accounts/set-password.component";
 import { SsoComponent } from "./accounts/sso.component";
 import { TwoFactorComponent } from "./accounts/two-factor.component";
 import { UpdateTempPasswordComponent } from "./accounts/update-temp-password.component";
+import { LoginGuard } from "./guards/login.guard";
 import { SendComponent } from "./send/send.component";
 import { VaultComponent } from "./vault/vault.component";
 
@@ -23,19 +22,19 @@ const routes: Routes = [
   {
     path: "lock",
     component: LockComponent,
-    canActivate: [LockGuardService],
+    canActivate: [LockGuard],
   },
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [LoginGuardService],
+    canActivate: [LoginGuard],
   },
   { path: "2fa", component: TwoFactorComponent },
   { path: "register", component: RegisterComponent },
   {
     path: "vault",
     component: VaultComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
   },
   { path: "hint", component: HintComponent },
   { path: "set-password", component: SetPasswordComponent },
@@ -43,17 +42,17 @@ const routes: Routes = [
   {
     path: "send",
     component: SendComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
   },
   {
     path: "update-temp-password",
     component: UpdateTempPasswordComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
   },
   {
     path: "remove-password",
     component: RemovePasswordComponent,
-    canActivate: [AuthGuardService],
+    canActivate: [AuthGuard],
     data: { titleId: "removeMasterPassword" },
   },
 ];

@@ -8,7 +8,7 @@ import { StateService } from "jslib-common/abstractions/state.service";
 const maxAllowedAccounts = 5;
 
 @Injectable()
-export class LoginGuardService implements CanActivate {
+export class LoginGuard implements CanActivate {
   protected homepage = "vault";
   constructor(
     private stateService: StateService,

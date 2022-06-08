@@ -15,8 +15,7 @@ app-root {
   height: 100%;
   display: flex;
 
-  > .groupings,
-  > .items,
+  > .items > div,
   > .details,
   > .logo {
     display: flex;
@@ -29,275 +28,6 @@ app-root {
 
   > .items {
     order: 2;
-  }
-
-  > .details {
-    order: 3;
-  }
-
-  > .logo {
-    order: 4;
-  }
-
-  > .groupings {
-    order: 1;
-    width: 22%;
-    min-width: 175px;
-    max-width: 600px;
-    border-right: 1px solid #000000;
-
-    @include themify($themes) {
-      background-color: themed("backgroundColorAlt");
-      border-right-color: themed("borderColor");
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      justify-content: space-between;
-
-      .footer {
-        padding: 0;
-      }
-
-      .inner-content {
-        padding-bottom: 0;
-        padding-right: 5px;
-        user-select: none;
-
-        > ul,
-        > div > ul {
-          margin: 0 0 15px 0;
-        }
-      }
-    }
-
-    h2 {
-      text-transform: uppercase;
-      font-size: $font-size-base;
-      font-weight: normal;
-      margin-bottom: 5px;
-
-      @include themify($themes) {
-        color: themed("headingColor");
-      }
-    }
-
-    .heading {
-      display: flex;
-
-      button {
-        margin-left: auto;
-        background: none;
-        border: none;
-        @include themify($themes) {
-          color: themed("headingButtonColor");
-        }
-
-        &:hover,
-        &:focus {
-          cursor: pointer;
-
-          @include themify($themes) {
-            color: themed("headingButtonHoverColor");
-          }
-        }
-      }
-    }
-
-    ul:not(.bwi-ul) {
-      li {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-    }
-
-    ul.bwi-ul {
-      li {
-        word-break: break-all;
-
-        .bwi-li {
-          top: 8px;
-          width: 1.1em;
-        }
-      }
-    }
-
-    // Nested indentions
-    ul.bwi-ul {
-      // Level 1
-      li {
-        > button {
-          padding-left: 12px;
-        }
-
-        .bwi-li {
-          left: -4px;
-        }
-
-        &.active > button .bwi-li {
-          left: 11px;
-        }
-      }
-
-      // Level 2
-      ul li {
-        > button {
-          padding-left: 23px;
-        }
-
-        .bwi-li {
-          left: 7px;
-        }
-
-        &.active > button .bwi-li {
-          left: 22px;
-        }
-      }
-
-      // Level 3
-      ul ul li {
-        > button {
-          padding-left: 34px;
-        }
-
-        .bwi-li {
-          left: 18px;
-        }
-
-        &.active > button .bwi-li {
-          left: 33px;
-        }
-      }
-
-      // Level 4
-      ul ul ul li {
-        > button {
-          padding-left: 45px;
-        }
-
-        .bwi-li {
-          left: 29px;
-        }
-
-        &.active > button .bwi-li {
-          left: 44px;
-        }
-      }
-
-      // Level 5
-      ul ul ul ul li {
-        > button {
-          padding-left: 56px;
-        }
-
-        .bwi-li {
-          left: 40px;
-        }
-
-        &.active > button .bwi-li {
-          left: 55px;
-        }
-      }
-
-      // Level 6
-      ul ul ul ul ul li {
-        > button {
-          padding-left: 67px;
-        }
-
-        .bwi-li {
-          left: 51px;
-        }
-
-        &.active > button .bwi-li {
-          left: 66px;
-        }
-      }
-
-      // Level 7
-      ul ul ul ul ul ul li {
-        > button {
-          padding-left: 78px;
-        }
-
-        .bwi-li {
-          left: 62px;
-        }
-
-        &.active > button .bwi-li {
-          left: 77px;
-        }
-      }
-    }
-
-    ul {
-      padding: 0;
-      margin: 0;
-
-      li {
-        button {
-          padding: 5px 0;
-          display: flex;
-          align-items: center;
-          width: 100%;
-
-          @include themify($themes) {
-            color: themed("textColor");
-          }
-
-          span {
-            visibility: hidden;
-            margin-left: auto;
-
-            @include themify($themes) {
-              color: themed("headingButtonColor");
-            }
-
-            &:hover,
-            &:focus {
-              @include themify($themes) {
-                color: themed("headingButtonHoverColor");
-              }
-            }
-          }
-
-          &:hover,
-          &:focus {
-            span {
-              visibility: visible;
-            }
-          }
-        }
-
-        &.active {
-          margin-left: -15px;
-          margin-right: -5px;
-          padding-left: 15px;
-          padding-right: 5px;
-
-          @include themify($themes) {
-            background-color: themed("groupingsActiveColor");
-          }
-
-          ul {
-            @include themify($themes) {
-              background-color: themed("backgroundColorAlt");
-            }
-
-            margin-left: -15px;
-            margin-right: -5px;
-            padding-left: 15px;
-            padding-right: 5px;
-          }
-        }
-      }
-    }
-  }
-
-  > .items {
     width: 28%;
     min-width: 200px;
     max-width: 350px;
@@ -336,6 +66,7 @@ app-root {
   > .details {
     flex: 1;
     min-width: 0;
+    order: 3;
 
     @include themify($themes) {
       background-color: themed("backgroundColorAlt2");
@@ -378,6 +109,7 @@ app-root {
   > .logo {
     flex: 1;
     min-width: 0;
+    order: 3;
 
     .content {
       overflow-y: hidden;
@@ -427,33 +159,6 @@ app-root {
     .right {
       margin-left: auto;
       display: flex;
-    }
-  }
-
-  .nav {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    .btn {
-      width: 100%;
-      font-size: $font-size-base * 0.8;
-      flex: 1;
-      border: 0;
-      border-radius: 0;
-      padding-bottom: 4px;
-
-      &:not(.active) {
-        @include themify($themes) {
-          background-color: themed("backgroundColorAlt");
-        }
-      }
-
-      i {
-        font-size: $font-size-base * 1.5;
-        display: block;
-        margin-bottom: 2px;
-        text-align: center;
-      }
     }
   }
 }

@@ -5,7 +5,6 @@ import {
   SECURE_STORAGE,
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
-  WINDOW,
   CLIENT_TYPE,
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
@@ -38,10 +37,10 @@ import { ElectronRendererStorageService } from "jslib-electron/services/electron
 
 import { Account } from "../../models/account";
 import { I18nService } from "../../services/i18n.service";
-import { LoginGuardService } from "../../services/loginGuard.service";
 import { NativeMessagingService } from "../../services/nativeMessaging.service";
 import { PasswordRepromptService } from "../../services/passwordReprompt.service";
 import { StateService } from "../../services/state.service";
+import { LoginGuard } from "../guards/login.guard";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { InitService } from "./init.service";
@@ -55,7 +54,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     InitService,
     NativeMessagingService,
     SearchBarService,
-    LoginGuardService,
+    LoginGuard,
     {
       provide: APP_INITIALIZER,
       useFactory: (initService: InitService) => initService.init(),

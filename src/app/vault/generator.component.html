@@ -386,16 +386,6 @@
                     (blur)="saveUsernameOptions()"
                   />
                 </div>
-                <div class="box-content-row" appBoxRow>
-                  <label for="simplelogin-hostname">{{ "hostname" | i18n }}</label>
-                  <input
-                    id="simplelogin-hostname"
-                    type="text"
-                    name="SimpleLoginHostname"
-                    [(ngModel)]="usernameOptions.forwardedSimpleLoginHostname"
-                    (blur)="saveUsernameOptions()"
-                  />
-                </div>
               </ng-container>
               <ng-container *ngIf="usernameOptions.forwardedService === 'anonaddy'">
                 <div class="box-content-row" appBoxRow>

@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
 import { ModalRef } from "jslib-angular/components/modal/modal.ref";
+import { VaultFilter } from "jslib-angular/modules/vault-filter/models/vault-filter.model";
 import { ModalService } from "jslib-angular/services/modal.service";
 import { BroadcasterService } from "jslib-common/abstractions/broadcaster.service";
 import { EventService } from "jslib-common/abstractions/event.service";
@@ -29,6 +30,7 @@ import { FolderView } from "jslib-common/models/view/folderView";
 import { invokeMenu, RendererMenuItem } from "jslib-electron/utils";
 
 import { SearchBarService } from "../layout/search/search-bar.service";
+import { VaultFilterComponent } from "../modules/vault-filter/vault-filter.component";
 
 import { AddEditComponent } from "./add-edit.component";
 import { AttachmentsComponent } from "./attachments.component";
@@ -36,7 +38,6 @@ import { CiphersComponent } from "./ciphers.component";
 import { CollectionsComponent } from "./collections.component";
 import { FolderAddEditComponent } from "./folder-add-edit.component";
 import { GeneratorComponent } from "./generator.component";
-import { GroupingsComponent } from "./groupings.component";
 import { PasswordHistoryComponent } from "./password-history.component";
 import { ShareComponent } from "./share.component";
 import { ViewComponent } from "./view.component";
@@ -51,9 +52,9 @@ export class VaultComponent implements OnInit, OnDestroy {
   @ViewChild(ViewComponent) viewComponent: ViewComponent;
   @ViewChild(AddEditComponent) addEditComponent: AddEditComponent;
   @ViewChild(CiphersComponent, { static: true }) ciphersComponent: CiphersComponent;
-  @ViewChild(GroupingsComponent, { static: true }) groupingsComponent: GroupingsComponent;
   @ViewChild("generator", { read: ViewContainerRef, static: true })
   generatorModalRef: ViewContainerRef;
+  @ViewChild(VaultFilterComponent, { static: true }) vaultFilterComponent: VaultFilterComponent;
   @ViewChild("attachments", { read: ViewContainerRef, static: true })
   attachmentsModalRef: ViewContainerRef;
   @ViewChild("passwordHistory", { read: ViewContainerRef, static: true })
@@ -70,12 +71,15 @@ export class VaultComponent implements OnInit, OnDestroy {
   type: CipherType = null;
   folderId: string = null;
   collectionId: string = null;
+  organizationId: string = null;
+  myVaultOnly = false;
   addType: CipherType = null;
   addOrganizationId: string = null;
   addCollectionIds: string[] = null;
   showingModal = false;
   deleted = false;
   userHasPremiumAccess = false;
+  activeFilter: VaultFilter = new VaultFilter();
 
   private modal: ModalRef = null;
 
@@ -124,7 +128,9 @@ export class VaultComponent implements OnInit, OnDestroy {
             await this.openGenerator(false);
             break;
           case "syncCompleted":
-            await this.load();
+            await this.ciphersComponent.reload(this.buildFilter());
+            await this.vaultFilterComponent.reloadCollectionsAndFolders(this.activeFilter);
+            await this.vaultFilterComponent.reloadOrganizations();
             break;
           case "refreshCiphers":
             this.ciphersComponent.refresh();
@@ -211,49 +217,31 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async load() {
     this.route.queryParams.pipe(first()).subscribe(async (params) => {
-      await this.groupingsComponent.load();
-
-      if (params == null) {
-        this.groupingsComponent.selectedAll = true;
-        await this.ciphersComponent.reload();
-      } else {
-        if (params.cipherId) {
-          const cipherView = new CipherView();
-          cipherView.id = params.cipherId;
-          if (params.action === "clone") {
-            await this.cloneCipher(cipherView);
-          } else if (params.action === "edit") {
-            await this.editCipher(cipherView);
-          } else {
-            await this.viewCipher(cipherView);
-          }
-        } else if (params.action === "add") {
-          this.addType = Number(params.addType);
-          this.addCipher(this.addType);
-        }
-
-        if (params.deleted) {
-          this.groupingsComponent.selectedTrash = true;
-          await this.filterDeleted();
-        } else if (params.favorites) {
-          this.groupingsComponent.selectedFavorites = true;
-          await this.filterFavorites();
-        } else if (params.type && params.action !== "add") {
-          const t = parseInt(params.type, null);
-          this.groupingsComponent.selectedType = t;
-          await this.filterCipherType(t);
-        } else if (params.folderId) {
-          this.groupingsComponent.selectedFolder = true;
-          this.groupingsComponent.selectedFolderId = params.folderId;
-          await this.filterFolder(params.folderId);
-        } else if (params.collectionId) {
-          this.groupingsComponent.selectedCollectionId = params.collectionId;
-          await this.filterCollection(params.collectionId);
+      if (params.cipherId) {
+        const cipherView = new CipherView();
+        cipherView.id = params.cipherId;
+        if (params.action === "clone") {
+          await this.cloneCipher(cipherView);
+        } else if (params.action === "edit") {
+          await this.editCipher(cipherView);
         } else {
-          this.groupingsComponent.selectedAll = true;
-          await this.ciphersComponent.reload();
+          await this.viewCipher(cipherView);
         }
+      } else if (params.action === "add") {
+        this.addType = Number(params.addType);
+        this.addCipher(this.addType);
       }
+
+      this.activeFilter = new VaultFilter({
+        status: params.deleted ? "trash" : params.favorites ? "favorites" : "all",
+        cipherType:
+          params.action === "add" || params.type == null ? null : parseInt(params.type, null),
+        selectedFolderId: params.folderId,
+        selectedCollectionId: params.selectedCollectionId,
+        selectedOrganizationId: params.selectedOrganizationId,
+        myVaultOnly: params.myVaultOnly ?? false,
+      });
+      await this.ciphersComponent.reload(this.buildFilter());
     });
   }
 
@@ -409,7 +397,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.addType = type;
     this.action = "add";
     this.cipherId = null;
-    this.updateCollectionProperties();
+    this.prefillNewCipherFromFilter();
     this.go();
   }
 
@@ -547,56 +535,73 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.go();
   }
 
-  async clearGroupingFilters() {
-    this.searchBarService.setPlaceholderText(this.i18nService.t("searchVault"));
-    await this.ciphersComponent.reload();
-    this.clearFilters();
-    this.go();
-  }
-
-  async filterFavorites() {
-    this.searchBarService.setPlaceholderText(this.i18nService.t("searchFavorites"));
-    await this.ciphersComponent.reload((c) => c.favorite);
-    this.clearFilters();
-    this.favorites = true;
-    this.go();
-  }
-
-  async filterDeleted() {
-    this.searchBarService.setPlaceholderText(this.i18nService.t("searchTrash"));
-    this.ciphersComponent.deleted = true;
-    await this.ciphersComponent.reload(null, true);
-    this.clearFilters();
-    this.deleted = true;
-    this.go();
-  }
-
-  async filterCipherType(type: CipherType) {
-    this.searchBarService.setPlaceholderText(this.i18nService.t("searchType"));
-    await this.ciphersComponent.reload((c) => c.type === type);
-    this.clearFilters();
-    this.type = type;
-    this.go();
-  }
-
-  async filterFolder(folderId: string) {
-    folderId = folderId === "none" ? null : folderId;
-    this.searchBarService.setPlaceholderText(this.i18nService.t("searchFolder"));
-    await this.ciphersComponent.reload((c) => c.folderId === folderId);
-    this.clearFilters();
-    this.folderId = folderId == null ? "none" : folderId;
-    this.go();
-  }
-
-  async filterCollection(collectionId: string) {
-    this.searchBarService.setPlaceholderText(this.i18nService.t("searchCollection"));
-    await this.ciphersComponent.reload(
-      (c) => c.collectionIds != null && c.collectionIds.indexOf(collectionId) > -1
+  async applyVaultFilter(vaultFilter: VaultFilter) {
+    this.searchBarService.setPlaceholderText(
+      this.i18nService.t(this.calculateSearchBarLocalizationString(vaultFilter))
     );
-    this.clearFilters();
-    this.collectionId = collectionId;
-    this.updateCollectionProperties();
+    this.activeFilter = vaultFilter;
+    await this.ciphersComponent.reload(this.buildFilter(), vaultFilter.status === "trash");
     this.go();
+  }
+
+  private calculateSearchBarLocalizationString(vaultFilter: VaultFilter): string {
+    if (vaultFilter.status === "favorites") {
+      return "searchFavorites";
+    }
+    if (vaultFilter.status === "trash") {
+      return "searchTrash";
+    }
+    if (vaultFilter.cipherType != null) {
+      return "searchType";
+    }
+    if (vaultFilter.selectedFolderId != null && vaultFilter.selectedFolderId != "none") {
+      return "searchFolder";
+    }
+    if (vaultFilter.selectedCollectionId != null) {
+      return "searchCollection";
+    }
+    if (vaultFilter.selectedOrganizationId != null) {
+      return "searchOrganization";
+    }
+    if (vaultFilter.myVaultOnly) {
+      return "searchMyVault";
+    }
+
+    return "searchVault";
+  }
+
+  private buildFilter(): (cipher: CipherView) => boolean {
+    return (cipher) => {
+      let cipherPassesFilter = true;
+      if (this.activeFilter.status === "favorites" && cipherPassesFilter) {
+        cipherPassesFilter = cipher.favorite;
+      }
+      if (this.activeFilter.status === "trash" && cipherPassesFilter) {
+        cipherPassesFilter = cipher.isDeleted;
+      }
+      if (this.activeFilter.cipherType != null && cipherPassesFilter) {
+        cipherPassesFilter = cipher.type === this.activeFilter.cipherType;
+      }
+      if (
+        this.activeFilter.selectedFolderId != null &&
+        this.activeFilter.selectedFolderId != "none" &&
+        cipherPassesFilter
+      ) {
+        cipherPassesFilter = cipher.folderId === this.activeFilter.selectedFolderId;
+      }
+      if (this.activeFilter.selectedCollectionId != null && cipherPassesFilter) {
+        cipherPassesFilter =
+          cipher.collectionIds != null &&
+          cipher.collectionIds.indexOf(this.activeFilter.selectedCollectionId) > -1;
+      }
+      if (this.activeFilter.selectedOrganizationId != null && cipherPassesFilter) {
+        cipherPassesFilter = cipher.organizationId === this.activeFilter.selectedOrganizationId;
+      }
+      if (this.activeFilter.myVaultOnly && cipherPassesFilter) {
+        cipherPassesFilter = cipher.organizationId === null;
+      }
+      return cipherPassesFilter;
+    };
   }
 
   async openGenerator(comingFromAddEdit: boolean, passwordType = true) {
@@ -657,11 +662,11 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     childComponent.onSavedFolder.subscribe(async (folder: FolderView) => {
       this.modal.close();
-      await this.groupingsComponent.loadFolders();
+      await this.vaultFilterComponent.reloadCollectionsAndFolders(this.activeFilter);
     });
     childComponent.onDeletedFolder.subscribe(async (folder: FolderView) => {
       this.modal.close();
-      await this.groupingsComponent.loadFolders();
+      await this.vaultFilterComponent.reloadCollectionsAndFolders(this.activeFilter);
     });
 
     this.modal.onClosed.subscribe(() => {
@@ -687,17 +692,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     return !confirmed;
   }
 
-  private clearFilters() {
-    this.folderId = null;
-    this.collectionId = null;
-    this.favorites = false;
-    this.type = null;
-    this.addCollectionIds = null;
-    this.addType = null;
-    this.addOrganizationId = null;
-    this.deleted = false;
-  }
-
   private go(queryParams: any = null) {
     if (queryParams == null) {
       queryParams = {
@@ -708,6 +702,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         folderId: this.folderId,
         collectionId: this.collectionId,
         deleted: this.deleted ? true : null,
+        organizationId: this.organizationId,
+        myVaultOnly: this.myVaultOnly,
       };
     }
 
@@ -751,19 +747,21 @@ export class VaultComponent implements OnInit, OnDestroy {
     });
   }
 
-  private updateCollectionProperties() {
-    if (this.collectionId != null) {
-      const collection = this.groupingsComponent.collections.filter(
-        (c) => c.id === this.collectionId
+  private prefillNewCipherFromFilter() {
+    if (this.activeFilter.selectedCollectionId != null) {
+      const collection = this.vaultFilterComponent.collections.fullList.filter(
+        (c) => c.id === this.activeFilter.selectedCollectionId
       );
       if (collection.length > 0) {
         this.addOrganizationId = collection[0].organizationId;
-        this.addCollectionIds = [this.collectionId];
-        return;
+        this.addCollectionIds = [this.activeFilter.selectedCollectionId];
       }
+    } else if (this.activeFilter.selectedOrganizationId) {
+      this.addOrganizationId = this.activeFilter.selectedOrganizationId;
     }
-    this.addOrganizationId = null;
-    this.addCollectionIds = null;
+    if (this.activeFilter.selectedFolderId && this.activeFilter.selectedFolder) {
+      this.folderId = this.activeFilter.selectedFolderId;
+    }
   }
 
   private async canNavigateAway(action: string, cipher?: CipherView) {
